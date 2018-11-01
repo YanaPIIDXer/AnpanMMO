@@ -19,7 +19,7 @@ public:
 	~Buffer() {}
 
 	// データを追加.
-	void Push(uint8 *pData, int32 Size);
+	void Push(const uint8 *pData, int32 Size);
 
 	// データを取り出す
 	void Pop(int32 Size);

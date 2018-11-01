@@ -8,7 +8,7 @@ Buffer::Buffer()
 }
 
 // ƒf[ƒ^‚ğ’Ç‰Á.
-void Buffer::Push(uint8 *pData, int32 Size)
+void Buffer::Push(const uint8 *pData, int32 Size)
 {
 	for (int i = 0; i < Size; i++)
 	{
