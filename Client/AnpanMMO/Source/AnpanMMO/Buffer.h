@@ -25,7 +25,10 @@ public:
 	void Pop(int32 Size);
 
 	// æ“ª‚ğæ“¾.
-	const uint8 *GetTop() const;
+	uint8 *GetTop();
+
+	// ƒTƒCƒY‚ğæ“¾.
+	int32 GetSize() const { return Data.Num(); }
 
 private:
 

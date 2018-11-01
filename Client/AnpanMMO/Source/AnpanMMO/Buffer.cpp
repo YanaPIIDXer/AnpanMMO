@@ -24,7 +24,7 @@ void Buffer::Pop(int32 Size)
 }
 
 // æ“ª‚ğæ“¾.
-const uint8 *Buffer::GetTop() const
+uint8 *Buffer::GetTop()
 {
 	if (Data.Num() == 0) { return nullptr; }
 
