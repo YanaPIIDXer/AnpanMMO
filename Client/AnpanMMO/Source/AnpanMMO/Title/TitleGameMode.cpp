@@ -1,7 +1,7 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "TitleGameMode.h"
-#include "MMOGameInstance.h"
+#include "Title/UI/TitleScreenWidget.h"
 
 // コンストラクタ
 ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
@@ -9,14 +9,11 @@ ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
 {
 }
 
-// ゲームサーバへの接続.
-void ATitleGameMode::ConnectToGameServer()
+// 開始時の処理.
+void ATitleGameMode::BeginPlay()
 {
-	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(GetGameInstance());
-	check(pInst != nullptr);
+	Super::BeginPlay();
 
-	if (!pInst->Connect("127.0.0.1", 4424))
-	{
-		UE_LOG(LogTemp, Log, TEXT("GameServer Connection Failed..."));
-	}
+	auto *pWidget = UTitleScreenWidget::Create(this);
+	pWidget->AddToViewport();
 }
