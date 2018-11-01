@@ -4,6 +4,7 @@
 #include "MemoryBuffer.h"
 
 class PacketBase;
+class ClientStateBase;
 
 /**
  * クライアントクラス
@@ -25,6 +26,9 @@ public:
 	// パケット送信.
 	void SendPacket(PacketBase *pPacket);
 
+	// ステート切り替え
+	void ChangeState(ClientStateBase *pNextState);
+
 private:
 
 	enum
@@ -43,6 +47,9 @@ private:
 
 	// 受信データ
 	array<u8, RecvDataSize> RecvData;
+
+	// State
+	ClientStateBase *pState;
 
 
 	// 受信開始.

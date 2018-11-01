@@ -5,6 +5,7 @@
 #include "MemoryStream/MemoryStreamWriter.h"
 #include "MemoryStream/MemoryStreamReader.h"
 #include "Packet/PacketHeader.h"
+#include "ClientState/ClientStateBase.h"
 
 // コンストラクタ
 Client::Client(const shared_ptr<tcp::socket> &pInSocket)
@@ -34,6 +35,13 @@ void Client::SendPacket(PacketBase *pPacket)
 	AsyncSend(WriteStream.GetStream(), WriteStream.GetSize());
 }
 
+// ステート切り替え
+void Client::ChangeState(ClientStateBase *pNextState)
+{
+	delete pState;
+	pState = pNextState;
+}
+
 
 // 受信開始.
 void Client::AsyncRecv(u8 *pBuffer, int Offset)
@@ -61,8 +69,8 @@ void Client::OnRecv(const system::error_code &ErrorCode, size_t Size)
 		RecvBuffer.Pop(2);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
-		// @TODO:パケット解析処理.
-
+		pState->AnalyzePacket(&BodyStream);
+		
 		RecvBuffer.Pop(Header.GetPacketSize());
 	}
 
