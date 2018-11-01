@@ -80,9 +80,12 @@ void GameServerConnection::Tick(float DeltaTime)
 // ‘—Mˆ—.
 void GameServerConnection::SendProc()
 {
+	uint8 *pData = SendBuffer.GetTop();
+	if (pData == nullptr) { return; }
+
 	int32 Size = SendBuffer.GetSize();
 	int32 SendSize = 0;
-	pSocket->Send(SendBuffer.GetTop(), Size, SendSize);
+	pSocket->Send(pData, Size, SendSize);
 	SendBuffer.Pop(SendSize);
 }
 
