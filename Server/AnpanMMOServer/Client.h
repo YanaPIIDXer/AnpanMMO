@@ -3,6 +3,8 @@
 
 #include "MemoryBuffer.h"
 
+class PacketBase;
+
 /**
  * クライアントクラス
  */
@@ -19,6 +21,9 @@ public:
 
 	// 接続されているか？
 	bool IsConnected() const { return bIsConnected; }
+
+	// パケット送信.
+	void SendPacket(PacketBase *pPacket);
 
 private:
 
@@ -47,7 +52,7 @@ private:
 	void OnRecv(const system::error_code &ErrorCode, size_t Size);
 
 	// 送信.
-	void AsyncSend(u8 *pBuffer, int Size);
+	void AsyncSend(const u8 *pBuffer, int Size);
 
 	// 送信した。
 	void OnSend(const system::error_code &ErrorCode, size_t Size);
