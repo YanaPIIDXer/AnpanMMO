@@ -2,7 +2,7 @@
 #define __PACKETBASE_H__
 
 class MemoryStreamInterface;
-enum class PacketID;
+enum PacketID;
 
 // パケット基底クラス
 // 各種パケットはこのクラスを派生して定義する。
