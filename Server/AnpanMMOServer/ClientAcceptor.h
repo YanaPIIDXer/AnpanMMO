@@ -12,6 +12,9 @@ public:
 	// コンストラクタ
 	ClientAcceptor(asio::io_service &InIOService, int Port);
 
+	// 定期処理.
+	void Poll();
+
 private:
 
 	// IOService

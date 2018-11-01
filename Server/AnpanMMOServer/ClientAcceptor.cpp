@@ -7,3 +7,9 @@ ClientAcceptor::ClientAcceptor(asio::io_service &InIOService, int Port)
 	, Acceptor(InIOService, tcp::endpoint(tcp::v4(), Port))
 {
 }
+
+// ’èŠúˆ—.
+void ClientAcceptor::Poll()
+{
+
+}
