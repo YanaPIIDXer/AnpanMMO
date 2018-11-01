@@ -3,6 +3,7 @@
 
 class MemoryStreamInterface;
 #include "Packet/PacketID.h"
+#include "TypeDefs.h"
 
 // パケットに付随するヘッダ
 class PacketHeader

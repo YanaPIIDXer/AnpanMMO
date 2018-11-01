@@ -1,7 +1,4 @@
-#include "AnpanMMO.h"
 #include "MemoryStreamReader.h"
-#include <stdio.h>
-#include <string.h>
 #include "EndianConverter.h"
 
 //コンストラクタ
