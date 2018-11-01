@@ -15,10 +15,16 @@ public:
 	// デストラクタ
 	~Client() {}
 
+	// 接続されているか？
+	bool IsConnected() const { return bIsConnected; }
+
 private:
 
 	// Socket
 	shared_ptr<tcp::socket> pSocket;
+
+	// 接続されているか？
+	bool bIsConnected;
 
 };
 

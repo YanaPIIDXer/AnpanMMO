@@ -4,5 +4,6 @@
 // コンストラクタ
 Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	: pSocket(pInSocket)
+	, bIsConnected(true)
 {
 }

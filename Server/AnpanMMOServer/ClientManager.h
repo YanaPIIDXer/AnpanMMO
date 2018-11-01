@@ -24,6 +24,9 @@ public:
 	// 定期処理.
 	void Poll();
 
+	// クライアント生成.
+	ClientPtr CreateClient(const shared_ptr<tcp::socket> &pSocket);
+
 private:
 
 	// クライアントリスト
