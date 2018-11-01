@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="ClientAcceptor.h" />
+    <ClInclude Include="Config.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
@@ -139,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClientAcceptor.cpp" />
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryBuffer.cpp" />
     <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />
