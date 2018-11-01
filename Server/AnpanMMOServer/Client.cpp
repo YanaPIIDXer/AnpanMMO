@@ -15,7 +15,7 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 // ŽóMŠJŽn.
 void Client::AsyncRecv(u8 *pBuffer, int Offset)
 {
-	pSocket->async_receive(asio::buffer(pBuffer, 1024 - Offset),
+	pSocket->async_receive(asio::buffer(pBuffer, RECV_DATA_SIZE - Offset),
 		bind(&Client::OnRecv, this, asio::placeholders::error, asio::placeholders::bytes_transferred));
 }
 
