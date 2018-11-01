@@ -52,6 +52,9 @@ private:
 	// 送信バッファ
 	Buffer SendBuffer;
 
+	// 受信データサイズ
+	static const int32 RecvDataSize;
+
 
 	// 送信処理.
 	void SendProc();

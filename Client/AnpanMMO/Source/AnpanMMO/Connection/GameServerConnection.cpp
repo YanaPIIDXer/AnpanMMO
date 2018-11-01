@@ -7,6 +7,8 @@
 #include "MemoryStream/MemorySizeCaliculateStream.h"
 #include "MemoryStream/MemoryStreamWriter.h"
 
+const int GameServerConnection::RecvDataSize = 1024;
+
 // コンストラクタ
 GameServerConnection::GameServerConnection()
 	: pSocket(nullptr)
@@ -92,9 +94,9 @@ void GameServerConnection::SendProc()
 // 受信処理.
 void GameServerConnection::RecvProc()
 {
-	uint8 RecvData[1024];
+	uint8 RecvData[RecvDataSize];
 	int32 RecvSize = 0;
-	pSocket->Recv(&RecvData[0], 1024, RecvSize);
+	pSocket->Recv(&RecvData[0], RecvDataSize, RecvSize);
 	RecvBuffer.Push(&RecvData[0], RecvSize);
 
 	MemoryStreamReader StreamReader(RecvBuffer.GetTop(), RecvBuffer.GetSize());
