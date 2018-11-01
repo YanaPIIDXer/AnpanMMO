@@ -1,5 +1,6 @@
 #include "stdafx.h"	
 #include "ClientAcceptor.h"
+#include "ClientManager.h"
 
 // エントリポイント
 int main()
@@ -12,6 +13,10 @@ int main()
 		bind(&ClientAcceptor::Poll, &Acceptor));
 
 	Acceptor.Start();
+
+	asio::basic_repeating_timer<posix_time::ptime> ClientManagerTimer(IOService);
+	ClientManagerTimer.start(posix_time::millisec(30),
+		bind(&ClientManager::Poll, &ClientManager::GetInstance()));
 
 	IOService.run();
 	return 0;

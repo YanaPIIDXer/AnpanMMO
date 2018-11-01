@@ -21,6 +21,9 @@ public:
 	// デストラクタ
 	~ClientManager() {}
 
+	// 定期処理.
+	void Poll();
+
 private:
 
 	// クライアントリスト

@@ -7,3 +7,9 @@ ClientManager ClientManager::Instance;
 ClientManager::ClientManager()
 {
 }
+
+// ’èŠúˆ—.
+void ClientManager::Poll()
+{
+
+}
