@@ -7,6 +7,8 @@
 #include "Connection/GameServerConnection.h"
 #include "MMOGameInstance.generated.h"
 
+class PacketBase;
+
 /**
  * GameInstance
  */
@@ -34,6 +36,9 @@ public:
 
 	// 接続されているか？
 	bool IsConnected() const { return (pConnection != nullptr && pConnection->IsConnected()); }
+
+	// パケット送信.
+	void SendPacket(PacketBase *pPacket);
 
 private:
 

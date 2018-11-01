@@ -37,3 +37,11 @@ void UMMOGameInstance::Close()
 	delete pConnection;
 	pConnection = nullptr;
 }
+
+// パケット送信.
+void UMMOGameInstance::SendPacket(PacketBase *pPacket)
+{
+	check(pConnection != nullptr);
+
+	pConnection->SendPacket(pPacket);
+}
