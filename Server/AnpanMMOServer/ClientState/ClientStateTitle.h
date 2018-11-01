@@ -19,6 +19,9 @@ public:
 
 private:
 
+	// ログインリクエストを受信した。
+	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __CLIENTSTATETITLE_H__

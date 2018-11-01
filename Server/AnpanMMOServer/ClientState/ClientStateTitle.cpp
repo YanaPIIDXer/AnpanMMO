@@ -12,5 +12,21 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 // パケット解析.
 void ClientStateTitle::AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream)
 {
+	switch (ID)
+	{
+		case LogInRequest:
+
+			OnRecvLogInRequest(pStream);
+			break;
+
+	}
+}
+
+
+// ログインリクエストを受信した。
+void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
+{
+	PacketLogInRequest Packet;
+	Packet.Serialize(pStream);
 
 }
