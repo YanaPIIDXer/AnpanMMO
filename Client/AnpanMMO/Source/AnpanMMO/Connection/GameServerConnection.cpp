@@ -102,6 +102,7 @@ void GameServerConnection::RecvProc()
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
 		// @TODO:パケット解析処理.
+		UE_LOG(LogTemp, Log, TEXT("RecvPacket PacketID:%X"), Header.GetPacketId());
 
 		RecvBuffer.Pop(Header.GetPacketSize());
 	}
