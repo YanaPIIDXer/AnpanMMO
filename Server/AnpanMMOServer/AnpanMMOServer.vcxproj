@@ -127,6 +127,7 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientAcceptor.h" />
     <ClInclude Include="ClientManager.h" />
+    <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="MemoryBuffer.h" />
