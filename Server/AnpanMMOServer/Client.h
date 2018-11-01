@@ -1,6 +1,8 @@
 #ifndef __CLIENT_H__
 #define __CLIENT_H__
 
+#include "MemoryBuffer.h"
+
 /**
  * クライアントクラス
  */
@@ -27,10 +29,10 @@ private:
 	bool bIsConnected;
 
 	// 受信バッファ.
-	array<u8, 1024> RecvBuffer;
+	MemoryBuffer RecvBuffer;
 
-	// 送信バッファ
-	array<u8, 1024> SendBuffer;
+	// 受信データ
+	array<u8, 1024> RecvData;
 
 
 	// 受信開始.

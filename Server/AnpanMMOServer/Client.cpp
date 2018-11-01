@@ -1,12 +1,14 @@
 #include "stdafx.h"
 #include "Client.h"
+#include "MemoryStream/MemoryStreamReader.h"
+#include "Packet/PacketHeader.h"
 
 // コンストラクタ
 Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	: pSocket(pInSocket)
 	, bIsConnected(true)
 {
-	AsyncRecv(&RecvBuffer[0], 0);
+	AsyncRecv(&RecvData[0], 0);
 }
 
 
@@ -26,7 +28,22 @@ void Client::OnRecv(const system::error_code &ErrorCode, size_t Size)
 		return;
 	}
 
-	AsyncRecv(&RecvBuffer[0], 0);
+	RecvBuffer.Push(&RecvData[0], Size);
+
+	u8 *pRecvData = RecvBuffer.GetTop();
+	MemoryStreamReader ReadStream(pRecvData, Size);
+	PacketHeader Header;
+	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize())
+	{
+		RecvBuffer.Pop(2);
+
+		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
+		// @TODO:パケット解析処理.
+
+		RecvBuffer.Pop(Header.GetPacketSize());
+	}
+
+	AsyncRecv(&RecvData[0], 0);
 }
 
 // 送信.
