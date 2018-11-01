@@ -29,12 +29,21 @@ private:
 	// 受信バッファ.
 	array<u8, 1024> RecvBuffer;
 
+	// 送信バッファ
+	array<u8, 1024> SendBuffer;
+
 
 	// 受信開始.
 	void AsyncRecv(u8 *pBuffer, int Offset);
 
 	// 受信した。
-	void OnRecv(const system::error_code &Error, size_t Size);
+	void OnRecv(const system::error_code &ErrorCode, size_t Size);
+
+	// 送信.
+	void AsyncSend(u8 *pBuffer, int Size);
+
+	// 送信した。
+	void OnSend(const system::error_code &ErrorCode, size_t Size);
 
 };
 

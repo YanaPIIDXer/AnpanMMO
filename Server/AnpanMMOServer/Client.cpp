@@ -28,3 +28,21 @@ void Client::OnRecv(const system::error_code &ErrorCode, size_t Size)
 
 	AsyncRecv(&RecvBuffer[0], 0);
 }
+
+// ëóêM.
+void Client::AsyncSend(u8 *pBuffer, int Size)
+{
+	tcp::socket *pSock = pSocket.get();
+	asio::async_write(*pSock, asio::buffer(pBuffer, Size),
+		bind(&Client::OnSend, this, asio::placeholders::error, asio::placeholders::bytes_transferred));
+}
+
+// ëóêMÇµÇΩÅB
+void Client::OnSend(const system::error_code &ErrorCode, size_t Size)
+{
+	if (ErrorCode)
+	{
+		bIsConnected = false;
+		return;
+	}
+}
