@@ -25,5 +25,8 @@ public:
 
 protected:
 	
+	// ログインパケットを送信.
+	UFUNCTION(BlueprintCallable, Category = "Connection")
+	void SendLogInPacket(const FString &UserName, const FString &Password);
 	
 };
