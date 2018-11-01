@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Networking/Public/Networking.h"
 
 /**
  * ゲームサーバ接続.
@@ -18,6 +19,15 @@ public:
 	// デストラクタ
 	~GameServerConnection();
 
+	// 接続.
+	bool Connect(const FString &URL, int32 Port);
+
+	// 切断.
+	void Close();
+
 private:
+
+	// Socket
+	FSocket *pSocket;
 
 };
