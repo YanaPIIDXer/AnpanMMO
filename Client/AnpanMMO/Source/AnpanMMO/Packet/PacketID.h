@@ -3,7 +3,9 @@
 
 enum PacketID
 {
-
+	LogInRequest,
+	LogInResult,
+	
 };
 
 #endif		// #ifndef __PACKETID_H__

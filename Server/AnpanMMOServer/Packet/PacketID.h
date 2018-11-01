@@ -3,6 +3,8 @@
 
 enum PacketID
 {
+	LogInRequest,
+	LogInResult,
 	
 };
 
