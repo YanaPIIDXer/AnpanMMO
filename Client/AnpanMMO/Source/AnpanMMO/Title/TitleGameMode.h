@@ -23,6 +23,10 @@ public:
 	// デストラクタ
 	virtual ~ATitleGameMode() {}
 
+	// ゲームサーバへの接続.
+	UFUNCTION(BlueprintCallable, Category = "Connection")
+	void ConnectToGameServer();
+
 private:
 	
 	
