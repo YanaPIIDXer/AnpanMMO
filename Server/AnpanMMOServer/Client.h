@@ -18,7 +18,7 @@ public:
 	Client(const shared_ptr<tcp::socket> &pInSocket);
 
 	// デストラクタ
-	~Client() {}
+	~Client();
 
 	// 接続されているか？
 	bool IsConnected() const { return bIsConnected; }

@@ -6,13 +6,22 @@
 #include "MemoryStream/MemoryStreamReader.h"
 #include "Packet/PacketHeader.h"
 #include "ClientState/ClientStateBase.h"
+#include "ClientState/ClientStateTitle.h"
 
 // コンストラクタ
 Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	: pSocket(pInSocket)
 	, bIsConnected(true)
+	, pState(new ClientStateTitle(this))
 {
 	AsyncRecv(&RecvData[0], 0);
+}
+
+// デストラクタ
+Client::~Client()
+{
+	delete pState;
+	pState = NULL;
 }
 
 // パケット送信.
