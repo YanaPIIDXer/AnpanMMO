@@ -15,6 +15,8 @@ class ClientManager : noncopyable
 private:		// 別名定義.
 
 	typedef shared_ptr<Client> ClientSharedPtr;
+	typedef std::vector<ClientSharedPtr> ClientList;
+	typedef ClientList::iterator ListIterator;
 
 public:
 
@@ -30,7 +32,7 @@ public:
 private:
 
 	// クライアントリスト
-	std::vector<ClientSharedPtr> ClientList;
+	ClientList List;
 
 	// ======== Singleton ============
 public:

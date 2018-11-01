@@ -20,5 +20,5 @@ void ClientManager::CreateClient(const shared_ptr<tcp::socket> &pSocket)
 	ClientSharedPtr pClient = ClientSharedPtr(new Client(pSocket));
 
 	// ƒŠƒXƒg‚É’Ç‰ÁB
-	ClientList.push_back(pClient);
+	List.push_back(pClient);
 }
