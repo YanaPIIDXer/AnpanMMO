@@ -15,6 +15,9 @@ public:
 	// 定期処理.
 	void Poll();
 
+	// Accept開始.
+	void Start();
+
 private:
 
 	// IOService
@@ -22,6 +25,19 @@ private:
 
 	// アクセプタ
 	tcp::acceptor Acceptor;
+
+	// Socket
+	shared_ptr<tcp::socket> pSocket;
+
+	// Accept待機中？
+	bool bWaitingAccept;
+
+
+	// Accept開始.
+	void StartAccept();
+
+	// Acceptした
+	void OnAccept(const system::error_code &ErrorCode);
 
 };
 

@@ -11,6 +11,8 @@ int main()
 	AcceptorTimer.start(posix_time::millisec(30),
 		bind(&ClientAcceptor::Poll, &Acceptor));
 
+	Acceptor.Start();
+
 	IOService.run();
 	return 0;
 }
