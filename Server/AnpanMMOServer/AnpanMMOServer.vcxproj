@@ -76,6 +76,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(BOOST_LIB)</AdditionalLibraryDirectories>
@@ -115,6 +116,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="basic_repeating_timer.h" />
+    <ClInclude Include="EndianConverter.h" />
+    <ClInclude Include="MemoryBuffer.h" />
+    <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
+    <ClInclude Include="MemoryStream\MemoryStreamInterface.h" />
+    <ClInclude Include="MemoryStream\MemoryStreamReader.h" />
+    <ClInclude Include="MemoryStream\MemoryStreamWriter.h" />
+    <ClInclude Include="Packet\PacketBase.h" />
+    <ClInclude Include="Packet\PacketHeader.h" />
+    <ClInclude Include="Packet\PacketID.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TypeDefs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MemoryBuffer.cpp" />
+    <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />
+    <ClCompile Include="MemoryStream\MemoryStreamReader.cpp" />
+    <ClCompile Include="MemoryStream\MemoryStreamWriter.cpp" />
+    <ClCompile Include="Packet\PacketHeader.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AnpanMMOServer.VC.db" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
