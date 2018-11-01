@@ -11,7 +11,13 @@ ClientManager::ClientManager()
 // 定期処理.
 void ClientManager::Poll()
 {
-
+	for (ListIterator It = List.begin(); It != List.end(); ++It)
+	{
+		if (!It->get()->IsConnected())
+		{
+			It = List.erase(It);
+		}
+	}
 }
 
 // クライアント生成.
