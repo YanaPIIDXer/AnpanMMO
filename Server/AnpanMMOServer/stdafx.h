@@ -14,6 +14,6 @@ using namespace boost;
 using asio::ip::tcp;
 
 #include "TypeDefs.h"
-
+#include "Config.h"
 
 // TODO: プログラムに必要な追加ヘッダーをここで参照してください
