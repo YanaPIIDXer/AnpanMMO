@@ -7,6 +7,8 @@
 #include "Tickable.h"
 #include "Buffer.h"
 
+class PacketBase;
+
 /**
  * ゲームサーバ接続.
  */
@@ -29,6 +31,9 @@ public:
 
 	// 接続されているか？
 	bool IsConnected() const { return (pSocket != nullptr && pSocket->GetConnectionState() == ESocketConnectionState::SCS_Connected); }
+
+	// パケット送信.
+	void SendPacket(PacketBase *pPacket);
 
 	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;

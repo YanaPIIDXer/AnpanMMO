@@ -3,6 +3,9 @@
 #include "GameServerConnection.h"
 #include "MemoryStream/MemoryStreamReader.h"
 #include "Packet/PacketHeader.h"
+#include "Packet/PacketBase.h"
+#include "MemoryStream/MemorySizeCaliculateStream.h"
+#include "MemoryStream/MemoryStreamWriter.h"
 
 // コンストラクタ
 GameServerConnection::GameServerConnection()
@@ -45,6 +48,23 @@ void GameServerConnection::Close()
 	
 	pSocket->Close();
 	pSocket = nullptr;
+}
+
+// パケット送信.
+void GameServerConnection::SendPacket(PacketBase *pPacket)
+{
+	// サイズを求める。
+	MemorySizeCaliculateStream CalcStream;
+	pPacket->Serialize(&CalcStream);
+
+	int32 SendSize = CalcStream.GetSize();
+
+	// シリアライズ
+	MemoryStreamWriter WriteStream(SendSize);
+	pPacket->Serialize(&WriteStream);
+	
+	const u8 *pData = WriteStream.GetStream();
+	SendBuffer.Push(pData, SendSize);
 }
 
 // 毎フレームの処理.
