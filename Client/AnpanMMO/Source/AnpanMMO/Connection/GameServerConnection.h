@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Networking/Public/Networking.h"
 #include "Tickable.h"
+#include "Buffer.h"
 
 /**
  * ゲームサーバ接続.
@@ -39,5 +40,18 @@ private:
 
 	// Socket
 	FSocket *pSocket;
+
+	// 受信バッファ
+	Buffer RecvBuffer;
+
+	// 送信バッファ
+	Buffer SendBuffer;
+
+
+	// 送信処理.
+	void SendProc();
+
+	// 受信処理.
+	void RecvProc();
 
 };

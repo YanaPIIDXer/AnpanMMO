@@ -1,6 +1,8 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "GameServerConnection.h"
+#include "MemoryStream/MemoryStreamReader.h"
+#include "Packet/PacketHeader.h"
 
 // コンストラクタ
 GameServerConnection::GameServerConnection()
@@ -50,4 +52,37 @@ void GameServerConnection::Tick(float DeltaTime)
 {
 	if (!IsConnected()) { return; }
 
+	SendProc();
+	RecvProc();
+}
+
+
+// 送信処理.
+void GameServerConnection::SendProc()
+{
+	int32 Size = SendBuffer.GetSize();
+	int32 SendSize = 0;
+	pSocket->Send(SendBuffer.GetTop(), Size, SendSize);
+	SendBuffer.Pop(SendSize);
+}
+
+// 受信処理.
+void GameServerConnection::RecvProc()
+{
+	uint8 RecvData[1024];
+	int32 RecvSize = 0;
+	pSocket->Recv(&RecvData[0], 1024, RecvSize);
+	RecvBuffer.Push(&RecvData[0], RecvSize);
+
+	MemoryStreamReader StreamReader(RecvBuffer.GetTop(), RecvBuffer.GetSize());
+	PacketHeader Header;
+	if (Header.Serialize(&StreamReader) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 2)
+	{
+		RecvBuffer.Pop(2);
+
+		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
+		// @TODO:パケット解析処理.
+
+		RecvBuffer.Pop(Header.GetPacketSize());
+	}
 }
