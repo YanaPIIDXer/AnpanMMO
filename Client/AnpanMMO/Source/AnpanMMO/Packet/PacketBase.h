@@ -15,7 +15,7 @@ public:
 	virtual ~PacketBase() {}
 
 	// パケットＩＤ取得
-	virtual PacketID GetPacketId() = 0;
+	virtual PacketID GetPacketID() const = 0;
 
 	//シリアライズ
 	virtual bool Serialize(MemoryStreamInterface *pStream) = 0;
