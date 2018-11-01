@@ -3,6 +3,9 @@
 
 #include "ClientStateBase.h"
 
+/**
+ * ƒ^ƒCƒgƒ‹‰æ–ÊState
+ */
 class ClientStateTitle : public ClientStateBase
 {
 
