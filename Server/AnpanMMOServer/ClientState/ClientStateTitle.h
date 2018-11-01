@@ -15,7 +15,7 @@ public:
 	ClientStateTitle(Client *pInParent);
 
 	// パケット解析.
-	virtual void AnalyzePacket(MemoryStreamInterface *pStream);
+	virtual void AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream);
 
 private:
 

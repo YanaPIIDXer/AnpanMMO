@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "ClientStateTitle.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "Packet/PacketLogInRequest.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
@@ -9,7 +10,7 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 }
 
 // パケット解析.
-void ClientStateTitle::AnalyzePacket(MemoryStreamInterface *pStream)
+void ClientStateTitle::AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream)
 {
 
 }

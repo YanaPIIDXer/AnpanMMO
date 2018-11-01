@@ -3,6 +3,7 @@
 
 class Client;
 class MemoryStreamInterface;
+enum PacketID;
 
 /**
  * クライアントステート基底クラス
@@ -20,7 +21,7 @@ public:
 	virtual ~ClientStateBase() {}
 
 	// パケット解析.
-	virtual void AnalyzePacket(MemoryStreamInterface *pStream) {}
+	virtual void AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream) {}
 	
 protected:
 

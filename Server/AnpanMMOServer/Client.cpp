@@ -78,7 +78,7 @@ void Client::OnRecv(const system::error_code &ErrorCode, size_t Size)
 		RecvBuffer.Pop(2);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
-		pState->AnalyzePacket(&BodyStream);
+		pState->AnalyzePacket(Header.GetPacketId(), &BodyStream);
 		
 		RecvBuffer.Pop(Header.GetPacketSize());
 	}

@@ -4,8 +4,6 @@
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
-#include "FlexArray.h"
-#include "Hoge.h"
 
 
 class PacketLogInRequest  : public PacketBase
