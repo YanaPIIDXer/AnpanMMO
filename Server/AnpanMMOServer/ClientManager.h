@@ -9,7 +9,7 @@ typedef weak_ptr<Client> ClientPtr;
 /**
  * クライアント管理.
  */
-class ClientManager
+class ClientManager : noncopyable
 {
 
 private:		// 別名定義.
@@ -18,9 +18,6 @@ private:		// 別名定義.
 
 public:
 
-	// コンストラクタ
-	ClientManager();
-
 	// デストラクタ
 	~ClientManager() {}
 
@@ -28,6 +25,16 @@ private:
 
 	// クライアントリスト
 	std::vector<ClientSharedPtr> ClientList;
+
+	// ======== Singleton ============
+public:
+
+	static ClientManager &GetInstance() { return Instance; }
+
+private:
+
+	ClientManager();
+	static ClientManager Instance;
 
 };
 
