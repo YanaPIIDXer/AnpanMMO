@@ -3,9 +3,6 @@
 
 #include "MemoryBuffer.h"
 
-// 受信バッファサイズ
-#define RECV_BUFFER_SIZE 1024
-
 /**
  * クライアントクラス
  */
@@ -25,6 +22,11 @@ public:
 
 private:
 
+	enum
+	{
+		RecvDataSize = 1024,
+	};
+
 	// Socket
 	shared_ptr<tcp::socket> pSocket;
 
@@ -35,7 +37,7 @@ private:
 	MemoryBuffer RecvBuffer;
 
 	// 受信データ
-	array<u8, RECV_BUFFER_SIZE> RecvData;
+	array<u8, RecvDataSize> RecvData;
 
 
 	// 受信開始.
