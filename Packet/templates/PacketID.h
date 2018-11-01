@@ -1,7 +1,7 @@
 #ifndef __PACKETID_H__
 #define __PACKETID_H__
 
-enum class PacketID
+enum PacketID
 {
 	$PACKET_ID_LIST$
 };
