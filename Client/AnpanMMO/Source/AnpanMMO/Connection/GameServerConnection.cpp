@@ -44,3 +44,10 @@ void GameServerConnection::Close()
 	pSocket->Close();
 	pSocket = nullptr;
 }
+
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void GameServerConnection::Tick(float DeltaTime)
+{
+	if (!IsConnected()) { return; }
+
+}

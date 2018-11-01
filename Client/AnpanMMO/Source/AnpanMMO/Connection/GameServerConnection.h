@@ -4,11 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Networking/Public/Networking.h"
+#include "Tickable.h"
 
 /**
  * ゲームサーバ接続.
  */
-class GameServerConnection
+class GameServerConnection : public FTickableGameObject
 {
 
 public:
@@ -24,6 +25,15 @@ public:
 
 	// 切断.
 	void Close();
+
+	// 接続されているか？
+	bool IsConnected() const { return (pSocket != nullptr && pSocket->GetConnectionState() == ESocketConnectionState::SCS_Connected); }
+
+	// 毎フレームの処理.
+	virtual void Tick(float DeltaTime) override;
+
+	// StatID取得.
+	virtual TStatId GetStatId() const override { return TStatId(); }
 
 private:
 
