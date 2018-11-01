@@ -21,7 +21,7 @@ public:
 	~GameServerConnection();
 
 	// Ú‘±.
-	bool Connect(const FString &URL, int32 Port);
+	bool Connect(const FString &Host, int32 Port);
 
 	// Ø’f.
 	void Close();

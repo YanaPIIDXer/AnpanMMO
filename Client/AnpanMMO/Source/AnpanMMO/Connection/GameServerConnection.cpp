@@ -15,7 +15,7 @@ GameServerConnection::~GameServerConnection()
 }
 
 // ê⁄ë±.
-bool GameServerConnection::Connect(const FString &URL, int32 Port)
+bool GameServerConnection::Connect(const FString &Host, int32 Port)
 {
 	if (pSocket != nullptr)
 	{
@@ -27,8 +27,8 @@ bool GameServerConnection::Connect(const FString &URL, int32 Port)
 	if (pSocket == nullptr) { return false; }
 
 	TSharedRef<FInternetAddr> Addr = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->CreateInternetAddr();
-	bool bIsValidURL = false;
-	Addr->SetIp(*URL, bIsValidURL);
+	bool bIsValidHost = false;
+	Addr->SetIp(*Host, bIsValidHost);
 	Addr->SetPort(Port);
 
 	if (!pSocket->Connect(Addr.Get())) { return false; }
