@@ -57,18 +57,21 @@ void GameServerConnection::Close()
 // パケット送信.
 void GameServerConnection::SendPacket(PacketBase *pPacket)
 {
-	// サイズを求める。
-	MemorySizeCaliculateStream CalcStream;
-	pPacket->Serialize(&CalcStream);
+	//まずはサイズを求める
+	MemorySizeCaliculateStream SizeStream;
+	pPacket->Serialize(&SizeStream);
 
-	int32 SendSize = CalcStream.GetSize();
+	//シリアライズ本番
+	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 2);
 
-	// シリアライズ
-	MemoryStreamWriter WriteStream(SendSize);
+	u8 Id = (u8)pPacket->GetPacketID();
+	u8 Size = SizeStream.GetSize();
+	WriteStream.Serialize(&Id);
+	WriteStream.Serialize(&Size);
 	pPacket->Serialize(&WriteStream);
 	
 	const u8 *pData = WriteStream.GetStream();
-	SendBuffer.Push(pData, SendSize);
+	SendBuffer.Push(pData, WriteStream.GetSize());
 }
 
 // 毎フレームの処理.
