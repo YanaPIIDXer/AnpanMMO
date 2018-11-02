@@ -46,6 +46,20 @@ bool MySqlQuery::ExecuteQuery(const char *pQuery)
 	int Result = mysql_stmt_prepare(pStatement, pQuery, strlen(pQuery));
 	if (Result != 0) { return false; }
 
+	MYSQL_BIND *pBinds = Binds.Get();
+	if (pBinds != NULL)
+	{
+		Result = mysql_stmt_bind_param(pStatement, pBinds);
+		if (Result != 0) { return false; }
+	}
+
+	MYSQL_BIND *pResults = Results.Get();
+	if (pResults != NULL)
+	{
+		Result = mysql_stmt_bind_result(pStatement, pResults);
+		if (Result != 0) { return false; }
+	}
+
 	Result = mysql_stmt_execute(pStatement);
 	if (Result != 0)
 	{
