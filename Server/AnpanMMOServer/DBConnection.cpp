@@ -32,7 +32,7 @@ bool DBConnection::LoadUserData(char *pUserName, char *pPassWord, int &OutId)
 	MySqlQuery Query = Connection.CreateQuery("select Id from UserData where UserName = ? and PassWord = ?");
 	Query.BindString(pUserName);
 	Query.BindString(pPassWord);
-	
+
 	int Id = 0;
 	Query.BindResultInt(&Id);
 	if (!Query.ExecuteQuery()) { return false; }
