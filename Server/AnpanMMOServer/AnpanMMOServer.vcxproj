@@ -131,6 +131,7 @@
     <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="ClientState\ClientStateTitle.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="DBConnection.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
@@ -152,6 +153,7 @@
     <ClCompile Include="ClientManager.cpp" />
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="Config.cpp" />
+    <ClCompile Include="DBConnection.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryBuffer.cpp" />
     <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />

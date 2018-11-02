@@ -1,10 +1,21 @@
 #include "stdafx.h"	
 #include "ClientAcceptor.h"
 #include "ClientManager.h"
+#include "DBConnection.h"
 
 // エントリポイント
 int main()
 {
+	if (DBConnection::GetInstance().Open())
+	{
+		std::cout << "DB Open Success!!" << std::endl;
+	}
+	else
+	{
+		std::cout << "DB Open Failed..." << std::endl;
+		return 1;
+	}
+	
 	asio::io_service IOService;
 
 	ClientAcceptor Acceptor(IOService, Config::Port);
