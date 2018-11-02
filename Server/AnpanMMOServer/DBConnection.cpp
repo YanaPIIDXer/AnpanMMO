@@ -3,6 +3,8 @@
 #include <fstream>
 
 const std::string DBConnection::UserDataFileName = "DBUserData.txt";
+const char *DBConnection::DBHost = "127.0.0.1";
+const char *DBConnection::DBName = "AnpanMMO";
 DBConnection DBConnection::Instance;
 
 // ŠJ‚­
@@ -21,5 +23,5 @@ bool DBConnection::Open()
 	FileStream.getline(PassWord, 256);
 	FileStream.close();
 
-	return Connection.Connect("127.0.0.1", UserName, PassWord, "AnpanMMO");
+	return Connection.Connect(DBHost, UserName, PassWord, DBName);
 }

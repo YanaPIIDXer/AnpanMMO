@@ -19,6 +19,12 @@ private:
 	// ユーザ情報を格納したファイル名.
 	static const std::string UserDataFileName;
 
+	// DBのホスト
+	static const char *DBHost;
+
+	// データベース名.
+	static const char *DBName;
+
 	// 接続.
 	MySqlConnection Connection;
 
