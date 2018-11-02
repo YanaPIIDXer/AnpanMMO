@@ -15,10 +15,7 @@ public:
 	bool Open();
 
 	// ユーザデータ読み込み
-	bool LoadUserData(char *pUserName, char *pPassWord);
-
-	// ユーザデータ登録.
-	bool RegisterUserData(char *pUserName, char *pPassWord);
+	bool LoadUserData(char *pUserCode, int &OutId);
 
 private:
 
@@ -33,6 +30,11 @@ private:
 
 	// 接続.
 	MySqlConnection Connection;
+
+
+
+	// ユーザデータ登録.
+	bool RegisterUserData(char *pUserCode);
 
 	// ======== Singleton ===========
 public:
