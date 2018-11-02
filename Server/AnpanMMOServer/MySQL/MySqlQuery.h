@@ -39,6 +39,9 @@ public:
 	// クエリ実行.
 	bool ExecuteQuery(const char *pQuery);
 
+	// フェッチ
+	bool Fetch();
+
 private:
 
 	// MYSQLへの接続.

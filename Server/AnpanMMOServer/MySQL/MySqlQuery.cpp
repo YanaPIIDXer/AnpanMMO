@@ -68,3 +68,12 @@ bool MySqlQuery::ExecuteQuery(const char *pQuery)
 
 	return true;
 }
+
+// フェッチ
+bool MySqlQuery::Fetch()
+{
+	if (pStatement == NULL) { return false; }
+
+	int Result = mysql_stmt_fetch(pStatement);
+	return (Result == 0);
+}
