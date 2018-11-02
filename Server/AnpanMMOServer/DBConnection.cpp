@@ -27,7 +27,7 @@ bool DBConnection::Open()
 }
 
 // ユーザデータ読み込み
-bool DBConnection::LoadUserData(char *pUserName, char *pPassWord, int &OutId)
+bool DBConnection::LoadUserData(char *pUserName, char *pPassWord)
 {
 	MySqlQuery Query = Connection.CreateQuery("select Id from UserData where UserName = ? and PassWord = ?");
 	Query.BindString(pUserName);
@@ -39,6 +39,5 @@ bool DBConnection::LoadUserData(char *pUserName, char *pPassWord, int &OutId)
 
 	if (!Query.Fetch()) { return false; }
 	
-	OutId = Id;
 	return true;
 }
