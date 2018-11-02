@@ -43,8 +43,13 @@ void MySqlBinds::AddString(char *pPtr)
 // —ÌˆæŠg’£.
 void MySqlBinds::Reallocate()
 {
-	delete[] pBinds;
-
+	MYSQL_BIND *pTmp = pBinds;
 	Length++;
 	pBinds = new MYSQL_BIND[Length];
+	for (int i = 0; i < Length - 1; i++)
+	{
+		pBinds[i] = pTmp[i];
+	}
+
+	delete[] pTmp;
 }
