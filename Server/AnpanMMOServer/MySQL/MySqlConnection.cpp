@@ -39,6 +39,13 @@ bool MySqlConnection::SimpleQuery(const char *pQuery)
 	return (Result == 0);
 }
 
+// ÉNÉGÉäê∂ê¨.
+MySqlQuery MySqlConnection::CreateQuery(const char *pQuery)
+{
+	MySqlQuery Query(pConnection, pQuery);
+	return Query;
+}
+
 // ï¬Ç∂ÇÈ
 void MySqlConnection::Close()
 {

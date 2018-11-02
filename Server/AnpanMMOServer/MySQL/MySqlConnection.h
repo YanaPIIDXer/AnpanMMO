@@ -7,6 +7,8 @@
 #include <mysql/mysql.h>
 #endif
 
+#include "MySqlQuery.h"
+
 /**
  * MySQL接続クラス
  */
@@ -26,6 +28,9 @@ public:
 
 	// 単純なクエリ実行.
 	bool SimpleQuery(const char *pQuery);
+
+	// クエリ生成.
+	MySqlQuery CreateQuery(const char *pQuery);
 
 	// 閉じる.
 	void Close();
