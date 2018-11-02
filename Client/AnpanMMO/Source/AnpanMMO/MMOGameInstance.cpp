@@ -27,7 +27,7 @@ bool UMMOGameInstance::Connect(const FString &Host, int Port)
 		return false;
 	}
 
-	pConnection->GetRecvPacketDelegate().BindUObject(this, &UMMOGameInstance::OnRecvPacket);
+	pConnection->OnRecvPacketDelegate.BindUObject(this, &UMMOGameInstance::OnRecvPacket);
 	
 	return true;
 }
