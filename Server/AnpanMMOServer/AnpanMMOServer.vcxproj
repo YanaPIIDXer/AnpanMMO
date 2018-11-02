@@ -82,6 +82,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(BOOST_LIB);$(MYSQL_C_LIB)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -136,6 +137,7 @@
     <ClInclude Include="MemoryStream\MemoryStreamInterface.h" />
     <ClInclude Include="MemoryStream\MemoryStreamReader.h" />
     <ClInclude Include="MemoryStream\MemoryStreamWriter.h" />
+    <ClInclude Include="MySQL\MySqlConnection.h" />
     <ClInclude Include="Packet\PacketBase.h" />
     <ClInclude Include="Packet\PacketHeader.h" />
     <ClInclude Include="Packet\PacketID.h" />
@@ -153,6 +155,7 @@
     <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />
     <ClCompile Include="MemoryStream\MemoryStreamReader.cpp" />
     <ClCompile Include="MemoryStream\MemoryStreamWriter.cpp" />
+    <ClCompile Include="MySQL\MySqlConnection.cpp" />
     <ClCompile Include="Packet\PacketHeader.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
