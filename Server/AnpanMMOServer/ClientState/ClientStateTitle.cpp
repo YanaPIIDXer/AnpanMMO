@@ -34,7 +34,6 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 
 	int Id = 0;
 	PacketLogInResult::ResultCode ResultCode = PacketLogInResult::Success;
-	std::cout << "UserCode:" << Packet.UserCode << std::endl;
 	char *pUserCode = const_cast<char *>(Packet.UserCode.c_str());
 	if (!DBConnection::GetInstance().LoadUserData(pUserCode, Id))
 	{

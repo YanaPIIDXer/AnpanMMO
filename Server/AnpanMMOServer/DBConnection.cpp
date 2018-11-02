@@ -51,9 +51,25 @@ bool DBConnection::LoadUserData(char *pUserCode, int &OutId)
 // ユーザデータ登録.
 bool DBConnection::RegisterUserData(char *pUserCode)
 {
+	// ユーザデータ
 	MySqlQuery Query = Connection.CreateQuery("insert into UserData(UserCode) Values(?)");
 	Query.BindString(pUserCode);
 	if (!Query.ExecuteQuery()) { return false; }
+	Query.Close();
+
+	// キャラデータ
+	MySqlQuery UserQuery = Connection.CreateQuery("select Id from UserData where UserCode = ?;");
+	UserQuery.BindString(pUserCode);
+
+	int Id = 0;
+	UserQuery.BindResultInt(&Id);
+	if (!UserQuery.ExecuteQuery()) { return false; }
+	if (!UserQuery.Fetch()) { return false; }
+	UserQuery.Close();
+
+	MySqlQuery CharacterQuery = Connection.CreateQuery("insert into CharacterData values(?, 50, 10, 10, 0);");
+	CharacterQuery.BindInt(&Id);
+	if (!CharacterQuery.ExecuteQuery()) { return false; }
 
 	return true;
 }

@@ -12,6 +12,7 @@ MySqlQuery::MySqlQuery(const shared_ptr<MYSQL> &pInConnection, const char *pInQu
 // デストラクタ
 MySqlQuery::~MySqlQuery()
 {
+	Close();
 }
 
 // int型のバインド
@@ -43,7 +44,7 @@ bool MySqlQuery::ExecuteQuery()
 {
 	pStatement = mysql_stmt_init(pConnection.lock().get());
 	if (pStatement == NULL) { return false; }
-
+	
 	int Result = mysql_stmt_prepare(pStatement, pQuery, strlen(pQuery));
 	if (Result != 0)
 	{
@@ -90,4 +91,13 @@ bool MySqlQuery::Fetch()
 
 	int Result = mysql_stmt_fetch(pStatement);
 	return (Result == 0);
+}
+
+// 閉じる
+void MySqlQuery::Close()
+{
+	if (pStatement == NULL) { return; }
+
+	mysql_stmt_close(pStatement);
+	pStatement = NULL;
 }

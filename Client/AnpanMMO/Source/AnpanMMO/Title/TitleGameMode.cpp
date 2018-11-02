@@ -4,6 +4,7 @@
 #include "Title/UI/TitleScreenWidget.h"
 #include "MMOGameInstance.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "Packet/PacketLogInResult.h"
 
 // コンストラクタ
 ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
@@ -28,5 +29,28 @@ void ATitleGameMode::BeginPlay()
 // パケットを受信した。
 void ATitleGameMode::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 {
-	UE_LOG(LogTemp, Log, TEXT("PacketID:%X"), ID);
+	switch (ID)
+	{
+		case PacketID::LogInResult:
+
+			OnRecvLogInResult(pStream);
+			break;
+
+	}
+}
+
+// ログイン結果を受信した。
+void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
+{
+	PacketLogInResult Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result == PacketLogInResult::Success)
+	{
+		UE_LOG(LogTemp, Log, TEXT("LogIn Success!!"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Log, TEXT("LogIn Failed..."));
+	}
 }

@@ -33,5 +33,8 @@ private:
 	
 	// パケットを受信した。
 	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
+
+	// ログイン結果を受信した。
+	void OnRecvLogInResult(MemoryStreamInterface *pStream);
 	
 };
