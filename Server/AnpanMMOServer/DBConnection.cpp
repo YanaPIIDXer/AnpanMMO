@@ -27,7 +27,7 @@ bool DBConnection::Open()
 }
 
 // ユーザデータ読み込み
-bool DBConnection::LoadUserData(char *pUserName, char *pPassWord, int &OutId)
+bool DBConnection::LoadUserData(char *pUserName, char *pPassWord)
 {
 	MySqlQuery Query = Connection.CreateQuery("select Id from UserData where UserName = ? and PassWord = ?");
 	Query.BindString(pUserName);
@@ -39,6 +39,23 @@ bool DBConnection::LoadUserData(char *pUserName, char *pPassWord, int &OutId)
 
 	if (!Query.Fetch()) { return false; }
 	
-	OutId = Id;
+	return true;
+}
+
+// ユーザデータ登録.
+bool DBConnection::RegisterUserData(char *pUserName, char *pPassWord)
+{
+	// ユーザ名重複チェック
+	MySqlQuery CheckQuery = Connection.CreateQuery("select UserName from UserData where UserName = ?");
+	CheckQuery.BindString(pUserName);
+	CheckQuery.ExecuteQuery();
+	if (CheckQuery.Fetch()) { return false; }
+	
+	// 登録.
+	MySqlQuery Query = Connection.CreateQuery("insert into UserData Values(?, ?)");
+	Query.BindString(pUserName);
+	Query.BindString(pPassWord);
+	if (!Query.ExecuteQuery()) { return false; }
+
 	return true;
 }

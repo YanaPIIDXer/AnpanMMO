@@ -15,7 +15,10 @@ public:
 	bool Open();
 
 	// ユーザデータ読み込み
-	bool LoadUserData(char *pUserName, char *pPassWord, int &OutId);
+	bool LoadUserData(char *pUserName, char *pPassWord);
+
+	// ユーザデータ登録.
+	bool RegisterUserData(char *pUserName, char *pPassWord);
 
 private:
 
