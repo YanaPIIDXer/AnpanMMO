@@ -34,7 +34,7 @@ void Client::SendPacket(PacketBase *pPacket)
 	//シリアライズ本番
 	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 2);
 
-	u8 Id = (u8)pPacket->GetPacketId();
+	u8 Id = (u8)pPacket->GetPacketID();
 	u8 Size = SizeStream.GetSize();
 	WriteStream.Serialize(&Id);
 	WriteStream.Serialize(&Size);
