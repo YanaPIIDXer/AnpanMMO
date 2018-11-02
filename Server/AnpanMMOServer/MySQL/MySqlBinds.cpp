@@ -19,8 +19,10 @@ MySqlBinds::~MySqlBinds()
 void MySqlBinds::AddInt(int *pPtr)
 {
 	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
 	Bind.buffer_type = MYSQL_TYPE_LONG;
 	Bind.buffer = pPtr;
+	Bind.buffer_length = sizeof(*pPtr);
 	Bind.is_null = 0;
 
 	Reallocate();
@@ -31,8 +33,10 @@ void MySqlBinds::AddInt(int *pPtr)
 void MySqlBinds::AddString(char *pPtr)
 {
 	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
 	Bind.buffer_type = MYSQL_TYPE_STRING;
 	Bind.buffer = pPtr;
+	Bind.buffer_length = strlen(pPtr);
 	Bind.is_null = 0;
 
 	Reallocate();
