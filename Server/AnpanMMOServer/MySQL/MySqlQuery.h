@@ -42,6 +42,9 @@ public:
 	// フェッチ
 	bool Fetch();
 
+	// 閉じる
+	void Close();
+
 private:
 
 	// クエリ
