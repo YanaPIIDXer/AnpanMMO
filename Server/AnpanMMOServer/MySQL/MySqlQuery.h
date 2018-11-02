@@ -19,7 +19,7 @@ class MySqlQuery
 public:
 
 	// コンストラクタ
-	MySqlQuery(const shared_ptr<MYSQL> &pInConnection);
+	MySqlQuery(const shared_ptr<MYSQL> &pInConnection, const char *pInQuery);
 
 	// デストラクタ
 	~MySqlQuery();
@@ -37,12 +37,15 @@ public:
 	void BindResultString(char *pPtr);
 
 	// クエリ実行.
-	bool ExecuteQuery(const char *pQuery);
+	bool ExecuteQuery();
 
 	// フェッチ
 	bool Fetch();
 
 private:
+
+	// クエリ
+	const char *pQuery;
 
 	// MYSQLへの接続.
 	weak_ptr<MYSQL> pConnection;

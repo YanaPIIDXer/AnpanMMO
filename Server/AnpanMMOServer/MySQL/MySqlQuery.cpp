@@ -2,8 +2,9 @@
 #include "MySqlQuery.h"
 
 // コンストラクタ
-MySqlQuery::MySqlQuery(const shared_ptr<MYSQL> &pInConnection)
+MySqlQuery::MySqlQuery(const shared_ptr<MYSQL> &pInConnection, const char *pInQuery)
 	: pConnection(pInConnection)
+	, pQuery(pInQuery)
 	, pStatement(NULL)
 {
 }
@@ -38,7 +39,7 @@ void MySqlQuery::BindResultString(char *pPtr)
 }
 
 // クエリ実行.
-bool MySqlQuery::ExecuteQuery(const char *pQuery)
+bool MySqlQuery::ExecuteQuery()
 {
 	pStatement = mysql_stmt_init(pConnection.lock().get());
 	if (pStatement == NULL) { return false; }
