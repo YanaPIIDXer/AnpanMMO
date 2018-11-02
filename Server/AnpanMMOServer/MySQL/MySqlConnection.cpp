@@ -30,6 +30,15 @@ bool MySqlConnection::Connect(const char *pHost, const char *pUserName, const ch
 	return true;
 }
 
+// 単純なクエリ実行.
+bool MySqlConnection::SimpleQuery(const char *pQuery)
+{
+	if (pConnection == NULL) { return false; }
+
+	int Result = mysql_query(pConnection.get(), pQuery);
+	return (Result == 0);
+}
+
 // 閉じる
 void MySqlConnection::Close()
 {

@@ -24,6 +24,9 @@ public:
 	// 接続.
 	bool Connect(const char *pHost, const char *pUserName, const char *pPassword, const char *pDBName);
 
+	// 単純なクエリ実行.
+	bool SimpleQuery(const char *pQuery);
+
 	// 閉じる.
 	void Close();
 
