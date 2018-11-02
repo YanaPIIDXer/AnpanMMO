@@ -19,7 +19,7 @@ void Buffer::Push(const uint8 *pData, int32 Size)
 // データを取り出す
 void Buffer::Pop(int32 Size)
 {
-	int32 DataSize = FMath::Max(Size, Data.Num());
+	int32 DataSize = FMath::Min(Size, Data.Num());
 	Data.RemoveAt(0, DataSize);
 }
 
