@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ClientAcceptor.h"
+#include "ClientManager.h"
 
 // コンストラクタ
 ClientAcceptor::ClientAcceptor(asio::io_service &InIOService, int Port)
@@ -42,6 +43,8 @@ void ClientAcceptor::OnAccept(const system::error_code &ErrorCode)
 		std::cout << "Accept Failed." << std::endl;
 		return;
 	}
+
+	ClientManager::GetInstance().CreateClient(pSocket);
 
 	bWaitingAccept = true;
 }

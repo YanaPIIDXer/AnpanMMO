@@ -3,4 +3,5 @@
 #pragma once
 
 #include "CoreMinimal.h"
-
+#include "TypeDefs.h"
+#include "EndianConverter.h"

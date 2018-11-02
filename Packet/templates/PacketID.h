@@ -3,9 +3,7 @@
 
 enum PacketID
 {
-	LogInRequest,
-	LogInResult,
-	
+	$PACKET_ID_LIST$
 };
 
 #endif		// #ifndef __PACKETID_H__
