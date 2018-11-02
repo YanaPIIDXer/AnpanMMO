@@ -26,6 +26,9 @@ bool UMMOGameInstance::Connect(const FString &Host, int Port)
 		Close();
 		return false;
 	}
+
+	pConnection->GetRecvPacketDelegate().BindUObject(this, &UMMOGameInstance::OnRecvPacket);
+	
 	return true;
 }
 
@@ -44,4 +47,11 @@ void UMMOGameInstance::SendPacket(PacketBase *pPacket)
 	check(pConnection != nullptr);
 
 	pConnection->SendPacket(pPacket);
+}
+
+
+// パケットを受信した。
+void UMMOGameInstance::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
+{
+	OnRecvPacketDelegate.ExecuteIfBound(ID, pStream);
 }

@@ -40,9 +40,19 @@ public:
 	// パケット送信.
 	void SendPacket(PacketBase *pPacket);
 
+	// パケット受信delegate取得.
+	FOnRecvPacketDelegate GetRecvPacketDelegate() const { return OnRecvPacketDelegate; }
+
 private:
 
 	// ゲームサーバへの接続.
 	GameServerConnection *pConnection;
+
+	// パケット受信delegate
+	FOnRecvPacketDelegate OnRecvPacketDelegate;
+
+
+	// パケットを受信した。
+	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 	
 };
