@@ -30,7 +30,7 @@ public:
 private:
 
 	// MySQL‚Ö‚ÌÚ‘±.
-	MYSQL *pConnection;
+	shared_ptr<MYSQL> pConnection;
 
 };
 
