@@ -14,6 +14,9 @@ public:
 	// 開く.
 	bool Open();
 
+	// ユーザデータ読み込み
+	bool LoadUserData(char *pUserName, char *pPassWord, int &OutId);
+
 private:
 
 	// ユーザ情報を格納したファイル名.
