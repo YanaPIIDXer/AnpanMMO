@@ -8,7 +8,7 @@
 # MySQLコネクタ
 以下のURLから**32Bit版を**ダウンロードしてください。  
 http://download.nust.na/pub6/mysql/downloads/connector/c/index.html  
-ダウンロードしたものを展開し、以下の通りパスを通してください。
+ダウンロードしたものを展開し、以下の通りパスを通してください。  
 **MYSQL_C_INCLUDE:{ConnectorRoot}\include**  
 **MYSQL_C_LIB:{ConnectorRoot}\lib**
 
