@@ -97,8 +97,7 @@ void GameServerConnection::RecvProc()
 	uint8 RecvData[RecvDataSize];
 	int32 RecvSize = 0;
 
-	bool bResult = pSocket->Recv(&RecvData[0], RecvDataSize, RecvSize);
-	if (!bResult || RecvSize == 0) { return; }
+	pSocket->Recv(&RecvData[0], RecvDataSize, RecvSize);
 	RecvBuffer.Push(&RecvData[0], RecvSize);
 
 	uint8 *pData = RecvBuffer.GetTop();
@@ -106,7 +105,7 @@ void GameServerConnection::RecvProc()
 
 	MemoryStreamReader StreamReader(pData, RecvBuffer.GetSize());
 	PacketHeader Header;
-	if (Header.Serialize(&StreamReader) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 2)
+	if (Header.Serialize(&StreamReader) && RecvBuffer.GetSize() >= Header.GetPacketSize())
 	{
 		RecvBuffer.Pop(2);
 
