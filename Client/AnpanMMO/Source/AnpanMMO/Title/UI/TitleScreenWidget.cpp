@@ -2,6 +2,7 @@
 
 #include "TitleScreenWidget.h"
 #include "MMOGameInstance.h"
+#include "Config.h"
 
 const TCHAR *UTitleScreenWidget::WidgetPath = TEXT("/Game/Blueprints/UI/Title/TitleScreen.TitleScreen_C");
 
@@ -30,7 +31,7 @@ void UTitleScreenWidget::ConnectToGameServer()
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
-	if (!pInst->Connect("127.0.0.1", 4424))
+	if (!pInst->Connect(Config::ServerHost, Config::ServerPort))
 	{
 		UE_LOG(LogTemp, Log, TEXT("GameServer Connection Failed..."));
 	}

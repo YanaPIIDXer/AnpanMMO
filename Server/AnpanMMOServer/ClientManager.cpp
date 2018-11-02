@@ -11,11 +11,16 @@ ClientManager::ClientManager()
 // ’èŠúˆ—.
 void ClientManager::Poll()
 {
-	for (ListIterator It = List.begin(); It != List.end(); ++It)
+	ListIterator It = List.begin();
+	while (It != List.end())
 	{
 		if (!It->get()->IsConnected())
 		{
 			It = List.erase(It);
+		}
+		else
+		{
+			++It;
 		}
 	}
 }
