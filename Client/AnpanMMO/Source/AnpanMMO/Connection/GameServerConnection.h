@@ -8,6 +8,10 @@
 #include "Buffer.h"
 
 class PacketBase;
+enum PacketID;
+class MemoryStreamInterface;
+
+DECLARE_DELEGATE_TwoParams(FOnRecvPacketDelegate, PacketID, MemoryStreamInterface *);
 
 /**
  * ゲームサーバ接続.
@@ -40,6 +44,10 @@ public:
 
 	// StatID取得.
 	virtual TStatId GetStatId() const override { return TStatId(); }
+
+
+	// パケット受信delegate
+	FOnRecvPacketDelegate OnRecvPacketDelegate;
 
 private:
 

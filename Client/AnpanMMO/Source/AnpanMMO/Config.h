@@ -18,4 +18,7 @@ public:
 	// サーバポート
 	static const int ServerPort;
 
+	// IDファイルのファイルパス
+	static const FString IdFilePath;
+
 };

@@ -6,6 +6,9 @@
 #include "GameFramework/GameMode.h"
 #include "TitleGameMode.generated.h"
 
+enum PacketID;
+class MemoryStreamInterface;
+
 /**
  * タイトル画面GameMode
  */
@@ -28,5 +31,7 @@ public:
 
 private:
 	
+	// パケットを受信した。
+	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 	
 };
