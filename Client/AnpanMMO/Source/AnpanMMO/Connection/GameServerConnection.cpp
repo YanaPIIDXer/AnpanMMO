@@ -40,6 +40,7 @@ bool GameServerConnection::Connect(const FString &Host, int32 Port)
 
 	if (!pSocket->Connect(Addr.Get())) { return false; }
 
+	pSocket->SetNonBlocking(true);
 	return true;
 }
 
@@ -49,6 +50,7 @@ void GameServerConnection::Close()
 	if (pSocket == nullptr) { return; }
 	
 	pSocket->Close();
+	ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->DestroySocket(pSocket);
 	pSocket = nullptr;
 }
 
@@ -83,8 +85,6 @@ void GameServerConnection::Tick(float DeltaTime)
 void GameServerConnection::SendProc()
 {
 	uint8 *pData = SendBuffer.GetTop();
-	if (pData == nullptr) { return; }
-
 	int32 Size = SendBuffer.GetSize();
 	int32 SendSize = 0;
 	pSocket->Send(pData, Size, SendSize);
@@ -96,10 +96,15 @@ void GameServerConnection::RecvProc()
 {
 	uint8 RecvData[RecvDataSize];
 	int32 RecvSize = 0;
-	pSocket->Recv(&RecvData[0], RecvDataSize, RecvSize);
+
+	bool bResult = pSocket->Recv(&RecvData[0], RecvDataSize, RecvSize);
+	if (!bResult || RecvSize == 0) { return; }
 	RecvBuffer.Push(&RecvData[0], RecvSize);
 
-	MemoryStreamReader StreamReader(RecvBuffer.GetTop(), RecvBuffer.GetSize());
+	uint8 *pData = RecvBuffer.GetTop();
+	if (pData == nullptr) { return; }
+
+	MemoryStreamReader StreamReader(pData, RecvBuffer.GetSize());
 	PacketHeader Header;
 	if (Header.Serialize(&StreamReader) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 2)
 	{
