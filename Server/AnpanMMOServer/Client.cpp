@@ -73,7 +73,7 @@ void Client::OnRecv(const system::error_code &ErrorCode, size_t Size)
 	u8 *pRecvData = RecvBuffer.GetTop();
 	MemoryStreamReader ReadStream(pRecvData, Size);
 	PacketHeader Header;
-	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize())
+	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 2)
 	{
 		RecvBuffer.Pop(2);
 
