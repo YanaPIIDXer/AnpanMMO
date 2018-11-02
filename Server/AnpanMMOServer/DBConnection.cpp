@@ -3,6 +3,8 @@
 #include <fstream>
 
 const std::string DBConnection::UserDataFileName = "DBUserData.txt";
+const char *DBConnection::DBHost = "127.0.0.1";
+const char *DBConnection::DBName = "AnpanMMO";
 DBConnection DBConnection::Instance;
 
 // 開く
@@ -21,5 +23,22 @@ bool DBConnection::Open()
 	FileStream.getline(PassWord, 256);
 	FileStream.close();
 
-	return Connection.Connect("127.0.0.1", UserName, PassWord, "AnpanMMO");
+	return Connection.Connect(DBHost, UserName, PassWord, DBName);
+}
+
+// ユーザデータ読み込み
+bool DBConnection::LoadUserData(char *pUserName, char *pPassWord, int &OutId)
+{
+	MySqlQuery Query = Connection.CreateQuery("select Id from UserData where UserName = ? and PassWord = ?");
+	Query.BindString(pUserName);
+	Query.BindString(pPassWord);
+
+	int Id = 0;
+	Query.BindResultInt(&Id);
+	if (!Query.ExecuteQuery()) { return false; }
+
+	if (!Query.Fetch()) { return false; }
+	
+	OutId = Id;
+	return true;
 }
