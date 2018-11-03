@@ -10,11 +10,12 @@
 const TCHAR *UTitleScreenWidget::WidgetPath = TEXT("/Game/Blueprints/UI/Title/TitleScreen.TitleScreen");
 
 // ê∂ê¨.
-UTitleScreenWidget *UTitleScreenWidget::Create(UObject *pOuter)
+UTitleScreenWidget *UTitleScreenWidget::Show(UObject *pOuter)
 {
 	UTitleScreenWidget *pWidget = Util::LoadBlueprint<UTitleScreenWidget>(pOuter, WidgetPath);
 	check(pWidget != nullptr);
 
+	pWidget->AddToViewport();
 	return pWidget;
 }
 

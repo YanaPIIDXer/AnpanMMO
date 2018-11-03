@@ -18,7 +18,7 @@ class ANPANMMO_API UTitleScreenWidget : public UUserWidget
 public:
 
 	// 生成.
-	static UTitleScreenWidget *Create(UObject *pOuter);
+	static UTitleScreenWidget *Show(UObject *pOuter);
 
 	// コンストラクタ
 	UTitleScreenWidget(const FObjectInitializer &ObjectInitializer);

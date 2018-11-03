@@ -18,9 +18,8 @@ void ATitleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	auto *pWidget = UTitleScreenWidget::Create(this);
-	pWidget->AddToViewport();
-
+	auto *pWidget = UTitleScreenWidget::Show(this);
+	
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	pInst->OnRecvPacketDelegate.BindUObject(this, &ATitleGameMode::OnRecvPacket);
