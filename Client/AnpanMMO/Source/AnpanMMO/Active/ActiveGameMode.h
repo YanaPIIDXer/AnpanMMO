@@ -6,9 +6,6 @@
 #include "MMOGameModeBase.h"
 #include "ActiveGameMode.generated.h"
 
-enum PacketID;
-class MemoryStreamInterface;
-
 /**
  * ƒQ[ƒ€’†GameMode
  */
