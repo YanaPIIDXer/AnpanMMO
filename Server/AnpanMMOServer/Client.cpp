@@ -50,6 +50,7 @@ void Client::ChangeState(ClientStateBase *pNextState)
 {
 	delete pState;
 	pState = pNextState;
+	pState->StateBegin();
 }
 
 
