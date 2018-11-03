@@ -5,16 +5,14 @@
 #include "Config.h"
 #include "Packet/PacketLogInRequest.h"
 #include "IdManager.h"
+#include "Util.h"
 
-const TCHAR *UTitleScreenWidget::WidgetPath = TEXT("/Game/Blueprints/UI/Title/TitleScreen.TitleScreen_C");
+const TCHAR *UTitleScreenWidget::WidgetPath = TEXT("/Game/Blueprints/UI/Title/TitleScreen.TitleScreen");
 
 // ê∂ê¨.
 UTitleScreenWidget *UTitleScreenWidget::Create(UObject *pOuter)
 {
-	UBlueprintGeneratedClass *pClass = LoadObject<UBlueprintGeneratedClass>(pOuter, WidgetPath, WidgetPath);
-	check(pClass != nullptr);
-
-	UTitleScreenWidget *pWidget = NewObject<UTitleScreenWidget>(pOuter, pClass);
+	UTitleScreenWidget *pWidget = Util::LoadBlueprint<UTitleScreenWidget>(pOuter, WidgetPath);
 	check(pWidget != nullptr);
 
 	return pWidget;

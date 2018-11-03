@@ -5,6 +5,7 @@
 
 class PacketBase;
 class ClientStateBase;
+class PlayerCharacter;
 
 /**
  * クライアントクラス
@@ -29,6 +30,18 @@ public:
 	// ステート切り替え
 	void ChangeState(ClientStateBase *pNextState);
 
+	// UUIDをセット
+	void SetUuid(int InUuid) { Uuid = InUuid; }
+
+	// UUIDを取得.
+	int GetUuid() const { return Uuid; }
+
+	// キャラクタ取得.
+	PlayerCharacter *GetCharacter() const { return pCharacter; }
+
+	// キャラクタ作成.
+	void CreateCharacter(int MaxHp, int Atk, int Def);
+
 private:
 
 	enum
@@ -49,7 +62,13 @@ private:
 	array<u8, RecvDataSize> RecvData;
 
 	// State
-	ClientStateBase *pState;
+	shared_ptr<ClientStateBase> pState;
+
+	// Uuid
+	int Uuid;
+
+	// キャラクタ
+	PlayerCharacter *pCharacter;
 
 
 	// 受信開始.

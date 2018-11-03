@@ -17,6 +17,9 @@ public:
 	// ユーザデータ読み込み
 	bool LoadUserData(char *pUserCode, int &OutId);
 
+	// キャラクタパラメータ読み込み
+	bool LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);
+
 private:
 
 	// ユーザ情報を格納したファイル名.
@@ -30,7 +33,6 @@ private:
 
 	// 接続.
 	MySqlConnection Connection;
-
 
 
 	// ユーザデータ登録.

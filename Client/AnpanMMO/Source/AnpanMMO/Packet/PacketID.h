@@ -5,6 +5,7 @@ enum PacketID
 {
 	LogInRequest,
 	LogInResult,
+	CharacterStatus,
 	
 };
 

@@ -14,9 +14,6 @@ public:
 	// コンストラクタ
 	ClientStateTitle(Client *pInParent);
 
-	// パケット解析.
-	virtual void AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream);
-
 private:
 
 	// ログインリクエストを受信した。
