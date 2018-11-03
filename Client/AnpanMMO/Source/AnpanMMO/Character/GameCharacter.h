@@ -6,26 +6,31 @@
 #include "GameFramework/Character.h"
 #include "GameCharacter.generated.h"
 
+/**
+ * キャラクタクラス
+ */
 UCLASS()
 class ANPANMMO_API AGameCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
-	AGameCharacter();
 
-protected:
-	// Called when the game starts or when spawned
+	// コンストラクタ
+	AGameCharacter(const FObjectInitializer &ObjectInitializer);
+
+	// デストラクタ
+	virtual ~AGameCharacter() {}
+
+	// 開始時の処理.
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
+	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
+	// InputComponentのセットアップ
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
+private:
 	
 };

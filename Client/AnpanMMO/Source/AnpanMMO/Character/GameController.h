@@ -7,14 +7,22 @@
 #include "GameController.generated.h"
 
 /**
- * 
+ * コントローラクラス
  */
 UCLASS()
 class ANPANMMO_API AGameController : public APlayerController
 {
+
 	GENERATED_BODY()
 	
+public:
+
+	// コンストラクタ
+	AGameController(const FObjectInitializer &ObjectInitializer);
 	
-	
+	// デストラクタ
+	virtual ~AGameController() {}
+
+private:
 	
 };

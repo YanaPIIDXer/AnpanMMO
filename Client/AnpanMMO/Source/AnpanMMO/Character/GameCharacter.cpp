@@ -2,30 +2,30 @@
 
 #include "GameCharacter.h"
 
-
-// Sets default values
-AGameCharacter::AGameCharacter()
+// コンストラクタ
+AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
+	: Super(ObjectInitializer)
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }
 
-// Called when the game starts or when spawned
+// 開始時の処理.
 void AGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+// 毎フレームの処理.
 void AGameCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
+// InputComponentのセットアップ
 void AGameCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
