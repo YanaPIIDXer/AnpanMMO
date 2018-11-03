@@ -3,15 +3,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
+#include "GameFramework/Pawn.h"
 #include "GameCharacter.generated.h"
 
 /**
  * キャラクタクラス
  */
 UCLASS()
-class ANPANMMO_API AGameCharacter : public ACharacter
+class ANPANMMO_API AGameCharacter : public APawn
 {
+
 	GENERATED_BODY()
 
 public:
@@ -27,9 +28,6 @@ public:
 
 	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;
-
-	// InputComponentのセットアップ
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
 	
