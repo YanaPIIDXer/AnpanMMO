@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameMode.h"
+#include "MMOGameModeBase.h"
 #include <functional>
 #include "TitleGameMode.generated.h"
 
@@ -15,15 +15,11 @@ class UTitleScreenWidget;
  * タイトル画面GameMode
  */
 UCLASS()
-class ANPANMMO_API ATitleGameMode : public AGameMode
+class ANPANMMO_API ATitleGameMode : public AMMOGameModeBase
 {
 
 	GENERATED_BODY()
 
-private:		// 別名定義.
-
-	typedef TMap<PacketID, std::function<void(MemoryStreamInterface *)>> FunctionMap;
-	
 public:
 
 	// コンストラクタ
@@ -47,15 +43,9 @@ private:
 	// タイトル画面Widget
 	UTitleScreenWidget *pScreenWidget;
 
-	// パケット解析関数群.
-	FunctionMap PacketFunctions;
-
 
 	// 接続コールバック
 	void OnConnectResult(bool bConnected);
-
-	// パケットを受信した。
-	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 
 	// ログイン結果を受信した。
 	void OnRecvLogInResult(MemoryStreamInterface *pStream);
