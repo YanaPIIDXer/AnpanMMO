@@ -2,7 +2,7 @@
 
 #include "FadeScreen.h"
 
-const float UFadeScreen::AlphaSpeedBySec = 0.3f;
+const float UFadeScreen::AlphaSpeedBySec = 0.5f;
 
 // コンストラクタ
 UFadeScreen::UFadeScreen(const FObjectInitializer &ObjectInitializer)
