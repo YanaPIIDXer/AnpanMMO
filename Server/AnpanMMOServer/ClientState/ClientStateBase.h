@@ -21,7 +21,7 @@ public:
 	virtual ~ClientStateBase() {}
 
 	// 開始時の処理.
-	virtual void StateBegin() {}
+	virtual void BeginState() {}
 
 	// パケット解析.
 	virtual void AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream) {}
