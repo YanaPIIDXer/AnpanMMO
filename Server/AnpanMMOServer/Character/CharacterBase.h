@@ -7,11 +7,15 @@
 class CharacterBase
 {
 
+public:
+
 	// コンストラクタ
 	CharacterBase();
 
 	// デストラクタ
 	virtual ~CharacterBase() {}
+
+private:
 
 };
 
