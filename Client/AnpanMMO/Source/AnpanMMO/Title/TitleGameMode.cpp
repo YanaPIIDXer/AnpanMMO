@@ -3,6 +3,7 @@
 #include "TitleGameMode.h"
 #include "Title/UI/TitleScreenWidget.h"
 #include "MMOGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 #include "UI/SimpleDialog.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInResult.h"
@@ -11,6 +12,7 @@
 // コンストラクタ
 ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, pScreenWidget(nullptr)
 {
 }
 
@@ -19,8 +21,12 @@ void ATitleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	auto *pWidget = UTitleScreenWidget::Show(this);
-	pWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
+	// マウスカーソルを表示する。
+	UGameplayStatics::GetPlayerController(this, 0)->bShowMouseCursor = true;
+
+	pScreenWidget = UTitleScreenWidget::Show(this);
+	pScreenWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
+	pScreenWidget->OnReadyToGame.BindUObject(this, &ATitleGameMode::OnReadyToGame);
 	
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
@@ -68,5 +74,17 @@ void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 	PacketLogInResult Packet;
 	Packet.Serialize(pStream);
 
-	OnLogInResult(Packet.Result == PacketLogInResult::Success);
+	bool bResult = (Packet.Result == PacketLogInResult::Success);
+	OnLogInResult(bResult);
+
+	if (bResult)
+	{
+		pScreenWidget->StartFade();
+	}
+}
+
+// ゲーム画面に進む準備が出来た。
+void ATitleGameMode::OnReadyToGame()
+{
+	UE_LOG(LogTemp, Log, TEXT("Game Start!!"));
 }

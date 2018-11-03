@@ -8,6 +8,7 @@
 
 enum PacketID;
 class MemoryStreamInterface;
+class UTitleScreenWidget;
 
 /**
  * タイトル画面GameMode
@@ -38,6 +39,10 @@ protected:
 
 private:
 	
+	// タイトル画面Widget
+	UTitleScreenWidget *pScreenWidget;
+
+
 	// 接続コールバック
 	void OnConnectResult(bool bConnected);
 
@@ -46,5 +51,8 @@ private:
 
 	// ログイン結果を受信した。
 	void OnRecvLogInResult(MemoryStreamInterface *pStream);
+
+	// ゲーム画面に進む準備が出来た。
+	void OnReadyToGame();
 	
 };

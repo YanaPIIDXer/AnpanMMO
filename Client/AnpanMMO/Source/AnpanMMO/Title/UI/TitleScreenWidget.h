@@ -29,6 +29,11 @@ public:
 	// デストラクタ
 	virtual ~UTitleScreenWidget() {}
 
+	// フェード開始.
+	UFUNCTION(BlueprintNativeEvent, Category = "Fade")
+	void StartFade();
+	void StartFade_Implementation() {}
+
 
 	// 接続コールバック
 	FOnConnect OnConnect;
