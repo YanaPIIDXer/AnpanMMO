@@ -5,6 +5,7 @@
 #include "MMOGameInstance.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInResult.h"
+#include "Packet/PacketCharacterStatus.h"
 
 // コンストラクタ
 ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
@@ -35,6 +36,16 @@ void ATitleGameMode::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 
 			OnRecvLogInResult(pStream);
 			break;
+
+		case PacketID::CharacterStatus:
+
+		{
+			// @TODO:ゲーム中GameModeに移動する。
+			PacketCharacterStatus Packet;
+			Packet.Serialize(pStream);
+			UE_LOG(LogTemp, Log, TEXT("HP:%d MaxHP:%d Atk:%d Def:%d Exp:%d"), Packet.Hp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+			break;
+		}
 
 	}
 }
