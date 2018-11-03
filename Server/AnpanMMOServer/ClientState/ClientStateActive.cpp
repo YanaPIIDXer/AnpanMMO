@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include  "ClientStateActive.h"
+#include "MemoryStream/MemoryStreamInterface.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
