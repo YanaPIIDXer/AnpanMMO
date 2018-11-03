@@ -21,8 +21,6 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 // デストラクタ
 Client::~Client()
 {
-	delete pState;
-	pState = NULL;
 }
 
 // パケット送信.
@@ -48,8 +46,7 @@ void Client::SendPacket(PacketBase *pPacket)
 // ステート切り替え
 void Client::ChangeState(ClientStateBase *pNextState)
 {
-	delete pState;
-	pState = pNextState;
+	pState = shared_ptr<ClientStateBase>(pNextState);
 	pState->BeginState();
 }
 

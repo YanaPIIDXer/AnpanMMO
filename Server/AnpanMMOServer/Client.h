@@ -55,7 +55,7 @@ private:
 	array<u8, RecvDataSize> RecvData;
 
 	// State
-	ClientStateBase *pState;
+	shared_ptr<ClientStateBase> pState;
 
 	// Uuid
 	int Uuid;
