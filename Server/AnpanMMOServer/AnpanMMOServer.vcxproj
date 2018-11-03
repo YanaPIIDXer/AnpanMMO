@@ -128,6 +128,7 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientAcceptor.h" />
     <ClInclude Include="ClientManager.h" />
+    <ClInclude Include="ClientState\ClientStateActive.h" />
     <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="ClientState\ClientStateTitle.h" />
     <ClInclude Include="Config.h" />
@@ -151,6 +152,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientAcceptor.cpp" />
     <ClCompile Include="ClientManager.cpp" />
+    <ClCompile Include="ClientState\ClientStateActive.cpp" />
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="DBConnection.cpp" />
