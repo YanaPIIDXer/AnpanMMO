@@ -91,5 +91,5 @@ void ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
 // ゲーム画面に進む準備が出来た。
 void ATitleGameMode::OnReadyToGame()
 {
-	UE_LOG(LogTemp, Log, TEXT("Game Start!!"));
+	UGameplayStatics::OpenLevel(this, "Active");
 }
