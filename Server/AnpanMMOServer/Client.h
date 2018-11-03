@@ -5,6 +5,7 @@
 
 class PacketBase;
 class ClientStateBase;
+class PlayerCharacter;
 
 /**
  * クライアントクラス
@@ -35,6 +36,9 @@ public:
 	// UUIDを取得.
 	int GetUuid() const { return Uuid; }
 
+	// キャラクタ取得.
+	PlayerCharacter *GetCharacter() const { return pCharacter; }
+
 private:
 
 	enum
@@ -59,6 +63,9 @@ private:
 
 	// Uuid
 	int Uuid;
+
+	// キャラクタ
+	PlayerCharacter *pCharacter;
 
 
 	// 受信開始.

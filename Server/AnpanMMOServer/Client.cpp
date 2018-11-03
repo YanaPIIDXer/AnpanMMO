@@ -7,6 +7,7 @@
 #include "Packet/PacketHeader.h"
 #include "ClientState/ClientStateBase.h"
 #include "ClientState/ClientStateTitle.h"
+#include "Character/PlayerCharacter.h"
 
 // コンストラクタ
 Client::Client(const shared_ptr<tcp::socket> &pInSocket)
@@ -14,6 +15,7 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	, bIsConnected(true)
 	, pState(new ClientStateTitle(this))
 	, Uuid(0)
+	, pCharacter(NULL)
 {
 	AsyncRecv(&RecvData[0], 0);
 }
@@ -21,6 +23,8 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 // デストラクタ
 Client::~Client()
 {
+	delete pCharacter;
+	pCharacter = NULL;
 }
 
 // パケット送信.
