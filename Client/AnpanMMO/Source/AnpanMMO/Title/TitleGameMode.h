@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameMode.h"
+#include <functional>
 #include "TitleGameMode.generated.h"
 
 enum PacketID;
@@ -18,6 +19,10 @@ class ANPANMMO_API ATitleGameMode : public AGameMode
 {
 
 	GENERATED_BODY()
+
+private:		// 別名定義.
+
+	typedef TMap<PacketID, std::function<void(MemoryStreamInterface *)>> FunctionMap;
 	
 public:
 
@@ -41,6 +46,9 @@ private:
 	
 	// タイトル画面Widget
 	UTitleScreenWidget *pScreenWidget;
+
+	// パケット解析関数群.
+	FunctionMap PacketFunctions;
 
 
 	// 接続コールバック

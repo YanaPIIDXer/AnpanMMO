@@ -31,6 +31,9 @@ void ATitleGameMode::BeginPlay()
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	pInst->OnRecvPacketDelegate.BindUObject(this, &ATitleGameMode::OnRecvPacket);
+
+	PacketFunctions.Add(PacketID::LogInResult, std::bind(&ATitleGameMode::OnRecvLogInResult, this, std::placeholders::_1));
+	PacketFunctions.Add(PacketID::CharacterStatus, std::bind(&ATitleGameMode::OnRecvCharacterStatus, this, std::placeholders::_1));
 }
 
 
@@ -48,20 +51,9 @@ void ATitleGameMode::OnConnectResult(bool bConnected)
 // パケットを受信した。
 void ATitleGameMode::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 {
-	switch (ID)
+	if (PacketFunctions.Contains(ID))
 	{
-		case PacketID::LogInResult:
-
-			OnRecvLogInResult(pStream);
-			break;
-
-		case PacketID::CharacterStatus:
-
-		{
-			OnRecvCharacterStatus(pStream);
-			break;
-		}
-
+		PacketFunctions[ID](pStream);
 	}
 }
 
