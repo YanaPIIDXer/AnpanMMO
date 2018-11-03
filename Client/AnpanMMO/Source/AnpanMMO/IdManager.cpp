@@ -1,5 +1,5 @@
-#include "AnpanMMO.h"
 #include "IdManager.h"
+#include "AnpanMMO.h"
 #include <fstream>
 #include <sstream>
 
