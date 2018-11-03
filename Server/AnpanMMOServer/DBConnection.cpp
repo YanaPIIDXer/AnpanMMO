@@ -47,6 +47,23 @@ bool DBConnection::LoadUserData(char *pUserCode, int &OutId)
 	return true;
 }
 
+// キャラクタパラメータ読み込み
+bool DBConnection::LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp)
+{
+	MySqlQuery Query = Connection.CreateQuery("select MaxHp, Atk, Def, Exp from CharacterData where CustomerId = ?");
+	Query.BindInt(&Id);
+
+	Query.BindResultInt(&OutMaxHp);
+	Query.BindResultInt(&OutAtk);
+	Query.BindResultInt(&OutDef);
+	Query.BindResultInt(&OutExp);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	if (!Query.Fetch()) { return false; }
+
+	return true;
+}
+
 
 // ユーザデータ登録.
 bool DBConnection::RegisterUserData(char *pUserCode)
