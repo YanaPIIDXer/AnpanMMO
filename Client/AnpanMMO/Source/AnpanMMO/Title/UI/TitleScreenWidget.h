@@ -6,6 +6,8 @@
 #include "Blueprint/UserWidget.h"
 #include "TitleScreenWidget.generated.h"
 
+DECLARE_DELEGATE_OneParam(FOnConnect, bool);
+
 /**
  * タイトル画面Widget
  */
@@ -25,6 +27,10 @@ public:
 
 	// デストラクタ
 	virtual ~UTitleScreenWidget() {}
+
+
+	// 接続コールバック
+	FOnConnect OnConnect;
 
 protected:
 

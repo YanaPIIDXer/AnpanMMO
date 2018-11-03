@@ -34,9 +34,10 @@ void UTitleScreenWidget::ConnectToGameServer()
 
 	if (!pInst->Connect(Config::ServerHost, Config::ServerPort))
 	{
-		UE_LOG(LogTemp, Log, TEXT("GameServer Connection Failed..."));
+		OnConnect.ExecuteIfBound(false);
 		return;
 	}
+	OnConnect.ExecuteIfBound(true);
 
 	// ログインパケット送信.
 	std::string FilePath = TCHAR_TO_UTF8(*Config::IdFilePath);
