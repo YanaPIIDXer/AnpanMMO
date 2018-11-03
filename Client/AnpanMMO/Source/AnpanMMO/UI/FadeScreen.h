@@ -46,6 +46,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Fade")
 	void Start(EFadeMode Mode);
 
+	// アルファ値を直接設定.
+	UFUNCTION(BlueprintCallable, Category = "Fade")
+	void SetAlpha(float InAlphaValue) { AlphaValue = FMath::Clamp<float>(InAlphaValue, 0.0f, 1.0f); }
 
 	// フェード完了delegate
 	UPROPERTY(BlueprintAssignable, Category = "Fade")
