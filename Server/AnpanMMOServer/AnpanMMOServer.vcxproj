@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="basic_repeating_timer.h" />
+    <ClInclude Include="Character\CharacterBase.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientAcceptor.h" />
     <ClInclude Include="ClientManager.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="TypeDefs.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Character\CharacterBase.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientAcceptor.cpp" />
     <ClCompile Include="ClientManager.cpp" />
