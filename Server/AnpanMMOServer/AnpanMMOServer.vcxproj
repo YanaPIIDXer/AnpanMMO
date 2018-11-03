@@ -158,6 +158,7 @@
     <ClCompile Include="ClientAcceptor.cpp" />
     <ClCompile Include="ClientManager.cpp" />
     <ClCompile Include="ClientState\ClientStateActive.cpp" />
+    <ClCompile Include="ClientState\ClientStateBase.cpp" />
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="DBConnection.cpp" />

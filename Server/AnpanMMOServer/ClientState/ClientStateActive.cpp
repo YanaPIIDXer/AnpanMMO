@@ -12,9 +12,3 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 void ClientStateActive::BeginState()
 {
 }
-
-// パケット解析.
-void ClientStateActive::AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream)
-{
-
-}

@@ -8,7 +8,7 @@
  */
 class ClientStateActive : public ClientStateBase
 {
-
+		
 public:
 
 	// コンストラクタ
@@ -19,9 +19,6 @@ public:
 
 	// 開始時の処理.
 	virtual void BeginState();
-
-	// パケット解析.
-	virtual void AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream);
 
 private:
 

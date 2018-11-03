@@ -11,19 +11,7 @@
 ClientStateTitle::ClientStateTitle(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
-}
-
-// パケット解析.
-void ClientStateTitle::AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream)
-{
-	switch (ID)
-	{
-		case LogInRequest:
-
-			OnRecvLogInRequest(pStream);
-			break;
-
-	}
+	AddPacketFunction(LogInRequest, boost::bind(&ClientStateTitle::OnRecvLogInRequest, this, _1));
 }
 
 
