@@ -60,6 +60,16 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Fade")
 	float AlphaValue;
 
+	// 開始.
+	UFUNCTION(BlueprintNativeEvent, Category = "Fade")
+	void OnStart();
+	void OnStart_Implementation() {}
+
+	// 終了.
+	UFUNCTION(BlueprintNativeEvent, Category = "Fade")
+	void OnFinish();
+	void OnFinish_Implementation() {}
+
 private:
 
 	// １秒間のアルファ値変動量.
