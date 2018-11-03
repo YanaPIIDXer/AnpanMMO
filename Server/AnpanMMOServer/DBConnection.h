@@ -35,7 +35,6 @@ private:
 	MySqlConnection Connection;
 
 
-
 	// ユーザデータ登録.
 	bool RegisterUserData(char *pUserCode);
 

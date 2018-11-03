@@ -22,6 +22,9 @@ public:
 
 private:
 
+	// キャラクタロード
+	void LoadCharacter();
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__
