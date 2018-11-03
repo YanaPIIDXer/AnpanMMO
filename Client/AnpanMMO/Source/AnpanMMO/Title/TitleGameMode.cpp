@@ -3,6 +3,7 @@
 #include "TitleGameMode.h"
 #include "Title/UI/TitleScreenWidget.h"
 #include "MMOGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 #include "UI/SimpleDialog.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInResult.h"
@@ -11,6 +12,7 @@
 // コンストラクタ
 ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, pScreenWidget(nullptr)
 {
 }
 
@@ -19,10 +21,14 @@ void ATitleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	auto *pWidget = UTitleScreenWidget::Show(this);
-	pWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
+	// マウスカーソルを表示する。
+	UGameplayStatics::GetPlayerController(this, 0)->bShowMouseCursor = true;
+
+	pScreenWidget = UTitleScreenWidget::Show(this);
+	pScreenWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
+	pScreenWidget->OnReadyToGame.BindUObject(this, &ATitleGameMode::OnReadyToGame);
 	
-	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	pInst->OnRecvPacketDelegate.BindUObject(this, &ATitleGameMode::OnRecvPacket);
 }
@@ -52,10 +58,7 @@ void ATitleGameMode::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 		case PacketID::CharacterStatus:
 
 		{
-			// @TODO:ゲーム中GameModeに移動する。
-			PacketCharacterStatus Packet;
-			Packet.Serialize(pStream);
-			UE_LOG(LogTemp, Log, TEXT("HP:%d MaxHP:%d Atk:%d Def:%d Exp:%d"), Packet.Hp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+			OnRecvCharacterStatus(pStream);
 			break;
 		}
 
@@ -68,5 +71,25 @@ void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 	PacketLogInResult Packet;
 	Packet.Serialize(pStream);
 
-	OnLogInResult(Packet.Result == PacketLogInResult::Success);
+	bool bResult = (Packet.Result == PacketLogInResult::Success);
+	OnLogInResult(bResult);
+
+	if (bResult)
+	{
+		pScreenWidget->StartFade();
+	}
+}
+
+// キャラクタステータスを受信した。
+void ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
+{
+	PacketCharacterStatus Packet;
+	Packet.Serialize(pStream);
+	UE_LOG(LogTemp, Log, TEXT("HP:%d MaxHP:%d Atk:%d Def:%d Exp:%d"), Packet.Hp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+}
+
+// ゲーム画面に進む準備が出来た。
+void ATitleGameMode::OnReadyToGame()
+{
+	UE_LOG(LogTemp, Log, TEXT("Game Start!!"));
 }
