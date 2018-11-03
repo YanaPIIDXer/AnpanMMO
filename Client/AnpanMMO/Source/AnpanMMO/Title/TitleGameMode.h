@@ -38,6 +38,9 @@ protected:
 
 private:
 	
+	// 接続コールバック
+	void OnConnectResult(bool bConnected);
+
 	// パケットを受信した。
 	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 

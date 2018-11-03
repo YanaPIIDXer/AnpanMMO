@@ -3,6 +3,7 @@
 #include "TitleGameMode.h"
 #include "Title/UI/TitleScreenWidget.h"
 #include "MMOGameInstance.h"
+#include "UI/SimpleDialog.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInResult.h"
 #include "Packet/PacketCharacterStatus.h"
@@ -19,12 +20,24 @@ void ATitleGameMode::BeginPlay()
 	Super::BeginPlay();
 
 	auto *pWidget = UTitleScreenWidget::Show(this);
+	pWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
 	
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	pInst->OnRecvPacketDelegate.BindUObject(this, &ATitleGameMode::OnRecvPacket);
 }
 
+
+// 接続コールバック
+void ATitleGameMode::OnConnectResult(bool bConnected)
+{
+	if (!bConnected)
+	{
+		// ↓何故か日本語が正しく表示されない・・・
+		//USimpleDialog::Show(this, "接続に失敗しました。");
+		USimpleDialog::Show(this, "Connection Failed...");
+	}
+}
 
 // パケットを受信した。
 void ATitleGameMode::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
