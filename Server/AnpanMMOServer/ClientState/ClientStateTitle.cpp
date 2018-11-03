@@ -5,6 +5,7 @@
 #include "Packet/PacketLogInResult.h"
 #include "Client.h"
 #include "DBConnection.h"
+#include "ClientStateActive.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
@@ -40,8 +41,12 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 		ResultCode = PacketLogInResult::Error;
 	}
 
-	GetParent()->SetUuid(Id);
-
 	PacketLogInResult ResultPacket(ResultCode, Id);
 	GetParent()->SendPacket(&ResultPacket);
+
+	Client *pClient = GetParent();
+	pClient->SetUuid(Id);
+
+	ClientStateActive *pNextState = new ClientStateActive(pClient);
+	pClient->ChangeState(pNextState);
 }
