@@ -6,6 +6,8 @@
 #include "Blueprint/UserWidget.h"
 #include "FadeScreen.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFadeFinished);
+
 // フェードモード
 UENUM(Blueprintable, Category = "Fade")
 enum class EFadeMode : uint8
@@ -43,6 +45,11 @@ public:
 	// フェード開始.
 	UFUNCTION(BlueprintCallable, Category = "Fade")
 	void Start(EFadeMode Mode);
+
+
+	// フェード完了delegate
+	UPROPERTY(BlueprintAssignable, Category = "Fade")
+	FOnFadeFinished OnFadeFinished;
 
 protected:
 

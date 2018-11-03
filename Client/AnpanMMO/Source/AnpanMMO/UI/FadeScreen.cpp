@@ -31,7 +31,19 @@ void UFadeScreen::NativeTick(const FGeometry &Geometry, float DeltaTime)
 			AlphaValue += Speed;
 			break;
 	}
-	AlphaValue = FMath::Clamp<float>(AlphaValue, 0.0f, 1.0f);
+
+	if (FadeMode == EFadeMode::FadeIn && AlphaValue <= 0.0f)
+	{
+		AlphaValue = 0.0f;
+		OnFadeFinished.Broadcast();
+		FadeMode = EFadeMode::None;
+	}
+	else if (FadeMode == EFadeMode::FadeOut && AlphaValue >= 1.0f)
+	{
+		AlphaValue = 1.0f;
+		OnFadeFinished.Broadcast();
+		FadeMode = EFadeMode::None;
+	}
 }
 
 // フェード開始.
