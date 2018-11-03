@@ -33,5 +33,5 @@ public:
 	virtual void SetupPlayerInputComponent(UInputComponent *PlayerInputComponent) override;
 
 private:
-	
+
 };
