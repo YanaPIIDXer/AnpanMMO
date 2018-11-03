@@ -21,9 +21,6 @@ void ATitleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// マウスカーソルを表示する。
-	UGameplayStatics::GetPlayerController(this, 0)->bShowMouseCursor = true;
-
 	pScreenWidget = UTitleScreenWidget::Show(this);
 	pScreenWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
 	pScreenWidget->OnReadyToGame.BindUObject(this, &ATitleGameMode::OnReadyToGame);

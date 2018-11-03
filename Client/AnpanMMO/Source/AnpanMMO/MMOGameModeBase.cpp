@@ -2,6 +2,7 @@
 
 #include "MMOGameModeBase.h"
 #include "MMOGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 
 // コンストラクタ
 AMMOGameModeBase::AMMOGameModeBase(const FObjectInitializer &ObjectInitializer)
@@ -14,6 +15,9 @@ AMMOGameModeBase::AMMOGameModeBase(const FObjectInitializer &ObjectInitializer)
 void AMMOGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// マウスカーソルを表示する。
+	UGameplayStatics::GetPlayerController(this, 0)->bShowMouseCursor = true;
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
