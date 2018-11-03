@@ -6,6 +6,8 @@
 #include "Blueprint/UserWidget.h"
 #include "TitleScreenWidget.generated.h"
 
+DECLARE_DELEGATE_OneParam(FOnConnect, bool);
+
 /**
  * タイトル画面Widget
  */
@@ -18,13 +20,17 @@ class ANPANMMO_API UTitleScreenWidget : public UUserWidget
 public:
 
 	// 生成.
-	static UTitleScreenWidget *Create(UObject *pOuter);
+	static UTitleScreenWidget *Show(UObject *pOuter);
 
 	// コンストラクタ
 	UTitleScreenWidget(const FObjectInitializer &ObjectInitializer);
 
 	// デストラクタ
 	virtual ~UTitleScreenWidget() {}
+
+
+	// 接続コールバック
+	FOnConnect OnConnect;
 
 protected:
 
