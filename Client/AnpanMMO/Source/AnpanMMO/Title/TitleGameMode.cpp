@@ -22,7 +22,7 @@ void ATitleGameMode::BeginPlay()
 	auto *pWidget = UTitleScreenWidget::Show(this);
 	pWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
 	
-	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	pInst->OnRecvPacketDelegate.BindUObject(this, &ATitleGameMode::OnRecvPacket);
 }
