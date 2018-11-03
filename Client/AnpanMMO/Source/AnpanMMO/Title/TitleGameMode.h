@@ -52,6 +52,9 @@ private:
 	// ログイン結果を受信した。
 	void OnRecvLogInResult(MemoryStreamInterface *pStream);
 
+	// キャラクタステータスを受信した。
+	void OnRecvCharacterStatus(MemoryStreamInterface *pStream);
+
 	// ゲーム画面に進む準備が出来た。
 	void OnReadyToGame();
 	

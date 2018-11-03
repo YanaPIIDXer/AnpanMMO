@@ -58,10 +58,7 @@ void ATitleGameMode::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 		case PacketID::CharacterStatus:
 
 		{
-			// @TODO:ゲーム中GameModeに移動する。
-			PacketCharacterStatus Packet;
-			Packet.Serialize(pStream);
-			UE_LOG(LogTemp, Log, TEXT("HP:%d MaxHP:%d Atk:%d Def:%d Exp:%d"), Packet.Hp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+			OnRecvCharacterStatus(pStream);
 			break;
 		}
 
@@ -81,6 +78,14 @@ void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 	{
 		pScreenWidget->StartFade();
 	}
+}
+
+// キャラクタステータスを受信した。
+void ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
+{
+	PacketCharacterStatus Packet;
+	Packet.Serialize(pStream);
+	UE_LOG(LogTemp, Log, TEXT("HP:%d MaxHP:%d Atk:%d Def:%d Exp:%d"), Packet.Hp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 }
 
 // ゲーム画面に進む準備が出来た。
