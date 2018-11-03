@@ -16,8 +16,9 @@ public:
 	template<class T>
 	static T *LoadBlueprint(UObject *pOuter, const TCHAR *Path)
 	{
-		TCHAR *LoadPath = Path + "_C";
-		UBlueprintGeneratedClass *pClass = LoadObject<UBlueprintGeneratedClass>(pOuter, LoadPath, LoadPath);
+		FString LoadPath = Path;
+		LoadPath += "_C";
+		UBlueprintGeneratedClass *pClass = LoadObject<UBlueprintGeneratedClass>(pOuter, *LoadPath, *LoadPath);
 		check(pClass != nullptr);
 
 		T *pObject = NewObject<T>(pOuter, pClass);
