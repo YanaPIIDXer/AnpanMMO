@@ -12,7 +12,7 @@ class PlayerCharacter : public CharacterBase
 public:
 
 	// コンストラクタ
-	PlayerCharacter();
+	PlayerCharacter(int MaxHp, int Atk, int Def);
 
 	// デストラクタ
 	virtual ~PlayerCharacter() {}

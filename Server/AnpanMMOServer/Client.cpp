@@ -54,6 +54,12 @@ void Client::ChangeState(ClientStateBase *pNextState)
 	pState->BeginState();
 }
 
+// キャラクタ作成.
+void Client::CreateCharacter(int MaxHp, int Atk, int Def)
+{
+	pCharacter = new PlayerCharacter(MaxHp, Atk, Def);
+}
+
 
 // 受信開始.
 void Client::AsyncRecv(u8 *pBuffer, int Offset)

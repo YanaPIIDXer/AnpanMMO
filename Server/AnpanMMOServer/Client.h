@@ -39,6 +39,9 @@ public:
 	// キャラクタ取得.
 	PlayerCharacter *GetCharacter() const { return pCharacter; }
 
+	// キャラクタ作成.
+	void CreateCharacter(int MaxHp, int Atk, int Def);
+
 private:
 
 	enum
