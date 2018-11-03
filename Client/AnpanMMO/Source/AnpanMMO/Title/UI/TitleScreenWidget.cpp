@@ -46,3 +46,9 @@ void UTitleScreenWidget::ConnectToGameServer()
 	PacketLogInRequest Packet(Id);
 	pInst->SendPacket(&Packet);
 }
+
+// フェードが完了した。
+void UTitleScreenWidget::OnFadeFinish()
+{
+	OnReadyToGame.ExecuteIfBound();
+}
