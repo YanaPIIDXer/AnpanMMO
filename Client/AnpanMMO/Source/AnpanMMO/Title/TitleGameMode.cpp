@@ -56,12 +56,5 @@ void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 	PacketLogInResult Packet;
 	Packet.Serialize(pStream);
 
-	if (Packet.Result == PacketLogInResult::Success)
-	{
-		UE_LOG(LogTemp, Log, TEXT("LogIn Success!!"));
-	}
-	else
-	{
-		UE_LOG(LogTemp, Log, TEXT("LogIn Failed..."));
-	}
+	OnLogInResult(Packet.Result == PacketLogInResult::Success);
 }

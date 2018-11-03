@@ -29,6 +29,13 @@ public:
 	// 開始時の処理.
 	virtual void BeginPlay() override;
 
+protected:
+
+	// ログイン結果.
+	UFUNCTION(BlueprintNativeEvent, Category = "LogIn")
+	void OnLogInResult(bool bSuccess);
+	void OnLogInResult_Implementation(bool bSuccess) {}
+
 private:
 	
 	// パケットを受信した。
