@@ -6,6 +6,9 @@
 #include "GameFramework/GameMode.h"
 #include "ActiveGameMode.generated.h"
 
+enum PacketID;
+class MemoryStreamInterface;
+
 /**
  * ゲーム中GameMode
  */
@@ -22,8 +25,17 @@ public:
 	// デストラクタ
 	virtual ~AActiveGameMode() {}
 
+	// 開始時の処理.
+	virtual void BeginPlay() override;
+
 protected:
 
 private:
+
+	// パケットを受信した。
+	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 	
+
+	
+
 };
