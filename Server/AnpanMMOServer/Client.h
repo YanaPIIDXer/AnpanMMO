@@ -29,6 +29,12 @@ public:
 	// ステート切り替え
 	void ChangeState(ClientStateBase *pNextState);
 
+	// UUIDをセット
+	void SetUuid(int InUuid) { Uuid = InUuid; }
+
+	// UUIDを取得.
+	int GetUuid() const { return Uuid; }
+
 private:
 
 	enum
@@ -50,6 +56,9 @@ private:
 
 	// State
 	ClientStateBase *pState;
+
+	// Uuid
+	int Uuid;
 
 
 	// 受信開始.

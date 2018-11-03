@@ -40,6 +40,8 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 		ResultCode = PacketLogInResult::Error;
 	}
 
+	GetParent()->SetUuid(Id);
+
 	PacketLogInResult ResultPacket(ResultCode, Id);
 	GetParent()->SendPacket(&ResultPacket);
 }
