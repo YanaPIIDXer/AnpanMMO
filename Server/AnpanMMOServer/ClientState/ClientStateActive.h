@@ -25,6 +25,9 @@ private:
 	// キャラクタロード
 	void LoadCharacter();
 
+	// ゲーム準備完了を受信.
+	void OnRecvGameReady(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__
