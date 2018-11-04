@@ -6,7 +6,7 @@
 ClientAcceptor::ClientAcceptor(asio::io_service &InIOService, int Port)
 	: IOService(InIOService)
 	, Acceptor(InIOService, tcp::endpoint(tcp::v4(), Port))
-	, pSocket(NULL)
+	//, pSocket(NULL)
 	, bWaitingAccept(false)
 {
 }
