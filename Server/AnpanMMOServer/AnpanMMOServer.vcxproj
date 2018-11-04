@@ -151,6 +151,7 @@
     <ClInclude Include="Packet\PacketID.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TypeDefs.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character\CharacterBase.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="MySQL\MySqlQuery.cpp" />
     <ClCompile Include="Packet\PacketHeader.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AnpanMMOServer.VC.db" />
