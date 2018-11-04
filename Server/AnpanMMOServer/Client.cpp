@@ -15,7 +15,7 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	, bIsConnected(true)
 	, pState(new ClientStateTitle(this))
 	, Uuid(0)
-	//, pCharacter(NULL)
+	, pCharacter(NULL)
 {
 	AsyncRecv(&RecvData[0], 0);
 }
