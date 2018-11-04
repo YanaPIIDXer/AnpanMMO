@@ -36,7 +36,7 @@ void ClientAcceptor::StartAccept()
 }
 
 // Accept‚µ‚½
-void ClientAcceptor::OnAccept(const system::error_code &ErrorCode)
+void ClientAcceptor::OnAccept(const boost::system::error_code &ErrorCode)
 {
 	if (ErrorCode)
 	{

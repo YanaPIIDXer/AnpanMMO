@@ -37,7 +37,7 @@ private:
 	void StartAccept();
 
 	// Accept‚µ‚½
-	void OnAccept(const system::error_code &ErrorCode);
+	void OnAccept(const boost::system::error_code &ErrorCode);
 
 };
 
