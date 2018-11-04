@@ -23,6 +23,9 @@ public:
 	// デストラクタ
 	virtual ~AActiveGameMode() {}
 
+	// 開始時の処理.
+	virtual void BeginPlay() override;
+
 protected:
 
 private:
