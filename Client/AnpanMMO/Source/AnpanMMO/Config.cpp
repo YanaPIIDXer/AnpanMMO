@@ -15,7 +15,7 @@ const int Config::ServerPort = 4424;
 
 #if PLATFORM_WINDOWS
 // WindowsŒü‚¯
-const FString Config::IdFilePath = FPaths::GameSavedDir();
+const FString Config::IdFilePath = FPaths::ProjectSavedDir();
 #elif PLATFORM_ANDROID
 // AndroidŒü‚¯
 const FString Config::IdFilePath = "";
