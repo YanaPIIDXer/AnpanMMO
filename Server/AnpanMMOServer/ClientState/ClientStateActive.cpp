@@ -3,6 +3,7 @@
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "DBConnection.h"
 #include "Client.h"
+#include "World.h"
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketGameReady.h"
 
@@ -46,4 +47,7 @@ void ClientStateActive::OnRecvGameReady(MemoryStreamInterface *pStream)
 	PacketGameReady Packet;
 	Packet.Serialize(pStream);		// ぶっちゃけいらないんじゃね？
 
+	// プレイヤーキャラをWorldにブチ込む。
+	PlayerCharacterPtr pPlayerChara = GetParent()->GetCharacter();
+	World::GetInstance().AddPlayerCharacter(pPlayerChara);
 }
