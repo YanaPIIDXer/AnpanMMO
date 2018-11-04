@@ -140,6 +140,7 @@
     <ClInclude Include="DBConnection.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
+    <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
     <ClInclude Include="MemoryStream\MemoryStreamInterface.h" />
