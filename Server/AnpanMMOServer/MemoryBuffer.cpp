@@ -2,7 +2,7 @@
 #include "MemoryBuffer.h"
 
 // ’Ç‰Á
-void MemoryBuffer::Push(u8 *Data, s32 Size)
+void MemoryBuffer::Push(const u8 *Data, s32 Size)
 {
 	if(CurrentSize + Size >= BUFFER_SIZE)
 	{
