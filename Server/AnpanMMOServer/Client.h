@@ -62,7 +62,7 @@ private:
 	array<u8, RecvDataSize> RecvData;
 
 	// 送信バッファ
-	MemoryBuffer SendBuffer;
+	asio::streambuf SendBuffer;
 
 	// State
 	shared_ptr<ClientStateBase> pState;
