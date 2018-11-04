@@ -70,4 +70,7 @@ private:
 	// óMˆ—.
 	void RecvProc();
 
+	// ‰ğÍˆ—.
+	void AnalyzeProc();
+
 };
