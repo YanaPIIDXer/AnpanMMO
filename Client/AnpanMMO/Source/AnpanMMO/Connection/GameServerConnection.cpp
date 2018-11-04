@@ -90,7 +90,7 @@ void GameServerConnection::SendProc()
 	uint8 *pData = SendBuffer.GetTop();
 	int32 Size = SendBuffer.GetSize();
 	int32 SendSize = 0;
-	pSocket->Send(pData, Size, SendSize);
+	if (!pSocket->Send(pData, Size, SendSize) || SendSize <= 0) { return; }
 	SendBuffer.Pop(SendSize);
 }
 
@@ -100,7 +100,7 @@ void GameServerConnection::RecvProc()
 	uint8 RecvData[RecvDataSize];
 	int32 RecvSize = 0;
 
-	pSocket->Recv(&RecvData[0], RecvDataSize, RecvSize);
+	if (!pSocket->Recv(&RecvData[0], RecvDataSize, RecvSize) || RecvSize <= 0) { return; }
 	RecvBuffer.Push(&RecvData[0], RecvSize);
 
 	uint8 *pData = RecvBuffer.GetTop();

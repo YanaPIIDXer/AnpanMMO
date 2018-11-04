@@ -20,6 +20,8 @@ void Buffer::Push(const uint8 *pData, int32 Size)
 void Buffer::Pop(int32 Size)
 {
 	int32 DataSize = FMath::Min(Size, Data.Num());
+	if (DataSize == 0) { return; }
+
 	Data.RemoveAt(0, DataSize);
 }
 
