@@ -3,9 +3,13 @@
 #include "GameController.h"
 #include "Engine/World.h"
 
+const FName AGameController::MoveForwardBind = "Forward";
+const FName AGameController::MoveRightBind = "Right";
+
 // コンストラクタ
 AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, pCharacter(nullptr)
 	, pCamera(nullptr)
 {
 }
@@ -20,6 +24,9 @@ void AGameController::Possess(APawn *aPawn)
 	auto *pPlayer = Cast<AGameCharacter>(aPawn);
 	check(pPlayer != nullptr);
 	pCamera->SetGameCharacter(pPlayer);
+	pCharacter = pPlayer;
+
+	SetupPlayerInput(pPlayer->InputComponent);
 }
 
 
@@ -32,4 +39,23 @@ void AGameController::SpawnCamera()
 	Param.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	pCamera = GetWorld()->SpawnActor<AGameCamera>(AGameCamera::StaticClass(), Param);
 	SetViewTargetWithBlend(pCamera.Get());
+}
+
+// PlayerInputComponentのセットアップ
+void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
+{
+	check(pInputComponent != nullptr);
+
+	pInputComponent->BindAxis(MoveForwardBind, this, &AGameController::MoveForward);
+	pInputComponent->BindAxis(MoveRightBind, this, &AGameController::MoveRight);
+}
+
+// 前後移動.
+void AGameController::MoveForward(float Value)
+{
+}
+
+// 左右移動.
+void AGameController::MoveRight(float Value)
+{
 }
