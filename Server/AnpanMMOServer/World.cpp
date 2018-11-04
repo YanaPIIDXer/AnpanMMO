@@ -7,3 +7,8 @@ World World::Instance;
 World::World()
 {
 }
+
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void World::Poll()
+{
+}

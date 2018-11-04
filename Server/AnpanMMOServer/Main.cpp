@@ -2,6 +2,7 @@
 #include "ClientAcceptor.h"
 #include "ClientManager.h"
 #include "DBConnection.h"
+#include "World.h"
 
 // エントリポイント
 int main()
@@ -28,6 +29,10 @@ int main()
 	asio::basic_repeating_timer<posix_time::ptime> ClientManagerTimer(IOService);
 	ClientManagerTimer.start(posix_time::millisec(30),
 		bind(&ClientManager::Poll, &ClientManager::GetInstance()));
+
+	asio::basic_repeating_timer<posix_time::ptime> WorldTimer(IOService);
+	WorldTimer.start(posix_time::millisec(30),
+		bind(&World::Poll, &World::GetInstance()));
 
 	IOService.run();
 	return 0;

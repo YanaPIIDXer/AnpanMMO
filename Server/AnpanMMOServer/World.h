@@ -9,6 +9,9 @@ class World : noncopyable
 
 public:
 
+	// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+	void Poll();
+
 private:
 
 	// ========== Singleton =========
