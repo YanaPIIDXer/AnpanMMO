@@ -19,10 +19,10 @@
 -- Table structure for table `characterdata`
 --
 
-DROP TABLE IF EXISTS `characterdata`;
+DROP TABLE IF EXISTS `CharacterData`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `characterdata` (
+CREATE TABLE `CharacterData` (
   `CustomerId` int(11) NOT NULL,
   `MaxHp` int(11) DEFAULT NULL,
   `Atk` int(11) DEFAULT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE `characterdata` (
 -- Table structure for table `userdata`
 --
 
-DROP TABLE IF EXISTS `userdata`;
+DROP TABLE IF EXISTS `UserData`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `userdata` (
+CREATE TABLE `UserData` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserCode` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`Id`)
