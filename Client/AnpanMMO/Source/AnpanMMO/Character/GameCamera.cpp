@@ -7,4 +7,13 @@ AGameCamera::AGameCamera(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pPlayer(nullptr)
 {
+	PrimaryActorTick.bCanEverTick = true;
+}
+
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void AGameCamera::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	SetActorLocation(pPlayer->GetActorLocation());
 }

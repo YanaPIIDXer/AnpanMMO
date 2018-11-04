@@ -24,6 +24,9 @@ public:
 	// デストラクタ
 	virtual ~AGameCamera() {}
 
+	// 毎フレームの処理.
+	virtual void Tick(float DeltaTime) override;
+
 	// プレイヤーキャラをセット。
 	void SetGameCharacter(AGameCharacter *pInPlayer) { pPlayer = pInPlayer; }
 
