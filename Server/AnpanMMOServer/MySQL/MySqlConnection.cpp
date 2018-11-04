@@ -3,7 +3,7 @@
 
 // コンストラクタ
 MySqlConnection::MySqlConnection()
-	: pConnection(NULL)
+//	: pConnection(NULL)
 {
 }
 
@@ -52,5 +52,5 @@ void MySqlConnection::Close()
 	if (pConnection == NULL) { return; }
 
 	mysql_close(pConnection.get());
-	pConnection = NULL;
+	pConnection.reset();
 }

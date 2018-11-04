@@ -31,7 +31,7 @@ namespace asio
 
     template <typename Time,
               typename TimeTraits = boost::asio::time_traits<Time>,
-              typename TimerService = boost::asio::detail::deadline_timer_service<TimeTraits>>
+              typename TimerService = boost::asio::detail::deadline_timer_service<TimeTraits> >
     class basic_repeating_timer : public boost::asio::basic_io_object<TimerService>
     {
     public:

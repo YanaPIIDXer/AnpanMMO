@@ -12,7 +12,7 @@ LIBS      =
 # インクルードパスの指定。これをちゃんとしておかないとDEPENDS(依存)ファイルがうまく作れない
 INCLUDE   = -I../include -I/usr/local/include -I./
 # 生成される実行ファイル
-TARGETS   = teMpaneServer.out
+TARGETS   = AnpanMMOServer.out
 # 生成されるバイナリファイルの出力ディレクトリ
 TARGETDIR = ./
 # ソースコードの位置
@@ -32,7 +32,7 @@ DEPENDS   = $(OBJECTS:.o=.d)
 
 # 依存ファイルを元に実行ファイルを作る
 $(TARGETS): $(OBJECTS) $(LIBS)
-	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lboost_system -DBOOST_SYSTEM_NO_DEPRECATED
+	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lboost_system -lmysqlclient -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
 
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
