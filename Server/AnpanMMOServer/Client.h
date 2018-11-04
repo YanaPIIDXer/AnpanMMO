@@ -75,13 +75,13 @@ private:
 	void AsyncRecv(u8 *pBuffer, int Offset);
 
 	// 受信した。
-	void OnRecv(const system::error_code &ErrorCode, size_t Size);
+	void OnRecv(const boost::system::error_code &ErrorCode, size_t Size);
 
 	// 送信.
 	void AsyncSend(const u8 *pBuffer, int Size);
 
 	// 送信した。
-	void OnSend(const system::error_code &ErrorCode, size_t Size);
+	void OnSend(const boost::system::error_code &ErrorCode, size_t Size);
 
 };
 

@@ -69,7 +69,7 @@ void Client::AsyncRecv(u8 *pBuffer, int Offset)
 }
 
 // 受信した。
-void Client::OnRecv(const system::error_code &ErrorCode, size_t Size)
+void Client::OnRecv(const boost::system::error_code &ErrorCode, size_t Size)
 {
 	if (ErrorCode)
 	{
@@ -104,7 +104,7 @@ void Client::AsyncSend(const u8 *pBuffer, int Size)
 }
 
 // 送信した。
-void Client::OnSend(const system::error_code &ErrorCode, size_t Size)
+void Client::OnSend(const boost::system::error_code &ErrorCode, size_t Size)
 {
 	if (ErrorCode)
 	{
