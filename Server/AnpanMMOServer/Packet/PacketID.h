@@ -3,6 +3,7 @@
 
 enum PacketID
 {
+	GameReady,
 	LogInRequest,
 	LogInResult,
 	CharacterStatus,
