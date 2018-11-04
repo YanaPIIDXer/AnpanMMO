@@ -3,7 +3,7 @@
 
 // コンストラクタ
 MySqlConnection::MySqlConnection()
-	: pConnection(NULL)
+//	: pConnection(NULL)
 {
 }
 
