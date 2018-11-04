@@ -21,16 +21,12 @@ void ATitleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// マウスカーソルを表示する。
-	UGameplayStatics::GetPlayerController(this, 0)->bShowMouseCursor = true;
-
 	pScreenWidget = UTitleScreenWidget::Show(this);
 	pScreenWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
 	pScreenWidget->OnReadyToGame.BindUObject(this, &ATitleGameMode::OnReadyToGame);
-	
-	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
-	check(pInst != nullptr);
-	pInst->OnRecvPacketDelegate.BindUObject(this, &ATitleGameMode::OnRecvPacket);
+
+	AddPacketFunction(PacketID::LogInResult, std::bind(&ATitleGameMode::OnRecvLogInResult, this, std::placeholders::_1));
+	AddPacketFunction(PacketID::CharacterStatus, std::bind(&ATitleGameMode::OnRecvCharacterStatus, this, std::placeholders::_1));
 }
 
 
@@ -42,26 +38,6 @@ void ATitleGameMode::OnConnectResult(bool bConnected)
 		// ↓何故か日本語が正しく表示されない・・・
 		//USimpleDialog::Show(this, "接続に失敗しました。");
 		USimpleDialog::Show(this, "Connection Failed...");
-	}
-}
-
-// パケットを受信した。
-void ATitleGameMode::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
-{
-	switch (ID)
-	{
-		case PacketID::LogInResult:
-
-			OnRecvLogInResult(pStream);
-			break;
-
-		case PacketID::CharacterStatus:
-
-		{
-			OnRecvCharacterStatus(pStream);
-			break;
-		}
-
 	}
 }
 

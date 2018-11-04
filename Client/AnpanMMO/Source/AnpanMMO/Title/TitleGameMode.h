@@ -3,7 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameMode.h"
+#include "MMOGameModeBase.h"
+#include <functional>
 #include "TitleGameMode.generated.h"
 
 enum PacketID;
@@ -14,11 +15,11 @@ class UTitleScreenWidget;
  * タイトル画面GameMode
  */
 UCLASS()
-class ANPANMMO_API ATitleGameMode : public AGameMode
+class ANPANMMO_API ATitleGameMode : public AMMOGameModeBase
 {
 
 	GENERATED_BODY()
-	
+
 public:
 
 	// コンストラクタ
@@ -45,9 +46,6 @@ private:
 
 	// 接続コールバック
 	void OnConnectResult(bool bConnected);
-
-	// パケットを受信した。
-	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 
 	// ログイン結果を受信した。
 	void OnRecvLogInResult(MemoryStreamInterface *pStream);
