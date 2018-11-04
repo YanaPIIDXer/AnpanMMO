@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "GameCamera.h"
 #include "GameController.generated.h"
 
 /**
@@ -23,6 +24,12 @@ public:
 	// デストラクタ
 	virtual ~AGameController() {}
 
+	// Pawnが紐付けられた。
+	virtual void Possess(APawn *aPawn) override;
+
 private:
 	
+	// カメラ
+	TWeakObjectPtr<AGameCamera> pCamera;
+
 };
