@@ -32,6 +32,8 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	PacketLogInResult ResultPacket(ResultCode, Id);
 	GetParent()->SendPacket(&ResultPacket);
 
+	if (ResultCode != PacketLogInResult::Success) { return; }
+
 	Client *pClient = GetParent();
 	pClient->SetUuid(Id);
 
