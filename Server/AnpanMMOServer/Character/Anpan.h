@@ -12,7 +12,7 @@ class Anpan : public CharacterBase
 public:
 
 	// コンストラクタ
-	Anpan();
+	Anpan(const Vector2D &InPosition);
 
 	// デストラクタ
 	virtual ~Anpan() {}

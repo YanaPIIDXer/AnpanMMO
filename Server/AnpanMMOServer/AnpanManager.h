@@ -1,6 +1,9 @@
 #ifndef __ANPANMANAGER_H__
 #define __ANPANMANAGER_H__
 
+#include <vector>
+#include "Character/Anpan.h"
+
 /**
  * アンパン管理クラス
  */
@@ -19,6 +22,9 @@ public:
 	void SpawnAnpan();
 
 private:
+
+	// アンパンリスト
+	std::vector<Anpan> AnpanList;
 
 };
 
