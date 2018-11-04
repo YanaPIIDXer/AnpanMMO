@@ -71,7 +71,7 @@ void Client::OnRecv(const boost::system::error_code &ErrorCode, size_t Size)
 {
 	if (ErrorCode)
 	{
-	r	bIsConnected = false;
+		bIsConnected = false;
 		return;
 	}
 
