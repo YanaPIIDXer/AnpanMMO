@@ -28,7 +28,8 @@ void ClientManager::Poll()
 // クライアント生成.
 void ClientManager::CreateClient(const shared_ptr<tcp::socket> &pSocket)
 {
-	ClientSharedPtr pClient = ClientSharedPtr(new Client(pSocket));
+	Client *pNewClient = new Client(pSocket);
+	ClientSharedPtr pClient = ClientSharedPtr(pNewClient);
 
 	// リストに追加。
 	List.push_back(pClient);

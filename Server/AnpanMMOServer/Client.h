@@ -81,7 +81,7 @@ private:
 	void AsyncSend(const u8 *pBuffer, int Size);
 
 	// ëóêMÇµÇΩÅB
-	void OnSend(const boost::system::error_code &ErrorCode, size_t Size);
+	void OnSend(const boost::system::error_code &ErrorCode, size_t Size, shared_ptr<asio::streambuf> SendBuffer);
 
 };
 

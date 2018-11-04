@@ -29,7 +29,7 @@ public:
 	s32 GetSize(){ return CurrentSize; }
 
 	// í«â¡
-	void Push(u8 *Data, s32 Size);
+	void Push(const u8 *Data, s32 Size);
 
 	// è¡ãé
 	void Pop(s32 Size);
