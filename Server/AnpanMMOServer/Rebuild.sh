@@ -6,4 +6,4 @@ do
 kill -9 ${pid}
 done
 make
-./AnpanMMOServer &
+./AnpanMMOServer.out &
