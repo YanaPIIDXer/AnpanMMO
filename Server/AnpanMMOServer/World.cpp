@@ -29,7 +29,6 @@ void World::UpdatePlayerList()
 	{
 		if (!It->expired())
 		{
-			std::cout << "Erase Player" << std::endl;
 			It = PlayerList.erase(It);
 		}
 		else
