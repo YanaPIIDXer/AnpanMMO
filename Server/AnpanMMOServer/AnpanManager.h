@@ -15,6 +15,9 @@ public:
 	// デストラクタ
 	~AnpanManager() {}
 
+	// アンパン生成.
+	void SpawnAnpan();
+
 private:
 
 };

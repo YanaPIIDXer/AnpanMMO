@@ -5,3 +5,8 @@
 AnpanManager::AnpanManager()
 {
 }
+
+// ƒAƒ“ƒpƒ“¶¬.
+void AnpanManager::SpawnAnpan()
+{
+}

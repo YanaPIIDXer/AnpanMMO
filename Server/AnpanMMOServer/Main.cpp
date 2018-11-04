@@ -34,6 +34,10 @@ int main()
 	WorldTimer.start(posix_time::millisec(30),
 		bind(&World::Poll, &World::GetInstance()));
 
+	asio::basic_repeating_timer<posix_time::ptime> AnpanSpawnTimer(IOService);
+	AnpanSpawnTimer.start(posix_time::millisec(5000),
+		bind(&AnpanManager::SpawnAnpan, World::GetInstance().GetAnpanManager()));
+
 	IOService.run();
 	return 0;
 }
