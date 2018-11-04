@@ -1,6 +1,9 @@
 #ifndef __WORLD_H__
 #define __WORLD_H__
 
+#include <vector>
+#include "Character/PlayerCharacter.h"
+
 /**
  * ワールドクラス
  */
@@ -12,7 +15,17 @@ public:
 	// 毎フレームの処理.
 	void Poll();
 
+	// プレイヤーキャラの追加.
+	void AddPlayerCharacter(const PlayerCharacterPtr &pPlayer);
+
 private:
+
+	// プレイヤーキャラリスト
+	std::vector<PlayerCharacterPtr> PlayerList;
+
+
+	// PlayerListの更新.
+	void UpdatePlayerList();
 
 	// ========== Singleton =========
 public:
