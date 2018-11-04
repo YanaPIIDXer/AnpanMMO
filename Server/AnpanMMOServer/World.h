@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "Character/PlayerCharacter.h"
+#include "AnpanManager.h"
 
 /**
  * ワールドクラス
@@ -22,6 +23,9 @@ private:
 
 	// プレイヤーキャラリスト
 	std::vector<PlayerCharacterPtr> PlayerList;
+
+	// アンパン管理.
+	AnpanManager AnpanMgr;
 
 
 	// PlayerListの更新.

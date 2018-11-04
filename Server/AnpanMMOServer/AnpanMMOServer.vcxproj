@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AnpanManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Character\CharacterBase.h" />
     <ClInclude Include="Character\CharacterParameter.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnpanManager.cpp" />
     <ClCompile Include="Character\CharacterBase.cpp" />
     <ClCompile Include="Character\PlayerCharacter.cpp" />
     <ClCompile Include="Client.cpp" />
