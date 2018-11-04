@@ -37,7 +37,7 @@ public:
 	int GetUuid() const { return Uuid; }
 
 	// キャラクタ取得.
-	PlayerCharacter *GetCharacter() const { return pCharacter; }
+	weak_ptr<PlayerCharacter> GetCharacter() const { return pCharacter; }
 
 	// キャラクタ作成.
 	void CreateCharacter(int MaxHp, int Atk, int Def);
@@ -68,7 +68,7 @@ private:
 	int Uuid;
 
 	// キャラクタ
-	PlayerCharacter *pCharacter;
+	shared_ptr<PlayerCharacter> pCharacter;
 
 
 	// 受信開始.

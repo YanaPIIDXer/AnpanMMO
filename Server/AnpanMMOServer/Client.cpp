@@ -23,8 +23,6 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 // デストラクタ
 Client::~Client()
 {
-	delete pCharacter;
-	pCharacter = NULL;
 }
 
 // パケット送信.
@@ -57,7 +55,8 @@ void Client::ChangeState(ClientStateBase *pNextState)
 // キャラクタ作成.
 void Client::CreateCharacter(int MaxHp, int Atk, int Def)
 {
-	pCharacter = new PlayerCharacter(MaxHp, Atk, Def);
+	PlayerCharacter *pChara= new PlayerCharacter(MaxHp, Atk, Def);
+	pCharacter = shared_ptr<PlayerCharacter>(pChara);
 }
 
 
