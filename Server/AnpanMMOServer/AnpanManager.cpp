@@ -11,6 +11,8 @@ AnpanManager::AnpanManager()
 // ƒAƒ“ƒpƒ“¶¬.
 void AnpanManager::SpawnAnpan()
 {
+	if (AnpanList.size() >= 100) { return; }
+
 	boost::random::random_device SeedGen;
 	boost::random::mt19937 Gen(SeedGen);
 	boost::random::uniform_real_distribution<float> Dist(-100.0f, 100.0f);
