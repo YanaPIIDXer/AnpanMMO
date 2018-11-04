@@ -61,9 +61,6 @@ private:
 	// 受信データ
 	array<u8, RecvDataSize> RecvData;
 
-	// 送信バッファ
-	asio::streambuf SendBuffer;
-
 	// State
 	shared_ptr<ClientStateBase> pState;
 
@@ -84,7 +81,7 @@ private:
 	void AsyncSend(const u8 *pBuffer, int Size);
 
 	// 送信した。
-	void OnSend(const boost::system::error_code &ErrorCode, size_t Size);
+	void OnSend(const boost::system::error_code &ErrorCode, size_t Size, shared_ptr<asio::streambuf> SendBuffer);
 
 };
 
