@@ -61,6 +61,9 @@ private:
 	// 受信データ
 	array<u8, RecvDataSize> RecvData;
 
+	// 送信バッファ
+	MemoryBuffer SendBuffer;
+
 	// State
 	shared_ptr<ClientStateBase> pState;
 

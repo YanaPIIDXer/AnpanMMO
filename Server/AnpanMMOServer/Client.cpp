@@ -98,6 +98,8 @@ void Client::OnRecv(const boost::system::error_code &ErrorCode, size_t Size)
 // ëóêM.
 void Client::AsyncSend(const u8 *pBuffer, int Size)
 {
+	SendBuffer.Push(pBuffer, Size);
+
 	tcp::socket *pSock = pSocket.get();
 	asio::async_write(*pSock, asio::buffer(pBuffer, Size),
 		bind(&Client::OnSend, this, asio::placeholders::error, asio::placeholders::bytes_transferred));
@@ -111,4 +113,6 @@ void Client::OnSend(const boost::system::error_code &ErrorCode, size_t Size)
 		bIsConnected = false;
 		return;
 	}
+
+	SendBuffer.Pop(Size);
 }
