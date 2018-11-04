@@ -10,7 +10,7 @@ DBConnection DBConnection::Instance;
 // ŠJ‚­
 bool DBConnection::Open()
 {
-	std::ifstream FileStream(UserDataFileName);
+	std::ifstream FileStream(UserDataFileName.c_str());
 	if (!FileStream)
 	{
 		std::cout << UserDataFileName << " Open Failed..." << std::endl;
