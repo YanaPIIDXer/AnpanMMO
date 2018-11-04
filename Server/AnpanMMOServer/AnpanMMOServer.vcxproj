@@ -124,7 +124,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AnpanManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
+    <ClInclude Include="Character\Anpan.h" />
     <ClInclude Include="Character\CharacterBase.h" />
     <ClInclude Include="Character\CharacterParameter.h" />
     <ClInclude Include="Character\PlayerCharacter.h" />
@@ -138,6 +140,7 @@
     <ClInclude Include="DBConnection.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
+    <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
     <ClInclude Include="MemoryStream\MemoryStreamInterface.h" />
@@ -151,8 +154,11 @@
     <ClInclude Include="Packet\PacketID.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TypeDefs.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnpanManager.cpp" />
+    <ClCompile Include="Character\Anpan.cpp" />
     <ClCompile Include="Character\CharacterBase.cpp" />
     <ClCompile Include="Character\PlayerCharacter.cpp" />
     <ClCompile Include="Client.cpp" />
@@ -174,6 +180,7 @@
     <ClCompile Include="MySQL\MySqlQuery.cpp" />
     <ClCompile Include="Packet\PacketHeader.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AnpanMMOServer.VC.db" />

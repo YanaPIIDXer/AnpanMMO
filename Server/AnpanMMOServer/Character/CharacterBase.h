@@ -2,6 +2,7 @@
 #define __CHARACTERBASE_H__
 
 #include "CharacterParameter.h"
+#include "Math/Vector2D.h"
 
 /**
  * キャラクタ基底クラス
@@ -20,6 +21,9 @@ public:
 	// パラメータ取得.
 	const CharacterParameter &GetParameter() const { return Parameter; }
 
+	// 座標取得.
+	const Vector2D &GetPosition() const { return Position; }
+
 protected:
 
 	// パラメータ設定.
@@ -31,10 +35,16 @@ protected:
 		Parameter.Def = Def;
 	}
 
+	// 座標設定.
+	void SetPosition(const Vector2D &InPosition) { Position = InPosition; }
+
 private:
 
 	// パラメータ
 	CharacterParameter Parameter;
+
+	// 座標.
+	Vector2D Position;
 
 };
 

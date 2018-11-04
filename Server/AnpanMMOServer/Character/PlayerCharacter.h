@@ -3,6 +3,9 @@
 
 #include "CharacterBase.h"
 
+class PlayerCharacter;
+typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
+
 /**
  * プレイヤーキャラクタ
  */

@@ -3,12 +3,15 @@
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "DBConnection.h"
 #include "Client.h"
+#include "World.h"
 #include "Packet/PacketCharacterStatus.h"
+#include "Packet/PacketGameReady.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
+	AddPacketFunction(GameReady, boost::bind(&ClientStateActive::OnRecvGameReady, this, boost::placeholders::_1));
 }
 
 // 開始時の処理.
@@ -36,4 +39,15 @@ void ClientStateActive::LoadCharacter()
 
 	PacketCharacterStatus Packet(MaxHp, MaxHp, Atk, Def, Exp);
 	pClient->SendPacket(&Packet);
+}
+
+// ゲーム準備完了を受信.
+void ClientStateActive::OnRecvGameReady(MemoryStreamInterface *pStream)
+{
+	PacketGameReady Packet;
+	Packet.Serialize(pStream);		// ぶっちゃけいらないんじゃね？
+
+	// プレイヤーキャラをWorldにブチ込む。
+	PlayerCharacterPtr pPlayerChara = GetParent()->GetCharacter();
+	World::GetInstance().AddPlayerCharacter(pPlayerChara);
 }
