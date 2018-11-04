@@ -15,15 +15,21 @@ void AGameController::Possess(APawn *aPawn)
 {
 	Super::Possess(aPawn);
 	
-	// ƒJƒƒ‰‚ğ¶¬.
+	SpawnCamera();
+
+	auto *pPlayer = Cast<AGameCharacter>(aPawn);
+	check(pPlayer != nullptr);
+	pCamera->SetGameCharacter(pPlayer);
+}
+
+
+// ƒJƒƒ‰‚ğSpawn
+void AGameController::SpawnCamera()
+{
 	FActorSpawnParameters Param;
 	Param.bNoFail = true;
 	Param.Owner = this;
 	Param.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	pCamera = GetWorld()->SpawnActor<AGameCamera>(AGameCamera::StaticClass(), Param);
 	SetViewTargetWithBlend(pCamera.Get());
-
-	auto *pPlayer = Cast<AGameCharacter>(aPawn);
-	check(pPlayer != nullptr);
-	pCamera->SetGameCharacter(pPlayer);
 }

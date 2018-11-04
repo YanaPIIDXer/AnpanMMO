@@ -32,4 +32,8 @@ private:
 	// ƒJƒƒ‰
 	TWeakObjectPtr<AGameCamera> pCamera;
 
+
+	// ƒJƒƒ‰‚ğSpawn
+	void SpawnCamera();
+
 };
