@@ -15,7 +15,6 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	, bIsConnected(true)
 	, pState(new ClientStateTitle(this))
 	, Uuid(0)
-	, pCharacter(NULL)
 {
 	AsyncRecv(&RecvData[0], 0);
 }
@@ -72,7 +71,7 @@ void Client::OnRecv(const boost::system::error_code &ErrorCode, size_t Size)
 {
 	if (ErrorCode)
 	{
-		bIsConnected = false;
+	r	bIsConnected = false;
 		return;
 	}
 
