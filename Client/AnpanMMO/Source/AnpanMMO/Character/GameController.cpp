@@ -21,12 +21,11 @@ void AGameController::Possess(APawn *aPawn)
 	
 	SpawnCamera();
 
-	auto *pPlayer = Cast<AGameCharacter>(aPawn);
-	check(pPlayer != nullptr);
-	pCamera->SetGameCharacter(pPlayer);
-	pCharacter = pPlayer;
-
-	SetupPlayerInput(pPlayer->InputComponent);
+	pCharacter = Cast<AGameCharacter>(aPawn);
+	check(pCharacter != nullptr);
+	pCamera->SetGameCharacter(pCharacter.Get());
+	
+	SetupPlayerInput(pCharacter->InputComponent);
 }
 
 
@@ -53,9 +52,13 @@ void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
 // ‘OŒãˆÚ“®.
 void AGameController::MoveForward(float Value)
 {
+	if (Value == 0.0f) { return; }
+	pCharacter->AddMovementInput(pCharacter->GetActorForwardVector(), Value);
 }
 
 // ¶‰EˆÚ“®.
 void AGameController::MoveRight(float Value)
 {
+	if (Value == 0.0f) { return; }
+	pCharacter->AddMovementInput(pCharacter->GetActorRightVector(), Value);
 }

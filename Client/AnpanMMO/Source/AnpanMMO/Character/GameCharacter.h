@@ -6,6 +6,8 @@
 #include "GameFramework/Pawn.h"
 #include "GameCharacter.generated.h"
 
+class UFloatingPawnMovement;
+
 /**
  * キャラクタクラス
  */
@@ -30,5 +32,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
+
+	// 移動用Component
+	UPROPERTY()
+	UFloatingPawnMovement *pMovementComponent;
 
 };
