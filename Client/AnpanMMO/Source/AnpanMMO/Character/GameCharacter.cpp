@@ -25,10 +25,3 @@ void AGameCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
-// InputComponentのセットアップ
-void AGameCharacter::SetupPlayerInputComponent(UInputComponent *PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}

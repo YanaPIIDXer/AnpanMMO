@@ -29,9 +29,6 @@ public:
 	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;
 
-	// InputComponentのセットアップ
-	virtual void SetupPlayerInputComponent(UInputComponent *PlayerInputComponent) override;
-
 private:
 
 };
