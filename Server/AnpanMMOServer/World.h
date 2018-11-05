@@ -5,6 +5,8 @@
 #include "Character/PlayerCharacter.h"
 #include "AnpanManager.h"
 
+class PacketBase;
+
 /**
  * ワールドクラス
  */
@@ -33,6 +35,9 @@ private:
 
 	// PlayerListの更新.
 	void UpdatePlayerList();
+
+	// パケットをブロードキャスト
+	void BroadcastPacket(PacketBase *pPacket);
 
 	// ========== Singleton =========
 public:
