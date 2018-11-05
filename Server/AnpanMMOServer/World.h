@@ -24,8 +24,8 @@ public:
 	// プレイヤーキャラの追加.
 	void AddPlayerCharacter(const PlayerCharacterPtr &pPlayer);
 
-	// アンパン管理を取得.
-	const AnpanManager &GetAnpanManager() const { return AnpanMgr; }
+	// アンパン生成.
+	void SpawnAnpan() { AnpanMgr.SpawnAnpan(); }
 
 private:
 
