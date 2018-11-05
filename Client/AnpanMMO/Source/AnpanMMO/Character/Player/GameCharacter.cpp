@@ -26,3 +26,9 @@ void AGameCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+// çUåÇ.
+void AGameCharacter::Attack()
+{
+	UE_LOG(LogTemp, Log, TEXT("AGameCharacter::Attack()"));
+}

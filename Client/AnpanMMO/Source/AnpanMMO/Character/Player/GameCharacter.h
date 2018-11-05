@@ -9,7 +9,7 @@
 class UFloatingPawnMovement;
 
 /**
- * キャラクタクラス
+ * プレイヤーキャラクタクラス
  */
 UCLASS()
 class ANPANMMO_API AGameCharacter : public ACharacterBase
@@ -30,6 +30,9 @@ public:
 
 	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;
+
+	// 攻撃.
+	void Attack();
 
 private:
 

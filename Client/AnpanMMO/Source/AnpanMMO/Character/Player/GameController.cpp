@@ -5,6 +5,7 @@
 
 const FName AGameController::MoveForwardBind = "Forward";
 const FName AGameController::MoveRightBind = "Right";
+const FName AGameController::AttackBind = "Attack";
 
 // コンストラクタ
 AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
@@ -47,6 +48,7 @@ void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
 
 	pInputComponent->BindAxis(MoveForwardBind, this, &AGameController::MoveForward);
 	pInputComponent->BindAxis(MoveRightBind, this, &AGameController::MoveRight);
+	pInputComponent->BindAction(AttackBind, EInputEvent::IE_Pressed, pCharacter.Get(), &AGameCharacter::Attack);
 }
 
 // 前後移動.
