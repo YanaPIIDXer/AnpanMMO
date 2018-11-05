@@ -1,8 +1,11 @@
 #include "stdafx.h"
 #include "World.h"
 #include "Client.h"
-#include "Packet/PacketSpawnAnpan.h"
+#include "Math/DamageCalcUnit.h"
+#include "MemoryStream/MemoryStreamInterface.h"
+#include "Packet/Packet1SpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
+#include "Packet/PacketAttack.h"
 
 World World::Instance;
 
@@ -35,6 +38,14 @@ void World::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 	AnpanMgr.MakeListPacket(Packet);
 
 	pPlayer.lock()->GetClient()->SendPacket(&Packet);
+}
+
+// UŒ‚‚ğóM‚µ‚½B
+void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
+{
+	PacketAttack Packet;
+	Packet.Serialize(pStream);
+
 }
 
 

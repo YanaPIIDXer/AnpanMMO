@@ -6,6 +6,7 @@
 #include "AnpanManager.h"
 
 class PacketBase;
+class MemoryStreamInterface;
 
 /**
  * ワールドクラス
@@ -26,6 +27,9 @@ public:
 
 	// アンパン生成.
 	void SpawnAnpan() { AnpanMgr.SpawnAnpan(); }
+
+	// 攻撃を受信した。
+	void OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream);
 
 private:
 
