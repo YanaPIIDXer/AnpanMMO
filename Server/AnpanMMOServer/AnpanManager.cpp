@@ -58,12 +58,9 @@ void AnpanManager::SpawnAnpan()
 	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
 	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
 
-	std::cout << "1" << std::endl;
 	unsigned int Uuid = NextUuid;
-	std::cout << "2" << std::endl;
 	AnpanList[Uuid] = pAnpan;
-	std::cout << "3" << std::endl;
-
+	
 	NextUuid++;
 
 	if (OnSpawn)
