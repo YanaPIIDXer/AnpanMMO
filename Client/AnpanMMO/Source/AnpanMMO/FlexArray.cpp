@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "FlexArray.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 
