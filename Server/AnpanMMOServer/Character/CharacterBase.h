@@ -24,6 +24,9 @@ public:
 	// 座標取得.
 	const Vector2D &GetPosition() const { return Position; }
 
+	// 死んでいる？
+	bool IsDead() const { return (Parameter.Hp <= 0); }
+
 protected:
 
 	// パラメータ設定.
