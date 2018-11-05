@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "World.h"
 #include "Client.h"
+#include "Packet/PacketSpawnAnpan.h"
 
 World World::Instance;
 
@@ -12,7 +13,7 @@ World::World()
 // 初期化.
 void World::Initialize()
 {
-	AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1));
+	AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1, _2));
 }
 
 // 毎フレームの処理.
@@ -57,7 +58,10 @@ void World::BroadcastPacket(PacketBase *pPacket)
 }
 
 // アンパンが生成された。
-void World::OnSpawnAnpan(AnpanPtr pAnpan)
+void World::OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan)
 {
-
+	const CharacterParameter &Param = pAnpan.lock().get()->GetParameter();
+	AnpanData Data(Uuid, Param.Hp, Param.MaxHp);
+	PacketSpawnAnpan Packet(Data);
+	BroadcastPacket(&Packet);
 }

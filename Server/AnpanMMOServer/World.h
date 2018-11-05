@@ -43,7 +43,7 @@ private:
 	void BroadcastPacket(PacketBase *pPacket);
 
 	// ƒAƒ“ƒpƒ“‚ª¶¬‚³‚ê‚½B
-	void OnSpawnAnpan(AnpanPtr pAnpan);
+	void OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan);
 
 	// ========== Singleton =========
 public:

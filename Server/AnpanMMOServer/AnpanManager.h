@@ -17,7 +17,7 @@ private:		// •Ê–¼’è‹`.
 
 	typedef shared_ptr<Anpan> AnpanSharedPtr;
 	typedef std::map<unsigned int, AnpanSharedPtr> AnpanMap;
-	typedef boost::function<void(AnpanPtr)> SpawnFunc;
+	typedef boost::function<void(unsigned int, AnpanPtr)> SpawnFunc;
 
 public:
 
