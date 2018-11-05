@@ -1,7 +1,7 @@
 #ifndef __WORLD_H__
 #define __WORLD_H__
 
-#include <vector>
+#include <boost/unordered_map.hpp>
 #include "Character/PlayerCharacter.h"
 #include "AnpanManager.h"
 
@@ -13,6 +13,10 @@ class MemoryStreamInterface;
  */
 class World : noncopyable
 {
+
+private:		// 別名定義.
+
+	typedef unordered_map<u32, PlayerCharacterPtr> PlayerMap;
 
 public:
 
@@ -34,7 +38,7 @@ public:
 private:
 
 	// プレイヤーキャラリスト
-	std::vector<PlayerCharacterPtr> PlayerList;
+	PlayerMap PlayerList;
 
 	// アンパン管理.
 	AnpanManager AnpanMgr;

@@ -3,7 +3,7 @@
 #include "Client.h"
 #include "Math/DamageCalcUnit.h"
 #include "MemoryStream/MemoryStreamInterface.h"
-#include "Packet/Packet1SpawnAnpan.h"
+#include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketAttack.h"
 
@@ -31,7 +31,7 @@ void World::Poll()
 // プレイヤーキャラの追加.
 void World::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 {
-	PlayerList.push_back(pPlayer);
+	PlayerList[pPlayer.lock()->GetClient()->GetUuid()] = pPlayer;
 
 	// アンパンリストを通知.
 	PacketAnpanList Packet;
@@ -52,10 +52,10 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 // PlayerListの更新.
 void World::UpdatePlayerList()
 {
-	std::vector<PlayerCharacterPtr>::iterator It = PlayerList.begin();
+	PlayerMap::iterator It = PlayerList.begin();
 	while (It != PlayerList.end())
 	{
-		if (It->expired())
+		if (It->second.expired())
 		{
 			It = PlayerList.erase(It);
 		}
