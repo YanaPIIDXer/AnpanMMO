@@ -1,8 +1,12 @@
 #include "stdafx.h"
 #include "World.h"
 #include "Client.h"
+#include "Math/DamageCalcUnit.h"
+#include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
+#include "Packet/PacketAttack.h"
+#include "Packet/PacketDamage.h"
 
 World World::Instance;
 
@@ -28,7 +32,7 @@ void World::Poll()
 // プレイヤーキャラの追加.
 void World::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 {
-	PlayerList.push_back(pPlayer);
+	PlayerList[pPlayer.lock()->GetClient()->GetUuid()] = pPlayer;
 
 	// アンパンリストを通知.
 	PacketAnpanList Packet;
@@ -37,14 +41,33 @@ void World::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 	pPlayer.lock()->GetClient()->SendPacket(&Packet);
 }
 
+// 攻撃を受信した。
+void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
+{
+	PacketAttack Packet;
+	Packet.Serialize(pStream);
+
+	PlayerCharacterPtr pAttacker = pClient->GetCharacter();
+	AnpanPtr pDefencer = AnpanMgr.Get(Packet.TargetUuid);
+
+	// ダメージ計算.
+	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
+	int DamageValue = DamageCalc.Calc();
+	pDefencer.lock()->ApplyDamage(DamageValue);
+
+	// ダメージを通知.
+	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
+	BroadcastPacket(&DamagePacket);
+}
+
 
 // PlayerListの更新.
 void World::UpdatePlayerList()
 {
-	std::vector<PlayerCharacterPtr>::iterator It = PlayerList.begin();
+	PlayerMap::iterator It = PlayerList.begin();
 	while (It != PlayerList.end())
 	{
-		if (It->expired())
+		if (It->second.expired())
 		{
 			It = PlayerList.erase(It);
 		}
@@ -58,9 +81,9 @@ void World::UpdatePlayerList()
 // パケットをブロードキャスト
 void World::BroadcastPacket(PacketBase *pPacket)
 {
-	for (int i = 0; i < PlayerList.size(); i++)
+	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
 	{
-		PlayerList[i].lock().get()->GetClient()->SendPacket(pPacket);
+		It->second.lock()->GetClient()->SendPacket(pPacket);
 	}
 }
 

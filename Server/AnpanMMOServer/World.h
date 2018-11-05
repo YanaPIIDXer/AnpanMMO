@@ -1,17 +1,22 @@
 #ifndef __WORLD_H__
 #define __WORLD_H__
 
-#include <vector>
+#include <boost/unordered_map.hpp>
 #include "Character/PlayerCharacter.h"
 #include "AnpanManager.h"
 
 class PacketBase;
+class MemoryStreamInterface;
 
 /**
  * ワールドクラス
  */
 class World : noncopyable
 {
+
+private:		// 別名定義.
+
+	typedef unordered_map<u32, PlayerCharacterPtr> PlayerMap;
 
 public:
 
@@ -27,10 +32,13 @@ public:
 	// アンパン生成.
 	void SpawnAnpan() { AnpanMgr.SpawnAnpan(); }
 
+	// 攻撃を受信した。
+	void OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream);
+
 private:
 
 	// プレイヤーキャラリスト
-	std::vector<PlayerCharacterPtr> PlayerList;
+	PlayerMap PlayerList;
 
 	// アンパン管理.
 	AnpanManager AnpanMgr;

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "Character/CharacterBase.h"
 #include "Anpan.generated.h"
 
 class AnpanData;
@@ -12,7 +12,7 @@ class AnpanData;
  * アンパンクラス
  */
 UCLASS()
-class ANPANMMO_API AAnpan : public AActor
+class ANPANMMO_API AAnpan : public ACharacterBase
 {
 
 	GENERATED_BODY()
@@ -28,6 +28,9 @@ public:
 	// デストラクタ
 	virtual ~AAnpan() {}
 
+	// UUID取得.
+	uint32 GetUuid() const { return Uuid; }
+
 private:
 
 	// メッシュのパス
@@ -37,10 +40,7 @@ private:
 	UPROPERTY()
 	UStaticMeshComponent *pMeshComponent;
 
-	// HP
-	int Hp;
-
-	// 最大HP
-	int MaxHp;
+	// UUID
+	uint32 Uuid;
 	
 };

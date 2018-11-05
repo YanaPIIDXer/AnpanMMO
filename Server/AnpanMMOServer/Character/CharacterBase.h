@@ -27,6 +27,9 @@ public:
 	// 死んでいる？
 	bool IsDead() const { return (Parameter.Hp <= 0); }
 
+	// ダメージ
+	void ApplyDamage(int Value);
+
 protected:
 
 	// パラメータ設定.

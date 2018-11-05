@@ -12,6 +12,13 @@ AnpanManager::AnpanManager()
 {
 }
 
+// æ“¾.
+AAnpan *AnpanManager::Get(uint32 Uuid) const
+{
+	if (!AnpanMap.Contains(Uuid)) { return nullptr; }
+	return AnpanMap[Uuid].Get();
+}
+
 // ƒŠƒXƒg‚ğóM‚µ‚½.
 void AnpanManager::OnRecvList(MemoryStreamInterface *pStream)
 {

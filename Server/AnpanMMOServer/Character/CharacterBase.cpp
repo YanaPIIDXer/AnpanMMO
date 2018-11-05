@@ -5,3 +5,13 @@
 CharacterBase::CharacterBase()
 {
 }
+
+// ƒ_ƒ[ƒW
+void CharacterBase::ApplyDamage(int Value)
+{
+	Parameter.Hp -= Value;
+	if (Parameter.Hp <= 0)
+	{
+		Parameter.Hp = 0;
+	}
+}

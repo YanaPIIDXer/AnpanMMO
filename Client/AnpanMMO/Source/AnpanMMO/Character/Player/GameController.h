@@ -36,6 +36,9 @@ private:
 	// 左右移動のバインド名.
 	static const FName MoveRightBind;
 
+	// 攻撃のバインド名.
+	static const FName AttackBind;
+
 	// プレイヤーキャラ
 	TWeakObjectPtr<AGameCharacter> pCharacter;
 

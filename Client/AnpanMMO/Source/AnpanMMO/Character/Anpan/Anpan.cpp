@@ -17,8 +17,8 @@ AAnpan *AAnpan::Spawn(UWorld *pWorld, const AnpanData &Data)
 	AAnpan *pAnpan = pWorld->SpawnActor<AAnpan>(FVector(Data.X, Data.Y, 100.0f), FRotator(0.0f, 0.0f, 0.0f), Param);
 	check(pAnpan != nullptr);
 
-	pAnpan->Hp = Data.Hp;
-	pAnpan->MaxHp = Data.MaxHp;
+	pAnpan->Initialize(Data.Hp, Data.MaxHp);
+	pAnpan->Uuid = Data.Uuid;
 
 	return pAnpan;
 }
@@ -35,6 +35,8 @@ AAnpan::AAnpan(const FObjectInitializer &ObjectInitializer)
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshFinder(MeshPath);
 	pMeshComponent->SetStaticMesh(MeshFinder.Object);
 	pMeshComponent->AddWorldRotation(FRotator(0.0f, 90.0f, 0.0f));
+	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel1);
 
 	RootComponent = pMeshComponent;
 }
