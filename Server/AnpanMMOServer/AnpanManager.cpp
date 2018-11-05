@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "AnpanManager.h"
-#include <boost/random.hpp>
-#include <boost/random/random_device.hpp>
+#include "Math/Random.h"
 #include "Packet/PacketAnpanList.h"
 
 // コンストラクタ
@@ -41,19 +40,13 @@ void AnpanManager::SpawnAnpan()
 {
 	if (AnpanList.size() >= 100) { return; }
 
-	boost::random::random_device SeedGen;
-	boost::random::mt19937 Gen(SeedGen);
-	boost::random::uniform_real_distribution<float> PositionDist(-500.0f, 500.0f);
-
-	float X = PositionDist(Gen);
-	float Y = PositionDist(Gen);
+	float X = Random::Range<float>(-500.0f, 500.0f);
+	float Y = Random::Range<float>(-500.0f, 500.0f);
 	
-	boost::random::uniform_int_distribution<> HpDist(100, 500);
-	int Hp = HpDist(Gen);
+	int Hp = Random::Range<int>(100, 500);
 
-	boost::random::uniform_int_distribution<> ParamDist(10, 100);
-	int Atk = ParamDist(Gen);
-	int Def = ParamDist(Gen);
+	int Atk = Random::Range<int>(10, 100);
+	int Def = Random::Range<int>(10, 100);
 
 	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
 	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
