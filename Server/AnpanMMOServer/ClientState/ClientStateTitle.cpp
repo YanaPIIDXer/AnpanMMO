@@ -11,7 +11,7 @@
 ClientStateTitle::ClientStateTitle(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
-	AddPacketFunction(LogInRequest, boost::bind(&ClientStateTitle::OnRecvLogInRequest, this, _1));
+	AddPacketFunction(LogInRequest, boost::bind(&ClientStateTitle::OnRecvLogInRequest, this, _2));
 }
 
 

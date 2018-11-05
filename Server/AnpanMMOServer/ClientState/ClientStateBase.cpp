@@ -7,6 +7,6 @@ void ClientStateBase::AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream)
 	FunctionMap::iterator It = PacketFunctions.find(ID);
 	if(It != PacketFunctions.end())
 	{
-		It->second(pStream);
+		It->second(pParent, pStream);
 	}
 }
