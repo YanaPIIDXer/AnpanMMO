@@ -18,7 +18,7 @@ void AnpanManager::Poll()
 	{
 		if (It->second->IsDead())
 		{
-			AnpanList.erase(It);
+			It = AnpanList.erase(It);
 		}
 		else
 		{
