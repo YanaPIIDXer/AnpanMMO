@@ -46,6 +46,11 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	PacketAttack Packet;
 	Packet.Serialize(pStream);
 
+	PlayerCharacterPtr pAttacker = pClient->GetCharacter();
+	AnpanPtr pDefencer = AnpanMgr.Get(Packet.TargetUuid);
+
+	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
+	int DamageValue = DamageCalc.Calc();
 }
 
 

@@ -27,6 +27,15 @@ void AnpanManager::Poll()
 	}
 }
 
+// æ“¾.
+AnpanPtr AnpanManager::Get(u32 Uuid) const
+{
+	AnpanMap::const_iterator It = AnpanList.find(Uuid);
+	if (It == AnpanList.end()) { return AnpanPtr(); }
+
+	return It->second;
+}
+
 // ƒAƒ“ƒpƒ“¶¬.
 void AnpanManager::SpawnAnpan()
 {

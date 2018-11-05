@@ -31,6 +31,9 @@ public:
 	// 毎フレームの処理.
 	void Poll();
 
+	// 取得.
+	AnpanPtr Get(u32 Uuid) const;
+
 	// アンパン生成.
 	void SpawnAnpan();
 
