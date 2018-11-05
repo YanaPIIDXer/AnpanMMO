@@ -2,6 +2,7 @@
 #define __PLAYERCHARACTER_H__
 
 #include "CharacterBase.h"
+#include "PlayerExp.h"
 
 class PlayerCharacter;
 typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
@@ -16,7 +17,7 @@ class PlayerCharacter : public CharacterBase
 public:
 
 	// コンストラクタ
-	PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def);
+	PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def, int InExp);
 
 	// デストラクタ
 	virtual ~PlayerCharacter() {}
@@ -28,6 +29,9 @@ private:
 
 	// クライアント
 	Client *pClient;
+
+	// 経験値.
+	PlayerExp Exp;
 
 };
 

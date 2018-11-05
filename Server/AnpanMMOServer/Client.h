@@ -40,7 +40,7 @@ public:
 	weak_ptr<PlayerCharacter> GetCharacter() const { return pCharacter; }
 
 	// ƒLƒƒƒ‰ƒNƒ^ì¬.
-	void CreateCharacter(int MaxHp, int Atk, int Def);
+	void CreateCharacter(int MaxHp, int Atk, int Def, int Exp);
 
 private:
 

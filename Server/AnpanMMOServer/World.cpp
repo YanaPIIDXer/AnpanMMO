@@ -58,6 +58,11 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	// ダメージを通知.
 	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
 	BroadcastPacket(&DamagePacket);
+
+	if (pDefencer.lock()->IsDead())
+	{
+		// @TODO:経験値獲得処理の実装.
+	}
 }
 
 
