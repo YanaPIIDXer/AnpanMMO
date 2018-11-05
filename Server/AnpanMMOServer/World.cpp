@@ -7,7 +7,7 @@ World World::Instance;
 // コンストラクタ
 World::World()
 {
-	AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1));
+	//AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1));
 }
 
 // 毎フレームの処理.
