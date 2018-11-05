@@ -2,6 +2,7 @@
 #define __ANPANMANAGER_H__
 
 #include <map>
+#include <functional>
 #include "Character/Anpan.h"
 
 typedef weak_ptr<Anpan> AnpanPtr;
