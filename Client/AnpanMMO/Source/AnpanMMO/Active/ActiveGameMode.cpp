@@ -17,6 +17,8 @@ void AActiveGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
+	AnpanMgr.SetWorld(GetWorld());
+
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	PacketGameReady Packet;
