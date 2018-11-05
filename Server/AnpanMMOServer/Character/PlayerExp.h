@@ -20,6 +20,9 @@ public:
 	// 経験値追加.
 	void Add(int Value);
 
+	// 取得.
+	int Get() const { return Exp; }
+
 	// レベルアップコールバックを設定.
 	void SetLevelUpCallback(const function<void()> &InLevelUpCallback) { LevelUpCallback = InLevelUpCallback; }
 
