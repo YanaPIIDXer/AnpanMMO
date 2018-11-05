@@ -53,7 +53,6 @@ void AnpanManager::SpawnAnpan()
 
 	if (OnSpawn)
 	{
-		std::cout << "Callback" << std::endl;
-		//OnSpawn(pAnpan);
+		OnSpawn(pAnpan);
 	}
 }
