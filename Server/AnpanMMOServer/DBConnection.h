@@ -20,6 +20,9 @@ public:
 	// キャラクタパラメータ読み込み
 	bool LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);
 
+	// キャラクタパラメータ書き込み
+	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp);
+
 private:
 
 	// ユーザ情報を格納したファイル名.
