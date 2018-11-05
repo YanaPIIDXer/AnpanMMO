@@ -34,4 +34,8 @@ private:
 	// アンパン管理.
 	AnpanManager AnpanMgr;
 
+
+	// ダメージを受信した。
+	void OnRecvDamage(MemoryStreamInterface *pStream);
+
 };
