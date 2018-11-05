@@ -40,8 +40,8 @@ void AnpanManager::SpawnAnpan()
 {
 	if (AnpanList.size() >= 100) { return; }
 
-	float X = Random::Range<float>(-500.0f, 500.0f);
-	float Y = Random::Range<float>(-500.0f, 500.0f);
+	float X = Random::Range<float>(-2500.0f, 2500.0f);
+	float Y = Random::Range<float>(-2500.0f, 2500.0f);
 	
 	int Hp = Random::Range<int>(100, 500);
 
