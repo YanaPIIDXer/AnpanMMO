@@ -11,7 +11,8 @@ public:
 	static bool IsLittleEndian()
 	{
 		int x = 1;
-		return (*(char *)&x);
+		char ch = (*(char *)&x);
+		return (ch != 0);
 	}
 
 	//符号付き１６ビット変換
