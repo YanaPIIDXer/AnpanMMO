@@ -52,6 +52,15 @@ void AnpanManager::SpawnAnpan()
 	unsigned int Uuid = NextUuid;
 	AnpanList[Uuid] = pAnpan;
 
+	if (AnpanList.begin() == AnpanList.end())
+	{
+		std::cout << "Fuck!!" << std::endl;
+	}
+	else
+	{
+		std::cout << "No Fuck" << std::endl;
+	}
+
 	NextUuid++;
 
 	if (OnSpawn)
@@ -63,6 +72,14 @@ void AnpanManager::SpawnAnpan()
 // アンパンリストパケットを生成.
 void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 {
+	if (AnpanList.begin() == AnpanList.end())
+	{
+		std::cout << "Fuck!!" << std::endl;
+	}
+	else
+	{
+		std::cout << "No Fuck" << std::endl;
+	}
 	for (AnpanMap::iterator It = AnpanList.begin(); It != AnpanList.end(); ++It)
 	{
 		AnpanSharedPtr pAnpan = It->second;
