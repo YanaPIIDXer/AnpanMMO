@@ -54,7 +54,7 @@ void Client::ChangeState(ClientStateBase *pNextState)
 // ƒLƒƒƒ‰ƒNƒ^ì¬.
 void Client::CreateCharacter(int MaxHp, int Atk, int Def)
 {
-	PlayerCharacter *pChara= new PlayerCharacter(MaxHp, Atk, Def);
+	PlayerCharacter *pChara= new PlayerCharacter(this, MaxHp, Atk, Def);
 	pCharacter = shared_ptr<PlayerCharacter>(pChara);
 }
 

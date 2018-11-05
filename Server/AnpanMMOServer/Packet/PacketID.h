@@ -3,6 +3,8 @@
 
 enum PacketID
 {
+	AnpanList,
+	SpawnAnpan,
 	GameReady,
 	LogInRequest,
 	LogInResult,

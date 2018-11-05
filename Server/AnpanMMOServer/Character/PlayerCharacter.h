@@ -5,6 +5,7 @@
 
 class PlayerCharacter;
 typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
+class Client;
 
 /**
  * プレイヤーキャラクタ
@@ -15,12 +16,18 @@ class PlayerCharacter : public CharacterBase
 public:
 
 	// コンストラクタ
-	PlayerCharacter(int MaxHp, int Atk, int Def);
+	PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def);
 
 	// デストラクタ
 	virtual ~PlayerCharacter() {}
 
+	// クライアント取得.
+	Client *GetClient() const { return pClient; }
+
 private:
+
+	// クライアント
+	Client *pClient;
 
 };
 

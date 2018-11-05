@@ -5,6 +5,8 @@
 #include "Character/PlayerCharacter.h"
 #include "AnpanManager.h"
 
+class PacketBase;
+
 /**
  * ワールドクラス
  */
@@ -12,6 +14,9 @@ class World : noncopyable
 {
 
 public:
+
+	// 初期化.
+	void Initialize();
 
 	// 毎フレームの処理.
 	void Poll();
@@ -33,6 +38,12 @@ private:
 
 	// PlayerListの更新.
 	void UpdatePlayerList();
+
+	// パケットをブロードキャスト
+	void BroadcastPacket(PacketBase *pPacket);
+
+	// アンパンが生成された。
+	void OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan);
 
 	// ========== Singleton =========
 public:
