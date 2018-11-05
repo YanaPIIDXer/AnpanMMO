@@ -51,6 +51,7 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 
 	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
 	int DamageValue = DamageCalc.Calc();
+	// @TODO:CharacterBaseにダメージ関数追加。
 }
 
 
