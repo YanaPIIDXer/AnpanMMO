@@ -8,6 +8,7 @@ enum PacketID
 	Attack,
 	Damage,
 	GameReady,
+	LevelUp,
 	LogInRequest,
 	LogInResult,
 	CharacterStatus,
