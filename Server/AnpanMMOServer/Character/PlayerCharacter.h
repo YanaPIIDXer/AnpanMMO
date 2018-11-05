@@ -28,6 +28,9 @@ public:
 	// 経験値追加.
 	void AddExp(int Value) { Exp.Add(Value); }
 
+	// 経験値取得.
+	int GetExp() const { return Exp.Get(); }
+
 private:
 
 	// クライアント
