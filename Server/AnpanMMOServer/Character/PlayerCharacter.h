@@ -25,6 +25,9 @@ public:
 	// クライアント取得.
 	Client *GetClient() const { return pClient; }
 
+	// 経験値追加.
+	void AddExp(int Value) { Exp.Add(Value); }
+
 private:
 
 	// クライアント
