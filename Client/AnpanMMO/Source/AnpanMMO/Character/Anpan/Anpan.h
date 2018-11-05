@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "Character/CharacterBase.h"
 #include "Anpan.generated.h"
 
 class AnpanData;
@@ -12,7 +12,7 @@ class AnpanData;
  * アンパンクラス
  */
 UCLASS()
-class ANPANMMO_API AAnpan : public AActor
+class ANPANMMO_API AAnpan : public ACharacterBase
 {
 
 	GENERATED_BODY()

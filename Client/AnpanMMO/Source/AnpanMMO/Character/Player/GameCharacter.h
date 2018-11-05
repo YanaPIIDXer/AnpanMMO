@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+#include "Character/CharacterBase.h"
 #include "GameCharacter.generated.h"
 
 class UFloatingPawnMovement;
@@ -12,7 +12,7 @@ class UFloatingPawnMovement;
  * キャラクタクラス
  */
 UCLASS()
-class ANPANMMO_API AGameCharacter : public APawn
+class ANPANMMO_API AGameCharacter : public ACharacterBase
 {
 
 	GENERATED_BODY()
