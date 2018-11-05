@@ -45,41 +45,30 @@ void AnpanManager::SpawnAnpan()
 	boost::random::mt19937 Gen(SeedGen);
 	boost::random::uniform_real_distribution<float> PositionDist(-500.0f, 500.0f);
 
-	std::cout << "1" << std::endl;
-
 	float X = PositionDist(Gen);
 	float Y = PositionDist(Gen);
-
-	std::cout << "2" << std::endl;
-
+	
 	boost::random::uniform_int_distribution<> HpDist(100, 500);
 	int Hp = HpDist(Gen);
-
-	std::cout << "3" << std::endl;
 
 	boost::random::uniform_int_distribution<> ParamDist(10, 100);
 	int Atk = ParamDist(Gen);
 	int Def = ParamDist(Gen);
 
-	std::cout << "4" << std::endl;
-
 	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
 	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
 
-	std::cout << "5" << std::endl;
-
+	std::cout << "1" << std::endl;
 	unsigned int Uuid = NextUuid;
+	std::cout << "2" << std::endl;
 	AnpanList[Uuid] = pAnpan;
-
-	std::cout << "6" << std::endl;
+	std::cout << "3" << std::endl;
 
 	NextUuid++;
 
 	if (OnSpawn)
 	{
-		std::cout << "7" << std::endl;
 		OnSpawn(Uuid, pAnpan);
-		std::cout << "8" << std::endl;
 	}
 }
 
