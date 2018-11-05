@@ -3,7 +3,7 @@
 #include "Config.h"
 #include "Paths.h"
 
-#define USE_LOCAL_SERVER
+//#define USE_LOCAL_SERVER
 
 #ifndef USE_LOCAL_SERVER
 const FString Config::ServerHost = "218.220.121.112";
