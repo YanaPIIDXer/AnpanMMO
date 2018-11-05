@@ -81,9 +81,9 @@ void World::UpdatePlayerList()
 // パケットをブロードキャスト
 void World::BroadcastPacket(PacketBase *pPacket)
 {
-	for (int i = 0; i < PlayerList.size(); i++)
+	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
 	{
-		PlayerList[i].lock().get()->GetClient()->SendPacket(pPacket);
+		It->second.lock()->GetClient()->SendPacket(pPacket);
 	}
 }
 
