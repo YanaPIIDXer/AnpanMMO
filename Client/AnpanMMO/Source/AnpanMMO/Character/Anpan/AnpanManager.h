@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 
 class AAnpan;
+class MemoryStreamInterface;
+class AnpanData;
 
 /**
  * アンパン管理.
@@ -24,9 +26,25 @@ public:
 	// デストラクタ
 	~AnpanManager() {}
 
+	// Worldをセット.
+	void SetWorld(UWorld *pInWorld) { pWorld = pInWorld; }
+
+	// リストを受信した.
+	void OnRecvList(MemoryStreamInterface *pStream);
+
+	// 生成を受信した.
+	void OnRecvSpawn(MemoryStreamInterface *pStream);
+
 private:
 
 	// アンパンマップ
 	TMap<uint32, AnpanPtr> AnpanMap;
+
+	// World
+	TWeakObjectPtr<UWorld> pWorld;
+
+
+	// アンパンをSpawn
+	void SpawnAnpan(const AnpanData &Data);
 
 };
