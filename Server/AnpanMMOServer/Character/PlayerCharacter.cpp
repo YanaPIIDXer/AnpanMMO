@@ -2,7 +2,8 @@
 #include "PlayerCharacter.h"
 
 // コンストラクタ
-PlayerCharacter::PlayerCharacter(int MaxHp, int Atk, int Def)
+PlayerCharacter::PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def)
+	: pClient(pInClient)
 {
 	SetParameter(MaxHp, MaxHp, Atk, Def);
 }
