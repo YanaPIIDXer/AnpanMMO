@@ -5,6 +5,7 @@
 
 // コンストラクタ
 AnpanManager::AnpanManager()
+	: NextUuid(1)
 {
 }
 
@@ -27,8 +28,10 @@ void AnpanManager::SpawnAnpan()
 	int Atk = ParamDist(Gen);
 	int Def = ParamDist(Gen);
 
-	Anpan Pan(Vector2D(X, Y), Hp, Atk, Def);
-	AnpanList.push_back(Pan);
+	Anpan *pAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
+	AnpanList[NextUuid] = AnpanSharedPtr(pAnpan);
+
+	NextUuid++;
 
 	// @TODO:クライアントに通知.
 }
