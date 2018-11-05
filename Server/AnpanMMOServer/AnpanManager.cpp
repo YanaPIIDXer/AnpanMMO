@@ -71,13 +71,15 @@ void AnpanManager::SpawnAnpan()
 	unsigned int Uuid = NextUuid;
 	AnpanList[Uuid] = pAnpan;
 
+	std::cout << "6" << std::endl;
+
 	NextUuid++;
 
 	if (OnSpawn)
 	{
-		std::cout << "6" << std::endl;
-		OnSpawn(Uuid, pAnpan);
 		std::cout << "7" << std::endl;
+		OnSpawn(Uuid, pAnpan);
+		std::cout << "8" << std::endl;
 	}
 }
 
