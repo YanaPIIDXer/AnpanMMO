@@ -9,6 +9,7 @@
 
 enum PacketID;
 class MemoryStreamInterface;
+using namespace std::placeholders;
 
 /**
  * GameModeŠî’êƒNƒ‰ƒX

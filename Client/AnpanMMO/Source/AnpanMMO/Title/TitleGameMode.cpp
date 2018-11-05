@@ -14,6 +14,8 @@ ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pScreenWidget(nullptr)
 {
+	AddPacketFunction(PacketID::LogInResult, std::bind(&ATitleGameMode::OnRecvLogInResult, this, _1));
+	AddPacketFunction(PacketID::CharacterStatus, std::bind(&ATitleGameMode::OnRecvCharacterStatus, this, _1));
 }
 
 // ŠJŽnŽž‚Ìˆ—.
@@ -24,9 +26,6 @@ void ATitleGameMode::BeginPlay()
 	pScreenWidget = UTitleScreenWidget::Show(this);
 	pScreenWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
 	pScreenWidget->OnReadyToGame.BindUObject(this, &ATitleGameMode::OnReadyToGame);
-
-	AddPacketFunction(PacketID::LogInResult, std::bind(&ATitleGameMode::OnRecvLogInResult, this, std::placeholders::_1));
-	AddPacketFunction(PacketID::CharacterStatus, std::bind(&ATitleGameMode::OnRecvCharacterStatus, this, std::placeholders::_1));
 }
 
 
