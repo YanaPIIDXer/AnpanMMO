@@ -7,6 +7,7 @@
 AnpanManager::AnpanManager()
 	: NextUuid(1)
 {
+	OnSpawn.clear();
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
