@@ -54,5 +54,4 @@ void World::BroadcastPacket(PacketBase *pPacket)
 // ƒAƒ“ƒpƒ“‚ª¶¬‚³‚ê‚½B
 void World::OnSpawnAnpan(AnpanPtr pAnpan)
 {
-	std::cout << "World::OnSpawnAnpan" << std::endl;
 }
