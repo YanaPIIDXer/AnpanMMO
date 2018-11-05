@@ -16,6 +16,7 @@ private:		// 別名定義.
 
 	typedef shared_ptr<Anpan> AnpanSharedPtr;
 	typedef std::map<unsigned int, AnpanSharedPtr> AnpanMap;
+	typedef std::function<void(AnpanPtr)> SpawnFunc;
 
 public:
 
@@ -31,6 +32,9 @@ public:
 	// アンパン生成.
 	void SpawnAnpan();
 
+	// 生成時コールバックを設定.
+	void SetSpawnCallback(const SpawnFunc &InOnSpawn) { OnSpawn = InOnSpawn; }
+
 private:
 
 	// アンパンリスト
@@ -38,6 +42,9 @@ private:
 
 	// 次のＵＵＩＤ
 	unsigned int NextUuid;
+
+	// 生成時コールバック
+	SpawnFunc OnSpawn;
 
 };
 

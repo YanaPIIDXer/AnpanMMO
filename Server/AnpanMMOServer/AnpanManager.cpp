@@ -45,10 +45,13 @@ void AnpanManager::SpawnAnpan()
 	int Atk = ParamDist(Gen);
 	int Def = ParamDist(Gen);
 
-	Anpan *pAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
-	AnpanList[NextUuid] = AnpanSharedPtr(pAnpan);
+	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
+	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
+	AnpanList[NextUuid] = pAnpan;
 
 	NextUuid++;
-
-	// @TODO:クライアントに通知.
+	if (OnSpawn)
+	{
+		OnSpawn(pAnpan);
+	}
 }
