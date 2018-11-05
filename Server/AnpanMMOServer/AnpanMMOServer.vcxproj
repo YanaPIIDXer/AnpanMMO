@@ -141,6 +141,7 @@
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
     <ClInclude Include="Math\DamageCalcUnit.h" />
+    <ClInclude Include="Math\Random.h" />
     <ClInclude Include="Math\Vector2D.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="FlexArray.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Math\DamageCalcUnit.cpp" />
+    <ClCompile Include="Math\Random.cpp" />
     <ClCompile Include="MemoryBuffer.cpp" />
     <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />
     <ClCompile Include="MemoryStream\MemoryStreamReader.cpp" />
