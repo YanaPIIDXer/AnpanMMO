@@ -73,7 +73,7 @@ public:
 	}
 
 	// オペレータオーバーロード
-	T operator [](int Index)
+	T operator [](int Index) const
 	{
 		return pArray[Index];
 	}
@@ -93,12 +93,12 @@ public:
 			return *this;
 		}
 
-		bool operator !=(const Iterator &Arg)
+		bool operator !=(const Iterator &Arg) const
 		{
 			return (Index != Arg.Index);
 		}
 
-		T *operator ->()
+		T *operator ->() const
 		{
 			return &pArray[Index];
 		}
