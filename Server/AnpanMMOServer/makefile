@@ -43,4 +43,5 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 -include $(DEPENDS)
 
 rebuild:
-	echo Rebuild
+	rm -rf obj
+	make
