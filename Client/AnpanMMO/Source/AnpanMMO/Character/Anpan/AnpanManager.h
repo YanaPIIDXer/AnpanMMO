@@ -29,6 +29,9 @@ public:
 	// Worldをセット.
 	void SetWorld(UWorld *pInWorld) { pWorld = pInWorld; }
 
+	// 取得.
+	AAnpan *Get(uint32 Uuid) const;
+
 	// リストを受信した.
 	void OnRecvList(MemoryStreamInterface *pStream);
 
