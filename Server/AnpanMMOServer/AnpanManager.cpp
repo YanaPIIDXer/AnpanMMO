@@ -7,7 +7,6 @@
 AnpanManager::AnpanManager()
 	: NextUuid(1)
 {
-	OnSpawn.clear();
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
@@ -51,6 +50,7 @@ void AnpanManager::SpawnAnpan()
 	AnpanList[NextUuid] = pAnpan;
 
 	NextUuid++;
+
 	if (OnSpawn)
 	{
 		OnSpawn(pAnpan);

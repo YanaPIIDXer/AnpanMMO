@@ -39,6 +39,9 @@ private:
 	// パケットをブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket);
 
+	// アンパンが生成された。
+	void OnSpawnAnpan(AnpanPtr pAnpan);
+
 	// ========== Singleton =========
 public:
 

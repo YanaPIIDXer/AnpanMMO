@@ -7,6 +7,7 @@ World World::Instance;
 // コンストラクタ
 World::World()
 {
+	AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1));
 }
 
 // 毎フレームの処理.
@@ -48,4 +49,9 @@ void World::BroadcastPacket(PacketBase *pPacket)
 	{
 		PlayerList[i].lock().get()->GetClient()->SendPacket(pPacket);
 	}
+}
+
+// アンパンが生成された。
+void World::OnSpawnAnpan(AnpanPtr pAnpan)
+{
 }
