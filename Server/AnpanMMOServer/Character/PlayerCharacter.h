@@ -33,6 +33,10 @@ private:
 	// 経験値.
 	PlayerExp Exp;
 
+
+	// レベルアップコールバック
+	void OnLevelUp();
+
 };
 
 #endif		// #ifndef __PLAYERCHARACTER_H__

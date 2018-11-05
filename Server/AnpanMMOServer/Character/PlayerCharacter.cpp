@@ -7,4 +7,12 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def,
 	, Exp(InExp)
 {
 	SetParameter(MaxHp, MaxHp, Atk, Def);
+	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
+}
+
+
+// レベルアップコールバック
+void PlayerCharacter::OnLevelUp()
+{
+
 }
