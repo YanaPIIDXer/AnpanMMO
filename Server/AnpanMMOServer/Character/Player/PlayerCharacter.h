@@ -1,7 +1,7 @@
 #ifndef __PLAYERCHARACTER_H__
 #define __PLAYERCHARACTER_H__
 
-#include "CharacterBase.h"
+#include "Character/CharacterBase.h"
 #include "PlayerExp.h"
 
 class PlayerCharacter;

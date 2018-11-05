@@ -1,7 +1,7 @@
 #ifndef __ANPAN_H__
 #define __ANPAN_H__
 
-#include "CharacterBase.h"
+#include "Character/CharacterBase.h"
 
 /**
  * アンパンクラス

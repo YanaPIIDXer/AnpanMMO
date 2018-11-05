@@ -3,7 +3,7 @@
 
 #include <boost/unordered_map.hpp>
 #include <boost/function.hpp>
-#include "Character/Anpan.h"
+#include "Character/Anpan/Anpan.h"
 
 typedef weak_ptr<Anpan> AnpanPtr;
 class PacketAnpanList;

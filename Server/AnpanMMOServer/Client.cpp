@@ -7,7 +7,7 @@
 #include "Packet/PacketHeader.h"
 #include "ClientState/ClientStateBase.h"
 #include "ClientState/ClientStateTitle.h"
-#include "Character/PlayerCharacter.h"
+#include "Character/Player/PlayerCharacter.h"
 
 // コンストラクタ
 Client::Client(const shared_ptr<tcp::socket> &pInSocket)

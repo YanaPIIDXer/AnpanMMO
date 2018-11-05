@@ -2,7 +2,7 @@
 #define __WORLD_H__
 
 #include <boost/unordered_map.hpp>
-#include "Character/PlayerCharacter.h"
+#include "Character/Player/PlayerCharacter.h"
 #include "AnpanManager.h"
 
 class PacketBase;

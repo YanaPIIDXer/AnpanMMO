@@ -126,11 +126,11 @@
   <ItemGroup>
     <ClInclude Include="AnpanManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
-    <ClInclude Include="Character\Anpan.h" />
+    <ClInclude Include="Character\Anpan\Anpan.h" />
     <ClInclude Include="Character\CharacterBase.h" />
     <ClInclude Include="Character\CharacterParameter.h" />
-    <ClInclude Include="Character\PlayerCharacter.h" />
-    <ClInclude Include="Character\PlayerExp.h" />
+    <ClInclude Include="Character\Player\PlayerCharacter.h" />
+    <ClInclude Include="Character\Player\PlayerExp.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientAcceptor.h" />
     <ClInclude Include="ClientManager.h" />
@@ -161,10 +161,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnpanManager.cpp" />
-    <ClCompile Include="Character\Anpan.cpp" />
+    <ClCompile Include="Character\Anpan\Anpan.cpp" />
     <ClCompile Include="Character\CharacterBase.cpp" />
-    <ClCompile Include="Character\PlayerCharacter.cpp" />
-    <ClCompile Include="Character\PlayerExp.cpp" />
+    <ClCompile Include="Character\Player\PlayerCharacter.cpp" />
+    <ClCompile Include="Character\Player\PlayerExp.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientAcceptor.cpp" />
     <ClCompile Include="ClientManager.cpp" />
