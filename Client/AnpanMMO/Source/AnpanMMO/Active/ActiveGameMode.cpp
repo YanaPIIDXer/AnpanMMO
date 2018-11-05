@@ -51,5 +51,8 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 
 	}
 	check(pDamageCharacter != nullptr);
+	int32 BeforeHp = pDamageCharacter->GetHp();
 	pDamageCharacter->ApplyDamage(Packet.DamageValue);
+	int32 AfterHp = pDamageCharacter->GetHp();
+	UE_LOG(LogTemp, Log, TEXT("Damage %s  Hp:%d -> %d"), *pDamageCharacter->GetName(), BeforeHp, AfterHp);
 }

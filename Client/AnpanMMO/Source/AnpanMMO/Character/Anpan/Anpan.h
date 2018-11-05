@@ -28,6 +28,9 @@ public:
 	// デストラクタ
 	virtual ~AAnpan() {}
 
+	// UUID取得.
+	uint32 GetUuid() const { return Uuid; }
+
 private:
 
 	// メッシュのパス
@@ -37,10 +40,7 @@ private:
 	UPROPERTY()
 	UStaticMeshComponent *pMeshComponent;
 
-	// HP
-	int Hp;
-
-	// 最大HP
-	int MaxHp;
+	// UUID
+	uint32 Uuid;
 	
 };
