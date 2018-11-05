@@ -61,7 +61,8 @@ void World::BroadcastPacket(PacketBase *pPacket)
 void World::OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan)
 {
 	const CharacterParameter &Param = pAnpan.lock().get()->GetParameter();
-	AnpanData Data(Uuid, Param.Hp, Param.MaxHp);
+	const Vector2D &Position = pAnpan.lock().get()->GetPosition();
+	AnpanData Data(Uuid, Position.X, Position.Y, Param.Hp, Param.MaxHp);
 	PacketSpawnAnpan Packet(Data);
 	BroadcastPacket(&Packet);
 }
