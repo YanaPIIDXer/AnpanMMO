@@ -41,3 +41,6 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 
 # ˆË‘¶ŠÖŒWƒtƒ@ƒCƒ‹
 -include $(DEPENDS)
+
+rebuild:
+	echo Rebuild
