@@ -4,6 +4,7 @@
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "AnpanData.h"
 
 
 class PacketSpawnAnpan  : public PacketBase
