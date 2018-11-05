@@ -15,6 +15,9 @@ class World : noncopyable
 
 public:
 
+	// ‰Šú‰».
+	void Initialize();
+
 	// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 	void Poll();
 

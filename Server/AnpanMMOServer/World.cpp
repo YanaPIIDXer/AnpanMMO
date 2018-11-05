@@ -7,7 +7,12 @@ World World::Instance;
 // コンストラクタ
 World::World()
 {
-	//AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1));
+}
+
+// 初期化.
+void World::Initialize()
+{
+	AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1));
 }
 
 // 毎フレームの処理.
@@ -54,4 +59,5 @@ void World::BroadcastPacket(PacketBase *pPacket)
 // アンパンが生成された。
 void World::OnSpawnAnpan(AnpanPtr pAnpan)
 {
+	std::cout << "World::OnSpawnAnpan" << std::endl;
 }

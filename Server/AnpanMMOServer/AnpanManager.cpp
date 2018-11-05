@@ -53,8 +53,6 @@ void AnpanManager::SpawnAnpan()
 
 	if (OnSpawn)
 	{
-		std::cout << "Callback" << std::endl;
 		OnSpawn(pAnpan);
 	}
-	else std::cout << "No Callback" << std::endl;
 }
