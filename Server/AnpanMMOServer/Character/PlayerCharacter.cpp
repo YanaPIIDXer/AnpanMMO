@@ -2,6 +2,7 @@
 #include "PlayerCharacter.h"
 #include "Client.h"
 #include "Math/Random.h"
+#include "DBConnection.h"
 #include "Packet/PacketLevelUp.h"
 
 // コンストラクタ
@@ -25,4 +26,9 @@ void PlayerCharacter::OnLevelUp()
 	const CharacterParameter &Param = GetParameter();
 	PacketLevelUp Packet(Param.MaxHp, Param.Atk, Param.Def, Exp.Get());
 	GetClient()->SendPacket(&Packet);
+
+	if (!DBConnection::GetInstance().SaveCharacterParameter(GetClient()->GetUuid(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get()))
+	{
+		std::cout << "LevelUp Parameter Save Failed..." << std::endl;
+	}
 }
