@@ -11,12 +11,10 @@ class PacketDamage  : public PacketBase
 public:
 	virtual PacketID GetPacketID() const { return Damage; }
 
-	enum DamageTypePlayer
+	enum TargetType
 	{
-		,
-	};enum DamageTypeEnemy
-	{
-		,
+		Player,
+		Enemy,
 	};
 
 	u8 TargetType;
