@@ -2,6 +2,8 @@
 
 #include "ActiveGameMode.h"
 #include "MMOGameInstance.h"
+#include "Character/CharacterBase.h"
+#include "Character/Anpan/Anpan.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketDamage.h"
 
@@ -34,4 +36,19 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	PacketDamage Packet;
 	Packet.Serialize(pStream);
 
+	ACharacterBase *pDamageCharacter = nullptr;
+	switch (Packet.TargetType)
+	{
+		case PacketDamage::TargetType::Player:
+
+			// @TODO:他プレイヤー周りが出来たら実装。
+			break;
+
+		case PacketDamage::TargetType::Enemy:
+	
+			pDamageCharacter = AnpanMgr.Get(Packet.TargetUuid);
+			break;
+
+	}
+	check(pDamageCharacter != nullptr);
 }
