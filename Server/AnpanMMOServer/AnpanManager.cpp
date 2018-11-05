@@ -2,6 +2,7 @@
 #include "AnpanManager.h"
 #include <boost/random.hpp>
 #include <boost/random/random_device.hpp>
+#include "Packet/PacketAnpanList.h"
 
 // コンストラクタ
 AnpanManager::AnpanManager()
@@ -56,5 +57,18 @@ void AnpanManager::SpawnAnpan()
 	if (OnSpawn)
 	{
 		OnSpawn(Uuid, pAnpan);
+	}
+}
+
+// アンパンリストパケットを生成.
+void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
+{
+	for (AnpanMap::iterator It = AnpanList.begin(); It != AnpanList.end(); ++It)
+	{
+		AnpanSharedPtr pAnpan = It->second;
+		const CharacterParameter &Param = pAnpan->GetParameter();
+		const Vector2D Position = pAnpan->GetPosition();
+		AnpanData Data(It->first, Position.X, Position.Y, Param.Hp, Param.MaxHp);
+		Packet.List.PushBack(Data);
 	}
 }

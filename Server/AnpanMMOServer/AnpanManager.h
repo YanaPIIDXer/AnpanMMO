@@ -6,6 +6,7 @@
 #include "Character/Anpan.h"
 
 typedef weak_ptr<Anpan> AnpanPtr;
+class PacketAnpanList;
 
 /**
  * アンパン管理クラス
@@ -35,6 +36,9 @@ public:
 
 	// 生成時コールバックを設定.
 	void SetSpawnCallback(const SpawnFunc &InOnSpawn) { OnSpawn = InOnSpawn; }
+
+	// アンパンリストパケットを生成.
+	void MakeListPacket(PacketAnpanList &Packet);
 
 private:
 
