@@ -2,7 +2,7 @@
 #define __ANPANMANAGER_H__
 
 #include <map>
-#include <functional>
+#include <boost/function.hpp>
 #include "Character/Anpan.h"
 
 typedef weak_ptr<Anpan> AnpanPtr;
@@ -17,7 +17,7 @@ private:		// •Ê–¼’è‹`.
 
 	typedef shared_ptr<Anpan> AnpanSharedPtr;
 	typedef std::map<unsigned int, AnpanSharedPtr> AnpanMap;
-	typedef std::function<void(AnpanPtr)> SpawnFunc;
+	typedef boost::function<void(AnpanPtr)> SpawnFunc;
 
 public:
 
