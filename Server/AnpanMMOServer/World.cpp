@@ -2,6 +2,7 @@
 #include "World.h"
 #include "Client.h"
 #include "Packet/PacketSpawnAnpan.h"
+#include "Packet/PacketAnpanList.h"
 
 World World::Instance;
 
@@ -28,6 +29,12 @@ void World::Poll()
 void World::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 {
 	PlayerList.push_back(pPlayer);
+
+	// アンパンリストを通知.
+	PacketAnpanList Packet;
+	AnpanMgr.MakeListPacket(Packet);
+
+	pPlayer.lock()->GetClient()->SendPacket(&Packet);
 }
 
 
@@ -60,8 +67,8 @@ void World::BroadcastPacket(PacketBase *pPacket)
 // アンパンが生成された。
 void World::OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan)
 {
-	const CharacterParameter &Param = pAnpan.lock().get()->GetParameter();
-	const Vector2D &Position = pAnpan.lock().get()->GetPosition();
+	const CharacterParameter &Param = pAnpan.lock()->GetParameter();
+	const Vector2D &Position = pAnpan.lock()->GetPosition();
 	AnpanData Data(Uuid, Position.X, Position.Y, Param.Hp, Param.MaxHp);
 	PacketSpawnAnpan Packet(Data);
 	BroadcastPacket(&Packet);
