@@ -6,6 +6,7 @@
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketAttack.h"
+#include "Packet/PacketDamage.h"
 
 World World::Instance;
 
@@ -49,9 +50,14 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	PlayerCharacterPtr pAttacker = pClient->GetCharacter();
 	AnpanPtr pDefencer = AnpanMgr.Get(Packet.TargetUuid);
 
+	// ダメージ計算.
 	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
 	int DamageValue = DamageCalc.Calc();
-	// @TODO:CharacterBaseにダメージ関数追加。
+	pDefencer.lock()->ApplyDamage(DamageValue);
+
+	// ダメージを通知.
+	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
+	BroadcastPacket(&DamagePacket);
 }
 
 
