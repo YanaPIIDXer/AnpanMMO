@@ -1,6 +1,8 @@
 #ifndef __PLAYEREXP_H__
 #define __PLAYEREXP_H__
 
+#include <boost/function.hpp>
+
 /**
  * プレイヤーの経験値管理.
  */
@@ -15,6 +17,12 @@ public:
 	// デストラクタ
 	~PlayerExp() {}
 
+	// 経験値追加.
+	void Add(int Value);
+
+	// レベルアップコールバックを設定.
+	void SetLevelUpCallback(const function<void()> &InLevelUpCallback) { LevelUpCallback = InLevelUpCallback; }
+
 private:
 
 	// レベルアップに必要な経験値.
@@ -22,6 +30,9 @@ private:
 
 	// 経験値
 	int Exp;
+
+	// レベルアップコールバック
+	function<void()> LevelUpCallback;
 
 };
 
