@@ -34,7 +34,7 @@ void AnpanManager::SpawnAnpan()
 
 	boost::random::random_device SeedGen;
 	boost::random::mt19937 Gen(SeedGen);
-	boost::random::uniform_real_distribution<float> PositionDist(-100.0f, 100.0f);
+	boost::random::uniform_real_distribution<float> PositionDist(-500.0f, 500.0f);
 
 	float X = PositionDist(Gen);
 	float Y = PositionDist(Gen);
