@@ -51,4 +51,5 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 
 	}
 	check(pDamageCharacter != nullptr);
+	pDamageCharacter->ApplyDamage(Packet.DamageValue);
 }
