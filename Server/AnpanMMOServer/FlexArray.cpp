@@ -113,17 +113,3 @@ void FlexArray<float>::Serialize(MemoryStreamInterface *pStream)
 		pStream->Serialize(&pArray[i]);
 	}
 }
-
-template<typename T>
-void FlexArray<T>::Serialize(MemoryStreamInterface *pStream)
-{
-	pStream->Serialize(&CurrentSize);
-	if (CurrentSize > CurrentCapacity)
-	{
-		Reallocate(CurrentSize);
-	}
-	for (int i = 0; i < CurrentSize; i++)
-	{
-		pArray[i].Serialize(pStream);
-	}
-}

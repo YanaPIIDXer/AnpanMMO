@@ -1,7 +1,7 @@
 #ifndef __FLEXARRAY_H__
 #define __FLEXARRAY_H__
 
-class MemoryStreamInterface;
+#include "MemoryStream/MemoryStreamInterface.h"
 
 template<typename T>
 class FlexArray
@@ -119,7 +119,7 @@ public:
 		return Iterator(CurrentSize);
 	}
 	
-	// シリアライズ
+	// シリアライズB
 	void Serialize(MemoryStreamInterface *pStream);
 
 private:
@@ -134,5 +134,21 @@ private:
 	int CurrentCapacity;
 
 };
+
+template<typename T>
+void FlexArray<T>::Serialize(MemoryStreamInterface *pStream)
+{
+	pStream->Serialize(&CurrentSize);
+	if (CurrentSize > CurrentCapacity)
+	{
+		Reallocate(CurrentSize);
+	}
+
+	for (int i = 0; i < CurrentSize; i++)
+	{
+		pArray[i].Serialize(pStream);
+	}
+}
+
 
 #endif		// #ifndef __FLEXARRAY_H__
