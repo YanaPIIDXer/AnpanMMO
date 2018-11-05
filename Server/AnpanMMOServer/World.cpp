@@ -12,6 +12,8 @@ World::World()
 void World::Poll()
 {
 	UpdatePlayerList();
+
+	AnpanMgr.Poll();
 }
 
 // プレイヤーキャラの追加.

@@ -9,6 +9,23 @@ AnpanManager::AnpanManager()
 {
 }
 
+// 毎フレームの処理.
+void AnpanManager::Poll()
+{
+	AnpanMap::iterator It = AnpanList.begin();
+	while (It != AnpanList.end())
+	{
+		if (It->second->IsDead())
+		{
+			AnpanList.erase(It);
+		}
+		else
+		{
+			++It;
+		}
+	}
+}
+
 // アンパン生成.
 void AnpanManager::SpawnAnpan()
 {

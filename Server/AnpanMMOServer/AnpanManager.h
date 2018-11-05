@@ -15,6 +15,7 @@ class AnpanManager
 private:		// 別名定義.
 
 	typedef shared_ptr<Anpan> AnpanSharedPtr;
+	typedef std::map<unsigned int, AnpanSharedPtr> AnpanMap;
 
 public:
 
@@ -24,13 +25,16 @@ public:
 	// デストラクタ
 	~AnpanManager() {}
 
+	// 毎フレームの処理.
+	void Poll();
+
 	// アンパン生成.
 	void SpawnAnpan();
 
 private:
 
 	// アンパンリスト
-	std::map<unsigned int, AnpanSharedPtr> AnpanList;
+	AnpanMap AnpanList;
 
 	// 次のＵＵＩＤ
 	unsigned int NextUuid;
