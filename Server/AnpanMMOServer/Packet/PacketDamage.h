@@ -19,6 +19,7 @@ public:
 		,
 	};
 
+	u8 TargetType;
 	u32 TargetUuid;
 	s32 DamageValue;
 	s32 ResultHp;
@@ -28,8 +29,9 @@ public:
 	{
 	}
 
-	PacketDamage(u32 InTargetUuid, s32 InDamageValue, s32 InResultHp)
+	PacketDamage(u8 InTargetType, u32 InTargetUuid, s32 InDamageValue, s32 InResultHp)
 	{
+		TargetType = InTargetType;
 		TargetUuid = InTargetUuid;
 		DamageValue = InDamageValue;
 		ResultHp = InResultHp;
@@ -38,6 +40,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&TargetType);
 		pStream->Serialize(&TargetUuid);
 		pStream->Serialize(&DamageValue);
 		pStream->Serialize(&ResultHp);
