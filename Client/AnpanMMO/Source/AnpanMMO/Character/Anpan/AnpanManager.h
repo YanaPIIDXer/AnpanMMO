@@ -26,6 +26,9 @@ public:
 	// デストラクタ
 	~AnpanManager() {}
 
+	// 毎フレームの処理.
+	void Poll();
+
 	// Worldをセット.
 	void SetWorld(UWorld *pInWorld) { pWorld = pInWorld; }
 

@@ -21,6 +21,7 @@ void ACharacterBase::ApplyDamage(int32 Value)
 	if (IsDead())
 	{
 		OnDead();
+		Destroy();
 	}
 }
 

@@ -27,6 +27,9 @@ public:
 	// 開始時の処理.
 	virtual void BeginPlay() override;
 
+	// 毎フレームの処理.
+	virtual void Tick(float DeltaTime) override;
+
 protected:
 
 private:

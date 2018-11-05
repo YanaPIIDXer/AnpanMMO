@@ -11,6 +11,8 @@
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 {
+	PrimaryActorTick.bCanEverTick = true;
+
 	AddPacketFunction(PacketID::AnpanList, std::bind(&AnpanManager::OnRecvList, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::SpawnAnpan, std::bind(&AnpanManager::OnRecvSpawn, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::Damage, std::bind(&AActiveGameMode::OnRecvDamage, this, _1));
@@ -27,6 +29,14 @@ void AActiveGameMode::BeginPlay()
 	check(pInst != nullptr);
 	PacketGameReady Packet;
 	pInst->SendPacket(&Packet);
+}
+
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void AActiveGameMode::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	AnpanMgr.Poll();
 }
 
 
@@ -54,5 +64,5 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	int32 BeforeHp = pDamageCharacter->GetHp();
 	pDamageCharacter->ApplyDamage(Packet.DamageValue);
 	int32 AfterHp = pDamageCharacter->GetHp();
-	UE_LOG(LogTemp, Log, TEXT("Damage %s  Hp:%d -> %d"), *pDamageCharacter->GetName(), BeforeHp, AfterHp);
+	UE_LOG(LogTemp, Log, TEXT("Damage Hp:%d -> %d"), BeforeHp, AfterHp);
 }

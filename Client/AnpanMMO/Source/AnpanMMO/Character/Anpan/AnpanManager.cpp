@@ -12,6 +12,18 @@ AnpanManager::AnpanManager()
 {
 }
 
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void AnpanManager::Poll()
+{
+	for (auto It = AnpanMap.CreateIterator(); It; ++It)
+	{
+		if (!It->Value.IsValid())
+		{
+			AnpanMap.Remove(It.Key());
+		}
+	}
+}
+
 // Žæ“¾.
 AAnpan *AnpanManager::Get(uint32 Uuid) const
 {
