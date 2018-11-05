@@ -1,7 +1,7 @@
 #ifndef __ANPANMANAGER_H__
 #define __ANPANMANAGER_H__
 
-#include <map>
+#include <boost/unordered_map.hpp>
 #include <boost/function.hpp>
 #include "Character/Anpan.h"
 
@@ -17,7 +17,7 @@ class AnpanManager
 private:		// •Ê–¼’è‹`.
 
 	typedef shared_ptr<Anpan> AnpanSharedPtr;
-	typedef std::map<unsigned int, AnpanSharedPtr> AnpanMap;
+	typedef unordered_map<unsigned int, AnpanSharedPtr> AnpanMap;
 	typedef boost::function<void(unsigned int, AnpanPtr)> SpawnFunc;
 
 public:

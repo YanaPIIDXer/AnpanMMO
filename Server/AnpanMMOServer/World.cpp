@@ -44,7 +44,7 @@ void World::UpdatePlayerList()
 	std::vector<PlayerCharacterPtr>::iterator It = PlayerList.begin();
 	while (It != PlayerList.end())
 	{
-		if (!It->expired())
+		if (It->expired())
 		{
 			It = PlayerList.erase(It);
 		}

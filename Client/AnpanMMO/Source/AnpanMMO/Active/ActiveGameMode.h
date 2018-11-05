@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "MMOGameModeBase.h"
+#include "Character/Anpan/AnpanManager.h"
 #include "ActiveGameMode.generated.h"
 
 /**
@@ -29,5 +30,8 @@ public:
 protected:
 
 private:
+
+	// ƒAƒ“ƒpƒ“ŠÇ—.
+	AnpanManager AnpanMgr;
 
 };

@@ -8,12 +8,16 @@
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 {
+	AddPacketFunction(PacketID::AnpanList, std::bind(&AnpanManager::OnRecvList, &AnpanMgr, std::placeholders::_1));
+	AddPacketFunction(PacketID::SpawnAnpan, std::bind(&AnpanManager::OnRecvSpawn, &AnpanMgr, std::placeholders::_1));
 }
 
 // ŠJn‚Ìˆ—.
 void AActiveGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
+	AnpanMgr.SetWorld(GetWorld());
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
