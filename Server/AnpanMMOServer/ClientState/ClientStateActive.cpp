@@ -11,7 +11,7 @@
 ClientStateActive::ClientStateActive(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
-	AddPacketFunction(GameReady, boost::bind(&ClientStateActive::OnRecvGameReady, this, boost::placeholders::_2));
+	AddPacketFunction(GameReady, boost::bind(&ClientStateActive::OnRecvGameReady, this, _2));
 }
 
 // ŠJn‚Ìˆ—.
