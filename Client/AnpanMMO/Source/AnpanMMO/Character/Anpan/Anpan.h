@@ -36,6 +36,9 @@ private:
 	// メッシュのパス
 	static const TCHAR *MeshPath;
 
+	// Blueprintのパス
+	static const TCHAR *BlueprintPath;
+
 	// メッシュComponent
 	UPROPERTY()
 	UStaticMeshComponent *pMeshComponent;
