@@ -3,20 +3,16 @@
 #include "Anpan.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/StaticMesh.h"
+#include "Util.h"
 #include "Packet/AnpanData.h"
 
 const TCHAR *AAnpan::MeshPath = TEXT("/Game/Meshes/Anpan/Mesh/Anpan.Anpan");
+const TCHAR *AAnpan::BlueprintPath = TEXT("/Game/Blueprints/System/Active/Anpan.Anpan");
 
 // ¶¬.
 AAnpan *AAnpan::Spawn(UWorld *pWorld, const AnpanData &Data)
 {
-	FActorSpawnParameters Param;
-	Param.bNoFail = true;
-	Param.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-
-	AAnpan *pAnpan = pWorld->SpawnActor<AAnpan>(FVector(Data.X, Data.Y, 100.0f), FRotator(0.0f, 0.0f, 0.0f), Param);
-	check(pAnpan != nullptr);
-
+	AAnpan *pAnpan = Util::SpawnFromBlueprint<AAnpan>(pWorld, BlueprintPath, FVector(Data.X, Data.Y, 100.0f), FRotator(0.0f, 0.0f, 0.0f));
 	pAnpan->Initialize(Data.Hp, Data.MaxHp);
 	pAnpan->Uuid = Data.Uuid;
 

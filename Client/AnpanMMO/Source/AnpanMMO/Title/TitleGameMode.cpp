@@ -23,6 +23,10 @@ void ATitleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
+	auto *pController = UGameplayStatics::GetPlayerController(this, 0);
+	pController->ConsoleCommand("r.SetRes 640x480w");
+	pController->SetVirtualJoystickVisibility(false);
+
 	pScreenWidget = UTitleScreenWidget::Show(this);
 	pScreenWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
 	pScreenWidget->OnReadyToGame.BindUObject(this, &ATitleGameMode::OnReadyToGame);

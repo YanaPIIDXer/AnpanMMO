@@ -40,7 +40,7 @@ void UTitleScreenWidget::ConnectToGameServer()
 	OnConnect.ExecuteIfBound(true);
 
 	// ログインパケット送信.
-	std::string FilePath = TCHAR_TO_UTF8(*Config::IdFilePath);
+	std::string FilePath = TCHAR_TO_UTF8(*Config::GetIdFilePath());
 	IdManager IdMgr(FilePath);
 	std::string Id = IdMgr.GetId();
 	PacketLogInRequest Packet(Id);

@@ -78,6 +78,9 @@ public:
 		return pArray[Index];
 	}
 
+	// Androidビルドでエラーになる箇所があるのでとりあえず封印。
+#if !PLATFORM_ANDROID
+
 	class Iterator
 	{
 	public:
@@ -118,8 +121,10 @@ public:
 	{
 		return Iterator(CurrentSize);
 	}
+
+#endif
 	
-	// シリアライズB
+	// シリアライズ
 	void Serialize(MemoryStreamInterface *pStream);
 
 private:

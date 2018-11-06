@@ -1,8 +1,9 @@
 #ifndef __PACKETBASE_H__
 #define __PACKETBASE_H__
 
+#include "PacketID.h"
+
 class MemoryStreamInterface;
-enum PacketID;
 
 // パケット基底クラス
 // 各種パケットはこのクラスを派生して定義する。

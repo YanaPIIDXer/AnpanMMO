@@ -7,6 +7,8 @@
 #include "Character/Anpan/AnpanManager.h"
 #include "ActiveGameMode.generated.h"
 
+class UMainHUD;
+
 /**
  * ゲーム中GameMode
  */
@@ -37,8 +39,18 @@ private:
 	// アンパン管理.
 	AnpanManager AnpanMgr;
 
+	// MainHUD
+	UPROPERTY()
+	UMainHUD *pMainHUD;
+
 
 	// ダメージを受信した。
 	void OnRecvDamage(MemoryStreamInterface *pStream);
+
+	// 経験値を受信した。
+	void OnRecvAddExp(MemoryStreamInterface *pStream);
+
+	// レベルアップを受信した。
+	void OnRecvLevelUp(MemoryStreamInterface *pStream);
 
 };
