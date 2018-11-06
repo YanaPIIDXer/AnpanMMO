@@ -40,6 +40,9 @@ private:
 	// メッシュパス
 	static const TCHAR *MeshPath;
 
+	// AnimInstanceのクラスパス
+	static const TCHAR *AnimInstanceClassPath;
+
 	// 移動用Component
 	UPROPERTY()
 	UFloatingPawnMovement *pMovementComponent;

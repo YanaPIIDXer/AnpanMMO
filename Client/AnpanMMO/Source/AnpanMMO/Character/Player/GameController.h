@@ -28,6 +28,9 @@ public:
 	// Pawnが紐付けられた。
 	virtual void Possess(APawn *aPawn) override;
 
+	// タッチ入力.
+	virtual bool InputTouch(uint32 Handle, ETouchType::Type Type, const FVector2D &TouchLocation, float Force, FDateTime DeviceTimestamp, uint32 TouchpadIndex) override;
+
 private:
 	
 	// 前後移動のバインド名.
@@ -44,6 +47,9 @@ private:
 
 	// カメラ
 	TWeakObjectPtr<AGameCamera> pCamera;
+
+	// 以前のタッチ座標.
+	FVector2D PrevTouchLocation;
 
 
 	// カメラをSpawn

@@ -12,6 +12,7 @@ AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pCharacter(nullptr)
 	, pCamera(nullptr)
+	, PrevTouchLocation(FVector2D::ZeroVector)
 {
 }
 
@@ -27,6 +28,19 @@ void AGameController::Possess(APawn *aPawn)
 	pCamera->SetGameCharacter(pCharacter.Get());
 	
 	SetupPlayerInput(pCharacter->InputComponent);
+}
+
+// ƒ^ƒbƒ`ˆ—.
+bool AGameController::InputTouch(uint32 Handle, ETouchType::Type Type, const FVector2D &TouchLocation, float Force, FDateTime DeviceTimestamp, uint32 TouchpadIndex)
+{
+	if (Type == ETouchType::Moved)
+	{
+		FVector2D Delta = TouchLocation - PrevTouchLocation;
+		pCamera->Rotate(Delta.X);
+	}
+
+	PrevTouchLocation = TouchLocation;
+	return true;
 }
 
 
@@ -56,7 +70,12 @@ void AGameController::MoveForward(float Value)
 {
 	if (Value == 0.0f) { return; }
 	FVector Vec(Value, 0.0f, 0.0f);
+	FRotator CameraRot(0.0f, pCamera->GetActorRotation().Yaw, 0.0f);
+	Vec = CameraRot.RotateVector(Vec);
 
+	FRotator Rot = Vec.Rotation();
+	Rot.Yaw -= 90.0f;
+	pCharacter->SetActorRotation(Rot);
 	pCharacter->AddMovementInput(Vec);
 }
 
@@ -65,6 +84,11 @@ void AGameController::MoveRight(float Value)
 {
 	if (Value == 0.0f) { return; }
 	FVector Vec(0.0f, Value, 0.0f);
+	FRotator CameraRot(0.0f, pCamera->GetActorRotation().Yaw, 0.0f);
+	Vec = CameraRot.RotateVector(Vec);
 
+	FRotator Rot = Vec.Rotation();
+	Rot.Yaw -= 90.0f;
+	pCharacter->SetActorRotation(Rot);
 	pCharacter->AddMovementInput(Vec);
 }
