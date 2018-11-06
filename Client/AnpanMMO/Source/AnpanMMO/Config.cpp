@@ -15,13 +15,20 @@ const FString Config::ServerHost = "127.0.0.1";
 
 const int Config::ServerPort = 4424;
 
+// IDファイルのファイルパス取得.
+FString Config::GetIdFilePath()
+{
+	FString Path = "";
 #if PLATFORM_WINDOWS
-// Windows向け
-const FString Config::IdFilePath = FPaths::ProjectSavedDir();
+	// Windows向け
+	Path = FPaths::ProjectSavedDir();
 #elif PLATFORM_ANDROID
-// Android向け
-const FString Config::IdFilePath = "/storage/emulated/0/AnapnMMO";
+	// Android向け
+	Path = "/storage/emulated/0/AnapnMMO";
 #elif PLATFORM_IOS
-// iOS向け
-const FString Config::IdFilePath = "";
+	// iOS向け
+	Path = "";
 #endif
+	return Path;
+}
+
