@@ -10,6 +10,8 @@ UMainHUD *UMainHUD::Show(UObject *pOuter)
 {
 	auto *pWidget = Util::LoadBlueprint<UMainHUD>(pOuter, AssetPath);
 	check(pWidget != nullptr);
+
+	pWidget->AddToViewport();
 	return pWidget;
 }
 
