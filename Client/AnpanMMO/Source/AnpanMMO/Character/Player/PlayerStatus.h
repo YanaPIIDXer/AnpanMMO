@@ -1,0 +1,67 @@
+// Copyright 2018 YanaPIIDXer All Rights Reserved.
+
+#pragma once
+
+#include "CoreMinimal.h"
+
+/**
+ * プレイヤーステータス
+ */
+class ANPANMMO_API PlayerStatus
+{
+
+public:
+
+	// コンストラクタ
+	PlayerStatus();
+
+	// デストラクタ
+	~PlayerStatus() {}
+
+	// Uuidセット
+	void SetUuid(uint32 InUuid) { Uuid = InUuid; }
+
+	// セット
+	void Set(int32 InMaxHp, int32 InAtk, int32 InDef)
+	{
+		MaxHp = InMaxHp;
+		Atk = InAtk;
+		Def = InDef;
+	}
+
+	// 経験値セット.
+	void SetExp(int32 InExp) { Exp = InExp; }
+
+	// Uuid取得.
+	uint32 GetUuid() const { return Uuid; }
+
+	// 最大HP取得.
+	int32 GetMaxHp() const { return MaxHp; }
+
+	// 攻撃力取得.
+	int32 GetAtk() const { return Atk; }
+
+	// 防御力取得.
+	int32 GetDef() const { return Def; }
+
+	// 経験値取得.
+	int32 GetExp() const { return Exp; }
+
+private:
+
+	// Uuid
+	uint32 Uuid;
+
+	// 最大HP
+	int32 MaxHp;
+
+	// 攻撃力.
+	int32 Atk;
+
+	// 防御力.
+	int32 Def;
+
+	// 経験値.
+	int32 Exp;
+
+};
