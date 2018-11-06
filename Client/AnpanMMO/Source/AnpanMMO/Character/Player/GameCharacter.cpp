@@ -2,10 +2,15 @@
 
 #include "GameCharacter.h"
 #include "GameFramework/FloatingPawnMovement.h"
+#include "UObject/ConstructorHelpers.h"
+#include "Engine/SkeletalMesh.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "Engine/World.h"
 #include "Character/Anpan/Anpan.h"
 #include "MMOGameInstance.h"
 #include "Packet/PacketAttack.h"
+
+const TCHAR *AGameCharacter::MeshPath = TEXT("/Game/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
 
 // コンストラクタ
 AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
@@ -15,6 +20,13 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 	PrimaryActorTick.bCanEverTick = true;
 	
 	pMovementComponent = CreateDefaultSubobject<UFloatingPawnMovement>("Movement");
+
+	pMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("MeshComponent");
+	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshFinder(MeshPath);
+	pMeshComponent->SetSkeletalMesh(MeshFinder.Object);
+	pMeshComponent->SetWorldRotation(FRotator(0.0f, -90.0f, 0.0f));
+
+	RootComponent = pMeshComponent;
 }
 
 // 開始時の処理.

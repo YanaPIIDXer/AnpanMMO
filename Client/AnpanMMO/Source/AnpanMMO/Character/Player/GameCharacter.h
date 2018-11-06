@@ -7,6 +7,7 @@
 #include "GameCharacter.generated.h"
 
 class UFloatingPawnMovement;
+class USkeletalMeshComponent;
 
 /**
  * プレイヤーキャラクタクラス
@@ -36,8 +37,15 @@ public:
 
 private:
 
+	// メッシュパス
+	static const TCHAR *MeshPath;
+
 	// 移動用Component
 	UPROPERTY()
 	UFloatingPawnMovement *pMovementComponent;
+
+	// MeshComponent
+	UPROPERTY()
+	USkeletalMeshComponent *pMeshComponent;
 
 };

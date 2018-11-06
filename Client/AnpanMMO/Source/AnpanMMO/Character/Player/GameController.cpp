@@ -55,12 +55,16 @@ void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
 void AGameController::MoveForward(float Value)
 {
 	if (Value == 0.0f) { return; }
-	pCharacter->AddMovementInput(pCharacter->GetActorForwardVector(), Value);
+	FVector Vec(Value, 0.0f, 0.0f);
+
+	pCharacter->AddMovementInput(Vec);
 }
 
 // ¶‰EˆÚ“®.
 void AGameController::MoveRight(float Value)
 {
 	if (Value == 0.0f) { return; }
-	pCharacter->AddMovementInput(pCharacter->GetActorRightVector(), Value);
+	FVector Vec(0.0f, Value, 0.0f);
+
+	pCharacter->AddMovementInput(Vec);
 }
