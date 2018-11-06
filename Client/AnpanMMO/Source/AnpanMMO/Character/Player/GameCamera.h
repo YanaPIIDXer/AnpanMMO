@@ -30,6 +30,9 @@ public:
 	// プレイヤーキャラをセット。
 	void SetGameCharacter(AGameCharacter *pInPlayer) { pPlayer = pInPlayer; }
 
+	// 回転.
+	void Rotate(float Yaw);
+
 private:
 	
 	// プレイヤーからの距離.
