@@ -27,4 +27,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Effect", meta = (WorldContext = pWorldContext))
 	static AEmitter *SpawnEffect(UObject *pWorldContext, UParticleSystem *pParticle, const FVector &Position, const FRotator &Rotation);
 	
+	// ランダムなベクトルを取得.
+	UFUNCTION(BlueprintPure, Category = "Math")
+	static FVector GetRandomVector(float Min, float Max);
+
 };

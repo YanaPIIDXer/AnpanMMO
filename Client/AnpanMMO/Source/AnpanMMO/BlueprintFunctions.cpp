@@ -27,3 +27,13 @@ AEmitter *UBlueprintFunctions::SpawnEffect(UObject *pWorldContext, UParticleSyst
 
 	return pEmitter;
 }
+
+// ランダムなベクトルを取得.
+FVector UBlueprintFunctions::GetRandomVector(float Min, float Max)
+{
+	FVector Vec;
+	Vec.X = FMath::RandRange(Min, Max);
+	Vec.Y = FMath::RandRange(Min, Max);
+	Vec.Z = FMath::RandRange(Min, Max);
+	return Vec;
+}
