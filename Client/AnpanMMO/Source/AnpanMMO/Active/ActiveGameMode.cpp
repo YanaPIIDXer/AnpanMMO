@@ -69,10 +69,7 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 
 	}
 	check(pDamageCharacter != nullptr);
-	int32 BeforeHp = pDamageCharacter->GetHp();
 	pDamageCharacter->ApplyDamage(Packet.DamageValue);
-	int32 AfterHp = pDamageCharacter->GetHp();
-	UE_LOG(LogTemp, Log, TEXT("Damage Hp:%d -> %d"), BeforeHp, AfterHp);
 }
 
 // 経験値を受信した。
