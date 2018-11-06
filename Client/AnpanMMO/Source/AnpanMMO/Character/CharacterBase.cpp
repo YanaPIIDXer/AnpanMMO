@@ -17,7 +17,11 @@ ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
 void ACharacterBase::ApplyDamage(int32 Value)
 {
 	if (IsDead()) { return; }
+	int32 BeforeHp = Hp;
 	Hp = FMath::Max<int32>(Hp - Value, 0);
+
+	OnDamaged(BeforeHp, Hp, Value);
+
 	if (IsDead())
 	{
 		OnDead();

@@ -41,6 +41,11 @@ protected:
 	// 初期化.
 	void Initialize(int32 InHp, int32 InMaxHp);
 
+	// ダメージイベント
+	UFUNCTION(BlueprintNativeEvent, Category = "Character")
+	void OnDamaged(int32 BeforeHp, int32 AfterHp, int32 DamageValue);
+	void OnDamaged_Implementation(int32 BeforeHp, int32 AfterHp, int32 DamageValue) {}
+
 	// 死亡イベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Character")
 	void OnDead();
