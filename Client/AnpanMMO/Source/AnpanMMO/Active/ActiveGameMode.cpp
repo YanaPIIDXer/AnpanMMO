@@ -4,6 +4,7 @@
 #include "MMOGameInstance.h"
 #include "Character/CharacterBase.h"
 #include "Character/Anpan/Anpan.h"
+#include "Active/UI/MainHUD.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketDamage.h"
 #include "Packet/PacketAddExp.h"
@@ -12,6 +13,7 @@
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
+	, pMainHUD(nullptr)
 {
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -26,6 +28,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 void AActiveGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+
+	pMainHUD = UMainHUD::Show(this);
 
 	AnpanMgr.SetWorld(GetWorld());
 

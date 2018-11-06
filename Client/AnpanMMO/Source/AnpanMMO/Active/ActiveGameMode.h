@@ -7,6 +7,8 @@
 #include "Character/Anpan/AnpanManager.h"
 #include "ActiveGameMode.generated.h"
 
+class UMainHUD;
+
 /**
  * ゲーム中GameMode
  */
@@ -36,6 +38,10 @@ private:
 
 	// アンパン管理.
 	AnpanManager AnpanMgr;
+
+	// MainHUD
+	UPROPERTY()
+	UMainHUD *pMainHUD;
 
 
 	// ダメージを受信した。
