@@ -2,10 +2,13 @@
 
 #include "GameCamera.h"
 
+const float AGameCamera::DistanceFromPlayer = 300.0f;
+
 // コンストラクタ
 AGameCamera::AGameCamera(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pPlayer(nullptr)
+	, Rotation(0.0f, 0.0f, 0.0f)
 {
 	PrimaryActorTick.bCanEverTick = true;
 }
@@ -15,5 +18,8 @@ void AGameCamera::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	SetActorLocation(pPlayer->GetActorLocation());
+	FVector PlayerPos = pPlayer->GetActorLocation();
+	FVector BackVec = FVector(-DistanceFromPlayer, 0.0f, 0.0f);
+	BackVec = Rotation.RotateVector(BackVec);
+	SetActorLocation(PlayerPos + BackVec);
 }
