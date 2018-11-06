@@ -25,6 +25,7 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("MeshComponent");
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshFinder(MeshPath);
 	pMeshComponent->SetSkeletalMesh(MeshFinder.Object);
+	pMeshComponent->SetWorldLocation(FVector(0, 0, -110.0f));
 	pMeshComponent->SetWorldRotation(FRotator(0.0f, -90.0f, 0.0f));
 	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
 	check(pAnimClass != nullptr);
