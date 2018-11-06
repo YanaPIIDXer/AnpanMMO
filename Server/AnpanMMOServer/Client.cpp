@@ -32,10 +32,10 @@ void Client::SendPacket(PacketBase *pPacket)
 	pPacket->Serialize(&SizeStream);
 
 	//シリアライズ本番
-	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 2);
+	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 3);
 
 	u8 Id = (u8)pPacket->GetPacketID();
-	u8 Size = SizeStream.GetSize();
+	u16 Size = SizeStream.GetSize();
 	WriteStream.Serialize(&Id);
 	WriteStream.Serialize(&Size);
 	pPacket->Serialize(&WriteStream);
@@ -80,9 +80,9 @@ void Client::OnRecv(const boost::system::error_code &ErrorCode, size_t Size)
 	u8 *pRecvData = RecvBuffer.GetTop();
 	MemoryStreamReader ReadStream(pRecvData, Size);
 	PacketHeader Header;
-	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 2)
+	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 3)
 	{
-		RecvBuffer.Pop(2);
+		RecvBuffer.Pop(3);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
 		pState->AnalyzePacket(Header.GetPacketId(), &BodyStream);
