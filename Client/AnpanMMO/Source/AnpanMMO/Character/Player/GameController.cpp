@@ -70,6 +70,7 @@ void AGameController::MoveForward(float Value)
 {
 	if (Value == 0.0f) { return; }
 	FVector Vec(Value, 0.0f, 0.0f);
+	Vec = pCamera->GetActorRotation().RotateVector(Vec);
 
 	pCharacter->AddMovementInput(Vec);
 }
@@ -79,6 +80,7 @@ void AGameController::MoveRight(float Value)
 {
 	if (Value == 0.0f) { return; }
 	FVector Vec(0.0f, Value, 0.0f);
+	Vec = pCamera->GetActorRotation().RotateVector(Vec);
 
 	pCharacter->AddMovementInput(Vec);
 }
