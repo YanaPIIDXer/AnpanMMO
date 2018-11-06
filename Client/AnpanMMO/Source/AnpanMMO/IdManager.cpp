@@ -2,7 +2,11 @@
 #include "AnpanMMO.h"
 #include <fstream>
 #include <sstream>
+#if PLATFORM_WINDOWS
 #include <direct.h>
+#else
+#include <sys/stat.h>
+#endif
 
 const std::string IdManager::FileName = "Id.dat";
 const int IdManager::IdLength = 32;
@@ -58,7 +62,11 @@ void IdManager::GenerateId(std::string &OutId)
 	struct stat StatBuffer;
 	if (stat(pFilePath, &StatBuffer) != 0)
 	{
+#if PLATFORM_WINDOWS
 		mkdir(pFilePath);
+#else
+		mkdir(pFilePath, S_IRWXU | S_IRWXG | S_IRWXO);
+#endif
 	}
 	std::ofstream FileStream(FilePath + FileName);
 	FileStream << OutId;

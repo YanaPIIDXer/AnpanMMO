@@ -20,7 +20,7 @@ const int Config::ServerPort = 4424;
 const FString Config::IdFilePath = FPaths::ProjectSavedDir();
 #elif PLATFORM_ANDROID
 // AndroidŒü‚¯
-const FString Config::IdFilePath = "";
+const FString Config::IdFilePath = "/storage/emulated/0/AnapnMMO";
 #elif PLATFORM_IOS
 // iOSŒü‚¯
 const FString Config::IdFilePath = "";

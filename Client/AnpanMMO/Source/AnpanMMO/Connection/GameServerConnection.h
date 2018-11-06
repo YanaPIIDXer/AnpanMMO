@@ -6,9 +6,9 @@
 #include "Networking/Public/Networking.h"
 #include "Tickable.h"
 #include "Buffer.h"
+#include "Packet/PacketID.h"
 
 class PacketBase;
-enum PacketID;
 class MemoryStreamInterface;
 
 DECLARE_DELEGATE_TwoParams(FOnRecvPacketDelegate, PacketID, MemoryStreamInterface *);
