@@ -11,6 +11,7 @@
 #include "Packet/PacketAttack.h"
 
 const TCHAR *AGameCharacter::MeshPath = TEXT("/Game/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
+const TCHAR *AGameCharacter::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
 
 // コンストラクタ
 AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
@@ -25,6 +26,9 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshFinder(MeshPath);
 	pMeshComponent->SetSkeletalMesh(MeshFinder.Object);
 	pMeshComponent->SetWorldRotation(FRotator(0.0f, -90.0f, 0.0f));
+	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
+	check(pAnimClass != nullptr);
+	pMeshComponent->SetAnimInstanceClass(pAnimClass);
 
 	RootComponent = pMeshComponent;
 }
