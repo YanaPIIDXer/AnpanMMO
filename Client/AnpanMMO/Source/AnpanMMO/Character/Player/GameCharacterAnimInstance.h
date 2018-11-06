@@ -6,6 +6,8 @@
 #include "Animation/AnimInstance.h"
 #include "GameCharacterAnimInstance.generated.h"
 
+class AGameCharacter;
+
 /**
  * GameCharacter用AnimInstance
  */
@@ -23,8 +25,24 @@ public:
 	// デストラクタ
 	virtual ~UGameCharacterAnimInstance() {}
 
+	// 開始時の処理.
+	virtual void NativeInitializeAnimation() override;
+
+	// 毎フレームの処理.
+	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
+
 protected:
 
+	// 移動ベクトル
+	UPROPERTY(BlueprintReadOnly, Category = "Movement")
+	FVector MoveVector;
+
 private:
+
+	// キャラクター
+	TWeakObjectPtr<AGameCharacter> pCharacter;
+
+	// 移動用Component
+	TWeakObjectPtr<UPawnMovementComponent> pMovementComponent;
 	
 };
