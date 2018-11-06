@@ -11,6 +11,7 @@ UAttachableWidget::UAttachableWidget(const FObjectInitializer &ObjectInitializer
 	, pTargetActor(nullptr)
 	, pController(nullptr)
 	, Offset(FVector::ZeroVector)
+	, bFirstSkip(true)
 {
 }
 
@@ -35,12 +36,14 @@ void UAttachableWidget::NativeTick(const FGeometry &InGeometry, float InDeltaTim
 
 	FVector Pos = pTargetActor->GetActorLocation() + Offset;
 	bool bResult = pController->ProjectWorldLocationToScreen(Pos, DisplayPosition);
-	if (bResult)
+	if (!bResult || bFirstSkip)
 	{
-		Visible = ESlateVisibility::HitTestInvisible;
+		// ※最初のフレームに限り変な位置に表示される事があるので非表示.
+		Visible = ESlateVisibility::Hidden;
 	}
 	else
 	{
-		Visible = ESlateVisibility::Hidden;
+		Visible = ESlateVisibility::HitTestInvisible;
 	}
+	bFirstSkip = false;
 }

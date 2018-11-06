@@ -58,4 +58,7 @@ private:
 	// オフセット.
 	FVector Offset;
 
+	// 最初のフレームか？
+	bool bFirstSkip;
+
 };
