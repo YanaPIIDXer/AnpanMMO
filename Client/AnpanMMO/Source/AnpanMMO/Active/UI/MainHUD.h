@@ -6,6 +6,8 @@
 #include "Blueprint/UserWidget.h"
 #include "MainHUD.generated.h"
 
+class AGameCharacter;
+
 /**
  * メインHUD
  */
@@ -26,12 +28,21 @@ public:
 	// デストラクタ
 	virtual ~UMainHUD() {}
 
+	// 開始時の処理.
+	virtual void NativeConstruct() override;
+
 protected:
 
+	// 攻撃ボタンが押された。
+	UFUNCTION(BlueprintCallable, Category = "Attack")
+	void OnPressedAttackButton();
 
 private:
 	
 	// Blueprintのアセットパス
 	static const TCHAR *AssetPath;
+
+	// キャラクタ
+	TWeakObjectPtr<AGameCharacter> pCharacter;
 	
 };

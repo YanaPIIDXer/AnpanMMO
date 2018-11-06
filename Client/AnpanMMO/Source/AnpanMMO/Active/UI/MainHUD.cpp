@@ -2,6 +2,8 @@
 
 #include "MainHUD.h"
 #include "Util.h"
+#include "Character/Player/GameCharacter.h"
+#include "Kismet/GameplayStatics.h"
 
 const TCHAR *UMainHUD::AssetPath = TEXT("/Game/Blueprints/UI/Active/MainHUD.MainHUD");
 
@@ -18,5 +20,21 @@ UMainHUD *UMainHUD::Show(UObject *pOuter)
 // コンストラクタ
 UMainHUD::UMainHUD(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, pCharacter(nullptr)
 {
+}
+
+// 開始時の処理.
+void UMainHUD::NativeConstruct()
+{
+	Super::NativeConstruct();
+
+	pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+}
+
+
+// 攻撃ボタンが押された。
+void UMainHUD::OnPressedAttackButton()
+{
+	pCharacter->Attack();
 }
