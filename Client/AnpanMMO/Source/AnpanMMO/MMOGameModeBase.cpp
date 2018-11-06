@@ -28,15 +28,16 @@ void AMMOGameModeBase::BeginPlay()
 // パケット解析関数追加.
 void AMMOGameModeBase::AddPacketFunction(PacketID ID, const PacketFunc &Func)
 {
-	PacketFunctions.Add(ID, Func);
+	PacketFunctions[ID] = Func;
 }
 
 
 // パケットを受信した。
 void AMMOGameModeBase::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 {
-	if (PacketFunctions.Contains(ID))
+	auto It = PacketFunctions.find(ID);
+	if (It != PacketFunctions.end())
 	{
-		PacketFunctions[ID](pStream);
+		It->second(pStream);
 	}
 }

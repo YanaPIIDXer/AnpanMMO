@@ -5,9 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include <functional>
+#include <map>
+#include "Packet/PacketID.h"
 #include "MMOGameModeBase.generated.h"
 
-enum PacketID;
 class MemoryStreamInterface;
 using namespace std::placeholders;
 
@@ -23,7 +24,7 @@ class ANPANMMO_API AMMOGameModeBase : public AGameModeBase
 private:		// •Ê–¼’è‹`.
 
 	typedef std::function<void(MemoryStreamInterface *)> PacketFunc;
-	typedef TMap<PacketID, PacketFunc> FunctionMap;
+	typedef std::map<PacketID, PacketFunc> FunctionMap;
 
 public:
 
