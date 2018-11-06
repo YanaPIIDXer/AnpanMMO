@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "DamageCalcUnit.h"
-#include <boost/random.hpp>
-#include <boost/random/random_device.hpp>
+#include "Math/Random.h"
 
 const int DamageCalcUnit::CorrectionMaxValue = 10;
 const int DamageCalcUnit::CriticalRate = 10;
@@ -16,15 +15,10 @@ DamageCalcUnit::DamageCalcUnit(const CharacterParameter &InAttackerParam, const 
 // 計算.
 int DamageCalcUnit::Calc() const
 {
-	boost::random::random_device SeedGen;
-	boost::random::mt19937 Gen(SeedGen);
-
-	boost::random::uniform_int_distribution<> CorrectionDist(0, CorrectionMaxValue);
-	int Atk = AttackerParam.Atk + CorrectionDist(Gen);
-	int Def = DefencerParam.Def + CorrectionDist(Gen);
+	int Atk = AttackerParam.Atk + Random::Range<int>(0, CorrectionMaxValue);
+	int Def = DefencerParam.Def + Random::Range<int>(0, CorrectionMaxValue);
 	
-	boost::random::uniform_int_distribution<> CriticalRateDist(0, 100);
-	if (CriticalRateDist(Gen) <= CriticalRate)
+	if (Random::Range<int>(0, 100) <= CriticalRate)
 	{
 		// クリティカル。防御無視。
 		Def = 0;

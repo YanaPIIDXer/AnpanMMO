@@ -14,7 +14,7 @@ public:
 	PacketID GetPacketId(){ return (PacketID) PacketId; }
 
 	// パケットサイズ取得
-	u8 GetPacketSize(){ return PacketSize; }
+	u16 GetPacketSize(){ return PacketSize; }
 
 	// シリアライズ
 	bool Serialize(MemoryStreamInterface *Stream);
@@ -25,7 +25,7 @@ private:
 	u8 PacketId;
 
 	// パケットサイズ
-	u8 PacketSize;
+	u16 PacketSize;
 
 };
 

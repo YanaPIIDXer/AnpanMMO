@@ -7,7 +7,7 @@
 #include "Packet/PacketHeader.h"
 #include "ClientState/ClientStateBase.h"
 #include "ClientState/ClientStateTitle.h"
-#include "Character/PlayerCharacter.h"
+#include "Character/Player/PlayerCharacter.h"
 
 // コンストラクタ
 Client::Client(const shared_ptr<tcp::socket> &pInSocket)
@@ -32,10 +32,10 @@ void Client::SendPacket(PacketBase *pPacket)
 	pPacket->Serialize(&SizeStream);
 
 	//シリアライズ本番
-	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 2);
+	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 3);
 
 	u8 Id = (u8)pPacket->GetPacketID();
-	u8 Size = SizeStream.GetSize();
+	u16 Size = SizeStream.GetSize();
 	WriteStream.Serialize(&Id);
 	WriteStream.Serialize(&Size);
 	pPacket->Serialize(&WriteStream);
@@ -52,9 +52,9 @@ void Client::ChangeState(ClientStateBase *pNextState)
 }
 
 // キャラクタ作成.
-void Client::CreateCharacter(int MaxHp, int Atk, int Def)
+void Client::CreateCharacter(int MaxHp, int Atk, int Def, int Exp)
 {
-	PlayerCharacter *pChara= new PlayerCharacter(this, MaxHp, Atk, Def);
+	PlayerCharacter *pChara= new PlayerCharacter(this, MaxHp, Atk, Def, Exp);
 	pCharacter = shared_ptr<PlayerCharacter>(pChara);
 }
 
@@ -80,9 +80,9 @@ void Client::OnRecv(const boost::system::error_code &ErrorCode, size_t Size)
 	u8 *pRecvData = RecvBuffer.GetTop();
 	MemoryStreamReader ReadStream(pRecvData, Size);
 	PacketHeader Header;
-	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 2)
+	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 3)
 	{
-		RecvBuffer.Pop(2);
+		RecvBuffer.Pop(3);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
 		pState->AnalyzePacket(Header.GetPacketId(), &BodyStream);

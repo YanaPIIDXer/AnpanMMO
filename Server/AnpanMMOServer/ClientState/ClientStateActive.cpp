@@ -36,7 +36,7 @@ void ClientStateActive::LoadCharacter()
 		std::cout << "Character Status Load Failed..." << std::endl;
 		return;
 	}
-	pClient->CreateCharacter(MaxHp, Atk, Def);
+	pClient->CreateCharacter(MaxHp, Atk, Def, Exp);
 
 	PacketCharacterStatus Packet(MaxHp, MaxHp, Atk, Def, Exp);
 	pClient->SendPacket(&Packet);

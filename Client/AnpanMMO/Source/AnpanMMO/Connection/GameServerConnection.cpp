@@ -62,14 +62,14 @@ void GameServerConnection::SendPacket(PacketBase *pPacket)
 	pPacket->Serialize(&SizeStream);
 
 	//シリアライズ本番
-	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 2);
+	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 3);
 
 	u8 Id = (u8)pPacket->GetPacketID();
-	u8 Size = SizeStream.GetSize();
+	u16 Size = SizeStream.GetSize();
 	WriteStream.Serialize(&Id);
 	WriteStream.Serialize(&Size);
 	pPacket->Serialize(&WriteStream);
-	
+
 	const u8 *pData = WriteStream.GetStream();
 	SendBuffer.Push(pData, WriteStream.GetSize());
 }
@@ -113,9 +113,9 @@ void GameServerConnection::AnalyzeProc()
 
 	MemoryStreamReader StreamReader(pData, RecvBuffer.GetSize());
 	PacketHeader Header;
-	if (Header.Serialize(&StreamReader) && RecvBuffer.GetSize() >= Header.GetPacketSize())
+	if (Header.Serialize(&StreamReader) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 3)
 	{
-		RecvBuffer.Pop(2);
+		RecvBuffer.Pop(3);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
 		OnRecvPacketDelegate.ExecuteIfBound(Header.GetPacketId(), &BodyStream);

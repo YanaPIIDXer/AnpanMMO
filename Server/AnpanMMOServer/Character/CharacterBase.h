@@ -41,6 +41,14 @@ protected:
 		Parameter.Def = Def;
 	}
 
+	// パラメータ追加.
+	void AddParameter(int MaxHp, int Atk, int Def)
+	{
+		Parameter.MaxHp += MaxHp;
+		Parameter.Atk += Atk;
+		Parameter.Def += Def;
+	}
+
 	// 座標設定.
 	void SetPosition(const Vector2D &InPosition) { Position = InPosition; }
 

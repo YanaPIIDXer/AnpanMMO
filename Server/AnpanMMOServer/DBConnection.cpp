@@ -64,6 +64,22 @@ bool DBConnection::LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, in
 	return true;
 }
 
+// キャラクタパラメータ書き込み
+bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp)
+{
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set MaxHp = ?, Atk = ?, Def = ?, Exp = ? where CustomerId = ?");
+
+	Query.BindInt(&MaxHp);
+	Query.BindInt(&Atk);
+	Query.BindInt(&Def);
+	Query.BindInt(&Exp);
+	Query.BindInt(&Id);
+
+	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
+
 
 // ユーザデータ登録.
 bool DBConnection::RegisterUserData(char *pUserCode)

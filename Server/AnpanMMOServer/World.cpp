@@ -2,11 +2,13 @@
 #include "World.h"
 #include "Client.h"
 #include "Math/DamageCalcUnit.h"
+#include "Math/Random.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketAttack.h"
 #include "Packet/PacketDamage.h"
+#include "Packet/PacketAddExp.h"
 
 World World::Instance;
 
@@ -58,6 +60,15 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	// ダメージを通知.
 	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
 	BroadcastPacket(&DamagePacket);
+
+	if (pDefencer.lock()->IsDead())
+	{
+		int Exp = Random::Range<int>(10, 50);
+		pAttacker.lock()->AddExp(Exp);
+
+		PacketAddExp ExpPacket(pAttacker.lock()->GetExp());
+		pAttacker.lock()->GetClient()->SendPacket(&ExpPacket);
+	}
 }
 
 
