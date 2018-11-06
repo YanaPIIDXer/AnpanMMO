@@ -2,6 +2,7 @@
 #include "AnpanMMO.h"
 #include <fstream>
 #include <sstream>
+#include <direct.h>
 
 const std::string IdManager::FileName = "Id.dat";
 const int IdManager::IdLength = 32;
@@ -9,7 +10,7 @@ const int IdManager::IdLength = 32;
 // コンストラクタ
 IdManager::IdManager(const std::string &InFilePath)
 	: IdCache("")
-	, FilePath(InFilePath + FileName)
+	, FilePath(InFilePath)
 {
 }
 
@@ -33,7 +34,7 @@ std::string IdManager::GetId()
 // IDをロード
 bool IdManager::LoadId(std::string &OutId)
 {
-	std::ifstream FileStream(FilePath);
+	std::ifstream FileStream(FilePath + FileName);
 	if (!FileStream) { return false; }
 
 	FileStream >> OutId;
@@ -53,6 +54,12 @@ void IdManager::GenerateId(std::string &OutId)
 	OutId = StrStream.str();
 
 	// ファイルに保存.
-	std::ofstream FileStream(FilePath);
+	const char *pFilePath = FilePath.c_str();
+	struct stat StatBuffer;
+	if (stat(pFilePath, &StatBuffer) != 0)
+	{
+		mkdir(pFilePath);
+	}
+	std::ofstream FileStream(FilePath + FileName);
 	FileStream << OutId;
 }
