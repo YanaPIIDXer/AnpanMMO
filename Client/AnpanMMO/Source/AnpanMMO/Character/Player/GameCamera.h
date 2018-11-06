@@ -32,7 +32,13 @@ public:
 
 private:
 	
+	// プレイヤーからの距離.
+	static const float DistanceFromPlayer;
+
 	// プレイヤーキャラ
 	TWeakObjectPtr<AGameCharacter> pPlayer;
-	
+
+	// 回転.
+	FRotator Rotation;
+
 };
