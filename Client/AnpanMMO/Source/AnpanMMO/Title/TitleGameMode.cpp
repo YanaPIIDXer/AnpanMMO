@@ -23,6 +23,8 @@ void ATitleGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
+	UGameplayStatics::GetPlayerController(this, 0)->SetVirtualJoystickVisibility(false);
+
 	pScreenWidget = UTitleScreenWidget::Show(this);
 	pScreenWidget->OnConnect.BindUObject(this, &ATitleGameMode::OnConnectResult);
 	pScreenWidget->OnReadyToGame.BindUObject(this, &ATitleGameMode::OnReadyToGame);
