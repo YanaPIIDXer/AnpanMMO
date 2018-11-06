@@ -20,7 +20,7 @@ public:
 	PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def, int InExp);
 
 	// デストラクタ
-	virtual ~PlayerCharacter() {}
+	virtual ~PlayerCharacter();
 
 	// クライアント取得.
 	Client *GetClient() const { return pClient; }
@@ -42,6 +42,9 @@ private:
 
 	// レベルアップコールバック
 	void OnLevelUp();
+
+	// パラメータを保存.
+	void SaveParameter();
 
 };
 

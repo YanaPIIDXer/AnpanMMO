@@ -14,6 +14,12 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def,
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
 }
 
+// デストラクタ
+PlayerCharacter::~PlayerCharacter()
+{
+	SaveParameter();
+}
+
 
 // レベルアップコールバック
 void PlayerCharacter::OnLevelUp()
@@ -27,8 +33,16 @@ void PlayerCharacter::OnLevelUp()
 	PacketLevelUp Packet(Param.MaxHp, Param.Atk, Param.Def, Exp.Get());
 	GetClient()->SendPacket(&Packet);
 
+	SaveParameter();
+}
+
+// パラメータを保存.
+void PlayerCharacter::SaveParameter()
+{
+	const CharacterParameter &Param = GetParameter();
 	if (!DBConnection::GetInstance().SaveCharacterParameter(GetClient()->GetUuid(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get()))
 	{
 		std::cout << "LevelUp Parameter Save Failed..." << std::endl;
 	}
+
 }
