@@ -45,7 +45,9 @@ void AGameCharacter::Attack()
 {
 	FHitResult Result;
 
-	if (!GetWorld()->LineTraceSingleByChannel(Result, GetActorLocation(), GetActorLocation() + (GetActorForwardVector() * 500.0f), ECollisionChannel::ECC_GameTraceChannel1)) { return; }
+	FVector StartVec = GetActorLocation();
+	FVector EndVec = StartVec + (GetActorForwardVector() * 500.0f);
+	if (!GetWorld()->LineTraceSingleByChannel(Result, StartVec, EndVec, ECollisionChannel::ECC_GameTraceChannel1)) { return; }
 	AAnpan *pAnpan = Cast<AAnpan>(Result.GetActor());
 	if (pAnpan == nullptr) { return; }
 
