@@ -20,3 +20,27 @@ AOtherPlayerCharacter::AOtherPlayerCharacter(const FObjectInitializer &ObjectIni
 {
 	AIControllerClass = AOtherPlayerController::StaticClass();
 }
+
+// 開始時の処理.
+void AOtherPlayerCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	// ↓コントローラを生成するにはコイツを呼び出す必要があるらしい。
+	SpawnDefaultController();
+}
+
+// コントローラと紐付けられた。
+void AOtherPlayerCharacter::PossessedBy(AController *NewController)
+{
+	Super::PossessedBy(NewController);
+
+	pController = Cast<AOtherPlayerController>(NewController);
+	check(pController != nullptr);
+}
+
+// 移動.
+void AOtherPlayerCharacter::Move(float X, float Y, float Rotation)
+{
+	pController->Move(X, Y, Rotation);
+}

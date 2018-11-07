@@ -55,6 +55,7 @@ void PlayerManager::OnRecvMove(MemoryStreamInterface *pStream)
 	PacketMovePlayer Packet;
 	Packet.Serialize(pStream);
 
+	PlayerMap[Packet.Uuid]->Move(Packet.X, Packet.Y, Packet.Rotation);
 }
 
 // ‘Şo‚ğóM.

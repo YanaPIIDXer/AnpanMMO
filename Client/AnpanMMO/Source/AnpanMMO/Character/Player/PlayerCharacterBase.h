@@ -24,6 +24,9 @@ public:
 	// デストラクタ
 	virtual ~APlayerCharacterBase() {}
 
+	// 移動.
+	virtual void Move(float X, float Y, float Rotation) {}
+	
 protected:
 
 	// MeshComponent取得.
