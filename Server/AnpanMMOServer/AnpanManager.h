@@ -60,6 +60,10 @@ private:
 
 	// アンパン生成.
 	void SpawnAnpan();
+
+	// 殺されたアンパンの撤去.
+	void EraseKilledAnpan();
+
 };
 
 #endif		// #ifndef __ANPANMANAGER_H__

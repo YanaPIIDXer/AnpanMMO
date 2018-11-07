@@ -22,18 +22,7 @@ void AnpanManager::Poll(int DeltaTime)
 		SpawnTime += SpawnInterval;
 	}
 
-	AnpanMap::iterator It = AnpanList.begin();
-	while (It != AnpanList.end())
-	{
-		if (It->second->IsDead())
-		{
-			It = AnpanList.erase(It);
-		}
-		else
-		{
-			++It;
-		}
-	}
+	EraseKilledAnpan();
 }
 
 // Žæ“¾.
@@ -82,5 +71,22 @@ void AnpanManager::SpawnAnpan()
 	if (OnSpawn)
 	{
 		OnSpawn(Uuid, pAnpan);
+	}
+}
+
+// ŽE‚³‚ê‚½ƒAƒ“ƒpƒ“‚Ì“P‹Ž.
+void AnpanManager::EraseKilledAnpan()
+{
+	AnpanMap::iterator It = AnpanList.begin();
+	while (It != AnpanList.end())
+	{
+		if (It->second->IsDead())
+		{
+			It = AnpanList.erase(It);
+		}
+		else
+		{
+			++It;
+		}
 	}
 }
