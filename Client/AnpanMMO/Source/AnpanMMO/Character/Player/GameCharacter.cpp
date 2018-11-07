@@ -5,6 +5,8 @@
 #include "Engine/World.h"
 #include "Character/Anpan/Anpan.h"
 #include "MMOGameInstance.h"
+#include "Active/ActiveGameMode.h"
+#include "Kismet/GameplayStatics.h"
 #include "Packet/PacketAttack.h"
 
 const TCHAR *AGameCharacter::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
@@ -32,6 +34,10 @@ void AGameCharacter::BeginPlay()
 	check(pInst != nullptr);
 	Status = pInst->GetStatusCache();
 	Initialize(Status.GetMaxHp(), Status.GetMaxHp());
+
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->AddPlayerCharacter(Status.GetUuid(), this);
 }
 
 // UŒ‚.
