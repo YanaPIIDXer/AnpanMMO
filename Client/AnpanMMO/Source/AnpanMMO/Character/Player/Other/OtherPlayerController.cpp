@@ -31,7 +31,14 @@ void AOtherPlayerController::Tick(float DeltaTime)
 
 	if (MoveTime <= 0.0f) { return; }
 
-	FVector Pos = FMath::Lerp<FVector>(PrevPos, MoveTarget, MoveTime / MoveInterval);
+	MoveTime -= DeltaTime;
+	if (MoveTime <= 0.0f)
+	{
+		MoveTime = 0.0f;
+		pCharacter->SetActorLocation(MoveTarget);
+		return;
+	}
+	FVector Pos = FMath::Lerp<FVector>(PrevPos, MoveTarget, 1.0f- (MoveTime / MoveInterval));
 	pCharacter->SetActorLocation(Pos);
 }
 
