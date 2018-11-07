@@ -6,6 +6,7 @@
 
 class PacketBase;
 class Client;
+class PacketPlayerList;
 
 /**
  * プレイヤー管理クラス
@@ -41,6 +42,10 @@ private:
 
 	// プレイヤーマップ
 	PlayerMap PlayerList;
+
+
+	// プレイヤーリストパケットを生成.
+	void MakeListPacket(PacketPlayerList &Packet);
 
 };
 

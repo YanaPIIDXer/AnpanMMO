@@ -13,6 +13,7 @@ enum PacketID
 	LogInRequest,
 	LogInResult,
 	CharacterStatus,
+	PlayerList,
 	SpawnPlayer,
 	
 };

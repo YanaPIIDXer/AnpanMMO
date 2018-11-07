@@ -19,16 +19,16 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 	PrimaryActorTick.bCanEverTick = true;
 	
 	pMovementComponent = CreateDefaultSubobject<UFloatingPawnMovement>("Movement");
-
-	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
-	check(pAnimClass != nullptr);
-	GetMeshComponent()->SetAnimInstanceClass(pAnimClass);
 }
 
 // äJénéûÇÃèàóù.
 void AGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
+	check(pAnimClass != nullptr);
+	GetMeshComponent()->SetAnimInstanceClass(pAnimClass);
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);

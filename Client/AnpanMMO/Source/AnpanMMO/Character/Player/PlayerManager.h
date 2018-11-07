@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "PlayerCharacterBase.h"
 
+class MemoryStreamInterface;
+
 /**
  * プレイヤー管理.
  */
@@ -32,6 +34,12 @@ public:
 	// 取得.
 	APlayerCharacterBase *Get(uint32 Uuid) const;
 
+	// 生成を受信.
+	void OnRecvSpawn(MemoryStreamInterface *pStream);
+
+	// リストを受信.
+	void OnRecvList(MemoryStreamInterface *pStream);
+
 private:
 
 	// プレイヤーマップ
@@ -39,5 +47,9 @@ private:
 
 	// World
 	TWeakObjectPtr<UWorld> pWorld;
+
+
+	// キャラクタをSpawn
+	void SpawnCharacter(uint32 Uuid, float X, float Y, float Rotation);
 
 };
