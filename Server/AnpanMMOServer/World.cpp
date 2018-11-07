@@ -51,8 +51,7 @@ void World::OnRecvMove(Client *pClient, MemoryStreamInterface *pStream)
 	PacketMovePlayer Packet;
 	Packet.Serialize(pStream);
 
-	// そのままブロードキャスト
-	PlayerMgr.BroadcastPacket(&Packet, pClient);
+	PlayerMgr.OnRecvMove(Packet.Uuid, Packet.X, Packet.Y, Packet.Rotation);
 }
 
 // 攻撃を受信した。

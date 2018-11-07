@@ -3,6 +3,7 @@
 #include "Client.h"
 #include "Packet/PacketSpawnPlayer.h"
 #include "Packet/PacketPlayerList.h"
+#include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketExitPlayer.h"
 
 // コンストラクタ
@@ -51,6 +52,15 @@ PlayerCharacterPtr PlayerManager::Get(u8 Uuid) const
 	PlayerMap::const_iterator It = PlayerList.find(Uuid);
 	if (It == PlayerList.end()) { return PlayerCharacterPtr(); }
 	return It->second;
+}
+
+// 移動を受信した。
+void PlayerManager::OnRecvMove(u32 Uuid, float X, float Y, float Rotation)
+{
+	PlayerList[Uuid].lock()->Move(X, Y, Rotation);
+
+	PacketMovePlayer Packet(Uuid, X, Y, Rotation);
+	BroadcastPacket(&Packet, PlayerList[Uuid].lock()->GetClient());
 }
 
 // パケットをブロードキャスト

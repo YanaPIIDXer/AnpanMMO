@@ -35,6 +35,9 @@ public:
 	// 取得.
 	PlayerCharacterPtr Get(u8 Uuid) const;
 
+	// 移動を受信した。
+	void OnRecvMove(u32 Uuid, float X, float Y, float Rotation);
+
 	// パケットをブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 
