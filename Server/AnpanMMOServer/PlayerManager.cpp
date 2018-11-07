@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PlayerManager.h"
 #include "Client.h"
+#include "Packet/PacketSpawnPlayer.h"
 
 // コンストラクタ
 PlayerManager::PlayerManager()
@@ -28,6 +29,9 @@ void PlayerManager::Poll()
 void PlayerManager::Add(u8 Uuid, PlayerCharacterPtr pPlayer)
 {
 	PlayerList[Uuid] = pPlayer;
+
+	PacketSpawnPlayer Packet(Uuid);
+	BroadcastPacket(&Packet, pPlayer.lock()->GetClient());
 }
 
 // 取得.
