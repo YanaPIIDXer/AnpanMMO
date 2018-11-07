@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Character/CharacterBase.h"
+#include "PlayerStatus.h"
 #include "GameCharacter.generated.h"
 
 class UFloatingPawnMovement;
@@ -29,11 +30,11 @@ public:
 	// 開始時の処理.
 	virtual void BeginPlay() override;
 
-	// 毎フレームの処理.
-	virtual void Tick(float DeltaTime) override;
-
 	// 攻撃.
 	void Attack();
+
+	// ステータス取得.
+	const PlayerStatus &GetStatus() const { return Status; }
 
 private:
 
@@ -50,5 +51,8 @@ private:
 	// MeshComponent
 	UPROPERTY()
 	USkeletalMeshComponent *pMeshComponent;
+
+	// ステータス
+	PlayerStatus Status;
 
 };

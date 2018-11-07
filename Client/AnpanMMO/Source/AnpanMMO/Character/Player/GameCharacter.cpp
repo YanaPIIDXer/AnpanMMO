@@ -38,14 +38,11 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 void AGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
-}
 
-// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
-void AGameCharacter::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+	Status = pInst->GetStatusCache();
+	Initialize(Status.GetMaxHp(), Status.GetMaxHp());
 }
 
 // UŒ‚.
