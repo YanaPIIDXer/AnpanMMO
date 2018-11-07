@@ -3,6 +3,7 @@
 #include "ClientManager.h"
 #include "DBConnection.h"
 #include "World.h"
+#include "TickManager.h"
 
 // エントリポイント
 int main()
@@ -39,6 +40,10 @@ int main()
 	asio::basic_repeating_timer<posix_time::ptime> AnpanSpawnTimer(IOService);
 	AnpanSpawnTimer.start(posix_time::millisec(5000),
 		bind(&World::SpawnAnpan, &World::GetInstance()));
+
+	asio::basic_repeating_timer<posix_time::ptime> TickTimer(IOService);
+	TickTimer.start(posix_time::millisec(30),
+		bind(&TickManager::Poll, &TickManager::GetInstance()));
 
 	IOService.run();
 	return 0;

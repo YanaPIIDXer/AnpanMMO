@@ -157,6 +157,7 @@
     <ClInclude Include="Packet\PacketID.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TickManager.h" />
     <ClInclude Include="TypeDefs.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
@@ -188,6 +189,7 @@
     <ClCompile Include="Packet\PacketHeader.cpp" />
     <ClCompile Include="PlayerManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="TickManager.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
