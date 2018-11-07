@@ -48,4 +48,8 @@ private:
 	// World
 	TWeakObjectPtr<UWorld> pWorld;
 
+
+	// ƒLƒƒƒ‰ƒNƒ^‚ğSpawn
+	void SpawnCharacter(uint32 Uuid, float X, float Y, float Rotation);
+
 };

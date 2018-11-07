@@ -1,6 +1,7 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "PlayerManager.h"
+#include "Other/OtherPlayerCharacter.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketSpawnPlayer.h"
 #include "Packet/PacketPlayerList.h"
@@ -30,7 +31,7 @@ void PlayerManager::OnRecvSpawn(MemoryStreamInterface *pStream)
 	PacketSpawnPlayer Packet;
 	Packet.Serialize(pStream);
 
-	UE_LOG(LogTemp, Log, TEXT("SpawnPlayer UUID:%d"), Packet.Uuid);
+	SpawnCharacter(Packet.Uuid, 0.0f, 0.0f, 0.0f);
 }
 
 // リストを受信.
@@ -42,6 +43,14 @@ void PlayerManager::OnRecvList(MemoryStreamInterface *pStream)
 	for (int32 i = 0; i < Packet.List.GetCurrentSize(); i++)
 	{
 		const auto &Data = Packet.List[i];
-		UE_LOG(LogTemp, Log, TEXT("Player UUID:%d X:%f Y:%f"), Data.Uuid, Data.X, Data.Y);
+		SpawnCharacter(Data.Uuid, Data.X, Data.Y, 0.0f);
 	}
+}
+
+
+// キャラクタをSpawn
+void PlayerManager::SpawnCharacter(uint32 Uuid, float X, float Y, float Rotation)
+{
+	auto *pCharacter = AOtherPlayerCharacter::Spawn(pWorld.Get(), FVector(X, Y, 110.0f), FRotator(0.0f, Rotation, 0.0f));
+	PlayerMap.Add(Uuid, pCharacter);
 }
