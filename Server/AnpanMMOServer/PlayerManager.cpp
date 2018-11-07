@@ -2,6 +2,7 @@
 #include "PlayerManager.h"
 #include "Client.h"
 #include "Packet/PacketSpawnPlayer.h"
+#include "Packet/PacketPlayerList.h"
 
 // コンストラクタ
 PlayerManager::PlayerManager()
@@ -28,10 +29,16 @@ void PlayerManager::Poll()
 // 追加.
 void PlayerManager::Add(u8 Uuid, PlayerCharacterPtr pPlayer)
 {
-	PlayerList[Uuid] = pPlayer;
-
+	// 生成を接続済みのクライアントにブロードキャスト
 	PacketSpawnPlayer Packet(Uuid);
 	BroadcastPacket(&Packet, pPlayer.lock()->GetClient());
+
+	// プレイヤーリストを通知.
+	PacketPlayerList ListPacket;
+	MakeListPacket(ListPacket);
+	pPlayer.lock()->GetClient()->SendPacket(&ListPacket);
+
+	PlayerList[Uuid] = pPlayer;
 }
 
 // 取得.
@@ -50,5 +57,17 @@ void PlayerManager::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 		Client *pClient = It->second.lock()->GetClient();
 		if (pClient == pIgnoreClient) { continue; }
 		pClient->SendPacket(pPacket);
+	}
+}
+
+
+// プレイヤーリストパケットを生成.
+void PlayerManager::MakeListPacket(PacketPlayerList &Packet)
+{
+	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
+	{
+		const Vector2D Position = It->second.lock()->GetPosition();
+		PlayerData Data(It->first, Position.X, Position.Y);
+		Packet.List.PushBack(Data);
 	}
 }
