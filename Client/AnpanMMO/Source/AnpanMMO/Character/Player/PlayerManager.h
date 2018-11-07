@@ -40,6 +40,9 @@ public:
 	// リストを受信.
 	void OnRecvList(MemoryStreamInterface *pStream);
 
+	// 退出を受信.
+	void OnRecvExit(MemoryStreamInterface *pStream);
+
 private:
 
 	// プレイヤーマップ
