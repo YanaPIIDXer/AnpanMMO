@@ -38,6 +38,17 @@ void AGameCharacter::BeginPlay()
 	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 	check(pGameMode != nullptr);
 	pGameMode->AddPlayerCharacter(Status.GetUuid(), this);
+
+	Move.Initialize(this, pInst);
+}
+
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void AGameCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	Move.Poll(DeltaTime);
+
 }
 
 // UŒ‚.
