@@ -37,6 +37,9 @@ public:
 	// 生成を受信.
 	void OnRecvSpawn(MemoryStreamInterface *pStream);
 
+	// リストを受信.
+	void OnRecvList(MemoryStreamInterface *pStream);
+
 private:
 
 	// プレイヤーマップ

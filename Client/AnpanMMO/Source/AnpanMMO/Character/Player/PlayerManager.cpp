@@ -1,8 +1,9 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "PlayerManager.h"
-#include "Packet/PacketSpawnPlayer.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "Packet/PacketSpawnPlayer.h"
+#include "Packet/PacketPlayerList.h"
 
 // コンストラクタ
 PlayerManager::PlayerManager()
@@ -30,4 +31,17 @@ void PlayerManager::OnRecvSpawn(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	UE_LOG(LogTemp, Log, TEXT("SpawnPlayer UUID:%d"), Packet.Uuid);
+}
+
+// リストを受信.
+void PlayerManager::OnRecvList(MemoryStreamInterface *pStream)
+{
+	PacketPlayerList Packet;
+	Packet.Serialize(pStream);
+
+	for (int32 i = 0; i < Packet.List.GetCurrentSize(); i++)
+	{
+		const auto &Data = Packet.List[i];
+		UE_LOG(LogTemp, Log, TEXT("Player UUID:%d X:%f Y:%f"), Data.Uuid, Data.X, Data.Y);
+	}
 }
