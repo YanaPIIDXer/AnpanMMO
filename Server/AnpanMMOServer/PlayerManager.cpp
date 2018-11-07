@@ -3,6 +3,7 @@
 #include "Client.h"
 #include "Packet/PacketSpawnPlayer.h"
 #include "Packet/PacketPlayerList.h"
+#include "Packet/PacketExitPlayer.h"
 
 // コンストラクタ
 PlayerManager::PlayerManager()
@@ -17,7 +18,10 @@ void PlayerManager::Poll()
 	{
 		if (It->second.expired())
 		{
+			u32 Uuid = It->first;
 			It = PlayerList.erase(It);
+			PacketExitPlayer Packet(Uuid);
+			BroadcastPacket(&Packet);
 		}
 		else
 		{
