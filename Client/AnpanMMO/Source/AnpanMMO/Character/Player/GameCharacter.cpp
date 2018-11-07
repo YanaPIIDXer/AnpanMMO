@@ -59,3 +59,16 @@ void AGameCharacter::Attack()
 	PacketAttack Packet(pAnpan->GetUuid());
 	pInst->SendPacket(&Packet);
 }
+
+// 経験値を受信した。
+void AGameCharacter::OnRecvExp(int32 Exp)
+{
+	Status.SetExp(Exp);
+}
+
+// レベルアップした。
+void AGameCharacter::OnLevelUp(int32 MaxHp, int32 Atk, int32 Def)
+{
+	Status.Set(MaxHp, Atk, Def);
+	UpdateMaxHp(MaxHp);
+}

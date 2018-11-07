@@ -5,6 +5,8 @@
 #include "Character/CharacterBase.h"
 #include "Character/Anpan/Anpan.h"
 #include "Active/UI/MainHUD.h"
+#include "Character/Player/GameCharacter.h"
+#include "Kismet/GameplayStatics.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketDamage.h"
 #include "Packet/PacketAddExp.h"
@@ -78,7 +80,9 @@ void AActiveGameMode::OnRecvAddExp(MemoryStreamInterface *pStream)
 	PacketAddExp Packet;
 	Packet.Serialize(pStream);
 
-	UE_LOG(LogTemp, Log, TEXT("AddExp Exp:%d"), Packet.Exp);
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+	pCharacter->OnRecvExp(Packet.Exp);
 }
 
 // レベルアップを受信した。
@@ -87,6 +91,8 @@ void AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 	PacketLevelUp Packet;
 	Packet.Serialize(pStream);
 
-	UE_LOG(LogTemp, Log, TEXT("Level Up!!"));
-	UE_LOG(LogTemp, Log, TEXT("MaxHp:%d Atc:%d Def;%d"), Packet.MaxHp, Packet.Atk, Packet.Def);
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+	pCharacter->OnLevelUp(Packet.MaxHp, Packet.Atk, Packet.Def);
+	pCharacter->OnRecvExp(Packet.ResultExp);
 }

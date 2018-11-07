@@ -36,6 +36,12 @@ public:
 	// ステータス取得.
 	const PlayerStatus &GetStatus() const { return Status; }
 
+	// 経験値を受信した。
+	void OnRecvExp(int32 Exp);
+
+	// レベルアップした。
+	void OnLevelUp(int32 MaxHp, int32 Atk, int32 Def);
+
 private:
 
 	// メッシュパス
