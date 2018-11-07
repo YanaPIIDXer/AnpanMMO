@@ -23,6 +23,9 @@ public:
 	// デストラクタ
 	~PlayerManager() {}
 
+	// Worldを設定.
+	void SetWorld(UWorld *pInWorld) { pWorld = pInWorld; }
+
 	// 追加.
 	void Add(uint8 Uuid, APlayerCharacterBase *pPlayer);
 
@@ -33,5 +36,8 @@ private:
 
 	// プレイヤーマップ
 	TMap<uint8, PlayerPtr> PlayerMap;
+
+	// World
+	TWeakObjectPtr<UWorld> pWorld;
 
 };

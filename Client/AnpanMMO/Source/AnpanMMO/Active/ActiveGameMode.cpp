@@ -33,6 +33,7 @@ void AActiveGameMode::BeginPlay()
 
 	pMainHUD = UMainHUD::Show(this);
 
+	PlayerMgr.SetWorld(GetWorld());
 	AnpanMgr.SetWorld(GetWorld());
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());

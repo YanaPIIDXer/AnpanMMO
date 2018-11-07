@@ -4,6 +4,7 @@
 
 // コンストラクタ
 PlayerManager::PlayerManager()
+	: pWorld(nullptr)
 {
 }
 
