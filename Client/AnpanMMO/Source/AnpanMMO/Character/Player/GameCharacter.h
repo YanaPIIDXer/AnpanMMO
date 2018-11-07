@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "PlayerCharacterBase.h"
 #include "PlayerStatus.h"
+#include "PlayerMove.h"
 #include "GameCharacter.generated.h"
 
 class UFloatingPawnMovement;
@@ -30,6 +31,9 @@ public:
 	// 開始時の処理.
 	virtual void BeginPlay() override;
 
+	// 毎フレームの処理.
+	virtual void Tick(float DeltaTime) override;
+
 	// 攻撃.
 	void Attack();
 
@@ -42,6 +46,9 @@ public:
 	// レベルアップを受信した。
 	void OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def);
 
+	// 移動ベクトルの取得.
+	virtual FVector GetMoveVector() const override;
+
 protected:
 
 	// レベルアップした
@@ -51,14 +58,14 @@ protected:
 
 private:
 
-	// AnimInstanceのクラスパス
-	static const TCHAR *AnimInstanceClassPath;
-
 	// 移動用Component
 	UPROPERTY()
 	UFloatingPawnMovement *pMovementComponent;
 
 	// ステータス
 	PlayerStatus Status;
+
+	// 移動パケット制御.
+	PlayerMove Move;
 
 };

@@ -6,6 +6,8 @@
 #include "GameFramework/Controller.h"
 #include "OtherPlayerController.generated.h"
 
+class AOtherPlayerCharacter;
+
 /**
  * 他人のコントローラ
  */
@@ -23,7 +25,33 @@ public:
 	// デストラクタ
 	virtual ~AOtherPlayerController() {}
 
+	// Pawnが紐付けられた.
+	virtual void Possess(APawn *aPawn) override;
+
+	// 毎フレームの処理.
+	virtual void Tick(float DeltaTime) override;
+
+	// 移動.
+	void Move(float X, float Y, float Rotation);
+
+	// 移動ベクトルの取得.
+	FVector GetMoveVector() const;
+
 private:
 	
+	// 移動インターバル
+	static const float MoveInterval;
+
+	// キャラクタ
+	TWeakObjectPtr<AOtherPlayerCharacter> pCharacter;
+
+	// 移動座標.
+	FVector MoveTarget;
+
+	// 以前の座標.
+	FVector PrevPos;
+
+	// 移動時間.
+	float MoveTime;
 	
 };

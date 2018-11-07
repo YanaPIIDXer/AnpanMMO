@@ -6,6 +6,7 @@
 #include "Components/SphereComponent.h"
 
 const TCHAR *APlayerCharacterBase::MeshPath = TEXT("/Game/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
+const TCHAR *APlayerCharacterBase::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
 
 // コンストラクタ
 APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectInitializer)
@@ -23,4 +24,14 @@ APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectIniti
 	pMeshComponent->AttachTo(pDummyComponent);
 	pMeshComponent->SetRelativeLocation(FVector(0, 0, -110.0f));
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+}
+
+// 開始時の処理.
+void APlayerCharacterBase::BeginPlay()
+{
+	Super::BeginPlay();
+
+	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
+	check(pAnimClass != nullptr);
+	pMeshComponent->SetAnimInstanceClass(pAnimClass);
 }

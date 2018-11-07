@@ -9,8 +9,6 @@
 #include "Kismet/GameplayStatics.h"
 #include "Packet/PacketAttack.h"
 
-const TCHAR *AGameCharacter::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
-
 // コンストラクタ
 AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
@@ -26,10 +24,6 @@ void AGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
-	check(pAnimClass != nullptr);
-	GetMeshComponent()->SetAnimInstanceClass(pAnimClass);
-
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	Status = pInst->GetStatusCache();
@@ -38,6 +32,17 @@ void AGameCharacter::BeginPlay()
 	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 	check(pGameMode != nullptr);
 	pGameMode->AddPlayerCharacter(Status.GetUuid(), this);
+
+	Move.Initialize(this, pInst);
+}
+
+// 毎フレームの処理.
+void AGameCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	Move.Poll(DeltaTime);
+
 }
 
 // 攻撃.
@@ -69,4 +74,10 @@ void AGameCharacter::OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def)
 	Status.Set(MaxHp, Atk, Def);
 	UpdateMaxHp(MaxHp);
 	OnLevelUp();
+}
+
+// 移動ベクトルの取得.
+FVector AGameCharacter::GetMoveVector() const
+{
+	return pMovementComponent->GetLastInputVector();
 }

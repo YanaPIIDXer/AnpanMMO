@@ -7,6 +7,7 @@
 #include "TickManager.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
+#include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
 #include "Packet/PacketDamage.h"
 #include "Packet/PacketAddExp.h"
@@ -42,6 +43,15 @@ void World::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 	AnpanMgr.MakeListPacket(Packet);
 
 	pPlayer.lock()->GetClient()->SendPacket(&Packet);
+}
+
+// プレイヤー移動を受信した。
+void World::OnRecvMove(Client *pClient, MemoryStreamInterface *pStream)
+{
+	PacketMovePlayer Packet;
+	Packet.Serialize(pStream);
+
+	PlayerMgr.OnRecvMove(Packet.Uuid, Packet.X, Packet.Y, Packet.Rotation);
 }
 
 // 攻撃を受信した。

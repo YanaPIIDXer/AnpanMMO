@@ -25,6 +25,9 @@ public:
 	// プレイヤーキャラの追加.
 	void AddPlayerCharacter(const PlayerCharacterPtr &pPlayer);
 
+	// プレイヤー移動を受信した。
+	void OnRecvMove(Client *pClient, MemoryStreamInterface *pStream);
+
 	// 攻撃を受信した。
 	void OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream);
 

@@ -6,6 +6,14 @@ CharacterBase::CharacterBase()
 {
 }
 
+// ˆÚ“®.
+void CharacterBase::Move(float X, float Y, float Rotation)
+{
+	Position.X = X;
+	Position.Y = Y;
+	Rot.Set(Rotation);
+}
+
 // ƒ_ƒ[ƒW
 void CharacterBase::ApplyDamage(int Value)
 {
