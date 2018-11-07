@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Character/CharacterBase.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "PlayerCharacterBase.generated.h"
 
 /**
@@ -25,6 +26,16 @@ public:
 
 protected:
 
+	// MeshComponent取得.
+	USkeletalMeshComponent *GetMeshComponent() const { return pMeshComponent; }
+
 private:
-	
+
+	// メッシュパス
+	static const TCHAR *MeshPath;
+
+	// MeshComponent
+	UPROPERTY()
+	USkeletalMeshComponent *pMeshComponent;
+
 };

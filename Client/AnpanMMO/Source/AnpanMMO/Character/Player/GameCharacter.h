@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Character/CharacterBase.h"
+#include "PlayerCharacterBase.h"
 #include "PlayerStatus.h"
 #include "GameCharacter.generated.h"
 
@@ -14,7 +14,7 @@ class USkeletalMeshComponent;
  * プレイヤーキャラクタクラス
  */
 UCLASS()
-class ANPANMMO_API AGameCharacter : public ACharacterBase
+class ANPANMMO_API AGameCharacter : public APlayerCharacterBase
 {
 
 	GENERATED_BODY()
@@ -44,19 +44,12 @@ public:
 
 private:
 
-	// メッシュパス
-	static const TCHAR *MeshPath;
-
 	// AnimInstanceのクラスパス
 	static const TCHAR *AnimInstanceClassPath;
 
 	// 移動用Component
 	UPROPERTY()
 	UFloatingPawnMovement *pMovementComponent;
-
-	// MeshComponent
-	UPROPERTY()
-	USkeletalMeshComponent *pMeshComponent;
 
 	// ステータス
 	PlayerStatus Status;

@@ -2,15 +2,11 @@
 
 #include "GameCharacter.h"
 #include "GameFramework/FloatingPawnMovement.h"
-#include "UObject/ConstructorHelpers.h"
-#include "Engine/SkeletalMesh.h"
-#include "Components/SkeletalMeshComponent.h"
 #include "Engine/World.h"
 #include "Character/Anpan/Anpan.h"
 #include "MMOGameInstance.h"
 #include "Packet/PacketAttack.h"
 
-const TCHAR *AGameCharacter::MeshPath = TEXT("/Game/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
 const TCHAR *AGameCharacter::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
 
 // コンストラクタ
@@ -22,16 +18,9 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 	
 	pMovementComponent = CreateDefaultSubobject<UFloatingPawnMovement>("Movement");
 
-	pMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("MeshComponent");
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshFinder(MeshPath);
-	pMeshComponent->SetSkeletalMesh(MeshFinder.Object);
-	pMeshComponent->SetWorldLocation(FVector(0, 0, -110.0f));
-	pMeshComponent->SetWorldRotation(FRotator(0.0f, -90.0f, 0.0f));
 	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
 	check(pAnimClass != nullptr);
-	pMeshComponent->SetAnimInstanceClass(pAnimClass);
-
-	RootComponent = pMeshComponent;
+	GetMeshComponent()->SetAnimInstanceClass(pAnimClass);
 }
 
 // 開始時の処理.
