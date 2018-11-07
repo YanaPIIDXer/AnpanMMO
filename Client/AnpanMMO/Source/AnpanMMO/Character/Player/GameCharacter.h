@@ -39,8 +39,15 @@ public:
 	// 経験値を受信した。
 	void OnRecvExp(int32 Exp);
 
-	// レベルアップした。
-	void OnLevelUp(int32 MaxHp, int32 Atk, int32 Def);
+	// レベルアップを受信した。
+	void OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def);
+
+protected:
+
+	// レベルアップした
+	UFUNCTION(BlueprintNativeEvent, Category = "Character")
+	void OnLevelUp();
+	void OnLevelUp_Implementation() {}
 
 private:
 
