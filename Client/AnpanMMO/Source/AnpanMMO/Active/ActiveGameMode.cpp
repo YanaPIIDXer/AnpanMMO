@@ -49,6 +49,12 @@ void AActiveGameMode::Tick(float DeltaTime)
 	AnpanMgr.Poll();
 }
 
+// プレイヤーキャラ追加.
+void AActiveGameMode::AddPlayerCharacter(uint32 Uuid, APlayerCharacterBase *pPlayer)
+{
+	PlayerMgr.Add(Uuid, pPlayer);
+}
+
 
 // ダメージを受信した。
 void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
