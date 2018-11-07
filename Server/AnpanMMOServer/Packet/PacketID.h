@@ -15,6 +15,7 @@ enum PacketID
 	CharacterStatus,
 	PlayerList,
 	SpawnPlayer,
+	ExitPlayer,
 	
 };
 

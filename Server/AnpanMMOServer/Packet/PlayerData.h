@@ -16,17 +16,19 @@ public:
 	u32 Uuid;
 	float X;
 	float Y;
+	float Rotation;
 	
 
 	PlayerData()
 	{
 	}
 
-	PlayerData(u32 InUuid, float InX, float InY)
+	PlayerData(u32 InUuid, float InX, float InY, float InRotation)
 	{
 		Uuid = InUuid;
 		X = InX;
 		Y = InY;
+		Rotation = InRotation;
 		
 	}
 
@@ -35,6 +37,7 @@ public:
 		pStream->Serialize(&Uuid);
 		pStream->Serialize(&X);
 		pStream->Serialize(&Y);
+		pStream->Serialize(&Rotation);
 		
 		return true;
 	}

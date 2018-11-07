@@ -5,6 +5,7 @@
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketSpawnPlayer.h"
 #include "Packet/PacketPlayerList.h"
+#include "Packet/PacketExitPlayer.h"
 
 // コンストラクタ
 PlayerManager::PlayerManager()
@@ -43,8 +44,20 @@ void PlayerManager::OnRecvList(MemoryStreamInterface *pStream)
 	for (int32 i = 0; i < Packet.List.GetCurrentSize(); i++)
 	{
 		const auto &Data = Packet.List[i];
-		SpawnCharacter(Data.Uuid, Data.X, Data.Y, 0.0f);
+		SpawnCharacter(Data.Uuid, Data.X, Data.Y, Data.Rotation);
 	}
+}
+
+// 退出を受信.
+void PlayerManager::OnRecvExit(MemoryStreamInterface *pStream)
+{
+	PacketExitPlayer Packet;
+	Packet.Serialize(pStream);
+
+	auto *pPlayer = PlayerMap.Find(Packet.Uuid);
+	check(pPlayer != nullptr);
+	pPlayer->Get()->Destroy();
+	PlayerMap.Remove(Packet.Uuid);
 }
 
 
