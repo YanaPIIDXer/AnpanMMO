@@ -6,7 +6,7 @@
 #include "Animation/AnimInstance.h"
 #include "GameCharacterAnimInstance.generated.h"
 
-class AGameCharacter;
+class APlayerCharacterBase;
 
 /**
  * GameCharacter用AnimInstance
@@ -40,9 +40,6 @@ protected:
 private:
 
 	// キャラクター
-	TWeakObjectPtr<AGameCharacter> pCharacter;
+	TWeakObjectPtr<APlayerCharacterBase> pCharacter;
 
-	// 移動用Component
-	TWeakObjectPtr<UPawnMovementComponent> pMovementComponent;
-	
 };

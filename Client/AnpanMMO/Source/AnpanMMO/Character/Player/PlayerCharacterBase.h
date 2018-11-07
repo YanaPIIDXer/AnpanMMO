@@ -24,8 +24,14 @@ public:
 	// デストラクタ
 	virtual ~APlayerCharacterBase() {}
 
+	// 開始時の処理.
+	virtual void BeginPlay() override;
+
 	// 移動.
 	virtual void Move(float X, float Y, float Rotation) {}
+
+	// 移動ベクトルの取得.
+	virtual FVector GetMoveVector() const { return FVector(); }
 	
 protected:
 
@@ -36,6 +42,9 @@ private:
 
 	// メッシュパス
 	static const TCHAR *MeshPath;
+
+	// AnimInstanceのクラスパス
+	static const TCHAR *AnimInstanceClassPath;
 
 	// MeshComponent
 	UPROPERTY()

@@ -1,7 +1,7 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "GameCharacterAnimInstance.h"
-#include "GameCharacter.h"
+#include "PlayerCharacterBase.h"
 #include "GameFramework/PawnMovementComponent.h"
 
 // コンストラクタ
@@ -9,7 +9,6 @@ UGameCharacterAnimInstance::UGameCharacterAnimInstance(const FObjectInitializer 
 	: Super(ObjectInitializer)
 	, MoveVector(FVector::ZeroVector)
 	, pCharacter(nullptr)
-	, pMovementComponent(nullptr)
 {
 }
 
@@ -18,18 +17,14 @@ void UGameCharacterAnimInstance::NativeInitializeAnimation()
 {
 	Super::NativeInitializeAnimation();
 
-	pCharacter = Cast<AGameCharacter>(TryGetPawnOwner());
-	if (pCharacter != nullptr)
-	{
-		pMovementComponent = pCharacter->GetMovementComponent();
-	}
+	pCharacter = Cast<APlayerCharacterBase>(TryGetPawnOwner());
 }
 
 // 毎フレームの処理.
 void UGameCharacterAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeUpdateAnimation(DeltaSeconds);
-	if (pCharacter == nullptr || pMovementComponent == nullptr) { return; }
+	if (pCharacter == nullptr) { return; }
 
-	MoveVector = pMovementComponent->GetLastInputVector();
+	MoveVector = pCharacter->GetMoveVector();
 }

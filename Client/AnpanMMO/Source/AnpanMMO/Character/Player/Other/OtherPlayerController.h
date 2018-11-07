@@ -34,6 +34,9 @@ public:
 	// 移動.
 	void Move(float X, float Y, float Rotation);
 
+	// 移動ベクトルの取得.
+	FVector GetMoveVector() const;
+
 private:
 	
 	// 移動インターバル

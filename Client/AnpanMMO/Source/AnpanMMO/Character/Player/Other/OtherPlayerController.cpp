@@ -53,3 +53,10 @@ void AOtherPlayerController::Move(float X, float Y, float Rotation)
 
 	MoveTime = MoveInterval;
 }
+
+// ˆÚ“®ƒxƒNƒgƒ‹‚ÌŽæ“¾.
+FVector AOtherPlayerController::GetMoveVector() const
+{
+	if (MoveTime <= 0.0f) { return FVector::ZeroVector; }
+	return (MoveTarget - PrevPos).GetSafeNormal();
+}

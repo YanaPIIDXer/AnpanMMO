@@ -44,3 +44,10 @@ void AOtherPlayerCharacter::Move(float X, float Y, float Rotation)
 {
 	pController->Move(X, Y, Rotation);
 }
+
+// ˆÚ“®ƒxƒNƒgƒ‹‚ÌŽæ“¾.
+FVector AOtherPlayerCharacter::GetMoveVector() const
+{
+	if (pController == nullptr) { return FVector::ZeroVector; }
+	return pController->GetMoveVector();
+}

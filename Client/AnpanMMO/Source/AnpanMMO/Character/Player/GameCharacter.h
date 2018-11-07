@@ -46,6 +46,9 @@ public:
 	// レベルアップを受信した。
 	void OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def);
 
+	// 移動ベクトルの取得.
+	virtual FVector GetMoveVector() const override;
+
 protected:
 
 	// レベルアップした
@@ -54,9 +57,6 @@ protected:
 	void OnLevelUp_Implementation() {}
 
 private:
-
-	// AnimInstanceのクラスパス
-	static const TCHAR *AnimInstanceClassPath;
 
 	// 移動用Component
 	UPROPERTY()
