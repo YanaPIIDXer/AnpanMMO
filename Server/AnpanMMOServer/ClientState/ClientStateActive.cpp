@@ -38,7 +38,7 @@ void ClientStateActive::LoadCharacter()
 	}
 	pClient->CreateCharacter(MaxHp, Atk, Def, Exp);
 
-	PacketCharacterStatus Packet(MaxHp, MaxHp, Atk, Def, Exp);
+	PacketCharacterStatus Packet(pClient->GetUuid(), MaxHp, MaxHp, Atk, Def, Exp);
 	pClient->SendPacket(&Packet);
 }
 
