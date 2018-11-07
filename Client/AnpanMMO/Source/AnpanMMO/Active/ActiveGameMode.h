@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "MMOGameModeBase.h"
+#include "Character/Player/PlayerManager.h"
 #include "Character/Anpan/AnpanManager.h"
 #include "ActiveGameMode.generated.h"
 
@@ -32,9 +33,15 @@ public:
 	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;
 
+	// プレイヤーキャラ追加.
+	void AddPlayerCharacter(uint32 Uuid, APlayerCharacterBase *pPlayer);
+	
 protected:
 
 private:
+
+	// プレイヤー管理.
+	PlayerManager PlayerMgr;
 
 	// アンパン管理.
 	AnpanManager AnpanMgr;

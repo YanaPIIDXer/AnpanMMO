@@ -41,6 +41,9 @@ protected:
 	// 初期化.
 	void Initialize(int32 InHp, int32 InMaxHp);
 
+	// 最大HPを更新.
+	void UpdateMaxHp(int32 InMaxHp) { MaxHp = InMaxHp; }
+
 	// ダメージイベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Character")
 	void OnDamaged(int32 BeforeHp, int32 AfterHp, int32 DamageValue);

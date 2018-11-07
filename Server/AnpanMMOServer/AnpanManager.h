@@ -29,13 +29,10 @@ public:
 	~AnpanManager() {}
 
 	// 毎フレームの処理.
-	void Poll();
+	void Poll(int DeltaTime);
 
 	// 取得.
 	AnpanPtr Get(u32 Uuid) const;
-
-	// アンパン生成.
-	void SpawnAnpan();
 
 	// 生成時コールバックを設定.
 	void SetSpawnCallback(const SpawnFunc &InOnSpawn) { OnSpawn = InOnSpawn; }
@@ -45,6 +42,9 @@ public:
 
 private:
 
+	// 生成インターバル
+	static const int SpawnInterval;
+
 	// アンパンリスト
 	AnpanMap AnpanList;
 
@@ -53,6 +53,16 @@ private:
 
 	// 生成時コールバック
 	SpawnFunc OnSpawn;
+
+	// 生成までの時間.
+	int SpawnTime;
+
+
+	// アンパン生成.
+	void SpawnAnpan();
+
+	// 殺されたアンパンの撤去.
+	void EraseKilledAnpan();
 
 };
 

@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
 #include "Connection/GameServerConnection.h"
+#include "Character/Player/PlayerStatus.h"
 #include "MMOGameInstance.generated.h"
 
 class PacketBase;
@@ -40,6 +41,12 @@ public:
 	// パケット送信.
 	void SendPacket(PacketBase *pPacket);
 
+	// ステータスを受信した。
+	void OnRecvStatus(uint32 Uuid, int32 MaxHp, int32 Atk, int32 Def, int32 Exp);
+
+	// ステータスキャッシュ取得.
+	const PlayerStatus &GetStatusCache() const { return StatusCache; }
+
 	
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;
@@ -48,6 +55,9 @@ private:
 
 	// ゲームサーバへの接続.
 	GameServerConnection *pConnection;
+
+	// ステータスキャッシュ
+	PlayerStatus StatusCache;
 
 
 	// パケットを受信した。

@@ -2,15 +2,13 @@
 
 #include "GameCharacter.h"
 #include "GameFramework/FloatingPawnMovement.h"
-#include "UObject/ConstructorHelpers.h"
-#include "Engine/SkeletalMesh.h"
-#include "Components/SkeletalMeshComponent.h"
 #include "Engine/World.h"
 #include "Character/Anpan/Anpan.h"
 #include "MMOGameInstance.h"
+#include "Active/ActiveGameMode.h"
+#include "Kismet/GameplayStatics.h"
 #include "Packet/PacketAttack.h"
 
-const TCHAR *AGameCharacter::MeshPath = TEXT("/Game/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
 const TCHAR *AGameCharacter::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
 
 // コンストラクタ
@@ -22,30 +20,24 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 	
 	pMovementComponent = CreateDefaultSubobject<UFloatingPawnMovement>("Movement");
 
-	pMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("MeshComponent");
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshFinder(MeshPath);
-	pMeshComponent->SetSkeletalMesh(MeshFinder.Object);
-	pMeshComponent->SetWorldLocation(FVector(0, 0, -110.0f));
-	pMeshComponent->SetWorldRotation(FRotator(0.0f, -90.0f, 0.0f));
 	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
 	check(pAnimClass != nullptr);
-	pMeshComponent->SetAnimInstanceClass(pAnimClass);
-
-	RootComponent = pMeshComponent;
+	GetMeshComponent()->SetAnimInstanceClass(pAnimClass);
 }
 
 // 開始時の処理.
 void AGameCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
-}
 
-// 毎フレームの処理.
-void AGameCharacter::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+	Status = pInst->GetStatusCache();
+	Initialize(Status.GetMaxHp(), Status.GetMaxHp());
 
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->AddPlayerCharacter(Status.GetUuid(), this);
 }
 
 // 攻撃.
@@ -53,7 +45,9 @@ void AGameCharacter::Attack()
 {
 	FHitResult Result;
 
-	if (!GetWorld()->LineTraceSingleByChannel(Result, GetActorLocation(), GetActorLocation() + (GetActorForwardVector() * 500.0f), ECollisionChannel::ECC_GameTraceChannel1)) { return; }
+	FVector StartVec = GetActorLocation();
+	FVector EndVec = StartVec + (GetActorForwardVector() * 500.0f);
+	if (!GetWorld()->LineTraceSingleByChannel(Result, StartVec, EndVec, ECollisionChannel::ECC_GameTraceChannel1)) { return; }
 	AAnpan *pAnpan = Cast<AAnpan>(Result.GetActor());
 	if (pAnpan == nullptr) { return; }
 
@@ -61,4 +55,18 @@ void AGameCharacter::Attack()
 	check(pInst != nullptr);
 	PacketAttack Packet(pAnpan->GetUuid());
 	pInst->SendPacket(&Packet);
+}
+
+// 経験値を受信した。
+void AGameCharacter::OnRecvExp(int32 Exp)
+{
+	Status.SetExp(Exp);
+}
+
+// レベルアップを受信した。
+void AGameCharacter::OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def)
+{
+	Status.Set(MaxHp, Atk, Def);
+	UpdateMaxHp(MaxHp);
+	OnLevelUp();
 }

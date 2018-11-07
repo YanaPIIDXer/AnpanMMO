@@ -74,7 +74,6 @@ void AGameController::MoveForward(float Value)
 	Vec = CameraRot.RotateVector(Vec);
 
 	FRotator Rot = Vec.Rotation();
-	Rot.Yaw -= 90.0f;
 	pCharacter->SetActorRotation(Rot);
 	pCharacter->AddMovementInput(Vec);
 }
@@ -88,7 +87,6 @@ void AGameController::MoveRight(float Value)
 	Vec = CameraRot.RotateVector(Vec);
 
 	FRotator Rot = Vec.Rotation();
-	Rot.Yaw -= 90.0f;
 	pCharacter->SetActorRotation(Rot);
 	pCharacter->AddMovementInput(Vec);
 }

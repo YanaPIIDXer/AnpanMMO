@@ -64,7 +64,10 @@ void ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
 {
 	PacketCharacterStatus Packet;
 	Packet.Serialize(pStream);
-	UE_LOG(LogTemp, Log, TEXT("HP:%d MaxHP:%d Atk:%d Def:%d Exp:%d"), Packet.Hp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+	pInst->OnRecvStatus(Packet.Uuid, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 }
 
 // ゲーム画面に進む準備が出来た。
