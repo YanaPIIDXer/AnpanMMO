@@ -14,15 +14,15 @@ public:
 	
 
 	u32 Uuid;
-	s32 X;
-	s32 Y;
+	float X;
+	float Y;
 	
 
 	PlayerData()
 	{
 	}
 
-	PlayerData(u32 InUuid, s32 InX, s32 InY)
+	PlayerData(u32 InUuid, float InX, float InY)
 	{
 		Uuid = InUuid;
 		X = InX;
