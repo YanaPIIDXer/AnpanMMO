@@ -5,6 +5,7 @@
 #include "Character/Player/PlayerCharacter.h"
 
 class PacketBase;
+class Client;
 
 /**
  * プレイヤー管理クラス
@@ -34,7 +35,7 @@ public:
 	PlayerCharacterPtr Get(u8 Uuid) const;
 
 	// パケットをブロードキャスト
-	void BroadcastPacket(PacketBase *pPacket);
+	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 
 private:
 

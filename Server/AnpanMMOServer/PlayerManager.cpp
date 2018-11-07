@@ -39,10 +39,12 @@ PlayerCharacterPtr PlayerManager::Get(u8 Uuid) const
 }
 
 // パケットをブロードキャスト
-void PlayerManager::BroadcastPacket(PacketBase *pPacket)
+void PlayerManager::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 {
 	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
 	{
-		It->second.lock()->GetClient()->SendPacket(pPacket);
+		Client *pClient = It->second.lock()->GetClient();
+		if (pClient == pIgnoreClient) { continue; }
+		pClient->SendPacket(pPacket);
 	}
 }
