@@ -67,7 +67,8 @@ void PlayerManager::MakeListPacket(PacketPlayerList &Packet)
 	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
 	{
 		const Vector2D Position = It->second.lock()->GetPosition();
-		PlayerData Data(It->first, Position.X, Position.Y);
+		const Rotation Rot = It->second.lock()->GetRotation();
+		PlayerData Data(It->first, Position.X, Position.Y, Rot.Get());
 		Packet.List.PushBack(Data);
 	}
 }
