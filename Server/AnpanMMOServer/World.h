@@ -20,13 +20,10 @@ public:
 	void Initialize();
 
 	// 毎フレームの処理.
-	void Poll();
+	void Poll(int DeltaTime);
 
 	// プレイヤーキャラの追加.
 	void AddPlayerCharacter(const PlayerCharacterPtr &pPlayer);
-
-	// アンパン生成.
-	void SpawnAnpan() { AnpanMgr.SpawnAnpan(); }
 
 	// 攻撃を受信した。
 	void OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream);

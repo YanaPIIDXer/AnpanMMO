@@ -3,15 +3,25 @@
 #include "Math/Random.h"
 #include "Packet/PacketAnpanList.h"
 
+const int AnpanManager::SpawnInterval = 5000;
+
 // コンストラクタ
 AnpanManager::AnpanManager()
 	: NextUuid(1)
+	, SpawnTime(SpawnInterval)
 {
 }
 
 // 毎フレームの処理.
-void AnpanManager::Poll()
+void AnpanManager::Poll(int DeltaTime)
 {
+	SpawnTime -= DeltaTime;
+	if (SpawnTime <= 0)
+	{
+		SpawnAnpan();
+		SpawnTime += SpawnInterval;
+	}
+
 	AnpanMap::iterator It = AnpanList.begin();
 	while (It != AnpanList.end())
 	{
@@ -34,34 +44,6 @@ AnpanPtr AnpanManager::Get(u32 Uuid) const
 
 	return It->second;
 }
-
-// アンパン生成.
-void AnpanManager::SpawnAnpan()
-{
-	if (AnpanList.size() >= 100) { return; }
-
-	float X = Random::Range<float>(-2500.0f, 2500.0f);
-	float Y = Random::Range<float>(-2500.0f, 2500.0f);
-	
-	int Hp = Random::Range<int>(100, 500);
-
-	int Atk = Random::Range<int>(10, 100);
-	int Def = Random::Range<int>(10, 100);
-
-	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
-	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
-
-	unsigned int Uuid = NextUuid;
-	AnpanList[Uuid] = pAnpan;
-	
-	NextUuid++;
-
-	if (OnSpawn)
-	{
-		OnSpawn(Uuid, pAnpan);
-	}
-}
-
 // アンパンリストパケットを生成.
 void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 {
@@ -72,5 +54,33 @@ void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 		const Vector2D Position = pAnpan->GetPosition();
 		AnpanData Data(It->first, Position.X, Position.Y, Param.Hp, Param.MaxHp);
 		Packet.List.PushBack(Data);
+	}
+}
+
+
+// アンパン生成.
+void AnpanManager::SpawnAnpan()
+{
+	if (AnpanList.size() >= 100) { return; }
+
+	float X = Random::Range<float>(-2500.0f, 2500.0f);
+	float Y = Random::Range<float>(-2500.0f, 2500.0f);
+
+	int Hp = Random::Range<int>(100, 500);
+
+	int Atk = Random::Range<int>(10, 100);
+	int Def = Random::Range<int>(10, 100);
+
+	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
+	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
+
+	unsigned int Uuid = NextUuid;
+	AnpanList[Uuid] = pAnpan;
+
+	NextUuid++;
+
+	if (OnSpawn)
+	{
+		OnSpawn(Uuid, pAnpan);
 	}
 }

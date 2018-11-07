@@ -31,15 +31,7 @@ int main()
 	ClientManagerTimer.start(posix_time::millisec(30),
 		bind(&ClientManager::Poll, &ClientManager::GetInstance()));
 
-	asio::basic_repeating_timer<posix_time::ptime> WorldTimer(IOService);
-	WorldTimer.start(posix_time::millisec(30),
-		bind(&World::Poll, &World::GetInstance()));
-
 	World::GetInstance().Initialize();
-
-	asio::basic_repeating_timer<posix_time::ptime> AnpanSpawnTimer(IOService);
-	AnpanSpawnTimer.start(posix_time::millisec(5000),
-		bind(&World::SpawnAnpan, &World::GetInstance()));
 
 	asio::basic_repeating_timer<posix_time::ptime> TickTimer(IOService);
 	TickTimer.start(posix_time::millisec(30),

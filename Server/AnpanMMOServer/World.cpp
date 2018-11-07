@@ -4,6 +4,7 @@
 #include "Math/DamageCalcUnit.h"
 #include "Math/Random.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "TickManager.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketAttack.h"
@@ -20,14 +21,15 @@ World::World()
 // 初期化.
 void World::Initialize()
 {
+	TickManager::GetInstance().Add(bind(&World::Poll, this, _1));
 	AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1, _2));
 }
 
 // 毎フレームの処理.
-void World::Poll()
+void World::Poll(int DeltaTime)
 {
 	PlayerMgr.Poll();
-	AnpanMgr.Poll();
+	AnpanMgr.Poll(DeltaTime);
 }
 
 // プレイヤーキャラの追加.
