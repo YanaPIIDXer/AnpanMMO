@@ -3,6 +3,7 @@
 
 #include <boost/unordered_map.hpp>
 #include "Character/Player/PlayerCharacter.h"
+#include "PlayerManager.h"
 #include "AnpanManager.h"
 
 class PacketBase;
@@ -13,10 +14,6 @@ class MemoryStreamInterface;
  */
 class World : noncopyable
 {
-
-private:		// 別名定義.
-
-	typedef unordered_map<u32, PlayerCharacterPtr> PlayerMap;
 
 public:
 
@@ -37,18 +34,12 @@ public:
 
 private:
 
-	// プレイヤーキャラリスト
-	PlayerMap PlayerList;
-
+	// プレイヤー管理.
+	PlayerManager PlayerMgr;
+	
 	// アンパン管理.
 	AnpanManager AnpanMgr;
 
-
-	// PlayerListの更新.
-	void UpdatePlayerList();
-
-	// パケットをブロードキャスト
-	void BroadcastPacket(PacketBase *pPacket);
 
 	// アンパンが生成された。
 	void OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan);

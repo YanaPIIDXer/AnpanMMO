@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "PlayerManager.h"
+#include "Client.h"
 
 // コンストラクタ
 PlayerManager::PlayerManager()
@@ -35,4 +36,13 @@ PlayerCharacterPtr PlayerManager::Get(u8 Uuid) const
 	PlayerMap::const_iterator It = PlayerList.find(Uuid);
 	if (It == PlayerList.end()) { return PlayerCharacterPtr(); }
 	return It->second;
+}
+
+// パケットをブロードキャスト
+void PlayerManager::BroadcastPacket(PacketBase *pPacket)
+{
+	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
+	{
+		It->second.lock()->GetClient()->SendPacket(pPacket);
+	}
 }

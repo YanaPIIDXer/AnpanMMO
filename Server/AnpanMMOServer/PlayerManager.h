@@ -4,6 +4,8 @@
 #include <boost/unordered_map.hpp>
 #include "Character/Player/PlayerCharacter.h"
 
+class PacketBase;
+
 /**
  * プレイヤー管理クラス
  */
@@ -30,6 +32,9 @@ public:
 
 	// 取得.
 	PlayerCharacterPtr Get(u8 Uuid) const;
+
+	// パケットをブロードキャスト
+	void BroadcastPacket(PacketBase *pPacket);
 
 private:
 

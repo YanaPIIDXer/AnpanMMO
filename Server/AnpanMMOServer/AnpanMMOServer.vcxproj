@@ -155,6 +155,7 @@
     <ClInclude Include="Packet\PacketBase.h" />
     <ClInclude Include="Packet\PacketHeader.h" />
     <ClInclude Include="Packet\PacketID.h" />
+    <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TypeDefs.h" />
     <ClInclude Include="World.h" />
@@ -185,6 +186,7 @@
     <ClCompile Include="MySQL\MySqlConnection.cpp" />
     <ClCompile Include="MySQL\MySqlQuery.cpp" />
     <ClCompile Include="Packet\PacketHeader.cpp" />
+    <ClCompile Include="PlayerManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>

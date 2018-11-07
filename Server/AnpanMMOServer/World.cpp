@@ -26,16 +26,15 @@ void World::Initialize()
 // 毎フレームの処理.
 void World::Poll()
 {
-	UpdatePlayerList();
-
+	PlayerMgr.Poll();
 	AnpanMgr.Poll();
 }
 
 // プレイヤーキャラの追加.
 void World::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 {
-	PlayerList[pPlayer.lock()->GetClient()->GetUuid()] = pPlayer;
-
+	PlayerMgr.Add(pPlayer.lock()->GetClient()->GetUuid(), pPlayer);
+	
 	// アンパンリストを通知.
 	PacketAnpanList Packet;
 	AnpanMgr.MakeListPacket(Packet);
@@ -59,8 +58,8 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 
 	// ダメージを通知.
 	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
-	BroadcastPacket(&DamagePacket);
-
+	PlayerMgr.BroadcastPacket(&DamagePacket);
+	
 	if (pDefencer.lock()->IsDead())
 	{
 		int Exp = Random::Range<int>(10, 50);
@@ -72,32 +71,6 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 }
 
 
-// PlayerListの更新.
-void World::UpdatePlayerList()
-{
-	PlayerMap::iterator It = PlayerList.begin();
-	while (It != PlayerList.end())
-	{
-		if (It->second.expired())
-		{
-			It = PlayerList.erase(It);
-		}
-		else
-		{
-			++It;
-		}
-	}
-}
-
-// パケットをブロードキャスト
-void World::BroadcastPacket(PacketBase *pPacket)
-{
-	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
-	{
-		It->second.lock()->GetClient()->SendPacket(pPacket);
-	}
-}
-
 // アンパンが生成された。
 void World::OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan)
 {
@@ -105,5 +78,5 @@ void World::OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan)
 	const Vector2D &Position = pAnpan.lock()->GetPosition();
 	AnpanData Data(Uuid, Position.X, Position.Y, Param.Hp, Param.MaxHp);
 	PacketSpawnAnpan Packet(Data);
-	BroadcastPacket(&Packet);
+	PlayerMgr.BroadcastPacket(&Packet);
 }
