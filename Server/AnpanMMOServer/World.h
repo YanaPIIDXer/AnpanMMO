@@ -6,7 +6,6 @@
 #include "PlayerManager.h"
 #include "AnpanManager.h"
 
-class PacketBase;
 class MemoryStreamInterface;
 
 /**
