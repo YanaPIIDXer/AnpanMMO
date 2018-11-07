@@ -43,7 +43,7 @@ void PlayerManager::OnRecvList(MemoryStreamInterface *pStream)
 	for (int32 i = 0; i < Packet.List.GetCurrentSize(); i++)
 	{
 		const auto &Data = Packet.List[i];
-		SpawnCharacter(Data.Uuid, Data.X, Data.Y, 0.0f);
+		SpawnCharacter(Data.Uuid, Data.X, Data.Y, Data.Rotation);
 	}
 }
 
