@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "PlayerCharacterBase.h"
 
+class MemoryStreamInterface;
+
 /**
  * プレイヤー管理.
  */
@@ -31,6 +33,9 @@ public:
 
 	// 取得.
 	APlayerCharacterBase *Get(uint32 Uuid) const;
+
+	// 生成を受信.
+	void OnRecvSpawn(MemoryStreamInterface *pStream);
 
 private:
 
