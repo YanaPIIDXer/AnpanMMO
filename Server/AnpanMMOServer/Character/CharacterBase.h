@@ -3,6 +3,7 @@
 
 #include "CharacterParameter.h"
 #include "Math/Vector2D.h"
+#include "Math/Rotation.h"
 
 /**
  * キャラクタ基底クラス
@@ -24,6 +25,9 @@ public:
 	// 座標取得.
 	const Vector2D &GetPosition() const { return Position; }
 
+	// 回転取得.
+	const Rotation &GetRotation() const { return Rot; }
+
 	// 死んでいる？
 	bool IsDead() const { return (Parameter.Hp <= 0); }
 
@@ -31,6 +35,13 @@ public:
 	void ApplyDamage(int Value);
 
 protected:
+
+	// 座標.
+	Vector2D Position;
+
+	// 回転.
+	Rotation Rot;
+
 
 	// パラメータ設定.
 	void SetParameter(int Hp, int MaxHp, int Atk, int Def)
@@ -52,13 +63,13 @@ protected:
 	// 座標設定.
 	void SetPosition(const Vector2D &InPosition) { Position = InPosition; }
 
+	// 回転を設定.
+	void SetRotation(float Value) { Rot.Set(Value); }
+
 private:
 
 	// パラメータ
 	CharacterParameter Parameter;
-
-	// 座標.
-	Vector2D Position;
 
 };
 
