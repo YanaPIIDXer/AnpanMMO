@@ -26,6 +26,18 @@ public:
 	// ステート切り替え.
 	void ChangeState(AnpanAIStateBase *pNewState);
 
+	// 移動パケットデータの生成.
+	void CreateMovePacketData(const Vector2D &Position, int Time);
+
+	// 移動パケットデータの取得.
+	AnpanMovePacketData *SweepMovePacketData();
+
+	// 回転パケットデータの生成.
+	void CreateRotatePacketData(const Rotation &Rot, int Time);
+
+	// 回転パケットデータの取得.
+	AnpanRotatePacketData *SweepRotatePacketData();
+
 private:
 
 	// 親.
@@ -33,6 +45,12 @@ private:
 
 	// ステート
 	AnpanAIStateBase *pState;
+
+	// 移動パケットデータ
+	AnpanMovePacketData *pMovePacketData;
+
+	// 回転パケットデータ
+	AnpanRotatePacketData *pRotatePacketData;
 
 };
 
