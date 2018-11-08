@@ -5,18 +5,19 @@ ClientManager ClientManager::Instance;
 
 // コンストラクタ
 ClientManager::ClientManager()
+	: NextUuid(1)
 {
 }
 
 // 定期処理.
 void ClientManager::Poll()
 {
-	ListIterator It = List.begin();
-	while (It != List.end())
+	MapIterator It = Map.begin();
+	while (It != Map.end())
 	{
-		if (!It->get()->IsConnected())
+		if (!It->second->IsConnected())
 		{
-			It = List.erase(It);
+			It = Map.erase(It);
 		}
 		else
 		{
@@ -31,6 +32,18 @@ void ClientManager::CreateClient(const shared_ptr<tcp::socket> &pSocket)
 	Client *pNewClient = new Client(pSocket);
 	ClientSharedPtr pClient = ClientSharedPtr(pNewClient);
 
-	// リストに追加。
-	List.push_back(pClient);
+	u32 Uuid = NextUuid;
+	pClient->SetUuid(Uuid);
+	NextUuid++;
+
+	// マップに追加。
+	Map[Uuid] = pClient;
+}
+
+// 取得.
+ClientPtr ClientManager::Get(u32 Uuid)
+{
+	MapIterator It = Map.find(Uuid);
+	if (It == Map.end()) { return ClientPtr(); }
+	return It->second;
 }

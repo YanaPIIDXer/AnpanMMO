@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "ClientStateTitle.h"
-#include "MemoryStream/MemoryStreamInterface.h"
-#include "Packet/PacketLogInRequest.h"
-#include "Packet/PacketLogInResult.h"
 #include "Client.h"
 #include "DBConnection.h"
 #include "ClientStateActive.h"
+#include "ClientManager.h"
+#include "MemoryStream/MemoryStreamInterface.h"
+#include "Packet/PacketLogInRequest.h"
+#include "Packet/PacketLogInResult.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
@@ -35,8 +36,6 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	if (ResultCode != PacketLogInResult::Success) { return; }
 
 	Client *pClient = GetParent();
-	pClient->SetUuid(Id);
-
 	ClientStateActive *pNextState = new ClientStateActive(pClient);
 	pClient->ChangeState(pNextState);
 }

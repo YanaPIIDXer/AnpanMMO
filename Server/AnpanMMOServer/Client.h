@@ -31,7 +31,7 @@ public:
 	void ChangeState(ClientStateBase *pNextState);
 
 	// UUIDをセット
-	void SetUuid(int InUuid) { Uuid = InUuid; }
+	void SetUuid(u32 InUuid) { Uuid = InUuid; }
 
 	// UUIDを取得.
 	int GetUuid() const { return Uuid; }
@@ -65,7 +65,7 @@ private:
 	shared_ptr<ClientStateBase> pState;
 
 	// Uuid
-	int Uuid;
+	u32 Uuid;
 
 	// キャラクタ
 	shared_ptr<PlayerCharacter> pCharacter;

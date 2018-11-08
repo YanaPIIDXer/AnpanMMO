@@ -1,7 +1,7 @@
 #ifndef __CLIENTMANAGER_H__
 #define __CLIENTMANAGER_H__
 
-#include <vector>
+#include <map>
 #include "Client.h"
 
 typedef weak_ptr<Client> ClientPtr;
@@ -15,8 +15,8 @@ class ClientManager : noncopyable
 private:		// 別名定義.
 
 	typedef shared_ptr<Client> ClientSharedPtr;
-	typedef std::vector<ClientSharedPtr> ClientList;
-	typedef ClientList::iterator ListIterator;
+	typedef std::map<u32, ClientSharedPtr> ClientMap;
+	typedef ClientMap::iterator MapIterator;
 
 public:
 
@@ -29,10 +29,16 @@ public:
 	// クライアント生成.
 	void CreateClient(const shared_ptr<tcp::socket> &pSocket);
 
+	// 取得.
+	ClientPtr Get(u32 Uuid);
+
 private:
 
 	// クライアントリスト
-	ClientList List;
+	ClientMap Map;
+
+	// 次に割り振るUUID
+	u32 NextUuid;
 
 	// ======== Singleton ============
 public:
