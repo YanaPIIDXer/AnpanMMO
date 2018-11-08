@@ -14,7 +14,8 @@ public:
 	enum ResultCode
 	{
 		Success,
-		Error = 0x02,
+		DoubleLogIn,
+		Error,
 	};
 
 	u8 Result;
