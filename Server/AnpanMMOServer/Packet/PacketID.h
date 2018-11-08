@@ -5,6 +5,8 @@ enum PacketID
 {
 	AnpanList,
 	SpawnAnpan,
+	MoveAnpan,
+	RotateAnpan,
 	Attack,
 	Damage,
 	GameReady,
