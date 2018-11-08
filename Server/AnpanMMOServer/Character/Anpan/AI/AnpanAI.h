@@ -40,6 +40,12 @@ public:
 	// 回転パケットデータの取得.
 	shared_ptr<AnpanRotatePacketData> SweepRotatePacketData();
 
+	// 停止パケットの送信をセット。
+	void SetSendStopPacket() { bIsNeedSendStopPacket = true; }
+
+	// 停止パケットの送信を取得.
+	bool SweepSendStopPacketFlag();
+
 	// ダメージを受けた。
 	void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue);
 
@@ -65,6 +71,9 @@ private:
 
 	// ヘイト管理.
 	Hate HateManager;
+
+	// 停止パケットを送る必要があるか？
+	bool bIsNeedSendStopPacket;
 
 };
 

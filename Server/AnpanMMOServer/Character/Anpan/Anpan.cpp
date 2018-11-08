@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Anpan.h"
 #include "World.h"
+#include "Packet/PacketStopAnpan.h"
 
 // コンストラクタ
 Anpan::Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def)
@@ -27,6 +28,13 @@ void Anpan::Poll(int DeltaTime)
 	if (pRotatePacketData != NULL)
 	{
 		PacketRotateAnpan Packet = pRotatePacketData->CreatePacket();
+		World::GetInstance().BroadcastPacket(&Packet);
+	}
+
+	if (AI.SweepSendStopPacketFlag())
+	{
+		const Vector2D Pos = GetPosition();
+		PacketStopAnpan Packet(GetUuid(), Pos.X, Pos.Y, GetRotation().Get());
 		World::GetInstance().BroadcastPacket(&Packet);
 	}
 }

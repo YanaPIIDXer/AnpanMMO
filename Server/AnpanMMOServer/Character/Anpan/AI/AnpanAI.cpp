@@ -7,6 +7,7 @@
 // コンストラクタ
 AnpanAI::AnpanAI(Anpan *pInParent)
 	: pParent(pInParent)
+	, bIsNeedSendStopPacket(false)
 {
 	pMovePacketData.reset();
 	pRotatePacketData.reset();
@@ -72,6 +73,14 @@ shared_ptr<AnpanRotatePacketData> AnpanAI::SweepRotatePacketData()
 	shared_ptr<AnpanRotatePacketData> pData = pRotatePacketData;
 	pRotatePacketData.reset();
 	return pData;
+}
+
+// 停止パケットの送信を取得.
+bool AnpanAI::SweepSendStopPacketFlag()
+{
+	bool bSend = bIsNeedSendStopPacket;
+	bIsNeedSendStopPacket = false;
+	return bSend;
 }
 
 // ダメージを受けた。

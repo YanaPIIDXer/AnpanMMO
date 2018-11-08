@@ -15,6 +15,12 @@ AnpanAIStateNonActive::AnpanAIStateNonActive(Anpan *pInParent)
 // ダメージを受けた。
 void AnpanAIStateNonActive::OnDamaged()
 {
+	if (StateTime > 0)
+	{
+		// 何かしら行動しているので停止パケットを送信.
+		GetAI()->SetSendStopPacket();
+	}
+
 	// アクティブ状態へ。
 	GetAI()->ChangeState(new AnpanAIStateActive(GetParent()));
 }
