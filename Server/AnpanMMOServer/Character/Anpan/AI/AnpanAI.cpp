@@ -6,3 +6,8 @@ AnpanAI::AnpanAI(Anpan *pInParent)
 	: pParent(pInParent)
 {
 }
+
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void AnpanAI::Poll(int DeltaTime)
+{
+}

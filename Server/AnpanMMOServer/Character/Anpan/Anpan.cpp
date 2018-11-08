@@ -12,4 +12,5 @@ Anpan::Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def)
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 void Anpan::Poll(int DeltaTime)
 {
+	AI.Poll(DeltaTime);
 }
