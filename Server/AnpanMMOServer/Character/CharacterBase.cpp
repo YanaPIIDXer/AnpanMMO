@@ -14,6 +14,12 @@ void CharacterBase::Move(float X, float Y, float Rotation)
 	Rot.Set(Rotation);
 }
 
+// ‰ñ“].
+void CharacterBase::Rotate(float AddRotation)
+{
+	Rot += AddRotation;
+}
+
 // ƒ_ƒ[ƒW
 void CharacterBase::ApplyDamage(int Value)
 {

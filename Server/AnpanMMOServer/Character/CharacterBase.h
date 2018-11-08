@@ -25,6 +25,9 @@ public:
 	// ˆÚ“®.
 	void Move(float X, float Y, float Rotation);
 
+	// ‰ñ“].
+	void Rotate(float AddRotation);
+
 	// À•Wæ“¾.
 	const Vector2D &GetPosition() const { return Position; }
 
