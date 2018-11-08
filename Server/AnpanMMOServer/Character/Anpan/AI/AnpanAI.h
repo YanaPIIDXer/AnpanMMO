@@ -21,6 +21,9 @@ public:
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
 
+	// ステート切り替え.
+	void ChangeState(AnpanAIStateBase *pNewState);
+
 private:
 
 	// 親.

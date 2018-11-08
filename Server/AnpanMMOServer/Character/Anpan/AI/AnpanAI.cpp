@@ -21,3 +21,10 @@ void AnpanAI::Poll(int DeltaTime)
 {
 	pState->Poll(DeltaTime);
 }
+
+// ステート切り替え.
+void AnpanAI::ChangeState(AnpanAIStateBase *pNewState)
+{
+	delete pState;
+	pState = pNewState;
+}
