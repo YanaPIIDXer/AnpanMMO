@@ -61,8 +61,8 @@ private:
 	// アンパン生成.
 	void SpawnAnpan();
 
-	// 殺されたアンパンの撤去.
-	void EraseKilledAnpan();
+	// 更新処理.
+	void Update(int DeltaTime);
 
 };
 

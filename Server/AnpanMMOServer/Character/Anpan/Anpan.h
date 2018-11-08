@@ -17,6 +17,9 @@ public:
 
 	// デストラクタ
 	virtual ~Anpan() {}
+	
+	// 毎フレームの処理.
+	void Poll(int DeltaTime);
 
 private:
 

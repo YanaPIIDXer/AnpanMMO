@@ -22,7 +22,7 @@ void AnpanManager::Poll(int DeltaTime)
 		SpawnTime += SpawnInterval;
 	}
 
-	EraseKilledAnpan();
+	Update(DeltaTime);
 }
 
 // Žæ“¾.
@@ -74,8 +74,8 @@ void AnpanManager::SpawnAnpan()
 	}
 }
 
-// ŽE‚³‚ê‚½ƒAƒ“ƒpƒ“‚Ì“P‹Ž.
-void AnpanManager::EraseKilledAnpan()
+// XVˆ—.
+void AnpanManager::Update(int DeltaTime)
 {
 	AnpanMap::iterator It = AnpanList.begin();
 	while (It != AnpanList.end())
@@ -86,6 +86,7 @@ void AnpanManager::EraseKilledAnpan()
 		}
 		else
 		{
+			It->second->Poll(DeltaTime);
 			++It;
 		}
 	}
