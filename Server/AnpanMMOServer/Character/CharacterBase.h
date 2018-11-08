@@ -38,7 +38,7 @@ public:
 	bool IsDead() const { return (Parameter.Hp <= 0); }
 
 	// ダメージ
-	void ApplyDamage(int Value);
+	void ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value);
 
 	// 正面ベクトルを取得.
 	Vector2D GetCenterVec() const;
@@ -68,6 +68,9 @@ protected:
 		Parameter.Atk += Atk;
 		Parameter.Def += Def;
 	}
+
+	// ダメージを受けた。
+	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue) {}
 
 private:
 

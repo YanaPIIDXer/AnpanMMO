@@ -72,7 +72,7 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	// ダメージ計算.
 	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
 	int DamageValue = DamageCalc.Calc();
-	pDefencer.lock()->ApplyDamage(DamageValue);
+	pDefencer.lock()->ApplyDamage(pAttacker, DamageValue);
 
 	// ダメージを通知.
 	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);

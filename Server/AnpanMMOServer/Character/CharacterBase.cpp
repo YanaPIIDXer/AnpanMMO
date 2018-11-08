@@ -20,13 +20,15 @@ void CharacterBase::SetRotate(const Rotation &TargetRotation)
 }
 
 // ダメージ
-void CharacterBase::ApplyDamage(int Value)
+void CharacterBase::ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value)
 {
 	Parameter.Hp -= Value;
 	if (Parameter.Hp <= 0)
 	{
 		Parameter.Hp = 0;
 	}
+
+	OnDamaged(pAttacker, Value);
 }
 
 // 正面ベクトルを取得.
