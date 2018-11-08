@@ -94,7 +94,7 @@ void World::OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan)
 {
 	const CharacterParameter &Param = pAnpan.lock()->GetParameter();
 	const Vector2D &Position = pAnpan.lock()->GetPosition();
-	AnpanData Data(Uuid, Position.X, Position.Y, Param.Hp, Param.MaxHp);
+	AnpanData Data(Uuid, Position.X, Position.Y, pAnpan.lock()->GetRotation().Get(), Param.Hp, Param.MaxHp);
 	PacketSpawnAnpan Packet(Data);
 	PlayerMgr.BroadcastPacket(&Packet);
 }

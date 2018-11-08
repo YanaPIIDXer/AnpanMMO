@@ -12,7 +12,7 @@ const TCHAR *AAnpan::BlueprintPath = TEXT("/Game/Blueprints/System/Active/Anpan.
 // ê∂ê¨.
 AAnpan *AAnpan::Spawn(UWorld *pWorld, const AnpanData &Data)
 {
-	AAnpan *pAnpan = Util::SpawnFromBlueprint<AAnpan>(pWorld, BlueprintPath, FVector(Data.X, Data.Y, 100.0f), FRotator(0.0f, 0.0f, 0.0f));
+	AAnpan *pAnpan = Util::SpawnFromBlueprint<AAnpan>(pWorld, BlueprintPath, FVector(Data.X, Data.Y, 100.0f), FRotator(0.0f, Data.Rotation, 0.0f));
 	pAnpan->Initialize(Data.Hp, Data.MaxHp);
 	pAnpan->Uuid = Data.Uuid;
 
