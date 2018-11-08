@@ -7,9 +7,9 @@
 // コンストラクタ
 AnpanAI::AnpanAI(Anpan *pInParent)
 	: pParent(pInParent)
-	, pMovePacketData(NULL)
-	, pRotatePacketData(NULL)
 {
+	pMovePacketData.reset();
+	pRotatePacketData.reset();
 	ChangeState(new AnpanAIStateNonActive(pInParent));
 }
 
