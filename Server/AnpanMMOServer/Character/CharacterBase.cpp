@@ -4,6 +4,7 @@
 
 // コンストラクタ
 CharacterBase::CharacterBase()
+	: Uuid(0)
 {
 }
 

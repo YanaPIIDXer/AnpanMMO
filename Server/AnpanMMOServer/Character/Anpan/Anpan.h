@@ -21,12 +21,6 @@ public:
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
 
-	// UUIDをセット。
-	void SetUuid(u32 InUuid) { Uuid = InUuid; }
-
-	// UUIDを取得.
-	u32 GetUuid() const { return Uuid; }
-
 protected:
 
 	// ダメージを受けた。
