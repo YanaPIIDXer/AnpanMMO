@@ -62,7 +62,7 @@ void AnpanManager::OnRecvMove(MemoryStreamInterface *pStream)
 	PacketMoveAnpan Packet;
 	Packet.Serialize(pStream);
 
-	UE_LOG(LogTemp, Log, TEXT("Recv Anpan Move"));
+	AnpanMap[Packet.Uuid]->Move(Packet.X, Packet.Y, Packet.MoveMilliSec);
 }
 
 // ‰ñ“]‚ðŽóM‚µ‚½B
@@ -71,7 +71,7 @@ void AnpanManager::OnRecvRotate(MemoryStreamInterface *pStream)
 	PacketRotateAnpan Packet;
 	Packet.Serialize(pStream);
 
-	UE_LOG(LogTemp, Log, TEXT("Recv Rotate Anpan"));
+	AnpanMap[Packet.Uuid]->Rotate(Packet.Rotation, Packet.RotateMilliSec);
 }
 
 

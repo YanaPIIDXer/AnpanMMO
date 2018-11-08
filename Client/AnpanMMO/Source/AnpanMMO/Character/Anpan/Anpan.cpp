@@ -1,6 +1,7 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "Anpan.h"
+#include "AnpanController.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/StaticMesh.h"
 #include "Util.h"
@@ -22,6 +23,7 @@ AAnpan *AAnpan::Spawn(UWorld *pWorld, const AnpanData &Data)
 // コンストラクタ
 AAnpan::AAnpan(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, pController(nullptr)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -35,4 +37,35 @@ AAnpan::AAnpan(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel1);
 
 	RootComponent = pMeshComponent;
+
+	AIControllerClass = AAnpanController::StaticClass();
+}
+
+// 開始時の処理.
+void AAnpan::BeginPlay()
+{
+	Super::BeginPlay();
+
+	SpawnDefaultController();
+}
+
+// コントローラと紐付けられた。
+void AAnpan::PossessedBy(AController *NewController)
+{
+	Super::PossessedBy(NewController);
+
+	pController = Cast<AAnpanController>(NewController);
+	check(pController != nullptr);
+}
+
+// 移動.
+void AAnpan::Move(float X, float Y, int32 Time)
+{
+
+}
+
+// 回転.
+void AAnpan::Rotate(float Rotation, int32 Time)
+{
+
 }
