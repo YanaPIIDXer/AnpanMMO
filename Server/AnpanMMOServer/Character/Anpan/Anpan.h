@@ -2,7 +2,7 @@
 #define __ANPAN_H__
 
 #include "Character/CharacterBase.h"
-#include "AI/AnpanAI.h"
+#include "Character/Anpan/AI/AnpanAI.h"
 
 /**
  * アンパンクラス
