@@ -47,6 +47,9 @@ protected:
 	// ‰ñ“]‚ğİ’è.
 	void SetRotate(const Rotation &InRotateTarget, int Time);
 
+	// ’â~.
+	void Stop();
+
 private:
 
 	// e.

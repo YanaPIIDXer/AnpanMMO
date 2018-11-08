@@ -51,6 +51,13 @@ void AnpanAIStateBase::SetRotate(const Rotation &InRotateTarget, int Time)
 	pAI->CreateRotatePacketData(RotateTarget, RotateTime);
 }
 
+// ’â~.
+void AnpanAIStateBase::Stop()
+{
+	MoveTime = 0;
+	RotateTime = 0;
+}
+
 
 // ˆÚ“®XV.
 void AnpanAIStateBase::UpdateMove(int DeltaTime)

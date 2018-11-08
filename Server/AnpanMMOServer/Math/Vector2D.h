@@ -55,6 +55,12 @@ public:
 		*this = Vec;
 	}
 
+	// 内積.
+	float Dot(const Vector2D &Arg)
+	{
+		return ((X * Arg.X) + (Y * Arg.Y)) / (GetSize() * Arg.GetSize());
+	}
+
 	// オペレータオーバーロード
 	Vector2D operator +(const Vector2D &Arg)
 	{

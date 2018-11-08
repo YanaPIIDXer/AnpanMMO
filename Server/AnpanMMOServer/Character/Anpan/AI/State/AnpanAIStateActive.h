@@ -22,12 +22,15 @@ public:
 protected:
 
 	// 更新.
-	virtual void Update();
+	virtual void Update(int DeltaTime);
 
 private:
 
 	// 現在のターゲット
 	weak_ptr<CharacterBase> pCurrentTarget;
+
+	// 移動タイマー
+	int MoveTimer;
 
 };
 
