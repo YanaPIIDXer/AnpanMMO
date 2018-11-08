@@ -43,6 +43,9 @@ public:
 	// 増加.
 	void Add(weak_ptr<CharacterBase> pCharacter, int Value);
 
+	// 一番上にいるキャラを取得.
+	weak_ptr<CharacterBase> GetTop() const;
+
 private:
 
 	// ヘイトリスト

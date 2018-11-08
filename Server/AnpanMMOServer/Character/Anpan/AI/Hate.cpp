@@ -50,6 +50,13 @@ void Hate::Add(weak_ptr<CharacterBase> pCharacter, int Value)
 	Sort();
 }
 
+// 一番上にいるキャラを取得.
+weak_ptr<CharacterBase> Hate::GetTop() const
+{
+	if (HateList.empty()) { return weak_ptr<CharacterBase>(); }
+	return HateList[0].pCharacter;
+}
+
 
 // ソート
 void Hate::Sort()
