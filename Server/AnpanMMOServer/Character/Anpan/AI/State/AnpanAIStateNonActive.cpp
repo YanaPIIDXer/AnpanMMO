@@ -2,6 +2,7 @@
 #include "AnpanAIStateNonActive.h"
 #include "Math/Random.h"
 #include "Character/Anpan/Anpan.h"
+#include "AnpanAIStateActive.h"
 
 // コンストラクタ
 AnpanAIStateNonActive::AnpanAIStateNonActive(Anpan *pInParent)
@@ -9,6 +10,13 @@ AnpanAIStateNonActive::AnpanAIStateNonActive(Anpan *pInParent)
 	, CurrentState(None)
 	, StateTime(0)
 {
+}
+
+// ダメージを受けた。
+void AnpanAIStateNonActive::OnDamaged()
+{
+	// アクティブ状態へ。
+	GetAI()->ChangeState(new AnpanAIStateActive(GetParent()));
 }
 
 
