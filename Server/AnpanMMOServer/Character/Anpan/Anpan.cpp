@@ -8,6 +8,7 @@ Anpan::Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def)
 	, Uuid(0)
 {
 	SetPosition(InPosition);
+	SetRotate(Rotation(180.0f));
 	SetParameter(Hp, Hp, Atk, Def);
 }
 

@@ -69,7 +69,8 @@ void AnpanAIStateNonActive::UpdateRotating()
 	{
 		// ˆÚ“®.
 		Vector2D Vec = GetParent()->GetCenterVec();
-		Vec *= Random::Range<float>(-1000.0f, 1000.0f);
+		Vec *= Random::Range<float>(500.0f, 1000.0f);
+		Vec += GetParent()->GetPosition();
 		StateTime = Random::Range<int>(3000, 5000);
 		SetMove(Vec, StateTime);
 		CurrentState = Moving;
