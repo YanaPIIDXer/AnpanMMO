@@ -5,6 +5,8 @@
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketSpawnAnpan.h"
+#include "Packet/PacketMoveAnpan.h"
+#include "Packet/PacketRotateAnpan.h"
 
 // コンストラクタ
 AnpanManager::AnpanManager()
@@ -52,6 +54,24 @@ void AnpanManager::OnRecvSpawn(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	SpawnAnpan(Packet.Data);
+}
+
+// 移動を受信した。
+void AnpanManager::OnRecvMove(MemoryStreamInterface *pStream)
+{
+	PacketMoveAnpan Packet;
+	Packet.Serialize(pStream);
+
+	UE_LOG(LogTemp, Log, TEXT("Recv Anpan Move"));
+}
+
+// 回転を受信した。
+void AnpanManager::OnRecvRotate(MemoryStreamInterface *pStream)
+{
+	PacketRotateAnpan Packet;
+	Packet.Serialize(pStream);
+
+	UE_LOG(LogTemp, Log, TEXT("Recv Rotate Anpan"));
 }
 
 

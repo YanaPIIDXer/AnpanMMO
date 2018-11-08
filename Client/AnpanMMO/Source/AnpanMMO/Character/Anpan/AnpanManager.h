@@ -41,6 +41,12 @@ public:
 	// 生成を受信した.
 	void OnRecvSpawn(MemoryStreamInterface *pStream);
 
+	// 移動を受信した。
+	void OnRecvMove(MemoryStreamInterface *pStream);
+
+	// 回転を受信した。
+	void OnRecvRotate(MemoryStreamInterface *pStream);
+
 private:
 
 	// アンパンマップ
