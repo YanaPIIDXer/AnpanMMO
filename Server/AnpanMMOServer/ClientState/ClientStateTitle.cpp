@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "ClientStateTitle.h"
-#include "MemoryStream/MemoryStreamInterface.h"
-#include "Packet/PacketLogInRequest.h"
-#include "Packet/PacketLogInResult.h"
 #include "Client.h"
 #include "DBConnection.h"
 #include "ClientStateActive.h"
+#include "ClientManager.h"
+#include "MemoryStream/MemoryStreamInterface.h"
+#include "Packet/PacketLogInRequest.h"
+#include "Packet/PacketLogInResult.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
@@ -28,14 +29,17 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	{
 		ResultCode = PacketLogInResult::Error;
 	}
-
-	PacketLogInResult ResultPacket(ResultCode, Id);
-	GetParent()->SendPacket(&ResultPacket);
+	if (!ClientManager::GetInstance().GetFromCustomerId(Id).expired())
+	{
+		ResultCode = PacketLogInResult::DoubleLogIn;
+	}
+	Client *pClient = GetParent();
+	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid());
+	pClient->SendPacket(&ResultPacket);
 
 	if (ResultCode != PacketLogInResult::Success) { return; }
 
-	Client *pClient = GetParent();
-	pClient->SetUuid(Id);
+	pClient->SetCustomerId(Id);
 
 	ClientStateActive *pNextState = new ClientStateActive(pClient);
 	pClient->ChangeState(pNextState);

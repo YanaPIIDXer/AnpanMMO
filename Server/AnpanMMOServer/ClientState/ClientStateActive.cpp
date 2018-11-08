@@ -32,7 +32,7 @@ void ClientStateActive::LoadCharacter()
 	int Atk = 0;
 	int Def = 0;
 	int Exp = 0;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(pClient->GetUuid(), MaxHp, Atk, Def, Exp))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(pClient->GetCustomerId(), MaxHp, Atk, Def, Exp))
 	{
 		std::cout << "Character Status Load Failed..." << std::endl;
 		return;

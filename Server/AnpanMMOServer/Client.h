@@ -31,10 +31,16 @@ public:
 	void ChangeState(ClientStateBase *pNextState);
 
 	// UUIDをセット
-	void SetUuid(int InUuid) { Uuid = InUuid; }
+	void SetUuid(u32 InUuid) { Uuid = InUuid; }
 
 	// UUIDを取得.
 	int GetUuid() const { return Uuid; }
+
+	// カスタマＩＤをセット.
+	void SetCustomerId(u32 InCustomerId) { CustomerId = InCustomerId; }
+
+	// カスタマＩＤを取得.
+	u32 GetCustomerId() const { return CustomerId; }
 
 	// キャラクタ取得.
 	weak_ptr<PlayerCharacter> GetCharacter() const { return pCharacter; }
@@ -65,7 +71,10 @@ private:
 	shared_ptr<ClientStateBase> pState;
 
 	// Uuid
-	int Uuid;
+	u32 Uuid;
+
+	// カスタマＩＤ
+	u32 CustomerId;
 
 	// キャラクタ
 	shared_ptr<PlayerCharacter> pCharacter;
