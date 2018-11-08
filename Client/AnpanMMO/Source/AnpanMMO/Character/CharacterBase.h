@@ -47,12 +47,12 @@ protected:
 	// ダメージイベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Character")
 	void OnDamaged(int32 BeforeHp, int32 AfterHp, int32 DamageValue);
-	void OnDamaged_Implementation(int32 BeforeHp, int32 AfterHp, int32 DamageValue) {}
+	virtual void OnDamaged_Implementation(int32 BeforeHp, int32 AfterHp, int32 DamageValue) {}
 
 	// 死亡イベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Character")
 	void OnDead();
-	void OnDead_Implementation() {}
+	virtual void OnDead_Implementation() {}
 
 private:
 
