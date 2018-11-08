@@ -27,6 +27,7 @@ AnpanAI::~AnpanAI()
 void AnpanAI::Poll(int DeltaTime)
 {
 	pState->Poll(DeltaTime);
+	HateManager.Poll();
 }
 
 // ステート切り替え.

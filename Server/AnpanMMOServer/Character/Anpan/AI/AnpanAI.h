@@ -2,6 +2,7 @@
 #define __ANPANAI_H__
 
 #include "AnpanAIPacketData.h"
+#include "Hate.h"
 
 class Anpan;
 class AnpanAIStateBase;
@@ -42,6 +43,9 @@ public:
 	// ダメージを受けた。
 	void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue);
 
+	// ヘイト管理取得.
+	const Hate &GetHate() const { return HateManager; }
+
 private:
 
 	// 親.
@@ -55,6 +59,9 @@ private:
 
 	// 回転パケットデータ
 	shared_ptr<AnpanRotatePacketData> pRotatePacketData;
+
+	// ヘイト管理.
+	Hate HateManager;
 
 };
 
