@@ -58,7 +58,7 @@ PlayerCharacterPtr PlayerManager::Get(u8 Uuid) const
 void PlayerManager::OnRecvMove(u32 Uuid, float X, float Y, float Rot)
 {
 	PlayerCharacter *pChara = PlayerList[Uuid].lock().get();
-	pChara->Move(Vector2D(X, Y));
+	pChara->SetPosition(Vector2D(X, Y));
 	pChara->SetRotate(Rotation(Rot));
 
 	PacketMovePlayer Packet(Uuid, X, Y, Rot);

@@ -22,14 +22,11 @@ public:
 	// パラメータ取得.
 	const CharacterParameter &GetParameter() const { return Parameter; }
 
-	// 移動.
-	void Move(const Vector2D &MoveTarget);
+	// 座標を設定.
+	void SetPosition(const Vector2D &MoveTarget);
 
 	// 回転を設定.
 	void SetRotate(const Rotation &TargetRotation);
-
-	// 回転.
-	void Rotate(float AddRotation);
 
 	// 座標取得.
 	const Vector2D &GetPosition() const { return Position; }
@@ -68,12 +65,6 @@ protected:
 		Parameter.Atk += Atk;
 		Parameter.Def += Def;
 	}
-
-	// 座標設定.
-	void SetPosition(const Vector2D &InPosition) { Position = InPosition; }
-
-	// 回転を設定.
-	void SetRotation(float Value) { Rot.Set(Value); }
 
 private:
 

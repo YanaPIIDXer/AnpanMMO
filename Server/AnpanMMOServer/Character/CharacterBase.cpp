@@ -7,7 +7,7 @@ CharacterBase::CharacterBase()
 }
 
 // ˆÚ“®.
-void CharacterBase::Move(const Vector2D &MoveTarget)
+void CharacterBase::SetPosition(const Vector2D &MoveTarget)
 {
 	Position = MoveTarget;
 }
@@ -16,12 +16,6 @@ void CharacterBase::Move(const Vector2D &MoveTarget)
 void CharacterBase::SetRotate(const Rotation &TargetRotation)
 {
 	Rot = TargetRotation;
-}
-
-// ‰ñ“].
-void CharacterBase::Rotate(float AddRotation)
-{
-	Rot += AddRotation;
 }
 
 // ƒ_ƒ[ƒW
