@@ -38,6 +38,7 @@ void AnpanAIStateBase::SetMove(const Vector2D &InMoveTarget, int Time)
 	MoveTarget = InMoveTarget;
 	MoveTime = Time;
 	MoveStartTime = Time;
+	pAI->CreateMovePacketData(MoveTarget, MoveTime);
 }
 
 // ‰ñ“]‚ðÝ’è.
@@ -47,6 +48,7 @@ void AnpanAIStateBase::SetRotate(const Rotation &InRotateTarget, int Time)
 	RotateTarget = InRotateTarget;
 	RotateTime = Time;
 	RotateStartTime = Time;
+	pAI->CreateRotatePacketData(RotateTarget, RotateTime);
 }
 
 
