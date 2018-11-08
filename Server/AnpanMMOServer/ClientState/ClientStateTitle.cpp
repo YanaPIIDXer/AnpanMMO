@@ -31,11 +31,13 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	}
 
 	PacketLogInResult ResultPacket(ResultCode, Id);
-	GetParent()->SendPacket(&ResultPacket);
+	Client *pClient = GetParent();
+	pClient->SendPacket(&ResultPacket);
 
 	if (ResultCode != PacketLogInResult::Success) { return; }
 
-	Client *pClient = GetParent();
+	pClient->SetCustomerId(Id);
+
 	ClientStateActive *pNextState = new ClientStateActive(pClient);
 	pClient->ChangeState(pNextState);
 }
