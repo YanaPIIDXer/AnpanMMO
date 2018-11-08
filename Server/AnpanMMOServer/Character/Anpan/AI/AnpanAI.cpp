@@ -19,6 +19,9 @@ AnpanAI::~AnpanAI()
 	delete pState;
 	pState = NULL;
 
+	delete pPrevState;
+	pPrevState = NULL;
+
 	pMovePacketData.reset();
 	pRotatePacketData.reset();
 }
@@ -26,6 +29,11 @@ AnpanAI::~AnpanAI()
 // 毎フレームの処理.
 void AnpanAI::Poll(int DeltaTime)
 {
+	if (pPrevState != NULL)
+	{
+		delete pPrevState;
+		pPrevState = NULL;
+	}
 	pState->Poll(DeltaTime);
 	HateManager.Poll();
 }
@@ -33,7 +41,7 @@ void AnpanAI::Poll(int DeltaTime)
 // ステート切り替え.
 void AnpanAI::ChangeState(AnpanAIStateBase *pNewState)
 {
-	delete pState;
+	pPrevState = pState;
 	pState = pNewState;
 	pState->SetAI(this);
 }

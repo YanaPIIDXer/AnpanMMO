@@ -54,6 +54,9 @@ private:
 	// ステート
 	AnpanAIStateBase *pState;
 
+	// 前のState
+	AnpanAIStateBase *pPrevState;
+
 	// 移動パケットデータ
 	shared_ptr<AnpanMovePacketData> pMovePacketData;
 
