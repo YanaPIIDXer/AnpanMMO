@@ -127,6 +127,7 @@
     <ClInclude Include="AnpanManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
+    <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
     <ClInclude Include="Character\Anpan\AI\State\AnpanAIStateBase.h" />
     <ClInclude Include="Character\Anpan\AI\State\AnpanAIStateNonActive.h" />
     <ClInclude Include="Character\Anpan\Anpan.h" />

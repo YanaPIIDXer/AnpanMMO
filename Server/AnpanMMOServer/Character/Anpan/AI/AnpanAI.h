@@ -1,6 +1,8 @@
 #ifndef __ANPANAI_H__
 #define __ANPANAI_H__
 
+#include "AnpanAIPacketData.h"
+
 class Anpan;
 class AnpanAIStateBase;
 
