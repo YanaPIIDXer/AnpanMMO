@@ -58,7 +58,7 @@ public:
 	// 内積.
 	float Dot(const Vector2D &Arg)
 	{
-		return ((X * Arg.X) + (Y * Arg.Y)) / (GetSize() * Arg.GetSize());
+		return ((X * Arg.X) + (Y * Arg.Y));
 	}
 
 	// オペレータオーバーロード
