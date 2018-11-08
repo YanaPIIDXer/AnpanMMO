@@ -64,3 +64,8 @@ shared_ptr<AnpanRotatePacketData> AnpanAI::SweepRotatePacketData()
 	pRotatePacketData.reset();
 	return pData;
 }
+
+// ダメージを受けた。
+void AnpanAI::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
+{
+}

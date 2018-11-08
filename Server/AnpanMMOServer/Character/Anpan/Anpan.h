@@ -27,6 +27,11 @@ public:
 	// UUIDを取得.
 	u32 GetUuid() const { return Uuid; }
 
+protected:
+
+	// ダメージを受けた。
+	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue);
+
 private:
 
 	// AI

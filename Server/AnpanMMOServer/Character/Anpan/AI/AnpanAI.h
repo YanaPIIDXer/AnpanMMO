@@ -5,6 +5,7 @@
 
 class Anpan;
 class AnpanAIStateBase;
+class CharacterBase;
 
 /**
  * アンパンＡＩクラス
@@ -37,6 +38,9 @@ public:
 
 	// 回転パケットデータの取得.
 	shared_ptr<AnpanRotatePacketData> SweepRotatePacketData();
+
+	// ダメージを受けた。
+	void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue);
 
 private:
 

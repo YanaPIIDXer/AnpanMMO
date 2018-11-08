@@ -31,3 +31,10 @@ void Anpan::Poll(int DeltaTime)
 		World::GetInstance().BroadcastPacket(&Packet);
 	}
 }
+
+
+// ダメージを受けた。
+void Anpan::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
+{
+	AI.OnDamaged(pAttacker, DamageValue);
+}
