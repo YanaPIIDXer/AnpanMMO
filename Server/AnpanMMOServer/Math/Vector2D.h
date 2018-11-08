@@ -84,6 +84,34 @@ public:
 		Y -= Arg.Y;
 	}
 
+	Vector2D operator *(float Arg)
+	{
+		Vector2D Vec;
+		Vec.X = X * Arg;
+		Vec.Y = Y * Arg;
+		return Vec;
+	}
+
+	Vector2D operator /(float Arg)
+	{
+		Vector2D Vec;
+		Vec.X = X / Arg;
+		Vec.Y = Y / Arg;
+		return Vec;
+	}
+
+	void operator *=(float Arg)
+	{
+		X *= Arg;
+		Y *= Arg;
+	}
+
+	void operator /=(float Arg)
+	{
+		X /= Arg;
+		Y /= Arg;
+	}
+
 };
 
 #endif		// #ifndef __VECTOR2D_H__
