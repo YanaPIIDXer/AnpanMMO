@@ -7,6 +7,7 @@
 #include "Anpan.generated.h"
 
 class AnpanData;
+class AAnpanController;
 
 /**
  * アンパンクラス
@@ -28,8 +29,20 @@ public:
 	// デストラクタ
 	virtual ~AAnpan() {}
 
+	// 開始時の処理.
+	virtual void BeginPlay() override;
+
+	// コントローラと紐付けられた。
+	virtual void PossessedBy(AController *NewController) override;
+
 	// UUID取得.
 	uint32 GetUuid() const { return Uuid; }
+
+	// 移動.
+	void Move(float X, float Y, int32 Time);
+
+	// 回転.
+	void Rotate(float Rotation, int32 Time);
 
 private:
 
@@ -42,6 +55,9 @@ private:
 	// メッシュComponent
 	UPROPERTY()
 	UStaticMeshComponent *pMeshComponent;
+
+	// コントローラ
+	TWeakObjectPtr<AAnpanController> pController;
 
 	// UUID
 	uint32 Uuid;

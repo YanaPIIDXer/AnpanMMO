@@ -127,6 +127,9 @@
     <ClInclude Include="AnpanManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
+    <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
+    <ClInclude Include="Character\Anpan\AI\State\AnpanAIStateBase.h" />
+    <ClInclude Include="Character\Anpan\AI\State\AnpanAIStateNonActive.h" />
     <ClInclude Include="Character\Anpan\Anpan.h" />
     <ClInclude Include="Character\CharacterBase.h" />
     <ClInclude Include="Character\CharacterParameter.h" />
@@ -143,6 +146,7 @@
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
     <ClInclude Include="Math\DamageCalcUnit.h" />
+    <ClInclude Include="Math\MathUtil.h" />
     <ClInclude Include="Math\Random.h" />
     <ClInclude Include="Math\Rotation.h" />
     <ClInclude Include="Math\Vector2D.h" />
@@ -182,6 +186,8 @@
   <ItemGroup>
     <ClCompile Include="AnpanManager.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
+    <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateBase.cpp" />
+    <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateNonActive.cpp" />
     <ClCompile Include="Character\Anpan\Anpan.cpp" />
     <ClCompile Include="Character\CharacterBase.cpp" />
     <ClCompile Include="Character\Player\PlayerCharacter.cpp" />
@@ -197,6 +203,7 @@
     <ClCompile Include="FlexArray.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Math\DamageCalcUnit.cpp" />
+    <ClCompile Include="Math\MathUtil.cpp" />
     <ClCompile Include="Math\Random.cpp" />
     <ClCompile Include="Math\Rotation.cpp" />
     <ClCompile Include="MemoryBuffer.cpp" />

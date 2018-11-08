@@ -22,8 +22,11 @@ public:
 	// パラメータ取得.
 	const CharacterParameter &GetParameter() const { return Parameter; }
 
-	// 移動.
-	void Move(float X, float Y, float Rotation);
+	// 座標を設定.
+	void SetPosition(const Vector2D &MoveTarget);
+
+	// 回転を設定.
+	void SetRotate(const Rotation &TargetRotation);
 
 	// 座標取得.
 	const Vector2D &GetPosition() const { return Position; }
@@ -35,7 +38,10 @@ public:
 	bool IsDead() const { return (Parameter.Hp <= 0); }
 
 	// ダメージ
-	void ApplyDamage(int Value);
+	void ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value);
+
+	// 正面ベクトルを取得.
+	Vector2D GetCenterVec() const;
 
 protected:
 
@@ -63,11 +69,8 @@ protected:
 		Parameter.Def += Def;
 	}
 
-	// 座標設定.
-	void SetPosition(const Vector2D &InPosition) { Position = InPosition; }
-
-	// 回転を設定.
-	void SetRotation(float Value) { Rot.Set(Value); }
+	// ダメージを受けた。
+	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue) {}
 
 private:
 

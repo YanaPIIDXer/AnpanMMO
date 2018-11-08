@@ -72,7 +72,7 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	// ダメージ計算.
 	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
 	int DamageValue = DamageCalc.Calc();
-	pDefencer.lock()->ApplyDamage(DamageValue);
+	pDefencer.lock()->ApplyDamage(pAttacker, DamageValue);
 
 	// ダメージを通知.
 	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
@@ -94,7 +94,7 @@ void World::OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan)
 {
 	const CharacterParameter &Param = pAnpan.lock()->GetParameter();
 	const Vector2D &Position = pAnpan.lock()->GetPosition();
-	AnpanData Data(Uuid, Position.X, Position.Y, Param.Hp, Param.MaxHp);
+	AnpanData Data(Uuid, Position.X, Position.Y, pAnpan.lock()->GetRotation().Get(), Param.Hp, Param.MaxHp);
 	PacketSpawnAnpan Packet(Data);
 	PlayerMgr.BroadcastPacket(&Packet);
 }

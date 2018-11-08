@@ -22,7 +22,7 @@ void AnpanManager::Poll(int DeltaTime)
 		SpawnTime += SpawnInterval;
 	}
 
-	EraseKilledAnpan();
+	Update(DeltaTime);
 }
 
 // Žæ“¾.
@@ -41,7 +41,7 @@ void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 		AnpanSharedPtr pAnpan = It->second;
 		const CharacterParameter &Param = pAnpan->GetParameter();
 		const Vector2D Position = pAnpan->GetPosition();
-		AnpanData Data(It->first, Position.X, Position.Y, Param.Hp, Param.MaxHp);
+		AnpanData Data(It->first, Position.X, Position.Y, pAnpan->GetRotation().Get(),Param.Hp, Param.MaxHp);
 		Packet.List.PushBack(Data);
 	}
 }
@@ -65,6 +65,7 @@ void AnpanManager::SpawnAnpan()
 
 	unsigned int Uuid = NextUuid;
 	AnpanList[Uuid] = pAnpan;
+	pAnpan->SetUuid(Uuid);
 
 	NextUuid++;
 
@@ -74,8 +75,8 @@ void AnpanManager::SpawnAnpan()
 	}
 }
 
-// ŽE‚³‚ê‚½ƒAƒ“ƒpƒ“‚Ì“P‹Ž.
-void AnpanManager::EraseKilledAnpan()
+// XVˆ—.
+void AnpanManager::Update(int DeltaTime)
 {
 	AnpanMap::iterator It = AnpanList.begin();
 	while (It != AnpanList.end())
@@ -86,6 +87,7 @@ void AnpanManager::EraseKilledAnpan()
 		}
 		else
 		{
+			It->second->Poll(DeltaTime);
 			++It;
 		}
 	}
