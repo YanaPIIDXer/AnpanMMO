@@ -21,13 +21,13 @@ public:
 	// Degree‚ğRadian‚É•ÏŠ·.
 	static float DegToRad(float Deg)
 	{
-		return (Deg * (PI / 180.0f));
+		return (Deg * PI / 180.0f);
 	}
 
 	// Radian‚ğDegree‚É•ÏŠ·.
 	static float RadToDeg(float Rad)
 	{
-		return (Rad * (180.0f / PI));
+		return (Rad * 180.0f / PI);
 	}
 
 	// ƒxƒNƒgƒ‹‚ğ‰ñ“].
