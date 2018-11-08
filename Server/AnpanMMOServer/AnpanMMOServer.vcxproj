@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClInclude Include="AnpanManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
+    <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\Anpan.h" />
     <ClInclude Include="Character\CharacterBase.h" />
     <ClInclude Include="Character\CharacterParameter.h" />
@@ -153,9 +154,25 @@
     <ClInclude Include="MySQL\MySqlBinds.h" />
     <ClInclude Include="MySQL\MySqlConnection.h" />
     <ClInclude Include="MySQL\MySqlQuery.h" />
+    <ClInclude Include="Packet\AnpanData.h" />
+    <ClInclude Include="Packet\PacketAddExp.h" />
+    <ClInclude Include="Packet\PacketAnpanList.h" />
+    <ClInclude Include="Packet\PacketAttack.h" />
     <ClInclude Include="Packet\PacketBase.h" />
+    <ClInclude Include="Packet\PacketCharacterStatus.h" />
+    <ClInclude Include="Packet\PacketDamage.h" />
+    <ClInclude Include="Packet\PacketExitPlayer.h" />
+    <ClInclude Include="Packet\PacketGameReady.h" />
     <ClInclude Include="Packet\PacketHeader.h" />
     <ClInclude Include="Packet\PacketID.h" />
+    <ClInclude Include="Packet\PacketLevelUp.h" />
+    <ClInclude Include="Packet\PacketLogInRequest.h" />
+    <ClInclude Include="Packet\PacketLogInResult.h" />
+    <ClInclude Include="Packet\PacketMovePlayer.h" />
+    <ClInclude Include="Packet\PacketPlayerList.h" />
+    <ClInclude Include="Packet\PacketSpawnAnpan.h" />
+    <ClInclude Include="Packet\PacketSpawnPlayer.h" />
+    <ClInclude Include="Packet\PlayerData.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TickManager.h" />
@@ -164,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnpanManager.cpp" />
+    <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\Anpan.cpp" />
     <ClCompile Include="Character\CharacterBase.cpp" />
     <ClCompile Include="Character\Player\PlayerCharacter.cpp" />

@@ -2,6 +2,7 @@
 #define __ANPAN_H__
 
 #include "Character/CharacterBase.h"
+#include "AI/AnpanAI.h"
 
 /**
  * アンパンクラス
@@ -18,6 +19,9 @@ public:
 	virtual ~Anpan() {}
 
 private:
+
+	// AI
+	AnpanAI AI;
 
 };
 
