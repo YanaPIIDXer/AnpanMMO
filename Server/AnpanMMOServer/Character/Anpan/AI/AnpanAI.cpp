@@ -1,12 +1,13 @@
 #include "stdafx.h"
 #include "AnpanAI.h"
+#include "State/AnpanAIStateBase.h"
 #include "State/AnpanAIStateNonActive.h"
 
 // コンストラクタ
 AnpanAI::AnpanAI(Anpan *pInParent)
 	: pParent(pInParent)
-	, pState(new AnpanAIStateNonActive(pInParent))
 {
+	ChangeState(new AnpanAIStateNonActive(pInParent));
 }
 
 // デストラクタ
@@ -27,4 +28,5 @@ void AnpanAI::ChangeState(AnpanAIStateBase *pNewState)
 {
 	delete pState;
 	pState = pNewState;
+	pState->SetAI(this);
 }

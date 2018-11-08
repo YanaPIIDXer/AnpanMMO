@@ -5,6 +5,7 @@
 #include "Math/Rotation.h"
 
 class Anpan;
+class AnpanAI;
 
 /**
  * アンパンＡＩステート基底クラス
@@ -22,6 +23,9 @@ public:
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
+
+	// AIを設定.
+	void SetAI(AnpanAI *pInAI) { pAI = pInAI; }
 
 	// 移動中？
 	bool IsMoving() const { return (MoveTime > 0); }
@@ -49,6 +53,9 @@ protected:
 	// 親を取得.
 	Anpan *GetParent() { return pParent; }
 
+	// AIを取得.
+	AnpanAI *GetAI() { return pAI; }
+
 	// 移動を設定.
 	void SetMove(const Vector2D &InMoveTarget, int Time);
 
@@ -59,6 +66,9 @@ private:
 
 	// 親.
 	Anpan *pParent;
+
+	// AI
+	AnpanAI *pAI;
 
 	// 以前の座標.
 	Vector2D PrevPos;
