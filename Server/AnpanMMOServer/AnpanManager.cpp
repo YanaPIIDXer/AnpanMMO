@@ -65,6 +65,7 @@ void AnpanManager::SpawnAnpan()
 
 	unsigned int Uuid = NextUuid;
 	AnpanList[Uuid] = pAnpan;
+	pAnpan->SetUuid(Uuid);
 
 	NextUuid++;
 

@@ -4,6 +4,7 @@
 // コンストラクタ
 Anpan::Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def)
 	: AI(this)
+	, Uuid(0)
 {
 	SetPosition(InPosition);
 	SetParameter(Hp, Hp, Atk, Def);
