@@ -5,3 +5,6 @@ cloneした後、以下のようにしてslnファイルを生成してください。
 
 1.AnpanMMO.uprojectを右クリック。  
 2.「Generate Visual Studio project files」を選択。
+
+# エンジンバージョン
+2018/11/8現在、エンジンバージョンは**4.21.0**です。  

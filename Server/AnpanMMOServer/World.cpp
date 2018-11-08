@@ -45,6 +45,12 @@ void World::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 	pPlayer.lock()->GetClient()->SendPacket(&Packet);
 }
 
+// パケットをブロードキャスト
+void World::BroadcastPacket(PacketBase *pPacket)
+{
+	PlayerMgr.BroadcastPacket(pPacket);
+}
+
 // プレイヤー移動を受信した。
 void World::OnRecvMove(Client *pClient, MemoryStreamInterface *pStream)
 {
