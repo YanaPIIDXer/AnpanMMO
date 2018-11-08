@@ -23,7 +23,10 @@ public:
 	const CharacterParameter &GetParameter() const { return Parameter; }
 
 	// ˆÚ“®.
-	void Move(float X, float Y, float Rotation);
+	void Move(const Vector2D &MoveTarget);
+
+	// ‰ñ“]‚ğİ’è.
+	void SetRotate(const Rotation &TargetRotation);
 
 	// ‰ñ“].
 	void Rotate(float AddRotation);

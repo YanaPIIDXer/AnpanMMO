@@ -55,11 +55,13 @@ PlayerCharacterPtr PlayerManager::Get(u8 Uuid) const
 }
 
 // ˆÚ“®‚ğóM‚µ‚½B
-void PlayerManager::OnRecvMove(u32 Uuid, float X, float Y, float Rotation)
+void PlayerManager::OnRecvMove(u32 Uuid, float X, float Y, float Rot)
 {
-	PlayerList[Uuid].lock()->Move(X, Y, Rotation);
+	PlayerCharacter *pChara = PlayerList[Uuid].lock().get();
+	pChara->Move(Vector2D(X, Y));
+	pChara->SetRotate(Rotation(Rot));
 
-	PacketMovePlayer Packet(Uuid, X, Y, Rotation);
+	PacketMovePlayer Packet(Uuid, X, Y, Rot);
 	BroadcastPacket(&Packet, PlayerList[Uuid].lock()->GetClient());
 }
 
