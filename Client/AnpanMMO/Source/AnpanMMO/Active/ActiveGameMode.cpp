@@ -75,7 +75,7 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	{
 		case PacketDamage::TargetType::Player:
 
-			// @TODO:他プレイヤー周りが出来たら実装。
+			pDamageCharacter = PlayerMgr.Get(Packet.TargetUuid);
 			break;
 
 		case PacketDamage::TargetType::Enemy:
