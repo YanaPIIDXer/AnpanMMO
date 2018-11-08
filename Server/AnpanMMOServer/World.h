@@ -6,6 +6,7 @@
 #include "PlayerManager.h"
 #include "AnpanManager.h"
 
+class PacketBase;
 class MemoryStreamInterface;
 
 /**
@@ -24,6 +25,9 @@ public:
 
 	// プレイヤーキャラの追加.
 	void AddPlayerCharacter(const PlayerCharacterPtr &pPlayer);
+
+	// パケットをブロードキャスト
+	void BroadcastPacket(PacketBase *pPacket);
 
 	// プレイヤー移動を受信した。
 	void OnRecvMove(Client *pClient, MemoryStreamInterface *pStream);
