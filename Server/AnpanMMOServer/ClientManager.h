@@ -1,7 +1,7 @@
 #ifndef __CLIENTMANAGER_H__
 #define __CLIENTMANAGER_H__
 
-#include <map>
+#include <boost/unordered_map.hpp>
 #include "Client.h"
 
 typedef weak_ptr<Client> ClientPtr;
@@ -15,7 +15,7 @@ class ClientManager : noncopyable
 private:		// •Ê–¼’è‹`.
 
 	typedef shared_ptr<Client> ClientSharedPtr;
-	typedef std::map<u32, ClientSharedPtr> ClientMap;
+	typedef unordered_map<u32, ClientSharedPtr> ClientMap;
 	typedef ClientMap::iterator MapIterator;
 
 public:
