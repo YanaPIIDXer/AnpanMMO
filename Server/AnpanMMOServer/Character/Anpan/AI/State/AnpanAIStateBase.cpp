@@ -27,6 +27,7 @@ void AnpanAIStateBase::Poll(int DeltaTime)
 {
 	Update(DeltaTime);
 	UpdateMove(DeltaTime);
+	UpdateRotate(DeltaTime);
 }
 
 
