@@ -61,9 +61,11 @@ void AnpanAIStateBase::UpdateMove(int DeltaTime)
 	if (MoveTime <= 0)
 	{
 		MoveTime = 0;
+		pParent->SetPosition(MoveTarget);
+		return;
 	}
 
-	float Rate = (MoveTime / (float)MoveStartTime);
+	float Rate = 1.0f - (MoveTime / (float)MoveStartTime);
 	Vector2D Pos = MathUtil::Lerp<Vector2D>(PrevPos, MoveTarget, Rate);
 	pParent->SetPosition(Pos);
 }
@@ -77,9 +79,12 @@ void AnpanAIStateBase::UpdateRotate(int DeltaTime)
 	if (RotateTime <= 0)
 	{
 		RotateTime = 0;
+		Rotation Rot(RotateTarget);
+		pParent->SetRotate(Rot);
+		return;
 	}
 
-	float Rate = (RotateTime / (float)RotateStartTime);
+	float Rate = 1.0f - (RotateTime / (float)RotateStartTime);
 	Rotation Rot = MathUtil::Lerp<Rotation>(PrevRotate, RotateTarget, Rate);
 	pParent->SetRotate(Rot);
 }
