@@ -40,6 +40,9 @@ public:
 	// ダメージ
 	void ApplyDamage(int Value);
 
+	// 正面ベクトルを取得.
+	Vector2D GetCenterVec() const;
+
 protected:
 
 	// 座標.

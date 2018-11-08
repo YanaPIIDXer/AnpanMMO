@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CharacterBase.h"
+#include "Math/MathUtil.h"
 
 // コンストラクタ
 CharacterBase::CharacterBase()
@@ -26,4 +27,12 @@ void CharacterBase::ApplyDamage(int Value)
 	{
 		Parameter.Hp = 0;
 	}
+}
+
+// 正面ベクトルを取得.
+Vector2D CharacterBase::GetCenterVec() const
+{
+	Vector2D Vec(1.0f, 0.0f);
+	Vec = MathUtil::RotateVector(Vec, Rot.Get());
+	return Vec;
 }
