@@ -3,6 +3,7 @@
 #include "Anpan.h"
 #include "AnpanController.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Components/SphereComponent.h"
 #include "Engine/StaticMesh.h"
 #include "Util.h"
 #include "Packet/AnpanData.h"
@@ -28,15 +29,20 @@ AAnpan::AAnpan(const FObjectInitializer &ObjectInitializer)
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	USphereComponent *pDummyComponent = CreateDefaultSubobject<USphereComponent>("Dummy");
+	pDummyComponent->bHiddenInGame = true;
+	pDummyComponent->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
+	RootComponent = pDummyComponent;
+
 	pMeshComponent = ObjectInitializer.CreateDefaultSubobject<UStaticMeshComponent>(this, "MeshComponent");
 
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshFinder(MeshPath);
 	pMeshComponent->SetStaticMesh(MeshFinder.Object);
-	pMeshComponent->AddWorldRotation(FRotator(0.0f, 90.0f, 0.0f));
 	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel1);
+	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
-	RootComponent = pMeshComponent;
+	pMeshComponent->AttachTo(RootComponent);
 
 	AIControllerClass = AAnpanController::StaticClass();
 }
