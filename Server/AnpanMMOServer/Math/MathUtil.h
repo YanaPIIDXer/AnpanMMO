@@ -5,9 +5,11 @@
 class MathUtil
 {
 
+public:
+
 	// •âŠÔ.
 	template<class T>
-	T Lerp(T Start, T End, float Rate);
+	static T Lerp(T Start, T End, float Rate);
 
 };
 
