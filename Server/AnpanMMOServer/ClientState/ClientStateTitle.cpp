@@ -29,6 +29,10 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	{
 		ResultCode = PacketLogInResult::Error;
 	}
+	if (!ClientManager::GetInstance().GetFromCustomerId(Id).expired())
+	{
+		ResultCode = PacketLogInResult::DoubleLogIn;
+	}
 	Client *pClient = GetParent();
 	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid());
 	pClient->SendPacket(&ResultPacket);
