@@ -1,15 +1,44 @@
 #ifndef __MATHUTIL_H__
 #define __MATHUTIL_H__
 
+#include <math.h>
+#include "Vector2D.h"
+
 // ‰‰ŽZŠÖŒW.
 class MathUtil
 {
 
 public:
 
+	// ƒpƒC
+	static const float PI;
+
+
 	// •âŠÔ.
 	template<class T>
 	static T Lerp(T Start, T End, float Rate);
+
+	// Degree‚ðRadian‚É•ÏŠ·.
+	static float DegToRad(float Deg)
+	{
+		return (Deg * (PI / 180.0f));
+	}
+
+	// Radian‚ðDegree‚É•ÏŠ·.
+	static float RadToDeg(float Rad)
+	{
+		return (Rad * (180.0f / PI));
+	}
+
+	// ƒxƒNƒgƒ‹‚ð‰ñ“].
+	static Vector2D RotateVector(const Vector2D &Vec, float Deg)
+	{
+		Vector2D Result;
+		float Rad = DegToRad(Deg);
+		Result.X = ((Vec.X * cos(Rad)) - (Vec.Y * sin(Rad)));
+		Result.Y = ((Vec.X * sin(Rad)) + (Vec.Y * cos(Rad)));
+		return Result;
+	}
 
 };
 

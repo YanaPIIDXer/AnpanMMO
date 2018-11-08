@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "MathUtil.h"
-#include "Vector2D.h"
 #include "Rotation.h"
+
+const float MathUtil::PI = 3.14f;
 
 // int‚Ì•âŠÔ.
 template<>
