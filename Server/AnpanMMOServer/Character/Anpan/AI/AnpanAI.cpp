@@ -19,8 +19,8 @@ AnpanAI::~AnpanAI()
 	delete pState;
 	pState = NULL;
 
-	pMovePacketData = NULL;
-	pRotatePacketData = NULL;
+	pMovePacketData.reset();
+	pRotatePacketData.reset();
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
@@ -47,7 +47,7 @@ void AnpanAI::CreateMovePacketData(const Vector2D &Position, int Time)
 shared_ptr<AnpanMovePacketData> AnpanAI::SweepMovePacketData()
 {
 	shared_ptr<AnpanMovePacketData> pData = pMovePacketData;
-	pMovePacketData = NULL;
+	pMovePacketData.reset();
 	return pData;
 }
 
@@ -61,6 +61,6 @@ void AnpanAI::CreateRotatePacketData(const Rotation &Rot, int Time)
 shared_ptr<AnpanRotatePacketData> AnpanAI::SweepRotatePacketData()
 {
 	shared_ptr<AnpanRotatePacketData> pData = pRotatePacketData;
-	pRotatePacketData = NULL;
+	pRotatePacketData.reset();
 	return pData;
 }
