@@ -2,6 +2,7 @@
 #define __ANPANAI_H__
 
 class Anpan;
+class AnpanAIStateBase;
 
 /**
  * アンパンＡＩクラス
@@ -15,7 +16,7 @@ public:
 	AnpanAI(Anpan *pInParent);
 
 	// デストラクタ
-	~AnpanAI() {}
+	~AnpanAI();
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
@@ -24,6 +25,9 @@ private:
 
 	// 親.
 	Anpan *pParent;
+
+	// ステート
+	AnpanAIStateBase *pState;
 
 };
 
