@@ -61,11 +61,11 @@ void AAnpan::PossessedBy(AController *NewController)
 // ˆÚ“®.
 void AAnpan::Move(float X, float Y, int32 Time)
 {
-
+	pController->Move(X, Y, Time);
 }
 
 // ‰ñ“].
 void AAnpan::Rotate(float Rotation, int32 Time)
 {
-
+	pController->Rotate(Rotation, Time);
 }
