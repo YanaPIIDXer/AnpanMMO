@@ -17,20 +17,18 @@ public:
 	float X;
 	float Y;
 	float Rotation;
-	s32 RotateMilliSec;
 	
 
 	PacketStopAnpan()
 	{
 	}
 
-	PacketStopAnpan(u32 InUuid, float InX, float InY, float InRotation, s32 InRotateMilliSec)
+	PacketStopAnpan(u32 InUuid, float InX, float InY, float InRotation)
 	{
 		Uuid = InUuid;
 		X = InX;
 		Y = InY;
 		Rotation = InRotation;
-		RotateMilliSec = InRotateMilliSec;
 		
 	}
 
@@ -40,7 +38,6 @@ public:
 		pStream->Serialize(&X);
 		pStream->Serialize(&Y);
 		pStream->Serialize(&Rotation);
-		pStream->Serialize(&RotateMilliSec);
 		
 		return true;
 	}
