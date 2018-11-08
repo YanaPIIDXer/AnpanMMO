@@ -11,7 +11,7 @@ AAnpanController::AAnpanController(const FObjectInitializer &ObjectInitializer)
 }
 
 // Pawn‚ª•R•t‚¯‚ç‚ê‚½B
-void AAnpanController::Possess(APanw *aPawn)
+void AAnpanController::Possess(APawn *aPawn)
 {
 	Super::Possess(aPawn);
 
