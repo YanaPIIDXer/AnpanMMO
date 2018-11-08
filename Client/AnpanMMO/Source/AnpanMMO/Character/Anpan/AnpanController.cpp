@@ -56,6 +56,19 @@ void AAnpanController::Rotate(float Rotation, int32 Time)
 	RotateStartTime = RotateTime;
 }
 
+// ’â~.
+void AAnpanController::Stop(float X, float Y, float Rotation)
+{
+	MoveTime = 0.0f;
+	RotateTime = 0.0f;
+
+	FVector Pos = pAnpan->GetActorLocation();
+	Pos.X = X;
+	Pos.Y = Y;
+	FRotator Rot(0.0f, Rotation, 0.0f);
+	pAnpan->SetActorLocationAndRotation(Pos, Rot);
+}
+
 
 // ˆÚ“®XV.
 void AAnpanController::UpdateMove(float DeltaTime)

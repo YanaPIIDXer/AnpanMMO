@@ -75,3 +75,9 @@ void AAnpan::Rotate(float Rotation, int32 Time)
 {
 	pController->Rotate(Rotation, Time);
 }
+
+// ’âŽ~.
+void AAnpan::Stop(float X, float Y, float Rotation)
+{
+	pController->Stop(X, Y, Rotation);
+}

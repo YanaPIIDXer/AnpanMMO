@@ -7,6 +7,7 @@
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketMoveAnpan.h"
 #include "Packet/PacketRotateAnpan.h"
+#include "Packet/PacketStopAnpan.h"
 
 // コンストラクタ
 AnpanManager::AnpanManager()
@@ -72,6 +73,15 @@ void AnpanManager::OnRecvRotate(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	AnpanMap[Packet.Uuid]->Rotate(Packet.Rotation, Packet.RotateMilliSec);
+}
+
+// 停止を受信した。
+void AnpanManager::OnRecvStop(MemoryStreamInterface *pStream)
+{
+	PacketStopAnpan Packet;
+	Packet.Serialize(pStream);
+
+	AnpanMap[Packet.Uuid]->Stop(Packet.X, Packet.Y, Packet.Rotation);
 }
 
 
