@@ -69,4 +69,6 @@ shared_ptr<AnpanRotatePacketData> AnpanAI::SweepRotatePacketData()
 // ダメージを受けた。
 void AnpanAI::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
 {
+	HateManager.Add(pAttacker, DamageValue);
+	pState->OnDamaged();
 }

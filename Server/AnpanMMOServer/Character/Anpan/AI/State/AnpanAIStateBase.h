@@ -27,23 +27,8 @@ public:
 	// AIを設定.
 	void SetAI(AnpanAI *pInAI) { pAI = pInAI; }
 
-	// 移動中？
-	bool IsMoving() const { return (MoveTime > 0); }
-
-	// 移動先を取得.
-	const Vector2D &GetMoveTarget() const { return MoveTarget; }
-
-	// 移動時間を取得.
-	int GetMoveTime() const { return MoveTime; }
-
-	// 回転中？
-	bool IsRotating() const { return (RotateTime > 0); }
-
-	// 回転先を取得.
-	const Rotation &GetRotateTarget() const { return RotateTarget; }
-
-	// 回転時間を取得.
-	int GetRotateTime() const { return RotateTime; }
+	// ダメージを受けた。
+	virtual void OnDamaged() {}
 
 protected:
 
