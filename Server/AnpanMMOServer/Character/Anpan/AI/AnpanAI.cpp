@@ -43,6 +43,7 @@ void AnpanAI::ChangeState(AnpanAIStateBase *pNewState)
 // 移動パケットデータの生成.
 void AnpanAI::CreateMovePacketData(const Vector2D &Position, int Time)
 {
+	delete pMovePacketData;
 	pMovePacketData = new AnpanMovePacketData(pParent->GetUuid(), Position, Time);
 }
 
@@ -57,6 +58,7 @@ AnpanMovePacketData *AnpanAI::SweepMovePacketData()
 // 回転パケットデータの生成.
 void AnpanAI::CreateRotatePacketData(const Rotation &Rot, int Time)
 {
+	delete pRotatePacketData;
 	pRotatePacketData = new AnpanRotatePacketData(pParent->GetUuid(), Rot, Time);
 }
 
