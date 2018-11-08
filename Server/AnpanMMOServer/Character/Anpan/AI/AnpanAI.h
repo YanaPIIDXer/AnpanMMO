@@ -30,13 +30,13 @@ public:
 	void CreateMovePacketData(const Vector2D &Position, int Time);
 
 	// 移動パケットデータの取得.
-	AnpanMovePacketData *SweepMovePacketData();
+	shared_ptr<AnpanMovePacketData> SweepMovePacketData();
 
 	// 回転パケットデータの生成.
 	void CreateRotatePacketData(const Rotation &Rot, int Time);
 
 	// 回転パケットデータの取得.
-	AnpanRotatePacketData *SweepRotatePacketData();
+	shared_ptr<AnpanRotatePacketData> SweepRotatePacketData();
 
 private:
 
@@ -47,10 +47,10 @@ private:
 	AnpanAIStateBase *pState;
 
 	// 移動パケットデータ
-	AnpanMovePacketData *pMovePacketData;
+	shared_ptr<AnpanMovePacketData> pMovePacketData;
 
 	// 回転パケットデータ
-	AnpanRotatePacketData *pRotatePacketData;
+	shared_ptr<AnpanRotatePacketData> pRotatePacketData;
 
 };
 

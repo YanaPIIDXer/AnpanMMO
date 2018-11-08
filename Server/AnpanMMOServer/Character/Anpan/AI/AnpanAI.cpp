@@ -19,10 +19,7 @@ AnpanAI::~AnpanAI()
 	delete pState;
 	pState = NULL;
 
-	delete pMovePacketData;
 	pMovePacketData = NULL;
-
-	delete pRotatePacketData;
 	pRotatePacketData = NULL;
 }
 
@@ -43,14 +40,13 @@ void AnpanAI::ChangeState(AnpanAIStateBase *pNewState)
 // 移動パケットデータの生成.
 void AnpanAI::CreateMovePacketData(const Vector2D &Position, int Time)
 {
-	delete pMovePacketData;
-	pMovePacketData = new AnpanMovePacketData(pParent->GetUuid(), Position, Time);
+	pMovePacketData = shared_ptr<AnpanMovePacketData>(new AnpanMovePacketData(pParent->GetUuid(), Position, Time));
 }
 
 // 移動パケットデータの取得.
-AnpanMovePacketData *AnpanAI::SweepMovePacketData()
+shared_ptr<AnpanMovePacketData> AnpanAI::SweepMovePacketData()
 {
-	AnpanMovePacketData *pData = pMovePacketData;
+	shared_ptr<AnpanMovePacketData> pData = pMovePacketData;
 	pMovePacketData = NULL;
 	return pData;
 }
@@ -58,14 +54,13 @@ AnpanMovePacketData *AnpanAI::SweepMovePacketData()
 // 回転パケットデータの生成.
 void AnpanAI::CreateRotatePacketData(const Rotation &Rot, int Time)
 {
-	delete pRotatePacketData;
-	pRotatePacketData = new AnpanRotatePacketData(pParent->GetUuid(), Rot, Time);
+	pRotatePacketData = shared_ptr<AnpanRotatePacketData>(new AnpanRotatePacketData(pParent->GetUuid(), Rot, Time));
 }
 
 // 回転パケットデータの取得.
-AnpanRotatePacketData *AnpanAI::SweepRotatePacketData()
+shared_ptr<AnpanRotatePacketData> AnpanAI::SweepRotatePacketData()
 {
-	AnpanRotatePacketData *pData = pRotatePacketData;
+	shared_ptr<AnpanRotatePacketData> pData = pRotatePacketData;
 	pRotatePacketData = NULL;
 	return pData;
 }
