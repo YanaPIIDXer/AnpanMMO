@@ -32,6 +32,9 @@ public:
 	// 取得.
 	ClientPtr Get(u32 Uuid);
 
+	// カスタマＩＤから取得.
+	ClientPtr GetFromCustomerId(u32 CustomerId);
+
 private:
 
 	// クライアントリスト

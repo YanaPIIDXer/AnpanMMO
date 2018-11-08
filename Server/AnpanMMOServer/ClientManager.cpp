@@ -47,3 +47,13 @@ ClientPtr ClientManager::Get(u32 Uuid)
 	if (It == Map.end()) { return ClientPtr(); }
 	return It->second;
 }
+
+// ƒJƒXƒ^ƒ}‚h‚c‚©‚çæ“¾.
+ClientPtr ClientManager::GetFromCustomerId(u32 CustomerId)
+{
+	for (MapIterator It = Map.begin(); It != Map.end(); ++It)
+	{
+		if (It->second->GetCustomerId() == CustomerId) { return It->second; }
+	}
+	return ClientPtr();
+}
