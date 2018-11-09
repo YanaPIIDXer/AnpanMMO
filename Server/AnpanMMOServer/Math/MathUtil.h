@@ -18,14 +18,14 @@ public:
 	// Degree‚ğRadian‚É•ÏŠ·.
 	static float DegToRad(float Deg)
 	{
-		if (Deg < FLT_EPSILON) { return 0.0f; }
+		if (fabsf(Deg) < FLT_EPSILON) { return 0.0f; }
 		return (float)(Deg * M_PI / 180.0f);
 	}
 
 	// Radian‚ğDegree‚É•ÏŠ·.
 	static float RadToDeg(float Rad)
 	{
-		if (Rad < FLT_EPSILON) { return 0.0f; }
+		if (fabsf(Rad) < FLT_EPSILON) { return 0.0f; }
 		return (float)(Rad * 180.0f / M_PI);
 	}
 
