@@ -29,8 +29,8 @@ private:
 	// 現在のターゲット
 	weak_ptr<CharacterBase> pCurrentTarget;
 
-	// 移動タイマー
-	int MoveTimer;
+	// 行動タイマー
+	int ActionTimer;
 
 };
 

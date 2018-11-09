@@ -56,6 +56,7 @@ void AnpanAIStateBase::Stop()
 {
 	MoveTime = 0;
 	RotateTime = 0;
+	pAI->SetSendStopPacket();
 }
 
 

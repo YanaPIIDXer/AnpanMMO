@@ -9,6 +9,7 @@
 // コンストラクタ
 AnpanAIStateActive::AnpanAIStateActive(Anpan *pInParent)
 	: AnpanAIStateBase(pInParent)
+	, ActionTimer(0)
 {
 	pCurrentTarget.reset();
 }
@@ -22,6 +23,7 @@ void AnpanAIStateActive::Update(int DeltaTime)
 	{
 		// ヘイトリストからキャラがいなくなった。
 		GetAI()->ChangeState(new AnpanAIStateNonActive(GetParent()));
+		return;
 	}
 
 	if (pCurrentTarget.expired() || pChara.lock().get() != pCurrentTarget.lock().get())
@@ -29,8 +31,8 @@ void AnpanAIStateActive::Update(int DeltaTime)
 		pCurrentTarget = pChara;
 	}
 
-	MoveTimer -= DeltaTime;
-	if (MoveTimer <= 0)
+	ActionTimer -= DeltaTime;
+	if (ActionTimer <= 0)
 	{
 		Vector2D TargetPosition = pCurrentTarget.lock()->GetPosition();
 		Vector2D MyPosition = GetParent()->GetPosition();
@@ -40,11 +42,9 @@ void AnpanAIStateActive::Update(int DeltaTime)
 		float Angle = MathUtil::RadToDeg(Dot);
 		Angle += GetParent()->GetRotation().Get();
 		MoveVec *= 1000.0f;
-		MoveTimer = 1000;
-		SetMove(MyPosition + MoveVec, MoveTimer);
-		SetRotate(Rotation(Angle), MoveTimer);
-		GetAI()->CreateMovePacketData(MyPosition + MoveVec, MoveTimer);
-		GetAI()->CreateRotatePacketData(Rotation(Angle), MoveTimer);
+		ActionTimer = 1000;
+		SetMove(MyPosition + MoveVec, ActionTimer);
+		SetRotate(Rotation(Angle), ActionTimer);
 	}
 	else
 	{
@@ -53,7 +53,6 @@ void AnpanAIStateActive::Update(int DeltaTime)
 		if ((TargetPosition - MyPosition).GetSizeSq() < 500.0f * 500.0f)
 		{
 			Stop();
-			GetAI()->SetSendStopPacket();
 		}
 	}
 }
