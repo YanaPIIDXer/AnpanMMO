@@ -70,9 +70,9 @@ void AnpanAIStateNonActive::UpdateStopping()
 	if (StateTime <= 0)
 	{
 		// ‰ñ“].
-		Rotation Rot(Random::Range<float>(0.0f, 360.0f));
+		float RotateValue = Random::Range<float>(0.0f, 360.0f);
 		StateTime = Random::Range<int>(1000, 3000);
-		SetRotate(Rot, StateTime);
+		SetRotate(RotateValue, StateTime);
 		CurrentState = Rotating;
 	}
 }
@@ -85,7 +85,6 @@ void AnpanAIStateNonActive::UpdateRotating()
 		// ˆÚ“®.
 		Vector2D Vec = GetParent()->GetCenterVec();
 		Vec *= Random::Range<float>(500.0f, 1000.0f);
-		Vec += GetParent()->GetPosition();
 		StateTime = Random::Range<int>(3000, 5000);
 		SetMove(Vec, StateTime);
 		CurrentState = Moving;
