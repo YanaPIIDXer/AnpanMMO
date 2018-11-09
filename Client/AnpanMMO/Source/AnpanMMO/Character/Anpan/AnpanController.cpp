@@ -39,6 +39,11 @@ void AAnpanController::Tick(float DeltaTime)
 // ˆÚ“®.
 void AAnpanController::Move(float X, float Y, int32 Time)
 {
+	if (MoveTime > 0.0f)
+	{
+		pAnpan->SetActorLocation(MoveTarget);
+	}
+
 	PrevPos = pAnpan->GetActorLocation();
 	MoveTarget = PrevPos;
 	MoveTarget.X = X;
@@ -50,8 +55,14 @@ void AAnpanController::Move(float X, float Y, int32 Time)
 // ‰ñ“].
 void AAnpanController::Rotate(float Rotation, int32 Time)
 {
+	if (RotateTime > 0.0f)
+	{
+		pAnpan->SetActorRotation(FRotator(0.0f, RotateTarget, 0.0f));
+	}
+
 	PrevRotate = pAnpan->GetActorRotation().Yaw;
 	RotateTarget = Rotation;
+	UE_LOG(LogTemp, Log, TEXT("Rotate %f -> %f"), PrevRotate, RotateTarget);
 	RotateTime = Time / 1000.0f;
 	RotateStartTime = RotateTime;
 }
