@@ -35,7 +35,7 @@ void AnpanAIStateBase::Poll(int DeltaTime)
 void AnpanAIStateBase::SetMove(const Vector2D &InMoveTarget, int Time)
 {
 	PrevPos = pParent->GetPosition();
-	MoveTarget = InMoveTarget;
+	MoveTarget = InMoveTarget + PrevPos;
 	MoveTime = Time;
 	MoveStartTime = Time;
 	pAI->CreateMovePacketData(MoveTarget, MoveTime);
@@ -45,7 +45,7 @@ void AnpanAIStateBase::SetMove(const Vector2D &InMoveTarget, int Time)
 void AnpanAIStateBase::SetRotate(const Rotation &InRotateTarget, int Time)
 {
 	PrevRotate = pParent->GetRotation();
-	RotateTarget = InRotateTarget;
+	RotateTarget = InRotateTarget + PrevRotate.Get();
 	RotateTime = Time;
 	RotateStartTime = Time;
 	pAI->CreateRotatePacketData(RotateTarget, RotateTime);

@@ -33,6 +33,11 @@ void AnpanAIStateActive::Update(int DeltaTime)
 		pCurrentTarget = pChara;
 	}
 
+	ActionTimer -= DeltaTime;
+	if (ActionTimer < 0)
+	{
+		ActionTimer = 0;
+	}
 	switch (CurrentState)
 	{
 		case Rotating:

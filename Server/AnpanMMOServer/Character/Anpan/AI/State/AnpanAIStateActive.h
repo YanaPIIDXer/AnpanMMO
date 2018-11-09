@@ -44,7 +44,9 @@ private:
 
 	// 内部State
 	EState CurrentState;
-
+	
+	// ターゲットの以前の座標.
+	Vector2D PrevTargetPos;
 
 	// 回転を更新.
 	void UpdateRotate();
