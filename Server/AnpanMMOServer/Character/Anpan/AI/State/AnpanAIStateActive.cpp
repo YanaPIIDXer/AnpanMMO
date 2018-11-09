@@ -12,8 +12,6 @@ const float AnpanAIStateActive::ApproachDist = 200.0f;
 // コンストラクタ
 AnpanAIStateActive::AnpanAIStateActive(Anpan *pInParent)
 	: AnpanAIStateBase(pInParent)
-	, MoveTimer(0)
-	, RotateTimer(0)
 {
 	pCurrentTarget.reset();
 }
@@ -43,8 +41,7 @@ void AnpanAIStateActive::Update(int DeltaTime)
 // 回転を更新.
 void AnpanAIStateActive::UpdateRotate(int DeltaTime)
 {
-	RotateTimer -= DeltaTime;
-	if (RotateTimer <= 0)
+	if (!IsRotating())
 	{
 		RotateToTarget();
 	}
@@ -53,8 +50,7 @@ void AnpanAIStateActive::UpdateRotate(int DeltaTime)
 // 移動を更新.
 void AnpanAIStateActive::UpdateMove(int DeltaTime)
 {
-	MoveTimer -= DeltaTime;
-	if (MoveTimer <= 0)
+	if (!IsMoving())
 	{
 		MoveToTarget();
 	}
@@ -62,7 +58,6 @@ void AnpanAIStateActive::UpdateMove(int DeltaTime)
 	if (IsApproached())
 	{
 		Stop();
-		MoveTimer = 0;
 	}
 }
 
@@ -75,9 +70,8 @@ void AnpanAIStateActive::RotateToTarget()
 	float Dot = MathUtil::Dot(TargetVec, CenterVec);
 	float Rad = acos(Dot);
 	float Deg = MathUtil::RadToDeg(Rad);
-
-	RotateTimer = 300;
-	SetRotate(Rotation(Deg), RotateTimer);
+	
+	SetRotate(Rotation(Deg), 300);
 }
 
 // ターゲットに向かって移動する。
@@ -90,8 +84,7 @@ void AnpanAIStateActive::MoveToTarget()
 	TargetVec.Normalize();
 	TargetVec *= (Size - ApproachDist);
 	
-	MoveTimer = 1000;
-	SetMove(TargetVec, MoveTimer);
+	SetMove(TargetVec, 1000);
 }
 
 // 接近しているか？

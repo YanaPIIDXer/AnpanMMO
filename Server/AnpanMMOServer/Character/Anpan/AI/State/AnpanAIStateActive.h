@@ -32,12 +32,6 @@ private:
 	// 現在のターゲット
 	weak_ptr<CharacterBase> pCurrentTarget;
 
-	// 移動タイマー
-	int MoveTimer;
-
-	// 回転タイマー
-	int RotateTimer;
-
 
 	// 回転を更新.
 	void UpdateRotate(int DeltaTime);

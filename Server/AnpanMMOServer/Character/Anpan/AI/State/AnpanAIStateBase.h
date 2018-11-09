@@ -50,6 +50,12 @@ protected:
 	// ’â~.
 	void Stop();
 
+	// ˆÚ“®’†H
+	bool IsMoving() const { return (MoveTime > 0); }
+
+	// ‰ñ“]’†H
+	bool IsRotating() const { return (RotateTime > 0); }
+
 private:
 
 	// e.
