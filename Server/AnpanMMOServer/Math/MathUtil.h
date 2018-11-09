@@ -32,8 +32,8 @@ public:
 	{
 		Vector2D Result;
 		float Rad = DegToRad(Deg);
-		Result.X = ((Vec.X * cos(Rad)) - (Vec.Y * sin(Rad)));
-		Result.Y = ((Vec.X * sin(Rad)) + (Vec.Y * cos(Rad)));
+		Result.X = ((Vec.X * cosf(Rad)) - (Vec.Y * sinf(Rad)));
+		Result.Y = ((Vec.X * sinf(Rad)) + (Vec.Y * cosf(Rad)));
 		return Result;
 	}
 
