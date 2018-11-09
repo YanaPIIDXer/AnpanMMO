@@ -90,14 +90,6 @@ public:
 		Vector2D Vec;
 		Vec.X = X * Arg;
 		Vec.Y = Y * Arg;
-		if (Vec.X == -0.0f)
-		{
-			Vec.X = 0.0f;
-		}
-		if (Vec.Y == -0.0f)
-		{
-			Vec.Y = 0.0f;
-		}
 		return Vec;
 	}
 
@@ -106,14 +98,6 @@ public:
 		Vector2D Vec;
 		Vec.X = X / Arg;
 		Vec.Y = Y / Arg;
-		if (Vec.X == -0.0f)
-		{
-			Vec.X = 0.0f;
-		}
-		if (Vec.Y == -0.0f)
-		{
-			Vec.Y = 0.0f;
-		}
 		return Vec;
 	}
 
@@ -121,28 +105,12 @@ public:
 	{
 		X *= Arg;
 		Y *= Arg;
-		if (X == -0.0f)
-		{
-			X = 0.0f;
-		}
-		if (Y == -0.0f)
-		{
-			Y = 0.0f;
-		}
 	}
 
 	void operator /=(float Arg)
 	{
 		X /= Arg;
 		Y /= Arg;
-		if (X == -0.0f)
-		{
-			X = 0.0f;
-		}
-		if (Y == -0.0f)
-		{
-			Y = 0.0f;
-		}
 	}
 
 	bool operator ==(const Vector2D &Arg) const
