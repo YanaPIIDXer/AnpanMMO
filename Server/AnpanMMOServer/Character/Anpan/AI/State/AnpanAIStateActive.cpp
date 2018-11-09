@@ -5,11 +5,13 @@
 #include "Character/CharacterBase.h"
 #include "Character/Anpan/Anpan.h"
 #include "Math/MathUtil.h"
+#include <math.h>
 
 // コンストラクタ
 AnpanAIStateActive::AnpanAIStateActive(Anpan *pInParent)
 	: AnpanAIStateBase(pInParent)
 	, ActionTimer(0)
+	, CurrentState(Rotating)
 {
 	pCurrentTarget.reset();
 }
@@ -31,28 +33,29 @@ void AnpanAIStateActive::Update(int DeltaTime)
 		pCurrentTarget = pChara;
 	}
 
-	ActionTimer -= DeltaTime;
-	if (ActionTimer <= 0)
+	switch (CurrentState)
 	{
-		Vector2D TargetPosition = pCurrentTarget.lock()->GetPosition();
-		Vector2D MyPosition = GetParent()->GetPosition();
-		if ((TargetPosition - MyPosition).GetSizeSq() < 500.0f * 500.0f) { return; }
-		Vector2D MoveVec = (TargetPosition - MyPosition).GetNormalized();
-		float Dot = MoveVec.Dot(GetParent()->GetCenterVec());
-		float Angle = MathUtil::RadToDeg(Dot);
-		Angle += GetParent()->GetRotation().Get();
-		MoveVec *= 1000.0f;
-		ActionTimer = 1000;
-		SetMove(MyPosition + MoveVec, ActionTimer);
-		SetRotate(Rotation(Angle), ActionTimer);
+		case Rotating:
+
+			UpdateRotate();
+			break;
+
+		case Moving:
+
+			UpdateMove();
+			break;
 	}
-	else
-	{
-		Vector2D TargetPosition = pCurrentTarget.lock()->GetPosition();
-		Vector2D MyPosition = GetParent()->GetPosition();
-		if ((TargetPosition - MyPosition).GetSizeSq() < 500.0f * 500.0f)
-		{
-			Stop();
-		}
-	}
+}
+
+
+// 回転を更新.
+void AnpanAIStateActive::UpdateRotate()
+{
+
+}
+
+// 移動を更新.
+void AnpanAIStateActive::UpdateMove()
+{
+
 }

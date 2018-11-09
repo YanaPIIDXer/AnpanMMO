@@ -26,11 +26,31 @@ protected:
 
 private:
 
+	// 内部State
+	enum EState
+	{
+		// 回転中.
+		Rotating,
+
+		// 移動中.
+		Moving,
+	};
+
 	// 現在のターゲット
 	weak_ptr<CharacterBase> pCurrentTarget;
 
 	// 行動タイマー
 	int ActionTimer;
+
+	// 内部State
+	EState CurrentState;
+
+
+	// 回転を更新.
+	void UpdateRotate();
+
+	// 移動を更新.
+	void UpdateMove();
 
 };
 
