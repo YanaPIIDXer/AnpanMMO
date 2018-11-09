@@ -21,8 +21,8 @@ public:
 	void Set(float InValue);
 
 	// オペレータオーバーロード
-	float operator +(float InValue);
-	float operator -(float InValue);
+	float operator +(float InValue) const;
+	float operator -(float InValue) const;
 	void operator +=(float InValue);
 	void operator -=(float InValue);
 
@@ -33,7 +33,7 @@ private:
 
 
 	// 丸め込み処理.
-	float Coax(float InValue);
+	static float Coax(float InValue);
 
 };
 

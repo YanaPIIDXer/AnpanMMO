@@ -21,12 +21,12 @@ void Rotation::Set(float InValue)
 }
 
 // オペレータオーバーロード
-float Rotation::operator+(float InValue)
+float Rotation::operator+(float InValue) const
 {
 	return Coax(Value + InValue);
 }
 
-float Rotation::operator-(float InValue)
+float Rotation::operator-(float InValue) const
 {
 	return Coax(Value - InValue);
 }
