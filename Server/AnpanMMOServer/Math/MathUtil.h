@@ -40,6 +40,12 @@ public:
 		return Result;
 	}
 
+	// ì‡êœ.
+	static float Dot(const Vector2D &A, const Vector2D &B)
+	{
+		return ((A.X * B.X) + (A.Y * B.Y));
+	}
+
 };
 
 #endif		// #ifndef __MATHUTIL_H__
