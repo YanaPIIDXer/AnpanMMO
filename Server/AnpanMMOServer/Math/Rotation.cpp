@@ -47,11 +47,11 @@ void Rotation::operator-=(float InValue)
 // ŠÛ‚ßž‚Ýˆ—.
 float Rotation::Coax(float InValue)
 {
-	if (InValue >= 360.0f)
+	if (InValue >= 180.0f)
 	{
 		InValue -= 360.0f;
 	}
-	else if (InValue <= 0.0f)
+	else if (InValue <= -180.0f)
 	{
 		InValue += 360.0f;
 	}
