@@ -2,6 +2,7 @@
 #define __VECTOR2D_H__
 
 #include <math.h>
+#include <float.h>
 
 // ベクトルクラス
 class Vector2D
@@ -142,6 +143,16 @@ public:
 		{
 			Y = 0.0f;
 		}
+	}
+
+	bool operator ==(const Vector2D &Arg) const
+	{
+		return (fabsf(X - Arg.X) < FLT_EPSILON && fabsf(Y - Arg.Y) < FLT_EPSILON);
+	}
+
+	bool operator !=(const Vector2D &Arg) const
+	{
+		return (fabsf(X - Arg.X) >= FLT_EPSILON || fabsf(Y - Arg.Y) >= FLT_EPSILON);
 	}
 
 };
