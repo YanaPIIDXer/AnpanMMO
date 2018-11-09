@@ -4,6 +4,7 @@
 #include "Packet/PacketAnpanList.h"
 
 const int AnpanManager::SpawnInterval = 5000;
+const int AnpanManager::AnpanMax = 100;
 
 // コンストラクタ
 AnpanManager::AnpanManager()
@@ -50,7 +51,7 @@ void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 // アンパン生成.
 void AnpanManager::SpawnAnpan()
 {
-	if (AnpanList.size() >= 100) { return; }
+	if (AnpanList.size() >= AnpanMax) { return; }
 
 	float X = Random::Range<float>(-2500.0f, 2500.0f);
 	float Y = Random::Range<float>(-2500.0f, 2500.0f);
