@@ -2,8 +2,6 @@
 #include "MathUtil.h"
 #include "Rotation.h"
 
-const float MathUtil::PI = 3.14f;
-
 // int‚Ì•âŠÔ.
 template<>
 int MathUtil::Lerp(int Start, int End, float Rate)

@@ -1,6 +1,7 @@
 #ifndef __MATHUTIL_H__
 #define __MATHUTIL_H__
 
+#define _USE_MATH_DEFINES
 #include <math.h>
 #include "Vector2D.h"
 
@@ -10,10 +11,6 @@ class MathUtil
 
 public:
 
-	// パイ
-	static const float PI;
-
-
 	// 補間.
 	template<class T>
 	static T Lerp(T Start, T End, float Rate);
@@ -21,13 +18,13 @@ public:
 	// DegreeをRadianに変換.
 	static float DegToRad(float Deg)
 	{
-		return (Deg * PI / 180.0f);
+		return (float)(Deg * M_PI / 180.0f);
 	}
 
 	// RadianをDegreeに変換.
 	static float RadToDeg(float Rad)
 	{
-		return (Rad * 180.0f / PI);
+		return (float)(Rad * 180.0f / M_PI);
 	}
 
 	// ベクトルを回転.
