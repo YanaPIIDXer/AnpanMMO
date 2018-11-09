@@ -39,3 +39,15 @@ Vector2D CharacterBase::GetCenterVec() const
 	Vec = MathUtil::RotateVector(Vec, Rot.Get());
 	return Vec;
 }
+
+// ˆÚ“®.
+void CharacterBase::Move(const Vector2D &MoveValue)
+{
+	Position += MoveValue;
+}
+
+// ‰ñ“].
+void CharacterBase::Rotate(float RotateValue)
+{
+	Rot.Set(Rot.Get() + RotateValue);
+}

@@ -49,6 +49,12 @@ public:
 	// UUID‚ğæ“¾.
 	u32 GetUuid() const { return Uuid; }
 
+	// ˆÚ“®.
+	void Move(const Vector2D &MoveValue);
+
+	// ‰ñ“].
+	void Rotate(float RotateValue);
+
 protected:
 
 	// À•W.
