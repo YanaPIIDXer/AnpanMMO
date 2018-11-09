@@ -56,7 +56,7 @@ public:
 	}
 
 	// オペレータオーバーロード
-	Vector2D operator +(const Vector2D &Arg)
+	Vector2D operator +(const Vector2D &Arg) const
 	{
 		Vector2D Vec;
 		Vec.X = X + Arg.X;
@@ -64,7 +64,7 @@ public:
 		return Vec;
 	}
 
-	Vector2D operator -(const Vector2D &Arg)
+	Vector2D operator -(const Vector2D &Arg) const
 	{
 		Vector2D Vec;
 		Vec.X = X - Arg.X;
@@ -84,7 +84,7 @@ public:
 		Y -= Arg.Y;
 	}
 
-	Vector2D operator *(float Arg)
+	Vector2D operator *(float Arg) const
 	{
 		Vector2D Vec;
 		Vec.X = X * Arg;
@@ -100,7 +100,7 @@ public:
 		return Vec;
 	}
 
-	Vector2D operator /(float Arg)
+	Vector2D operator /(float Arg) const
 	{
 		Vector2D Vec;
 		Vec.X = X / Arg;
