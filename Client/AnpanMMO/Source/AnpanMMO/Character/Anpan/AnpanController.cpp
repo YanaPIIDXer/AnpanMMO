@@ -62,7 +62,6 @@ void AAnpanController::Rotate(float Rotation, int32 Time)
 
 	PrevRotate = pAnpan->GetActorRotation().Yaw;
 	RotateTarget = Rotation;
-	UE_LOG(LogTemp, Log, TEXT("Rotate %f -> %f"), PrevRotate, RotateTarget);
 	RotateTime = Time / 1000.0f;
 	RotateStartTime = RotateTime;
 }
