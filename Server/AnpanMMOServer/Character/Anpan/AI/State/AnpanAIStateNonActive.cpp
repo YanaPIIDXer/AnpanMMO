@@ -17,8 +17,9 @@ void AnpanAIStateNonActive::OnDamaged()
 {
 	if (StateTime > 0)
 	{
-		// 何かしら行動しているので停止パケットを送信.
-		GetAI()->SetSendStopPacket();
+		// 何かしら行動しているので停止.
+		Stop();
+		StateTime = 0;
 	}
 
 	// アクティブ状態へ。
