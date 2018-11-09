@@ -26,33 +26,33 @@ protected:
 
 private:
 
-	// 内部State
-	enum EState
-	{
-		// 回転中.
-		Rotating,
-
-		// 移動中.
-		Moving,
-	};
+	// 「近づいた」と判定する距離.
+	static const float ApproachDist;
 
 	// 現在のターゲット
 	weak_ptr<CharacterBase> pCurrentTarget;
 
-	// 行動タイマー
-	int ActionTimer;
+	// 移動タイマー
+	int MoveTimer;
 
-	// 内部State
-	EState CurrentState;
-	
-	// ターゲットの以前の座標.
-	Vector2D PrevTargetPos;
+	// 回転タイマー
+	int RotateTimer;
+
 
 	// 回転を更新.
-	void UpdateRotate();
+	void UpdateRotate(int DeltaTime);
 
 	// 移動を更新.
-	void UpdateMove();
+	void UpdateMove(int DeltaTime);
+
+	// ターゲットの方向を向く。
+	void RotateToTarget();
+
+	// ターゲットに向かって移動する。
+	void MoveToTarget();
+
+	// 接近しているか？
+	bool IsApproached();
 
 };
 
