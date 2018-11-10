@@ -6,6 +6,7 @@
 #include "Character/Anpan/Anpan.h"
 #include "MMOGameInstance.h"
 #include "Active/ActiveGameMode.h"
+#include "Active/UI/MainHUD.h"
 #include "Kismet/GameplayStatics.h"
 #include "Packet/PacketAttack.h"
 
@@ -32,6 +33,8 @@ void AGameCharacter::BeginPlay()
 	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 	check(pGameMode != nullptr);
 	pGameMode->AddPlayerCharacter(Status.GetUuid(), this);
+
+	pGameMode->GetMainHUD()->OnHUDInitialize();
 
 	Move.Initialize(this, pInst);
 }

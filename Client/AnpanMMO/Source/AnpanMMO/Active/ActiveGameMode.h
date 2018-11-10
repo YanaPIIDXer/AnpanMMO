@@ -35,6 +35,10 @@ public:
 
 	// プレイヤーキャラ追加.
 	void AddPlayerCharacter(uint32 Uuid, APlayerCharacterBase *pPlayer);
+
+	// メインHUD取得.
+	UFUNCTION(BlueprintPure, Category = "HUD")
+	UMainHUD *GetMainHUD() const { return pMainHUD; }
 	
 protected:
 
