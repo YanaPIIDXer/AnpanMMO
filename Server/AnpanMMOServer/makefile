@@ -54,4 +54,5 @@ clean:
 
 rebuild:
 	@make clean
+	@make depend
 	@make
