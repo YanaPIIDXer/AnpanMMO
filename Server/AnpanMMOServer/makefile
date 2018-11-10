@@ -37,7 +37,7 @@ $(TARGETS): $(OBJECTS) $(LIBS)
 # 依存ファイルの作成.
 $(OBJROOT)/.d, $(SRCROOT)/.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
+#	$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
 
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
