@@ -37,7 +37,7 @@ $(TARGETS): $(OBJECTS) $(LIBS)
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
+	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $< $($@: .cpp=.d)
 
 # 依存関係ファイル
 #-include $(DEPENDS)
