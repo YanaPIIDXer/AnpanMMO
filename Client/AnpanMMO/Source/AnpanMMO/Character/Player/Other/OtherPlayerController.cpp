@@ -3,7 +3,7 @@
 #include "OtherPlayerController.h"
 #include "OtherPlayerCharacter.h"
 
-const float AOtherPlayerController::MoveInterval = 5.0f;
+const float AOtherPlayerController::MoveInterval = 2.0f;
 
 // コンストラクタ
 AOtherPlayerController::AOtherPlayerController(const FObjectInitializer &ObjectInitializer)
