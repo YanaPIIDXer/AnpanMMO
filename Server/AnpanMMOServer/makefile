@@ -45,6 +45,7 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 # àÀë∂ä÷åWÉtÉ@ÉCÉãÇÃê∂ê¨.
 depend: $(DEPENDS)
 $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
+	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) -MM -MG $(CXXFLAGS) $< > $@
 
 rebuild:
