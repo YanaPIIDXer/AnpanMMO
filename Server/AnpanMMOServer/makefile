@@ -37,13 +37,11 @@ $(TARGETS): $(OBJECTS) $(LIBS)
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -c $< > $@
-	
+	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
+
 # 依存関係ファイル
 -include $(DEPENDS)
 
-.PHONY: rebuild
-
 rebuild:
-	@rm -rf obj $(TARGETS)
-	@make
+	rm -rf obj
+	make
