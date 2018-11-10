@@ -10,6 +10,8 @@
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
 #include "Packet/PacketAddExp.h"
+#include "Packet/PacketRespawnRequest.h"
+#include "Packet/PacketPlayerRespawn.h"
 
 World World::Instance;
 
@@ -81,6 +83,19 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 		PacketAddExp ExpPacket(pAttacker.lock()->GetExp());
 		pAttacker.lock()->GetClient()->SendPacket(&ExpPacket);
 	}
+}
+
+// リスポンリクエスト受信.
+void World::OnRecvRespawnRequest(Client *pClient, MemoryStreamInterface *pStream)
+{
+	PacketRespawnRequest RequestPacket;
+	RequestPacket.Serialize(pStream);
+
+	PlayerCharacterPtr pChara = PlayerMgr.Get(pClient->GetUuid());
+	pChara.lock()->Respawn();
+
+	Vector2D Pos = pChara.lock()->GetPosition();
+	PacketPlayerRespawn Packet(pClient->GetUuid(), Pos.X, Pos.Y);
 }
 
 // プレイヤーキャラを取得.
