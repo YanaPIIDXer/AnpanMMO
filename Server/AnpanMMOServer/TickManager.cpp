@@ -16,7 +16,12 @@ void TickManager::Poll()
 	timespec CurrentTime;
 	GetTime(&CurrentTime);
 	int DeltaTime = (CurrentTime.tv_nsec - PrevTime.tv_nsec) / 1000000;
-
+	if (DeltaTime < 0)
+	{
+		// ‚½‚Ü‚ÉCurrentTime < PrevTime‚É‚È‚é‚æ‚¤‚È‚Ì‚Å‘ÎˆB
+		DeltaTime = 0;
+	}
+	
 	for (int i = 0; i < Functions.size(); i++)
 	{
 		Functions[i](DeltaTime);
