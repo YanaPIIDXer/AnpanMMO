@@ -28,10 +28,14 @@ public:
 private:
 
 	// ˆÈ‘O‚ÌŠÔ.
-	int PrevTime;
+	timespec PrevTime;
 
 	// ŠÖ”ƒŠƒXƒg
 	std::vector<TickFunction> Functions;
+
+
+	// ŠÔ‚ğæ“¾.
+	void GetTime(timespec *pTime);
 
 	// ========== Singleton ============
 public:
