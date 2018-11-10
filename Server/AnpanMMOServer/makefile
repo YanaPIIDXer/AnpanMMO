@@ -34,18 +34,10 @@ DEPENDS   = $(OBJECTS:.o=.d)
 $(TARGETS): $(OBJECTS) $(LIBS)
 	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lboost_system -lmysqlclient -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
 
-# 依存関係ファイルの生成.
-$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
-	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) -MM -MG -MP $(CXXFLAGS) $< > $@
-
-# 依存関係ファイル
--include $(DEPENDS)
-
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
+	$(COMPILER) $(CXXFLAGS) -MD $(INCLUDE) -o $@ -c $<
 
 # 依存関係ファイルの生成.
 .PHONY: depend
@@ -60,3 +52,6 @@ rebuild:
 	@make clean
 	@make depend
 	@make
+	
+# 依存関係ファイル
+-include $(DEPENDS)
