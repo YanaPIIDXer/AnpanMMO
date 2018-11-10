@@ -5,9 +5,15 @@
 #include "World.h"
 #include "TickManager.h"
 
+int Hoge()
+{
+	return 0;
+}
+
 // エントリポイント
 int main()
 {
+	Hoge();
 	if (DBConnection::GetInstance().Open())
 	{
 		std::cout << "DB Open Success!!" << std::endl;
