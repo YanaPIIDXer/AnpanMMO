@@ -37,7 +37,7 @@ void AnpanAIStateActive::Update(int DeltaTime)
 
 	UpdateMove();
 	UpdateRotate();
-	UpdateAttack(DeltaTime);
+	//UpdateAttack(DeltaTime);
 }
 
 
@@ -87,6 +87,11 @@ void AnpanAIStateActive::RotateToTarget()
 	float Dot = MathUtil::Dot(TargetVec, CenterVec);
 	float Rad = acos(Dot);
 	float Deg = MathUtil::RadToDeg(Rad);
+
+	if (isnan(Deg))
+	{
+		Deg = 0.0f;
+	}
 	
 	SetRotate(Rotation(Deg), 300);
 }
