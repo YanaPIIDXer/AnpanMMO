@@ -31,6 +31,11 @@ public:
 	// 開始時の処理.
 	virtual void NativeConstruct() override;
 
+	// 初期化.
+	UFUNCTION(BlueprintNativeEvent, Category = "MainHUD")
+	void OnInitialize();
+	void OnInitialize_Implementation() {}
+
 protected:
 
 	// 攻撃ボタンが押された。
