@@ -21,12 +21,12 @@ void Rotation::Set(float InValue)
 }
 
 // オペレータオーバーロード
-float Rotation::operator+(float InValue)
+float Rotation::operator+(float InValue) const
 {
 	return Coax(Value + InValue);
 }
 
-float Rotation::operator-(float InValue)
+float Rotation::operator-(float InValue) const
 {
 	return Coax(Value - InValue);
 }
@@ -47,11 +47,11 @@ void Rotation::operator-=(float InValue)
 // 丸め込み処理.
 float Rotation::Coax(float InValue)
 {
-	if (InValue >= 360.0f)
+	if (InValue >= 180.0f)
 	{
 		InValue -= 360.0f;
 	}
-	else if (InValue <= 0.0f)
+	else if (InValue <= -180.0f)
 	{
 		InValue += 360.0f;
 	}

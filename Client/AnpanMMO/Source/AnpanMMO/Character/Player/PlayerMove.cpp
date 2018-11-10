@@ -5,7 +5,7 @@
 #include "MMOGameInstance.h"
 #include "Packet/PacketMovePlayer.h"
 
-const float PlayerMove::SendInterval = 5.0f;
+const float PlayerMove::SendInterval = 2.0f;
 
 // コンストラクタ
 PlayerMove::PlayerMove()

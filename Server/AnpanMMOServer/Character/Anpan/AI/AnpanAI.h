@@ -2,6 +2,7 @@
 #define __ANPANAI_H__
 
 #include "AnpanAIPacketData.h"
+#include "Hate.h"
 
 class Anpan;
 class AnpanAIStateBase;
@@ -39,8 +40,17 @@ public:
 	// 回転パケットデータの取得.
 	shared_ptr<AnpanRotatePacketData> SweepRotatePacketData();
 
+	// 停止パケットの送信をセット。
+	void SetSendStopPacket() { bIsNeedSendStopPacket = true; }
+
+	// 停止パケットの送信を取得.
+	bool SweepSendStopPacketFlag();
+
 	// ダメージを受けた。
 	void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue);
+
+	// ヘイト管理取得.
+	const Hate &GetHate() const { return HateManager; }
 
 private:
 
@@ -50,11 +60,20 @@ private:
 	// ステート
 	AnpanAIStateBase *pState;
 
+	// 前のState
+	AnpanAIStateBase *pPrevState;
+
 	// 移動パケットデータ
 	shared_ptr<AnpanMovePacketData> pMovePacketData;
 
 	// 回転パケットデータ
 	shared_ptr<AnpanRotatePacketData> pRotatePacketData;
+
+	// ヘイト管理.
+	Hate HateManager;
+
+	// 停止パケットを送る必要があるか？
+	bool bIsNeedSendStopPacket;
 
 };
 

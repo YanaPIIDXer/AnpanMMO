@@ -3,6 +3,7 @@
 
 #include "Character/CharacterBase.h"
 #include "AI/AnpanAI.h"
+#include "Packet/CharacterType.h"
 
 /**
  * アンパンクラス
@@ -21,11 +22,11 @@ public:
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
 
-	// UUIDをセット。
-	void SetUuid(u32 InUuid) { Uuid = InUuid; }
+	// キャラクタタイプを取得.
+	virtual u8 GetCharacterType() const { return CharacterType::Enemy; }
 
-	// UUIDを取得.
-	u32 GetUuid() const { return Uuid; }
+	// 攻撃.
+	void AttackTo(CharacterBase *pTarget);
 
 protected:
 

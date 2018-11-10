@@ -47,6 +47,9 @@ public:
 	// 回転を受信した。
 	void OnRecvRotate(MemoryStreamInterface *pStream);
 
+	// 停止を受信した。
+	void OnRecvStop(MemoryStreamInterface *pStream);
+
 private:
 
 	// アンパンマップ

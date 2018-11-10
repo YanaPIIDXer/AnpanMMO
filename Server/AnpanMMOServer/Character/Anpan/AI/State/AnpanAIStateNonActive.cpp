@@ -2,6 +2,7 @@
 #include "AnpanAIStateNonActive.h"
 #include "Math/Random.h"
 #include "Character/Anpan/Anpan.h"
+#include "AnpanAIStateActive.h"
 
 // コンストラクタ
 AnpanAIStateNonActive::AnpanAIStateNonActive(Anpan *pInParent)
@@ -9,6 +10,20 @@ AnpanAIStateNonActive::AnpanAIStateNonActive(Anpan *pInParent)
 	, CurrentState(None)
 	, StateTime(0)
 {
+}
+
+// ダメージを受けた。
+void AnpanAIStateNonActive::OnDamaged()
+{
+	if (StateTime > 0)
+	{
+		// 何かしら行動しているので停止.
+		Stop();
+		StateTime = 0;
+	}
+
+	// アクティブ状態へ。
+	GetAI()->ChangeState(new AnpanAIStateActive(GetParent()));
 }
 
 
@@ -55,9 +70,9 @@ void AnpanAIStateNonActive::UpdateStopping()
 	if (StateTime <= 0)
 	{
 		// 回転.
-		Rotation Rot(Random::Range<float>(0.0f, 360.0f));
+		float RotateValue = Random::Range<float>(0.0f, 360.0f);
 		StateTime = Random::Range<int>(1000, 3000);
-		SetRotate(Rot, StateTime);
+		SetRotate(RotateValue, StateTime);
 		CurrentState = Rotating;
 	}
 }
@@ -70,7 +85,6 @@ void AnpanAIStateNonActive::UpdateRotating()
 		// 移動.
 		Vector2D Vec = GetParent()->GetCenterVec();
 		Vec *= Random::Range<float>(500.0f, 1000.0f);
-		Vec += GetParent()->GetPosition();
 		StateTime = Random::Range<int>(3000, 5000);
 		SetMove(Vec, StateTime);
 		CurrentState = Moving;

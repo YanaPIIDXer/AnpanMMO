@@ -7,6 +7,7 @@
 // コンストラクタ
 AnpanAI::AnpanAI(Anpan *pInParent)
 	: pParent(pInParent)
+	, bIsNeedSendStopPacket(false)
 {
 	pMovePacketData.reset();
 	pRotatePacketData.reset();
@@ -19,6 +20,9 @@ AnpanAI::~AnpanAI()
 	delete pState;
 	pState = NULL;
 
+	delete pPrevState;
+	pPrevState = NULL;
+
 	pMovePacketData.reset();
 	pRotatePacketData.reset();
 }
@@ -26,13 +30,19 @@ AnpanAI::~AnpanAI()
 // 毎フレームの処理.
 void AnpanAI::Poll(int DeltaTime)
 {
+	if (pPrevState != NULL)
+	{
+		delete pPrevState;
+		pPrevState = NULL;
+	}
 	pState->Poll(DeltaTime);
+	HateManager.Poll();
 }
 
 // ステート切り替え.
 void AnpanAI::ChangeState(AnpanAIStateBase *pNewState)
 {
-	delete pState;
+	pPrevState = pState;
 	pState = pNewState;
 	pState->SetAI(this);
 }
@@ -65,7 +75,17 @@ shared_ptr<AnpanRotatePacketData> AnpanAI::SweepRotatePacketData()
 	return pData;
 }
 
+// 停止パケットの送信を取得.
+bool AnpanAI::SweepSendStopPacketFlag()
+{
+	bool bSend = bIsNeedSendStopPacket;
+	bIsNeedSendStopPacket = false;
+	return bSend;
+}
+
 // ダメージを受けた。
 void AnpanAI::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
 {
+	HateManager.Add(pAttacker, DamageValue);
+	pState->OnDamaged();
 }

@@ -45,6 +45,9 @@ private:
 	// 生成インターバル
 	static const int SpawnInterval;
 
+	// アンパンの最大数.
+	static const int AnpanMax;
+
 	// アンパンリスト
 	AnpanMap AnpanList;
 

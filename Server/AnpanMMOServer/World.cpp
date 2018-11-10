@@ -9,7 +9,6 @@
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
-#include "Packet/PacketDamage.h"
 #include "Packet/PacketAddExp.h"
 
 World World::Instance;
@@ -73,10 +72,6 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
 	int DamageValue = DamageCalc.Calc();
 	pDefencer.lock()->ApplyDamage(pAttacker, DamageValue);
-
-	// ダメージを通知.
-	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
-	PlayerMgr.BroadcastPacket(&DamagePacket);
 	
 	if (pDefencer.lock()->IsDead())
 	{
@@ -86,6 +81,18 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 		PacketAddExp ExpPacket(pAttacker.lock()->GetExp());
 		pAttacker.lock()->GetClient()->SendPacket(&ExpPacket);
 	}
+}
+
+// プレイヤーキャラを取得.
+PlayerCharacterPtr World::GetPlayer(u32 Uuid) const
+{
+	return PlayerMgr.Get(Uuid);
+}
+
+// アンパンを取得.
+AnpanPtr World::GetAnpan(u32 Uuid) const
+{
+	return AnpanMgr.Get(Uuid);
 }
 
 

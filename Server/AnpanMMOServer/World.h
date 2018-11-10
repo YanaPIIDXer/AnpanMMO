@@ -35,6 +35,12 @@ public:
 	// 攻撃を受信した。
 	void OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream);
 
+	// プレイヤーキャラクタを取得.
+	PlayerCharacterPtr GetPlayer(u32 Uuid) const;
+
+	// アンパンを取得.
+	AnpanPtr GetAnpan(u32 Uuid) const;
+
 private:
 
 	// プレイヤー管理.

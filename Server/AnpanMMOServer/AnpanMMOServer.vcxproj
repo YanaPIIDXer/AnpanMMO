@@ -128,6 +128,8 @@
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
+    <ClInclude Include="Character\Anpan\AI\Hate.h" />
+    <ClInclude Include="Character\Anpan\AI\State\AnpanAIStateActive.h" />
     <ClInclude Include="Character\Anpan\AI\State\AnpanAIStateBase.h" />
     <ClInclude Include="Character\Anpan\AI\State\AnpanAIStateNonActive.h" />
     <ClInclude Include="Character\Anpan\Anpan.h" />
@@ -186,6 +188,8 @@
   <ItemGroup>
     <ClCompile Include="AnpanManager.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
+    <ClCompile Include="Character\Anpan\AI\Hate.cpp" />
+    <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateActive.cpp" />
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateBase.cpp" />
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateNonActive.cpp" />
     <ClCompile Include="Character\Anpan\Anpan.cpp" />

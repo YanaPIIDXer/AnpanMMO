@@ -17,6 +17,9 @@ public:
 	// デストラクタ
 	virtual ~AnpanAIStateNonActive() {}
 
+	// ダメージを受けた。
+	virtual void OnDamaged();
+
 protected:
 
 	// 更新処理.

@@ -9,6 +9,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketDamage.h"
+#include "Packet/CharacterType.h"
 #include "Packet/PacketAddExp.h"
 #include "Packet/PacketLevelUp.h"
 
@@ -23,6 +24,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::SpawnAnpan, std::bind(&AnpanManager::OnRecvSpawn, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::MoveAnpan, std::bind(&AnpanManager::OnRecvMove, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::RotateAnpan, std::bind(&AnpanManager::OnRecvRotate, &AnpanMgr, _1));
+	AddPacketFunction(PacketID::StopAnpan, std::bind(&AnpanManager::OnRecvStop, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::Damage, std::bind(&AActiveGameMode::OnRecvDamage, this, _1));
 	AddPacketFunction(PacketID::AddExp, std::bind(&AActiveGameMode::OnRecvAddExp, this, _1));
 	AddPacketFunction(PacketID::LevelUp, std::bind(&AActiveGameMode::OnRecvLevelUp, this, _1));
@@ -72,12 +74,12 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	ACharacterBase *pDamageCharacter = nullptr;
 	switch (Packet.TargetType)
 	{
-		case PacketDamage::TargetType::Player:
+		case CharacterType::Player:
 
-			// @TODO:他プレイヤー周りが出来たら実装。
+			pDamageCharacter = PlayerMgr.Get(Packet.TargetUuid);
 			break;
 
-		case PacketDamage::TargetType::Enemy:
+		case CharacterType::Enemy:
 	
 			pDamageCharacter = AnpanMgr.Get(Packet.TargetUuid);
 			break;
@@ -85,6 +87,11 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	}
 	check(pDamageCharacter != nullptr);
 	pDamageCharacter->ApplyDamage(Packet.DamageValue);
+
+	if (Packet.TargetType == CharacterType::Player)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Damage Value:%d ResultHP:%d"), Packet.DamageValue, Packet.ResultHp);
+	}
 }
 
 // 経験値を受信した。

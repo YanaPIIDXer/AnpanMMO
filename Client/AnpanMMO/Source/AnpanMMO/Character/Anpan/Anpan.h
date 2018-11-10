@@ -44,6 +44,9 @@ public:
 	// 回転.
 	void Rotate(float Rotation, int32 Time);
 
+	// 停止.
+	void Stop(float X, float Y, float Rotation);
+
 private:
 
 	// メッシュのパス

@@ -56,6 +56,7 @@ void Client::ChangeState(ClientStateBase *pNextState)
 void Client::CreateCharacter(int MaxHp, int Atk, int Def, int Exp)
 {
 	PlayerCharacter *pChara= new PlayerCharacter(this, MaxHp, Atk, Def, Exp);
+	pChara->SetUuid(Uuid);
 	pCharacter = shared_ptr<PlayerCharacter>(pChara);
 }
 

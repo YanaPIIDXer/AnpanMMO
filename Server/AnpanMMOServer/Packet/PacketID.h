@@ -7,6 +7,7 @@ enum PacketID
 	SpawnAnpan,
 	MoveAnpan,
 	RotateAnpan,
+	StopAnpan,
 	Attack,
 	Damage,
 	GameReady,

@@ -43,6 +43,21 @@ public:
 	// 正面ベクトルを取得.
 	Vector2D GetCenterVec() const;
 
+	// UUIDをセット。
+	void SetUuid(u32 InUuid) { Uuid = InUuid; }
+
+	// UUIDを取得.
+	u32 GetUuid() const { return Uuid; }
+
+	// キャラクタタイプを取得.
+	virtual u8 GetCharacterType() const = 0;
+
+	// 移動.
+	void Move(const Vector2D &MoveValue);
+
+	// 回転.
+	void Rotate(float RotateValue);
+
 protected:
 
 	// 座標.
@@ -76,6 +91,9 @@ private:
 
 	// パラメータ
 	CharacterParameter Parameter;
+
+	// UUID
+	u32 Uuid;
 
 };
 

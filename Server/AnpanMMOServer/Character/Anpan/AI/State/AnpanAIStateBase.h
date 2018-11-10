@@ -27,23 +27,8 @@ public:
 	// AI‚ðÝ’è.
 	void SetAI(AnpanAI *pInAI) { pAI = pInAI; }
 
-	// ˆÚ“®’†H
-	bool IsMoving() const { return (MoveTime > 0); }
-
-	// ˆÚ“®æ‚ðŽæ“¾.
-	const Vector2D &GetMoveTarget() const { return MoveTarget; }
-
-	// ˆÚ“®ŽžŠÔ‚ðŽæ“¾.
-	int GetMoveTime() const { return MoveTime; }
-
-	// ‰ñ“]’†H
-	bool IsRotating() const { return (RotateTime > 0); }
-
-	// ‰ñ“]æ‚ðŽæ“¾.
-	const Rotation &GetRotateTarget() const { return RotateTarget; }
-
-	// ‰ñ“]ŽžŠÔ‚ðŽæ“¾.
-	int GetRotateTime() const { return RotateTime; }
+	// ƒ_ƒ[ƒW‚ðŽó‚¯‚½B
+	virtual void OnDamaged() {}
 
 protected:
 
@@ -61,6 +46,15 @@ protected:
 
 	// ‰ñ“]‚ðÝ’è.
 	void SetRotate(const Rotation &InRotateTarget, int Time);
+
+	// ’âŽ~.
+	void Stop();
+
+	// ˆÚ“®’†H
+	bool IsMoving() const { return (MoveTime > 0); }
+
+	// ‰ñ“]’†H
+	bool IsRotating() const { return (RotateTime > 0); }
 
 private:
 

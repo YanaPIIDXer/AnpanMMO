@@ -37,6 +37,9 @@ public:
 	// ‰ñ“].
 	void Rotate(float Rotation, int32 Time);
 
+	// ’âŽ~.
+	void Stop(float X, float Y, float Rotation);
+
 private:
 	
 	// ƒAƒ“ƒpƒ“.
