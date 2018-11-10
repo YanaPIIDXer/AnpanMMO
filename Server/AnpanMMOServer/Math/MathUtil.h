@@ -45,6 +45,12 @@ public:
 		return ((A.X * B.X) + (A.Y * B.Y));
 	}
 
+	// ŠOÏ.
+	static float Cross(const Vector2D &A, const Vector2D &B)
+	{
+		return ((A.X * B.Y) - (A.Y * B.X));
+	}
+
 };
 
 #endif		// #ifndef __MATHUTIL_H__
