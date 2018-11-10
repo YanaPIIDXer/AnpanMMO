@@ -23,7 +23,7 @@ void PlayerManager::Add(uint8 Uuid, APlayerCharacterBase *pPlayer)
 // Žæ“¾.
 APlayerCharacterBase *PlayerManager::Get(uint32 Uuid) const
 {
-	if (PlayerMap.Contains(Uuid)) { return nullptr; }
+	if (!PlayerMap.Contains(Uuid)) { return nullptr; }
 	return PlayerMap[Uuid].Get();
 }
 
