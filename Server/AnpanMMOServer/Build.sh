@@ -5,5 +5,6 @@ for pid in ${pids[*]}
 do
 kill -9 ${pid}
 done
+make depend
 make
 ./AnpanMMOServer.out &
