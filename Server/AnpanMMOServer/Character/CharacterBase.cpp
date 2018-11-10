@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "CharacterBase.h"
+#include "World.h"
 #include "Math/MathUtil.h"
+#include "Packet/PacketDamage.h"
 
 // コンストラクタ
 CharacterBase::CharacterBase()
@@ -28,6 +30,9 @@ void CharacterBase::ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value)
 	{
 		Parameter.Hp = 0;
 	}
+
+	PacketDamage Packet(GetCharacterType(), Uuid, Value, Parameter.Hp);
+	World::GetInstance().BroadcastPacket(&Packet);
 
 	OnDamaged(pAttacker, Value);
 }

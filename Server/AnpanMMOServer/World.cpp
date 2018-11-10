@@ -74,10 +74,6 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
 	int DamageValue = DamageCalc.Calc();
 	pDefencer.lock()->ApplyDamage(pAttacker, DamageValue);
-
-	// ダメージを通知.
-	PacketDamage DamagePacket(CharacterType::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
-	PlayerMgr.BroadcastPacket(&DamagePacket);
 	
 	if (pDefencer.lock()->IsDead())
 	{
