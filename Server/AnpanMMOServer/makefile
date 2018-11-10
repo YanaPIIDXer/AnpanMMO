@@ -46,6 +46,8 @@ $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 
 # 依存関係ファイル
 -include $(DEPENDS)
+	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
+	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
 # 依存関係ファイルの生成.
 .PHONY: depend
