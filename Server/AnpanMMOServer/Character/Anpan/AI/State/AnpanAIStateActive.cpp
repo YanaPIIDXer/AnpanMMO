@@ -87,6 +87,16 @@ void AnpanAIStateActive::RotateToTarget()
 	float Dot = MathUtil::Dot(TargetVec, CenterVec);
 	float Rad = acos(Dot);
 	float Deg = MathUtil::RadToDeg(Rad);
+
+	if (isnan(Deg))
+	{
+		Deg = 0.0f;
+	}
+
+	if (MathUtil::Cross(CenterVec, TargetVec) < 0.0f)
+	{
+		Deg *= -1.0f;
+	}
 	
 	SetRotate(Rotation(Deg), 300);
 }
