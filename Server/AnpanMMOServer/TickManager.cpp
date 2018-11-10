@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "TickManager.h"
-#include <ctime>
+#include <time.h>
 
 TickManager TickManager::Instance;
 
