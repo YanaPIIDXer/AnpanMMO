@@ -30,7 +30,6 @@ void AnpanAIStateNonActive::OnDamaged()
 // 更新処理.
 void AnpanAIStateNonActive::Update(int DeltaTime)
 {
-	std::cout << "AI Update DeltaTime;" << DeltaTime << std::endl;
 	if (CurrentState == None)
 	{
 		// 内部ステートの初期化.

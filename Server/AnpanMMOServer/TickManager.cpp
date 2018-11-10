@@ -16,6 +16,7 @@ void TickManager::Poll()
 	int CurrentTime = clock();
 	int DeltaTime = CurrentTime - PrevTime;
 
+	std::cout << "TickManager::Poll() DeltaTime:" << DeltaTime << "(PrevTime:" << PrevTime << " CurrentTime:" << CurrentTime << ")" << std::endl;
 	for (int i = 0; i < Functions.size(); i++)
 	{
 		Functions[i](DeltaTime);
