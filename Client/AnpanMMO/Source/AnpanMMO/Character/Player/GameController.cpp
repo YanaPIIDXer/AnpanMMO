@@ -36,6 +36,8 @@ void AGameController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (pCharacter->IsDead()) { return; }
+
 	InputVector.Normalize();
 
 	FRotator CameraRot = pCamera->GetActorRotation();
