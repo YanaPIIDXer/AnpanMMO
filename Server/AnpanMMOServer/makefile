@@ -51,5 +51,5 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 .PHONY: rebuild
 
 rebuild:
-	rm -rf obj $(TARGETS)
-	make
+	@rm -rf obj $(TARGETS)
+	@make
