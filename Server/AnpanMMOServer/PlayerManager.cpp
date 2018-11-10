@@ -35,7 +35,8 @@ void PlayerManager::Poll()
 void PlayerManager::Add(u8 Uuid, PlayerCharacterPtr pPlayer)
 {
 	// 生成を接続済みのクライアントにブロードキャスト
-	PacketSpawnPlayer Packet(Uuid);
+	const CharacterParameter &Param = pPlayer.lock()->GetParameter();
+	PacketSpawnPlayer Packet(Uuid, Param.Hp, Param.MaxHp);
 	BroadcastPacket(&Packet, pPlayer.lock()->GetClient());
 
 	// プレイヤーリストを通知.
@@ -82,9 +83,10 @@ void PlayerManager::MakeListPacket(PacketPlayerList &Packet)
 {
 	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
 	{
-		const Vector2D Position = It->second.lock()->GetPosition();
-		const Rotation Rot = It->second.lock()->GetRotation();
-		PlayerData Data(It->first, Position.X, Position.Y, Rot.Get());
+		const Vector2D &Position = It->second.lock()->GetPosition();
+		const Rotation &Rot = It->second.lock()->GetRotation();
+		const CharacterParameter &Param = It->second.lock()->GetParameter();
+		PlayerData Data(It->first, Position.X, Position.Y, Rot.Get(), Param.Hp, Param.MaxHp);
 		Packet.List.PushBack(Data);
 	}
 }

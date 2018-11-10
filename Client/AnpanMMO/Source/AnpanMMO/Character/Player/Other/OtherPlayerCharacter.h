@@ -20,7 +20,7 @@ class ANPANMMO_API AOtherPlayerCharacter : public APlayerCharacterBase
 public:
 
 	// Spawn
-	static AOtherPlayerCharacter *Spawn(UWorld *pWorld, const FVector &Position, const FRotator &Rotation);
+	static AOtherPlayerCharacter *Spawn(UWorld *pWorld, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp);
 
 	// コンストラクタ
 	AOtherPlayerCharacter(const FObjectInitializer &ObjectInitializer);
@@ -43,6 +43,9 @@ public:
 protected:
 
 private:
+
+	// Blueprintのアセットパス
+	static const TCHAR *AssetPath;
 	
 	// コントローラ
 	TWeakObjectPtr<AOtherPlayerController> pController;

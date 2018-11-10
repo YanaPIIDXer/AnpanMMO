@@ -17,18 +17,22 @@ public:
 	float X;
 	float Y;
 	float Rotation;
+	s32 Hp;
+	s32 MaxHp;
 	
 
 	PlayerData()
 	{
 	}
 
-	PlayerData(u32 InUuid, float InX, float InY, float InRotation)
+	PlayerData(u32 InUuid, float InX, float InY, float InRotation, s32 InHp, s32 InMaxHp)
 	{
 		Uuid = InUuid;
 		X = InX;
 		Y = InY;
 		Rotation = InRotation;
+		Hp = InHp;
+		MaxHp = InMaxHp;
 		
 	}
 
@@ -38,6 +42,8 @@ public:
 		pStream->Serialize(&X);
 		pStream->Serialize(&Y);
 		pStream->Serialize(&Rotation);
+		pStream->Serialize(&Hp);
+		pStream->Serialize(&MaxHp);
 		
 		return true;
 	}

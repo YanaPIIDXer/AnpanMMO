@@ -2,14 +2,15 @@
 
 #include "OtherPlayerCharacter.h"
 #include "OtherPlayerController.h"
+#include "Util.h"
+
+const TCHAR *AOtherPlayerCharacter::AssetPath = TEXT("/Game/Blueprints/System/Active/OtherPlayerCharacter.OtherPlayerCharacter");
 
 // Spawn
-AOtherPlayerCharacter *AOtherPlayerCharacter::Spawn(UWorld *pWorld, const FVector &Position, const FRotator &Rotation)
+AOtherPlayerCharacter *AOtherPlayerCharacter::Spawn(UWorld *pWorld, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp)
 {
-	FActorSpawnParameters Param;
-	Param.bNoFail = true;
-	Param.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	auto *pCharacter = pWorld->SpawnActor<AOtherPlayerCharacter>(Position, Rotation, Param);
+	auto pCharacter = Util::SpawnFromBlueprint<AOtherPlayerCharacter>(pWorld, AssetPath, Position, Rotation);
+	pCharacter->Initialize(Hp, MaxHp);
 
 	return pCharacter;
 }

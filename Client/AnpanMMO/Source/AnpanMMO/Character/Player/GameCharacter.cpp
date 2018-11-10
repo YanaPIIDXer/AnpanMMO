@@ -34,8 +34,6 @@ void AGameCharacter::BeginPlay()
 	check(pGameMode != nullptr);
 	pGameMode->AddPlayerCharacter(Status.GetUuid(), this);
 
-	pGameMode->GetMainHUD()->OnHUDInitialize();
-
 	Move.Initialize(this, pInst);
 }
 
