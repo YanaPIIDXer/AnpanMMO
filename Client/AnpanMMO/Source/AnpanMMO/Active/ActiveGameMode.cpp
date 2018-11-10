@@ -9,6 +9,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketDamage.h"
+#include "Packet/CharacterType.h"
 #include "Packet/PacketAddExp.h"
 #include "Packet/PacketLevelUp.h"
 
@@ -73,12 +74,12 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	ACharacterBase *pDamageCharacter = nullptr;
 	switch (Packet.TargetType)
 	{
-		case PacketDamage::TargetType::Player:
+		case CharacterType::Player:
 
 			pDamageCharacter = PlayerMgr.Get(Packet.TargetUuid);
 			break;
 
-		case PacketDamage::TargetType::Enemy:
+		case CharacterType::Enemy:
 	
 			pDamageCharacter = AnpanMgr.Get(Packet.TargetUuid);
 			break;

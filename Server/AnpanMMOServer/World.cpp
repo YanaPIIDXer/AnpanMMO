@@ -10,6 +10,7 @@
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
 #include "Packet/PacketDamage.h"
+#include "Packet/CharacterType.h"
 #include "Packet/PacketAddExp.h"
 
 World World::Instance;
@@ -75,7 +76,7 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	pDefencer.lock()->ApplyDamage(pAttacker, DamageValue);
 
 	// ダメージを通知.
-	PacketDamage DamagePacket(PacketDamage::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
+	PacketDamage DamagePacket(CharacterType::Enemy, Packet.TargetUuid, DamageValue, pDefencer.lock()->GetParameter().Hp);
 	PlayerMgr.BroadcastPacket(&DamagePacket);
 	
 	if (pDefencer.lock()->IsDead())
