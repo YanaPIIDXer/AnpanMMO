@@ -83,6 +83,18 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	}
 }
 
+// プレイヤーキャラを取得.
+PlayerCharacterPtr World::GetPlayer(u32 Uuid) const
+{
+	return PlayerMgr.Get(Uuid);
+}
+
+// アンパンを取得.
+AnpanPtr World::GetAnpan(u32 Uuid) const
+{
+	return AnpanMgr.Get(Uuid);
+}
+
 
 // アンパンが生成された。
 void World::OnSpawnAnpan(unsigned int Uuid, AnpanPtr pAnpan)
