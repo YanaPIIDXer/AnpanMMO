@@ -40,6 +40,7 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
 # ˆË‘¶ŠÖŒWƒtƒ@ƒCƒ‹‚Ì¶¬.
+.PHONY: depend
 depend: $(DEPENDS)
 $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
