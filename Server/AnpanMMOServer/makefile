@@ -40,7 +40,12 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
 # 依存関係ファイル
--include $(DEPENDS)
+#-include $(DEPENDS)
+
+# 依存関係ファイルの生成.
+depend: $(DEPENDS)
+$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
+	$(COMPILER) -MM -MG $(CXXFLAGS) -o $@
 
 rebuild:
 	rm -rf obj
