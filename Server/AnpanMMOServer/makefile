@@ -35,7 +35,7 @@ $(TARGETS): $(OBJECTS) $(LIBS)
 	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lboost_system -lmysqlclient -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
 
 # àÀë∂ä÷åWÉtÉ@ÉCÉãÇÃê∂ê¨.
-$(DEPENDS): $(SRCROOT)/%.cpp
+$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) -MM -MG -MP $(CXXFLAGS) $< > $@
 
