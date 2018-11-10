@@ -45,7 +45,6 @@ void AGameCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	Move.Poll(DeltaTime);
-
 }
 
 // UŒ‚.
@@ -83,4 +82,15 @@ void AGameCharacter::OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def)
 FVector AGameCharacter::GetMoveVector() const
 {
 	return pMovementComponent->GetLastInputVector();
+}
+
+
+// ƒŠƒXƒ|ƒ“‚µ‚½B
+void AGameCharacter::OnRespawn()
+{
+	SetHP(Status.GetMaxHp());
+
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->GetMainHUD()->OnRespawn();
 }

@@ -43,6 +43,9 @@ public:
 	// 移動を受信.
 	void OnRecvMove(MemoryStreamInterface *pStream);
 
+	// リスポンを受信.
+	void OnRecvRespawn(MemoryStreamInterface *pStream);
+
 	// 退出を受信.
 	void OnRecvExit(MemoryStreamInterface *pStream);
 

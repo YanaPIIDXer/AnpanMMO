@@ -54,6 +54,9 @@ protected:
 	void OnDead();
 	virtual void OnDead_Implementation() {}
 
+	// HP‚ğİ’è.
+	void SetHP(int InHp) { Hp = InHp; }
+
 private:
 
 	// HP

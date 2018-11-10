@@ -44,5 +44,9 @@ public:
 	// ランダムなベクトルを取得.
 	UFUNCTION(BlueprintPure, Category = "Math")
 	static FVector GetRandomVector(float Min, float Max);
+	
+	// リスポンリクエスト送信.
+	UFUNCTION(BlueprintCallable, Category = "Respawn", meta = (WorldContext = pWorldContext))
+	static void SendRespawnRequest(UObject *pWorldContext);
 
 };

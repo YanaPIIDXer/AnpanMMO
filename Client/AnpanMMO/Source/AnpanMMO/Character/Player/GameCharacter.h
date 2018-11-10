@@ -56,6 +56,9 @@ protected:
 	void OnLevelUp();
 	void OnLevelUp_Implementation() {}
 
+	// リスポンした。
+	virtual void OnRespawn() override;
+
 private:
 
 	// 移動用Component

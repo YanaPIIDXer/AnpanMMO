@@ -35,3 +35,11 @@ void APlayerCharacterBase::BeginPlay()
 	check(pAnimClass != nullptr);
 	pMeshComponent->SetAnimInstanceClass(pAnimClass);
 }
+
+// ƒŠƒXƒ|ƒ“
+void APlayerCharacterBase::Respawn(float X, float Y)
+{
+	OnRespawn();
+	
+	SetActorLocation(FVector(X, Y, GetActorLocation().Z));
+}
