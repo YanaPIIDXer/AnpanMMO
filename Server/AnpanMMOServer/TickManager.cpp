@@ -17,7 +17,6 @@ void TickManager::Poll()
 	GetTime(&CurrentTime);
 	int DeltaTime = (CurrentTime.tv_nsec - PrevTime.tv_nsec) / 1000000;
 
-	std::cout << "TickManager::Poll() DeltaTime:" << DeltaTime << "(PrevTime:" << PrevTime.tv_nsec << " CurrentTime:" << CurrentTime.tv_nsec << ")" << std::endl;
 	for (int i = 0; i < Functions.size(); i++)
 	{
 		Functions[i](DeltaTime);
@@ -36,6 +35,8 @@ void TickManager::Add(const TickFunction &Function)
 // 時間を取得.
 void TickManager::GetTime(timespec *pTime)
 {
+	// ※WindowsとLinuxで定義されている関数が分かれているので
+	// 　こういった対処を行っている。
 #if WIN32
 	timespec_get(pTime, TIME_UTC);
 #else
