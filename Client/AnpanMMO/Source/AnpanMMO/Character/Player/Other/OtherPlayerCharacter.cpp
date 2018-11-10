@@ -4,12 +4,14 @@
 #include "OtherPlayerController.h"
 
 // Spawn
-AOtherPlayerCharacter *AOtherPlayerCharacter::Spawn(UWorld *pWorld, const FVector &Position, const FRotator &Rotation)
+AOtherPlayerCharacter *AOtherPlayerCharacter::Spawn(UWorld *pWorld, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp)
 {
 	FActorSpawnParameters Param;
 	Param.bNoFail = true;
 	Param.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	auto *pCharacter = pWorld->SpawnActor<AOtherPlayerCharacter>(Position, Rotation, Param);
+
+	pCharacter->Initialize(Hp, MaxHp);
 
 	return pCharacter;
 }

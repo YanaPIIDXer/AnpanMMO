@@ -34,7 +34,7 @@ void PlayerManager::OnRecvSpawn(MemoryStreamInterface *pStream)
 	PacketSpawnPlayer Packet;
 	Packet.Serialize(pStream);
 
-	SpawnCharacter(Packet.Uuid, 0.0f, 0.0f, 0.0f);
+	SpawnCharacter(Packet.Uuid, 0.0f, 0.0f, 0.0f, Packet.Hp, Packet.MaxHp);
 }
 
 // リストを受信.
@@ -46,7 +46,7 @@ void PlayerManager::OnRecvList(MemoryStreamInterface *pStream)
 	for (int32 i = 0; i < Packet.List.GetCurrentSize(); i++)
 	{
 		const auto &Data = Packet.List[i];
-		SpawnCharacter(Data.Uuid, Data.X, Data.Y, Data.Rotation);
+		SpawnCharacter(Data.Uuid, Data.X, Data.Y, Data.Rotation, Data.Hp, Data.MaxHp);
 	}
 }
 
@@ -84,8 +84,8 @@ void PlayerManager::OnRecvExit(MemoryStreamInterface *pStream)
 
 
 // キャラクタをSpawn
-void PlayerManager::SpawnCharacter(uint32 Uuid, float X, float Y, float Rotation)
+void PlayerManager::SpawnCharacter(uint32 Uuid, float X, float Y, float Rotation, int32 Hp, int32 MaxHp)
 {
-	auto *pCharacter = AOtherPlayerCharacter::Spawn(pWorld.Get(), FVector(X, Y, 110.0f), FRotator(0.0f, Rotation, 0.0f));
+	auto *pCharacter = AOtherPlayerCharacter::Spawn(pWorld.Get(), FVector(X, Y, 110.0f), FRotator(0.0f, Rotation, 0.0f), Hp, MaxHp);
 	PlayerMap.Add(Uuid, pCharacter);
 }

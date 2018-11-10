@@ -59,6 +59,6 @@ private:
 
 
 	// ƒLƒƒƒ‰ƒNƒ^‚ğSpawn
-	void SpawnCharacter(uint32 Uuid, float X, float Y, float Rotation);
+	void SpawnCharacter(uint32 Uuid, float X, float Y, float Rotation, int32 Hp, int32 MaxHp);
 
 };
