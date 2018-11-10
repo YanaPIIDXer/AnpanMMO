@@ -8,10 +8,12 @@
 #include <math.h>
 
 const float AnpanAIStateActive::ApproachDist = 200.0f;
+const int AnpanAIStateActive::AttackInterval = 5000;
 
 // コンストラクタ
 AnpanAIStateActive::AnpanAIStateActive(Anpan *pInParent)
 	: AnpanAIStateBase(pInParent)
+	, AttackTimer(0)
 {
 	pCurrentTarget.reset();
 }
@@ -35,6 +37,7 @@ void AnpanAIStateActive::Update(int DeltaTime)
 
 	UpdateMove();
 	UpdateRotate();
+	UpdateAttack(DeltaTime);
 }
 
 
@@ -58,6 +61,20 @@ void AnpanAIStateActive::UpdateMove()
 	if (IsApproached())
 	{
 		Stop();
+	}
+}
+
+// 攻撃を更新.
+void AnpanAIStateActive::UpdateAttack(int DeltaTime)
+{
+	AttackTimer -= DeltaTime;
+	if (AttackTimer <= 0)
+	{
+		AttackTimer = 0;
+		if (!IsApproached()) { return; }
+		
+
+		AttackTimer += AttackInterval;
 	}
 }
 

@@ -29,8 +29,14 @@ private:
 	// 「近づいた」と判定する距離.
 	static const float ApproachDist;
 
+	// 攻撃インターバル
+	static const int AttackInterval;
+
 	// 現在のターゲット
 	weak_ptr<CharacterBase> pCurrentTarget;
+
+	// 攻撃タイマー
+	int AttackTimer;
 
 
 	// 回転を更新.
@@ -38,6 +44,9 @@ private:
 
 	// 移動を更新.
 	void UpdateMove();
+
+	// 攻撃を更新.
+	void UpdateAttack(int DeltaTime);
 
 	// ターゲットの方向を向く。
 	void RotateToTarget();
