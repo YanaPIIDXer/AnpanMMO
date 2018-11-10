@@ -25,6 +25,9 @@ public:
 	// キャラクタタイプを取得.
 	virtual u8 GetCharacterType() const { return CharacterType::Enemy; }
 
+	// 攻撃.
+	void AttackTo(CharacterBase *pTarget);
+
 protected:
 
 	// ダメージを受けた。

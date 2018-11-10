@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Anpan.h"
 #include "World.h"
+#include "Math/DamageCalcUnit.h"
 #include "Packet/PacketStopAnpan.h"
 
 // コンストラクタ
@@ -37,6 +38,18 @@ void Anpan::Poll(int DeltaTime)
 		PacketStopAnpan Packet(GetUuid(), Pos.X, Pos.Y, GetRotation().Get());
 		World::GetInstance().BroadcastPacket(&Packet);
 	}
+}
+
+// 攻撃.
+void Anpan::AttackTo(CharacterBase *pTarget)
+{
+	DamageCalcUnit Calc(GetParameter(), pTarget->GetParameter());
+	int Value = Calc.Calc();
+
+	// ダメージ関数がキャラクタのweak_ptrを要求するので自分自身を取得.
+	AnpanPtr pSelf = World::GetInstance().GetAnpan(GetUuid());
+
+	pTarget->ApplyDamage(pSelf, Value);
 }
 
 
