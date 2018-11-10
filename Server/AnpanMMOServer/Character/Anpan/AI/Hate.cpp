@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Hate.h"
+#include "Character/CharacterBase.h"
 
 // コンストラクタ
 Hate::Hate()
@@ -13,7 +14,7 @@ void Hate::Poll()
 	bool bNeedSort = false;
 	while (It != HateList.end())
 	{
-		if (It->pCharacter.expired())
+		if (It->pCharacter.expired() || It->pCharacter.lock()->IsDead())
 		{
 			It = HateList.erase(It);
 			bNeedSort = true;
