@@ -41,9 +41,8 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	
 .PHONY: depend
 # 依存ファイルを生成.
-depend:
-	$(OBJROOT)/.d: $(SRCROOT)/.cpp
-		$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
+depend: $(OBJROOT)/.d: $(SRCROOT)/.cpp
+			$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
 
 # 依存関係ファイル
 -include $(DEPENDS)
