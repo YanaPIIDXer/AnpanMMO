@@ -8,6 +8,7 @@
 AnpanAI::AnpanAI(Anpan *pInParent)
 	: pParent(pInParent)
 	, bIsNeedSendStopPacket(false)
+	, pPrevState(NULL)
 {
 	pMovePacketData.reset();
 	pRotatePacketData.reset();
