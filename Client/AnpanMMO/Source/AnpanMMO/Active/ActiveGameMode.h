@@ -54,6 +54,9 @@ private:
 	UPROPERTY()
 	UMainHUD *pMainHUD;
 
+	// MainHUDを初期化したか？
+	bool bInitializedMainHUD;
+
 
 	// ダメージを受信した。
 	void OnRecvDamage(MemoryStreamInterface *pStream);

@@ -17,6 +17,7 @@
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 	, pMainHUD(nullptr)
+	, bInitializedMainHUD(false)
 {
 	PrimaryActorTick.bCanEverTick = true;
 
@@ -41,8 +42,6 @@ void AActiveGameMode::BeginPlay()
 	Super::BeginPlay();
 
 	pMainHUD = UMainHUD::Show(this);
-	check(pMainHUD != nullptr);
-	pMainHUD->OnHUDInitialize();
 
 	PlayerMgr.SetWorld(GetWorld());
 	AnpanMgr.SetWorld(GetWorld());
@@ -57,6 +56,12 @@ void AActiveGameMode::BeginPlay()
 void AActiveGameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	if (!bInitializedMainHUD)
+	{
+		pMainHUD->OnHUDInitialize();
+		bInitializedMainHUD = true;
+	}
 
 	AnpanMgr.Poll();
 }
