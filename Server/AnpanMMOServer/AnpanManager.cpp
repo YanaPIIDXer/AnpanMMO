@@ -4,7 +4,7 @@
 #include "Packet/PacketAnpanList.h"
 
 const int AnpanManager::SpawnInterval = 5000;
-const int AnpanManager::AnpanMax = 1;
+const int AnpanManager::AnpanMax = 100;
 
 // コンストラクタ
 AnpanManager::AnpanManager()
