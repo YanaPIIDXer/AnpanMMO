@@ -49,6 +49,9 @@ $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 # ˆË‘¶ŠÖŒWƒtƒ@ƒCƒ‹
 include $(DEPENDS)
 
+clean:
+	@rm -rf obj
+
 rebuild:
-	rm -rf obj
-	make
+	@make clean
+	@make
