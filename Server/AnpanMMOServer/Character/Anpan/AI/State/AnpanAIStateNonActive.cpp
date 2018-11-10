@@ -30,6 +30,7 @@ void AnpanAIStateNonActive::OnDamaged()
 // 更新処理.
 void AnpanAIStateNonActive::Update(int DeltaTime)
 {
+	std::cout << "AI Update DeltaTime;" << DeltaTime << std::endl;
 	if (CurrentState == None)
 	{
 		// 内部ステートの初期化.
@@ -70,7 +71,6 @@ void AnpanAIStateNonActive::UpdateStopping()
 	if (StateTime <= 0)
 	{
 		// 回転.
-		std::cout << "Rotate" << std::endl;
 		float RotateValue = Random::Range<float>(0.0f, 360.0f);
 		StateTime = Random::Range<int>(1000, 3000);
 		SetRotate(RotateValue, StateTime);
@@ -84,7 +84,6 @@ void AnpanAIStateNonActive::UpdateRotating()
 	if (StateTime <= 0)
 	{
 		// 移動.
-		std::cout << "Move" << std::endl;
 		Vector2D Vec = GetParent()->GetCenterVec();
 		Vec *= Random::Range<float>(500.0f, 1000.0f);
 		StateTime = Random::Range<int>(3000, 5000);
@@ -98,7 +97,6 @@ void AnpanAIStateNonActive::UpdateMoving()
 {
 	if (StateTime <= 0)
 	{
-		std::cout << "Stop" << std::endl;
 		CurrentState = Stopping;
 		StateTime = Random::Range<int>(1000, 5000);
 	}
