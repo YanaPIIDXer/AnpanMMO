@@ -35,9 +35,9 @@ $(TARGETS): $(OBJECTS) $(LIBS)
 	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lboost_system -lmysqlclient -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
 
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
-$(OBJROOT)/%.o: $(SRCROOT)/%.cpp $(OBJROOT)/%.d
+$(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
+	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $< $(OBJROOT)/%.d
 
 $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
