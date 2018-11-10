@@ -38,10 +38,14 @@ $(TARGETS): $(OBJECTS) $(LIBS)
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
+	
+depend:
+	$(OBJROOT)/.d: $(SRCROOT)/.cpp
+		$(COMPILER) -MM $(CXXFLAGS) 
 
 # ˆË‘¶ŠÖŒWƒtƒ@ƒCƒ‹
 -include $(DEPENDS)
 
 rebuild:
-	rm -rf obj
+	rm -rf obj $(TARGETS)
 	make
