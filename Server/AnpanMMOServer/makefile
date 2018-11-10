@@ -39,10 +39,6 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) $(CXXFLAGS) -MD $(INCLUDE) -o $@ -c $<
 
-# 依存関係ファイルの生成.
-.PHONY: depend
-depend: $(DEPENDS)
-
 # クリーン
 clean:
 	@rm -rf obj
@@ -50,7 +46,6 @@ clean:
 # リビルド
 rebuild:
 	@make clean
-	@make depend
 	@make
 	
 # 依存関係ファイル
