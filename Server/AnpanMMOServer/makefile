@@ -45,7 +45,7 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 # ˆË‘¶ŠÖŒWƒtƒ@ƒCƒ‹‚Ì¶¬.
 depend: $(DEPENDS)
 $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
-	$(COMPILER) -MM -MG $(CXXFLAGS) -o $@
+	$(COMPILER) -MM -MG $(CXXFLAGS) > $@
 
 rebuild:
 	rm -rf obj
