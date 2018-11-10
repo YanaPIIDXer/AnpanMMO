@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "TickManager.h"
+#if WIN32
 #include <time.h>
+#else
+#include <sys/time.h>
+#endif
 
 TickManager TickManager::Instance;
 
