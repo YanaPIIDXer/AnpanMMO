@@ -3,7 +3,6 @@
 
 #include "Character/CharacterBase.h"
 #include "PlayerExp.h"
-#include "Packet/CharacterType.h"
 
 class PlayerCharacter;
 typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
@@ -31,9 +30,6 @@ public:
 
 	// 経験値取得.
 	int GetExp() const { return Exp.Get(); }
-
-	// キャラクタタイプを取得.
-	virtual u8 GetCharacterType() const { return CharacterType::Player; }
 
 private:
 

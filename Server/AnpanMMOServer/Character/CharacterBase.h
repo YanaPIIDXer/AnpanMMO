@@ -55,9 +55,6 @@ public:
 	// 回転.
 	void Rotate(float RotateValue);
 
-	// キャラクタタイプを取得.
-	virtual u8 GetCharacterType() const = 0;
-
 protected:
 
 	// 座標.

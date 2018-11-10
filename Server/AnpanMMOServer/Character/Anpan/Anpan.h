@@ -3,7 +3,6 @@
 
 #include "Character/CharacterBase.h"
 #include "AI/AnpanAI.h"
-#include "Packet/CharacterType.h"
 
 /**
  * アンパンクラス
@@ -21,9 +20,6 @@ public:
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
-
-	// キャラクタタイプを取得.
-	virtual u8 GetCharacterType() const { return CharacterType::Enemy; }
 
 protected:
 
