@@ -20,6 +20,8 @@ enum PacketID
 	SpawnPlayer,
 	MovePlayer,
 	ExitPlayer,
+	RespawnRequest,
+	PlayerRespawn,
 	
 };
 

@@ -35,6 +35,9 @@ public:
 	// 攻撃を受信した。
 	void OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream);
 
+	// リスポンリクエスト受信.
+	void OnRecvRespawnRequest(Client *pClient, MemoryStreamInterface *pStream);
+
 	// プレイヤーキャラクタを取得.
 	PlayerCharacterPtr GetPlayer(u32 Uuid) const;
 

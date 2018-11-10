@@ -32,8 +32,14 @@ public:
 
 	// 移動ベクトルの取得.
 	virtual FVector GetMoveVector() const { return FVector(); }
+
+	// リスポン.
+	void Respawn(float X, float Y);
 	
 protected:
+
+	// リスポンした
+	virtual void OnRespawn() {}
 
 	// MeshComponent取得.
 	USkeletalMeshComponent *GetMeshComponent() const { return pMeshComponent; }

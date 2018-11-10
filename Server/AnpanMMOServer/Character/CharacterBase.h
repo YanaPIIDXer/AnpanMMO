@@ -58,6 +58,9 @@ public:
 	// ‰ñ“].
 	void Rotate(float RotateValue);
 
+	// ƒŠƒXƒ|ƒ“
+	void Respawn();
+
 protected:
 
 	// À•W.

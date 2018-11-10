@@ -3,6 +3,9 @@
 #include "BlueprintFunctions.h"
 #include "UI/SimpleDialog.h"
 #include "Particles/Emitter.h"
+#include "Kismet/GameplayStatics.h"
+#include "MMOGameInstance.h"
+#include "Packet/PacketRespawnRequest.h"
 
 // 単純なダイアログを表示.
 USimpleDialog *UBlueprintFunctions::ShowSimpleDialog(UObject *pOuter, const FString &DisplayText)
@@ -36,4 +39,14 @@ FVector UBlueprintFunctions::GetRandomVector(float Min, float Max)
 	Vec.Y = FMath::RandRange(Min, Max);
 	Vec.Z = FMath::RandRange(Min, Max);
 	return Vec;
+}
+
+// リスポンリクエスト送信.
+void UBlueprintFunctions::SendRespawnRequest(UObject *pWorldContext)
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(pWorldContext));
+	check(pInst != nullptr);
+
+	PacketRespawnRequest Packet;
+	pInst->SendPacket(&Packet);
 }

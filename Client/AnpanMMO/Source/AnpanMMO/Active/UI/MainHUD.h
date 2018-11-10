@@ -41,6 +41,11 @@ public:
 	void OnDamaged(int32 Value);
 	void OnDamaged_Implementation(int32 Value) {}
 
+	// リスポンした。
+	UFUNCTION(BlueprintNativeEvent, Category = "Respawn")
+	void OnRespawn();
+	void OnRespawn_Implementation() {}
+
 protected:
 
 	// 攻撃ボタンが押された。

@@ -14,6 +14,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(GameReady, boost::bind(&ClientStateActive::OnRecvGameReady, this, _2));
 	AddPacketFunction(MovePlayer, boost::bind(&World::OnRecvMove, &World::GetInstance(), _1, _2));
 	AddPacketFunction(Attack, boost::bind(&World::OnRecvAttack, &World::GetInstance(), _1, _2));
+	AddPacketFunction(RespawnRequest, boost::bind(&World::OnRecvRespawnRequest, &World::GetInstance(), _1, _2));
 }
 
 // ŠJn‚Ìˆ—.

@@ -56,3 +56,10 @@ void CharacterBase::Rotate(float RotateValue)
 {
 	Rot.Set(Rot.Get() + RotateValue);
 }
+
+// ƒŠƒXƒ|ƒ“
+void CharacterBase::Respawn()
+{
+	Parameter.Hp = Parameter.MaxHp;
+	Position = Vector2D(0.0f, 0.0f);
+}
