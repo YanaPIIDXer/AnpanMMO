@@ -41,7 +41,7 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	
 .PHONY: depend
 # ˆË‘¶ƒtƒ@ƒCƒ‹‚ð¶¬.
-:depend
+depend:
 	$(OBJROOT)/.d: $(SRCROOT)/.cpp
 		$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
 
