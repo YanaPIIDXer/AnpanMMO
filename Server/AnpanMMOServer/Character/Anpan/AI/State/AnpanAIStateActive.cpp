@@ -92,6 +92,11 @@ void AnpanAIStateActive::RotateToTarget()
 	{
 		Deg = 0.0f;
 	}
+
+	if (MathUtil::Cross(CenterVec, TargetVec) < 0.0f)
+	{
+		Deg *= -1.0f;
+	}
 	
 	SetRotate(Rotation(Deg), 300);
 }
