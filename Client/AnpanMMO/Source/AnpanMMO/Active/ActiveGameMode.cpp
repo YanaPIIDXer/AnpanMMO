@@ -41,6 +41,8 @@ void AActiveGameMode::BeginPlay()
 	Super::BeginPlay();
 
 	pMainHUD = UMainHUD::Show(this);
+	check(pMainHUD != nullptr);
+	pMainHUD->OnHUDInitialize();
 
 	PlayerMgr.SetWorld(GetWorld());
 	AnpanMgr.SetWorld(GetWorld());

@@ -43,6 +43,9 @@ public:
 protected:
 
 private:
+
+	// Blueprintのアセットパス
+	static const TCHAR *AssetPath;
 	
 	// コントローラ
 	TWeakObjectPtr<AOtherPlayerController> pController;
