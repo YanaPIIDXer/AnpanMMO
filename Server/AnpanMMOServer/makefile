@@ -30,12 +30,6 @@ OBJDIRS   = $(addprefix $(OBJROOT)/, $(SRCDIRS))
 # 依存ファイル.dを.oファイルから作る
 DEPENDS   = $(OBJECTS:.o=.d)
 
-# ビルドルール
-all: $(TARGETS)
-
-# 依存関係ファイル
--include $(DEPENDS)
-
 # 依存ファイルを元に実行ファイルを作る
 $(TARGETS): $(OBJECTS) $(LIBS)
 	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lboost_system -lmysqlclient -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
@@ -45,17 +39,22 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp $(OBJROOT)/%.d
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
-# 依存関係ファイルの生成.
-.PHONY: depend
-depend: $(DEPENDS)
-
 $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) -MM -MG -MP $(CXXFLAGS) $< > $@
 
+# 依存関係ファイル
+-include $(DEPENDS)
+
+# 依存関係ファイルの生成.
+.PHONY: depend
+depend: $(DEPENDS)
+
+# クリーン
 clean:
 	@rm -rf obj
 
+# リビルド
 rebuild:
 	@make clean
 	@make depend
