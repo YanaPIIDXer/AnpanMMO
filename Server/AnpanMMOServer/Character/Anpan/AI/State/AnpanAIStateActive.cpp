@@ -33,13 +33,13 @@ void AnpanAIStateActive::Update(int DeltaTime)
 		pCurrentTarget = pChara;
 	}
 
-	UpdateMove(DeltaTime);
-	UpdateRotate(DeltaTime);
+	UpdateMove();
+	UpdateRotate();
 }
 
 
 // 回転を更新.
-void AnpanAIStateActive::UpdateRotate(int DeltaTime)
+void AnpanAIStateActive::UpdateRotate()
 {
 	if (!IsRotating())
 	{
@@ -48,7 +48,7 @@ void AnpanAIStateActive::UpdateRotate(int DeltaTime)
 }
 
 // 移動を更新.
-void AnpanAIStateActive::UpdateMove(int DeltaTime)
+void AnpanAIStateActive::UpdateMove()
 {
 	if (!IsMoving())
 	{

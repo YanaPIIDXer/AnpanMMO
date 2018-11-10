@@ -34,10 +34,10 @@ private:
 
 
 	// 回転を更新.
-	void UpdateRotate(int DeltaTime);
+	void UpdateRotate();
 
 	// 移動を更新.
-	void UpdateMove(int DeltaTime);
+	void UpdateMove();
 
 	// ターゲットの方向を向く。
 	void RotateToTarget();
