@@ -9,8 +9,6 @@
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
-#include "Packet/PacketDamage.h"
-#include "Packet/CharacterType.h"
 #include "Packet/PacketAddExp.h"
 
 World World::Instance;
