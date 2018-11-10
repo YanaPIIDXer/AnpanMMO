@@ -41,9 +41,8 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	
 # 依存ファイルの作成.
 depend:
-	$(OBJROOT)/.d: $(SRCROOT)/.cpp
-		@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-		$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
+	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
+	$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
 
 # 依存関係ファイル
 -include $(DEPENDS)
