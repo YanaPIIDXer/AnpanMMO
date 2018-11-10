@@ -33,8 +33,13 @@ public:
 
 	// 初期化.
 	UFUNCTION(BlueprintNativeEvent, Category = "MainHUD")
-	void OnInitialize();
-	void OnInitialize_Implementation() {}
+	void OnHUDInitialize();
+	void OnHUDInitialize_Implementation() {}
+
+	// ダメージを受けた。
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "MainHUD")
+	void OnDamaged(int32 Value);
+	void OnDamaged_Implementation(int32 Value) {}
 
 protected:
 
