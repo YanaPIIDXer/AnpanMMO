@@ -96,6 +96,7 @@ void World::OnRecvRespawnRequest(Client *pClient, MemoryStreamInterface *pStream
 
 	Vector2D Pos = pChara.lock()->GetPosition();
 	PacketPlayerRespawn Packet(pClient->GetUuid(), Pos.X, Pos.Y);
+	BroadcastPacket(&Packet);
 }
 
 // プレイヤーキャラを取得.
