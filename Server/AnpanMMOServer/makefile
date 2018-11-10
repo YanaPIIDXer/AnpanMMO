@@ -37,7 +37,7 @@ $(TARGETS): $(OBJECTS) $(LIBS)
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $< $(OBJROOT)/%.d
+	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $< $($@:.o=.d)
 
 $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
