@@ -40,10 +40,10 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -c $< > $@
 	
 # 依存ファイルの作成.
-depend: $(OBJROOT)/%.d
-$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
-	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) -MM -MG $(CXXFLAGS) $^ > $@
+#depend: $(OBJROOT)/%.d
+#$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
+#	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
+#	$(COMPILER) -MM -MG $(CXXFLAGS) $^ > $@
 
 # 依存関係ファイル
 -include $(DEPENDS)
