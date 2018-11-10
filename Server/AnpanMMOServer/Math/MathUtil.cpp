@@ -14,7 +14,7 @@ int MathUtil::Lerp(int Start, int End, float Rate)
 	{
 		Rate = 1.0f;
 	}
-	return (int)(Start + Rate * (End - Start));
+	return (int)((1.0f - Rate) * Start + Rate * End);
 }
 
 // float‚Ì•âŠÔ.
@@ -29,16 +29,16 @@ float MathUtil::Lerp(float Start, float End, float Rate)
 	{
 		Rate = 1.0f;
 	}
-	return Start + Rate * (End - Start);
+	return (1.0f - Rate) * Start + Rate * End;
 }
 
 // Vector2D‚Ì•âŠÔ.
 template<>
 Vector2D MathUtil::Lerp(Vector2D Start, Vector2D End, float Rate)
 {
-	Vector2D Result;
-	Result.X = Lerp<float>(Start.X, End.X, Rate);
-	Result.Y = Lerp<float>(Start.X, End.Y, Rate);
+	Vector2D Result = Start;
+	Result.X += (End.X - Start.X) * Rate;
+	Result.Y += (End.Y - Start.Y) * Rate;
 	return Result;
 }
 
