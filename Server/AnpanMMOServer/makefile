@@ -39,11 +39,11 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 	
-.PHONY: depend
 # 依存ファイルを生成.
-depend: $(OBJROOT)/.d: $(SRCROOT)/.cpp
+.PHONY: depend
+depend: $(OBJROOT)/.d, $(SRCROOT)/.cpp
 			@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-#			$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
+			$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
 
 # 依存関係ファイル
 -include $(DEPENDS)
