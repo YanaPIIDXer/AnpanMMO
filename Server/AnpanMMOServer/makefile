@@ -39,13 +39,11 @@ $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) -MM -MG -MP $(CXXFLAGS) $< > $@
 
-# 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
-#$(OBJROOT)/%.o: $(SRCROOT)/%.cpp
-#	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-#	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
-
 # 依存関係ファイル
 -include $(DEPENDS)
+
+# 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
+$(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
