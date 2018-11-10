@@ -17,8 +17,8 @@ TickManager::TickManager()
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 void TickManager::Poll()
 {
-	int CurrentTime = clock();
-	int DeltaTime = CurrentTime - PrevTime;
+	clock_t CurrentTime = clock();
+	time_t DeltaTime = difftime(CurrentTime, PrevTime);
 
 	std::cout << "TickManager::Poll() DeltaTime:" << DeltaTime << "(PrevTime:" << PrevTime << " CurrentTime:" << CurrentTime << ")" << std::endl;
 	for (int i = 0; i < Functions.size(); i++)

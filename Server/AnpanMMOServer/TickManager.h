@@ -28,7 +28,7 @@ public:
 private:
 
 	// ˆÈ‘O‚ÌŠÔ.
-	int PrevTime;
+	clock_t PrevTime;
 
 	// ŠÖ”ƒŠƒXƒg
 	std::vector<TickFunction> Functions;
