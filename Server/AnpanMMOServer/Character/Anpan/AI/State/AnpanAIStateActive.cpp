@@ -73,7 +73,7 @@ void AnpanAIStateActive::UpdateAttack(int DeltaTime)
 		AttackTimer = 0;
 		if (!IsApproached()) { return; }
 		
-
+		GetParent()->AttackTo(pCurrentTarget.lock().get());
 		AttackTimer += AttackInterval;
 	}
 }

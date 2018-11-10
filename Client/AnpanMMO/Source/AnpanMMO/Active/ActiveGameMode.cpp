@@ -87,6 +87,11 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	}
 	check(pDamageCharacter != nullptr);
 	pDamageCharacter->ApplyDamage(Packet.DamageValue);
+
+	if (Packet.TargetType == CharacterType::Player)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Damage Value:%d ResultHP:%d"), Packet.DamageValue, Packet.ResultHp);
+	}
 }
 
 // 経験値を受信した。
