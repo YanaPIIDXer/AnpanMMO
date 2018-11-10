@@ -1,8 +1,7 @@
 #include "stdafx.h"
 #include "TickManager.h"
-#if WIN32
 #include <time.h>
-#else
+#if !WIN32
 #include <sys/time.h>
 #endif
 
