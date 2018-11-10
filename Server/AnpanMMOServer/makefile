@@ -33,17 +33,16 @@ DEPENDS   = $(OBJECTS:.o=.d)
 # 依存ファイルを元に実行ファイルを作る
 $(TARGETS): $(OBJECTS) $(LIBS)
 	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lboost_system -lmysqlclient -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
-	 
+
+# 依存ファイルの作成.
+$(OBJROOT)/.d, $(SRCROOT)/.cpp
+	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
+	$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
+
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
-	
-# 依存ファイルを生成.
-.PHONY: depend
-depend: $(OBJROOT)/.d, $(SRCROOT)/.cpp
-			@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-			$(COMPILER) -MM $(CXXFLAGS) $^ > -o $@
 
 # 依存関係ファイル
 -include $(DEPENDS)
