@@ -49,6 +49,9 @@ public:
 	// UUIDを取得.
 	u32 GetUuid() const { return Uuid; }
 
+	// キャラクタタイプを取得.
+	virtual u8 GetCharacterType() const = 0;
+
 	// 移動.
 	void Move(const Vector2D &MoveValue);
 
