@@ -12,6 +12,7 @@ AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pCharacter(nullptr)
 	, pCamera(nullptr)
+	, InputVector(FVector::ZeroVector)
 	, PrevTouchLocation(FVector2D::ZeroVector)
 {
 }
@@ -28,6 +29,26 @@ void AGameController::Possess(APawn *aPawn)
 	pCamera->SetGameCharacter(pCharacter.Get());
 	
 	SetupPlayerInput(pCharacter->InputComponent);
+}
+
+// 毎フレームの処理.
+void AGameController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	InputVector.Normalize();
+
+	FRotator CameraRot = pCamera->GetActorRotation();
+	CameraRot.Pitch = 0.0f;
+	CameraRot.Roll = 0.0f;
+	FVector Vec = CameraRot.RotateVector(InputVector);
+	pCharacter->AddMovementInput(Vec);
+
+	if (InputVector.SizeSquared() > 0.0f)
+	{
+		FRotator Rot = Vec.Rotation();
+		pCharacter->SetActorRotation(Rot);
+	}
 }
 
 // タッチ処理.
@@ -68,25 +89,11 @@ void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
 // 前後移動.
 void AGameController::MoveForward(float Value)
 {
-	if (Value == 0.0f) { return; }
-	FVector Vec(Value, 0.0f, 0.0f);
-	FRotator CameraRot(0.0f, pCamera->GetActorRotation().Yaw, 0.0f);
-	Vec = CameraRot.RotateVector(Vec);
-
-	FRotator Rot = Vec.Rotation();
-	pCharacter->SetActorRotation(Rot);
-	pCharacter->AddMovementInput(Vec);
+	InputVector.X = Value;
 }
 
 // 左右移動.
 void AGameController::MoveRight(float Value)
 {
-	if (Value == 0.0f) { return; }
-	FVector Vec(0.0f, Value, 0.0f);
-	FRotator CameraRot(0.0f, pCamera->GetActorRotation().Yaw, 0.0f);
-	Vec = CameraRot.RotateVector(Vec);
-
-	FRotator Rot = Vec.Rotation();
-	pCharacter->SetActorRotation(Rot);
-	pCharacter->AddMovementInput(Vec);
+	InputVector.Y = Value;
 }
