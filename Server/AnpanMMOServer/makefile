@@ -43,7 +43,7 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 depend: $(OBJROOT)/%.d
 $(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) -MM -MG $(CXXFLAGS) $^ > -o $@
+	$(COMPILER) -MM -MG $(CXXFLAGS) $^ >> -o $@
 
 # ˆË‘¶ŠÖŒWƒtƒ@ƒCƒ‹
 -include $(DEPENDS)
