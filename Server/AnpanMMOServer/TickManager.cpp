@@ -1,24 +1,20 @@
 #include "stdafx.h"
 #include "TickManager.h"
-#if WIN32
 #include <time.h>
-#else
-#include <sys/time.h>
-#endif
 
 TickManager TickManager::Instance;
 
 // コンストラクタ
 TickManager::TickManager()
 {
-	timespec_get(&PrevTime, TIME_UTC);
+	GetTime(&PrevTime);
 }
 
 // 毎フレームの処理.
 void TickManager::Poll()
 {
 	timespec CurrentTime;
-	timespec_get(&CurrentTime, TIME_UTC);
+	GetTime(&CurrentTime);
 	int DeltaTime = (CurrentTime.tv_nsec - PrevTime.tv_nsec) / 1000000;
 
 	std::cout << "TickManager::Poll() DeltaTime:" << DeltaTime << "(PrevTime:" << PrevTime.tv_nsec << " CurrentTime:" << CurrentTime.tv_nsec << ")" << std::endl;
@@ -34,4 +30,15 @@ void TickManager::Poll()
 void TickManager::Add(const TickFunction &Function)
 {
 	Functions.push_back(Function);
+}
+
+
+// 時間を取得.
+void TickManager::GetTime(timespec *pTime)
+{
+#if WIN32
+	timespec_get(pTime, TIME_UTC);
+#else
+	clock_gettime(CLOCK_REALTIME, pTime);
+#endif
 }

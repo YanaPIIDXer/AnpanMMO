@@ -33,6 +33,10 @@ private:
 	// ŠÖ”ƒŠƒXƒg
 	std::vector<TickFunction> Functions;
 
+
+	// ŠÔ‚ğæ“¾.
+	void GetTime(timespec *pTime);
+
 	// ========== Singleton ============
 public:
 
