@@ -34,14 +34,15 @@ DEPENDS   = $(OBJECTS:.o=.d)
 $(TARGETS): $(OBJECTS) $(LIBS)
 	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lboost_system -lmysqlclient -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
 
+# 依存関係ファイルの生成.
+$(DEPENDS): $(SRCROOT)/%.cpp
+	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
+	$(COMPILER) -MM -MG -MP $(CXXFLAGS) $< > $@
+
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp $(OBJROOT)/%.d
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
-
-$(DEPENDS): $(SRCROOT)/%.cpp
-	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-	$(COMPILER) -MM -MG -MP $(CXXFLAGS) $< > $@
 
 # 依存関係ファイル
 -include $(DEPENDS)
