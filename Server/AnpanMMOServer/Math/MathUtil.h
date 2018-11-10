@@ -45,6 +45,10 @@ public:
 		return ((A.X * B.X) + (A.Y * B.Y));
 	}
 
+	static void DependTest()
+	{
+	}
+
 };
 
 #endif		// #ifndef __MATHUTIL_H__
