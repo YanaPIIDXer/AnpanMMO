@@ -37,7 +37,7 @@ void AnpanAIStateActive::Update(int DeltaTime)
 
 	UpdateMove();
 	UpdateRotate();
-	//UpdateAttack(DeltaTime);
+	UpdateAttack(DeltaTime);
 }
 
 
