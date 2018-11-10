@@ -41,7 +41,7 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	
 # ˆË‘¶ƒtƒ@ƒCƒ‹‚Ìì¬.
 depend: $(OBJROOT)/%.d
-$(OBJROOT)/%.d $(SRCROOT)/%.cpp
+$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) -MM -MG $(CXXFLAGS) $^ > -o $@
 
