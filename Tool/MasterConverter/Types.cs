@@ -18,5 +18,6 @@ namespace MasterConverter
 		s32,
 		u32,
 		String,
+		Float,
 	}
 }
