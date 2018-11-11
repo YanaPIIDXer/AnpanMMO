@@ -28,12 +28,34 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.OutputButton = new System.Windows.Forms.Button();
+			this.SuspendLayout();
+			// 
+			// OutputButton
+			// 
+			this.OutputButton.Location = new System.Drawing.Point(83, 198);
+			this.OutputButton.Name = "OutputButton";
+			this.OutputButton.Size = new System.Drawing.Size(115, 45);
+			this.OutputButton.TabIndex = 0;
+			this.OutputButton.Text = "出力";
+			this.OutputButton.UseVisualStyleBackColor = true;
+			this.OutputButton.Click += new System.EventHandler(this.OutputButton_Click);
+			// 
+			// Form1
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(282, 255);
+			this.Controls.Add(this.OutputButton);
+			this.Name = "Form1";
 			this.Text = "Form1";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
+
+		private System.Windows.Forms.Button OutputButton;
 	}
 }
 

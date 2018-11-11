@@ -43,7 +43,14 @@ namespace MasterConverter
 		{
 			// ファイル名をテーブル名として扱う。
 			string TableName = Path.GetFileNameWithoutExtension(FilePath);
-			var Writer = new StreamWriter(FilePath, false);
+
+			var Dir = Path.GetDirectoryName(FilePath);
+			if(!Directory.Exists(Dir))
+			{
+				Directory.CreateDirectory(Dir);
+			}
+
+			var Writer = File.CreateText(FilePath);
 			Writer.WriteLine("DROP TABLE IF EXISTS `" + TableName + "`;");
 			Writer.WriteLine("CREATE TABLE `" + TableName + "` (");
 			foreach(Column Col in Columns)
