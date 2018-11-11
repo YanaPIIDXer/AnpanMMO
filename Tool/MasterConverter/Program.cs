@@ -10,6 +10,8 @@ namespace MasterConverter
 	{
 		static void Main(string[] args)
 		{
+			ExcelParser Parser = new ExcelParser("MasterData\\Test.xlsx");
+			Parser.Load();
 		}
 	}
 }
