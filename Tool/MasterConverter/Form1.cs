@@ -30,6 +30,7 @@ namespace MasterConverter
 			string[] Files = Directory.GetFiles(ExcelFilePath);
 			foreach (var FilePath in Files)
 			{
+				Console.WriteLine(FilePath + "の展開中・・・");
 				ExcelParser Parser = new ExcelParser(FilePath);
 				if (!Parser.Load())
 				{
