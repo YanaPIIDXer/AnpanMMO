@@ -51,6 +51,7 @@
     <Compile Include="ExcelParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLGenerator.cs" />
     <Compile Include="Types.cs" />
   </ItemGroup>
   <ItemGroup>

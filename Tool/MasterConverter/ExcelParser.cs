@@ -33,7 +33,7 @@ namespace MasterConverter
 		/// <summary>
 		/// カラムリスト
 		/// </summary>
-		private List<Column> Columns = new List<Column>();
+		public List<Column> Columns { get; private set; }
 
 		/// <summary>
 		/// コンストラクタ
@@ -42,6 +42,7 @@ namespace MasterConverter
 		public ExcelParser(string InFilePath)
 		{
 			FilePath = InFilePath;
+			Columns = new List<Column>();
 		}
 
 		/// <summary> 0
@@ -64,16 +65,6 @@ namespace MasterConverter
 				}
 
 				CollectDatas(WorkSheet, TagIndex);
-
-				// Test
-				for(int i = 0; i < Columns.Count; i++)
-				{
-					Console.WriteLine(Columns[i].Name + ":" + Columns[i].DataType.ToString());
-					foreach(var Data in Columns[i].DataList)
-					{
-						Console.WriteLine(Data.ToString());
-					}
-				}
 			}
 
 			return true;
