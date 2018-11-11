@@ -19,6 +19,11 @@ namespace MasterConverter
 		/// </summary>
 		private static readonly string ExcelFilePath = "MasterData";
 
+		/// <summary>
+		/// .sqlファイルを生成するパス
+		/// </summary>
+		private static readonly string SQLOutputPath = "SQLs";
+
 		public Form1()
 		{
 			InitializeComponent();
@@ -27,23 +32,69 @@ namespace MasterConverter
 		// 出力ボタンが押された
 		private void OutputButton_Click(object sender, EventArgs e)
 		{
-			string[] Files = Directory.GetFiles(ExcelFilePath);
-			foreach (var FilePath in Files)
+			// テスト用
+			string Host = "";
+			string UserName = "";
+			string Password = "";
+			using (StreamReader Stream = new StreamReader("FTPData.txt"))
 			{
-				ExcelParser Parser = new ExcelParser(FilePath);
+				Host = Stream.ReadLine();
+				UserName = Stream.ReadLine();
+				Password = Stream.ReadLine();
+			}
+
+			string[] Files = Directory.GetFiles(ExcelFilePath);
+			foreach (var TargetFilePath in Files)
+			{
+				Console.Write(TargetFilePath + "の展開中...");
+				ExcelParser Parser = new ExcelParser(TargetFilePath);
 				if (!Parser.Load())
 				{
 					MessageBox.Show("Excelファイルの解析に失敗しました。");
+					Console.WriteLine("失敗。");
 					return;
 				}
 
-				SQLGenerator SQLGen = new SQLGenerator("SQLs\\Test.sql", Parser.Columns);
+				Console.WriteLine("完了。");
+				
+				string FileName = Path.GetFileNameWithoutExtension(TargetFilePath) + ".sql";
+				string FilePath = SQLOutputPath + "\\" + FileName;
+				Console.Write(FilePath + "の生成中...");
+
+				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Columns);
 				if (!SQLGen.Generate())
 				{
 					MessageBox.Show("SQLファイルの生成に失敗しました。");
+					Console.WriteLine("失敗。");
 					return;
 				}
+
+				Console.WriteLine("完了。");
+
+				Console.Write(FilePath + "の転送中...");
+
+				SQLTransporter Transporter = new SQLTransporter(FilePath, Host, UserName, Password);
+				if(!Transporter.Transport())
+				{
+					MessageBox.Show("SQLファイルの転送に失敗しました。");
+					Console.WriteLine("失敗。");
+					return;
+				}
+
+				Console.WriteLine("完了。");
 			}
+
+			Console.Write("SQLの展開中...");
+
+			SQLExecuter Executer = new SQLExecuter(Host, UserName, Password);
+			if(!Executer.Execute())
+			{
+				MessageBox.Show("SQLの展開に失敗しました。");
+				Console.WriteLine("失敗。");
+				return;
+			}
+
+			Console.WriteLine("完了。");
 
 			MessageBox.Show("出力しました。");
 		}
