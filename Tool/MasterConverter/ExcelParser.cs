@@ -57,9 +57,22 @@ namespace MasterConverter
 				if(TagIndex == -1) { return false; }
 
 				CollectColumns(WorkSheet, TagIndex - 2);
+				if(Columns[0].DataType == Type.String)
+				{
+					Console.WriteLine("最初の行を文字列型にすることは出来ません。");
+					return false;
+				}
+
+				CollectDatas(WorkSheet, TagIndex);
+
+				// Test
 				for(int i = 0; i < Columns.Count; i++)
 				{
 					Console.WriteLine(Columns[i].Name + ":" + Columns[i].DataType.ToString());
+					foreach(var Data in Columns[i].DataList)
+					{
+						Console.WriteLine(Data.ToString());
+					}
 				}
 			}
 
@@ -133,6 +146,24 @@ namespace MasterConverter
 
 				Column NewColumn = new Column(ColumnName, DataType);
 				Columns.Add(NewColumn);
+			}
+		}
+
+		/// <summary>
+		/// データを収集.
+		/// </summary>
+		/// <param name="WorkSheet">ワークシート</param>
+		/// <param name="StartRow">開始行</param>
+		private void CollectDatas(ExcelWorksheet WorkSheet, int StartRow)
+		{
+			for(int i = StartRow; ; i++)
+			{
+				for(int j = 1; j <= Columns.Count; j++)
+				{
+					object Data = WorkSheet.Cells[i, j + 1].Value;
+					if(j == 1 && Data == null) { return; }
+					Columns[j - 1].AddData(Data);
+				}
 			}
 		}
 

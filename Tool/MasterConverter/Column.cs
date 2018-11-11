@@ -24,6 +24,11 @@ namespace MasterConverter
 		public Type DataType { get; private set; }
 
 		/// <summary>
+		/// データリスト
+		/// </summary>
+		public List<object> DataList { get; private set; }
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InName">カラム名</param>
@@ -32,6 +37,16 @@ namespace MasterConverter
 		{
 			Name = InName;
 			DataType = InDataType;
+			DataList = new List<object>();
+		}
+
+		/// <summary>
+		/// データ追加.
+		/// </summary>
+		/// <param name="Data">データ</param>
+		public void AddData(object Data)
+		{
+			DataList.Add(Data);
 		}
 
 	}
