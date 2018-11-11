@@ -32,6 +32,17 @@ namespace MasterConverter
 		// 出力ボタンが押された
 		private void OutputButton_Click(object sender, EventArgs e)
 		{
+			// テスト用
+			string Host = "";
+			string UserName = "";
+			string Password = "";
+			using (StreamReader Stream = new StreamReader("FTPData.txt"))
+			{
+				Host = Stream.ReadLine();
+				UserName = Stream.ReadLine();
+				Password = Stream.ReadLine();
+			}
+
 			string[] Files = Directory.GetFiles(ExcelFilePath);
 			foreach (var TargetFilePath in Files)
 			{
@@ -62,17 +73,6 @@ namespace MasterConverter
 
 				Console.Write(FilePath + "の転送中...");
 
-				// テスト用
-				string Host = "";
-				string UserName = "";
-				string Password = "";
-				using (StreamReader Stream = new StreamReader("FTPData.txt"))
-				{
-					Host = Stream.ReadLine();
-					UserName = Stream.ReadLine();
-					Password = Stream.ReadLine();
-				}
-
 				SQLTransporter Transporter = new SQLTransporter(FilePath, Host, UserName, Password);
 				if(!Transporter.Transport())
 				{
@@ -83,6 +83,18 @@ namespace MasterConverter
 
 				Console.WriteLine("完了。");
 			}
+
+			Console.Write("SQLの展開中...");
+
+			SQLExecuter Executer = new SQLExecuter(Host, UserName, Password);
+			if(!Executer.Execute())
+			{
+				MessageBox.Show("SQLの展開に失敗しました。");
+				Console.WriteLine("失敗。");
+				return;
+			}
+
+			Console.WriteLine("完了。");
 
 			MessageBox.Show("出力しました。");
 		}

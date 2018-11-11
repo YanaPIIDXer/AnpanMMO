@@ -14,12 +14,7 @@ namespace MasterConverter
 	/// </summary>
 	public class SQLTransporter
 	{
-
-		/// <summary>
-		/// 対象のパス
-		/// </summary>
-		private static readonly string TargetRootPath = "SQLs";
-
+		
 		/// <summary>
 		/// ファイルパス
 		/// </summary>
@@ -68,11 +63,11 @@ namespace MasterConverter
 				using (var Client = new SftpClient(ConnInfo))
 				{
 					Client.Connect();
-					if(!Client.Exists(TargetRootPath))
+					if(!Client.Exists(Config.HostSQLPath))
 					{
-						Client.CreateDirectory(TargetRootPath);
+						Client.CreateDirectory(Config.HostSQLPath);
 					}
-					Client.ChangeDirectory(TargetRootPath);
+					Client.ChangeDirectory(Config.HostSQLPath);
 					using (var FileStream = File.OpenRead(FilePath))
 					{
 						Client.UploadFile(FileStream, Path.GetFileName(FilePath), true);
