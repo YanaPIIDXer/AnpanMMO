@@ -78,9 +78,6 @@ namespace MasterConverter
 			// マスタをブチ込む。
 			Process AppendProcess = CreateMySQLProcess("-D " + Config.MasterDataBaseName + " < " + FilePath);
 			
-			string DisplayCommand = "mysql -u " + UserName + " -p" + Password + " -D " + Config.MasterDataBaseName + " < " + FilePath;
-			Console.WriteLine(DisplayCommand);
-
 			AppendProcess.Start();
 
 			string Error = AppendProcess.StandardError.ReadToEnd();
