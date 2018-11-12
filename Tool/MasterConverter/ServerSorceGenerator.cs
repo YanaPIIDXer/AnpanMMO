@@ -169,17 +169,17 @@ namespace MasterConverter
 				{
 					case Type.Float:
 
-						ItemBind += "Query.AddResultFloat(&BindItem." + Col.Name + ");";
+						ItemBind += "Query.BindResultFloat(&BindItem." + Col.Name + ");";
 						break;
 
 					case Type.String:
 
-						ItemBind += "Query.AddResultString(" + Col.Name + "Bind);";
+						ItemBind += "Query.BindResultString(" + Col.Name + "Bind);";
 						break;
 
 					default:
 
-						ItemBind += "Query.AddResultInt(&BindItem." + Col.Name + ");";
+						ItemBind += "Query.BindResultInt(&BindItem." + Col.Name + ");";
 						break;
 				}
 				ItemBind += "\n";
@@ -215,7 +215,7 @@ namespace MasterConverter
 			Source = Source.Replace("$ITEM_FETCH$", ItemFetch);
 
 			// マップへの追加.
-			string AppendToMap = "Items[" + ColumnList[0].Name + "] = Item;";
+			string AppendToMap = "Items[Item." + ColumnList[0].Name + "] = Item;";
 			Source = Source.Replace("$APPEND_TO_MAP$", AppendToMap);
 
 			return Source;
