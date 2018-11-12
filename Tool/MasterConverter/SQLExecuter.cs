@@ -59,7 +59,7 @@ namespace MasterConverter
 					Console.WriteLine("");
 					string Result = "";
 					string Error = "";
-
+					
 					// .sqlファイルを列挙.
 					ExecuteCommand(Client, "ls -1 " + Config.HostSQLPath, false, out Result, out Error);
 					string[] SQLFiles = Result.Split('\n');
@@ -69,7 +69,7 @@ namespace MasterConverter
 					{
 						if (String.IsNullOrEmpty(SQLFile)) { continue; }
 						var FilePath = Config.HostSQLPath + "/" + SQLFile;
-						if(!ExecuteCommand(Client, "mysql -u " + UserName + " -p" + Password + " -D " + Config.MasterDataBaseName + " < " + FilePath, true, out Result, out Error))
+						if(!ExecuteCommand(Client, GenerateMySQLCommand("-D " + Config.MasterDataBaseName + " < " + FilePath), true, out Result, out Error))
 						{
 							Console.WriteLine(Error);
 							return false;
@@ -109,11 +109,11 @@ namespace MasterConverter
 			{
 				using (SshCommand Cmd = Client.CreateCommand(Command))
 				{
-					Cmd.Execute();
 					if(OutputToConsole)
 					{
 						Console.WriteLine(Cmd.CommandText);
 					}
+					Cmd.Execute();
 					Result = Cmd.Result;
 					bCommandSuccess = (Cmd.ExitStatus == 0);
 					if(!bCommandSuccess)
@@ -130,6 +130,16 @@ namespace MasterConverter
 			}
 
 			return bCommandSuccess;
+		}
+
+		/// <summary>
+		/// MySQLのコマンドを生成.
+		/// </summary>
+		/// <param name="Arg">引数</param>
+		/// <returns>MySQLのコマンド</returns>
+		private string GenerateMySQLCommand(string Arg)
+		{
+			return "mysql -u " + UserName + " -p" + Password + " " + Arg;
 		}
 
 	}
