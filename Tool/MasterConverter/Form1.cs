@@ -180,8 +180,16 @@ namespace MasterConverter
 				Expander = new LocalSQLExpander(UserName, Password);
 			}
 
-			string[] Files = Directory.GetFiles(Config.TemporaryDirectoryPath);
-			if (!Expander.Expand(Files))
+			string[] AllFiles = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			List<string> Files = new List<string>();
+			foreach(var File in AllFiles)
+			{
+				if(Path.GetExtension(File) == ".sql")
+				{
+					Files.Add(File);
+				}
+			}
+			if (!Expander.Expand(Files.ToArray()))
 			{
 				MessageBox.Show("SQLの展開に失敗しました。");
 				return false;
