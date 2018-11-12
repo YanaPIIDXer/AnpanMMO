@@ -64,25 +64,15 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す。</returns>
 		private bool ExpandFile(string FilePath)
 		{
-			Process ExpandProcess = new Process();
+			Process ExpandProcess = CreateMySQLProcess("-D " + Config.MasterDataBaseName + " < " + FilePath);
+			
+			string DisplayCommand = "mysql -u " + UserName + " -p" + Password + " -D " + Config.MasterDataBaseName + " < " + FilePath;
+			Console.WriteLine(DisplayCommand);
 
-			ExpandProcess.StartInfo.FileName = System.Environment.GetEnvironmentVariable("ComSpec");
-			
-			ExpandProcess.StartInfo.UseShellExecute = false;
-			ExpandProcess.StartInfo.RedirectStandardError = true;
-			ExpandProcess.StartInfo.RedirectStandardInput = true;
-			ExpandProcess.StartInfo.RedirectStandardOutput = true;
-			ExpandProcess.StartInfo.CreateNoWindow = true;
-			
-			string CommandArg = "mysql -u " + UserName + " -p" + Password + " -D " + Config.MasterDataBaseName + " < " + FilePath;
-			ExpandProcess.StartInfo.Arguments = "/c " + CommandArg;
-
-			Console.WriteLine(CommandArg);
-			
 			ExpandProcess.Start();
-			
+
 			string Error = ExpandProcess.StandardError.ReadToEnd();
-			if(Error != "")
+			if (Error != "")
 			{
 				Console.WriteLine(Error);
 			}
@@ -92,5 +82,26 @@ namespace MasterConverter
 			return (Error == "");
 		}
 
+		/// <summary>
+		/// MySQLのProcessを作成。
+		/// </summary>
+		/// <param name="Arg"></param>
+		/// <returns></returns>
+		private Process CreateMySQLProcess(string Arg)
+		{
+			Process ExpandProcess = new Process();
+
+			ExpandProcess.StartInfo.FileName = System.Environment.GetEnvironmentVariable("ComSpec");
+
+			ExpandProcess.StartInfo.UseShellExecute = false;
+			ExpandProcess.StartInfo.RedirectStandardError = true;
+			ExpandProcess.StartInfo.RedirectStandardInput = true;
+			ExpandProcess.StartInfo.RedirectStandardOutput = true;
+			ExpandProcess.StartInfo.CreateNoWindow = true;
+
+			string CommandArg = "mysql -u " + UserName + " -p" + Password + " " + Arg;
+			ExpandProcess.StartInfo.Arguments = "/c " + CommandArg;
+			return ExpandProcess;
+		}
 	}
 }
