@@ -19,11 +19,6 @@ namespace MasterConverter
 		/// </summary>
 		private static readonly string ExcelFilePath = "MasterData";
 
-		/// <summary>
-		/// .sqlファイルを生成するパス
-		/// </summary>
-		private static readonly string SQLOutputPath = "SQLs";
-
 		public Form1()
 		{
 			InitializeComponent();
@@ -32,6 +27,8 @@ namespace MasterConverter
 		// 出力ボタンが押された
 		private void OutputButton_Click(object sender, EventArgs e)
 		{
+			if (!GenerateSQLFiles()) { return; }
+
 			// テスト用
 			string Host = "";
 			string UserName = "";
@@ -42,23 +39,48 @@ namespace MasterConverter
 				UserName = Stream.ReadLine();
 				Password = Stream.ReadLine();
 			}
+			if(!ExpandMaster(Host, UserName, Password)) { return; }
+
+			// 後片付け
+			string[] Files = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			foreach(var FileName in Files)
+			{
+				File.Delete(FileName);
+			}
+			Directory.Delete(Config.TemporaryDirectoryPath);
+
+			MessageBox.Show("出力しました。");
+		}
+
+		/// <summary>
+		/// .sqlファイルの生成.
+		/// </summary>
+		/// <returns>成功したらtrueを返す</returns>
+		private bool GenerateSQLFiles()
+		{
+			// ディレクトリ生成.
+			if(!Directory.Exists(Config.TemporaryDirectoryPath))
+			{
+				Directory.CreateDirectory(Config.TemporaryDirectoryPath);
+			}
 
 			string[] Files = Directory.GetFiles(ExcelFilePath);
 			foreach (var TargetFilePath in Files)
 			{
+				if(Path.GetExtension(TargetFilePath) != ".xlsx") { continue; }
 				Console.Write(TargetFilePath + "の展開中...");
 				ExcelParser Parser = new ExcelParser(TargetFilePath);
 				if (!Parser.Load())
 				{
 					MessageBox.Show("Excelファイルの解析に失敗しました。");
 					Console.WriteLine("失敗。");
-					return;
+					return false;
 				}
 
 				Console.WriteLine("完了。");
-				
+
 				string FileName = Path.GetFileNameWithoutExtension(TargetFilePath) + ".sql";
-				string FilePath = SQLOutputPath + "\\" + FileName;
+				string FilePath = Config.TemporaryDirectoryPath + "\\" + FileName;
 				Console.Write(FilePath + "の生成中...");
 
 				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Columns);
@@ -66,12 +88,23 @@ namespace MasterConverter
 				{
 					MessageBox.Show("SQLファイルの生成に失敗しました。");
 					Console.WriteLine("失敗。");
-					return;
+					return false;
 				}
 
 				Console.WriteLine("完了。");
 			}
+			return true;
+		}
 
+		/// <summary>
+		/// マスタ展開.
+		/// </summary>
+		/// <param name="Host">ホスト</param>
+		/// <param name="UserName">ユーザ名</param>
+		/// <param name="Password">パスワード</param>
+		/// <returns>成功したらtrueを返す</returns>
+		private bool ExpandMaster(string Host, string UserName, string Password)
+		{
 			ISQLExpand Expander = null;
 			if (!Util.IsLocalHost(Host))
 			{
@@ -82,14 +115,14 @@ namespace MasterConverter
 				Expander = new LocalSQLExpander(UserName, Password);
 			}
 
-			Files = Directory.GetFiles(SQLOutputPath);
-			if(!Expander.Expand(Files))
+			string[] Files = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			if (!Expander.Expand(Files))
 			{
 				MessageBox.Show("SQLの展開に失敗しました。");
-				return;
+				return false;
 			}
-
-			MessageBox.Show("出力しました。");
+			return true;
 		}
+
 	}
 }
