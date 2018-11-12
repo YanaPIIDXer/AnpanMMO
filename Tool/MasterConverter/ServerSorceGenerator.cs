@@ -128,11 +128,11 @@ namespace MasterConverter
 		private string ReplaceTags(string Source)
 		{
 			// インクルードガード
-			string IncludeGuard = "__" + MasterName.ToUpper() + "_H__";
+			string IncludeGuard = "__" + MasterName.ToUpper() + "MASTER_H__";
 			Source = Source.Replace("$INCLUDE_GUARD$", IncludeGuard);
 
 			// ヘッダファイル名.
-			string HeaderFileName = MasterName + ".h";
+			string HeaderFileName = MasterName + "Master.h";
 			Source = Source.Replace("$HEADER_FILE_NAME$", HeaderFileName);
 
 			// クラス名.
