@@ -68,7 +68,10 @@ namespace MasterConverter
 					{
 						if (String.IsNullOrEmpty(SQLFile)) { continue; }
 						var FilePath = Config.HostSQLPath + "/" + SQLFile;
-						ExecuteCommand(Client, "mysql -u " + UserName + " -p" + Password + " -D AnpanMMO < " + FilePath, true, out Result);
+						if(!ExecuteCommand(Client, "mysql -u " + UserName + " -p" + Password + " -D AnpanMMO < " + FilePath, true, out Result))
+						{
+							return false;
+						}
 					}
 
 					// 後片付け
@@ -97,6 +100,7 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		private bool ExecuteCommand(SshClient Client, string Command, bool OutputToConsole, out string Result)
 		{
+			bool bCommandSuccess = false;
 			try
 			{
 				using (SshCommand Cmd = Client.CreateCommand(Command))
@@ -107,6 +111,7 @@ namespace MasterConverter
 						Console.WriteLine(Cmd.CommandText);
 					}
 					Result = Cmd.Result;
+					bCommandSuccess = (Cmd.ExitStatus == 0);
 				}
 			}
 			catch(Exception e)
@@ -117,7 +122,7 @@ namespace MasterConverter
 				return false;
 			}
 
-			return true;
+			return bCommandSuccess;
 		}
 
 	}
