@@ -144,7 +144,6 @@ namespace MasterConverter
 					Console.WriteLine("失敗。");
 					return false;
 				}
-
 				Console.WriteLine("完了。");
 
 				Console.Write("バイナリデータ生成中...");
@@ -155,9 +154,26 @@ namespace MasterConverter
 					Console.WriteLine("失敗。");
 					return false;
 				}
-
 				Console.WriteLine("完了。");
 			}
+
+			Console.Write("バージョンファイル生成中...");
+			string[] AllFile = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			List<string> TargetFiles = new List<string>();
+			foreach(var FilePath in AllFile)
+			{
+				if(Path.GetExtension(FilePath) != ".bin") { continue; }
+				TargetFiles.Add(FilePath);
+			}
+			VersionGenerator VersionGen = new VersionGenerator(TargetFiles.ToArray());
+			if(!VersionGen.Generate())
+			{
+				MessageBox.Show("バージョンファイルの生成に失敗しました。");
+				Console.WriteLine("失敗。");
+				return false;
+			}
+			Console.WriteLine("完了。");
+
 			return true;
 		}
 
