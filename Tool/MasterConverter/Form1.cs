@@ -46,6 +46,14 @@ namespace MasterConverter
 			}
 			if(!ExpandMaster(Host, UserName, Password)) { return; }
 
+			// 後片付け
+			string[] Files = Directory.GetFiles(SQLOutputPath);
+			foreach(var FileName in Files)
+			{
+				File.Delete(FileName);
+			}
+			Directory.Delete(SQLOutputPath);
+
 			MessageBox.Show("出力しました。");
 		}
 
@@ -55,6 +63,12 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		private bool GenerateSQLFiles()
 		{
+			// ディレクトリ生成.
+			if(!Directory.Exists(SQLOutputPath))
+			{
+				Directory.CreateDirectory(SQLOutputPath);
+			}
+
 			string[] Files = Directory.GetFiles(ExcelFilePath);
 			foreach (var TargetFilePath in Files)
 			{
