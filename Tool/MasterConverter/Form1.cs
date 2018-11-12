@@ -20,9 +20,9 @@ namespace MasterConverter
 		private static readonly string ExcelFilePath = "MasterData";
 
 		/// <summary>
-		/// .sqlファイルを生成するパス
+		/// 一時ディレクトリパス
 		/// </summary>
-		private static readonly string SQLOutputPath = "SQLs";
+		private static readonly string TemporaryDirectoryPath = "SQLs";
 
 		public Form1()
 		{
@@ -47,12 +47,12 @@ namespace MasterConverter
 			if(!ExpandMaster(Host, UserName, Password)) { return; }
 
 			// 後片付け
-			string[] Files = Directory.GetFiles(SQLOutputPath);
+			string[] Files = Directory.GetFiles(TemporaryDirectoryPath);
 			foreach(var FileName in Files)
 			{
 				File.Delete(FileName);
 			}
-			Directory.Delete(SQLOutputPath);
+			Directory.Delete(TemporaryDirectoryPath);
 
 			MessageBox.Show("出力しました。");
 		}
@@ -64,9 +64,9 @@ namespace MasterConverter
 		private bool GenerateSQLFiles()
 		{
 			// ディレクトリ生成.
-			if(!Directory.Exists(SQLOutputPath))
+			if(!Directory.Exists(TemporaryDirectoryPath))
 			{
-				Directory.CreateDirectory(SQLOutputPath);
+				Directory.CreateDirectory(TemporaryDirectoryPath);
 			}
 
 			string[] Files = Directory.GetFiles(ExcelFilePath);
@@ -84,7 +84,7 @@ namespace MasterConverter
 				Console.WriteLine("完了。");
 
 				string FileName = Path.GetFileNameWithoutExtension(TargetFilePath) + ".sql";
-				string FilePath = SQLOutputPath + "\\" + FileName;
+				string FilePath = TemporaryDirectoryPath + "\\" + FileName;
 				Console.Write(FilePath + "の生成中...");
 
 				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Columns);
@@ -119,7 +119,7 @@ namespace MasterConverter
 				Expander = new LocalSQLExpander(UserName, Password);
 			}
 
-			string[] Files = Directory.GetFiles(SQLOutputPath);
+			string[] Files = Directory.GetFiles(TemporaryDirectoryPath);
 			if (!Expander.Expand(Files))
 			{
 				MessageBox.Show("SQLの展開に失敗しました。");
