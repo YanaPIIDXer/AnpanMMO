@@ -59,6 +59,13 @@ namespace MasterConverter
 					Console.WriteLine("");
 					string Result = "";
 					string Error = "";
+
+					// 一旦マスタを全消去.
+					string AllRemoveCommand = GenerateMySQLCommand("-e 'show tables from " + Config.MasterDataBaseName + "'");
+					AllRemoveCommand += " | grep ~*";
+					AllRemoveCommand += " | grep -v Tables_in";
+					AllRemoveCommand += " | xargs -I \"@@\" " + GenerateMySQLCommand("-e 'drop table " + Config.MasterDataBaseName + ".@@'");
+					ExecuteCommand(Client, AllRemoveCommand, false, out Result, out Error);
 					
 					// .sqlファイルを列挙.
 					ExecuteCommand(Client, "ls -1 " + Config.HostSQLPath, false, out Result, out Error);
