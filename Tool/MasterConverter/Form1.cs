@@ -67,6 +67,7 @@ namespace MasterConverter
 			string[] Files = Directory.GetFiles(ExcelFilePath);
 			foreach (var TargetFilePath in Files)
 			{
+				if(Path.GetExtension(TargetFilePath) != ".xlsx") { continue; }
 				Console.Write(TargetFilePath + "の展開中...");
 				ExcelParser Parser = new ExcelParser(TargetFilePath);
 				if (!Parser.Load())
