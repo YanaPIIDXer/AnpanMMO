@@ -18,7 +18,7 @@ namespace MasterConverter
 		/// エクセルファイルを格納するパス
 		/// </summary>
 		private static readonly string ExcelFilePath = "MasterData";
-
+		
 		public Form1()
 		{
 			InitializeComponent();
@@ -82,10 +82,10 @@ namespace MasterConverter
 					Console.WriteLine("失敗。");
 					return false;
 				}
-
 				Console.WriteLine("完了。");
 
-				string FileName = Path.GetFileNameWithoutExtension(TargetFilePath) + ".sql";
+				string MasterName = Path.GetFileNameWithoutExtension(TargetFilePath);
+				string FileName = MasterName + ".sql";
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + FileName;
 				Console.Write(FilePath + "の生成中...");
 
@@ -93,6 +93,17 @@ namespace MasterConverter
 				if (!SQLGen.Generate())
 				{
 					MessageBox.Show("SQLファイルの生成に失敗しました。");
+					Console.WriteLine("失敗。");
+					return false;
+				}
+				Console.WriteLine("完了。");
+
+				Console.Write("サーバソースの生成中...");
+
+				ServerSorceGenerator ServerSource = new ServerSorceGenerator("Test", MasterName, Parser.Columns);
+				if(!ServerSource.Generate())
+				{
+					MessageBox.Show("サーバソースの生成に失敗しました。");
 					Console.WriteLine("失敗。");
 					return false;
 				}
