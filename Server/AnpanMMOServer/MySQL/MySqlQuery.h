@@ -27,11 +27,17 @@ public:
 	// int型のバインド
 	void BindInt(int *pPtr);
 
+	// float型のバインド
+	void BindFloat(float *pPtr);
+
 	// 文字列のバインド
 	void BindString(char *pPtr);
 
 	// 結果のint型バインド
 	void BindResultInt(int *pPtr);
+
+	// 結果のfloat型バインド
+	void BindResultFloat(float *pPtr);
 
 	// 結果の文字列バインド
 	void BindResultString(char *pPtr);
