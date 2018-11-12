@@ -58,7 +58,7 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		public bool Generate()
 		{
-			//try
+			try
 			{
 				string Dir = Path.GetDirectoryName(TargetDirectory);
 				if(!Directory.Exists(Dir))
@@ -69,10 +69,10 @@ namespace MasterConverter
 				GenerateHeader();
 				GenerateSource();
 			}
-			//catch
-			//{
-			//	return false;
-			//}
+			catch
+			{
+				return false;
+			}
 
 			return true;
 		}
@@ -90,7 +90,7 @@ namespace MasterConverter
 
 			Source = ReplaceTags(Source);
 
-			string FilePath = TargetDirectory + "\\" + MasterName + ".h";
+			string FilePath = TargetDirectory + "\\" + MasterName + "Master.h";
 			if(!Directory.Exists(TargetDirectory))
 			{
 				Directory.CreateDirectory(TargetDirectory);
@@ -114,7 +114,7 @@ namespace MasterConverter
 
 			Source = ReplaceTags(Source);
 
-			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + ".cpp", false, Encoding.UTF8))
+			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + "Master.cpp", false, Encoding.UTF8))
 			{
 				Writer.Write(Source);
 			}
