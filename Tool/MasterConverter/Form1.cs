@@ -27,6 +27,7 @@ namespace MasterConverter
 		// 出力ボタンが押された
 		private void OutputButton_Click(object sender, EventArgs e)
 		{
+			// .sql生成.
 			if (!GenerateSQLFiles())
 			{
 				DeleteTemporaryDirectory();
@@ -43,6 +44,8 @@ namespace MasterConverter
 				UserName = Stream.ReadLine();
 				Password = Stream.ReadLine();
 			}
+
+			// マスタ展開.
 			if(!ExpandMaster(Host, UserName, Password))
 			{
 				DeleteTemporaryDirectory();
