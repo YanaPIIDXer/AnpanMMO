@@ -17,12 +17,12 @@ namespace MasterConverter
 		/// <summary>
 		/// ヘッダファイルテンプレートパス
 		/// </summary>
-		private static readonly string HeaderTemplatePath = "Template\\Server\\Template.h";
+		private static readonly string HeaderTemplatePath = "SourceTemplate\\Server\\Template.h";
 
 		/// <summary>
 		/// ソースファイルテンプレートパス
 		/// </summary>
-		private static readonly string SourceTemplatePath = "Template\\Server\\Template.cpp";
+		private static readonly string SourceTemplatePath = "SourceTemplate\\Server\\Template.cpp";
 
 		/// <summary>
 		/// 出力先ディレクトリ
