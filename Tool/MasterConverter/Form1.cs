@@ -70,31 +70,22 @@ namespace MasterConverter
 				}
 
 				Console.WriteLine("完了。");
-
-				Console.Write(FilePath + "の転送中...");
-
-				SQLTransporter Transporter = new SQLTransporter(FilePath, Host, UserName, Password);
-				if(!Transporter.Transport())
-				{
-					MessageBox.Show("SQLファイルの転送に失敗しました。");
-					Console.WriteLine("失敗。");
-					return;
-				}
-
-				Console.WriteLine("完了。");
 			}
 
-			Console.Write("SQLの展開中...");
-
-			SQLExecuter Executer = new SQLExecuter(Host, UserName, Password);
-			if(!Executer.Execute())
+			ISQLExpand Expander = null;
+			if (!Util.IsLocalHost(Host))
+			{
+				Expander = new RemoteSQLExpander(Host, UserName, Password);
+			}
+			else
+			{
+				throw new Exception("まだ未実装。");
+			}
+			if(!Expander.Expand(Files))
 			{
 				MessageBox.Show("SQLの展開に失敗しました。");
-				Console.WriteLine("失敗。");
 				return;
 			}
-
-			Console.WriteLine("完了。");
 
 			MessageBox.Show("出力しました。");
 		}
