@@ -14,6 +14,11 @@ namespace MasterConverter
 	{
 
 		/// <summary>
+		/// 一時ディレクトリパス
+		/// </summary>
+		public static readonly string TemporaryDirectoryPath = "Temporary";
+
+		/// <summary>
 		/// ホストのSQLディレクトリ
 		/// </summary>
 		public static readonly string HostSQLPath = "SQLs";
