@@ -41,8 +41,8 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		public bool Generate()
 		{
-			// ファイル名をテーブル名として扱う。
-			string TableName = Path.GetFileNameWithoutExtension(FilePath);
+			// ファイル名をテーブル名として扱い、Masterと言うサフィックスを付ける。
+			string TableName = Path.GetFileNameWithoutExtension(FilePath) + "Master";
 
 			var Dir = Path.GetDirectoryName(FilePath);
 			if(!Directory.Exists(Dir))
