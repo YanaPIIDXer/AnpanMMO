@@ -32,6 +32,8 @@ namespace MasterConverter
 		// 出力ボタンが押された
 		private void OutputButton_Click(object sender, EventArgs e)
 		{
+			if (!GenerateSQLFiles()) { return; }
+
 			// テスト用
 			string Host = "";
 			string UserName = "";
@@ -42,7 +44,17 @@ namespace MasterConverter
 				UserName = Stream.ReadLine();
 				Password = Stream.ReadLine();
 			}
+			if(!ExpandMaster(Host, UserName, Password)) { return; }
 
+			MessageBox.Show("出力しました。");
+		}
+
+		/// <summary>
+		/// .sqlファイルの生成.
+		/// </summary>
+		/// <returns>成功したらtrueを返す</returns>
+		private bool GenerateSQLFiles()
+		{
 			string[] Files = Directory.GetFiles(ExcelFilePath);
 			foreach (var TargetFilePath in Files)
 			{
@@ -52,11 +64,11 @@ namespace MasterConverter
 				{
 					MessageBox.Show("Excelファイルの解析に失敗しました。");
 					Console.WriteLine("失敗。");
-					return;
+					return false;
 				}
 
 				Console.WriteLine("完了。");
-				
+
 				string FileName = Path.GetFileNameWithoutExtension(TargetFilePath) + ".sql";
 				string FilePath = SQLOutputPath + "\\" + FileName;
 				Console.Write(FilePath + "の生成中...");
@@ -66,12 +78,23 @@ namespace MasterConverter
 				{
 					MessageBox.Show("SQLファイルの生成に失敗しました。");
 					Console.WriteLine("失敗。");
-					return;
+					return false;
 				}
 
 				Console.WriteLine("完了。");
 			}
+			return true;
+		}
 
+		/// <summary>
+		/// マスタ展開.
+		/// </summary>
+		/// <param name="Host">ホスト</param>
+		/// <param name="UserName">ユーザ名</param>
+		/// <param name="Password">パスワード</param>
+		/// <returns>成功したらtrueを返す</returns>
+		private bool ExpandMaster(string Host, string UserName, string Password)
+		{
 			ISQLExpand Expander = null;
 			if (!Util.IsLocalHost(Host))
 			{
@@ -82,14 +105,14 @@ namespace MasterConverter
 				Expander = new LocalSQLExpander(UserName, Password);
 			}
 
-			Files = Directory.GetFiles(SQLOutputPath);
-			if(!Expander.Expand(Files))
+			string[] Files = Directory.GetFiles(SQLOutputPath);
+			if (!Expander.Expand(Files))
 			{
 				MessageBox.Show("SQLの展開に失敗しました。");
-				return;
+				return false;
 			}
-
-			MessageBox.Show("出力しました。");
+			return true;
 		}
+
 	}
 }
