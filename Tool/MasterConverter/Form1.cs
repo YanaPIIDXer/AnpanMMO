@@ -27,7 +27,11 @@ namespace MasterConverter
 		// 出力ボタンが押された
 		private void OutputButton_Click(object sender, EventArgs e)
 		{
-			if (!GenerateSQLFiles()) { return; }
+			if (!GenerateSQLFiles())
+			{
+				DeleteTemporaryDirectory();
+				return;
+			}
 
 			// テスト用
 			string Host = "";
@@ -39,16 +43,15 @@ namespace MasterConverter
 				UserName = Stream.ReadLine();
 				Password = Stream.ReadLine();
 			}
-			if(!ExpandMaster(Host, UserName, Password)) { return; }
+			if(!ExpandMaster(Host, UserName, Password))
+			{
+				DeleteTemporaryDirectory();
+				return;
+			}
 
 			// 後片付け
-			string[] Files = Directory.GetFiles(Config.TemporaryDirectoryPath);
-			foreach(var FileName in Files)
-			{
-				File.Delete(FileName);
-			}
-			Directory.Delete(Config.TemporaryDirectoryPath);
-
+			DeleteTemporaryDirectory();
+			
 			MessageBox.Show("出力しました。");
 		}
 
@@ -122,6 +125,19 @@ namespace MasterConverter
 				return false;
 			}
 			return true;
+		}
+
+		/// <summary>
+		/// 一時ディレクトリの撤去.
+		/// </summary>
+		private void DeleteTemporaryDirectory()
+		{
+			string[] Files = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			foreach (var FileName in Files)
+			{
+				File.Delete(FileName);
+			}
+			Directory.Delete(Config.TemporaryDirectoryPath);
 		}
 
 	}
