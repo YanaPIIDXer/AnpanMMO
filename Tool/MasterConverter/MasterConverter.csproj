@@ -76,12 +76,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ISQLExpand.cs" />
+    <Compile Include="LocalSQLExpander.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoteSQLExpander.cs" />
     <Compile Include="SQLExecuter.cs" />
     <Compile Include="SQLGenerator.cs" />
     <Compile Include="SQLTransporter.cs" />
     <Compile Include="Types.cs" />
+    <Compile Include="Util.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
