@@ -27,10 +27,10 @@ public:
 	bool Connect(const char *pHost, const char *pUserName, const char *pPassword, const char *pDBName);
 
 	// 単純なクエリ実行.
-	bool SimpleQuery(const char *pQuery);
+	bool SimpleQuery(const char *pQuery) const;
 
 	// クエリ生成.
-	MySqlQuery CreateQuery(const char *pQuery);
+	MySqlQuery CreateQuery(const char *pQuery) const;
 
 	// 閉じる.
 	void Close();

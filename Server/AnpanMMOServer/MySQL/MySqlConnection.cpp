@@ -31,7 +31,7 @@ bool MySqlConnection::Connect(const char *pHost, const char *pUserName, const ch
 }
 
 // 単純なクエリ実行.
-bool MySqlConnection::SimpleQuery(const char *pQuery)
+bool MySqlConnection::SimpleQuery(const char *pQuery) const
 {
 	if (pConnection == NULL) { return false; }
 
@@ -40,7 +40,7 @@ bool MySqlConnection::SimpleQuery(const char *pQuery)
 }
 
 // クエリ生成.
-MySqlQuery MySqlConnection::CreateQuery(const char *pQuery)
+MySqlQuery MySqlConnection::CreateQuery(const char *pQuery) const
 {
 	MySqlQuery Query(pConnection, pQuery);
 	return Query;
