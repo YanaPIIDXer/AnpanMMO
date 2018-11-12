@@ -10,9 +10,9 @@ namespace MasterConverter
 {
 
 	/// <summary>
-	/// SQLファイル転送クラス
+	/// ファイル転送クラス
 	/// </summary>
-	public class SQLTransporter
+	public class FileTransporter
 	{
 		
 		/// <summary>
@@ -36,18 +36,26 @@ namespace MasterConverter
 		private string Password;
 
 		/// <summary>
+		/// 対象ディレクトリ
+		/// </summary>
+		private string TargetDirectory;
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InFilePath">ファイルパス</param>
 		/// <param name="InTransportTargetHost">転送対象ホスト</param>
 		/// <param name="InUserName">ユーザ名</param>
 		/// <param name="InPassword">パスワード</param>
-		public SQLTransporter(string InFilePath, string InTransportTargetHost, string InUserName, string InPassword)
+		/// <param name="InTargetDirectory">対象ディレクトリ</param>
+		public FileTransporter(string InFilePath, string InTransportTargetHost, string InUserName, string InPassword, string InTargetDirectory)
 		{
 			FilePath = InFilePath;
 			TransportTargetHost = InTransportTargetHost;
 			UserName = InUserName;
 			Password = InPassword;
+			TargetDirectory = InTargetDirectory;
+
 		}
 
 		/// <summary>
@@ -63,11 +71,11 @@ namespace MasterConverter
 				using (var Client = new SftpClient(ConnInfo))
 				{
 					Client.Connect();
-					if(!Client.Exists(Config.HostSQLPath))
+					if(!Client.Exists(TargetDirectory))
 					{
-						Client.CreateDirectory(Config.HostSQLPath);
+						Client.CreateDirectory(TargetDirectory);
 					}
-					Client.ChangeDirectory(Config.HostSQLPath);
+					Client.ChangeDirectory(TargetDirectory);
 					using (var FileStream = File.OpenRead(FilePath))
 					{
 						Client.UploadFile(FileStream, Path.GetFileName(FilePath), true);
