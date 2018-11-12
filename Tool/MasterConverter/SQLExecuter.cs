@@ -58,9 +58,10 @@ namespace MasterConverter
 
 					Console.WriteLine("");
 					string Result = "";
+					string Error = "";
 
 					// .sqlファイルを列挙.
-					ExecuteCommand(Client, "ls -1 " + Config.HostSQLPath, false, out Result);
+					ExecuteCommand(Client, "ls -1 " + Config.HostSQLPath, false, out Result, out Error);
 					string[] SQLFiles = Result.Split('\n');
 
 					// 片っ端からデータベースにブチ込む。
@@ -68,14 +69,15 @@ namespace MasterConverter
 					{
 						if (String.IsNullOrEmpty(SQLFile)) { continue; }
 						var FilePath = Config.HostSQLPath + "/" + SQLFile;
-						if(!ExecuteCommand(Client, "mysql -u " + UserName + " -p" + Password + " -D AnpanMMO < " + FilePath, true, out Result))
+						if(!ExecuteCommand(Client, "mysql -u " + UserName + " -p" + Password + " -D " + Config.MasterDataBaseName + " < " + FilePath, true, out Result, out Error))
 						{
+							Console.WriteLine(Error);
 							return false;
 						}
 					}
 
 					// 後片付け
-					ExecuteCommand(Client, "rm -rf " + Config.HostSQLPath, false, out Result);
+					ExecuteCommand(Client, "rm -rf " + Config.HostSQLPath, false, out Result, out Error);
 					
 					Client.Disconnect();
 				}
@@ -98,8 +100,10 @@ namespace MasterConverter
 		/// <param name="OutputToConsole">コンソールにコマンドを出力するか？</param>
 		/// <param name="Result">結果</param>
 		/// <returns>成功したらtrueを返す</returns>
-		private bool ExecuteCommand(SshClient Client, string Command, bool OutputToConsole, out string Result)
+		private bool ExecuteCommand(SshClient Client, string Command, bool OutputToConsole, out string Result, out string Error)
 		{
+			Result = "";
+			Error = "";
 			bool bCommandSuccess = false;
 			try
 			{
@@ -112,13 +116,16 @@ namespace MasterConverter
 					}
 					Result = Cmd.Result;
 					bCommandSuccess = (Cmd.ExitStatus == 0);
+					if(!bCommandSuccess)
+					{
+						Error = Cmd.Error;
+					}
 				}
 			}
 			catch(Exception e)
 			{
 				Console.WriteLine("");
 				Console.WriteLine(e.Message);
-				Result = "";
 				return false;
 			}
 

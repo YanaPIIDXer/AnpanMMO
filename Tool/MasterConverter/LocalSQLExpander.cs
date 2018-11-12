@@ -74,7 +74,7 @@ namespace MasterConverter
 			ExpandProcess.StartInfo.RedirectStandardOutput = true;
 			ExpandProcess.StartInfo.CreateNoWindow = true;
 			
-			string CommandArg = "mysql -u " + UserName + " -p" + Password + " -D AnpanMMO < " + FilePath;
+			string CommandArg = "mysql -u " + UserName + " -p" + Password + " -D " + Config.MasterDataBaseName + " < " + FilePath;
 			ExpandProcess.StartInfo.Arguments = "/c " + CommandArg;
 
 			Console.WriteLine(CommandArg);
