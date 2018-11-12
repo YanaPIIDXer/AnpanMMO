@@ -26,6 +26,9 @@ public:
 	// int’Ç‰Á.
 	void AddInt(int *pPtr);
 
+	// float’Ç‰Á.
+	void AddFloat(float *pPtr);
+
 	// •¶Žš—ñ’Ç‰Á.
 	void AddString(char *pPtr);
 

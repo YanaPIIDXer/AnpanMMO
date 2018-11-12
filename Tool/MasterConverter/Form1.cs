@@ -19,15 +19,36 @@ namespace MasterConverter
 		/// </summary>
 		private static readonly string ExcelFilePath = "MasterData";
 
+		/// <summary>
+		/// ソースディレクトリ設定ファイル名.
+		/// </summary>
+		private static readonly string SourceDirectorySettingFileName = "SourceDirectory.ini";
+
+		/// <summary>
+		/// サーバソースディレクトリ
+		/// </summary>
+		private string ServerSourceDirectory = "";
+
+		/// <summary>
+		/// クライアントソースディレクトリ
+		/// </summary>
+		private string ClientSourceDirectory = "";
+		
 		public Form1()
 		{
 			InitializeComponent();
+			LoadSourceDirectorySetting();
 		}
 
 		// 出力ボタンが押された
 		private void OutputButton_Click(object sender, EventArgs e)
 		{
-			if (!GenerateSQLFiles()) { return; }
+			// .sql生成.
+			if (!GenerateSQLFiles())
+			{
+				DeleteTemporaryDirectory();
+				return;
+			}
 
 			// テスト用
 			string Host = "";
@@ -39,17 +60,39 @@ namespace MasterConverter
 				UserName = Stream.ReadLine();
 				Password = Stream.ReadLine();
 			}
-			if(!ExpandMaster(Host, UserName, Password)) { return; }
+
+			// マスタ展開.
+			if(!ExpandMaster(Host, UserName, Password))
+			{
+				DeleteTemporaryDirectory();
+				return;
+			}
 
 			// 後片付け
-			string[] Files = Directory.GetFiles(Config.TemporaryDirectoryPath);
-			foreach(var FileName in Files)
-			{
-				File.Delete(FileName);
-			}
-			Directory.Delete(Config.TemporaryDirectoryPath);
-
+			DeleteTemporaryDirectory();
+			
 			MessageBox.Show("出力しました。");
+		}
+
+		/// <summary>
+		/// ソースディレクトリ設定ファイル読み込み
+		/// </summary>
+		private void LoadSourceDirectorySetting()
+		{
+			if(!File.Exists(SourceDirectorySettingFileName))
+			{
+				using (StreamWriter Writer = new StreamWriter(SourceDirectorySettingFileName))
+				{
+					Writer.WriteLine("../Server/AnpanMMOServer/Master");
+					Writer.WriteLine("../Client/AnpanMMO/Source/AnpanMMO/Master");
+				}
+			}
+
+			using (StreamReader Reader = new StreamReader(SourceDirectorySettingFileName))
+			{
+				ServerSourceDirectory = Reader.ReadLine();
+				ClientSourceDirectory = Reader.ReadLine();
+			}
 		}
 
 		/// <summary>
@@ -76,10 +119,10 @@ namespace MasterConverter
 					Console.WriteLine("失敗。");
 					return false;
 				}
-
 				Console.WriteLine("完了。");
 
-				string FileName = Path.GetFileNameWithoutExtension(TargetFilePath) + ".sql";
+				string MasterName = Path.GetFileNameWithoutExtension(TargetFilePath);
+				string FileName = MasterName + ".sql";
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + FileName;
 				Console.Write(FilePath + "の生成中...");
 
@@ -87,6 +130,17 @@ namespace MasterConverter
 				if (!SQLGen.Generate())
 				{
 					MessageBox.Show("SQLファイルの生成に失敗しました。");
+					Console.WriteLine("失敗。");
+					return false;
+				}
+				Console.WriteLine("完了。");
+
+				Console.Write("サーバソースの生成中...");
+
+				ServerSorceGenerator ServerSource = new ServerSorceGenerator(ServerSourceDirectory, MasterName, Parser.Columns);
+				if(!ServerSource.Generate())
+				{
+					MessageBox.Show("サーバソースの生成に失敗しました。");
 					Console.WriteLine("失敗。");
 					return false;
 				}
@@ -122,6 +176,19 @@ namespace MasterConverter
 				return false;
 			}
 			return true;
+		}
+
+		/// <summary>
+		/// 一時ディレクトリの撤去.
+		/// </summary>
+		private void DeleteTemporaryDirectory()
+		{
+			string[] Files = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			foreach (var FileName in Files)
+			{
+				File.Delete(FileName);
+			}
+			Directory.Delete(Config.TemporaryDirectoryPath);
 		}
 
 	}
