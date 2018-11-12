@@ -79,8 +79,10 @@ namespace MasterConverter
 			}
 			else
 			{
-				throw new Exception("まだ未実装。");
+				Expander = new LocalSQLExpander(UserName, Password);
 			}
+
+			Files = Directory.GetFiles(SQLOutputPath);
 			if(!Expander.Expand(Files))
 			{
 				MessageBox.Show("SQLの展開に失敗しました。");
