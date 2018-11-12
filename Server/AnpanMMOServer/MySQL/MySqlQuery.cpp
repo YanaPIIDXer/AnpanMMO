@@ -21,6 +21,12 @@ void MySqlQuery::BindInt(int *pPtr)
 	Binds.AddInt(pPtr);
 }
 
+// unsigned int型のバインド
+void MySqlQuery::BindInt(unsigned int *pPtr)
+{
+	Binds.AddInt(pPtr);
+}
+
 // float型のバインド
 void MySqlQuery::BindFloat(float *pPtr)
 {
@@ -35,6 +41,12 @@ void MySqlQuery::BindString(char *pPtr)
 
 // 結果のint型バインド
 void MySqlQuery::BindResultInt(int *pPtr)
+{
+	Results.AddInt(pPtr);
+}
+
+// 結果のunsigned int型のバインド
+void MySqlQuery::BindResultInt(unsigned int *pPtr)
 {
 	Results.AddInt(pPtr);
 }
