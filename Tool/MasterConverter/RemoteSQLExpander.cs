@@ -66,7 +66,7 @@ namespace MasterConverter
 			{
 				Console.WriteLine(FilePath + "の転送中...");
 
-				SQLTransporter Transporter = new SQLTransporter(FilePath, Host, UserName, Password);
+				FileTransporter Transporter = new FileTransporter(FilePath, Host, UserName, Password, Config.HostSQLPath);
 				if (!Transporter.Transport())
 				{
 					MessageBox.Show("SQLファイルの転送に失敗しました。");

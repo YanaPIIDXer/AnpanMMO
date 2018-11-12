@@ -18,5 +18,10 @@ namespace MasterConverter
 		/// </summary>
 		public static readonly string HostSQLPath = "SQLs";
 
+		/// <summary>
+		/// DB名.
+		/// </summary>
+		public static readonly string MasterDataBaseName = "AnpanMMOMaster";
+
 	}
 }

@@ -58,9 +58,17 @@ namespace MasterConverter
 
 					Console.WriteLine("");
 					string Result = "";
+					string Error = "";
 
+					// 一旦マスタを全消去.
+					string AllRemoveCommand = GenerateMySQLCommand("-e 'show tables from " + Config.MasterDataBaseName + "'");
+					AllRemoveCommand += " | grep ~*";
+					AllRemoveCommand += " | grep -v Tables_in";
+					AllRemoveCommand += " | xargs -I \"@@\" " + GenerateMySQLCommand("-e 'drop table " + Config.MasterDataBaseName + ".@@'");
+					ExecuteCommand(Client, AllRemoveCommand, false, out Result, out Error);
+					
 					// .sqlファイルを列挙.
-					ExecuteCommand(Client, "ls -1 " + Config.HostSQLPath, false, out Result);
+					ExecuteCommand(Client, "ls -1 " + Config.HostSQLPath, false, out Result, out Error);
 					string[] SQLFiles = Result.Split('\n');
 
 					// 片っ端からデータベースにブチ込む。
@@ -68,11 +76,15 @@ namespace MasterConverter
 					{
 						if (String.IsNullOrEmpty(SQLFile)) { continue; }
 						var FilePath = Config.HostSQLPath + "/" + SQLFile;
-						ExecuteCommand(Client, "mysql -u " + UserName + " -p" + Password + " -D AnpanMMO < " + FilePath, true, out Result);
+						if(!ExecuteCommand(Client, GenerateMySQLCommand("-D " + Config.MasterDataBaseName + " < " + FilePath), true, out Result, out Error))
+						{
+							Console.WriteLine(Error);
+							return false;
+						}
 					}
 
 					// 後片付け
-					ExecuteCommand(Client, "rm -rf " + Config.HostSQLPath, false, out Result);
+					ExecuteCommand(Client, "rm -rf " + Config.HostSQLPath, false, out Result, out Error);
 					
 					Client.Disconnect();
 				}
@@ -95,29 +107,46 @@ namespace MasterConverter
 		/// <param name="OutputToConsole">コンソールにコマンドを出力するか？</param>
 		/// <param name="Result">結果</param>
 		/// <returns>成功したらtrueを返す</returns>
-		private bool ExecuteCommand(SshClient Client, string Command, bool OutputToConsole, out string Result)
+		private bool ExecuteCommand(SshClient Client, string Command, bool OutputToConsole, out string Result, out string Error)
 		{
+			Result = "";
+			Error = "";
+			bool bCommandSuccess = false;
 			try
 			{
 				using (SshCommand Cmd = Client.CreateCommand(Command))
 				{
-					Cmd.Execute();
 					if(OutputToConsole)
 					{
 						Console.WriteLine(Cmd.CommandText);
 					}
+					Cmd.Execute();
 					Result = Cmd.Result;
+					bCommandSuccess = (Cmd.ExitStatus == 0);
+					if(!bCommandSuccess)
+					{
+						Error = Cmd.Error;
+					}
 				}
 			}
 			catch(Exception e)
 			{
 				Console.WriteLine("");
 				Console.WriteLine(e.Message);
-				Result = "";
 				return false;
 			}
 
-			return true;
+			return bCommandSuccess;
+		}
+
+		/// <summary>
+		/// MySQLのコマンドを生成.
+		/// </summary>
+		/// <param name="Arg">引数</param>
+		/// <returns>MySQLのコマンド</returns>
+		private string GenerateMySQLCommand(string Arg)
+		{
+			return "mysql -u " + UserName + " -p" + Password + " " + Arg;
 		}
 
 	}

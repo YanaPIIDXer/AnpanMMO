@@ -83,7 +83,7 @@
     <Compile Include="RemoteSQLExpander.cs" />
     <Compile Include="SQLExecuter.cs" />
     <Compile Include="SQLGenerator.cs" />
-    <Compile Include="SQLTransporter.cs" />
+    <Compile Include="FileTransporter.cs" />
     <Compile Include="Types.cs" />
     <Compile Include="Util.cs" />
     <EmbeddedResource Include="Form1.resx">
