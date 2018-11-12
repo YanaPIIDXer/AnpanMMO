@@ -58,15 +58,21 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		public bool Generate()
 		{
-			try
+			//try
 			{
+				string Dir = Path.GetDirectoryName(TargetDirectory);
+				if(!Directory.Exists(Dir))
+				{
+					Directory.CreateDirectory(Dir);
+				}
+
 				GenerateHeader();
 				GenerateSource();
 			}
-			catch
-			{
-				return false;
-			}
+			//catch
+			//{
+			//	return false;
+			//}
 
 			return true;
 		}
@@ -84,7 +90,12 @@ namespace MasterConverter
 
 			Source = ReplaceTags(Source);
 
-			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + ".h", false, Encoding.UTF8))
+			string FilePath = TargetDirectory + "\\" + MasterName + ".h";
+			if(!Directory.Exists(TargetDirectory))
+			{
+				Directory.CreateDirectory(TargetDirectory);
+			}
+			using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.UTF8))
 			{
 				Writer.Write(Source);
 			}

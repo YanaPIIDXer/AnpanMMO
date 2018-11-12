@@ -18,10 +18,26 @@ namespace MasterConverter
 		/// エクセルファイルを格納するパス
 		/// </summary>
 		private static readonly string ExcelFilePath = "MasterData";
+
+		/// <summary>
+		/// ソースディレクトリ設定ファイル名.
+		/// </summary>
+		private static readonly string SourceDirectorySettingFileName = "SourceDirectory.ini";
+
+		/// <summary>
+		/// サーバソースディレクトリ
+		/// </summary>
+		private string ServerSourceDirectory = "";
+
+		/// <summary>
+		/// クライアントソースディレクトリ
+		/// </summary>
+		private string ClientSourceDirectory = "";
 		
 		public Form1()
 		{
 			InitializeComponent();
+			LoadSourceDirectorySetting();
 		}
 
 		// 出力ボタンが押された
@@ -56,6 +72,27 @@ namespace MasterConverter
 			DeleteTemporaryDirectory();
 			
 			MessageBox.Show("出力しました。");
+		}
+
+		/// <summary>
+		/// ソースディレクトリ設定ファイル読み込み
+		/// </summary>
+		private void LoadSourceDirectorySetting()
+		{
+			if(!File.Exists(SourceDirectorySettingFileName))
+			{
+				using (StreamWriter Writer = new StreamWriter(SourceDirectorySettingFileName))
+				{
+					Writer.WriteLine("../Server/AnpanMMOServer/Master");
+					Writer.WriteLine("../Client/AnpanMMO/Source/AnpanMMO/Master");
+				}
+			}
+
+			using (StreamReader Reader = new StreamReader(SourceDirectorySettingFileName))
+			{
+				ServerSourceDirectory = Reader.ReadLine();
+				ClientSourceDirectory = Reader.ReadLine();
+			}
 		}
 
 		/// <summary>
@@ -100,7 +137,7 @@ namespace MasterConverter
 
 				Console.Write("サーバソースの生成中...");
 
-				ServerSorceGenerator ServerSource = new ServerSorceGenerator("Test", MasterName, Parser.Columns);
+				ServerSorceGenerator ServerSource = new ServerSorceGenerator(ServerSourceDirectory, MasterName, Parser.Columns);
 				if(!ServerSource.Generate())
 				{
 					MessageBox.Show("サーバソースの生成に失敗しました。");
