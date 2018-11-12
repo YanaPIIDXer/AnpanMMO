@@ -29,6 +29,21 @@ void MySqlBinds::AddInt(int *pPtr)
 	pBinds[Length - 1] = Bind;
 }
 
+// unsigned intå^í«â¡.
+void MySqlBinds::AddInt(unsigned int *pPtr)
+{
+	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
+	Bind.buffer_type = MYSQL_TYPE_LONG;
+	Bind.is_unsigned = true;
+	Bind.buffer = pPtr;
+	Bind.buffer_length = sizeof(*pPtr);
+	Bind.is_null = 0;
+
+	Reallocate();
+	pBinds[Length - 1] = Bind;
+}
+
 // floatí«â¡.
 void MySqlBinds::AddFloat(float *pPtr)
 {

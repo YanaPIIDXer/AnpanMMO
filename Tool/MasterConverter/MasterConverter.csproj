@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryGenerator.cs" />
     <Compile Include="Column.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ExcelParser.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="FileTransporter.cs" />
     <Compile Include="Types.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="VersionGenerator.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

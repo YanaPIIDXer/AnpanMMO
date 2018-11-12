@@ -27,6 +27,9 @@ public:
 	// int型のバインド
 	void BindInt(int *pPtr);
 
+	// unsigned int型のバインド
+	void BindInt(unsigned int *pPtr);
+
 	// float型のバインド
 	void BindFloat(float *pPtr);
 
@@ -35,6 +38,9 @@ public:
 
 	// 結果のint型バインド
 	void BindResultInt(int *pPtr);
+
+	// 結果のunsigned int型のバインド
+	void BindResultInt(unsigned int *pPtr);
 
 	// 結果のfloat型バインド
 	void BindResultFloat(float *pPtr);

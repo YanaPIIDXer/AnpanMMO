@@ -26,6 +26,9 @@ public:
 	// intí«â¡.
 	void AddInt(int *pPtr);
 
+	// unsigned intí«â¡ÅB
+	void AddInt(unsigned int *pPtr);
+
 	// floatí«â¡.
 	void AddFloat(float *pPtr);
 

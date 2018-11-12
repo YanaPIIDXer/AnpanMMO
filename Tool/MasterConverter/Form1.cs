@@ -144,9 +144,36 @@ namespace MasterConverter
 					Console.WriteLine("失敗。");
 					return false;
 				}
+				Console.WriteLine("完了。");
 
+				Console.Write("バイナリデータ生成中...");
+				BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Columns);
+				if(!BinGenerator.Generate())
+				{
+					MessageBox.Show("バイナリデータの生成に失敗しました。");
+					Console.WriteLine("失敗。");
+					return false;
+				}
 				Console.WriteLine("完了。");
 			}
+
+			Console.Write("バージョンファイル生成中...");
+			string[] AllFile = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			List<string> TargetFiles = new List<string>();
+			foreach(var FilePath in AllFile)
+			{
+				if(Path.GetExtension(FilePath) != ".bin") { continue; }
+				TargetFiles.Add(FilePath);
+			}
+			VersionGenerator VersionGen = new VersionGenerator(TargetFiles.ToArray());
+			if(!VersionGen.Generate())
+			{
+				MessageBox.Show("バージョンファイルの生成に失敗しました。");
+				Console.WriteLine("失敗。");
+				return false;
+			}
+			Console.WriteLine("完了。");
+
 			return true;
 		}
 
@@ -169,8 +196,16 @@ namespace MasterConverter
 				Expander = new LocalSQLExpander(UserName, Password);
 			}
 
-			string[] Files = Directory.GetFiles(Config.TemporaryDirectoryPath);
-			if (!Expander.Expand(Files))
+			string[] AllFiles = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			List<string> Files = new List<string>();
+			foreach(var File in AllFiles)
+			{
+				if(Path.GetExtension(File) == ".sql")
+				{
+					Files.Add(File);
+				}
+			}
+			if (!Expander.Expand(Files.ToArray()))
 			{
 				MessageBox.Show("SQLの展開に失敗しました。");
 				return false;
