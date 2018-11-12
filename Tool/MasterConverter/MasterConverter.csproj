@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryGenerator.cs" />
     <Compile Include="Column.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ExcelParser.cs" />

@@ -146,6 +146,17 @@ namespace MasterConverter
 				}
 
 				Console.WriteLine("完了。");
+
+				Console.Write("バイナリデータ生成中...");
+				BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Columns);
+				if(!BinGenerator.Generate())
+				{
+					MessageBox.Show("バイナリデータの生成に失敗しました。");
+					Console.WriteLine("失敗。");
+					return false;
+				}
+
+				Console.WriteLine("完了。");
 			}
 			return true;
 		}
