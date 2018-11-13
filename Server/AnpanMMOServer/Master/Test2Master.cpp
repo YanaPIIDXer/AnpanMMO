@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+#include "stdafx.h"
 #include "Test2Master.h"
 #include "MySQL/MySqlConnection.h"
 
