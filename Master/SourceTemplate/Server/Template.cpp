@@ -17,6 +17,8 @@ $ITEM_BIND$
 $ITEM_FETCH$
 		$APPEND_TO_MAP$
 	}
+
+	return true;
 }
 
 // アイテム取得.
