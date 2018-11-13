@@ -28,5 +28,10 @@ namespace MasterConverter
 		/// </summary>
 		public static readonly string MasterDataBaseName = "AnpanMMOMaster";
 
+		/// <summary>
+		/// 転送対象の格納パス
+		/// </summary>
+		public static readonly string TransportTargetsPath = "TransportTargets";
+
 	}
 }

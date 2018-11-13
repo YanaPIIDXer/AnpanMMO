@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.OutputButton = new System.Windows.Forms.Button();
+			this.TransportTargetList = new System.Windows.Forms.ListBox();
 			this.SuspendLayout();
 			// 
 			// OutputButton
@@ -41,11 +42,21 @@
 			this.OutputButton.UseVisualStyleBackColor = true;
 			this.OutputButton.Click += new System.EventHandler(this.OutputButton_Click);
 			// 
+			// TransportTargetList
+			// 
+			this.TransportTargetList.FormattingEnabled = true;
+			this.TransportTargetList.ItemHeight = 15;
+			this.TransportTargetList.Location = new System.Drawing.Point(36, 12);
+			this.TransportTargetList.Name = "TransportTargetList";
+			this.TransportTargetList.Size = new System.Drawing.Size(207, 154);
+			this.TransportTargetList.TabIndex = 1;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(282, 255);
+			this.Controls.Add(this.TransportTargetList);
 			this.Controls.Add(this.OutputButton);
 			this.Name = "Form1";
 			this.Text = "Form1";
@@ -56,6 +67,7 @@
 		#endregion
 
 		private System.Windows.Forms.Button OutputButton;
+		private System.Windows.Forms.ListBox TransportTargetList;
 	}
 }
 

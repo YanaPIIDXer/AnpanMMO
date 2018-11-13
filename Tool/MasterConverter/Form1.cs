@@ -38,6 +38,11 @@ namespace MasterConverter
 		{
 			InitializeComponent();
 			LoadSourceDirectorySetting();
+			if(!Directory.Exists(Config.TransportTargetsPath))
+			{
+				Directory.CreateDirectory(Config.TransportTargetsPath);
+			}
+			ReloadTransportTargetList();
 		}
 
 		// 出力ボタンが押された
@@ -263,6 +268,20 @@ namespace MasterConverter
 				File.Delete(FileName);
 			}
 			Directory.Delete(Config.TemporaryDirectoryPath);
+		}
+
+		/// <summary>
+		/// 転送対象リストの再読み込み
+		/// </summary>
+		private void ReloadTransportTargetList()
+		{
+			TransportTargetList.Items.Clear();
+			string[] Files = Directory.GetFiles(Config.TransportTargetsPath);
+			foreach(var FileName in Files)
+			{
+				if(Path.GetExtension(FileName) != ".dat") { continue; }
+				TransportTargetList.Items.Add(Path.GetFileNameWithoutExtension(FileName));
+			}
 		}
 
 	}
