@@ -162,15 +162,11 @@ bool MySqlQuery::Fetch()
 	if (pStatement == NULL) { return false; }
 
 	int Result = mysql_stmt_fetch(pStatement);
-	if (Result != 0 && Result != MYSQL_NO_DATA)
+	if (Result == 1)
 	{
 		std::cout << "Fetch Error:" << mysql_stmt_error(pStatement) << std::endl;
 	}
-	if (Result == MYSQL_DATA_TRUNCATED)
-	{
-		std::cout << "Fetch Warning: Data Truncated." << std::endl;
-	}
-	return (Result == 0);
+	return (Result != 1);
 }
 
 // •Â‚¶‚é
