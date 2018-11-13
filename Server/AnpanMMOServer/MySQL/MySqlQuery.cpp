@@ -27,6 +27,30 @@ void MySqlQuery::BindInt(unsigned int *pPtr)
 	Binds.AddInt(pPtr);
 }
 
+// short型のバインド
+void MySqlQuery::BindShort(short *pPtr)
+{
+	Binds.AddShort(pPtr);
+}
+
+// unsigned short型のバインド
+void MySqlQuery::BindShort(unsigned short *pPtr)
+{
+	Binds.AddShort(pPtr);
+}
+
+// char型のバインド
+void MySqlQuery::BindChar(char *pPtr)
+{
+	Binds.AddChar(pPtr);
+}
+
+// unsigned char型のバインド
+void MySqlQuery::BindChar(unsigned char *pPtr)
+{
+	Binds.AddChar(pPtr);
+}
+
 // float型のバインド
 void MySqlQuery::BindFloat(float *pPtr)
 {
@@ -49,6 +73,30 @@ void MySqlQuery::BindResultInt(int *pPtr)
 void MySqlQuery::BindResultInt(unsigned int *pPtr)
 {
 	Results.AddInt(pPtr);
+}
+
+// 結果のshort型のバインド
+void MySqlQuery::BindResultShort(short *pPtr)
+{
+	Results.AddShort(pPtr);
+}
+
+// 結果のunsigned short型のバインド
+void MySqlQuery::BindResultShort(unsigned short *pPtr)
+{
+	Results.AddShort(pPtr);
+}
+
+// 結果のchar型バインド
+void MySqlQuery::BindResultChar(char *pPtr)
+{
+	Results.AddChar(pPtr);
+}
+
+// 結果のunsigned char型バインド
+void MySqlQuery::BindResultChar(unsigned char *pPtr)
+{
+	Results.AddChar(pPtr);
 }
 
 // 結果のfloat型バインド
