@@ -10,7 +10,7 @@ void $CLASS_NAME$::Load(const MySqlConnection &Connection)
 	$ITEM_STRUCT_NAME$ BindItem;
 $STRING_BIND$
 $ITEM_BIND$
-	Query.ExecuteQuery();
+	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
 	{
 		$ITEM_STRUCT_NAME$ Item;

@@ -29,7 +29,7 @@ private:		// 別名定義.
 public:
 
 	// 読み込み.
-	void Load(const MySqlConnection &Connection);
+	bool Load(const MySqlConnection &Connection);
 
 	// アイテム取得.
 	const $ITEM_STRUCT_NAME$ *GetItem($KEY_TYPE$ Key) const;
