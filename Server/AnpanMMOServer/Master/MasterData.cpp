@@ -2,7 +2,6 @@
 #include "MasterData.h"
 #include <fstream>
 #include "MySQL/MySqlConnection.h"
-#include "TestMaster.h"
 #include "Test2Master.h"
 #include "Test3Master.h"
 
@@ -33,24 +32,13 @@ bool MasterData::Read()
 		std::cout << "Master Database Connection Failed..." << std::endl;
 		return false;
 	}
-
-	// テスト１
-	TestMaster Test;
-	if (!Test.Load(Connection)) { return false; }
 	
-	std::vector<TestItem> TestItems = Test.GetAll();
-	std::cout << "TestMaster DataCount:" << TestItems.size() << std::endl;
-	for (std::vector<TestItem>::iterator It = TestItems.begin(); It != TestItems.end(); ++It)
-	{
-		std::cout << "ID:" << It->ID << " Name:" << It->Name << " Hp:" << It->Hp << " Mp:" << It->Mp << " Exp:" << It->Exp << std::endl;
-	}
-
 	// テスト２
 	Test2Master Test2;
 	if (!Test2.Load(Connection)) { return false; }
 
 	std::vector<Test2Item> Test2Items = Test2.GetAll();
-	std::cout << std::endl << "Test2Master DataCount:" << Test2Items.size() << std::endl;
+	std::cout << "Test2Master DataCount:" << Test2Items.size() << std::endl;
 	for (std::vector<Test2Item>::iterator It = Test2Items.begin(); It != Test2Items.end(); ++It)
 	{
 		std::cout << "ID:" << It->ID << " Hp:" << It->Hp << " Mp:" << It->Mp << " Exp:" << It->Exp << std::endl;

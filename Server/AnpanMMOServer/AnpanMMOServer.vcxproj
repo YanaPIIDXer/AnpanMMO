@@ -150,7 +150,6 @@
     <ClInclude Include="Master\MasterData.h" />
     <ClInclude Include="Master\Test2Master.h" />
     <ClInclude Include="Master\Test3Master.h" />
-    <ClInclude Include="Master\TestMaster.h" />
     <ClInclude Include="Math\DamageCalcUnit.h" />
     <ClInclude Include="Math\MathUtil.h" />
     <ClInclude Include="Math\Random.h" />
@@ -213,7 +212,6 @@
     <ClCompile Include="Master\MasterData.cpp" />
     <ClCompile Include="Master\Test2Master.cpp" />
     <ClCompile Include="Master\Test3Master.cpp" />
-    <ClCompile Include="Master\TestMaster.cpp" />
     <ClCompile Include="Math\DamageCalcUnit.cpp" />
     <ClCompile Include="Math\MathUtil.cpp" />
     <ClCompile Include="Math\Random.cpp" />
