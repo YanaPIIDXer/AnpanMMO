@@ -77,7 +77,7 @@ namespace MasterConverter
 		private void GenerateHeader()
 		{
 			string Source = "";
-			using (StreamReader Reader = new StreamReader(HeaderTemplatePath, Encoding.UTF8))
+			using (StreamReader Reader = new StreamReader(HeaderTemplatePath, Encoding.GetEncoding("shift-jis")))
 			{
 				Source = Reader.ReadToEnd();
 			}
@@ -89,7 +89,7 @@ namespace MasterConverter
 			{
 				Directory.CreateDirectory(TargetDirectory);
 			}
-			using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.UTF8))
+			using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.GetEncoding("shift-jis")))
 			{
 				Writer.Write(Source);
 			}

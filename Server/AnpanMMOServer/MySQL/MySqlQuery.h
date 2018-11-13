@@ -19,7 +19,7 @@ class MySqlQuery
 public:
 
 	// コンストラクタ
-	MySqlQuery(const shared_ptr<MYSQL> &pInConnection, const char *pInQuery);
+	MySqlQuery(MYSQL *pInConnection, const char *pInQuery);
 
 	// デストラクタ
 	~MySqlQuery();
@@ -87,7 +87,7 @@ private:
 	const char *pQuery;
 
 	// MYSQLへの接続.
-	weak_ptr<MYSQL> pConnection;
+	MYSQL *pConnection;
 
 	// ステートメント
 	MYSQL_STMT *pStatement;

@@ -89,7 +89,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoteSQLExpander.cs" />
-    <Compile Include="ServerSorceGenerator.cs" />
+    <Compile Include="ServerSourceGenerator.cs" />
     <Compile Include="SQLExecuter.cs" />
     <Compile Include="SQLGenerator.cs" />
     <Compile Include="FileTransporter.cs" />

@@ -2,7 +2,7 @@
 #include "MySqlQuery.h"
 
 // コンストラクタ
-MySqlQuery::MySqlQuery(const shared_ptr<MYSQL> &pInConnection, const char *pInQuery)
+MySqlQuery::MySqlQuery(MYSQL *pInConnection, const char *pInQuery)
 	: pConnection(pInConnection)
 	, pQuery(pInQuery)
 	, pStatement(NULL)
@@ -114,7 +114,7 @@ void MySqlQuery::BindResultString(char *pPtr)
 // クエリ実行.
 bool MySqlQuery::ExecuteQuery()
 {
-	pStatement = mysql_stmt_init(pConnection.lock().get());
+	pStatement = mysql_stmt_init(pConnection);
 	if (pStatement == NULL) { return false; }
 	
 	int Result = mysql_stmt_prepare(pStatement, pQuery, strlen(pQuery));
@@ -162,7 +162,11 @@ bool MySqlQuery::Fetch()
 	if (pStatement == NULL) { return false; }
 
 	int Result = mysql_stmt_fetch(pStatement);
-	return (Result == 0);
+	if (Result == 1)
+	{
+		std::cout << "Fetch Error:" << mysql_stmt_error(pStatement) << std::endl;
+	}
+	return (Result == 0 || Result == MYSQL_DATA_TRUNCATED);
 }
 
 // 閉じる

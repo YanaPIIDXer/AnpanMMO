@@ -45,6 +45,9 @@ namespace MasterConverter
 		{
 			Console.WriteLine("SQLファイルの展開中...");
 
+			// 一旦全部吹っ飛ばす。
+			RemoveAllMaster();
+
 			foreach(var FilePath in FileList)
 			{
 				if(!ExpandFile(FilePath))
@@ -63,18 +66,7 @@ namespace MasterConverter
 		/// <param name="FilePath">ファイルパス</param>
 		/// <returns>成功したらtrueを返す。</returns>
 		private bool ExpandFile(string FilePath)
-		{
-			// 一旦消去.
-			string RemoveArg = "/c for /f %i in ('" + GenerateMySQLCommand("-e \"show tables from " + Config.MasterDataBaseName + "\"");
-			RemoveArg += " ^| findstr ~*";
-			RemoveArg += " ^| findstr -v Tables_in')";
-			RemoveArg += " do " + GenerateMySQLCommand("-e \"drop table " + Config.MasterDataBaseName + ".%i\"");
-			Process RemoveProcess = CreateCmdProcess();
-			RemoveProcess.StartInfo.Arguments = RemoveArg;
-			RemoveProcess.Start();
-			RemoveProcess.WaitForExit();
-			RemoveProcess.Close();
-			
+		{	
 			// マスタをブチ込む。
 			Process AppendProcess = CreateMySQLProcess("-D " + Config.MasterDataBaseName + " < " + FilePath);
 			
@@ -89,6 +81,22 @@ namespace MasterConverter
 			AppendProcess.WaitForExit();
 			AppendProcess.Close();
 			return (Error == "");
+		}
+
+		/// <summary>
+		/// マスタの全消去.
+		/// </summary>
+		private void RemoveAllMaster()
+		{
+			string RemoveArg = "/c for /f %i in ('" + GenerateMySQLCommand("-e \"show tables from " + Config.MasterDataBaseName + "\"");
+			RemoveArg += " ^| findstr ~*";
+			RemoveArg += " ^| findstr -v Tables_in')";
+			RemoveArg += " do " + GenerateMySQLCommand("-e \"drop table " + Config.MasterDataBaseName + ".%i\"");
+			Process RemoveProcess = CreateCmdProcess();
+			RemoveProcess.StartInfo.Arguments = RemoveArg;
+			RemoveProcess.Start();
+			RemoveProcess.WaitForExit();
+			RemoveProcess.Close();
 		}
 
 		/// <summary>

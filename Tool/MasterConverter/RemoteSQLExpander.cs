@@ -85,7 +85,6 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す。</returns>
 		private bool Execute()
 		{
-
 			Console.Write("SQLの展開中...");
 
 			SQLExecuter Executer = new SQLExecuter(Host, UserName, Password);

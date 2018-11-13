@@ -147,6 +147,7 @@
     <ClInclude Include="DBConnection.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
+    <ClInclude Include="Master\MasterData.h" />
     <ClInclude Include="Math\DamageCalcUnit.h" />
     <ClInclude Include="Math\MathUtil.h" />
     <ClInclude Include="Math\Random.h" />
@@ -206,6 +207,7 @@
     <ClCompile Include="DBConnection.cpp" />
     <ClCompile Include="FlexArray.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Master\MasterData.cpp" />
     <ClCompile Include="Math\DamageCalcUnit.cpp" />
     <ClCompile Include="Math\MathUtil.cpp" />
     <ClCompile Include="Math\Random.cpp" />

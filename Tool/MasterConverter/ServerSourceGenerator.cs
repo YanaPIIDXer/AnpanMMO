@@ -11,7 +11,7 @@ namespace MasterConverter
 	/// <summary>
 	/// サーバ側ソースコード生成.
 	/// </summary>
-	public class ServerSorceGenerator
+	public class ServerSourceGenerator
 	{
 
 		/// <summary>
@@ -45,7 +45,7 @@ namespace MasterConverter
 		/// <param name="InTargetDirectory">出力先ディレクトリ</param>
 		/// <param name="InMasterName">マスタ名</param>
 		/// <param name="InColumnList">カラムリスト</param>
-		public ServerSorceGenerator(string InTargetDirectory, string InMasterName, List<Column> InColumnList)
+		public ServerSourceGenerator(string InTargetDirectory, string InMasterName, List<Column> InColumnList)
 		{
 			TargetDirectory = InTargetDirectory;
 			MasterName = InMasterName;
@@ -83,7 +83,7 @@ namespace MasterConverter
 		private void GenerateHeader()
 		{
 			string Source = "";
-			using (StreamReader Reader = new StreamReader(HeaderTemplatePath, Encoding.UTF8))
+			using (StreamReader Reader = new StreamReader(HeaderTemplatePath, Encoding.GetEncoding("shift-jis")))
 			{
 				Source = Reader.ReadToEnd();
 			}
@@ -95,7 +95,7 @@ namespace MasterConverter
 			{
 				Directory.CreateDirectory(TargetDirectory);
 			}
-			using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.UTF8))
+			using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.GetEncoding("shift-jis")))
 			{
 				Writer.Write(Source);
 			}
@@ -107,14 +107,14 @@ namespace MasterConverter
 		private void GenerateSource()
 		{
 			string Source = "";
-			using (StreamReader Reader = new StreamReader(SourceTemplatePath, Encoding.UTF8))
+			using (StreamReader Reader = new StreamReader(SourceTemplatePath, Encoding.GetEncoding("shift-jis")))
 			{
 				Source = Reader.ReadToEnd();
 			}
 
 			Source = ReplaceTags(Source);
 
-			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + "Master.cpp", false, Encoding.UTF8))
+			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + "Master.cpp", false, Encoding.GetEncoding("shift-jis")))
 			{
 				Writer.Write(Source);
 			}
