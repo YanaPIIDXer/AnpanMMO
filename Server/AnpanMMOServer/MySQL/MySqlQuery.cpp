@@ -166,7 +166,7 @@ bool MySqlQuery::Fetch()
 	{
 		std::cout << "Fetch Error:" << mysql_stmt_error(pStatement) << std::endl;
 	}
-	return (Result != 1);
+	return (Result == 0 || Result == MYSQL_DATA_TRUNCATED);
 }
 
 // •Â‚¶‚é
