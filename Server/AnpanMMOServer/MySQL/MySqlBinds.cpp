@@ -44,6 +44,64 @@ void MySqlBinds::AddInt(unsigned int *pPtr)
 	pBinds[Length - 1] = Bind;
 }
 
+// short’Ç‰Á.
+void MySqlBinds::AddShort(short *pPtr)
+{
+	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
+	Bind.buffer_type = MYSQL_TYPE_SHORT;
+	Bind.buffer = pPtr;
+	Bind.buffer_length = sizeof(*pPtr);
+	Bind.is_null = 0;
+
+	Reallocate();
+	pBinds[Length - 1] = Bind;
+}
+
+// unsigned short’Ç‰Á.
+void MySqlBinds::AddShort(unsigned short *pPtr)
+{
+	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
+	Bind.buffer_type = MYSQL_TYPE_SHORT;
+	Bind.buffer = pPtr;
+	Bind.buffer_length = sizeof(*pPtr);
+	Bind.is_unsigned = true;
+	Bind.is_null = 0;
+
+	Reallocate();
+	pBinds[Length - 1] = Bind;
+}
+
+// char’Ç‰Á.
+void MySqlBinds::AddChar(char *pPtr)
+{
+	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
+	Bind.buffer_type = MYSQL_TYPE_TINY;
+	Bind.buffer = pPtr;
+	Bind.buffer_length = sizeof(*pPtr);
+	Bind.is_null = 0;
+
+	Reallocate();
+	pBinds[Length - 1] = Bind;
+}
+
+// unsigned char’Ç‰Á.
+void MySqlBinds::AddChar(unsigned char *pPtr)
+{
+	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
+	Bind.buffer_type = MYSQL_TYPE_TINY;
+	Bind.buffer = pPtr;
+	Bind.buffer_length = sizeof(*pPtr);
+	Bind.is_unsigned = true;
+	Bind.is_null = 0;
+
+	Reallocate();
+	pBinds[Length - 1] = Bind;
+}
+
 // float’Ç‰Á.
 void MySqlBinds::AddFloat(float *pPtr)
 {

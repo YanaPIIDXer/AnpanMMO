@@ -29,6 +29,18 @@ public:
 	// unsigned intí«â¡ÅB
 	void AddInt(unsigned int *pPtr);
 
+	// shortí«â¡.
+	void AddShort(short *pPtr);
+
+	// unsigned shortí«â¡.
+	void AddShort(unsigned short *pPtr);
+
+	// charí«â¡.
+	void AddChar(char *pPtr);
+
+	// unsigned charí«â¡.
+	void AddChar(unsigned char *pPtr);
+
 	// floatí«â¡.
 	void AddFloat(float *pPtr);
 

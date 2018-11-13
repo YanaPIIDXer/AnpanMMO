@@ -65,10 +65,10 @@ namespace MasterConverter
 					AllRemoveCommand += " | grep ~*";
 					AllRemoveCommand += " | grep -v Tables_in";
 					AllRemoveCommand += " | xargs -I \"@@\" " + GenerateMySQLCommand("-e 'drop table " + Config.MasterDataBaseName + ".@@'");
-					ExecuteCommand(Client, AllRemoveCommand, false, out Result, out Error);
+					ExecuteCommand(Client, AllRemoveCommand, out Result, out Error);
 					
 					// .sqlファイルを列挙.
-					ExecuteCommand(Client, "ls -1 " + Config.HostSQLPath, false, out Result, out Error);
+					ExecuteCommand(Client, "ls -1 " + Config.HostSQLPath, out Result, out Error);
 					string[] SQLFiles = Result.Split('\n');
 
 					// 片っ端からデータベースにブチ込む。
@@ -76,7 +76,7 @@ namespace MasterConverter
 					{
 						if (String.IsNullOrEmpty(SQLFile)) { continue; }
 						var FilePath = Config.HostSQLPath + "/" + SQLFile;
-						if(!ExecuteCommand(Client, GenerateMySQLCommand("-D " + Config.MasterDataBaseName + " < " + FilePath), true, out Result, out Error))
+						if(!ExecuteCommand(Client, GenerateMySQLCommand("-D " + Config.MasterDataBaseName + " < " + FilePath), out Result, out Error))
 						{
 							Console.WriteLine(Error);
 							return false;
@@ -84,7 +84,7 @@ namespace MasterConverter
 					}
 
 					// 後片付け
-					ExecuteCommand(Client, "rm -rf " + Config.HostSQLPath, false, out Result, out Error);
+					ExecuteCommand(Client, "rm -rf " + Config.HostSQLPath, out Result, out Error);
 					
 					Client.Disconnect();
 				}
@@ -104,10 +104,9 @@ namespace MasterConverter
 		/// </summary>
 		/// <param name="Client">SSHクライアント</param>
 		/// <param name="Command">コマンド</param>
-		/// <param name="OutputToConsole">コンソールにコマンドを出力するか？</param>
 		/// <param name="Result">結果</param>
 		/// <returns>成功したらtrueを返す</returns>
-		private bool ExecuteCommand(SshClient Client, string Command, bool OutputToConsole, out string Result, out string Error)
+		private bool ExecuteCommand(SshClient Client, string Command, out string Result, out string Error)
 		{
 			Result = "";
 			Error = "";
@@ -116,10 +115,6 @@ namespace MasterConverter
 			{
 				using (SshCommand Cmd = Client.CreateCommand(Command))
 				{
-					if(OutputToConsole)
-					{
-						Console.WriteLine(Cmd.CommandText);
-					}
 					Cmd.Execute();
 					Result = Cmd.Result;
 					bCommandSuccess = (Cmd.ExitStatus == 0);

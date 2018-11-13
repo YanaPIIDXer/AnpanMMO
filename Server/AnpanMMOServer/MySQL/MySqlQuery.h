@@ -30,6 +30,18 @@ public:
 	// unsigned int型のバインド
 	void BindInt(unsigned int *pPtr);
 
+	// short型のバインド
+	void BindShort(short *pPtr);
+
+	// unsigned short型のバインド
+	void BindShort(unsigned short *pPtr);
+
+	// char型のバインド
+	void BindChar(char *pPtr);
+
+	// unsigned char型のバインド
+	void BindChar(unsigned char *pPtr);
+
 	// float型のバインド
 	void BindFloat(float *pPtr);
 
@@ -41,6 +53,18 @@ public:
 
 	// 結果のunsigned int型のバインド
 	void BindResultInt(unsigned int *pPtr);
+
+	// 結果のshort型のバインド
+	void BindResultShort(short *pPtr);
+
+	// 結果のunsigned short型のバインド
+	void BindResultShort(unsigned short *pPtr);
+
+	// 結果のchar型のバインド
+	void BindResultChar(char *pPtr);
+
+	// 結果のunsigned char型のバインド
+	void BindResultChar(unsigned char *pPtr);
 
 	// 結果のfloat型バインド
 	void BindResultFloat(float *pPtr);

@@ -58,7 +58,7 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		public bool Generate()
 		{
-			//try
+			try
 			{
 				string Dir = Path.GetDirectoryName(TargetDirectory);
 				if(!Directory.Exists(Dir))
@@ -69,10 +69,10 @@ namespace MasterConverter
 				GenerateHeader();
 				GenerateSource();
 			}
-			//catch
-			//{
-			//	return false;
-			//}
+			catch
+			{
+				return false;
+			}
 
 			return true;
 		}
@@ -90,7 +90,7 @@ namespace MasterConverter
 
 			Source = ReplaceTags(Source);
 
-			string FilePath = TargetDirectory + "\\" + MasterName + ".h";
+			string FilePath = TargetDirectory + "\\" + MasterName + "Master.h";
 			if(!Directory.Exists(TargetDirectory))
 			{
 				Directory.CreateDirectory(TargetDirectory);
@@ -114,7 +114,7 @@ namespace MasterConverter
 
 			Source = ReplaceTags(Source);
 
-			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + ".cpp", false, Encoding.UTF8))
+			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + "Master.cpp", false, Encoding.UTF8))
 			{
 				Writer.Write(Source);
 			}
@@ -128,11 +128,11 @@ namespace MasterConverter
 		private string ReplaceTags(string Source)
 		{
 			// インクルードガード
-			string IncludeGuard = "__" + MasterName.ToUpper() + "_H__";
+			string IncludeGuard = "__" + MasterName.ToUpper() + "MASTER_H__";
 			Source = Source.Replace("$INCLUDE_GUARD$", IncludeGuard);
 
 			// ヘッダファイル名.
-			string HeaderFileName = MasterName + ".h";
+			string HeaderFileName = MasterName + "Master.h";
 			Source = Source.Replace("$HEADER_FILE_NAME$", HeaderFileName);
 
 			// クラス名.
@@ -177,10 +177,24 @@ namespace MasterConverter
 						ItemBind += "Query.BindResultString(" + Col.Name + "Bind);";
 						break;
 
-					default:
+					case Type.s32:
+					case Type.u32:
 
 						ItemBind += "Query.BindResultInt(&BindItem." + Col.Name + ");";
 						break;
+
+					case Type.s16:
+					case Type.u16:
+
+						ItemBind += "Query.BIndResultShort(&BindItem." + Col.Name + ");";
+						break;
+
+					case Type.s8:
+					case Type.u8:
+
+						ItemBind += "Query.BindResultChar(&BindItem." + Col.Name + ");";
+						break;
+
 				}
 				ItemBind += "\n";
 			}
