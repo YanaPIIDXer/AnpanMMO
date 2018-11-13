@@ -52,6 +52,9 @@ public:
 
 private:
 
+	// String型のバッファ長.
+	static const int StringBufferLength;
+
 	// バインド
 	MYSQL_BIND *pBinds;
 
