@@ -195,13 +195,7 @@
     <ClInclude Include="Character\Anpan\AI\State\AnpanAIStateActive.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Master\Test2Master.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Master\MasterData.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Master\Test3Master.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -314,13 +308,7 @@
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateActive.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Master\Test2Master.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Master\MasterData.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Master\Test3Master.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
