@@ -162,7 +162,7 @@ bool MySqlQuery::Fetch()
 	if (pStatement == NULL) { return false; }
 
 	int Result = mysql_stmt_fetch(pStatement);
-	if (Result == 1)
+	if (Result != 0 && Result != MYSQL_NO_DATA)
 	{
 		std::cout << "Fetch Error:" << mysql_stmt_error(pStatement) << std::endl;
 	}
