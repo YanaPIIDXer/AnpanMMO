@@ -39,3 +39,14 @@ std::vector<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAll() const
 	std::sort(AllItem.begin(), AllItem.end());
 	return AllItem;
 }
+
+// ソート用オペレータオーバーロード
+bool operator <(const $ITEM_STRUCT_NAME$ &A, const $ITEM_STRUCT_NAME$ &B)
+{
+	return (A.$KEY_NAME$ < B.$KEY_NAME$);
+}
+
+bool operator >(const $ITEM_STRUCT_NAME$ &A, const $ITEM_STRUCT_NAME$ &B)
+{
+	return (A.$KEY_NAME$ > B.$KEY_NAME$);
+}

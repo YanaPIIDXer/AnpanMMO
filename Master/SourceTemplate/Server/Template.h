@@ -16,15 +16,8 @@ $ITEM_LIST$
 };
 
 // ソート用オペレータオーバーロード
-bool operator <(const $ITEM_STRUCT_NAME$ &A, const $ITEM_STRUCT_NAME$ &B)
-{
-	return (A.$KEY_NAME$ < B.$KEY_NAME$);
-}
-
-bool operator >(const $ITEM_STRUCT_NAME$ &A, const $ITEM_STRUCT_NAME$ &B)
-{
-	return (A.$KEY_NAME$ > B.$KEY_NAME$);
-}
+bool operator <(const $ITEM_STRUCT_NAME$ &A, const $ITEM_STRUCT_NAME$ &B);
+bool operator >(const $ITEM_STRUCT_NAME$ &A, const $ITEM_STRUCT_NAME$ &B);
 
 class $CLASS_NAME$
 {
