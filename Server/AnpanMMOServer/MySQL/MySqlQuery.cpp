@@ -166,6 +166,10 @@ bool MySqlQuery::Fetch()
 	{
 		std::cout << "Fetch Error:" << mysql_stmt_error(pStatement) << std::endl;
 	}
+	if (Result == MYSQL_DATA_TRUNCATED)
+	{
+		std::cout << "Fetch Warning: Data Truncated." << std::endl;
+	}
 	return (Result == 0);
 }
 
