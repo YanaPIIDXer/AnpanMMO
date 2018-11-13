@@ -30,5 +30,6 @@ bool MasterData::Read()
 		std::cout << "Master Database Connection Failed..." << std::endl;
 		return false;
 	}
+
 	return true;
 }
