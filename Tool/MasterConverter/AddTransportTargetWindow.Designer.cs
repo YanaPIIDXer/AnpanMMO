@@ -34,12 +34,14 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.PasswordTextBox = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.BinaryPathTextBox = new System.Windows.Forms.TextBox();
+			this.BinaryHostTextBox = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.OKButton = new System.Windows.Forms.Button();
 			this.CancelButton = new System.Windows.Forms.Button();
 			this.HostTextBox = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
+			this.BinaryPathTextBox = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -91,25 +93,25 @@
 			this.label3.TabIndex = 4;
 			this.label3.Text = "パスワード";
 			// 
-			// BinaryPathTextBox
+			// BinaryHostTextBox
 			// 
-			this.BinaryPathTextBox.Location = new System.Drawing.Point(155, 205);
-			this.BinaryPathTextBox.Name = "BinaryPathTextBox";
-			this.BinaryPathTextBox.Size = new System.Drawing.Size(255, 22);
-			this.BinaryPathTextBox.TabIndex = 5;
+			this.BinaryHostTextBox.Location = new System.Drawing.Point(155, 205);
+			this.BinaryHostTextBox.Name = "BinaryHostTextBox";
+			this.BinaryHostTextBox.Size = new System.Drawing.Size(255, 22);
+			this.BinaryHostTextBox.TabIndex = 5;
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Location = new System.Drawing.Point(19, 208);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(120, 15);
+			this.label4.Size = new System.Drawing.Size(131, 15);
 			this.label4.TabIndex = 6;
-			this.label4.Text = "バイナリ転送先パス";
+			this.label4.Text = "バイナリ転送先ホスト";
 			// 
 			// OKButton
 			// 
-			this.OKButton.Location = new System.Drawing.Point(77, 255);
+			this.OKButton.Location = new System.Drawing.Point(69, 281);
 			this.OKButton.Name = "OKButton";
 			this.OKButton.Size = new System.Drawing.Size(111, 55);
 			this.OKButton.TabIndex = 8;
@@ -119,7 +121,7 @@
 			// 
 			// CancelButton
 			// 
-			this.CancelButton.Location = new System.Drawing.Point(241, 255);
+			this.CancelButton.Location = new System.Drawing.Point(233, 281);
 			this.CancelButton.Name = "CancelButton";
 			this.CancelButton.Size = new System.Drawing.Size(111, 55);
 			this.CancelButton.TabIndex = 9;
@@ -143,16 +145,34 @@
 			this.label5.TabIndex = 10;
 			this.label5.Text = "ホスト";
 			// 
+			// BinaryPathTextBox
+			// 
+			this.BinaryPathTextBox.Location = new System.Drawing.Point(155, 243);
+			this.BinaryPathTextBox.Name = "BinaryPathTextBox";
+			this.BinaryPathTextBox.Size = new System.Drawing.Size(255, 22);
+			this.BinaryPathTextBox.TabIndex = 6;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(19, 246);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(120, 15);
+			this.label6.TabIndex = 12;
+			this.label6.Text = "バイナリ転送先パス";
+			// 
 			// AddTransportTargetWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(435, 339);
+			this.ClientSize = new System.Drawing.Size(435, 360);
+			this.Controls.Add(this.BinaryPathTextBox);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.HostTextBox);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.CancelButton);
 			this.Controls.Add(this.OKButton);
-			this.Controls.Add(this.BinaryPathTextBox);
+			this.Controls.Add(this.BinaryHostTextBox);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.PasswordTextBox);
 			this.Controls.Add(this.label3);
@@ -176,11 +196,13 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox PasswordTextBox;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox BinaryPathTextBox;
+		private System.Windows.Forms.TextBox BinaryHostTextBox;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button OKButton;
 		private System.Windows.Forms.Button CancelButton;
 		private System.Windows.Forms.TextBox HostTextBox;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.TextBox BinaryPathTextBox;
+		private System.Windows.Forms.Label label6;
 	}
 }

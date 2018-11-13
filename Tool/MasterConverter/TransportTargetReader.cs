@@ -35,7 +35,12 @@ namespace MasterConverter
 		public string Password { get; private set; }
 
 		/// <summary>
-		/// バイナリパス
+		/// バイナリ転送先ホスト
+		/// </summary>
+		public string BinaryHost { get; private set; }
+
+		/// <summary>
+		/// バイナリ転送先パス
 		/// </summary>
 		public string BinaryPath { get; private set; }
 
@@ -61,6 +66,7 @@ namespace MasterConverter
 					Host = Reader.ReadLine();
 					UserName = Reader.ReadLine();
 					Password = Reader.ReadLine();
+					BinaryHost = Reader.ReadLine();
 					BinaryPath = Reader.ReadLine();
 				}
 			}
