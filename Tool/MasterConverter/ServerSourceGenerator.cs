@@ -11,7 +11,7 @@ namespace MasterConverter
 	/// <summary>
 	/// サーバ側ソースコード生成.
 	/// </summary>
-	public class ServerSorceGenerator
+	public class ServerSourceGenerator
 	{
 
 		/// <summary>
@@ -45,7 +45,7 @@ namespace MasterConverter
 		/// <param name="InTargetDirectory">出力先ディレクトリ</param>
 		/// <param name="InMasterName">マスタ名</param>
 		/// <param name="InColumnList">カラムリスト</param>
-		public ServerSorceGenerator(string InTargetDirectory, string InMasterName, List<Column> InColumnList)
+		public ServerSourceGenerator(string InTargetDirectory, string InMasterName, List<Column> InColumnList)
 		{
 			TargetDirectory = InTargetDirectory;
 			MasterName = InMasterName;

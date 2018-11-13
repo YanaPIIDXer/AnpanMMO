@@ -156,7 +156,7 @@ namespace MasterConverter
 
 				Console.Write("サーバソースの生成中...");
 
-				ServerSorceGenerator ServerSource = new ServerSorceGenerator(ServerSourceDirectory, MasterName, Parser.Columns);
+				ServerSourceGenerator ServerSource = new ServerSourceGenerator(ServerSourceDirectory, MasterName, Parser.Columns);
 				if(!ServerSource.Generate())
 				{
 					MessageBox.Show("サーバソースの生成に失敗しました。");
