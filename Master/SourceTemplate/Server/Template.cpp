@@ -3,7 +3,7 @@
 #include "MySQL/MySqlConnection.h"
 
 // 読み込み。
-void $CLASS_NAME$::Load(const MySqlConnection &Connection)
+bool $CLASS_NAME$::Load(const MySqlConnection &Connection)
 {
 	MySqlQuery Query = Connection.CreateQuery("select * from $MASTER_NAME$;");
 
