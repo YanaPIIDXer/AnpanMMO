@@ -30,13 +30,14 @@
 		{
 			this.OutputButton = new System.Windows.Forms.Button();
 			this.TransportTargetList = new System.Windows.Forms.ListBox();
+			this.AddTransportTargetButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// OutputButton
 			// 
-			this.OutputButton.Location = new System.Drawing.Point(83, 198);
+			this.OutputButton.Location = new System.Drawing.Point(75, 275);
 			this.OutputButton.Name = "OutputButton";
-			this.OutputButton.Size = new System.Drawing.Size(115, 45);
+			this.OutputButton.Size = new System.Drawing.Size(127, 45);
 			this.OutputButton.TabIndex = 0;
 			this.OutputButton.Text = "出力";
 			this.OutputButton.UseVisualStyleBackColor = true;
@@ -51,11 +52,22 @@
 			this.TransportTargetList.Size = new System.Drawing.Size(207, 154);
 			this.TransportTargetList.TabIndex = 1;
 			// 
+			// AddTransportTargetButton
+			// 
+			this.AddTransportTargetButton.Location = new System.Drawing.Point(75, 195);
+			this.AddTransportTargetButton.Name = "AddTransportTargetButton";
+			this.AddTransportTargetButton.Size = new System.Drawing.Size(127, 45);
+			this.AddTransportTargetButton.TabIndex = 2;
+			this.AddTransportTargetButton.Text = "転送対象の追加";
+			this.AddTransportTargetButton.UseVisualStyleBackColor = true;
+			this.AddTransportTargetButton.Click += new System.EventHandler(this.AddTransportTargetButton_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(282, 255);
+			this.ClientSize = new System.Drawing.Size(282, 347);
+			this.Controls.Add(this.AddTransportTargetButton);
 			this.Controls.Add(this.TransportTargetList);
 			this.Controls.Add(this.OutputButton);
 			this.Name = "Form1";
@@ -68,6 +80,7 @@
 
 		private System.Windows.Forms.Button OutputButton;
 		private System.Windows.Forms.ListBox TransportTargetList;
+		private System.Windows.Forms.Button AddTransportTargetButton;
 	}
 }
 

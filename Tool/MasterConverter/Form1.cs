@@ -284,6 +284,12 @@ namespace MasterConverter
 			}
 		}
 
+		// 転送対象の追加ボタンが押された
+		private void AddTransportTargetButton_Click(object sender, EventArgs e)
+		{
+			AddTransportTargetWindow Window = new AddTransportTargetWindow();
+			Window.ShowDialog();
+		}
 	}
 }
 

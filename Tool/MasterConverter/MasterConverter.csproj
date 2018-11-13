@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTransportTargetWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTransportTargetWindow.Designer.cs">
+      <DependentUpon>AddTransportTargetWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="BinaryGenerator.cs" />
     <Compile Include="Column.cs" />
     <Compile Include="Config.cs" />
@@ -89,6 +95,9 @@
     <Compile Include="Types.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="VersionGenerator.cs" />
+    <EmbeddedResource Include="AddTransportTargetWindow.resx">
+      <DependentUpon>AddTransportTargetWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
