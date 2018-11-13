@@ -37,6 +37,7 @@ bool MasterData::Read()
 	if (!Test.Load(Connection)) { return false; }
 	
 	std::vector<TestItem> TestItems = Test.GetAll();
+	std::cout << "DataCount:" << TestItems.size() << std::endl;
 	for (std::vector<TestItem>::iterator It = TestItems.begin(); It != TestItems.end(); ++It)
 	{
 		std::cout << "ID:" << It->ID << " Name:" << It->Name << " Hp:" << It->Hp << " Mp:" << It->Mp << " Exp:" << It->Exp << std::endl;
