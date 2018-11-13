@@ -1,4 +1,4 @@
-﻿#ifndef __TEST2MASTER_H__
+#ifndef __TEST2MASTER_H__
 #define __TEST2MASTER_H__
 
 #include <map>
@@ -19,31 +19,26 @@ public:
 
 };
 
-// ソート用オペレータオーバーロード
 bool operator <(const Test2Item &A, const Test2Item &B);
 bool operator >(const Test2Item &A, const Test2Item &B);
 
 class Test2Master
 {
 
-private:		// 別名定義.
+private:
 
 	typedef std::map<u32, Test2Item> ItemMap;
 
 public:
 
-	// 読み込み.
 	bool Load(const MySqlConnection &Connection);
 
-	// アイテム取得.
 	const Test2Item *GetItem(u32 Key) const;
 
-	// 全取得.
 	std::vector<Test2Item> GetAll() const;
 
 private:
 
-	// アイテムマップ
 	ItemMap Items;
 
 };

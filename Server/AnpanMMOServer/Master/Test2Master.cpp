@@ -2,7 +2,6 @@
 #include "Test2Master.h"
 #include "MySQL/MySqlConnection.h"
 
-// 読み込み。
 bool Test2Master::Load(const MySqlConnection &Connection)
 {
 	MySqlQuery Query = Connection.CreateQuery("select * from Test2;");
@@ -29,7 +28,6 @@ bool Test2Master::Load(const MySqlConnection &Connection)
 	return true;
 }
 
-// アイテム取得.
 const Test2Item *Test2Master::GetItem(u32 Key) const
 {
 	ItemMap::const_iterator It = Items.find(Key);
@@ -37,7 +35,6 @@ const Test2Item *Test2Master::GetItem(u32 Key) const
 	return &It->second;
 }
 
-// 全取得.
 std::vector<Test2Item> Test2Master::GetAll() const
 {
 	std::vector<Test2Item> AllItem;
@@ -50,7 +47,6 @@ std::vector<Test2Item> Test2Master::GetAll() const
 	return AllItem;
 }
 
-// ソート用オペレータオーバーロード
 bool operator <(const Test2Item &A, const Test2Item &B)
 {
 	return (A.ID < B.ID);
