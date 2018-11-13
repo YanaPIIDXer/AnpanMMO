@@ -50,7 +50,7 @@ namespace MasterConverter
 				return;
 			}
 
-			TransportTargetWriter Writer = new TransportTargetWriter(NameTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, BinaryPathTextBox.Text);
+			TransportTargetWriter Writer = new TransportTargetWriter(NameTextBox.Text, HostTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, BinaryPathTextBox.Text);
 			if(!Writer.Write())
 			{
 				MessageBox.Show("転送先データの追加に失敗しました。");

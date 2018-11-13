@@ -20,6 +20,11 @@ namespace MasterConverter
 		private string FileName;
 
 		/// <summary>
+		/// ホスト
+		/// </summary>
+		private string Host;
+
+		/// <summary>
 		/// ユーザ名.
 		/// </summary>
 		private string UserName;
@@ -38,12 +43,14 @@ namespace MasterConverter
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InFileName">ファイル名</param>
+		/// <param name="InHost">ホスト</param>
 		/// <param name="InUserName">ユーザ名</param>
 		/// <param name="InPassword">パスワード</param>
 		/// <param name="InBinaryPath">バイナリ転送先パス</param>
-		public TransportTargetWriter(string InFileName, string InUserName, string InPassword, string InBinaryPath)
+		public TransportTargetWriter(string InFileName, string InHost, string InUserName, string InPassword, string InBinaryPath)
 		{
 			FileName = InFileName + ".dat";
+			Host = InHost;
 			UserName = InUserName;
 			Password = InPassword;
 			BinaryPath = InBinaryPath;
@@ -59,6 +66,7 @@ namespace MasterConverter
 			{
 				using (StreamWriter Writer = new StreamWriter(Config.TransportTargetsPath + "\\" + FileName))
 				{
+					Writer.WriteLine(Host);
 					Writer.WriteLine(UserName);
 					Writer.WriteLine(Password);
 					Writer.WriteLine(BinaryPath);
