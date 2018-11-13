@@ -3,7 +3,7 @@
 
 // コンストラクタ
 MySqlConnection::MySqlConnection()
-//	: pConnection(NULL)
+	: pConnection(NULL)
 {
 }
 
@@ -21,12 +21,11 @@ bool MySqlConnection::Connect(const char *pHost, const char *pUserName, const ch
 		Close();
 	}
 
-	MYSQL *pConn = mysql_init(NULL);
-	if (pConn == NULL) { return false; }
+	pConnection = mysql_init(NULL);
+	if (pConnection == NULL) { return false; }
 
-	if (!mysql_real_connect(pConn, pHost, pUserName, pPassword, pDBName, 0, NULL, 0)) { return false; }
+	if (!mysql_real_connect(pConnection, pHost, pUserName, pPassword, pDBName, 0, NULL, 0)) { return false; }
 
-	pConnection = shared_ptr<MYSQL>(pConn);
 	return true;
 }
 
@@ -35,7 +34,7 @@ bool MySqlConnection::SimpleQuery(const char *pQuery) const
 {
 	if (pConnection == NULL) { return false; }
 
-	int Result = mysql_query(pConnection.get(), pQuery);
+	int Result = mysql_query(pConnection, pQuery);
 	return (Result == 0);
 }
 
@@ -51,6 +50,5 @@ void MySqlConnection::Close()
 {
 	if (pConnection == NULL) { return; }
 
-	mysql_close(pConnection.get());
-	pConnection.reset();
+	mysql_close(pConnection);
 }
