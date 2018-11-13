@@ -177,10 +177,24 @@ namespace MasterConverter
 						ItemBind += "Query.BindResultString(" + Col.Name + "Bind);";
 						break;
 
-					default:
+					case Type.s32:
+					case Type.u32:
 
 						ItemBind += "Query.BindResultInt(&BindItem." + Col.Name + ");";
 						break;
+
+					case Type.s16:
+					case Type.u16:
+
+						ItemBind += "Query.BIndResultShort(&BindItem." + Col.Name + ");";
+						break;
+
+					case Type.s8:
+					case Type.u8:
+
+						ItemBind += "Query.BindResultChar(&BindItem." + Col.Name + ");";
+						break;
+
 				}
 				ItemBind += "\n";
 			}
