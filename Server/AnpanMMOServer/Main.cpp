@@ -3,7 +3,8 @@
 #include "ClientManager.h"
 #include "DBConnection.h"
 #include "World.h"
-#include "TickManager.h"
+#include "TickManager.h" 
+#include "Master/MasterData.h"
 
 // エントリポイント
 int main()
@@ -15,6 +16,16 @@ int main()
 	else
 	{
 		std::cout << "DB Open Failed..." << std::endl;
+		return 1;
+	}
+
+	if (MasterData::GetInstance().Read())
+	{
+		std::cout << "Master Read Success!!" << std::endl;
+	}
+	else
+	{
+		std::cout << "Master Read Faled..." << std::endl;
 		return 1;
 	}
 	
