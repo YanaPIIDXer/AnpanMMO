@@ -123,7 +123,7 @@ void MySqlBinds::AddString(char *pPtr)
 	memset(&Bind, 0, sizeof(Bind));
 	Bind.buffer_type = MYSQL_TYPE_STRING;
 	Bind.buffer = pPtr;
-	Bind.buffer_length = strlen(pPtr);
+	Bind.buffer_length = strlen(pPtr) + 1;
 	Bind.is_null = 0;
 
 	Reallocate();
