@@ -79,7 +79,7 @@
 			this.PasswordTextBox.Location = new System.Drawing.Point(155, 160);
 			this.PasswordTextBox.Name = "PasswordTextBox";
 			this.PasswordTextBox.Size = new System.Drawing.Size(255, 22);
-			this.PasswordTextBox.TabIndex = 5;
+			this.PasswordTextBox.TabIndex = 4;
 			this.PasswordTextBox.UseSystemPasswordChar = true;
 			// 
 			// label3
@@ -96,7 +96,7 @@
 			this.BinaryPathTextBox.Location = new System.Drawing.Point(155, 205);
 			this.BinaryPathTextBox.Name = "BinaryPathTextBox";
 			this.BinaryPathTextBox.Size = new System.Drawing.Size(255, 22);
-			this.BinaryPathTextBox.TabIndex = 7;
+			this.BinaryPathTextBox.TabIndex = 5;
 			// 
 			// label4
 			// 
@@ -132,7 +132,7 @@
 			this.HostTextBox.Location = new System.Drawing.Point(155, 64);
 			this.HostTextBox.Name = "HostTextBox";
 			this.HostTextBox.Size = new System.Drawing.Size(255, 22);
-			this.HostTextBox.TabIndex = 11;
+			this.HostTextBox.TabIndex = 2;
 			// 
 			// label5
 			// 

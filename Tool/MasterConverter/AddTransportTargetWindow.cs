@@ -50,11 +50,23 @@ namespace MasterConverter
 				return;
 			}
 
+			TransportTargetWriter Writer = new TransportTargetWriter(NameTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, BinaryPathTextBox.Text);
+			if(!Writer.Write())
+			{
+				MessageBox.Show("転送先データの追加に失敗しました。");
+				return;
+			}
+
+			MessageBox.Show("転送先データを追加しました。");
+
+			DialogResult = DialogResult.OK;
+			Close();
 		}
 
 		// キャンセルボタンが押された。
 		private void CancelButton_Click(object sender, EventArgs e)
 		{
+			DialogResult = DialogResult.Cancel;
 			Close();
 		}
 	}

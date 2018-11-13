@@ -92,6 +92,7 @@
     <Compile Include="SQLExecuter.cs" />
     <Compile Include="SQLGenerator.cs" />
     <Compile Include="FileTransporter.cs" />
+    <Compile Include="TransportTargetWriter.cs" />
     <Compile Include="Types.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="VersionGenerator.cs" />

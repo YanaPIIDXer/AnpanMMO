@@ -288,7 +288,11 @@ namespace MasterConverter
 		private void AddTransportTargetButton_Click(object sender, EventArgs e)
 		{
 			AddTransportTargetWindow Window = new AddTransportTargetWindow();
-			Window.ShowDialog();
+			var Result = Window.ShowDialog();
+			if(Result != DialogResult.Cancel)
+			{
+				ReloadTransportTargetList();
+			}
 		}
 	}
 }
