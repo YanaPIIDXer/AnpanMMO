@@ -9,6 +9,16 @@
 // エントリポイント
 int main()
 {
+	if (MasterData::GetInstance().Read())
+	{
+		std::cout << "Master Read Success!!" << std::endl;
+	}
+	else
+	{
+		std::cout << "Master Read Faled..." << std::endl;
+		return 1;
+	}
+
 	if (DBConnection::GetInstance().Open())
 	{
 		std::cout << "DB Open Success!!" << std::endl;
@@ -19,16 +29,6 @@ int main()
 		return 1;
 	}
 
-	if (MasterData::GetInstance().Read())
-	{
-		std::cout << "Master Read Success!!" << std::endl;
-	}
-	else
-	{
-		std::cout << "Master Read Faled..." << std::endl;
-		return 1;
-	}
-	
 	asio::io_service IOService;
 
 	ClientAcceptor Acceptor(IOService, Config::Port);
