@@ -33,17 +33,7 @@ bool MasterData::Read()
 		return false;
 	}
 
-	// テスト１
-	TestMaster Test;
-	if (!Test.Load(Connection)) { return false; }
-	
-	std::vector<TestItem> TestItems = Test.GetAll();
-	std::cout << "TestMaster DataCount:" << TestItems.size() << std::endl;
-	for (std::vector<TestItem>::iterator It = TestItems.begin(); It != TestItems.end(); ++It)
-	{
-		std::cout << "ID:" << It->ID << " Name:" << It->Name << " Hp:" << It->Hp << " Mp:" << It->Mp << " Exp:" << It->Exp << std::endl;
-	}
-
+	// テスト２
 	Test2Master Test2;
 	if (!Test2.Load(Connection)) { return false; }
 
@@ -52,6 +42,17 @@ bool MasterData::Read()
 	for (std::vector<Test2Item>::iterator It = Test2Items.begin(); It != Test2Items.end(); ++It)
 	{
 		std::cout << "ID:" << It->ID << " Hp:" << It->Hp << " Mp:" << It->Mp << " Exp:" << It->Exp << std::endl;
+	}
+
+	// テスト１
+	TestMaster Test;
+	if (!Test.Load(Connection)) { return false; }
+
+	std::vector<TestItem> TestItems = Test.GetAll();
+	std::cout << "TestMaster DataCount:" << TestItems.size() << std::endl;
+	for (std::vector<TestItem>::iterator It = TestItems.begin(); It != TestItems.end(); ++It)
+	{
+		std::cout << "ID:" << It->ID << " Name:" << It->Name << " Hp:" << It->Hp << " Mp:" << It->Mp << " Exp:" << It->Exp << std::endl;
 	}
 
 	return true;
