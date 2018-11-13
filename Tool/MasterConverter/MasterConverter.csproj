@@ -74,6 +74,7 @@
       <DependentUpon>AddTransportTargetWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="BinaryGenerator.cs" />
+    <Compile Include="ClientSourceGenerator.cs" />
     <Compile Include="Column.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ExcelParser.cs" />
