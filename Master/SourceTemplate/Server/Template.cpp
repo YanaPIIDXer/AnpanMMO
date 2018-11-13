@@ -26,3 +26,16 @@ const $ITEM_STRUCT_NAME$ *$CLASS_NAME$::GetItem($KEY_TYPE$ Key) const
 	if (It == Items.end()) { return NULL; }
 	return &It->second;
 }
+
+// 全取得.
+std::vector<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAll() const
+{
+	std::vector<$ITEM_STRUCT_NAME$> AllItem;
+	for (ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
+	{
+		AllItem.push_back(It->second);
+	}
+	
+	std::sort(AllItem.begin(), AllItem.end());
+	return AllItem;
+}

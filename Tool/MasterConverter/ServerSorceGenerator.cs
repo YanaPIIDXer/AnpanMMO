@@ -147,6 +147,10 @@ namespace MasterConverter
 			string KeyType = Util.ToTypeNameString(ColumnList[0].DataType);
 			Source = Source.Replace("$KEY_TYPE$", KeyType);
 
+			// キーの名前
+			string KeyName = ColumnList[0].Name;
+			Source = Source.Replace("$KEY_NAME$", KeyName);
+
 			// アイテムリスト
 			string ItemList = "";
 			foreach (Column Col in ColumnList)
