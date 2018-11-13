@@ -165,6 +165,18 @@ namespace MasterConverter
 				}
 				Console.WriteLine("完了。");
 
+				Console.Write("クライアントソースの生成中...");
+
+				ClientSourceGenerator ClientSource = new ClientSourceGenerator(ClientSourceDirectory, MasterName, Parser.Columns);
+				if(!ClientSource.Generate())
+				{
+					MessageBox.Show("クライアントソースの生成に失敗しました。");
+					Console.WriteLine("失敗。");
+					return false;
+				}
+
+				Console.WriteLine("完了。");
+
 				Console.Write("バイナリデータ生成中...");
 				BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Columns);
 				if(!BinGenerator.Generate())
