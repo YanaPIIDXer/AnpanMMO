@@ -44,13 +44,19 @@ namespace MasterConverter
 				return;
 			}
 
+			if(BinaryHostTextBox.Text == "")
+			{
+				MessageBox.Show("バイナリ転送先ホストを入力してください。");
+				return;
+			}
+
 			if(BinaryPathTextBox.Text == "")
 			{
 				MessageBox.Show("バイナリ転送先パスを入力してください。");
 				return;
 			}
 
-			TransportTargetWriter Writer = new TransportTargetWriter(NameTextBox.Text, HostTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, BinaryPathTextBox.Text);
+			TransportTargetWriter Writer = new TransportTargetWriter(NameTextBox.Text, HostTextBox.Text, UserNameTextBox.Text, PasswordTextBox.Text, BinaryHostTextBox.Text, BinaryPathTextBox.Text);
 			if(!Writer.Write())
 			{
 				MessageBox.Show("転送先データの追加に失敗しました。");

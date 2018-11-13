@@ -63,6 +63,7 @@ namespace MasterConverter
 			string Host = TargetReader.Host;
 			string UserName = TargetReader.UserName;
 			string Password = TargetReader.Password;
+			string BinaryHost = TargetReader.BinaryHost;
 			string BinaryPath = TargetReader.BinaryPath;
 
 			// .sql生成.
@@ -80,7 +81,7 @@ namespace MasterConverter
 			}
 
 			// バイナリ転送.
-			if(!TransportBinaryFiles(Host, UserName, Password, BinaryPath))
+			if(!TransportBinaryFiles(BinaryHost, UserName, Password, BinaryPath))
 			{
 				DeleteTemporaryDirectory();
 				return;
