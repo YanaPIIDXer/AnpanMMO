@@ -51,4 +51,5 @@ void MySqlConnection::Close()
 	if (pConnection == NULL) { return; }
 
 	mysql_close(pConnection);
+	pConnection = NULL;
 }
