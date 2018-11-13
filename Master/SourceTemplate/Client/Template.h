@@ -1,4 +1,4 @@
-﻿#ifndef $INCLUDE_GUARD$
+#ifndef $INCLUDE_GUARD$
 #define $INCLUDE_GUARD$
 
 struct $ITEM_STRUCT_NAME$
