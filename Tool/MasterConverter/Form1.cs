@@ -54,15 +54,24 @@ namespace MasterConverter
 			string Host = "";
 			string UserName = "";
 			string Password = "";
+			string BinaryPath = "";
 			using (StreamReader Stream = new StreamReader("FTPData.txt"))
 			{
 				Host = Stream.ReadLine();
 				UserName = Stream.ReadLine();
 				Password = Stream.ReadLine();
+				BinaryPath = Stream.ReadLine();
 			}
 
 			// マスタ展開.
 			if(!ExpandMaster(Host, UserName, Password))
+			{
+				DeleteTemporaryDirectory();
+				return;
+			}
+
+			// バイナリ転送.
+			if(!TransportBinaryFiles(Host, UserName, Password, BinaryPath))
 			{
 				DeleteTemporaryDirectory();
 				return;
@@ -210,6 +219,36 @@ namespace MasterConverter
 				MessageBox.Show("SQLの展開に失敗しました。");
 				return false;
 			}
+			
+			return true;
+		}
+
+		/// <summary>
+		/// バイナリファイルの転送.
+		/// </summary>
+		/// <param name="Host">ホスト</param>
+		/// <param name="UserName">ユーザ名</param>
+		/// <param name="Password">パスワード</param>
+		/// <param name="TargetDirectory">転送先ディレクトリ</param>
+		/// <returns>成功したらtrueを返す</returns>
+		private bool TransportBinaryFiles(string Host, string UserName, string Password, string TargetDirectory)
+		{
+			string[] AllFiles = Directory.GetFiles(Config.TemporaryDirectoryPath);
+			foreach(var FilePath in AllFiles)
+			{
+				if(Path.GetExtension(FilePath) != ".bin" && Path.GetFileName(FilePath) != "Version.csv") { continue; }
+
+				Console.Write(Path.GetFileName(FilePath) + "の転送中...");
+				FileTransporter Transporter = new FileTransporter(FilePath, Host, UserName, Password, TargetDirectory);
+				if(!Transporter.Transport())
+				{
+					MessageBox.Show("バイナリファイルの転送に失敗しました。");
+					Console.WriteLine("失敗。");
+					return false;
+				}
+				Console.WriteLine("完了。");
+			}
+
 			return true;
 		}
 
@@ -228,3 +267,4 @@ namespace MasterConverter
 
 	}
 }
+
