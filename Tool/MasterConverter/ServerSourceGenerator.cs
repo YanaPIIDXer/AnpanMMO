@@ -107,14 +107,14 @@ namespace MasterConverter
 		private void GenerateSource()
 		{
 			string Source = "";
-			using (StreamReader Reader = new StreamReader(SourceTemplatePath, Encoding.UTF8))
+			using (StreamReader Reader = new StreamReader(SourceTemplatePath, Encoding.GetEncoding("shift-jis")))
 			{
 				Source = Reader.ReadToEnd();
 			}
 
 			Source = ReplaceTags(Source);
 
-			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + "Master.cpp", false, Encoding.UTF8))
+			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + "Master.cpp", false, Encoding.GetEncoding("shift-jis")))
 			{
 				Writer.Write(Source);
 			}
