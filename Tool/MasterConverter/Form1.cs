@@ -48,6 +48,23 @@ namespace MasterConverter
 		// 出力ボタンが押された
 		private void OutputButton_Click(object sender, EventArgs e)
 		{
+			if(TransportTargetList.SelectedIndex == -1)
+			{
+				MessageBox.Show("転送先を選択してください。");
+				return;
+			}
+
+			TransportTargetReader TargetReader = new TransportTargetReader(TransportTargetList.SelectedItem.ToString());
+			if(!TargetReader.Read())
+			{
+				MessageBox.Show("転送先データの読み込みに失敗しました。");
+				return;
+			}
+			string Host = TargetReader.Host;
+			string UserName = TargetReader.UserName;
+			string Password = TargetReader.Password;
+			string BinaryPath = TargetReader.BinaryPath;
+
 			// .sql生成.
 			if (!GenerateSQLFiles())
 			{
@@ -55,21 +72,8 @@ namespace MasterConverter
 				return;
 			}
 
-			// テスト用
-			string Host = "";
-			string UserName = "";
-			string Password = "";
-			string BinaryPath = "";
-			using (StreamReader Stream = new StreamReader("FTPData.txt"))
-			{
-				Host = Stream.ReadLine();
-				UserName = Stream.ReadLine();
-				Password = Stream.ReadLine();
-				BinaryPath = Stream.ReadLine();
-			}
-
 			// マスタ展開.
-			if(!ExpandMaster(Host, UserName, Password))
+			if (!ExpandMaster(Host, UserName, Password))
 			{
 				DeleteTemporaryDirectory();
 				return;
