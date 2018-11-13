@@ -2,7 +2,6 @@
 #include "MasterData.h"
 #include <fstream>
 #include "MySQL/MySqlConnection.h"
-#include "TestMaster.h"
 
 const char *MasterData::DBHost = "127.0.0.1";
 const char *MasterData::DBName = "AnpanMMOMaster";
@@ -32,16 +31,5 @@ bool MasterData::Read()
 		return false;
 	}
 
-	// ƒeƒXƒg
-	TestMaster Test;
-	Test.Load(Connection);
-
-	std::vector<TestItem> TestItems = Test.GetAll();
-	std::cout << "TestItem Count:" << TestItems.size() << std::endl;
-	for (std::vector<TestItem>::iterator It = TestItems.begin(); It != TestItems.end(); ++It)
-	{
-		std::cout << "ID:" << It->ID << " Name:" << It->Name << std::endl;
-	}
-	
 	return true;
 }
