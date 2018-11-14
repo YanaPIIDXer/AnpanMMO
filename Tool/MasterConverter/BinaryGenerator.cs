@@ -103,7 +103,7 @@ namespace MasterConverter
 									SizeBytes = SizeBytes.Reverse().ToArray();
 								}
 								BinWriter.Write(SizeBytes);
-								Bytes = Encoding.GetEncoding("shift-jis").GetBytes(Str);
+								Bytes = Encoding.GetEncoding("shift-jis").GetBytes(Str).Reverse().ToArray();
 								break;
 						}
 						if(BitConverter.IsLittleEndian)
