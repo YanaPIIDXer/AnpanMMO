@@ -114,6 +114,12 @@ void MasterDownloader::OnDownloadMasterFile(bool bSuccess, const TArray<uint8> &
 		return;
 	}
 
+	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
+	FString FilePath = Config::GetMasterDirectory() + "\\" + DownloadQueue[0];
+	IFileHandle *pFileHandle = File.OpenWrite(*FilePath);
+	pFileHandle->Write(&Content[0], Content.Num());
+	pFileHandle->Flush();
+
 	DownloadQueue.RemoveAt(0, 1);
 	if (DownloadQueue.Num() == 0)
 	{
