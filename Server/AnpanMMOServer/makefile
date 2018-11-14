@@ -41,9 +41,9 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 
 # àÀë∂ä÷åWÇÃçƒê∂ê¨
 depend:
-	$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
-		@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
-		$(COMPILER) $(CXXFLAGS) -MM -MG $(INCLUDE) -o $@ -c $<
+$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
+	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
+	$(COMPILER) $(CXXFLAGS) -MM -MG $(INCLUDE) -o $@ -c $<
 
 # ÉNÉäÅ[Éì
 clean:
