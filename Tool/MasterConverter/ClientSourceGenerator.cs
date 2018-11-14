@@ -125,7 +125,7 @@ namespace MasterConverter
 			foreach(Column Col in ColumnList)
 			{
 				ItemSerialize += "\t\t";
-				ItemSerialize += "pStream->Serialize(&" + Col.Name + ");";
+				ItemSerialize += "if(!pStream->Serialize(&" + Col.Name + ")) { return false; }";
 				ItemSerialize += "\n";
 			}
 			Source = Source.Replace("$ITEM_SERIALIZE$", ItemSerialize);
