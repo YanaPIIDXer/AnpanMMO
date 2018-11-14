@@ -46,6 +46,13 @@ void HttpConnection::Close()
 void HttpConnection::OnResponseReceived(FHttpRequestPtr pRequest, FHttpResponsePtr pResponse, bool bSuccess)
 {
 	TArray<uint8> Content;
+	if (pResponse->GetResponseCode() != 200)
+	{
+		DownloadFinished.ExecuteIfBound(false, Content);
+		Close();
+		return;
+	}
+
 	if (!bSuccess)
 	{
 		DownloadFinished.ExecuteIfBound(false, Content);
