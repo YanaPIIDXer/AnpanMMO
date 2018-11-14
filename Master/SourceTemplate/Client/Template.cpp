@@ -19,6 +19,7 @@ void $CLASS_NAME$::Load()
 	delete pFileHandle;
 
 	MemoryStreamReader Reader(Data, DataSize);
+	Items.Empty();
 	while (true)
 	{
 		$ITEM_STRUCT_NAME$ Item;
