@@ -39,6 +39,12 @@ $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(COMPILER) $(CXXFLAGS) -MD $(INCLUDE) -o $@ -c $<
 
+# ˆË‘¶ŠÖŒW‚ÌÄ¶¬
+depend:
+$(OBJROOT)/%.d: $(SRCROOT)/%.cpp
+	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
+	$(COMPILER) $(CXXFLAGS) -MM -MG $(INCLUDE) -o $@ -c $<
+
 # ƒNƒŠ[ƒ“
 clean:
 	@rm -rf obj
