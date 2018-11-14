@@ -96,7 +96,14 @@ namespace MasterConverter
 
 							case Type.String:
 
-								Bytes = Encoding.GetEncoding("shift-jis").GetBytes((string)Columns[j].DataList[i]);
+								string Str = (string)Columns[j].DataList[i];
+								byte[] SizeBytes = BitConverter.GetBytes(Str.Length);
+								if(BitConverter.IsLittleEndian)
+								{
+									SizeBytes = SizeBytes.Reverse().ToArray();
+								}
+								BinWriter.Write(SizeBytes);
+								Bytes = Encoding.GetEncoding("shift-jis").GetBytes(Str);
 								break;
 						}
 						if(BitConverter.IsLittleEndian)

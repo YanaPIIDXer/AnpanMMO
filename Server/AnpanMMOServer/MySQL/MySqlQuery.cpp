@@ -60,7 +60,7 @@ void MySqlQuery::BindFloat(float *pPtr)
 // 文字列のバインド
 void MySqlQuery::BindString(char *pPtr)
 {
-	Binds.AddString(pPtr);
+	Binds.AddString(pPtr, false);
 }
 
 // 結果のint型バインド
@@ -108,7 +108,7 @@ void MySqlQuery::BindResultFloat(float *pPtr)
 // 結果の文字列バインド
 void MySqlQuery::BindResultString(char *pPtr)
 {
-	Results.AddString(pPtr);
+	Results.AddString(pPtr, true);
 }
 
 // クエリ実行.

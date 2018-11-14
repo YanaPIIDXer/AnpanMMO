@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "MasterDownloader.h"
 #include "TitleScreenWidget.generated.h"
 
 DECLARE_DELEGATE_OneParam(FOnConnect, bool);
@@ -43,6 +44,15 @@ public:
 	
 protected:
 
+	// マスタダウンロード開始.
+	UFUNCTION(BlueprintCallable, Category = "Master")
+	void StartMasterDownload();
+
+	// ダウンロードが完了した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Master")
+	void OnMasterDownloaded(bool bSuccess);
+	void OnMasterDownloaded_Implementation(bool bSuccess) {}
+
 	// ゲームサーバへの接続.
 	UFUNCTION(BlueprintCallable, Category = "Connection")
 	void ConnectToGameServer();
@@ -55,5 +65,8 @@ private:
 
 	// Widgetのパス
 	static const TCHAR *WidgetPath;
-	
+
+	// マスタダウンローダ
+	MasterDownloader MasterDownload;
+
 };
