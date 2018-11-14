@@ -45,7 +45,7 @@ public:
 	void AddFloat(float *pPtr);
 
 	// •¶Žš—ñ’Ç‰Á.
-	void AddString(char *pPtr);
+	void AddString(char *pPtr, bool bForResult);
 
 	// Žæ“¾.
 	MYSQL_BIND *Get() { return pBinds; }
