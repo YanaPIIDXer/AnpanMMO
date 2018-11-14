@@ -33,9 +33,9 @@ FString Config::GetIdFilePath()
 }
 
 #ifndef USE_LOCAL_SERVER
-const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/main";
+const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/main/";
 #else
-const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/local";
+const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/local/";
 #endif
 
 // マスタディレクトリ取得.

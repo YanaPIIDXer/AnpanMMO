@@ -3,6 +3,11 @@
 #include "VersionFile.h"
 
 // コンストラクタ
+VersionFile::VersionFile()
+{
+}
+
+// コンストラクタ
 VersionFile::VersionFile(const TArray<uint8> &Content)
 {
 	Configure(Content);
@@ -25,7 +30,6 @@ FString VersionFile::GetHash(const FString &FileName) const
 	if (!HashMap.Contains(FileName)) { return ""; }
 	return HashMap[FileName];
 }
-
 
 // 構築.
 void VersionFile::Configure(const TArray<uint8> &Content)
