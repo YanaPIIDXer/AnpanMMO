@@ -8,6 +8,7 @@
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInResult.h"
 #include "Packet/PacketCharacterStatus.h"
+#include "Master/MasterData.h"
 
 // コンストラクタ
 ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
@@ -55,6 +56,7 @@ void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 
 	if (bResult)
 	{
+		MasterData::GetInstance().Load();
 		pScreenWidget->StartFade();
 	}
 }
