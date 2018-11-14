@@ -32,3 +32,26 @@ FString Config::GetIdFilePath()
 	return Path;
 }
 
+#ifndef USE_LOCAL_SERVER
+const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/main";
+#else
+const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/local";
+#endif
+
+// マスタディレクトリ取得.
+FString Config::GetMasterDirectory()
+{
+	FString Path = "";
+#if PLATFORM_WINDOWS
+	// Windows向け
+	Path = FPaths::ProjectSavedDir() + "\\Master";
+#elif PLATFORM_ANDROID
+	// Android向け
+	Path = "/storage/emulated/0/AnapnMMO/Master";
+#elif PLATFORM_IOS
+	// iOS向け
+	Path = "";
+#endif
+	return Path;
+}
+

@@ -17,8 +17,14 @@ public:
 
 	// サーバポート
 	static const int ServerPort;
-
+	
 	// IDファイルのファイルパス取得.
 	static FString GetIdFilePath();
+
+	// マスタＵＲＬ
+	static const FString MasterURL;
+
+	// マスタディレクトリを取得.
+	static FString GetMasterDirectory();
 
 };
