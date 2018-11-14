@@ -35,17 +35,17 @@ void MasterDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> 
 
 	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
 
-	FString DirName = Config::GetMasterDirectory();
-	if (!File.DirectoryExists(*DirName))
+	FString MasterDir = Config::GetMasterDirectory();
+	if (!File.DirectoryExists(*MasterDir))
 	{
-		File.CreateDirectory(*DirName);
+		File.CreateDirectory(*MasterDir);
 	}
 
 	VersionFile DownloadedVersionFile(Content);
 
 	Http.DownloadFinished.BindRaw<MasterDownloader>(this, &MasterDownloader::OnDownloadMasterFile);
 	
-	FString VersionFilePath = DirName + "\\Version.csv";
+	FString VersionFilePath = MasterDir + "\\Version.csv";
 	if (!File.FileExists(*VersionFilePath))
 	{
 		// バージョンファイルがない。
@@ -60,10 +60,12 @@ void MasterDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> 
 		return;
 	}
 
-	FString VersionFileName = VersionFilePath + "\\Version.csv";
-	IFileHandle *pFileHandle = File.OpenRead(*VersionFileName);
+	IFileHandle *pFileHandle = File.OpenRead(*VersionFilePath);
 	uint8 Data[2048];
 	pFileHandle->Read(Data, 2048);
+	pFileHandle->Flush();
+	delete pFileHandle;
+	
 	TArray<uint8> LocalData;
 	for (uint8 Ch : Data)
 	{
@@ -73,7 +75,7 @@ void MasterDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> 
 	TArray<FString> FileList = DownloadedVersionFile.GetAllFiles();
 	for (FString FileName : FileList)
 	{
-		if (!File.FileExists(*(DirName + "\\" + FileName)))
+		if (!File.FileExists(*(MasterDir + "\\" + FileName)))
 		{
 			// ローカルには存在しないファイル
 			DownloadQueue.Add(FileName);
@@ -119,6 +121,7 @@ void MasterDownloader::OnDownloadMasterFile(bool bSuccess, const TArray<uint8> &
 	IFileHandle *pFileHandle = File.OpenWrite(*FilePath);
 	pFileHandle->Write(&Content[0], Content.Num());
 	pFileHandle->Flush();
+	delete pFileHandle;
 
 	DownloadQueue.RemoveAt(0, 1);
 	if (DownloadQueue.Num() == 0)
@@ -140,4 +143,5 @@ void MasterDownloader::SaveDownloadedVersionFile()
 	IFileHandle *pFileHandle = File.OpenWrite(*VersionFilePath);
 	pFileHandle->Write(&DownloadedVersionFileData[0], DownloadedVersionFileData.Num());
 	pFileHandle->Flush();
+	delete pFileHandle;
 }

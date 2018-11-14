@@ -44,7 +44,7 @@ FString Config::GetMasterDirectory()
 	FString Path = "";
 #if PLATFORM_WINDOWS
 	// WindowsŒü‚¯
-	Path = FPaths::ProjectSavedDir() + "\\Master";
+	Path = FPaths::ProjectSavedDir() + "Master";
 #elif PLATFORM_ANDROID
 	// AndroidŒü‚¯
 	Path = "/storage/emulated/0/AnapnMMO/Master";
