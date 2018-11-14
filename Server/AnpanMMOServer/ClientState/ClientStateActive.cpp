@@ -6,7 +6,6 @@
 #include "World.h"
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketGameReady.h"
-#include "Test.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
