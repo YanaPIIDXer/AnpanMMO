@@ -17,6 +17,11 @@ HttpConnection::~HttpConnection()
 // ダウンロード開始.
 bool HttpConnection::StartDownload(const FString &URL)
 {
+	if (pHttp != nullptr)
+	{
+		Close();
+	}
+
 	pHttp = &FHttpModule::Get();
 	if (pHttp == nullptr) { return false; }
 
@@ -44,8 +49,11 @@ void HttpConnection::OnResponseReceived(FHttpRequestPtr pRequest, FHttpResponseP
 	if (!bSuccess)
 	{
 		DownloadFinished.ExecuteIfBound(false, Content);
+		Close();
 		return;
 	}
 	Content = pResponse->GetContent();
 	DownloadFinished.ExecuteIfBound(true, Content);
+
+	Close();
 }
