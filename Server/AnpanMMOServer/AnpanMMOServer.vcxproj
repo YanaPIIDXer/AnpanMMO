@@ -182,6 +182,7 @@
     <ClInclude Include="Packet\PlayerData.h" />
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="TickManager.h" />
     <ClInclude Include="TypeDefs.h" />
     <ClInclude Include="World.h" />
