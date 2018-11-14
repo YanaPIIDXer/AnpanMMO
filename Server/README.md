@@ -22,4 +22,6 @@ gccのバージョンが古い為、C++11が使えない点に注意してください。
 サーバの起動には以下の準備が必要です。  
 1.MySQLで**AnpanMMO**データベースを用意する。（使用するユーザに権限も与えておく事。）  
 2.Serverディレクトリに移動し、**mysql -u {ユーザ名} -p{パスワード} -D AnpanMMO < AnpanMMO.sql**コマンドを実行し、テーブルを展開しておく。  
-3.AnpanMMOServerディレクトリに移動し、**DBUserData.txt**を作成し、一行目にMySQLでログインするユーザ名を、二行目にパスワードを記述する。  
+3.AnpanMMOServerディレクトリに移動し、**DBUserData.txt**を作成し、一行目にMySQLでログインするユーザ名を、二行目にパスワードを記述する。
+3.同様に**AnpanMMOMaster**データベースを用意し、使用するユーザに権限を与えておく。
+4.AnpanMMOServerディレクトリ内に**MasterDBUserData.txt**を作成し、一行目にAnpanMMOMasterデータベースを参照するユーザ名を、二行目にパスワードを記述する。  
