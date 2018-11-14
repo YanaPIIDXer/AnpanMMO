@@ -26,6 +26,16 @@ UTitleScreenWidget::UTitleScreenWidget(const FObjectInitializer &ObjectInitializ
 }
 
 
+// マスタダウンロード開始.
+void UTitleScreenWidget::StartMasterDownload()
+{
+	MasterDownload.DownloadResult.BindUObject<UTitleScreenWidget>(this, &UTitleScreenWidget::OnMasterDownloaded);
+	if (!MasterDownload.Start())
+	{
+		OnMasterDownloaded(false);
+	}
+}
+
 // ゲームサーバへの接続.
 void UTitleScreenWidget::ConnectToGameServer()
 {
