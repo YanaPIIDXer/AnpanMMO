@@ -21,7 +21,7 @@ public:
 	bool LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);
 
 	// キャラクタパラメータ書き込み
-	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp);
+	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y);
 
 private:
 
