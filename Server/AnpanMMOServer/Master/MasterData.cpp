@@ -31,5 +31,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!Area.Load(Connection))
+	{
+		std::cout << "Area Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }

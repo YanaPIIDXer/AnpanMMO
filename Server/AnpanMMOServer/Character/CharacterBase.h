@@ -1,14 +1,16 @@
 #ifndef __CHARACTERBASE_H__
 #define __CHARACTERBASE_H__
 
+#include <boost/enable_shared_from_this.hpp>
 #include "CharacterParameter.h"
 #include "Math/Vector2D.h"
 #include "Math/Rotation.h"
+#include "Area/Area.h"
 
 /**
  * キャラクタ基底クラス
  */
-class CharacterBase
+class CharacterBase : public enable_shared_from_this<CharacterBase>
 {
 
 public:
@@ -61,6 +63,12 @@ public:
 	// リスポン
 	void Respawn();
 
+	// エリアをセット。
+	void SetArea(const AreaPtr &pInArea) { pArea = pInArea; }
+
+	// エリアを取得.
+	AreaPtr GetArea() const { return pArea; }
+
 protected:
 
 	// 座標.
@@ -97,6 +105,9 @@ private:
 
 	// UUID
 	u32 Uuid;
+
+	// エリア
+	AreaPtr pArea;
 
 };
 

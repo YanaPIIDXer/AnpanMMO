@@ -2,16 +2,40 @@
 #include "AnpanManager.h"
 #include "Math/Random.h"
 #include "Packet/PacketAnpanList.h"
+#include "Character/Anpan/Anpan.h"
 
 const int AnpanManager::SpawnInterval = 5000;
-const int AnpanManager::AnpanMax = 100;
 
 // コンストラクタ
 AnpanManager::AnpanManager()
-	: NextUuid(1)
+	: AnpanMax(0)
+	, NextUuid(1)
 	, SpawnTime(SpawnInterval)
+	, MinHp(10)
+	, MaxHp(10)
+	, MinAtk(0)
+	, MaxAtk(0)
+	, MinDef(0)
+	, MaxDef(0)
+	, MinExp(0)
+	, MaxExp(0)
 {
 }
+
+// 初期化.
+void AnpanManager::Initialize(unsigned int InAnpanMax, int InMinHp, int InMaxHp, int InMinAtk, int InMaxAtk, int InMinDef, int InMaxDef, int InMinExp, int InMaxExp)
+{
+	AnpanMax = InAnpanMax;
+	MinHp = InMinHp;
+	MaxHp = InMaxHp;
+	MinAtk = InMinAtk;
+	MaxAtk = InMaxAtk;
+	MinDef = InMinDef;
+	MaxDef = InMaxDef;
+	MinExp = InMinExp;
+	MaxExp = InMaxExp;
+}
+
 
 // 毎フレームの処理.
 void AnpanManager::Poll(int DeltaTime)
@@ -56,12 +80,14 @@ void AnpanManager::SpawnAnpan()
 	float X = Random::Range<float>(-2500.0f, 2500.0f);
 	float Y = Random::Range<float>(-2500.0f, 2500.0f);
 
-	int Hp = Random::Range<int>(100, 500);
+	int Hp = Random::Range<int>(MinHp, MaxHp);
 
-	int Atk = Random::Range<int>(10, 100);
-	int Def = Random::Range<int>(10, 100);
+	int Atk = Random::Range<int>(MinAtk, MaxAtk);
+	int Def = Random::Range<int>(MinDef, MaxDef);
 
-	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
+	int Exp = Random::Range<int>(MinExp, MaxExp);
+
+	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def, Exp);
 	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
 
 	unsigned int Uuid = NextUuid;

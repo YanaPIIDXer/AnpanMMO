@@ -34,7 +34,7 @@ void Hate::Poll()
 // ‘‰Á.
 void Hate::Add(weak_ptr<CharacterBase> pCharacter, int Value)
 {
-	for (int i = 0; i < HateList.size(); i++)
+	for (unsigned int i = 0; i < HateList.size(); i++)
 	{
 		if (HateList[i].pCharacter.lock().get() == pCharacter.lock().get())
 		{

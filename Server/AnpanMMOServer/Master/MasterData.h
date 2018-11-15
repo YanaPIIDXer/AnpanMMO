@@ -1,6 +1,8 @@
 #ifndef __MASTERDATA_H__
 #define __MASTERDATA_H__
 
+#include "AreaMaster.h"
+
 /**
  * マスタデータクラス
  */
@@ -12,6 +14,9 @@ public:
 	// 読み込み
 	bool Read();
 
+	// エリアマスタ取得.
+	const AreaMaster &GetAreaMaster() { return Area; }
+
 private:
 
 	// DBホスト
@@ -22,6 +27,9 @@ private:
 
 	// DBのユーザ名とか記述したファイル名.
 	static const std::string DBDataFileName;
+
+	// エリアマスタ
+	AreaMaster Area;
 
 	// ======= Singleton ==========
 public:

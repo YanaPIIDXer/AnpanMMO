@@ -22,7 +22,7 @@ void TickManager::Poll()
 		DeltaTime = 0;
 	}
 	
-	for (int i = 0; i < Functions.size(); i++)
+	for (unsigned int i = 0; i < Functions.size(); i++)
 	{
 		Functions[i](DeltaTime);
 	}

@@ -28,6 +28,9 @@ private:
 	// ゲーム準備完了を受信.
 	void OnRecvGameReady(MemoryStreamInterface *pStream);
 
+	// リスポン要求を受信した。
+	void OnRecvRespawnRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

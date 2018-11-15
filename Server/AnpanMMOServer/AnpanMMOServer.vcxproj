@@ -125,6 +125,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AnpanManager.h" />
+    <ClInclude Include="Area\Area.h" />
+    <ClInclude Include="Area\AreaManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
@@ -147,6 +149,7 @@
     <ClInclude Include="DBConnection.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
+    <ClInclude Include="Master\AreaMaster.h" />
     <ClInclude Include="Master\MasterData.h" />
     <ClInclude Include="Math\DamageCalcUnit.h" />
     <ClInclude Include="Math\MathUtil.h" />
@@ -184,10 +187,11 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TickManager.h" />
     <ClInclude Include="TypeDefs.h" />
-    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnpanManager.cpp" />
+    <ClCompile Include="Area\Area.cpp" />
+    <ClCompile Include="Area\AreaManager.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateActive.cpp" />
@@ -207,6 +211,7 @@
     <ClCompile Include="DBConnection.cpp" />
     <ClCompile Include="FlexArray.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Master\AreaMaster.cpp" />
     <ClCompile Include="Master\MasterData.cpp" />
     <ClCompile Include="Math\DamageCalcUnit.cpp" />
     <ClCompile Include="Math\MathUtil.cpp" />
@@ -223,7 +228,6 @@
     <ClCompile Include="PlayerManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TickManager.cpp" />
-    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AnpanMMOServer.VC.db" />

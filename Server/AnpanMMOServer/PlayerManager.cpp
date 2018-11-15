@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PlayerManager.h"
 #include "Client.h"
+#include "Character/Player/PlayerCharacter.h"
 #include "Packet/PacketSpawnPlayer.h"
 #include "Packet/PacketPlayerList.h"
 #include "Packet/PacketMovePlayer.h"
@@ -32,7 +33,7 @@ void PlayerManager::Poll()
 }
 
 // 追加.
-void PlayerManager::Add(u8 Uuid, PlayerCharacterPtr pPlayer)
+void PlayerManager::Add(u32 Uuid, PlayerCharacterPtr pPlayer)
 {
 	// 生成を接続済みのクライアントにブロードキャスト
 	const CharacterParameter &Param = pPlayer.lock()->GetParameter();
@@ -47,8 +48,18 @@ void PlayerManager::Add(u8 Uuid, PlayerCharacterPtr pPlayer)
 	PlayerList[Uuid] = pPlayer;
 }
 
+// 削除.
+void PlayerManager::Remove(u32 Uuid)
+{
+	PlayerList.erase(Uuid);
+
+	// 他プレイヤーに通知.
+	PacketExitPlayer Packet(Uuid);
+	BroadcastPacket(&Packet);
+}
+
 // 取得.
-PlayerCharacterPtr PlayerManager::Get(u8 Uuid) const
+PlayerCharacterPtr PlayerManager::Get(u32 Uuid) const
 {
 	PlayerMap::const_iterator It = PlayerList.find(Uuid);
 	if (It == PlayerList.end()) { return PlayerCharacterPtr(); }
