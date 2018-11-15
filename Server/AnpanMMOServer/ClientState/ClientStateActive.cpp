@@ -53,9 +53,16 @@ void ClientStateActive::OnRecvGameReady(MemoryStreamInterface *pStream)
 	PacketGameReady Packet;
 	Packet.Serialize(pStream);		// ぶっちゃけいらないんじゃね？
 
-	// プレイヤーキャラをWorldにブチ込む。
+	// プレイヤーキャラをエリアにブチ込む。
+	u32 AreaId = 1;
+	float X = 0.0f;
+	float Y = 0.0f;
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(GetParent()->GetCustomerId(), AreaId, X, Y))
+	{
+		std::cout << "Last Logout Position Read Failed..." << std::endl;
+	}
 	PlayerCharacterPtr pPlayerChara = GetParent()->GetCharacter();
-	AreaPtr pArea = AreaManager::GetInstance().Get(1);
+	AreaPtr pArea = AreaManager::GetInstance().Get(AreaId);
 	pArea.lock()->AddPlayerCharacter(pPlayerChara);
 }
 
