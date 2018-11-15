@@ -125,6 +125,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AnpanManager.h" />
+    <ClInclude Include="Area\Area.h" />
+    <ClInclude Include="Area\AreaManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
@@ -189,6 +191,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnpanManager.cpp" />
+    <ClCompile Include="Area\Area.cpp" />
+    <ClCompile Include="Area\AreaManager.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateActive.cpp" />

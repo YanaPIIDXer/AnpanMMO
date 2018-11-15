@@ -1,0 +1,51 @@
+#ifndef __AREAMANAGER_H__
+#define __AREAMANAGER_H__
+
+#include <boost/unordered_map.hpp>
+
+class Area;
+
+typedef weak_ptr<Area> AreaPtr;
+
+/**
+ * エリアマネージャ
+ */
+class AreaManager : public noncopyable
+{
+
+private:		// 別名定義.
+
+	typedef shared_ptr<Area> AreaSharedPtr;
+	typedef unordered_map<u32, AreaSharedPtr> AreaMap;
+
+public:
+
+	// デストラクタ
+	virtual ~AreaManager() {}
+
+	// 初期化.
+	void Initialize();
+
+	// 毎フレームの処理.
+	void Poll(int DeltaTime);
+
+private:
+
+	// エリアマップ
+	AreaMap Areas;
+
+
+	// ========== Singleton ===============
+
+public:
+
+	static AreaManager &GetInstance() { return Instance; }
+
+private:
+
+	AreaManager();
+	static AreaManager Instance;
+
+};
+
+#endif		// #ifndef __AREAMANAGER_H__

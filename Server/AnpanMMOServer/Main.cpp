@@ -5,6 +5,7 @@
 #include "World.h"
 #include "TickManager.h" 
 #include "Master/MasterData.h"
+#include "Area/AreaManager.h"
 
 // エントリポイント
 int main()
@@ -43,6 +44,7 @@ int main()
 		bind(&ClientManager::Poll, &ClientManager::GetInstance()));
 
 	World::GetInstance().Initialize();
+	AreaManager::GetInstance().Initialize();
 
 	asio::basic_repeating_timer<posix_time::ptime> TickTimer(IOService);
 	TickTimer.start(posix_time::millisec(30),
