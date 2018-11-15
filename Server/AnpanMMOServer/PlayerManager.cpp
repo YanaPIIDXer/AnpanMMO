@@ -32,7 +32,7 @@ void PlayerManager::Poll()
 }
 
 // 追加.
-void PlayerManager::Add(u8 Uuid, PlayerCharacterPtr pPlayer)
+void PlayerManager::Add(u32 Uuid, PlayerCharacterPtr pPlayer)
 {
 	// 生成を接続済みのクライアントにブロードキャスト
 	const CharacterParameter &Param = pPlayer.lock()->GetParameter();
@@ -45,6 +45,14 @@ void PlayerManager::Add(u8 Uuid, PlayerCharacterPtr pPlayer)
 	pPlayer.lock()->GetClient()->SendPacket(&ListPacket);
 
 	PlayerList[Uuid] = pPlayer;
+}
+
+// 削除.
+void PlayerManager::Remove(u32 Uuid)
+{
+	PlayerList.erase(Uuid);
+
+	// @TODO:削除を他プレイヤーに通知する処理の実装.
 }
 
 // 取得.

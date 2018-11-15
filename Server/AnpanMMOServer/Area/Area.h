@@ -24,6 +24,12 @@ public:
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
 
+	// プレイヤーキャラの追加.
+	void AddPlayerCharacter(const PlayerCharacterPtr &pPlayer);
+
+	// プレイヤーキャラ削除,
+	void RemovePlayerCharacter(u32 Uuid);
+
 	// パケットのブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket);
 	

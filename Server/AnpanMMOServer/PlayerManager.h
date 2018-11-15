@@ -30,7 +30,10 @@ public:
 	void Poll();
 
 	// ’Ç‰Á.
-	void Add(u8 Uuid, PlayerCharacterPtr pPlayer);
+	void Add(u32 Uuid, PlayerCharacterPtr pPlayer);
+
+	// íœ.
+	void Remove(u32 Uuid);
 
 	// æ“¾.
 	PlayerCharacterPtr Get(u8 Uuid) const;

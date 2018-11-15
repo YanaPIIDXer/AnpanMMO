@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "Area.h"
+#include "Client.h"
 #include "Master/AreaMaster.h"
 #include "Packet/PacketSpawnAnpan.h"
+#include "Packet/PacketAnpanList.h"
 
 // コンストラクタ
 Area::Area(const AreaItem *pItem)
@@ -15,6 +17,24 @@ void Area::Poll(int DeltaTime)
 {
 	PlayerMgr.Poll();
 	AnpanMgr.Poll(DeltaTime);
+}
+
+// プレイヤーキャラの追加.
+void Area::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
+{
+	PlayerMgr.Add(pPlayer.lock()->GetClient()->GetUuid(), pPlayer);
+
+	// アンパンリストを通知.
+	PacketAnpanList Packet;
+	AnpanMgr.MakeListPacket(Packet);
+
+	pPlayer.lock()->GetClient()->SendPacket(&Packet);
+}
+
+// プレイヤーキャラ削除.
+void Area::RemovePlayerCharacter(u32 Uuid)
+{
+	PlayerMgr.Remove(Uuid);
 }
 
 // パケットのブロードキャスト
