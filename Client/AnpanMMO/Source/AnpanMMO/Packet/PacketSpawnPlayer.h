@@ -16,17 +16,21 @@ public:
 	u32 Uuid;
 	s32 Hp;
 	s32 MaxHp;
+	float X;
+	float Y;
 	
 
 	PacketSpawnPlayer()
 	{
 	}
 
-	PacketSpawnPlayer(u32 InUuid, s32 InHp, s32 InMaxHp)
+	PacketSpawnPlayer(u32 InUuid, s32 InHp, s32 InMaxHp, float InX, float InY)
 	{
 		Uuid = InUuid;
 		Hp = InHp;
 		MaxHp = InMaxHp;
+		X = InX;
+		Y = InY;
 		
 	}
 
@@ -35,6 +39,8 @@ public:
 		pStream->Serialize(&Uuid);
 		pStream->Serialize(&Hp);
 		pStream->Serialize(&MaxHp);
+		pStream->Serialize(&X);
+		pStream->Serialize(&Y);
 		
 		return true;
 	}

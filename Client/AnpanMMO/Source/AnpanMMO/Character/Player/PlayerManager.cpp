@@ -35,7 +35,7 @@ void PlayerManager::OnRecvSpawn(MemoryStreamInterface *pStream)
 	PacketSpawnPlayer Packet;
 	Packet.Serialize(pStream);
 
-	SpawnCharacter(Packet.Uuid, 0.0f, 0.0f, 0.0f, Packet.Hp, Packet.MaxHp);
+	SpawnCharacter(Packet.Uuid, Packet.X, Packet.Y, 0.0f, Packet.Hp, Packet.MaxHp);
 }
 
 // ƒŠƒXƒg‚ğóM.

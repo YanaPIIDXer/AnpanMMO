@@ -63,6 +63,7 @@ void ClientStateActive::OnRecvGameReady(MemoryStreamInterface *pStream)
 		std::cout << "Last Logout Position Read Failed..." << std::endl;
 	}
 	PlayerCharacterPtr pPlayerChara = GetParent()->GetCharacter();
+	pPlayerChara.lock()->SetPosition(Vector2D(X, Y));
 	AreaPtr pArea = AreaManager::GetInstance().Get(AreaId);
 	pArea.lock()->AddPlayerCharacter(pPlayerChara);
 
