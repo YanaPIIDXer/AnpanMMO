@@ -5,6 +5,7 @@
 #include "CharacterParameter.h"
 #include "Math/Vector2D.h"
 #include "Math/Rotation.h"
+#include "Area/Area.h"
 
 /**
  * キャラクタ基底クラス

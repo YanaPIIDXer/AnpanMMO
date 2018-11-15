@@ -1,6 +1,7 @@
 #ifndef __AREA_H__
 #define __AREA_H__
 
+#include <boost/enable_shared_from_this.hpp>
 #include "PlayerManager.h"
 #include "AnpanManager.h"
 
@@ -22,7 +23,7 @@ public:
 	Area(const AreaItem *pItem);
 
 	// デストラクタ
-	~Area() {}
+	virtual ~Area() {}
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
