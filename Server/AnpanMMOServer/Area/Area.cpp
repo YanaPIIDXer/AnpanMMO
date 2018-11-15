@@ -17,6 +17,12 @@ void Area::Poll(int DeltaTime)
 	AnpanMgr.Poll(DeltaTime);
 }
 
+// パケットのブロードキャスト
+void Area::BroadcastPacket(PacketBase *pPacket)
+{
+	PlayerMgr.BroadcastPacket(pPacket);
+}
+
 
 // アンパンが生成された。
 void Area::OnSpawnAnpan(u32 Uuid, AnpanPtr pAnpan)

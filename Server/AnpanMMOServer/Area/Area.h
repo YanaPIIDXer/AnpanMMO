@@ -5,6 +5,7 @@
 #include "AnpanManager.h"
 
 struct AreaItem;
+class PacketBase;
 
 /**
  * エリアクラス
@@ -22,6 +23,9 @@ public:
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
+
+	// パケットのブロードキャスト
+	void BroadcastPacket(PacketBase *pPacket);
 	
 private:
 
