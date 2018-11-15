@@ -10,7 +10,7 @@ public:
 
 	u32 ID;
 	std::string Name;
-	u8 bSpawnAnpan;
+	u32 AnpanMax;
 	s32 AnpanMinHp;
 	s32 AnpanMaxHp;
 	s32 AnpanMinAtk;
@@ -25,7 +25,7 @@ public:
 	{
 		if(!pStream->Serialize(&ID)) { return false; }
 		if(!pStream->Serialize(&Name)) { return false; }
-		if(!pStream->Serialize(&bSpawnAnpan)) { return false; }
+		if(!pStream->Serialize(&AnpanMax)) { return false; }
 		if(!pStream->Serialize(&AnpanMinHp)) { return false; }
 		if(!pStream->Serialize(&AnpanMaxHp)) { return false; }
 		if(!pStream->Serialize(&AnpanMinAtk)) { return false; }

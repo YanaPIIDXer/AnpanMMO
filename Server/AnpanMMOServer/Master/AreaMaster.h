@@ -13,7 +13,7 @@ public:
 
 	u32 ID;
 	std::string Name;
-	u8 bSpawnAnpan;
+	u32 AnpanMax;
 	s32 AnpanMinHp;
 	s32 AnpanMaxHp;
 	s32 AnpanMinAtk;
