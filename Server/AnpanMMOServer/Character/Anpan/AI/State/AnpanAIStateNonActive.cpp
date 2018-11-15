@@ -60,6 +60,8 @@ void AnpanAIStateNonActive::Update(int DeltaTime)
 			UpdateMoving();
 			break;
 
+		default:
+			break;
 	}
 }
 
