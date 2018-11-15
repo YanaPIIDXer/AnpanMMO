@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "Anpan.h"
-#include "World.h"
 #include "Math/DamageCalcUnit.h"
 #include "Packet/PacketStopAnpan.h"
 
@@ -23,21 +22,21 @@ void Anpan::Poll(int DeltaTime)
 	if (pMovePacketData != NULL)
 	{
 		PacketMoveAnpan Packet = pMovePacketData->CreatePacket();
-		World::GetInstance().BroadcastPacket(&Packet);
+		GetArea().lock()->BroadcastPacket(&Packet);
 	}
 
 	shared_ptr<AnpanRotatePacketData> pRotatePacketData = AI.SweepRotatePacketData();
 	if (pRotatePacketData != NULL)
 	{
 		PacketRotateAnpan Packet = pRotatePacketData->CreatePacket();
-		World::GetInstance().BroadcastPacket(&Packet);
+		GetArea().lock()->BroadcastPacket(&Packet);
 	}
 
 	if (AI.SweepSendStopPacketFlag())
 	{
 		const Vector2D Pos = GetPosition();
 		PacketStopAnpan Packet(GetUuid(), Pos.X, Pos.Y, GetRotation().Get());
-		World::GetInstance().BroadcastPacket(&Packet);
+		GetArea().lock()->BroadcastPacket(&Packet);
 	}
 }
 

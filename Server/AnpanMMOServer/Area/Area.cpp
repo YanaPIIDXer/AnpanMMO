@@ -43,6 +43,12 @@ void Area::RemovePlayerCharacter(u32 Uuid)
 	PlayerMgr.Remove(Uuid);
 }
 
+// 移動を受信した。
+void Area::OnRecvMove(u32 Uuid, float X, float Y, float Rotation)
+{
+	PlayerMgr.OnRecvMove(Uuid, X, Y, Rotation);
+}
+
 // 攻撃を受信した。
 void Area::OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid)
 {

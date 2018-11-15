@@ -4,6 +4,9 @@
 #include <boost/unordered_map.hpp>
 #include "Area.h"
 
+class Client;
+class MemoryStreamInterface;
+
 /**
  * エリアマネージャ
  */
@@ -28,6 +31,12 @@ public:
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
+
+	// 移動を受信した。
+	void OnRecvMove(Client *pClient, MemoryStreamInterface *pStream);
+
+	// 攻撃を受信した。
+	void OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream);
 
 private:
 

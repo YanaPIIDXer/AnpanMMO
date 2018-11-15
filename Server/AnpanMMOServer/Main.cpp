@@ -2,7 +2,6 @@
 #include "ClientAcceptor.h"
 #include "ClientManager.h"
 #include "DBConnection.h"
-#include "World.h"
 #include "TickManager.h" 
 #include "Master/MasterData.h"
 #include "Area/AreaManager.h"
@@ -43,7 +42,6 @@ int main()
 	ClientManagerTimer.start(posix_time::millisec(30),
 		bind(&ClientManager::Poll, &ClientManager::GetInstance()));
 
-	World::GetInstance().Initialize();
 	AreaManager::GetInstance().Initialize();
 
 	asio::basic_repeating_timer<posix_time::ptime> TickTimer(IOService);
