@@ -36,7 +36,7 @@ public:
 	void Remove(u32 Uuid);
 
 	// æ“¾.
-	PlayerCharacterPtr Get(u8 Uuid) const;
+	PlayerCharacterPtr Get(u32 Uuid) const;
 
 	// ˆÚ“®‚ğóM‚µ‚½B
 	void OnRecvMove(u32 Uuid, float X, float Y, float Rot);

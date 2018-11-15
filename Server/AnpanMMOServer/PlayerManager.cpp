@@ -58,7 +58,7 @@ void PlayerManager::Remove(u32 Uuid)
 }
 
 // Žæ“¾.
-PlayerCharacterPtr PlayerManager::Get(u8 Uuid) const
+PlayerCharacterPtr PlayerManager::Get(u32 Uuid) const
 {
 	PlayerMap::const_iterator It = PlayerList.find(Uuid);
 	if (It == PlayerList.end()) { return PlayerCharacterPtr(); }
