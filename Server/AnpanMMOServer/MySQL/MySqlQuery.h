@@ -82,12 +82,12 @@ public:
 	void Close();
 
 private:
+	
+	// MYSQLへの接続.
+	MYSQL *pConnection;
 
 	// クエリ
 	const char *pQuery;
-
-	// MYSQLへの接続.
-	MYSQL *pConnection;
 
 	// ステートメント
 	MYSQL_STMT *pStatement;
