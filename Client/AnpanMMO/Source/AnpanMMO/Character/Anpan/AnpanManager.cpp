@@ -84,6 +84,16 @@ void AnpanManager::OnRecvStop(MemoryStreamInterface *pStream)
 	AnpanMap[Packet.Uuid]->Stop(Packet.X, Packet.Y, Packet.Rotation);
 }
 
+// リセット
+void AnpanManager::Reset()
+{
+	for (auto KeyValue : AnpanMap)
+	{
+		KeyValue.Value->Destroy();
+	}
+	AnpanMap.Empty();
+}
+
 
 // アンパンをSpawn
 void AnpanManager::SpawnAnpan(const AnpanData &Data)

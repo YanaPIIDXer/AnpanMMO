@@ -7,6 +7,7 @@
 #include "Area/AreaManager.h"
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketGameReady.h"
+#include "Packet/PacketAreaMove.h"
 #include "Packet/PacketRespawnRequest.h"
 #include "Packet/PacketPlayerRespawn.h"
 
@@ -53,10 +54,21 @@ void ClientStateActive::OnRecvGameReady(MemoryStreamInterface *pStream)
 	PacketGameReady Packet;
 	Packet.Serialize(pStream);		// ぶっちゃけいらないんじゃね？
 
-	// プレイヤーキャラをWorldにブチ込む。
+	// プレイヤーキャラをエリアにブチ込む。
+	u32 AreaId = 1;
+	float X = 0.0f;
+	float Y = 0.0f;
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(GetParent()->GetCustomerId(), AreaId, X, Y))
+	{
+		std::cout << "Last Logout Position Read Failed..." << std::endl;
+	}
 	PlayerCharacterPtr pPlayerChara = GetParent()->GetCharacter();
-	AreaPtr pArea = AreaManager::GetInstance().Get(1);
+	AreaPtr pArea = AreaManager::GetInstance().Get(AreaId);
 	pArea.lock()->AddPlayerCharacter(pPlayerChara);
+
+	// エリア移動をクライアントに通知.
+	PacketAreaMove AreaMovePacket(AreaId, X, Y);
+	GetParent()->SendPacket(&AreaMovePacket);
 }
 
 // リスポン要求を受信した。

@@ -8,6 +8,7 @@
 #include "Character/Player/GameCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "Packet/PacketGameReady.h"
+#include "Packet/PacketAreaMove.h"
 #include "Packet/PacketDamage.h"
 #include "Packet/CharacterType.h"
 #include "Packet/PacketAddExp.h"
@@ -21,6 +22,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 {
 	PrimaryActorTick.bCanEverTick = true;
 
+	AddPacketFunction(PacketID::AreaMove, std::bind(&AActiveGameMode::OnRecvAreaMove, this, _1));
 	AddPacketFunction(PacketID::AnpanList, std::bind(&AnpanManager::OnRecvList, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::SpawnAnpan, std::bind(&AnpanManager::OnRecvSpawn, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::MoveAnpan, std::bind(&AnpanManager::OnRecvMove, &AnpanMgr, _1));
@@ -72,6 +74,24 @@ void AActiveGameMode::AddPlayerCharacter(uint32 Uuid, APlayerCharacterBase *pPla
 	PlayerMgr.Add(Uuid, pPlayer);
 }
 
+
+// エリア移動を受信した。
+void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
+{
+	PacketAreaMove Packet;
+	Packet.Serialize(pStream);
+
+	PlayerMgr.Reset();
+	AnpanMgr.Reset();
+
+	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+	
+	FVector Pos = pCharacter->GetActorLocation();
+	Pos.X = Packet.X;
+	Pos.Y = Packet.Y;
+	pCharacter->SetActorLocation(Pos);
+}
 
 // ダメージを受信した。
 void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)

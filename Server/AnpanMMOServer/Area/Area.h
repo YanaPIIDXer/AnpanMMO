@@ -43,8 +43,14 @@ public:
 	
 	// パケットのブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket);
+
+	// ID取得.
+	u32 GetId() const { return Id; }
 	
 private:
+
+	// ID
+	u32 Id;
 
 	// プレイヤー管理.
 	PlayerManager PlayerMgr;

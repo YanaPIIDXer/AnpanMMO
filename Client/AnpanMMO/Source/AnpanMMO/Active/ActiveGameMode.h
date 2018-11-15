@@ -58,6 +58,9 @@ private:
 	bool bInitializedMainHUD;
 
 
+	// エリア移動を受信した。
+	void OnRecvAreaMove(MemoryStreamInterface *pStream);
+
 	// ダメージを受信した。
 	void OnRecvDamage(MemoryStreamInterface *pStream);
 

@@ -40,9 +40,11 @@ void PlayerCharacter::OnLevelUp()
 void PlayerCharacter::SaveParameter()
 {
 	const CharacterParameter &Param = GetParameter();
-	if (!DBConnection::GetInstance().SaveCharacterParameter(GetClient()->GetUuid(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get()))
+	AreaPtr pArea = GetArea();
+	const Vector2D Pos = GetPosition();
+	if (!DBConnection::GetInstance().SaveCharacterParameter(GetClient()->GetUuid(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), pArea.lock()->GetId(), Pos.X, Pos.Y))
 	{
-		std::cout << "LevelUp Parameter Save Failed..." << std::endl;
+		std::cout << "Parameter Save Failed..." << std::endl;
 	}
 
 }

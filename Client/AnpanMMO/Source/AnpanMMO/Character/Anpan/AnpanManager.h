@@ -50,6 +50,9 @@ public:
 	// 停止を受信した。
 	void OnRecvStop(MemoryStreamInterface *pStream);
 
+	// リセット.
+	void Reset();
+
 private:
 
 	// アンパンマップ

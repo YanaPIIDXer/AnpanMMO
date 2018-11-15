@@ -65,17 +65,36 @@ bool DBConnection::LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, in
 }
 
 // キャラクタパラメータ書き込み
-bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp)
+bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y)
 {
-	MySqlQuery Query = Connection.CreateQuery("update CharacterData set MaxHp = ?, Atk = ?, Def = ?, Exp = ? where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set MaxHp = ?, Atk = ?, Def = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ? where CustomerId = ?");
 
 	Query.BindInt(&MaxHp);
 	Query.BindInt(&Atk);
 	Query.BindInt(&Def);
 	Query.BindInt(&Exp);
+	Query.BindInt(&AreaId);
+	Query.BindFloat(&X);
+	Query.BindFloat(&Y);
 	Query.BindInt(&Id);
 
 	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
+
+// 最後にログアウトした位置を読み込み
+bool DBConnection::ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY)
+{
+	MySqlQuery Query = Connection.CreateQuery("select LastArea, LastX, LastY from CharacterData where CustomerId = ?");
+
+	Query.BindInt(&Id);
+	Query.BindResultInt(&OutAreaId);
+	Query.BindResultFloat(&OutX);
+	Query.BindResultFloat(&OutY);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	if (!Query.Fetch()) { return false; }
 
 	return true;
 }
@@ -100,7 +119,7 @@ bool DBConnection::RegisterUserData(char *pUserCode)
 	if (!UserQuery.Fetch()) { return false; }
 	UserQuery.Close();
 
-	MySqlQuery CharacterQuery = Connection.CreateQuery("insert into CharacterData values(?, 50, 10, 10, 0);");
+	MySqlQuery CharacterQuery = Connection.CreateQuery("insert into CharacterData values(?, 50, 10, 10, 0, 1, 0.0, 0.0);");
 	CharacterQuery.BindInt(&Id);
 	if (!CharacterQuery.ExecuteQuery()) { return false; }
 

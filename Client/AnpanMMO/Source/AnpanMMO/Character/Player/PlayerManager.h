@@ -49,10 +49,13 @@ public:
 	// 退出を受信.
 	void OnRecvExit(MemoryStreamInterface *pStream);
 
+	// リセット.
+	void Reset();
+
 private:
 
 	// プレイヤーマップ
-	TMap<uint8, PlayerPtr> PlayerMap;
+	TMap<uint32, PlayerPtr> PlayerMap;
 
 	// World
 	TWeakObjectPtr<UWorld> pWorld;
