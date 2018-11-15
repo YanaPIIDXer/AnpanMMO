@@ -37,7 +37,8 @@ void PlayerManager::Add(u32 Uuid, PlayerCharacterPtr pPlayer)
 {
 	// 生成を接続済みのクライアントにブロードキャスト
 	const CharacterParameter &Param = pPlayer.lock()->GetParameter();
-	PacketSpawnPlayer Packet(Uuid, Param.Hp, Param.MaxHp);
+	const Vector2D &Pos = pPlayer.lock()->GetPosition();
+	PacketSpawnPlayer Packet(Uuid, Param.Hp, Param.MaxHp, Pos.X, Pos.Y);
 	BroadcastPacket(&Packet, pPlayer.lock()->GetClient());
 
 	// プレイヤーリストを通知.
