@@ -1,6 +1,7 @@
 #ifndef __CHARACTERBASE_H__
 #define __CHARACTERBASE_H__
 
+#include <boost/enable_shared_from_this.hpp>
 #include "CharacterParameter.h"
 #include "Math/Vector2D.h"
 #include "Math/Rotation.h"
@@ -8,7 +9,7 @@
 /**
  * キャラクタ基底クラス
  */
-class CharacterBase
+class CharacterBase : public enable_shared_from_this<CharacterBase>
 {
 
 public:

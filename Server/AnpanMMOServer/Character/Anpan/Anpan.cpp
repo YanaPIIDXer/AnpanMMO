@@ -47,10 +47,7 @@ void Anpan::AttackTo(CharacterBase *pTarget)
 	DamageCalcUnit Calc(GetParameter(), pTarget->GetParameter());
 	int Value = Calc.Calc();
 
-	// ダメージ関数がキャラクタのweak_ptrを要求するので自分自身を取得.
-	AnpanPtr pSelf = World::GetInstance().GetAnpan(GetUuid());
-
-	pTarget->ApplyDamage(pSelf, Value);
+	pTarget->ApplyDamage(shared_from_this(), Value);
 }
 
 
