@@ -1,6 +1,9 @@
 #ifndef __AREA_H__
 #define __AREA_H__
 
+#include "PlayerManager.h"
+#include "AnpanManager.h"
+
 struct AreaItem;
 
 /**
@@ -12,7 +15,7 @@ class Area
 public:
 
 	// コンストラクタ
-	Area(const AreaItem *pInItem);
+	Area(const AreaItem *pItem);
 
 	// デストラクタ
 	~Area() {}
@@ -22,8 +25,15 @@ public:
 	
 private:
 
-	// マスタデータ
-	const AreaItem *pItem;
+	// プレイヤー管理.
+	PlayerManager PlayerMgr;
+
+	// アンパン管理.
+	AnpanManager AnpanMgr;
+
+
+	// アンパンが生成された。
+	void OnSpawnAnpan(u32 Uuid, AnpanPtr pAnpan);
 
 };
 
