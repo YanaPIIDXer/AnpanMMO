@@ -8,6 +8,7 @@
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketPlayerRespawn.h"
 #include "Packet/PacketExitPlayer.h"
+#include "Kismet/GameplayStatics.h"
 
 // コンストラクタ
 PlayerManager::PlayerManager()
@@ -80,6 +81,24 @@ void PlayerManager::OnRecvExit(MemoryStreamInterface *pStream)
 	check(pPlayer != nullptr);
 	pPlayer->Get()->Destroy();
 	PlayerMap.Remove(Packet.Uuid);
+}
+
+// リセット.
+void PlayerManager::Reset()
+{
+	TArray<uint32> RemoveList;
+	for (auto KeyValue : PlayerMap)
+	{
+		// 自キャラは消さないようにする。
+		if (KeyValue.Value == UGameplayStatics::GetPlayerPawn(KeyValue.Value.Get(), 0)) { continue; }
+		KeyValue.Value->Destroy();
+		RemoveList.Add(KeyValue.Key);
+	}
+
+	for (uint32 Id : RemoveList)
+	{
+		PlayerMap.Remove(Id);
+	}
 }
 
 

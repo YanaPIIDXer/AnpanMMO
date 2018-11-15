@@ -81,6 +81,9 @@ void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 	PacketAreaMove Packet;
 	Packet.Serialize(pStream);
 
+	PlayerMgr.Reset();
+	AnpanMgr.Reset();
+
 	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 	
