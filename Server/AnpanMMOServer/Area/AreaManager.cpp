@@ -29,4 +29,8 @@ void AreaManager::Initialize()
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 void AreaManager::Poll(int DeltaTime)
 {
+	for (AreaMap::iterator It = Areas.begin(); It != Areas.end(); ++It)
+	{
+		It->second->Poll(DeltaTime);
+	}
 }

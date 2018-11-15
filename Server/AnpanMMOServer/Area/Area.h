@@ -16,6 +16,9 @@ public:
 
 	// デストラクタ
 	~Area() {}
+
+	// 毎フレームの処理.
+	void Poll(int DeltaTime);
 	
 private:
 

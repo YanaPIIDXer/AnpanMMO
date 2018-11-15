@@ -7,3 +7,8 @@ Area::Area(const AreaItem *pInItem)
 	: pItem(pInItem)
 {
 }
+
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void Area::Poll(int DeltaTime)
+{
+}
