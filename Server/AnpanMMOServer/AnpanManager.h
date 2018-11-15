@@ -5,7 +5,6 @@
 #include <boost/function.hpp>
 #include "Character/Anpan/Anpan.h"
 
-typedef weak_ptr<Anpan> AnpanPtr;
 class PacketAnpanList;
 
 /**
