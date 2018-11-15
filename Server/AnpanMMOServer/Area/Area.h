@@ -30,6 +30,9 @@ public:
 	// プレイヤーキャラ削除,
 	void RemovePlayerCharacter(u32 Uuid);
 
+	// 攻撃を受信した。
+	void OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid);
+	
 	// パケットのブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket);
 	

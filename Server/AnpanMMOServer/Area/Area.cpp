@@ -2,8 +2,10 @@
 #include "Area.h"
 #include "Client.h"
 #include "Master/AreaMaster.h"
+#include "Math/DamageCalcUnit.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
+#include "Packet/PacketAddExp.h"
 
 // コンストラクタ
 Area::Area(const AreaItem *pItem)
@@ -35,6 +37,27 @@ void Area::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 void Area::RemovePlayerCharacter(u32 Uuid)
 {
 	PlayerMgr.Remove(Uuid);
+}
+
+// 攻撃を受信した。
+void Area::OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid)
+{
+	PlayerCharacterPtr pAttacker = PlayerMgr.Get(AttackerUuid);
+	AnpanPtr pDefencer = AnpanMgr.Get(DefencerUuid);
+
+	// ダメージ計算.
+	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
+	int DamageValue = DamageCalc.Calc();
+	pDefencer.lock()->ApplyDamage(pAttacker, DamageValue);
+
+	if (pDefencer.lock()->IsDead())
+	{
+		int Exp = pDefencer.lock()->GetExp();
+		pAttacker.lock()->AddExp(Exp);
+
+		PacketAddExp ExpPacket(pAttacker.lock()->GetExp());
+		pAttacker.lock()->GetClient()->SendPacket(&ExpPacket);
+	}
 }
 
 // パケットのブロードキャスト
