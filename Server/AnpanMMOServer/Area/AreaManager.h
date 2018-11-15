@@ -2,10 +2,7 @@
 #define __AREAMANAGER_H__
 
 #include <boost/unordered_map.hpp>
-
-class Area;
-
-typedef weak_ptr<Area> AreaPtr;
+#include "Area.h"
 
 /**
  * エリアマネージャ

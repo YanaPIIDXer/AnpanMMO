@@ -7,10 +7,13 @@
 struct AreaItem;
 class PacketBase;
 
+class Area;
+typedef weak_ptr<Area> AreaPtr;
+
 /**
  * エリアクラス
  */
-class Area
+class Area : public enable_shared_from_this<Area>
 {
 
 public:

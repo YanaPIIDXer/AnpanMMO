@@ -2,7 +2,6 @@
 #include "AreaManager.h"
 #include "TickManager.h"
 #include "Master/MasterData.h"
-#include "Area.h"
 
 AreaManager AreaManager::Instance;
 
