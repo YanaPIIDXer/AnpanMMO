@@ -5,8 +5,9 @@
 #include "Packet/PacketStopAnpan.h"
 
 // コンストラクタ
-Anpan::Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def)
+Anpan::Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def, int InExp)
 	: AI(this)
+	, Exp(InExp)
 {
 	SetPosition(InPosition);
 	SetRotate(Rotation(180.0f));

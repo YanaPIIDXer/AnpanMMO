@@ -10,8 +10,30 @@ const int AnpanManager::AnpanMax = 100;
 AnpanManager::AnpanManager()
 	: NextUuid(1)
 	, SpawnTime(SpawnInterval)
+	, MinHp(10)
+	, MaxHp(10)
+	, MinAtk(0)
+	, MaxAtk(0)
+	, MinDef(0)
+	, MaxDef(0)
+	, MinExp(0)
+	, MaxExp(0)
 {
 }
+
+// ‰Šú‰».
+void AnpanManager::Initialize(int InMinHp, int InMaxHp, int InMinAtk, int InMaxAtk, int InMinDef, int InMaxDef, int InMinExp, int InMaxExp)
+{
+	MinHp = InMinHp;
+	MaxHp = InMaxHp;
+	MinAtk = InMinAtk;
+	MaxAtk = InMaxAtk;
+	MinDef = InMinDef;
+	MaxDef = InMaxDef;
+	MinExp = InMinExp;
+	MaxExp = InMaxExp;
+}
+
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 void AnpanManager::Poll(int DeltaTime)
@@ -56,12 +78,14 @@ void AnpanManager::SpawnAnpan()
 	float X = Random::Range<float>(-2500.0f, 2500.0f);
 	float Y = Random::Range<float>(-2500.0f, 2500.0f);
 
-	int Hp = Random::Range<int>(100, 500);
+	int Hp = Random::Range<int>(MinHp, MaxHp);
 
-	int Atk = Random::Range<int>(10, 100);
-	int Def = Random::Range<int>(10, 100);
+	int Atk = Random::Range<int>(MinAtk, MaxAtk);
+	int Def = Random::Range<int>(MinDef, MaxDef);
 
-	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def);
+	int Exp = Random::Range<int>(MinExp, MaxExp);
+
+	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def, Exp);
 	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
 
 	unsigned int Uuid = NextUuid;

@@ -14,7 +14,7 @@ class Anpan : public CharacterBase
 public:
 
 	// コンストラクタ
-	Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def);
+	Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def, int InExp);
 
 	// デストラクタ
 	virtual ~Anpan() {}
@@ -28,6 +28,9 @@ public:
 	// 攻撃.
 	void AttackTo(CharacterBase *pTarget);
 
+	// 倒したときに獲得できる経験値を取得.
+	int GetExp() const { return Exp; }
+
 protected:
 
 	// ダメージを受けた。
@@ -40,6 +43,9 @@ private:
 
 	// UUID
 	u32 Uuid;
+
+	// 倒したときに獲得できる経験値.
+	int Exp;
 
 };
 

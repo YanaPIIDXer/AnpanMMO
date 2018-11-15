@@ -25,6 +25,7 @@ void World::Initialize()
 {
 	TickManager::GetInstance().Add(bind(&World::Poll, this, _1));
 	AnpanMgr.SetSpawnCallback(bind(&World::OnSpawnAnpan, this, _1, _2));
+	AnpanMgr.Initialize(100, 500, 10, 100, 10, 100, 10, 50);
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
@@ -77,7 +78,7 @@ void World::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
 	
 	if (pDefencer.lock()->IsDead())
 	{
-		int Exp = Random::Range<int>(10, 50);
+		int Exp = pDefencer.lock()->GetExp();
 		pAttacker.lock()->AddExp(Exp);
 
 		PacketAddExp ExpPacket(pAttacker.lock()->GetExp());
