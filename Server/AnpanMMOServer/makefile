@@ -1,7 +1,7 @@
 # コンパイラ
 COMPILER  = gcc
 # お好きなフラグを
-CXXFLAGS    = -g -Wall
+CXXFLAGS    = -g -Wall -Werror
 # ライブラリ関係の指定
 ifeq "$(shell getconf LONG_BIT)" "64"
   LDFLAGS = -L/usr/local/lib -L/usr/lib
