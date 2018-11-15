@@ -12,6 +12,9 @@ public:
 	MemorySizeCaliculateStream()
 		: Size( 0 ){}
 
+	// デストラクタ
+	virtual ~MemorySizeCaliculateStream() {}
+
 	//計算結果取得
 	int GetSize(){ return Size; }
 	

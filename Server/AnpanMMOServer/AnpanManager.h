@@ -49,7 +49,7 @@ private:
 	static const int SpawnInterval;
 
 	// アンパンの最大数.
-	static const int AnpanMax;
+	static const unsigned int AnpanMax;
 
 	// アンパンリスト
 	AnpanMap AnpanList;

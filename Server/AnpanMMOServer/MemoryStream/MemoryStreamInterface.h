@@ -10,6 +10,9 @@ class MemoryStreamInterface
 
 public:
 
+	// デストラクタ
+	virtual ~MemoryStreamInterface() {}
+
 	//符号付き３２ビットシリアライズ
 	virtual bool Serialize( s32 *pValue ) = 0;
 
