@@ -7,6 +7,7 @@
 #include "Area/AreaManager.h"
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketGameReady.h"
+#include "Packet/PacketAreaMove.h"
 #include "Packet/PacketRespawnRequest.h"
 #include "Packet/PacketPlayerRespawn.h"
 
@@ -64,6 +65,10 @@ void ClientStateActive::OnRecvGameReady(MemoryStreamInterface *pStream)
 	PlayerCharacterPtr pPlayerChara = GetParent()->GetCharacter();
 	AreaPtr pArea = AreaManager::GetInstance().Get(AreaId);
 	pArea.lock()->AddPlayerCharacter(pPlayerChara);
+
+	// エリア移動をクライアントに通知.
+	PacketAreaMove AreaMovePacket(AreaId, X, Y);
+	GetParent()->SendPacket(&AreaMovePacket);
 }
 
 // リスポン要求を受信した。
