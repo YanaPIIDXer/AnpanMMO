@@ -16,7 +16,7 @@ void AreaManager::Initialize()
 	TickManager::GetInstance().Add(boost::bind(&AreaManager::Poll, this, _1));
 
 	std::vector<AreaItem> Items = MasterData::GetInstance().GetAreaMaster().GetAll();
-	for (int i = 0; i < Items.size(); i++)
+	for (unsigned int i = 0; i < Items.size(); i++)
 	{
 		const AreaItem *pItem = MasterData::GetInstance().GetAreaMaster().GetItem(Items[i].ID);
 		Area *pArea = new Area(pItem);
