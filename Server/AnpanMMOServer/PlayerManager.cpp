@@ -52,7 +52,9 @@ void PlayerManager::Remove(u32 Uuid)
 {
 	PlayerList.erase(Uuid);
 
-	// @TODO:削除を他プレイヤーに通知する処理の実装.
+	// 他プレイヤーに通知.
+	PacketExitPlayer Packet(Uuid);
+	BroadcastPacket(&Packet);
 }
 
 // 取得.
