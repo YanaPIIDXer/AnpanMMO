@@ -5,11 +5,11 @@
 #include "Character/Anpan/Anpan.h"
 
 const int AnpanManager::SpawnInterval = 5000;
-const unsigned int AnpanManager::AnpanMax = 100;
 
 // コンストラクタ
 AnpanManager::AnpanManager()
-	: NextUuid(1)
+	: AnpanMax(0)
+	, NextUuid(1)
 	, SpawnTime(SpawnInterval)
 	, MinHp(10)
 	, MaxHp(10)
@@ -23,8 +23,9 @@ AnpanManager::AnpanManager()
 }
 
 // 初期化.
-void AnpanManager::Initialize(int InMinHp, int InMaxHp, int InMinAtk, int InMaxAtk, int InMinDef, int InMaxDef, int InMinExp, int InMaxExp)
+void AnpanManager::Initialize(unsigned int InAnpanMax, int InMinHp, int InMaxHp, int InMinAtk, int InMaxAtk, int InMinDef, int InMaxDef, int InMinExp, int InMaxExp)
 {
+	AnpanMax = InAnpanMax;
 	MinHp = InMinHp;
 	MaxHp = InMaxHp;
 	MinAtk = InMinAtk;

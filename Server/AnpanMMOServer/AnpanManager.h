@@ -29,7 +29,7 @@ public:
 	~AnpanManager() {}
 
 	// 初期化.
-	void Initialize(int InMinHp, int InMaxHp, int InMinAtk, int InMaxAtk, int InMinDef, int InMaxDef, int InMinExp, int InMaxExp);
+	void Initialize(unsigned int InAnpanMax, int InMinHp, int InMaxHp, int InMinAtk, int InMaxAtk, int InMinDef, int InMaxDef, int InMinExp, int InMaxExp);
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
@@ -48,11 +48,11 @@ private:
 	// 生成インターバル
 	static const int SpawnInterval;
 
-	// アンパンの最大数.
-	static const unsigned int AnpanMax;
-
 	// アンパンリスト
 	AnpanMap AnpanList;
+
+	// アンパンの最大数.
+	unsigned int AnpanMax;
 
 	// 次のＵＵＩＤ
 	unsigned int NextUuid;
