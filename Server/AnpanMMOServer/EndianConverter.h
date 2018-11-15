@@ -16,7 +16,7 @@ public:
 	}
 
 	//符号付き１６ビット変換
-	static s16 Convert( s16 Value )
+	static s16 Convert(s16 Value)
 	{
 		if (IsLittleEndian())
 		{
@@ -27,7 +27,7 @@ public:
 	}
 	
 	//符号無し１６ビット変換
-	static u16 Convert( u16 Value )
+	static u16 Convert(u16 Value)
 	{
 		if (IsLittleEndian())
 		{
@@ -38,7 +38,7 @@ public:
 	}
 
 	//符号付き３２ビット変換
-	static s32 Convert( s32 Value )
+	static s32 Convert(s32 Value)
 	{
 		if (IsLittleEndian())
 		{
@@ -52,7 +52,7 @@ public:
 	}
 	
 	//符号無し３２ビット変換
-	static u32 Convert( u32 Value )
+	static u32 Convert(u32 Value)
 	{
 		if (IsLittleEndian())
 		{
@@ -65,15 +65,12 @@ public:
 	}
 
 	// float変換
-	static float Convert( float Value )
+	static float Convert(float Value)
 	{
-
 		union FloatConv
 		{
-
 			u32 u;
 			float f;
-
 		};
 		
 		FloatConv Conv;
@@ -82,15 +79,14 @@ public:
 		Conv.u = Convert(Conv.u);
 
 		return Conv.f;
-
 	}
 
 private:
 
 	//暗黙で定義されるものの封印
 	EndianConverter();
-	EndianConverter( const EndianConverter &Arg );
-	EndianConverter operator =( const EndianConverter &Arg );
+	EndianConverter(const EndianConverter &Arg);
+	EndianConverter operator =(const EndianConverter &Arg);
 
 };
 
