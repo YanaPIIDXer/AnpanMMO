@@ -10,7 +10,7 @@ public:
 
 	//コンストラクタ
 	MemorySizeCaliculateStream()
-		: Size( 0 ){}
+		: Size(0){}
 
 	// デストラクタ
 	virtual ~MemorySizeCaliculateStream() {}
@@ -19,25 +19,25 @@ public:
 	int GetSize(){ return Size; }
 	
 	//符号付き３２ビットシリアライズ
-	virtual bool Serialize( s32 *pValue );
+	virtual bool Serialize(s32 *pValue);
 
 	//符号無し３２ビットシリアライズ
-	virtual bool Serialize( u32 *pValue );
+	virtual bool Serialize(u32 *pValue);
 
 	//符号付き１６ビットシリアライズ
-	virtual bool Serialize( s16 *pValue );
+	virtual bool Serialize(s16 *pValue);
 
 	//符号無し１６ビットシリアライズ
-	virtual bool Serialize( u16 *pValue );
+	virtual bool Serialize(u16 *pValue);
 
 	//符号付き８ビットシリアライズ
-	virtual bool Serialize( s8 *pValue );
+	virtual bool Serialize(s8 *pValue);
 
 	//符号無し８ビットシリアライズ
-	virtual bool Serialize( u8 *pValue );
+	virtual bool Serialize(u8 *pValue);
 
 	//文字列シリアライズ
-	virtual bool Serialize( std::string *pValue );
+	virtual bool Serialize(std::string *pValue);
 
 	// floatシリアライズ
 	virtual bool Serialize(float *pValue);
