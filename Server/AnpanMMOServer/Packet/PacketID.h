@@ -11,6 +11,7 @@ enum PacketID
 	Attack,
 	Damage,
 	GameReady,
+	AreaMove,
 	AddExp,
 	LevelUp,
 	LogInRequest,
