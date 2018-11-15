@@ -26,6 +26,14 @@ void AreaManager::Initialize()
 	}
 }
 
+// æ“¾.
+AreaPtr AreaManager::Get(u32 ID) const
+{
+	AreaMap::const_iterator It = Areas.find(ID);
+	if (It == Areas.end()) { return AreaPtr(); }
+	return It->second;
+}
+
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 void AreaManager::Poll(int DeltaTime)
 {

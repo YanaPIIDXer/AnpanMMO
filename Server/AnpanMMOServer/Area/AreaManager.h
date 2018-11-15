@@ -26,6 +26,9 @@ public:
 	// ‰Šú‰».
 	void Initialize();
 
+	// æ“¾.
+	AreaPtr Get(u32 ID) const;
+
 	// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 	void Poll(int DeltaTime);
 
