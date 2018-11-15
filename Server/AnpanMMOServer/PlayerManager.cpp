@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PlayerManager.h"
 #include "Client.h"
+#include "Character/Player/PlayerCharacter.h"
 #include "Packet/PacketSpawnPlayer.h"
 #include "Packet/PacketPlayerList.h"
 #include "Packet/PacketMovePlayer.h"

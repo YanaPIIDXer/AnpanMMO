@@ -2,8 +2,9 @@
 #define __PLAYERMANAGER_H__
 
 #include <boost/unordered_map.hpp>
-#include "Character/Player/PlayerCharacter.h"
 
+class PlayerCharacter;
+typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
 class PacketBase;
 class Client;
 class PacketPlayerList;

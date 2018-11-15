@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Area.h"
 #include "Client.h"
+#include "Character/Player/PlayerCharacter.h"
+#include "Character/Anpan/Anpan.h"
 #include "Master/AreaMaster.h"
 #include "Math/DamageCalcUnit.h"
 #include "Packet/PacketSpawnAnpan.h"

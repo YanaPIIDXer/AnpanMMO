@@ -2,6 +2,7 @@
 #include "AnpanManager.h"
 #include "Math/Random.h"
 #include "Packet/PacketAnpanList.h"
+#include "Character/Anpan/Anpan.h"
 
 const int AnpanManager::SpawnInterval = 5000;
 const int AnpanManager::AnpanMax = 100;

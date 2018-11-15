@@ -4,6 +4,7 @@
 #include "Math/DamageCalcUnit.h"
 #include "Math/Random.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "Character/Anpan/Anpan.h"
 #include "TickManager.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"

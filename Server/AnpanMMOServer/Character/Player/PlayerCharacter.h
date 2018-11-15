@@ -5,8 +5,6 @@
 #include "PlayerExp.h"
 #include "Packet/CharacterType.h"
 
-class PlayerCharacter;
-typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
 class Client;
 
 /**

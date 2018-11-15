@@ -5,9 +5,6 @@
 #include "AI/AnpanAI.h"
 #include "Packet/CharacterType.h"
 
-class Anpan;
-typedef weak_ptr<Anpan> AnpanPtr;
-
 /**
  * アンパンクラス
  */
