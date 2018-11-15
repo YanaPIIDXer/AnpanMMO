@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `characterdata`
+-- Table structure for table `CharacterData`
 --
 
 DROP TABLE IF EXISTS `CharacterData`;
@@ -28,12 +28,15 @@ CREATE TABLE `CharacterData` (
   `Atk` int(11) DEFAULT NULL,
   `Def` int(11) DEFAULT NULL,
   `Exp` int(11) DEFAULT NULL,
+  `LastArea` int(11) DEFAULT NULL,
+  `LastX` float DEFAULT NULL,
+  `LastY` float DEFAULT NULL,
   PRIMARY KEY (`CustomerId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `userdata`
+-- Table structure for table `UserData`
 --
 
 DROP TABLE IF EXISTS `UserData`;
@@ -43,7 +46,7 @@ CREATE TABLE `UserData` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserCode` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +58,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-03  0:00:09
+-- Dump completed on 2018-11-15 21:01:36
