@@ -65,14 +65,14 @@ private:
 	//データのポインタ（先頭位置）
 	u8 *pData;
 
-	// エラーフラグ
-	bool bError;
-
 	//データサイズ
 	const int Size;
 
 	//現在のストリーム位置
 	int CurrentPosition;
+
+	// エラーフラグ
+	bool bError;
 
 	//暗黙で定義されるものの封印
 	MemoryStreamWriter();
