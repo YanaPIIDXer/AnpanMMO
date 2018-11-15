@@ -63,6 +63,12 @@ public:
 	// リスポン
 	void Respawn();
 
+	// エリアをセット。
+	void SetArea(const AreaPtr &pInArea) { pArea = pInArea; }
+
+	// エリアを取得.
+	AreaPtr GetArea() const { return pArea; }
+
 protected:
 
 	// 座標.
@@ -99,6 +105,9 @@ private:
 
 	// UUID
 	u32 Uuid;
+
+	// エリア
+	AreaPtr pArea;
 
 };
 

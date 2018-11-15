@@ -26,6 +26,8 @@ void Area::Poll(int DeltaTime)
 // プレイヤーキャラの追加.
 void Area::AddPlayerCharacter(const PlayerCharacterPtr &pPlayer)
 {
+	pPlayer.lock()->SetArea(shared_from_this());
+
 	PlayerMgr.Add(pPlayer.lock()->GetClient()->GetUuid(), pPlayer);
 
 	// アンパンリストを通知.
@@ -72,6 +74,8 @@ void Area::BroadcastPacket(PacketBase *pPacket)
 // アンパンが生成された。
 void Area::OnSpawnAnpan(u32 Uuid, AnpanPtr pAnpan)
 {
+	pAnpan.lock()->SetArea(shared_from_this());
+
 	const CharacterParameter &Param = pAnpan.lock()->GetParameter();
 	const Vector2D &Position = pAnpan.lock()->GetPosition();
 	AnpanData Data(Uuid, Position.X, Position.Y, pAnpan.lock()->GetRotation().Get(), Param.Hp, Param.MaxHp);
