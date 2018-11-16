@@ -13,22 +13,22 @@ public:
 
 	
 
-	u32 AreaId;
+	u32 AreaMoveId;
 	
 
 	PacketAreaMoveRequest()
 	{
 	}
 
-	PacketAreaMoveRequest(u32 InAreaId)
+	PacketAreaMoveRequest(u32 InAreaMoveId)
 	{
-		AreaId = InAreaId;
+		AreaMoveId = InAreaMoveId;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&AreaId);
+		pStream->Serialize(&AreaMoveId);
 		
 		return true;
 	}
