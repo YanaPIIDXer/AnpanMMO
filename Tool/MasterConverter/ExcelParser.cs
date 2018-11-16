@@ -153,6 +153,11 @@ namespace MasterConverter
 						DataType = Type.u32;
 						break;
 
+					case "float":
+
+						DataType = Type.Float;
+						break;
+
 					case "string":
 
 						DataType = Type.String;
