@@ -173,7 +173,7 @@ namespace MasterConverter
 
 				Console.Write("クライアントソースの生成中...");
 
-				ClientSourceGenerator ClientSource = new ClientSourceGenerator(ClientSourceDirectory, MasterName, Parser.Master.GetColumns());
+				ClientSourceGenerator ClientSource = new ClientSourceGenerator(ClientSourceDirectory, Parser.Master);
 				if(!ClientSource.Generate())
 				{
 					MessageBox.Show("クライアントソースの生成に失敗しました。");
