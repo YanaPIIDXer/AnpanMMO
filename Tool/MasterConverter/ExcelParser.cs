@@ -18,12 +18,12 @@ namespace MasterConverter
 		/// <summary>
 		/// $ITEMタグを見つけるまでの深さ
 		/// </summary>
-		private static readonly int CheckDepth = 10;
+		private static readonly int CheckDepth = 15;
 
 		/// <summary>
 		/// $ITEMタグを探し始める行.
 		/// </summary>
-		private static readonly int CheckStartRow = 3;
+		private static readonly int CheckStartRow = 1;
 
 		/// <summary>
 		/// ファイルパス
@@ -31,9 +31,9 @@ namespace MasterConverter
 		private string FilePath;
 
 		/// <summary>
-		/// カラムリスト
+		/// マスタデータ
 		/// </summary>
-		public List<Column> Columns { get; private set; }
+		public MasterData Master { get; private set; }
 
 		/// <summary>
 		/// コンストラクタ
@@ -42,7 +42,7 @@ namespace MasterConverter
 		public ExcelParser(string InFilePath)
 		{
 			FilePath = InFilePath;
-			Columns = new List<Column>();
+			Master = new MasterData(Path.GetFileNameWithoutExtension(InFilePath));
 		}
 
 		/// <summary> 0
@@ -58,7 +58,7 @@ namespace MasterConverter
 				if(TagIndex == -1) { return false; }
 
 				CollectColumns(WorkSheet, TagIndex - 2);
-				if(Columns[0].DataType == Type.String)
+				if(Master.GetColumn(0).DataType == Type.String)
 				{
 					Console.WriteLine("最初の行を文字列型にすることは出来ません。");
 					return false;
@@ -136,7 +136,7 @@ namespace MasterConverter
 				}
 
 				Column NewColumn = new Column(ColumnName, DataType);
-				Columns.Add(NewColumn);
+				Master.AddColumn(NewColumn);
 			}
 		}
 
@@ -149,11 +149,11 @@ namespace MasterConverter
 		{
 			for(int i = StartRow; ; i++)
 			{
-				for(int j = 1; j <= Columns.Count; j++)
+				for(int j = 1; j <= Master.GetColumnCount(); j++)
 				{
 					object Data = WorkSheet.Cells[i, j + 1].Value;
 					if(j == 1 && Data == null) { return; }
-					Columns[j - 1].AddData(Data);
+					Master.AddDataToColumn(j - 1, Data);
 				}
 			}
 		}
