@@ -43,9 +43,7 @@ void APlayerCharacterBase::BeginPlay()
 }
 
 // ƒŠƒXƒ|ƒ“
-void APlayerCharacterBase::Respawn(float X, float Y)
+void APlayerCharacterBase::Respawn()
 {
 	OnRespawn();
-	
-	SetActorLocation(FVector(X, Y, GetActorLocation().Z));
 }

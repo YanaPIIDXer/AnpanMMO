@@ -51,9 +51,16 @@ void ClientStateActive::OnRecvRespawnRequest(MemoryStreamInterface *pStream)
 	PlayerCharacterPtr pChara = GetParent()->GetCharacter();
 	pChara.lock()->Respawn();
 
-	// @TODO:ロビーにリスポンさせたい。
-	Vector2D Pos = pChara.lock()->GetPosition();
-	PacketPlayerRespawn RespawnPacket(pChara.lock()->GetUuid(), Pos.X, Pos.Y);
+	PacketPlayerRespawn RespawnPacket(pChara.lock()->GetUuid(), 0.0f, 0.0f);
+	GetParent()->SendPacket(&RespawnPacket);
+
+	// ロビーにリスポンする。
+	PacketAreaMoveResponse AreaMovePacket(PacketAreaMoveResponse::Success);
+	GetParent()->SendPacket(&AreaMovePacket);
+
 	AreaPtr pArea = pChara.lock()->GetArea();
-	pArea.lock()->BroadcastPacket(&RespawnPacket);
+	pArea.lock()->RemovePlayerCharacter(pChara.lock()->GetUuid());
+
+	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), 1, Vector2D(-1000.0f, 0.0f));
+	GetParent()->ChangeState(pNewState);
 }

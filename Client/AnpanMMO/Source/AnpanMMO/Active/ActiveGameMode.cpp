@@ -14,6 +14,7 @@
 #include "Packet/PacketAddExp.h"
 #include "Packet/PacketLevelUp.h"
 #include "Packet/PacketAreaMoveResponse.h"
+#include "Packet/PacketPlayerRespawn.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -36,7 +37,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::AreaMoveResponse, std::bind(&AActiveGameMode::OnRecvAreaMoveResponse, this, _1));
 	AddPacketFunction(PacketID::PlayerList, std::bind(&PlayerManager::OnRecvList, &PlayerMgr, _1));
 	AddPacketFunction(PacketID::MovePlayer, std::bind(&PlayerManager::OnRecvMove, &PlayerMgr, _1));
-	AddPacketFunction(PacketID::PlayerRespawn, std::bind(&PlayerManager::OnRecvRespawn, &PlayerMgr, _1));
+	AddPacketFunction(PacketID::PlayerRespawn, std::bind(&AActiveGameMode::OnRecvRespawn, this, _1));
 	AddPacketFunction(PacketID::ExitPlayer, std::bind(&PlayerManager::OnRecvExit, &PlayerMgr, _1));
 }
 
@@ -162,4 +163,15 @@ void AActiveGameMode::OnRecvAreaMoveResponse(MemoryStreamInterface *pStream)
 	WarpPointMgr.Reset();
 
 	pMainHUD->OnStartMapChange();
+}
+
+// リスポンを受信した。
+void AActiveGameMode::OnRecvRespawn(MemoryStreamInterface *pStream)
+{
+	PacketPlayerRespawn Packet;
+	Packet.Serialize(pStream);
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+	pCharacter->Respawn();
 }

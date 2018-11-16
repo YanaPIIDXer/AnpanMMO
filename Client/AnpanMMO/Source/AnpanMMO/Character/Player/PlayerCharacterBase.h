@@ -34,7 +34,7 @@ public:
 	virtual FVector GetMoveVector() const { return FVector(); }
 
 	// ƒŠƒXƒ|ƒ“.
-	void Respawn(float X, float Y);
+	void Respawn();
 	
 protected:
 
