@@ -19,7 +19,7 @@ public:
 	Client(const shared_ptr<tcp::socket> &pInSocket);
 
 	// デストラクタ
-	~Client();
+	virtual ~Client();
 	
 	// パケット送信.
 	void SendPacket(PacketBase *pPacket);
