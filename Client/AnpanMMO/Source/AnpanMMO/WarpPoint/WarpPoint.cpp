@@ -2,21 +2,21 @@
 
 #include "WarpPoint.h"
 #include "UObject/ConstructorHelpers.h"
-#include "Master/MasterData.h"
 #include "Kismet/GameplayStatics.h"
+#include "Active/UI/WarpAreaList.h"
 
 const float AWarpPoint::CollisionRadius = 300.0f;
 const TCHAR *AWarpPoint::ParticlePath = TEXT("/Game/Effects/Effects/FX_Mobile/Fire/combat/P_AuraCircle_Fire_02.P_AuraCircle_Fire_02");
 
 // Spawn
-AWarpPoint *AWarpPoint::Spawn(UWorld *pWorld, float X, float Y, uint32 Id)
+AWarpPoint *AWarpPoint::Spawn(UWorld *pWorld, float X, float Y, uint32 InId)
 {
 	FActorSpawnParameters Param;
 	Param.bNoFail = true;
 	Param.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	AWarpPoint *pWarpPoint = pWorld->SpawnActor<AWarpPoint>(FVector(X, Y, 0.0f), FRotator::ZeroRotator, Param);
 	check(pWarpPoint != nullptr);
-	pWarpPoint->Initialize(Id);
+	pWarpPoint->Id = InId;
 
 	return pWarpPoint;
 }
@@ -63,16 +63,6 @@ void AWarpPoint::Tick(float DeltaTime)
 void AWarpPoint::OnOverlap(UPrimitiveComponent *pOverlappedComponent, AActor *pOtherActor, UPrimitiveComponent *pOtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult)
 {
 	if (pOtherActor != UGameplayStatics::GetPlayerPawn(this, 0)) { return; }
-	UE_LOG(LogTemp, Log, TEXT("WarpDatas Count:%d"), WarpDatas.Num());
-	for (const auto *pData : WarpDatas)
-	{
-		UE_LOG(LogTemp, Log, TEXT("AreaId:%d X:%f Y:%f"), pData->AreaId, pData->X, pData->Y);
-	}
-}
 
-
-// ‰Šú‰».
-void AWarpPoint::Initialize(uint32 Id)
-{
-	WarpDatas = MasterData::GetInstance().GetWarpDataMaster().CollectItems(Id);
+	UWarpAreaList::Create(this, Id);
 }
