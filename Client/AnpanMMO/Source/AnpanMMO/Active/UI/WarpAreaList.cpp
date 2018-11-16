@@ -37,7 +37,7 @@ void UWarpAreaList::NativeConstruct()
 	{
 		const auto *pAreaData = MasterData::GetInstance().GetAreaMaster().Get(pItem->AreaId);
 		check(pAreaData != nullptr);
-		FString AreaName = ANSI_TO_TCHAR(pAreaData->Name.c_str());
+		FString AreaName = UTF8_TO_TCHAR(pAreaData->Name.c_str());
 		AddItem(pItem->ID, AreaName);
 	}
 }
