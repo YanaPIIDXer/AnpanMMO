@@ -3,6 +3,7 @@
 
 #include "AreaMaster.h"
 #include "WarpDataMaster.h"
+#include "AnpanPopAreaMaster.h"
 
 /**
  * マスタデータクラス
@@ -21,6 +22,9 @@ public:
 	// ワープデータマスタ取得.
 	const WarpDataMaster &GetWarpDataMaster() { return WarpData; }
 
+	// アンパンポップエリアマスタ取得.
+	const AnpanPopAreaMaster &GetAnpanPopAreaMaster() { return AnpanPopArea; }
+
 private:
 
 	// DBホスト
@@ -37,6 +41,9 @@ private:
 
 	// ワープデータマスタ
 	WarpDataMaster WarpData;
+
+	// アンパンポップエリアマスタ
+	AnpanPopAreaMaster AnpanPopArea;
 
 	// ======= Singleton ==========
 public:

@@ -13,15 +13,6 @@ public:
 
 	u32 ID;
 	std::string Name;
-	u32 AnpanMax;
-	s32 AnpanMinHp;
-	s32 AnpanMaxHp;
-	s32 AnpanMinAtk;
-	s32 AnpanMaxAtk;
-	s32 AnpanMinDef;
-	s32 AnpanMaxDef;
-	s32 AnpanMinExp;
-	s32 AnpanMaxExp;
 
 
 };

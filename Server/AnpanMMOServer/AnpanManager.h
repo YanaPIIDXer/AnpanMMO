@@ -7,6 +7,7 @@
 class Anpan;
 typedef weak_ptr<Anpan> AnpanPtr;
 class PacketAnpanList;
+class AnpanPopArea;
 
 /**
  * アンパン管理クラス
@@ -19,6 +20,7 @@ private:		// 別名定義.
 	typedef shared_ptr<Anpan> AnpanSharedPtr;
 	typedef unordered_map<unsigned int, AnpanSharedPtr> AnpanMap;
 	typedef boost::function<void(unsigned int, AnpanPtr)> SpawnFunc;
+	typedef std::vector<AnpanPopArea *> AnpanPopAreaList;
 
 public:
 
@@ -26,10 +28,10 @@ public:
 	AnpanManager();
 
 	// デストラクタ
-	~AnpanManager() {}
+	~AnpanManager();
 
 	// 初期化.
-	void Initialize(unsigned int InAnpanMax, int InMinHp, int InMaxHp, int InMinAtk, int InMaxAtk, int InMinDef, int InMaxDef, int InMinExp, int InMaxExp);
+	void Initialize(u32 AreaId);
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
@@ -45,14 +47,8 @@ public:
 
 private:
 
-	// 生成インターバル
-	static const int SpawnInterval;
-
 	// アンパンリスト
 	AnpanMap AnpanList;
-
-	// アンパンの最大数.
-	unsigned int AnpanMax;
 
 	// 次のＵＵＩＤ
 	unsigned int NextUuid;
@@ -60,36 +56,12 @@ private:
 	// 生成時コールバック
 	SpawnFunc OnSpawn;
 
-	// 生成までの時間.
-	int SpawnTime;
-
-	// 最小ＨＰ
-	int MinHp;
-
-	// 最大ＨＰ
-	int MaxHp;
-
-	// 最小攻撃力.
-	int MinAtk;
-
-	// 最大攻撃力.
-	int MaxAtk;
-
-	// 最小防御力.
-	int MinDef;
-
-	// 最大防御力.
-	int MaxDef;
-
-	// 最小経験値.
-	int MinExp;
-
-	// 最大経験値.
-	int MaxExp;
+	// ポップエリアリスト
+	AnpanPopAreaList PopAreaList;
 
 
 	// アンパン生成.
-	void SpawnAnpan();
+	void SpawnAnpan(AnpanSharedPtr pAnpan);
 
 	// 更新処理.
 	void Update(int DeltaTime);

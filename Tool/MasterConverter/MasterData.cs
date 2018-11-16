@@ -27,6 +27,11 @@ namespace MasterConverter
 		/// オートキー？
 		/// </summary>
 		public bool IsAutoKey { get; private set; }
+
+		/// <summary>
+		/// サーバのみ出力するか？
+		/// </summary>
+		public bool IsServerOnly { get; private set; }
 		
 		/// <summary>
 		/// コンストラクタ
@@ -36,6 +41,7 @@ namespace MasterConverter
 		{
 			Name = InName;
 			IsAutoKey = false;
+			IsServerOnly = false;
 		}
 
 		/// <summary>
@@ -96,6 +102,14 @@ namespace MasterConverter
 		public void SetEnableAutoKey()
 		{
 			IsAutoKey = true;
+		}
+
+		/// <summary>
+		/// サーバのみ出力を設定。
+		/// </summary>
+		public void SetEnableServerOnly()
+		{
+			IsServerOnly = true;
 		}
 
 		/// <summary>
