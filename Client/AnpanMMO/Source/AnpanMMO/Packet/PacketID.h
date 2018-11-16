@@ -13,6 +13,7 @@ enum PacketID
 	GameReady,
 	AreaMove,
 	AreaMoveRequest,
+	AreaMoveResponse,
 	AddExp,
 	LevelUp,
 	LogInRequest,
