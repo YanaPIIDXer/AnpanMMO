@@ -119,7 +119,7 @@ bool DBConnection::RegisterUserData(char *pUserCode)
 	if (!UserQuery.Fetch()) { return false; }
 	UserQuery.Close();
 
-	MySqlQuery CharacterQuery = Connection.CreateQuery("insert into CharacterData values(?, 50, 10, 10, 0, 1, 0.0, 0.0);");
+	MySqlQuery CharacterQuery = Connection.CreateQuery("insert into CharacterData values(?, 50, 10, 10, 0, 1, -1000.0, 0.0);");
 	CharacterQuery.BindInt(&Id);
 	if (!CharacterQuery.ExecuteQuery()) { return false; }
 
