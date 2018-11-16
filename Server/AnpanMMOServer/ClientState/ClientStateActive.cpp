@@ -6,10 +6,11 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "Area/AreaManager.h"
 #include "Master/MasterData.h"
+#include "ClientStateAreaChange.h"
 #include "Packet/PacketCharacterStatus.h"
-#include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
 #include "Packet/PacketAreaMoveRequest.h"
+#include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketRespawnRequest.h"
 #include "Packet/PacketPlayerRespawn.h"
 
@@ -17,7 +18,6 @@
 ClientStateActive::ClientStateActive(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
-	AddPacketFunction(GameReady, boost::bind(&ClientStateActive::OnRecvGameReady, this, _2));
 	AddPacketFunction(MovePlayer, boost::bind(&AreaManager::OnRecvMove, &AreaManager::GetInstance(), _1, _2));
 	AddPacketFunction(Attack, boost::bind(&AreaManager::OnRecvAttack, &AreaManager::GetInstance(), _1, _2));
 	AddPacketFunction(AreaMoveRequest, boost::bind(&ClientStateActive::OnRecvAreaMoveRequest, this, _2));
@@ -51,30 +51,6 @@ void ClientStateActive::LoadCharacter()
 	pClient->SendPacket(&Packet);
 }
 
-// ゲーム準備完了を受信.
-void ClientStateActive::OnRecvGameReady(MemoryStreamInterface *pStream)
-{
-	PacketGameReady Packet;
-	Packet.Serialize(pStream);		// ぶっちゃけいらないんじゃね？
-
-	// プレイヤーキャラをエリアにブチ込む。
-	u32 AreaId = 1;
-	float X = 0.0f;
-	float Y = 0.0f;
-	if (!DBConnection::GetInstance().ReadLastLogoutPosition(GetParent()->GetCustomerId(), AreaId, X, Y))
-	{
-		std::cout << "Last Logout Position Read Failed..." << std::endl;
-	}
-	PlayerCharacterPtr pPlayerChara = GetParent()->GetCharacter();
-	pPlayerChara.lock()->SetPosition(Vector2D(X, Y));
-	AreaPtr pArea = AreaManager::GetInstance().Get(AreaId);
-	pArea.lock()->AddPlayerCharacter(pPlayerChara);
-
-	// エリア移動をクライアントに通知.
-	PacketAreaMove AreaMovePacket(AreaId, X, Y);
-	GetParent()->SendPacket(&AreaMovePacket);
-}
-
 // エリア移動要求を受信した。
 void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 {
@@ -83,11 +59,14 @@ void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 
 	const WarpDataItem *pItem = MasterData::GetInstance().GetWarpDataMaster().GetItem(Packet.AreaMoveId);
 	PlayerCharacter *pPlayer = GetParent()->GetCharacter().lock().get();
-	pPlayer->AreaMove(pItem->AreaId);
-	pPlayer->SetPosition(Vector2D(pItem->X, pItem->Y));
+	AreaPtr pArea = pPlayer->GetArea();
+	pArea.lock()->RemovePlayerCharacter(pPlayer->GetUuid());
 
-	PacketAreaMove AreaMovePacket(pItem->AreaId, pItem->X, pItem->Y);
-	GetParent()->SendPacket(&AreaMovePacket);
+	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector2D(pItem->X, pItem->Y));
+	GetParent()->ChangeState(pNewState);
+
+	PacketAreaMoveResponse ResponsePacket(PacketAreaMoveResponse::Success);
+	GetParent()->SendPacket(&ResponsePacket);
 }
 
 // リスポン要求を受信した。

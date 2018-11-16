@@ -2,7 +2,7 @@
 #include "ClientStateTitle.h"
 #include "Client.h"
 #include "DBConnection.h"
-#include "ClientStateActive.h"
+#include "ClientStateAreaChange.h"
 #include "ClientManager.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInRequest.h"
@@ -41,6 +41,14 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 
 	pClient->SetCustomerId(Id);
 
-	ClientStateActive *pNextState = new ClientStateActive(pClient);
+	u32 AreaId = 1;
+	float X = 0.0f;
+	float Y = 0.0f;
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Id, AreaId, X, Y))
+	{
+		std::cout << "Read Last Logout Position Failed..." << std::endl;
+	}
+
+	ClientStateAreaChange *pNextState = new ClientStateAreaChange(pClient, AreaId, Vector2D(X, Y));
 	pClient->ChangeState(pNextState);
 }

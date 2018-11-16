@@ -33,9 +33,6 @@ public:
 	// キャラクタタイプを取得.
 	virtual u8 GetCharacterType() const { return CharacterType::Player; }
 
-	// エリア移動.
-	void AreaMove(u32 AreaId);
-
 private:
 
 	// クライアント

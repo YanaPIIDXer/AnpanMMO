@@ -144,6 +144,7 @@
     <ClInclude Include="ClientAcceptor.h" />
     <ClInclude Include="ClientManager.h" />
     <ClInclude Include="ClientState\ClientStateActive.h" />
+    <ClInclude Include="ClientState\ClientStateAreaChange.h" />
     <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="ClientState\ClientStateTitle.h" />
     <ClInclude Include="Config.h" />
@@ -210,6 +211,7 @@
     <ClCompile Include="ClientAcceptor.cpp" />
     <ClCompile Include="ClientManager.cpp" />
     <ClCompile Include="ClientState\ClientStateActive.cpp" />
+    <ClCompile Include="ClientState\ClientStateAreaChange.cpp" />
     <ClCompile Include="ClientState\ClientStateBase.cpp" />
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="Config.cpp" />
