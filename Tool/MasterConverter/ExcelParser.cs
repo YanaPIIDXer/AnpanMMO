@@ -166,7 +166,7 @@ namespace MasterConverter
 						DataType = Type.Float;
 						break;
 
-					case "string":
+					case "String":
 
 						DataType = Type.String;
 						break;
