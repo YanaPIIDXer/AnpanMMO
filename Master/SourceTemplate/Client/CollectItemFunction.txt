@@ -1,4 +1,4 @@
-TArray<const $ITEM_STRUCT_NAME$ *> $CLASS_NAME$::CollectItems($KEY_TYPE$ Key)
+TArray<const $ITEM_STRUCT_NAME$ *> $CLASS_NAME$::CollectItems($KEY_TYPE$ Key) const
 {
 	TArray<const $ITEM_STRUCT_NAME$ *> Result;
 	for(auto KeyValue : Items)
