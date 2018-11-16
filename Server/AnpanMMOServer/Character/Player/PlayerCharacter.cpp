@@ -4,6 +4,7 @@
 #include "Math/Random.h"
 #include "DBConnection.h"
 #include "Packet/PacketLevelUp.h"
+#include "Area/AreaManager.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def, int InExp)
@@ -18,6 +19,21 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def,
 PlayerCharacter::~PlayerCharacter()
 {
 	SaveParameter();
+}
+
+// エリア移動.
+void PlayerCharacter::AreaMove(u32 AreaId)
+{
+	AreaPtr pNewArea = AreaManager::GetInstance().Get(AreaId);
+	if (pNewArea.expired())
+	{
+		std::cout << "AreaMove Failed... AreaId:" << AreaId << std::endl;
+		return;
+	}
+	AreaPtr pCurrentArea = GetArea();
+	pCurrentArea.lock()->RemovePlayerCharacter(GetUuid());
+	SetArea(pNewArea);
+	pNewArea.lock()->AddPlayerCharacter(GetClient()->GetCharacter());
 }
 
 
@@ -46,5 +62,4 @@ void PlayerCharacter::SaveParameter()
 	{
 		std::cout << "Parameter Save Failed..." << std::endl;
 	}
-
 }
