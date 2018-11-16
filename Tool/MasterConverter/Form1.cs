@@ -129,7 +129,7 @@ namespace MasterConverter
 			string[] Files = Directory.GetFiles(ExcelFilePath);
 			foreach (var TargetFilePath in Files)
 			{
-				if(Path.GetExtension(TargetFilePath) != ".xlsx") { continue; }
+				if (Path.GetExtension(TargetFilePath) != ".xlsx") { continue; }
 				Console.Write(TargetFilePath + "の展開中...");
 				ExcelParser Parser = new ExcelParser(TargetFilePath);
 				if (!Parser.Load())
@@ -141,7 +141,7 @@ namespace MasterConverter
 				Console.WriteLine("完了。");
 
 				// オートキー
-				if(Parser.Master.IsAutoKey)
+				if (Parser.Master.IsAutoKey)
 				{
 					Parser.Master.GenerateAutoKey();
 				}
@@ -163,7 +163,7 @@ namespace MasterConverter
 				Console.Write("サーバソースの生成中...");
 
 				ServerSourceGenerator ServerSource = new ServerSourceGenerator(ServerSourceDirectory, Parser.Master);
-				if(!ServerSource.Generate())
+				if (!ServerSource.Generate())
 				{
 					MessageBox.Show("サーバソースの生成に失敗しました。");
 					Console.WriteLine("失敗。");
@@ -171,27 +171,30 @@ namespace MasterConverter
 				}
 				Console.WriteLine("完了。");
 
-				Console.Write("クライアントソースの生成中...");
-
-				ClientSourceGenerator ClientSource = new ClientSourceGenerator(ClientSourceDirectory, Parser.Master);
-				if(!ClientSource.Generate())
+				if (!Parser.Master.IsServerOnly)
 				{
-					MessageBox.Show("クライアントソースの生成に失敗しました。");
-					Console.WriteLine("失敗。");
-					return false;
-				}
+					Console.Write("クライアントソースの生成中...");
 
-				Console.WriteLine("完了。");
+					ClientSourceGenerator ClientSource = new ClientSourceGenerator(ClientSourceDirectory, Parser.Master);
+					if (!ClientSource.Generate())
+					{
+						MessageBox.Show("クライアントソースの生成に失敗しました。");
+						Console.WriteLine("失敗。");
+						return false;
+					}
 
-				Console.Write("バイナリデータ生成中...");
-				BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Master.GetColumns());
-				if(!BinGenerator.Generate())
-				{
-					MessageBox.Show("バイナリデータの生成に失敗しました。");
-					Console.WriteLine("失敗。");
-					return false;
+					Console.WriteLine("完了。");
+
+					Console.Write("バイナリデータ生成中...");
+					BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Master.GetColumns());
+					if (!BinGenerator.Generate())
+					{
+						MessageBox.Show("バイナリデータの生成に失敗しました。");
+						Console.WriteLine("失敗。");
+						return false;
+					}
+					Console.WriteLine("完了。");
 				}
-				Console.WriteLine("完了。");
 			}
 
 			Console.Write("バージョンファイル生成中...");

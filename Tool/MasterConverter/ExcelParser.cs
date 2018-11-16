@@ -97,6 +97,11 @@ namespace MasterConverter
 					{
 						Master.SetEnableAutoKey();
 					}
+
+					if(CellValue == "$SERVER_ONLY")
+					{
+						Master.SetEnableServerOnly();
+					}
 				}
 				catch {}
 			}
