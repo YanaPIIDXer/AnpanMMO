@@ -15,14 +15,19 @@ namespace MasterConverter
 	{
 
 		/// <summary>
+		/// テンプレートパス
+		/// </summary>
+		private static readonly string TemplatePath = "SourceTemplate\\Server\\";
+
+		/// <summary>
 		/// ヘッダファイルテンプレートパス
 		/// </summary>
-		private static readonly string HeaderTemplatePath = "SourceTemplate\\Server\\Template.h";
+		private static readonly string HeaderTemplatePath = TemplatePath + "Template.h";
 
 		/// <summary>
 		/// ソースファイルテンプレートパス
 		/// </summary>
-		private static readonly string SourceTemplatePath = "SourceTemplate\\Server\\Template.cpp";
+		private static readonly string SourceTemplatePath = TemplatePath + "Template.cpp";
 
 		/// <summary>
 		/// 出力先ディレクトリ
@@ -120,6 +125,28 @@ namespace MasterConverter
 		/// <returns>変換後のソース</returns>
 		private string ReplaceTags(string Source)
 		{
+			var ColumnList = Master.GetColumns();
+
+			// 取得関数宣言.
+			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *GetItem($KEY_TYPE$ Key) const;";
+			if(Master.IsAutoKey)
+			{
+				GetItemFunctionDecrare = "std::vector<const $ITEM_STRUCT_NAME$ *> CollectItems($KEY_TYPE$ Key) const;";
+			}
+			Source = Source.Replace("$GET_ITEN_FUNCTION_DECRARE$", GetItemFunctionDecrare);
+
+			// キー取得関数.
+			string KeyFunctionFileName = TemplatePath + "GetKeyFunction.txt";
+			if(Master.IsAutoKey)
+			{
+				KeyFunctionFileName = TemplatePath + "CollectItemFunction.txt";
+			}
+			using (StreamReader Reader = new StreamReader(KeyFunctionFileName, Encoding.GetEncoding("shift-jis")))
+			{
+				string KeyFunction = Reader.ReadToEnd();
+				Source = Source.Replace("$GET_KEY_FUNCTION$", KeyFunction);
+			}
+
 			// インクルードガード
 			string IncludeGuard = "__" + Master.Name.ToUpper() + "MASTER_H__";
 			Source = Source.Replace("$INCLUDE_GUARD$", IncludeGuard);
@@ -136,14 +163,20 @@ namespace MasterConverter
 			string ItemStructName = Master.Name + "Item";
 			Source = Source.Replace("$ITEM_STRUCT_NAME$", ItemStructName);
 
-			var ColumnList = Master.GetColumns();
-
 			// キーの型名.
 			string KeyType = Util.ToTypeNameString(ColumnList[0].DataType);
+			if(Master.IsAutoKey)
+			{
+				KeyType = Util.ToTypeNameString(ColumnList[1].DataType);
+			}
 			Source = Source.Replace("$KEY_TYPE$", KeyType);
 
 			// キーの名前
 			string KeyName = ColumnList[0].Name;
+			if(Master.IsAutoKey)
+			{
+				KeyName = ColumnList[1].Name;
+			}
 			Source = Source.Replace("$KEY_NAME$", KeyName);
 
 			// アイテムリスト

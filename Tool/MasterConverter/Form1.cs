@@ -140,6 +140,12 @@ namespace MasterConverter
 				}
 				Console.WriteLine("完了。");
 
+				// オートキー
+				if(Parser.Master.IsAutoKey)
+				{
+					Parser.Master.GenerateAutoKey();
+				}
+
 				string MasterName = Path.GetFileNameWithoutExtension(TargetFilePath);
 				string FileName = MasterName + ".sql";
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + FileName;

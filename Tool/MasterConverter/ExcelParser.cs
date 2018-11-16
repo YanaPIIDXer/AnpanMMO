@@ -85,7 +85,7 @@ namespace MasterConverter
 					string CellValue = (string)WorkSheet.Cells[i, 1].Value;
 
 					// オートキー
-					if(CellValue == "$AUTOKEY")
+					if(CellValue == "$AUTO_KEY")
 					{
 						Master.SetEnableAutoKey();
 					}
