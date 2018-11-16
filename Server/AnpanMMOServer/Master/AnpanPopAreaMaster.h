@@ -16,7 +16,7 @@ public:
 	float X;
 	float Y;
 	float Range;
-	u32 PopInterval;
+	s32 PopInterval;
 	s32 MinHp;
 	s32 MaxHp;
 	s32 MinAtk;
