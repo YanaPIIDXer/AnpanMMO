@@ -19,6 +19,9 @@ private:
 	// ログインリクエストを受信した。
 	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
 
+	// キャラクタロード
+	void LoadCharacter();
+
 };
 
 #endif		// #ifndef __CLIENTSTATETITLE_H__

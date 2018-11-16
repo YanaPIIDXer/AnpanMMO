@@ -7,7 +7,6 @@
 #include "Area/AreaManager.h"
 #include "Master/MasterData.h"
 #include "ClientStateAreaChange.h"
-#include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketAreaMove.h"
 #include "Packet/PacketAreaMoveRequest.h"
 #include "Packet/PacketAreaMoveResponse.h"
@@ -27,29 +26,8 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 // 開始時の処理.
 void ClientStateActive::BeginState()
 {
-	LoadCharacter();
 }
 
-
-// キャラクタロード
-void ClientStateActive::LoadCharacter()
-{
-	Client *pClient = GetParent();
-
-	int MaxHp = 0;
-	int Atk = 0;
-	int Def = 0;
-	int Exp = 0;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(pClient->GetCustomerId(), MaxHp, Atk, Def, Exp))
-	{
-		std::cout << "Character Status Load Failed..." << std::endl;
-		return;
-	}
-	pClient->CreateCharacter(MaxHp, Atk, Def, Exp);
-
-	PacketCharacterStatus Packet(pClient->GetUuid(), MaxHp, MaxHp, Atk, Def, Exp);
-	pClient->SendPacket(&Packet);
-}
 
 // エリア移動要求を受信した。
 void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
@@ -62,11 +40,11 @@ void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 	AreaPtr pArea = pPlayer->GetArea();
 	pArea.lock()->RemovePlayerCharacter(pPlayer->GetUuid());
 
-	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector2D(pItem->X, pItem->Y));
-	GetParent()->ChangeState(pNewState);
-
 	PacketAreaMoveResponse ResponsePacket(PacketAreaMoveResponse::Success);
 	GetParent()->SendPacket(&ResponsePacket);
+
+	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector2D(pItem->X, pItem->Y));
+	GetParent()->ChangeState(pNewState);
 }
 
 // リスポン要求を受信した。

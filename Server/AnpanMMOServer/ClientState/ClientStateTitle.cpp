@@ -7,6 +7,7 @@
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInRequest.h"
 #include "Packet/PacketLogInResult.h"
+#include "Packet/PacketCharacterStatus.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
@@ -41,6 +42,8 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 
 	pClient->SetCustomerId(Id);
 
+	LoadCharacter();
+
 	u32 AreaId = 1;
 	float X = 0.0f;
 	float Y = 0.0f;
@@ -51,4 +54,24 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 
 	ClientStateAreaChange *pNextState = new ClientStateAreaChange(pClient, AreaId, Vector2D(X, Y));
 	pClient->ChangeState(pNextState);
+}
+
+// キャラクタロード
+void ClientStateTitle::LoadCharacter()
+{
+	Client *pClient = GetParent();
+
+	int MaxHp = 0;
+	int Atk = 0;
+	int Def = 0;
+	int Exp = 0;
+	if (!DBConnection::GetInstance().LoadCharacterParameter(pClient->GetCustomerId(), MaxHp, Atk, Def, Exp))
+	{
+		std::cout << "Character Status Load Failed..." << std::endl;
+		return;
+	}
+	pClient->CreateCharacter(MaxHp, Atk, Def, Exp);
+
+	PacketCharacterStatus Packet(pClient->GetUuid(), MaxHp, MaxHp, Atk, Def, Exp);
+	pClient->SendPacket(&Packet);
 }
