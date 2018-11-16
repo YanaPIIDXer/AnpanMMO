@@ -13,7 +13,7 @@
 Area::Area(const AreaItem *pItem)
 	: Id(pItem->ID)
 {
-	AnpanMgr.Initialize(pItem->AnpanMax, pItem->ID);
+	AnpanMgr.Initialize(pItem->ID);
 	AnpanMgr.SetSpawnCallback(bind(&Area::OnSpawnAnpan, this, _1, _2));
 }
 

@@ -3,6 +3,7 @@
 
 #include <boost/function.hpp>
 #include "Math/Vector2D.h"
+#include "AnpanManager.h"
 
 struct AnpanPopAreaItem;
 class Anpan;
@@ -39,6 +40,9 @@ private:
 	// 座標.
 	Vector2D Position;
 
+	// 最大生成数,
+	u32 MaxCount;
+
 	// 最小HP
 	int MinHp;
 
@@ -72,9 +76,15 @@ private:
 	// 生成時コールバック
 	SpawnFunc SpawnFunction;
 
+	// このポップエリアが生成したアンパンリスト
+	std::vector<AnpanPtr> AnpanList;
+
 
 	// アンパンを生成.
 	void SpawnAnpan();
+
+	// リスト更新.
+	void UpdateList();
 
 };
 

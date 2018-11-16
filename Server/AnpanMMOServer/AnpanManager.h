@@ -31,7 +31,7 @@ public:
 	~AnpanManager();
 
 	// 初期化.
-	void Initialize(u32 InAnpanMax, u32 AreaId);
+	void Initialize(u32 AreaId);
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
@@ -49,9 +49,6 @@ private:
 
 	// アンパンリスト
 	AnpanMap AnpanList;
-
-	// アンパンの最大数.
-	unsigned int AnpanMax;
 
 	// 次のＵＵＩＤ
 	unsigned int NextUuid;

@@ -8,8 +8,7 @@
 
 // コンストラクタ
 AnpanManager::AnpanManager()
-	: AnpanMax(0)
-	, NextUuid(1)
+	: NextUuid(1)
 {
 }
 
@@ -23,9 +22,8 @@ AnpanManager::~AnpanManager()
 }
 
 // 初期化.
-void AnpanManager::Initialize(u32 InAnpanMax, u32 AreaId)
+void AnpanManager::Initialize(u32 AreaId)
 {
-	AnpanMax = InAnpanMax;
 	std::vector<const AnpanPopAreaItem *> Items = MasterData::GetInstance().GetAnpanPopAreaMaster().CollectItems(AreaId);
 	for (u32 i = 0; i < Items.size(); i++)
 	{
@@ -71,8 +69,6 @@ void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 // アンパン生成.
 void AnpanManager::SpawnAnpan(AnpanSharedPtr pAnpan)
 {
-	if (AnpanList.size() >= AnpanMax) { return; }
-
 	unsigned int Uuid = NextUuid;
 	AnpanList[Uuid] = pAnpan;
 	pAnpan->SetUuid(Uuid);

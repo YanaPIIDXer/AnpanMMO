@@ -8,6 +8,7 @@
 AnpanPopArea::AnpanPopArea(const AnpanPopAreaItem *pMasterItem)
 	: Range(pMasterItem->Range)
 	, Position(pMasterItem->X, pMasterItem->Y)
+	, MaxCount(pMasterItem->MaxCount)
 	, MinHp(pMasterItem->MinHp)
 	, MaxHp(pMasterItem->MaxHp)
 	, MinAtk(pMasterItem->MinAtk)
@@ -30,14 +31,17 @@ void AnpanPopArea::Poll(int DeltaTime)
 		SpawnAnpan();
 		CurrentInterval += PopInterval;
 	}
+	UpdateList();
 }
 
 
 // アンパンを生成.
 void AnpanPopArea::SpawnAnpan()
 {
-	float X = Random::Range<float>(-Range, Range);
-	float Y = Random::Range<float>(-Range, Range);
+	if (AnpanList.size() >= MaxCount) { return; }
+
+	float X = Position.X + Random::Range<float>(-Range, Range);
+	float Y = Position.Y + Random::Range<float>(-Range, Range);
 	int Hp = Random::Range<int>(MinHp, MaxHp);
 	int Atk = Random::Range<int>(MinAtk, MaxAtk);
 	int Def = Random::Range<int>(MinDef, MaxDef);
@@ -45,8 +49,26 @@ void AnpanPopArea::SpawnAnpan()
 
 	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def, Exp);
 	shared_ptr<Anpan> pAnpan = shared_ptr<Anpan>(pNewAnpan);
+	AnpanList.push_back(pAnpan);
 	if (SpawnFunction)
 	{
 		SpawnFunction(pAnpan);
+	}
+}
+
+// リスト更新.
+void AnpanPopArea::UpdateList()
+{
+	std::vector<AnpanPtr>::iterator It = AnpanList.begin();
+	while (It != AnpanList.end())
+	{
+		if (It->expired())
+		{
+			It = AnpanList.erase(It);
+		}
+		else
+		{
+			++It;
+		}
 	}
 }
