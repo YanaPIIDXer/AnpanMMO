@@ -2,6 +2,7 @@
 
 #include "WarpPoint.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Master/MasterData.h"
 
 const TCHAR *AWarpPoint::ParticlePath = TEXT("/Game/Effects/Effects/FX_Mobile/Fire/combat/P_AuraCircle_Fire_02.P_AuraCircle_Fire_02");
 
@@ -12,6 +13,8 @@ AWarpPoint *AWarpPoint::Spawn(UWorld *pWorld, float X, float Y, uint32 Id)
 	Param.bNoFail = true;
 	Param.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	AWarpPoint *pWarpPoint = pWorld->SpawnActor<AWarpPoint>(FVector(X, Y, 0.0f), FRotator::ZeroRotator, Param);
+	check(pWarpPoint != nullptr);
+	pWarpPoint->Initialize(Id);
 
 	return pWarpPoint;
 }
@@ -28,4 +31,11 @@ AWarpPoint::AWarpPoint(const FObjectInitializer &ObjectInitializer)
 
 	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleFinder(ParticlePath);
 	pParticleComponent->SetTemplate(ParticleFinder.Object);
+}
+
+
+// èâä˙âª.
+void AWarpPoint::Initialize(uint32 Id)
+{
+	WarpDatas = MasterData::GetInstance().GetWarpDataMaster().CollectItems(Id);
 }

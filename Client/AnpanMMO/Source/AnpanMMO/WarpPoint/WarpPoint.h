@@ -7,6 +7,8 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "WarpPoint.generated.h"
 
+struct WarpDataItem;
+
 /**
  * ワープポイントクラス
  */
@@ -35,5 +37,12 @@ private:
 	// パーティクルシステムコンポーネント
 	UPROPERTY()
 	UParticleSystemComponent *pParticleComponent;
+
+	// ワープデータ
+	TArray<const WarpDataItem *> WarpDatas;
+
+
+	// 初期化.
+	void Initialize(uint32 Id);
 
 };
