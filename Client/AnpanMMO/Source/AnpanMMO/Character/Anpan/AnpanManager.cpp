@@ -63,6 +63,7 @@ void AnpanManager::OnRecvMove(MemoryStreamInterface *pStream)
 	PacketMoveAnpan Packet;
 	Packet.Serialize(pStream);
 
+	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
 	AnpanMap[Packet.Uuid]->Move(Packet.X, Packet.Y, Packet.MoveMilliSec);
 }
 
@@ -72,6 +73,7 @@ void AnpanManager::OnRecvRotate(MemoryStreamInterface *pStream)
 	PacketRotateAnpan Packet;
 	Packet.Serialize(pStream);
 
+	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
 	AnpanMap[Packet.Uuid]->Rotate(Packet.Rotation, Packet.RotateMilliSec);
 }
 
@@ -81,6 +83,7 @@ void AnpanManager::OnRecvStop(MemoryStreamInterface *pStream)
 	PacketStopAnpan Packet;
 	Packet.Serialize(pStream);
 
+	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
 	AnpanMap[Packet.Uuid]->Stop(Packet.X, Packet.Y, Packet.Rotation);
 }
 
