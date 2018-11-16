@@ -5,6 +5,8 @@
 #include "Master/MasterData.h"
 #include "Character/Player/GameController.h"
 #include "Kismet/GameplayStatics.h"
+#include "MMOGameInstance.h"
+#include "Packet/PacketAreaMoveRequest.h"
 
 const TCHAR *UWarpAreaList::AssetPath = TEXT("/Game/Blueprints/UI/Active/WarpAreaList.WarpAreaList");
 
@@ -32,13 +34,22 @@ void UWarpAreaList::NativeConstruct()
 	check(pController != nullptr);
 	pController->SetEnableMove(false);
 
-	auto ItemList = MasterData::GetInstance().GetWarpDataMaster().CollectItems(Id);
-	for (const auto *pItem : ItemList)
+	auto AllList = MasterData::GetInstance().GetWarpDataMaster().GetAll();
+	TArray<WarpDataItem> ItemList;
+	for (const auto &Item : AllList)
 	{
-		const auto *pAreaData = MasterData::GetInstance().GetAreaMaster().Get(pItem->AreaId);
+		if (Item.WarpDataId == Id)
+		{
+			ItemList.Add(Item);
+		}
+	}
+
+	for (const auto &Item : ItemList)
+	{
+		const auto *pAreaData = MasterData::GetInstance().GetAreaMaster().Get(Item.AreaId);
 		check(pAreaData != nullptr);
 		FString AreaName = UTF8_TO_TCHAR(pAreaData->Name.c_str());
-		AddItem(pItem->AreaId, AreaName);
+		AddItem(Item.ID, AreaName);
 	}
 }
 
@@ -56,5 +67,9 @@ void UWarpAreaList::NativeDestruct()
 // エリア移動パケット送信.
 void UWarpAreaList::SendAreaMoveRequest(int32 Id)
 {
-	UE_LOG(LogTemp, Log, TEXT("SendAreaMoveRequest Id:%d"), Id);
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketAreaMoveRequest Packet(Id);
+	pInst->SendPacket(&Packet);
 }

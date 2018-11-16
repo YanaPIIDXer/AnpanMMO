@@ -37,5 +37,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!WarpData.Load(Connection))
+	{
+		std::cout << "WarpData Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }

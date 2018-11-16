@@ -2,6 +2,7 @@
 #define __MASTERDATA_H__
 
 #include "AreaMaster.h"
+#include "WarpDataMaster.h"
 
 /**
  * マスタデータクラス
@@ -17,6 +18,9 @@ public:
 	// エリアマスタ取得.
 	const AreaMaster &GetAreaMaster() { return Area; }
 
+	// ワープデータマスタ取得.
+	const WarpDataMaster &GetWarpDataMaster() { return WarpData; }
+
 private:
 
 	// DBホスト
@@ -30,6 +34,9 @@ private:
 
 	// エリアマスタ
 	AreaMaster Area;
+
+	// ワープデータマスタ
+	WarpDataMaster WarpData;
 
 	// ======= Singleton ==========
 public:
