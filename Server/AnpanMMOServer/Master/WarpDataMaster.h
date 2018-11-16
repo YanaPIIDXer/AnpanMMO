@@ -11,8 +11,8 @@ struct WarpDataItem
 
 public:
 
-	s32 AutoKey;
 	u32 ID;
+	u32 WarpDataId;
 	u32 AreaId;
 	float X;
 	float Y;
@@ -34,7 +34,7 @@ public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	std::vector<const WarpDataItem *> CollectItems(u32 Key) const;
+	const WarpDataItem *GetItem(u32 Key) const;
 
 	std::vector<WarpDataItem> GetAll() const;
 

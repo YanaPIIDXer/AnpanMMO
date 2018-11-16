@@ -32,13 +32,22 @@ void UWarpAreaList::NativeConstruct()
 	check(pController != nullptr);
 	pController->SetEnableMove(false);
 
-	auto ItemList = MasterData::GetInstance().GetWarpDataMaster().CollectItems(Id);
-	for (const auto *pItem : ItemList)
+	auto AllList = MasterData::GetInstance().GetWarpDataMaster().GetAll();
+	TArray<WarpDataItem> ItemList;
+	for (const auto &Item : AllList)
 	{
-		const auto *pAreaData = MasterData::GetInstance().GetAreaMaster().Get(pItem->AreaId);
+		if (Item.WarpDataId == Id)
+		{
+			ItemList.Add(Item);
+		}
+	}
+
+	for (const auto &Item : ItemList)
+	{
+		const auto *pAreaData = MasterData::GetInstance().GetAreaMaster().Get(Item.AreaId);
 		check(pAreaData != nullptr);
 		FString AreaName = UTF8_TO_TCHAR(pAreaData->Name.c_str());
-		AddItem(pItem->AreaId, AreaName);
+		AddItem(Item.ID, AreaName);
 	}
 }
 

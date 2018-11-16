@@ -8,8 +8,8 @@ struct WarpDataItem
 
 public:
 
-	s32 AutoKey;
 	u32 ID;
+	u32 WarpDataId;
 	u32 AreaId;
 	float X;
 	float Y;
@@ -17,8 +17,8 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		if(!pStream->Serialize(&AutoKey)) { return false; }
 		if(!pStream->Serialize(&ID)) { return false; }
+		if(!pStream->Serialize(&WarpDataId)) { return false; }
 		if(!pStream->Serialize(&AreaId)) { return false; }
 		if(!pStream->Serialize(&X)) { return false; }
 		if(!pStream->Serialize(&Y)) { return false; }
@@ -33,7 +33,7 @@ class WarpDataMaster
 
 private:
 
-	typedef TMap<s32, WarpDataItem> ItemMap;
+	typedef TMap<u32, WarpDataItem> ItemMap;
 
 public:
 
@@ -41,7 +41,7 @@ public:
 
 	TArray<WarpDataItem> GetAll() const;
 
-	TArray<const WarpDataItem *> CollectItems(u32 Key) const;
+	const WarpDataItem *Get(u32 Key) const;
 
 private:
 
