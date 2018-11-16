@@ -47,6 +47,7 @@ void AActiveGameMode::BeginPlay()
 
 	PlayerMgr.SetWorld(GetWorld());
 	AnpanMgr.SetWorld(GetWorld());
+	WarpPointMgr.SetWorld(GetWorld());
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
@@ -83,9 +84,12 @@ void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 
 	PlayerMgr.Reset();
 	AnpanMgr.Reset();
+	WarpPointMgr.Reset();
 
 	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
+
+	WarpPointMgr.Spawn(Packet.AreaId);
 	
 	FVector Pos = pCharacter->GetActorLocation();
 	Pos.X = Packet.X;

@@ -42,7 +42,7 @@ AAnpan::AAnpan(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel1);
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
-	pMeshComponent->AttachTo(RootComponent);
+	pMeshComponent->SetupAttachment(RootComponent);
 
 	AIControllerClass = AAnpanController::StaticClass();
 }

@@ -3,6 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AreaMaster.h"
+#include "WarpDataMaster.h"
+#include "WarpPointMaster.h"
 
 /**
  * マスタデータ
@@ -18,7 +21,25 @@ public:
 	// ロード
 	void Load();
 
+	// エリアマスタを取得.
+	const AreaMaster &GetAreaMaster() const { return Area; }
+
+	// ワープポイントマスタを取得.
+	const WarpPointMaster &GetWarpPointMaster() const { return WarpPoint; }
+
+	// ワープデータマスタを取得.
+	const WarpDataMaster &GetWarpDataMaster() const { return WarpData; }
+
 private:
+
+	// エリアマスタ
+	AreaMaster Area;
+
+	// ワープポイントマスタ
+	WarpPointMaster WarpPoint;
+
+	// ワープデータマスタ
+	WarpDataMaster WarpData;
 
 	// =========== Singleton ============
 public:

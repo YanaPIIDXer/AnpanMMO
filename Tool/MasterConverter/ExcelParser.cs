@@ -51,24 +51,32 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		public bool Load()
 		{
-			using (var Excel = new ExcelPackage(new FileInfo(FilePath)))
+			try
 			{
-				var WorkSheet = Excel.Workbook.Worksheets[1];
-				CheckTags(WorkSheet);
-
-				int TagIndex = FindItemTag(WorkSheet);
-				if(TagIndex == -1) { return false; }
-
-				CollectColumns(WorkSheet, TagIndex - 2);
-				if(Master.GetColumn(0).DataType == Type.String)
+				using (var Excel = new ExcelPackage(new FileInfo(FilePath)))
 				{
-					Console.WriteLine("最初の行を文字列型にすることは出来ません。");
-					return false;
+					var WorkSheet = Excel.Workbook.Worksheets[1];
+					CheckTags(WorkSheet);
+
+					int TagIndex = FindItemTag(WorkSheet);
+					if (TagIndex == -1) { return false; }
+
+					CollectColumns(WorkSheet, TagIndex - 2);
+					if (Master.GetColumn(0).DataType == Type.String)
+					{
+						Console.WriteLine("最初の行を文字列型にすることは出来ません。");
+						return false;
+					}
+
+					CollectDatas(WorkSheet, TagIndex);
 				}
-
-				CollectDatas(WorkSheet, TagIndex);
 			}
-
+			catch(Exception e)
+			{
+				Console.WriteLine("");
+				Console.WriteLine(e.Message);
+				return false;
+			}
 			return true;
 		}
 
@@ -120,6 +128,7 @@ namespace MasterConverter
 				string ColumnName = (string) WorkSheet.Cells[StartRow, i].Value;
 				if (String.IsNullOrEmpty(ColumnName)) { return; }
 				string DataTypeName = (string)WorkSheet.Cells[StartRow + 1, i].Value;
+				DataTypeName = DataTypeName.ToLower();
 				Type DataType = Type.String;
 				switch(DataTypeName)
 				{
@@ -162,6 +171,10 @@ namespace MasterConverter
 
 						DataType = Type.String;
 						break;
+
+					default:
+
+						throw new Exception(DataTypeName + "は認識できない型です。");
 				}
 
 				Column NewColumn = new Column(ColumnName, DataType);

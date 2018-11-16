@@ -41,7 +41,7 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		public bool Generate()
 		{
-			//try
+			try
 			{
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + MasterName + ".bin";
 				FileStream WriteStream = new FileStream(FilePath, FileMode.Create);
@@ -98,13 +98,14 @@ namespace MasterConverter
 								case Type.String:
 
 									string Str = (string)Columns[j].DataList[i];
-									byte[] SizeBytes = BitConverter.GetBytes(Str.Length);
+									int StrSize = Encoding.UTF8.GetByteCount(Str);
+									byte[] SizeBytes = BitConverter.GetBytes(StrSize);
 									if (BitConverter.IsLittleEndian)
 									{
 										SizeBytes = SizeBytes.Reverse().ToArray();
 									}
 									BinWriter.Write(SizeBytes);
-									Bytes = Encoding.GetEncoding("shift-jis").GetBytes(Str).Reverse().ToArray();
+									Bytes = Encoding.UTF8.GetBytes(Str).Reverse().ToArray();
 									break;
 							}
 							if (BitConverter.IsLittleEndian)
@@ -117,10 +118,10 @@ namespace MasterConverter
 					}
 				}
 			}
-			//catch
-			//{
-			//	return false;
-			//}
+			catch
+			{
+				return false;
+			}
 
 			return true;
 		}

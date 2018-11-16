@@ -21,9 +21,14 @@ APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectIniti
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshFinder(MeshPath);
 	pMeshComponent->SetSkeletalMesh(MeshFinder.Object);
 
-	pMeshComponent->AttachTo(pDummyComponent);
+	pMeshComponent->SetupAttachment(pDummyComponent);
 	pMeshComponent->SetRelativeLocation(FVector(0, 0, -110.0f));
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_Pawn);
+	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel2, ECollisionResponse::ECR_Overlap);
+	pMeshComponent->SetGenerateOverlapEvents(true);
+	SetActorEnableCollision(true);
 }
 
 // ŠJn‚Ìˆ—.
