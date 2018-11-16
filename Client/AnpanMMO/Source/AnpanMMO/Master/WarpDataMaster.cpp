@@ -24,7 +24,7 @@ void WarpDataMaster::Load()
 	{
 		WarpDataItem Item;
 		if (!Item.Serialize(&Reader)) { break; }
-		Items.Add(Item.ID, Item);
+		Items.Add(Item.AutoKey, Item);
 	}
 }
 
@@ -37,7 +37,7 @@ TArray<WarpDataItem> WarpDataMaster::GetAll() const
 	}
 	ItemArray.Sort([](const WarpDataItem &A, const WarpDataItem &B)
 	{
-		return (A.ID < B.ID);
+		return (A.AutoKey < B.AutoKey);
 	});
 	return ItemArray;
 }
@@ -45,7 +45,7 @@ TArray<WarpDataItem> WarpDataMaster::GetAll() const
 TArray<const WarpDataItem *> WarpDataMaster::CollectItems(u32 Key) const
 {
 	TArray<const WarpDataItem *> Result;
-	for(auto KeyValue : Items)
+	for(const auto &KeyValue : Items)
 	{
 		if(KeyValue.Value.ID == Key)
 		{

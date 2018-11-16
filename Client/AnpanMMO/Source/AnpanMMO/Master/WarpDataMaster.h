@@ -33,7 +33,7 @@ class WarpDataMaster
 
 private:
 
-	typedef TMap<u32, WarpDataItem> ItemMap;
+	typedef TMap<s32, WarpDataItem> ItemMap;
 
 public:
 
