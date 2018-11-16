@@ -6,6 +6,7 @@
 #include "MMOGameModeBase.h"
 #include "Character/Player/PlayerManager.h"
 #include "Character/Anpan/AnpanManager.h"
+#include "WarpPoint/WarpPointManager.h"
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
@@ -49,6 +50,9 @@ private:
 
 	// アンパン管理.
 	AnpanManager AnpanMgr;
+
+	// ワープポイントマネージャ
+	WarpPointManager WarpPointMgr;
 
 	// MainHUD
 	UPROPERTY()
