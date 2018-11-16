@@ -1,15 +1,21 @@
 #ifndef __ANPANPOPAREA_H__
 #define __ANPANPOPAREA_H__
 
+#include <boost/function.hpp>
 #include "Math/Vector2D.h"
 
 struct AnpanPopAreaItem;
+class Anpan;
 
 /**
  * アンパンが生成されるエリア
  */
 class AnpanPopArea
 {
+
+private:		// 別名定義.
+
+	typedef boost::function<void(shared_ptr<Anpan>)> SpawnFunc;
 
 public:
 
@@ -21,6 +27,9 @@ public:
 
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
+
+	// 生成した時のコールバック設定.
+	void SetSpawnFunction(const SpawnFunc &InSpawnFunction) { SpawnFunction = InSpawnFunction; }
 
 private:
 
@@ -55,10 +64,17 @@ private:
 	int MaxExp;
 
 	// インターバル
-	const unsigned int PopInterval;
+	const int PopInterval;
 
 	// 現在のインターバル
-	unsigned int CurrentInterval;
+	int CurrentInterval;
+
+	// 生成時コールバック
+	SpawnFunc SpawnFunction;
+
+
+	// アンパンを生成.
+	void SpawnAnpan();
 
 };
 

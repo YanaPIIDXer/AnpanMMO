@@ -3,50 +3,46 @@
 #include "Math/Random.h"
 #include "Packet/PacketAnpanList.h"
 #include "Character/Anpan/Anpan.h"
-
-const int AnpanManager::SpawnInterval = 5000;
+#include "AnpanPopArea.h"
+#include "Master/MasterData.h"
 
 // コンストラクタ
 AnpanManager::AnpanManager()
 	: AnpanMax(0)
 	, NextUuid(1)
-	, SpawnTime(SpawnInterval)
-	, MinHp(10)
-	, MaxHp(10)
-	, MinAtk(0)
-	, MaxAtk(0)
-	, MinDef(0)
-	, MaxDef(0)
-	, MinExp(0)
-	, MaxExp(0)
 {
 }
 
+// デストラクタ
+AnpanManager::~AnpanManager()
+{
+	for (unsigned int i = 0; i < PopAreaList.size(); i++)
+	{
+		delete PopAreaList[i];
+	}
+}
+
 // 初期化.
-void AnpanManager::Initialize(unsigned int InAnpanMax, int InMinHp, int InMaxHp, int InMinAtk, int InMaxAtk, int InMinDef, int InMaxDef, int InMinExp, int InMaxExp)
+void AnpanManager::Initialize(u32 InAnpanMax, u32 AreaId)
 {
 	AnpanMax = InAnpanMax;
-	MinHp = InMinHp;
-	MaxHp = InMaxHp;
-	MinAtk = InMinAtk;
-	MaxAtk = InMaxAtk;
-	MinDef = InMinDef;
-	MaxDef = InMaxDef;
-	MinExp = InMinExp;
-	MaxExp = InMaxExp;
+	std::vector<const AnpanPopAreaItem *> Items = MasterData::GetInstance().GetAnpanPopAreaMaster().CollectItems(AreaId);
+	for (u32 i = 0; i < Items.size(); i++)
+	{
+		AnpanPopArea *pArea = new AnpanPopArea(Items[i]);
+		pArea->SetSpawnFunction(bind(&AnpanManager::SpawnAnpan, this, _1));
+		PopAreaList.push_back(pArea);
+	}
 }
 
 
 // 毎フレームの処理.
 void AnpanManager::Poll(int DeltaTime)
 {
-	SpawnTime -= DeltaTime;
-	if (SpawnTime <= 0)
+	for (unsigned int i = 0; i < PopAreaList.size(); i++)
 	{
-		SpawnAnpan();
-		SpawnTime += SpawnInterval;
+		PopAreaList[i]->Poll(DeltaTime);
 	}
-
 	Update(DeltaTime);
 }
 
@@ -73,22 +69,9 @@ void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 
 
 // アンパン生成.
-void AnpanManager::SpawnAnpan()
+void AnpanManager::SpawnAnpan(AnpanSharedPtr pAnpan)
 {
 	if (AnpanList.size() >= AnpanMax) { return; }
-
-	float X = Random::Range<float>(-2500.0f, 2500.0f);
-	float Y = Random::Range<float>(-2500.0f, 2500.0f);
-
-	int Hp = Random::Range<int>(MinHp, MaxHp);
-
-	int Atk = Random::Range<int>(MinAtk, MaxAtk);
-	int Def = Random::Range<int>(MinDef, MaxDef);
-
-	int Exp = Random::Range<int>(MinExp, MaxExp);
-
-	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def, Exp);
-	AnpanSharedPtr pAnpan = AnpanSharedPtr(pNewAnpan);
 
 	unsigned int Uuid = NextUuid;
 	AnpanList[Uuid] = pAnpan;

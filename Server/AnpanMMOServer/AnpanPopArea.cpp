@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "AnpanPopArea.h"
+#include "Character/Anpan/Anpan.h"
 #include "Master/AnpanPopAreaMaster.h"
+#include "Math/Random.h"
 
 // コンストラクタ
 AnpanPopArea::AnpanPopArea(const AnpanPopAreaItem *pMasterItem)
@@ -25,7 +27,26 @@ void AnpanPopArea::Poll(int DeltaTime)
 	CurrentInterval -= DeltaTime;
 	if (CurrentInterval <= 0)
 	{
-		// @TODO:アンパンをSpawnする処理。
+		SpawnAnpan();
 		CurrentInterval += PopInterval;
+	}
+}
+
+
+// アンパンを生成.
+void AnpanPopArea::SpawnAnpan()
+{
+	float X = Random::Range<float>(-Range, Range);
+	float Y = Random::Range<float>(-Range, Range);
+	int Hp = Random::Range<int>(MinHp, MaxHp);
+	int Atk = Random::Range<int>(MinAtk, MaxAtk);
+	int Def = Random::Range<int>(MinDef, MaxDef);
+	int Exp = Random::Range<int>(MinExp, MaxExp);
+
+	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def, Exp);
+	shared_ptr<Anpan> pAnpan = shared_ptr<Anpan>(pNewAnpan);
+	if (SpawnFunction)
+	{
+		SpawnFunction(pAnpan);
 	}
 }
