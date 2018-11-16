@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "WarpDataMaster.h"
+#include "WarpPointMaster.h"
 
 /**
  * マスタデータ
@@ -19,6 +21,12 @@ public:
 	void Load();
 
 private:
+
+	// ワープポイントマスタ
+	WarpPointMaster WarpPoint;
+
+	// ワープデータマスタ
+	WarpDataMaster WarpData;
 
 	// =========== Singleton ============
 public:

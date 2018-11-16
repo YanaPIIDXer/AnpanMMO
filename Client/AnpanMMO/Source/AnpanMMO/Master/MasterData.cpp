@@ -12,4 +12,6 @@ MasterData::MasterData()
 // ƒ[ƒh
 void MasterData::Load()
 {
+	WarpPoint.Load();
+	WarpData.Load();
 }
