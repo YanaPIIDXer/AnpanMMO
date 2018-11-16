@@ -1,9 +1,9 @@
-TArray<const $ITEM_STRUCT_NAME$ *> $CLASS_NAME$::CollectItems($KEY_TYPE$ Key) const
+TArray<const $ITEM_STRUCT_NAME$ *> $CLASS_NAME$::CollectItems($SECONDARY_KEY_TYPE$ Key) const
 {
 	TArray<const $ITEM_STRUCT_NAME$ *> Result;
 	for(auto KeyValue : Items)
 	{
-		if(KeyValue.Value.$KEY_NAME$ == Key)
+		if(KeyValue.Value.$SECONDARY_KEY_NAME$ == Key)
 		{
 			Result.Add(&KeyValue.Value);
 		}

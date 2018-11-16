@@ -138,7 +138,7 @@ namespace MasterConverter
 			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *Get($KEY_TYPE$ Key) const;";
 			if (Master.IsAutoKey)
 			{
-				GetItemFunctionDecrare = "TArray<const $ITEM_STRUCT_NAME$ *> CollectItems($KEY_TYPE$ Key) const;";
+				GetItemFunctionDecrare = "TArray<const $ITEM_STRUCT_NAME$ *> CollectItems($SECONDARY_KEY_TYPE$ Key) const;";
 			}
 			Source = Source.Replace("$GET_ITEM_FUNCTION_DECRARE$", GetItemFunctionDecrare);
 
@@ -174,19 +174,19 @@ namespace MasterConverter
 
 			// キーの型名.
 			string KeyType = Util.ToTypeNameString(ColumnList[0].DataType);
-			if(Master.IsAutoKey)
-			{
-				KeyType = Util.ToTypeNameString(ColumnList[1].DataType);
-			}
 			Source = Source.Replace("$KEY_TYPE$", KeyType);
 
 			// キーの名前
 			string KeyName = ColumnList[0].Name;
-			if(Master.IsAutoKey)
-			{
-				KeyName = ColumnList[1].Name;
-			}
 			Source = Source.Replace("$KEY_NAME$", KeyName);
+
+			// セカンダリキーの型名.
+			string SecondaryKeyType = Util.ToTypeNameString(ColumnList[1].DataType);
+			Source = Source.Replace("$SECONDARY_KEY_TYPE$", SecondaryKeyType);
+
+			// セカンダリキーの名前.
+			string SecondaryKeyName = ColumnList[1].Name;
+			Source = Source.Replace("$SECONDARY_KEY_NAME$", SecondaryKeyName);
 
 			// アイテムリスト
 			string ItemList = "";
