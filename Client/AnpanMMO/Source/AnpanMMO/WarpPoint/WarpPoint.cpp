@@ -13,7 +13,7 @@ AWarpPoint::AWarpPoint(const FObjectInitializer &ObjectInitializer)
 	PrimaryActorTick.bCanEverTick = true;
 
 	pParticleComponent = ObjectInitializer.CreateDefaultSubobject<UParticleSystemComponent>(this, "ParticleSystem");
-	pParticleComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	pParticleComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 
 	static ConstructorHelpers::FObjectFinder<UParticleSystem> ParticleFinder(ParticlePath);
 	pParticleComponent->SetTemplate(ParticleFinder.Object);
