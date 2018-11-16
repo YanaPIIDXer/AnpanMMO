@@ -10,7 +10,6 @@ bool AreaMaster::Load(const MySqlConnection &Connection)
 	char NameBind[128];
 	Query.BindResultInt(&BindItem.ID);
 	Query.BindResultString(NameBind);
-	Query.BindResultInt(&BindItem.AnpanMax);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
@@ -18,7 +17,6 @@ bool AreaMaster::Load(const MySqlConnection &Connection)
 		AreaItem Item;
 		Item.ID = BindItem.ID;
 		Item.Name = NameBind;
-		Item.AnpanMax = BindItem.AnpanMax;
 
 		Items[Item.ID] = Item;
 	}

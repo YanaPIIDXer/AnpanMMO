@@ -10,14 +10,12 @@ public:
 
 	u32 ID;
 	std::string Name;
-	u32 AnpanMax;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		if(!pStream->Serialize(&ID)) { return false; }
 		if(!pStream->Serialize(&Name)) { return false; }
-		if(!pStream->Serialize(&AnpanMax)) { return false; }
 
 		return true;
 	}

@@ -13,7 +13,6 @@ public:
 
 	u32 ID;
 	std::string Name;
-	u32 AnpanMax;
 
 
 };
