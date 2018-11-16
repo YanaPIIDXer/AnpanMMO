@@ -51,3 +51,10 @@ void UWarpAreaList::NativeDestruct()
 	if (pController == nullptr) { return; }		// checkすると開きっぱなしで落とした時にクラッシュする。
 	pController->SetEnableMove(true);
 }
+
+
+// エリア移動パケット送信.
+void UWarpAreaList::SendAreaMoveRequest(int32 Id)
+{
+	UE_LOG(LogTemp, Log, TEXT("SendAreaMoveRequest Id:%d"), Id);
+}

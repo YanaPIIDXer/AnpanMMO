@@ -39,6 +39,10 @@ protected:
 	void AddItem(int32 Id, const FString &Name);
 	void AddItem_Implementation(int32 Id, const FString &Name) {}
 
+	// エリア移動パケット送信.
+	UFUNCTION(BlueprintCallable, Category = "WarpAreaList")
+	void SendAreaMoveRequest(int32 Id);
+
 private:
 
 	// アセットのパス
