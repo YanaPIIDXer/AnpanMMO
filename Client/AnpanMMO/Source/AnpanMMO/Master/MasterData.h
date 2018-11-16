@@ -20,6 +20,12 @@ public:
 	// ロード
 	void Load();
 
+	// ワープポイントマスタを取得.
+	const WarpPointMaster &GetWarpPointMaster() const { return WarpPoint; }
+
+	// ワープデータマスタを取得.
+	const WarpDataMaster &GetWarpDataMaster() const { return WarpData; }
+
 private:
 
 	// ワープポイントマスタ

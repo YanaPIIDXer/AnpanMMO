@@ -24,7 +24,19 @@ public:
 	// デストラクタ
 	~WarpPointManager() {}
 
+	// Worldを設定.
+	void SetWorld(UWorld *pInWorld) { pWorld = pInWorld; }
+
+	// Spawn
+	void Spawn(uint32 AreaId);
+
+	// リセット
+	void Reset();
+
 private:
+
+	// World
+	TWeakObjectPtr<UWorld> pWorld;
 
 	// ワープポイントリスト
 	TArray<WarpPointPtr> WarpPoints;
