@@ -140,12 +140,18 @@ namespace MasterConverter
 				}
 				Console.WriteLine("完了。");
 
+				// オートキー
+				if(Parser.Master.IsAutoKey)
+				{
+					Parser.Master.GenerateAutoKey();
+				}
+
 				string MasterName = Path.GetFileNameWithoutExtension(TargetFilePath);
 				string FileName = MasterName + ".sql";
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + FileName;
 				Console.Write(FilePath + "の生成中...");
 
-				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Columns);
+				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Master.GetColumns());
 				if (!SQLGen.Generate())
 				{
 					MessageBox.Show("SQLファイルの生成に失敗しました。");
@@ -156,7 +162,7 @@ namespace MasterConverter
 
 				Console.Write("サーバソースの生成中...");
 
-				ServerSourceGenerator ServerSource = new ServerSourceGenerator(ServerSourceDirectory, MasterName, Parser.Columns);
+				ServerSourceGenerator ServerSource = new ServerSourceGenerator(ServerSourceDirectory, Parser.Master);
 				if(!ServerSource.Generate())
 				{
 					MessageBox.Show("サーバソースの生成に失敗しました。");
@@ -167,7 +173,7 @@ namespace MasterConverter
 
 				Console.Write("クライアントソースの生成中...");
 
-				ClientSourceGenerator ClientSource = new ClientSourceGenerator(ClientSourceDirectory, MasterName, Parser.Columns);
+				ClientSourceGenerator ClientSource = new ClientSourceGenerator(ClientSourceDirectory, Parser.Master);
 				if(!ClientSource.Generate())
 				{
 					MessageBox.Show("クライアントソースの生成に失敗しました。");
@@ -178,7 +184,7 @@ namespace MasterConverter
 				Console.WriteLine("完了。");
 
 				Console.Write("バイナリデータ生成中...");
-				BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Columns);
+				BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Master.GetColumns());
 				if(!BinGenerator.Generate())
 				{
 					MessageBox.Show("バイナリデータの生成に失敗しました。");

@@ -42,8 +42,4 @@ TArray<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAll() const
 	return ItemArray;
 }
 
-const $ITEM_STRUCT_NAME$ *$CLASS_NAME$::Get($KEY_TYPE$ Key) const
-{
-	if (!Items.Contains(Key)) { return nullptr; }
-	return &Items[Key];
-}
+$GET_ITEM_FUNCTION$

@@ -1,0 +1,12 @@
+TArray<const $ITEM_STRUCT_NAME$ *> $CLASS_NAME$::CollectItems($KEY_TYPE$ Key)
+{
+	TArray<const $ITEM_STRUCT_NAME$ *> Result;
+	for(auto KeyValue : Items)
+	{
+		if(KeyValue.Value.$KEY_NAME$ == Key)
+		{
+			Result.Add(&KeyValue.Value);
+		}
+	}
+	return Result;
+}

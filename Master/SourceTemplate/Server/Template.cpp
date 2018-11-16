@@ -20,12 +20,7 @@ $ITEM_FETCH$
 	return true;
 }
 
-const $ITEM_STRUCT_NAME$ *$CLASS_NAME$::GetItem($KEY_TYPE$ Key) const
-{
-	ItemMap::const_iterator It = Items.find(Key);
-	if (It == Items.end()) { return NULL; }
-	return &It->second;
-}
+$GET_KEY_FUNCTION$
 
 std::vector<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAll() const
 {

@@ -1,0 +1,5 @@
+const $ITEM_STRUCT_NAME$ *$CLASS_NAME$::Get($KEY_TYPE$ Key) const
+{
+	if (!Items.Contains(Key)) { return nullptr; }
+	return &Items[Key];
+}

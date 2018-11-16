@@ -16,14 +16,14 @@ namespace MasterConverter
 	{
 
 		/// <summary>
-		/// $ITEMタグを見つけるまでの深さ
+		/// タグを検索する深さ
 		/// </summary>
-		private static readonly int CheckDepth = 10;
+		private static readonly int CheckDepth = 15;
 
 		/// <summary>
 		/// $ITEMタグを探し始める行.
 		/// </summary>
-		private static readonly int CheckStartRow = 3;
+		private static readonly int CheckStartRow = 1;
 
 		/// <summary>
 		/// ファイルパス
@@ -31,9 +31,9 @@ namespace MasterConverter
 		private string FilePath;
 
 		/// <summary>
-		/// カラムリスト
+		/// マスタデータ
 		/// </summary>
-		public List<Column> Columns { get; private set; }
+		public MasterData Master { get; private set; }
 
 		/// <summary>
 		/// コンストラクタ
@@ -42,7 +42,7 @@ namespace MasterConverter
 		public ExcelParser(string InFilePath)
 		{
 			FilePath = InFilePath;
-			Columns = new List<Column>();
+			Master = new MasterData(Path.GetFileNameWithoutExtension(InFilePath));
 		}
 
 		/// <summary> 0
@@ -54,11 +54,13 @@ namespace MasterConverter
 			using (var Excel = new ExcelPackage(new FileInfo(FilePath)))
 			{
 				var WorkSheet = Excel.Workbook.Worksheets[1];
+				CheckTags(WorkSheet);
+
 				int TagIndex = FindItemTag(WorkSheet);
 				if(TagIndex == -1) { return false; }
 
 				CollectColumns(WorkSheet, TagIndex - 2);
-				if(Columns[0].DataType == Type.String)
+				if(Master.GetColumn(0).DataType == Type.String)
 				{
 					Console.WriteLine("最初の行を文字列型にすることは出来ません。");
 					return false;
@@ -68,6 +70,28 @@ namespace MasterConverter
 			}
 
 			return true;
+		}
+
+		/// <summary>
+		/// タグのチェック
+		/// </summary>
+		/// <param name="WorkSheet">ワークシート</param>
+		private void CheckTags(ExcelWorksheet WorkSheet)
+		{
+			for(int i = 1; i < 1 + CheckDepth; i++)
+			{
+				try
+				{
+					string CellValue = (string)WorkSheet.Cells[i, 1].Value;
+
+					// オートキー
+					if(CellValue == "$AUTO_KEY")
+					{
+						Master.SetEnableAutoKey();
+					}
+				}
+				catch {}
+			}
 		}
 
 		/// <summary>
@@ -129,6 +153,11 @@ namespace MasterConverter
 						DataType = Type.u32;
 						break;
 
+					case "float":
+
+						DataType = Type.Float;
+						break;
+
 					case "string":
 
 						DataType = Type.String;
@@ -136,7 +165,7 @@ namespace MasterConverter
 				}
 
 				Column NewColumn = new Column(ColumnName, DataType);
-				Columns.Add(NewColumn);
+				Master.AddColumn(NewColumn);
 			}
 		}
 
@@ -149,11 +178,11 @@ namespace MasterConverter
 		{
 			for(int i = StartRow; ; i++)
 			{
-				for(int j = 1; j <= Columns.Count; j++)
+				for(int j = 1; j <= Master.GetColumnCount(); j++)
 				{
 					object Data = WorkSheet.Cells[i, j + 1].Value;
 					if(j == 1 && Data == null) { return; }
-					Columns[j - 1].AddData(Data);
+					Master.AddDataToColumn(j - 1, Data);
 				}
 			}
 		}

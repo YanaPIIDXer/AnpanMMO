@@ -29,7 +29,7 @@ public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const $ITEM_STRUCT_NAME$ *GetItem($KEY_TYPE$ Key) const;
+	$GET_ITEN_FUNCTION_DECRARE$
 
 	std::vector<$ITEM_STRUCT_NAME$> GetAll() const;
 

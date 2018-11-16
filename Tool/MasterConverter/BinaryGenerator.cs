@@ -45,73 +45,75 @@ namespace MasterConverter
 			{
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + MasterName + ".bin";
 				FileStream WriteStream = new FileStream(FilePath, FileMode.Create);
-				using(BinaryWriter BinWriter = new BinaryWriter(WriteStream))
-				for(int i = 0; ; i++)
+				using (BinaryWriter BinWriter = new BinaryWriter(WriteStream))
 				{
-					if(i >= Columns[0].DataList.Count) { break; }
-					for(int j = 0; j < Columns.Count; j++)
+					for (int i = 0; ; i++)
 					{
-						byte[] Bytes = null;
-						double Data = 0.0;
-						if (Columns[j].DataType != Type.String)
+						if (i >= Columns[0].DataList.Count) { break; }
+						for (int j = 0; j < Columns.Count; j++)
 						{
-							Data = (double)Columns[j].DataList[i];
+							byte[] Bytes = null;
+							double Data = 0.0;
+							if (Columns[j].DataType != Type.String)
+							{
+								Data = (double)Columns[j].DataList[i];
+							}
+							switch (Columns[j].DataType)
+							{
+								case Type.s8:
+
+									Bytes = BitConverter.GetBytes((char)Data);
+									break;
+
+								case Type.u8:
+
+									Bytes = BitConverter.GetBytes((byte)Data);
+									break;
+
+								case Type.s16:
+
+									Bytes = BitConverter.GetBytes((short)Data);
+									break;
+
+								case Type.u16:
+
+									Bytes = BitConverter.GetBytes((ushort)Data);
+									break;
+
+								case Type.s32:
+
+									Bytes = BitConverter.GetBytes((int)Data);
+									break;
+
+								case Type.u32:
+
+									Bytes = BitConverter.GetBytes((uint)Data);
+									break;
+
+								case Type.Float:
+
+									Bytes = BitConverter.GetBytes((float)Data);
+									break;
+
+								case Type.String:
+
+									string Str = (string)Columns[j].DataList[i];
+									byte[] SizeBytes = BitConverter.GetBytes(Str.Length);
+									if (BitConverter.IsLittleEndian)
+									{
+										SizeBytes = SizeBytes.Reverse().ToArray();
+									}
+									BinWriter.Write(SizeBytes);
+									Bytes = Encoding.GetEncoding("shift-jis").GetBytes(Str).Reverse().ToArray();
+									break;
+							}
+							if (BitConverter.IsLittleEndian)
+							{
+								Bytes = Bytes.Reverse().ToArray();
+							}
+
+							BinWriter.Write(Bytes);
 						}
-						switch (Columns[j].DataType)
-						{
-							case Type.s8:
-
-								Bytes = BitConverter.GetBytes((char)Data);
-								break;
-
-							case Type.u8:
-
-								Bytes = BitConverter.GetBytes((byte)Data);
-								break;
-
-							case Type.s16:
-
-								Bytes = BitConverter.GetBytes((short)Data);
-								break;
-
-							case Type.u16:
-
-								Bytes = BitConverter.GetBytes((ushort)Data);
-								break;
-
-							case Type.s32:
-
-								Bytes = BitConverter.GetBytes((int)Data);
-								break;
-
-							case Type.u32:
-
-								Bytes = BitConverter.GetBytes((uint)Data);
-								break;
-
-							case Type.Float:
-
-								Bytes = BitConverter.GetBytes((float)Data);
-								break;
-
-							case Type.String:
-
-								string Str = (string)Columns[j].DataList[i];
-								byte[] SizeBytes = BitConverter.GetBytes(Str.Length);
-								if(BitConverter.IsLittleEndian)
-								{
-									SizeBytes = SizeBytes.Reverse().ToArray();
-								}
-								BinWriter.Write(SizeBytes);
-								Bytes = Encoding.GetEncoding("shift-jis").GetBytes(Str).Reverse().ToArray();
-								break;
-						}
-						if(BitConverter.IsLittleEndian)
-						{
-							Bytes = Bytes.Reverse().ToArray();
-						}
-
-						BinWriter.Write(Bytes);
 					}
 				}
 			}

@@ -1,0 +1,12 @@
+const std::vector<$ITEM_STRUCT_NAME$ *> $CLASS_NAME$::CollectItems($KEY_TYPE$ Key) const
+{
+	std::vector<$ITEM_STRUCT_NAME$ *> Result;
+	for(ItemMap:;const_iterator It = Items.begin(); It != Items.end(); ++It)
+	{
+		if(It->second.$KEY_NAME$ == Key)
+		{
+			Result.push_back(&It->second);
+		}
+	}
+	return Result;
+}

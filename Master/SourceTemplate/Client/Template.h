@@ -31,7 +31,7 @@ public:
 
 	TArray<$ITEM_STRUCT_NAME$> GetAll() const;
 
-	const $ITEM_STRUCT_NAME$ *Get($KEY_TYPE$ Key) const;
+	$GET_ITEM_FUNCTION_DECRARE$
 
 private:
 
