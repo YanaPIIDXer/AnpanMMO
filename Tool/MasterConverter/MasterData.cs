@@ -107,7 +107,7 @@ namespace MasterConverter
 			Column AutoKeyColumn = new Column("AutoKey", Type.s32);
 			for(int i = 0;i < Columns[1].DataList.Count; i++)
 			{
-				AutoKeyColumn.DataList.Add(i + 1);
+				AutoKeyColumn.DataList.Add((double)(i + 1));
 			}
 			Columns.Insert(0, AutoKeyColumn);
 		}
