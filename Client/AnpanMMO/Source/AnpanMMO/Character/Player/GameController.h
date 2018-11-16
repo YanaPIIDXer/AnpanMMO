@@ -34,6 +34,9 @@ public:
 	// タッチ入力.
 	virtual bool InputTouch(uint32 Handle, ETouchType::Type Type, const FVector2D &TouchLocation, float Force, FDateTime DeviceTimestamp, uint32 TouchpadIndex) override;
 
+	// 動けるかどうかを設定.
+	void SetEnableMove(bool bInEnableMove) { bEnableMove = bInEnableMove; }
+
 private:
 	
 	// 前後移動のバインド名.
@@ -56,6 +59,9 @@ private:
 
 	// 以前のタッチ座標.
 	FVector2D PrevTouchLocation;
+
+	// 動けるか？
+	bool bEnableMove;
 
 
 	// カメラをSpawn

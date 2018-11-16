@@ -14,6 +14,7 @@ AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 	, pCamera(nullptr)
 	, InputVector(FVector::ZeroVector)
 	, PrevTouchLocation(FVector2D::ZeroVector)
+	, bEnableMove(true)
 {
 }
 
@@ -37,6 +38,8 @@ void AGameController::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	if (pCharacter->IsDead()) { return; }
+
+	if (!bEnableMove) { return; }
 
 	InputVector.Normalize();
 
