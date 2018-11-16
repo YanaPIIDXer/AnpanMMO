@@ -23,11 +23,6 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
 }
 
-// 開始時の処理.
-void ClientStateActive::BeginState()
-{
-}
-
 
 // エリア移動要求を受信した。
 void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)

@@ -17,13 +17,8 @@ public:
 	// デストラクタ
 	virtual ~ClientStateActive() {}
 
-	// 開始時の処理.
-	virtual void BeginState();
-
 private:
 
-	// キャラクタロード
-	void LoadCharacter();
 
 	// エリア移動要求を受信した。
 	void OnRecvAreaMoveRequest(MemoryStreamInterface *pStream);
