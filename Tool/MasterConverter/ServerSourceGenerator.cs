@@ -28,28 +28,21 @@ namespace MasterConverter
 		/// 出力先ディレクトリ
 		/// </summary>
 		private string TargetDirectory;
-
+		
 		/// <summary>
-		/// マスタ名.
+		/// マスタデータ
 		/// </summary>
-		private string MasterName;
-
-		/// <summary>
-		/// カラムデータ
-		/// </summary>
-		private List<Column> ColumnList;
+		private MasterData Master;
 
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InTargetDirectory">出力先ディレクトリ</param>
-		/// <param name="InMasterName">マスタ名</param>
-		/// <param name="InColumnList">カラムリスト</param>
-		public ServerSourceGenerator(string InTargetDirectory, string InMasterName, List<Column> InColumnList)
+		/// <param name="InMaster">マスタデータ</param>
+		public ServerSourceGenerator(string InTargetDirectory, MasterData InMaster)
 		{
 			TargetDirectory = InTargetDirectory;
-			MasterName = InMasterName;
-			ColumnList = InColumnList;
+			Master = InMaster;
 		}
 
 		/// <summary>
@@ -90,7 +83,7 @@ namespace MasterConverter
 
 			Source = ReplaceTags(Source);
 
-			string FilePath = TargetDirectory + "\\" + MasterName + "Master.h";
+			string FilePath = TargetDirectory + "\\" + Master.Name + "Master.h";
 			if(!Directory.Exists(TargetDirectory))
 			{
 				Directory.CreateDirectory(TargetDirectory);
@@ -114,7 +107,7 @@ namespace MasterConverter
 
 			Source = ReplaceTags(Source);
 
-			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + MasterName + "Master.cpp", false, Encoding.GetEncoding("shift-jis")))
+			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + Master.Name + "Master.cpp", false, Encoding.GetEncoding("shift-jis")))
 			{
 				Writer.Write(Source);
 			}
@@ -128,11 +121,11 @@ namespace MasterConverter
 		private string ReplaceTags(string Source)
 		{
 			// インクルードガード
-			string IncludeGuard = "__" + MasterName.ToUpper() + "MASTER_H__";
+			string IncludeGuard = "__" + Master.Name.ToUpper() + "MASTER_H__";
 			Source = Source.Replace("$INCLUDE_GUARD$", IncludeGuard);
 
 			// ヘッダファイル名.
-			string HeaderFileName = MasterName + "Master.h";
+			string HeaderFileName = Master.Name + "Master.h";
 			Source = Source.Replace("$HEADER_FILE_NAME$", HeaderFileName);
 
 			// クラス名.
@@ -140,8 +133,10 @@ namespace MasterConverter
 			Source = Source.Replace("$CLASS_NAME$", ClassName);
 
 			// アイテム構造体名.
-			string ItemStructName = MasterName + "Item";
+			string ItemStructName = Master.Name + "Item";
 			Source = Source.Replace("$ITEM_STRUCT_NAME$", ItemStructName);
+
+			var ColumnList = Master.GetColumns();
 
 			// キーの型名.
 			string KeyType = Util.ToTypeNameString(ColumnList[0].DataType);
@@ -162,7 +157,7 @@ namespace MasterConverter
 			Source = Source.Replace("$ITEM_LIST$", ItemList);
 
 			// マスタ名.
-			Source = Source.Replace("$MASTER_NAME$", MasterName);
+			Source = Source.Replace("$MASTER_NAME$", Master.Name);
 
 			// アイテムバインド
 			string ItemBind = "";
@@ -245,7 +240,7 @@ namespace MasterConverter
 		/// <returns>クラス名</returns>
 		private string GenerateClassName()
 		{
-			return MasterName + "Master";
+			return Master.Name + "Master";
 		}
 
 	}

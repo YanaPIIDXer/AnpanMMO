@@ -16,7 +16,7 @@ namespace MasterConverter
 	{
 
 		/// <summary>
-		/// $ITEMタグを見つけるまでの深さ
+		/// タグを検索する深さ
 		/// </summary>
 		private static readonly int CheckDepth = 15;
 
@@ -54,6 +54,8 @@ namespace MasterConverter
 			using (var Excel = new ExcelPackage(new FileInfo(FilePath)))
 			{
 				var WorkSheet = Excel.Workbook.Worksheets[1];
+				CheckTags(WorkSheet);
+
 				int TagIndex = FindItemTag(WorkSheet);
 				if(TagIndex == -1) { return false; }
 
@@ -68,6 +70,28 @@ namespace MasterConverter
 			}
 
 			return true;
+		}
+
+		/// <summary>
+		/// タグのチェック
+		/// </summary>
+		/// <param name="WorkSheet">ワークシート</param>
+		private void CheckTags(ExcelWorksheet WorkSheet)
+		{
+			for(int i = 1; i < 1 + CheckDepth; i++)
+			{
+				try
+				{
+					string CellValue = (string)WorkSheet.Cells[i, 1].Value;
+
+					// オートキー
+					if(CellValue == "$AUTOKEY")
+					{
+						Master.SetEnableAutoKey();
+					}
+				}
+				catch {}
+			}
 		}
 
 		/// <summary>

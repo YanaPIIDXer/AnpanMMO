@@ -22,6 +22,11 @@ namespace MasterConverter
 		/// カラムリスト
 		/// </summary>
 		private List<Column> Columns = new List<Column>();
+
+		/// <summary>
+		/// オートキー？
+		/// </summary>
+		public bool IsAutoKey { get; private set; }
 		
 		/// <summary>
 		/// コンストラクタ
@@ -30,6 +35,7 @@ namespace MasterConverter
 		public MasterData(string InName)
 		{
 			Name = InName;
+			IsAutoKey = false;
 		}
 
 		/// <summary>
@@ -77,6 +83,14 @@ namespace MasterConverter
 		public void AddDataToColumn(int ColumnIndex, object Data)
 		{
 			Columns[ColumnIndex].DataList.Add(Data);
+		}
+
+		/// <summary>
+		/// オートキーを設定。
+		/// </summary>
+		public void SetEnableAutoKey()
+		{
+			IsAutoKey = true;
 		}
 		
 	}
