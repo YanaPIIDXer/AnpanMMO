@@ -46,11 +46,25 @@ public:
 	void OnRespawn();
 	void OnRespawn_Implementation() {}
 
+	// マップチェンジ開始.
+	UFUNCTION(BlueprintNativeEvent, Category = "MapChange")
+	void OnStartMapChange();
+	void OnStartMapChange_Implementation() {}
+
+	// マップ移動が完了した。
+	UFUNCTION(BlueprintNativeEvent, Category = "MapChange")
+	void OnRecvMapChangeFinished();
+	void OnRecvMapChangeFinished_Implementation() {}
+
 protected:
 
 	// 攻撃ボタンが押された。
 	UFUNCTION(BlueprintCallable, Category = "Attack")
 	void OnPressedAttackButton();
+
+	// 準備完了パケットを送信.
+	UFUNCTION(BlueprintCallable, Category = "MapChange")
+	void SendReadyPacket();
 
 private:
 	

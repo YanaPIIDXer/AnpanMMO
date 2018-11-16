@@ -13,6 +13,7 @@
 #include "Packet/CharacterType.h"
 #include "Packet/PacketAddExp.h"
 #include "Packet/PacketLevelUp.h"
+#include "Packet/PacketAreaMoveResponse.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -32,6 +33,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::AddExp, std::bind(&AActiveGameMode::OnRecvAddExp, this, _1));
 	AddPacketFunction(PacketID::LevelUp, std::bind(&AActiveGameMode::OnRecvLevelUp, this, _1));
 	AddPacketFunction(PacketID::SpawnPlayer, std::bind(&PlayerManager::OnRecvSpawn, &PlayerMgr, _1));
+	AddPacketFunction(PacketID::AreaMoveResponse, std::bind(&AActiveGameMode::OnRecvAreaMoveResponse, this, _1));
 	AddPacketFunction(PacketID::PlayerList, std::bind(&PlayerManager::OnRecvList, &PlayerMgr, _1));
 	AddPacketFunction(PacketID::MovePlayer, std::bind(&PlayerManager::OnRecvMove, &PlayerMgr, _1));
 	AddPacketFunction(PacketID::PlayerRespawn, std::bind(&PlayerManager::OnRecvRespawn, &PlayerMgr, _1));
@@ -82,10 +84,6 @@ void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 	PacketAreaMove Packet;
 	Packet.Serialize(pStream);
 
-	PlayerMgr.Reset();
-	AnpanMgr.Reset();
-	WarpPointMgr.Reset();
-
 	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 
@@ -95,6 +93,8 @@ void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 	Pos.X = Packet.X;
 	Pos.Y = Packet.Y;
 	pCharacter->SetActorLocation(Pos);
+
+	pMainHUD->OnRecvMapChangeFinished();
 }
 
 // ダメージを受信した。
@@ -142,4 +142,24 @@ void AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 	pCharacter->OnRecvLevelUp(Packet.MaxHp, Packet.Atk, Packet.Def);
 	pCharacter->OnRecvExp(Packet.ResultExp);
+}
+
+// エリア移動結果を受信した。
+void AActiveGameMode::OnRecvAreaMoveResponse(MemoryStreamInterface *pStream)
+{
+	PacketAreaMoveResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != PacketAreaMoveResponse::Success)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Area Move Failed... ResultCode:%d"), Packet.Result);
+		return;
+	}
+
+	// 各種マネージャの初期化.
+	PlayerMgr.Reset();
+	AnpanMgr.Reset();
+	WarpPointMgr.Reset();
+
+	pMainHUD->OnStartMapChange();
 }
