@@ -41,7 +41,7 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す</returns>
 		public bool Generate()
 		{
-			//try
+			try
 			{
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + MasterName + ".bin";
 				FileStream WriteStream = new FileStream(FilePath, FileMode.Create);
@@ -117,10 +117,10 @@ namespace MasterConverter
 					}
 				}
 			}
-			//catch
-			//{
-			//	return false;
-			//}
+			catch
+			{
+				return false;
+			}
 
 			return true;
 		}
