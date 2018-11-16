@@ -128,6 +128,7 @@ namespace MasterConverter
 				string ColumnName = (string) WorkSheet.Cells[StartRow, i].Value;
 				if (String.IsNullOrEmpty(ColumnName)) { return; }
 				string DataTypeName = (string)WorkSheet.Cells[StartRow + 1, i].Value;
+				DataTypeName = DataTypeName.ToLower();
 				Type DataType = Type.String;
 				switch(DataTypeName)
 				{
@@ -166,7 +167,7 @@ namespace MasterConverter
 						DataType = Type.Float;
 						break;
 
-					case "String":
+					case "string":
 
 						DataType = Type.String;
 						break;
