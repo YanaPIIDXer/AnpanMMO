@@ -16,14 +16,14 @@ public:
 	float X;
 	float Y;
 	float Range;
-	s32 AnpanMinHp;
-	s32 AnpanMaxHp;
-	s32 AnpanMinAtk;
-	s32 AnpanMaxAtk;
-	s32 AnpanMinDef;
-	s32 AnpanMaxDef;
-	s32 AnpanMinExp;
-	s32 AnpanMaxExp;
+	s32 MinHp;
+	s32 MaxHp;
+	s32 MinAtk;
+	s32 MaxAtk;
+	s32 MinDef;
+	s32 MaxDef;
+	s32 MinExp;
+	s32 MaxExp;
 
 
 };

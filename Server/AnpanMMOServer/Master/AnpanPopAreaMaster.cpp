@@ -13,14 +13,14 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultFloat(&BindItem.X);
 	Query.BindResultFloat(&BindItem.Y);
 	Query.BindResultFloat(&BindItem.Range);
-	Query.BindResultInt(&BindItem.AnpanMinHp);
-	Query.BindResultInt(&BindItem.AnpanMaxHp);
-	Query.BindResultInt(&BindItem.AnpanMinAtk);
-	Query.BindResultInt(&BindItem.AnpanMaxAtk);
-	Query.BindResultInt(&BindItem.AnpanMinDef);
-	Query.BindResultInt(&BindItem.AnpanMaxDef);
-	Query.BindResultInt(&BindItem.AnpanMinExp);
-	Query.BindResultInt(&BindItem.AnpanMaxExp);
+	Query.BindResultInt(&BindItem.MinHp);
+	Query.BindResultInt(&BindItem.MaxHp);
+	Query.BindResultInt(&BindItem.MinAtk);
+	Query.BindResultInt(&BindItem.MaxAtk);
+	Query.BindResultInt(&BindItem.MinDef);
+	Query.BindResultInt(&BindItem.MaxDef);
+	Query.BindResultInt(&BindItem.MinExp);
+	Query.BindResultInt(&BindItem.MaxExp);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
@@ -31,14 +31,14 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 		Item.X = BindItem.X;
 		Item.Y = BindItem.Y;
 		Item.Range = BindItem.Range;
-		Item.AnpanMinHp = BindItem.AnpanMinHp;
-		Item.AnpanMaxHp = BindItem.AnpanMaxHp;
-		Item.AnpanMinAtk = BindItem.AnpanMinAtk;
-		Item.AnpanMaxAtk = BindItem.AnpanMaxAtk;
-		Item.AnpanMinDef = BindItem.AnpanMinDef;
-		Item.AnpanMaxDef = BindItem.AnpanMaxDef;
-		Item.AnpanMinExp = BindItem.AnpanMinExp;
-		Item.AnpanMaxExp = BindItem.AnpanMaxExp;
+		Item.MinHp = BindItem.MinHp;
+		Item.MaxHp = BindItem.MaxHp;
+		Item.MinAtk = BindItem.MinAtk;
+		Item.MaxAtk = BindItem.MaxAtk;
+		Item.MinDef = BindItem.MinDef;
+		Item.MaxDef = BindItem.MaxDef;
+		Item.MinExp = BindItem.MinExp;
+		Item.MaxExp = BindItem.MaxExp;
 
 		Items[Item.AutoKey] = Item;
 	}
