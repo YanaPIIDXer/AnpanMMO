@@ -21,21 +21,6 @@ PlayerCharacter::~PlayerCharacter()
 	SaveParameter();
 }
 
-// エリア移動.
-void PlayerCharacter::AreaMove(u32 AreaId)
-{
-	AreaPtr pNewArea = AreaManager::GetInstance().Get(AreaId);
-	if (pNewArea.expired())
-	{
-		std::cout << "AreaMove Failed... AreaId:" << AreaId << std::endl;
-		return;
-	}
-	AreaPtr pCurrentArea = GetArea();
-	pCurrentArea.lock()->RemovePlayerCharacter(GetUuid());
-	SetArea(pNewArea);
-	pNewArea.lock()->AddPlayerCharacter(GetClient()->GetCharacter());
-}
-
 
 // レベルアップコールバック
 void PlayerCharacter::OnLevelUp()

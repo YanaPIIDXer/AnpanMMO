@@ -4,6 +4,8 @@
 #include "Util.h"
 #include "Character/Player/GameCharacter.h"
 #include "Kismet/GameplayStatics.h"
+#include "MMOGameInstance.h"
+#include "Packet/PacketGameReady.h"
 
 const TCHAR *UMainHUD::AssetPath = TEXT("/Game/Blueprints/UI/Active/MainHUD.MainHUD");
 
@@ -37,4 +39,14 @@ void UMainHUD::NativeConstruct()
 void UMainHUD::OnPressedAttackButton()
 {
 	pCharacter->Attack();
+}
+
+// 準備完了パケットを送信.
+void UMainHUD::SendReadyPacket()
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketGameReady Packet;
+	pInst->SendPacket(&Packet);
 }

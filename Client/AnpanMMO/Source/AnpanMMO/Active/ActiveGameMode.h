@@ -74,4 +74,7 @@ private:
 	// レベルアップを受信した。
 	void OnRecvLevelUp(MemoryStreamInterface *pStream);
 
+	// エリア移動結果を受信した。
+	void OnRecvAreaMoveResponse(MemoryStreamInterface *pStream);
+
 };
