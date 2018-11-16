@@ -44,7 +44,12 @@ namespace MasterConverter
 		/// <returns>カラムリスト</returns>
 		public List<Column> GetColumns()
 		{
-			return Columns;
+			List<Column> Return = new List<Column>();
+			foreach(var Col in Columns)
+			{
+				Return.Add(Col);
+			}
+			return Return;
 		}
 
 		/// <summary>
