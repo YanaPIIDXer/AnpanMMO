@@ -37,7 +37,7 @@ void UWarpAreaList::NativeConstruct()
 	{
 		const auto *pAreaData = MasterData::GetInstance().GetAreaMaster().Get(pItem->AreaId);
 		check(pAreaData != nullptr);
-		FString AreaName = UTF8_TO_TCHAR(pAreaData->Name.c_str());
+		FString AreaName = ANSI_TO_TCHAR(pAreaData->Name.c_str());
 		AddItem(pItem->ID, AreaName);
 	}
 }
@@ -48,6 +48,6 @@ void UWarpAreaList::NativeDestruct()
 	Super::NativeDestruct();
 
 	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
-	check(pController != nullptr);
+	if (pController == nullptr) { return; }		// checkすると開きっぱなしで落とした時にクラッシュする。
 	pController->SetEnableMove(true);
 }
