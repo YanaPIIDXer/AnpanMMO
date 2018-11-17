@@ -14,6 +14,7 @@ public:
 
 	
 
+	u32 CustomerId;
 	s32 MaxHp;
 	s32 Atk;
 	s32 Def;
@@ -27,9 +28,10 @@ public:
 	{
 	}
 
-	CachePacketCharacterDataSave(u32 InClientId, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY)
+	CachePacketCharacterDataSave(u32 InClientId, u32 InCustomerId, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY)
 	{
 		ClientId = InClientId;
+		CustomerId = InCustomerId;
 		MaxHp = InMaxHp;
 		Atk = InAtk;
 		Def = InDef;
@@ -43,6 +45,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		CachePacketBase::Serialize(pStream);
+		pStream->Serialize(&CustomerId);
 		pStream->Serialize(&MaxHp);
 		pStream->Serialize(&Atk);
 		pStream->Serialize(&Def);
