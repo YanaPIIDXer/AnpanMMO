@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "CachePacketReceiver.h"
 #include "CacheServerConnection.h"
+#include "Packet/CachePacketLogInResult.h"
+#include "ClientManager.h"
 
 // コンストラクタ
 CachePacketReceiver::CachePacketReceiver(CacheServerConnection *pInParent)
@@ -13,6 +15,16 @@ void CachePacketReceiver::RecvPacket(PacketID ID, MemoryStreamInterface *pStream
 {
 	if (PacketFuncs.find(ID) == PacketFuncs.end()) { return; }
 	PacketFuncs[ID](pStream);
+}
+
+
+// ログイン結果を受信した。
+void CachePacketReceiver::OnRecvLogInResult(MemoryStreamInterface *pStream)
+{
+	CachePacketLogInResult Packet;
+	Packet.Serialize(pStream);
+
+	ClientManager::GetInstance().Get(Packet.ClientId).lock()->RecvPacket(Packet.GetPacketID(), pStream);
 }
 
 

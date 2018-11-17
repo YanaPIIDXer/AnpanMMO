@@ -4,10 +4,13 @@
 #include "DBConnection.h"
 #include "ClientStateAreaChange.h"
 #include "ClientManager.h"
+#include "CacheServerConnection.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInRequest.h"
 #include "Packet/PacketLogInResult.h"
 #include "Packet/PacketCharacterStatus.h"
+#include "Packet/CachePacketLogInRequest.h"
+#include "Packet/CachePacketLogInResult.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
@@ -23,6 +26,10 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	PacketLogInRequest Packet;
 	Packet.Serialize(pStream);
 
+	CachePacketLogInRequest CachePacket(GetParent()->GetUuid(), Packet.UserCode);
+	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+
+	/*
 	int Id = 0;
 	PacketLogInResult::ResultCode ResultCode = PacketLogInResult::Success;
 	char *pUserCode = const_cast<char *>(Packet.UserCode.c_str());
@@ -54,6 +61,30 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 
 	ClientStateAreaChange *pNextState = new ClientStateAreaChange(pClient, AreaId, Vector2D(X, Y));
 	pClient->ChangeState(pNextState);
+	*/
+}
+
+// キャッシュサーバからログイン結果を受信した。
+void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
+{
+	CachePacketLogInResult Packet;
+	Packet.Serialize(pStream);
+
+	PacketLogInResult::ResultCode ResultCode = PacketLogInResult::Success;
+	if (Packet.Result != CachePacketLogInResult::Success)
+	{
+		ResultCode = PacketLogInResult::Error;
+	}
+	if (!ClientManager::GetInstance().GetFromCustomerId(Packet.Uuid).expired())
+	{
+		ResultCode = PacketLogInResult::DoubleLogIn;
+	}
+
+	PacketLogInResult ResultPacket(ResultCode, GetParent()->GetUuid());
+	GetParent()->SendPacket(&ResultPacket);
+
+	if (ResultCode != PacketLogInResult::Success) { return; }
+
 }
 
 // キャラクタロード
