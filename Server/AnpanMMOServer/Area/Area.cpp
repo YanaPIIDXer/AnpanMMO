@@ -56,6 +56,9 @@ void Area::OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid)
 	PlayerCharacterPtr pAttacker = PlayerMgr.Get(AttackerUuid);
 	AnpanPtr pDefencer = AnpanMgr.Get(DefencerUuid);
 
+	// 連打した時など、サーバ上では既に死んでいるアンパンを殴ろうとする事がある。
+	if (pDefencer.expired()) { return; }
+
 	// ダメージ計算.
 	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
 	int DamageValue = DamageCalc.Calc();
