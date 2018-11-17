@@ -4,6 +4,8 @@
 #include "TCPConnection.h"
 #include "CachePacketReceiver.h"
 
+class PacketBase;
+
 /**
  * キャッシュサーバとの接続.
  */
@@ -20,6 +22,9 @@ public:
 
 	// 接続.
 	bool Connect();
+
+	// パケット送信.
+	void SendPacket(PacketBase *pPacket);
 
 protected:
 
