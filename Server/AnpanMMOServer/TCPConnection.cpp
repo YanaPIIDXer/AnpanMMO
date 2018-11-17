@@ -3,8 +3,8 @@
 
 // コンストラクタ
 TCPConnection::TCPConnection(const shared_ptr<tcp::socket> &pInSocket)
-	: pSocket(pInSocket)
-	, bIsConnected(false)
+	: bIsConnected(false)
+	, pSocket(pInSocket)
 {
 }
 
@@ -28,6 +28,7 @@ void TCPConnection::OnRecv(const boost::system::error_code &ErrorCode, size_t Si
 	if (ErrorCode)
 	{
 		bIsConnected = false;
+		OnDisconnected();
 		return;
 	}
 
@@ -55,6 +56,7 @@ void TCPConnection::OnSend(const boost::system::error_code &ErrorCode, size_t Si
 	if (ErrorCode)
 	{
 		bIsConnected = false;
+		OnDisconnected();
 		return;
 	}
 }

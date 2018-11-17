@@ -2,6 +2,7 @@
 #define __GAMESERVERCONNECTION_H__
 
 #include "TCPConnection.h"
+#include "PacketReceiver.h"
 
 /**
  * ゲームサーバへの接続クラス
@@ -19,17 +20,23 @@ public:
 
 protected:
 
+	// データを受信した。
+	virtual void OnRecvData(size_t Size);
+
 private:
 
 	// アクセプタ
 	tcp::acceptor Acceptor;
+
+	// パケット受信.
+	PacketReceiver Receiver;
 
 
 	// Acceptする。
 	void Accept();
 
 	// Acceptした。
-	void OnAccept(const system::error_code &ErrorCode);
+	void OnAccept(const boost::system::error_code &ErrorCode);
 
 };
 

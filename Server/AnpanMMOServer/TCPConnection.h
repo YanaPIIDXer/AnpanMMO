@@ -38,6 +38,9 @@ protected:
 	// データを受信した。
 	virtual void OnRecvData(size_t Size) {}
 
+	// 切断された。
+	virtual void OnDisconnected() {}
+
 	// 送信.
 	void AsyncSend(const u8 *pBuffer, int Size);
 
