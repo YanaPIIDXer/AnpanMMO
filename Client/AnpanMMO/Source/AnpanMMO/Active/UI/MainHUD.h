@@ -46,6 +46,11 @@ public:
 	void OnRespawn();
 	void OnRespawn_Implementation() {}
 
+	// レベルアップした。
+	UFUNCTION(BlueprintNativeEvent, Category = "LevelUp")
+	void OnLevelUp();
+	void OnLevelUp_Implementation() {}
+
 	// マップチェンジ開始.
 	UFUNCTION(BlueprintNativeEvent, Category = "MapChange")
 	void OnStartMapChange();

@@ -143,6 +143,8 @@ void AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 	pCharacter->OnRecvLevelUp(Packet.MaxHp, Packet.Atk, Packet.Def);
 	pCharacter->OnRecvExp(Packet.ResultExp);
+
+	pMainHUD->OnLevelUp();
 }
 
 // エリア移動結果を受信した。
