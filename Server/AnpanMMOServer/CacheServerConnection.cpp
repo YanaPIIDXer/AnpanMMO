@@ -11,7 +11,7 @@ CacheServerConnection::CacheServerConnection(const shared_ptr<tcp::socket> &pInS
 // Ú‘±.
 bool CacheServerConnection::Connect()
 {
-	system::error_code ErrorCode;
+	boost::system::error_code ErrorCode;
 	GetSocket()->connect(tcp::endpoint(asio::ip::address::from_string("127.0.0.1"), Config::CacheServerPort), ErrorCode);
 
 	if (ErrorCode)
