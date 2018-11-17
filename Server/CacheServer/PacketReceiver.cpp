@@ -12,6 +12,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	: pParent(pInParent)
 {
 	AddPacketFunc(CacheLogInRequest, bind(&PacketReceiver::OnRecvLogInRequest, this, _1));
+	AddPacketFunc(CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
