@@ -18,7 +18,7 @@ void GameServerConnection::Accept()
 }
 
 // AcceptÇµÇΩÅB
-void GameServerConnection::OnAccept(const system::error_code &ErrorCode)
+void GameServerConnection::OnAccept(const boost::system::error_code &ErrorCode)
 {
 	if (ErrorCode)
 	{
