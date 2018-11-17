@@ -123,6 +123,17 @@ namespace NativePacketGenerator
 								Class.AddMember(Data);
 							}
 							break;
+
+						case "$FOR_CACHE_SERVER$":
+
+							{
+								string Value = (string)WorkSheet.Cells[i, 2].Value;
+								if(Value == "1")
+								{
+									Class.SetForCacheServerFlag();
+								}
+							}
+							break;
 					}
 				}
 			}
