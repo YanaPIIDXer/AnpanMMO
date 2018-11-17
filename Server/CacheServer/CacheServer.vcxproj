@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="DBConnection.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
     <ClInclude Include="GameServerConnection.h" />
@@ -169,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Config.cpp" />
+    <ClCompile Include="DBConnection.cpp" />
     <ClCompile Include="FlexArray.cpp" />
     <ClCompile Include="GameServerConnection.cpp" />
     <ClCompile Include="Main.cpp" />
