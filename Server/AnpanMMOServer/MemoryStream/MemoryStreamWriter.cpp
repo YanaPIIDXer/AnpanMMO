@@ -80,6 +80,13 @@ bool MemoryStreamWriter::Serialize(float *pValue)
 	return Write(&NetworkValue, sizeof(float));
 }
 
+// リセット.
+void MemoryStreamWriter::Reset()
+{
+	CurrentPosition = 0;
+}
+
+
 //指定したサイズ分の読み込み
 bool MemoryStreamWriter::Write(const void *pValue ,const int WriteSize)
 {
@@ -92,5 +99,4 @@ bool MemoryStreamWriter::Write(const void *pValue ,const int WriteSize)
 	memcpy((pData + CurrentPosition), pValue, WriteSize);
 	CurrentPosition += WriteSize;
 	return true;
-
 }
