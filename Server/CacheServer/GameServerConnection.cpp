@@ -54,6 +54,12 @@ void GameServerConnection::OnRecvData(size_t Size)
 	}
 }
 
+// Ø’f‚³‚ê‚½B
+void GameServerConnection::OnDisconnected()
+{
+	Accept();
+}
+
 
 // Accept‚·‚éB
 void GameServerConnection::Accept()
