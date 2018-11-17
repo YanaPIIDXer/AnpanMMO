@@ -26,6 +26,7 @@ APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectIniti
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_Pawn);
+	pMeshComponent->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel2, ECollisionResponse::ECR_Overlap);
 	pMeshComponent->SetGenerateOverlapEvents(true);
 	SetActorEnableCollision(true);
@@ -42,9 +43,7 @@ void APlayerCharacterBase::BeginPlay()
 }
 
 // ƒŠƒXƒ|ƒ“
-void APlayerCharacterBase::Respawn(float X, float Y)
+void APlayerCharacterBase::Respawn()
 {
 	OnRespawn();
-	
-	SetActorLocation(FVector(X, Y, GetActorLocation().Z));
 }

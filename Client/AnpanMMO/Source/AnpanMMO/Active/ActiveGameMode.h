@@ -77,4 +77,7 @@ private:
 	// エリア移動結果を受信した。
 	void OnRecvAreaMoveResponse(MemoryStreamInterface *pStream);
 
+	// リスポンを受信した。
+	void OnRecvRespawn(MemoryStreamInterface *pStream);
+
 };

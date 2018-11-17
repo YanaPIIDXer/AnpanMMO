@@ -6,7 +6,6 @@
 #include "Packet/PacketSpawnPlayer.h"
 #include "Packet/PacketPlayerList.h"
 #include "Packet/PacketMovePlayer.h"
-#include "Packet/PacketPlayerRespawn.h"
 #include "Packet/PacketExitPlayer.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -58,17 +57,6 @@ void PlayerManager::OnRecvMove(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	PlayerMap[Packet.Uuid]->Move(Packet.X, Packet.Y, Packet.Rotation);
-}
-
-// リスポンを受信.
-void PlayerManager::OnRecvRespawn(MemoryStreamInterface *pStream)
-{
-	PacketPlayerRespawn Packet;
-	Packet.Serialize(pStream);
-
-	auto *pPlayer = PlayerMap.Find(Packet.Uuid);
-	check(pPlayer != nullptr);
-	pPlayer->Get()->Respawn(Packet.X, Packet.Y);
 }
 
 // 退出を受信.
