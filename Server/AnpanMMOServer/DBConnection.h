@@ -14,12 +14,6 @@ public:
 	// 開く.
 	bool Open();
 
-	// ユーザデータ読み込み
-	bool LoadUserData(char *pUserCode, int &OutId);
-
-	// キャラクタパラメータ読み込み
-	bool LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);
-
 	// キャラクタパラメータ書き込み
 	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y);
 
@@ -40,9 +34,6 @@ private:
 	// 接続.
 	MySqlConnection Connection;
 
-
-	// ユーザデータ登録.
-	bool RegisterUserData(char *pUserCode);
 
 	// ======== Singleton ===========
 public:
