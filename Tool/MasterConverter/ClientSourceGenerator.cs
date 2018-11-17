@@ -192,7 +192,12 @@ namespace MasterConverter
 			string ItemList = "";
 			foreach (Column Col in ColumnList)
 			{
-				string Item = "\t" + Util.ToTypeNameString(Col.DataType);
+				string TypeName = Util.ToTypeNameString(Col.DataType);
+				if (Col.DataType == Type.String)
+				{
+					TypeName = "FString";
+				}
+				string Item = "\t" + TypeName;
 				Item += " " + Col.Name + ";";
 				ItemList += Item + "\n";
 			}
@@ -203,7 +208,16 @@ namespace MasterConverter
 			foreach(Column Col in ColumnList)
 			{
 				ItemSerialize += "\t\t";
-				ItemSerialize += "if(!pStream->Serialize(&" + Col.Name + ")) { return false; }";
+				if(Col.DataType == Type.String)
+				{
+					ItemSerialize += "std::string Str" + Col.Name + ";\n\t\t";
+					ItemSerialize += "if(!pStream->Serialize(&Str" + Col.Name + ")) { return false; }\n\t\t";
+					ItemSerialize += Col.Name + " = UTF8_TO_TCHAR(Str" + Col.Name + ".c_str());";
+				}
+				else
+				{
+					ItemSerialize += "if(!pStream->Serialize(&" + Col.Name + ")) { return false; }";
+				}
 				ItemSerialize += "\n";
 			}
 			Source = Source.Replace("$ITEM_SERIALIZE$", ItemSerialize);
