@@ -6,6 +6,7 @@
 #include "Packet/CachePacketLogInResult.h"
 #include "Packet/CachePacketCharacterDataRequest.h"
 #include "Packet/CachePacketCharacterDataResult.h"
+#include "Packet/CachePacketCharacterDataSave.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -13,6 +14,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 {
 	AddPacketFunc(CacheLogInRequest, bind(&PacketReceiver::OnRecvLogInRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
+	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSave, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -59,6 +61,18 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 
 	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, MaxHp, Atk, Def, Exp, LastAreaId, LastX, LastY);
 	pParent->SendPacket(&ResultPacket);
+}
+
+// キャラクタ保存リクエストを受信した。
+void PacketReceiver::OnRecvCharacterDataSave(MemoryStreamInterface *pStream)
+{
+	CachePacketCharacterDataSave Packet;
+	Packet.Serialize(pStream);
+
+	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CustomerId, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY))
+	{
+		std::cout << "Character Data Save Failed..." << std::endl;
+	}
 }
 
 

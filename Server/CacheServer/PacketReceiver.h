@@ -48,6 +48,9 @@ private:
 	// キャラクタ情報リクエストを受信した。
 	void OnRecvCharacterDataRequest(MemoryStreamInterface *pStream);
 
+	// キャラクタ保存リクエストを受信した。
+	void OnRecvCharacterDataSave(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__
