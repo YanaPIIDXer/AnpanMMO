@@ -2,10 +2,12 @@
 #define __CLIENT_H__
 
 #include "TCPConnection.h"
+#include "Packet/PacketID.h"
 
 class PacketBase;
 class ClientStateBase;
 class PlayerCharacter;
+class MemoryStreamInterface;
 
 /**
  * クライアントクラス
@@ -44,6 +46,10 @@ public:
 
 	// キャラクタ作成.
 	void CreateCharacter(int MaxHp, int Atk, int Def, int Exp);
+
+	// パケットを受信。
+	// ※主に別プロセスからの受信時に使用。
+	void RecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 
 protected:
 
