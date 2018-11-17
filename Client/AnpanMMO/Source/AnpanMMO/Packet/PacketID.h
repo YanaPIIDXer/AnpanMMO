@@ -21,6 +21,8 @@ enum PacketID
 	CharacterStatus,
 	CacheLogInRequest,
 	CacheLogInResult,
+	CacheCharacterDataRequest,
+	CacheCharacterDataResult,
 	PlayerList,
 	SpawnPlayer,
 	MovePlayer,
