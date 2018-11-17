@@ -7,7 +7,7 @@
 /**
  * キャッシュサーバとの接続.
  */
-class CacheServerConnection : TCPConnection
+class CacheServerConnection : public TCPConnection, public noncopyable
 {
 
 public:
@@ -30,6 +30,16 @@ private:
 
 	// パケット受信.
 	CachePacketReceiver Receiver;
+
+	// ============ Singletonもどき ================
+
+public:
+
+	static CacheServerConnection *GetInstance() { return pInstance; }
+
+private:
+
+	static CacheServerConnection *pInstance;
 
 };
 

@@ -4,11 +4,14 @@
 #include "MemoryStream/MemoryStreamReader.h"
 #include "Packet/PacketHeader.h"
 
+CacheServerConnection *CacheServerConnection::pInstance = NULL;
+
 // コンストラクタ
 CacheServerConnection::CacheServerConnection(const shared_ptr<tcp::socket> &pInSocket)
 	: TCPConnection(pInSocket)
 	, Receiver(this)
 {
+	pInstance = this;
 }
 
 // 接続.
