@@ -47,8 +47,7 @@ public:
 	virtual bool IsError() const { return false; }
 
 	// リセット
-	// 特にやることは無し。
-	virtual void Reset() {}
+	virtual void Reset() { Size = 0; }
 
 private:
 
