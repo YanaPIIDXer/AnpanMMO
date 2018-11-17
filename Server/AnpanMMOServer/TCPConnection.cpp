@@ -27,6 +27,7 @@ void TCPConnection::OnRecv(const boost::system::error_code &ErrorCode, size_t Si
 {
 	if (ErrorCode)
 	{
+		pSocket->close();
 		bIsConnected = false;
 		OnDisconnected();
 		return;
@@ -55,6 +56,7 @@ void TCPConnection::OnSend(const boost::system::error_code &ErrorCode, size_t Si
 {
 	if (ErrorCode)
 	{
+		pSocket->close();
 		bIsConnected = false;
 		OnDisconnected();
 		return;
