@@ -4,7 +4,7 @@
 // コンストラクタ
 TCPConnection::TCPConnection(const shared_ptr<tcp::socket> &pInSocket)
 	: pSocket(pInSocket)
-	, bIsConnected(true)
+	, bIsConnected(false)
 {
 }
 
