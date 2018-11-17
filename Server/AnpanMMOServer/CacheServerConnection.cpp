@@ -73,3 +73,8 @@ void CacheServerConnection::OnRecvData(size_t Size)
 	}
 }
 
+// êÿífÇ≥ÇÍÇΩÅB
+void CacheServerConnection::OnDisconnected()
+{
+	exit(1);
+}

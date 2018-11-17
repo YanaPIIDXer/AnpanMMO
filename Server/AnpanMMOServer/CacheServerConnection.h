@@ -31,6 +31,9 @@ protected:
 	// データを受信した。
 	virtual void OnRecvData(size_t Size);
 
+	// 切断された。
+	virtual void OnDisconnected();
+
 private:
 
 	// パケット受信.
