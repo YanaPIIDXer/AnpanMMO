@@ -155,6 +155,7 @@
     <ClInclude Include="MySQL\MySqlBinds.h" />
     <ClInclude Include="MySQL\MySqlConnection.h" />
     <ClInclude Include="MySQL\MySqlQuery.h" />
+    <ClInclude Include="Packet\CachePacketBase.h" />
     <ClInclude Include="Packet\PacketBase.h" />
     <ClInclude Include="Packet\PacketHeader.h" />
     <ClInclude Include="Packet\PacketID.h" />
