@@ -45,6 +45,9 @@ private:
 	// ログインリクエストを受信した。
 	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
 
+	// キャラクタ情報リクエストを受信した。
+	void OnRecvCharacterDataRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__

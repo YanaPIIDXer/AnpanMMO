@@ -11,12 +11,16 @@
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/CachePacketLogInRequest.h"
 #include "Packet/CachePacketLogInResult.h"
+#include "Packet/CachePacketCharacterDataRequest.h"
+#include "Packet/CachePacketCharacterDataResult.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
 	AddPacketFunction(LogInRequest, boost::bind(&ClientStateTitle::OnRecvLogInRequest, this, _2));
+	AddPacketFunction(CacheLogInResult, boost::bind(&ClientStateTitle::OnRecvCacheLogInResult, this, _2));
+	AddPacketFunction(CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
 }
 
 
@@ -30,27 +34,6 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 
 	/*
-	int Id = 0;
-	PacketLogInResult::ResultCode ResultCode = PacketLogInResult::Success;
-	char *pUserCode = const_cast<char *>(Packet.UserCode.c_str());
-	if (!DBConnection::GetInstance().LoadUserData(pUserCode, Id))
-	{
-		ResultCode = PacketLogInResult::Error;
-	}
-	if (!ClientManager::GetInstance().GetFromCustomerId(Id).expired())
-	{
-		ResultCode = PacketLogInResult::DoubleLogIn;
-	}
-	Client *pClient = GetParent();
-	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid());
-	pClient->SendPacket(&ResultPacket);
-
-	if (ResultCode != PacketLogInResult::Success) { return; }
-
-	pClient->SetCustomerId(Id);
-
-	LoadCharacter();
-
 	u32 AreaId = 1;
 	float X = 0.0f;
 	float Y = 0.0f;
@@ -80,29 +63,32 @@ void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 		ResultCode = PacketLogInResult::DoubleLogIn;
 	}
 
-	PacketLogInResult ResultPacket(ResultCode, GetParent()->GetUuid());
-	GetParent()->SendPacket(&ResultPacket);
+	Client *pClient = GetParent();
+	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid());
+	pClient->SendPacket(&ResultPacket);
 
 	if (ResultCode != PacketLogInResult::Success) { return; }
 
+	pClient->SetCustomerId(Packet.Uuid);
+
+	CachePacketCharacterDataRequest CharaRequestPacket(pClient->GetUuid(), Packet.Uuid);
+	CacheServerConnection::GetInstance()->SendPacket(&CharaRequestPacket);
 }
 
-// キャラクタロード
-void ClientStateTitle::LoadCharacter()
+// キャッシュサーバからキャラクタデータを受信した。
+void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream)
 {
-	Client *pClient = GetParent();
+	CachePacketCharacterDataResult Packet;
+	Packet.Serialize(pStream);
 
-	int MaxHp = 0;
-	int Atk = 0;
-	int Def = 0;
-	int Exp = 0;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(pClient->GetCustomerId(), MaxHp, Atk, Def, Exp))
+	if (Packet.Result != CachePacketCharacterDataResult::Success)
 	{
-		std::cout << "Character Status Load Failed..." << std::endl;
+		std::cout << "CharacterData Load Failed..." << std::endl;
 		return;
 	}
-	pClient->CreateCharacter(MaxHp, Atk, Def, Exp);
 
-	PacketCharacterStatus Packet(pClient->GetUuid(), MaxHp, MaxHp, Atk, Def, Exp);
-	pClient->SendPacket(&Packet);
+	Client *pClient = GetParent();
+	pClient->CreateCharacter(Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	pClient->SendPacket(&StatusPacket);
 }

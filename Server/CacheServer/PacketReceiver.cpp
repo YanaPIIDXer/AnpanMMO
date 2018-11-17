@@ -4,6 +4,8 @@
 #include "DBConnection.h"
 #include "Packet/CachePacketLogInRequest.h"
 #include "Packet/CachePacketLogInResult.h"
+#include "Packet/CachePacketCharacterDataRequest.h"
+#include "Packet/CachePacketCharacterDataResult.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -27,6 +29,26 @@ void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	}
 
 	CachePacketLogInResult ResultPacket(Packet.ClientId, ResultCode, Id);
+	pParent->SendPacket(&ResultPacket);
+}
+
+// キャラクタ情報リクエストを受信した。
+void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketCharacterDataRequest Packet;
+	Packet.Serialize(pStream);
+
+	s32 MaxHp = 0;
+	s32 Atk = 0;
+	s32 Def = 0;
+	s32 Exp = 0;
+	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, MaxHp, Atk, Def, Exp))
+	{
+		ResultCode = CachePacketCharacterDataResult::Error;
+	}
+
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, MaxHp, Atk, Def, Exp);
 	pParent->SendPacket(&ResultPacket);
 }
 
