@@ -121,12 +121,18 @@ namespace NativePacketGenerator
 		private List<ClassMemberData> _Members = new List<ClassMemberData>();
 
 		/// <summary>
+		/// キャッシュサーバ向けか？
+		/// </summary>
+		public bool IsForCacheServer { get; private set; }
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InClassName">クラス名</param>
 		public ClassData(string InClassName)
 		{
 			ClassName = InClassName;
+			IsForCacheServer = false;
 		}
 
 		/// <summary>
@@ -160,6 +166,14 @@ namespace NativePacketGenerator
 				EnumList.Add(TypeName, new List<EnumData>());
 			}
 			EnumList[TypeName].Add(new EnumData(Name, Value));
+		}
+
+		/// <summary>
+		/// キャッシュサーバ向けフラグを立てる。
+		/// </summary>
+		public void SetForCacheServerFlag()
+		{
+			IsForCacheServer = true;
 		}
 
 	}
