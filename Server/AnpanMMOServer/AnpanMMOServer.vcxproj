@@ -129,6 +129,7 @@
     <ClInclude Include="Area\Area.h" />
     <ClInclude Include="Area\AreaManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
+    <ClInclude Include="CacheServerConnection.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
     <ClInclude Include="Character\Anpan\AI\Hate.h" />
@@ -199,6 +200,7 @@
     <ClCompile Include="AnpanPopArea.cpp" />
     <ClCompile Include="Area\Area.cpp" />
     <ClCompile Include="Area\AreaManager.cpp" />
+    <ClCompile Include="CacheServerConnection.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateActive.cpp" />
