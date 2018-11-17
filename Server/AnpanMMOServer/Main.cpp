@@ -5,6 +5,7 @@
 #include "TickManager.h" 
 #include "Master/MasterData.h"
 #include "Area/AreaManager.h"
+#include "CacheServerConnection.h"
 
 // エントリポイント
 int main()
@@ -31,6 +32,14 @@ int main()
 
 	asio::io_service IOService;
 
+	tcp::socket *pSock = new tcp::socket(IOService);
+	shared_ptr<tcp::socket> pSocket = shared_ptr<tcp::socket>(pSock);
+	CacheServerConnection CacheServerConn(pSocket);
+	if (!CacheServerConn.Connect())
+	{
+		return 1;
+	}
+	
 	ClientAcceptor Acceptor(IOService, Config::Port);
 	asio::basic_repeating_timer<posix_time::ptime> AcceptorTimer(IOService);
 	AcceptorTimer.start(posix_time::millisec(30),

@@ -25,6 +25,13 @@ protected:
 	// 受信バッファ.
 	MemoryBuffer RecvBuffer;
 
+	// 接続されているか？
+	bool bIsConnected;
+
+	// ソケットを取得.
+	tcp::socket *GetSocket() { return pSocket.get(); }
+
+
 	// 受信開始.
 	void AsyncRecv();
 
@@ -43,9 +50,6 @@ private:
 
 	// Socket
 	shared_ptr<tcp::socket> pSocket;
-
-	// 接続されているか？
-	bool bIsConnected;
 
 	// 受信データ
 	array<u8, RecvDataSize> RecvData;

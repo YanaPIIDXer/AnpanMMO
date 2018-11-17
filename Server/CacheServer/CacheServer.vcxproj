@@ -145,8 +145,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basic_repeating_timer.h" />
+    <ClInclude Include="Config.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
+    <ClInclude Include="GameServerConnection.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
     <ClInclude Include="MemoryStream\MemoryStreamInterface.h" />
@@ -165,8 +167,10 @@
     <ClInclude Include="TypeDefs.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CacheServer.cpp" />
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="FlexArray.cpp" />
+    <ClCompile Include="GameServerConnection.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryBuffer.cpp" />
     <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />
     <ClCompile Include="MemoryStream\MemoryStreamReader.cpp" />

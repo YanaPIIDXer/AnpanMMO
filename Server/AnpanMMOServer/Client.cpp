@@ -16,6 +16,7 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	, Uuid(0)
 	, CustomerId(0)
 {
+	bIsConnected = true;
 	AsyncRecv();
 }
 
