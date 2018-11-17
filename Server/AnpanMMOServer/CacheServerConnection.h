@@ -2,6 +2,7 @@
 #define __CACHESERVERCONNECTION_H__
 
 #include "TCPConnection.h"
+#include "CachePacketReceiver.h"
 
 /**
  * キャッシュサーバとの接続.
@@ -26,6 +27,9 @@ protected:
 	virtual void OnRecvData(size_t Size);
 
 private:
+
+	// パケット受信.
+	CachePacketReceiver Receiver;
 
 };
 

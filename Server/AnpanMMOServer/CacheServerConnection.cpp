@@ -7,6 +7,7 @@
 // コンストラクタ
 CacheServerConnection::CacheServerConnection(const shared_ptr<tcp::socket> &pInSocket)
 	: TCPConnection(pInSocket)
+	, Receiver(this)
 {
 }
 
@@ -40,8 +41,8 @@ void CacheServerConnection::OnRecvData(size_t Size)
 		RecvBuffer.Pop(3);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
-		//pState->AnalyzePacket(Header.GetPacketId(), &BodyStream);
-
+		Receiver.RecvPacket(Header.GetPacketId(), &BodyStream);
+		
 		RecvBuffer.Pop(Header.GetPacketSize());
 	}
 }
