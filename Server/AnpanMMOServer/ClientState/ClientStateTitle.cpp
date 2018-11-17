@@ -32,19 +32,6 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 
 	CachePacketLogInRequest CachePacket(GetParent()->GetUuid(), Packet.UserCode);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
-
-	/*
-	u32 AreaId = 1;
-	float X = 0.0f;
-	float Y = 0.0f;
-	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Id, AreaId, X, Y))
-	{
-		std::cout << "Read Last Logout Position Failed..." << std::endl;
-	}
-
-	ClientStateAreaChange *pNextState = new ClientStateAreaChange(pClient, AreaId, Vector2D(X, Y));
-	pClient->ChangeState(pNextState);
-	*/
 }
 
 // キャッシュサーバからログイン結果を受信した。
@@ -91,4 +78,7 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	pClient->CreateCharacter(Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 	pClient->SendPacket(&StatusPacket);
+
+	ClientStateAreaChange *pNextState = new ClientStateAreaChange(pClient, Packet.LastAreaId, Vector2D(Packet.LastX, Packet.LastY));
+	pClient->ChangeState(pNextState);
 }
