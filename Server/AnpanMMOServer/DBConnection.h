@@ -17,9 +17,6 @@ public:
 	// キャラクタパラメータ書き込み
 	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y);
 
-	// 最後にログアウトした位置を読み込み
-	bool ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY);
-
 private:
 
 	// ユーザ情報を格納したファイル名.

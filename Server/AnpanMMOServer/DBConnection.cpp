@@ -44,19 +44,3 @@ bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, i
 
 	return true;
 }
-
-// 最後にログアウトした位置を読み込み
-bool DBConnection::ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY)
-{
-	MySqlQuery Query = Connection.CreateQuery("select LastArea, LastX, LastY from CharacterData where CustomerId = ?");
-
-	Query.BindInt(&Id);
-	Query.BindResultInt(&OutAreaId);
-	Query.BindResultFloat(&OutX);
-	Query.BindResultFloat(&OutY);
-
-	if (!Query.ExecuteQuery()) { return false; }
-	if (!Query.Fetch()) { return false; }
-
-	return true;
-}
