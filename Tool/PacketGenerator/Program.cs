@@ -21,6 +21,7 @@ namespace NativePacketGenerator
 				StreamWriter Writer = new StreamWriter(SettingFileName);
 				Writer.WriteLine("Server Directory:");
 				Writer.WriteLine("Client Directory:");
+				Writer.WriteLine("CacheServer Directory:");
 				Writer.Close();
 				Console.WriteLine("設定ファイルが存在しなかったので自動生成しました。\n必要な項目を入力してください。");
 				return;
@@ -29,6 +30,7 @@ namespace NativePacketGenerator
 			StreamReader Reader = new StreamReader(SettingFileName);
 			var ServerPath = Reader.ReadLine().Replace("Server Directory:", "");
 			var ClientPath = Reader.ReadLine().Replace("Client Directory:", "");
+			var CacheServerPath = Reader.ReadLine().Replace("CacheServer Directory:", "");
 
 			var Excels = Directory.GetFiles("PacketData");
 			List<ClassData> Classes = new List<ClassData>();
@@ -50,13 +52,22 @@ namespace NativePacketGenerator
 			if (!IDGen.Generate()) { return; }
 			if (!IDGen.Write(ServerPath + "\\PacketID.h")) { return; }
 			if (!IDGen.Write(ClientPath + "\\PacketID.h")) { return; }
+			if (!IDGen.Write(CacheServerPath + "\\PacketID.h")) { return; }
 
 			foreach(var Class in Classes)
 			{
 				SourceGenerator Gen = new SourceGenerator(Class);
 				if (!Gen.Generate()) { return; }
-				if (!Gen.Write(ServerPath)) { return; }
-				if (!Gen.Write(ClientPath)) { return; }
+				if(!Class.IsForCacheServer)
+				{
+					if (!Gen.Write(ServerPath)) { return; }
+					if (!Gen.Write(ClientPath)) { return; }
+				}
+				else
+				{
+					if (!Gen.Write(ServerPath)) { return; }
+					if (!Gen.Write(CacheServerPath)) { return; }
+				}
 			}
 
 		}

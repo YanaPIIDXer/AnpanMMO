@@ -127,7 +127,7 @@ namespace NativePacketGenerator
 						case "$FOR_CACHE_SERVER$":
 
 							{
-								string Value = (string)WorkSheet.Cells[i, 2].Value;
+								string Value = WorkSheet.Cells[i, 2].Value.ToString();
 								if(Value == "1")
 								{
 									Class.SetForCacheServerFlag();

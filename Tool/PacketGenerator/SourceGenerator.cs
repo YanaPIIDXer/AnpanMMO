@@ -193,6 +193,10 @@ namespace NativePacketGenerator
 			Template = Template.Replace("$PUT_MEMBERS$", PutMembers);
 
 			string SerializeFunctions = "";
+			if(Class.IsForCacheServer && Class.BaseClassName == "CachePacketBase")
+			{
+				SerializeFunctions += "CachePacketBase::Serialize(pStream);\n\t\t";
+			}
 			for(int i = 0; i < Class.Members.Count; i++)
 			{
 				var Member = Class.Members[i];
