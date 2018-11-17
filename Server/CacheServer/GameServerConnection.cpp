@@ -8,6 +8,7 @@
 GameServerConnection::GameServerConnection(asio::io_service &IOService, const shared_ptr<tcp::socket> &pInSocket)
 	: TCPConnection(pInSocket)
 	, Acceptor(IOService, tcp::endpoint(tcp::v4(), Config::CacheServerPort))
+	, Receiver(this)
 {
 	Accept();
 }
@@ -24,8 +25,8 @@ void GameServerConnection::OnRecvData(size_t Size)
 		RecvBuffer.Pop(3);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
-		//pState->AnalyzePacket(Header.GetPacketId(), &BodyStream);
-
+		Receiver.RecvPacket(Header.GetPacketId(), &BodyStream);
+		
 		RecvBuffer.Pop(Header.GetPacketSize());
 	}
 }

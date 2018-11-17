@@ -2,6 +2,7 @@
 #define __GAMESERVERCONNECTION_H__
 
 #include "TCPConnection.h"
+#include "PacketReceiver.h"
 
 /**
  * ゲームサーバへの接続クラス
@@ -26,6 +27,9 @@ private:
 
 	// アクセプタ
 	tcp::acceptor Acceptor;
+
+	// パケット受信.
+	PacketReceiver Receiver;
 
 
 	// Acceptする。

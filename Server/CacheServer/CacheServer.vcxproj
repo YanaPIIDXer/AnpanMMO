@@ -157,6 +157,7 @@
     <ClInclude Include="MySQL\MySqlBinds.h" />
     <ClInclude Include="MySQL\MySqlConnection.h" />
     <ClInclude Include="MySQL\MySqlQuery.h" />
+    <ClInclude Include="PacketReceiver.h" />
     <ClInclude Include="Packet\CachePacketBase.h" />
     <ClInclude Include="Packet\PacketBase.h" />
     <ClInclude Include="Packet\PacketHeader.h" />
@@ -178,6 +179,7 @@
     <ClCompile Include="MySQL\MySqlBinds.cpp" />
     <ClCompile Include="MySQL\MySqlConnection.cpp" />
     <ClCompile Include="MySQL\MySqlQuery.cpp" />
+    <ClCompile Include="PacketReceiver.cpp" />
     <ClCompile Include="Packet\PacketHeader.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
