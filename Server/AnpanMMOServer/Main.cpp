@@ -1,7 +1,6 @@
 #include "stdafx.h"	
 #include "ClientAcceptor.h"
 #include "ClientManager.h"
-#include "DBConnection.h"
 #include "TickManager.h" 
 #include "Master/MasterData.h"
 #include "Area/AreaManager.h"
@@ -17,16 +16,6 @@ int main()
 	else
 	{
 		std::cout << "Master Read Faled..." << std::endl;
-		return 1;
-	}
-
-	if (DBConnection::GetInstance().Open())
-	{
-		std::cout << "DB Open Success!!" << std::endl;
-	}
-	else
-	{
-		std::cout << "DB Open Failed..." << std::endl;
 		return 1;
 	}
 

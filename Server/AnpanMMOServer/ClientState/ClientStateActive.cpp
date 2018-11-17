@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include  "ClientStateActive.h"
 #include "MemoryStream/MemoryStreamInterface.h"
-#include "DBConnection.h"
 #include "Client.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Area/AreaManager.h"

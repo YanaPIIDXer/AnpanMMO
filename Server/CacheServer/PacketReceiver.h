@@ -42,6 +42,15 @@ private:
 	// パケット受信関数を追加.
 	void AddPacketFunc(PacketID ID, const PacketFunc &Func);
 
+	// ログインリクエストを受信した。
+	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
+
+	// キャラクタ情報リクエストを受信した。
+	void OnRecvCharacterDataRequest(MemoryStreamInterface *pStream);
+
+	// キャラクタ保存リクエストを受信した。
+	void OnRecvCharacterDataSave(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__

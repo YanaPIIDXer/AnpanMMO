@@ -101,6 +101,13 @@ bool MemoryStreamReader::Serialize(float *pValue)
 	return true;
 }
 
+// リセット
+void MemoryStreamReader::Reset()
+{
+	CurrentPosition = 0;
+}
+
+
 //指定したサイズ分の読み込み
 bool MemoryStreamReader::Read(void *pValue, int ReadSize)
 {

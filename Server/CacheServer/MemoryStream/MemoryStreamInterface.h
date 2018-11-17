@@ -40,6 +40,9 @@ public:
 	// エラーが発生しているか？
 	virtual bool IsError() const = 0;
 
+	// リセット.
+	virtual void Reset() = 0;
+
 };
 
 #endif			//#ifndef __MEMORYSTREAMINTERFACE_H__

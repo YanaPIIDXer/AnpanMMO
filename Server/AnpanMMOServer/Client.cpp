@@ -60,6 +60,13 @@ void Client::CreateCharacter(int MaxHp, int Atk, int Def, int Exp)
 	pCharacter = shared_ptr<PlayerCharacter>(pChara);
 }
 
+// パケットを受信.
+void Client::RecvPacket(PacketID ID, MemoryStreamInterface *pStream)
+{
+	pStream->Reset();
+	pState->AnalyzePacket(ID, pStream);
+}
+
 
 // データを受信した。
 void Client::OnRecvData(size_t Size)

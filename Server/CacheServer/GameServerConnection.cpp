@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "GameServerConnection.h"
 #include "Config.h"
+#include "Packet/PacketBase.h"
+#include "MemoryStream/MemorySizeCaliculateStream.h"
+#include "MemoryStream/MemoryStreamWriter.h"
 #include "MemoryStream/MemoryStreamReader.h"
 #include "Packet/PacketHeader.h"
 
@@ -11,6 +14,26 @@ GameServerConnection::GameServerConnection(asio::io_service &IOService, const sh
 	, Receiver(this)
 {
 	Accept();
+}
+
+// パケット送信.
+void GameServerConnection::SendPacket(PacketBase *pPacket)
+{
+	//まずはサイズを求める
+	MemorySizeCaliculateStream SizeStream;
+	pPacket->Serialize(&SizeStream);
+
+	//シリアライズ本番
+	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 3);
+
+	u8 Id = (u8)pPacket->GetPacketID();
+	u16 Size = SizeStream.GetSize();
+	WriteStream.Serialize(&Id);
+	WriteStream.Serialize(&Size);
+	pPacket->Serialize(&WriteStream);
+
+	//送信
+	AsyncSend(WriteStream.GetStream(), WriteStream.GetSize());
 }
 
 

@@ -4,10 +4,12 @@
 #include "TCPConnection.h"
 #include "CachePacketReceiver.h"
 
+class PacketBase;
+
 /**
  * キャッシュサーバとの接続.
  */
-class CacheServerConnection : TCPConnection
+class CacheServerConnection : public TCPConnection, public noncopyable
 {
 
 public:
@@ -21,6 +23,9 @@ public:
 	// 接続.
 	bool Connect();
 
+	// パケット送信.
+	void SendPacket(PacketBase *pPacket);
+
 protected:
 
 	// データを受信した。
@@ -30,6 +35,16 @@ private:
 
 	// パケット受信.
 	CachePacketReceiver Receiver;
+
+	// ============ Singletonもどき ================
+
+public:
+
+	static CacheServerConnection *GetInstance() { return pInstance; }
+
+private:
+
+	static CacheServerConnection *pInstance;
 
 };
 

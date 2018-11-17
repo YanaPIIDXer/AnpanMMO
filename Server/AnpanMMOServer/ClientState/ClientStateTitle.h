@@ -19,8 +19,11 @@ private:
 	// ログインリクエストを受信した。
 	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
 
-	// キャラクタロード
-	void LoadCharacter();
+	// キャッシュサーバからログイン結果を受信した。
+	void OnRecvCacheLogInResult(MemoryStreamInterface *pStream);
+
+	// キャッシュサーバからキャラクタデータを受信した。
+	void OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream);
 
 };
 

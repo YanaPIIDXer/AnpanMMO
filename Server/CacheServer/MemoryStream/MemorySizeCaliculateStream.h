@@ -46,6 +46,9 @@ public:
 	// サイズ計算ではエラーが無い
 	virtual bool IsError() const { return false; }
 
+	// リセット
+	virtual void Reset() { Size = 0; }
+
 private:
 
 	//計算結果

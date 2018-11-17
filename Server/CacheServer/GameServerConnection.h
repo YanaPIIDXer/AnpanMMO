@@ -4,6 +4,8 @@
 #include "TCPConnection.h"
 #include "PacketReceiver.h"
 
+class PacketBase;
+
 /**
  * ゲームサーバへの接続クラス
  */
@@ -17,6 +19,9 @@ public:
 
 	// デストラクタ
 	virtual ~GameServerConnection() {}
+
+	// パケット送信.
+	void SendPacket(PacketBase *pPacket);
 
 protected:
 

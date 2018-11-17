@@ -45,6 +45,9 @@ public:
 	// エラーが発生しているか？
 	virtual bool IsError() const { return bError; }
 
+	// リセット
+	virtual void Reset();
+
 private:
 
 	//指定したサイズ分の読み込み
