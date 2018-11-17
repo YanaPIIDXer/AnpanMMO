@@ -21,5 +21,6 @@ bool CacheServerConnection::Connect()
 	}
 	
 	std::cout << "Cache Server Connected!" << std::endl;
+	AsyncRecv();
 	return true;
 }
