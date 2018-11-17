@@ -12,7 +12,7 @@ class GameServerConnection : public TCPConnection
 public:
 
 	// コンストラクタ
-	GameServerConnection(const shared_ptr<tcp::socket> &pInSocket);
+	GameServerConnection(asio::io_service &IOService, const shared_ptr<tcp::socket> &pInSocket);
 
 	// デストラクタ
 	virtual ~GameServerConnection() {}
@@ -20,6 +20,9 @@ public:
 protected:
 
 private:
+
+	// アクセプタ
+	tcp::acceptor Acceptor;
 
 };
 
