@@ -23,13 +23,16 @@ public:
 	s32 Atk;
 	s32 Def;
 	s32 Exp;
+	u32 LastAreaId;
+	float LastX;
+	float LastY;
 	
 
 	CachePacketCharacterDataResult()
 	{
 	}
 
-	CachePacketCharacterDataResult(u32 InClientId, u8 InResult, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp)
+	CachePacketCharacterDataResult(u32 InClientId, u8 InResult, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY)
 	{
 		ClientId = InClientId;
 		Result = InResult;
@@ -37,6 +40,9 @@ public:
 		Atk = InAtk;
 		Def = InDef;
 		Exp = InExp;
+		LastAreaId = InLastAreaId;
+		LastX = InLastX;
+		LastY = InLastY;
 		
 	}
 
@@ -48,6 +54,9 @@ public:
 		pStream->Serialize(&Atk);
 		pStream->Serialize(&Def);
 		pStream->Serialize(&Exp);
+		pStream->Serialize(&LastAreaId);
+		pStream->Serialize(&LastX);
+		pStream->Serialize(&LastY);
 		
 		return true;
 	}

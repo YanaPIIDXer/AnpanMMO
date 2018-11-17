@@ -48,7 +48,15 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, MaxHp, Atk, Def, Exp);
+	u32 LastAreaId = 0;
+	float LastX = 0.0f;
+	float LastY = 0.0f;
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Packet.CustomerId, LastAreaId, LastX, LastY))
+	{
+		ResultCode = CachePacketCharacterDataResult::Error;
+	}
+
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, MaxHp, Atk, Def, Exp, LastAreaId, LastX, LastY);
 	pParent->SendPacket(&ResultPacket);
 }
 
