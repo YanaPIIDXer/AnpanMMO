@@ -23,6 +23,8 @@ enum PacketID
 	CacheLogInResult,
 	CacheCharacterDataRequest,
 	CacheCharacterDataResult,
+	CacheLogOutPointRequest,
+	CacheLogOutPointResult,
 	PlayerList,
 	SpawnPlayer,
 	MovePlayer,
