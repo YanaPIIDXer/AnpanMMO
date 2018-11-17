@@ -22,6 +22,9 @@ public:
 
 protected:
 
+	// データを受信した。
+	virtual void OnRecvData(size_t Size);
+
 private:
 
 };

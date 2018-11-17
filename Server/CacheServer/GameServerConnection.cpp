@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "GameServerConnection.h"
 #include "Config.h"
+#include "MemoryStream/MemoryStreamReader.h"
+#include "Packet/PacketHeader.h"
 
 // コンストラクタ
 GameServerConnection::GameServerConnection(asio::io_service &IOService, const shared_ptr<tcp::socket> &pInSocket)
@@ -8,6 +10,24 @@ GameServerConnection::GameServerConnection(asio::io_service &IOService, const sh
 	, Acceptor(IOService, tcp::endpoint(tcp::v4(), Config::CacheServerPort))
 {
 	Accept();
+}
+
+
+// データを受信した。
+void GameServerConnection::OnRecvData(size_t Size)
+{
+	u8 *pRecvData = RecvBuffer.GetTop();
+	MemoryStreamReader ReadStream(pRecvData, Size);
+	PacketHeader Header;
+	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 3)
+	{
+		RecvBuffer.Pop(3);
+
+		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
+		//pState->AnalyzePacket(Header.GetPacketId(), &BodyStream);
+
+		RecvBuffer.Pop(Header.GetPacketSize());
+	}
 }
 
 
