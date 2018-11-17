@@ -18,6 +18,7 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 	PrimaryActorTick.bCanEverTick = true;
 	
 	pMovementComponent = CreateDefaultSubobject<UFloatingPawnMovement>("Movement");
+
 }
 
 // ŠJn‚Ìˆ—.

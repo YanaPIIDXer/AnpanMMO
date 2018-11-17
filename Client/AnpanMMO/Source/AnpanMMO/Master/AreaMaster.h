@@ -9,13 +9,15 @@ struct AreaItem
 public:
 
 	u32 ID;
-	std::string Name;
+	FString Name;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		if(!pStream->Serialize(&ID)) { return false; }
-		if(!pStream->Serialize(&Name)) { return false; }
+		std::string StrName;
+		if(!pStream->Serialize(&StrName)) { return false; }
+		Name = UTF8_TO_TCHAR(StrName.c_str());
 
 		return true;
 	}
