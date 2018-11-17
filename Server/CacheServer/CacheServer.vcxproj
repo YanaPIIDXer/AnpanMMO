@@ -165,8 +165,8 @@
     <ClInclude Include="TypeDefs.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CacheServer.cpp" />
     <ClCompile Include="FlexArray.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryBuffer.cpp" />
     <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />
     <ClCompile Include="MemoryStream\MemoryStreamReader.cpp" />
