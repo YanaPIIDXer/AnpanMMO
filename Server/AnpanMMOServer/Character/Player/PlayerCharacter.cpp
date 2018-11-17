@@ -5,6 +5,8 @@
 #include "DBConnection.h"
 #include "Packet/PacketLevelUp.h"
 #include "Area/AreaManager.h"
+#include "CacheServerConnection.h"
+#include "Packet/CachePacketCharacterDataSave.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def, int InExp)
@@ -43,8 +45,7 @@ void PlayerCharacter::SaveParameter()
 	const CharacterParameter &Param = GetParameter();
 	AreaPtr pArea = GetArea();
 	const Vector2D Pos = GetPosition();
-	if (!DBConnection::GetInstance().SaveCharacterParameter(GetClient()->GetUuid(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), pArea.lock()->GetId(), Pos.X, Pos.Y))
-	{
-		std::cout << "Parameter Save Failed..." << std::endl;
-	}
+	Client *pClient = GetClient();
+	CachePacketCharacterDataSave Packet(pClient->GetUuid(), pClient->GetCustomerId(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), pArea.lock()->GetId(), Pos.X, Pos.Y);
+	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }
