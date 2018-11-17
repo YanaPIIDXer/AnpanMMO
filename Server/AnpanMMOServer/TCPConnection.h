@@ -28,6 +28,9 @@ protected:
 	// 接続されているか？
 	bool bIsConnected;
 
+	// ソケットを取得.
+	tcp::socket *GetSocket() { return pSocket.get(); }
+
 
 	// 受信開始.
 	void AsyncRecv();
