@@ -7,9 +7,15 @@ GameServerConnection::GameServerConnection(asio::io_service &IOService, const sh
 	: TCPConnection(pInSocket)
 	, Acceptor(IOService, tcp::endpoint(tcp::v4(), Config::CacheServerPort))
 {
-	Acceptor.async_accept(*pInSocket.get(), bind(&GameServerConnection::OnAccept, this, asio::placeholders::error));
+	Accept();
 }
 
+
+// AcceptÇ∑ÇÈÅB
+void GameServerConnection::Accept()
+{
+	Acceptor.async_accept(*GetSocket(), bind(&GameServerConnection::OnAccept, this, asio::placeholders::error));
+}
 
 // AcceptÇµÇΩÅB
 void GameServerConnection::OnAccept(const system::error_code &ErrorCode)

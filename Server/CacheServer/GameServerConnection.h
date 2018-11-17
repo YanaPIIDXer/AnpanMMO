@@ -25,6 +25,9 @@ private:
 	tcp::acceptor Acceptor;
 
 
+	// AcceptÇ∑ÇÈÅB
+	void Accept();
+
 	// AcceptÇµÇΩÅB
 	void OnAccept(const system::error_code &ErrorCode);
 
