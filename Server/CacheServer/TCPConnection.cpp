@@ -3,8 +3,8 @@
 
 // コンストラクタ
 TCPConnection::TCPConnection(const shared_ptr<tcp::socket> &pInSocket)
-	: pSocket(pInSocket)
-	, bIsConnected(false)
+	: bIsConnected(false)
+	, pSocket(pInSocket)
 {
 }
 
