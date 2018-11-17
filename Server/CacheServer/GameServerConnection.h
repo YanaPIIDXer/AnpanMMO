@@ -24,6 +24,10 @@ private:
 	// アクセプタ
 	tcp::acceptor Acceptor;
 
+
+	// Acceptした。
+	void OnAccept(const system::error_code &ErrorCode);
+
 };
 
 #endif		// #ifndef __GAMESERVERCONNECTION_H__
