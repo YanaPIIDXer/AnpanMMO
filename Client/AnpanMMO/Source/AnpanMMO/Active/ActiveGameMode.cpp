@@ -5,6 +5,7 @@
 #include "Character/CharacterBase.h"
 #include "Character/Anpan/Anpan.h"
 #include "Active/UI/MainHUD.h"
+#include "LevelStreaming/LevelManager.h"
 #include "Character/Player/GameCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "Packet/PacketGameReady.h"
@@ -39,6 +40,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::MovePlayer, std::bind(&PlayerManager::OnRecvMove, &PlayerMgr, _1));
 	AddPacketFunction(PacketID::PlayerRespawn, std::bind(&AActiveGameMode::OnRecvRespawn, this, _1));
 	AddPacketFunction(PacketID::ExitPlayer, std::bind(&PlayerManager::OnRecvExit, &PlayerMgr, _1));
+
+	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 }
 
 // ŠJŽnŽž‚Ìˆ—.
@@ -51,6 +54,10 @@ void AActiveGameMode::BeginPlay()
 	PlayerMgr.SetWorld(GetWorld());
 	AnpanMgr.SetWorld(GetWorld());
 	WarpPointMgr.SetWorld(GetWorld());
+	pLevelManager->SetWorld(GetWorld());
+
+	// Test
+	pLevelManager->Load("/Map0001/Levels/Map0001.Map0001");
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);

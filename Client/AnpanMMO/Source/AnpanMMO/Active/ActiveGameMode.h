@@ -10,6 +10,7 @@
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
+class ULevelManager;
 
 /**
  * ƒQ[ƒ€’†GameMode
@@ -57,6 +58,10 @@ private:
 	// MainHUD
 	UPROPERTY()
 	UMainHUD *pMainHUD;
+
+	// ƒŒƒxƒ‹ŠÇ—.
+	UPROPERTY()
+	ULevelManager *pLevelManager;
 
 	// MainHUD‚ğ‰Šú‰»‚µ‚½‚©H
 	bool bInitializedMainHUD;
