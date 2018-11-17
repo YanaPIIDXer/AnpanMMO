@@ -151,7 +151,6 @@
     <ClInclude Include="ClientState\ClientStateTitle.h" />
     <ClInclude Include="TCPConnection.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="DBConnection.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="FlexArray.h" />
     <ClInclude Include="Master\AnpanPopAreaMaster.h" />
@@ -221,7 +220,6 @@
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />
-    <ClCompile Include="DBConnection.cpp" />
     <ClCompile Include="FlexArray.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Master\AnpanPopAreaMaster.cpp" />

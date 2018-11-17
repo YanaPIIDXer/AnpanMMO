@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "ClientStateTitle.h"
 #include "Client.h"
-#include "DBConnection.h"
 #include "ClientStateAreaChange.h"
 #include "ClientManager.h"
 #include "CacheServerConnection.h"

@@ -2,7 +2,6 @@
 #include "PlayerCharacter.h"
 #include "Client.h"
 #include "Math/Random.h"
-#include "DBConnection.h"
 #include "Packet/PacketLevelUp.h"
 #include "Area/AreaManager.h"
 #include "CacheServerConnection.h"
