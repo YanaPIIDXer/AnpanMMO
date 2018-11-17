@@ -26,8 +26,9 @@ public:
 	{
 	}
 
-	CachePacketLogInResult(u8 InResult, s32 InUuid)
+	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InUuid)
 	{
+		ClientId = InClientId;
 		Result = InResult;
 		Uuid = InUuid;
 		

@@ -21,8 +21,9 @@ public:
 	{
 	}
 
-	CachePacketLogInRequest(std::string InUserCode)
+	CachePacketLogInRequest(u32 InClientId, std::string InUserCode)
 	{
+		ClientId = InClientId;
 		UserCode = InUserCode;
 		
 	}
