@@ -26,4 +26,5 @@ void GameServerConnection::OnAccept(const system::error_code &ErrorCode)
 		return;
 	}
 	bIsConnected = true;
+	AsyncRecv();
 }
