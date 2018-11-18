@@ -41,6 +41,12 @@ public:
 	// メインHUD取得.
 	UFUNCTION(BlueprintPure, Category = "HUD")
 	UMainHUD *GetMainHUD() const { return pMainHUD; }
+
+	// マップロード開始.
+	void StartLevelLoad(uint32 AreaId);
+
+	// レベルロードが完了した。
+	void OnLevelLoadFinished();
 	
 protected:
 

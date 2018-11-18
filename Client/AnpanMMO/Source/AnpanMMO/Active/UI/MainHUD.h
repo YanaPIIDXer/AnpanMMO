@@ -67,9 +67,9 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Attack")
 	void OnPressedAttackButton();
 
-	// 準備完了パケットを送信.
+	// レベルロード開始.
 	UFUNCTION(BlueprintCallable, Category = "MapChange")
-	void SendReadyPacket();
+	void StartLevelLoad();
 
 private:
 	

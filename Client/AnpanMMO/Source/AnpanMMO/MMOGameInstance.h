@@ -47,6 +47,12 @@ public:
 	// ステータスキャッシュ取得.
 	const PlayerStatus &GetStatusCache() const { return StatusCache; }
 
+	// エリアＩＤキャッシュをセット。
+	void SetAreaIdCache(uint32 AreaId) { AreaIdCache = AreaId; }
+
+	// エリアＩＤキャッシュを取得.
+	uint32 GetAreaIdCache() { return AreaIdCache; }
+
 	
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;
@@ -58,6 +64,9 @@ private:
 
 	// ステータスキャッシュ
 	PlayerStatus StatusCache;
+
+	// エリアＩＤキャッシュ
+	uint32 AreaIdCache;
 
 
 	// パケットを受信した。

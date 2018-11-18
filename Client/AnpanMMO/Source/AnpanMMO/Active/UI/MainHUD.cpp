@@ -5,7 +5,7 @@
 #include "Character/Player/GameCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "MMOGameInstance.h"
-#include "Packet/PacketGameReady.h"
+#include "Active/ActiveGameMode.h"
 
 const TCHAR *UMainHUD::AssetPath = TEXT("/Game/Blueprints/UI/Active/MainHUD.MainHUD");
 
@@ -41,12 +41,15 @@ void UMainHUD::OnPressedAttackButton()
 	pCharacter->Attack();
 }
 
-// 準備完了パケットを送信.
-void UMainHUD::SendReadyPacket()
+// レベルロード開始.
+void UMainHUD::StartLevelLoad()
 {
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
 	check(pInst != nullptr);
 
-	PacketGameReady Packet;
-	pInst->SendPacket(&Packet);
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	
+	uint32 AreaId = pInst->GetAreaIdCache();
+	pGameMode->StartLevelLoad(AreaId);
 }
