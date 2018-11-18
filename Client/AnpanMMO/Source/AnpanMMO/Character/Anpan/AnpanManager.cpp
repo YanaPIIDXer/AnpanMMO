@@ -64,7 +64,7 @@ void AnpanManager::OnRecvMove(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
-	AnpanMap[Packet.Uuid]->Move(Packet.X, Packet.Y, Packet.MoveMilliSec);
+	AnpanMap[Packet.Uuid]->Move(Packet.X, Packet.Y, Packet.Z, Packet.MoveMilliSec);
 }
 
 // 回転を受信した。
@@ -84,7 +84,7 @@ void AnpanManager::OnRecvStop(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
-	AnpanMap[Packet.Uuid]->Stop(Packet.X, Packet.Y, Packet.Rotation);
+	AnpanMap[Packet.Uuid]->Stop(Packet.X, Packet.Y, Packet.Z, Packet.Rotation);
 }
 
 // リセット

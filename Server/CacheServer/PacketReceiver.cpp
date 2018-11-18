@@ -34,7 +34,8 @@ void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	u32 LastAreaId = 0;
 	float LastX = 0.0f;
 	float LastY = 0.0f;
-	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Id, LastAreaId, LastX, LastY))
+	float LastZ = 0.0f;
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Id, LastAreaId, LastX, LastY, LastZ))
 	{
 		ResultCode = CachePacketLogInResult::Error;
 	}
@@ -62,12 +63,13 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	u32 LastAreaId = 0;
 	float LastX = 0.0f;
 	float LastY = 0.0f;
-	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Packet.CustomerId, LastAreaId, LastX, LastY))
+	float LastZ = 0.0f;
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Packet.CustomerId, LastAreaId, LastX, LastY, LastZ))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, MaxHp, Atk, Def, Exp, LastAreaId, LastX, LastY);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, MaxHp, Atk, Def, Exp, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 }
 
@@ -77,7 +79,7 @@ void PacketReceiver::OnRecvCharacterDataSave(MemoryStreamInterface *pStream)
 	CachePacketCharacterDataSave Packet;
 	Packet.Serialize(pStream);
 
-	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CustomerId, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY))
+	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CustomerId, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY, Packet.LastZ))
 	{
 		std::cout << "Character Data Save Failed..." << std::endl;
 	}

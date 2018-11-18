@@ -32,13 +32,13 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	// ˆÚ“®.
-	void Move(float X, float Y, int32 Time);
+	void Move(float X, float Y, float Z, int32 Time);
 
 	// ‰ñ“].
 	void Rotate(float Rotation, int32 Time);
 
 	// ’âŽ~.
-	void Stop(float X, float Y, float Rotation);
+	void Stop(float X, float Y, float Z, float Rotation);
 
 private:
 	

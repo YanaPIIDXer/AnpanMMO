@@ -43,13 +43,11 @@ void AOtherPlayerController::Tick(float DeltaTime)
 }
 
 // ˆÚ“®.
-void AOtherPlayerController::Move(float X, float Y, float Rotation)
+void AOtherPlayerController::Move(float X, float Y, float Z, float Rotation)
 {
 	pCharacter->SetActorRotation(FRotator(0.0f, Rotation, 0.0f));
 	PrevPos = pCharacter->GetActorLocation();
-	MoveTarget = PrevPos;
-	MoveTarget.X = X;
-	MoveTarget.Y = Y;
+	MoveTarget = FVector(X, Y, Z);
 
 	MoveTime = MoveInterval;
 }

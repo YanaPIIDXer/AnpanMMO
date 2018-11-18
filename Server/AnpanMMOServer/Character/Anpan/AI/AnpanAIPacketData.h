@@ -21,7 +21,7 @@ public:
 	// パケット生成.
 	PacketMoveAnpan CreatePacket()
 	{
-		PacketMoveAnpan Packet(Uuid, Pos.X, Pos.Y, Time);
+		PacketMoveAnpan Packet(Uuid, Pos.X, Pos.Y, Pos.Z, Time);
 		return Packet;
 	}
 

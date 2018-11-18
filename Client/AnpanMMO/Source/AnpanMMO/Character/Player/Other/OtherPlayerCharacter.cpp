@@ -41,9 +41,9 @@ void AOtherPlayerCharacter::PossessedBy(AController *NewController)
 }
 
 // ˆÚ“®.
-void AOtherPlayerCharacter::Move(float X, float Y, float Rotation)
+void AOtherPlayerCharacter::Move(float X, float Y, float Z, float Rotation)
 {
-	pController->Move(X, Y, Rotation);
+	pController->Move(X, Y, Z, Rotation);
 }
 
 // ˆÚ“®ƒxƒNƒgƒ‹‚ÌŽæ“¾.

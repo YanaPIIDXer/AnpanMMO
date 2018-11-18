@@ -35,7 +35,7 @@ public:
 	virtual void PossessedBy(AController *NewController) override;
 
 	// ˆÚ“®.
-	virtual void Move(float X, float Y, float Rotation) override;
+	virtual void Move(float X, float Y, float Z, float Rotation) override;
 
 	// ˆÚ“®ƒxƒNƒgƒ‹‚ÌŽæ“¾.
 	virtual FVector GetMoveVector() const override;

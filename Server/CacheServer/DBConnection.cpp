@@ -65,9 +65,9 @@ bool DBConnection::LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, in
 }
 
 // キャラクタパラメータ書き込み
-bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y)
+bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z)
 {
-	MySqlQuery Query = Connection.CreateQuery("update CharacterData set MaxHp = ?, Atk = ?, Def = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ? where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set MaxHp = ?, Atk = ?, Def = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ?, LastZ = ? where CustomerId = ?");
 
 	Query.BindInt(&MaxHp);
 	Query.BindInt(&Atk);
@@ -76,6 +76,7 @@ bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, i
 	Query.BindInt(&AreaId);
 	Query.BindFloat(&X);
 	Query.BindFloat(&Y);
+	Query.BindFloat(&Z);
 	Query.BindInt(&Id);
 
 	if (!Query.ExecuteQuery()) { return false; }
@@ -84,14 +85,15 @@ bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, i
 }
 
 // 最後にログアウトした位置を読み込み
-bool DBConnection::ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY)
+bool DBConnection::ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY, float &OutZ)
 {
-	MySqlQuery Query = Connection.CreateQuery("select LastArea, LastX, LastY from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select LastArea, LastX, LastY, LastZ from CharacterData where CustomerId = ?");
 
 	Query.BindInt(&Id);
 	Query.BindResultInt(&OutAreaId);
 	Query.BindResultFloat(&OutX);
 	Query.BindResultFloat(&OutY);
+	Query.BindResultFloat(&OutZ);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	if (!Query.Fetch()) { return false; }

@@ -32,7 +32,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	// ˆÚ“®.
-	void Move(float X, float Y, float Rotation);
+	void Move(float X, float Y, float Z, float Rotation);
 
 	// ˆÚ“®ƒxƒNƒgƒ‹‚ÌŽæ“¾.
 	FVector GetMoveVector() const;

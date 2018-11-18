@@ -16,6 +16,7 @@ public:
 	u32 Uuid;
 	float X;
 	float Y;
+	float Z;
 	float Rotation;
 	
 
@@ -23,11 +24,12 @@ public:
 	{
 	}
 
-	PacketMovePlayer(u32 InUuid, float InX, float InY, float InRotation)
+	PacketMovePlayer(u32 InUuid, float InX, float InY, float InZ, float InRotation)
 	{
 		Uuid = InUuid;
 		X = InX;
 		Y = InY;
+		Z = InZ;
 		Rotation = InRotation;
 		
 	}
@@ -37,6 +39,7 @@ public:
 		pStream->Serialize(&Uuid);
 		pStream->Serialize(&X);
 		pStream->Serialize(&Y);
+		pStream->Serialize(&Z);
 		pStream->Serialize(&Rotation);
 		
 		return true;

@@ -50,7 +50,7 @@ void ClientStateActive::OnRecvRespawnRequest(MemoryStreamInterface *pStream)
 	PlayerCharacterPtr pChara = GetParent()->GetCharacter();
 	pChara.lock()->Respawn();
 
-	PacketPlayerRespawn RespawnPacket(pChara.lock()->GetUuid(), 0.0f, 0.0f);
+	PacketPlayerRespawn RespawnPacket(pChara.lock()->GetUuid(), 0.0f, 0.0f, 0.0f);
 	GetParent()->SendPacket(&RespawnPacket);
 
 	// ロビーにリスポンする。

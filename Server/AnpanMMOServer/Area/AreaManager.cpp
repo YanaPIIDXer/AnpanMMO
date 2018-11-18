@@ -54,7 +54,7 @@ void AreaManager::OnRecvMove(Client *pClient, MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	AreaPtr pArea = pClient->GetCharacter().lock()->GetArea();
-	pArea.lock()->OnRecvMove(pClient->GetUuid(), Packet.X, Packet.Y, Packet.Rotation);
+	pArea.lock()->OnRecvMove(pClient->GetUuid(), Packet.X, Packet.Y, Packet.Z, Packet.Rotation);
 }
 
 // UŒ‚‚ğóM‚µ‚½B

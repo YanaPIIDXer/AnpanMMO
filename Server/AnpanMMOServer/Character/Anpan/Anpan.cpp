@@ -35,7 +35,7 @@ void Anpan::Poll(int DeltaTime)
 	if (AI.SweepSendStopPacketFlag())
 	{
 		const Vector3D Pos = GetPosition();
-		PacketStopAnpan Packet(GetUuid(), Pos.X, Pos.Y, GetRotation().Get());
+		PacketStopAnpan Packet(GetUuid(), Pos.X, Pos.Y, Pos.Z, GetRotation().Get());
 		GetArea().lock()->BroadcastPacket(&Packet);
 	}
 }

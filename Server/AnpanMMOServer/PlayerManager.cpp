@@ -38,7 +38,7 @@ void PlayerManager::Add(u32 Uuid, PlayerCharacterPtr pPlayer)
 	// 生成を接続済みのクライアントにブロードキャスト
 	const CharacterParameter &Param = pPlayer.lock()->GetParameter();
 	const Vector3D &Pos = pPlayer.lock()->GetPosition();
-	PacketSpawnPlayer Packet(Uuid, Param.Hp, Param.MaxHp, Pos.X, Pos.Y);
+	PacketSpawnPlayer Packet(Uuid, Param.Hp, Param.MaxHp, Pos.X, Pos.Y, Pos.Z);
 	BroadcastPacket(&Packet, pPlayer.lock()->GetClient());
 
 	// プレイヤーリストを通知.
@@ -74,7 +74,7 @@ void PlayerManager::OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rot)
 	pChara->SetPosition(Vector3D(X, Y, Z));
 	pChara->SetRotate(Rotation(Rot));
 
-	PacketMovePlayer Packet(Uuid, X, Y, Rot);
+	PacketMovePlayer Packet(Uuid, X, Y, Z, Rot);
 	BroadcastPacket(&Packet, PlayerList[Uuid].lock()->GetClient());
 }
 
@@ -98,7 +98,7 @@ void PlayerManager::MakeListPacket(PacketPlayerList &Packet)
 		const Vector3D &Position = It->second.lock()->GetPosition();
 		const Rotation &Rot = It->second.lock()->GetRotation();
 		const CharacterParameter &Param = It->second.lock()->GetParameter();
-		PlayerData Data(It->first, Position.X, Position.Y, Rot.Get(), Param.Hp, Param.MaxHp);
+		PlayerData Data(It->first, Position.X, Position.Y, Position.Z, Rot.Get(), Param.Hp, Param.MaxHp);
 		Packet.List.PushBack(Data);
 	}
 }

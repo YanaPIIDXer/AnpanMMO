@@ -16,6 +16,7 @@ public:
 	u32 Uuid;
 	float X;
 	float Y;
+	float Z;
 	s32 MoveMilliSec;
 	
 
@@ -23,11 +24,12 @@ public:
 	{
 	}
 
-	PacketMoveAnpan(u32 InUuid, float InX, float InY, s32 InMoveMilliSec)
+	PacketMoveAnpan(u32 InUuid, float InX, float InY, float InZ, s32 InMoveMilliSec)
 	{
 		Uuid = InUuid;
 		X = InX;
 		Y = InY;
+		Z = InZ;
 		MoveMilliSec = InMoveMilliSec;
 		
 	}
@@ -37,6 +39,7 @@ public:
 		pStream->Serialize(&Uuid);
 		pStream->Serialize(&X);
 		pStream->Serialize(&Y);
+		pStream->Serialize(&Z);
 		pStream->Serialize(&MoveMilliSec);
 		
 		return true;
