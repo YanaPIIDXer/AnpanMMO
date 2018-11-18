@@ -46,7 +46,8 @@ namespace DLCGenerator
 		private void CollectDLCs()
 		{
 			DLCListBox.Items.Clear();
-			var DLCs = Directory.EnumerateFiles("..\\Client\\AnpanMMO\\Plugins", "*.uplugin", SearchOption.AllDirectories);
+			//var DLCs = Directory.EnumerateFiles("..\\Client\\AnpanMMO\\Plugins", "*.uplugin", SearchOption.AllDirectories);
+			var DLCs = Directory.EnumerateDirectories("..\\Client\\AnpanMMO\\Plugins");
 			foreach(var DLCPath in DLCs)
 			{
 				DLCListBox.Items.Add(Path.GetFileNameWithoutExtension(DLCPath));
@@ -80,6 +81,27 @@ namespace DLCGenerator
 			{
 				MessageBox.Show("リリースの生成に失敗しました。");
 				return;
+			}
+
+			Console.WriteLine("リリースを生成しました。\n\n");
+
+			string DLCPath = Config.GetDLCDirectory();
+			if(!Directory.Exists(DLCPath))
+			{
+				Directory.CreateDirectory(DLCPath);
+			}
+
+			var DLCList = DLCListBox.SelectedItems;
+			foreach(var DLC in DLCList)
+			{
+				string DLCName = DLC.ToString();
+				DLCGenerator DLCGen = new DLCGenerator(AutomationToolPath, DLCName);
+				if(!DLCGen.Execute())
+				{
+					MessageBox.Show(DLCName + "のＤＬＣ生成に失敗しました。");
+					return;
+				}
+				Console.WriteLine(DLCName + "のＤＬＣを生成しました。\n\n");
 			}
 
 			MessageBox.Show("完了しました。");

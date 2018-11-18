@@ -29,5 +29,20 @@ namespace DLCGenerator
 			return ProjPath;
 		}
 
+		/// <summary>
+		/// DLCをブチ込むパス
+		/// </summary>
+		private static readonly string DLCPath = "DLCs";
+
+		/// <summary>
+		/// DLCをブチ込むパスを絶対パスで取得.
+		/// </summary>
+		/// <returns>DLCをブチ込むパスの絶対パス</returns>
+		public static string GetDLCDirectory()
+		{
+			string Dir = Path.GetFullPath(DLCPath);
+			return Dir;
+		}
+
 	}
 }

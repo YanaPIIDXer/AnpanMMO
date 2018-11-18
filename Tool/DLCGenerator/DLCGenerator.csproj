@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AutomationToolProcess.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="DLCGenerator.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
