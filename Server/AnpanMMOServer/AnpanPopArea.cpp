@@ -7,7 +7,7 @@
 // コンストラクタ
 AnpanPopArea::AnpanPopArea(const AnpanPopAreaItem *pMasterItem)
 	: Range(pMasterItem->Range)
-	, Position(pMasterItem->X, pMasterItem->Y)
+	, Position(pMasterItem->X, pMasterItem->Y, pMasterItem->Z)
 	, MaxCount(pMasterItem->MaxCount)
 	, MinHp(pMasterItem->MinHp)
 	, MaxHp(pMasterItem->MaxHp)
@@ -42,12 +42,13 @@ void AnpanPopArea::SpawnAnpan()
 
 	float X = Position.X + Random::Range<float>(-Range, Range);
 	float Y = Position.Y + Random::Range<float>(-Range, Range);
+	float Z = Position.Z;
 	int Hp = Random::Range<int>(MinHp, MaxHp);
 	int Atk = Random::Range<int>(MinAtk, MaxAtk);
 	int Def = Random::Range<int>(MinDef, MaxDef);
 	int Exp = Random::Range<int>(MinExp, MaxExp);
 
-	Anpan *pNewAnpan = new Anpan(Vector2D(X, Y), Hp, Atk, Def, Exp);
+	Anpan *pNewAnpan = new Anpan(Vector3D(X, Y, Z), Hp, Atk, Def, Exp);
 	shared_ptr<Anpan> pAnpan = shared_ptr<Anpan>(pNewAnpan);
 	AnpanList.push_back(pAnpan);
 	if (SpawnFunction)

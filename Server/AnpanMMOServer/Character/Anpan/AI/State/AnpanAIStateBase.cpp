@@ -6,8 +6,8 @@
 // コンストラクタ
 AnpanAIStateBase::AnpanAIStateBase(Anpan *pInParent)
 	: pParent(pInParent)
-	, PrevPos(0.0f, 0.0f)
-	, MoveTarget(0.0f, 0.0f)
+	, PrevPos(0.0f, 0.0f, 0.0f)
+	, MoveTarget(0.0f, 0.0f, 0.0f)
 	, MoveTime(0)
 	, MoveStartTime(0)
 	, PrevRotate(0.0f)
@@ -32,7 +32,7 @@ void AnpanAIStateBase::Poll(int DeltaTime)
 
 
 // 移動を設定.
-void AnpanAIStateBase::SetMove(const Vector2D &InMoveTarget, int Time)
+void AnpanAIStateBase::SetMove(const Vector3D &InMoveTarget, int Time)
 {
 	PrevPos = pParent->GetPosition();
 	MoveTarget = InMoveTarget + PrevPos;
@@ -74,7 +74,7 @@ void AnpanAIStateBase::UpdateMove(int DeltaTime)
 	}
 
 	float Rate = 1.0f - (MoveTime / (float)MoveStartTime);
-	Vector2D Pos = MathUtil::Lerp<Vector2D>(PrevPos, MoveTarget, Rate);
+	Vector3D Pos = MathUtil::Lerp<Vector3D>(PrevPos, MoveTarget, Rate);
 	pParent->SetPosition(Pos);
 }
 

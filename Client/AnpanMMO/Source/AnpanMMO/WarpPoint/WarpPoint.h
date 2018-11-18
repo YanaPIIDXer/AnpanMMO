@@ -22,7 +22,7 @@ class ANPANMMO_API AWarpPoint : public AActor
 public:	
 
 	// Spawn
-	static AWarpPoint *Spawn(UWorld *pWorld, float X, float Y, uint32 InId);
+	static AWarpPoint *Spawn(UWorld *pWorld, float X, float Y, float Z, uint32 InId);
 
 	// コンストラクタ
 	AWarpPoint(const FObjectInitializer &ObjectInitializer);

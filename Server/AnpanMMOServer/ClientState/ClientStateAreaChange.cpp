@@ -9,7 +9,7 @@
 #include "Packet/PacketAreaMove.h"
 
 // コンストラクタ
-ClientStateAreaChange::ClientStateAreaChange(Client *pInParent, u32 InAreaId, const Vector2D &InPosition)
+ClientStateAreaChange::ClientStateAreaChange(Client *pInParent, u32 InAreaId, const Vector3D &InPosition)
 	: ClientStateBase(pInParent)
 	, AreaId(InAreaId)
 	, Position(InPosition)

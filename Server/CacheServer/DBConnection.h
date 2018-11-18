@@ -21,10 +21,10 @@ public:
 	bool LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);
 
 	// キャラクタパラメータ書き込み
-	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y);
+	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z);
 
 	// 最後にログアウトした位置を読み込み
-	bool ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY);
+	bool ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY, float &OutZ);
 
 private:
 

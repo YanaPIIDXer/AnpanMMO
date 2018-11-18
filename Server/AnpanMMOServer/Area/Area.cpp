@@ -45,9 +45,9 @@ void Area::RemovePlayerCharacter(u32 Uuid)
 }
 
 // 移動を受信した。
-void Area::OnRecvMove(u32 Uuid, float X, float Y, float Rotation)
+void Area::OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rotation)
 {
-	PlayerMgr.OnRecvMove(Uuid, X, Y, Rotation);
+	PlayerMgr.OnRecvMove(Uuid, X, Y, Z, Rotation);
 }
 
 // 攻撃を受信した。
@@ -87,8 +87,8 @@ void Area::OnSpawnAnpan(u32 Uuid, AnpanPtr pAnpan)
 	pAnpan.lock()->SetArea(shared_from_this());
 
 	const CharacterParameter &Param = pAnpan.lock()->GetParameter();
-	const Vector2D &Position = pAnpan.lock()->GetPosition();
-	AnpanData Data(Uuid, Position.X, Position.Y, pAnpan.lock()->GetRotation().Get(), Param.Hp, Param.MaxHp);
+	const Vector3D &Position = pAnpan.lock()->GetPosition();
+	AnpanData Data(Uuid, Position.X, Position.Y, Position.Z, pAnpan.lock()->GetRotation().Get(), Param.Hp, Param.MaxHp);
 	PacketSpawnAnpan Packet(Data);
 	PlayerMgr.BroadcastPacket(&Packet);
 }

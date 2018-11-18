@@ -22,13 +22,14 @@ public:
 	u32 LastAreaId;
 	float LastX;
 	float LastY;
+	float LastZ;
 	
 
 	CachePacketCharacterDataSave()
 	{
 	}
 
-	CachePacketCharacterDataSave(u32 InClientId, u32 InCustomerId, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY)
+	CachePacketCharacterDataSave(u32 InClientId, u32 InCustomerId, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
 		CustomerId = InCustomerId;
@@ -39,6 +40,7 @@ public:
 		LastAreaId = InLastAreaId;
 		LastX = InLastX;
 		LastY = InLastY;
+		LastZ = InLastZ;
 		
 	}
 
@@ -53,6 +55,7 @@ public:
 		pStream->Serialize(&LastAreaId);
 		pStream->Serialize(&LastX);
 		pStream->Serialize(&LastY);
+		pStream->Serialize(&LastZ);
 		
 		return true;
 	}

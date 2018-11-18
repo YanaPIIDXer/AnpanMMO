@@ -28,7 +28,7 @@ public:
 	virtual void BeginPlay() override;
 
 	// ˆÚ“®.
-	virtual void Move(float X, float Y, float Rotation) {}
+	virtual void Move(float X, float Y, float Z, float Rotation) {}
 
 	// ˆÚ“®ƒxƒNƒgƒ‹‚ÌŽæ“¾.
 	virtual FVector GetMoveVector() const { return FVector(); }

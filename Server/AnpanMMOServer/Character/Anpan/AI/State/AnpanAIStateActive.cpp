@@ -81,8 +81,8 @@ void AnpanAIStateActive::UpdateAttack(int DeltaTime)
 // ターゲットの方向を向く。
 void AnpanAIStateActive::RotateToTarget()
 {
-	Vector2D TargetVec = (pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition()).GetNormalized();
-	Vector2D CenterVec = GetParent()->GetCenterVec();
+	Vector3D TargetVec = (pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition()).GetNormalized();
+	Vector3D CenterVec = GetParent()->GetCenterVec();
 
 	float Dot = MathUtil::Dot(TargetVec, CenterVec);
 	float Rad = acos(Dot);
@@ -93,7 +93,7 @@ void AnpanAIStateActive::RotateToTarget()
 		Deg = 0.0f;
 	}
 
-	if (MathUtil::Cross(CenterVec, TargetVec) < 0.0f)
+	if (MathUtil::Cross(CenterVec, TargetVec).X < 0.0f)
 	{
 		Deg *= -1.0f;
 	}
@@ -106,7 +106,7 @@ void AnpanAIStateActive::MoveToTarget()
 {
 	if (IsApproached()) { return; }
 
-	Vector2D TargetVec = (pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition());
+	Vector3D TargetVec = (pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition());
 	float Size = TargetVec.GetSize();
 	TargetVec.Normalize();
 	TargetVec *= (Size - ApproachDist);
@@ -117,6 +117,6 @@ void AnpanAIStateActive::MoveToTarget()
 // 接近しているか？
 bool AnpanAIStateActive::IsApproached()
 {
-	Vector2D TargetVec = pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition();
+	Vector3D TargetVec = pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition();
 	return (TargetVec.GetSizeSq() < ApproachDist * ApproachDist);
 }

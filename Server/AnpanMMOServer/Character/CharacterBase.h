@@ -3,7 +3,7 @@
 
 #include <boost/enable_shared_from_this.hpp>
 #include "CharacterParameter.h"
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 #include "Math/Rotation.h"
 #include "Area/Area.h"
 
@@ -25,13 +25,13 @@ public:
 	const CharacterParameter &GetParameter() const { return Parameter; }
 
 	// 座標を設定.
-	void SetPosition(const Vector2D &MoveTarget);
+	void SetPosition(const Vector3D &MoveTarget);
 
 	// 回転を設定.
 	void SetRotate(const Rotation &TargetRotation);
 
 	// 座標取得.
-	const Vector2D &GetPosition() const { return Position; }
+	const Vector3D &GetPosition() const { return Position; }
 
 	// 回転取得.
 	const Rotation &GetRotation() const { return Rot; }
@@ -43,7 +43,7 @@ public:
 	void ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value);
 
 	// 正面ベクトルを取得.
-	Vector2D GetCenterVec() const;
+	Vector3D GetCenterVec() const;
 
 	// UUIDをセット。
 	void SetUuid(u32 InUuid) { Uuid = InUuid; }
@@ -55,7 +55,7 @@ public:
 	virtual u8 GetCharacterType() const = 0;
 
 	// 移動.
-	void Move(const Vector2D &MoveValue);
+	void Move(const Vector3D &MoveValue);
 
 	// 回転.
 	void Rotate(float RotateValue);
@@ -72,7 +72,7 @@ public:
 protected:
 
 	// 座標.
-	Vector2D Position;
+	Vector3D Position;
 
 	// 回転.
 	Rotation Rot;

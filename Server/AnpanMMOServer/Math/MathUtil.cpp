@@ -32,13 +32,14 @@ float MathUtil::Lerp(float Start, float End, float Rate)
 	return (1.0f - Rate) * Start + Rate * End;
 }
 
-// Vector2D‚Ì•âŠÔ.
+// Vector3D‚Ì•âŠÔ.
 template<>
-Vector2D MathUtil::Lerp(Vector2D Start, Vector2D End, float Rate)
+Vector3D MathUtil::Lerp(Vector3D Start, Vector3D End, float Rate)
 {
-	Vector2D Result = Start;
+	Vector3D Result = Start;
 	Result.X += (End.X - Start.X) * Rate;
 	Result.Y += (End.Y - Start.Y) * Rate;
+	Result.Z += (End.Z - Start.Z) * Rate;
 	return Result;
 }
 

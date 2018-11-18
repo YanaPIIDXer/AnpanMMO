@@ -14,7 +14,7 @@ const TCHAR *AAnpan::BlueprintPath = TEXT("/Game/Blueprints/System/Active/Anpan.
 // ê∂ê¨.
 AAnpan *AAnpan::Spawn(UWorld *pWorld, const AnpanData &Data)
 {
-	AAnpan *pAnpan = Util::SpawnFromBlueprint<AAnpan>(pWorld, BlueprintPath, FVector(Data.X, Data.Y, 100.0f), FRotator(0.0f, Data.Rotation, 0.0f));
+	AAnpan *pAnpan = Util::SpawnFromBlueprint<AAnpan>(pWorld, BlueprintPath, FVector(Data.X, Data.Y, Data.Z), FRotator(0.0f, Data.Rotation, 0.0f));
 	pAnpan->Initialize(Data.Hp, Data.MaxHp);
 	pAnpan->Uuid = Data.Uuid;
 
@@ -40,6 +40,7 @@ AAnpan::AAnpan(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent->SetStaticMesh(MeshFinder.Object);
 	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel1);
+	pMeshComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 100.0f));
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
 	pMeshComponent->SetupAttachment(RootComponent);
@@ -65,9 +66,9 @@ void AAnpan::PossessedBy(AController *NewController)
 }
 
 // à⁄ìÆ.
-void AAnpan::Move(float X, float Y, int32 Time)
+void AAnpan::Move(float X, float Y,  float Z,int32 Time)
 {
-	pController->Move(X, Y, Time);
+	pController->Move(X, Y, Z, Time);
 }
 
 // âÒì].
@@ -77,7 +78,7 @@ void AAnpan::Rotate(float Rotation, int32 Time)
 }
 
 // í‚é~.
-void AAnpan::Stop(float X, float Y, float Rotation)
+void AAnpan::Stop(float X, float Y, float Z, float Rotation)
 {
-	pController->Stop(X, Y, Rotation);
+	pController->Stop(X, Y, Z, Rotation);
 }

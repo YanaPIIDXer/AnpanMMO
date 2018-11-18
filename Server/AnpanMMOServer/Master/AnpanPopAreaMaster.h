@@ -15,6 +15,7 @@ public:
 	u32 AreaId;
 	float X;
 	float Y;
+	float Z;
 	float Range;
 	s32 PopInterval;
 	u32 MaxCount;

@@ -43,8 +43,8 @@ void PlayerCharacter::SaveParameter()
 {
 	const CharacterParameter &Param = GetParameter();
 	AreaPtr pArea = GetArea();
-	const Vector2D Pos = GetPosition();
+	const Vector3D Pos = GetPosition();
 	Client *pClient = GetClient();
-	CachePacketCharacterDataSave Packet(pClient->GetUuid(), pClient->GetCustomerId(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), pArea.lock()->GetId(), Pos.X, Pos.Y);
+	CachePacketCharacterDataSave Packet(pClient->GetUuid(), pClient->GetCustomerId(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), pArea.lock()->GetId(), Pos.X, Pos.Y, Pos.Z);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }

@@ -35,7 +35,7 @@ void PlayerMove::Poll(float DeltaTime)
 		FVector Pos = pCharacter->GetActorLocation();
 		if (PrevPos == Pos) { return; }
 
-		PacketMovePlayer Packet(pCharacter->GetStatus().GetUuid(), Pos.X, Pos.Y, pCharacter->GetActorRotation().Yaw);
+		PacketMovePlayer Packet(pCharacter->GetStatus().GetUuid(), Pos.X, Pos.Y, Pos.Z, pCharacter->GetActorRotation().Yaw);
 		pInst->SendPacket(&Packet);
 		
 		PrevPos = Pos;

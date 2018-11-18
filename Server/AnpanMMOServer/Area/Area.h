@@ -4,7 +4,6 @@
 #include <boost/enable_shared_from_this.hpp>
 #include "PlayerManager.h"
 #include "AnpanManager.h"
-#include "Math/Vector2D.h"
 
 struct AreaItem;
 class PacketBase;
@@ -36,7 +35,7 @@ public:
 	void RemovePlayerCharacter(u32 Uuid);
 
 	// 移動を受信した。
-	void OnRecvMove(u32 Uuid, float X, float Y, float Rotation);
+	void OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rotation);
 
 	// 攻撃を受信した。
 	void OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid);

@@ -13,6 +13,7 @@ bool WarpDataMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.AreaId);
 	Query.BindResultFloat(&BindItem.X);
 	Query.BindResultFloat(&BindItem.Y);
+	Query.BindResultFloat(&BindItem.Z);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
@@ -23,6 +24,7 @@ bool WarpDataMaster::Load(const MySqlConnection &Connection)
 		Item.AreaId = BindItem.AreaId;
 		Item.X = BindItem.X;
 		Item.Y = BindItem.Y;
+		Item.Z = BindItem.Z;
 
 		Items[Item.ID] = Item;
 	}

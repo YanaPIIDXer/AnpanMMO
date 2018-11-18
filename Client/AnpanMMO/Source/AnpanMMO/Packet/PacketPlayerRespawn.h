@@ -16,17 +16,19 @@ public:
 	u32 Uuid;
 	float X;
 	float Y;
+	float Z;
 	
 
 	PacketPlayerRespawn()
 	{
 	}
 
-	PacketPlayerRespawn(u32 InUuid, float InX, float InY)
+	PacketPlayerRespawn(u32 InUuid, float InX, float InY, float InZ)
 	{
 		Uuid = InUuid;
 		X = InX;
 		Y = InY;
+		Z = InZ;
 		
 	}
 
@@ -35,6 +37,7 @@ public:
 		pStream->Serialize(&Uuid);
 		pStream->Serialize(&X);
 		pStream->Serialize(&Y);
+		pStream->Serialize(&Z);
 		
 		return true;
 	}

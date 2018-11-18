@@ -1,7 +1,7 @@
 #ifndef __ANPANAIPACKETDATA_H__
 #define __ANPANAIPACKETDATA_H__
 
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 #include "Math/Rotation.h"
 #include "Packet/PacketMoveAnpan.h"
 #include "Packet/PacketRotateAnpan.h"
@@ -13,7 +13,7 @@ class AnpanMovePacketData
 public:
 
 	// コンストラクタ
-	AnpanMovePacketData(u32 InUuid, const Vector2D &InPos, int InTime)
+	AnpanMovePacketData(u32 InUuid, const Vector3D &InPos, int InTime)
 		: Uuid(InUuid)
 		, Pos(InPos)
 		, Time(InTime) {}
@@ -21,7 +21,7 @@ public:
 	// パケット生成.
 	PacketMoveAnpan CreatePacket()
 	{
-		PacketMoveAnpan Packet(Uuid, Pos.X, Pos.Y, Time);
+		PacketMoveAnpan Packet(Uuid, Pos.X, Pos.Y, Pos.Z, Time);
 		return Packet;
 	}
 
@@ -31,7 +31,7 @@ private:
 	u32 Uuid;
 
 	// 座標
-	Vector2D Pos;
+	Vector3D Pos;
 
 	// 時間.
 	int Time;

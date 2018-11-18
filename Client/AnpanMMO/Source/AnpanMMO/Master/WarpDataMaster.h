@@ -13,6 +13,7 @@ public:
 	u32 AreaId;
 	float X;
 	float Y;
+	float Z;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
@@ -22,6 +23,7 @@ public:
 		if(!pStream->Serialize(&AreaId)) { return false; }
 		if(!pStream->Serialize(&X)) { return false; }
 		if(!pStream->Serialize(&Y)) { return false; }
+		if(!pStream->Serialize(&Z)) { return false; }
 
 		return true;
 	}

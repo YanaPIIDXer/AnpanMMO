@@ -12,6 +12,7 @@ public:
 	u32 AreaId;
 	float X;
 	float Y;
+	float Z;
 	u32 WarpDataId;
 
 
@@ -21,6 +22,7 @@ public:
 		if(!pStream->Serialize(&AreaId)) { return false; }
 		if(!pStream->Serialize(&X)) { return false; }
 		if(!pStream->Serialize(&Y)) { return false; }
+		if(!pStream->Serialize(&Z)) { return false; }
 		if(!pStream->Serialize(&WarpDataId)) { return false; }
 
 		return true;

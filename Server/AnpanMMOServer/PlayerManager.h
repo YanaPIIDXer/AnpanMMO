@@ -40,7 +40,7 @@ public:
 	PlayerCharacterPtr Get(u32 Uuid) const;
 
 	// 移動を受信した。
-	void OnRecvMove(u32 Uuid, float X, float Y, float Rot);
+	void OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rot);
 
 	// パケットをブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
