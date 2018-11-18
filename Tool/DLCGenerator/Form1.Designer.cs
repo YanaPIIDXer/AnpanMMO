@@ -32,6 +32,7 @@
 			this.AutomationToolPathText = new System.Windows.Forms.Label();
 			this.AutomationToolSelectButton = new System.Windows.Forms.Button();
 			this.ExecuteButton = new System.Windows.Forms.Button();
+			this.DLCListBox = new System.Windows.Forms.CheckedListBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -71,11 +72,20 @@
 			this.ExecuteButton.UseVisualStyleBackColor = true;
 			this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
 			// 
+			// DLCListBox
+			// 
+			this.DLCListBox.FormattingEnabled = true;
+			this.DLCListBox.Location = new System.Drawing.Point(73, 100);
+			this.DLCListBox.Name = "DLCListBox";
+			this.DLCListBox.Size = new System.Drawing.Size(225, 157);
+			this.DLCListBox.TabIndex = 4;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(865, 308);
+			this.Controls.Add(this.DLCListBox);
 			this.Controls.Add(this.ExecuteButton);
 			this.Controls.Add(this.AutomationToolSelectButton);
 			this.Controls.Add(this.AutomationToolPathText);
@@ -93,6 +103,7 @@
 		private System.Windows.Forms.Label AutomationToolPathText;
 		private System.Windows.Forms.Button AutomationToolSelectButton;
 		private System.Windows.Forms.Button ExecuteButton;
+		private System.Windows.Forms.CheckedListBox DLCListBox;
 	}
 }
 

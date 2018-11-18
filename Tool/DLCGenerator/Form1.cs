@@ -37,6 +37,20 @@ namespace DLCGenerator
 			catch { }
 
 			AutomationToolPathText.Text = AutomationToolPath;
+			CollectDLCs();
+		}
+
+		/// <summary>
+		/// DLCを列挙.
+		/// </summary>
+		private void CollectDLCs()
+		{
+			DLCListBox.Items.Clear();
+			var DLCs = Directory.EnumerateFiles("..\\Client\\AnpanMMO\\Plugins", "*.uplugin", SearchOption.AllDirectories);
+			foreach(var DLCPath in DLCs)
+			{
+				DLCListBox.Items.Add(Path.GetFileNameWithoutExtension(DLCPath));
+			}
 		}
 
 		// AutomationToolを探すボタンが押された。
