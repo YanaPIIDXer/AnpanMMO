@@ -50,7 +50,7 @@ void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 	}
 
 	Client *pClient = GetParent();
-	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid());
+	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid(), Packet.LastAreaId);
 	pClient->SendPacket(&ResultPacket);
 
 	if (ResultCode != PacketLogInResult::Success) { return; }

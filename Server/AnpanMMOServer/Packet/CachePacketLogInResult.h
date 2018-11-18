@@ -20,17 +20,19 @@ public:
 
 	u8 Result;
 	s32 Uuid;
+	u32 LastAreaId;
 	
 
 	CachePacketLogInResult()
 	{
 	}
 
-	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InUuid)
+	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InUuid, u32 InLastAreaId)
 	{
 		ClientId = InClientId;
 		Result = InResult;
 		Uuid = InUuid;
+		LastAreaId = InLastAreaId;
 		
 	}
 
@@ -39,6 +41,7 @@ public:
 		CachePacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
 		pStream->Serialize(&Uuid);
+		pStream->Serialize(&LastAreaId);
 		
 		return true;
 	}

@@ -31,7 +31,15 @@ void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketLogInResult::Error;
 	}
 
-	CachePacketLogInResult ResultPacket(Packet.ClientId, ResultCode, Id);
+	u32 LastAreaId = 0;
+	float LastX = 0.0f;
+	float LastY = 0.0f;
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Id, LastAreaId, LastX, LastY))
+	{
+		ResultCode = CachePacketLogInResult::Error;
+	}
+
+	CachePacketLogInResult ResultPacket(Packet.ClientId, ResultCode, Id, LastAreaId);
 	pParent->SendPacket(&ResultPacket);
 }
 
