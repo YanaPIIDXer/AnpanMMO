@@ -37,15 +37,15 @@ namespace DLCGenerator
 		{
 			Process CmdProcess = new Process();
 
-			CmdProcess.StartInfo.FileName = System.Environment.GetEnvironmentVariable("ComSpec");
+			CmdProcess.StartInfo.FileName = AutomationToolPath;
 
 			CmdProcess.StartInfo.UseShellExecute = false;
 			CmdProcess.StartInfo.RedirectStandardError = true;
 			CmdProcess.StartInfo.RedirectStandardInput = true;
 			CmdProcess.StartInfo.RedirectStandardOutput = true;
-			CmdProcess.StartInfo.CreateNoWindow = false;
+			CmdProcess.StartInfo.CreateNoWindow = true;
 
-			CmdProcess.StartInfo.Arguments = "/c " + AutomationToolPath + " " + Argument;
+			CmdProcess.StartInfo.Arguments = Argument;
 
 			return CmdProcess;
 		}

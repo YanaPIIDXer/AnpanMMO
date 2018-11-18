@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace DLCGenerator
 {
@@ -35,7 +36,7 @@ namespace DLCGenerator
 		/// <returns>成功したらtrueを返す</returns>
 		public bool Execute()
 		{
-			string Argument = "-ScriptForProject=" + ProjectPath + " ";
+			string Argument = "-ScriptsForProject=" + ProjectPath + " ";
 			Argument += "BuildCookRun -project=" + ProjectPath + " ";
 			Argument += "-noP4 ";
 			Argument += "-clientconfig=Development ";
@@ -52,15 +53,33 @@ namespace DLCGenerator
 			Argument += "-unversionedcookedcontent ";
 			Argument += "-pak ";
 			Argument += "-createreleaseversion=1.0 ";
-			Argument += "-compressed";
+			Argument += "-compressed ";
+			Argument += "-stage ";
+			Argument += "-package ";
+			Argument += "-cmdline=\"-Messaging\"";
 
 			Process AutomationToolProcess = CreateProcess(Argument);
+
+			AutomationToolProcess.OutputDataReceived += (sender, e) =>
+			{
+				Console.WriteLine(e.Data);
+			};
+
+			AutomationToolProcess.ErrorDataReceived += (sender, e) =>
+			{
+				Console.WriteLine(e.Data);
+			};
+
 			AutomationToolProcess.Start();
+			AutomationToolProcess.BeginOutputReadLine();
+			AutomationToolProcess.BeginErrorReadLine();
 			AutomationToolProcess.WaitForExit();
-			string Error = AutomationToolProcess.StandardError.ReadToEnd();
+			int ExitCode = AutomationToolProcess.ExitCode;
+			AutomationToolProcess.CancelOutputRead();
+			AutomationToolProcess.CancelErrorRead();
 			AutomationToolProcess.Close();
 
-			return (Error == "");
+			return (ExitCode == 0);
 		}
 
 	}

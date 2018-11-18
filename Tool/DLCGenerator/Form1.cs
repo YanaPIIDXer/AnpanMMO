@@ -62,11 +62,13 @@ namespace DLCGenerator
 		private void ExecuteButton_Click(object sender, EventArgs e)
 		{
 			ReleaseGenerator ReleaseGen = new ReleaseGenerator(AutomationToolPath);
-			if(ReleaseGen.Execute())
+			if(!ReleaseGen.Execute())
 			{
 				MessageBox.Show("リリースの生成に失敗しました。");
 				return;
 			}
+
+			MessageBox.Show("完了しました。");
 		}
 		
 	}
