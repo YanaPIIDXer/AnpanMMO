@@ -3,7 +3,6 @@
 #include "PlayerCharacterBase.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/SkeletalMesh.h"
-#include "Components/SphereComponent.h"
 
 const TCHAR *APlayerCharacterBase::MeshPath = TEXT("/Game/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
 const TCHAR *APlayerCharacterBase::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
@@ -12,16 +11,11 @@ const TCHAR *APlayerCharacterBase::AnimInstanceClassPath = TEXT("/Game/Meshes/Pl
 APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	USphereComponent *pDummyComponent = CreateDefaultSubobject<USphereComponent>("Dummy");
-	pDummyComponent->bHiddenInGame = true;
-	pDummyComponent->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
-	RootComponent = pDummyComponent;
+	auto *pMeshComponent = GetMesh();
 
-	pMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>("MeshComponent");
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> MeshFinder(MeshPath);
 	pMeshComponent->SetSkeletalMesh(MeshFinder.Object);
 
-	pMeshComponent->SetupAttachment(pDummyComponent);
 	pMeshComponent->SetRelativeLocation(FVector(0, 0, -110.0f));
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
@@ -31,7 +25,12 @@ APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectIniti
 	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel2, ECollisionResponse::ECR_Overlap);
 	pMeshComponent->SetGenerateOverlapEvents(true);
 	SetActorEnableCollision(true);
+
+	bUseControllerRotationPitch = false;
+	bUseControllerRotationRoll = false;
+	bUseControllerRotationYaw = false;
 }
+
 
 // 開始時の処理.
 void APlayerCharacterBase::BeginPlay()
@@ -40,7 +39,7 @@ void APlayerCharacterBase::BeginPlay()
 
 	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
 	check(pAnimClass != nullptr);
-	pMeshComponent->SetAnimInstanceClass(pAnimClass);
+	GetMesh()->SetAnimInstanceClass(pAnimClass);
 }
 
 // リスポン

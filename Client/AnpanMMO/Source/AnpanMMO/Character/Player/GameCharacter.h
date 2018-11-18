@@ -61,10 +61,6 @@ protected:
 
 private:
 
-	// 移動用Component
-	UPROPERTY()
-	UFloatingPawnMovement *pMovementComponent;
-
 	// ステータス
 	PlayerStatus Status;
 

@@ -41,8 +41,8 @@ void AGameController::Tick(float DeltaTime)
 
 	if (!bEnableMove) { return; }
 
+	if (InputVector == FVector::ZeroVector) { return; }
 	InputVector.Normalize();
-
 	FRotator CameraRot = pCamera->GetActorRotation();
 	CameraRot.Pitch = 0.0f;
 	CameraRot.Roll = 0.0f;

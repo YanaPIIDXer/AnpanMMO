@@ -16,9 +16,6 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	
-	pMovementComponent = CreateDefaultSubobject<UFloatingPawnMovement>("Movement");
-
 }
 
 // 開始時の処理.
@@ -80,7 +77,7 @@ void AGameCharacter::OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def)
 // 移動ベクトルの取得.
 FVector AGameCharacter::GetMoveVector() const
 {
-	return pMovementComponent->GetLastInputVector();
+	return GetMovementComponent()->GetLastInputVector();
 }
 
 

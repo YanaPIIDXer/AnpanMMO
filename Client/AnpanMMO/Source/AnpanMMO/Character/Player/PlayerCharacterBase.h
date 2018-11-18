@@ -41,9 +41,6 @@ protected:
 	// リスポンした
 	virtual void OnRespawn() {}
 
-	// MeshComponent取得.
-	USkeletalMeshComponent *GetMeshComponent() const { return pMeshComponent; }
-
 private:
 
 	// メッシュパス
@@ -51,9 +48,5 @@ private:
 
 	// AnimInstanceのクラスパス
 	static const TCHAR *AnimInstanceClassPath;
-
-	// MeshComponent
-	UPROPERTY()
-	USkeletalMeshComponent *pMeshComponent;
 
 };
