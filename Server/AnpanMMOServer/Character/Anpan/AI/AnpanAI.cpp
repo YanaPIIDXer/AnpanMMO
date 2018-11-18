@@ -50,7 +50,7 @@ void AnpanAI::ChangeState(AnpanAIStateBase *pNewState)
 }
 
 // 移動パケットデータの生成.
-void AnpanAI::CreateMovePacketData(const Vector2D &Position, int Time)
+void AnpanAI::CreateMovePacketData(const Vector3D &Position, int Time)
 {
 	pMovePacketData = shared_ptr<AnpanMovePacketData>(new AnpanMovePacketData(pParent->GetUuid(), Position, Time));
 }

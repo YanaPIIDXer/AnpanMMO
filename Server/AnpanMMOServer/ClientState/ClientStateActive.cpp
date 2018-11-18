@@ -37,7 +37,7 @@ void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 	PacketAreaMoveResponse ResponsePacket(PacketAreaMoveResponse::Success);
 	GetParent()->SendPacket(&ResponsePacket);
 
-	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector2D(pItem->X, pItem->Y));
+	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector3D(pItem->X, pItem->Y, 0.0f));
 	GetParent()->ChangeState(pNewState);
 }
 
@@ -60,6 +60,6 @@ void ClientStateActive::OnRecvRespawnRequest(MemoryStreamInterface *pStream)
 	AreaPtr pArea = pChara.lock()->GetArea();
 	pArea.lock()->RemovePlayerCharacter(pChara.lock()->GetUuid());
 
-	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), 1, Vector2D(-1000.0f, 0.0f));
+	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), 1, Vector3D(-1000.0f, 0.0f, 0.0f));
 	GetParent()->ChangeState(pNewState);
 }

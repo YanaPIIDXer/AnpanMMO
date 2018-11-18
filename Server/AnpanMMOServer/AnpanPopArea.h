@@ -2,7 +2,7 @@
 #define __ANPANPOPAREA_H__
 
 #include <boost/function.hpp>
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 #include "AnpanManager.h"
 
 struct AnpanPopAreaItem;
@@ -38,7 +38,7 @@ private:
 	float Range;
 
 	// ç¿ïW.
-	Vector2D Position;
+	Vector3D Position;
 
 	// ç≈ëÂê∂ê¨êî,
 	u32 MaxCount;

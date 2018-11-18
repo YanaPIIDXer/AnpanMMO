@@ -162,7 +162,7 @@
     <ClInclude Include="Math\MathUtil.h" />
     <ClInclude Include="Math\Random.h" />
     <ClInclude Include="Math\Rotation.h" />
-    <ClInclude Include="Math\Vector2D.h" />
+    <ClInclude Include="Math\Vector3D.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
     <ClInclude Include="MemoryStream\MemoryStreamInterface.h" />

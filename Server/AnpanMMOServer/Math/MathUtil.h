@@ -3,7 +3,7 @@
 
 #define _USE_MATH_DEFINES
 #include <math.h>
-#include "Vector2D.h"
+#include "Vector3D.h"
 
 // ‰‰ZŠÖŒW.
 class MathUtil
@@ -30,25 +30,30 @@ public:
 	}
 
 	// ƒxƒNƒgƒ‹‚ğ‰ñ“].
-	static Vector2D RotateVector(const Vector2D &Vec, float Deg)
+	static Vector3D RotateVector(const Vector3D &Vec, float Deg)
 	{
-		Vector2D Result;
+		Vector3D Result;
 		float Rad = DegToRad(Deg);
 		Result.X = ((Vec.X * cosf(Rad)) - (Vec.Y * sinf(Rad)));
 		Result.Y = ((Vec.X * sinf(Rad)) + (Vec.Y * cosf(Rad)));
+		Result.Z = Vec.Z;
 		return Result;
 	}
 
 	// “àÏ.
-	static float Dot(const Vector2D &A, const Vector2D &B)
+	static float Dot(const Vector3D &A, const Vector3D &B)
 	{
-		return ((A.X * B.X) + (A.Y * B.Y));
+		return ((A.X * B.X) + (A.Y * B.Y) + (A.Z * B.Z));
 	}
 
 	// ŠOÏ.
-	static float Cross(const Vector2D &A, const Vector2D &B)
+	static Vector3D Cross(const Vector3D &A, const Vector3D &B)
 	{
-		return ((A.X * B.Y) - (A.Y * B.X));
+		Vector3D Vec;
+		Vec.X = (A.Y * B.Z) - (A.Z * B.Y);
+		Vec.Y = (A.Z * B.X) - (A.X * B.Z);
+		Vec.Z = (A.X * B.Y) - (A.Y * B.X);
+		return Vec;
 	}
 
 };

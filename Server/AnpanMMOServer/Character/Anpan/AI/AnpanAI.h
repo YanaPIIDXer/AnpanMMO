@@ -29,7 +29,7 @@ public:
 	void ChangeState(AnpanAIStateBase *pNewState);
 
 	// 移動パケットデータの生成.
-	void CreateMovePacketData(const Vector2D &Position, int Time);
+	void CreateMovePacketData(const Vector3D &Position, int Time);
 
 	// 移動パケットデータの取得.
 	shared_ptr<AnpanMovePacketData> SweepMovePacketData();

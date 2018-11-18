@@ -1,7 +1,7 @@
 #ifndef __ANPANAISTATEBASE_H__
 #define __ANPANAISTATEBASE_H__
 
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 #include "Math/Rotation.h"
 
 class Anpan;
@@ -42,7 +42,7 @@ protected:
 	AnpanAI *GetAI() { return pAI; }
 
 	// ˆÚ“®‚ğİ’è.
-	void SetMove(const Vector2D &InMoveTarget, int Time);
+	void SetMove(const Vector3D &InMoveTarget, int Time);
 
 	// ‰ñ“]‚ğİ’è.
 	void SetRotate(const Rotation &InRotateTarget, int Time);
@@ -65,10 +65,10 @@ private:
 	AnpanAI *pAI;
 
 	// ˆÈ‘O‚ÌÀ•W.
-	Vector2D PrevPos;
+	Vector3D PrevPos;
 
 	// ˆÚ“®æ.
-	Vector2D MoveTarget;
+	Vector3D MoveTarget;
 
 	// ˆÚ“®ŠÔ.
 	int MoveTime;

@@ -4,7 +4,6 @@
 #include <boost/enable_shared_from_this.hpp>
 #include "PlayerManager.h"
 #include "AnpanManager.h"
-#include "Math/Vector2D.h"
 
 struct AreaItem;
 class PacketBase;

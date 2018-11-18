@@ -10,7 +10,7 @@ CharacterBase::CharacterBase()
 }
 
 // ˆÚ“®.
-void CharacterBase::SetPosition(const Vector2D &MoveTarget)
+void CharacterBase::SetPosition(const Vector3D &MoveTarget)
 {
 	Position = MoveTarget;
 }
@@ -37,15 +37,15 @@ void CharacterBase::ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value)
 }
 
 // ³–ÊƒxƒNƒgƒ‹‚ğæ“¾.
-Vector2D CharacterBase::GetCenterVec() const
+Vector3D CharacterBase::GetCenterVec() const
 {
-	Vector2D Vec(1.0f, 0.0f);
+	Vector3D Vec(1.0f, 0.0f, 0.0f);
 	Vec = MathUtil::RotateVector(Vec, Rot.Get());
 	return Vec;
 }
 
 // ˆÚ“®.
-void CharacterBase::Move(const Vector2D &MoveValue)
+void CharacterBase::Move(const Vector3D &MoveValue)
 {
 	Position += MoveValue;
 }
@@ -60,5 +60,5 @@ void CharacterBase::Rotate(float RotateValue)
 void CharacterBase::Respawn()
 {
 	Parameter.Hp = Parameter.MaxHp;
-	Position = Vector2D(0.0f, 0.0f);
+	Position = Vector3D(0.0f, 0.0f, 0.0f);
 }

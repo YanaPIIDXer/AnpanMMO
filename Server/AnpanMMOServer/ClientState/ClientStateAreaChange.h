@@ -2,7 +2,7 @@
 #define __CLIENTSTATEAREACHANGE_H__
 
 #include "ClientStateBase.h"
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 
 /**
  * エリア切り替え待ちステート
@@ -13,7 +13,7 @@ class ClientStateAreaChange : public ClientStateBase
 public:
 
 	// コンストラクタ
-	ClientStateAreaChange(Client *pInParent, u32 InAreaId, const Vector2D &InPosition);
+	ClientStateAreaChange(Client *pInParent, u32 InAreaId, const Vector3D &InPosition);
 
 	// デストラクタ
 	virtual ~ClientStateAreaChange() {}
@@ -24,7 +24,7 @@ private:
 	u32 AreaId;
 
 	// 座標.
-	Vector2D Position;
+	Vector3D Position;
 
 
 	// ゲーム準備完了を受信した。

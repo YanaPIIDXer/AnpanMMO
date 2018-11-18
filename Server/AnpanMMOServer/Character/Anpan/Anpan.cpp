@@ -4,7 +4,7 @@
 #include "Packet/PacketStopAnpan.h"
 
 // コンストラクタ
-Anpan::Anpan(const Vector2D &InPosition, int Hp, int Atk, int Def, int InExp)
+Anpan::Anpan(const Vector3D &InPosition, int Hp, int Atk, int Def, int InExp)
 	: AI(this)
 	, Exp(InExp)
 {
@@ -34,7 +34,7 @@ void Anpan::Poll(int DeltaTime)
 
 	if (AI.SweepSendStopPacketFlag())
 	{
-		const Vector2D Pos = GetPosition();
+		const Vector3D Pos = GetPosition();
 		PacketStopAnpan Packet(GetUuid(), Pos.X, Pos.Y, GetRotation().Get());
 		GetArea().lock()->BroadcastPacket(&Packet);
 	}

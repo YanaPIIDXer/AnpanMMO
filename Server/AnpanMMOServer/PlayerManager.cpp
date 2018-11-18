@@ -37,7 +37,7 @@ void PlayerManager::Add(u32 Uuid, PlayerCharacterPtr pPlayer)
 {
 	// 生成を接続済みのクライアントにブロードキャスト
 	const CharacterParameter &Param = pPlayer.lock()->GetParameter();
-	const Vector2D &Pos = pPlayer.lock()->GetPosition();
+	const Vector3D &Pos = pPlayer.lock()->GetPosition();
 	PacketSpawnPlayer Packet(Uuid, Param.Hp, Param.MaxHp, Pos.X, Pos.Y);
 	BroadcastPacket(&Packet, pPlayer.lock()->GetClient());
 
@@ -68,10 +68,10 @@ PlayerCharacterPtr PlayerManager::Get(u32 Uuid) const
 }
 
 // 移動を受信した。
-void PlayerManager::OnRecvMove(u32 Uuid, float X, float Y, float Rot)
+void PlayerManager::OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rot)
 {
 	PlayerCharacter *pChara = PlayerList[Uuid].lock().get();
-	pChara->SetPosition(Vector2D(X, Y));
+	pChara->SetPosition(Vector3D(X, Y, Z));
 	pChara->SetRotate(Rotation(Rot));
 
 	PacketMovePlayer Packet(Uuid, X, Y, Rot);
@@ -95,7 +95,7 @@ void PlayerManager::MakeListPacket(PacketPlayerList &Packet)
 {
 	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
 	{
-		const Vector2D &Position = It->second.lock()->GetPosition();
+		const Vector3D &Position = It->second.lock()->GetPosition();
 		const Rotation &Rot = It->second.lock()->GetRotation();
 		const CharacterParameter &Param = It->second.lock()->GetParameter();
 		PlayerData Data(It->first, Position.X, Position.Y, Rot.Get(), Param.Hp, Param.MaxHp);
