@@ -10,6 +10,7 @@ public:
 
 	u32 ID;
 	FString Name;
+	FString LevelName;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
@@ -18,6 +19,9 @@ public:
 		std::string StrName;
 		if(!pStream->Serialize(&StrName)) { return false; }
 		Name = UTF8_TO_TCHAR(StrName.c_str());
+		std::string StrLevelName;
+		if(!pStream->Serialize(&StrLevelName)) { return false; }
+		LevelName = UTF8_TO_TCHAR(StrLevelName.c_str());
 
 		return true;
 	}

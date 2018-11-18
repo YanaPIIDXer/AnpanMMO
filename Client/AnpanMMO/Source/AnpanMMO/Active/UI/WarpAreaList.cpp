@@ -69,6 +69,8 @@ void UWarpAreaList::SendAreaMoveRequest(int32 Id)
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
 	check(pInst != nullptr);
 
+	pInst->SetAreaIdCache(Id);
+
 	PacketAreaMoveRequest Packet(Id);
 	pInst->SendPacket(&Packet);
 }

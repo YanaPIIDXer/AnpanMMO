@@ -59,6 +59,11 @@ void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 		MasterData::GetInstance().Load();
 		pScreenWidget->StartFade();
 	}
+
+	// @TODO:暫定処理.
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+	pInst->SetAreaIdCache(Packet.LastAreaId);
 }
 
 // キャラクタステータスを受信した。

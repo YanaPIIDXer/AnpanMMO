@@ -8,6 +8,7 @@
 #include "LevelStreaming/LevelManager.h"
 #include "Character/Player/GameCharacter.h"
 #include "Kismet/GameplayStatics.h"
+#include "Master/MasterData.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
 #include "Packet/PacketDamage.h"
@@ -55,14 +56,13 @@ void AActiveGameMode::BeginPlay()
 	AnpanMgr.SetWorld(GetWorld());
 	WarpPointMgr.SetWorld(GetWorld());
 	pLevelManager->SetWorld(GetWorld());
-
-	// Test
-	pLevelManager->Load("/Map0001/Levels/Map0001.Map0001");
+	pLevelManager->OnLevelLoadFinished.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnLevelLoadFinished);
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
-	PacketGameReady Packet;
-	pInst->SendPacket(&Packet);
+
+	uint32 AreaId = pInst->GetAreaIdCache();
+	StartLevelLoad(AreaId);
 }
 
 // 毎フレームの処理.
@@ -77,12 +77,34 @@ void AActiveGameMode::Tick(float DeltaTime)
 	}
 
 	AnpanMgr.Poll();
+	pLevelManager->Poll();
 }
 
 // プレイヤーキャラ追加.
 void AActiveGameMode::AddPlayerCharacter(uint32 Uuid, APlayerCharacterBase *pPlayer)
 {
 	PlayerMgr.Add(Uuid, pPlayer);
+}
+
+// マップロード開始.
+void AActiveGameMode::StartLevelLoad(uint32 AreaId)
+{
+	const auto *pItem = MasterData::GetInstance().GetAreaMaster().Get(AreaId);
+	check(pItem != nullptr);
+
+	FString LevelName = pItem->LevelName;
+	FString LevelPath = "/" + LevelName + "/Levels/" + LevelName + "." + LevelName;
+	pLevelManager->Load(LevelPath);
+}
+
+// レベルロードが完了した。
+void AActiveGameMode::OnLevelLoadFinished()
+{
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	PacketGameReady Packet;
+	pInst->SendPacket(&Packet);
 }
 
 

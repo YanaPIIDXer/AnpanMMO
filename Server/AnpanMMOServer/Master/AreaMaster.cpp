@@ -7,9 +7,10 @@ bool AreaMaster::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from Area;");
 
 	AreaItem BindItem;
-	char NameBind[128];
+	char NameBind[128];	char LevelNameBind[128];
 	Query.BindResultInt(&BindItem.ID);
 	Query.BindResultString(NameBind);
+	Query.BindResultString(LevelNameBind);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
@@ -17,6 +18,7 @@ bool AreaMaster::Load(const MySqlConnection &Connection)
 		AreaItem Item;
 		Item.ID = BindItem.ID;
 		Item.Name = NameBind;
+		Item.LevelName = LevelNameBind;
 
 		Items[Item.ID] = Item;
 	}

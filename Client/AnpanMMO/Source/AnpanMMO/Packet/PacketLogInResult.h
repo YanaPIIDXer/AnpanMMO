@@ -20,16 +20,18 @@ public:
 
 	u8 Result;
 	s32 Uuid;
+	u32 LastAreaId;
 	
 
 	PacketLogInResult()
 	{
 	}
 
-	PacketLogInResult(u8 InResult, s32 InUuid)
+	PacketLogInResult(u8 InResult, s32 InUuid, u32 InLastAreaId)
 	{
 		Result = InResult;
 		Uuid = InUuid;
+		LastAreaId = InLastAreaId;
 		
 	}
 
@@ -37,6 +39,7 @@ public:
 	{
 		pStream->Serialize(&Result);
 		pStream->Serialize(&Uuid);
+		pStream->Serialize(&LastAreaId);
 		
 		return true;
 	}
