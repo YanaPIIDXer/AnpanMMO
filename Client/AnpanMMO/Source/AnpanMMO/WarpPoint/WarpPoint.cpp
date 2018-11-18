@@ -9,12 +9,12 @@ const float AWarpPoint::CollisionRadius = 300.0f;
 const TCHAR *AWarpPoint::ParticlePath = TEXT("/Game/Effects/Effects/FX_Mobile/Fire/combat/P_AuraCircle_Fire_02.P_AuraCircle_Fire_02");
 
 // Spawn
-AWarpPoint *AWarpPoint::Spawn(UWorld *pWorld, float X, float Y, uint32 InId)
+AWarpPoint *AWarpPoint::Spawn(UWorld *pWorld, float X, float Y, float Z, uint32 InId)
 {
 	FActorSpawnParameters Param;
 	Param.bNoFail = true;
 	Param.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	AWarpPoint *pWarpPoint = pWorld->SpawnActor<AWarpPoint>(FVector(X, Y, 0.0f), FRotator::ZeroRotator, Param);
+	AWarpPoint *pWarpPoint = pWorld->SpawnActor<AWarpPoint>(FVector(X, Y, Z), FRotator::ZeroRotator, Param);
 	check(pWarpPoint != nullptr);
 	pWarpPoint->Id = InId;
 

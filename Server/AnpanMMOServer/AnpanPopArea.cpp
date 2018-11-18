@@ -7,7 +7,7 @@
 // コンストラクタ
 AnpanPopArea::AnpanPopArea(const AnpanPopAreaItem *pMasterItem)
 	: Range(pMasterItem->Range)
-	, Position(pMasterItem->X, pMasterItem->Y, 0.0f)
+	, Position(pMasterItem->X, pMasterItem->Y, pMasterItem->Z)
 	, MaxCount(pMasterItem->MaxCount)
 	, MinHp(pMasterItem->MinHp)
 	, MaxHp(pMasterItem->MaxHp)

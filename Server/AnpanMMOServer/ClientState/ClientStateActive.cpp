@@ -37,7 +37,7 @@ void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 	PacketAreaMoveResponse ResponsePacket(PacketAreaMoveResponse::Success);
 	GetParent()->SendPacket(&ResponsePacket);
 
-	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector3D(pItem->X, pItem->Y, 0.0f));
+	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector3D(pItem->X, pItem->Y, pItem->Z));
 	GetParent()->ChangeState(pNewState);
 }
 

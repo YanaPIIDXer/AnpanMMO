@@ -12,6 +12,7 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.AreaId);
 	Query.BindResultFloat(&BindItem.X);
 	Query.BindResultFloat(&BindItem.Y);
+	Query.BindResultFloat(&BindItem.Z);
 	Query.BindResultFloat(&BindItem.Range);
 	Query.BindResultInt(&BindItem.PopInterval);
 	Query.BindResultInt(&BindItem.MaxCount);
@@ -32,6 +33,7 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 		Item.AreaId = BindItem.AreaId;
 		Item.X = BindItem.X;
 		Item.Y = BindItem.Y;
+		Item.Z = BindItem.Z;
 		Item.Range = BindItem.Range;
 		Item.PopInterval = BindItem.PopInterval;
 		Item.MaxCount = BindItem.MaxCount;

@@ -16,7 +16,7 @@ void WarpPointManager::Spawn(uint32 AreaId)
 	for (auto Point : WarpPointList)
 	{
 		if (Point.AreaId != AreaId) { continue; }
-		auto *pWarpPoint = AWarpPoint::Spawn(pWorld.Get(), Point.X, Point.Y, Point.WarpDataId);
+		auto *pWarpPoint = AWarpPoint::Spawn(pWorld.Get(), Point.X, Point.Y, Point.Z, Point.WarpDataId);
 		WarpPoints.Add(pWarpPoint);
 	}
 }
