@@ -104,7 +104,29 @@ namespace DLCGenerator
 				Console.WriteLine(DLCName + "のＤＬＣを生成しました。\n\n");
 			}
 
+			MoveDLCs();
+
 			MessageBox.Show("完了しました。");
+		}
+
+		/// <summary>
+		/// DLCを移動.
+		/// </summary>
+		private void MoveDLCs()
+		{
+			if(!Directory.Exists(Config.PakPath))
+			{
+				Directory.CreateDirectory(Config.PakPath);
+			}
+
+			var DLCs = Directory.EnumerateFiles(Config.GetDLCDirectory(), "*.pak", SearchOption.AllDirectories);
+			foreach(var DLC in DLCs)
+			{
+				int Index = DLC.IndexOf("Plugins\\");
+				var DLCName = DLC.Replace(DLC.Substring(0, Index + "Plugins\\".Length), "");
+				DLCName = DLCName.Substring(0, DLCName.IndexOf("\\"));
+				File.Copy(DLC, Config.PakPath + "\\" + DLCName + ".pak");
+			}
 		}
 		
 	}

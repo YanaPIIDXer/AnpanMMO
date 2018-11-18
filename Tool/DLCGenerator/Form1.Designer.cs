@@ -64,11 +64,11 @@
 			// 
 			// ExecuteButton
 			// 
-			this.ExecuteButton.Location = new System.Drawing.Point(702, 253);
+			this.ExecuteButton.Location = new System.Drawing.Point(350, 253);
 			this.ExecuteButton.Name = "ExecuteButton";
 			this.ExecuteButton.Size = new System.Drawing.Size(132, 43);
 			this.ExecuteButton.TabIndex = 3;
-			this.ExecuteButton.Text = "実行";
+			this.ExecuteButton.Text = "DLC作成";
 			this.ExecuteButton.UseVisualStyleBackColor = true;
 			this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
 			// 

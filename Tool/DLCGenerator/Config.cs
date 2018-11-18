@@ -44,5 +44,10 @@ namespace DLCGenerator
 			return Dir;
 		}
 
+		/// <summary>
+		/// Pakファイルをブチ込むパス
+		/// </summary>
+		public static readonly string PakPath = "Paks";
+
 	}
 }
