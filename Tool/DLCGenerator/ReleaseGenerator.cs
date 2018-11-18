@@ -16,18 +16,12 @@ namespace DLCGenerator
 	{
 
 		/// <summary>
-		/// プロジェクトのパス
-		/// </summary>
-		private string ProjectPath;
-
-		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InAutomationToolPath">AutomationToolのパス</param>
 		public ReleaseGenerator(string InAutomationToolPath)
 			: base(InAutomationToolPath)
 		{
-			ProjectPath = Config.GetProjectFilePath();
 		}
 
 		/// <summary>

@@ -17,7 +17,7 @@ namespace DLCGenerator
 		/// <summary>
 		/// プロジェクトファイルパス
 		/// </summary>
-		private static readonly string ProjectFilePath = "../../Client/AnpanMMO/AnpanMMO.uproject";
+		private static readonly string ProjectFilePath = "../Client/AnpanMMO/AnpanMMO.uproject";
 
 		/// <summary>
 		/// プロジェクトファイルパスを絶対パスで取得.

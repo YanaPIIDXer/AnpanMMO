@@ -20,12 +20,18 @@ namespace DLCGenerator
 		private string AutomationToolPath;
 		
 		/// <summary>
+		/// プロジェクトのパス
+		/// </summary>
+		protected string ProjectPath { get; private set; }
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InAutomationToolPath">AutomationToolのパス</param>
 		public AutomationToolProcess(string InAutomationToolPath)
 		{
 			AutomationToolPath = InAutomationToolPath;
+			ProjectPath = Config.GetProjectFilePath();
 		}
 
 		/// <summary>
