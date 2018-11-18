@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+#include "GameFramework/Character.h"
 #include "CharacterBase.generated.h"
 
 /**
  * キャラクタ基底クラス
  */
 UCLASS()
-class ANPANMMO_API ACharacterBase : public APawn
+class ANPANMMO_API ACharacterBase : public ACharacter
 {
 	GENERATED_BODY()
 
