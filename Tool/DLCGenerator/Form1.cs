@@ -57,5 +57,17 @@ namespace DLCGenerator
 			}
 			catch { }
 		}
+
+		// 実行ボタンが押された
+		private void ExecuteButton_Click(object sender, EventArgs e)
+		{
+			ReleaseGenerator ReleaseGen = new ReleaseGenerator(AutomationToolPath);
+			if(ReleaseGen.Execute())
+			{
+				MessageBox.Show("リリースの生成に失敗しました。");
+				return;
+			}
+		}
+		
 	}
 }

@@ -31,6 +31,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.AutomationToolPathText = new System.Windows.Forms.Label();
 			this.AutomationToolSelectButton = new System.Windows.Forms.Button();
+			this.ExecuteButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -60,11 +61,22 @@
 			this.AutomationToolSelectButton.UseVisualStyleBackColor = true;
 			this.AutomationToolSelectButton.Click += new System.EventHandler(this.AutomationToolSelectButton_Click);
 			// 
+			// ExecuteButton
+			// 
+			this.ExecuteButton.Location = new System.Drawing.Point(702, 253);
+			this.ExecuteButton.Name = "ExecuteButton";
+			this.ExecuteButton.Size = new System.Drawing.Size(132, 43);
+			this.ExecuteButton.TabIndex = 3;
+			this.ExecuteButton.Text = "実行";
+			this.ExecuteButton.UseVisualStyleBackColor = true;
+			this.ExecuteButton.Click += new System.EventHandler(this.ExecuteButton_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(865, 308);
+			this.Controls.Add(this.ExecuteButton);
 			this.Controls.Add(this.AutomationToolSelectButton);
 			this.Controls.Add(this.AutomationToolPathText);
 			this.Controls.Add(this.label1);
@@ -80,6 +92,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label AutomationToolPathText;
 		private System.Windows.Forms.Button AutomationToolSelectButton;
+		private System.Windows.Forms.Button ExecuteButton;
 	}
 }
 
