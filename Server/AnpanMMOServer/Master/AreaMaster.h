@@ -13,6 +13,7 @@ public:
 
 	u32 ID;
 	std::string Name;
+	std::string LevelName;
 
 
 };
