@@ -33,6 +33,9 @@
 			this.AutomationToolSelectButton = new System.Windows.Forms.Button();
 			this.ExecuteButton = new System.Windows.Forms.Button();
 			this.DLCListBox = new System.Windows.Forms.CheckedListBox();
+			this.TransportTargetList = new System.Windows.Forms.ListBox();
+			this.AddTransportTargetButton = new System.Windows.Forms.Button();
+			this.TransportButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -64,7 +67,7 @@
 			// 
 			// ExecuteButton
 			// 
-			this.ExecuteButton.Location = new System.Drawing.Point(350, 253);
+			this.ExecuteButton.Location = new System.Drawing.Point(239, 279);
 			this.ExecuteButton.Name = "ExecuteButton";
 			this.ExecuteButton.Size = new System.Drawing.Size(132, 43);
 			this.ExecuteButton.TabIndex = 3;
@@ -80,11 +83,43 @@
 			this.DLCListBox.Size = new System.Drawing.Size(225, 157);
 			this.DLCListBox.TabIndex = 4;
 			// 
+			// TransportTargetList
+			// 
+			this.TransportTargetList.FormattingEnabled = true;
+			this.TransportTargetList.ItemHeight = 15;
+			this.TransportTargetList.Location = new System.Drawing.Point(545, 100);
+			this.TransportTargetList.Name = "TransportTargetList";
+			this.TransportTargetList.Size = new System.Drawing.Size(232, 154);
+			this.TransportTargetList.TabIndex = 5;
+			// 
+			// AddTransportTargetButton
+			// 
+			this.AddTransportTargetButton.Location = new System.Drawing.Point(569, 279);
+			this.AddTransportTargetButton.Name = "AddTransportTargetButton";
+			this.AddTransportTargetButton.Size = new System.Drawing.Size(118, 43);
+			this.AddTransportTargetButton.TabIndex = 6;
+			this.AddTransportTargetButton.Text = "転送先の追加";
+			this.AddTransportTargetButton.UseVisualStyleBackColor = true;
+			this.AddTransportTargetButton.Click += new System.EventHandler(this.AddTransportTargetButton_Click);
+			// 
+			// TransportButton
+			// 
+			this.TransportButton.Location = new System.Drawing.Point(735, 279);
+			this.TransportButton.Name = "TransportButton";
+			this.TransportButton.Size = new System.Drawing.Size(118, 43);
+			this.TransportButton.TabIndex = 7;
+			this.TransportButton.Text = "転送";
+			this.TransportButton.UseVisualStyleBackColor = true;
+			this.TransportButton.Click += new System.EventHandler(this.TransportButton_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(865, 308);
+			this.ClientSize = new System.Drawing.Size(865, 346);
+			this.Controls.Add(this.TransportButton);
+			this.Controls.Add(this.AddTransportTargetButton);
+			this.Controls.Add(this.TransportTargetList);
 			this.Controls.Add(this.DLCListBox);
 			this.Controls.Add(this.ExecuteButton);
 			this.Controls.Add(this.AutomationToolSelectButton);
@@ -104,6 +139,9 @@
 		private System.Windows.Forms.Button AutomationToolSelectButton;
 		private System.Windows.Forms.Button ExecuteButton;
 		private System.Windows.Forms.CheckedListBox DLCListBox;
+		private System.Windows.Forms.ListBox TransportTargetList;
+		private System.Windows.Forms.Button AddTransportTargetButton;
+		private System.Windows.Forms.Button TransportButton;
 	}
 }
 

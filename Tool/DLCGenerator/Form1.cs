@@ -38,6 +38,7 @@ namespace DLCGenerator
 
 			AutomationToolPathText.Text = AutomationToolPath;
 			CollectDLCs();
+			ReloadTransportTargetList();
 		}
 
 		/// <summary>
@@ -106,6 +107,15 @@ namespace DLCGenerator
 
 			MoveDLCs();
 
+			VersionGenerator VersionGen = new VersionGenerator(Directory.GetFiles(Config.PakPath));
+			if(!VersionGen.Generate())
+			{
+				MessageBox.Show("バージョンファイルの生成に失敗しました。");
+				return;
+			}
+
+			Console.WriteLine("バージョンファイルを生成しました。");
+
 			MessageBox.Show("完了しました。");
 		}
 
@@ -125,9 +135,87 @@ namespace DLCGenerator
 				int Index = DLC.IndexOf("Plugins\\");
 				var DLCName = DLC.Replace(DLC.Substring(0, Index + "Plugins\\".Length), "");
 				DLCName = DLCName.Substring(0, DLCName.IndexOf("\\"));
-				File.Copy(DLC, Config.PakPath + "\\" + DLCName + ".pak");
+				string TargetPath = Config.PakPath + "\\" + DLCName + ".pak";
+				if(File.Exists(TargetPath))
+				{
+					File.Delete(TargetPath);
+				}
+				File.Copy(DLC, TargetPath);
 			}
 		}
-		
+
+		// 転送先を追加ボタンが押された。
+		private void AddTransportTargetButton_Click(object sender, EventArgs e)
+		{
+			TransportTargetWindow Window = new TransportTargetWindow();
+			DialogResult Result = Window.ShowDialog();
+			if(Result != DialogResult.OK) { return; }
+			ReloadTransportTargetList();
+		}
+
+		// 転送ボタンが押された。
+		private void TransportButton_Click(object sender, EventArgs e)
+		{
+			if(TransportTargetList.SelectedIndex == -1)
+			{
+				MessageBox.Show("転送先を選択してください。");
+				return;
+			}
+
+			string Host = "";
+			string UserName = "";
+			string Password = "";
+			string TargetDirectory = "";
+			try
+			{
+				string TargetFilePath = Config.TransportTargetsPath + "\\" + TransportTargetList.SelectedItem.ToString() + ".dat";
+				using (StreamReader Reader = new StreamReader(TargetFilePath))
+				{
+					Host = Reader.ReadLine();
+					UserName = Reader.ReadLine();
+					Password = Reader.ReadLine();
+					TargetDirectory = Reader.ReadLine();
+				}
+			}
+			catch
+			{
+				MessageBox.Show("転送先の読み込みに失敗しました。");
+				return;
+			}
+
+			string[] Files = Directory.GetFiles(Config.PakPath);
+			foreach(var FilePath in Files)
+			{
+				string FileName = Path.GetFileName(FilePath);
+				Console.Write(FileName + "の転送中...");
+				FileTransporter Transporter = new FileTransporter(FilePath, Host, UserName, Password, TargetDirectory);
+				if(!Transporter.Transport())
+				{
+					Console.WriteLine("失敗。");
+					MessageBox.Show(FileName + "の転送に失敗しました。");
+					return;
+				}
+
+				Console.WriteLine("成功。");
+			}
+
+			Console.WriteLine("転送完了。");
+			MessageBox.Show("DLCの転送が完了しました。");
+		}
+
+		/// <summary>
+		/// 転送先リストの再読み込み
+		/// </summary>
+		private void ReloadTransportTargetList()
+		{
+			TransportTargetList.Items.Clear();
+			if (!Directory.Exists(Config.TransportTargetsPath)) { return; }
+			string[] Files = Directory.GetFiles(Config.TransportTargetsPath);
+			foreach(var FileName in Files)
+			{
+				TransportTargetList.Items.Add(Path.GetFileNameWithoutExtension(FileName));
+			}
+		}
+
 	}
 }

@@ -49,5 +49,10 @@ namespace DLCGenerator
 		/// </summary>
 		public static readonly string PakPath = "Paks";
 
+		/// <summary>
+		/// 転送先を保存するパス
+		/// </summary>
+		public static readonly string TransportTargetsPath = "TransportTargets";
+
 	}
 }
