@@ -5,27 +5,27 @@
 #include "CoreMinimal.h"
 #include "Connection/HttpConnection.h"
 
-DECLARE_DELEGATE_OneParam(FMasterDownloadResult, bool);
+DECLARE_DELEGATE_OneParam(FDownloadResult, bool);
 
 /**
- * マスタダウンロードクラス
+ * バージョンファイルで管理されたファイルのダウンロードクラス
  */
-class ANPANMMO_API MasterDownloader
+class ANPANMMO_API VersionDownloader
 {
 
 public:
 
 	// コンストラクタ
-	MasterDownloader();
+	VersionDownloader();
 
 	// デストラクタ
-	~MasterDownloader() {}
+	~VersionDownloader() {}
 
 	// 開始.
-	bool Start();
+	bool Start(const FString &InURL, const FString &InSavePath);
 
 	// ダウンロード結果delegate
-	FMasterDownloadResult DownloadResult;
+	FDownloadResult DownloadResult;
 	
 private:
 
@@ -38,12 +38,18 @@ private:
 	// ダウンロードキュー
 	TArray<FString> DownloadQueue;
 
+	// URL
+	FString URL;
+
+	// 保存先パス
+	FString SavePath;
+
 
 	// バージョンファイルのダウンロードが完了した。
 	void OnDownloadVersionFile(bool bSuccess, const TArray<uint8> &Content);
 
-	// マスタファイルのダウンロードが完了した。
-	void OnDownloadMasterFile(bool bSuccess, const TArray<uint8> &Content);
+	// ファイルのダウンロードが完了した。
+	void OnDownloadFile(bool bSuccess, const TArray<uint8> &Content);
 
 	// ダウンロードしてきたバージョンファイルを保存.
 	void SaveDownloadedVersionFile();

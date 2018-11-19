@@ -71,9 +71,19 @@ namespace DLCGenerator
 				using (var Client = new SftpClient(ConnInfo))
 				{
 					Client.Connect();
-					if(!Client.Exists(TargetDirectory))
+					// 次々とディレクトリを掘っていく。
+					string[] Paths = TargetDirectory.Split('/');
+					for (int i = 0; i < Paths.Length; i++)
 					{
-						Client.CreateDirectory(TargetDirectory);
+						string TargetPath = "";
+						for (int j = 0; j <= i; j++)
+						{
+							TargetPath += Paths[j] + "/";
+						}
+						if (!Client.Exists(TargetPath))
+						{
+							Client.CreateDirectory(TargetPath);
+						}
 					}
 					Client.ChangeDirectory(TargetDirectory);
 					using (var FileStream = File.OpenRead(FilePath))

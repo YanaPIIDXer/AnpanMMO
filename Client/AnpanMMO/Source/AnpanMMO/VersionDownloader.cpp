@@ -1,29 +1,34 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
-#include "MasterDownloader.h"
+#include "VersionDownloader.h"
 #include "Config.h"
 #include "VersionFile.h"
 #include "GenericPlatformFile.h"
 #include "FileManagerGeneric.h"
 
 // コンストラクタ
-MasterDownloader::MasterDownloader()
+VersionDownloader::VersionDownloader()
+	: URL("")
+	, SavePath("")
 {
 }
 
 // 開始.
-bool MasterDownloader::Start()
+bool VersionDownloader::Start(const FString &InURL, const FString &InSavePath)
 {
-	Http.DownloadFinished.BindRaw<MasterDownloader>(this, &MasterDownloader::OnDownloadVersionFile);
+	URL = InURL;
+	SavePath = InSavePath;
 
-	FString VersionFileURL = Config::MasterURL + "Version.csv";
+	Http.DownloadFinished.BindRaw<VersionDownloader>(this, &VersionDownloader::OnDownloadVersionFile);
+
+	FString VersionFileURL = URL + "Version.csv";
 	if (!Http.StartDownload(VersionFileURL)) { return false; }
 	return true;
 }
 
 
 // バージョンファイルのダウンロードが完了した。
-void MasterDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> &Content)
+void VersionDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> &Content)
 {
 	if (!bSuccess)
 	{
@@ -35,17 +40,16 @@ void MasterDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> 
 
 	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
 
-	FString MasterDir = Config::GetMasterDirectory();
-	if (!File.DirectoryExists(*MasterDir))
+	if (!File.DirectoryExists(*SavePath))
 	{
-		File.CreateDirectory(*MasterDir);
+		File.CreateDirectory(*SavePath);
 	}
 
 	VersionFile DownloadedVersionFile(Content);
 
-	Http.DownloadFinished.BindRaw<MasterDownloader>(this, &MasterDownloader::OnDownloadMasterFile);
+	Http.DownloadFinished.BindRaw<VersionDownloader>(this, &VersionDownloader::OnDownloadFile);
 	
-	FString VersionFilePath = MasterDir + "\\Version.csv";
+	FString VersionFilePath = SavePath + "\\Version.csv";
 	if (!File.FileExists(*VersionFilePath))
 	{
 		// バージョンファイルがない。
@@ -56,7 +60,7 @@ void MasterDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> 
 			DownloadResult.ExecuteIfBound(true);
 			return;
 		}
-		Http.StartDownload(Config::MasterURL + DownloadQueue[0]);
+		Http.StartDownload(URL + DownloadQueue[0]);
 		return;
 	}
 
@@ -75,7 +79,7 @@ void MasterDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> 
 	TArray<FString> FileList = DownloadedVersionFile.GetAllFiles();
 	for (FString FileName : FileList)
 	{
-		if (!File.FileExists(*(MasterDir + "\\" + FileName)))
+		if (!File.FileExists(*(SavePath + "\\" + FileName)))
 		{
 			// ローカルには存在しないファイル
 			DownloadQueue.Add(FileName);
@@ -104,11 +108,11 @@ void MasterDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8> 
 		return;
 	}
 	
-	Http.StartDownload(Config::MasterURL + DownloadQueue[0]);
+	Http.StartDownload(URL + DownloadQueue[0]);
 }
 
-// マスタファイルのダウンロードが完了した。
-void MasterDownloader::OnDownloadMasterFile(bool bSuccess, const TArray<uint8> &Content)
+// ファイルのダウンロードが完了した。
+void VersionDownloader::OnDownloadFile(bool bSuccess, const TArray<uint8> &Content)
 {
 	if (!bSuccess)
 	{
@@ -117,7 +121,7 @@ void MasterDownloader::OnDownloadMasterFile(bool bSuccess, const TArray<uint8> &
 	}
 
 	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
-	FString FilePath = Config::GetMasterDirectory() + "\\" + DownloadQueue[0];
+	FString FilePath = SavePath + "\\" + DownloadQueue[0];
 	IFileHandle *pFileHandle = File.OpenWrite(*FilePath);
 	pFileHandle->Write(&Content[0], Content.Num());
 	pFileHandle->Flush();
@@ -132,14 +136,14 @@ void MasterDownloader::OnDownloadMasterFile(bool bSuccess, const TArray<uint8> &
 		return;
 	}
 
-	Http.StartDownload(Config::MasterURL + DownloadQueue[0]);
+	Http.StartDownload(URL + DownloadQueue[0]);
 }
 
 // ダウンロードしてきたバージョンファイルを保存.
-void MasterDownloader::SaveDownloadedVersionFile()
+void VersionDownloader::SaveDownloadedVersionFile()
 {
 	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
-	FString VersionFilePath = Config::GetMasterDirectory() + "\\Version.csv";
+	FString VersionFilePath = SavePath + "\\Version.csv";
 	IFileHandle *pFileHandle = File.OpenWrite(*VersionFilePath);
 	pFileHandle->Write(&DownloadedVersionFileData[0], DownloadedVersionFileData.Num());
 	pFileHandle->Flush();

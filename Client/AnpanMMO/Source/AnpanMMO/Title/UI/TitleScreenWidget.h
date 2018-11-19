@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "MasterDownloader.h"
+#include "VersionDownloader.h"
 #include "TitleScreenWidget.generated.h"
 
 DECLARE_DELEGATE_OneParam(FOnConnect, bool);
@@ -66,7 +66,7 @@ private:
 	// Widgetのパス
 	static const TCHAR *WidgetPath;
 
-	// マスタダウンローダ
-	MasterDownloader MasterDownload;
+	// バージョンダウンローダ
+	VersionDownloader VersionDownload;
 
 };

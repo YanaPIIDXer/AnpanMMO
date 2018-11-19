@@ -29,8 +29,8 @@ UTitleScreenWidget::UTitleScreenWidget(const FObjectInitializer &ObjectInitializ
 // マスタダウンロード開始.
 void UTitleScreenWidget::StartMasterDownload()
 {
-	MasterDownload.DownloadResult.BindUObject<UTitleScreenWidget>(this, &UTitleScreenWidget::OnMasterDownloaded);
-	if (!MasterDownload.Start())
+	VersionDownload.DownloadResult.BindUObject<UTitleScreenWidget>(this, &UTitleScreenWidget::OnMasterDownloaded);
+	if (!VersionDownload.Start(Config::MasterURL, Config::GetMasterDirectory()))
 	{
 		OnMasterDownloaded(false);
 	}
