@@ -66,6 +66,11 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Connection")
 	void ConnectToGameServer();
 
+	// ゲームサーバに接続した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Connection")
+	void OnConnectedGameServer(bool bSuccess);
+	void OnConnectedGameServer_Implementation(bool bSuccess) {}
+
 	// フェードが完了した。
 	UFUNCTION(BlueprintCallable, Category = "Fade")
 	void OnFadeFinish();

@@ -39,11 +39,16 @@ void UTitleScreenWidget::StartMasterDownload()
 // DLCダウンロード開始.
 void UTitleScreenWidget::StartDLCDownload()
 {
+#if !WITH_EDITOR
 	VersionDownload.DownloadResult.BindUObject<UTitleScreenWidget>(this, &UTitleScreenWidget::OnDLCDownloaded);
 	if (!VersionDownload.Start(Config::DLCURL, Config::GetDLCDirectory()))
 	{
 		OnDLCDownloaded(false);
 	}
+#else
+	// Editor上では問答無用で成功扱いとする。
+	OnDLCDownloaded(true);
+#endif
 }
 
 // ゲームサーバへの接続.
@@ -55,9 +60,11 @@ void UTitleScreenWidget::ConnectToGameServer()
 	if (!pInst->Connect(Config::ServerHost, Config::ServerPort))
 	{
 		OnConnect.ExecuteIfBound(false);
+		OnConnectedGameServer(false);
 		return;
 	}
 	OnConnect.ExecuteIfBound(true);
+	OnConnectedGameServer(true);
 
 	// ログインパケット送信.
 	std::string FilePath = TCHAR_TO_UTF8(*Config::GetIdFilePath());
