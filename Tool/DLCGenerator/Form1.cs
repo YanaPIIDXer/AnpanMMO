@@ -156,7 +156,51 @@ namespace DLCGenerator
 		// 転送ボタンが押された。
 		private void TransportButton_Click(object sender, EventArgs e)
 		{
+			if(TransportTargetList.SelectedIndex == -1)
+			{
+				MessageBox.Show("転送先を選択してください。");
+				return;
+			}
 
+			string Host = "";
+			string UserName = "";
+			string Password = "";
+			string TargetDirectory = "";
+			try
+			{
+				string TargetFilePath = Config.TransportTargetsPath + "\\" + TransportTargetList.SelectedItem.ToString() + ".dat";
+				using (StreamReader Reader = new StreamReader(TargetFilePath))
+				{
+					Host = Reader.ReadLine();
+					UserName = Reader.ReadLine();
+					Password = Reader.ReadLine();
+					TargetDirectory = Reader.ReadLine();
+				}
+			}
+			catch
+			{
+				MessageBox.Show("転送先の読み込みに失敗しました。");
+				return;
+			}
+
+			string[] Files = Directory.GetFiles(Config.PakPath);
+			foreach(var FilePath in Files)
+			{
+				string FileName = Path.GetFileName(FilePath);
+				Console.Write(FileName + "の転送中...");
+				FileTransporter Transporter = new FileTransporter(FilePath, Host, UserName, Password, TargetDirectory);
+				if(!Transporter.Transport())
+				{
+					Console.WriteLine("失敗。");
+					MessageBox.Show(FileName + "の転送に失敗しました。");
+					return;
+				}
+
+				Console.WriteLine("成功。");
+			}
+
+			Console.WriteLine("転送完了。");
+			MessageBox.Show("DLCの転送が完了しました。");
 		}
 
 		/// <summary>
