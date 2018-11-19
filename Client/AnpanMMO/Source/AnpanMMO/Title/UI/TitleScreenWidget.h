@@ -35,6 +35,11 @@ public:
 	void StartFade();
 	void StartFade_Implementation() {}
 
+	// ログインに失敗した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Connection")
+	void OnFailedLogIn();
+	void OnFailedLogIn_Implementation() {}
+
 
 	// 接続コールバック
 	FOnConnect OnConnect;
