@@ -106,6 +106,15 @@ namespace DLCGenerator
 
 			MoveDLCs();
 
+			VersionGenerator VersionGen = new VersionGenerator(Directory.GetFiles(Config.PakPath));
+			if(!VersionGen.Generate())
+			{
+				MessageBox.Show("バージョンファイルの生成に失敗しました。");
+				return;
+			}
+
+			Console.WriteLine("バージョンファイルを生成しました。");
+
 			MessageBox.Show("完了しました。");
 		}
 
@@ -125,7 +134,12 @@ namespace DLCGenerator
 				int Index = DLC.IndexOf("Plugins\\");
 				var DLCName = DLC.Replace(DLC.Substring(0, Index + "Plugins\\".Length), "");
 				DLCName = DLCName.Substring(0, DLCName.IndexOf("\\"));
-				File.Copy(DLC, Config.PakPath + "\\" + DLCName + ".pak");
+				string TargetPath = Config.PakPath + "\\" + DLCName + ".pak";
+				if(File.Exists(TargetPath))
+				{
+					File.Delete(TargetPath);
+				}
+				File.Copy(DLC, TargetPath);
 			}
 		}
 		
