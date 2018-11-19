@@ -27,4 +27,10 @@ public:
 	// マスタディレクトリを取得.
 	static FString GetMasterDirectory();
 
+	// DLCのURL
+	static const FString DLCURL;
+
+	// DLCディレクトリを取得.
+	static FString GetDLCDirectory();
+
 };
