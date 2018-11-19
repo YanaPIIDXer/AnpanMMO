@@ -34,7 +34,7 @@ void PakFileManager::Initialize()
 }
 
 // マウント
-void PakFileManager::Mount(const FString &Path)
+bool PakFileManager::Mount(const FString &Path)
 {
 #if !WITH_EDITOR
 	// マウント済み。
@@ -42,8 +42,9 @@ void PakFileManager::Mount(const FString &Path)
 	if (!pPakPlatform->Mount(*Path, 0, *FPaths::GameContentDir()))
 	{
 		UE_LOG(LogTemp, Log, TEXT("%s Mount Failed..."), *Path);
-		return;
+		return false;
 	}
 	MountedPaths.Add(Path);
 #endif
+	return true;
 }

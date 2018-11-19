@@ -26,6 +26,9 @@ public:
 	// デストラクタ
 	virtual ~UMMOGameInstance() {}
 
+	// 初期化時の処理.
+	virtual void Init() override;
+
 	// 終了時の処理.
 	virtual void Shutdown() override;
 
