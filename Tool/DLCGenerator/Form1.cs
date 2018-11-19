@@ -38,6 +38,7 @@ namespace DLCGenerator
 
 			AutomationToolPathText.Text = AutomationToolPath;
 			CollectDLCs();
+			ReloadTransportTargetList();
 		}
 
 		/// <summary>
@@ -142,6 +143,35 @@ namespace DLCGenerator
 				File.Copy(DLC, TargetPath);
 			}
 		}
-		
+
+		// 転送先を追加ボタンが押された。
+		private void AddTransportTargetButton_Click(object sender, EventArgs e)
+		{
+			TransportTargetWindow Window = new TransportTargetWindow();
+			DialogResult Result = Window.ShowDialog();
+			if(Result != DialogResult.OK) { return; }
+			ReloadTransportTargetList();
+		}
+
+		// 転送ボタンが押された。
+		private void TransportButton_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		/// <summary>
+		/// 転送先リストの再読み込み
+		/// </summary>
+		private void ReloadTransportTargetList()
+		{
+			TransportTargetList.Items.Clear();
+			if (!Directory.Exists(Config.TransportTargetsPath)) { return; }
+			string[] Files = Directory.GetFiles(Config.TransportTargetsPath);
+			foreach(var FileName in Files)
+			{
+				TransportTargetList.Items.Add(Path.GetFileNameWithoutExtension(FileName));
+			}
+		}
+
 	}
 }
