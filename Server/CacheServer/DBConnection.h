@@ -18,7 +18,7 @@ public:
 	bool LoadUserData(char *pUserCode, int &OutId);
 
 	// キャラクタパラメータ読み込み
-	bool LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);
+	bool LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, bool bCreateIfNotFound);
 
 	// キャラクタパラメータ書き込み
 	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z);
@@ -43,6 +43,9 @@ private:
 
 	// ユーザデータ登録.
 	bool RegisterUserData(char *pUserCode);
+
+	// キャラクタデータ登録.
+	bool RegisterCharacterData(u32 Id);
 
 	// ======== Singleton ===========
 public:
