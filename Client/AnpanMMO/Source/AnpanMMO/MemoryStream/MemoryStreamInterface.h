@@ -10,6 +10,9 @@ class MemoryStreamInterface
 
 public:
 
+	// デストラクタ
+	virtual ~MemoryStreamInterface() {}
+
 	//符号付き３２ビットシリアライズ
 	virtual bool Serialize( s32 *pValue ) = 0;
 
@@ -36,6 +39,9 @@ public:
 
 	// エラーが発生しているか？
 	virtual bool IsError() const = 0;
+
+	// リセット.
+	virtual void Reset() = 0;
 
 };
 
