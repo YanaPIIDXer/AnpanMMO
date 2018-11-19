@@ -36,6 +36,16 @@ void UTitleScreenWidget::StartMasterDownload()
 	}
 }
 
+// DLCダウンロード開始.
+void UTitleScreenWidget::StartDLCDownload()
+{
+	VersionDownload.DownloadResult.BindUObject<UTitleScreenWidget>(this, &UTitleScreenWidget::OnDLCDownloaded);
+	if (!VersionDownload.Start(Config::DLCURL, Config::GetDLCDirectory()))
+	{
+		OnDLCDownloaded(false);
+	}
+}
+
 // ゲームサーバへの接続.
 void UTitleScreenWidget::ConnectToGameServer()
 {

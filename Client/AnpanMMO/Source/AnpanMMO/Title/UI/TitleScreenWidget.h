@@ -48,10 +48,19 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Master")
 	void StartMasterDownload();
 
-	// ダウンロードが完了した。
+	// マスタダウンロードが完了した。
 	UFUNCTION(BlueprintNativeEvent, Category = "Master")
 	void OnMasterDownloaded(bool bSuccess);
 	void OnMasterDownloaded_Implementation(bool bSuccess) {}
+
+	// DLCのダウンロード開始.
+	UFUNCTION(BlueprintCallable, Category = "DLC")
+	void StartDLCDownload();
+
+	// DLCダウンロードが完了した。
+	UFUNCTION(BlueprintNativeEvent, Category = "DLC")
+	void OnDLCDownloaded(bool bSuccess);
+	void OnDLCDownloaded_Implementation(bool bSuccess) {}
 
 	// ゲームサーバへの接続.
 	UFUNCTION(BlueprintCallable, Category = "Connection")
