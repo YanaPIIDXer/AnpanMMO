@@ -10,36 +10,34 @@ class MemoryStreamReader : public MemoryStreamInterface
 public:
 
 	//コンストラクタ
-	MemoryStreamReader( const u8 *_pData , const int _Size );
+	MemoryStreamReader(const u8 *pInData, const int InSize);
 
 	//デストラクタ
 	virtual ~MemoryStreamReader()
 	{
-
 		delete []pData;
-
 	}
 
 	//符号付き３２ビットシリアライズ
-	virtual bool Serialize( s32 *pValue );
+	virtual bool Serialize(s32 *pValue);
 
 	//符号無し３２ビットシリアライズ
-	virtual bool Serialize( u32 *pValue );
+	virtual bool Serialize(u32 *pValue);
 
 	//符号付き１６ビットシリアライズ
-	virtual bool Serialize( s16 *pValue );
+	virtual bool Serialize(s16 *pValue);
 
 	//符号無し１６ビットシリアライズ
-	virtual bool Serialize( u16 *pValue );
+	virtual bool Serialize(u16 *pValue);
 
 	//符号付き８ビットシリアライズ
-	virtual bool Serialize( s8 *pValue );
+	virtual bool Serialize(s8 *pValue);
 
 	//符号無し８ビットシリアライズ
-	virtual bool Serialize( u8 *pValue );
+	virtual bool Serialize(u8 *pValue);
 
 	//文字列シリアライズ
-	virtual bool Serialize( std::string *pValue );
+	virtual bool Serialize(std::string *pValue);
 
 	// floatシリアライズ
 	virtual bool Serialize(float *pValue);
@@ -47,16 +45,16 @@ public:
 	// エラーが発生しているか？
 	virtual bool IsError() const { return bError; }
 
+	// リセット
+	virtual void Reset();
+
 private:
 
 	//指定したサイズ分の読み込み
-	bool Read( void *pValue , int ReadSize );
+	bool Read(void *pValue , int ReadSize);
 
 	//データのポインタ（先頭位置）
 	u8 *pData;
-
-	// エラーフラグ
-	bool bError;
 
 	//データサイズ
 	const int Size;
@@ -64,10 +62,13 @@ private:
 	//現在のストリーム位置
 	int CurrentPosition;
 
+	// エラーフラグ
+	bool bError;
+
 	//暗黙で定義されるものの封印
 	MemoryStreamReader();
-	MemoryStreamReader( const MemoryStreamReader &Arg );
-	MemoryStreamReader operator =( const MemoryStreamReader &Arg );
+	MemoryStreamReader(const MemoryStreamReader &Arg);
+	MemoryStreamReader operator =(const MemoryStreamReader &Arg );
 
 };
 

@@ -35,6 +35,11 @@ public:
 	void StartFade();
 	void StartFade_Implementation() {}
 
+	// ログインに失敗した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Connection")
+	void OnFailedLogIn();
+	void OnFailedLogIn_Implementation() {}
+
 
 	// 接続コールバック
 	FOnConnect OnConnect;
@@ -65,6 +70,11 @@ protected:
 	// ゲームサーバへの接続.
 	UFUNCTION(BlueprintCallable, Category = "Connection")
 	void ConnectToGameServer();
+
+	// ゲームサーバに接続した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Connection")
+	void OnConnectedGameServer(bool bSuccess);
+	void OnConnectedGameServer_Implementation(bool bSuccess) {}
 
 	// フェードが完了した。
 	UFUNCTION(BlueprintCallable, Category = "Fade")

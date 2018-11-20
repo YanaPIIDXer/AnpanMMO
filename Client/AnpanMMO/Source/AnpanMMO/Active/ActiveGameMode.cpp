@@ -9,6 +9,8 @@
 #include "Character/Player/GameCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "Master/MasterData.h"
+#include "Config.h"
+#include "DLC/PakFileManager.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
 #include "Packet/PacketDamage.h"
@@ -93,6 +95,14 @@ void AActiveGameMode::StartLevelLoad(uint32 AreaId)
 	check(pItem != nullptr);
 
 	FString LevelName = pItem->LevelName;
+	FString PakPath = Config::GetDLCDirectory() + "\\" + LevelName + ".pak";
+	if (!PakFileManager::GetInstance().Mount(PakPath))
+	{
+		UE_LOG(LogTemp, Log, TEXT("%s DLC Mount Failed..."), *LevelName);
+		// @TODO:Ž¸”sŽž‚Ì‘Î‰ž‚Ç‚¤‚·‚ñ‚Ì‚æH
+		return;
+	}
+
 	FString LevelPath = "/" + LevelName + "/Levels/" + LevelName + "." + LevelName;
 	pLevelManager->Load(LevelPath);
 }

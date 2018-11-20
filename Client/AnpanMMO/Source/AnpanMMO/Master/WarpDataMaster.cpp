@@ -12,13 +12,14 @@ void WarpDataMaster::Load()
 
 	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
 	IFileHandle *pFileHandle = File.OpenRead(*FilePath);
-	uint8 Data[2048];
-	pFileHandle->Read(Data, 2048);
-	int DataSize = pFileHandle->Size();
+	int32 DataSize = pFileHandle->Size();
+	uint8 *pData = new uint8[DataSize];
+	bool bReadResult = pFileHandle->Read(pData, DataSize);
+	check(bReadResult);
 	pFileHandle->Flush();
 	delete pFileHandle;
 
-	MemoryStreamReader Reader(Data, DataSize);
+	MemoryStreamReader Reader(pData, DataSize);
 	Items.Empty();
 	while (true)
 	{
@@ -26,6 +27,8 @@ void WarpDataMaster::Load()
 		if (!Item.Serialize(&Reader)) { break; }
 		Items.Add(Item.ID, Item);
 	}
+
+	delete[] pData;
 }
 
 TArray<WarpDataItem> WarpDataMaster::GetAll() const

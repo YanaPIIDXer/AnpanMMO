@@ -20,7 +20,7 @@ public:
 	void Initialize();
 
 	// ƒ}ƒEƒ“ƒg
-	void Mount(const FString &Path);
+	bool Mount(const FString &Path);
 
 private:
 

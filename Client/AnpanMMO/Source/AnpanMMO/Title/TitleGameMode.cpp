@@ -59,6 +59,10 @@ void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 		MasterData::GetInstance().Load();
 		pScreenWidget->StartFade();
 	}
+	else
+	{
+		pScreenWidget->OnFailedLogIn();
+	}
 
 	// @TODO:b’èˆ—.
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());

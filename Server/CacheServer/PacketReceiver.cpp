@@ -31,6 +31,17 @@ void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketLogInResult::Error;
 	}
 
+	// キャラデータを一旦読み込む。
+	// （ここで読み込んだデータそのものは使用しないが、キャラが存在しなければ勝手に生成するため）
+	s32 MaxHp = 0;
+	s32 Atk = 0;
+	s32 Def = 0;
+	s32 Exp = 0;
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Id, MaxHp, Atk, Def, Exp, true))
+	{
+		ResultCode = CachePacketLogInResult::Error;
+	}
+
 	u32 LastAreaId = 0;
 	float LastX = 0.0f;
 	float LastY = 0.0f;
@@ -55,7 +66,7 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	s32 Def = 0;
 	s32 Exp = 0;
 	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, MaxHp, Atk, Def, Exp))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, MaxHp, Atk, Def, Exp, true))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}

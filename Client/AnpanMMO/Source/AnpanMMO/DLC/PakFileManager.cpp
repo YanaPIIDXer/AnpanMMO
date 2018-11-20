@@ -2,6 +2,7 @@
 
 #include "PakFileManager.h"
 #include "HAL/PlatformFilemanager.h"
+#include "Misc/CoreDelegates.h"
 
 PakFileManager PakFileManager::Instance;
 
@@ -29,21 +30,29 @@ void PakFileManager::Initialize()
 	IPlatformFile &InnerPlatform = FPlatformFileManager::Get().GetPlatformFile();
 	pPakPlatform = new FPakPlatformFile();
 	pPakPlatform->Initialize(&InnerPlatform, TEXT(""));
+	pPakPlatform->InitializeNewAsyncIO();
 	FPlatformFileManager::Get().SetPlatformFile(*pPakPlatform);
 #endif
 }
 
 // マウント
-void PakFileManager::Mount(const FString &Path)
+bool PakFileManager::Mount(const FString &Path)
 {
 #if !WITH_EDITOR
 	// マウント済み。
-	if (MountedPaths.Find(Path)) { return; }
-	if (!pPakPlatform->Mount(*Path, 0, *FPaths::GameContentDir()))
+	// if(MountedPaths.Find(Path)) { return true; }		// ←何故か問答無用でtrueが返される。
+	int DummyIndex = 0;
+	if (MountedPaths.Find(Path, DummyIndex)) { return true; }
+
+	FString MountPoint = FPaths::ProjectDir();
+	FPaths::MakeStandardFilename(MountPoint);
+	MountPoint = FPaths::GetPath(MountPoint);
+	if (!pPakPlatform->Mount(*Path, 4, *MountPoint))
 	{
 		UE_LOG(LogTemp, Log, TEXT("%s Mount Failed..."), *Path);
-		return;
+		return false;
 	}
 	MountedPaths.Add(Path);
 #endif
+	return true;
 }

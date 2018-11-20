@@ -1,12 +1,21 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "MMOGameInstance.h"
+#include "DLC/PakFileManager.h"
 
 // コンストラクタ
 UMMOGameInstance::UMMOGameInstance(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pConnection(nullptr)
 {
+}
+
+// 初期化時の処理.
+void UMMOGameInstance::Init()
+{
+	Super::Init();
+
+	PakFileManager::GetInstance().Initialize();
 }
 
 // 終了時の処理.
