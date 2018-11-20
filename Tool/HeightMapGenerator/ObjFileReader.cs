@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace HeightMapGenerator
 {
@@ -18,6 +19,16 @@ namespace HeightMapGenerator
 		/// ファイルパス
 		/// </summary>
 		private string FilePath;
+
+		/// <summary>
+		/// 頂点ディクショナリ
+		/// </summary>
+		private Dictionary<int, Vector> VertexDic = new Dictionary<int, Vector>();
+
+		/// <summary>
+		/// 多角形リスト
+		/// </summary>
+		private List<Geometry> Geometrys = new List<Geometry>();
 
 		/// <summary>
 		/// コンストラクタ
@@ -45,8 +56,9 @@ namespace HeightMapGenerator
 					}
 				}
 			}
-			catch
+			catch(Exception e)
 			{
+				MessageBox.Show(e.Message + "(" + e.StackTrace + ")");
 				return false;
 			}
 			return true;
@@ -58,8 +70,36 @@ namespace HeightMapGenerator
 		/// <param name="Line">行</param>
 		private void ParseLine(string Line)
 		{
-			string KeyWord = Line.Split(' ')[0];
+			string[] Datas = Line.Split(' ');
+			string KeyWord = Datas[0];
+			switch(KeyWord)
+			{
+				case "v":
 
+					{
+						float X = float.Parse(Datas[1]);
+						float Y = float.Parse(Datas[2]);
+						float Z = float.Parse(Datas[3]);
+						Vector Vertex = new Vector(X, Y, Z);
+						VertexDic.Add(VertexDic.Count + 1, Vertex);
+					}
+					break;
+
+				case "f":
+
+					{
+						Geometry Geo = new Geometry();
+						for (int i = 1; i < Datas.Length; i++)
+						{
+							if(Datas[i] == "") { continue; }
+							string[] GeometryInfo = Datas[i].Split('/');
+							Vector Vertex = VertexDic[int.Parse(GeometryInfo[0])];
+							Geo.AddVertex(Vertex);
+						}
+						Geometrys.Add(Geo);
+					}
+					break;
+			}
 		}
 
 	}
