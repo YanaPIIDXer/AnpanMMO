@@ -31,6 +31,15 @@ namespace HeightMapGenerator
 				ObjListBox.Items.Add(Path.GetFileNameWithoutExtension(ObjFile));
 			}
 		}
-		
+
+		// ハイトマップ出力ボタンが押された。
+		private void OutputHeightMapButton_Click(object sender, EventArgs e)
+		{
+			if(ObjListBox.SelectedIndex == -1)
+			{
+				MessageBox.Show("ハイトマップを出力するobjファイルを選択してください。");
+				return;
+			}
+		}
 	}
 }

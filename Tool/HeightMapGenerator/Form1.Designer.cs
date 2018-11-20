@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.ObjListBox = new System.Windows.Forms.ListBox();
+			this.OutputHeightMapButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// ObjListBox
@@ -40,11 +41,22 @@
 			this.ObjListBox.Size = new System.Drawing.Size(288, 289);
 			this.ObjListBox.TabIndex = 0;
 			// 
+			// OutputHeightMapButton
+			// 
+			this.OutputHeightMapButton.Location = new System.Drawing.Point(115, 365);
+			this.OutputHeightMapButton.Name = "OutputHeightMapButton";
+			this.OutputHeightMapButton.Size = new System.Drawing.Size(133, 54);
+			this.OutputHeightMapButton.TabIndex = 1;
+			this.OutputHeightMapButton.Text = "ハイトマップ出力";
+			this.OutputHeightMapButton.UseVisualStyleBackColor = true;
+			this.OutputHeightMapButton.Click += new System.EventHandler(this.OutputHeightMapButton_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(379, 431);
+			this.Controls.Add(this.OutputHeightMapButton);
 			this.Controls.Add(this.ObjListBox);
 			this.Name = "Form1";
 			this.Text = "Form1";
@@ -55,6 +67,7 @@
 		#endregion
 
 		private System.Windows.Forms.ListBox ObjListBox;
+		private System.Windows.Forms.Button OutputHeightMapButton;
 	}
 }
 
