@@ -38,16 +38,19 @@ void ULevelManager::Load(const FString &LevelPath)
 		UE_LOG(LogTemp, Log, TEXT("Level %s Load Failed..."), *LevelPath);
 		return;
 	}
+
 	pLevelStreaming->SetShouldBeLoaded(true);
 	pLevelStreaming->SetShouldBeVisible(true);
-	pLevelStreaming->bShouldBlockOnLoad = true;
+	pLevelStreaming->bShouldBlockOnLoad = false;
 	pLevelStreaming->bInitiallyLoaded = true;
 	pLevelStreaming->bInitiallyVisible = true;
 	pLevelStreaming->PackageNameToLoad = *LevelPath;
-
+	
 	bIsLoaded = false;
 
 	// ↓動かない。
 	//pLevelStreaming->OnLevelLoaded.AddDynamic(this, &ULevelManager::OnLevelLoaded);
-	pWorld->AddStreamingLevel(pLevelStreaming);
+
+	// ↓実はULevelStreamingDynamic::LoadLevelInstance関数が呼び出す関数内で実行されているらしい。
+	//pWorld->AddStreamingLevel(pLevelStreaming);
 }
