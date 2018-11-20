@@ -40,6 +40,17 @@ namespace HeightMapGenerator
 				MessageBox.Show("ハイトマップを出力するobjファイルを選択してください。");
 				return;
 			}
+
+			string ObjName = ObjListBox.SelectedItem.ToString();
+			string FilePath = Config.ObjFilesDirectory + "\\" + ObjName + ".obj";
+			HeightMapGenerator HeightMapGen = new HeightMapGenerator(FilePath);
+			if(!HeightMapGen.Generate())
+			{
+				MessageBox.Show(ObjName + "のハイトマップ生成に失敗しました。");
+				return;
+			}
+
+			MessageBox.Show(ObjName + "のハイトマップを生成しました。");
 		}
 	}
 }
