@@ -39,6 +39,7 @@ namespace HeightMapGenerator
 				MessageBox.Show("objファイルの読み込みに失敗しました。");
 				return false;
 			}
+
 			return true;
 		}
 

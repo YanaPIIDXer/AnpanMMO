@@ -18,5 +18,10 @@ namespace HeightMapGenerator
 		/// </summary>
 		public static readonly string ObjFilesDirectory = "Objs";
 
+		/// <summary>
+		/// ビットマップを格納するディレクトリ
+		/// </summary>
+		public static readonly string BitMapDirectory = "HeightMaps";
+
 	}
 }
