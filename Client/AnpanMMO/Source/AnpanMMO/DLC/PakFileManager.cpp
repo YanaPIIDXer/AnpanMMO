@@ -29,8 +29,9 @@ void PakFileManager::Initialize()
 
 	IPlatformFile &InnerPlatform = FPlatformFileManager::Get().GetPlatformFile();
 	pPakPlatform = new FPakPlatformFile();
-	FPlatformFileManager::Get().SetPlatformFile(*pPakPlatform);
 	pPakPlatform->Initialize(&InnerPlatform, TEXT(""));
+	pPakPlatform->InitializeNewAsyncIO();
+	FPlatformFileManager::Get().SetPlatformFile(*pPakPlatform);
 #endif
 }
 
