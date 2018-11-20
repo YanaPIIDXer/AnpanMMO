@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace HeightMapGenerator
 {
@@ -17,7 +19,7 @@ namespace HeightMapGenerator
 		/// <summary>
 		/// objファイル読み込み
 		/// </summary>
-		private ObjFileReader ObjReader;
+		private ObjFile ObjReader;
 
 		/// <summary>
 		/// コンストラクタ
@@ -25,7 +27,7 @@ namespace HeightMapGenerator
 		/// <param name="ObjFilePath">.objのファイルパス</param>
 		public HeightMapGenerator(string ObjFilePath)
 		{
-			ObjReader = new ObjFileReader(ObjFilePath);
+			ObjReader = new ObjFile(ObjFilePath);
 		}
 
 		/// <summary>

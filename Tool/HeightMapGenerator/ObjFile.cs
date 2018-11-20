@@ -12,7 +12,7 @@ namespace HeightMapGenerator
 	/// <summary>
 	/// .objファイル読み込みクラス
 	/// </summary>
-	public class ObjFileReader
+	public class ObjFile
 	{
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace HeightMapGenerator
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InFilePath">ファイルパス</param>
-		public ObjFileReader(string InFilePath)
+		public ObjFile(string InFilePath)
 		{
 			FilePath = InFilePath;
 			Geometrys = new List<Geometry>();
