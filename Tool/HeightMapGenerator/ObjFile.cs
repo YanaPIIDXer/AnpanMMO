@@ -102,5 +102,24 @@ namespace HeightMapGenerator
 			}
 		}
 
+		/// <summary>
+		/// 高さを取得.
+		/// </summary>
+		/// <param name="X">X座標</param>
+		/// <param name="Y">Y座標</param>
+		/// <returns>高さ</returns>
+		public float GetHeight(float X, float Y)
+		{
+			float Height = 0.0f;
+			foreach(Geometry Geo in Geometrys)
+			{
+				if(Geo.TryGetHeight(X, Y, out Height))
+				{
+					return Height;
+				}
+			}
+			return 0.0f;
+		}
+
 	}
 }
