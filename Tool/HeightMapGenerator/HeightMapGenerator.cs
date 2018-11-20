@@ -19,7 +19,7 @@ namespace HeightMapGenerator
 		/// <summary>
 		/// objファイル読み込み
 		/// </summary>
-		private ObjFile ObjReader;
+		private ObjFile ObjData;
 
 		/// <summary>
 		/// コンストラクタ
@@ -27,7 +27,7 @@ namespace HeightMapGenerator
 		/// <param name="ObjFilePath">.objのファイルパス</param>
 		public HeightMapGenerator(string ObjFilePath)
 		{
-			ObjReader = new ObjFile(ObjFilePath);
+			ObjData = new ObjFile(ObjFilePath);
 		}
 
 		/// <summary>
@@ -36,7 +36,7 @@ namespace HeightMapGenerator
 		/// <returns>成功したらtrueを返す。</returns>
 		public bool Generate()
 		{
-			if(!ObjReader.Load())
+			if(!ObjData.Load())
 			{
 				MessageBox.Show("objファイルの読み込みに失敗しました。");
 				return false;
