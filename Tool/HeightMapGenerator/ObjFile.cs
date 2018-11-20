@@ -28,7 +28,7 @@ namespace HeightMapGenerator
 		/// <summary>
 		/// 多角形リスト
 		/// </summary>
-		public List<Geometry> Geometrys { get; private set; }
+		private List<Geometry> Geometrys = new List<Geometry>();
 
 		/// <summary>
 		/// コンストラクタ
@@ -37,7 +37,6 @@ namespace HeightMapGenerator
 		public ObjFile(string InFilePath)
 		{
 			FilePath = InFilePath;
-			Geometrys = new List<Geometry>();
 		}
 
 		/// <summary>
