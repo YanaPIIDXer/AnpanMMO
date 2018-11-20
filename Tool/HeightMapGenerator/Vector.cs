@@ -90,6 +90,16 @@ namespace HeightMapGenerator
 			return new Vector(A.X - B.X, A.Y - B.Y, A.Z - B.Z);
 		}
 
+		public static Vector operator *(Vector Vec, float Rate)
+		{
+			return new Vector(Vec.X * Rate, Vec.Y * Rate, Vec.Z * Rate);
+		}
+
+		public static Vector operator /(Vector Vec, float Rate)
+		{
+			return new Vector(Vec.X / Rate, Vec.Y / Rate, Vec.Z / Rate);
+		}
+
 		#endregion
 
 
