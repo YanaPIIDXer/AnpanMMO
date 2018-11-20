@@ -28,13 +28,24 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.ObjListBox = new System.Windows.Forms.ListBox();
 			this.SuspendLayout();
+			// 
+			// ObjListBox
+			// 
+			this.ObjListBox.FormattingEnabled = true;
+			this.ObjListBox.ItemHeight = 15;
+			this.ObjListBox.Location = new System.Drawing.Point(39, 41);
+			this.ObjListBox.Name = "ObjListBox";
+			this.ObjListBox.Size = new System.Drawing.Size(288, 289);
+			this.ObjListBox.TabIndex = 0;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(282, 255);
+			this.ClientSize = new System.Drawing.Size(379, 431);
+			this.Controls.Add(this.ObjListBox);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.ResumeLayout(false);
@@ -42,6 +53,8 @@
 		}
 
 		#endregion
+
+		private System.Windows.Forms.ListBox ObjListBox;
 	}
 }
 
