@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Geometry.cs" />
     <Compile Include="HeightMapGenerator.cs" />
+    <Compile Include="MathUtil.cs" />
     <Compile Include="ObjFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
