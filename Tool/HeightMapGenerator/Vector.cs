@@ -77,6 +77,17 @@ namespace HeightMapGenerator
 			return Vec;
 		}
 
+		/// <summary>
+		/// 行列式.
+		/// </summary>
+		/// <param name="A">ベクトルＡ</param>
+		/// <param name="B">ベクトルＢ</param>
+		/// <param name="C">ベクトルＣ</param>
+		/// <returns>行列式の結果</returns>
+		public static float Determinant(Vector A, Vector B, Vector C)
+		{
+			return ((A.X * B.Y * C.Z) + (A.Y * B.Z * C.X) + (A.Z * B.X * C.Y) - (A.X * B.Z * C.Y) - (A.Y * B.X * C.Z) - (A.Z * B.Y * C.X));
+		}
 
 		#region オペレータオーバーロード
 
