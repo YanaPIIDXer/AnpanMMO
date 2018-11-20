@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HeightMapGenerator
 {
@@ -14,17 +15,17 @@ namespace HeightMapGenerator
 	{
 
 		/// <summary>
-		/// .objのファイルパス
+		/// objファイル読み込み
 		/// </summary>
-		private string ObjFilePath;
+		private ObjFileReader ObjReader;
 
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		/// <param name="InObjFilePath">.objのファイルパス</param>
-		public HeightMapGenerator(string InObjFilePath)
+		/// <param name="ObjFilePath">.objのファイルパス</param>
+		public HeightMapGenerator(string ObjFilePath)
 		{
-			ObjFilePath = InObjFilePath;
+			ObjReader = new ObjFileReader(ObjFilePath);
 		}
 
 		/// <summary>
@@ -33,6 +34,11 @@ namespace HeightMapGenerator
 		/// <returns>成功したらtrueを返す。</returns>
 		public bool Generate()
 		{
+			if(!ObjReader.Load())
+			{
+				MessageBox.Show("objファイルの読み込みに失敗しました。");
+				return false;
+			}
 			return true;
 		}
 
