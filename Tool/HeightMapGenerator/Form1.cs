@@ -8,14 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using OpenTK;
-using OpenTK.Graphics;
-using OpenTK.Graphics.OpenGL;
 
 namespace HeightMapGenerator
 {
 	public partial class Form1 : Form
 	{
+
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public Form1()
 		{
 			InitializeComponent();
@@ -54,39 +55,6 @@ namespace HeightMapGenerator
 			}
 
 			MessageBox.Show(ObjName + "のハイトマップを生成しました。");
-		}
-
-		// ModelViewerが読み込まれた。
-		private void ModelViewer_Load(object sender, EventArgs e)
-		{
-			GL.ClearColor(Color4.Black);
-			GL.Enable(EnableCap.DepthTest);
-		}
-
-		// ModelViewerのリサイズ
-		private void ModelViewer_Resize(object sender, EventArgs e)
-		{
-			GL.Viewport(0, 0, ModelViewer.Size.Width, ModelViewer.Size.Height);
-			GL.MatrixMode(MatrixMode.Projection);
-			Matrix4 Proj = Matrix4.CreatePerspectiveFieldOfView((float)Math.PI / 4, (float)ModelViewer.Size.Width / (float)ModelViewer.Size.Height, 1.0f, 64.0f);
-			GL.LoadMatrix(ref Proj);
-		}
-
-		// ModelViewerの再描画.
-		private void ModelViewer_Paint(object sender, PaintEventArgs e)
-		{
-			GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-
-			GL.MatrixMode(MatrixMode.Modelview);
-			Matrix4 modelview = Matrix4.LookAt(Vector3.Zero, Vector3.UnitZ, Vector3.UnitY);
-			GL.LoadMatrix(ref modelview);
-
-			GL.Begin(PrimitiveType.Quads);
-			
-			GL.Color4(Color4.White);
-			
-			GL.End();
-			ModelViewer.SwapBuffers();
 		}
 	}
 }
