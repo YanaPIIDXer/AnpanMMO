@@ -14,6 +14,26 @@ namespace HeightMapGenerator
 	{
 
 		/// <summary>
+		/// 幅下限値.
+		/// </summary>
+		public static readonly float WidthMin = -10000.0f;
+
+		/// <summary>
+		/// 幅上限値.
+		/// </summary>
+		public static readonly float WidhtMax = 10000.0f;
+
+		/// <summary>
+		/// 奥行き下限値.
+		/// </summary>
+		public static readonly float DepthMin = -10000.0f;
+
+		/// <summary>
+		/// 奥行き上限値.
+		/// </summary>
+		public static readonly float DepthMax = 10000.0f;
+
+		/// <summary>
 		/// 高さの下限値.
 		/// </summary>
 		public static readonly float HeightMin = -10000.0f;
