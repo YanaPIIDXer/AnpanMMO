@@ -21,7 +21,7 @@ namespace HeightMapGenerator
 		/// <summary>
 		/// 幅上限値.
 		/// </summary>
-		public static readonly float WidhtMax = 10000.0f;
+		public static readonly float WidthMax = 10000.0f;
 
 		/// <summary>
 		/// 奥行き下限値.
