@@ -152,7 +152,7 @@ namespace HeightMapGenerator
 		public float GetHeight(float X, float Y)
 		{
 			// 範囲チェック。
-			if(X < MinX || X > MaxX || Y < MinY || Y > MaxY) { return Config.HeightMin;}
+			if (X < MinX || X > MaxX || Y < MinY || Y > MaxY) { return Config.HeightMin;}
 			
 			float Height = 0.0f;
 			foreach (Geometry Geo in Geometrys)

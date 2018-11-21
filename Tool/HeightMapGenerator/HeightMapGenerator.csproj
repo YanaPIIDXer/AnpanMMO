@@ -27,7 +27,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\HeightMap\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -57,6 +57,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Geometry.cs" />
+    <Compile Include="GeometryCell.cs" />
+    <Compile Include="GeometryOctree.cs" />
+    <Compile Include="GeometryTreeData.cs" />
     <Compile Include="HeightMapGenerator.cs" />
     <Compile Include="MathUtil.cs" />
     <Compile Include="ObjFile.cs" />
