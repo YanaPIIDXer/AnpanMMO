@@ -31,12 +31,36 @@ namespace HeightMapGenerator
 		private List<Geometry> Geometrys = new List<Geometry>();
 
 		/// <summary>
+		/// X座標下限値.
+		/// </summary>
+		private float MinX;
+
+		/// <summary>
+		/// X座標上限値.
+		/// </summary>
+		private float MaxX;
+
+		/// <summary>
+		/// Y座標下限値.
+		/// </summary>
+		private float MinY;
+
+		/// <summary>
+		/// Y座標上限値.
+		/// </summary>
+		private float MaxY;
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InFilePath">ファイルパス</param>
 		public ObjFile(string InFilePath)
 		{
 			FilePath = InFilePath;
+			MinX = 0.0f;
+			MaxX = 0.0f;
+			MinY = 0.0f;
+			MaxY = 0.0f;
 		}
 
 		/// <summary>
@@ -78,10 +102,27 @@ namespace HeightMapGenerator
 
 					{
 						float X = float.Parse(Datas[1]);
-						float Y = float.Parse(Datas[2]);
-						float Z = float.Parse(Datas[3]);
+						float Y = float.Parse(Datas[3]);
+						float Z = float.Parse(Datas[2]);
 						Vector Vertex = new Vector(X, Y, Z);
 						VertexDic.Add(VertexDic.Count + 1, Vertex);
+
+						if(X < MinX)
+						{
+							MinX = X;
+						}
+						if(X > MaxX)
+						{
+							MaxX = X;
+						}
+						if(Y < MinY)
+						{
+							MinY = Y;
+						}
+						if(Y > MaxY)
+						{
+							MaxY = Y;
+						}
 					}
 					break;
 
@@ -110,8 +151,11 @@ namespace HeightMapGenerator
 		/// <returns>高さ</returns>
 		public float GetHeight(float X, float Y)
 		{
+			// 範囲チェック。
+			if(X < MinX || X > MaxX || Y < MinY || Y > MaxY) { return Config.HeightMin;}
+			
 			float Height = 0.0f;
-			foreach(Geometry Geo in Geometrys)
+			foreach (Geometry Geo in Geometrys)
 			{
 				if(Geo.TryGetHeight(X, Y, out Height))
 				{
