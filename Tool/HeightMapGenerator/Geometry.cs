@@ -46,8 +46,8 @@ namespace HeightMapGenerator
 		{
 			OutHeight = 0.0f;
 
-			Vector Origin = new Vector(X, Y, 10000.0f);
-			Vector Ray = new Vector(0.0f, 0.0f, -10000.0f);
+			Vector Origin = new Vector(X, Y, Config.HeightMax);
+			Vector Ray = new Vector(0.0f, 0.0f, Config.HeightMin);
 
 			Vector InvRay = Ray * -1.0f;
 			Vector Edge1 = VertexList[1] - VertexList[0];

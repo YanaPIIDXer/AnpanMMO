@@ -30,6 +30,7 @@
 		{
 			this.ObjListBox = new System.Windows.Forms.ListBox();
 			this.OutputHeightMapButton = new System.Windows.Forms.Button();
+			this.ModelViewer = new OpenTK.GLControl();
 			this.SuspendLayout();
 			// 
 			// ObjListBox
@@ -43,7 +44,7 @@
 			// 
 			// OutputHeightMapButton
 			// 
-			this.OutputHeightMapButton.Location = new System.Drawing.Point(115, 365);
+			this.OutputHeightMapButton.Location = new System.Drawing.Point(194, 365);
 			this.OutputHeightMapButton.Name = "OutputHeightMapButton";
 			this.OutputHeightMapButton.Size = new System.Drawing.Size(133, 54);
 			this.OutputHeightMapButton.TabIndex = 1;
@@ -51,11 +52,25 @@
 			this.OutputHeightMapButton.UseVisualStyleBackColor = true;
 			this.OutputHeightMapButton.Click += new System.EventHandler(this.OutputHeightMapButton_Click);
 			// 
+			// ModelViewer
+			// 
+			this.ModelViewer.BackColor = System.Drawing.Color.Black;
+			this.ModelViewer.Location = new System.Drawing.Point(367, 41);
+			this.ModelViewer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.ModelViewer.Name = "ModelViewer";
+			this.ModelViewer.Size = new System.Drawing.Size(327, 289);
+			this.ModelViewer.TabIndex = 2;
+			this.ModelViewer.VSync = false;
+			this.ModelViewer.Load += new System.EventHandler(this.ModelViewer_Load);
+			this.ModelViewer.Paint += new System.Windows.Forms.PaintEventHandler(this.ModelViewer_Paint);
+			this.ModelViewer.Resize += new System.EventHandler(this.ModelViewer_Resize);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(379, 431);
+			this.ClientSize = new System.Drawing.Size(738, 431);
+			this.Controls.Add(this.ModelViewer);
 			this.Controls.Add(this.OutputHeightMapButton);
 			this.Controls.Add(this.ObjListBox);
 			this.Name = "Form1";
@@ -68,6 +83,7 @@
 
 		private System.Windows.Forms.ListBox ObjListBox;
 		private System.Windows.Forms.Button OutputHeightMapButton;
+		private OpenTK.GLControl ModelViewer;
 	}
 }
 
