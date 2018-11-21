@@ -27,12 +27,7 @@ namespace HeightMapGenerator
 		/// ビットマップの高さ
 		/// </summary>
 		private static readonly int BitmapHeight = 1000;
-
-		/// <summary>
-		/// タスク数.
-		/// </summary>
-		private static readonly int TaskNum = 8;
-
+		
 		/// <summary>
 		/// .objファイルのパス
 		/// </summary>
@@ -43,11 +38,6 @@ namespace HeightMapGenerator
 		/// </summary>
 		private ObjFile ObjData;
 		
-		/// <summary>
-		/// タスクリスト
-		/// </summary>
-		private List<Task> TaskList = new List<Task>();
-
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>ask
@@ -73,54 +63,47 @@ namespace HeightMapGenerator
 			Bitmap Bmp = new Bitmap(BitmapWidth, BitmapHeight);
 
 			int BmpSize = BitmapWidth * BitmapHeight;
-
-			// クソ重い処理なのでTaskで分散。
-			for(int i = 0; i < TaskNum; i++)
-			{
-				int WriteStart = (int)((i / (float)TaskNum) * BmpSize);
-				int WriteEnd = (int)(((i + 1) / (float)TaskNum) * BmpSize);
-				Task WriteTask = new Task(()=>
-				{
-					for(int Pixel = WriteStart; Pixel < WriteEnd; Pixel++)
-					{
-						int PixelX = Pixel % BitmapWidth;
-						int PixelY = Pixel / BitmapHeight;
-						float X = MathUtil.Lerp(Config.DepthMin, Config.DepthMax, (float)PixelX / BitmapWidth);
-						float Y = MathUtil.Lerp(Config.WidthMin, Config.WidthMax, (float)PixelY / BitmapHeight);
-						float Height = ObjData.GetHeight(X, Y);
-
-						// コンソールにも出力.
-						string LogOutput = "X:" + X + " Y:" + Y;
-						if(Height != Config.HeightMin)
-						{
-							LogOutput += " Height:" + Height;
-						}
-						Console.WriteLine(LogOutput);
-					}
-				});
-				TaskList.Add(WriteTask);
-				WriteTask.Start();
-			}
 			
-			while(true)
+			for(int PixelX = 0; PixelX < BitmapWidth; PixelX++)
 			{
-				bool bAllEnd = true;
-				for(int i = 0; i < TaskList.Count; i++)
+				for(int PixelY = 0; PixelY < BitmapHeight; PixelY++)
 				{
-					if(!TaskList[i].IsCompleted)
-					{
-						bAllEnd = false;
-						break;
-					}
-				}
 
-				if (bAllEnd) { break; }
+					float X = MathUtil.Lerp(Config.DepthMin, Config.DepthMax, (float)PixelX / BitmapWidth);
+					float Y = MathUtil.Lerp(Config.WidthMin, Config.WidthMax, (float)PixelY / BitmapHeight);
+					float Height = ObjData.GetHeight(X, Y);
+
+					// 色データに変換して書き込み。
+					Color HeightColor = HeightToColor(Height);
+					Bmp.SetPixel(PixelX, PixelY, HeightColor);
+
+					// コンソールにも出力.
+					string LogOutput = "X:" + X + " Y:" + Y;
+					if (Height != Config.HeightMin)
+					{
+						LogOutput += " Height:" + Height;
+					}
+					Console.WriteLine(LogOutput);
+				}
 			}
 
 			string BmpFilePath = Config.BitMapDirectory + "\\" + Path.GetFileNameWithoutExtension(ObjFilePath) + ".bmp";
 			Bmp.Save(BmpFilePath);
 
 			return true;
+		}
+
+		/// <summary>
+		/// 高さデータを色データに変換.
+		/// </summary>
+		/// <param name="Height">高さ</param>
+		/// <returns>色データ</returns>
+		private Color HeightToColor(float Height)
+		{
+			float Rate = 1.0f - (Height - Config.HeightMax) / (Config.HeightMin - Config.HeightMax);
+			int B = (int)(255 * Rate);
+			Color Col = Color.FromArgb(0, 0, B);
+			return Col;
 		}
 
 	}
