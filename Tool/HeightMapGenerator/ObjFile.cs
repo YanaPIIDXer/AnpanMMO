@@ -118,7 +118,7 @@ namespace HeightMapGenerator
 					return Height;
 				}
 			}
-			return 0.0f;
+			return Config.HeightMin;
 		}
 
 	}
