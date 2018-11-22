@@ -79,6 +79,9 @@ namespace HeightMapGenerator
 			Right = 0.0f;
 			Back = 0.0f;
 			Front = 0.0f;
+
+			GeometryGroup Group = new GeometryGroup();
+			GeometryGroups.Add(Group);
 		}
 
 		/// <summary>
@@ -164,14 +167,11 @@ namespace HeightMapGenerator
 							Geo.AddVertex(Vertex);
 						}
 						CurrentGeometryGroup.AddGeometry(Geo);
-					}
-					break;
-
-				case "g":
-
-					{
-						GeometryGroup Group = new GeometryGroup();
-						GeometryGroups.Add(Group);
+						if(CurrentGeometryGroup.IsMax)
+						{
+							GeometryGroup NewGroup = new GeometryGroup();
+							GeometryGroups.Add(NewGroup);
+						}
 					}
 					break;
 			}

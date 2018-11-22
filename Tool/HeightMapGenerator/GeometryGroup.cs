@@ -14,6 +14,11 @@ namespace HeightMapGenerator
 	{
 
 		/// <summary>
+		/// ジオメトリ最大数.
+		/// </summary>
+		private static readonly int MaxCount = 1000;
+
+		/// <summary>
 		/// ジオメトリリスト
 		/// </summary>
 		private List<Geometry> GeometryList = new List<Geometry>();
@@ -49,6 +54,17 @@ namespace HeightMapGenerator
 		public float Back { get; private set; }
 
 		/// <summary>
+		/// 最大か？
+		/// </summary>
+		public bool IsMax
+		{
+			get
+			{
+				return (GeometryList.Count >= MaxCount);
+			}
+		}
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		public GeometryGroup()
@@ -67,6 +83,11 @@ namespace HeightMapGenerator
 		/// <param name="TargetGeometry">ジオメトリ</param>
 		public void AddGeometry(Geometry TargetGeometry)
 		{
+			if(IsMax)
+			{
+				throw new Exception("ジオメトリの数が最大です。");
+			}
+
 			GeometryList.Add(TargetGeometry);
 
 			if (TargetGeometry.Back > Back)
