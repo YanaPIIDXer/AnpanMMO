@@ -148,68 +148,56 @@ namespace HeightMapGenerator
 		/// <summary>
 		/// 登録されているオブジェクトの衝突リストを取得する。
 		/// </summary>
+		/// <param name="X">X座標</param>
+		/// <param name="Y">Y座標</param>
 		/// <param name="CollisionList">衝突リスト</param>
-		/// <returns>衝突リストのサイズ</returns>
-		public int GetCollisionList(List<Geometry> CollisionList)
+		/// <returns>衝突リストの数</returns>
+		public int GetCollisionList(float X, float Y, List<Geometry> CollisionList)
 		{
-			// 衝突リストをクリア。
 			CollisionList.Clear();
 
-			// ルート空間の存在をチェック。
+			// ルート空間の存在をチェック
 			if(CellList[0] == null) { return 0; }
 
-			// ルート空間から衝突チェック開始.
-			LinkedList<Geometry> CollisionStack = new LinkedList<Geometry>();
-			GetCollisionList(0, CollisionList, CollisionStack);
+			// 線分.
+			float Top = Y;
+			float Left = X;
+			float Bottom = Y;
+			float Right = X;
+			
+			// 指定領域の分オフセットする。
+			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom)) { return 0; }
+
+			// モートン番号を算出.
+			int BelongLevel;
+			int Elem = GetMortonNumber(Left, Top, Right, Bottom, out BelongLevel);
+
+			if(!GetCollisionList_Rec(Elem, CollisionList)) { return 0; }
 
 			return CollisionList.Count;
 		}
 
 		/// <summary>
-		/// 各セルから全衝突可能リストを列挙する。
+		/// コリジョンリストの取得（再帰関数）
 		/// </summary>
-		/// <param name="Elem">検索を開始する要素のindex</param>
-		/// <param name="CollisionList">衝突可能性のあるリスト</param>
-		/// <param name="CollisionStack">衝突検出用スタック</param>
+		/// <param name="Elem">モートン番号</param>
+		/// <param name="CollisionList">コリジョンリスト</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		private bool GetCollisionList(int Elem, List<Geometry> CollisionList, LinkedList<Geometry> CollisionStack)
+		private bool GetCollisionList_Rec(int Elem, List<Geometry> CollisionList)
 		{
-			// 空間内のオブジェクト同士の衝突リスト作成.
-
-			// ルート空間に登録されているリンクリストの最初の要素を取り出す。
 			GeometryTreeData Data = CellList[Elem].FirstData;
 
-			// データが無くなるまで繰り返す。
-			while (Data != null)
+			while(Data != null)
 			{
-				// リンクリストの次を取り出す。
-				GeometryTreeData Next = Data.Next;
-				while (Next != null)
-				{
-					// 衝突リスト作成.
-					CollisionList.Add(Data.Object);
-					CollisionList.Add(Next.Object);
-					Next = Next.Next;
-				}
-
-				// 衝突スタックと衝突リスト作成.
-				foreach(var Obj in CollisionStack)
-				{
-					CollisionList.Add(Data.Object);
-					CollisionList.Add(Obj);
-				}
-
+				CollisionList.Add(Data.Object);
 				Data = Data.Next;
 			}
-
-			bool bChild = false;
-
+			
 			// 子空間へ移動.
-			int ObjNum = 0;
 			int NextElem;
 
 			// 子空間を巡る
-			for(int i = 0; i < DivisionNum; i++)
+			for (int i = 0; i < DivisionNum; i++)
 			{
 				NextElem = Elem * DivisionNum + 1 + i;
 
@@ -217,37 +205,13 @@ namespace HeightMapGenerator
 				bool bSkip = (NextElem >= CellNum || CellList[NextElem] == null);
 				if (bSkip) { continue; }
 
-				// 子空間への処理がまだ済んでいない場合は処理を行う。
-				if(!bChild)
-				{
-					// 同空間のオブジェクトをスタックに積む。
-					Data = CellList[Elem].FirstData;
-					while(Data != null)
-					{
-						CollisionStack.AddLast(Data.Object);
-						ObjNum++;
-						Data = Data.Next;
-					}
-				}
-
-				bChild = true;
-
 				// 子空間を検索.
-				GetCollisionList(NextElem, CollisionList, CollisionStack);
-			}
-
-			// スタックからオブジェクトを外す。
-			if(bChild)
-			{
-				for(int i = 0; i < ObjNum; i++)
-				{
-					CollisionStack.RemoveLast();
-				}
+				GetCollisionList_Rec(NextElem, CollisionList);
 			}
 
 			return true;
 		}
-
+		
 		/// <summary>
 		/// 指定された番号の空間オブジェクトを新規作成.
 		/// </summary>
@@ -302,7 +266,6 @@ namespace HeightMapGenerator
 		/// <returns>成功したらtrueを返す。</returns>
 		private bool OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom)
 		{
-
 			Left -= OffsetLeft;
 			Right -= OffsetLeft;
 			Top -= OffsetBottom;
