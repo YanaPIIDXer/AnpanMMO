@@ -50,12 +50,7 @@ namespace HeightMapGenerator
 		/// 下方向オフセット
 		/// </summary>
 		private float OffsetBottom;
-
-		/// <summary>
-		/// 手前方向オフセット
-		/// </summary>
-		private float OffsetFront;
-
+		
 		/// <summary>
 		/// 幅.
 		/// </summary>
@@ -65,16 +60,10 @@ namespace HeightMapGenerator
 		/// 高さ
 		/// </summary>
 		private float Height;
-
-		/// <summary>
-		/// 奥行き
-		/// </summary>
-		private float Depth;
-
+		
 		private float UnitWidth;
 		private float UnitHeight;
-		private float UnitDepth;
-
+		
 		/// <summary>
 		/// 初期化.
 		/// </summary>
@@ -86,7 +75,7 @@ namespace HeightMapGenerator
 		/// <param name="Front">手前の座標</param>
 		/// <param name="Back">奥の座標</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		public bool Initialize(int InLevel, float Left, float Right, float Top, float Bottom, float Front, float Back)
+		public bool Initialize(int InLevel, float Left, float Right, float Top, float Bottom)
 		{
 			// MaxLevelを超えて初期化しようとしたらエラー
 			if(InLevel > MaxLevel + 1) { return false; }
@@ -109,16 +98,13 @@ namespace HeightMapGenerator
 			// 有効領域を登録.
 			OffsetLeft = Left;
 			OffsetBottom = Bottom;
-			OffsetFront = Front;
 			Width = Right - Left;
 			Height = Top - Bottom;
-			Depth = Back - Front;
-
+			
 			int Unit = 1 << InLevel;
 			UnitWidth = Width / Unit;
 			UnitHeight = Height / Unit;
-			UnitDepth = Depth / Unit;
-
+			
 			Level = InLevel;
 
 			ParentShift = (int)Math.Log(DivisionNum, 2.0f);
@@ -137,14 +123,14 @@ namespace HeightMapGenerator
 		/// <param name="Back">奥</param>
 		/// <param name="Data">登録するデータ</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		public bool Register(float Left, float Top, float Right, float Bottom, float Front, float Back, GeometryTreeData Data)
+		public bool Register(float Left, float Top, float Right, float Bottom, GeometryTreeData Data)
 		{
 			// 指定領域の分オフセットして計算する。
-			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back)) { return false; }
+			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom)) { return false; }
 
 			// オブジェクトの境界領域からモートン番号を算出.
 			int BelongLevel;
-			int Elem = GetMortonNumber(Left, Top, Right, Bottom, Front, Back, out BelongLevel);
+			int Elem = GetMortonNumber(Left, Top, Right, Bottom, out BelongLevel);
 			Elem = ToLinearSpace(Elem, BelongLevel);
 
 			// 算出されたモートン番号が生成した空間分割数より大きい場合はエラー
@@ -314,23 +300,19 @@ namespace HeightMapGenerator
 		/// <param name="Front">手前</param>
 		/// <param name="Back">奥</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		private bool OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom, ref float Front, ref float Back)
+		private bool OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom)
 		{
 
 			Left -= OffsetLeft;
 			Right -= OffsetLeft;
 			Top -= OffsetBottom;
 			Bottom -= OffsetBottom;
-			Front -= OffsetFront;
-			Back -= OffsetFront;
-
+			
 			if (Left < 0) { return false; }
 			if (Right > Width) { return false; }
 			if (Bottom < 0) { return false; }
 			if (Top > Height) { return false; }
-			if (Front < 0) { return false; }
-			if (Back > Depth) { return false; }
-
+			
 			return true;
 		}
 
@@ -345,19 +327,17 @@ namespace HeightMapGenerator
 		/// <param name="Back">奥</param>
 		/// <param name="BelongLevel">所属する空間のレベル</param>
 		/// <returns>モートン番号</returns>
-		private int GetMortonNumber(float Left, float Top, float Right, float Bottom, float Front, float Back, out int BelongLevel)
+		private int GetMortonNumber(float Left, float Top, float Right, float Bottom, out int BelongLevel)
 		{
 			// 左上手前のモートン番号を算出.
 			int LtdX = (int)(Left / UnitWidth);
 			int LtdY = (int)(Top / UnitHeight);
-			int LtdZ = (int)(Front / UnitDepth);
-			int Ltd = BitSeparate3D(LtdX) | (BitSeparate3D(LtdY) << 1) | (BitSeparate3D(LtdZ) << 2);
+			int Ltd = BitSeparate2D(LtdX) | (BitSeparate2D(LtdY) << 1);
 
 			// 右下奥のモートン番号を算出.
 			int RbdX = (int)(Right / UnitWidth);
 			int RbdY = (int)(Bottom / UnitHeight);
-			int RbdZ = (int)(Back / UnitDepth);
-			int Rbd = BitSeparate3D(RbdX) | (BitSeparate3D(RbdY) << 1) | (BitSeparate3D(RbdZ) << 2);
+			int Rbd = BitSeparate2D(RbdX) | (BitSeparate2D(RbdY) << 1);
 
 			// 左上と右下のモートン番号のxorを取る。
 			int Xor = Ltd ^ Rbd;
@@ -371,11 +351,11 @@ namespace HeightMapGenerator
 				{
 					// 空間シフト数を採用.
 					SpaceIndex = (i + 1);
-					Shift = SpaceIndex * 3;
+					Shift = SpaceIndex * 2;
 				}
 
-				// 3bitシフトさせて再チェック。
-				Xor >>= 3;
+				// 2bitシフトさせて再チェック。
+				Xor >>= 2;
 				i++;
 			}
 
@@ -400,19 +380,7 @@ namespace HeightMapGenerator
 			n = (n | (n << 2)) & 0x33333333;
 			return (n | (n << 1)) & 0x55555555;
 		}
-
-		/// <summary>
-		/// 渡された引数をbitで飛び飛びにしたものにする（３Ｄ版）
-		/// </summary>
-		/// <param name="n">変換したい値</param>
-		/// <returns>変換後の値</returns>
-		private static int BitSeparate3D(int n)
-		{
-			n = (n | (n << 8)) & 0x0000f00f;
-			n = (n | (n << 4)) & 0x000c30c3;
-			return (n | (n << 2)) & 0x00249249;
-		}
-
+		
 	}
 	
 }
