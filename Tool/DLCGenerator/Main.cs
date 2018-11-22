@@ -11,7 +11,7 @@ using System.IO;
 
 namespace DLCGenerator
 {
-	public partial class Form1 : Form
+	public partial class Main : Form
 	{
 
 		/// <summary>
@@ -24,7 +24,7 @@ namespace DLCGenerator
 		/// </summary>
 		private string AutomationToolPath = "";
 
-		public Form1()
+		public Main()
 		{
 			InitializeComponent();
 			try

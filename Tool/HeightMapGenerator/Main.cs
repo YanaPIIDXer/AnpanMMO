@@ -11,13 +11,13 @@ using System.IO;
 
 namespace HeightMapGenerator
 {
-	public partial class Form1 : Form
+	public partial class Main : Form
 	{
 
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public Form1()
+		public Main()
 		{
 			InitializeComponent();
 			ReloadObjListBox();

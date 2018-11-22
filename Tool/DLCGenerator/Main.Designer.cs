@@ -1,6 +1,6 @@
 ﻿namespace DLCGenerator
 {
-	partial class Form1
+	partial class Main
 	{
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -112,7 +112,7 @@
 			this.TransportButton.UseVisualStyleBackColor = true;
 			this.TransportButton.Click += new System.EventHandler(this.TransportButton_Click);
 			// 
-			// Form1
+			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -125,8 +125,8 @@
 			this.Controls.Add(this.AutomationToolSelectButton);
 			this.Controls.Add(this.AutomationToolPathText);
 			this.Controls.Add(this.label1);
-			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Name = "Main";
+			this.Text = "DLC生成ツール";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

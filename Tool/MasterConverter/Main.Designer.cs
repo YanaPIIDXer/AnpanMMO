@@ -1,6 +1,6 @@
 ﻿namespace MasterConverter
 {
-	partial class Form1
+	partial class Main
 	{
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -62,7 +62,7 @@
 			this.AddTransportTargetButton.UseVisualStyleBackColor = true;
 			this.AddTransportTargetButton.Click += new System.EventHandler(this.AddTransportTargetButton_Click);
 			// 
-			// Form1
+			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,8 +70,8 @@
 			this.Controls.Add(this.AddTransportTargetButton);
 			this.Controls.Add(this.TransportTargetList);
 			this.Controls.Add(this.OutputButton);
-			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Name = "Main";
+			this.Text = "マスタ生成ツール";
 			this.ResumeLayout(false);
 
 		}

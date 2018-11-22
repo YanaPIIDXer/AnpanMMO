@@ -11,7 +11,7 @@ using System.IO;
 
 namespace MasterConverter
 {
-	public partial class Form1 : Form
+	public partial class Main : Form
 	{
 
 		/// <summary>
@@ -34,7 +34,7 @@ namespace MasterConverter
 		/// </summary>
 		private string ClientSourceDirectory = "";
 		
-		public Form1()
+		public Main()
 		{
 			InitializeComponent();
 			LoadSourceDirectorySetting();
