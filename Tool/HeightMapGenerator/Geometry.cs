@@ -19,11 +19,35 @@ namespace HeightMapGenerator
 		public List<Vector> VertexList { get; private set; }
 
 		/// <summary>
+		/// 左端.
+		/// </summary>
+		public float Left { get; private set; }
+
+		/// <summary>
+		/// 右端.
+		/// </summary>
+		public float Right { get; private set; }
+
+		/// <summary>
+		/// 上.
+		/// </summary>
+		public float Top { get; private set; }
+
+		/// <summary>
+		/// 下.
+		/// </summary>
+		public float Bottom { get; private set; }
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		public Geometry()
 		{
 			VertexList = new List<Vector>();
+			Left = 0.0f;
+			Right = 0.0f;
+			Top = 0.0f;
+			Bottom = 0.0f;
 		}
 
 		/// <summary>
@@ -33,6 +57,23 @@ namespace HeightMapGenerator
 		public void AddVertex(Vector Vertex)
 		{
 			VertexList.Add(Vertex);
+
+			if(Vertex.X < Left)
+			{
+				Left = Vertex.X;
+			}
+			if(Vertex.X > Right)
+			{
+				Right = Vertex.X;
+			}
+			if(Vertex.Y > Top)
+			{
+				Top = Vertex.Y;
+			}
+			if(Vertex.Y < Bottom)
+			{
+				Bottom = Vertex.Y;
+			}
 		}
 
 		/// <summary>

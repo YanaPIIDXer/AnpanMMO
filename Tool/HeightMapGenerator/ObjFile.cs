@@ -31,24 +31,29 @@ namespace HeightMapGenerator
 		private List<Geometry> Geometrys = new List<Geometry>();
 
 		/// <summary>
-		/// X座標下限値.
+		/// 八分木.
 		/// </summary>
-		private float MinX;
+		private GeometryOctree Octree = new GeometryOctree();
 
 		/// <summary>
-		/// X座標上限値.
+		/// 左端.
 		/// </summary>
-		private float MaxX;
+		private float Left;
 
 		/// <summary>
-		/// Y座標下限値.
+		/// 右端.
 		/// </summary>
-		private float MinY;
+		private float Right;
 
 		/// <summary>
-		/// Y座標上限値.
+		/// 上.
 		/// </summary>
-		private float MaxY;
+		private float Top;
+
+		/// <summary>
+		/// 下.
+		/// </summary>
+		private float Bottom;
 
 		/// <summary>
 		/// コンストラクタ
@@ -57,10 +62,10 @@ namespace HeightMapGenerator
 		public ObjFile(string InFilePath)
 		{
 			FilePath = InFilePath;
-			MinX = 0.0f;
-			MaxX = 0.0f;
-			MinY = 0.0f;
-			MaxY = 0.0f;
+			Left = 0.0f;
+			Right = 0.0f;
+			Bottom = 0.0f;
+			Top = 0.0f;
 		}
 
 		/// <summary>
@@ -78,6 +83,14 @@ namespace HeightMapGenerator
 						string Line = Reader.ReadLine();
 						ParseLine(Line);
 					}
+				}
+
+				// 八分木にデータを登録していく。
+				if(!Octree.Initialize(3, Left, Right, Top, Bottom)) { return false; }
+				foreach(var Geo in Geometrys)
+				{
+					GeometryTreeData Data = new GeometryTreeData(Geo);
+					if(!Octree.Register(Geo.Left, Geo.Top, Geo.Right, Geo.Bottom, Data)) { return false; }
 				}
 			}
 			catch(Exception e)
@@ -107,21 +120,21 @@ namespace HeightMapGenerator
 						Vector Vertex = new Vector(X, Y, Z);
 						VertexDic.Add(VertexDic.Count + 1, Vertex);
 
-						if(X < MinX)
+						if(X < Left)
 						{
-							MinX = X;
+							Left = X;
 						}
-						if(X > MaxX)
+						if(X > Right)
 						{
-							MaxX = X;
+							Right = X;
 						}
-						if(Y < MinY)
+						if(Y < Bottom)
 						{
-							MinY = Y;
+							Bottom = Y;
 						}
-						if(Y > MaxY)
+						if(Y > Top)
 						{
-							MaxY = Y;
+							Top = Y;
 						}
 					}
 					break;
@@ -152,7 +165,7 @@ namespace HeightMapGenerator
 		public float GetHeight(float X, float Y)
 		{
 			// 範囲チェック。
-			if (X < MinX || X > MaxX || Y < MinY || Y > MaxY) { return Config.HeightMin;}
+			if (X < Left || X > Right || Y < Bottom || Y > Top) { return Config.HeightMin;}
 			
 			float Height = 0.0f;
 			foreach (Geometry Geo in Geometrys)
