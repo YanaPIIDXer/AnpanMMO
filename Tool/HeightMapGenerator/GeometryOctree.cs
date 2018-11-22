@@ -50,7 +50,12 @@ namespace HeightMapGenerator
 		/// 下方向オフセット
 		/// </summary>
 		private float OffsetBottom;
-		
+
+		/// <summary>
+		/// 手前方向オフセット
+		/// </summary>
+		private float OffsetFront;
+
 		/// <summary>
 		/// 幅.
 		/// </summary>
@@ -60,10 +65,16 @@ namespace HeightMapGenerator
 		/// 高さ
 		/// </summary>
 		private float Height;
-		
+
+		/// <summary>
+		/// 奥行き
+		/// </summary>
+		private float Depth;
+
 		private float UnitWidth;
 		private float UnitHeight;
-		
+		private float UnitDepth;
+
 		/// <summary>
 		/// 初期化.
 		/// </summary>
@@ -75,7 +86,7 @@ namespace HeightMapGenerator
 		/// <param name="Front">手前の座標</param>
 		/// <param name="Back">奥の座標</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		public bool Initialize(int InLevel, float Left, float Right, float Top, float Bottom)
+		public bool Initialize(int InLevel, float Left, float Right, float Top, float Bottom, float Front, float Back)
 		{
 			// MaxLevelを超えて初期化しようとしたらエラー
 			if(InLevel > MaxLevel + 1) { return false; }
@@ -98,13 +109,16 @@ namespace HeightMapGenerator
 			// 有効領域を登録.
 			OffsetLeft = Left;
 			OffsetBottom = Bottom;
+			OffsetFront = Front;
 			Width = Right - Left;
 			Height = Top - Bottom;
-			
+			Depth = Back - Front;
+
 			int Unit = 1 << InLevel;
 			UnitWidth = Width / Unit;
 			UnitHeight = Height / Unit;
-			
+			UnitDepth = Depth / Unit;
+
 			Level = InLevel;
 
 			ParentShift = (int)Math.Log(DivisionNum, 2.0f);
@@ -123,14 +137,14 @@ namespace HeightMapGenerator
 		/// <param name="Back">奥</param>
 		/// <param name="Data">登録するデータ</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		public bool Register(float Left, float Top, float Right, float Bottom, GeometryTreeData Data)
+		public bool Register(float Left, float Top, float Right, float Bottom, float Front, float Back, GeometryTreeData Data)
 		{
 			// 指定領域の分オフセットして計算する。
-			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom)) { return false; }
+			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back)) { return false; }
 
 			// オブジェクトの境界領域からモートン番号を算出.
 			int BelongLevel;
-			int Elem = GetMortonNumber(Left, Top, Right, Bottom, out BelongLevel);
+			int Elem = GetMortonNumber(Left, Top, Right, Bottom, Front, Back, out BelongLevel);
 			Elem = ToLinearSpace(Elem, BelongLevel);
 
 			// 算出されたモートン番号が生成した空間分割数より大きい場合はエラー
@@ -156,43 +170,45 @@ namespace HeightMapGenerator
 		{
 			CollisionList.Clear();
 
-			// ルート空間の存在をチェック
-			if(CellList[0] == null) { return 0; }
-
 			// 線分.
 			float Top = Y;
-			float Left = X;
 			float Bottom = Y;
+			float Left = X;
 			float Right = X;
-			
-			// 指定領域の分オフセットする。
-			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom)) { return 0; }
+			float Front = Config.DepthMax;
+			float Back = Config.DepthMin;
 
-			// モートン番号を算出.
+			// 指定領域の分オフセット
+			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front,ref Back)) { return 0; }
+
+			// モートン番号を取得.
 			int BelongLevel;
-			int Elem = GetMortonNumber(Left, Top, Right, Bottom, out BelongLevel);
+			int Elem = GetMortonNumber(Left, Top, Right, Bottom, Front, Back, out BelongLevel);
 
-			if(!GetCollisionList_Rec(Elem, CollisionList)) { return 0; }
+			// コリジョンリストを列挙.
+			GetCollisionList_Rec(Elem, CollisionList);
 
 			return CollisionList.Count;
 		}
 
 		/// <summary>
-		/// コリジョンリストの取得（再帰関数）
+		/// コリジョンリストを列挙（再帰メソッド）
 		/// </summary>
 		/// <param name="Elem">モートン番号</param>
 		/// <param name="CollisionList">コリジョンリスト</param>
-		/// <returns>成功したらtrueを返す。</returns>
-		private bool GetCollisionList_Rec(int Elem, List<Geometry> CollisionList)
+		private void GetCollisionList_Rec(int Elem, List<Geometry> CollisionList)
 		{
-			GeometryTreeData Data = CellList[Elem].FirstData;
+			if(CellList[Elem] == null) { return; }
 
+			GeometryTreeData Data = CellList[Elem].FirstData;
+			
+			// データが無くなるまで繰り返す。
 			while(Data != null)
 			{
 				CollisionList.Add(Data.Object);
 				Data = Data.Next;
 			}
-			
+
 			// 子空間へ移動.
 			int NextElem;
 
@@ -204,14 +220,115 @@ namespace HeightMapGenerator
 				// 空間分割数以上 or 対象空間が無い場合はスキップ。
 				bool bSkip = (NextElem >= CellNum || CellList[NextElem] == null);
 				if (bSkip) { continue; }
-
+				
 				// 子空間を検索.
 				GetCollisionList_Rec(NextElem, CollisionList);
+			}
+		}
+
+		/// <summary>
+		/// 登録されているオブジェクトの衝突リストを取得する。
+		/// </summary>
+		/// <param name="CollisionList">衝突リスト</param>
+		/// <returns>衝突リストのサイズ</returns>
+		public int GetCollisionList(List<Geometry> CollisionList)
+		{
+			// 衝突リストをクリア。
+			CollisionList.Clear();
+
+			// ルート空間の存在をチェック。
+			if(CellList[0] == null) { return 0; }
+
+			// ルート空間から衝突チェック開始.
+			LinkedList<Geometry> CollisionStack = new LinkedList<Geometry>();
+			GetCollisionList(0, CollisionList, CollisionStack);
+
+			return CollisionList.Count;
+		}
+
+		/// <summary>
+		/// 各セルから全衝突可能リストを列挙する。
+		/// </summary>
+		/// <param name="Elem">検索を開始する要素のindex</param>
+		/// <param name="CollisionList">衝突可能性のあるリスト</param>
+		/// <param name="CollisionStack">衝突検出用スタック</param>
+		/// <returns>成功したらtrueを返す。</returns>
+		private bool GetCollisionList(int Elem, List<Geometry> CollisionList, LinkedList<Geometry> CollisionStack)
+		{
+			// 空間内のオブジェクト同士の衝突リスト作成.
+
+			// ルート空間に登録されているリンクリストの最初の要素を取り出す。
+			GeometryTreeData Data = CellList[Elem].FirstData;
+
+			// データが無くなるまで繰り返す。
+			while (Data != null)
+			{
+				// リンクリストの次を取り出す。
+				GeometryTreeData Next = Data.Next;
+				while (Next != null)
+				{
+					// 衝突リスト作成.
+					CollisionList.Add(Data.Object);
+					CollisionList.Add(Next.Object);
+					Next = Next.Next;
+				}
+
+				// 衝突スタックと衝突リスト作成.
+				foreach(var Obj in CollisionStack)
+				{
+					CollisionList.Add(Data.Object);
+					CollisionList.Add(Obj);
+				}
+
+				Data = Data.Next;
+			}
+
+			bool bChild = false;
+
+			// 子空間へ移動.
+			int ObjNum = 0;
+			int NextElem;
+
+			// 子空間を巡る
+			for(int i = 0; i < DivisionNum; i++)
+			{
+				NextElem = Elem * DivisionNum + 1 + i;
+
+				// 空間分割数以上 or 対象空間が無い場合はスキップ。
+				bool bSkip = (NextElem >= CellNum || CellList[NextElem] == null);
+				if (bSkip) { continue; }
+
+				// 子空間への処理がまだ済んでいない場合は処理を行う。
+				if(!bChild)
+				{
+					// 同空間のオブジェクトをスタックに積む。
+					Data = CellList[Elem].FirstData;
+					while(Data != null)
+					{
+						CollisionStack.AddLast(Data.Object);
+						ObjNum++;
+						Data = Data.Next;
+					}
+				}
+
+				bChild = true;
+
+				// 子空間を検索.
+				GetCollisionList(NextElem, CollisionList, CollisionStack);
+			}
+
+			// スタックからオブジェクトを外す。
+			if(bChild)
+			{
+				for(int i = 0; i < ObjNum; i++)
+				{
+					CollisionStack.RemoveLast();
+				}
 			}
 
 			return true;
 		}
-		
+
 		/// <summary>
 		/// 指定された番号の空間オブジェクトを新規作成.
 		/// </summary>
@@ -264,18 +381,23 @@ namespace HeightMapGenerator
 		/// <param name="Front">手前</param>
 		/// <param name="Back">奥</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		private bool OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom)
+		private bool OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom, ref float Front, ref float Back)
 		{
+
 			Left -= OffsetLeft;
 			Right -= OffsetLeft;
 			Top -= OffsetBottom;
 			Bottom -= OffsetBottom;
-			
+			Front -= OffsetFront;
+			Back -= OffsetFront;
+
 			if (Left < 0) { return false; }
 			if (Right > Width) { return false; }
 			if (Bottom < 0) { return false; }
 			if (Top > Height) { return false; }
-			
+			if (Front < 0) { return false; }
+			if (Back > Depth) { return false; }
+
 			return true;
 		}
 
@@ -290,17 +412,19 @@ namespace HeightMapGenerator
 		/// <param name="Back">奥</param>
 		/// <param name="BelongLevel">所属する空間のレベル</param>
 		/// <returns>モートン番号</returns>
-		private int GetMortonNumber(float Left, float Top, float Right, float Bottom, out int BelongLevel)
+		private int GetMortonNumber(float Left, float Top, float Right, float Bottom, float Front, float Back, out int BelongLevel)
 		{
 			// 左上手前のモートン番号を算出.
 			int LtdX = (int)(Left / UnitWidth);
 			int LtdY = (int)(Top / UnitHeight);
-			int Ltd = BitSeparate2D(LtdX) | (BitSeparate2D(LtdY) << 1);
+			int LtdZ = (int)(Front / UnitDepth);
+			int Ltd = BitSeparate3D(LtdX) | (BitSeparate3D(LtdY) << 1) | (BitSeparate3D(LtdZ) << 2);
 
 			// 右下奥のモートン番号を算出.
 			int RbdX = (int)(Right / UnitWidth);
 			int RbdY = (int)(Bottom / UnitHeight);
-			int Rbd = BitSeparate2D(RbdX) | (BitSeparate2D(RbdY) << 1);
+			int RbdZ = (int)(Back / UnitDepth);
+			int Rbd = BitSeparate3D(RbdX) | (BitSeparate3D(RbdY) << 1) | (BitSeparate3D(RbdZ) << 2);
 
 			// 左上と右下のモートン番号のxorを取る。
 			int Xor = Ltd ^ Rbd;
@@ -314,11 +438,11 @@ namespace HeightMapGenerator
 				{
 					// 空間シフト数を採用.
 					SpaceIndex = (i + 1);
-					Shift = SpaceIndex * 2;
+					Shift = SpaceIndex * 3;
 				}
 
-				// 2bitシフトさせて再チェック。
-				Xor >>= 2;
+				// 3bitシフトさせて再チェック。
+				Xor >>= 3;
 				i++;
 			}
 
@@ -343,7 +467,19 @@ namespace HeightMapGenerator
 			n = (n | (n << 2)) & 0x33333333;
 			return (n | (n << 1)) & 0x55555555;
 		}
-		
+
+		/// <summary>
+		/// 渡された引数をbitで飛び飛びにしたものにする（３Ｄ版）
+		/// </summary>
+		/// <param name="n">変換したい値</param>
+		/// <returns>変換後の値</returns>
+		private static int BitSeparate3D(int n)
+		{
+			n = (n | (n << 8)) & 0x0000f00f;
+			n = (n | (n << 4)) & 0x000c30c3;
+			return (n | (n << 2)) & 0x00249249;
+		}
+
 	}
 	
 }

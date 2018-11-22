@@ -86,11 +86,11 @@ namespace HeightMapGenerator
 				}
 
 				// 八分木にデータを登録していく。
-				if(!Octree.Initialize(3, Left, Right, Top, Bottom)) { return false; }
+				if(!Octree.Initialize(3, Left, Right, Top, Bottom, Config.DepthMin, Config.DepthMax)) { return false; }
 				foreach(var Geo in Geometrys)
 				{
 					GeometryTreeData Data = new GeometryTreeData(Geo);
-					if(!Octree.Register(Geo.Left, Geo.Top, Geo.Right, Geo.Bottom, Data)) { return false; }
+					if(!Octree.Register(Geo.Left, Geo.Top, Geo.Right, Geo.Bottom, Geo.Front, Geo.Back, Data)) { return false; }
 				}
 			}
 			catch(Exception e)
@@ -164,17 +164,16 @@ namespace HeightMapGenerator
 		/// <returns>高さ</returns>
 		public float GetHeight(float X, float Y)
 		{
-			// 範囲チェック。
-			if (X < Left || X > Right || Y < Bottom || Y > Top) { return Config.HeightMin;}
-			
 			float Height = 0.0f;
-			foreach (Geometry Geo in Geometrys)
+
+			List<Geometry> CollisionList = new List<Geometry>();
+			Octree.GetCollisionList(X, Y, CollisionList);
+			
+			foreach(var Geo in CollisionList)
 			{
-				if(Geo.TryGetHeight(X, Y, out Height))
-				{
-					return Height;
-				}
+				if(Geo.TryGetHeight(X, Y, out Height)) { return Height; }
 			}
+			
 			return Config.HeightMin;
 		}
 

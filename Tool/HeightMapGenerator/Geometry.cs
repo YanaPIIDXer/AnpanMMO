@@ -39,6 +39,16 @@ namespace HeightMapGenerator
 		public float Bottom { get; private set; }
 
 		/// <summary>
+		/// 奥.
+		/// </summary>
+		public float Front { get; private set; }
+
+		/// <summary>
+		/// 手前.
+		/// </summary>
+		public float Back { get; private set; }
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		public Geometry()
@@ -48,6 +58,8 @@ namespace HeightMapGenerator
 			Right = 0.0f;
 			Top = 0.0f;
 			Bottom = 0.0f;
+			Front = 0.0f;
+			Back = 0.0f;
 		}
 
 		/// <summary>
@@ -73,6 +85,14 @@ namespace HeightMapGenerator
 			if(Vertex.Y < Bottom)
 			{
 				Bottom = Vertex.Y;
+			}
+			if(Vertex.Z > Front)
+			{
+				Front = Vertex.Z;
+			}
+			if(Vertex.Z < Back)
+			{
+				Back = Vertex.Z;
 			}
 		}
 
