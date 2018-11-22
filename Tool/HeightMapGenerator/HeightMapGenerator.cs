@@ -37,6 +37,11 @@ namespace HeightMapGenerator
 		/// objファイル読み込み
 		/// </summary>
 		private ObjFile ObjData;
+
+		/// <summary>
+		/// 書き込みプログレスフォーム
+		/// </summary>
+		private WriteProgressForm ProgressForm;
 		
 		/// <summary>
 		/// コンストラクタ
@@ -46,6 +51,7 @@ namespace HeightMapGenerator
 		{
 			ObjFilePath = InObjFilePath;
 			ObjData = new ObjFile(ObjFilePath);
+			ProgressForm = new WriteProgressForm();
 		}
 
 		/// <summary>
@@ -59,10 +65,13 @@ namespace HeightMapGenerator
 				MessageBox.Show("objファイルの読み込みに失敗しました。");
 				return false;
 			}
+
+			ProgressForm.Show();
 			
 			Bitmap Bmp = new Bitmap(BitmapWidth, BitmapHeight);
-
 			int BmpSize = BitmapWidth * BitmapHeight;
+
+			ProgressForm.SetWriteDataSize(BmpSize);
 			
 			for(int PixelX = 0; PixelX < BitmapWidth; PixelX++)
 			{
@@ -75,11 +84,16 @@ namespace HeightMapGenerator
 					// 色データに変換して書き込み。
 					Color HeightColor = HeightToColor(Height);
 					Bmp.SetPixel(PixelX, PixelY, HeightColor);
+
+					// プログレスバー更新.
+					ProgressForm.SetProgress(PixelX * BitmapHeight + PixelY);
 				}
 			}
 
 			string BmpFilePath = Config.BitMapDirectory + "\\" + Path.GetFileNameWithoutExtension(ObjFilePath) + ".bmp";
 			Bmp.Save(BmpFilePath);
+
+			ProgressForm.Close();
 
 			return true;
 		}
