@@ -68,7 +68,6 @@ namespace HeightMapGenerator
 			{
 				for(int PixelY = 0; PixelY < BitmapHeight; PixelY++)
 				{
-
 					float X = MathUtil.Lerp(Config.DepthMin, Config.DepthMax, (float)PixelX / BitmapWidth);
 					float Y = MathUtil.Lerp(Config.WidthMin, Config.WidthMax, (float)PixelY / BitmapHeight);
 					float Height = ObjData.GetHeight(X, Y);
@@ -76,14 +75,6 @@ namespace HeightMapGenerator
 					// 色データに変換して書き込み。
 					Color HeightColor = HeightToColor(Height);
 					Bmp.SetPixel(PixelX, PixelY, HeightColor);
-
-					// コンソールにも出力.
-					string LogOutput = "X:" + X + " Y:" + Y;
-					if (Height != Config.HeightMin)
-					{
-						LogOutput += " Height:" + Height;
-					}
-					Console.WriteLine(LogOutput);
 				}
 			}
 
