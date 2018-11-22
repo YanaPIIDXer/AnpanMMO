@@ -177,10 +177,7 @@ namespace HeightMapGenerator
 			float Right = Y;
 			float Front = X;
 			float Back = X;
-
-			// 指定領域の分オフセット
-			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back)) { return 0; }
-
+			
 			// モートン番号を取得.
 			int BelongLevel;
 			int Elem = GetMortonNumber(Left, Top, Right, Bottom, Front, Back, out BelongLevel);
