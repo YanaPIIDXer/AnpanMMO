@@ -46,14 +46,14 @@ namespace HeightMapGenerator
 		private float Right;
 
 		/// <summary>
-		/// 手前.
+		/// 上.
 		/// </summary>
-		private float Front;
+		private float Top;
 
 		/// <summary>
-		/// 奥.
+		/// 下.
 		/// </summary>
-		private float Back;
+		private float Bottom;
 
 		/// <summary>
 		/// コンストラクタ
@@ -64,8 +64,8 @@ namespace HeightMapGenerator
 			FilePath = InFilePath;
 			Left = 0.0f;
 			Right = 0.0f;
-			Front = 0.0f;
-			Back = 0.0f;
+			Bottom = 0.0f;
+			Top = 0.0f;
 		}
 
 		/// <summary>
@@ -86,7 +86,7 @@ namespace HeightMapGenerator
 				}
 
 				// 八分木にデータを登録していく。
-				if(!Octree.Initialize(4, Left, Right, Config.DepthMax, Config.DepthMin, Front, Back)) { return false; }
+				if(!Octree.Initialize(3, Left, Right, Top, Bottom, Config.DepthMin, Config.DepthMax)) { return false; }
 				foreach(var Geo in Geometrys)
 				{
 					GeometryTreeData Data = new GeometryTreeData(Geo);
@@ -120,21 +120,21 @@ namespace HeightMapGenerator
 						Vector Vertex = new Vector(X, Y, Z);
 						VertexDic.Add(VertexDic.Count + 1, Vertex);
 
-						if(X > Front)
+						if(X < Left)
 						{
-							Front = X;
+							Left = X;
 						}
-						if (X < Back)
+						if(X > Right)
 						{
-							Back = X;
+							Right = X;
 						}
-						if (Y < Left)
+						if(Y < Bottom)
 						{
-							Left = Y;
+							Bottom = Y;
 						}
-						if(Y > Right)
+						if(Y > Top)
 						{
-							Right = Y;
+							Top = Y;
 						}
 					}
 					break;
