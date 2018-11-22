@@ -1,6 +1,6 @@
 ﻿namespace HeightMapGenerator
 {
-	partial class Form1
+	partial class Main
 	{
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -51,15 +51,15 @@
 			this.OutputHeightMapButton.UseVisualStyleBackColor = true;
 			this.OutputHeightMapButton.Click += new System.EventHandler(this.OutputHeightMapButton_Click);
 			// 
-			// Form1
+			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(361, 431);
 			this.Controls.Add(this.OutputHeightMapButton);
 			this.Controls.Add(this.ObjListBox);
-			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Name = "Main";
+			this.Text = "ハイトマップ生成ツール";
 			this.ResumeLayout(false);
 
 		}

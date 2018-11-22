@@ -78,11 +78,11 @@
     <Compile Include="Column.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ExcelParser.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="ISQLExpand.cs" />
     <Compile Include="LocalSQLExpander.cs" />
@@ -101,6 +101,9 @@
     <Compile Include="VersionGenerator.cs" />
     <EmbeddedResource Include="AddTransportTargetWindow.resx">
       <DependentUpon>AddTransportTargetWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
