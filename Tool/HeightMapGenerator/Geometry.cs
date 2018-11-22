@@ -68,7 +68,7 @@ namespace HeightMapGenerator
 		/// <param name="Vertex">頂点データ</param>
 		public void AddVertex(Vector Vertex)
 		{
-			VertexList.Add(Vertex);
+			VertexList.Insert(0, Vertex);
 
 			if(Vertex.X > Back)
 			{
