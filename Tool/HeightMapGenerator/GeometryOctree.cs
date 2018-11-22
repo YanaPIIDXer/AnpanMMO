@@ -140,7 +140,7 @@ namespace HeightMapGenerator
 		public bool Register(float Left, float Top, float Right, float Bottom, float Front, float Back, GeometryTreeData Data)
 		{
 			// 指定領域の分オフセットして計算する。
-			OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back);
+			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back)) { throw new Exception("OffsetPosition Failed."); }
 
 			// オブジェクトの境界領域からモートン番号を算出.
 			int BelongLevel;
@@ -179,7 +179,7 @@ namespace HeightMapGenerator
 			float Back = Config.DepthMin;
 
 			// 指定領域の分オフセット
-			OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back);
+			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back)) { return 0; }
 
 			// モートン番号を取得.
 			int BelongLevel;
@@ -278,7 +278,7 @@ namespace HeightMapGenerator
 		/// <param name="Front">手前</param>
 		/// <param name="Back">奥</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		private void OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom, ref float Front, ref float Back)
+		private bool OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom, ref float Front, ref float Back)
 		{
 			Left -= OffsetLeft;
 			Right -= OffsetLeft;
@@ -287,12 +287,14 @@ namespace HeightMapGenerator
 			Front -= OffsetFront;
 			Back -= OffsetFront;
 
-			if (Left < 0) { throw new Exception("OffsetPosition Failed. Left < 0"); }
-			if (Right > Width) { throw new Exception("OffsetPosition Failed. Right > Width"); }
-			if (Bottom < 0) { throw new Exception("OffsetPosition Failed. Bottom < 0"); }
-			if (Top > Height) { throw new Exception("OffsetPosition Failed. Top > Height"); }
-			if (Front < 0) { throw new Exception("OffsetPosition Failed. Front < 0"); }
-			if (Back > Depth) { throw new Exception("OffsetPosition Failed. Back > Depth"); }
+			if (Left < 0) { return false; }
+			if (Right > Width) { return false; }
+			if (Bottom < 0) { return false; }
+			if (Top > Height) { return false; }
+			if (Front < 0) { return false; }
+			if (Back > Depth) { return false; }
+
+			return true;
 		}
 
 		/// <summary>
