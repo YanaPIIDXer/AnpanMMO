@@ -171,12 +171,12 @@ namespace HeightMapGenerator
 			CollisionList.Clear();
 
 			// 線分.
-			float Top = Y;
-			float Bottom = Y;
-			float Left = X;
-			float Right = X;
-			float Front = Config.DepthMax;
-			float Back = Config.DepthMin;
+			float Top = Config.HeightMax;
+			float Bottom = Config.HeightMin;
+			float Left = Y;
+			float Right = Y;
+			float Front = X;
+			float Back = X;
 
 			// 指定領域の分オフセット
 			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back)) { return 0; }

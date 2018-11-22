@@ -70,29 +70,29 @@ namespace HeightMapGenerator
 		{
 			VertexList.Add(Vertex);
 
-			if(Vertex.X < Left)
+			if(Vertex.X > Back)
 			{
-				Left = Vertex.X;
+				Back = Vertex.X;
 			}
-			if(Vertex.X > Right)
+			if(Vertex.X < Front)
 			{
-				Right = Vertex.X;
+				Front = Vertex.X;
 			}
-			if(Vertex.Y > Top)
+			if(Vertex.Y > Right)
 			{
-				Top = Vertex.Y;
+				Right = Vertex.Y;
 			}
-			if(Vertex.Y < Bottom)
+			if(Vertex.Y < Left)
 			{
-				Bottom = Vertex.Y;
+				Left = Vertex.Y;
 			}
-			if(Vertex.Z > Front)
+			if(Vertex.Z > Top)
 			{
-				Front = Vertex.Z;
+				Top = Vertex.Z;
 			}
-			if(Vertex.Z < Back)
+			if(Vertex.Z < Bottom)
 			{
-				Back = Vertex.Z;
+				Bottom = Vertex.Z;
 			}
 		}
 
