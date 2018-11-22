@@ -140,7 +140,11 @@ namespace HeightMapGenerator
 		public bool Register(float Left, float Top, float Right, float Bottom, float Front, float Back, GeometryTreeData Data)
 		{
 			// 指定領域の分オフセットして計算する。
-			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back)) { throw new Exception("OffsetPosition Failed."); }
+			string FailedReason = "";
+			if(!OffsetPosition(ref Left, ref Top, ref Right, ref Bottom, ref Front, ref Back, out FailedReason))
+			{
+				throw new Exception("OffsetPosition Failed. Reason:" + FailedReason);
+			}
 
 			// オブジェクトの境界領域からモートン番号を算出.
 			int BelongLevel;
@@ -274,8 +278,9 @@ namespace HeightMapGenerator
 		/// <param name="Bottom">下</param>
 		/// <param name="Front">手前</param>
 		/// <param name="Back">奥</param>
+		/// <param name="FailedReason">失敗理由</param>
 		/// <returns>成功したらtrueを返す。</returns>
-		private bool OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom, ref float Front, ref float Back)
+		private bool OffsetPosition(ref float Left, ref float Top, ref float Right, ref float Bottom, ref float Front, ref float Back, out string FailedReason)
 		{
 			Left -= OffsetLeft;
 			Right -= OffsetLeft;
@@ -284,12 +289,37 @@ namespace HeightMapGenerator
 			Front -= OffsetFront;
 			Back -= OffsetFront;
 
-			if (Left < 0) { return false; }
-			if (Right > Width) { return false; }
-			if (Bottom < 0) { return false; }
-			if (Top > Height) { return false; }
-			if (Front < 0) { return false; }
-			if (Back > Depth) { return false; }
+			FailedReason = "";
+			if (Left < 0)
+			{
+				FailedReason = "Left < 0";
+				return false;
+			}
+			if (Right > Width)
+			{
+				FailedReason = "Right > Width";
+				return false;
+			}
+			if (Bottom < 0)
+			{
+				FailedReason = "Bottom < 0";
+				return false;
+			}
+			if (Top > Height)
+			{
+				FailedReason = "Top > Height";
+				return false;
+			}
+			if (Front < 0)
+			{
+				FailedReason = "Front < 0";
+				return false;
+			}
+			if (Back > Depth)
+			{
+				FailedReason = "Back > Depth";
+				return false;
+			}
 
 			return true;
 		}
