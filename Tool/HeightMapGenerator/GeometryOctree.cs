@@ -288,12 +288,12 @@ namespace HeightMapGenerator
 			Front -= OffsetFront;
 			Back -= OffsetFront;
 
-			if (Left < 0) { return false; }
-			if (Right > Width) { return false; }
-			if (Bottom < 0) { return false; }
-			if (Top > Height) { return false; }
-			if (Front < 0) { return false; }
-			if (Back > Depth) { return false; }
+			if (Left < 0) { throw new Exception("OffsetPosition Failed. Left < 0"); }
+			if (Right > Width) { throw new Exception("OffsetPosition Failed. Right < Width"); }
+			if (Bottom < 0) { throw new Exception("OffsetPosition Failed. Bottom < 0"); }
+			if (Top > Height) { throw new Exception("OffsetPosition Failed. Top > Height"); }
+			if (Front < 0) { throw new Exception("OffsetPosition Failed. Front < 0"); }
+			if (Back > Depth) { throw new Exception("OffsetPosition Failed. Back > Depth"); }
 
 			return true;
 		}
