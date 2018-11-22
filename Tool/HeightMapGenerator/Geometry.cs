@@ -97,6 +97,17 @@ namespace HeightMapGenerator
 		}
 
 		/// <summary>
+		/// 範囲内か？
+		/// </summary>
+		/// <param name="X">X座標</param>
+		/// <param name="Y">Y座標</param>
+		/// <returns>範囲内であればtrueを返す</returns>
+		public bool IsInRange(float X, float Y)
+		{
+			return (X <= Back && X >= Front && Y <= Right && Y >= Left);
+		}
+
+		/// <summary>
 		/// 高さを取得.
 		/// </summary>
 		/// <param name="X">X座標</param>
@@ -107,7 +118,7 @@ namespace HeightMapGenerator
 		{
 			OutHeight = 0.0f;
 
-			if(X > Back || X < Front || Y > Right || Y < Left) { return false; }
+			if(!IsInRange(X, Y)) { return false; }
 			
 			Vector Origin = new Vector(X, Y, Config.HeightMax);
 			Vector Ray = new Vector(X, Y, Config.HeightMin);
