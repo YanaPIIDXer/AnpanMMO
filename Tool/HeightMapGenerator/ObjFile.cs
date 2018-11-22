@@ -86,7 +86,7 @@ namespace HeightMapGenerator
 				}
 
 				// 八分木にデータを登録していく。
-				if(!Octree.Initialize(3, Left, Right, Top, Bottom, Config.DepthMin, Config.DepthMax)) { return false; }
+				if(!Octree.Initialize(4, Left, Right, Top, Bottom, Config.DepthMin, Config.DepthMax)) { return false; }
 				foreach(var Geo in Geometrys)
 				{
 					GeometryTreeData Data = new GeometryTreeData(Geo);
@@ -120,21 +120,21 @@ namespace HeightMapGenerator
 						Vector Vertex = new Vector(X, Y, Z);
 						VertexDic.Add(VertexDic.Count + 1, Vertex);
 
-						if(X < Left)
+						if(X > Top)
 						{
-							Left = X;
+							Top = X;
 						}
-						if(X > Right)
+						if (X < Bottom)
 						{
-							Right = X;
+							Bottom = X;
 						}
-						if(Y < Bottom)
+						if (Y < Left)
 						{
-							Bottom = Y;
+							Left = Y;
 						}
-						if(Y > Top)
+						if(Y > Right)
 						{
-							Top = Y;
+							Right = Y;
 						}
 					}
 					break;

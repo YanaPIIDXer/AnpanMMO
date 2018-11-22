@@ -78,21 +78,21 @@ namespace HeightMapGenerator
 			{
 				Right = Vertex.X;
 			}
-			if(Vertex.Y > Top)
+			if (Vertex.Y > Front)
 			{
-				Top = Vertex.Y;
+				Front = Vertex.Y;
 			}
-			if(Vertex.Y < Bottom)
+			if (Vertex.Y < Back)
 			{
-				Bottom = Vertex.Y;
+				Back = Vertex.Y;
 			}
-			if(Vertex.Z > Front)
+			if (Vertex.Z > Top)
 			{
-				Front = Vertex.Z;
+				Top = Vertex.Z;
 			}
-			if(Vertex.Z < Back)
+			if(Vertex.Z < Bottom)
 			{
-				Back = Vertex.Z;
+				Bottom = Vertex.Z;
 			}
 		}
 
