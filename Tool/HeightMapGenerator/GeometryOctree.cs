@@ -170,7 +170,7 @@ namespace HeightMapGenerator
 		/// <param name="Y">Y座標</param>
 		/// <param name="CollisionList">衝突リスト</param>
 		/// <returns>衝突リストの数</returns>
-		public int GetCollisionList(float X, float Y, List<Geometry> CollisionList)
+		public int GetCollisionList(float X, float Y, List<GeometryGroup> CollisionList)
 		{
 			CollisionList.Clear();
 
@@ -198,7 +198,7 @@ namespace HeightMapGenerator
 		/// <param name="MortonNum">モートン番号</param>
 		/// <param name="BelongLevel">レベル</param>
 		/// <param name="CollisionList">コリジョンリスト</param>
-		private void GetCollisionList_Rec(int MortonNum, int BelongLevel, List<Geometry> CollisionList)
+		private void GetCollisionList_Rec(int MortonNum, int BelongLevel, List<GeometryGroup> CollisionList)
 		{
 			int Elem = ToLinearSpace(MortonNum, BelongLevel);
 			if(CellList[Elem] == null) { return; }

@@ -24,11 +24,24 @@ namespace HeightMapGenerator
 		/// 頂点ディクショナリ
 		/// </summary>
 		private Dictionary<int, Vector> VertexDic = new Dictionary<int, Vector>();
+		
+		/// <summary>
+		/// ジオメトリグループリスト
+		/// </summary>
+		private List<GeometryGroup> GeometryGroups = new List<GeometryGroup>();
 
 		/// <summary>
-		/// 多角形リスト
+		/// 現在のジオメトリグループ
 		/// </summary>
-		private List<Geometry> Geometrys = new List<Geometry>();
+		private GeometryGroup CurrentGeometryGroup
+		{
+			get
+			{
+				if(GeometryGroups.Count == 0) { return null; }
+				int Index = GeometryGroups.Count - 1;
+				return GeometryGroups[Index];
+			}
+		}
 
 		/// <summary>
 		/// 八分木.
@@ -87,10 +100,10 @@ namespace HeightMapGenerator
 
 				// 八分木にデータを登録していく。
 				if(!Octree.Initialize(4, Left, Right, Config.HeightMax, Config.HeightMin, Front, Back)) { return false; }
-				foreach(var Geo in Geometrys)
+				foreach(var Group in GeometryGroups)
 				{
-					GeometryTreeData Data = new GeometryTreeData(Geo);
-					if(!Octree.Register(Geo.Left, Geo.Top, Geo.Right, Geo.Bottom, Geo.Front, Geo.Back, Data)) { return false; }
+					GeometryTreeData Data = new GeometryTreeData(Group);
+					if(!Octree.Register(Group.Left, Group.Top, Group.Right, Group.Bottom, Group.Front, Group.Back, Data)) { return false; }
 				}
 			}
 			catch(Exception e)
@@ -150,7 +163,15 @@ namespace HeightMapGenerator
 							Vector Vertex = VertexDic[int.Parse(GeometryInfo[0])];
 							Geo.AddVertex(Vertex);
 						}
-						Geometrys.Add(Geo);
+						CurrentGeometryGroup.AddGeometry(Geo);
+					}
+					break;
+
+				case "g":
+
+					{
+						GeometryGroup Group = new GeometryGroup();
+						GeometryGroups.Add(Group);
 					}
 					break;
 			}
@@ -166,7 +187,7 @@ namespace HeightMapGenerator
 		{
 			float Height = 0.0f;
 
-			List<Geometry> CollisionList = new List<Geometry>();
+			List<GeometryGroup> CollisionList = new List<GeometryGroup>();
 			Octree.GetCollisionList(X, Y, CollisionList);
 			
 			foreach(var Geo in CollisionList)

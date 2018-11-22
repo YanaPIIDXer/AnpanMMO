@@ -33,9 +33,9 @@ namespace HeightMapGenerator
 		}
 
 		/// <summary>
-		/// 空間オブジェクト
+		/// ジオメトリグループ
 		/// </summary>
-		public Geometry Object { get; private set; }
+		public GeometryGroup Object { get; private set; }
 		
 		/// <summary>
 		/// 前のデータ
@@ -50,8 +50,8 @@ namespace HeightMapGenerator
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		/// <param name="InObject">空間オブジェクト</param>
-		public GeometryTreeData(Geometry InObject)
+		/// <param name="InObject">ジオメトリグループ</param>
+		public GeometryTreeData(GeometryGroup InObject)
 		{
 			Object = InObject;
 		}

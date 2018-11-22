@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Geometry.cs" />
     <Compile Include="GeometryCell.cs" />
+    <Compile Include="GeometryGroup.cs" />
     <Compile Include="GeometryOctree.cs" />
     <Compile Include="GeometryTreeData.cs" />
     <Compile Include="HeightMapGenerator.cs" />
