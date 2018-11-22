@@ -106,6 +106,8 @@ namespace HeightMapGenerator
 		public bool TryGetHeight(float X, float Y, out float OutHeight)
 		{
 			OutHeight = 0.0f;
+
+			if(X > Back || X < Front || Y > Right || Y < Left) { return false; }
 			
 			Vector Origin = new Vector(X, Y, Config.HeightMax);
 			Vector Ray = new Vector(X, Y, Config.HeightMin);
