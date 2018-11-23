@@ -341,7 +341,7 @@ namespace HeightMapGenerator
 		{
 			// 左上手前のモートン番号を算出.
 			int LtdX = (int)(Front / UnitDepth);
-			int LtdY = (int)(Right / UnitWidth);
+			int LtdY = (int)(Left / UnitWidth);
 			int LtdZ = (int)(Top / UnitHeight);
 			int Ltd = BitSeparate3D(LtdX) | (BitSeparate3D(LtdY) << 1) | (BitSeparate3D(LtdZ) << 2);
 
