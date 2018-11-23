@@ -5,6 +5,7 @@
 #include "Character/Anpan/Anpan.h"
 #include "Master/AreaMaster.h"
 #include "Math/DamageCalcUnit.h"
+#include "Bitmap.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketAddExp.h"
@@ -15,6 +16,13 @@ Area::Area(const AreaItem *pItem)
 {
 	AnpanMgr.Initialize(pItem->ID);
 	AnpanMgr.SetSpawnCallback(bind(&Area::OnSpawnAnpan, this, _1, _2));
+	
+	std::string FilePath = "../../HeightMap/HeightMaps/" + pItem->LevelName + ".bmp";
+	Bitmap Bmp;
+	if (!Bmp.Load(FilePath))
+	{
+		std::cout << FilePath << " Load Failed..." << std::endl;
+	}
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.

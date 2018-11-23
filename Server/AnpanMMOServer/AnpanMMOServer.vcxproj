@@ -129,6 +129,7 @@
     <ClInclude Include="Area\Area.h" />
     <ClInclude Include="Area\AreaManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
+    <ClInclude Include="Bitmap.h" />
     <ClInclude Include="CachePacketReceiver.h" />
     <ClInclude Include="CacheServerConnection.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
@@ -200,6 +201,7 @@
     <ClCompile Include="AnpanPopArea.cpp" />
     <ClCompile Include="Area\Area.cpp" />
     <ClCompile Include="Area\AreaManager.cpp" />
+    <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="CachePacketReceiver.cpp" />
     <ClCompile Include="CacheServerConnection.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
