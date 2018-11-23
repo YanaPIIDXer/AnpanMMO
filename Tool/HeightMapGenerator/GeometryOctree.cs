@@ -105,7 +105,7 @@ namespace HeightMapGenerator
 			int Denom = DivisionNum - 1;
 			CellNum = (Pow[InLevel + 1] - 1) / Denom;
 			CellList = new GeometryCell[CellNum];
-
+			
 			// 有効領域を登録.
 			OffsetLeft = Left;
 			OffsetBottom = Bottom;
@@ -113,7 +113,7 @@ namespace HeightMapGenerator
 			Width = Right - Left;
 			Height = Top - Bottom;
 			Depth = Back - Front;
-
+			
 			int Unit = 1 << InLevel;
 			UnitWidth = Width / Unit;
 			UnitHeight = Height / Unit;
@@ -262,12 +262,12 @@ namespace HeightMapGenerator
 		/// 線形配列のインデックスに変換.
 		/// </summary>
 		/// <param name="MortonNum">モートン番号</param>
-		/// <param name="InLevel">レベル</param>
+		/// <param name="BelongLevel">レベル</param>
 		/// <returns></returns>
-		private int ToLinearSpace(int MortonNum, int InLevel)
+		private int ToLinearSpace(int MortonNum, int BelongLevel)
 		{
 			int Denom = DivisionNum - 1;
-			int AdditiveNum = (int)(Math.Pow(DivisionNum, InLevel) - 1) / Denom;
+			int AdditiveNum = (int)((Math.Pow(DivisionNum, BelongLevel) - 1) / Denom);
 			return MortonNum + AdditiveNum;
 		}
 
@@ -340,15 +340,15 @@ namespace HeightMapGenerator
 		private int GetMortonNumber(float Left, float Top, float Right, float Bottom, float Front, float Back, out int BelongLevel)
 		{
 			// 左上手前のモートン番号を算出.
-			int LtdX = (int)(Left / UnitWidth);
-			int LtdY = (int)(Top / UnitHeight);
-			int LtdZ = (int)(Front / UnitDepth);
+			int LtdX = (int)(Front / UnitDepth);
+			int LtdY = (int)(Left / UnitWidth);
+			int LtdZ = (int)(Top / UnitHeight);
 			int Ltd = BitSeparate3D(LtdX) | (BitSeparate3D(LtdY) << 1) | (BitSeparate3D(LtdZ) << 2);
 
 			// 右下奥のモートン番号を算出.
-			int RbdX = (int)(Right / UnitWidth);
-			int RbdY = (int)(Bottom / UnitHeight);
-			int RbdZ = (int)(Back / UnitDepth);
+			int RbdX = (int)(Back / UnitDepth);
+			int RbdY = (int)(Right / UnitWidth);
+			int RbdZ = (int)(Bottom / UnitHeight);
 			int Rbd = BitSeparate3D(RbdX) | (BitSeparate3D(RbdY) << 1) | (BitSeparate3D(RbdZ) << 2);
 
 			// 左上と右下のモートン番号のxorを取る。
