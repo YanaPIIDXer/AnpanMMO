@@ -2,8 +2,6 @@
 #include "HeightMap.h"
 #include "Math/MathUtil.h"
 
-#pragma warning(disable : 4293)
-
 const float HeightMap::MinWidth = -10000.0f;
 const float HeightMap::MaxWidth = 10000.0f;
 const float HeightMap::MinHeight = -10000.0f;
