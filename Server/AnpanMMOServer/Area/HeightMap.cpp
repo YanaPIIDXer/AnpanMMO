@@ -2,6 +2,8 @@
 #include "HeightMap.h"
 #include "Math/MathUtil.h"
 
+#pragma warning(disable : 4293)
+
 const float HeightMap::MinWidth = -10000.0f;
 const float HeightMap::MaxWidth = 10000.0f;
 const float HeightMap::MinHeight = -10000.0f;
@@ -27,8 +29,14 @@ float HeightMap::GetHeight(float X, float Y) const
 	float YRate = (Y - MaxWidth) / (MinWidth - MaxWidth);
 	int XPixel = (int)(Bmp.GetWidth() * XRate);
 	int YPixel = (int)(Bmp.GetHeight() * YRate);
-	u8 HeightPixel = Bmp.GetPixel(XPixel, YPixel).B;
-	float PixelRate = HeightPixel / 255.0f;
-	float Height = MathUtil::Lerp<float>(MinHeight, MaxHeight, PixelRate);
+	Color32 HeightColor = Bmp.GetPixel(XPixel, YPixel);
+
+	float Height = 0.0f;
+	Height += (HeightColor.G << 8);
+	Height += HeightColor.B;
+	if (HeightColor.R > 0)
+	{
+		Height *= -1.0f;
+	}
 	return Height;
 }
