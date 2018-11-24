@@ -116,6 +116,21 @@ struct Color32
 	// 青.
 	u8 B;
 
+	// コンストラクタ
+	Color32()
+		: R(0)
+		, G(0)
+		, B(0) {}
+
+	Color32(u8 InR, u8 InG, u8 InB)
+		: R(InR)
+		, G(InG)
+		, B(InB) {}
+
+
+	// 黒.
+	static const Color32 Black;
+
 };
 
 /**

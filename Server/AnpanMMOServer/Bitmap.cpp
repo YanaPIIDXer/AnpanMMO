@@ -5,6 +5,8 @@ const u32 Bitmap::RColorMask = 0x00FF0000;
 const u32 Bitmap::GColorMask = 0x0000FF00;
 const u32 Bitmap::BColorMask = 0x000000FF;
 
+const Color32 Color32::Black(0, 0, 0);
+
 // コンストラクタ
 Bitmap::Bitmap()
 	: pColorData(NULL)
@@ -56,6 +58,7 @@ bool Bitmap::Load(const std::string &FilePath)
 // ピクセルを取得.
 Color32 Bitmap::GetPixel(int X, int Y) const
 {
+	if (X < 0 || X > InfoData.Width || Y < 0 || Y > InfoData.Height) { return Color32::Black; }
 	int Index = (Y * InfoData.Width) + X;
 	return pColorData[Index];
 }
