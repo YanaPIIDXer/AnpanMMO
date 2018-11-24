@@ -188,7 +188,7 @@ namespace HeightMapGenerator
 			
 			// コリジョンリストを列挙.
 			GetCollisionList_Rec(Elem, BelongLevel, CollisionList);
-
+			
 			return CollisionList.Count;
 		}
 
@@ -201,7 +201,7 @@ namespace HeightMapGenerator
 		private void GetCollisionList_Rec(int MortonNum, int BelongLevel, List<GeometryGroup> CollisionList)
 		{
 			int Elem = ToLinearSpace(MortonNum, BelongLevel);
-			if(CellList[Elem] == null) { return; }
+			if(Elem < 0 || Elem >= CellNum || CellList[Elem] == null) { return; }
 
 			GeometryTreeData Data = CellList[Elem].FirstData;
 			
@@ -221,7 +221,7 @@ namespace HeightMapGenerator
 				NextElem = MortonNum * DivisionNum + 1 + i;
 
 				// 空間分割数以上 or 対象空間が無い場合はスキップ。
-				bool bSkip = (NextElem >= CellNum || CellList[NextElem] == null);
+				bool bSkip = (NextElem < 0 || NextElem >= CellNum || CellList[NextElem] == null);
 				if (bSkip) { continue; }
 				
 				// 子空間を検索.
