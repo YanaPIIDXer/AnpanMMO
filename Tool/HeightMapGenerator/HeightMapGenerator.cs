@@ -91,7 +91,7 @@ namespace HeightMapGenerator
 			}
 
 			string BmpFilePath = Config.BitMapDirectory + "\\" + Path.GetFileNameWithoutExtension(ObjFilePath) + ".bmp";
-			Bmp.Save(BmpFilePath);
+			Bmp.Save(BmpFilePath, ImageFormat.Bmp);
 
 			ProgressForm.Close();
 
