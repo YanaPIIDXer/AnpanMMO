@@ -1,17 +1,21 @@
 #include "stdafx.h"
 #include "Bitmap.h"
 
+const u32 Bitmap::RColorMask = 0x00FF0000;
+const u32 Bitmap::GColorMask = 0x0000FF00;
+const u32 Bitmap::BColorMask = 0x000000FF;
+
 // コンストラクタ
 Bitmap::Bitmap()
-	: pColorPalette(NULL)
+	: pColorData(NULL)
 {
 }
 
 // デストラクタ
 Bitmap::~Bitmap()
 {
-	delete[] pColorPalette;
-	pColorPalette = NULL;
+	delete[] pColorData;
+	pColorData = NULL;
 }
 
 // ロード
@@ -28,22 +32,30 @@ bool Bitmap::Load(const std::string &FilePath)
 	if (!FileHeader.Read(FileStream)) { return false; }
 	if (!InfoData.Read(FileStream)) { return false; }
 
-	std::cout << "==== " << FilePath << " ====" << std::endl;
-	std::cout << "FileSize:" << FileHeader.FileSize << std::endl;
-	std::cout << "Reserved1" << FileHeader.Reserved1 << std::endl;
-	std::cout << "Reserved2" << FileHeader.Reserved2 << std::endl;
-	std::cout << "HeaderSize:" << InfoData.Size << std::endl;
-	std::cout << "Width:" << InfoData.Width << std::endl;
-	std::cout << "Height:" << InfoData.Height << std::endl;
-	std::cout << "UsedColors:" << InfoData.UsedColors << std::endl;
-	std::cout << "==========================================" << std::endl;
+	pColorData = new Color32[InfoData.Width * InfoData.Height];
 
-	// カラーパレットの読み込み。
-	pColorPalette = new BitmapPaletteData[InfoData.UsedColors];
-	for (unsigned int i = 0; i < InfoData.UsedColors; i++)
+	for (int Height = InfoData.Height - 1; Height >= 0; Height--)
 	{
-		if (!pColorPalette->Read(FileStream)) { return false; }
+		for(int Width = 0; Width < InfoData.Width; Width++)
+		{
+			u32 BitData = 0;
+			ReadFromStream(FileStream, &BitData);
+			Color32 Col;
+			Col.R = BitData & RColorMask;
+			Col.G = BitData & GColorMask;
+			Col.B = BitData & BColorMask;
+			
+			int Index = (Height * InfoData.Width) + Width;
+			pColorData[Index] = Col;
+		}
 	}
 
 	return true;
+}
+
+// 色を取得.
+Color32 Bitmap::GetColor(int X, int Y) const
+{
+	int Index = (Y * InfoData.Width) + X;
+	return pColorData[Index];
 }

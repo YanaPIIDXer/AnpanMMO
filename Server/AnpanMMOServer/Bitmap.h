@@ -103,22 +103,10 @@ struct BitmapInfoData
 
 };
 
-// ビットフィールド
-struct BitmapBitField
+// 32bitカラーデータ
+struct Color32
 {
-	// 赤.
-	u32 RField;
 
-	// 緑.
-	u32 GField;
-
-	// 青.
-	u32 BField;
-};
-
-// ビットマップパレットデータ
-struct BitmapPaletteData
-{
 	// 赤.
 	u8 R;
 
@@ -128,19 +116,6 @@ struct BitmapPaletteData
 	// 青.
 	u8 B;
 
-	// 予約領域.
-	u8 Reserved;
-
-
-	// 読み込み
-	bool Read(std::ifstream &FileStream)
-	{
-		ReadFromStream(FileStream, &R);
-		ReadFromStream(FileStream, &G);
-		ReadFromStream(FileStream, &B);
-		ReadFromStream(FileStream, &Reserved);
-		return !FileStream.eof();
-	}
 };
 
 /**
@@ -160,7 +135,19 @@ public:
 	// ロード
 	bool Load(const std::string &FilePath);
 
+	// 色を取得.
+	Color32 GetColor(int X, int Y) const;
+
 private:
+
+	// 赤のカラーマスク
+	static const u32 RColorMask;
+
+	// 緑のカラーマスク
+	static const u32 GColorMask;
+
+	// 青のカラーマスク
+	static const u32 BColorMask;
 
 	// ファイルヘッダ
 	BitmapFileHeader FileHeader;
@@ -168,11 +155,8 @@ private:
 	// 情報ヘッダ
 	BitmapInfoData InfoData;
 
-	// ビットフィールド
-	BitmapBitField BitField;
-
-	// カラーパレットデータ
-	BitmapPaletteData *pColorPalette;
+	// カラーデータ
+	Color32 *pColorData;
 
 };
 
