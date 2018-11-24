@@ -85,12 +85,12 @@ namespace HeightMapGenerator
 		public ObjFile(string InFilePath)
 		{
 			FilePath = InFilePath;
-			Left = 0.0f;
-			Right = 0.0f;
-			Top = 0.0f;
-			Bottom = 0.0f;
-			Back = 0.0f;
-			Front = 0.0f;
+			Left = float.MaxValue;
+			Right = float.MinValue;
+			Top = float.MinValue;
+			Bottom = float.MaxValue;
+			Front = float.MaxValue;
+			Back = float.MinValue;
 
 			GeometryGroup Group = new GeometryGroup();
 			GeometryGroups.Add(Group);
