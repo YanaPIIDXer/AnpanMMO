@@ -87,11 +87,12 @@ namespace HeightMapGenerator
 
 					// プログレスバー更新.
 					ProgressForm.SetProgress(PixelX * BitmapHeight + PixelY);
+					Application.DoEvents();
 				}
 			}
 
 			string BmpFilePath = Config.BitMapDirectory + "\\" + Path.GetFileNameWithoutExtension(ObjFilePath) + ".bmp";
-			Bmp.Save(BmpFilePath);
+			Bmp.Save(BmpFilePath, ImageFormat.Bmp);
 
 			ProgressForm.Close();
 

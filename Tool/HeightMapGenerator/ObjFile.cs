@@ -42,12 +42,7 @@ namespace HeightMapGenerator
 				return GeometryGroups[Index];
 			}
 		}
-
-		/// <summary>
-		/// 八分木.
-		/// </summary>
-		private GeometryOctree Octree = new GeometryOctree();
-
+		
 		/// <summary>
 		/// 左端.
 		/// </summary>
@@ -89,8 +84,8 @@ namespace HeightMapGenerator
 			Right = 0.0f;
 			Top = 0.0f;
 			Bottom = 0.0f;
-			Back = 0.0f;
 			Front = 0.0f;
+			Back = 0.0f;
 
 			GeometryGroup Group = new GeometryGroup();
 			GeometryGroups.Add(Group);
@@ -111,14 +106,6 @@ namespace HeightMapGenerator
 						string Line = Reader.ReadLine();
 						ParseLine(Line);
 					}
-				}
-
-				// 八分木にデータを登録していく。
-				if(!Octree.Initialize(4, Left, Right, Top, Bottom, Front, Back)) { return false; }
-				foreach(var Group in GeometryGroups)
-				{
-					GeometryTreeData Data = new GeometryTreeData(Group);
-					if(!Octree.Register(Group.Left, Group.Top, Group.Right, Group.Bottom, Group.Front, Group.Back, Data)) { return false; }
 				}
 			}
 			catch(Exception e)
@@ -206,13 +193,10 @@ namespace HeightMapGenerator
 		public float GetHeight(float X, float Y)
 		{
 			float Height = 0.0f;
-
-			List<GeometryGroup> CollisionList = new List<GeometryGroup>();
-			Octree.GetCollisionList(X, Y, CollisionList);
 			
-			foreach(var Geo in CollisionList)
+			foreach(var Group in GeometryGroups)
 			{
-				if(Geo.TryGetHeight(X, Y, out Height)) { return Height; }
+				if(Group.TryGetHeight(X, Y, out Height)) { return Height; }
 			}
 			
 			return Config.HeightMin;

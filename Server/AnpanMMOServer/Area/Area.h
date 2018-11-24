@@ -4,6 +4,7 @@
 #include <boost/enable_shared_from_this.hpp>
 #include "PlayerManager.h"
 #include "AnpanManager.h"
+#include "HeightMap.h"
 
 struct AreaItem;
 class PacketBase;
@@ -56,6 +57,9 @@ private:
 
 	// アンパン管理.
 	AnpanManager AnpanMgr;
+
+	// ハイトマップ
+	HeightMap HeightData;
 
 
 	// アンパンが生成された。

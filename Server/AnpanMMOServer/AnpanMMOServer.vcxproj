@@ -129,6 +129,7 @@
     <ClInclude Include="Area\Area.h" />
     <ClInclude Include="Area\AreaManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
+    <ClInclude Include="Bitmap.h" />
     <ClInclude Include="CachePacketReceiver.h" />
     <ClInclude Include="CacheServerConnection.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="ClientState\ClientStateAreaChange.h" />
     <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="ClientState\ClientStateTitle.h" />
+    <ClInclude Include="Area\HeightMap.h" />
     <ClInclude Include="TCPConnection.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="EndianConverter.h" />
@@ -200,6 +202,7 @@
     <ClCompile Include="AnpanPopArea.cpp" />
     <ClCompile Include="Area\Area.cpp" />
     <ClCompile Include="Area\AreaManager.cpp" />
+    <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="CachePacketReceiver.cpp" />
     <ClCompile Include="CacheServerConnection.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
@@ -218,6 +221,7 @@
     <ClCompile Include="ClientState\ClientStateAreaChange.cpp" />
     <ClCompile Include="ClientState\ClientStateBase.cpp" />
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
+    <ClCompile Include="Area\HeightMap.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="FlexArray.cpp" />

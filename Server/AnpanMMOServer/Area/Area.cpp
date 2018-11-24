@@ -15,6 +15,15 @@ Area::Area(const AreaItem *pItem)
 {
 	AnpanMgr.Initialize(pItem->ID);
 	AnpanMgr.SetSpawnCallback(bind(&Area::OnSpawnAnpan, this, _1, _2));
+	std::string HeightMapPath = "../../HeightMap/HeightMaps/" + pItem->LevelName + ".bmp";
+	if (!HeightData.Load(HeightMapPath))
+	{
+		std::cout << "HeightMap Load Failed... Path:" << HeightMapPath << std::endl;
+	}
+	else
+	{
+		std::cout << pItem->LevelName << " HeightMap Load Success!!" << std::endl;
+	}
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
