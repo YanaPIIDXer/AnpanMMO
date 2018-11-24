@@ -54,12 +54,12 @@ namespace HeightMapGenerator
 		public Geometry()
 		{
 			VertexList = new List<Vector>();
-			Left = float.MaxValue;
-			Right = float.MinValue;
-			Top = float.MinValue;
-			Bottom = float.MaxValue;
-			Front = float.MaxValue;
-			Back = float.MinValue;
+			Left = 0.0f;
+			Right = 0.0f;
+			Top = 0.0f;
+			Bottom = 0.0f;
+			Front = 0.0f;
+			Back = 0.0f;
 		}
 
 		/// <summary>
