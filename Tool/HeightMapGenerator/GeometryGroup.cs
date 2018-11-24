@@ -16,7 +16,7 @@ namespace HeightMapGenerator
 		/// <summary>
 		/// ジオメトリ最大数.
 		/// </summary>
-		private static readonly int MaxCount = 5000;
+		private static readonly int MaxCount = 1000;
 
 		/// <summary>
 		/// ジオメトリリスト
