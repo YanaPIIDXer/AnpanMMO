@@ -106,10 +106,12 @@ namespace HeightMapGenerator
 		/// <returns>色データ</returns>
 		private Color HeightToColor(float Height)
 		{
-			float Rate = 1.0f - (Height - Config.HeightMax) / (Config.HeightMin - Config.HeightMax);
-			int B = (int)(255 * Rate);
-			Color Col = Color.FromArgb(0, 0, B);
-			return Col;
+			long LongHeight = (long)Math.Abs(Height);
+			int R = ((Height < 0.0f) ? 255 : 0);
+			int G = (int)((LongHeight >> 8) & 0x000000FF);
+			int B = (int)(LongHeight & 0x000000FF);
+			
+			return Color.FromArgb(R, G, B);
 		}
 
 	}
