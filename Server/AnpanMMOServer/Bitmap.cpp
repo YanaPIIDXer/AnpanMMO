@@ -43,10 +43,10 @@ bool Bitmap::Load(const std::string &FilePath)
 			u32 BitData = 0;
 			ReadFromStream(FileStream, &BitData);
 			Color32 Col;
-			Col.R = BitData & RColorMask;
-			Col.G = BitData & GColorMask;
+			Col.R = (BitData & RColorMask) >> 16;
+			Col.G = (BitData & GColorMask) >> 8;
 			Col.B = BitData & BColorMask;
-			
+
 			int Index = (Height * InfoData.Width) + Width;
 			pColorData[Index] = Col;
 		}
