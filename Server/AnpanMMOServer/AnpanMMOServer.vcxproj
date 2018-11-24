@@ -150,6 +150,7 @@
     <ClInclude Include="ClientState\ClientStateAreaChange.h" />
     <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="ClientState\ClientStateTitle.h" />
+    <ClInclude Include="Area\HeightMap.h" />
     <ClInclude Include="TCPConnection.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="EndianConverter.h" />
@@ -220,6 +221,7 @@
     <ClCompile Include="ClientState\ClientStateAreaChange.cpp" />
     <ClCompile Include="ClientState\ClientStateBase.cpp" />
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
+    <ClCompile Include="Area\HeightMap.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="FlexArray.cpp" />
