@@ -18,3 +18,16 @@ bool HeightMap::Load(const std::string &FilePath)
 {
 	return Bmp.Load(FilePath);
 }
+
+// çÇÇ≥ÇéÊìæ.
+float HeightMap::GetHeight(float X, float Y) const
+{
+	float XRate = (X - MaxDepth) / (MinDepth - MaxDepth);
+	float YRate = (Y - MaxWidth) / (MinWidth - MaxWidth);
+	int XPixel = (int)(Bmp.GetWidth() * XRate);
+	int YPixel = (int)(Bmp.GetHeight() * YRate);
+	u8 HeightPixel = Bmp.GetPixel(XPixel, YPixel).B;
+	float PixelRate = HeightPixel / 255.0f;
+	float Height = (MinHeight - MaxHeight) * PixelRate;
+	return Height;
+}

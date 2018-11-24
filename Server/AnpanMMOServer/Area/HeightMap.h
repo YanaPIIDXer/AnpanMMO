@@ -20,6 +20,9 @@ public:
 	// ƒ[ƒh
 	bool Load(const std::string &FilePath);
 
+	// ‚‚³‚ğæ“¾.
+	float GetHeight(float X, float Z) const;
+
 private:
 
 	// •Å¬’l.

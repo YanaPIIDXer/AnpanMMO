@@ -53,8 +53,8 @@ bool Bitmap::Load(const std::string &FilePath)
 	return true;
 }
 
-// 色を取得.
-Color32 Bitmap::GetColor(int X, int Y) const
+// ピクセルを取得.
+Color32 Bitmap::GetPixel(int X, int Y) const
 {
 	int Index = (Y * InfoData.Width) + X;
 	return pColorData[Index];

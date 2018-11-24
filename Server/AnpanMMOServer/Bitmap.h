@@ -135,8 +135,14 @@ public:
 	// ロード
 	bool Load(const std::string &FilePath);
 
-	// 色を取得.
-	Color32 GetColor(int X, int Y) const;
+	// ピクセルを取得.
+	Color32 GetPixel(int X, int Y) const;
+
+	// 幅を取得.
+	s32 GetWidth() const { return InfoData.Width; }
+
+	// 高さを取得.
+	s32 GetHeight() const { return InfoData.Height; }
 
 private:
 
