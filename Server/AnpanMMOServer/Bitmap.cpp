@@ -17,7 +17,7 @@ Bitmap::~Bitmap()
 // ÉçÅ[Éh
 bool Bitmap::Load(const std::string &FilePath)
 {
-	std::ifstream FileStream(FilePath.c_str(), std::ios::binary);
+	std::ifstream FileStream(FilePath.c_str(), std::ios::in | std::ios::binary);
 	if (!FileStream)
 	{
 		std::cout << FilePath << " Not Found..." << std::endl;
@@ -30,6 +30,8 @@ bool Bitmap::Load(const std::string &FilePath)
 
 	std::cout << "==== " << FilePath << " ====" << std::endl;
 	std::cout << "FileSize:" << FileHeader.FileSize << std::endl;
+	std::cout << "Reserved1" << FileHeader.Reserved1 << std::endl;
+	std::cout << "Reserved2" << FileHeader.Reserved2 << std::endl;
 	std::cout << "HeaderSize:" << InfoData.Size << std::endl;
 	std::cout << "Width:" << InfoData.Width << std::endl;
 	std::cout << "Height:" << InfoData.Height << std::endl;

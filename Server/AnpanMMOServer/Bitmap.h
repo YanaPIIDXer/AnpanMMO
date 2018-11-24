@@ -4,6 +4,18 @@
 #include <fstream>
 #include "EndianConverter.h"
 
+// ストリームから読み込み。
+template <typename T>
+static void ReadFromStream(std::ifstream &FileStream, T *pData)
+{
+	FileStream.read((char *)pData, sizeof(T));
+	if (!EndianConverter::IsLittleEndian())
+	{
+		// リトルエンディアン→ビックエンディアン
+		*pData = EndianConverter::Convert(*pData, true);
+	}
+}
+
 // ビットマップファイルヘッダ
 struct BitmapFileHeader
 {
@@ -24,11 +36,11 @@ struct BitmapFileHeader
 	// 読み込み
 	bool Read(std::ifstream &FileStream)
 	{
-		FileStream.read((char *) &FileType, sizeof(FileType));
-		FileStream.read((char *) &FileSize, sizeof(FileSize));
-		FileStream.read((char *)&Reserved1, sizeof(Reserved1));
-		FileStream.read((char *)&Reserved2, sizeof(Reserved2));
-		FileStream.read((char *)&Offset, sizeof(Offset));
+		ReadFromStream(FileStream, &FileType);
+		ReadFromStream(FileStream, &FileSize);
+		ReadFromStream(FileStream, &Reserved1);
+		ReadFromStream(FileStream, &Reserved2);
+		ReadFromStream(FileStream, &Offset);
 		
 		return !FileStream.eof();
 	}
@@ -74,17 +86,17 @@ struct BitmapInfoData
 	// 読み込み
 	bool Read(std::ifstream &FileStream)
 	{
-		FileStream.read((char *)&Size, sizeof(Size));		
-		FileStream.read((char *)&Width, sizeof(Width));
-		FileStream.read((char *)&Height, sizeof(Height));
-		FileStream.read((char *)&Planes, sizeof(Planes));
-		FileStream.read((char *)&BitCount, sizeof(BitCount));
-		FileStream.read((char *)&Compression, sizeof(Compression));
-		FileStream.read((char *)&ImageSize, sizeof(ImageSize));
-		FileStream.read((char *)&XPixelPerMeter, sizeof(XPixelPerMeter));
-		FileStream.read((char *)&YPixelPerMeter, sizeof(YPixelPerMeter));
-		FileStream.read((char *)&UsedColors, sizeof(UsedColors));
-		FileStream.read((char *)&ImportantColors, sizeof(ImportantColors));
+		ReadFromStream(FileStream, &Size);
+		ReadFromStream(FileStream, &Width);
+		ReadFromStream(FileStream, &Height);
+		ReadFromStream(FileStream, &Planes);
+		ReadFromStream(FileStream, &BitCount);
+		ReadFromStream(FileStream, &Compression);
+		ReadFromStream(FileStream, &ImageSize);
+		ReadFromStream(FileStream, &XPixelPerMeter);
+		ReadFromStream(FileStream, &YPixelPerMeter);
+		ReadFromStream(FileStream, &UsedColors);
+		ReadFromStream(FileStream, &ImportantColors);
 
 		return !FileStream.eof();
 	}
@@ -123,10 +135,10 @@ struct BitmapPaletteData
 	// 読み込み
 	bool Read(std::ifstream &FileStream)
 	{
-		FileStream.read((char *)&R, sizeof(R));
-		FileStream.read((char *)&G, sizeof(G));
-		FileStream.read((char *)&B, sizeof(B));
-		FileStream.read((char *)&Reserved, sizeof(Reserved));
+		ReadFromStream(FileStream, &R);
+		ReadFromStream(FileStream, &G);
+		ReadFromStream(FileStream, &B);
+		ReadFromStream(FileStream, &Reserved);
 		return !FileStream.eof();
 	}
 };

@@ -16,9 +16,9 @@ public:
 	}
 
 	//符号付き１６ビット変換
-	static s16 Convert(s16 Value)
+	static s16 Convert(s16 Value, bool bForce = false)
 	{
-		if (IsLittleEndian())
+		if (IsLittleEndian() || bForce)
 		{
 			Value = ((Value << 8) & 0xFF00 | (Value >> 8) & 0x00FF);
 		}
@@ -27,9 +27,9 @@ public:
 	}
 	
 	//符号無し１６ビット変換
-	static u16 Convert(u16 Value)
+	static u16 Convert(u16 Value, bool bForce = false)
 	{
-		if (IsLittleEndian())
+		if (IsLittleEndian() || bForce)
 		{
 			Value = ((Value << 8) & 0xFF00 | (Value >> 8) & 0x00FF);
 		}
@@ -38,9 +38,9 @@ public:
 	}
 
 	//符号付き３２ビット変換
-	static s32 Convert(s32 Value)
+	static s32 Convert(s32 Value, bool bForce = false)
 	{
-		if (IsLittleEndian())
+		if (IsLittleEndian() || bForce)
 		{
 			s16 Low, High;
 			High = (Value & 0xFFFF0000) >> 16;
@@ -52,9 +52,9 @@ public:
 	}
 	
 	//符号無し３２ビット変換
-	static u32 Convert(u32 Value)
+	static u32 Convert(u32 Value, bool bForce = false)
 	{
-		if (IsLittleEndian())
+		if (IsLittleEndian() || bForce)
 		{
 			u16 Low, High;
 			High = (Value & 0xFFFF0000) >> 16;
@@ -65,7 +65,7 @@ public:
 	}
 
 	// float変換
-	static float Convert(float Value)
+	static float Convert(float Value, bool bForce = false)
 	{
 		union FloatConv
 		{
@@ -76,7 +76,7 @@ public:
 		FloatConv Conv;
 
 		Conv.f = Value;
-		Conv.u = Convert(Conv.u);
+		Conv.u = Convert(Conv.u, bForce);
 
 		return Conv.f;
 	}
