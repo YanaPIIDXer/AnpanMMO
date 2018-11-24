@@ -87,6 +87,7 @@ namespace HeightMapGenerator
 
 					// プログレスバー更新.
 					ProgressForm.SetProgress(PixelX * BitmapHeight + PixelY);
+					Application.DoEvents();
 				}
 			}
 
