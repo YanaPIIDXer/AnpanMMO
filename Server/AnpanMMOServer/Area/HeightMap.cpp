@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "HeightMap.h"
+#include "Math/MathUtil.h"
 
 const float HeightMap::MinWidth = -10000.0f;
 const float HeightMap::MaxWidth = 10000.0f;
@@ -28,6 +29,6 @@ float HeightMap::GetHeight(float X, float Y) const
 	int YPixel = (int)(Bmp.GetHeight() * YRate);
 	u8 HeightPixel = Bmp.GetPixel(XPixel, YPixel).B;
 	float PixelRate = HeightPixel / 255.0f;
-	float Height = (MinHeight - MaxHeight) * PixelRate;
+	float Height = MathUtil::Lerp<float>(MinHeight, MaxHeight, PixelRate);
 	return Height;
 }
