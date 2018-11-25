@@ -19,8 +19,8 @@ bool HeightMap::Load(const std::string &FilePath)
 // çÇÇ≥ÇéÊìæ.
 float HeightMap::GetHeight(float X, float Y) const
 {
-	float XRate = (X - AreaConfig::MaxDepth) / (AreaConfig::MinDepth - AreaConfig::MaxDepth);
-	float YRate = (Y - AreaConfig::MaxWidth) / (AreaConfig::MinWidth - AreaConfig::MaxWidth);
+	float XRate = (1.0f - (X - AreaConfig::MaxDepth) / (AreaConfig::MinDepth - AreaConfig::MaxDepth));
+	float YRate = (1.0f - (Y - AreaConfig::MaxWidth) / (AreaConfig::MinWidth - AreaConfig::MaxWidth));
 	int XPixel = (int)(Bmp.GetWidth() * XRate);
 	int YPixel = (int)(Bmp.GetHeight() * YRate);
 	Color24 HeightColor = Bmp.GetPixel(XPixel, YPixel);

@@ -58,7 +58,7 @@ bool Bitmap::Load(const std::string &FilePath)
 // ƒsƒNƒZƒ‹‚ðŽæ“¾.
 Color24 Bitmap::GetPixel(int X, int Y) const
 {
-	if (X < 0 || X > InfoData.Width || Y < 0 || Y > InfoData.Height) { return Color24::Black; }
+	if (X < 0 || X >= InfoData.Width || Y < 0 || Y >= InfoData.Height) { return Color24::Black; }
 	int Index = (Y * InfoData.Width) + X;
 	return pColorData[Index];
 }
