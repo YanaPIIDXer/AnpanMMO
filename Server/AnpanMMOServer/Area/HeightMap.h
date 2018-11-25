@@ -3,6 +3,8 @@
 
 #include "Bitmap.h"
 
+class Vector3D;
+
 /**
  * ハイトマップ
  */
@@ -23,7 +25,13 @@ public:
 	// 高さを取得.
 	float GetHeight(float X, float Z) const;
 
+	// レイキャスト
+	bool Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &OutHit) const;
+
 private:
+
+	// レイ分割数.
+	static const int RayDivisionCount;
 
 	// 幅最小値.
 	static const float MinWidth;
