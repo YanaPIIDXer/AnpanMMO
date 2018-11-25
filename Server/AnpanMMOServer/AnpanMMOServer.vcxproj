@@ -222,6 +222,7 @@
     <ClCompile Include="ClientState\ClientStateBase.cpp" />
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="Area\HeightMap.cpp" />
+    <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="FlexArray.cpp" />
