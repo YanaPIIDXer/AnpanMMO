@@ -41,9 +41,8 @@ bool HeightMap::Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &Ou
 	Vector3D Ray = End - Start;
 	Vector3D DivisionVec = Ray / RayDivisionCount;
 	Vector3D Vec = Vector3D::Zero;
-	for (int i = 0; i < RayDivisionCount; i++)
+	for (int i = 0; i <= RayDivisionCount; i++)
 	{
-		Vec += DivisionVec;
 		Vector3D Point = Start + Vec;
 		float Height = GetHeight(Point.X, Point.Y);
 		if (Point.Z <= Height)
@@ -51,6 +50,7 @@ bool HeightMap::Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &Ou
 			OutHit = Point;
 			return true;
 		}
+		Vec += DivisionVec;
 	}
 
 	OutHit = End;
