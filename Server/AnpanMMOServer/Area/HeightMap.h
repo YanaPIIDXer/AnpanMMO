@@ -33,18 +33,6 @@ private:
 	// レイ分割数.
 	static const int RayDivisionCount;
 
-	// 幅最小値.
-	static const float MinWidth;
-
-	// 幅最大値.
-	static const float MaxWidth;
-
-	// 奥行き最小値.
-	static const float MinDepth;
-
-	// 奥行き最大値.
-	static const float MaxDepth;
-
 	// ビットマップデータ
 	Bitmap Bmp;
 

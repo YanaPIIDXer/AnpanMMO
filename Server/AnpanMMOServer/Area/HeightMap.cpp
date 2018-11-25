@@ -1,12 +1,9 @@
 #include "stdafx.h"
 #include "HeightMap.h"
+#include "AreaConfig.h"
 #include "Math/Vector3D.h"
 
 const int HeightMap::RayDivisionCount = 32;
-const float HeightMap::MinWidth = -10000.0f;
-const float HeightMap::MaxWidth = 10000.0f;
-const float HeightMap::MinDepth = -10000.0f;
-const float HeightMap::MaxDepth = 10000.0f;
 
 // コンストラクタ
 HeightMap::HeightMap()
@@ -22,8 +19,8 @@ bool HeightMap::Load(const std::string &FilePath)
 // 高さを取得.
 float HeightMap::GetHeight(float X, float Y) const
 {
-	float XRate = (X - MaxDepth) / (MinDepth - MaxDepth);
-	float YRate = (Y - MaxWidth) / (MinWidth - MaxWidth);
+	float XRate = (X - AreaConfig::MaxDepth) / (AreaConfig::MinDepth - AreaConfig::MaxDepth);
+	float YRate = (Y - AreaConfig::MaxWidth) / (AreaConfig::MinWidth - AreaConfig::MaxWidth);
 	int XPixel = (int)(Bmp.GetWidth() * XRate);
 	int YPixel = (int)(Bmp.GetHeight() * YRate);
 	Color24 HeightColor = Bmp.GetPixel(XPixel, YPixel);
