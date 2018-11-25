@@ -193,13 +193,22 @@ namespace HeightMapGenerator
 		public float GetHeight(float X, float Y)
 		{
 			float Height = 0.0f;
-			
+
+			bool bHit = false;
+			float MaxHeight = float.MinValue;
 			foreach(var Group in GeometryGroups)
 			{
-				if(Group.TryGetHeight(X, Y, out Height)) { return Height; }
+				if(Group.TryGetHeight(X, Y, out Height))
+				{
+					if(Height > MaxHeight)
+					{
+						bHit = true;
+						MaxHeight = Height;
+					}
+				}
 			}
 			
-			return Config.HeightMin;
+			return (bHit ? MaxHeight : Config.HeightMin);
 		}
 
 	}

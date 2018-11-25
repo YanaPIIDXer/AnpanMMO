@@ -140,12 +140,22 @@ namespace HeightMapGenerator
 
 			if (!IsInRange(X, Y)) { return false; }
 
+			bool bHit = false;
+			float MaxHeight = float.MinValue;
 			foreach(var Geo in GeometryList)
 			{
-				if(Geo.TryGetHeight(X, Y, out Height)) { return true; }
+				if(Geo.TryGetHeight(X, Y, out Height))
+				{
+					bHit = true;
+					if(Height > MaxHeight)
+					{
+						MaxHeight = Height;
+					}
+				}
 			}
 
-			return false;
+			Height = MaxHeight;
+			return bHit;
 		}
 
 	}
