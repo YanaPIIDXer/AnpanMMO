@@ -27,7 +27,7 @@ float HeightMap::GetHeight(float X, float Y) const
 	float YRate = (Y - MaxWidth) / (MinWidth - MaxWidth);
 	int XPixel = (int)(Bmp.GetWidth() * XRate);
 	int YPixel = (int)(Bmp.GetHeight() * YRate);
-	Color32 HeightColor = Bmp.GetPixel(XPixel, YPixel);
+	Color24 HeightColor = Bmp.GetPixel(XPixel, YPixel);
 
 	float Height = 0.0f;
 	Height += (HeightColor.G << 8);
