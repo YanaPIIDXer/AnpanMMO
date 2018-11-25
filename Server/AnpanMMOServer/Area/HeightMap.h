@@ -31,12 +31,6 @@ private:
 	// 幅最大値.
 	static const float MaxWidth;
 
-	// 高さ最小値.
-	static const float MinHeight;
-
-	// 高さ最小値.
-	static const float MaxHeight;
-
 	// 奥行き最小値.
 	static const float MinDepth;
 
