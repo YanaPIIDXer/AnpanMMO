@@ -32,8 +32,8 @@ public:
 	int GetExp() const { return Exp; }
 
 	
-	// 高さオフセット
-	static const float HeightOffset;
+	// 高さオフセット（半分）
+	static const float HalfHeightOffset;
 
 protected:
 
