@@ -30,7 +30,7 @@ void ClientStateAreaChange::OnRecvGameReady(MemoryStreamInterface *pStream)
 	pArea.lock()->AddPlayerCharacter(pPlayerChara);
 
 	// エリア移動をクライアントに通知.
-	PacketAreaMove AreaMovePacket(AreaId, Position.X, Position.Y);
+	PacketAreaMove AreaMovePacket(AreaId, Position.X, Position.Y, Position.Z);
 	GetParent()->SendPacket(&AreaMovePacket);
 
 	// アクティブ状態へ。
