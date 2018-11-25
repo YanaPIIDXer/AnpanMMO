@@ -107,7 +107,6 @@ void AnpanAIStateActive::MoveToTarget()
 	if (IsApproached()) { return; }
 
 	Vector3D TargetVec = (pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition());
-	TargetVec.Z = 0.0f;
 	float Size = TargetVec.GetSize();
 	TargetVec.Normalize();
 	TargetVec *= (Size - ApproachDist);
