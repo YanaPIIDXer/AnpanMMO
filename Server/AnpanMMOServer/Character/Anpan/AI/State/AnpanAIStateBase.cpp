@@ -42,9 +42,8 @@ void AnpanAIStateBase::SetMove(const Vector3D &InMoveTarget, int Time)
 	StartPos.Z += Anpan::HalfHeightOffset;
 	EndPos.Z += Anpan::HalfHeightOffset;
 
-	//AreaPtr pArea = GetParent()->GetArea();
-	//pArea.lock()->Raycast(StartPos, EndPos, MoveTarget);
-	MoveTarget = EndPos;
+	AreaPtr pArea = GetParent()->GetArea();
+	pArea.lock()->Raycast(StartPos, EndPos, MoveTarget);
 	
 	// ‚‚³‚ğŒ³‚É–ß‚·B
 	MoveTarget.Z -= Anpan::HalfHeightOffset;
