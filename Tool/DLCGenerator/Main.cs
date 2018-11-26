@@ -92,7 +92,7 @@ namespace DLCGenerator
 				Directory.CreateDirectory(DLCPath);
 			}
 
-			var DLCList = DLCListBox.SelectedItems;
+			var DLCList = DLCListBox.CheckedItems;
 			foreach(var DLC in DLCList)
 			{
 				string DLCName = DLC.ToString();
