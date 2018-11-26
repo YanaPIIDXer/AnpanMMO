@@ -35,8 +35,8 @@ float HeightMap::GetHeight(float X, float Y) const
 	return Height;
 }
 
-// レイキャスト
-bool HeightMap::Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &OutHit) const
+// 移動可能かどうかをチェック
+bool HeightMap::CheckMovable(const Vector3D &Start, const Vector3D &End, float ClimbableHeight, Vector3D &OutHit) const
 {
 	Vector3D Ray = End - Start;
 	Vector3D DivisionVec = Ray / RayDivisionCount;

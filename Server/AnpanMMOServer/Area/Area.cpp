@@ -95,10 +95,10 @@ float Area::GetHeight(float X, float Y) const
 	return HeightData.GetHeight(X, Y);
 }
 
-// レイキャスト
-bool Area::Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &OutHit) const
+// 移動可能かどうかをチェック
+bool Area::CheckMovable(const Vector3D &Start, const Vector3D &End, float ClimbableHeight, Vector3D &OutHit) const
 {
-	return HeightData.Raycast(Start, End, OutHit);
+	return HeightData.CheckMovable(Start, End, ClimbableHeight, OutHit);
 }
 
 
