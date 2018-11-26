@@ -2,6 +2,7 @@
 #include "HeightMap.h"
 #include "AreaConfig.h"
 #include "Math/Vector3D.h"
+#include <math.h>
 
 const int HeightMap::RayDivisionCount = 32;
 
@@ -45,7 +46,7 @@ bool HeightMap::CheckMovable(const Vector3D &Start, const Vector3D &End, float C
 	{
 		Vector3D Point = Start + Vec;
 		float Height = GetHeight(Point.X, Point.Y);
-		if (Point.Z <= Height)
+		if (fabsf(Height - Point.Z) > ClimbableHeight)
 		{
 			if (i > 0)
 			{

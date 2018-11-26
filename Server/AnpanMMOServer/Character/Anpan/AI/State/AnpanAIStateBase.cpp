@@ -39,15 +39,9 @@ void AnpanAIStateBase::SetMove(const Vector3D &InMoveTarget, int Time)
 	Vector3D StartPos = PrevPos;
 	Vector3D EndPos = InMoveTarget + PrevPos;
 
-	StartPos.Z += Anpan::HalfHeightOffset;
-	EndPos.Z += Anpan::HalfHeightOffset;
-
 	AreaPtr pArea = GetParent()->GetArea();
 	pArea.lock()->CheckMovable(StartPos, EndPos, Anpan::HalfHeightOffset, MoveTarget);
 	
-	// ‚‚³‚ðŒ³‚É–ß‚·B
-	MoveTarget.Z -= Anpan::HalfHeightOffset;
-
 	MoveTime = Time;
 	MoveStartTime = Time;
 	pAI->CreateMovePacketData(MoveTarget, MoveTime);
