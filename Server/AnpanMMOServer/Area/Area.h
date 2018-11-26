@@ -46,6 +46,12 @@ public:
 
 	// ID取得.
 	u32 GetId() const { return Id; }
+
+	// 高さを取得.
+	float GetHeight(float X, float Y) const;
+	
+	// レイキャスト
+	bool Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &OutHit) const;
 	
 private:
 

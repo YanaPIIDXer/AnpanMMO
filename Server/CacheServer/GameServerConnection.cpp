@@ -57,6 +57,7 @@ void GameServerConnection::OnRecvData(size_t Size)
 // Ø’f‚³‚ê‚½B
 void GameServerConnection::OnDisconnected()
 {
+	GetSocket()->close();
 	Accept();
 }
 

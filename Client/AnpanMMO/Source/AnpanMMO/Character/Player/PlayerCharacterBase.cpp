@@ -3,6 +3,7 @@
 #include "PlayerCharacterBase.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/SkeletalMesh.h"
+#include "Components/CapsuleComponent.h"
 
 const TCHAR *APlayerCharacterBase::MeshPath = TEXT("/Game/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
 const TCHAR *APlayerCharacterBase::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
@@ -29,6 +30,8 @@ APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectIniti
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;
+
+	GetCapsuleComponent()->InitCapsuleSize(42.0f, 96.0f);
 }
 
 

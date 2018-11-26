@@ -89,6 +89,18 @@ void Area::BroadcastPacket(PacketBase *pPacket)
 	PlayerMgr.BroadcastPacket(pPacket);
 }
 
+// 高さを取得.
+float Area::GetHeight(float X, float Y) const
+{
+	return HeightData.GetHeight(X, Y);
+}
+
+// レイキャスト
+bool Area::Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &OutHit) const
+{
+	return HeightData.Raycast(Start, End, OutHit);
+}
+
 
 // アンパンが生成された。
 void Area::OnSpawnAnpan(u32 Uuid, AnpanPtr pAnpan)

@@ -3,6 +3,8 @@
 #include "Math/DamageCalcUnit.h"
 #include "Packet/PacketStopAnpan.h"
 
+const float Anpan::HalfHeightOffset = 50.0f;
+
 // コンストラクタ
 Anpan::Anpan(const Vector3D &InPosition, int Hp, int Atk, int Def, int InExp)
 	: AI(this)

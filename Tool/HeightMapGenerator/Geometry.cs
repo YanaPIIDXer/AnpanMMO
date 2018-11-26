@@ -121,7 +121,7 @@ namespace HeightMapGenerator
 			if(!IsInRange(X, Y)) { return false; }
 			
 			Vector Origin = new Vector(X, Y, Config.HeightMax);
-			Vector Ray = new Vector(X, Y, Config.HeightMin);
+			Vector Ray = new Vector(0.0f, 0.0f, Config.HeightMin);
 
 			Vector InvRay = Ray * -1.0f;
 			Vector Edge1 = VertexList[1] - VertexList[0];

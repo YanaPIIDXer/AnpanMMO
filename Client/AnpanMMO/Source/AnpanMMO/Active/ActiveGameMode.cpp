@@ -11,6 +11,7 @@
 #include "Master/MasterData.h"
 #include "Config.h"
 #include "DLC/PakFileManager.h"
+#include "Components/CapsuleComponent.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
 #include "Packet/PacketDamage.h"
@@ -129,9 +130,10 @@ void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 
 	WarpPointMgr.Spawn(Packet.AreaId);
 	
-	FVector Pos = pCharacter->GetActorLocation();
-	Pos.X = Packet.X;
-	Pos.Y = Packet.Y;
+	FVector Pos(Packet.X, Packet.Y, Packet.Z);
+	
+	// 足元の座標が送られてくるのでキャラの中心に変換。
+	Pos.Z += pCharacter->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
 	pCharacter->SetActorLocation(Pos);
 
 	pMainHUD->OnRecvMapChangeFinished();

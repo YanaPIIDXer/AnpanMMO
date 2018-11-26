@@ -136,6 +136,10 @@ public:
 		return (fabsf(X - Arg.X) >= FLT_EPSILON || fabsf(Y - Arg.Y) >= FLT_EPSILON || fabsf(Z - Arg.Z) >= FLT_EPSILON);
 	}
 
+
+	// ƒ[ƒƒxƒNƒgƒ‹
+	static const Vector3D Zero;
+
 };
 
 #endif		// #ifndef __VECTOR2D_H__

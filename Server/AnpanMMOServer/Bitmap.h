@@ -103,8 +103,8 @@ struct BitmapInfoData
 
 };
 
-// 32bitカラーデータ
-struct Color32
+// 24bitカラーデータ
+struct Color24
 {
 
 	// 赤.
@@ -117,19 +117,19 @@ struct Color32
 	u8 B;
 
 	// コンストラクタ
-	Color32()
+	Color24()
 		: R(0)
 		, G(0)
 		, B(0) {}
 
-	Color32(u8 InR, u8 InG, u8 InB)
+	Color24(u8 InR, u8 InG, u8 InB)
 		: R(InR)
 		, G(InG)
 		, B(InB) {}
 
 
 	// 黒.
-	static const Color32 Black;
+	static const Color24 Black;
 
 };
 
@@ -151,7 +151,7 @@ public:
 	bool Load(const std::string &FilePath);
 
 	// ピクセルを取得.
-	Color32 GetPixel(int X, int Y) const;
+	Color24 GetPixel(int X, int Y) const;
 
 	// 幅を取得.
 	s32 GetWidth() const { return InfoData.Width; }
@@ -177,7 +177,7 @@ private:
 	BitmapInfoData InfoData;
 
 	// カラーデータ
-	Color32 *pColorData;
+	Color24 *pColorData;
 
 };
 

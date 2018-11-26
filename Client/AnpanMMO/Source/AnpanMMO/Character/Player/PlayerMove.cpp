@@ -3,6 +3,7 @@
 #include "PlayerMove.h"
 #include "GameCharacter.h"
 #include "MMOGameInstance.h"
+#include "Components/CapsuleComponent.h"
 #include "Packet/PacketMovePlayer.h"
 
 const float PlayerMove::SendInterval = 2.0f;
@@ -13,6 +14,7 @@ PlayerMove::PlayerMove()
 	, pInst(nullptr)
 	, PrevPos(FVector::ZeroVector)
 	, SendTimer(SendInterval)
+	, CharacterHalfHeight(0.0f)
 {
 }
 
@@ -22,6 +24,7 @@ void PlayerMove::Initialize(AGameCharacter *pInCharacter, UMMOGameInstance *pInI
 	pCharacter = pInCharacter;
 	pInst = pInInst;
 	PrevPos = pCharacter->GetActorLocation();
+	CharacterHalfHeight = pCharacter->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
 }
 
 // 毎フレームの処理.
@@ -33,6 +36,12 @@ void PlayerMove::Poll(float DeltaTime)
 		SendTimer += SendInterval;
 
 		FVector Pos = pCharacter->GetActorLocation();
+		
+		// GetActorLocationで取得できるのはキャラの中心の座標なので
+		// キャラの高さの半分だけズラす。
+		// ※キャラの足元の座標を送る。
+		Pos.Z -= CharacterHalfHeight;
+
 		if (PrevPos == Pos) { return; }
 
 		PacketMovePlayer Packet(pCharacter->GetStatus().GetUuid(), Pos.X, Pos.Y, Pos.Z, pCharacter->GetActorRotation().Yaw);

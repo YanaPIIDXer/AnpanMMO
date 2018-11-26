@@ -107,7 +107,7 @@ namespace HeightMapGenerator
 		private Color HeightToColor(float Height)
 		{
 			long LongHeight = (long)Math.Abs(Height);
-			int R = ((Height < 0.0f) ? 255 : 0);
+			int R = ((Height < 0.0f) ? 1 : 0);
 			int G = (int)((LongHeight >> 8) & 0x000000FF);
 			int B = (int)(LongHeight & 0x000000FF);
 			

@@ -1,13 +1,9 @@
 #include "stdafx.h"
 #include "HeightMap.h"
-#include "Math/MathUtil.h"
+#include "AreaConfig.h"
+#include "Math/Vector3D.h"
 
-const float HeightMap::MinWidth = -10000.0f;
-const float HeightMap::MaxWidth = 10000.0f;
-const float HeightMap::MinHeight = -10000.0f;
-const float HeightMap::MaxHeight = 10000.0f;
-const float HeightMap::MinDepth = -10000.0f;
-const float HeightMap::MaxDepth = 10000.0f;
+const int HeightMap::RayDivisionCount = 32;
 
 // コンストラクタ
 HeightMap::HeightMap()
@@ -23,11 +19,11 @@ bool HeightMap::Load(const std::string &FilePath)
 // 高さを取得.
 float HeightMap::GetHeight(float X, float Y) const
 {
-	float XRate = (X - MaxDepth) / (MinDepth - MaxDepth);
-	float YRate = (Y - MaxWidth) / (MinWidth - MaxWidth);
+	float XRate = (1.0f - (X - AreaConfig::MaxDepth) / (AreaConfig::MinDepth - AreaConfig::MaxDepth));
+	float YRate = (1.0f - (Y - AreaConfig::MaxWidth) / (AreaConfig::MinWidth - AreaConfig::MaxWidth));
 	int XPixel = (int)(Bmp.GetWidth() * XRate);
 	int YPixel = (int)(Bmp.GetHeight() * YRate);
-	Color32 HeightColor = Bmp.GetPixel(XPixel, YPixel);
+	Color24 HeightColor = Bmp.GetPixel(XPixel, YPixel);
 
 	float Height = 0.0f;
 	Height += (HeightColor.G << 8);
@@ -37,4 +33,31 @@ float HeightMap::GetHeight(float X, float Y) const
 		Height *= -1.0f;
 	}
 	return Height;
+}
+
+// レイキャスト
+bool HeightMap::Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &OutHit) const
+{
+	Vector3D Ray = End - Start;
+	Vector3D DivisionVec = Ray / RayDivisionCount;
+	Vector3D Vec = Vector3D::Zero;
+	for (int i = 0; i <= RayDivisionCount; i++)
+	{
+		Vector3D Point = Start + Vec;
+		float Height = GetHeight(Point.X, Point.Y);
+		if (Point.Z <= Height)
+		{
+			if (i > 0)
+			{
+				// 一つ前に戻す。
+				Point -= DivisionVec;
+			}
+			OutHit = Point;
+			return true;
+		}
+		Vec += DivisionVec;
+	}
+
+	OutHit = End;
+	return false;
 }

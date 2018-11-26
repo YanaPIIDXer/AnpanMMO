@@ -16,17 +16,19 @@ public:
 	u32 AreaId;
 	float X;
 	float Y;
+	float Z;
 	
 
 	PacketAreaMove()
 	{
 	}
 
-	PacketAreaMove(u32 InAreaId, float InX, float InY)
+	PacketAreaMove(u32 InAreaId, float InX, float InY, float InZ)
 	{
 		AreaId = InAreaId;
 		X = InX;
 		Y = InY;
+		Z = InZ;
 		
 	}
 
@@ -35,6 +37,7 @@ public:
 		pStream->Serialize(&AreaId);
 		pStream->Serialize(&X);
 		pStream->Serialize(&Y);
+		pStream->Serialize(&Z);
 		
 		return true;
 	}

@@ -31,6 +31,10 @@ public:
 	// 倒したときに獲得できる経験値を取得.
 	int GetExp() const { return Exp; }
 
+	
+	// 高さオフセット（半分）
+	static const float HalfHeightOffset;
+
 protected:
 
 	// ダメージを受けた。

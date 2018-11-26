@@ -2,6 +2,7 @@
 #include "AnpanAIStateBase.h"
 #include "Character/Anpan/Anpan.h"
 #include "Math/MathUtil.h"
+#include "Area/Area.h"
 
 // コンストラクタ
 AnpanAIStateBase::AnpanAIStateBase(Anpan *pInParent)
@@ -35,7 +36,18 @@ void AnpanAIStateBase::Poll(int DeltaTime)
 void AnpanAIStateBase::SetMove(const Vector3D &InMoveTarget, int Time)
 {
 	PrevPos = pParent->GetPosition();
-	MoveTarget = InMoveTarget + PrevPos;
+	Vector3D StartPos = PrevPos;
+	Vector3D EndPos = InMoveTarget + PrevPos;
+
+	StartPos.Z += Anpan::HalfHeightOffset;
+	EndPos.Z += Anpan::HalfHeightOffset;
+
+	AreaPtr pArea = GetParent()->GetArea();
+	pArea.lock()->Raycast(StartPos, EndPos, MoveTarget);
+	
+	// 高さを元に戻す。
+	MoveTarget.Z -= Anpan::HalfHeightOffset;
+
 	MoveTime = Time;
 	MoveStartTime = Time;
 	pAI->CreateMovePacketData(MoveTarget, MoveTime);

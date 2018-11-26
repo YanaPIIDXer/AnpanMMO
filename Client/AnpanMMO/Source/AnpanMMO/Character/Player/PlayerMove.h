@@ -44,4 +44,7 @@ private:
 	// 送信タイマー
 	float SendTimer;
 
+	// キャラの高さの半分.
+	float CharacterHalfHeight;
+
 };
