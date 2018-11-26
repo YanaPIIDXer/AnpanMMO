@@ -47,6 +47,11 @@ bool HeightMap::Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &Ou
 		float Height = GetHeight(Point.X, Point.Y);
 		if (Point.Z <= Height)
 		{
+			if (i > 0)
+			{
+				// ˆê‚Â‘O‚É–ß‚·B
+				Point -= DivisionVec;
+			}
 			OutHit = Point;
 			return true;
 		}
