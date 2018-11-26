@@ -174,7 +174,7 @@ namespace DLCGenerator
 				return;
 			}
 
-			VersionGenerator VersionGen = new VersionGenerator(Directory.GetFiles(Config.PakPath));
+			VersionGenerator VersionGen = new VersionGenerator(Directory.GetFiles(Config.PakPath, "*.pak"));
 			if (!VersionGen.Generate())
 			{
 				MessageBox.Show("バージョンファイルの生成に失敗しました。");
