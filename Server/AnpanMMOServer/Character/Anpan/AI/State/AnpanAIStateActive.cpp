@@ -81,7 +81,10 @@ void AnpanAIStateActive::UpdateAttack(int DeltaTime)
 // ターゲットの方向を向く。
 void AnpanAIStateActive::RotateToTarget()
 {
-	Vector3D TargetVec = (pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition()).GetNormalized();
+	Vector3D TargetPos = pCurrentTarget.lock()->GetPosition();
+	Vector3D MyPos = GetParent()->GetPosition();
+	TargetPos.Z = MyPos.Z;		// 高さは考慮しない。
+	Vector3D TargetVec = (TargetPos - MyPos).GetNormalized();
 	Vector3D CenterVec = GetParent()->GetCenterVec();
 
 	float Dot = MathUtil::Dot(TargetVec, CenterVec);
@@ -106,7 +109,10 @@ void AnpanAIStateActive::MoveToTarget()
 {
 	if (IsApproached()) { return; }
 
-	Vector3D TargetVec = (pCurrentTarget.lock()->GetPosition() - GetParent()->GetPosition());
+	Vector3D TargetPos = pCurrentTarget.lock()->GetPosition();
+	Vector3D MyPos = GetParent()->GetPosition();
+	TargetPos.Z = MyPos.Z;		// 高さは考慮しない。
+	Vector3D TargetVec = TargetPos - MyPos;
 	float Size = TargetVec.GetSize();
 	TargetVec.Normalize();
 	TargetVec *= (Size - ApproachDist);

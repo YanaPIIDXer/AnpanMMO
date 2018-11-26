@@ -50,8 +50,8 @@ public:
 	// 高さを取得.
 	float GetHeight(float X, float Y) const;
 	
-	// レイキャスト
-	bool Raycast(const Vector3D &Start, const Vector3D &End, Vector3D &OutHit) const;
+	// 移動可能かどうかをチェック
+	bool CheckMovable(const Vector3D &Start, const Vector3D &End, float ClimbableHeight, Vector3D &OutHit) const;
 	
 private:
 

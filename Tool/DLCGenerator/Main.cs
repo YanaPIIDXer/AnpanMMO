@@ -92,7 +92,7 @@ namespace DLCGenerator
 				Directory.CreateDirectory(DLCPath);
 			}
 
-			var DLCList = DLCListBox.SelectedItems;
+			var DLCList = DLCListBox.CheckedItems;
 			foreach(var DLC in DLCList)
 			{
 				string DLCName = DLC.ToString();
@@ -106,15 +106,6 @@ namespace DLCGenerator
 			}
 
 			MoveDLCs();
-
-			VersionGenerator VersionGen = new VersionGenerator(Directory.GetFiles(Config.PakPath));
-			if(!VersionGen.Generate())
-			{
-				MessageBox.Show("バージョンファイルの生成に失敗しました。");
-				return;
-			}
-
-			Console.WriteLine("バージョンファイルを生成しました。");
 
 			MessageBox.Show("完了しました。");
 		}
@@ -182,6 +173,15 @@ namespace DLCGenerator
 				MessageBox.Show("転送先の読み込みに失敗しました。");
 				return;
 			}
+
+			VersionGenerator VersionGen = new VersionGenerator(Directory.GetFiles(Config.PakPath, "*.pak"));
+			if (!VersionGen.Generate())
+			{
+				MessageBox.Show("バージョンファイルの生成に失敗しました。");
+				return;
+			}
+
+			Console.WriteLine("バージョンファイルを生成しました。");
 
 			string[] Files = Directory.GetFiles(Config.PakPath);
 			foreach(var FilePath in Files)
