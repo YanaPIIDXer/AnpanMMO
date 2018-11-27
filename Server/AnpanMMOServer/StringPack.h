@@ -53,7 +53,7 @@ public:
 		for (unsigned int i = 0; i < SIZE; i++)
 		{
 			if (pString[i] == '\0') { break; }
-			Length += GetByte(pString[i]);
+			Length += GetByte((unsigned char) pString[i]);
 		}
 		return Length;
 	}
@@ -72,7 +72,7 @@ private:
 
 
 	// ƒoƒCƒg”‚ðŽæ“¾.
-	static u32 GetByte(char Ch)
+	static u32 GetByte(unsigned char Ch)
 	{
 		if ((Ch >= 0x00) && (Ch <= 0x7f)) { return 1; }
 		if ((Ch >= 0xc2) && (Ch <= 0xdf)) { return 2; }
