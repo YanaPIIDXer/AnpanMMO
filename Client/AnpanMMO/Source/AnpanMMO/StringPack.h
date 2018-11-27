@@ -16,6 +16,7 @@ public:
 	StringPack()
 	{
 		pString = new char[SIZE];
+		memset(pString, 0, SIZE);
 	}
 
 	StringPack(char *pStr)
@@ -33,7 +34,13 @@ public:
 	// •¶Žš—ñ‚ðƒZƒbƒg.
 	void Set(char *pStr)
 	{
-		memcpy(pString, pStr, strlen(pStr));
+		int Size = strlen(pStr);
+		if (Size >= SIZE)
+		{
+			Size = SIZE - 1;
+		}
+		memset(pString, 0, SIZE);
+		memcpy(pString, pStr, Size);
 	}
 
 	// Žæ“¾.
