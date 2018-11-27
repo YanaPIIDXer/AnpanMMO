@@ -1,11 +1,11 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "TitleScreenWidget.h"
-#include "MMOGameInstance.h"
 #include "Config.h"
-#include "Packet/PacketLogInRequest.h"
-#include "IdManager.h"
+#include "MMOGameInstance.h"
+#include "Title/TitleGameMode.h"
 #include "Util.h"
+#include "Kismet/GameplayStatics.h"
 
 const TCHAR *UTitleScreenWidget::WidgetPath = TEXT("/Game/Blueprints/UI/Title/TitleScreen.TitleScreen");
 
@@ -67,11 +67,9 @@ void UTitleScreenWidget::ConnectToGameServer()
 	OnConnectedGameServer(true);
 
 	// ログインパケット送信.
-	std::string FilePath = TCHAR_TO_UTF8(*Config::GetIdFilePath());
-	IdManager IdMgr(FilePath);
-	std::string Id = IdMgr.GetId();
-	PacketLogInRequest Packet(Id);
-	pInst->SendPacket(&Packet);
+	ATitleGameMode *pGameMode = Cast<ATitleGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->SendLogInRequest();
 }
 
 // フェードが完了した。
