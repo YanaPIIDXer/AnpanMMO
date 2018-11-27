@@ -7,7 +7,7 @@
 #include "MMOGameInstance.h"
 #include "Util.h"
 
-const TCHAR *UCharacterNameInputWidget::AssetPath = TEXT("/Game/Blueprints/UI/Title/CharacterNameInput");
+const TCHAR *UCharacterNameInputWidget::AssetPath = TEXT("/Game/Blueprints/UI/Title/CharacterNameInput.CharacterNameInput");
 
 // •\Ž¦.
 UCharacterNameInputWidget *UCharacterNameInputWidget::Show(UObject *pOuter, int32 ZOrder)
