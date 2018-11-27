@@ -43,7 +43,7 @@ public:
 	virtual bool Serialize(float *pValue);
 
 	// 読み込み用か？
-	virtual bool IsReadMode() { return true; }
+	virtual bool IsReadMode() const { return true; }
 
 	// エラーが発生しているか？
 	virtual bool IsError() const { return bError; }
