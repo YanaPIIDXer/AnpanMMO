@@ -40,13 +40,26 @@ void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	PacketLogInResult::ResultCode ResultCode = PacketLogInResult::Success;
-	if (Packet.Result != CachePacketLogInResult::Success)
+	switch (Packet.Result)
 	{
-		ResultCode = PacketLogInResult::Error;
+		case CachePacketLogInResult::NoCharacter:
+
+			ResultCode = PacketLogInResult::NoCharacter;
+			break;
+
+		case CachePacketLogInResult::Error:
+
+			ResultCode = PacketLogInResult::Error;
+			break;
 	}
-	if (!ClientManager::GetInstance().GetFromCustomerId(Packet.Uuid).expired())
+
+	if (Packet.Result == CachePacketLogInResult::Success)
 	{
-		ResultCode = PacketLogInResult::DoubleLogIn;
+		// ダブルログインチェックはリザルトコードがSuccessだった場合のみ行う。
+		if (!ClientManager::GetInstance().GetFromCustomerId(Packet.Uuid).expired())
+		{
+			ResultCode = PacketLogInResult::DoubleLogIn;
+		}
 	}
 
 	Client *pClient = GetParent();
