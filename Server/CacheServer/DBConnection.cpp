@@ -47,29 +47,49 @@ bool DBConnection::LoadUserData(char *pUserCode, int &OutId)
 	return true;
 }
 
-// キャラクタパラメータ読み込み
-bool DBConnection::LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, bool bCreateIfNotFound)
+// キャラクタデータが存在するか？
+bool DBConnection::IsExistCharacter(int Id, bool &OutResult)
 {
-	MySqlQuery Query = Connection.CreateQuery("select MaxHp, Atk, Def, Exp from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select CustomerId from CharacterData where CustomerId = ?");
 	Query.BindInt(&Id);
 
+	int DummyId;
+	Query.BindResultInt(&DummyId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	OutResult = Query.Fetch();
+	
+	return true;
+}
+
+// キャラクタデータ登録.
+bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName)
+{
+	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData values(?, ?, 50, 10, 10, 0, 1, -1000.0, 0.0, 0.0);");
+	Query.BindInt(&Id);
+	Query.BindString(pCharacterName);
+	if (!Query.ExecuteQuery()) { return false; }
+	return true;
+}
+
+// キャラクタパラメータ読み込み
+bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp)
+{
+	MySqlQuery Query = Connection.CreateQuery("select Name, MaxHp, Atk, Def, Exp from CharacterData where CustomerId = ?");
+	Query.BindInt(&Id);
+
+	char NameStr[256];
+	
+	Query.BindResultString(NameStr);
 	Query.BindResultInt(&OutMaxHp);
 	Query.BindResultInt(&OutAtk);
 	Query.BindResultInt(&OutDef);
 	Query.BindResultInt(&OutExp);
 
 	if (!Query.ExecuteQuery()) { return false; }
-	if (!Query.Fetch())
-	{
-		if (bCreateIfNotFound)
-		{
-			// 生成しなおして読み直す。
-			if (!RegisterCharacterData(Id)) { return false; }
-			return LoadCharacterParameter(Id, OutMaxHp, OutAtk, OutDef, OutExp, false);
-		}
-		return false;
-	}
+	if (!Query.Fetch()) { return false; }
 
+	OutName = NameStr;
 	return true;
 }
 
@@ -130,17 +150,5 @@ bool DBConnection::RegisterUserData(char *pUserCode)
 	if (!UserQuery.Fetch()) { return false; }
 	UserQuery.Close();
 
-	if (!RegisterCharacterData(Id)) { return false; }
-	
-	return true;
-}
-
-// キャラクタデータ登録.
-bool DBConnection::RegisterCharacterData(u32 Id)
-{
-	std::cout << "Register Character Data" << std::endl;
-	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData values(?, 50, 10, 10, 0, 1, -1000.0, 0.0, 0.0);");
-	Query.BindInt(&Id);
-	if (!Query.ExecuteQuery()) { return false; }
 	return true;
 }

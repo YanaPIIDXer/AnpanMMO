@@ -4,10 +4,10 @@
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
-#include "CachePacketBase.h"
+#include "ProcessPacketBase.h"
 
 
-class CachePacketCharacterDataResult  : public CachePacketBase
+class CachePacketCharacterDataResult  : public ProcessPacketBase
 {
 public:
 	virtual PacketID GetPacketID() const { return CacheCharacterDataResult; }
@@ -19,6 +19,7 @@ public:
 	};
 
 	u8 Result;
+	std::string Name;
 	s32 MaxHp;
 	s32 Atk;
 	s32 Def;
@@ -33,10 +34,11 @@ public:
 	{
 	}
 
-	CachePacketCharacterDataResult(u32 InClientId, u8 InResult, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
+	CachePacketCharacterDataResult(u32 InClientId, u8 InResult, std::string InName, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
 		Result = InResult;
+		Name = InName;
 		MaxHp = InMaxHp;
 		Atk = InAtk;
 		Def = InDef;
@@ -50,8 +52,9 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		CachePacketBase::Serialize(pStream);
+		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
+		pStream->Serialize(&Name);
 		pStream->Serialize(&MaxHp);
 		pStream->Serialize(&Atk);
 		pStream->Serialize(&Def);

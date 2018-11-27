@@ -15,6 +15,7 @@ public:
 	{
 		Success,
 		DoubleLogIn,
+		NoCharacter,
 		Error,
 	};
 

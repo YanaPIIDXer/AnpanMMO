@@ -20,7 +20,7 @@ class ANPANMMO_API USimpleDialog : public UUserWidget
 public:
 
 	// 表示.
-	static USimpleDialog *Show(UObject *pOuter, const FString &InDisplayText);
+	static USimpleDialog *Show(UObject *pOuter, const FString &InDisplayText, int32 ZOrder = 0);
 
 	// コンストラクタ
 	USimpleDialog(const FObjectInitializer &ObjectInitializer);

@@ -54,15 +54,15 @@ void UMMOGameInstance::Close()
 void UMMOGameInstance::SendPacket(PacketBase *pPacket)
 {
 	check(pConnection != nullptr);
-
 	pConnection->SendPacket(pPacket);
 }
 
 // ステータスを受信した。
-void UMMOGameInstance::OnRecvStatus(uint32 Uuid, int32 MaxHp, int32 Atk, int32 Def, int32 Exp)
+void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, int32 MaxHp, int32 Atk, int32 Def, int32 Exp)
 {
 	StatusCache.SetUuid(Uuid);
 	StatusCache.Set(MaxHp, Atk, Def);
+	StatusCache.SetName(Name);
 	StatusCache.SetExp(Exp);
 }
 

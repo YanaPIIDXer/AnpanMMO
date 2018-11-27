@@ -45,6 +45,9 @@ private:
 	// ログインリクエストを受信した。
 	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
 
+	// キャラクタ作成リクエストを受信した。
+	void OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream);
+
 	// キャラクタ情報リクエストを受信した。
 	void OnRecvCharacterDataRequest(MemoryStreamInterface *pStream);
 

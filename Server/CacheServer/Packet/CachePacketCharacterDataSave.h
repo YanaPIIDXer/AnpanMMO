@@ -4,10 +4,10 @@
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
-#include "CachePacketBase.h"
+#include "ProcessPacketBase.h"
 
 
-class CachePacketCharacterDataSave  : public CachePacketBase
+class CachePacketCharacterDataSave  : public ProcessPacketBase
 {
 public:
 	virtual PacketID GetPacketID() const { return CacheCharacterDataSave; }
@@ -46,7 +46,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		CachePacketBase::Serialize(pStream);
+		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&CustomerId);
 		pStream->Serialize(&MaxHp);
 		pStream->Serialize(&Atk);

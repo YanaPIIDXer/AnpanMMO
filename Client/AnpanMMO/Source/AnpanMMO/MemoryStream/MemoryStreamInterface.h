@@ -14,28 +14,31 @@ public:
 	virtual ~MemoryStreamInterface() {}
 
 	//符号付き３２ビットシリアライズ
-	virtual bool Serialize( s32 *pValue ) = 0;
+	virtual bool Serialize(s32 *pValue) = 0;
 
 	//符号無し３２ビットシリアライズ
-	virtual bool Serialize( u32 *pValue ) = 0;
+	virtual bool Serialize(u32 *pValue) = 0;
 
 	//符号付き１６ビットシリアライズ
-	virtual bool Serialize( s16 *pValue ) = 0;
+	virtual bool Serialize(s16 *pValue) = 0;
 
 	//符号無し１６ビットシリアライズ
-	virtual bool Serialize( u16 *pValue ) = 0;
+	virtual bool Serialize(u16 *pValue) = 0;
 
 	//符号付き８ビットシリアライズ
-	virtual bool Serialize( s8 *pValue ) = 0;
+	virtual bool Serialize(s8 *pValue) = 0;
 
 	//符号無し８ビットシリアライズ
-	virtual bool Serialize( u8 *pValue ) = 0;
+	virtual bool Serialize(u8 *pValue) = 0;
 
 	//文字列シリアライズ
-	virtual bool Serialize( std::string *pValue ) = 0;
+	virtual bool Serialize(std::string *pValue) = 0;
 
 	// floatシリアライズ
 	virtual bool Serialize(float *pValue) = 0;
+
+	// 読み込み用か？
+	virtual bool IsReadMode() const = 0;
 
 	// エラーが発生しているか？
 	virtual bool IsError() const = 0;

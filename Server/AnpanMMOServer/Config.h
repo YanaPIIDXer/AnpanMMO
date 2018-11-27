@@ -15,6 +15,9 @@ public:
 	// キャッシュサーバのポート
 	static const int CacheServerPort;
 
+	// キャラクタ名の長さ最大.
+	static const u32 CharacterNameMaxLength;
+
 };
 
 #endif		// #ifndef __CONFIG_H__

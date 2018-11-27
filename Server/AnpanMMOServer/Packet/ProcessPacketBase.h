@@ -5,9 +5,9 @@
 #include "MemoryStream/MemoryStreamInterface.h"
 
 /**
- * キャッシュサーバ用パケットベースクラス
+ * 他プロセスとの通信用パケットベースクラス
  */
-class CachePacketBase : public PacketBase
+class ProcessPacketBase : public PacketBase
 {
 
 public:

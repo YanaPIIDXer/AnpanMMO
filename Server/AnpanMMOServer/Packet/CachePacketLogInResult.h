@@ -4,10 +4,10 @@
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
-#include "CachePacketBase.h"
+#include "ProcessPacketBase.h"
 
 
-class CachePacketLogInResult  : public CachePacketBase
+class CachePacketLogInResult  : public ProcessPacketBase
 {
 public:
 	virtual PacketID GetPacketID() const { return CacheLogInResult; }
@@ -15,11 +15,12 @@ public:
 	enum ResultCode
 	{
 		Success,
+		NoCharacter,
 		Error,
 	};
 
 	u8 Result;
-	s32 Uuid;
+	s32 CustomerId;
 	u32 LastAreaId;
 	
 
@@ -27,20 +28,20 @@ public:
 	{
 	}
 
-	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InUuid, u32 InLastAreaId)
+	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InCustomerId, u32 InLastAreaId)
 	{
 		ClientId = InClientId;
 		Result = InResult;
-		Uuid = InUuid;
+		CustomerId = InCustomerId;
 		LastAreaId = InLastAreaId;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		CachePacketBase::Serialize(pStream);
+		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
-		pStream->Serialize(&Uuid);
+		pStream->Serialize(&CustomerId);
 		pStream->Serialize(&LastAreaId);
 		
 		return true;

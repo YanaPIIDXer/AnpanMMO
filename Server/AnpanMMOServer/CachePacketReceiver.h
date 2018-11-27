@@ -45,6 +45,9 @@ private:
 	// ログイン結果を受信した。
 	void OnRecvLogInResult(MemoryStreamInterface *pStream);
 
+	// キャラクタ作成結果を受信した。
+	void OnRecvCreateCharacterResult(MemoryStreamInterface *pStream);
+
 	// キャラクタ情報の結果を受信した。
 	void OnRecvCharacterDataResult(MemoryStreamInterface *pStream);
 

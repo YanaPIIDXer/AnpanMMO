@@ -6,13 +6,13 @@
 const TCHAR *USimpleDialog::BlueprintPath = TEXT("/Game/Blueprints/UI/System/SimpleDialog.SimpleDialog");
 
 // •\Ž¦.
-USimpleDialog *USimpleDialog::Show(UObject *pOuter, const FString &InDisplayText)
+USimpleDialog *USimpleDialog::Show(UObject *pOuter, const FString &InDisplayText, int32 ZOrder)
 {
 	USimpleDialog *pDialog = Util::LoadBlueprint<USimpleDialog>(pOuter, BlueprintPath);
 	check(pDialog != nullptr);
 
 	pDialog->DisplayText = InDisplayText;
-	pDialog->AddToViewport();
+	pDialog->AddToViewport(ZOrder);
 
 	return pDialog;
 }

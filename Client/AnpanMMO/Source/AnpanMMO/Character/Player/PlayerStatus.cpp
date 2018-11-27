@@ -5,6 +5,7 @@
 // コンストラクタ
 PlayerStatus::PlayerStatus()
 	: Uuid(0)
+	, Name("")
 	, MaxHp(1)
 	, Atk(10)
 	, Def(10)

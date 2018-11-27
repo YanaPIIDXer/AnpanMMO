@@ -30,6 +30,12 @@ public:
 	// 経験値取得.
 	int GetExp() const { return Exp.Get(); }
 
+	// 名前を設定.
+	void SetName(const std::string &InName) { Name = InName; }
+
+	// 名前を取得.
+	const std::string &GetName() const { return Name; }
+
 	// キャラクタタイプを取得.
 	virtual u8 GetCharacterType() const { return CharacterType::Player; }
 
@@ -40,6 +46,9 @@ private:
 
 	// 経験値.
 	PlayerExp Exp;
+
+	// 名前.
+	std::string Name;
 
 
 	// レベルアップコールバック

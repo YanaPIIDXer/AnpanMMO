@@ -54,6 +54,9 @@ public:
 	// floatシリアライズ
 	virtual bool Serialize(float *pValue);
 
+	// 読み込み用か？
+	virtual bool IsReadMode() const { return false; }
+
 	// エラーが発生しているか？
 	virtual bool IsError() const { return bError; }
 

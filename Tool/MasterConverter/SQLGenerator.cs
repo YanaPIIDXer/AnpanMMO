@@ -59,7 +59,7 @@ namespace MasterConverter
 				Line += GetSQLTypeName(Col.DataType) + ",";
 				Writer.WriteLine(Line);
 			}
-			Writer.WriteLine("PRIMARY KEY(`" + Columns[0].Name + "`)\n);");
+			Writer.WriteLine("PRIMARY KEY(`" + Columns[0].Name + "`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
 
 			Writer.WriteLine("LOCK TABLES `" + TableName + "` WRITE;");
 
