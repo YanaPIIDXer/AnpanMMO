@@ -7,6 +7,8 @@
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInRequest.h"
 #include "Packet/PacketLogInResult.h"
+#include "Packet/PacketCreateCharacterRequest.h"
+#include "Packet/PacketCreateCharacterResult.h"
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/CachePacketLogInRequest.h"
 #include "Packet/CachePacketLogInResult.h"
@@ -18,6 +20,7 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
 	AddPacketFunction(LogInRequest, boost::bind(&ClientStateTitle::OnRecvLogInRequest, this, _2));
+	AddPacketFunction(CreateCharacterRequest, boost::bind(&ClientStateTitle::OnRecvCreateCharacterRequest, this, _2));
 	AddPacketFunction(CacheLogInResult, boost::bind(&ClientStateTitle::OnRecvCacheLogInResult, this, _2));
 	AddPacketFunction(CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
 }
@@ -31,6 +34,13 @@ void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 
 	CachePacketLogInRequest CachePacket(GetParent()->GetUuid(), Packet.UserCode);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+}
+
+// キャラクタ作成リクエストを受信した。
+void ClientStateTitle::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream)
+{
+	PacketCreateCharacterRequest Packet;
+	Packet.Serialize(pStream);
 }
 
 // キャッシュサーバからログイン結果を受信した。
