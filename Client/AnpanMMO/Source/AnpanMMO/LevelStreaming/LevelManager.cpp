@@ -6,7 +6,6 @@
 // コンストラクタ
 ULevelManager::ULevelManager(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
-	, pWorld(nullptr)
 	, pStreamingLevel(nullptr)
 	, bIsLoaded(false)
 {
@@ -28,7 +27,8 @@ void ULevelManager::Load(const FString &LevelPath)
 {
 	if (pStreamingLevel != nullptr)
 	{
-		pWorld->RemoveStreamingLevel(pStreamingLevel);
+		pStreamingLevel->SetShouldBeVisible(false);
+		pStreamingLevel->SetShouldBeLoaded(false);
 		pStreamingLevel = nullptr;
 	}
 	bool bSuccess = false;

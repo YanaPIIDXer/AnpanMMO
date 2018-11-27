@@ -58,7 +58,6 @@ void AActiveGameMode::BeginPlay()
 	PlayerMgr.SetWorld(GetWorld());
 	AnpanMgr.SetWorld(GetWorld());
 	WarpPointMgr.SetWorld(GetWorld());
-	pLevelManager->SetWorld(GetWorld());
 	pLevelManager->OnLevelLoadFinished.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnLevelLoadFinished);
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
