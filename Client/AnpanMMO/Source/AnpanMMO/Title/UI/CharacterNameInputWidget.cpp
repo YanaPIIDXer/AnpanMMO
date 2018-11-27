@@ -10,7 +10,7 @@
 const TCHAR *UCharacterNameInputWidget::AssetPath = TEXT("/Game/Blueprints/UI/Title/CharacterNameInput");
 
 // •\Ž¦.
-UCharacterNameInputWidget *Show(UObject *pOuter, int32 ZOrder)
+UCharacterNameInputWidget *UCharacterNameInputWidget::Show(UObject *pOuter, int32 ZOrder)
 {
 	UCharacterNameInputWidget *pWidget = Util::LoadBlueprint<UCharacterNameInputWidget>(pOuter, AssetPath);
 	check(pWidget != nullptr);
