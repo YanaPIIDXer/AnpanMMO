@@ -44,9 +44,9 @@ private:
 	// World
 	TWeakObjectPtr<UWorld> pWorld;
 	
-	// レベルストリーミング
+	// ストリーミング中のレベル
 	UPROPERTY()
-	ULevelStreamingDynamic *pLevelStreaming;
+	ULevelStreamingDynamic *pStreamingLevel;
 
 	// ロードが完了したか？
 	bool bIsLoaded;

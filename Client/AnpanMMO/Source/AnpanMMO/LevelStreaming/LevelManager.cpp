@@ -7,7 +7,7 @@
 ULevelManager::ULevelManager(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pWorld(nullptr)
-	, pLevelStreaming(nullptr)
+	, pStreamingLevel(nullptr)
 	, bIsLoaded(false)
 {
 }
@@ -15,8 +15,8 @@ ULevelManager::ULevelManager(const FObjectInitializer &ObjectInitializer)
 // 毎フレームの処理.
 void ULevelManager::Poll()
 {
-	if (pLevelStreaming == nullptr) { return; }
-	if (!bIsLoaded && pLevelStreaming->GetLoadedLevel() != nullptr)
+	if (pStreamingLevel == nullptr) { return; }
+	if (!bIsLoaded && pStreamingLevel->GetLoadedLevel() != nullptr)
 	{
 		OnLevelLoadFinished.ExecuteIfBound();
 		bIsLoaded = true;
@@ -26,31 +26,31 @@ void ULevelManager::Poll()
 // ロード
 void ULevelManager::Load(const FString &LevelPath)
 {
-	if (pLevelStreaming != nullptr)
+	if (pStreamingLevel != nullptr)
 	{
-		pWorld->RemoveStreamingLevel(pLevelStreaming);
-		pLevelStreaming = nullptr;
+		pWorld->RemoveStreamingLevel(pStreamingLevel);
+		pStreamingLevel = nullptr;
 	}
 	bool bSuccess = false;
-	pLevelStreaming = ULevelStreamingDynamic::LoadLevelInstance(this, LevelPath, FVector::ZeroVector, FRotator::ZeroRotator, bSuccess);
+	pStreamingLevel = ULevelStreamingDynamic::LoadLevelInstance(this, LevelPath, FVector::ZeroVector, FRotator::ZeroRotator, bSuccess);
 	if (!bSuccess)
 	{
 		UE_LOG(LogTemp, Log, TEXT("Level %s Load Failed..."), *LevelPath);
 		return;
 	}
 
-	pLevelStreaming->SetShouldBeLoaded(true);
-	pLevelStreaming->SetShouldBeVisible(true);
-	pLevelStreaming->bShouldBlockOnLoad = false;
-	pLevelStreaming->bInitiallyLoaded = true;
-	pLevelStreaming->bInitiallyVisible = true;
-	pLevelStreaming->PackageNameToLoad = *LevelPath;
+	pStreamingLevel->SetShouldBeLoaded(true);
+	pStreamingLevel->SetShouldBeVisible(true);
+	pStreamingLevel->bShouldBlockOnLoad = false;
+	pStreamingLevel->bInitiallyLoaded = true;
+	pStreamingLevel->bInitiallyVisible = true;
+	pStreamingLevel->PackageNameToLoad = *LevelPath;
 	
 	bIsLoaded = false;
 
 	// ↓動かない。
-	//pLevelStreaming->OnLevelLoaded.AddDynamic(this, &ULevelManager::OnLevelLoaded);
+	//pStreamingLevel->OnLevelLoaded.AddDynamic(this, &ULevelManager::OnLevelLoaded);
 
 	// ↓実はULevelStreamingDynamic::LoadLevelInstance関数が呼び出す関数内で実行されているらしい。
-	//pWorld->AddStreamingLevel(pLevelStreaming);
+	//pWorld->AddStreamingLevel(pStreamingLevel);
 }
