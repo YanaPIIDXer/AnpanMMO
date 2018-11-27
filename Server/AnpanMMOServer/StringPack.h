@@ -74,7 +74,7 @@ private:
 	// ƒoƒCƒg”‚ðŽæ“¾.
 	static u32 GetByte(unsigned char Ch)
 	{
-		if ((Ch >= 0x00) && (Ch <= 0x7f)) { return 1; }
+		if (Ch <= 0x7f) { return 1; }
 		if ((Ch >= 0xc2) && (Ch <= 0xdf)) { return 2; }
 		if ((Ch >= 0xe0) && (Ch <= 0xef)) { return 3; }
 		if ((Ch >= 0xf0) && (Ch <= 0xf7)) { return 4; }
