@@ -152,6 +152,7 @@
     <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="ClientState\ClientStateTitle.h" />
     <ClInclude Include="Area\HeightMap.h" />
+    <ClInclude Include="StringPack.h" />
     <ClInclude Include="TCPConnection.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="EndianConverter.h" />
