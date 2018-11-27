@@ -88,7 +88,10 @@ void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 	if (Packet.Result == CachePacketLogInResult::Success)
 	{
 		// ダブルログインチェックはリザルトコードがSuccessだった場合のみ行う。
-		if (!ClientManager::GetInstance().GetFromCustomerId(Packet.CustomerId).expired())
+		// カスタマＩＤから取得できた場合、
+		// そいつが自分自身以外だったらダブルログインと看做す。
+		ClientPtr pDoubleCheck = ClientManager::GetInstance().GetFromCustomerId(Packet.CustomerId);
+		if (!pDoubleCheck.expired() && pDoubleCheck.lock().get() != GetParent())
 		{
 			ResultCode = PacketLogInResult::DoubleLogIn;
 		}
