@@ -15,6 +15,7 @@ public:
 	enum ResultCode
 	{
 		Success,
+		NoCharacter,
 		Error,
 	};
 
