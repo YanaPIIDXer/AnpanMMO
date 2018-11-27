@@ -50,10 +50,10 @@ public:
 	u32 GetLength() const
 	{
 		u32 Length = 0;
-		for (int i = 0; i < SIZE; i++)
+		for (unsigned int i = 0; i < SIZE; i++)
 		{
 			if (pString[i] == '\0') { break; }
-			Length += GetByte(pString[i]);
+			Length += GetByte((unsigned char) pString[i]);
 		}
 		return Length;
 	}
@@ -72,14 +72,14 @@ private:
 
 
 	// ƒoƒCƒg”‚ðŽæ“¾.
-	static u32 GetByte(char Ch)
+	static u32 GetByte(unsigned char Ch)
 	{
-		if (Ch >= 0x00 && Ch <= 0x7f) { return 1; }
-		if (Ch >= 0xc2 && Ch <= 0xdf) { return 2; }
-		if (Ch >= 0xe0 && Ch <= 0xef) { return 3; }
-		if (Ch >= 0xf0 && Ch <= 0xf7) { return 4; }
-		if (Ch >= 0xf8 && Ch <= 0xfb) { return 5; }
-		if (Ch >= 0xfc && Ch <= 0xfd) { return 6; }
+		if (Ch <= 0x7f) { return 1; }
+		if ((Ch >= 0xc2) && (Ch <= 0xdf)) { return 2; }
+		if ((Ch >= 0xe0) && (Ch <= 0xef)) { return 3; }
+		if ((Ch >= 0xf0) && (Ch <= 0xf7)) { return 4; }
+		if ((Ch >= 0xf8) && (Ch <= 0xfb)) { return 5; }
+		if ((Ch >= 0xfc) && (Ch <= 0xfd)) { return 6; }
 
 		return 0;
 	}
