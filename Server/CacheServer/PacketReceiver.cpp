@@ -67,7 +67,7 @@ void PacketReceiver::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream
 	Packet.Serialize(pStream);
 
 	u8 ResultCode = CachePacketCreateCharacterResult::Success;
-	char *pCharaName = const_cast<char *>(Packet.CharacterName.Get());
+	char *pCharaName = const_cast<char *>(Packet.CharacterName.c_str());
 	if (!DBConnection::GetInstance().RegisterCharacterData(Packet.CustomerId, pCharaName))
 	{
 		ResultCode = CachePacketCreateCharacterResult::Error;

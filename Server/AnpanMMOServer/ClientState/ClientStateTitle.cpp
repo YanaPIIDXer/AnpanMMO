@@ -46,14 +46,15 @@ void ClientStateTitle::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStre
 	PacketCreateCharacterRequest Packet;
 	Packet.Serialize(pStream);
 
-	if (Packet.CharacterName.GetLength() == 0)
+	if (Packet.CharacterName.size() == 0)
 	{
 		PacketCreateCharacterResult ResultPacket(PacketCreateCharacterResult::EmptyName);
 		GetParent()->SendPacket(&ResultPacket);
 		return;
 	}
 
-	if (Packet.CharacterName.GetLength() > Config::CharacterNameMaxLength)
+	// @TODO:‘å•¶Žš‚ðl—¶‚·‚éB
+	if (Packet.CharacterName.size() > Config::CharacterNameMaxLength)
 	{
 		PacketCreateCharacterResult ResultPacket(PacketCreateCharacterResult::TooLongName);
 		GetParent()->SendPacket(&ResultPacket);
