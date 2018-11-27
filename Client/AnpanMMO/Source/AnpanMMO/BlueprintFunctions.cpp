@@ -8,9 +8,9 @@
 #include "Packet/PacketRespawnRequest.h"
 
 // 単純なダイアログを表示.
-USimpleDialog *UBlueprintFunctions::ShowSimpleDialog(UObject *pOuter, const FString &DisplayText)
+USimpleDialog *UBlueprintFunctions::ShowSimpleDialog(UObject *pOuter, const FString &DisplayText, int32 ZOrder)
 {
-	USimpleDialog *pDialog = USimpleDialog::Show(pOuter, DisplayText);
+	USimpleDialog *pDialog = USimpleDialog::Show(pOuter, DisplayText, ZOrder);
 	return pDialog;
 }
 

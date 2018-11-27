@@ -35,7 +35,7 @@ public:
 	
 	// 単純なダイアログを表示.
 	UFUNCTION(BlueprintCallable, Category = "Dialog", meta = (WorldContext = pOuter))
-	static USimpleDialog *ShowSimpleDialog(UObject *pOuter, const FString &DisplayText);
+	static USimpleDialog *ShowSimpleDialog(UObject *pOuter, const FString &DisplayText, int32 ZOrder = 0);
 
 	// エフェクト生成.
 	UFUNCTION(BlueprintCallable, Category = "Effect", meta = (WorldContext = pWorldContext))
