@@ -4,6 +4,7 @@
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "StringPack.h"
 #include "ProcessPacketBase.h"
 
 
@@ -14,14 +15,14 @@ public:
 
 	
 
-	std::string CharacterName;
+	StringPack<32> CharacterName;
 	
 
 	CachePacketCharacterCreateRequest()
 	{
 	}
 
-	CachePacketCharacterCreateRequest(u32 InClientId, std::string InCharacterName)
+	CachePacketCharacterCreateRequest(u32 InClientId, StringPack<32> InCharacterName)
 	{
 		ClientId = InClientId;
 		CharacterName = InCharacterName;
@@ -30,7 +31,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&CharacterName);
+		CharacterName.Serialize(pStream);
 		
 		return true;
 	}
