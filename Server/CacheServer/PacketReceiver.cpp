@@ -65,6 +65,16 @@ void PacketReceiver::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream
 {
 	CachePacketCreateCharacterRequest Packet;
 	Packet.Serialize(pStream);
+
+	u8 ResultCode = CachePacketCreateCharacterResult::Success;
+	char *pCharaName = const_cast<char *>(Packet.CharacterName.Get());
+	if (!DBConnection::GetInstance().RegisterCharacterData(Packet.CustomerId, pCharaName))
+	{
+		ResultCode = CachePacketCreateCharacterResult::Error;
+	}
+
+	CachePacketCreateCharacterResult ResultPacket(Packet.ClientId, ResultCode);
+	pParent->SendPacket(&ResultPacket);
 }
 
 // キャラクタ情報リクエストを受信した。
