@@ -12,7 +12,7 @@ enum PacketID
 	Damage,
 	CacheLogInRequest,
 	CacheLogInResult,
-	CacheCharacterCreateRequest,
+	CacheCreateCharacterRequest,
 	CacheCreateCharacterResult,
 	CacheCharacterDataRequest,
 	CacheCharacterDataResult,
