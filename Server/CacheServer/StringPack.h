@@ -19,6 +19,12 @@ public:
 		memset(pString, 0, SIZE);
 	}
 
+	StringPack(const StringPack &Arg)
+	{
+		pString = new char[SIZE];
+		Set(const_cast<char *>(Arg.Get()));
+	}
+
 	StringPack(char *pStr)
 	{
 		pString = new char[SIZE];
@@ -61,7 +67,12 @@ public:
 	// シリアライズ
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		if (!pStream->Serialize(pString)) { return false; }
+		size_t ByteLength = strlen(pString);
+		if (!pStream->Serialize(&ByteLength)) { return false; }
+		for (unsigned int i = 0; i < ByteLength; i++)
+		{
+			if (!pStream->Serialize(&(pString[i]))) { return false; }
+		}
 		return true;
 	}
 
