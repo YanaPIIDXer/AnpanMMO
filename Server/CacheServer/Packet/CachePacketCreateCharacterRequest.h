@@ -33,6 +33,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&CustomerId);
 		CharacterName.Serialize(pStream);
 		

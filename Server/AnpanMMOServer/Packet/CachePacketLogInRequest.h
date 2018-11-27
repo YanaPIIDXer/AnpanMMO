@@ -30,6 +30,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&UserCode);
 		
 		return true;

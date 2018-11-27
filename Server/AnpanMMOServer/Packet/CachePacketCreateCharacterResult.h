@@ -34,6 +34,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
 		
 		return true;
