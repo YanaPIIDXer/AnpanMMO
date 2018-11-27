@@ -40,7 +40,7 @@ public:
 	// •¶Žš—ñ‚ðƒZƒbƒg.
 	void Set(char *pStr)
 	{
-		int Size = strlen(pStr);
+		size_t Size = strlen(pStr);
 		if (Size >= SIZE)
 		{
 			Size = SIZE - 1;
