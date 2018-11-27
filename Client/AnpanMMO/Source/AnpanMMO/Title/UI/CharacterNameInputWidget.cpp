@@ -5,6 +5,20 @@
 #include "Packet/PacketCreateCharacterRequest.h"
 #include "Kismet/GameplayStatics.h"
 #include "MMOGameInstance.h"
+#include "Util.h"
+
+const TCHAR *UCharacterNameInputWidget::AssetPath = TEXT("/Game/Blueprints/UI/Title/CharacterNameInput");
+
+// 表示.
+UCharacterNameInputWidget *Show(UObject *pOuter, int32 ZOrder)
+{
+	UCharacterNameInputWidget *pWidget = Util::LoadBlueprint<UCharacterNameInputWidget>(pOuter, AssetPath);
+	check(pWidget != nullptr);
+
+	pWidget->AddToViewport(ZOrder);
+
+	return pWidget;
+}
 
 // コンストラクタ
 UCharacterNameInputWidget::UCharacterNameInputWidget(const FObjectInitializer &ObjectInitializer)

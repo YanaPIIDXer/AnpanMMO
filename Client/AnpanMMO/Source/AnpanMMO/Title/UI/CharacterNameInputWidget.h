@@ -17,6 +17,9 @@ class ANPANMMO_API UCharacterNameInputWidget : public UUserWidget
 
 public:
 
+	// 表示.
+	static UCharacterNameInputWidget *Show(UObject *pOuter, int32 ZOrder);
+
 	// コンストラクタ
 	UCharacterNameInputWidget(const FObjectInitializer &ObjectInitializer);
 
@@ -28,5 +31,10 @@ protected:
 	// リクエストパケット送信.
 	UFUNCTION(BlueprintCallable, Category = "Request")
 	void SendRequestPacket(const FString &Name);
+
+private:
+
+	// アセットパス
+	static const TCHAR *AssetPath;
 
 };
