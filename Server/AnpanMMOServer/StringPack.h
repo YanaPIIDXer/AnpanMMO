@@ -67,7 +67,7 @@ public:
 	// シリアライズ
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		size_t ByteLength = strlen(pString);
+		u32 ByteLength = strlen(pString);
 		if (!pStream->Serialize(&ByteLength)) { return false; }
 		for (unsigned int i = 0; i < ByteLength; i++)
 		{
