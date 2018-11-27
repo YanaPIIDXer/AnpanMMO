@@ -47,6 +47,21 @@ bool DBConnection::LoadUserData(char *pUserCode, int &OutId)
 	return true;
 }
 
+// キャラクタデータが存在するか？
+bool DBConnection::IsExistCharacter(int Id, bool &OutResult)
+{
+	MySqlQuery Query = Connection.CreateQuery("select CustomerId from CharacterData where CustomerId = ?");
+	Query.BindInt(&Id);
+
+	int DummyId;
+	Query.BindResultInt(&DummyId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	OutResult = Query.Fetch();
+	
+	return true;
+}
+
 // キャラクタデータ登録.
 bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName)
 {

@@ -17,6 +17,9 @@ public:
 	// ユーザデータ読み込み
 	bool LoadUserData(char *pUserCode, int &OutId);
 
+	// キャラクタデータが存在するか？
+	bool IsExistCharacter(int Id, bool &OutResult);
+
 	// キャラクタデータ登録.
 	bool RegisterCharacterData(u32 Id, char *pCharacterName);
 
