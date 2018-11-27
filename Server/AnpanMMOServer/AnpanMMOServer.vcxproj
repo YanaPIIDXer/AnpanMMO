@@ -198,6 +198,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TickManager.h" />
     <ClInclude Include="TypeDefs.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnpanManager.cpp" />
@@ -250,6 +251,7 @@
     <ClCompile Include="PlayerManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TickManager.cpp" />
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AnpanMMOServer.VC.db" />

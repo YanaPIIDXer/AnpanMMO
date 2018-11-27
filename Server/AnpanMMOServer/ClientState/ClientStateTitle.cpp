@@ -5,6 +5,7 @@
 #include "ClientManager.h"
 #include "CacheServerConnection.h"
 #include "Config.h"
+#include "Util.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInRequest.h"
 #include "Packet/PacketLogInResult.h"
@@ -53,8 +54,7 @@ void ClientStateTitle::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStre
 		return;
 	}
 
-	// @TODO:‘å•¶Žš‚ðl—¶‚·‚éB
-	if (Packet.CharacterName.size() > Config::CharacterNameMaxLength)
+	if (Util::CalcStringLength(Packet.CharacterName) > Config::CharacterNameMaxLength)
 	{
 		PacketCreateCharacterResult ResultPacket(PacketCreateCharacterResult::TooLongName);
 		GetParent()->SendPacket(&ResultPacket);
