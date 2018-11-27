@@ -26,9 +26,6 @@ public:
 	// デストラクタ
 	virtual ~ULevelManager() {}
 
-	// ワールドを設定
-	void SetWorld(UWorld *pInWorld) { pWorld = pInWorld; }
-
 	// 毎フレームの処理.
 	void Poll();
 
@@ -41,12 +38,9 @@ public:
 
 private:
 
-	// World
-	TWeakObjectPtr<UWorld> pWorld;
-	
-	// レベルストリーミング
+	// ストリーミング中のレベル
 	UPROPERTY()
-	ULevelStreamingDynamic *pLevelStreaming;
+	ULevelStreamingDynamic *pStreamingLevel;
 
 	// ロードが完了したか？
 	bool bIsLoaded;
