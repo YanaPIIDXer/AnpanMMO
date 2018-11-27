@@ -15,6 +15,7 @@ public:
 	{
 		Success,
 		TooLongName,
+		EmptyName,
 		Error,
 	};
 
