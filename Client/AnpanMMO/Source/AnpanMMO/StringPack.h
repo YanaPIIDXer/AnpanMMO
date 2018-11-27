@@ -15,13 +15,13 @@ public:
 	// コンストラクタ
 	StringPack()
 	{
-		pString = new u8[SIZE];
+		pString = new char[SIZE];
 		memset(pString, 0, SIZE);
 	}
 
 	StringPack(char *pStr)
 	{
-		pString = new u8[SIZE];
+		pString = new char[SIZE];
 		Set(pStr);
 	}
 
@@ -44,7 +44,7 @@ public:
 	}
 
 	// 取得.
-	const u8 *Get() const { return pString; }
+	const char *Get() const { return pString; }
 
 	// 文字列長を取得.
 	u32 GetLength() const
@@ -53,7 +53,7 @@ public:
 		for (unsigned int i = 0; i < SIZE; i++)
 		{
 			if (pString[i] == '\0') { break; }
-			Length += GetByte(pString[i]);
+			Length += GetByte((unsigned char) pString[i]);
 		}
 		return Length;
 	}
@@ -68,7 +68,7 @@ public:
 private:
 
 	// 文字列.
-	u8 *pString;
+	char *pString;
 
 
 	// バイト数を取得.
