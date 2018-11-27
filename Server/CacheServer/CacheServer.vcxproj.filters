@@ -72,9 +72,6 @@
     <ClInclude Include="MemoryStream\MemoryStreamWriter.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Packet\CachePacketBase.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="GameServerConnection.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -85,6 +82,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="DBConnection.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet\ProcessPacketBase.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

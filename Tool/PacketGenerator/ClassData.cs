@@ -174,7 +174,7 @@ namespace NativePacketGenerator
 		public void SetForCacheServerFlag()
 		{
 			IsForCacheServer = true;
-			AddInclude("CachePacketBase.h");
+			AddInclude("ProcessPacketBase.h");
 		}
 
 	}
