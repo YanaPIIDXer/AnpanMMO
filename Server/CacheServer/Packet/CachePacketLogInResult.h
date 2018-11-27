@@ -20,7 +20,7 @@ public:
 	};
 
 	u8 Result;
-	s32 Uuid;
+	s32 CustomerId;
 	u32 LastAreaId;
 	
 
@@ -28,11 +28,11 @@ public:
 	{
 	}
 
-	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InUuid, u32 InLastAreaId)
+	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InCustomerId, u32 InLastAreaId)
 	{
 		ClientId = InClientId;
 		Result = InResult;
-		Uuid = InUuid;
+		CustomerId = InCustomerId;
 		LastAreaId = InLastAreaId;
 		
 	}
@@ -40,7 +40,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&Result);
-		pStream->Serialize(&Uuid);
+		pStream->Serialize(&CustomerId);
 		pStream->Serialize(&LastAreaId);
 		
 		return true;

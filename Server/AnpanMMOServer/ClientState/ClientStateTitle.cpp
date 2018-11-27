@@ -56,7 +56,7 @@ void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 	if (Packet.Result == CachePacketLogInResult::Success)
 	{
 		// ダブルログインチェックはリザルトコードがSuccessだった場合のみ行う。
-		if (!ClientManager::GetInstance().GetFromCustomerId(Packet.Uuid).expired())
+		if (!ClientManager::GetInstance().GetFromCustomerId(Packet.CustomerId).expired())
 		{
 			ResultCode = PacketLogInResult::DoubleLogIn;
 		}
@@ -66,11 +66,14 @@ void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid(), Packet.LastAreaId);
 	pClient->SendPacket(&ResultPacket);
 
+	if (ResultCode != PacketLogInResult::Success && ResultCode != PacketLogInResult::NoCharacter) { return; }
+
+	// キャラクタが存在しなかった場合でもカスタマＩＤは登録しておく。
+	pClient->SetCustomerId(Packet.CustomerId);
+
 	if (ResultCode != PacketLogInResult::Success) { return; }
 
-	pClient->SetCustomerId(Packet.Uuid);
-
-	CachePacketCharacterDataRequest CharaRequestPacket(pClient->GetUuid(), Packet.Uuid);
+	CachePacketCharacterDataRequest CharaRequestPacket(pClient->GetUuid(), Packet.CustomerId);
 	CacheServerConnection::GetInstance()->SendPacket(&CharaRequestPacket);
 }
 
