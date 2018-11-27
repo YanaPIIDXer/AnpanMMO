@@ -4,6 +4,8 @@
 #include "DBConnection.h"
 #include "Packet/CachePacketLogInRequest.h"
 #include "Packet/CachePacketLogInResult.h"
+#include "Packet/CachePacketCreateCharacterRequest.h"
+#include "Packet/CachePacketCreateCharacterResult.h"
 #include "Packet/CachePacketCharacterDataRequest.h"
 #include "Packet/CachePacketCharacterDataResult.h"
 #include "Packet/CachePacketCharacterDataSave.h"
@@ -13,6 +15,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	: pParent(pInParent)
 {
 	AddPacketFunc(CacheLogInRequest, bind(&PacketReceiver::OnRecvLogInRequest, this, _1));
+	AddPacketFunc(CacheCreateCharacterRequest, bind(&PacketReceiver::OnRecvCreateCharacterRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSave, this, _1));
 }
@@ -55,6 +58,13 @@ void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	}
 	CachePacketLogInResult ResultPacket(Packet.ClientId, ResultCode, Id, LastAreaId);
 	pParent->SendPacket(&ResultPacket);
+}
+
+// キャラクタ作成リクエストを受信した。
+void PacketReceiver::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketCreateCharacterRequest Packet;
+	Packet.Serialize(pStream);
 }
 
 // キャラクタ情報リクエストを受信した。
