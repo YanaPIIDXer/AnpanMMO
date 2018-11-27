@@ -18,7 +18,7 @@ public:
 	bool LoadUserData(char *pUserCode, int &OutId);
 
 	// キャラクタデータ登録.
-	bool RegisterCharacterData(u32 Id, const std::string &CharacterName);
+	bool RegisterCharacterData(u32 Id, char *pCharacterName);
 
 	// キャラクタパラメータ読み込み
 	bool LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);

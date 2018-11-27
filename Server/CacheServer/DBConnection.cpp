@@ -48,12 +48,11 @@ bool DBConnection::LoadUserData(char *pUserCode, int &OutId)
 }
 
 // キャラクタデータ登録.
-bool DBConnection::RegisterCharacterData(u32 Id, const std::string &CharacterName)
+bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName)
 {
 	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData values(?, ?, 50, 10, 10, 0, 1, -1000.0, 0.0, 0.0);");
 	Query.BindInt(&Id);
-	char *pCharaName = const_cast<char *>(CharacterName.c_str());
-	Query.BindString(pCharaName);
+	Query.BindString(pCharacterName);
 	if (!Query.ExecuteQuery()) { return false; }
 	return true;
 }
