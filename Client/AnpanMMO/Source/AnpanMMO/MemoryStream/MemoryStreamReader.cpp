@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "MemoryStreamReader.h"
 #include <stdio.h>
 #include <string.h>
