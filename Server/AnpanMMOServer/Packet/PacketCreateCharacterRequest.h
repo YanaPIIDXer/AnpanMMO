@@ -4,7 +4,6 @@
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
-#include "StringPack.h"
 
 
 class PacketCreateCharacterRequest  : public PacketBase
@@ -14,14 +13,14 @@ public:
 
 	
 
-	StringPack<32> CharacterName;
+	std::string CharacterName;
 	
 
 	PacketCreateCharacterRequest()
 	{
 	}
 
-	PacketCreateCharacterRequest(StringPack<32> InCharacterName)
+	PacketCreateCharacterRequest(std::string InCharacterName)
 	{
 		CharacterName = InCharacterName;
 		
@@ -29,7 +28,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		CharacterName.Serialize(pStream);
+		pStream->Serialize(&CharacterName);
 		
 		return true;
 	}
