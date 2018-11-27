@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "MemoryStreamWriter.h"
 #include <stdio.h>
 #include <string.h>
