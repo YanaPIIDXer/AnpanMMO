@@ -51,7 +51,7 @@ void ClientStateTitle::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStre
 		return;
 	}
 
-	CachePacketCreateCharacterRequest CacheRequestPacket(GetParent()->GetUuid(), Packet.CharacterName);
+	CachePacketCreateCharacterRequest CacheRequestPacket(GetParent()->GetUuid(), GetParent()->GetCustomerId(), Packet.CharacterName);
 	CacheServerConnection::GetInstance()->SendPacket(&CacheRequestPacket);
 }
 

@@ -15,6 +15,7 @@ public:
 
 	
 
+	u32 CustomerId;
 	StringPack<32> CharacterName;
 	
 
@@ -22,15 +23,17 @@ public:
 	{
 	}
 
-	CachePacketCreateCharacterRequest(u32 InClientId, StringPack<32> InCharacterName)
+	CachePacketCreateCharacterRequest(u32 InClientId, u32 InCustomerId, StringPack<32> InCharacterName)
 	{
 		ClientId = InClientId;
+		CustomerId = InCustomerId;
 		CharacterName = InCharacterName;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&CustomerId);
 		CharacterName.Serialize(pStream);
 		
 		return true;
