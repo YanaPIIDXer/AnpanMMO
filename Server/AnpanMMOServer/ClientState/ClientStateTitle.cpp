@@ -4,6 +4,7 @@
 #include "ClientStateAreaChange.h"
 #include "ClientManager.h"
 #include "CacheServerConnection.h"
+#include "Config.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInRequest.h"
 #include "Packet/PacketLogInResult.h"
@@ -12,6 +13,7 @@
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/CachePacketLogInRequest.h"
 #include "Packet/CachePacketLogInResult.h"
+#include "Packet/CachePacketCreateCharacterRequest.h"
 #include "Packet/CachePacketCharacterDataRequest.h"
 #include "Packet/CachePacketCharacterDataResult.h"
 
@@ -41,6 +43,16 @@ void ClientStateTitle::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStre
 {
 	PacketCreateCharacterRequest Packet;
 	Packet.Serialize(pStream);
+
+	if (Packet.CharacterName.GetLength() > Config::CharacterNameMaxLength)
+	{
+		PacketCreateCharacterResult ResultPacket(PacketCreateCharacterResult::TooLongName);
+		GetParent()->SendPacket(&ResultPacket);
+		return;
+	}
+
+	CachePacketCreateCharacterRequest CacheRequestPacket(GetParent()->GetUuid(), Packet.CharacterName);
+	CacheServerConnection::GetInstance()->SendPacket(&CacheRequestPacket);
 }
 
 // キャッシュサーバからログイン結果を受信した。

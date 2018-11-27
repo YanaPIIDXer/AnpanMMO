@@ -16,7 +16,7 @@ public:
 	static const int CacheServerPort;
 
 	// ƒLƒƒƒ‰ƒNƒ^–¼‚Ì’·‚³Å‘å.
-	static const int CharacterNameMaxLength;
+	static const u32 CharacterNameMaxLength;
 
 };
 
