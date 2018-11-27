@@ -3,6 +3,7 @@
 #include "CacheServerConnection.h"
 #include "ClientManager.h"
 #include "Packet/CachePacketLogInResult.h"
+#include "Packet/CachePacketCreateCharacterResult.h"
 #include "Packet/CachePacketCharacterDataResult.h"
 
 // コンストラクタ
@@ -10,6 +11,7 @@ CachePacketReceiver::CachePacketReceiver(CacheServerConnection *pInParent)
 	: pParent(pInParent)
 {
 	AddPacketFunc(CacheLogInResult, bind(&CachePacketReceiver::OnRecvLogInResult, this, _1));
+	AddPacketFunc(CacheCreateCharacterResult, bind(&CachePacketReceiver::OnRecvCreateCharacterResult, this, _1));
 	AddPacketFunc(CacheCharacterDataResult, bind(&CachePacketReceiver::OnRecvCharacterDataResult, this, _1));
 }
 
@@ -25,6 +27,15 @@ void CachePacketReceiver::RecvPacket(PacketID ID, MemoryStreamInterface *pStream
 void CachePacketReceiver::OnRecvLogInResult(MemoryStreamInterface *pStream)
 {
 	CachePacketLogInResult Packet;
+	Packet.Serialize(pStream);
+
+	ClientManager::GetInstance().Get(Packet.ClientId).lock()->RecvPacket(Packet.GetPacketID(), pStream);
+}
+
+// キャラクタ作成結果を受信した。
+void CachePacketReceiver::OnRecvCreateCharacterResult(MemoryStreamInterface *pStream)
+{
+	CachePacketCreateCharacterResult Packet;
 	Packet.Serialize(pStream);
 
 	ClientManager::GetInstance().Get(Packet.ClientId).lock()->RecvPacket(Packet.GetPacketID(), pStream);

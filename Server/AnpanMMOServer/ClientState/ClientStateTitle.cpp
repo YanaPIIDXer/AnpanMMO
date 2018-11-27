@@ -14,6 +14,7 @@
 #include "Packet/CachePacketLogInRequest.h"
 #include "Packet/CachePacketLogInResult.h"
 #include "Packet/CachePacketCreateCharacterRequest.h"
+#include "Packet/CachePacketCreateCharacterResult.h"
 #include "Packet/CachePacketCharacterDataRequest.h"
 #include "Packet/CachePacketCharacterDataResult.h"
 
@@ -24,6 +25,7 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 	AddPacketFunction(LogInRequest, boost::bind(&ClientStateTitle::OnRecvLogInRequest, this, _2));
 	AddPacketFunction(CreateCharacterRequest, boost::bind(&ClientStateTitle::OnRecvCreateCharacterRequest, this, _2));
 	AddPacketFunction(CacheLogInResult, boost::bind(&ClientStateTitle::OnRecvCacheLogInResult, this, _2));
+	AddPacketFunction(CacheCreateCharacterResult, boost::bind(&ClientStateTitle::OnRecvCacheCreateCharacterResult, this, _2));
 	AddPacketFunction(CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
 }
 
@@ -97,6 +99,22 @@ void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 
 	CachePacketCharacterDataRequest CharaRequestPacket(pClient->GetUuid(), Packet.CustomerId);
 	CacheServerConnection::GetInstance()->SendPacket(&CharaRequestPacket);
+}
+
+// キャッシュサーバからキャラクタ作成結果を受信した。
+void ClientStateTitle::OnRecvCacheCreateCharacterResult(MemoryStreamInterface *pStream)
+{
+	CachePacketCreateCharacterResult Packet;
+	Packet.Serialize(pStream);
+
+	u8 ResultCode = PacketCreateCharacterResult::Success;
+	if (Packet.Result == CachePacketCreateCharacterResult::Error)
+	{
+		ResultCode = PacketCreateCharacterResult::Error;
+	}
+
+	PacketCreateCharacterResult ResultPacket(ResultCode);
+	GetParent()->SendPacket(&ResultPacket);
 }
 
 // キャッシュサーバからキャラクタデータを受信した。

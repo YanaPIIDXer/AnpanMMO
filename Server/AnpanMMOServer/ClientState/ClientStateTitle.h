@@ -25,6 +25,9 @@ private:
 	// キャッシュサーバからログイン結果を受信した。
 	void OnRecvCacheLogInResult(MemoryStreamInterface *pStream);
 
+	// キャッシュサーバからキャラクタ作成結果を受信した。
+	void OnRecvCacheCreateCharacterResult(MemoryStreamInterface *pStream);
+
 	// キャッシュサーバからキャラクタデータを受信した。
 	void OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream);
 
