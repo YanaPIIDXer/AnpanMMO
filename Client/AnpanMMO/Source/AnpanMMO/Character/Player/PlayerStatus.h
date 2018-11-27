@@ -29,8 +29,14 @@ public:
 		Def = InDef;
 	}
 
-	// 経験値セット.
+	// 経験値セット
 	void SetExp(int32 InExp) { Exp = InExp; }
+
+	// 名前をセット
+	void SetName(const FString &InName) { Name = InName; }
+
+	// 名前を取得.
+	const FString &GetName() const { return Name; }
 
 	// Uuid取得.
 	uint32 GetUuid() const { return Uuid; }
@@ -51,6 +57,9 @@ private:
 
 	// Uuid
 	uint32 Uuid;
+
+	// 名前.
+	FString Name;
 
 	// 最大HP
 	int32 MaxHp;

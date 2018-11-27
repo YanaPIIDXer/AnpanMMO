@@ -73,11 +73,14 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName)
 }
 
 // キャラクタパラメータ読み込み
-bool DBConnection::LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp)
+bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp)
 {
-	MySqlQuery Query = Connection.CreateQuery("select MaxHp, Atk, Def, Exp from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select Name, MaxHp, Atk, Def, Exp from CharacterData where CustomerId = ?");
 	Query.BindInt(&Id);
 
+	char NameStr[256];
+	
+	Query.BindResultString(NameStr);
 	Query.BindResultInt(&OutMaxHp);
 	Query.BindResultInt(&OutAtk);
 	Query.BindResultInt(&OutDef);
@@ -86,6 +89,7 @@ bool DBConnection::LoadCharacterParameter(int Id, int &OutMaxHp, int &OutAtk, in
 	if (!Query.ExecuteQuery()) { return false; }
 	if (!Query.Fetch()) { return false; }
 
+	OutName = NameStr;
 	return true;
 }
 

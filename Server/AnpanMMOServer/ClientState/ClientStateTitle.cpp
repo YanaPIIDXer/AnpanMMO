@@ -141,8 +141,8 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	}
 
 	Client *pClient = GetParent();
-	pClient->CreateCharacter(Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
-	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	pClient->CreateCharacter(Packet.Name, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 	pClient->SendPacket(&StatusPacket);
 
 	ClientStateAreaChange *pNextState = new ClientStateAreaChange(pClient, Packet.LastAreaId, Vector3D(Packet.LastX, Packet.LastY, 0.0f));

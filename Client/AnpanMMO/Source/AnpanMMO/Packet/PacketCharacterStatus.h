@@ -14,6 +14,7 @@ public:
 	
 
 	u32 Uuid;
+	std::string Name;
 	s32 Hp;
 	s32 MaxHp;
 	s32 Atk;
@@ -25,9 +26,10 @@ public:
 	{
 	}
 
-	PacketCharacterStatus(u32 InUuid, s32 InHp, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp)
+	PacketCharacterStatus(u32 InUuid, std::string InName, s32 InHp, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp)
 	{
 		Uuid = InUuid;
+		Name = InName;
 		Hp = InHp;
 		MaxHp = InMaxHp;
 		Atk = InAtk;
@@ -39,6 +41,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&Uuid);
+		pStream->Serialize(&Name);
 		pStream->Serialize(&Hp);
 		pStream->Serialize(&MaxHp);
 		pStream->Serialize(&Atk);

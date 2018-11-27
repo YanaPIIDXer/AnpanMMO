@@ -45,7 +45,7 @@ public:
 	weak_ptr<PlayerCharacter> GetCharacter() const { return pCharacter; }
 
 	// キャラクタ作成.
-	void CreateCharacter(int MaxHp, int Atk, int Def, int Exp);
+	void CreateCharacter(const std::string &Name, int MaxHp, int Atk, int Def, int Exp);
 
 	// パケットを受信。
 	// ※主に別プロセスからの受信時に使用。

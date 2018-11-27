@@ -139,7 +139,8 @@ void ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
-	pInst->OnRecvStatus(Packet.Uuid, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	FString NameStr = UTF8_TO_TCHAR(Packet.Name.c_str());
+	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 }
 
 // ゲーム画面に進む準備が出来た。
