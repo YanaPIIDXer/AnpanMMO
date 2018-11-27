@@ -14,6 +14,9 @@ public:
 	// コンストラクタ
 	ClientStateTitle(Client *pInParent);
 
+	// デストラクタ
+	virtual ~ClientStateTitle() {}
+
 private:
 
 	// ログインリクエストを受信した。
