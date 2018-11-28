@@ -74,15 +74,15 @@ void ClientStateActive::OnRecvChatWordCheckResult(MemoryStreamInterface *pStream
 	AreaPtr pArea = pCharacter.lock()->GetArea();
 	switch (Packet.Type)
 	{
-	case PacketSendChat::Say:
+		case PacketSendChat::Say:
 
-		pArea.lock()->BroadcastPacketWithRange(&RecvPacket, pCharacter.lock()->GetPosition(), Config::SayRange);
-		break;
+			pArea.lock()->BroadcastPacketWithRange(&RecvPacket, pCharacter.lock()->GetPosition(), Config::SayRange);
+			break;
 
-	case PacketSendChat::Shout:
+		case PacketSendChat::Shout:
 
-		pArea.lock()->BroadcastPacket(&RecvPacket);
-		break;
+			pArea.lock()->BroadcastPacket(&RecvPacket);
+			break;
 
 	}
 }
