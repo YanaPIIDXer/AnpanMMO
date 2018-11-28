@@ -14,15 +14,12 @@ std::string WordChecker::ChatWordCheck(const std::string &Message)
 	std::wstring Result = Convert.from_bytes(Message);
 
 	std::wcout.imbue(std::locale(""));
-	std::cout << "Message:";
-	std::wcout << Result << std::endl;
-
 	std::vector<NGWordItem> WordList = NGWords.GetAll();
 	for (unsigned int i = 0; i < WordList.size(); i++)
 	{
 		// @TODO;愚直な判定。
 		//		 全角半角を考慮する方法ってある・・・？
-		const std::wstring &NGWord = WordList[i].NGWord;
+		std::wstring NGWord = Convert.from_bytes(WordList[i].NGWord);
 		std::wcout << NGWord << std::endl;
 		size_t Pos = Result.find(NGWord);
 		if (Pos == std::string::npos) { continue; }
@@ -63,6 +60,12 @@ bool WordChecker::LoadMaster()
 	{
 		std::cout << "NGWord Master Load Failed..." << std::endl;
 		return false;
+	}
+
+	std::vector<NGWordItem> WordList = NGWords.GetAll();
+	for (unsigned int i = 0; i < WordList.size(); i++)
+	{
+		std::cout << "NGWord:" << WordList[i].NGWord << std::endl;
 	}
 
 	std::cout << "WordChecker LoadMaster Success!!" << std::endl;

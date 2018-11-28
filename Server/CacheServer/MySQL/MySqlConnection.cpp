@@ -24,6 +24,8 @@ bool MySqlConnection::Connect(const char *pHost, const char *pUserName, const ch
 	pConnection = mysql_init(NULL);
 	if (pConnection == NULL) { return false; }
 
+	mysql_options(pConnection, MYSQL_SET_CHARSET_NAME, "utf8");
+
 	if (!mysql_real_connect(pConnection, pHost, pUserName, pPassword, pDBName, 0, NULL, 0)) { return false; }
 
 	return true;
