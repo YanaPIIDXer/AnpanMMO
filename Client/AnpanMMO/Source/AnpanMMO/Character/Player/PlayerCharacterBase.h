@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Character/CharacterBase.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "PlayerCharacterBase.generated.h"
 
 /**
@@ -35,6 +36,9 @@ public:
 
 	// ƒŠƒXƒ|ƒ“.
 	void Respawn();
+
+	// ‚‚³‚Ì”¼•ª‚ðŽæ“¾.
+	float GetHalfHeight() const { return GetCapsuleComponent()->GetScaledCapsuleHalfHeight(); }
 	
 protected:
 

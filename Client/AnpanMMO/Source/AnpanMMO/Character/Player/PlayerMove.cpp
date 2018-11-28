@@ -3,7 +3,6 @@
 #include "PlayerMove.h"
 #include "GameCharacter.h"
 #include "MMOGameInstance.h"
-#include "Components/CapsuleComponent.h"
 #include "Packet/PacketMovePlayer.h"
 
 const float PlayerMove::SendInterval = 2.0f;
@@ -24,7 +23,7 @@ void PlayerMove::Initialize(AGameCharacter *pInCharacter, UMMOGameInstance *pInI
 	pCharacter = pInCharacter;
 	pInst = pInInst;
 	PrevPos = pCharacter->GetActorLocation();
-	CharacterHalfHeight = pCharacter->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+	CharacterHalfHeight = pCharacter->GetHalfHeight();
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.

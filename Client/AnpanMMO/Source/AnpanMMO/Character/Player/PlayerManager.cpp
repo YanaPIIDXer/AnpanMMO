@@ -94,5 +94,6 @@ void PlayerManager::Reset()
 void PlayerManager::SpawnCharacter(uint32 Uuid, float X, float Y, float Z, float Rotation, int32 Hp, int32 MaxHp)
 {
 	auto *pCharacter = AOtherPlayerCharacter::Spawn(pWorld.Get(), FVector(X, Y, Z), FRotator(0.0f, Rotation, 0.0f), Hp, MaxHp);
+	check(pCharacter != nullptr);
 	PlayerMap.Add(Uuid, pCharacter);
 }
