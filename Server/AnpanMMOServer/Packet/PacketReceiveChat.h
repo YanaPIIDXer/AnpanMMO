@@ -13,6 +13,7 @@ public:
 
 	
 
+	u32 Uuid;
 	std::string Name;
 	std::string Message;
 	
@@ -21,8 +22,9 @@ public:
 	{
 	}
 
-	PacketReceiveChat(std::string InName, std::string InMessage)
+	PacketReceiveChat(u32 InUuid, std::string InName, std::string InMessage)
 	{
+		Uuid = InUuid;
 		Name = InName;
 		Message = InMessage;
 		
@@ -30,6 +32,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&Uuid);
 		pStream->Serialize(&Name);
 		pStream->Serialize(&Message);
 		
