@@ -136,7 +136,9 @@ namespace MasterConverter
 		{
 			if (!IsAutoKey) { return; }
 			Column AutoKeyColumn = new Column("AutoKey", Type.s32);
-			for(int i = 0;i < Columns[1].DataList.Count; i++)
+			int Index = 1;
+			if(Columns.Count == 1) { Index = 0; }
+			for(int i = 0;i < Columns[Index].DataList.Count; i++)
 			{
 				AutoKeyColumn.DataList.Add((double)(i + 1));
 			}
