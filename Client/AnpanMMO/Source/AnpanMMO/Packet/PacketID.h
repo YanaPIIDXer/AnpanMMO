@@ -17,6 +17,8 @@ enum PacketID
 	CacheCharacterDataRequest,
 	CacheCharacterDataResult,
 	CacheCharacterDataSave,
+	SendChat,
+	ReceiveChat,
 	GameReady,
 	AreaMove,
 	AreaMoveRequest,
