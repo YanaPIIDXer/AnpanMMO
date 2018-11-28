@@ -113,6 +113,7 @@ namespace MasterConverter
 					break;
 
 				case Type.String:
+				case Type.WString:
 
 					TypeName = "TEXT";
 					break;
@@ -145,7 +146,7 @@ namespace MasterConverter
 						break;
 					}
 					string Data = Col.DataList[i].ToString();
-					if(Col.DataType == Type.String)
+					if(Col.DataType == Type.String || Col.DataType == Type.WString)
 					{
 						Data = "'" + Data + "'";
 					}

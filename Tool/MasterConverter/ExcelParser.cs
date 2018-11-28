@@ -184,6 +184,11 @@ namespace MasterConverter
 						DataType = Type.String;
 						break;
 
+					case "wstring":
+
+						DataType = Type.WString;
+						break;
+
 					default:
 
 						throw new Exception(DataTypeName + "は認識できない型です。");
