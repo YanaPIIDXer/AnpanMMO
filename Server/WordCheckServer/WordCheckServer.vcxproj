@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="EndianConverter.h" />
+    <ClInclude Include="GameServerConnection.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
     <ClInclude Include="MemoryStream\MemoryStreamInterface.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="MySQL\MySqlBinds.h" />
     <ClInclude Include="MySQL\MySqlConnection.h" />
     <ClInclude Include="MySQL\MySqlQuery.h" />
+    <ClInclude Include="PacketReceiver.h" />
     <ClInclude Include="Packet\PacketBase.h" />
     <ClInclude Include="Packet\PacketHeader.h" />
     <ClInclude Include="Packet\PacketID.h" />
@@ -174,6 +176,7 @@
     <ClInclude Include="TypeDefs.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameServerConnection.cpp" />
     <ClCompile Include="MemoryBuffer.cpp" />
     <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />
     <ClCompile Include="MemoryStream\MemoryStreamReader.cpp" />
@@ -181,6 +184,7 @@
     <ClCompile Include="MySQL\MySqlBinds.cpp" />
     <ClCompile Include="MySQL\MySqlConnection.cpp" />
     <ClCompile Include="MySQL\MySqlQuery.cpp" />
+    <ClCompile Include="PacketReceiver.cpp" />
     <ClCompile Include="Packet\PacketHeader.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
