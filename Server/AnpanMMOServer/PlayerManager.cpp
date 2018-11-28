@@ -89,6 +89,24 @@ void PlayerManager::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 	}
 }
 
+// 範囲を指定したパケットのブロードキャスト
+void PlayerManager::BroadcastPacketWithRange(PacketBase *pPacket, const Vector3D &Center, float Range, Client *pIgnoreClient)
+{
+	float RangeSq = Range * Range;
+	for (PlayerMap::iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
+	{
+		Client *pClient = It->second.lock()->GetClient();
+		if (pClient == pIgnoreClient) { continue; }
+
+		Vector3D Pos = It->second.lock()->GetPosition();
+		Pos.Z = Center.Z;		// 高さは考慮しない。
+		float SizeSq = (Pos - Center).GetSizeSq();
+		if (SizeSq > RangeSq) { continue; }
+
+		pClient->SendPacket(pPacket);
+	}
+}
+
 
 // プレイヤーリストパケットを生成.
 void PlayerManager::MakeListPacket(PacketPlayerList &Packet)

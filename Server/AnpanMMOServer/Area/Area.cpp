@@ -89,6 +89,12 @@ void Area::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 	PlayerMgr.BroadcastPacket(pPacket, pIgnoreClient);
 }
 
+// 範囲を指定したパケットのブロードキャスト
+void Area::BroadcastPacketWithRange(PacketBase *pPacket, const Vector3D &Center, float Range, Client *pIgnoreClient)
+{
+	PlayerMgr.BroadcastPacketWithRange(pPacket, Center, Range, pIgnoreClient);
+}
+
 // 高さを取得.
 float Area::GetHeight(float X, float Y) const
 {

@@ -2,6 +2,7 @@
 #define __PLAYERMANAGER_H__
 
 #include <boost/unordered_map.hpp>
+#include "Math/Vector3D.h"
 
 class PlayerCharacter;
 typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
@@ -44,6 +45,9 @@ public:
 
 	// パケットをブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
+
+	// 範囲を指定したパケットのブロードキャスト
+	void BroadcastPacketWithRange(PacketBase *pPacket, const Vector3D &Center, float Range, Client *pIgnoreClient = NULL);
 
 private:
 

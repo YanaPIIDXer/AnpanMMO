@@ -44,6 +44,9 @@ public:
 	// パケットのブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 
+	// 範囲を指定したパケットのブロードキャスト
+	void BroadcastPacketWithRange(PacketBase *pPacket, const Vector3D &Center, float Range, Client *pIgnoreClient = NULL);
+
 	// ID取得.
 	u32 GetId() const { return Id; }
 
