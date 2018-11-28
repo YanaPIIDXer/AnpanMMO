@@ -36,6 +36,8 @@ enum PacketID
 	ExitPlayer,
 	RespawnRequest,
 	PlayerRespawn,
+	WordCheckChatRequest,
+	WordCheckChatResult,
 	
 };
 
