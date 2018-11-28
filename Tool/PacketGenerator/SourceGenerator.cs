@@ -173,7 +173,7 @@ namespace NativePacketGenerator
 
 			// コンストラクタのメンバ
 			string ConstructorMembers = "";
-			if(Class.IsForCacheServer)
+			if(Class.IsProcessPacket)
 			{
 				ConstructorMembers += "u32 InClientId";
 				if(Class.Members.Count > 0)
@@ -194,7 +194,7 @@ namespace NativePacketGenerator
 
 			// メンバを押し込む
 			string PutMembers = "";
-			if(Class.IsForCacheServer)
+			if(Class.IsProcessPacket)
 			{
 				PutMembers += "ClientId = InClientId;\n\t\t";
 			}

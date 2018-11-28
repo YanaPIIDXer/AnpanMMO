@@ -89,7 +89,22 @@ namespace NativePacketGenerator
 		/// <summary>
 		/// 基底クラス名
 		/// </summary>
-		public string BaseClassName { get; set; }
+		private string _BaseClassName;
+		public string BaseClassName
+		{
+			get
+			{
+				return _BaseClassName;
+			}
+			set
+			{
+				_BaseClassName = value;
+				if(IsProcessPacket)
+				{
+					AddInclude("ProcessPacketBase.h");
+				}
+			}
+		}
 
 		/// <summary>
 		/// 追加インクルード
@@ -124,6 +139,17 @@ namespace NativePacketGenerator
 		/// キャッシュサーバ向けか？
 		/// </summary>
 		public bool IsForCacheServer { get; private set; }
+
+		/// <summary>
+		/// プロセスパケットか？
+		/// </summary>
+		public bool IsProcessPacket
+		{
+			get
+			{
+				return (BaseClassName == "ProcessPacketBase");
+			}
+		}
 
 		/// <summary>
 		/// コンストラクタ
@@ -174,7 +200,6 @@ namespace NativePacketGenerator
 		public void SetForCacheServerFlag()
 		{
 			IsForCacheServer = true;
-			AddInclude("ProcessPacketBase.h");
 		}
 
 	}
