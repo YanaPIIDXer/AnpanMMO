@@ -62,7 +62,7 @@ namespace MasterConverter
 					if (TagIndex == -1) { return false; }
 
 					CollectColumns(WorkSheet, TagIndex - 2);
-					if (Master.GetColumn(0).DataType == Type.String)
+					if (!Master.IsAutoKey && Master.GetColumn(0).DataType == Type.String)
 					{
 						Console.WriteLine("最初の行を文字列型にすることは出来ません。");
 						return false;
