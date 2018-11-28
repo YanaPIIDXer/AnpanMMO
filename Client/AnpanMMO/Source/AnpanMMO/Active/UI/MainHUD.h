@@ -61,6 +61,11 @@ public:
 	void OnRecvMapChangeFinished();
 	void OnRecvMapChangeFinished_Implementation() {}
 
+	// チャットを受信した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Chat")
+	void OnRecvChat(const FString &Name, const FString &Message, bool bIsSelf);
+	void OnRecvChat_Implementation(const FString &Name, const FString &Message, bool bIsSelf) {}
+
 protected:
 
 	// 攻撃ボタンが押された。
