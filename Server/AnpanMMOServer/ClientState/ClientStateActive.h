@@ -19,6 +19,12 @@ public:
 
 private:
 
+	// 移動を受信した。
+	void OnRecvMove(MemoryStreamInterface *pStream);
+
+	// 攻撃を受信した。
+	void OnRecvAttack(MemoryStreamInterface *pStream);
+
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
 

@@ -4,9 +4,6 @@
 #include "Client.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Master/MasterData.h"
-#include "MemoryStream/MemoryStreamInterface.h"
-#include "Packet/PacketMovePlayer.h"
-#include "Packet/PacketAttack.h"
 
 AreaManager AreaManager::Instance;
 
@@ -45,24 +42,4 @@ void AreaManager::Poll(int DeltaTime)
 	{
 		It->second->Poll(DeltaTime);
 	}
-}
-
-// 移動を受信した。
-void AreaManager::OnRecvMove(Client *pClient, MemoryStreamInterface *pStream)
-{
-	PacketMovePlayer Packet;
-	Packet.Serialize(pStream);
-
-	AreaPtr pArea = pClient->GetCharacter().lock()->GetArea();
-	pArea.lock()->OnRecvMove(pClient->GetUuid(), Packet.X, Packet.Y, Packet.Z, Packet.Rotation);
-}
-
-// 攻撃を受信した。
-void AreaManager::OnRecvAttack(Client *pClient, MemoryStreamInterface *pStream)
-{
-	PacketAttack Packet;
-	Packet.Serialize(pStream);
-
-	AreaPtr pArea = pClient->GetCharacter().lock()->GetArea();
-	pArea.lock()->OnRecvAttack(pClient->GetUuid(), Packet.TargetUuid);
 }
