@@ -4,7 +4,7 @@
 #include "TickManager.h" 
 #include "Master/MasterData.h"
 #include "Area/AreaManager.h"
-#include "CacheServerConnection.h"
+#include "CacheServer/CacheServerConnection.h"
 
 // エントリポイント
 int main()

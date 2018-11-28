@@ -3,7 +3,7 @@
 #include "Client.h"
 #include "ClientStateAreaChange.h"
 #include "ClientManager.h"
-#include "CacheServerConnection.h"
+#include "CacheServer/CacheServerConnection.h"
 #include "Config.h"
 #include "Util.h"
 #include "MemoryStream/MemoryStreamInterface.h"
