@@ -2,7 +2,6 @@
 #include "WordChecker.h"
 #include "MySQL/MySqlConnection.h"
 #include <fstream>
-#include <codecvt>
 
 const std::string WordChecker::MasterDBInfoFileName = "MasterDBUserData.txt";
 WordChecker WordChecker::Instance;
@@ -10,8 +9,7 @@ WordChecker WordChecker::Instance;
 // チャット用ワードチェック
 std::string WordChecker::ChatWordCheck(const std::string &Message)
 {
-	std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> Convert;
-	std::wstring Result = Convert.from_bytes(Message);
+	std::string Result = Message;
 
 	std::wcout.imbue(std::locale(""));
 	std::vector<NGWordItem> WordList = NGWords.GetAll();
@@ -19,8 +17,8 @@ std::string WordChecker::ChatWordCheck(const std::string &Message)
 	{
 		// @TODO;愚直な判定。
 		//		 全角半角を考慮する方法ってある・・・？
-		std::wstring NGWord = Convert.from_bytes(WordList[i].NGWord);
-		std::wcout << NGWord << std::endl;
+		std::string NGWord = WordList[i].NGWord;
+		std::cout << NGWord << std::endl;
 		size_t Pos = Result.find(NGWord);
 		if (Pos == std::string::npos) { continue; }
 		size_t Length = NGWord.length();
@@ -29,10 +27,10 @@ std::string WordChecker::ChatWordCheck(const std::string &Message)
 		{
 			Replace += "*";
 		}
-		Result = Result.replace(Pos, Length, Convert.from_bytes(Replace));
+		Result = Result.replace(Pos, Length, Replace);
 	}
 
-	return Convert.to_bytes(Result);
+	return Result;
 }
 
 // マスタの読み込み
