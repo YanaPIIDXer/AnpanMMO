@@ -134,6 +134,17 @@ namespace NativePacketGenerator
 								}
 							}
 							break;
+
+						case "$FOR_WORDCHECK_SERVER$":
+
+							{
+								string Value = WorkSheet.Cells[i, 2].Value.ToString();
+								if(Value == "1")
+								{
+									Class.SetForWordCheckServerFlag();
+								}
+							}
+							break;
 					}
 				}
 			}

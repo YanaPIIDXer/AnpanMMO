@@ -141,6 +141,11 @@ namespace NativePacketGenerator
 		public bool IsForCacheServer { get; private set; }
 
 		/// <summary>
+		/// ワードチェックサーバ向けか？
+		/// </summary>
+		public bool IsForWordCheckServer { get; private set; }
+
+		/// <summary>
 		/// プロセスパケットか？
 		/// </summary>
 		public bool IsProcessPacket
@@ -200,6 +205,14 @@ namespace NativePacketGenerator
 		public void SetForCacheServerFlag()
 		{
 			IsForCacheServer = true;
+		}
+
+		/// <summary>
+		/// ワードチェックサーバ向けフラグを立てる。
+		/// </summary>
+		public void SetForWordCheckServerFlag()
+		{
+			IsForWordCheckServer = true;
 		}
 
 	}

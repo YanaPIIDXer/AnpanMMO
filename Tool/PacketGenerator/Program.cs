@@ -55,20 +55,27 @@ namespace NativePacketGenerator
 			if (!IDGen.Write(ServerPath + "\\PacketID.h")) { return; }
 			if (!IDGen.Write(ClientPath + "\\PacketID.h")) { return; }
 			if (!IDGen.Write(CacheServerPath + "\\PacketID.h")) { return; }
+			if (!IDGen.Write(WordCheckServerPath + "\\PacketID.h")) { return; }
 
 			foreach(var Class in Classes)
 			{
 				SourceGenerator Gen = new SourceGenerator(Class);
 				if (!Gen.Generate()) { return; }
-				if(!Class.IsForCacheServer)
+				if (!Gen.Write(ServerPath)) { return; }
+				if (!Class.IsForCacheServer && !Class.IsForWordCheckServer)
 				{
-					if (!Gen.Write(ServerPath)) { return; }
+					// クライアント
 					if (!Gen.Write(ClientPath)) { return; }
+				}
+				else if (Class.IsForCacheServer)
+				{
+					// キャッシュサーバ
+					if (!Gen.Write(CacheServerPath)) { return; }
 				}
 				else
 				{
-					if (!Gen.Write(ServerPath)) { return; }
-					if (!Gen.Write(CacheServerPath)) { return; }
+					// ワードチェックサーバ
+					if (!Gen.Write(WordCheckServerPath)) { return; }
 				}
 			}
 
