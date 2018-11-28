@@ -91,4 +91,7 @@ private:
 	// リスポンを受信した。
 	void OnRecvRespawn(MemoryStreamInterface *pStream);
 
+	// チャットを受信した。
+	void OnRecvChat(MemoryStreamInterface *pStream);
+
 };

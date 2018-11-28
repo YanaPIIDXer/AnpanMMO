@@ -131,8 +131,8 @@
     <ClInclude Include="Area\AreaManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Bitmap.h" />
-    <ClInclude Include="CachePacketReceiver.h" />
-    <ClInclude Include="CacheServerConnection.h" />
+    <ClInclude Include="CacheServer\CachePacketReceiver.h" />
+    <ClInclude Include="CacheServer\CacheServerConnection.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
     <ClInclude Include="Character\Anpan\AI\Hate.h" />
@@ -207,8 +207,8 @@
     <ClCompile Include="Area\Area.cpp" />
     <ClCompile Include="Area\AreaManager.cpp" />
     <ClCompile Include="Bitmap.cpp" />
-    <ClCompile Include="CachePacketReceiver.cpp" />
-    <ClCompile Include="CacheServerConnection.cpp" />
+    <ClCompile Include="CacheServer\CachePacketReceiver.cpp" />
+    <ClCompile Include="CacheServer\CacheServerConnection.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateActive.cpp" />

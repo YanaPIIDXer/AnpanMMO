@@ -20,6 +20,7 @@
 #include "Packet/PacketLevelUp.h"
 #include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketPlayerRespawn.h"
+#include "Packet/PacketReceiveChat.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -44,6 +45,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::MovePlayer, std::bind(&PlayerManager::OnRecvMove, &PlayerMgr, _1));
 	AddPacketFunction(PacketID::PlayerRespawn, std::bind(&AActiveGameMode::OnRecvRespawn, this, _1));
 	AddPacketFunction(PacketID::ExitPlayer, std::bind(&PlayerManager::OnRecvExit, &PlayerMgr, _1));
+	AddPacketFunction(PacketID::ReceiveChat, std::bind(&AActiveGameMode::OnRecvChat, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 }
@@ -216,4 +218,20 @@ void AActiveGameMode::OnRecvRespawn(MemoryStreamInterface *pStream)
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 	pCharacter->Respawn();
+}
+
+// チャットを受信した。
+void AActiveGameMode::OnRecvChat(MemoryStreamInterface *pStream)
+{
+	PacketReceiveChat Packet;
+	Packet.Serialize(pStream);
+
+	FString Name = UTF8_TO_TCHAR(Packet.Name.c_str());
+	FString Message = UTF8_TO_TCHAR(Packet.Message.c_str());
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+	bool bIsSelf = (Packet.Uuid == pCharacter->GetStatus().GetUuid());
+
+	pMainHUD->OnRecvChat(Name, Message, bIsSelf);
 }

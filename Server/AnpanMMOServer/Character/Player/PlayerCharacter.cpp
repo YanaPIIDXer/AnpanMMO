@@ -4,7 +4,7 @@
 #include "Math/Random.h"
 #include "Packet/PacketLevelUp.h"
 #include "Area/AreaManager.h"
-#include "CacheServerConnection.h"
+#include "CacheServer/CacheServerConnection.h"
 #include "Packet/CachePacketCharacterDataSave.h"
 
 // コンストラクタ
