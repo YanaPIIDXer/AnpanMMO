@@ -7,16 +7,16 @@ bool NGWordMaster::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from NGWord;");
 
 	NGWordItem BindItem;
-	char NGWordBind[128];
+
 	Query.BindResultInt(&BindItem.AutoKey);
-	Query.BindResultString(NGWordBind);
+	
 
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
 	{
 		NGWordItem Item;
 		Item.AutoKey = BindItem.AutoKey;
-		Item.NGWord = NGWordBind;
+		Item.NGWord = BindItem.NGWord;
 
 		Items[Item.AutoKey] = Item;
 	}
