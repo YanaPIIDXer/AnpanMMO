@@ -98,9 +98,16 @@ namespace MasterConverter
 						Master.SetEnableAutoKey();
 					}
 
+					// サーバのみ
 					if(CellValue == "$SERVER_ONLY")
 					{
 						Master.SetEnableServerOnly();
+					}
+
+					// ワードチェックサーバ向けの出力.
+					if(CellValue == "$FOR_WORDCHECK_SERVER$")
+					{
+						Master.SetForWordCheckServer();
 					}
 				}
 				catch {}

@@ -32,6 +32,11 @@ namespace MasterConverter
 		/// サーバのみ出力するか？
 		/// </summary>
 		public bool IsServerOnly { get; private set; }
+
+		/// <summary>
+		/// ワードチェックサーバ向けに出力するか？
+		/// </summary>
+		public bool IsForWordCheckServer { get; private set; }
 		
 		/// <summary>
 		/// コンストラクタ
@@ -42,6 +47,7 @@ namespace MasterConverter
 			Name = InName;
 			IsAutoKey = false;
 			IsServerOnly = false;
+			IsForWordCheckServer = false;
 		}
 
 		/// <summary>
@@ -97,7 +103,7 @@ namespace MasterConverter
 		}
 
 		/// <summary>
-		/// オートキーを設定。
+		/// オートキーを設定.
 		/// </summary>
 		public void SetEnableAutoKey()
 		{
@@ -105,11 +111,19 @@ namespace MasterConverter
 		}
 
 		/// <summary>
-		/// サーバのみ出力を設定。
+		/// サーバのみ出力を設定.
 		/// </summary>
 		public void SetEnableServerOnly()
 		{
 			IsServerOnly = true;
+		}
+
+		/// <summary>
+		/// ワードチェックサーバ向けへの出力を設定.
+		/// </summary>
+		public void SetForWordCheckServer()
+		{
+			IsForWordCheckServer = true;
 		}
 
 		/// <summary>
