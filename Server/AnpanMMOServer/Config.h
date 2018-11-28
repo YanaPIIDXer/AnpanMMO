@@ -18,6 +18,9 @@ public:
 	// ƒLƒƒƒ‰ƒNƒ^–¼‚Ì’·‚³Å‘å.
 	static const u32 CharacterNameMaxLength;
 
+	// Say‚Ì”ÍˆÍ.
+	static const float SayRange;
+
 };
 
 #endif		// #ifndef __CONFIG_H__
