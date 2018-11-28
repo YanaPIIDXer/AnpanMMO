@@ -216,9 +216,13 @@ namespace MasterConverter
 						break;
 
 					case Type.String:
-					case Type.WString:
 
 						ItemBind += "Query.BindResultString(" + Col.Name + "Bind);";
+						break;
+
+					case Type.WString:
+
+						ItemBind += "Query.BindResultWString(" + Col.Name + "Bind);";
 						break;
 
 					case Type.s32:
@@ -250,7 +254,15 @@ namespace MasterConverter
 			{
 				if(Col.DataType != Type.String && Col.DataType != Type.WString) { continue; }
 				StringBind += "\t";
-				StringBind += "char " + Col.Name + "Bind[128];";
+				if(Col.DataType == Type.String)
+				{
+					StringBind += "char ";
+				}
+				else
+				{
+					StringBind += "wchar_t ";
+				}
+				StringBind += Col.Name + "Bind[128];";
 			}
 			Source = Source.Replace("$STRING_BIND$", StringBind);
 
@@ -259,7 +271,7 @@ namespace MasterConverter
 			foreach(Column Col in ColumnList)
 			{
 				ItemFetch += "\t\t";
-				if(Col.DataType == Type.String)
+				if(Col.DataType == Type.String || Col.DataType == Type.WString)
 				{
 					// stringの場合は別領域に格納されたものを放り込む。
 					ItemFetch += "Item." + Col.Name + " = " + Col.Name + "Bind;";
