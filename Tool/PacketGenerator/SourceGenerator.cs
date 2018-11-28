@@ -205,7 +205,7 @@ namespace NativePacketGenerator
 			Template = Template.Replace("$PUT_MEMBERS$", PutMembers);
 
 			string SerializeFunctions = "";
-			if(Class.IsForCacheServer && Class.BaseClassName == "ProcessPacketBase")
+			if(Class.IsProcessPacket)
 			{
 				SerializeFunctions += "ProcessPacketBase::Serialize(pStream);\n\t\t";
 			}
