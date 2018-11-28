@@ -11,8 +11,13 @@ class PacketSendChat  : public PacketBase
 public:
 	virtual PacketID GetPacketID() const { return SendChat; }
 
-	
+	enum ChatType
+	{
+		Say,
+		Shout,
+	};
 
+	u8 Type;
 	std::string Message;
 	
 
@@ -20,14 +25,16 @@ public:
 	{
 	}
 
-	PacketSendChat(std::string InMessage)
+	PacketSendChat(u8 InType, std::string InMessage)
 	{
+		Type = InType;
 		Message = InMessage;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&Type);
 		pStream->Serialize(&Message);
 		
 		return true;
