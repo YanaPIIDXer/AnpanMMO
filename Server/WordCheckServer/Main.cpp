@@ -1,7 +1,7 @@
-ï»¿#include "stdafx.h"
+#include "stdafx.h"
 
+// ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg
 int main()
 {
-
 	return 0;
 }
