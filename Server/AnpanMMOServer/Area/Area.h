@@ -42,7 +42,7 @@ public:
 	void OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid);
 	
 	// パケットのブロードキャスト
-	void BroadcastPacket(PacketBase *pPacket);
+	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 
 	// ID取得.
 	u32 GetId() const { return Id; }

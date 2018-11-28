@@ -84,9 +84,9 @@ void Area::OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid)
 }
 
 // パケットのブロードキャスト
-void Area::BroadcastPacket(PacketBase *pPacket)
+void Area::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 {
-	PlayerMgr.BroadcastPacket(pPacket);
+	PlayerMgr.BroadcastPacket(pPacket, pIgnoreClient);
 }
 
 // 高さを取得.
