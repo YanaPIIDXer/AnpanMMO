@@ -28,6 +28,9 @@ private:
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
 
+	// チャットのワードチェック結果を受信した。
+	void OnRecvChatWordCheckResult(MemoryStreamInterface *pStream);
+
 	// エリア移動要求を受信した。
 	void OnRecvAreaMoveRequest(MemoryStreamInterface *pStream);
 

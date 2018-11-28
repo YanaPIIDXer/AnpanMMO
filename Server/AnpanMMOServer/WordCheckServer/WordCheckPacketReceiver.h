@@ -42,6 +42,9 @@ private:
 	// パケット受信関数を追加.
 	void AddPacketFunc(PacketID ID, const PacketFunc &Func);
 
+	// チャットのワードチェック結果を受信した。
+	void OnRecvChatWordCheckResult(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __WORDCHECKPACKETRECEIVER_H__

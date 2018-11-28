@@ -22,6 +22,7 @@ namespace NativePacketGenerator
 				Writer.WriteLine("Server Directory:");
 				Writer.WriteLine("Client Directory:");
 				Writer.WriteLine("CacheServer Directory:");
+				Writer.WriteLine("WordCheckServer Directory:");
 				Writer.Close();
 				Console.WriteLine("設定ファイルが存在しなかったので自動生成しました。\n必要な項目を入力してください。");
 				return;
@@ -31,6 +32,7 @@ namespace NativePacketGenerator
 			var ServerPath = Reader.ReadLine().Replace("Server Directory:", "");
 			var ClientPath = Reader.ReadLine().Replace("Client Directory:", "");
 			var CacheServerPath = Reader.ReadLine().Replace("CacheServer Directory:", "");
+			var WordCheckServerPath = Reader.ReadLine().Replace("WordCheckServer Directory:", "");
 
 			var Excels = Directory.GetFiles("PacketData");
 			List<ClassData> Classes = new List<ClassData>();
@@ -53,20 +55,27 @@ namespace NativePacketGenerator
 			if (!IDGen.Write(ServerPath + "\\PacketID.h")) { return; }
 			if (!IDGen.Write(ClientPath + "\\PacketID.h")) { return; }
 			if (!IDGen.Write(CacheServerPath + "\\PacketID.h")) { return; }
+			if (!IDGen.Write(WordCheckServerPath + "\\PacketID.h")) { return; }
 
 			foreach(var Class in Classes)
 			{
 				SourceGenerator Gen = new SourceGenerator(Class);
 				if (!Gen.Generate()) { return; }
-				if(!Class.IsForCacheServer)
+				if (!Gen.Write(ServerPath)) { return; }
+				if (!Class.IsForCacheServer && !Class.IsForWordCheckServer)
 				{
-					if (!Gen.Write(ServerPath)) { return; }
+					// クライアント
 					if (!Gen.Write(ClientPath)) { return; }
+				}
+				else if (Class.IsForCacheServer)
+				{
+					// キャッシュサーバ
+					if (!Gen.Write(CacheServerPath)) { return; }
 				}
 				else
 				{
-					if (!Gen.Write(ServerPath)) { return; }
-					if (!Gen.Write(CacheServerPath)) { return; }
+					// ワードチェックサーバ
+					if (!Gen.Write(WordCheckServerPath)) { return; }
 				}
 			}
 

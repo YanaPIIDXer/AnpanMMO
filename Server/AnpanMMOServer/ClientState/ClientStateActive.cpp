@@ -6,10 +6,13 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "Area/AreaManager.h"
 #include "Master/MasterData.h"
+#include "WordCheckServer/WordCheckServerConnection.h"
 #include "ClientStateAreaChange.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
 #include "Packet/PacketSendChat.h"
+#include "Packet/WordCheckPacketChatRequest.h"
+#include "Packet/WordCheckPacketChatResult.h"
 #include "Packet/PacketReceiveChat.h"
 #include "Packet/PacketAreaMove.h"
 #include "Packet/PacketAreaMoveRequest.h"
@@ -24,6 +27,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(MovePlayer, boost::bind(&ClientStateActive::OnRecvMove, this, _2));
 	AddPacketFunction(Attack, boost::bind(&ClientStateActive::OnRecvAttack, this, _2));
 	AddPacketFunction(SendChat, boost::bind(&ClientStateActive::OnRecvChat, this, _2));
+	AddPacketFunction(WordCheckChatResult, boost::bind(&ClientStateActive::OnRecvChatWordCheckResult, this, _2));
 	AddPacketFunction(AreaMoveRequest, boost::bind(&ClientStateActive::OnRecvAreaMoveRequest, this, _2));
 	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
 }
@@ -55,7 +59,16 @@ void ClientStateActive::OnRecvChat(MemoryStreamInterface *pStream)
 	PacketSendChat Packet;
 	Packet.Serialize(pStream);
 
-	// @TODO:ワードチェックサーバを作成し、ＮＧワードをチェックする必要がある。
+	WordCheckPacketChatRequest WordCheckPacket(GetParent()->GetUuid(), Packet.Type, Packet.Message);
+	WordCheckServerConnection::GetInstance()->SendPacket(&WordCheckPacket);
+}
+
+// チャットのワードチェック結果を受信した。
+void ClientStateActive::OnRecvChatWordCheckResult(MemoryStreamInterface *pStream)
+{
+	WordCheckPacketChatResult Packet;
+	Packet.Serialize(pStream);
+
 	PlayerCharacterPtr pCharacter = GetParent()->GetCharacter();
 	PacketReceiveChat RecvPacket(GetParent()->GetUuid(), pCharacter.lock()->GetName(), Packet.Message);
 	AreaPtr pArea = pCharacter.lock()->GetArea();
