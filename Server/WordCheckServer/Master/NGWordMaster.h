@@ -25,13 +25,13 @@ class NGWordMaster
 
 private:
 
-	typedef std::map<std::string, NGWordItem> ItemMap;
+	typedef std::map<s32, NGWordItem> ItemMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	std::vector<const NGWordItem *> CollectItems(std::string Key) const;
+	
 
 	std::vector<NGWordItem> GetAll() const;
 

@@ -24,18 +24,7 @@ bool NGWordMaster::Load(const MySqlConnection &Connection)
 	return true;
 }
 
-std::vector<const NGWordItem *> NGWordMaster::CollectItems(std::string Key) const
-{
-	std::vector<const NGWordItem *> Result;
-	for(ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
-	{
-		if(It->second.NGWord == Key)
-		{
-			Result.push_back(&It->second);
-		}
-	}
-	return Result;
-}
+
 
 std::vector<NGWordItem> NGWordMaster::GetAll() const
 {
