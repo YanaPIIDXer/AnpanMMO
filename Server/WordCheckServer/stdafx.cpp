@@ -1,5 +1,8 @@
-﻿// pch.cpp: プリコンパイル済みヘッダーに対応するソース ファイル。コンパイルが正常に実行されるために必要です
+// stdafx.cpp : �W���C���N���[�h CacheServer.pch �݂̂�
+// �܂ރ\�[�X �t�@�C���́A�v���R���p�C���ς݃w�b�_�[�ɂȂ�܂��B
+// stdafx.obj �ɂ̓v���R���p�C���ς݌^��񂪊܂܂�܂��B
 
 #include "stdafx.h"
 
-// 一般に、このファイルは無視できますが、プリコンパイル済みヘッダーを使用している場合は保持します。
+// TODO: ���̃t�@�C���ł͂Ȃ��ASTDAFX.H �ŕK�v��
+// �ǉ��w�b�_�[���Q�Ƃ��Ă��������B
