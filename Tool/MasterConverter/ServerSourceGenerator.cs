@@ -216,6 +216,7 @@ namespace MasterConverter
 						break;
 
 					case Type.String:
+					case Type.WString:
 
 						ItemBind += "Query.BindResultString(" + Col.Name + "Bind);";
 						break;
@@ -247,7 +248,7 @@ namespace MasterConverter
 			string StringBind = "";
 			foreach(Column Col in ColumnList)
 			{
-				if(Col.DataType != Type.String) { continue; }
+				if(Col.DataType != Type.String && Col.DataType != Type.WString) { continue; }
 				StringBind += "\t";
 				StringBind += "char " + Col.Name + "Bind[128];";
 			}
