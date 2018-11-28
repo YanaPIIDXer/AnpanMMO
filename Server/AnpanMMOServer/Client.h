@@ -33,7 +33,7 @@ public:
 	void SetUuid(u32 InUuid) { Uuid = InUuid; }
 
 	// UUIDを取得.
-	int GetUuid() const { return Uuid; }
+	u32 GetUuid() const { return Uuid; }
 
 	// カスタマＩＤをセット.
 	void SetCustomerId(u32 InCustomerId) { CustomerId = InCustomerId; }
