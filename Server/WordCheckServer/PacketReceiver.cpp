@@ -29,7 +29,10 @@ void PacketReceiver::OnRecvChatWordCheckRequest(MemoryStreamInterface *pStream)
 	std::string ResultMessage = Packet.Message;
 	std::string ReplaceWord = "fuck";
 	u32 Index = ResultMessage.find(ReplaceWord);
-	ResultMessage = ResultMessage.replace(Index, ReplaceWord.length(), "****");
+	if (Index != std::string::npos)
+	{
+		ResultMessage = ResultMessage.replace(Index, ReplaceWord.length(), "****");
+	}
 
 	WordCheckPacketChatResult ResultPacket(Packet.ClientId, Packet.Type, ResultMessage);
 	pParent->SendPacket(&ResultPacket);
