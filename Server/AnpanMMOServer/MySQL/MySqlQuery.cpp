@@ -63,6 +63,12 @@ void MySqlQuery::BindString(char *pPtr)
 	Binds.AddString(pPtr, false);
 }
 
+// ワイド文字列のバインド
+void MySqlQuery::BindWString(wchar_t *pPtr)
+{
+	Binds.AddWString(pPtr, false);
+}
+
 // 結果のint型バインド
 void MySqlQuery::BindResultInt(int *pPtr)
 {
@@ -109,6 +115,12 @@ void MySqlQuery::BindResultFloat(float *pPtr)
 void MySqlQuery::BindResultString(char *pPtr)
 {
 	Results.AddString(pPtr, true);
+}
+
+// 結果のワイド文字列バインド
+void MySqlQuery::BindResultWString(wchar_t *pPtr)
+{
+	Results.AddWString(pPtr, true);
 }
 
 // クエリ実行.

@@ -47,6 +47,9 @@ public:
 	// •¶š—ñ’Ç‰Á.
 	void AddString(char *pPtr, bool bForResult);
 
+	// ƒƒCƒh•¶š—ñ’Ç‰Á.
+	void AddWString(wchar_t *pPtr, bool bForResult);
+
 	// æ“¾.
 	MYSQL_BIND *Get() { return pBinds; }
 
