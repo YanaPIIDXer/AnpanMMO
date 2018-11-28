@@ -240,6 +240,9 @@
     <ClInclude Include="CacheServer\CacheServerConnection.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="ServerPort.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MemoryBuffer.cpp">
@@ -393,6 +396,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="CacheServer\CacheServerConnection.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerPort.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

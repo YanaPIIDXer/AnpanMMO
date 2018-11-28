@@ -4,6 +4,7 @@
 #include "TickManager.h" 
 #include "Master/MasterData.h"
 #include "Area/AreaManager.h"
+#include "ServerPort.h"
 #include "CacheServer/CacheServerConnection.h"
 
 // エントリポイント
@@ -26,10 +27,11 @@ int main()
 	CacheServerConnection CacheServerConn(pSocket);
 	if (!CacheServerConn.Connect())
 	{
+		std::cout << "CacheServer Connect Failed..." << std::endl;
 		return 1;
 	}
 	
-	ClientAcceptor Acceptor(IOService, Config::Port);
+	ClientAcceptor Acceptor(IOService, ServerPort::GameServer);
 	asio::basic_repeating_timer<posix_time::ptime> AcceptorTimer(IOService);
 	AcceptorTimer.start(posix_time::millisec(30),
 		bind(&ClientAcceptor::Poll, &Acceptor));
