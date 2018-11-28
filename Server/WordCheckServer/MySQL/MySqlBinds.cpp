@@ -139,6 +139,27 @@ void MySqlBinds::AddString(char *pPtr, bool bForResult)
 	pBinds[Length - 1] = Bind;
 }
 
+// ÉèÉCÉhï∂éöóÒí«â¡.
+void MySqlBinds::AddWString(wchar_t *pPtr, bool bForResult)
+{
+	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
+	Bind.buffer_type = MYSQL_TYPE_STRING;
+	Bind.buffer = pPtr;
+	if (!bForResult)
+	{
+		Bind.buffer_length = wcslen(pPtr);
+	}
+	else
+	{
+		Bind.buffer_length = StringBufferLength;
+	}
+	Bind.is_null = 0;
+
+	Reallocate();
+	pBinds[Length - 1] = Bind;
+}
+
 
 // óÃàÊägí£.
 void MySqlBinds::Reallocate()

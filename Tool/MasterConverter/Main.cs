@@ -25,14 +25,19 @@ namespace MasterConverter
 		private static readonly string SourceDirectorySettingFileName = "SourceDirectory.ini";
 
 		/// <summary>
-		/// サーバソースディレクトリ
+		/// ゲームサーバソースディレクトリ
 		/// </summary>
-		private string ServerSourceDirectory = "";
+		private string GameServerSourceDirectory = "";
 
 		/// <summary>
 		/// クライアントソースディレクトリ
 		/// </summary>
 		private string ClientSourceDirectory = "";
+
+		/// <summary>
+		/// ワードチェックサーバディレクトリ
+		/// </summary>
+		private string WordCheckServerDirectory = "";
 		
 		public Main()
 		{
@@ -104,13 +109,15 @@ namespace MasterConverter
 				{
 					Writer.WriteLine("../Server/AnpanMMOServer/Master");
 					Writer.WriteLine("../Client/AnpanMMO/Source/AnpanMMO/Master");
+					Writer.WriteLine("../Server/WordCheckServer/Master");
 				}
 			}
 
 			using (StreamReader Reader = new StreamReader(SourceDirectorySettingFileName))
 			{
-				ServerSourceDirectory = Reader.ReadLine();
+				GameServerSourceDirectory = Reader.ReadLine();
 				ClientSourceDirectory = Reader.ReadLine();
+				WordCheckServerDirectory = Reader.ReadLine();
 			}
 		}
 
@@ -162,7 +169,12 @@ namespace MasterConverter
 
 				Console.Write("サーバソースの生成中...");
 
-				ServerSourceGenerator ServerSource = new ServerSourceGenerator(ServerSourceDirectory, Parser.Master);
+				string TargetDirectory = GameServerSourceDirectory;
+				if(Parser.Master.IsForWordCheckServer)
+				{
+					TargetDirectory = WordCheckServerDirectory;
+				}
+				ServerSourceGenerator ServerSource = new ServerSourceGenerator(TargetDirectory, Parser.Master);
 				if (!ServerSource.Generate())
 				{
 					MessageBox.Show("サーバソースの生成に失敗しました。");

@@ -48,6 +48,9 @@ public:
 	// 文字列のバインド
 	void BindString(char *pPtr);
 
+	// ワイド文字列のバインド
+	void BindWString(wchar_t *pPtr);
+
 	// 結果のint型バインド
 	void BindResultInt(int *pPtr);
 
@@ -71,6 +74,9 @@ public:
 
 	// 結果の文字列バインド
 	void BindResultString(char *pPtr);
+
+	// 結果のワイド文字列バインド
+	void BindResultWString(wchar_t *pPtr);
 
 	// クエリ実行.
 	bool ExecuteQuery();

@@ -131,7 +131,14 @@ namespace MasterConverter
 			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *GetItem($KEY_TYPE$ Key) const;";
 			if(Master.IsAutoKey)
 			{
-				GetItemFunctionDecrare = "std::vector<const $ITEM_STRUCT_NAME$ *> CollectItems($KEY_TYPE$ Key) const;";
+				if(ColumnList.Count <= 2)
+				{
+					GetItemFunctionDecrare = "";
+				}
+				else
+				{
+					GetItemFunctionDecrare = "std::vector<const $ITEM_STRUCT_NAME$ *> CollectItems($KEY_TYPE$ Key) const;";
+				}
 			}
 			Source = Source.Replace("$GET_ITEN_FUNCTION_DECRARE$", GetItemFunctionDecrare);
 
@@ -141,11 +148,15 @@ namespace MasterConverter
 			{
 				KeyFunctionFileName = TemplatePath + "CollectItemFunction.txt";
 			}
-			using (StreamReader Reader = new StreamReader(KeyFunctionFileName, Encoding.GetEncoding("shift-jis")))
+			string KeyFunction = "";
+			if(!Master.IsAutoKey || (Master.IsAutoKey && ColumnList.Count > 2))
 			{
-				string KeyFunction = Reader.ReadToEnd();
-				Source = Source.Replace("$GET_KEY_FUNCTION$", KeyFunction);
+				using (StreamReader Reader = new StreamReader(KeyFunctionFileName, Encoding.GetEncoding("shift-jis")))
+				{
+					KeyFunction = Reader.ReadToEnd();
+				}
 			}
+			Source = Source.Replace("$GET_KEY_FUNCTION$", KeyFunction);
 
 			// インクルードガード
 			string IncludeGuard = "__" + Master.Name.ToUpper() + "MASTER_H__";
@@ -165,7 +176,7 @@ namespace MasterConverter
 
 			// キーの型名.
 			string KeyType = Util.ToTypeNameString(ColumnList[0].DataType);
-			if(Master.IsAutoKey)
+			if(Master.IsAutoKey && ColumnList.Count > 2)
 			{
 				KeyType = Util.ToTypeNameString(ColumnList[1].DataType);
 			}
@@ -209,6 +220,11 @@ namespace MasterConverter
 						ItemBind += "Query.BindResultString(" + Col.Name + "Bind);";
 						break;
 
+					case Type.WString:
+
+						ItemBind += "Query.BindResultWString(" + Col.Name + "Bind);";
+						break;
+
 					case Type.s32:
 					case Type.u32:
 
@@ -236,9 +252,17 @@ namespace MasterConverter
 			string StringBind = "";
 			foreach(Column Col in ColumnList)
 			{
-				if(Col.DataType != Type.String) { continue; }
+				if(Col.DataType != Type.String && Col.DataType != Type.WString) { continue; }
 				StringBind += "\t";
-				StringBind += "char " + Col.Name + "Bind[128];";
+				if(Col.DataType == Type.String)
+				{
+					StringBind += "char ";
+				}
+				else
+				{
+					StringBind += "wchar_t ";
+				}
+				StringBind += Col.Name + "Bind[128];";
 			}
 			Source = Source.Replace("$STRING_BIND$", StringBind);
 
@@ -247,7 +271,7 @@ namespace MasterConverter
 			foreach(Column Col in ColumnList)
 			{
 				ItemFetch += "\t\t";
-				if(Col.DataType == Type.String)
+				if(Col.DataType == Type.String || Col.DataType == Type.WString)
 				{
 					// stringの場合は別領域に格納されたものを放り込む。
 					ItemFetch += "Item." + Col.Name + " = " + Col.Name + "Bind;";

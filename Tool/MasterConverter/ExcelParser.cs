@@ -62,7 +62,7 @@ namespace MasterConverter
 					if (TagIndex == -1) { return false; }
 
 					CollectColumns(WorkSheet, TagIndex - 2);
-					if (Master.GetColumn(0).DataType == Type.String)
+					if (!Master.IsAutoKey && Master.GetColumn(0).DataType == Type.String)
 					{
 						Console.WriteLine("最初の行を文字列型にすることは出来ません。");
 						return false;
@@ -98,9 +98,16 @@ namespace MasterConverter
 						Master.SetEnableAutoKey();
 					}
 
+					// サーバのみ
 					if(CellValue == "$SERVER_ONLY")
 					{
 						Master.SetEnableServerOnly();
+					}
+
+					// ワードチェックサーバ向けの出力.
+					if(CellValue == "$FOR_WORDCHECK_SERVER")
+					{
+						Master.SetForWordCheckServer();
 					}
 				}
 				catch {}
@@ -175,6 +182,11 @@ namespace MasterConverter
 					case "string":
 
 						DataType = Type.String;
+						break;
+
+					case "wstring":
+
+						DataType = Type.WString;
 						break;
 
 					default:

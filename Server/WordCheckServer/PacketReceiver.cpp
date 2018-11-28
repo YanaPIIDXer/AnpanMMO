@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PacketReceiver.h"
 #include "GameServerConnection.h"
+#include "WordChecker.h"
 #include "Packet/WordCheckPacketChatRequest.h"
 #include "Packet/WordCheckPacketChatResult.h"
 
@@ -26,14 +27,7 @@ void PacketReceiver::OnRecvChatWordCheckRequest(MemoryStreamInterface *pStream)
 	WordCheckPacketChatRequest Packet;
 	Packet.Serialize(pStream);
 
-	std::string ResultMessage = Packet.Message;
-	std::string ReplaceWord = "fuck";
-	u32 Index = ResultMessage.find(ReplaceWord);
-	if (Index != std::string::npos)
-	{
-		ResultMessage = ResultMessage.replace(Index, ReplaceWord.length(), "****");
-	}
-
+	std::string ResultMessage = WordChecker::GetInstance().ChatWordCheck(Packet.Message);
 	WordCheckPacketChatResult ResultPacket(Packet.ClientId, Packet.Type, ResultMessage);
 	pParent->SendPacket(&ResultPacket);
 }

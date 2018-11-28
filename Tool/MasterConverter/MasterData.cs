@@ -32,6 +32,11 @@ namespace MasterConverter
 		/// サーバのみ出力するか？
 		/// </summary>
 		public bool IsServerOnly { get; private set; }
+
+		/// <summary>
+		/// ワードチェックサーバ向けに出力するか？
+		/// </summary>
+		public bool IsForWordCheckServer { get; private set; }
 		
 		/// <summary>
 		/// コンストラクタ
@@ -42,6 +47,7 @@ namespace MasterConverter
 			Name = InName;
 			IsAutoKey = false;
 			IsServerOnly = false;
+			IsForWordCheckServer = false;
 		}
 
 		/// <summary>
@@ -97,7 +103,7 @@ namespace MasterConverter
 		}
 
 		/// <summary>
-		/// オートキーを設定。
+		/// オートキーを設定.
 		/// </summary>
 		public void SetEnableAutoKey()
 		{
@@ -105,10 +111,21 @@ namespace MasterConverter
 		}
 
 		/// <summary>
-		/// サーバのみ出力を設定。
+		/// サーバのみ出力を設定.
 		/// </summary>
 		public void SetEnableServerOnly()
 		{
+			IsServerOnly = true;
+		}
+
+		/// <summary>
+		/// ワードチェックサーバ向けへの出力を設定.
+		/// </summary>
+		public void SetForWordCheckServer()
+		{
+			IsForWordCheckServer = true;
+
+			// サーバのみの出力とする。
 			IsServerOnly = true;
 		}
 
@@ -119,7 +136,9 @@ namespace MasterConverter
 		{
 			if (!IsAutoKey) { return; }
 			Column AutoKeyColumn = new Column("AutoKey", Type.s32);
-			for(int i = 0;i < Columns[1].DataList.Count; i++)
+			int Index = 1;
+			if(Columns.Count == 1) { Index = 0; }
+			for(int i = 0;i < Columns[Index].DataList.Count; i++)
 			{
 				AutoKeyColumn.DataList.Add((double)(i + 1));
 			}

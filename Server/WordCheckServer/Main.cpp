@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "GameServerConnection.h"
+#include "WordChecker.h"
 
 // エントリポイント
 int main()
 {
+	if (!WordChecker::GetInstance().LoadMaster()) { return 1; }
+
 	asio::io_service IOService;
 
 	tcp::socket *pSock = new tcp::socket(IOService);

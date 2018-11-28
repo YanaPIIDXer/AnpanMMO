@@ -157,6 +157,7 @@
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="EndianConverter.h" />
     <ClInclude Include="GameServerConnection.h" />
+    <ClInclude Include="Master\NGWordMaster.h" />
     <ClInclude Include="MemoryBuffer.h" />
     <ClInclude Include="MemoryStream\MemorySizeCaliculateStream.h" />
     <ClInclude Include="MemoryStream\MemoryStreamInterface.h" />
@@ -175,9 +176,11 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TCPConnection.h" />
     <ClInclude Include="TypeDefs.h" />
+    <ClInclude Include="WordChecker.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameServerConnection.cpp" />
+    <ClCompile Include="Master\NGWordMaster.cpp" />
     <ClCompile Include="MemoryBuffer.cpp" />
     <ClCompile Include="MemoryStream\MemorySizeCaliculateStream.cpp" />
     <ClCompile Include="MemoryStream\MemoryStreamReader.cpp" />
@@ -196,6 +199,7 @@
     </ClCompile>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
+    <ClCompile Include="WordChecker.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
