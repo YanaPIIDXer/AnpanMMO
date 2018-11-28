@@ -14,6 +14,7 @@ public:
 
 	
 
+	u8 Type;
 	std::string Message;
 	
 
@@ -21,15 +22,17 @@ public:
 	{
 	}
 
-	WordCheckPacketChatRequest(u32 InClientId, std::string InMessage)
+	WordCheckPacketChatRequest(u32 InClientId, u8 InType, std::string InMessage)
 	{
 		ClientId = InClientId;
+		Type = InType;
 		Message = InMessage;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&Type);
 		pStream->Serialize(&Message);
 		
 		return true;
