@@ -12,6 +12,11 @@ AOtherPlayerCharacter *AOtherPlayerCharacter::Spawn(UWorld *pWorld, const FVecto
 	auto pCharacter = Util::SpawnFromBlueprint<AOtherPlayerCharacter>(pWorld, AssetPath, Position, Rotation);
 	pCharacter->Initialize(Hp, MaxHp);
 
+	// 足元の座標が送られてくるので中心の座標に変換.
+	FVector OffsetPos = Position;
+	OffsetPos.Z += pCharacter->GetHalfHeight();
+	pCharacter->SetActorLocation(OffsetPos);
+
 	return pCharacter;
 }
 
@@ -43,6 +48,7 @@ void AOtherPlayerCharacter::PossessedBy(AController *NewController)
 // 移動.
 void AOtherPlayerCharacter::Move(float X, float Y, float Z, float Rotation)
 {
+	Z += GetHalfHeight();		// 足元の座標から中心の座標に変換.
 	pController->Move(X, Y, Z, Rotation);
 }
 
