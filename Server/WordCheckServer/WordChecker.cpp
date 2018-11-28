@@ -11,7 +11,6 @@ std::string WordChecker::ChatWordCheck(const std::string &Message)
 {
 	std::string Result = Message;
 
-	std::wcout.imbue(std::locale(""));
 	std::vector<NGWordItem> WordList = NGWords.GetAll();
 	for (unsigned int i = 0; i < WordList.size(); i++)
 	{
