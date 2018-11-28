@@ -131,7 +131,14 @@ namespace MasterConverter
 			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *GetItem($KEY_TYPE$ Key) const;";
 			if(Master.IsAutoKey)
 			{
-				GetItemFunctionDecrare = "std::vector<const $ITEM_STRUCT_NAME$ *> CollectItems($KEY_TYPE$ Key) const;";
+				if(ColumnList.Count <= 2)
+				{
+					GetItemFunctionDecrare = "";
+				}
+				else
+				{
+					GetItemFunctionDecrare = "std::vector<const $ITEM_STRUCT_NAME$ *> CollectItems($KEY_TYPE$ Key) const;";
+				}
 			}
 			Source = Source.Replace("$GET_ITEN_FUNCTION_DECRARE$", GetItemFunctionDecrare);
 
@@ -141,11 +148,15 @@ namespace MasterConverter
 			{
 				KeyFunctionFileName = TemplatePath + "CollectItemFunction.txt";
 			}
-			using (StreamReader Reader = new StreamReader(KeyFunctionFileName, Encoding.GetEncoding("shift-jis")))
+			string KeyFunction = "";
+			if(!Master.IsAutoKey || (Master.IsAutoKey && ColumnList.Count > 2))
 			{
-				string KeyFunction = Reader.ReadToEnd();
-				Source = Source.Replace("$GET_KEY_FUNCTION$", KeyFunction);
+				using (StreamReader Reader = new StreamReader(KeyFunctionFileName, Encoding.GetEncoding("shift-jis")))
+				{
+					KeyFunction = Reader.ReadToEnd();
+				}
 			}
+			Source = Source.Replace("$GET_KEY_FUNCTION$", KeyFunction);
 
 			// インクルードガード
 			string IncludeGuard = "__" + Master.Name.ToUpper() + "MASTER_H__";
@@ -165,7 +176,7 @@ namespace MasterConverter
 
 			// キーの型名.
 			string KeyType = Util.ToTypeNameString(ColumnList[0].DataType);
-			if(Master.IsAutoKey)
+			if(Master.IsAutoKey && ColumnList.Count > 2)
 			{
 				KeyType = Util.ToTypeNameString(ColumnList[1].DataType);
 			}
