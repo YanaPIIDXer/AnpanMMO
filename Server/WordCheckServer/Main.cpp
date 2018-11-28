@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+
 // エントリポイント
 int main()
 {
