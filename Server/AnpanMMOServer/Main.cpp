@@ -4,7 +4,9 @@
 #include "TickManager.h" 
 #include "Master/MasterData.h"
 #include "Area/AreaManager.h"
+#include "ServerPort.h"
 #include "CacheServer/CacheServerConnection.h"
+#include "WordCheckServer/WordCheckServerConnection.h"
 
 // エントリポイント
 int main()
@@ -21,15 +23,25 @@ int main()
 
 	asio::io_service IOService;
 
-	tcp::socket *pSock = new tcp::socket(IOService);
-	shared_ptr<tcp::socket> pSocket = shared_ptr<tcp::socket>(pSock);
-	CacheServerConnection CacheServerConn(pSocket);
+	tcp::socket *pCacheServerSock = new tcp::socket(IOService);
+	shared_ptr<tcp::socket> pCacheServerSocket = shared_ptr<tcp::socket>(pCacheServerSock);
+	CacheServerConnection CacheServerConn(pCacheServerSocket);
 	if (!CacheServerConn.Connect())
 	{
+		std::cout << "CacheServer Connect Failed..." << std::endl;
+		return 1;
+	}
+
+	tcp::socket *pWordCheckServerSock = new tcp::socket(IOService);
+	shared_ptr<tcp::socket> pWordCheckServerSocket = shared_ptr<tcp::socket>(pWordCheckServerSock);
+	WordCheckServerConnection WordCheckServerConn(pWordCheckServerSocket);
+	if (!WordCheckServerConn.Connect())
+	{
+		std::cout << "WordCheckServer Connect Failed..." << std::endl;
 		return 1;
 	}
 	
-	ClientAcceptor Acceptor(IOService, Config::Port);
+	ClientAcceptor Acceptor(IOService, ServerPort::GameServer);
 	asio::basic_repeating_timer<posix_time::ptime> AcceptorTimer(IOService);
 	AcceptorTimer.start(posix_time::millisec(30),
 		bind(&ClientAcceptor::Poll, &Acceptor));

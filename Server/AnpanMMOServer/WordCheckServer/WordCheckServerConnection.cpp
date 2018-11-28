@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "CacheServerConnection.h"
+#include "WordCheckServerConnection.h"
 #include "ServerPort.h"
 #include "Packet/PacketBase.h"
 #include "MemoryStream/MemorySizeCaliculateStream.h"
@@ -7,10 +7,10 @@
 #include "MemoryStream/MemoryStreamReader.h"
 #include "Packet/PacketHeader.h"
 
-CacheServerConnection *CacheServerConnection::pInstance = NULL;
+WordCheckServerConnection *WordCheckServerConnection::pInstance = NULL;
 
 // コンストラクタ
-CacheServerConnection::CacheServerConnection(const shared_ptr<tcp::socket> &pInSocket)
+WordCheckServerConnection::WordCheckServerConnection(const shared_ptr<tcp::socket> &pInSocket)
 	: TCPConnection(pInSocket)
 	, Receiver(this)
 {
@@ -18,10 +18,10 @@ CacheServerConnection::CacheServerConnection(const shared_ptr<tcp::socket> &pInS
 }
 
 // 接続.
-bool CacheServerConnection::Connect()
+bool WordCheckServerConnection::Connect()
 {
 	boost::system::error_code ErrorCode;
-	GetSocket()->connect(tcp::endpoint(asio::ip::address::from_string("127.0.0.1"), ServerPort::CacheServer), ErrorCode);
+	GetSocket()->connect(tcp::endpoint(asio::ip::address::from_string("127.0.0.1"), ServerPort::WordCheckServer), ErrorCode);
 
 	if (ErrorCode)
 	{
@@ -29,14 +29,14 @@ bool CacheServerConnection::Connect()
 		return false;
 	}
 	
-	std::cout << "Cache Server Connected!" << std::endl;
+	std::cout << "WordCheck Server Connected!" << std::endl;
 	bIsConnected = true;
 	AsyncRecv();
 	return true;
 }
 
 // パケット送信.
-void CacheServerConnection::SendPacket(PacketBase *pPacket)
+void WordCheckServerConnection::SendPacket(PacketBase *pPacket)
 {
 	//まずはサイズを求める
 	MemorySizeCaliculateStream SizeStream;
@@ -57,7 +57,7 @@ void CacheServerConnection::SendPacket(PacketBase *pPacket)
 
 
 // データを受信した。
-void CacheServerConnection::OnRecvData(size_t Size)
+void WordCheckServerConnection::OnRecvData(size_t Size)
 {
 	u8 *pRecvData = RecvBuffer.GetTop();
 	MemoryStreamReader ReadStream(pRecvData, Size);
@@ -74,7 +74,7 @@ void CacheServerConnection::OnRecvData(size_t Size)
 }
 
 // 切断された。
-void CacheServerConnection::OnDisconnected()
+void WordCheckServerConnection::OnDisconnected()
 {
 	exit(1);
 }

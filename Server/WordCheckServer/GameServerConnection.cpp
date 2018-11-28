@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "CacheServerConnection.h"
+#include "GameServerConnection.h"
 #include "ServerPort.h"
 #include "Packet/PacketBase.h"
 #include "MemoryStream/MemorySizeCaliculateStream.h"
@@ -7,36 +7,17 @@
 #include "MemoryStream/MemoryStreamReader.h"
 #include "Packet/PacketHeader.h"
 
-CacheServerConnection *CacheServerConnection::pInstance = NULL;
-
 // コンストラクタ
-CacheServerConnection::CacheServerConnection(const shared_ptr<tcp::socket> &pInSocket)
+GameServerConnection::GameServerConnection(asio::io_service &IOService, const shared_ptr<tcp::socket> &pInSocket)
 	: TCPConnection(pInSocket)
+	, Acceptor(IOService, tcp::endpoint(tcp::v4(), ServerPort::WordCheckServer))
 	, Receiver(this)
 {
-	pInstance = this;
-}
-
-// 接続.
-bool CacheServerConnection::Connect()
-{
-	boost::system::error_code ErrorCode;
-	GetSocket()->connect(tcp::endpoint(asio::ip::address::from_string("127.0.0.1"), ServerPort::CacheServer), ErrorCode);
-
-	if (ErrorCode)
-	{
-		std::cout << ErrorCode.message() << std::endl;
-		return false;
-	}
-	
-	std::cout << "Cache Server Connected!" << std::endl;
-	bIsConnected = true;
-	AsyncRecv();
-	return true;
+	Accept();
 }
 
 // パケット送信.
-void CacheServerConnection::SendPacket(PacketBase *pPacket)
+void GameServerConnection::SendPacket(PacketBase *pPacket)
 {
 	//まずはサイズを求める
 	MemorySizeCaliculateStream SizeStream;
@@ -57,7 +38,7 @@ void CacheServerConnection::SendPacket(PacketBase *pPacket)
 
 
 // データを受信した。
-void CacheServerConnection::OnRecvData(size_t Size)
+void GameServerConnection::OnRecvData(size_t Size)
 {
 	u8 *pRecvData = RecvBuffer.GetTop();
 	MemoryStreamReader ReadStream(pRecvData, Size);
@@ -74,7 +55,27 @@ void CacheServerConnection::OnRecvData(size_t Size)
 }
 
 // 切断された。
-void CacheServerConnection::OnDisconnected()
+void GameServerConnection::OnDisconnected()
 {
-	exit(1);
+	GetSocket()->close();
+	Accept();
+}
+
+
+// Acceptする。
+void GameServerConnection::Accept()
+{
+	Acceptor.async_accept(*GetSocket(), bind(&GameServerConnection::OnAccept, this, asio::placeholders::error));
+}
+
+// Acceptした。
+void GameServerConnection::OnAccept(const boost::system::error_code &ErrorCode)
+{
+	if (ErrorCode)
+	{
+		std::cout << ErrorCode.message() << std::endl;
+		return;
+	}
+	bIsConnected = true;
+	AsyncRecv();
 }

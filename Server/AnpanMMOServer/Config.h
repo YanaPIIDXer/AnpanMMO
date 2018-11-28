@@ -9,12 +9,6 @@ class Config
 
 public:
 
-	// ポート番号.
-	static const int Port;
-
-	// キャッシュサーバのポート
-	static const int CacheServerPort;
-
 	// キャラクタ名の長さ最大.
 	static const u32 CharacterNameMaxLength;
 
