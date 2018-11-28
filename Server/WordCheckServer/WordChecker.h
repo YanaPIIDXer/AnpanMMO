@@ -14,6 +14,9 @@ public:
 	// デストラクタ
 	~WordChecker() {}
 
+	// チャット用ワードチェック
+	std::string ChatWordCheck(const std::string &Message);
+
 	// マスタの読み込み
 	bool LoadMaster();
 

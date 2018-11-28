@@ -12,7 +12,7 @@ struct NGWordItem
 public:
 
 	s32 AutoKey;
-	std::wstring NGWord;
+	std::string NGWord;
 
 
 };

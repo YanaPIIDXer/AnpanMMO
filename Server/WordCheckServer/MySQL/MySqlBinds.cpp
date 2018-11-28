@@ -142,7 +142,6 @@ void MySqlBinds::AddString(char *pPtr, bool bForResult)
 // ƒƒCƒh•¶š—ñ’Ç‰Á.
 void MySqlBinds::AddWString(wchar_t *pPtr, bool bForResult)
 {
-
 	MYSQL_BIND Bind;
 	memset(&Bind, 0, sizeof(Bind));
 	Bind.buffer_type = MYSQL_TYPE_STRING;
