@@ -105,7 +105,7 @@ namespace MasterConverter
 					}
 
 					// ワードチェックサーバ向けの出力.
-					if(CellValue == "$FOR_WORDCHECK_SERVER$")
+					if(CellValue == "$FOR_WORDCHECK_SERVER")
 					{
 						Master.SetForWordCheckServer();
 					}

@@ -124,6 +124,9 @@ namespace MasterConverter
 		public void SetForWordCheckServer()
 		{
 			IsForWordCheckServer = true;
+
+			// サーバのみの出力とする。
+			IsServerOnly = true;
 		}
 
 		/// <summary>
