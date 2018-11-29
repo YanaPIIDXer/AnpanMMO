@@ -4,6 +4,8 @@
 #include <boost/unordered_map.hpp>
 #include "WeakPtrDefine.h"
 
+class PacketBase;
+
 /**
  * パーティクラス
  */
@@ -39,6 +41,9 @@ public:
 
 	// UUIDを取得.
 	u32 GetUuid() const { return Uuid; }
+
+	// パケットをバラ撒く。
+	void BroadcastPacket(PacketBase *pPacket);
 
 private:
 

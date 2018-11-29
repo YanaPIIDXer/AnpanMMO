@@ -3,6 +3,8 @@
 #include "Client.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "WeakPtrDefine.h"
+#include "Packet/PacketPartyJoinMember.h"
+#include "Packet/PacketPartyMemberList.h"
 
 const u32 Party::MaximumMember = 4;
 
@@ -18,8 +20,36 @@ bool Party::Join(PlayerCharacterPtr pPlayer)
 	if (IsMaximumMember()) { return false; }		// メンバ数が最大.
 	u32 Uuid = pPlayer.lock()->GetClient()->GetUuid();
 	if (MemberList.find(Uuid) != MemberList.end()) { return false; }		// 既に参加済み。
+
+	// メンバ追加をバラ撒く
+	{
+		PartyMemberData Data(Uuid, pPlayer.lock()->GetName());
+		PacketPartyJoinMember JoinPacket(Data);
+		BroadcastPacket(&JoinPacket);
+	}
+
 	MemberList[Uuid] = pPlayer;
 	pPlayer.lock()->SetParty(shared_from_this());
+
+	// メンバリストを送信.
+	FlexArray<PartyMemberData> List;
+	for (MemberMap::iterator It = MemberList.begin(); It != MemberList.end(); ++It)
+	{
+		PartyMemberData Data(It->first, It->second.lock()->GetName());
+		if (It->first == Uuid)
+		{
+			// リーダーは先頭.
+			List.Insert(Data, 0);
+		}
+		else
+		{
+			// それ以外は普通にPushBack
+			List.PushBack(Data);
+		}
+	}
+	PacketPartyMemberList ListPacket(List);
+	pPlayer.lock()->GetClient()->SendPacket(&ListPacket);
+
 	return true;
 }
 
@@ -52,4 +82,13 @@ bool Party::IsAbleDelete() const
 
 	// パーティメンバ全員が消失していたら削除可。
 	return true;
+}
+
+// パケットをバラ撒く。
+void Party::BroadcastPacket(PacketBase *pPacket)
+{
+	for (MemberMap::iterator It = MemberList.begin(); It != MemberList.end(); ++It)
+	{
+		It->second.lock()->GetClient()->SendPacket(pPacket);
+	}
 }
