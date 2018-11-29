@@ -13,7 +13,7 @@ PartyManager::PartyManager()
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 void PartyManager::Poll()
 {
-	for (PartyList::iterator It = Partys.begin(); It != Partys.end(); ++It)
+	for (PartyList::iterator It = Partys.begin(); It != Partys.end();)
 	{
 		if (It->second->IsAbleDelete())
 		{
@@ -32,8 +32,8 @@ void PartyManager::Create(PlayerCharacterPtr pCreatePlayer)
 {
 	u32 Uuid = pCreatePlayer.lock()->GetClient()->GetUuid();
 	Party *pParty = new Party(Uuid);
-	pParty->Join(pCreatePlayer);
 	Partys[Uuid] = shared_ptr<Party>(pParty);
+	pParty->Join(pCreatePlayer);
 }
 
 // Žæ“¾.
