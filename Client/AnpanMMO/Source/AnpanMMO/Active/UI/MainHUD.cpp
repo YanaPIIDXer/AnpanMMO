@@ -7,6 +7,7 @@
 #include "MMOGameInstance.h"
 #include "Active/ActiveGameMode.h"
 #include "Packet/NoticeData.h"
+#include "Menu/GameMenuWidget.h"
 
 const TCHAR *UMainHUD::AssetPath = TEXT("/Game/Blueprints/UI/Active/MainHUD.MainHUD");
 
@@ -24,6 +25,7 @@ UMainHUD *UMainHUD::Show(UObject *pOuter)
 UMainHUD::UMainHUD(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pCharacter(nullptr)
+	, NotReadNoticeCount(0)
 {
 }
 
@@ -38,7 +40,7 @@ void UMainHUD::NativeConstruct()
 // 通知を受信した。
 void UMainHUD::OnRecvNotice(int32 Uuid, const NoticeData &Data)
 {
-	UE_LOG(LogTemp, Log, TEXT("OnRecvNotice UUID:%d Type:%d CustomerId:%d"), Uuid, Data.Type, Data.CustomerId);
+	NotReadNoticeCount++;
 }
 
 
@@ -61,10 +63,8 @@ void UMainHUD::StartLevelLoad()
 	pGameMode->StartLevelLoad(AreaId);
 }
 
-// ゲームメニュー表示.
+// ゲームメニューを表示.
 void UMainHUD::ShowGameMenu()
 {
-	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
-	check(pGameMode != nullptr);
-	pGameMode->ShowGameMenu();
+	UGameMenuWidget::ShowWidget(this);
 }

@@ -53,8 +53,8 @@ public:
 	// レベルロードが完了した。
 	void OnLevelLoadFinished();
 
-	// ゲームメニューを表示.
-	void ShowGameMenu();
+	// メインHUDを表示するかどうかを設定.
+	void SetHiddenMainHUD(bool bHidden);
 
 	// 他人のポップアップメニューを表示.
 	void ShowOtherPlayerPopupMenu(AOtherPlayerCharacter *pCharacter);
@@ -82,10 +82,6 @@ private:
 	UPROPERTY()
 	UMainHUD *pMainHUD;
 
-	// ゲームメニュー
-	UPROPERTY()
-	UGameMenuWidget *pGameMenu;
-
 	// 他人のポップアップメニュー
 	UPROPERTY()
 	UOtherPlayerPopupMenu *pOtherPlayerMenu;
@@ -103,9 +99,6 @@ private:
 	// MainHUDを初期化したか？
 	bool bInitializedMainHUD;
 
-
-	// ゲームメニューが閉じられた。
-	void OnCloseGameMenu();
 
 	// エリア移動を受信した。
 	void OnRecvAreaMove(MemoryStreamInterface *pStream);

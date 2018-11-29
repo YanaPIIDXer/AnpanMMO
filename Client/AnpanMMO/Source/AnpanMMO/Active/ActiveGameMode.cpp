@@ -31,7 +31,6 @@
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 	, pMainHUD(nullptr)
-	, pGameMenu(nullptr)
 	, pOtherPlayerMenu(nullptr)
 	, bInitializedMainHUD(false)
 {
@@ -133,20 +132,24 @@ void AActiveGameMode::OnLevelLoadFinished()
 	pInst->SendPacket(&Packet);
 }
 
-// ゲームメニューを表示.
-void AActiveGameMode::ShowGameMenu()
+// メインHUDを表示するかどうかを設定.
+void AActiveGameMode::SetHiddenMainHUD(bool bHidden)
 {
-	// 念のため。
-	EraseOtherPlayerPopupMenu();
-
-	pGameMenu = UGameMenuWidget::ShowWidget(this);
-	pGameMenu->OnMenuClosed.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnCloseGameMenu);
-
-	pMainHUD->SetVisibility(ESlateVisibility::Hidden);
 	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
 	check(pController != nullptr);
-	pController->SetVirtualJoystickVisibility(false);
-	pController->SetEnableMove(false);
+
+	if (bHidden)
+	{
+		pMainHUD->SetVisibility(ESlateVisibility::Hidden);
+		pController->SetVirtualJoystickVisibility(false);
+		pController->SetEnableMove(false);
+	}
+	else
+	{
+		pMainHUD->SetVisibility(ESlateVisibility::Visible);
+		pController->SetVirtualJoystickVisibility(true);
+		pController->SetEnableMove(true);
+	}
 }
 
 // 他人のポップアップメニューを表示.
@@ -167,17 +170,6 @@ void AActiveGameMode::EraseOtherPlayerPopupMenu()
 	pOtherPlayerMenu = nullptr;
 }
 
-
-// ゲームメニューが閉じられた。
-void AActiveGameMode::OnCloseGameMenu()
-{
-	pGameMenu = nullptr;
-	pMainHUD->SetVisibility(ESlateVisibility::Visible);
-	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
-	check(pController != nullptr);
-	pController->SetVirtualJoystickVisibility(true);
-	pController->SetEnableMove(true);
-}
 
 // エリア移動を受信した。
 void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)

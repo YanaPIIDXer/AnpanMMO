@@ -7,7 +7,6 @@
 #include "MainHUD.generated.h"
 
 class AGameCharacter;
-class NoticeData;
 
 /**
  * メインHUD
@@ -80,9 +79,22 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "MapChange")
 	void StartLevelLoad();
 
-	// ゲームメニュー表示.
+	// ゲームメニューを表示.
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void ShowGameMenu();
+
+	// 未読通知があるか？
+	UFUNCTION(BlueprintPure, Category = "Notice")
+	bool HasNotReadNotice() const { return (NotReadNoticeCount > 0); }
+
+	// 通知を読んだ事にする。
+	UFUNCTION(BlueprintCallable, Category = "Notice")
+	void ReadNotice() { NotReadNoticeCount = 0; }
+
+
+	// 未読通知の数.
+	UPROPERTY(BlueprintReadOnly, Category = "Notice")
+	int32 NotReadNoticeCount;
 
 private:
 	
@@ -91,5 +103,5 @@ private:
 
 	// キャラクタ
 	TWeakObjectPtr<AGameCharacter> pCharacter;
-	
+
 };
