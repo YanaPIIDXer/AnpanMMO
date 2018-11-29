@@ -24,7 +24,7 @@ bool Party::Join(PlayerCharacterPtr pPlayer)
 }
 
 // —£’E.
-void Party::Secession(u32 Uuid)
+void Party::Dissolution(u32 Uuid)
 {
 	if (MemberList.find(Uuid) == MemberList.end()) { return; }			// ‘¶Ý‚µ‚È‚¢B
 	MemberList[Uuid].lock()->SetParty(PartyPtr());

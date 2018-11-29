@@ -26,7 +26,7 @@ public:
 	bool Join(PlayerCharacterPtr pPlayer);
 
 	// ’E‘Ş.
-	void Secession(u32 Uuid);
+	void Dissolution(u32 Uuid);
 
 	// ƒƒ“ƒoƒŠƒXƒgæ“¾.
 	std::vector<PlayerCharacterPtr> GetMemberList() const;

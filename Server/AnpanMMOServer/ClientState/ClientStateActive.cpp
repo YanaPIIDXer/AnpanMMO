@@ -22,6 +22,8 @@
 #include "Packet/PacketPlayerRespawn.h"
 #include "Packet/PacketPartyCreateRequest.h"
 #include "Packet/PacketPartyCreateResult.h"
+#include "Packet/PacketPartyDissolutionRequest.h"
+#include "Packet/PacketPartyDissolutionResult.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -34,6 +36,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(AreaMoveRequest, boost::bind(&ClientStateActive::OnRecvAreaMoveRequest, this, _2));
 	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
 	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
+	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
 }
 
 
@@ -153,5 +156,26 @@ void ClientStateActive::OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream)
 		PartyId = GetParent()->GetCharacter().lock()->GetParty().lock()->GetUuid();
 	}
 	PacketPartyCreateResult ResultPacket(Result, PartyId);
+	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティ離脱要求を受信した。
+void ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pStream)
+{
+	PacketPartyDissolutionRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketPartyDissolutionResult::Success;
+	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
+	if (!pParty.expired())
+	{
+		pParty.lock()->Dissolution(GetParent()->GetUuid());
+	}
+	else
+	{
+		Result = PacketPartyDissolutionResult::Error;
+	}
+
+	PacketPartyDissolutionResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
 }
