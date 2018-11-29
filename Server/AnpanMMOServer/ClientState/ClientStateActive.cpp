@@ -145,11 +145,13 @@ void ClientStateActive::OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream)
 		Result = PacketPartyCreateResponse::AlreadyJoin;
 	}
 
+	u32 PartyId = 0;
 	if (Result == PacketPartyCreateResponse::Success)
 	{
 		// パーティ作成.
 		PartyManager::GetInstance().Create(GetParent()->GetCharacter());
+		PartyId = GetParent()->GetCharacter().lock()->GetParty().lock()->GetUuid();
 	}
-	PacketPartyCreateResponse ResponsePacket(Result);
+	PacketPartyCreateResponse ResponsePacket(Result, PartyId);
 	GetParent()->SendPacket(&ResponsePacket);
 }

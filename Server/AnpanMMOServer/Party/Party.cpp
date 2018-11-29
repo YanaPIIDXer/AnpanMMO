@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Party.h"
 #include "Client.h"
+#include "Character/Player/PlayerCharacter.h"
 
 const u32 Party::MaximumMember = 4;
 
@@ -17,6 +18,7 @@ bool Party::Join(PlayerCharacterPtr pPlayer)
 	u32 Uuid = pPlayer.lock()->GetClient()->GetUuid();
 	if (MemberList.find(Uuid) != MemberList.end()) { return false; }		// Šù‚ÉŽQ‰ÁÏ‚ÝB
 	MemberList[Uuid] = pPlayer;
+	pPlayer->SetParty(shared_from_this());
 	return true;
 }
 
@@ -24,6 +26,7 @@ bool Party::Join(PlayerCharacterPtr pPlayer)
 void Party::Secession(u32 Uuid)
 {
 	if (MemberList.find(Uuid) == MemberList.end()) { return; }			// ‘¶Ý‚µ‚È‚¢B
+	MemberList[Uuid].lock()->SetParty(PartyPtr());
 	MemberList.erase(Uuid);
 }
 

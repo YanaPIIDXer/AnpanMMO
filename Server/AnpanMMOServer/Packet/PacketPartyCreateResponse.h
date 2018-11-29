@@ -19,21 +19,24 @@ public:
 	};
 
 	u8 Result;
+	u32 PartyId;
 	
 
 	PacketPartyCreateResponse()
 	{
 	}
 
-	PacketPartyCreateResponse(u8 InResult)
+	PacketPartyCreateResponse(u8 InResult, u32 InPartyId)
 	{
 		Result = InResult;
+		PartyId = InPartyId;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&Result);
+		pStream->Serialize(&PartyId);
 		
 		return true;
 	}
