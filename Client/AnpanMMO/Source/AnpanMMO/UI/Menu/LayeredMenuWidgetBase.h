@@ -6,6 +6,8 @@
 #include "Blueprint/UserWidget.h"
 #include "LayeredMenuWidgetBase.generated.h"
 
+DECLARE_DELEGATE(FOnMenuClosed);
+
 /**
  * レイヤに分割されたメニューWidget基底クラス
  */
@@ -25,6 +27,10 @@ public:
 
 	// 表示.
 	void Show(int32 InZOrder = 0);
+
+
+	// メニューが閉じられた。
+	FOnMenuClosed OnMenuClosed;
 
 protected:
 

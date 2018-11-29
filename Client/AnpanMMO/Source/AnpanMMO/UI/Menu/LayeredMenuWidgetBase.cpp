@@ -32,11 +32,11 @@ void ULayeredMenuWidgetBase::Back()
 void ULayeredMenuWidgetBase::Close()
 {
 	RemoveFromParent();
-	ULayeredMenuWidgetBase *pParent = pParentMenu;
-	while (pParent != nullptr)
+	OnMenuClosed.ExecuteIfBound();
+	
+	if (pParentMenu != nullptr)
 	{
-		pParent->RemoveFromParent();
-		pParent = pParent->pParentMenu;
+		pParentMenu->Close();
 	}
 }
 
