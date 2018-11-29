@@ -4,7 +4,9 @@
 #include "Util.h"
 #include "Kismet/GameplayStatics.h"
 #include "Active/ActiveGameMode.h"
+#include "MMOGameInstance.h"
 #include "Packet/NoticeData.h"
+#include "Packet/PacketPartyInviteResponse.h"
 
 const TCHAR *UNoticeMenuWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Menu/Notice/NoticeMenu.NoticeMenu");
 
@@ -92,14 +94,17 @@ UPartyInviteNotice::UPartyInviteNotice(const FObjectInitializer &ObjectInitializ
 // í ímÇ…ëŒÇ∑ÇÈçsìÆ.
 void UPartyInviteNotice::OnAction()
 {
-	if (bAccept)
+	uint8 Response = PacketPartyInviteResponse::Accept;
+	if (!bAccept)
 	{
-		UE_LOG(LogTemp, Log, TEXT("Accept Party Invite."));
+		Response = PacketPartyInviteResponse::Refuse;
 	}
-	else
-	{
-		UE_LOG(LogTemp, Log, TEXT("Refuse Party Invite"));
-	}
+
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketPartyInviteResponse Packet(CustomerId, Response);
+	pInst->SendPacket(&Packet);
 }
 
 // ========== UNoticeMenuItem ===============
