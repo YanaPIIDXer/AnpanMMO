@@ -53,6 +53,9 @@ public:
 	// ゲームメニューを表示.
 	void ShowGameMenu();
 
+	// パーティ情報取得.
+	const PartyInformation &GetPartyInfo() const { return PartyInfo; }
+
 protected:
 
 private:

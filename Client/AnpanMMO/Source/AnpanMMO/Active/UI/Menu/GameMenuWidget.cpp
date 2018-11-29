@@ -27,5 +27,15 @@ UGameMenuWidget::UGameMenuWidget(const FObjectInitializer &ObjectInitializer)
 // パーティメニュー表示.
 void UGameMenuWidget::ShowPartyMenu()
 {
-	UE_LOG(LogTemp, Log, TEXT("Show Party Menu"));
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	if (!pGameMode->GetPartyInfo().IsJoined())
+	{
+		UE_LOG(LogTemp, Log, TEXT("Show Party Create Menu"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Log, TEXT("Show Party Info Menu"));
+	}
 }
