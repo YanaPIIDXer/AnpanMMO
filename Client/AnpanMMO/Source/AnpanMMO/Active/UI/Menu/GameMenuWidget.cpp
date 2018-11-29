@@ -5,6 +5,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Active/ActiveGameMode.h"
 #include "Party/PartyCreateMenuWidget.h"
+#include "Party/PartyInfoMenuWidget.h"
 
 const TCHAR *UGameMenuWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Menu/GameMenu.GameMenu");
 
@@ -38,6 +39,7 @@ void UGameMenuWidget::ShowPartyMenu()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Log, TEXT("Show Party Info Menu"));
+		auto *pChild = UPartyInfoMenuWidget::Create(this);
+		ShowChild(pChild);
 	}
 }
