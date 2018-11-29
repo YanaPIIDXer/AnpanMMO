@@ -3,8 +3,8 @@
 #include "Client.h"
 
 // コンストラクタ
-Party::Party()
-	: Uuid(0)
+Party::Party(u32 InUuid)
+	: Uuid(InUuid)
 {
 }
 

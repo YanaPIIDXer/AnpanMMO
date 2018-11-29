@@ -1,11 +1,11 @@
 #include "stdafx.h"
 #include "PartyManager.h"
+#include "Client.h"
 
 PartyManager PartyManager::Instance;
 
 // コンストラクタ
 PartyManager::PartyManager()
-	: NextUuid(1)
 {
 }
 
@@ -14,7 +14,7 @@ void PartyManager::Poll()
 {
 	for (PartyList::iterator It = Partys.begin(); It != Partys.end(); ++It)
 	{
-		if (It->second.lock()->IsAbleDelete())
+		if (It->second->IsAbleDelete())
 		{
 			// パーティ消去.
 			It = Partys.erase(It);
@@ -26,11 +26,18 @@ void PartyManager::Poll()
 	}
 }
 
-// 追加.
-void PartyManager::Add(PartyPtr pParty)
+// 作成.
+void PartyManager::Create(PlayerCharacterPtr pCreatePlayer)
 {
-	u32 Uuid = NextUuid;
-	Partys[Uuid] = pParty;
-	pParty.lock()->SetUuid(Uuid);
-	NextUuid++;
+	u32 Uuid = pCreatePlayer.lock()->GetClient()->GetUuid();
+	Party *pParty = new Party(Uuid);
+	pParty->Join(pCreatePlayer);
+	Partys[Uuid] = shared_ptr<Party>(pParty);
+}
+
+// 取得.
+PartyPtr PartyManager::Get(u32 Uuid)
+{
+	if (Partys.find(Uuid) == Partys.end()) { return PartyPtr(); }
+	return Partys[Uuid];
 }

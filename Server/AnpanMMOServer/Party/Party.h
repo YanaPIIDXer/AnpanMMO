@@ -19,7 +19,7 @@ private:		// 別名定義.
 public:
 
 	// コンストラクタ
-	Party();
+	Party(u32 InUuid);
 
 	// デストラクタ
 	~Party() {}
@@ -32,9 +32,6 @@ public:
 
 	// 削除してもいいか？
 	bool IsAbleDelete() const;
-
-	// UUIDをセット
-	void SetUuid(u32 InUuid) { Uuid = InUuid; }
 
 	// UUIDを取得.
 	u32 GetUuid() const { return Uuid; }

@@ -11,7 +11,8 @@ class PartyManager : noncopyable
 
 private:		// 別名定義.
 
-	typedef boost::unordered_map<u32, PartyPtr> PartyList;
+	typedef shared_ptr<Party> PartySharedPtr;
+	typedef boost::unordered_map<u32, PartySharedPtr> PartyList;
 
 public:
 
@@ -21,16 +22,16 @@ public:
 	// 毎フレームの処理.
 	void Poll();
 
-	// 追加.
-	void Add(PartyPtr pParty);
+	// 作成.
+	void Create(PlayerCharacterPtr pCreatePlayer);
+
+	// 取得.
+	PartyPtr Get(u32 Uuid);
 
 private:
 
 	// パーティリスト
 	PartyList Partys;
-
-	// 次に割り振るUUID
-	u32 NextUuid;
 
 	// ============ Singleton =============
 
