@@ -23,6 +23,7 @@ APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectIniti
 	pMeshComponent->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_WorldStatic, ECollisionResponse::ECR_Block);
 	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel2, ECollisionResponse::ECR_Overlap);
+	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Block);
 	pMeshComponent->SetGenerateOverlapEvents(true);
 	SetActorEnableCollision(true);
 

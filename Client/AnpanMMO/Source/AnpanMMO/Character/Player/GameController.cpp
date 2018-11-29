@@ -2,10 +2,16 @@
 
 #include "GameController.h"
 #include "Engine/World.h"
+#include "Kismet/GameplayStatics.h"
+#include "Active/ActiveGameMode.h"
+#include "Engine/Public/DrawDebugHelpers.h"
+
+class AOtherPlayerCharacter;
 
 const FName AGameController::MoveForwardBind = "Forward";
 const FName AGameController::MoveRightBind = "Right";
 const FName AGameController::AttackBind = "Attack";
+const float AGameController::TapCheckThreshold = 10.0f;
 
 // コンストラクタ
 AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
@@ -15,6 +21,7 @@ AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 	, InputVector(FVector::ZeroVector)
 	, PrevTouchLocation(FVector2D::ZeroVector)
 	, bEnableMove(true)
+	, SwipeValue(0.0f)
 {
 }
 
@@ -62,10 +69,30 @@ void AGameController::Tick(float DeltaTime)
 // タッチ処理.
 bool AGameController::InputTouch(uint32 Handle, ETouchType::Type Type, const FVector2D &TouchLocation, float Force, FDateTime DeviceTimestamp, uint32 TouchpadIndex)
 {
-	if (Type == ETouchType::Moved)
+	switch (Type)
 	{
-		FVector2D Delta = TouchLocation - PrevTouchLocation;
-		pCamera->Rotate(Delta.X);
+		case ETouchType::Began:
+
+			SwipeValue = 0.0f;
+			break;
+
+		case ETouchType::Moved:
+
+			{
+				FVector2D Delta = TouchLocation - PrevTouchLocation;
+				SwipeValue += FMath::Abs<float>(Delta.X);
+				SwipeValue += FMath::Abs<float>(Delta.Y);
+				pCamera->Rotate(Delta.X);
+			}
+			break;
+
+		case ETouchType::Ended:
+
+			if (SwipeValue <= TapCheckThreshold)
+			{
+				RayTraceToOtherPlayer(TouchLocation);
+			}
+			break;
 	}
 
 	PrevTouchLocation = TouchLocation;
@@ -104,4 +131,34 @@ void AGameController::MoveForward(float Value)
 void AGameController::MoveRight(float Value)
 {
 	InputVector.Y = Value;
+}
+
+// 他人に対するレイトレース
+void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
+{
+	FVector Pos;
+	FVector Direction;
+	DeprojectScreenPositionToWorld(ScreenPos.X, ScreenPos.Y, Pos, Direction);
+
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	FVector Start = Pos;
+	FVector End = Pos + (Direction * 3000.0f);
+
+	FHitResult Result;
+	if (!GetWorld()->LineTraceSingleByChannel(Result, Start, End, ECollisionChannel::ECC_GameTraceChannel3))
+	{
+		pGameMode->EraseOtherPlayerPopupMenu();
+		return;
+	}
+
+	AOtherPlayerCharacter *pCharacter = Cast<AOtherPlayerCharacter>(Result.GetActor());
+	if (pCharacter == nullptr)
+	{
+		pGameMode->EraseOtherPlayerPopupMenu();
+		return;
+	}
+
+	pGameMode->ShowOtherPlayerPopupMenu(pCharacter);
 }

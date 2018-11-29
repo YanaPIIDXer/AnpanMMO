@@ -12,7 +12,9 @@
 
 class UMainHUD;
 class UGameMenuWidget;
+class UOtherPlayerPopupMenu;
 class ULevelManager;
+class AOtherPlayerCharacter;
 
 /**
  * ゲーム中GameMode
@@ -53,6 +55,12 @@ public:
 	// ゲームメニューを表示.
 	void ShowGameMenu();
 
+	// 他人のポップアップメニューを表示.
+	void ShowOtherPlayerPopupMenu(AOtherPlayerCharacter *pCharacter);
+
+	// 他人のポップアップメニューを消去.
+	void EraseOtherPlayerPopupMenu();
+
 	// パーティ情報取得.
 	const PartyInformation &GetPartyInfo() const { return PartyInfo; }
 
@@ -76,6 +84,10 @@ private:
 	// ゲームメニュー
 	UPROPERTY()
 	UGameMenuWidget *pGameMenu;
+
+	// 他人のポップアップメニュー
+	UPROPERTY()
+	UOtherPlayerPopupMenu *pOtherPlayerMenu;
 
 	// レベル管理.
 	UPROPERTY()
@@ -111,5 +123,8 @@ private:
 
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
+
+	// パーティ勧誘結果を受信した。
+	void OnRecvPartyInviteResult(MemoryStreamInterface *pStream);
 
 };

@@ -12,7 +12,9 @@
 #include "Master/MasterData.h"
 #include "Config.h"
 #include "DLC/PakFileManager.h"
+#include "UI/SimpleDialog.h"
 #include "UI/Menu/GameMenuWidget.h"
+#include "UI/Menu/OtherPlayerPopupMenu.h"
 #include "Components/CapsuleComponent.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
@@ -23,12 +25,14 @@
 #include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketPlayerRespawn.h"
 #include "Packet/PacketReceiveChat.h"
+#include "Packet/PacketPartyInviteResult.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 	, pMainHUD(nullptr)
 	, pGameMenu(nullptr)
+	, pOtherPlayerMenu(nullptr)
 	, bInitializedMainHUD(false)
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -51,6 +55,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::ReceiveChat, std::bind(&AActiveGameMode::OnRecvChat, this, _1));
 	AddPacketFunction(PacketID::PartyCreateResult, std::bind(&PartyInformation::OnRecvCreateResult, &PartyInfo, _1));
 	AddPacketFunction(PacketID::PartyDissolutionResult, std::bind(&PartyInformation::OnRecvDissolutionResult, &PartyInfo, _1));
+	AddPacketFunction(PacketID::PartyInviteResult, std::bind(&AActiveGameMode::OnRecvPartyInviteResult, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 }
@@ -128,6 +133,9 @@ void AActiveGameMode::OnLevelLoadFinished()
 // ゲームメニューを表示.
 void AActiveGameMode::ShowGameMenu()
 {
+	// 念のため。
+	EraseOtherPlayerPopupMenu();
+
 	pGameMenu = UGameMenuWidget::ShowWidget(this);
 	pGameMenu->OnMenuClosed.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnCloseGameMenu);
 
@@ -136,6 +144,24 @@ void AActiveGameMode::ShowGameMenu()
 	check(pController != nullptr);
 	pController->SetVirtualJoystickVisibility(false);
 	pController->SetEnableMove(false);
+}
+
+// 他人のポップアップメニューを表示.
+void AActiveGameMode::ShowOtherPlayerPopupMenu(AOtherPlayerCharacter *pCharacter)
+{
+	// 一旦消去.
+	EraseOtherPlayerPopupMenu();
+
+	pOtherPlayerMenu = UOtherPlayerPopupMenu::Show(this, pCharacter);
+}
+
+// 他人のポップアップメニューを消去.
+void AActiveGameMode::EraseOtherPlayerPopupMenu()
+{
+	if (pOtherPlayerMenu == nullptr) { return; }
+
+	pOtherPlayerMenu->RemoveFromParent();
+	pOtherPlayerMenu = nullptr;
 }
 
 
@@ -264,4 +290,28 @@ void AActiveGameMode::OnRecvChat(MemoryStreamInterface *pStream)
 	bool bIsSelf = (Packet.Uuid == pCharacter->GetStatus().GetUuid());
 
 	pMainHUD->OnRecvChat(Name, Message, bIsSelf);
+}
+
+// パーティ勧誘結果を受信した。
+void AActiveGameMode::OnRecvPartyInviteResult(MemoryStreamInterface *pStream)
+{
+	PacketPartyInviteResult Packet;
+	Packet.Serialize(pStream);
+
+	FString DisplayMessage = "";
+	switch (Packet.Result)
+	{
+		case PacketPartyInviteResult::Success:
+
+			DisplayMessage = "Party Invite Success!";
+			break;
+
+		case PacketPartyInviteResult::Error:
+
+			DisplayMessage = "Party Invite Error...";
+			break;
+
+	}
+
+	USimpleDialog::Show(this, DisplayMessage);
 }
