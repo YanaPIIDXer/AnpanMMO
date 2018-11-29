@@ -4,6 +4,7 @@
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PlayerData.h"
 
 
 class PacketSpawnPlayer  : public PacketBase
@@ -13,37 +14,22 @@ public:
 
 	
 
-	u32 Uuid;
-	s32 Hp;
-	s32 MaxHp;
-	float X;
-	float Y;
-	float Z;
+	PlayerData Data;
 	
 
 	PacketSpawnPlayer()
 	{
 	}
 
-	PacketSpawnPlayer(u32 InUuid, s32 InHp, s32 InMaxHp, float InX, float InY, float InZ)
+	PacketSpawnPlayer(PlayerData InData)
 	{
-		Uuid = InUuid;
-		Hp = InHp;
-		MaxHp = InMaxHp;
-		X = InX;
-		Y = InY;
-		Z = InZ;
+		Data = InData;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&Uuid);
-		pStream->Serialize(&Hp);
-		pStream->Serialize(&MaxHp);
-		pStream->Serialize(&X);
-		pStream->Serialize(&Y);
-		pStream->Serialize(&Z);
+		Data.Serialize(pStream);
 		
 		return true;
 	}

@@ -20,7 +20,7 @@ class ANPANMMO_API AOtherPlayerCharacter : public APlayerCharacterBase
 public:
 
 	// Spawn
-	static AOtherPlayerCharacter *Spawn(UWorld *pWorld, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp);
+	static AOtherPlayerCharacter *Spawn(UWorld *pWorld, uint32 Uuid, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp, const FString &CharacterName);
 
 	// コンストラクタ
 	AOtherPlayerCharacter(const FObjectInitializer &ObjectInitializer);
@@ -40,7 +40,11 @@ public:
 	// 移動ベクトルの取得.
 	virtual FVector GetMoveVector() const override;
 
-protected:
+	// UUIDを取得.
+	virtual uint32 GetUuid() const override { return Uuid; }
+
+	// キャラクタ名を取得.
+	virtual FString GetCharacterName() const override { return CharacterName; }
 
 private:
 
@@ -49,5 +53,11 @@ private:
 	
 	// コントローラ
 	TWeakObjectPtr<AOtherPlayerController> pController;
+
+	// UUID
+	uint32 Uuid;
+
+	// キャラクタ名.
+	FString CharacterName;
 	
 };
