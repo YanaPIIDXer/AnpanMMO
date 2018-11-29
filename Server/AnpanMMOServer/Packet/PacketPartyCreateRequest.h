@@ -13,22 +13,16 @@ public:
 
 	
 
-	u32 MemberMax;
 	
 
 	PacketPartyCreateRequest()
 	{
 	}
 
-	PacketPartyCreateRequest(u32 InMemberMax)
-	{
-		MemberMax = InMemberMax;
-		
-	}
+	
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&MemberMax);
 		
 		return true;
 	}
