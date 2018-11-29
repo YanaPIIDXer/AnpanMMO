@@ -5,7 +5,6 @@
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "PartyMemberData.h"
-#include "FlexArray.h"
 
 
 class PacketPartyJoinMember  : public PacketBase
@@ -15,22 +14,22 @@ public:
 
 	
 
-	FlexArray<PartyMemberData> MemberList;
+	PartyMemberData MemberData;
 	
 
 	PacketPartyJoinMember()
 	{
 	}
 
-	PacketPartyJoinMember(FlexArray<PartyMemberData> InMemberList)
+	PacketPartyJoinMember(PartyMemberData InMemberData)
 	{
-		MemberList = InMemberList;
+		MemberData = InMemberData;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		MemberList.Serialize(pStream);
+		MemberData.Serialize(pStream);
 		
 		return true;
 	}
