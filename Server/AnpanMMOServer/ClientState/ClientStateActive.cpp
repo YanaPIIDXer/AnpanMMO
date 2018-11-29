@@ -2,6 +2,7 @@
 #include  "ClientStateActive.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Client.h"
+#include "ClientManager.h"
 #include "Config.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Area/AreaManager.h"
@@ -24,6 +25,9 @@
 #include "Packet/PacketPartyCreateResult.h"
 #include "Packet/PacketPartyDissolutionRequest.h"
 #include "Packet/PacketPartyDissolutionResult.h"
+#include "Packet/PacketPartyInviteRequest.h"
+#include "Packet/PacketReceiveNotice.h"
+#include "Packet/PacketPartyInviteResult.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -37,6 +41,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
 	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
 	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
+	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
 }
 
 
@@ -177,5 +182,28 @@ void ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pSt
 	}
 
 	PacketPartyDissolutionResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティ勧誘要求を受信した。
+void ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
+{
+	PacketPartyInviteRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketPartyInviteResult::Success;
+	ClientPtr pTargetClient = ClientManager::GetInstance().Get(Packet.TargetUuid);
+	if (!pTargetClient.expired())
+	{
+		NoticeData Notice(NoticeData::PartyInvide, GetParent()->GetCustomerId());
+		PacketReceiveNotice NoticePacket(Notice);
+		pTargetClient.lock()->SendPacket(&NoticePacket);
+	}
+	else
+	{
+		Result = PacketPartyInviteResult::Error;
+	}
+
+	PacketPartyInviteResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
 }
