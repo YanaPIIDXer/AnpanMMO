@@ -76,6 +76,10 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "MapChange")
 	void StartLevelLoad();
 
+	// ゲームメニュー表示.
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void ShowGameMenu();
+
 private:
 	
 	// Blueprintのアセットパス

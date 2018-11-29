@@ -10,6 +10,7 @@
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
+class UGameMenuWidget;
 class ULevelManager;
 
 /**
@@ -47,6 +48,12 @@ public:
 
 	// レベルロードが完了した。
 	void OnLevelLoadFinished();
+
+	// ゲームメニューを表示.
+	void ShowGameMenu();
+
+	// ゲームメニューが閉じられた。
+	void OnCloseGameMenu();
 	
 protected:
 
@@ -64,6 +71,10 @@ private:
 	// MainHUD
 	UPROPERTY()
 	UMainHUD *pMainHUD;
+
+	// ゲームメニュー
+	UPROPERTY()
+	UGameMenuWidget *pGameMenu;
 
 	// レベル管理.
 	UPROPERTY()

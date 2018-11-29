@@ -2,6 +2,8 @@
 
 #include "GameMenuWidget.h"
 #include "Util.h"
+#include "Kismet/GameplayStatics.h"
+#include "Active/ActiveGameMode.h"
 
 const TCHAR *UGameMenuWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Menu/GameMenu.GameMenu");
 const int UGameMenuWidget::ZOrder = 1;
@@ -33,4 +35,8 @@ void UGameMenuWidget::ShowPartyMenu()
 void UGameMenuWidget::CloseMenu()
 {
 	RemoveFromParent();
+
+	auto *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->OnCloseGameMenu();
 }

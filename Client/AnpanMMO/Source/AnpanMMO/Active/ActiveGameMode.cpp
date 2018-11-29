@@ -7,10 +7,12 @@
 #include "Active/UI/MainHUD.h"
 #include "LevelStreaming/LevelManager.h"
 #include "Character/Player/GameCharacter.h"
+#include "Character/Player/GameController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Master/MasterData.h"
 #include "Config.h"
 #include "DLC/PakFileManager.h"
+#include "UI/Menu/GameMenuWidget.h"
 #include "Components/CapsuleComponent.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
@@ -26,6 +28,7 @@
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 	, pMainHUD(nullptr)
+	, pGameMenu(nullptr)
 	, bInitializedMainHUD(false)
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -117,6 +120,28 @@ void AActiveGameMode::OnLevelLoadFinished()
 
 	PacketGameReady Packet;
 	pInst->SendPacket(&Packet);
+}
+
+// ゲームメニューを表示.
+void AActiveGameMode::ShowGameMenu()
+{
+	pGameMenu = UGameMenuWidget::Show(this);
+	pMainHUD->SetVisibility(ESlateVisibility::Hidden);
+	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
+	check(pController != nullptr);
+	pController->SetVirtualJoystickVisibility(false);
+	pController->SetEnableMove(false);
+}
+
+// ゲームメニューが閉じられた。
+void AActiveGameMode::OnCloseGameMenu()
+{
+	pGameMenu = nullptr;
+	pMainHUD->SetVisibility(ESlateVisibility::Visible);
+	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
+	check(pController != nullptr);
+	pController->SetVirtualJoystickVisibility(true);
+	pController->SetEnableMove(true);
 }
 
 
