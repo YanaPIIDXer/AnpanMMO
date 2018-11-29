@@ -6,15 +6,14 @@
 #include "Active/ActiveGameMode.h"
 
 const TCHAR *UGameMenuWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Menu/GameMenu.GameMenu");
-const int UGameMenuWidget::ZOrder = 1;
 
 // •\Ž¦.
-UGameMenuWidget *UGameMenuWidget::Show(UObject *pOuter)
+UGameMenuWidget *UGameMenuWidget::ShowWidget(UObject *pOuter)
 {
 	auto *pWidget = Util::LoadBlueprint<UGameMenuWidget>(pOuter, AssetPath);
 	check(pWidget != nullptr);
 
-	pWidget->AddToViewport(ZOrder);
+	pWidget->Show(1);
 	return pWidget;
 }
 

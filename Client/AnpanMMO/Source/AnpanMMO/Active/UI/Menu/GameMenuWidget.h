@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "UI/Menu/LayeredMenuWidgetBase.h"
 #include "GameMenuWidget.generated.h"
 
 /**
  * ゲームメニューWidget
  */
 UCLASS()
-class ANPANMMO_API UGameMenuWidget : public UUserWidget
+class ANPANMMO_API UGameMenuWidget : public ULayeredMenuWidgetBase
 {
 
 	GENERATED_BODY()
@@ -18,7 +18,7 @@ class ANPANMMO_API UGameMenuWidget : public UUserWidget
 public:
 
 	// 表示.
-	static UGameMenuWidget *Show(UObject *pOuter);
+	static UGameMenuWidget *ShowWidget(UObject *pOuter);
 
 	// コンストラクタ
 	UGameMenuWidget(const FObjectInitializer &ObjectInitializer);
@@ -41,7 +41,4 @@ private:
 	// アセットのパス
 	static const TCHAR *AssetPath;
 
-	// ZOrder
-	static const int32 ZOrder;
-	
 };

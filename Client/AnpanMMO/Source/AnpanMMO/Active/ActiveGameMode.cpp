@@ -128,7 +128,7 @@ void AActiveGameMode::OnLevelLoadFinished()
 // ゲームメニューを表示.
 void AActiveGameMode::ShowGameMenu()
 {
-	pGameMenu = UGameMenuWidget::Show(this);
+	pGameMenu = UGameMenuWidget::ShowWidget(this);
 	pMainHUD->SetVisibility(ESlateVisibility::Hidden);
 	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
 	check(pController != nullptr);
