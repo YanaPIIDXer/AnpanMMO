@@ -12,7 +12,7 @@ const std::string ServerHost::CacheServerHost = "127.0.0.1";
 const std::string ServerHost::CacheServerHost = "218.220.121.112";
 #endif
 
-#ifndef USER_REMOTE_WORDCHECKSERVER
+#ifndef USE_REMOTE_WORDCHECKSERVER
 const std::string ServerHost::WordCheckServerHost = "127.0.0.1";
 #else
 const std::string ServerHost::WordCheckServerHost = "218.220.121.112";
