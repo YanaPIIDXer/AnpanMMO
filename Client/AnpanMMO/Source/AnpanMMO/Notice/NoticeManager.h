@@ -7,6 +7,8 @@
 
 class MemoryStreamInterface;
 
+DECLARE_DELEGATE_TwoParams(FOnRecvNotice, int32, const NoticeData &);
+
 /**
  * 通知マネージャ
  */
@@ -27,9 +29,20 @@ public:
 	// 通知を受信した。
 	void OnRecvNotice(MemoryStreamInterface *pStream);
 
+
+	// 通知を受信した時のdelegate
+	FOnRecvNotice OnRecvNoticeDelegate;
+
 private:
 
 	// 通知リスト
-	TArray<NoticeData> NoticeList;
+	TMap<int32, NoticeData> NoticeList;
+
+	// 次に割り振られるUUID
+	int32 NextUuid;
+
+
+	// 通知を追加.
+	void AddNotice(const NoticeData &Data);
 
 };

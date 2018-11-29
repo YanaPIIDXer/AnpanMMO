@@ -7,6 +7,7 @@
 
 // コンストラクタ
 NoticeManager::NoticeManager()
+	: NextUuid(1)
 {
 }
 
@@ -18,7 +19,7 @@ void NoticeManager::OnRecvNoticeList(MemoryStreamInterface *pStream)
 
 	for (int32 i = 0; i < Packet.Notices.GetCurrentSize(); i++)
 	{
-		NoticeList.Add(Packet.Notices[i]);
+		AddNotice(Packet.Notices[i]);
 	}
 }
 
@@ -28,7 +29,16 @@ void NoticeManager::OnRecvNotice(MemoryStreamInterface *pStream)
 	PacketReceiveNotice Packet;
 	Packet.Serialize(pStream);
 
-	UE_LOG(LogTemp, Log, TEXT("OnRecvNotice  Type:%d CustomerId:%d"), Packet.Notice.Type, Packet.Notice.CustomerId);
+	AddNotice(Packet.Notice);
+}
 
-	NoticeList.Add(Packet.Notice);
+
+// 通知を追加.
+void NoticeManager::AddNotice(const NoticeData &Data)
+{
+	int32 Uuid = NextUuid;
+	NoticeList.Add(Uuid, Data);
+	NextUuid++;
+
+	OnRecvNoticeDelegate.ExecuteIfBound(Uuid, Data);
 }
