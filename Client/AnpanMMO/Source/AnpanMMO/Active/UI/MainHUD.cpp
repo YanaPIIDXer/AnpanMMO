@@ -6,6 +6,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "MMOGameInstance.h"
 #include "Active/ActiveGameMode.h"
+#include "Packet/NoticeData.h"
 
 const TCHAR *UMainHUD::AssetPath = TEXT("/Game/Blueprints/UI/Active/MainHUD.MainHUD");
 
@@ -32,6 +33,12 @@ void UMainHUD::NativeConstruct()
 	Super::NativeConstruct();
 
 	pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+}
+
+// í ímÇéÛêMÇµÇΩÅB
+void UMainHUD::OnRecvNotice(int32 Uuid, const NoticeData &Data)
+{
+	UE_LOG(LogTemp, Log, TEXT("OnRecvNotice UUID:%d Type:%d CustomerId:%d"), Uuid, Data.Type, Data.CustomerId);
 }
 
 

@@ -7,6 +7,7 @@
 #include "MainHUD.generated.h"
 
 class AGameCharacter;
+class NoticeData;
 
 /**
  * メインHUD
@@ -65,6 +66,9 @@ public:
 	UFUNCTION(BlueprintNativeEvent, Category = "Chat")
 	void OnRecvChat(const FString &Name, const FString &Message, bool bIsSelf);
 	void OnRecvChat_Implementation(const FString &Name, const FString &Message, bool bIsSelf) {}
+
+	// 通知を受信した。
+	void OnRecvNotice(int32 Uuid, const NoticeData &Data);
 
 protected:
 

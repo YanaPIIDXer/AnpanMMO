@@ -195,9 +195,16 @@ void ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
 	ClientPtr pTargetClient = ClientManager::GetInstance().Get(Packet.TargetUuid);
 	if (!pTargetClient.expired())
 	{
-		NoticeData Notice(NoticeData::PartyInvide, GetParent()->GetCustomerId());
-		PacketReceiveNotice NoticePacket(Notice);
-		pTargetClient.lock()->SendPacket(&NoticePacket);
+		if (pTargetClient.lock()->GetCharacter().lock()->GetParty().expired())
+		{
+			NoticeData Notice(NoticeData::PartyInvide, GetParent()->GetCustomerId());
+			PacketReceiveNotice NoticePacket(Notice);
+			pTargetClient.lock()->SendPacket(&NoticePacket);
+		}
+		else
+		{
+			Result = PacketPartyInviteResult::AlreadyJoinOtherParty;
+		}
 	}
 	else
 	{

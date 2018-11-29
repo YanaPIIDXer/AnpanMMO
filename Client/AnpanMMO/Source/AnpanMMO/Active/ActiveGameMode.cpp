@@ -73,6 +73,7 @@ void AActiveGameMode::BeginPlay()
 	AnpanMgr.SetWorld(GetWorld());
 	WarpPointMgr.SetWorld(GetWorld());
 	PartyInfo.SetGameMode(this);
+	NoticeMgr.OnRecvNoticeDelegate.BindUObject<UMainHUD>(pMainHUD, &UMainHUD::OnRecvNotice);
 	pLevelManager->OnLevelLoadFinished.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnLevelLoadFinished);
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
@@ -300,12 +301,12 @@ void AActiveGameMode::OnRecvPartyInviteResult(MemoryStreamInterface *pStream)
 	PacketPartyInviteResult Packet;
 	Packet.Serialize(pStream);
 
-	FString DisplayMessage = "";
+	FString DisplayMessage = "Party Invite Success!";
 	switch (Packet.Result)
 	{
-		case PacketPartyInviteResult::Success:
+		case PacketPartyInviteResult::AlreadyJoinOtherParty:
 
-			DisplayMessage = "Party Invite Success!";
+			DisplayMessage = "Already Joined Other Party...";
 			break;
 
 		case PacketPartyInviteResult::Error:
