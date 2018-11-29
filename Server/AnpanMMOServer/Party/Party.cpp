@@ -32,22 +32,21 @@ bool Party::Join(PlayerCharacterPtr pPlayer)
 	pPlayer.lock()->SetParty(shared_from_this());
 
 	// メンバリストを送信.
-	FlexArray<PartyMemberData> List;
+	PacketPartyMemberList ListPacket;
 	for (MemberMap::iterator It = MemberList.begin(); It != MemberList.end(); ++It)
 	{
 		PartyMemberData Data(It->first, It->second.lock()->GetName());
 		if (It->first == Uuid)
 		{
 			// リーダーは先頭.
-			List.Insert(Data, 0);
+			ListPacket.MemberList.Insert(Data, 0);
 		}
 		else
 		{
 			// それ以外は普通にPushBack
-			List.PushBack(Data);
+			ListPacket.MemberList.PushBack(Data);
 		}
 	}
-	PacketPartyMemberList ListPacket(List);
 	pPlayer.lock()->GetClient()->SendPacket(&ListPacket);
 
 	return true;
