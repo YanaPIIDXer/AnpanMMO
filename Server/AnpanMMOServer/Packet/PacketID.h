@@ -35,6 +35,7 @@ enum PacketID
 	PartyCreateRequest,
 	PartyCreateResult,
 	PartyInviteRequest,
+	PartyInviteResult,
 	PartyInviteResponse,
 	PartyDissolutionRequest,
 	PartyDissolutionResult,

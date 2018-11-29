@@ -5,7 +5,7 @@
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "NoticeData.h"
-#include "FlexArray,h"
+#include "FlexArray.h"
 
 
 class PacketNoticeList  : public PacketBase

@@ -48,6 +48,9 @@ private:
 	// 攻撃のバインド名.
 	static const FName AttackBind;
 
+	// タップチェックの閾値.
+	static const float TapCheckThreshold;
+
 	// プレイヤーキャラ
 	TWeakObjectPtr<AGameCharacter> pCharacter;
 
@@ -63,6 +66,9 @@ private:
 	// 動けるか？
 	bool bEnableMove;
 
+	// スワイプ量.
+	float SwipeValue;
+
 
 	// カメラをSpawn
 	void SpawnCamera();
@@ -75,5 +81,8 @@ private:
 
 	// 左右移動.
 	void MoveRight(float Value);
+
+	// 他人に対するレイトレース
+	void RayTraceToOtherPlayer(const FVector2D &ScreenPos);
 
 };

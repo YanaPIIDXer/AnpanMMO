@@ -12,7 +12,9 @@
 #include "Master/MasterData.h"
 #include "Config.h"
 #include "DLC/PakFileManager.h"
+#include "UI/SimpleDialog.h"
 #include "UI/Menu/GameMenuWidget.h"
+#include "UI/Menu/OtherPlayerPopupMenu.h"
 #include "Components/CapsuleComponent.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
@@ -23,12 +25,13 @@
 #include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketPlayerRespawn.h"
 #include "Packet/PacketReceiveChat.h"
+#include "Packet/PacketPartyInviteResult.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 	, pMainHUD(nullptr)
-	, pGameMenu(nullptr)
+	, pOtherPlayerMenu(nullptr)
 	, bInitializedMainHUD(false)
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -51,6 +54,9 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::ReceiveChat, std::bind(&AActiveGameMode::OnRecvChat, this, _1));
 	AddPacketFunction(PacketID::PartyCreateResult, std::bind(&PartyInformation::OnRecvCreateResult, &PartyInfo, _1));
 	AddPacketFunction(PacketID::PartyDissolutionResult, std::bind(&PartyInformation::OnRecvDissolutionResult, &PartyInfo, _1));
+	AddPacketFunction(PacketID::PartyInviteResult, std::bind(&AActiveGameMode::OnRecvPartyInviteResult, this, _1));
+	AddPacketFunction(PacketID::NoticeList, std::bind(&NoticeManager::OnRecvNoticeList, &NoticeMgr, _1));
+	AddPacketFunction(PacketID::ReceiveNotice, std::bind(&NoticeManager::OnRecvNotice, &NoticeMgr, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 }
@@ -66,6 +72,7 @@ void AActiveGameMode::BeginPlay()
 	AnpanMgr.SetWorld(GetWorld());
 	WarpPointMgr.SetWorld(GetWorld());
 	PartyInfo.SetGameMode(this);
+	NoticeMgr.OnRecvNoticeDelegate.BindUObject<UMainHUD>(pMainHUD, &UMainHUD::OnRecvNotice);
 	pLevelManager->OnLevelLoadFinished.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnLevelLoadFinished);
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
@@ -125,30 +132,44 @@ void AActiveGameMode::OnLevelLoadFinished()
 	pInst->SendPacket(&Packet);
 }
 
-// ゲームメニューを表示.
-void AActiveGameMode::ShowGameMenu()
+// メインHUDを表示するかどうかを設定.
+void AActiveGameMode::SetHiddenMainHUD(bool bHidden)
 {
-	pGameMenu = UGameMenuWidget::ShowWidget(this);
-	pGameMenu->OnMenuClosed.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnCloseGameMenu);
-
-	pMainHUD->SetVisibility(ESlateVisibility::Hidden);
 	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
 	check(pController != nullptr);
-	pController->SetVirtualJoystickVisibility(false);
-	pController->SetEnableMove(false);
+
+	if (bHidden)
+	{
+		pMainHUD->SetVisibility(ESlateVisibility::Hidden);
+		pController->SetVirtualJoystickVisibility(false);
+		pController->SetEnableMove(false);
+	}
+	else
+	{
+		pMainHUD->SetVisibility(ESlateVisibility::Visible);
+		pController->SetVirtualJoystickVisibility(true);
+		pController->SetEnableMove(true);
+	}
 }
 
-
-// ゲームメニューが閉じられた。
-void AActiveGameMode::OnCloseGameMenu()
+// 他人のポップアップメニューを表示.
+void AActiveGameMode::ShowOtherPlayerPopupMenu(AOtherPlayerCharacter *pCharacter)
 {
-	pGameMenu = nullptr;
-	pMainHUD->SetVisibility(ESlateVisibility::Visible);
-	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
-	check(pController != nullptr);
-	pController->SetVirtualJoystickVisibility(true);
-	pController->SetEnableMove(true);
+	// 一旦消去.
+	EraseOtherPlayerPopupMenu();
+
+	pOtherPlayerMenu = UOtherPlayerPopupMenu::Show(this, pCharacter);
 }
+
+// 他人のポップアップメニューを消去.
+void AActiveGameMode::EraseOtherPlayerPopupMenu()
+{
+	if (pOtherPlayerMenu == nullptr) { return; }
+
+	pOtherPlayerMenu->RemoveFromParent();
+	pOtherPlayerMenu = nullptr;
+}
+
 
 // エリア移動を受信した。
 void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
@@ -264,4 +285,28 @@ void AActiveGameMode::OnRecvChat(MemoryStreamInterface *pStream)
 	bool bIsSelf = (Packet.Uuid == pCharacter->GetStatus().GetUuid());
 
 	pMainHUD->OnRecvChat(Name, Message, bIsSelf);
+}
+
+// パーティ勧誘結果を受信した。
+void AActiveGameMode::OnRecvPartyInviteResult(MemoryStreamInterface *pStream)
+{
+	PacketPartyInviteResult Packet;
+	Packet.Serialize(pStream);
+
+	FString DisplayMessage = "Party Invite Success!";
+	switch (Packet.Result)
+	{
+		case PacketPartyInviteResult::AlreadyJoinOtherParty:
+
+			DisplayMessage = "Already Joined Other Party...";
+			break;
+
+		case PacketPartyInviteResult::Error:
+
+			DisplayMessage = "Party Invite Error...";
+			break;
+
+	}
+
+	USimpleDialog::Show(this, DisplayMessage);
 }

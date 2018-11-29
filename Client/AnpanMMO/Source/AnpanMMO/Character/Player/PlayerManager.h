@@ -6,6 +6,7 @@
 #include "PlayerCharacterBase.h"
 
 class MemoryStreamInterface;
+class PlayerData;
 
 /**
  * プレイヤー管理.
@@ -59,6 +60,6 @@ private:
 
 
 	// キャラクタをSpawn
-	void SpawnCharacter(uint32 Uuid, float X, float Y, float Z, float Rotation, int32 Hp, int32 MaxHp);
+	void SpawnCharacter(const PlayerData &Data);
 
 };

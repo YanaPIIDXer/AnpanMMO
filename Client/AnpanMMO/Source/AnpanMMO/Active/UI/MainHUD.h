@@ -66,6 +66,9 @@ public:
 	void OnRecvChat(const FString &Name, const FString &Message, bool bIsSelf);
 	void OnRecvChat_Implementation(const FString &Name, const FString &Message, bool bIsSelf) {}
 
+	// 通知を受信した。
+	void OnRecvNotice(int32 Uuid, const NoticeData &Data);
+
 protected:
 
 	// 攻撃ボタンが押された。
@@ -76,9 +79,21 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "MapChange")
 	void StartLevelLoad();
 
-	// ゲームメニュー表示.
+	// ゲームメニューを表示.
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void ShowGameMenu();
+
+	// 未読通知があるか？
+	UFUNCTION(BlueprintPure, Category = "Notice")
+	bool HasNotReadNotice() const { return (NotReadNoticeCount > 0); }
+
+	// 通知メニューを表示.
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void ShowNoticeMenu();
+
+	// 未読通知の数.
+	UPROPERTY(BlueprintReadOnly, Category = "Notice")
+	int32 NotReadNoticeCount;
 
 private:
 	
@@ -87,5 +102,5 @@ private:
 
 	// キャラクタ
 	TWeakObjectPtr<AGameCharacter> pCharacter;
-	
+
 };

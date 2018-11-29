@@ -20,13 +20,14 @@ public:
 	float Rotation;
 	s32 Hp;
 	s32 MaxHp;
+	std::string Name;
 	
 
 	PlayerData()
 	{
 	}
 
-	PlayerData(u32 InUuid, float InX, float InY, float InZ, float InRotation, s32 InHp, s32 InMaxHp)
+	PlayerData(u32 InUuid, float InX, float InY, float InZ, float InRotation, s32 InHp, s32 InMaxHp, std::string InName)
 	{
 		Uuid = InUuid;
 		X = InX;
@@ -35,6 +36,7 @@ public:
 		Rotation = InRotation;
 		Hp = InHp;
 		MaxHp = InMaxHp;
+		Name = InName;
 		
 	}
 
@@ -47,6 +49,7 @@ public:
 		pStream->Serialize(&Rotation);
 		pStream->Serialize(&Hp);
 		pStream->Serialize(&MaxHp);
+		pStream->Serialize(&Name);
 		
 		return true;
 	}

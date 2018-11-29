@@ -49,6 +49,12 @@ public:
 	// 移動ベクトルの取得.
 	virtual FVector GetMoveVector() const override;
 
+	// UUIDを取得.
+	virtual uint32 GetUuid() const override { return Status.GetUuid(); }
+
+	// キャラクタ名を取得.
+	virtual FString GetCharacterName() const override { return Status.GetName(); }
+
 protected:
 
 	// レベルアップした

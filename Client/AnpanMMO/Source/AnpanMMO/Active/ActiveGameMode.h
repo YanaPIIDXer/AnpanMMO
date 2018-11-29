@@ -8,11 +8,14 @@
 #include "Character/Anpan/AnpanManager.h"
 #include "WarpPoint/WarpPointManager.h"
 #include "Party/PartyInformation.h"
+#include "Notice/NoticeManager.h"
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
 class UGameMenuWidget;
+class UOtherPlayerPopupMenu;
 class ULevelManager;
+class AOtherPlayerCharacter;
 
 /**
  * ゲーム中GameMode
@@ -50,8 +53,14 @@ public:
 	// レベルロードが完了した。
 	void OnLevelLoadFinished();
 
-	// ゲームメニューを表示.
-	void ShowGameMenu();
+	// メインHUDを表示するかどうかを設定.
+	void SetHiddenMainHUD(bool bHidden);
+
+	// 他人のポップアップメニューを表示.
+	void ShowOtherPlayerPopupMenu(AOtherPlayerCharacter *pCharacter);
+
+	// 他人のポップアップメニューを消去.
+	void EraseOtherPlayerPopupMenu();
 
 	// パーティ情報取得.
 	const PartyInformation &GetPartyInfo() const { return PartyInfo; }
@@ -73,9 +82,9 @@ private:
 	UPROPERTY()
 	UMainHUD *pMainHUD;
 
-	// ゲームメニュー
+	// 他人のポップアップメニュー
 	UPROPERTY()
-	UGameMenuWidget *pGameMenu;
+	UOtherPlayerPopupMenu *pOtherPlayerMenu;
 
 	// レベル管理.
 	UPROPERTY()
@@ -84,12 +93,12 @@ private:
 	// パーティ情報.
 	PartyInformation PartyInfo;
 
+	// 通知管理.
+	NoticeManager NoticeMgr;
+
 	// MainHUDを初期化したか？
 	bool bInitializedMainHUD;
 
-
-	// ゲームメニューが閉じられた。
-	void OnCloseGameMenu();
 
 	// エリア移動を受信した。
 	void OnRecvAreaMove(MemoryStreamInterface *pStream);
@@ -111,5 +120,8 @@ private:
 
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
+
+	// パーティ勧誘結果を受信した。
+	void OnRecvPartyInviteResult(MemoryStreamInterface *pStream);
 
 };

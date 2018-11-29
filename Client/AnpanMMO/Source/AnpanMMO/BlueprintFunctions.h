@@ -37,6 +37,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Dialog", meta = (WorldContext = pOuter))
 	static USimpleDialog *ShowSimpleDialog(UObject *pOuter, const FString &DisplayText, int32 ZOrder = 0);
 
+	// はい・いいえのダイアログを表示.
+	UFUNCTION(BlueprintCallable, Category = "Dialog", meta = (WorldContext = pOuter))
+	static UYesNoDialog *ShowYesNoDialog(UObject *pOuter, const FString &DisplayText, int32 ZOrder = 0);
+
 	// エフェクト生成.
 	UFUNCTION(BlueprintCallable, Category = "Effect", meta = (WorldContext = pWorldContext))
 	static AEmitter *SpawnEffect(UObject *pWorldContext, UParticleSystem *pParticle, const FVector &Position, const FRotator &Rotation);
