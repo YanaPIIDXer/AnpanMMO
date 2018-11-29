@@ -2,6 +2,7 @@
 
 #include "BlueprintFunctions.h"
 #include "UI/SimpleDialog.h"
+#include "UI/YesNoDialog.h"
 #include "Particles/Emitter.h"
 #include "Kismet/GameplayStatics.h"
 #include "MMOGameInstance.h"
@@ -11,6 +12,13 @@
 USimpleDialog *UBlueprintFunctions::ShowSimpleDialog(UObject *pOuter, const FString &DisplayText, int32 ZOrder)
 {
 	USimpleDialog *pDialog = USimpleDialog::Show(pOuter, DisplayText, ZOrder);
+	return pDialog;
+}
+
+// はい・いいえのダイアログを表示.
+UYesNoDialog *UBlueprintFunctions::ShowYesNoDialog(UObject *pOuter, const FString &DisplayText, int32 ZOrder)
+{
+	UYesNoDialog *pDialog = UYesNoDialog::Show(pOuter, DisplayText, ZOrder);
 	return pDialog;
 }
 
