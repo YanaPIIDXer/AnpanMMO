@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Packet/PartyMemberData.h"
 
 class MemoryStreamInterface;
 class AActiveGameMode;
@@ -30,8 +31,14 @@ public:
 	// 作成結果を受信した。
 	void OnRecvCreateResult(MemoryStreamInterface *pStream);
 
-	// 離脱結果を受信した。
+	// 解散結果を受信した。
 	void OnRecvDissolutionResult(MemoryStreamInterface *pStream);
+
+	// メンバリストを受信した。
+	void OnRecvMemberList(MemoryStreamInterface *pStream);
+
+	// メンバ加入を受信した。
+	void OnRecvJoinMember(MemoryStreamInterface *pStream);
 
 private:
 
@@ -40,5 +47,8 @@ private:
 
 	// GameMode
 	TWeakObjectPtr<AActiveGameMode> pGameMode;
+
+	// メンバリスト
+	TArray<PartyMemberData> MemberList;
 
 };
