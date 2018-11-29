@@ -35,6 +35,7 @@ void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 
 	if (Packet.Result != PacketPartyCreateResult::Success) { return; }
 	PartyId = Packet.PartyId;
+	USimpleDialog::Show(pGameMode.Get(), "Party Create Success!!");
 }
 
 // ó£íEåãâ ÇéÛêMÇµÇΩÅB
@@ -50,4 +51,5 @@ void PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
 	}
 
 	PartyId = 0;
+	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
 }
