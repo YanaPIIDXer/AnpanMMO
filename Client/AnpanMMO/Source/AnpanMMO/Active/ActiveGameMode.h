@@ -53,9 +53,6 @@ public:
 	// ゲームメニューを表示.
 	void ShowGameMenu();
 
-	// ゲームメニューが閉じられた。
-	void OnCloseGameMenu();
-	
 protected:
 
 private:
@@ -87,6 +84,9 @@ private:
 	// MainHUDを初期化したか？
 	bool bInitializedMainHUD;
 
+
+	// ゲームメニューが閉じられた。
+	void OnCloseGameMenu();
 
 	// エリア移動を受信した。
 	void OnRecvAreaMove(MemoryStreamInterface *pStream);

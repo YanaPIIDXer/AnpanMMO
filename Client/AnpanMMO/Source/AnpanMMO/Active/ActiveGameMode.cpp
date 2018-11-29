@@ -129,12 +129,15 @@ void AActiveGameMode::OnLevelLoadFinished()
 void AActiveGameMode::ShowGameMenu()
 {
 	pGameMenu = UGameMenuWidget::ShowWidget(this);
+	pGameMenu->OnMenuClosed.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnCloseGameMenu);
+
 	pMainHUD->SetVisibility(ESlateVisibility::Hidden);
 	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
 	check(pController != nullptr);
 	pController->SetVirtualJoystickVisibility(false);
 	pController->SetEnableMove(false);
 }
+
 
 // ゲームメニューが閉じられた。
 void AActiveGameMode::OnCloseGameMenu()
@@ -146,7 +149,6 @@ void AActiveGameMode::OnCloseGameMenu()
 	pController->SetVirtualJoystickVisibility(true);
 	pController->SetEnableMove(true);
 }
-
 
 // エリア移動を受信した。
 void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)

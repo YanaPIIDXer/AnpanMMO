@@ -29,13 +29,3 @@ void UGameMenuWidget::ShowPartyMenu()
 {
 	UE_LOG(LogTemp, Log, TEXT("Show Party Menu"));
 }
-
-// ƒƒjƒ…[‚ğ•Â‚¶‚é
-void UGameMenuWidget::CloseMenu()
-{
-	RemoveFromParent();
-
-	auto *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
-	check(pGameMode != nullptr);
-	pGameMode->OnCloseGameMenu();
-}

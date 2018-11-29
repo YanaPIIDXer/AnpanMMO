@@ -32,10 +32,6 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void ShowPartyMenu();
 
-	// メニューを閉じる
-	UFUNCTION(BlueprintCallable, Category = "Menu")
-	void CloseMenu();
-
 private:
 
 	// アセットのパス
