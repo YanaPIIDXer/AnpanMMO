@@ -40,6 +40,9 @@ public:
 	// メンバ加入を受信した。
 	void OnRecvJoinMember(MemoryStreamInterface *pStream);
 
+	// 解散を受信した。
+	void OnRecvDissolution(MemoryStreamInterface *pStream);
+
 private:
 
 	// パーティＩＤ

@@ -10,6 +10,7 @@
 #include "Packet/PacketPartyDissolutionResult.h"
 #include "Packet/PacketPartyMemberList.h"
 #include "Packet/PacketPartyJoinMember.h"
+#include "Packet/PacketPartyDissolution.h"
 
 // コンストラクタ
 PartyInformation::PartyInformation()
@@ -62,6 +63,7 @@ void PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
 		return;
 	}
 
+	MemberList.Empty();
 	PartyId = 0;
 	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
 }
@@ -85,4 +87,15 @@ void PartyInformation::OnRecvJoinMember(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	MemberList.Add(Packet.MemberData);
+}
+
+// 解散を受信した。
+void PartyInformation::OnRecvDissolution(MemoryStreamInterface *pStream)
+{
+	PacketPartyDissolution Packet;
+	Packet.Serialize(pStream);
+
+	MemberList.Empty();
+	PartyId = 0;
+	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
 }
