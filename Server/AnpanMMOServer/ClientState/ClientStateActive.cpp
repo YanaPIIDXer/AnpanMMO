@@ -173,16 +173,11 @@ void ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pSt
 	Packet.Serialize(pStream);
 
 	u8 Result = PacketPartyDissolutionResult::Success;
-	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
-	if (!pParty.expired())
-	{
-		pParty.lock()->Dissolution(GetParent()->GetUuid());
-	}
-	else
+	if (!PartyManager::GetInstance().Dissolution(GetParent()->GetUuid()))
 	{
 		Result = PacketPartyDissolutionResult::Error;
 	}
-
+	
 	PacketPartyDissolutionResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
 }

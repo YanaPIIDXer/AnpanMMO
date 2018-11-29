@@ -26,6 +26,9 @@ public:
 	// ì¬.
 	void Create(PlayerCharacterPtr pCreatePlayer);
 
+	// ‰ğU.
+	bool Dissolution(u32 Uuid);
+
 	// æ“¾.
 	PartyPtr Get(u32 Uuid);
 

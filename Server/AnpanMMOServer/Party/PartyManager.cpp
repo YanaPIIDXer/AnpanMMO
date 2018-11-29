@@ -36,6 +36,14 @@ void PartyManager::Create(PlayerCharacterPtr pCreatePlayer)
 	pParty->Join(pCreatePlayer);
 }
 
+// ‰ğU.
+bool PartyManager::Dissolution(u32 Uuid)
+{
+	if (Partys.find(Uuid) == Partys.end()) { return false; }
+	Partys.erase(Uuid);
+	return true;
+}
+
 // æ“¾.
 PartyPtr PartyManager::Get(u32 Uuid)
 {
