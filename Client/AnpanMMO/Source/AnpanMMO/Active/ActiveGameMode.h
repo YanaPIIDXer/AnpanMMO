@@ -8,6 +8,7 @@
 #include "Character/Anpan/AnpanManager.h"
 #include "WarpPoint/WarpPointManager.h"
 #include "Party/PartyInformation.h"
+#include "Notice/NoticeManager.h"
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
@@ -95,6 +96,9 @@ private:
 
 	// パーティ情報.
 	PartyInformation PartyInfo;
+
+	// 通知管理.
+	NoticeManager NoticeMgr;
 
 	// MainHUDを初期化したか？
 	bool bInitializedMainHUD;
