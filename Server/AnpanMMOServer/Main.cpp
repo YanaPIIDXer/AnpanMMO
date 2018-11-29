@@ -4,6 +4,7 @@
 #include "TickManager.h" 
 #include "Master/MasterData.h"
 #include "Area/AreaManager.h"
+#include "Party/PartyManager.h"
 #include "ServerHost.h"
 #include "CacheServer/CacheServerConnection.h"
 #include "WordCheckServer/WordCheckServerConnection.h"
@@ -53,6 +54,10 @@ int main()
 		bind(&ClientManager::Poll, &ClientManager::GetInstance()));
 
 	AreaManager::GetInstance().Initialize();
+
+	asio::basic_repeating_timer<posix_time::ptime> PartyManagerTimer(IOService);
+	PartyManagerTimer.start(posix_time::millisec(30),
+		bind(&PartyManager::Poll, &PartyManager::GetInstance()));
 
 	asio::basic_repeating_timer<posix_time::ptime> TickTimer(IOService);
 	TickTimer.start(posix_time::millisec(30),
