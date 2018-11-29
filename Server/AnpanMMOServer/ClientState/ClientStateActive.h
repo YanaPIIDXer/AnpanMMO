@@ -45,6 +45,9 @@ private:
 
 	// パーティ勧誘要求を受信した。
 	void OnRecvPartyInviteRequest(MemoryStreamInterface *pStream);
+	
+	// パーティ勧誘レスポンスを受信した。
+	void OnRecvPartyInviteResponse(MemoryStreamInterface *pStream);
 
 };
 

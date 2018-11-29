@@ -28,6 +28,7 @@
 #include "Packet/PacketPartyInviteRequest.h"
 #include "Packet/PacketReceiveNotice.h"
 #include "Packet/PacketPartyInviteResult.h"
+#include "Packet/PacketPartyInviteResponse.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -42,6 +43,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
 	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
 	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
+	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
 }
 
 
@@ -213,4 +215,35 @@ void ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
 
 	PacketPartyInviteResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティ勧誘レスポンスを受けた。
+void ClientStateActive::OnRecvPartyInviteResponse(MemoryStreamInterface *pStream)
+{
+	PacketPartyInviteResponse Packet;
+	Packet.Serialize(pStream);
+
+	ClientPtr pTargetClient = ClientManager::GetInstance().GetFromCustomerId(Packet.CustomerId);
+
+	// レスポンス待ちの間に落ちた等のケース
+	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
+	if (pTargetClient.expired()) { return; }
+
+	if (Packet.Response == PacketPartyInviteResponse::Refuse)
+	{
+		// @TODO:pTargetClientに対して通知を投げる。
+		return;
+	}
+
+	PartyPtr pParty = pTargetClient.lock()->GetCharacter().lock()->GetParty();
+
+	// レスポンス待ちの間にパーティを解散した等のケース
+	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
+	if (pParty.expired()) { return; }
+
+	// レスポンス待ちの間にメンバーが最大になった場合。
+	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
+	if (pParty.lock()->IsMaximumMember()) { return; }
+
+	pParty.lock()->Join(GetParent()->GetCharacter());
 }
