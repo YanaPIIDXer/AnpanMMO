@@ -37,6 +37,9 @@ void AGameController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// ↓本来なら不要なNULLチェックなんだけど突如落ちるようになったので。
+	if (pCharacter == nullptr) { return; }
+
 	if (pCharacter->IsDead()) { return; }
 
 	if (!bEnableMove) { return; }
