@@ -43,6 +43,7 @@ enum PacketID
 	PartyExitResult,
 	PartyDissolutionRequest,
 	PartyDissolutionResult,
+	PartyDissolution,
 	PlayerList,
 	SpawnPlayer,
 	MovePlayer,
