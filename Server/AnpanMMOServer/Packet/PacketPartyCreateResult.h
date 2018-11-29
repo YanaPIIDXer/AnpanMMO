@@ -1,15 +1,15 @@
-#ifndef __PACKETPARTYCREATERESPONSE_H__
-#define __PACKETPARTYCREATERESPONSE_H__
+#ifndef __PACKETPARTYCREATERESULT_H__
+#define __PACKETPARTYCREATERESULT_H__
 
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 
 
-class PacketPartyCreateResponse  : public PacketBase
+class PacketPartyCreateResult  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return PartyCreateResponse; }
+	virtual PacketID GetPacketID() const { return PartyCreateResult; }
 
 	enum ResultCode
 	{
@@ -22,11 +22,11 @@ public:
 	u32 PartyId;
 	
 
-	PacketPartyCreateResponse()
+	PacketPartyCreateResult()
 	{
 	}
 
-	PacketPartyCreateResponse(u8 InResult, u32 InPartyId)
+	PacketPartyCreateResult(u8 InResult, u32 InPartyId)
 	{
 		Result = InResult;
 		PartyId = InPartyId;
@@ -42,4 +42,4 @@ public:
 	}
 };
 
-#endif		// #ifndef __PACKETPARTYCREATERESPONSE_H__
+#endif		// #ifndef __PACKETPARTYCREATERESULT_H__

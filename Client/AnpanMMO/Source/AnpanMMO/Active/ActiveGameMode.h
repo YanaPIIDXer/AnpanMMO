@@ -7,6 +7,7 @@
 #include "Character/Player/PlayerManager.h"
 #include "Character/Anpan/AnpanManager.h"
 #include "WarpPoint/WarpPointManager.h"
+#include "Party/PartyInformation.h"
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
@@ -79,6 +80,9 @@ private:
 	// レベル管理.
 	UPROPERTY()
 	ULevelManager *pLevelManager;
+
+	// パーティ情報.
+	PartyInformation PartyInfo;
 
 	// MainHUDを初期化したか？
 	bool bInitializedMainHUD;

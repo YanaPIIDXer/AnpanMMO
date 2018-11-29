@@ -21,7 +21,7 @@
 #include "Packet/PacketRespawnRequest.h"
 #include "Packet/PacketPlayerRespawn.h"
 #include "Packet/PacketPartyCreateRequest.h"
-#include "Packet/PacketPartyCreateResponse.h"
+#include "Packet/PacketPartyCreateResult.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -138,20 +138,20 @@ void ClientStateActive::OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream)
 	PacketPartyCreateRequest Packet;
 	Packet.Serialize(pStream);
 
-	u8 Result = PacketPartyCreateResponse::Success;
+	u8 Result = PacketPartyCreateResult::Success;
 	if (PartyManager::GetInstance().IsAlreadyJoined(GetParent()->GetUuid()))
 	{
 		// 既にどこかのパーティに参加済み。
-		Result = PacketPartyCreateResponse::AlreadyJoin;
+		Result = PacketPartyCreateResult::AlreadyJoin;
 	}
 
 	u32 PartyId = 0;
-	if (Result == PacketPartyCreateResponse::Success)
+	if (Result == PacketPartyCreateResult::Success)
 	{
 		// パーティ作成.
 		PartyManager::GetInstance().Create(GetParent()->GetCharacter());
 		PartyId = GetParent()->GetCharacter().lock()->GetParty().lock()->GetUuid();
 	}
-	PacketPartyCreateResponse ResponsePacket(Result, PartyId);
-	GetParent()->SendPacket(&ResponsePacket);
+	PacketPartyCreateResult ResultPacket(Result, PartyId);
+	GetParent()->SendPacket(&ResultPacket);
 }
