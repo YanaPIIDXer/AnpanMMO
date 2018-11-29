@@ -30,6 +30,8 @@ enum PacketID
 	CreateCharacterRequest,
 	CreateCharacterResult,
 	CharacterStatus,
+	NoticeList,
+	ReceiveNotice,
 	PlayerList,
 	SpawnPlayer,
 	MovePlayer,
