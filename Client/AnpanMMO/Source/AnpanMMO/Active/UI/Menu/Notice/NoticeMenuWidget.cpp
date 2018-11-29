@@ -39,7 +39,7 @@ void UNoticeMenuWidget::NativeConstruct()
 		{
 			case NoticeData::PartyInvide:
 
-				pNotice = UPartyInviteNotice::Create(this, Info.Uuid, Info.Data.CustomerId, "DummyName");
+				pNotice = UPartyInviteNotice::Create(this, Info.Uuid, Info.Data.CustomerId, UTF8_TO_TCHAR(Info.Data.CharacterName.c_str()));
 				break;
 		}
 		check(pNotice != nullptr);

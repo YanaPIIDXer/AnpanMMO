@@ -197,7 +197,7 @@ void ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
 	{
 		if (pTargetClient.lock()->GetCharacter().lock()->GetParty().expired())
 		{
-			NoticeData Notice(NoticeData::PartyInvide, GetParent()->GetCustomerId());
+			NoticeData Notice(NoticeData::PartyInvide, GetParent()->GetCustomerId(), GetParent()->GetCharacter().lock()->GetName());
 			PacketReceiveNotice NoticePacket(Notice);
 			pTargetClient.lock()->SendPacket(&NoticePacket);
 		}
