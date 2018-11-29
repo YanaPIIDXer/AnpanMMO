@@ -8,6 +8,7 @@
 #include "Active/ActiveGameMode.h"
 #include "Packet/NoticeData.h"
 #include "Menu/GameMenuWidget.h"
+#include "Menu/Notice/NoticeMenuWidget.h"
 
 const TCHAR *UMainHUD::AssetPath = TEXT("/Game/Blueprints/UI/Active/MainHUD.MainHUD");
 
@@ -67,4 +68,11 @@ void UMainHUD::StartLevelLoad()
 void UMainHUD::ShowGameMenu()
 {
 	UGameMenuWidget::ShowWidget(this);
+}
+
+// 通知メニューを表示.
+void UMainHUD::ShowNoticeMenu()
+{
+	NotReadNoticeCount = 0;
+	UNoticeMenuWidget::ShowWidget(this);
 }

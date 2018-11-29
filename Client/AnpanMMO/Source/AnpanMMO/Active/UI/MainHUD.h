@@ -87,10 +87,9 @@ protected:
 	UFUNCTION(BlueprintPure, Category = "Notice")
 	bool HasNotReadNotice() const { return (NotReadNoticeCount > 0); }
 
-	// 通知を読んだ事にする。
-	UFUNCTION(BlueprintCallable, Category = "Notice")
-	void ReadNotice() { NotReadNoticeCount = 0; }
-
+	// 通知メニューを表示.
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void ShowNoticeMenu();
 
 	// 未読通知の数.
 	UPROPERTY(BlueprintReadOnly, Category = "Notice")
