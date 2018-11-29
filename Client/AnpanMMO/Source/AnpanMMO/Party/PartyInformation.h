@@ -30,6 +30,9 @@ public:
 	// 作成結果を受信した。
 	void OnRecvCreateResult(MemoryStreamInterface *pStream);
 
+	// 離脱結果を受信した。
+	void OnRecvDissolutionResult(MemoryStreamInterface *pStream);
+
 private:
 
 	// パーティＩＤ
