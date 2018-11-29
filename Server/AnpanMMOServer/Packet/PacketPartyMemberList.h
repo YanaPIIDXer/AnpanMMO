@@ -11,7 +11,7 @@
 class PacketPartyMemberList  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return PartyMemberLIst; }
+	virtual PacketID GetPacketID() const { return PartyMemberList; }
 
 	
 

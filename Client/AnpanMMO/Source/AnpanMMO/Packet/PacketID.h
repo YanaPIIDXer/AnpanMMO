@@ -38,7 +38,7 @@ enum PacketID
 	PartyInviteResult,
 	PartyInviteResponse,
 	PartyJoinMember,
-	PartyMemberLIst,
+	PartyMemberList,
 	PartyExitRequest,
 	PartyExitResult,
 	PartyDissolutionRequest,
