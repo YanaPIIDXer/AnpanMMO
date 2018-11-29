@@ -43,7 +43,7 @@ public:
 	u32 GetUuid() const { return Uuid; }
 
 	// パケットをバラ撒く。
-	void BroadcastPacket(PacketBase *pPacket);
+	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 
 private:
 

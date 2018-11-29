@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "PartyManager.h"
 #include "Client.h"
+#include "ClientManager.h"
 #include "Character/Player/PlayerCharacter.h"
+#include "Packet/PacketPartyDissolution.h"
 
 PartyManager PartyManager::Instance;
 
@@ -40,6 +42,13 @@ void PartyManager::Create(PlayerCharacterPtr pCreatePlayer)
 bool PartyManager::Dissolution(u32 Uuid)
 {
 	if (Partys.find(Uuid) == Partys.end()) { return false; }
+
+	// 解散を通知する。
+	// 但し解散した張本人（リーダー）には送信しない。
+	ClientPtr pLeaderClient = ClientManager::GetInstance().Get(Uuid);
+	PacketPartyDissolution Packet;
+	Partys[Uuid]->BroadcastPacket(&Packet, pLeaderClient.lock().get());
+
 	Partys.erase(Uuid);
 	return true;
 }

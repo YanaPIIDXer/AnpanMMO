@@ -84,10 +84,11 @@ bool Party::IsAbleDelete() const
 }
 
 // パケットをバラ撒く。
-void Party::BroadcastPacket(PacketBase *pPacket)
+void Party::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 {
 	for (MemberMap::iterator It = MemberList.begin(); It != MemberList.end(); ++It)
 	{
+		if (It->second.lock()->GetClient() == pIgnoreClient) { continue; }
 		It->second.lock()->GetClient()->SendPacket(pPacket);
 	}
 }
