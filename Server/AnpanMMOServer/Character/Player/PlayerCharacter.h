@@ -3,6 +3,7 @@
 
 #include "Character/CharacterBase.h"
 #include "PlayerExp.h"
+#include "WeakPtrDefine.h"
 #include "Packet/CharacterType.h"
 
 class Client;
@@ -39,6 +40,12 @@ public:
 	// キャラクタタイプを取得.
 	virtual u8 GetCharacterType() const { return CharacterType::Player; }
 
+	// パーティを設定.
+	void SetParty(const PartyPtr &pInParty) { pParty = pInParty; }
+
+	// パーティを取得.
+	PartyPtr GetParty() const { return pParty; }
+
 private:
 
 	// クライアント
@@ -49,6 +56,9 @@ private:
 
 	// 名前.
 	std::string Name;
+
+	// パーティ
+	PartyPtr pParty;
 
 
 	// レベルアップコールバック

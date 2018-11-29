@@ -162,7 +162,7 @@
     <ClInclude Include="Packet\PacketBase.h" />
     <ClInclude Include="Packet\PacketHeader.h" />
     <ClInclude Include="Packet\PacketID.h" />
-    <ClInclude Include="ServerPort.h" />
+    <ClInclude Include="ServerHost.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TCPConnection.h" />
@@ -182,7 +182,7 @@
     <ClCompile Include="MySQL\MySqlQuery.cpp" />
     <ClCompile Include="PacketReceiver.cpp" />
     <ClCompile Include="Packet\PacketHeader.cpp" />
-    <ClCompile Include="ServerPort.cpp" />
+    <ClCompile Include="ServerHost.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

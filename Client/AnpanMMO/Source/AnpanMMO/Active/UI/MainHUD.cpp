@@ -53,3 +53,11 @@ void UMainHUD::StartLevelLoad()
 	uint32 AreaId = pInst->GetAreaIdCache();
 	pGameMode->StartLevelLoad(AreaId);
 }
+
+// ゲームメニュー表示.
+void UMainHUD::ShowGameMenu()
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->ShowGameMenu();
+}

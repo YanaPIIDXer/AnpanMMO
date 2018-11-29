@@ -9,9 +9,6 @@
 struct AreaItem;
 class PacketBase;
 
-class Area;
-typedef weak_ptr<Area> AreaPtr;
-
 /**
  * エリアクラス
  */

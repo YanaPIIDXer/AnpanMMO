@@ -7,10 +7,12 @@
 #include "Active/UI/MainHUD.h"
 #include "LevelStreaming/LevelManager.h"
 #include "Character/Player/GameCharacter.h"
+#include "Character/Player/GameController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Master/MasterData.h"
 #include "Config.h"
 #include "DLC/PakFileManager.h"
+#include "UI/Menu/GameMenuWidget.h"
 #include "Components/CapsuleComponent.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
@@ -26,6 +28,7 @@
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 	, pMainHUD(nullptr)
+	, pGameMenu(nullptr)
 	, bInitializedMainHUD(false)
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -46,6 +49,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::PlayerRespawn, std::bind(&AActiveGameMode::OnRecvRespawn, this, _1));
 	AddPacketFunction(PacketID::ExitPlayer, std::bind(&PlayerManager::OnRecvExit, &PlayerMgr, _1));
 	AddPacketFunction(PacketID::ReceiveChat, std::bind(&AActiveGameMode::OnRecvChat, this, _1));
+	AddPacketFunction(PacketID::PartyCreateResult, std::bind(&PartyInformation::OnRecvCreateResult, &PartyInfo, _1));
+	AddPacketFunction(PacketID::PartyDissolutionResult, std::bind(&PartyInformation::OnRecvDissolutionResult, &PartyInfo, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 }
@@ -60,6 +65,7 @@ void AActiveGameMode::BeginPlay()
 	PlayerMgr.SetWorld(GetWorld());
 	AnpanMgr.SetWorld(GetWorld());
 	WarpPointMgr.SetWorld(GetWorld());
+	PartyInfo.SetGameMode(this);
 	pLevelManager->OnLevelLoadFinished.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnLevelLoadFinished);
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
@@ -119,6 +125,30 @@ void AActiveGameMode::OnLevelLoadFinished()
 	pInst->SendPacket(&Packet);
 }
 
+// ゲームメニューを表示.
+void AActiveGameMode::ShowGameMenu()
+{
+	pGameMenu = UGameMenuWidget::ShowWidget(this);
+	pGameMenu->OnMenuClosed.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnCloseGameMenu);
+
+	pMainHUD->SetVisibility(ESlateVisibility::Hidden);
+	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
+	check(pController != nullptr);
+	pController->SetVirtualJoystickVisibility(false);
+	pController->SetEnableMove(false);
+}
+
+
+// ゲームメニューが閉じられた。
+void AActiveGameMode::OnCloseGameMenu()
+{
+	pGameMenu = nullptr;
+	pMainHUD->SetVisibility(ESlateVisibility::Visible);
+	auto *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
+	check(pController != nullptr);
+	pController->SetVirtualJoystickVisibility(true);
+	pController->SetEnableMove(true);
+}
 
 // エリア移動を受信した。
 void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)

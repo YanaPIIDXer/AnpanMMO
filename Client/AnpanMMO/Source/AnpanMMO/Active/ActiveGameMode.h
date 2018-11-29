@@ -7,9 +7,11 @@
 #include "Character/Player/PlayerManager.h"
 #include "Character/Anpan/AnpanManager.h"
 #include "WarpPoint/WarpPointManager.h"
+#include "Party/PartyInformation.h"
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
+class UGameMenuWidget;
 class ULevelManager;
 
 /**
@@ -47,7 +49,13 @@ public:
 
 	// レベルロードが完了した。
 	void OnLevelLoadFinished();
-	
+
+	// ゲームメニューを表示.
+	void ShowGameMenu();
+
+	// パーティ情報取得.
+	const PartyInformation &GetPartyInfo() const { return PartyInfo; }
+
 protected:
 
 private:
@@ -65,13 +73,23 @@ private:
 	UPROPERTY()
 	UMainHUD *pMainHUD;
 
+	// ゲームメニュー
+	UPROPERTY()
+	UGameMenuWidget *pGameMenu;
+
 	// レベル管理.
 	UPROPERTY()
 	ULevelManager *pLevelManager;
 
+	// パーティ情報.
+	PartyInformation PartyInfo;
+
 	// MainHUDを初期化したか？
 	bool bInitializedMainHUD;
 
+
+	// ゲームメニューが閉じられた。
+	void OnCloseGameMenu();
 
 	// エリア移動を受信した。
 	void OnRecvAreaMove(MemoryStreamInterface *pStream);

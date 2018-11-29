@@ -18,6 +18,11 @@ void AGameCamera::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// ↓何故か突如落ちるようになった。
+	//   PlayerControllerのPossessが走る前にTickが走るようになったのかと思われるが
+	//   そうなった原因は不明。
+	if (pPlayer == nullptr) { return; }
+
 	FVector PlayerPos = pPlayer->GetActorLocation();
 	FVector BackVec = FVector(-DistanceFromPlayer, 0.0f, 150.0f);
 	BackVec = Rotation.RotateVector(BackVec);

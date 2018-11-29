@@ -3,9 +3,8 @@
 
 #include <boost/unordered_map.hpp>
 #include <boost/function.hpp>
+#include "WeakPtrDefine.h"
 
-class Anpan;
-typedef weak_ptr<Anpan> AnpanPtr;
 class PacketAnpanList;
 class AnpanPopArea;
 

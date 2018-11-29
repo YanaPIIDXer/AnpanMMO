@@ -7,6 +7,7 @@
 #include "Area/AreaManager.h"
 #include "Master/MasterData.h"
 #include "WordCheckServer/WordCheckServerConnection.h"
+#include "Party/PartyManager.h"
 #include "ClientStateAreaChange.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
@@ -19,6 +20,10 @@
 #include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketRespawnRequest.h"
 #include "Packet/PacketPlayerRespawn.h"
+#include "Packet/PacketPartyCreateRequest.h"
+#include "Packet/PacketPartyCreateResult.h"
+#include "Packet/PacketPartyDissolutionRequest.h"
+#include "Packet/PacketPartyDissolutionResult.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -30,6 +35,8 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(WordCheckChatResult, boost::bind(&ClientStateActive::OnRecvChatWordCheckResult, this, _2));
 	AddPacketFunction(AreaMoveRequest, boost::bind(&ClientStateActive::OnRecvAreaMoveRequest, this, _2));
 	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
+	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
+	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
 }
 
 
@@ -126,4 +133,49 @@ void ClientStateActive::OnRecvRespawnRequest(MemoryStreamInterface *pStream)
 
 	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), 1, Vector3D(-1000.0f, 0.0f, 0.0f));
 	GetParent()->ChangeState(pNewState);
+}
+
+// パーティ作成要求を受信した。
+void ClientStateActive::OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream)
+{
+	PacketPartyCreateRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketPartyCreateResult::Success;
+	if (PartyManager::GetInstance().IsAlreadyJoined(GetParent()->GetUuid()))
+	{
+		// 既にどこかのパーティに参加済み。
+		Result = PacketPartyCreateResult::AlreadyJoin;
+	}
+
+	u32 PartyId = 0;
+	if (Result == PacketPartyCreateResult::Success)
+	{
+		// パーティ作成.
+		PartyManager::GetInstance().Create(GetParent()->GetCharacter());
+		PartyId = GetParent()->GetCharacter().lock()->GetParty().lock()->GetUuid();
+	}
+	PacketPartyCreateResult ResultPacket(Result, PartyId);
+	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティ離脱要求を受信した。
+void ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pStream)
+{
+	PacketPartyDissolutionRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketPartyDissolutionResult::Success;
+	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
+	if (!pParty.expired())
+	{
+		pParty.lock()->Dissolution(GetParent()->GetUuid());
+	}
+	else
+	{
+		Result = PacketPartyDissolutionResult::Error;
+	}
+
+	PacketPartyDissolutionResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
 }

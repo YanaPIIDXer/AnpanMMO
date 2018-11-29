@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "CacheServerConnection.h"
-#include "ServerPort.h"
+#include "ServerHost.h"
 #include "Packet/PacketBase.h"
 #include "MemoryStream/MemorySizeCaliculateStream.h"
 #include "MemoryStream/MemoryStreamWriter.h"
@@ -21,7 +21,7 @@ CacheServerConnection::CacheServerConnection(const shared_ptr<tcp::socket> &pInS
 bool CacheServerConnection::Connect()
 {
 	boost::system::error_code ErrorCode;
-	GetSocket()->connect(tcp::endpoint(asio::ip::address::from_string("127.0.0.1"), ServerPort::CacheServer), ErrorCode);
+	GetSocket()->connect(tcp::endpoint(asio::ip::address::from_string(ServerHost::CacheServerHost), ServerHost::CacheServerPort), ErrorCode);
 
 	if (ErrorCode)
 	{
