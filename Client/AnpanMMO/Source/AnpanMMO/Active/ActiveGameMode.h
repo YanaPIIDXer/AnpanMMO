@@ -65,6 +65,12 @@ public:
 	// パーティ情報取得.
 	const PartyInformation &GetPartyInfo() const { return PartyInfo; }
 
+	// 通知リストを取得.
+	TArray<NoticeInformation> GetNoticeList() const { return NoticeMgr.GetNoticeList(); }
+
+	// 通知を消去.
+	void RemoveNotice(uint32 Uuid) { NoticeMgr.RemoveNotice(Uuid); }
+
 protected:
 
 private:
