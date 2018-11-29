@@ -43,7 +43,7 @@ public:
 			Reallocate(CurrentCapacity * 2);
 		}
 
-		for (int i = CurrentSize; i > Index; i++)
+		for (int i = CurrentSize; i > Index; i--)
 		{
 			pArray[i] = pArray[i - 1];
 		}
