@@ -41,3 +41,17 @@ PartyPtr PartyManager::Get(u32 Uuid)
 	if (Partys.find(Uuid) == Partys.end()) { return PartyPtr(); }
 	return Partys[Uuid];
 }
+
+// 既にどこかのパーティに参加済みか？
+bool PartyManager::IsAlreadyJoined(u32 Uuid)
+{
+	for (PartyList::iterator It = Partys.begin(); It != Partys.end(); ++It)
+	{
+		std::vector<PlayerCharacterPtr> MemberList = It->second->GetMemberList();
+		for (u32 i = 0; i < MemberList.size(); i++)
+		{
+			if (MemberList[i].lock()->GetClient()->GetUuid() == Uuid) { return true; }
+		}
+	}
+	return false;
+}

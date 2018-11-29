@@ -28,6 +28,9 @@ public:
 	// 取得.
 	PartyPtr Get(u32 Uuid);
 
+	// 既にどこかのパーティに参加済みか？
+	bool IsAlreadyJoined(u32 Uuid);
+
 private:
 
 	// パーティリスト

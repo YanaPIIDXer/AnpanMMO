@@ -37,6 +37,9 @@ private:
 	// リスポン要求を受信した。
 	void OnRecvRespawnRequest(MemoryStreamInterface *pStream);
 
+	// パーティ作成要求を受信した。
+	void OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

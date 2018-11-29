@@ -25,10 +25,16 @@ public:
 	~Party() {}
 
 	// 参加.
-	void Join(PlayerCharacterPtr pPlayer);
+	bool Join(PlayerCharacterPtr pPlayer);
 
 	// 脱退.
 	void Secession(u32 Uuid);
+
+	// メンバリスト取得.
+	std::vector<PlayerCharacterPtr> GetMemberList() const;
+
+	// メンバが最大か？
+	bool IsMaximumMember() const { return (MemberList.size() >= MaximumMember); }
 
 	// 削除してもいいか？
 	bool IsAbleDelete() const;
@@ -37,6 +43,9 @@ public:
 	u32 GetUuid() const { return Uuid; }
 
 private:
+
+	// メンバ最大数.
+	static const u32 MaximumMember;
 
 	// メンバマップ
 	MemberMap MemberList;
