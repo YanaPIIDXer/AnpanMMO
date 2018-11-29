@@ -1,10 +1,8 @@
 #ifndef __PARTY_H__
 #define __PARTY_H__
 
-#include "Character/Player/PlayerCharacter.h"
-
-class Party;
-typedef weak_ptr<Party> PartyPtr;
+#include <boost/unordered_map.hpp>
+#include "WeakPtrDefine.h"
 
 /**
  * パーティクラス

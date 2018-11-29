@@ -2,8 +2,8 @@
 #define __PLAYERCHARACTER_H__
 
 #include "Character/CharacterBase.h"
-#include "Party/Party.h"
 #include "PlayerExp.h"
+#include "WeakPtrDefine.h"
 #include "Packet/CharacterType.h"
 
 class Client;

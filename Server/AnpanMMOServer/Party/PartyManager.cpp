@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PartyManager.h"
 #include "Client.h"
+#include "Character/Player/PlayerCharacter.h"
 
 PartyManager PartyManager::Instance;
 

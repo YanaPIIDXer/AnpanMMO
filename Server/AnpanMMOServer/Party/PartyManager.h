@@ -2,6 +2,7 @@
 #define __PARTYMANAGER_H__
 
 #include "Party.h"
+#include "WeakPtrDefine.h"
 
 /**
  * パーティマネージャ

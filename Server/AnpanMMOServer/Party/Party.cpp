@@ -2,6 +2,7 @@
 #include "Party.h"
 #include "Client.h"
 #include "Character/Player/PlayerCharacter.h"
+#include "WeakPtrDefine.h"
 
 const u32 Party::MaximumMember = 4;
 
@@ -18,7 +19,7 @@ bool Party::Join(PlayerCharacterPtr pPlayer)
 	u32 Uuid = pPlayer.lock()->GetClient()->GetUuid();
 	if (MemberList.find(Uuid) != MemberList.end()) { return false; }		// Šù‚ÉQ‰ÁÏ‚İB
 	MemberList[Uuid] = pPlayer;
-	pPlayer->SetParty(shared_from_this());
+	pPlayer.lock()->SetParty(shared_from_this());
 	return true;
 }
 

@@ -3,8 +3,7 @@
 
 #include <boost/unordered_map.hpp>
 #include "Client.h"
-
-typedef weak_ptr<Client> ClientPtr;
+#include "WeakPtrDefine.h"
 
 /**
  * クライアント管理.
