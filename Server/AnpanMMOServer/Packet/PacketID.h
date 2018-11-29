@@ -36,6 +36,8 @@ enum PacketID
 	PartyCreateResponse,
 	PartyInviteRequest,
 	PartyInviteResponse,
+	PartyDissolutionRequest,
+	PartyDissolutionResponse,
 	PlayerList,
 	SpawnPlayer,
 	MovePlayer,
