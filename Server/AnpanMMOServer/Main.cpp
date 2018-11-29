@@ -4,7 +4,7 @@
 #include "TickManager.h" 
 #include "Master/MasterData.h"
 #include "Area/AreaManager.h"
-#include "ServerPort.h"
+#include "ServerHost.h"
 #include "CacheServer/CacheServerConnection.h"
 #include "WordCheckServer/WordCheckServerConnection.h"
 
@@ -41,7 +41,7 @@ int main()
 		return 1;
 	}
 	
-	ClientAcceptor Acceptor(IOService, ServerPort::GameServer);
+	ClientAcceptor Acceptor(IOService, ServerHost::GameServerPort);
 	asio::basic_repeating_timer<posix_time::ptime> AcceptorTimer(IOService);
 	AcceptorTimer.start(posix_time::millisec(30),
 		bind(&ClientAcceptor::Poll, &Acceptor));

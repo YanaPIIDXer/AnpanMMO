@@ -152,7 +152,7 @@
     <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="ClientState\ClientStateTitle.h" />
     <ClInclude Include="Area\HeightMap.h" />
-    <ClInclude Include="ServerPort.h" />
+    <ClInclude Include="ServerHost.h" />
     <ClInclude Include="StringPack.h" />
     <ClInclude Include="TCPConnection.h" />
     <ClInclude Include="Config.h" />
@@ -230,7 +230,7 @@
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="Area\HeightMap.cpp" />
     <ClCompile Include="Math\Vector3D.cpp" />
-    <ClCompile Include="ServerPort.cpp" />
+    <ClCompile Include="ServerHost.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="FlexArray.cpp" />

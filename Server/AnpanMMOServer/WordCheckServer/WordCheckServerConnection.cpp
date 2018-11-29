@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "WordCheckServerConnection.h"
-#include "ServerPort.h"
+#include "ServerHost.h"
 #include "Packet/PacketBase.h"
 #include "MemoryStream/MemorySizeCaliculateStream.h"
 #include "MemoryStream/MemoryStreamWriter.h"
@@ -21,7 +21,7 @@ WordCheckServerConnection::WordCheckServerConnection(const shared_ptr<tcp::socke
 bool WordCheckServerConnection::Connect()
 {
 	boost::system::error_code ErrorCode;
-	GetSocket()->connect(tcp::endpoint(asio::ip::address::from_string("127.0.0.1"), ServerPort::WordCheckServer), ErrorCode);
+	GetSocket()->connect(tcp::endpoint(asio::ip::address::from_string(ServerHost::WordCheckServerHost), ServerHost::WordCheckServerPort), ErrorCode);
 
 	if (ErrorCode)
 	{

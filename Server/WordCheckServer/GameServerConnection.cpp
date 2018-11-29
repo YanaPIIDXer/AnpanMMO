@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "GameServerConnection.h"
-#include "ServerPort.h"
+#include "ServerHost.h"
 #include "Packet/PacketBase.h"
 #include "MemoryStream/MemorySizeCaliculateStream.h"
 #include "MemoryStream/MemoryStreamWriter.h"
@@ -10,7 +10,7 @@
 // コンストラクタ
 GameServerConnection::GameServerConnection(asio::io_service &IOService, const shared_ptr<tcp::socket> &pInSocket)
 	: TCPConnection(pInSocket)
-	, Acceptor(IOService, tcp::endpoint(tcp::v4(), ServerPort::WordCheckServer))
+	, Acceptor(IOService, tcp::endpoint(tcp::v4(), ServerHost::WordCheckServerPort))
 	, Receiver(this)
 {
 	Accept();
