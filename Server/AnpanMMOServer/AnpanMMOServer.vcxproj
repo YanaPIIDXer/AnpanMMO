@@ -131,6 +131,8 @@
     <ClInclude Include="Area\Area.h" />
     <ClInclude Include="Area\AreaManager.h" />
     <ClInclude Include="Area\InstanceArea.h" />
+    <ClInclude Include="Area\InstanceAreaTicket.h" />
+    <ClInclude Include="Area\InstanceAreaTicketManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="CacheServer\CachePacketReceiver.h" />
@@ -218,6 +220,8 @@
     <ClCompile Include="Area\Area.cpp" />
     <ClCompile Include="Area\AreaManager.cpp" />
     <ClCompile Include="Area\InstanceArea.cpp" />
+    <ClCompile Include="Area\InstanceAreaTicket.cpp" />
+    <ClCompile Include="Area\InstanceAreaTicketManager.cpp" />
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="CacheServer\CachePacketReceiver.cpp" />
     <ClCompile Include="CacheServer\CacheServerConnection.cpp" />

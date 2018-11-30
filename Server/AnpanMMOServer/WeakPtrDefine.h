@@ -22,4 +22,7 @@ typedef weak_ptr<Client> ClientPtr;
 class AreaBase;
 typedef weak_ptr<AreaBase> AreaPtr;
 
+class InstanceAreaTicket;
+typedef weak_ptr<InstanceAreaTicket> InstanceAreaTicketPtr;
+
 #endif		// #ifndef __WEAKPTRDEFINE_H__
