@@ -60,7 +60,7 @@ namespace MasterConverter
 								int EnumValue = 0;
 								if(Master.TryFindEnumValue(Columns[j].DataList[i].ToString(), out EnumValue))
 								{
-									Data = (double)EnumValue;
+									Data = EnumValue;
 								}
 								else
 								{
@@ -71,12 +71,15 @@ namespace MasterConverter
 							{
 								case Type.s8:
 
-									Bytes = BitConverter.GetBytes((char)Data);
+									// @TODO:負数ブチ込んだ時に問題起きる気がする・・・
+									Bytes = new byte[1];
+									Bytes[0] = (byte)Data;
 									break;
 
 								case Type.u8:
 
-									Bytes = BitConverter.GetBytes((byte)Data);
+									Bytes = new byte[1];
+									Bytes[0] = (byte)Data;
 									break;
 
 								case Type.s16:
