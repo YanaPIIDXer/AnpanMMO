@@ -8,7 +8,7 @@
 #include "UI/SimpleDialog.h"
 #include "Packet/PacketPartyCreateResult.h"
 #include "Packet/PacketPartyDissolutionResult.h"
-#include "Packet/PacketPartyMemberList.h"
+#include "Packet/PacketPartyJoin.h"
 #include "Packet/PacketPartyJoinMember.h"
 #include "Packet/PacketPartyDissolution.h"
 
@@ -69,11 +69,12 @@ void PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
 }
 
 // メンバリストを受信した。
-void PartyInformation::OnRecvMemberList(MemoryStreamInterface *pStream)
+void PartyInformation::OnRecvJoin(MemoryStreamInterface *pStream)
 {
-	PacketPartyMemberList Packet;
+	PacketPartyJoin Packet;
 	Packet.Serialize(pStream);
 
+	PartyId = Packet.Uuid;
 	for (int i = 0; i < Packet.MemberList.GetCurrentSize(); i++)
 	{
 		MemberList.Add(Packet.MemberList[i]);

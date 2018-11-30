@@ -4,7 +4,7 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "WeakPtrDefine.h"
 #include "Packet/PacketPartyJoinMember.h"
-#include "Packet/PacketPartyMemberList.h"
+#include "Packet/PacketPartyJoin.h"
 
 const u32 Party::MaximumMember = 4;
 
@@ -18,46 +18,47 @@ Party::Party(u32 InUuid)
 bool Party::Join(PlayerCharacterPtr pPlayer)
 {
 	if (IsMaximumMember()) { return false; }		// メンバ数が最大.
-	u32 Uuid = pPlayer.lock()->GetClient()->GetUuid();
-	if (MemberList.find(Uuid) != MemberList.end()) { return false; }		// 既に参加済み。
+	u32 CharacterUuid = pPlayer.lock()->GetClient()->GetUuid();
+	if (MemberList.find(CharacterUuid) != MemberList.end()) { return false; }		// 既に参加済み。
 
 	// メンバ追加をバラ撒く
 	{
-		PartyMemberData Data(Uuid, pPlayer.lock()->GetName());
+		PartyMemberData Data(CharacterUuid, pPlayer.lock()->GetName());
 		PacketPartyJoinMember JoinPacket(Data);
 		BroadcastPacket(&JoinPacket);
 	}
 
-	MemberList[Uuid] = pPlayer;
+	MemberList[CharacterUuid] = pPlayer;
 	pPlayer.lock()->SetParty(shared_from_this());
 
-	// メンバリストを送信.
-	PacketPartyMemberList ListPacket;
+	// パーティ参加参加を送信.
+	PacketPartyJoin JoinPacket;
+	JoinPacket.Uuid = Uuid;
 	for (MemberMap::iterator It = MemberList.begin(); It != MemberList.end(); ++It)
 	{
 		PartyMemberData Data(It->first, It->second.lock()->GetName());
 		if (It->first == Uuid)
 		{
 			// リーダーは先頭.
-			ListPacket.MemberList.Insert(Data, 0);
+			JoinPacket.MemberList.Insert(Data, 0);
 		}
 		else
 		{
 			// それ以外は普通にPushBack
-			ListPacket.MemberList.PushBack(Data);
+			JoinPacket.MemberList.PushBack(Data);
 		}
 	}
-	pPlayer.lock()->GetClient()->SendPacket(&ListPacket);
+	pPlayer.lock()->GetClient()->SendPacket(&JoinPacket);
 
 	return true;
 }
 
 // 離脱.
-void Party::Exit(u32 Uuid)
+void Party::Exit(u32 PlayerUuid)
 {
-	if (MemberList.find(Uuid) == MemberList.end()) { return; }			// 存在しない。
-	MemberList[Uuid].lock()->SetParty(PartyPtr());
-	MemberList.erase(Uuid);
+	if (MemberList.find(PlayerUuid) == MemberList.end()) { return; }			// 存在しない。
+	MemberList[PlayerUuid].lock()->SetParty(PartyPtr());
+	MemberList.erase(PlayerUuid);
 }
 
 // メンバリスト取得.

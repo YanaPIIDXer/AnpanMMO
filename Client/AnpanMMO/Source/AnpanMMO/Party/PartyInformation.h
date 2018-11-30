@@ -34,8 +34,8 @@ public:
 	// 解散結果を受信した。
 	void OnRecvDissolutionResult(MemoryStreamInterface *pStream);
 
-	// メンバリストを受信した。
-	void OnRecvMemberList(MemoryStreamInterface *pStream);
+	// 参加を受信した。
+	void OnRecvJoin(MemoryStreamInterface *pStream);
 
 	// メンバ加入を受信した。
 	void OnRecvJoinMember(MemoryStreamInterface *pStream);

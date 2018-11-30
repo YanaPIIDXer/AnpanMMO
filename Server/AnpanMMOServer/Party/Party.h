@@ -28,7 +28,7 @@ public:
 	bool Join(PlayerCharacterPtr pPlayer);
 
 	// ’E‘Ş.
-	void Exit(u32 Uuid);
+	void Exit(u32 CharacterUuid);
 
 	// ƒƒ“ƒoƒŠƒXƒgæ“¾.
 	std::vector<PlayerCharacterPtr> GetMemberList() const;

@@ -1,5 +1,5 @@
-#ifndef __PACKETPARTYMEMBERLIST_H__
-#define __PACKETPARTYMEMBERLIST_H__
+#ifndef __PACKETPARTYJOIN_H__
+#define __PACKETPARTYJOIN_H__
 
 #include "PacketBase.h"
 #include "PacketID.h"
@@ -8,32 +8,35 @@
 #include "FlexArray.h"
 
 
-class PacketPartyMemberList  : public PacketBase
+class PacketPartyJoin  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return PartyMemberList; }
+	virtual PacketID GetPacketID() const { return PartyJoin; }
 
 	
 
+	u32 Uuid;
 	FlexArray<PartyMemberData> MemberList;
 	
 
-	PacketPartyMemberList()
+	PacketPartyJoin()
 	{
 	}
 
-	PacketPartyMemberList(FlexArray<PartyMemberData> InMemberList)
+	PacketPartyJoin(u32 InUuid, FlexArray<PartyMemberData> InMemberList)
 	{
+		Uuid = InUuid;
 		MemberList = InMemberList;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&Uuid);
 		MemberList.Serialize(pStream);
 		
 		return true;
 	}
 };
 
-#endif		// #ifndef __PACKETPARTYMEMBERLIST_H__
+#endif		// #ifndef __PACKETPARTYJOIN_H__
