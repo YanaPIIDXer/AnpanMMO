@@ -27,6 +27,7 @@ enum PacketID
 	LevelUp,
 	InstanceAreaTicketPublish,
 	InstanceAreaTicketProcess,
+	InstanceAreaTicketDiscard,
 	LogInRequest,
 	LogInResult,
 	CreateCharacterRequest,
