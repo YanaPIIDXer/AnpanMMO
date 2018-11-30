@@ -3,7 +3,7 @@
 #include "Math/DamageCalcUnit.h"
 #include "Packet/PacketStopAnpan.h"
 
-const float Anpan::BaseRadius = 50.0f;
+const float Anpan::BaseRadius = 80.0f;
 
 // コンストラクタ
 Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate)

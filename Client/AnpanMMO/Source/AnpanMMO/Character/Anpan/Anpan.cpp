@@ -6,18 +6,26 @@
 #include "Components/SphereComponent.h"
 #include "Engine/StaticMesh.h"
 #include "Util.h"
+#include "Master/MasterData.h"
 #include "Packet/AnpanData.h"
 
+const float AAnpan::BaseRadius = 80.0f;
 const TCHAR *AAnpan::MeshPath = TEXT("/Game/Meshes/Anpan/Mesh/Anpan.Anpan");
 const TCHAR *AAnpan::BlueprintPath = TEXT("/Game/Blueprints/System/Active/Anpan.Anpan");
 
 // 生成.
 AAnpan *AAnpan::Spawn(UWorld *pWorld, const AnpanData &Data)
 {
-	AAnpan *pAnpan = Util::SpawnFromBlueprint<AAnpan>(pWorld, BlueprintPath, FVector(Data.X, Data.Y, Data.Z), FRotator(0.0f, Data.Rotation, 0.0f));
+	const AnpanItem *pItem = MasterData::GetInstance().GetAnpanMaster().Get(Data.MasterId);
+
+	// 足元の座標から中心の座標に変換する。
+	float Z = Data.Z + (BaseRadius * pItem->Scale);
+	AAnpan *pAnpan = Util::SpawnFromBlueprint<AAnpan>(pWorld, BlueprintPath, FVector(Data.X, Data.Y, Z), FRotator(0.0f, Data.Rotation, 0.0f));
 	pAnpan->Initialize(Data.Hp, Data.MaxHp);
 	pAnpan->Uuid = Data.Uuid;
 
+	pAnpan->SetActorScale3D(FVector(pItem->Scale, pItem->Scale, pItem->Scale));
+	
 	return pAnpan;
 }
 
@@ -40,7 +48,6 @@ AAnpan::AAnpan(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent->SetStaticMesh(MeshFinder.Object);
 	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel1);
-	pMeshComponent->SetRelativeLocation(FVector(0.0f, 0.0f, 100.0f));
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
 	pMeshComponent->SetupAttachment(RootComponent);
@@ -68,6 +75,8 @@ void AAnpan::PossessedBy(AController *NewController)
 // 移動.
 void AAnpan::Move(float X, float Y,  float Z,int32 Time)
 {
+	// 足元の座標から中心の座標に変換する。
+	Z += (BaseRadius * GetActorScale3D().X);
 	pController->Move(X, Y, Z, Time);
 }
 

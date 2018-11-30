@@ -49,6 +49,9 @@ public:
 
 private:
 
+	// 半径基準値.
+	static const float BaseRadius;
+
 	// メッシュのパス
 	static const TCHAR *MeshPath;
 
