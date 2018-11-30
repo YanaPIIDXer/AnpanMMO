@@ -15,6 +15,9 @@ public:
 
 	u32 Id;
 	u32 BossId;
+	float BossX;
+	float BossY;
+	float BossZ;
 	u32 ExitWarpDataId;
 
 
