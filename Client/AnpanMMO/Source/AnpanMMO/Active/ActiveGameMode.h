@@ -133,4 +133,10 @@ private:
 	// パーティ勧誘結果を受信した。
 	void OnRecvPartyInviteResult(MemoryStreamInterface *pStream);
 
+	// インスタンスマップチケット発行を受信した。
+	void OnRecvInstanceAreaTicketPublish(MemoryStreamInterface *pStream);
+
+	// インスタンスマップチケット破棄を受信した。
+	void OnRecvInstanceAreaTicketDiscard(MemoryStreamInterface *pStream);
+
 };

@@ -15,6 +15,7 @@
 #include "UI/SimpleDialog.h"
 #include "UI/Menu/GameMenuWidget.h"
 #include "UI/Menu/OtherPlayerPopupMenu.h"
+#include "UI/Menu/InstanceArea/InstanceAreaTicketMenuWidget.h"
 #include "Components/CapsuleComponent.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
@@ -27,6 +28,8 @@
 #include "Packet/PacketReceiveChat.h"
 #include "Packet/PacketPartyKickResult.h"
 #include "Packet/PacketPartyInviteResult.h"
+#include "Packet/PacketInstanceAreaTicketPublish.h"
+#include "Packet/PacketInstanceAreaTicketDiscard.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -65,6 +68,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::PartyInviteResult, std::bind(&AActiveGameMode::OnRecvPartyInviteResult, this, _1));
 	AddPacketFunction(PacketID::NoticeList, std::bind(&NoticeManager::OnRecvNoticeList, &NoticeMgr, _1));
 	AddPacketFunction(PacketID::ReceiveNotice, std::bind(&NoticeManager::OnRecvNotice, &NoticeMgr, _1));
+	AddPacketFunction(PacketID::InstanceAreaTicketPublish, std::bind(&AActiveGameMode::OnRecvInstanceAreaTicketPublish, this, _1));
+	AddPacketFunction(PacketID::InstanceAreaTicketDiscard, std::bind(&AActiveGameMode::OnRecvInstanceAreaTicketDiscard, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 }
@@ -339,4 +344,23 @@ void AActiveGameMode::OnRecvPartyInviteResult(MemoryStreamInterface *pStream)
 	}
 
 	USimpleDialog::Show(this, DisplayMessage);
+}
+
+// インスタンスマップチケット発行を受信した。
+void AActiveGameMode::OnRecvInstanceAreaTicketPublish(MemoryStreamInterface *pStream)
+{
+	PacketInstanceAreaTicketPublish Packet;
+	Packet.Serialize(pStream);
+
+	UInstanceAreaTicketMenuWidget::ShowWidget(this, Packet.TicketId);
+}
+
+// インスタンスマップチケット破棄を受信した。
+void AActiveGameMode::OnRecvInstanceAreaTicketDiscard(MemoryStreamInterface *pStream)
+{
+	PacketInstanceAreaTicketDiscard Packet;
+	Packet.Serialize(pStream);
+
+	USimpleDialog::Show(this, "Instance Area Ticket Discard...");
+
 }
