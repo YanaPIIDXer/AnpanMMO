@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace DLCGenerator
 {
@@ -82,6 +83,9 @@ namespace DLCGenerator
 			AutomationToolProcess.CancelOutputRead();
 			AutomationToolProcess.CancelErrorRead();
 			AutomationToolProcess.Close();
+
+			string SavedDir = Path.GetDirectoryName(ProjectPath) + "\\Plugins\\" + DLCName + "\\Saved";
+			Directory.Delete(SavedDir, true);
 
 			return (ExitCode == 0);
 		}
