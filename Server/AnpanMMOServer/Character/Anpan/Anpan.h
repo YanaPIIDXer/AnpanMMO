@@ -14,7 +14,7 @@ class Anpan : public CharacterBase
 public:
 
 	// コンストラクタ
-	Anpan(const Vector3D &InPosition, int Hp, int Atk, int Def, int InExp);
+	Anpan(const Vector3D &InPosition, int Hp, int Atk, int Def, int InExp, float InScaleRate);
 
 	// デストラクタ
 	virtual ~Anpan() {}
@@ -30,11 +30,10 @@ public:
 
 	// 倒したときに獲得できる経験値を取得.
 	int GetExp() const { return Exp; }
-
 	
-	// 高さオフセット（半分）
-	static const float HalfHeightOffset;
-
+	// 半径を取得.
+	float GetRadius() const { return (BaseRadius * ScaleRate); }
+	
 protected:
 
 	// ダメージを受けた。
@@ -42,6 +41,9 @@ protected:
 
 private:
 
+	// 半径.
+	static const float BaseRadius;
+	
 	// AI
 	AnpanAI AI;
 
@@ -50,6 +52,9 @@ private:
 
 	// 倒したときに獲得できる経験値.
 	int Exp;
+
+	// 拡縮倍率.
+	float ScaleRate;
 
 };
 

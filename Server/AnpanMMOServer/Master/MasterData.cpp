@@ -43,9 +43,21 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!Anpan.Load(Connection))
+	{
+		std::cout << "Anpan Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	if (!AnpanPopArea.Load(Connection))
 	{
 		std::cout << "AnpanPopArea Master Load Failed..." << std::endl;
+		return false;
+	}
+
+	if (!AnpanPopData.Load(Connection))
+	{
+		std::cout << "AnpanPopData Master Load Failed..." << std::endl;
 		return false;
 	}
 

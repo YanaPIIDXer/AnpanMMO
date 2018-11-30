@@ -152,6 +152,8 @@
     <ClInclude Include="ClientState\ClientStateBase.h" />
     <ClInclude Include="ClientState\ClientStateTitle.h" />
     <ClInclude Include="Area\HeightMap.h" />
+    <ClInclude Include="Master\AnpanMaster.h" />
+    <ClInclude Include="Master\AnpanPopDataMaster.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
     <ClInclude Include="ServerHost.h" />
@@ -232,6 +234,8 @@
     <ClCompile Include="ClientState\ClientStateBase.cpp" />
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="Area\HeightMap.cpp" />
+    <ClCompile Include="Master\AnpanMaster.cpp" />
+    <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />
     <ClCompile Include="Party\PartyManager.cpp" />

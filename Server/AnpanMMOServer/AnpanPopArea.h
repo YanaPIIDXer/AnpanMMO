@@ -43,29 +43,8 @@ private:
 	// 最大生成数,
 	u32 MaxCount;
 
-	// 最小HP
-	int MinHp;
-
-	// 最大HP
-	int MaxHp;
-
-	// 最小攻撃力.
-	int MinAtk;
-
-	// 最大攻撃力.
-	int MaxAtk;
-
-	// 最小防御力.
-	int MinDef;
-
-	// 最大防御力.
-	int MaxDef;
-
-	// 最小経験値.
-	int MinExp;
-
-	// 最大経験値.
-	int MaxExp;
+	// ポップデータのＩＤ
+	u32 PopDataId;
 
 	// インターバル
 	const int PopInterval;

@@ -40,7 +40,7 @@ void AnpanAIStateBase::SetMove(const Vector3D &InMoveTarget, int Time)
 	Vector3D EndPos = InMoveTarget + PrevPos;
 
 	AreaPtr pArea = GetParent()->GetArea();
-	pArea.lock()->CheckMovable(StartPos, EndPos, Anpan::HalfHeightOffset, MoveTarget);
+	pArea.lock()->CheckMovable(StartPos, EndPos, GetParent()->GetRadius(), MoveTarget);
 	
 	MoveTime = Time;
 	MoveStartTime = Time;

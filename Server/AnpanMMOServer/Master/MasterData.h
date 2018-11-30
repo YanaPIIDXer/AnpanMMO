@@ -3,7 +3,9 @@
 
 #include "AreaMaster.h"
 #include "WarpDataMaster.h"
+#include "AnpanMaster.h"
 #include "AnpanPopAreaMaster.h"
+#include "AnpanPopDataMaster.h"
 
 /**
  * マスタデータクラス
@@ -22,8 +24,14 @@ public:
 	// ワープデータマスタ取得.
 	const WarpDataMaster &GetWarpDataMaster() { return WarpData; }
 
+	// アンパンマスタ取得.
+	const AnpanMaster &GetAnpanMaster() { return Anpan; }
+
 	// アンパンポップエリアマスタ取得.
 	const AnpanPopAreaMaster &GetAnpanPopAreaMaster() { return AnpanPopArea; }
+
+	// アンパンポップデータマスタ取得.
+	const AnpanPopDataMaster &GetAnpanPopDataMaster() { return AnpanPopData; }
 
 private:
 
@@ -42,8 +50,14 @@ private:
 	// ワープデータマスタ
 	WarpDataMaster WarpData;
 
+	// アンパンマスタ
+	AnpanMaster Anpan;
+
 	// アンパンポップエリアマスタ
 	AnpanPopAreaMaster AnpanPopArea;
+
+	// アンパンポップデータマスタ
+	AnpanPopDataMaster AnpanPopData;
 
 	// ======= Singleton ==========
 public:
