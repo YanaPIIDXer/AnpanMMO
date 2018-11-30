@@ -20,19 +20,19 @@ namespace MasterConverter
 		private string FilePath;
 
 		/// <summary>
-		/// カラムリスト
+		/// マスタデータ
 		/// </summary>
-		private List<Column> Columns;
+		private MasterData Master;
 
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InFilePath">ファイルパス</param>
-		/// <param name="InColumns">カラムリスト</param>
-		public SQLGenerator(string InFilePath, List<Column> InColumns)
+		/// <param name="InMaster">マスタデータ</param>
+		public SQLGenerator(string InFilePath, MasterData InMaster)
 		{
 			FilePath = InFilePath;
-			Columns = InColumns;
+			Master = InMaster;
 		}
 
 		/// <summary>
@@ -53,6 +53,7 @@ namespace MasterConverter
 			var Writer = File.CreateText(FilePath);
 			Writer.WriteLine("DROP TABLE IF EXISTS `" + TableName + "`;");
 			Writer.WriteLine("CREATE TABLE `" + TableName + "` (");
+			var Columns = Master.GetColumns();
 			foreach(Column Col in Columns)
 			{
 				string Line = " `" + Col.Name + "` ";
@@ -138,6 +139,7 @@ namespace MasterConverter
 			{
 				string Line = "INSERT INTO `" + TableName + "` VALUES (";
 				bool bFinished = false;
+				var Columns = Master.GetColumns();
 				foreach (Column Col in Columns)
 				{
 					if(i >= Col.DataList.Count)
@@ -146,9 +148,14 @@ namespace MasterConverter
 						break;
 					}
 					string Data = Col.DataList[i].ToString();
+					int EnumValue = 0;
 					if(Col.DataType == Type.String || Col.DataType == Type.WString)
 					{
 						Data = "'" + Data + "'";
+					}
+					else if(Master.TryFindEnumValue(Data, out EnumValue))
+					{
+						Data = EnumValue.ToString();
 					}
 
 					Line += Data;

@@ -20,19 +20,19 @@ namespace MasterConverter
 		private string MasterName;
 
 		/// <summary>
-		/// カラムリスト
+		/// マスタデータ
 		/// </summary>
-		private List<Column> Columns;
-
+		private MasterData Master;
+		
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InMasterName">マスタ名</param>
-		/// <param name="InColumns">カラムリスト</param>
-		public BinaryGenerator(string InMasterName, List<Column> InColumns)
+		/// <param name="InMaster">マスタデータ</param>
+		public BinaryGenerator(string InMasterName, MasterData InMaster)
 		{
 			MasterName = InMasterName;
-			Columns = InColumns;
+			Master = InMaster;
 		}
 
 		/// <summary>
@@ -49,6 +49,7 @@ namespace MasterConverter
 				{
 					for (int i = 0; ; i++)
 					{
+						var Columns = Master.GetColumns();
 						if (i >= Columns[0].DataList.Count) { break; }
 						for (int j = 0; j < Columns.Count; j++)
 						{
@@ -56,7 +57,15 @@ namespace MasterConverter
 							double Data = 0.0;
 							if (Columns[j].DataType != Type.String)
 							{
-								Data = (double)Columns[j].DataList[i];
+								int EnumValue = 0;
+								if(Master.TryFindEnumValue(Columns[j].DataList[i].ToString(), out EnumValue))
+								{
+									Data = (double)EnumValue;
+								}
+								else
+								{
+									Data = (double)Columns[j].DataList[i];
+								}
 							}
 							switch (Columns[j].DataType)
 							{

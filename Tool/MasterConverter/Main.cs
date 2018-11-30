@@ -158,7 +158,7 @@ namespace MasterConverter
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + FileName;
 				Console.Write(Path.GetFileNameWithoutExtension(FilePath) + "の生成中...");
 
-				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Master.GetColumns());
+				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Master);
 				if (!SQLGen.Generate())
 				{
 					MessageBox.Show("SQLファイルの生成に失敗しました。");
@@ -198,7 +198,7 @@ namespace MasterConverter
 					Console.WriteLine("完了。");
 
 					Console.Write("バイナリデータ生成中...");
-					BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Master.GetColumns());
+					BinaryGenerator BinGenerator = new BinaryGenerator(MasterName, Parser.Master);
 					if (!BinGenerator.Generate())
 					{
 						MessageBox.Show("バイナリデータの生成に失敗しました。");

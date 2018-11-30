@@ -24,6 +24,11 @@ namespace MasterConverter
 		private List<Column> Columns = new List<Column>();
 
 		/// <summary>
+		/// Enumリスト
+		/// </summary>
+		public List<EnumData> EnumList { get; private set; }
+
+		/// <summary>
 		/// オートキー？
 		/// </summary>
 		public bool IsAutoKey { get; private set; }
@@ -48,6 +53,7 @@ namespace MasterConverter
 			IsAutoKey = false;
 			IsServerOnly = false;
 			IsForWordCheckServer = false;
+			EnumList = new List<EnumData>();
 		}
 
 		/// <summary>
@@ -100,6 +106,39 @@ namespace MasterConverter
 		public void AddDataToColumn(int ColumnIndex, object Data)
 		{
 			Columns[ColumnIndex].DataList.Add(Data);
+		}
+
+		/// <summary>
+		/// Enumデータを追加。
+		/// </summary>
+		/// <param name="Data">Enumデータ</param>
+		public void AddEnum(EnumData Data)
+		{
+			EnumList.Add(Data);
+		}
+
+		/// <summary>
+		/// Enumの値の取得を試みる
+		/// </summary>
+		/// <param name="EnumName">Enum名</param>
+		/// <param name="Value">値</param>
+		/// <returns>存在すればtrue</returns>
+		public bool TryFindEnumValue(string EnumName, out int Value)
+		{
+			Value = 0;
+			foreach(var Enum in EnumList)
+			{
+				foreach(var Data in Enum.EnumList)
+				{
+					if(EnumName == Data.Key)
+					{
+						Value = Data.Value;
+						return true;
+					}
+				}
+			}
+
+			return false;
 		}
 
 		/// <summary>

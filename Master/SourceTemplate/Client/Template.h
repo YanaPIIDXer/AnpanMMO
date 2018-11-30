@@ -8,6 +8,8 @@ struct $ITEM_STRUCT_NAME$
 
 public:
 
+$ENUMS$
+
 $ITEM_LIST$
 
 	bool Serialize(MemoryStreamInterface *pStream)
