@@ -84,10 +84,6 @@ void Party::Exit(u32 PlayerUuid)
 	if (MemberList.find(PlayerUuid) == MemberList.end()) { return; }			// 存在しない。
 	MemberList[PlayerUuid].lock()->SetParty(PartyPtr());
 	MemberList.erase(PlayerUuid);
-
-	// 離脱パケットをバラ撒く。
-	PacketPartyExit Packet(PlayerUuid);
-	BroadcastPacket(&Packet);
 }
 
 // メンバリスト取得.

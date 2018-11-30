@@ -27,6 +27,10 @@
 #include "Packet/PacketPartyDissolutionResult.h"
 #include "Packet/PacketPartyExitRequest.h"
 #include "Packet/PacketPartyExitResult.h"
+#include "Packet/PacketPartyExit.h"
+#include "Packet/PacketPartyKickRequest.h"
+#include "Packet/PacketPartyKickResult.h"
+#include "Packet/PacketPartyKick.h"
 #include "Packet/PacketPartyInviteRequest.h"
 #include "Packet/PacketReceiveNotice.h"
 #include "Packet/PacketPartyInviteResult.h"
@@ -45,6 +49,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
 	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
 	AddPacketFunction(PartyExitRequest, boost::bind(&ClientStateActive::OnRecvPartyExitRequest, this, _2));
+	AddPacketFunction(PartyKickRequest, boost::bind(&ClientStateActive::OnRecvPartyKickRequest, this, _2));
 	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
 	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
 }
@@ -196,6 +201,10 @@ void ClientStateActive::OnRecvPartyExitRequest(MemoryStreamInterface *pStream)
 	if (!pParty.expired())
 	{
 		pParty.lock()->Exit(GetParent()->GetUuid());
+
+		// 離脱パケットをバラ撒く。
+		PacketPartyExit Packet(GetParent()->GetUuid());
+		pParty.lock()->BroadcastPacket(&Packet);
 	}
 	else
 	{
@@ -203,6 +212,31 @@ void ClientStateActive::OnRecvPartyExitRequest(MemoryStreamInterface *pStream)
 	}
 
 	PacketPartyExitResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティキック要求を受信した。
+void ClientStateActive::OnRecvPartyKickRequest(MemoryStreamInterface *pStream)
+{
+	PacketPartyKickRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketPartyKickResult::Success;
+	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
+	if (!pParty.expired())
+	{
+		// 実際に離脱させる前にキックパケットをバラ撒く.
+		PacketPartyKick KickPacket(Packet.Uuid);
+		pParty.lock()->BroadcastPacket(&KickPacket);
+
+		pParty.lock()->Exit(Packet.Uuid);
+	}
+	else
+	{
+		Result = PacketPartyKickResult::Error;
+	}
+
+	PacketPartyKickResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
 }
 
