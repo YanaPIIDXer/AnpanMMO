@@ -28,6 +28,9 @@ public:
 	// 参加しているか？
 	bool IsJoined() const { return (PartyId != 0); }
 
+	// リーダーか？
+	bool IsLeader() const { return bIsLeader; }
+
 	// 作成結果を受信した。
 	void OnRecvCreateResult(MemoryStreamInterface *pStream);
 
@@ -50,6 +53,9 @@ private:
 
 	// パーティＩＤ
 	uint32 PartyId;
+
+	// リーダーか？
+	bool bIsLeader;
 
 	// GameMode
 	TWeakObjectPtr<AActiveGameMode> pGameMode;

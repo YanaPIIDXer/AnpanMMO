@@ -16,6 +16,7 @@
 // コンストラクタ
 PartyInformation::PartyInformation()
 	: PartyId(0)
+	, bIsLeader(false)
 	, pGameMode(nullptr)
 {
 }
@@ -49,6 +50,8 @@ void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 	PartyMemberData Data(pCharacter->GetUuid(), TCHAR_TO_UTF8(*pCharacter->GetName()));
 	MemberList.Add(Data.Uuid, Data);
 
+	bIsLeader = true;
+
 	USimpleDialog::Show(pGameMode.Get(), "Party Create Success!!");
 }
 
@@ -69,7 +72,7 @@ void PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
 	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
 }
 
-// メンバリストを受信した。
+// 参加を受信した。
 void PartyInformation::OnRecvJoin(MemoryStreamInterface *pStream)
 {
 	PacketPartyJoin Packet;
@@ -80,6 +83,8 @@ void PartyInformation::OnRecvJoin(MemoryStreamInterface *pStream)
 	{
 		MemberList.Add(Packet.MemberList[i].Uuid, Packet.MemberList[i]);
 	}
+
+	bIsLeader = false;
 }
 
 // メンバ加入を受信した。
