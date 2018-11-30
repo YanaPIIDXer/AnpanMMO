@@ -25,6 +25,8 @@ enum PacketID
 	AreaMoveResponse,
 	AddExp,
 	LevelUp,
+	InstanceAreaTicketPublish,
+	InstanceAreaTicketProcess,
 	LogInRequest,
 	LogInResult,
 	CreateCharacterRequest,
