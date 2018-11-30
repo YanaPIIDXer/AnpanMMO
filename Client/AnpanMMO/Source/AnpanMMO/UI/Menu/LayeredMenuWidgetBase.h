@@ -32,6 +32,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void Close();
 
+	// パケットを受信した。
+	virtual void OnRecvPacket(PacketID ID) {}
+
 
 	// メニューが閉じられた。
 	FOnMenuClosed OnMenuClosed;

@@ -18,6 +18,7 @@ void ULayeredMenuWidgetBase::Show(int32 InZOrder)
 	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 	check(pGameMode != nullptr);
 
+	pGameMode->SetCurrentMenu(this);
 	pGameMode->SetHiddenMainHUD(true);
 
 	ZOrder = InZOrder;
@@ -39,6 +40,7 @@ void ULayeredMenuWidgetBase::Close()
 		AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 		check(pGameMode != nullptr);
 
+		pGameMode->SetCurrentMenu(nullptr);
 		pGameMode->SetHiddenMainHUD(false);
 	}
 }

@@ -3,12 +3,13 @@
 #include "MMOGameModeBase.h"
 #include "MMOGameInstance.h"
 #include "Kismet/GameplayStatics.h"
+#include "UI/Menu/LayeredMenuWidgetBase.h"
 
 // コンストラクタ
 AMMOGameModeBase::AMMOGameModeBase(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, pCurrentMenu(nullptr)
 {
-
 }
 
 // 開始時の処理.
@@ -35,6 +36,11 @@ void AMMOGameModeBase::AddPacketFunction(PacketID ID, const PacketFunc &Func)
 // パケットを受信した。
 void AMMOGameModeBase::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 {
+	if(pCurrentMenu != nullptr)
+	{
+		pCurrentMenu->OnRecvPacket(ID);
+	}
+
 	auto It = PacketFunctions.find(ID);
 	if (It != PacketFunctions.end())
 	{
