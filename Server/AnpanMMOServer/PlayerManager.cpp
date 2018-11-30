@@ -74,6 +74,7 @@ void PlayerManager::OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rot)
 	PlayerCharacter *pChara = PlayerList[Uuid].lock().get();
 	pChara->SetPosition(Vector3D(X, Y, Z));
 	pChara->SetRotate(Rotation(Rot));
+	pChara->OnMoved();
 
 	PacketMovePlayer Packet(Uuid, X, Y, Z, Rot);
 	BroadcastPacket(&Packet, PlayerList[Uuid].lock()->GetClient());

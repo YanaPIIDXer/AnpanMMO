@@ -46,6 +46,12 @@ public:
 	// パーティを取得.
 	PartyPtr GetParty() const { return pParty; }
 
+	// 移動した。
+	void OnMoved();
+
+	// エリアが切り替わった。
+	void OnAreaChange();
+
 private:
 
 	// クライアント
@@ -59,6 +65,12 @@ private:
 
 	// パーティ
 	PartyPtr pParty;
+
+	// セーブするエリアＩＤ
+	u32 SaveAreaId;
+
+	// セーブする座標.
+	Vector3D SavePosition;
 
 
 	// レベルアップコールバック
