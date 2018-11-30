@@ -8,9 +8,17 @@ struct AreaItem
 
 public:
 
+	enum
+	{
+		NORMAL_AREA = 0,
+		INSTANCE_AREA = 1,
+	};
+
+
 	u32 ID;
 	FString Name;
 	FString LevelName;
+	u8 Type;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
@@ -22,6 +30,7 @@ public:
 		std::string StrLevelName;
 		if(!pStream->Serialize(&StrLevelName)) { return false; }
 		LevelName = UTF8_TO_TCHAR(StrLevelName.c_str());
+		if(!pStream->Serialize(&Type)) { return false; }
 
 		return true;
 	}

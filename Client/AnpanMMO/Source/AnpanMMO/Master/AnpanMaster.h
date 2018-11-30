@@ -8,6 +8,8 @@ struct AnpanItem
 
 public:
 
+
+
 	u32 ID;
 	s32 Hp;
 	s32 Atk;

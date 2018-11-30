@@ -11,6 +11,8 @@ struct AnpanPopAreaItem
 
 public:
 
+
+
 	s32 AutoKey;
 	u32 AreaId;
 	float X;

@@ -11,6 +11,8 @@ struct AnpanPopDataItem
 
 public:
 
+
+
 	s32 AutoKey;
 	u32 Id;
 	u32 AnpanId;

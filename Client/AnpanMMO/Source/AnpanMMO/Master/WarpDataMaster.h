@@ -8,6 +8,8 @@ struct WarpDataItem
 
 public:
 
+
+
 	u32 ID;
 	u32 WarpDataId;
 	u32 AreaId;
