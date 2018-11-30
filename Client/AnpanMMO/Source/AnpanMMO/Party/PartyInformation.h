@@ -31,6 +31,9 @@ public:
 	// リーダーか？
 	bool IsLeader() const { return bIsLeader; }
 
+	// メンバリストを取得.
+	TArray<PartyMemberData> GetMemberList() const;
+
 	// 作成結果を受信した。
 	void OnRecvCreateResult(MemoryStreamInterface *pStream);
 

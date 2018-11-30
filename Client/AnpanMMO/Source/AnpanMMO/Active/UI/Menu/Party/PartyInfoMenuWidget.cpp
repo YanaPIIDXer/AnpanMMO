@@ -30,10 +30,29 @@ void UPartyInfoMenuWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
+	Init();
+}
+
+
+// ‰Šú‰».
+void UPartyInfoMenuWidget::Init()
+{
 	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 	check(pGameMode != nullptr);
 
 	bIsLeader = pGameMode->GetPartyInfo().IsLeader();
+
+	TArray<PartyMemberData> List = pGameMode->GetPartyInfo().GetMemberList();
+	for (int32 i = 0; i < List.Num(); i++)
+	{
+		const auto &Data = List[i];
+		FPartyMemberData Member;
+		Member.Uuid = Data.Uuid;
+		Member.Name = UTF8_TO_TCHAR(Data.CharacterName.c_str());
+		Member.bIsLeader = (i == 0);
+
+		MemberList.Add(Member);
+	}
 
 	OnInit();
 }

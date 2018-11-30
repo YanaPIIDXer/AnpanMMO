@@ -22,6 +22,27 @@ PartyInformation::PartyInformation()
 {
 }
 
+// メンバリストを取得.
+TArray<PartyMemberData> PartyInformation::GetMemberList() const
+{
+	TArray<PartyMemberData> List;
+
+	for (const auto KeyValue : MemberList)
+	{
+		if (KeyValue.Value.Uuid == PartyId)
+		{
+			// リーダーは先頭に。
+			List.Insert(KeyValue.Value, 0);
+		}
+		else
+		{
+			List.Add(KeyValue.Value);
+		}
+	}
+
+	return List;
+}
+
 // 作成結果を受信した。
 void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 {
@@ -48,7 +69,7 @@ void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(pGameMode.Get(), 0));
 	check(pCharacter != nullptr);
 
-	PartyMemberData Data(pCharacter->GetUuid(), TCHAR_TO_UTF8(*pCharacter->GetName()));
+	PartyMemberData Data(pCharacter->GetUuid(), TCHAR_TO_UTF8(*pCharacter->GetCharacterName()));
 	MemberList.Add(Data.Uuid, Data);
 
 	bIsLeader = true;
