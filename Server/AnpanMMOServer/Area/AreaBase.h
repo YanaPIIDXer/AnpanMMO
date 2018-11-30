@@ -56,13 +56,18 @@ public:
 	// 消去可能か？
 	virtual bool IsAbleDelete() const = 0;
 
-private:
+	// インスタンスエリアか？
+	virtual bool IsInstance() const { return false; }
+
+protected:
 
 	// プレイヤー管理.
 	PlayerManager PlayerMgr;
 
 	// アンパン管理.
 	AnpanManager AnpanMgr;
+
+private:
 
 	// ハイトマップ
 	HeightMap HeightData;

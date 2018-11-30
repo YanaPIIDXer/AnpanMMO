@@ -44,6 +44,9 @@ public:
 	// アンパンリストパケットを生成.
 	void MakeListPacket(PacketAnpanList &Packet);
 
+	// アンパンの数を取得.
+	u32 GetCount() const { return AnpanList.size(); }
+
 private:
 
 	// アンパンリスト

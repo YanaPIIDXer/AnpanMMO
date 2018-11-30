@@ -267,6 +267,9 @@
     <ClInclude Include="Area\AreaBase.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Area\InstanceArea.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MemoryBuffer.cpp">
@@ -444,6 +447,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Area\AreaBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Area\InstanceArea.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
