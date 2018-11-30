@@ -32,10 +32,16 @@ public:
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
 
+	// インスタンスマップを生成.
+	AreaPtr CreateInstanceArea(u32 AreaId);
+
 private:
 
 	// エリアマップ
 	AreaMap Areas;
+
+	// 次に発行するインスタンスマップのUUID
+	u32 NextInstanceAreaUuid;
 
 
 	// ========== Singleton ===============
