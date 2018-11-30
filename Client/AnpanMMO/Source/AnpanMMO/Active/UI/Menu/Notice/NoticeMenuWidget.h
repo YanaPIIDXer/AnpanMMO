@@ -6,6 +6,18 @@
 #include "UI/Menu/LayeredMenuWidgetBase.h"
 #include "NoticeMenuWidget.generated.h"
 
+// 通知タイプ
+// ※NoticeDataの定義と合わせる事。
+UENUM(BlueprintType)
+enum class ENoticeType : uint8
+{
+	// ダミーの定義.
+	None,
+
+	// パーティ勧誘.
+	PartyInvite,
+};
+
 /**
  * 通知基底クラス
  */
@@ -25,12 +37,30 @@ public:
 
 	// 通知に対する行動.
 	UFUNCTION(BlueprintCallable, Category = "Notice")
-	virtual void Action() {}
+	void Action();
+
+	// 通知タイプを取得.
+	UFUNCTION(BlueprintPure, Category = "Notice")
+	virtual ENoticeType GetNoticeType() const { return ENoticeType::None; }
+
+	// キャラクタ名を取得.
+	UFUNCTION(BlueprintPure, Category = "Notice")
+	const FString &GetCharacterName() const { return CharacterName; }
 
 protected:
 
+	// 通知に対する行動.
+	virtual void OnAction() {}
+
+
 	// カスタマＩＤ
 	uint32 CustomerId;
+
+	// 通知UUID
+	uint32 NoticeUuid;
+
+	// キャラクタ名.
+	FString CharacterName;
 
 };
 
@@ -46,7 +76,7 @@ class UPartyInviteNotice : public UNoticeBase
 public:
 
 	// 生成.
-	static UPartyInviteNotice *Create(uint32 CustomerId);
+	static UPartyInviteNotice *Create(UObject *pOuter, uint32 NoticeUuid, uint32 CustomerId, const FString &CharacterName);
 
 	// コンストラクタ
 	UPartyInviteNotice(const FObjectInitializer &ObjectInitializer);
@@ -54,10 +84,25 @@ public:
 	// デストラクタ
 	virtual ~UPartyInviteNotice() {}
 
+	// 通知タイプを取得.
+	virtual ENoticeType GetNoticeType() const override { return ENoticeType::PartyInvite; }
+
+	// 勧誘を受けるかどうかを設定.
+	void SetAccept(bool bInAccept) { bAccept = bInAccept; }
+
+protected:
+
 	// 通知に対する行動.
-	virtual void Action() override;
+	virtual void OnAction() override;
+
+private:
+
+	// 勧誘を受けるか？
+	bool bAccept;
 
 };
+
+class UNoticeMenuWidget;
 
 /**
  * 通知メニューのアイテム
@@ -80,17 +125,52 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Notice")
 	void SetNotice(UNoticeBase *pInNotice) { pNotice = pInNotice; }
 
+	// 親を設定.
+	UFUNCTION(BlueprintCallable, Category = "Notice")
+	void SetParent(UNoticeMenuWidget *pInParent) { pParent = pInParent; }
+
 protected:
 
 	// 通知に対する行動.
 	UFUNCTION(BlueprintCallable, Category = "Notice")
 	void Action();
 
-private:
 
 	// 通知.
-	UPROPERTY()
+	UPROPERTY(BlueprintReadOnly, Category = "Notice")
 	UNoticeBase *pNotice;
+
+private:
+
+	// 親.
+	UPROPERTY()
+	UNoticeMenuWidget *pParent;
+
+};
+
+/**
+ * パーティ勧誘通知アイテム
+ * ※勧誘を受けるかどうかを設定する必要があるためC++で定義。
+ */
+UCLASS()
+class ANPANMMO_API UPartyInviteNoticeItem : public UNoticeMenuItem
+{
+
+	GENERATED_BODY()
+
+public:
+
+	// コンストラクタ
+	UPartyInviteNoticeItem(const FObjectInitializer &ObjectInitializer);
+
+	// デストラクタ
+	virtual ~UPartyInviteNoticeItem() {}
+
+protected:
+
+	// 勧誘を受けるかどうかを設定.
+	UFUNCTION(BlueprintCallable, Category = "PartyInvite")
+	void SetAccept(bool bAccept);
 
 };
 
@@ -118,6 +198,12 @@ public:
 	virtual void NativeConstruct() override;
 
 protected:
+
+	// 初期化された。
+	UFUNCTION(BlueprintNativeEvent, Category = "Menu")
+	void OnInit();
+	void OnInit_Implementation() {}
+
 
 	// 通知リスト
 	UPROPERTY(BlueprintReadOnly, Category = "Notice")

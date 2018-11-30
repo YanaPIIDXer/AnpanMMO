@@ -7,6 +7,7 @@
 #include "MainHUD.generated.h"
 
 class AGameCharacter;
+class NoticeData;
 
 /**
  * ƒƒCƒ“HUD

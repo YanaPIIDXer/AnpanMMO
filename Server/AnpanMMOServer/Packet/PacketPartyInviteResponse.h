@@ -17,7 +17,7 @@ public:
 		Refuse,
 	};
 
-	u32 TargetUuid;
+	u32 CustomerId;
 	u8 Response;
 	
 
@@ -25,16 +25,16 @@ public:
 	{
 	}
 
-	PacketPartyInviteResponse(u32 InTargetUuid, u8 InResponse)
+	PacketPartyInviteResponse(u32 InCustomerId, u8 InResponse)
 	{
-		TargetUuid = InTargetUuid;
+		CustomerId = InCustomerId;
 		Response = InResponse;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&TargetUuid);
+		pStream->Serialize(&CustomerId);
 		pStream->Serialize(&Response);
 		
 		return true;

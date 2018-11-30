@@ -43,8 +43,17 @@ private:
 	// パーティ離脱要求を受信した。
 	void OnRecvPartyDissolutionRequest(MemoryStreamInterface *pStream);
 
+	// パーティ離脱要求を受信した。
+	void OnRecvPartyExitRequest(MemoryStreamInterface *pStream);
+
+	// パーティキック要求を受信した。
+	void OnRecvPartyKickRequest(MemoryStreamInterface *pStream);
+
 	// パーティ勧誘要求を受信した。
 	void OnRecvPartyInviteRequest(MemoryStreamInterface *pStream);
+	
+	// パーティ勧誘レスポンスを受信した。
+	void OnRecvPartyInviteResponse(MemoryStreamInterface *pStream);
 
 };
 

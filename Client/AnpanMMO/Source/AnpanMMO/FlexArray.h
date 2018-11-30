@@ -17,6 +17,18 @@ public:
 		pArray = new T[DefaultCapacity];
 	}
 
+	// コピーコンストラクタ
+	FlexArray(const FlexArray &Arg)
+	{
+		CurrentSize = Arg.CurrentSize;
+		CurrentCapacity = Arg.CurrentCapacity;
+		pArray = new T[CurrentCapacity];
+		for (int i = 0; i < CurrentSize; i++)
+		{
+			pArray[i] = Arg[i];
+		}
+	}
+
 	// デストラクタ
 	~FlexArray()
 	{
@@ -32,6 +44,22 @@ public:
 		}
 
 		pArray[CurrentSize] = NewItem;
+		CurrentSize++;
+	}
+
+	// 挿入.
+	void Insert(T NewItem, int Index)
+	{
+		if (CurrentSize + 1 > CurrentCapacity)
+		{
+			Reallocate(CurrentCapacity * 2);
+		}
+
+		for (int i = CurrentSize; i > Index; i--)
+		{
+			pArray[i] = pArray[i - 1];
+		}
+		pArray[Index] = NewItem;
 		CurrentSize++;
 	}
 
@@ -78,53 +106,7 @@ public:
 		return pArray[Index];
 	}
 
-	// Androidビルドでエラーになる箇所があるのでとりあえず封印。
-#if !PLATFORM_ANDROID
-
-	class Iterator
-	{
-	public:
-
-		// コンストラクタ
-		Iterator(int InIndex)
-			: Index(InIndex) {}
-
-		// オペレータオーバーロード
-		Iterator &operator ++()
-		{
-			Index++;
-			return *this;
-		}
-
-		bool operator !=(const Iterator &Arg) const
-		{
-			return (Index != Arg.Index);
-		}
-
-		T *operator ->() const
-		{
-			return &pArray[Index];
-		}
-
-	private:
-
-		// インデックス
-		int Index;
-	};
-
-	Iterator begin()
-	{
-		return Iterator(0);
-	}
-
-	Iterator end()
-	{
-		return Iterator(CurrentSize);
-	}
-
-#endif
-	
-	// シリアライズ
+	// シリアライズB
 	void Serialize(MemoryStreamInterface *pStream);
 
 private:

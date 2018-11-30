@@ -24,14 +24,15 @@ void ULayeredMenuWidgetBase::Show(int32 InZOrder)
 	AddToViewport(ZOrder);
 }
 
-
-// –ß‚é
-void ULayeredMenuWidgetBase::Back()
+// •Â‚¶‚é
+void ULayeredMenuWidgetBase::Close()
 {
 	RemoveFromParent();
+	OnMenuClosed.ExecuteIfBound();
+
 	if (pParentMenu != nullptr)
 	{
-		pParentMenu->SetVisibility(ESlateVisibility::Visible);
+		pParentMenu->Close();
 	}
 	else
 	{
@@ -42,15 +43,15 @@ void ULayeredMenuWidgetBase::Back()
 	}
 }
 
-// •Â‚¶‚é
-void ULayeredMenuWidgetBase::Close()
+
+// –ß‚é
+void ULayeredMenuWidgetBase::Back()
 {
 	RemoveFromParent();
-	OnMenuClosed.ExecuteIfBound();
-	
 	if (pParentMenu != nullptr)
 	{
-		pParentMenu->Close();
+		pParentMenu->SetVisibility(ESlateVisibility::Visible);
+		pParentMenu->OnBackFromChild();
 	}
 	else
 	{

@@ -3,8 +3,11 @@
 #include "PartyInfoMenuWidget.h"
 #include "Kismet/GameplayStatics.h"
 #include "MMOGameInstance.h"
+#include "Active/ActiveGameMode.h"
+#include "Character/Player/GameCharacter.h"
 #include "Util.h"
 #include "Packet/PacketPartyDissolutionRequest.h"
+#include "Packet/PacketPartyExitRequest.h"
 
 const TCHAR *UPartyInfoMenuWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Menu/Party/PartyInfoMenu.PartyInfoMenu");
 
@@ -23,6 +26,44 @@ UPartyInfoMenuWidget::UPartyInfoMenuWidget(const FObjectInitializer &ObjectIniti
 {
 }
 
+// 開始時の処理.
+void UPartyInfoMenuWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+
+	Init();
+}
+
+
+// 初期化.
+void UPartyInfoMenuWidget::Init()
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+	check(pCharacter != nullptr);
+
+	bIsLeader = pGameMode->GetPartyInfo().IsLeader();
+
+	MemberList.Empty();
+
+	TArray<PartyMemberData> List = pGameMode->GetPartyInfo().GetMemberList();
+	for (int32 i = 0; i < List.Num(); i++)
+	{
+		const auto &Data = List[i];
+		FPartyMemberData Member;
+		Member.Uuid = Data.Uuid;
+		Member.Name = UTF8_TO_TCHAR(Data.CharacterName.c_str());
+		Member.bIsLeader = (i == 0);
+		Member.bIsSelf = (Data.Uuid == pCharacter->GetUuid());
+
+		MemberList.Add(Member);
+	}
+
+	OnInit();
+}
+
 
 // 解散リクエストを送信.
 void UPartyInfoMenuWidget::SendDissolutionRequest()
@@ -31,5 +72,15 @@ void UPartyInfoMenuWidget::SendDissolutionRequest()
 	check(pInst != nullptr);
 
 	PacketPartyDissolutionRequest Packet;
+	pInst->SendPacket(&Packet);
+}
+
+// 離脱リクエストを送信.
+void UPartyInfoMenuWidget::SendExitRequest()
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketPartyExitRequest Packet;
 	pInst->SendPacket(&Packet);
 }

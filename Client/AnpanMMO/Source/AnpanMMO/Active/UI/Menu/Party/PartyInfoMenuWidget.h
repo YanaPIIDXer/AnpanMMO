@@ -6,6 +6,31 @@
 #include "UI/Menu/LayeredMenuWidgetBase.h"
 #include "PartyInfoMenuWidget.generated.h"
 
+// パーティデータ
+USTRUCT(BlueprintType, Category = "Party")
+struct FPartyMemberData
+{
+
+	GENERATED_USTRUCT_BODY()
+
+public:
+
+	// UUID
+	uint32 Uuid;
+
+	// 名前.
+	UPROPERTY(BlueprintReadOnly)
+	FString Name;
+
+	// リーダーか？
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsLeader;
+
+	// 自分自身か？
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsSelf;
+};
+
 /**
  * パーティ情報メニューWidget
  */
@@ -26,11 +51,36 @@ public:
 	// デストラクタ
 	virtual ~UPartyInfoMenuWidget() {}
 
+	// 開始時の処理.
+	virtual void NativeConstruct() override;
+
 protected:
+
+	// 初期化.
+	UFUNCTION(BlueprintCallable, Category = "PartyMenu")
+	void Init();
+
+	// 初期化された
+	UFUNCTION(BlueprintNativeEvent, Category = "Party")
+	void OnInit();
+	void OnInit_Implementation() {}
 
 	// 解散リクエストを送信.
 	UFUNCTION(BlueprintCallable, Category = "Party")
 	void SendDissolutionRequest();
+
+	// 離脱リクエストを送信.
+	UFUNCTION(BlueprintCallable, Category = "Party")
+	void SendExitRequest();
+
+
+	// メンバリスト
+	UPROPERTY(BlueprintReadOnly, Category = "Party")
+	TArray<FPartyMemberData> MemberList;
+
+	// リーダーか？
+	UPROPERTY(BlueprintReadOnly, Category = "Party")
+	bool bIsLeader;
 
 private:
 

@@ -25,9 +25,16 @@
 #include "Packet/PacketPartyCreateResult.h"
 #include "Packet/PacketPartyDissolutionRequest.h"
 #include "Packet/PacketPartyDissolutionResult.h"
+#include "Packet/PacketPartyExitRequest.h"
+#include "Packet/PacketPartyExitResult.h"
+#include "Packet/PacketPartyExit.h"
+#include "Packet/PacketPartyKickRequest.h"
+#include "Packet/PacketPartyKickResult.h"
+#include "Packet/PacketPartyKick.h"
 #include "Packet/PacketPartyInviteRequest.h"
 #include "Packet/PacketReceiveNotice.h"
 #include "Packet/PacketPartyInviteResult.h"
+#include "Packet/PacketPartyInviteResponse.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -41,7 +48,10 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
 	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
 	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
+	AddPacketFunction(PartyExitRequest, boost::bind(&ClientStateActive::OnRecvPartyExitRequest, this, _2));
+	AddPacketFunction(PartyKickRequest, boost::bind(&ClientStateActive::OnRecvPartyKickRequest, this, _2));
 	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
+	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
 }
 
 
@@ -171,17 +181,62 @@ void ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pSt
 	Packet.Serialize(pStream);
 
 	u8 Result = PacketPartyDissolutionResult::Success;
-	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
-	if (!pParty.expired())
-	{
-		pParty.lock()->Dissolution(GetParent()->GetUuid());
-	}
-	else
+	if (!PartyManager::GetInstance().Dissolution(GetParent()->GetUuid()))
 	{
 		Result = PacketPartyDissolutionResult::Error;
 	}
-
+	
 	PacketPartyDissolutionResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティ離脱要求を受信した。
+void ClientStateActive::OnRecvPartyExitRequest(MemoryStreamInterface *pStream)
+{
+	PacketPartyExitRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketPartyExitResult::Success;
+	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
+	if (!pParty.expired())
+	{
+		pParty.lock()->Exit(GetParent()->GetUuid());
+
+		// 離脱パケットをバラ撒く。
+		PacketPartyExit Packet(GetParent()->GetUuid());
+		pParty.lock()->BroadcastPacket(&Packet);
+	}
+	else
+	{
+		Result = PacketPartyExitResult::Error;
+	}
+
+	PacketPartyExitResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティキック要求を受信した。
+void ClientStateActive::OnRecvPartyKickRequest(MemoryStreamInterface *pStream)
+{
+	PacketPartyKickRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketPartyKickResult::Success;
+	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
+	if (!pParty.expired())
+	{
+		// 実際に離脱させる前にキックパケットをバラ撒く.
+		PacketPartyKick KickPacket(Packet.Uuid);
+		pParty.lock()->BroadcastPacket(&KickPacket);
+
+		pParty.lock()->Exit(Packet.Uuid);
+	}
+	else
+	{
+		Result = PacketPartyKickResult::Error;
+	}
+
+	PacketPartyKickResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
 }
 
@@ -197,7 +252,7 @@ void ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
 	{
 		if (pTargetClient.lock()->GetCharacter().lock()->GetParty().expired())
 		{
-			NoticeData Notice(NoticeData::PartyInvide, GetParent()->GetCustomerId());
+			NoticeData Notice(NoticeData::PartyInvide, GetParent()->GetCustomerId(), GetParent()->GetCharacter().lock()->GetName());
 			PacketReceiveNotice NoticePacket(Notice);
 			pTargetClient.lock()->SendPacket(&NoticePacket);
 		}
@@ -213,4 +268,35 @@ void ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
 
 	PacketPartyInviteResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティ勧誘レスポンスを受けた。
+void ClientStateActive::OnRecvPartyInviteResponse(MemoryStreamInterface *pStream)
+{
+	PacketPartyInviteResponse Packet;
+	Packet.Serialize(pStream);
+
+	ClientPtr pTargetClient = ClientManager::GetInstance().GetFromCustomerId(Packet.CustomerId);
+
+	// レスポンス待ちの間に落ちた等のケース
+	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
+	if (pTargetClient.expired()) { return; }
+
+	if (Packet.Response == PacketPartyInviteResponse::Refuse)
+	{
+		// @TODO:pTargetClientに対して通知を投げる。
+		return;
+	}
+
+	PartyPtr pParty = pTargetClient.lock()->GetCharacter().lock()->GetParty();
+
+	// レスポンス待ちの間にパーティを解散した等のケース
+	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
+	if (pParty.expired()) { return; }
+
+	// レスポンス待ちの間にメンバーが最大になった場合。
+	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
+	if (pParty.lock()->IsMaximumMember()) { return; }
+
+	pParty.lock()->Join(GetParent()->GetCharacter());
 }

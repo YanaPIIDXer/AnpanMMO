@@ -2,6 +2,11 @@
 
 #include "NoticeMenuWidget.h"
 #include "Util.h"
+#include "Kismet/GameplayStatics.h"
+#include "Active/ActiveGameMode.h"
+#include "MMOGameInstance.h"
+#include "Packet/NoticeData.h"
+#include "Packet/PacketPartyInviteResponse.h"
 
 const TCHAR *UNoticeMenuWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Menu/Notice/NoticeMenu.NoticeMenu");
 
@@ -24,8 +29,26 @@ UNoticeMenuWidget::UNoticeMenuWidget(const FObjectInitializer &ObjectInitializer
 void UNoticeMenuWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
+	
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
 
+	TArray<NoticeInformation> Notices = pGameMode->GetNoticeList();
+	for (const auto &Info : Notices)
+	{
+		UNoticeBase *pNotice = nullptr;
+		switch (Info.Data.Type)
+		{
+			case NoticeData::PartyInvide:
 
+				pNotice = UPartyInviteNotice::Create(this, Info.Uuid, Info.Data.CustomerId, UTF8_TO_TCHAR(Info.Data.CharacterName.c_str()));
+				break;
+		}
+		check(pNotice != nullptr);
+		NoticeList.Add(pNotice);
+	}
+
+	OnInit();
 }
 
 // ============ UNoticeBase ===============
@@ -33,16 +56,32 @@ void UNoticeMenuWidget::NativeConstruct()
 // コンストラクタ
 UNoticeBase::UNoticeBase(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, CustomerId(0)
+	, NoticeUuid(0)
+	, CharacterName("")
 {
+}
+
+// 通知に対する行動.
+void UNoticeBase::Action()
+{
+	OnAction();
+
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	pGameMode->RemoveNotice(NoticeUuid);
 }
 
 // ========== UPartyInviteNotice ==============
 
 // 生成.
-UPartyInviteNotice *UPartyInviteNotice::Create(uint32 CustomerId)
+UPartyInviteNotice *UPartyInviteNotice::Create(UObject *pOuter, uint32 NoticeUuid, uint32 CustomerId, const FString &CharacterName)
 {
-	UPartyInviteNotice *pNotice = NewObject<UPartyInviteNotice>();
+	UPartyInviteNotice *pNotice = NewObject<UPartyInviteNotice>(pOuter);
+	pNotice->NoticeUuid = NoticeUuid;
 	pNotice->CustomerId = CustomerId;
+	pNotice->CharacterName = CharacterName;
 	return pNotice;
 }
 
@@ -53,8 +92,19 @@ UPartyInviteNotice::UPartyInviteNotice(const FObjectInitializer &ObjectInitializ
 }
 
 // 通知に対する行動.
-void UPartyInviteNotice::Action()
+void UPartyInviteNotice::OnAction()
 {
+	uint8 Response = PacketPartyInviteResponse::Accept;
+	if (!bAccept)
+	{
+		Response = PacketPartyInviteResponse::Refuse;
+	}
+
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketPartyInviteResponse Packet(CustomerId, Response);
+	pInst->SendPacket(&Packet);
 }
 
 // ========== UNoticeMenuItem ===============
@@ -62,6 +112,7 @@ void UPartyInviteNotice::Action()
 // コンストラクタ
 UNoticeMenuItem::UNoticeMenuItem(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, pParent(nullptr)
 	, pNotice(nullptr)
 {
 }
@@ -71,4 +122,23 @@ UNoticeMenuItem::UNoticeMenuItem(const FObjectInitializer &ObjectInitializer)
 void UNoticeMenuItem::Action()
 {
 	pNotice->Action();
+	pParent->Close();
+}
+
+// ========== UPartyInviteNoticeItem =============
+
+// コンストラクタ
+UPartyInviteNoticeItem::UPartyInviteNoticeItem(const FObjectInitializer &ObjectInitializer)
+	: Super(ObjectInitializer)
+{
+}
+
+
+// 勧誘を受けるかどうかを設定.
+void UPartyInviteNoticeItem::SetAccept(bool bAccept)
+{
+	UPartyInviteNotice *pPartyInviteNotice = Cast<UPartyInviteNotice>(pNotice);
+	check(pPartyInviteNotice != nullptr);
+
+	pPartyInviteNotice->SetAccept(bAccept);
 }

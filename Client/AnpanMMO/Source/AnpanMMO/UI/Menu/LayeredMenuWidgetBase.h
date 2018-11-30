@@ -28,6 +28,10 @@ public:
 	// 表示.
 	void Show(int32 InZOrder = 0);
 
+	// 閉じる
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void Close();
+
 
 	// メニューが閉じられた。
 	FOnMenuClosed OnMenuClosed;
@@ -38,9 +42,10 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void Back();
 
-	// 閉じる
-	UFUNCTION(BlueprintCallable, Category = "Menu")
-	void Close();
+	// 戻ってきた時のイベント
+	UFUNCTION(BlueprintNativeEvent, Category = "Menu")
+	void OnBackFromChild();
+	void OnBackFromChild_Implementation() {}
 
 	// 子を表示.
 	UFUNCTION(BlueprintCallable, Category = "Menu")

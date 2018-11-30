@@ -2,16 +2,46 @@
 
 #include "PartyInformation.h"
 #include "Active/ActiveGameMode.h"
+#include "Character/Player/GameCharacter.h"
+#include "Kismet/GameplayStatics.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "UI/SimpleDialog.h"
 #include "Packet/PacketPartyCreateResult.h"
 #include "Packet/PacketPartyDissolutionResult.h"
+#include "Packet/PacketPartyExitResult.h"
+#include "Packet/PacketPartyJoin.h"
+#include "Packet/PacketPartyJoinMember.h"
+#include "Packet/PacketPartyDissolution.h"
+#include "Packet/PacketPartyExit.h"
+#include "Packet/PacketPartyKick.h"
 
 // コンストラクタ
 PartyInformation::PartyInformation()
 	: PartyId(0)
+	, bIsLeader(false)
 	, pGameMode(nullptr)
 {
+}
+
+// メンバリストを取得.
+TArray<PartyMemberData> PartyInformation::GetMemberList() const
+{
+	TArray<PartyMemberData> List;
+
+	for (const auto KeyValue : MemberList)
+	{
+		if (KeyValue.Value.Uuid == PartyId)
+		{
+			// リーダーは先頭に。
+			List.Insert(KeyValue.Value, 0);
+		}
+		else
+		{
+			List.Add(KeyValue.Value);
+		}
+	}
+
+	return List;
 }
 
 // 作成結果を受信した。
@@ -35,10 +65,20 @@ void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 
 	if (Packet.Result != PacketPartyCreateResult::Success) { return; }
 	PartyId = Packet.PartyId;
+
+	// 自分自身を登録.
+	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(pGameMode.Get(), 0));
+	check(pCharacter != nullptr);
+
+	PartyMemberData Data(pCharacter->GetUuid(), TCHAR_TO_UTF8(*pCharacter->GetCharacterName()));
+	MemberList.Add(Data.Uuid, Data);
+
+	bIsLeader = true;
+
 	USimpleDialog::Show(pGameMode.Get(), "Party Create Success!!");
 }
 
-// 離脱結果を受信した。
+// 解散結果を受信した。
 void PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
 {
 	PacketPartyDissolutionResult Packet;
@@ -50,6 +90,87 @@ void PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
 		return;
 	}
 
+	MemberList.Empty();
+	PartyId = 0;
+	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
+}
+
+// 離脱結果を受信した。
+void PartyInformation::OnRecvExitResult(MemoryStreamInterface *pStream)
+{
+	PacketPartyExitResult Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result == PacketPartyExitResult::Error)
+	{
+		USimpleDialog::Show(pGameMode.Get(), "Exit Error...");
+		return;
+	}
+
+	MemberList.Empty();
+	PartyId = 0;
+	USimpleDialog::Show(pGameMode.Get(), "Party Exit.");
+}
+
+// 参加を受信した。
+void PartyInformation::OnRecvJoin(MemoryStreamInterface *pStream)
+{
+	PacketPartyJoin Packet;
+	Packet.Serialize(pStream);
+
+	PartyId = Packet.Uuid;
+	for (int i = 0; i < Packet.MemberList.GetCurrentSize(); i++)
+	{
+		MemberList.Add(Packet.MemberList[i].Uuid, Packet.MemberList[i]);
+	}
+
+	bIsLeader = false;
+}
+
+// メンバ加入を受信した。
+void PartyInformation::OnRecvJoinMember(MemoryStreamInterface *pStream)
+{
+	PacketPartyJoinMember Packet;
+	Packet.Serialize(pStream);
+
+	MemberList.Add(Packet.MemberData.Uuid, Packet.MemberData);
+}
+
+// メンバ離脱を受信した。
+void PartyInformation::OnRecvExitMember(MemoryStreamInterface *pStream)
+{
+	PacketPartyExit Packet;
+	Packet.Serialize(pStream);
+
+	if (!MemberList.Contains(Packet.Uuid)) { return; }
+	MemberList.Remove(Packet.Uuid);
+}
+
+// メンバキックを受信した。
+void PartyInformation::OnRecvKickMember(MemoryStreamInterface *pStream)
+{
+	PacketPartyKick Packet;
+	Packet.Serialize(pStream);
+
+	if (!MemberList.Contains(Packet.Uuid)) { return; }
+	MemberList.Remove(Packet.Uuid);
+
+	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(pGameMode.Get(), 0));
+	check(pCharacter != nullptr);
+
+	if (pCharacter->GetUuid() == Packet.Uuid)
+	{
+		USimpleDialog::Show(pGameMode.Get(), "Party Kicked...");
+	}
+}
+
+// 解散を受信した。
+void PartyInformation::OnRecvDissolution(MemoryStreamInterface *pStream)
+{
+	PacketPartyDissolution Packet;
+	Packet.Serialize(pStream);
+
+	MemberList.Empty();
 	PartyId = 0;
 	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
 }

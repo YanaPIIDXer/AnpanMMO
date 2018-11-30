@@ -4,6 +4,8 @@
 #include <boost/unordered_map.hpp>
 #include "WeakPtrDefine.h"
 
+class PacketBase;
+
 /**
  * パーティクラス
  */
@@ -20,13 +22,16 @@ public:
 	Party(u32 InUuid);
 
 	// デストラクタ
-	~Party() {}
+	virtual ~Party() {}
+
+	// 毎フレームの処理.
+	void Poll();
 
 	// 参加.
 	bool Join(PlayerCharacterPtr pPlayer);
 
 	// 脱退.
-	void Dissolution(u32 Uuid);
+	void Exit(u32 CharacterUuid);
 
 	// メンバリスト取得.
 	std::vector<PlayerCharacterPtr> GetMemberList() const;
@@ -39,6 +44,9 @@ public:
 
 	// UUIDを取得.
 	u32 GetUuid() const { return Uuid; }
+
+	// パケットをバラ撒く。
+	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 
 private:
 

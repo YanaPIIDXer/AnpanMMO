@@ -65,6 +65,12 @@ public:
 	// パーティ情報取得.
 	const PartyInformation &GetPartyInfo() const { return PartyInfo; }
 
+	// 通知リストを取得.
+	TArray<NoticeInformation> GetNoticeList() const { return NoticeMgr.GetNoticeList(); }
+
+	// 通知を消去.
+	void RemoveNotice(uint32 Uuid) { NoticeMgr.RemoveNotice(Uuid); }
+
 protected:
 
 private:
@@ -120,6 +126,9 @@ private:
 
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
+
+	// キック結果を受信した。
+	void OnRecvPartyKickResult(MemoryStreamInterface *pStream);
 
 	// パーティ勧誘結果を受信した。
 	void OnRecvPartyInviteResult(MemoryStreamInterface *pStream);

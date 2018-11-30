@@ -18,16 +18,18 @@ public:
 
 	u8 Type;
 	u32 CustomerId;
+	std::string CharacterName;
 	
 
 	NoticeData()
 	{
 	}
 
-	NoticeData(u8 InType, u32 InCustomerId)
+	NoticeData(u8 InType, u32 InCustomerId, std::string InCharacterName)
 	{
 		Type = InType;
 		CustomerId = InCustomerId;
+		CharacterName = InCharacterName;
 		
 	}
 
@@ -35,6 +37,7 @@ public:
 	{
 		pStream->Serialize(&Type);
 		pStream->Serialize(&CustomerId);
+		pStream->Serialize(&CharacterName);
 		
 		return true;
 	}
