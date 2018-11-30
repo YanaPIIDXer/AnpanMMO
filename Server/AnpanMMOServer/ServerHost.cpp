@@ -2,7 +2,7 @@
 #include "ServerHost.h"
 
 #if WIN32
-//#define USE_REMOTE_CACHESERVER
+#define USE_REMOTE_CACHESERVER
 #define USE_REMOTE_WORDCHECKSERVER
 #endif
 
