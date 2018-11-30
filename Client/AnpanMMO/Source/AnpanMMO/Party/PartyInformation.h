@@ -37,6 +37,9 @@ public:
 	// 解散結果を受信した。
 	void OnRecvDissolutionResult(MemoryStreamInterface *pStream);
 
+	// 離脱結果を受信した。
+	void OnRecvExitResult(MemoryStreamInterface *pStream);
+
 	// 参加を受信した。
 	void OnRecvJoin(MemoryStreamInterface *pStream);
 

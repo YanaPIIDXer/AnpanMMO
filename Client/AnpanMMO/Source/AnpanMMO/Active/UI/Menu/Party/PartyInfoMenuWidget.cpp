@@ -3,8 +3,10 @@
 #include "PartyInfoMenuWidget.h"
 #include "Kismet/GameplayStatics.h"
 #include "MMOGameInstance.h"
+#include "Active/ActiveGameMode.h"
 #include "Util.h"
 #include "Packet/PacketPartyDissolutionRequest.h"
+#include "Packet/PacketPartyExitRequest.h"
 
 const TCHAR *UPartyInfoMenuWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Menu/Party/PartyInfoMenu.PartyInfoMenu");
 
@@ -23,6 +25,19 @@ UPartyInfoMenuWidget::UPartyInfoMenuWidget(const FObjectInitializer &ObjectIniti
 {
 }
 
+// 開始時の処理.
+void UPartyInfoMenuWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	bIsLeader = pGameMode->GetPartyInfo().IsLeader();
+
+	OnInit();
+}
+
 
 // 解散リクエストを送信.
 void UPartyInfoMenuWidget::SendDissolutionRequest()
@@ -31,5 +46,15 @@ void UPartyInfoMenuWidget::SendDissolutionRequest()
 	check(pInst != nullptr);
 
 	PacketPartyDissolutionRequest Packet;
+	pInst->SendPacket(&Packet);
+}
+
+// 離脱リクエストを送信.
+void UPartyInfoMenuWidget::SendExitRequest()
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketPartyExitRequest Packet;
 	pInst->SendPacket(&Packet);
 }

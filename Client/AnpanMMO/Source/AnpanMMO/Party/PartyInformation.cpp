@@ -8,6 +8,7 @@
 #include "UI/SimpleDialog.h"
 #include "Packet/PacketPartyCreateResult.h"
 #include "Packet/PacketPartyDissolutionResult.h"
+#include "Packet/PacketPartyExitResult.h"
 #include "Packet/PacketPartyJoin.h"
 #include "Packet/PacketPartyJoinMember.h"
 #include "Packet/PacketPartyDissolution.h"
@@ -70,6 +71,23 @@ void PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
 	MemberList.Empty();
 	PartyId = 0;
 	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
+}
+
+// 離脱結果を受信した。
+void PartyInformation::OnRecvExitResult(MemoryStreamInterface *pStream)
+{
+	PacketPartyExitResult Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result == PacketPartyExitResult::Error)
+	{
+		USimpleDialog::Show(pGameMode.Get(), "Exit Error...");
+		return;
+	}
+
+	MemberList.Empty();
+	PartyId = 0;
+	USimpleDialog::Show(pGameMode.Get(), "Party Exit.");
 }
 
 // 参加を受信した。

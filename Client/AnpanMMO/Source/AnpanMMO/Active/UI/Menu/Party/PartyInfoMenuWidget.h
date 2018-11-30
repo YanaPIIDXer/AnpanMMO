@@ -26,11 +26,28 @@ public:
 	// デストラクタ
 	virtual ~UPartyInfoMenuWidget() {}
 
+	// 開始時の処理.
+	virtual void NativeConstruct() override;
+
 protected:
+
+	// 初期化された
+	UFUNCTION(BlueprintNativeEvent, Category = "Party")
+	void OnInit();
+	void OnInit_Implementation() {}
 
 	// 解散リクエストを送信.
 	UFUNCTION(BlueprintCallable, Category = "Party")
 	void SendDissolutionRequest();
+
+	// 離脱リクエストを送信.
+	UFUNCTION(BlueprintCallable, Category = "Party")
+	void SendExitRequest();
+
+
+	// リーダーか？
+	UPROPERTY(BlueprintReadOnly, Category = "Party")
+	bool bIsLeader;
 
 private:
 
