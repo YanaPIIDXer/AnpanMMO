@@ -28,10 +28,21 @@ public:
 	// インスタンスエリアか？
 	virtual bool IsInstance() const { return true; }
 
+protected:
+
+	// 更新.
+	virtual void Update();
+
 private:
 
 	// UUID
 	u32 Uuid;
+
+	// 脱出ポイント生成済みか？
+	bool bSpawnedExitPoint;
+
+	// 脱出ポイントＩＤ
+	u32 ExitWarpDataId;
 
 };
 

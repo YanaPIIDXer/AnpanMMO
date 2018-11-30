@@ -67,6 +67,10 @@ protected:
 	// アンパン管理.
 	AnpanManager AnpanMgr;
 
+
+	// 更新.
+	virtual void Update() {}
+
 private:
 
 	// ハイトマップ

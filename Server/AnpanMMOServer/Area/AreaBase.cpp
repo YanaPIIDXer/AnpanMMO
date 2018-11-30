@@ -31,6 +31,7 @@ void AreaBase::Poll(int DeltaTime)
 {
 	PlayerMgr.Poll();
 	AnpanMgr.Poll(DeltaTime);
+	Update();
 }
 
 // プレイヤーキャラの追加.
