@@ -7,6 +7,7 @@
 　　└マスタツールのコンソール起動対応。
 　└コンソールからビルドした時にdefineマクロをブチ込めるかどうかの調査。
 　　└可能なら現在クライアント側で#if WITH_EDITORで切ってるローカルサーバ接続を修正。
+　　└参考資料：https://answers.unrealengine.com/questions/338772/setting-global-preprocessor-definitions-for-a-modu.html
 　└Fedoraサーバをmasterブランチに切り替え。
 
 ・クエスト
