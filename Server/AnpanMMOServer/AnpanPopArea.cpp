@@ -44,7 +44,7 @@ void AnpanPopArea::SpawnAnpan()
 	const AnpanPopDataItem *pPopData = Items[PopDataIndex];
 	const AnpanItem *pAnpanItem = MasterData::GetInstance().GetAnpanMaster().GetItem(pPopData->AnpanId);
 
-	Anpan *pNewAnpan = new Anpan(Vector3D(X, Y, Z), pAnpanItem->Hp, pAnpanItem->Atk, pAnpanItem->Def, pAnpanItem->Exp, pAnpanItem->Scale);
+	Anpan *pNewAnpan = new Anpan(Vector3D(X, Y, Z), pAnpanItem->ID, pAnpanItem->Hp, pAnpanItem->Atk, pAnpanItem->Def, pAnpanItem->Exp, pAnpanItem->Scale);
 	shared_ptr<Anpan> pAnpan = shared_ptr<Anpan>(pNewAnpan);
 	AnpanList.push_back(pAnpan);
 	if (SpawnFunction)

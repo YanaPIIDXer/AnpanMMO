@@ -14,7 +14,7 @@ class Anpan : public CharacterBase
 public:
 
 	// コンストラクタ
-	Anpan(const Vector3D &InPosition, int Hp, int Atk, int Def, int InExp, float InScaleRate);
+	Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate);
 
 	// デストラクタ
 	virtual ~Anpan() {}
@@ -33,6 +33,9 @@ public:
 	
 	// 半径を取得.
 	float GetRadius() const { return (BaseRadius * ScaleRate); }
+
+	// マスタＩＤを取得.
+	u32 GetMasterId() const { return MasterId; }
 	
 protected:
 
@@ -47,8 +50,8 @@ private:
 	// AI
 	AnpanAI AI;
 
-	// UUID
-	u32 Uuid;
+	// マスタＩＤ
+	u32 MasterId;
 
 	// 倒したときに獲得できる経験値.
 	int Exp;

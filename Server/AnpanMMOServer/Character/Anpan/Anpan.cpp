@@ -6,8 +6,9 @@
 const float Anpan::BaseRadius = 50.0f;
 
 // コンストラクタ
-Anpan::Anpan(const Vector3D &InPosition, int Hp, int Atk, int Def, int InExp, float InScaleRate)
+Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate)
 	: AI(this)
+	, MasterId(InMasterId)
 	, Exp(InExp)
 	, ScaleRate(InScaleRate)
 {
