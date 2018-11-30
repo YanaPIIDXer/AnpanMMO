@@ -137,7 +137,7 @@ namespace MasterConverter
 			foreach (var TargetFilePath in Files)
 			{
 				if (Path.GetExtension(TargetFilePath) != ".xlsx") { continue; }
-				Console.Write(TargetFilePath + "の展開中...");
+				Console.Write(Path.GetFileNameWithoutExtension(TargetFilePath) + "の解析中...");
 				ExcelParser Parser = new ExcelParser(TargetFilePath);
 				if (!Parser.Load())
 				{
@@ -156,7 +156,7 @@ namespace MasterConverter
 				string MasterName = Path.GetFileNameWithoutExtension(TargetFilePath);
 				string FileName = MasterName + ".sql";
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + FileName;
-				Console.Write(FilePath + "の生成中...");
+				Console.Write(Path.GetFileNameWithoutExtension(FilePath) + "の生成中...");
 
 				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Master.GetColumns());
 				if (!SQLGen.Generate())

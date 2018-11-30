@@ -115,7 +115,7 @@ void Area::OnSpawnAnpan(u32 Uuid, AnpanPtr pAnpan)
 
 	const CharacterParameter &Param = pAnpan.lock()->GetParameter();
 	const Vector3D &Position = pAnpan.lock()->GetPosition();
-	AnpanData Data(Uuid, Position.X, Position.Y, Position.Z, pAnpan.lock()->GetRotation().Get(), Param.Hp, Param.MaxHp);
+	AnpanData Data(Uuid, pAnpan.lock()->GetMasterId(), Position.X, Position.Y, Position.Z, pAnpan.lock()->GetRotation().Get(), Param.Hp, Param.MaxHp);
 	PacketSpawnAnpan Packet(Data);
 	PlayerMgr.BroadcastPacket(&Packet);
 }

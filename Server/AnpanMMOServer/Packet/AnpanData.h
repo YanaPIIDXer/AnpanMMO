@@ -14,6 +14,7 @@ public:
 	
 
 	u32 Uuid;
+	u32 MasterId;
 	float X;
 	float Y;
 	float Z;
@@ -26,9 +27,10 @@ public:
 	{
 	}
 
-	AnpanData(u32 InUuid, float InX, float InY, float InZ, float InRotation, s32 InHp, s32 InMaxHp)
+	AnpanData(u32 InUuid, u32 InMasterId, float InX, float InY, float InZ, float InRotation, s32 InHp, s32 InMaxHp)
 	{
 		Uuid = InUuid;
+		MasterId = InMasterId;
 		X = InX;
 		Y = InY;
 		Z = InZ;
@@ -41,6 +43,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&Uuid);
+		pStream->Serialize(&MasterId);
 		pStream->Serialize(&X);
 		pStream->Serialize(&Y);
 		pStream->Serialize(&Z);
