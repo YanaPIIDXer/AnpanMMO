@@ -5,6 +5,7 @@
 #include "WeakPtrDefine.h"
 #include "Packet/PacketPartyJoinMember.h"
 #include "Packet/PacketPartyJoin.h"
+#include "Packet/PacketPartyExit.h"
 
 const u32 Party::MaximumMember = 4;
 
@@ -21,7 +22,15 @@ void Party::Poll()
 	{
 		if (It->second.expired())
 		{
+			u32 EraseUuid = It->first;
 			It = MemberList.erase(It);
+			if (EraseUuid != Uuid)
+			{
+				// リーダー以外が抜けた場合は離脱パケットをバラ撒く。
+				// ※リーダーが抜けた場合はこの後解散パケットがバラ撒かれるので不要。
+				PacketPartyExit Packet(EraseUuid);
+				BroadcastPacket(&Packet);
+			}
 		}
 		else
 		{
@@ -75,6 +84,10 @@ void Party::Exit(u32 PlayerUuid)
 	if (MemberList.find(PlayerUuid) == MemberList.end()) { return; }			// 存在しない。
 	MemberList[PlayerUuid].lock()->SetParty(PartyPtr());
 	MemberList.erase(PlayerUuid);
+
+	// 離脱パケットをバラ撒く。
+	PacketPartyExit Packet(PlayerUuid);
+	BroadcastPacket(&Packet);
 }
 
 // メンバリスト取得.
