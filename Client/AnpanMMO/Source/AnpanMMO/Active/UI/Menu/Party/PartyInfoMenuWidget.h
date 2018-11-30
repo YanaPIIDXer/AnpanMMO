@@ -25,6 +25,10 @@ public:
 	// リーダーか？
 	UPROPERTY(BlueprintReadOnly)
 	bool bIsLeader;
+
+	// 自分自身か？
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsSelf;
 };
 
 /**
