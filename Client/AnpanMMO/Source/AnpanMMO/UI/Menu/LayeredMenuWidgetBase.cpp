@@ -60,6 +60,7 @@ void ULayeredMenuWidgetBase::Back()
 		AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 		check(pGameMode != nullptr);
 
+		pGameMode->SetCurrentMenu(nullptr);
 		pGameMode->SetHiddenMainHUD(false);
 	}
 }
