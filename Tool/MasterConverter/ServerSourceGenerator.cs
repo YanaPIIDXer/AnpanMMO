@@ -190,6 +190,19 @@ namespace MasterConverter
 			}
 			Source = Source.Replace("$KEY_NAME$", KeyName);
 
+			// Enum
+			string EnumList = "";
+			foreach(var Enum in Master.EnumList)
+			{
+				EnumList += "\tenum\n\t{";
+				foreach (var Data in Enum.EnumList)
+				{
+					EnumList += "\n\t\t" + Data.Key + " = " + Data.Value + ",";
+				}
+				EnumList += "\n\t};\n";
+			}
+			Source = Source.Replace("$ENUMS$", EnumList);
+
 			// アイテムリスト
 			string ItemList = "";
 			foreach (Column Col in ColumnList)
@@ -219,12 +232,7 @@ namespace MasterConverter
 
 						ItemBind += "Query.BindResultString(" + Col.Name + "Bind);";
 						break;
-
-					case Type.WString:
-
-						ItemBind += "Query.BindResultWString(" + Col.Name + "Bind);";
-						break;
-
+						
 					case Type.s32:
 					case Type.u32:
 
@@ -252,7 +260,7 @@ namespace MasterConverter
 			string StringBind = "";
 			foreach(Column Col in ColumnList)
 			{
-				if(Col.DataType != Type.String && Col.DataType != Type.WString) { continue; }
+				if(Col.DataType != Type.String) { continue; }
 				StringBind += "\t";
 				if(Col.DataType == Type.String)
 				{
@@ -271,7 +279,7 @@ namespace MasterConverter
 			foreach(Column Col in ColumnList)
 			{
 				ItemFetch += "\t\t";
-				if(Col.DataType == Type.String || Col.DataType == Type.WString)
+				if(Col.DataType == Type.String)
 				{
 					// stringの場合は別領域に格納されたものを放り込む。
 					ItemFetch += "Item." + Col.Name + " = " + Col.Name + "Bind;";

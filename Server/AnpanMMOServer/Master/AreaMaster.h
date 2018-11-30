@@ -11,9 +11,18 @@ struct AreaItem
 
 public:
 
+	enum
+	{
+		NORMAL_AREA = 0,
+		INSTANCE_AREA = 1,
+	};
+
+
 	u32 ID;
 	std::string Name;
 	std::string LevelName;
+	u8 Type;
+	u32 InstanceInfoId;
 
 
 };

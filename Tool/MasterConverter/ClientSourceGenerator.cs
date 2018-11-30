@@ -188,6 +188,19 @@ namespace MasterConverter
 			string SecondaryKeyName = ColumnList[1].Name;
 			Source = Source.Replace("$SECONDARY_KEY_NAME$", SecondaryKeyName);
 
+			// Enum
+			string EnumList = "";
+			foreach (var Enum in Master.EnumList)
+			{
+				EnumList += "\tenum\n\t{";
+				foreach (var Data in Enum.EnumList)
+				{
+					EnumList += "\n\t\t" + Data.Key + " = " + Data.Value + ",";
+				}
+				EnumList += "\n\t};\n";
+			}
+			Source = Source.Replace("$ENUMS$", EnumList);
+
 			// アイテムリスト
 			string ItemList = "";
 			foreach (Column Col in ColumnList)

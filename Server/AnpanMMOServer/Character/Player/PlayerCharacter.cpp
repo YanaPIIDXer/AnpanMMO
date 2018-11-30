@@ -11,6 +11,8 @@
 PlayerCharacter::PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def, int InExp)
 	: pClient(pInClient)
 	, Exp(InExp)
+	, SaveAreaId(0)
+	, SavePosition(Vector3D::Zero)
 {
 	SetParameter(MaxHp, MaxHp, Atk, Def);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
@@ -20,6 +22,21 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def,
 PlayerCharacter::~PlayerCharacter()
 {
 	SaveParameter();
+}
+
+// 移動した。
+void PlayerCharacter::OnMoved()
+{
+	if (GetArea().lock()->IsInstance()) { return; }
+	SavePosition = GetPosition();
+}
+
+// エリアが切り替わった。
+void PlayerCharacter::OnAreaChange()
+{
+	AreaPtr pArea = GetArea();
+	if (pArea.lock()->IsInstance()) { return; }
+	SaveAreaId = pArea.lock()->GetId();
 }
 
 
@@ -42,10 +59,8 @@ void PlayerCharacter::OnLevelUp()
 void PlayerCharacter::SaveParameter()
 {
 	const CharacterParameter &Param = GetParameter();
-	AreaPtr pArea = GetArea();
-	if (pArea.expired()) { return; }		// まだエリアに属していない。
-	const Vector3D Pos = GetPosition();
+	if (SaveAreaId == 0) { return; }		// まだエリアに属していない。
 	Client *pClient = GetClient();
-	CachePacketCharacterDataSave Packet(pClient->GetUuid(), pClient->GetCustomerId(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), pArea.lock()->GetId(), Pos.X, Pos.Y, Pos.Z);
+	CachePacketCharacterDataSave Packet(pClient->GetUuid(), pClient->GetCustomerId(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), SaveAreaId, SavePosition.X, SavePosition.Y, SavePosition.Z);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }

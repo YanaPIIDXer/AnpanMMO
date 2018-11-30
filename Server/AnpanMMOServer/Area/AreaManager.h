@@ -2,7 +2,7 @@
 #define __AREAMANAGER_H__
 
 #include <boost/unordered_map.hpp>
-#include "Area.h"
+#include "AreaBase.h"
 
 class Client;
 class MemoryStreamInterface;
@@ -15,7 +15,7 @@ class AreaManager : public noncopyable
 
 private:		// 別名定義.
 
-	typedef shared_ptr<Area> AreaSharedPtr;
+	typedef shared_ptr<AreaBase> AreaSharedPtr;
 	typedef unordered_map<u32, AreaSharedPtr> AreaMap;
 
 public:
@@ -32,10 +32,16 @@ public:
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
 
+	// インスタンスマップを生成.
+	AreaPtr CreateInstanceArea(u32 AreaId);
+
 private:
 
 	// エリアマップ
 	AreaMap Areas;
+
+	// 次に発行するインスタンスマップのUUID
+	u32 NextInstanceAreaUuid;
 
 
 	// ========== Singleton ===============

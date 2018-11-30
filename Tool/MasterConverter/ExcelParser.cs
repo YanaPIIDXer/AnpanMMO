@@ -109,6 +109,21 @@ namespace MasterConverter
 					{
 						Master.SetForWordCheckServer();
 					}
+
+					if(CellValue == "$ENUM")
+					{
+						int EnumValue = 0;
+						EnumData Data = new EnumData();
+						for(int j = 2; ; j++)
+						{
+							string EnumName = (string)WorkSheet.Cells[i, j].Value;
+							if (string.IsNullOrEmpty(EnumName)) { break; }
+
+							Data.Add(EnumName, EnumValue);
+							EnumValue++;
+						}
+						Master.AddEnum(Data);
+					}
 				}
 				catch {}
 			}
@@ -183,12 +198,7 @@ namespace MasterConverter
 
 						DataType = Type.String;
 						break;
-
-					case "wstring":
-
-						DataType = Type.WString;
-						break;
-
+						
 					default:
 
 						throw new Exception(DataTypeName + "は認識できない型です。");

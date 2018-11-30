@@ -28,6 +28,7 @@ void ClientStateAreaChange::OnRecvGameReady(MemoryStreamInterface *pStream)
 	pPlayerChara.lock()->SetPosition(Position);
 	AreaPtr pArea = AreaManager::GetInstance().Get(AreaId);
 	pArea.lock()->AddPlayerCharacter(pPlayerChara);
+	pPlayerChara.lock()->OnAreaChange();
 
 	// エリア移動をクライアントに通知.
 	PacketAreaMove AreaMovePacket(AreaId, Position.X, Position.Y, Position.Z);

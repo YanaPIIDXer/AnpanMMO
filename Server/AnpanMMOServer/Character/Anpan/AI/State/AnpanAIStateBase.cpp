@@ -2,7 +2,7 @@
 #include "AnpanAIStateBase.h"
 #include "Character/Anpan/Anpan.h"
 #include "Math/MathUtil.h"
-#include "Area/Area.h"
+#include "Area/AreaBase.h"
 
 // コンストラクタ
 AnpanAIStateBase::AnpanAIStateBase(Anpan *pInParent)

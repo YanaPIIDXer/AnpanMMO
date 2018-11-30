@@ -49,6 +49,9 @@ public:
 	// 範囲を指定したパケットのブロードキャスト
 	void BroadcastPacketWithRange(PacketBase *pPacket, const Vector3D &Center, float Range, Client *pIgnoreClient = NULL);
 
+	// プレイヤー数を取得.
+	u32 GetCount() const { return PlayerList.size(); }
+
 private:
 
 	// プレイヤーマップ

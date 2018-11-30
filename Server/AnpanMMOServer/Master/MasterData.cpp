@@ -61,5 +61,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!InstanceInfo.Load(Connection))
+	{
+		std::cout << "InstanceInfo Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }

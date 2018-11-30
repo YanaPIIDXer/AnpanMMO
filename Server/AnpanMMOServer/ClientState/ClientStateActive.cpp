@@ -10,6 +10,8 @@
 #include "WordCheckServer/WordCheckServerConnection.h"
 #include "Party/PartyManager.h"
 #include "ClientStateAreaChange.h"
+#include "Area/InstanceAreaTicket.h"
+#include "Area/InstanceAreaTicketManager.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
 #include "Packet/PacketSendChat.h"
@@ -35,6 +37,7 @@
 #include "Packet/PacketReceiveNotice.h"
 #include "Packet/PacketPartyInviteResult.h"
 #include "Packet/PacketPartyInviteResponse.h"
+#include "Packet/PacketInstanceAreaTicketProcess.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -52,6 +55,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PartyKickRequest, boost::bind(&ClientStateActive::OnRecvPartyKickRequest, this, _2));
 	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
 	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
+	AddPacketFunction(InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
 }
 
 
@@ -116,15 +120,47 @@ void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	const WarpDataItem *pItem = MasterData::GetInstance().GetWarpDataMaster().GetItem(Packet.AreaMoveId);
-	PlayerCharacter *pPlayer = GetParent()->GetCharacter().lock().get();
-	AreaPtr pArea = pPlayer->GetArea();
-	pArea.lock()->RemovePlayerCharacter(pPlayer->GetUuid());
+	const AreaItem *pAreaItem = MasterData::GetInstance().GetAreaMaster().GetItem(pItem->AreaId);
+	if (pAreaItem->Type != AreaItem::INSTANCE_AREA)
+	{
+		// 通常マップへの移動。
+		PlayerCharacter *pPlayer = GetParent()->GetCharacter().lock().get();
+		AreaPtr pArea = pPlayer->GetArea();
+		pArea.lock()->RemovePlayerCharacter(pPlayer->GetUuid());
 
-	PacketAreaMoveResponse ResponsePacket(PacketAreaMoveResponse::Success);
-	GetParent()->SendPacket(&ResponsePacket);
+		PacketAreaMoveResponse ResponsePacket(PacketAreaMoveResponse::Success);
+		GetParent()->SendPacket(&ResponsePacket);
 
-	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector3D(pItem->X, pItem->Y, pItem->Z));
-	GetParent()->ChangeState(pNewState);
+		ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector3D(pItem->X, pItem->Y, pItem->Z));
+		GetParent()->ChangeState(pNewState);
+	}
+	else
+	{
+		// インスタンスマップへの移動を試みた。
+		Vector3D StartPosition(pItem->X, pItem->Y, pItem->Z);
+		InstanceAreaTicket *pTicket = InstanceAreaTicketManager::GetInstance().Publish(pItem->AreaId, StartPosition);
+		
+		PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
+		if (pParty.expired())
+		{
+			// ソロ
+			ClientPtr pSelf = ClientManager::GetInstance().Get(GetParent()->GetUuid());
+			pTicket->AddClient(pSelf);
+		}
+		else
+		{
+			// パーティに入っていた場合はメンバ全員を招待。
+			std::vector<PlayerCharacterPtr> Players = pParty.lock()->GetMemberList();
+			for (u32 i = 0; i < Players.size(); i++)
+			{
+				ClientPtr pClient = ClientManager::GetInstance().Get(Players[i].lock()->GetClient()->GetUuid());
+				pTicket->AddClient(pClient);
+			}
+		}
+		
+		// 発行チケットをバラ撒く。
+		pTicket->BroadcastPublishPacket();
+	}
 }
 
 // リスポン要求を受信した。
@@ -299,4 +335,44 @@ void ClientStateActive::OnRecvPartyInviteResponse(MemoryStreamInterface *pStream
 	if (pParty.lock()->IsMaximumMember()) { return; }
 
 	pParty.lock()->Join(GetParent()->GetCharacter());
+}
+
+// インスタンスマップチケットの処理を受信した。
+void ClientStateActive::OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *pStream)
+{
+	PacketInstanceAreaTicketProcess Packet;
+	Packet.Serialize(pStream);
+
+	InstanceAreaTicket *pTicket = InstanceAreaTicketManager::GetInstance().Get(Packet.TicketId);
+	if (pTicket == NULL) { return; }
+	ETicketState State;
+	switch (Packet.Process)
+	{
+		case PacketInstanceAreaTicketProcess::Enter:
+
+			State = TicketStateEnter;
+			break;
+
+		case PacketInstanceAreaTicketProcess::Discard:
+
+			State = TicketStateDiscard;
+			break;
+	}
+	pTicket->RecvProcess(GetParent()->GetUuid(), State);
+
+	if (pTicket->IsReady())
+	{
+		// 準備が完了したのでインスタンスマップを生成してメンバ全員を飛ばす。
+		AreaPtr pArea = AreaManager::GetInstance().CreateInstanceArea(pTicket->GetAreaId());
+		pTicket->EnterToInstanceArea(pArea);
+
+		// チケットは破棄。
+		InstanceAreaTicketManager::GetInstance().Remove(Packet.TicketId);
+	}
+	else if (!pTicket->IsWaiting() && pTicket->IsDiscard())
+	{
+		// 一人でもチケットを破棄したクライアントがいれば破棄。
+		pTicket->BroadcastDiscardPacket();
+		InstanceAreaTicketManager::GetInstance().Remove(Packet.TicketId);
+	}
 }

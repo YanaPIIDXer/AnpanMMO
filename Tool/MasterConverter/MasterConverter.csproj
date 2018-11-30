@@ -77,6 +77,7 @@
     <Compile Include="ClientSourceGenerator.cs" />
     <Compile Include="Column.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="EnumData.cs" />
     <Compile Include="ExcelParser.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>

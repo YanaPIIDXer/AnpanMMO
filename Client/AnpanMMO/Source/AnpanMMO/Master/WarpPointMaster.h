@@ -8,6 +8,8 @@ struct WarpPointItem
 
 public:
 
+
+
 	u32 Id;
 	u32 AreaId;
 	float X;

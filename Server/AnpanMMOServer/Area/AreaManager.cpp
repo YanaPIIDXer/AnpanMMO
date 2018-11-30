@@ -4,11 +4,14 @@
 #include "Client.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Master/MasterData.h"
+#include "Area/Area.h"
+#include "Area/InstanceArea.h"
 
 AreaManager AreaManager::Instance;
 
 // コンストラクタ
 AreaManager::AreaManager()
+	: NextInstanceAreaUuid(1)
 {
 }
 
@@ -21,6 +24,7 @@ void AreaManager::Initialize()
 	for (unsigned int i = 0; i < Items.size(); i++)
 	{
 		const AreaItem *pItem = MasterData::GetInstance().GetAreaMaster().GetItem(Items[i].ID);
+		if (pItem->Type != AreaItem::NORMAL_AREA) { continue; }
 		Area *pArea = new Area(pItem);
 		AreaSharedPtr pSharedArea = AreaSharedPtr(pArea);
 		Areas[pItem->ID] = pSharedArea;
@@ -38,8 +42,30 @@ AreaPtr AreaManager::Get(u32 ID) const
 // 毎フレームの処理.
 void AreaManager::Poll(int DeltaTime)
 {
-	for (AreaMap::iterator It = Areas.begin(); It != Areas.end(); ++It)
+	for (AreaMap::iterator It = Areas.begin(); It != Areas.end();)
 	{
 		It->second->Poll(DeltaTime);
+		
+		if (It->second->IsAbleDelete())
+		{
+			It = Areas.erase(It);
+		}
+		else
+		{
+			++It;
+		}
 	}
+}
+
+// インスタンスエリアの生成.
+AreaPtr AreaManager::CreateInstanceArea(u32 AreaId)
+{
+	u32 Uuid = 10000 + NextInstanceAreaUuid;
+	const AreaItem *pItem = MasterData::GetInstance().GetAreaMaster().GetItem(AreaId);
+	InstanceArea *pArea = new InstanceArea(Uuid, pItem);
+	AreaSharedPtr pSharedPtr = AreaSharedPtr(pArea);
+	Areas[Uuid] = pSharedPtr;
+
+	NextInstanceAreaUuid++;
+	return pSharedPtr;
 }
