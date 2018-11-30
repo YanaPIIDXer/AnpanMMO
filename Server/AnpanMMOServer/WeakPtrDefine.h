@@ -19,7 +19,7 @@ typedef weak_ptr<Party> PartyPtr;
 class Client;
 typedef weak_ptr<Client> ClientPtr;
 
-class Area;
-typedef weak_ptr<Area> AreaPtr;
+class AreaBase;
+typedef weak_ptr<AreaBase> AreaPtr;
 
 #endif		// #ifndef __WEAKPTRDEFINE_H__

@@ -2,7 +2,7 @@
 #define __AREAMANAGER_H__
 
 #include <boost/unordered_map.hpp>
-#include "Area.h"
+#include "AreaBase.h"
 
 class Client;
 class MemoryStreamInterface;
@@ -15,7 +15,7 @@ class AreaManager : public noncopyable
 
 private:		// •Ê–¼’è‹`.
 
-	typedef shared_ptr<Area> AreaSharedPtr;
+	typedef shared_ptr<AreaBase> AreaSharedPtr;
 	typedef unordered_map<u32, AreaSharedPtr> AreaMap;
 
 public:
