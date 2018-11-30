@@ -25,6 +25,8 @@
 #include "Packet/PacketPartyCreateResult.h"
 #include "Packet/PacketPartyDissolutionRequest.h"
 #include "Packet/PacketPartyDissolutionResult.h"
+#include "Packet/PacketPartyExitRequest.h"
+#include "Packet/PacketPartyExitResult.h"
 #include "Packet/PacketPartyInviteRequest.h"
 #include "Packet/PacketReceiveNotice.h"
 #include "Packet/PacketPartyInviteResult.h"
@@ -42,6 +44,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
 	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
 	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
+	AddPacketFunction(PartyExitRequest, boost::bind(&ClientStateActive::OnRecvPartyExitRequest, this, _2));
 	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
 	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
 }
@@ -179,6 +182,27 @@ void ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pSt
 	}
 	
 	PacketPartyDissolutionResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
+}
+
+// パーティ離脱要求を受信した。
+void ClientStateActive::OnRecvPartyExitRequest(MemoryStreamInterface *pStream)
+{
+	PacketPartyExitRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketPartyExitResult::Success;
+	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
+	if (!pParty.expired())
+	{
+		pParty.lock()->Exit(GetParent()->GetUuid());
+	}
+	else
+	{
+		Result = PacketPartyExitResult::Error;
+	}
+
+	PacketPartyExitResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
 }
 
