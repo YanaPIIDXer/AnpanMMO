@@ -14,6 +14,22 @@ Party::Party(u32 InUuid)
 {
 }
 
+// 毎フレームの処理.
+void Party::Poll()
+{
+	for (MemberMap::iterator It = MemberList.begin(); It != MemberList.end();)
+	{
+		if (It->second.expired())
+		{
+			It = MemberList.erase(It);
+		}
+		else
+		{
+			++It;
+		}
+	}
+}
+
 // 参加.
 bool Party::Join(PlayerCharacterPtr pPlayer)
 {
@@ -75,13 +91,8 @@ std::vector<PlayerCharacterPtr> Party::GetMemberList() const
 // 削除してもいいか？
 bool Party::IsAbleDelete() const
 {
-	for (MemberMap::const_iterator It = MemberList.begin(); It != MemberList.end(); ++It)
-	{
-		if (!It->second.expired()) { return false; }
-	}
-
-	// パーティメンバ全員が消失していたら削除可。
-	return true;
+	// リーダーが抜けていたら削除可.
+	return (MemberList.find(Uuid) == MemberList.end());
 }
 
 // パケットをバラ撒く。

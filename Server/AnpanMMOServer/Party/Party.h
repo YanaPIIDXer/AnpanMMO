@@ -22,7 +22,10 @@ public:
 	Party(u32 InUuid);
 
 	// デストラクタ
-	~Party() {}
+	virtual ~Party() {}
+
+	// 毎フレームの処理.
+	void Poll();
 
 	// 参加.
 	bool Join(PlayerCharacterPtr pPlayer);

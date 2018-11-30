@@ -17,9 +17,13 @@ void PartyManager::Poll()
 {
 	for (PartyList::iterator It = Partys.begin(); It != Partys.end();)
 	{
+		It->second->Poll();
 		if (It->second->IsAbleDelete())
 		{
 			// パーティ消去.
+			// 解散パケットをバラ撒く。
+			PacketPartyDissolution Packet;
+			It->second->BroadcastPacket(&Packet);
 			It = Partys.erase(It);
 		}
 		else
