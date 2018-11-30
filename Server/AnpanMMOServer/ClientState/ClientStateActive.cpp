@@ -372,7 +372,7 @@ void ClientStateActive::OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *p
 	else if (!pTicket->IsWaiting() && pTicket->IsDiscard())
 	{
 		// 一人でもチケットを破棄したクライアントがいれば破棄。
+		pTicket->BroadcastDiscardPacket();
 		InstanceAreaTicketManager::GetInstance().Remove(Packet.TicketId);
-		// @TODO:通知.
 	}
 }

@@ -71,6 +71,9 @@ public:
 	// 発行パケットをバラ撒く。
 	void BroadcastPublishPacket();
 
+	// 破棄パケットをバラ撒く。
+	void BroadcastDiscardPacket();
+
 	// インスタンスエリアに突っ込む。
 	void EnterToInstanceArea(AreaPtr pArea);
 

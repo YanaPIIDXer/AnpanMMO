@@ -4,6 +4,7 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "ClientState/ClientStateAreaChange.h"
 #include "Packet/PacketInstanceAreaTicketPublish.h"
+#include "Packet/PacketInstanceAreaTicketDiscard.h"
 #include "Packet/PacketAreaMoveResponse.h"
 
 // コンストラクタ
@@ -66,6 +67,16 @@ bool InstanceAreaTicket::IsWaiting() const
 void InstanceAreaTicket::BroadcastPublishPacket()
 {
 	PacketInstanceAreaTicketPublish Packet(AreaId, Uuid);
+	for (InfoMap::iterator It = InfoList.begin(); It != InfoList.end(); ++It)
+	{
+		It->second.pClient.lock()->SendPacket(&Packet);
+	}
+}
+
+// 破棄チケットをバラ撒く。
+void InstanceAreaTicket::BroadcastDiscardPacket()
+{
+	PacketInstanceAreaTicketDiscard Packet;
 	for (InfoMap::iterator It = InfoList.begin(); It != InfoList.end(); ++It)
 	{
 		It->second.pClient.lock()->SendPacket(&Packet);
