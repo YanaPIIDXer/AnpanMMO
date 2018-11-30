@@ -71,7 +71,7 @@ namespace MasterConverter
 							{
 								case Type.s8:
 
-									// @TODO:負数ブチ込んだ時に問題起きる気がする・・・
+									// @HACK:負数ブチ込んだ時に問題起きる気がする・・・
 									Bytes = new byte[1];
 									Bytes[0] = (byte)Data;
 									break;
