@@ -55,6 +55,9 @@ private:
 	// パーティ勧誘レスポンスを受信した。
 	void OnRecvPartyInviteResponse(MemoryStreamInterface *pStream);
 
+	// インスタンスマップチケットの処理を受信した。
+	void OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

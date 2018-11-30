@@ -37,6 +37,7 @@
 #include "Packet/PacketReceiveNotice.h"
 #include "Packet/PacketPartyInviteResult.h"
 #include "Packet/PacketPartyInviteResponse.h"
+#include "Packet/PacketInstanceAreaTicketProcess.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -54,6 +55,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PartyKickRequest, boost::bind(&ClientStateActive::OnRecvPartyKickRequest, this, _2));
 	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
 	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
+	AddPacketFunction(InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
 }
 
 
@@ -332,4 +334,43 @@ void ClientStateActive::OnRecvPartyInviteResponse(MemoryStreamInterface *pStream
 	if (pParty.lock()->IsMaximumMember()) { return; }
 
 	pParty.lock()->Join(GetParent()->GetCharacter());
+}
+
+// インスタンスマップチケットの処理を受信した。
+void ClientStateActive::OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *pStream)
+{
+	PacketInstanceAreaTicketProcess Packet;
+	Packet.Serialize(pStream);
+
+	InstanceAreaTicket *pTicket = InstanceAreaTicketManager::GetInstance().Get(Packet.TicketId);
+	if (pTicket == NULL) { return; }
+	ETicketState State;
+	switch (Packet.Process)
+	{
+		case PacketInstanceAreaTicketProcess::Enter:
+
+			State = TicketStateEnter;
+			break;
+
+		case PacketInstanceAreaTicketProcess::Discard:
+
+			State = TicketStateDiscard;
+			break;
+	}
+	pTicket->RecvProcess(GetParent()->GetUuid(), State);
+
+	if (pTicket->IsReady())
+	{
+		// 準備が完了したのでインスタンスマップを生成してメンバ全員を飛ばす。
+
+
+		// チケットは破棄。
+		InstanceAreaTicketManager::GetInstance().Remove(Packet.TicketId);
+	}
+	else if (!pTicket->IsWaiting() && pTicket->IsDiscard())
+	{
+		// 一人でもチケットを破棄したクライアントがいれば破棄。
+		InstanceAreaTicketManager::GetInstance().Remove(Packet.TicketId);
+		// @TODO:通知.
+	}
 }
