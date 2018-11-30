@@ -38,12 +38,7 @@ namespace MasterConverter
 
 					TypeName = "std::string";
 					break;
-
-				case Type.WString:
-
-					TypeName = "std::wstring";
-					break;
-
+					
 				case Type.Float:
 
 					TypeName = "float";

@@ -114,8 +114,7 @@ namespace MasterConverter
 					break;
 
 				case Type.String:
-				case Type.WString:
-
+				
 					TypeName = "TEXT";
 					break;
 
@@ -149,7 +148,7 @@ namespace MasterConverter
 					}
 					string Data = Col.DataList[i].ToString();
 					int EnumValue = 0;
-					if(Col.DataType == Type.String || Col.DataType == Type.WString)
+					if(Col.DataType == Type.String)
 					{
 						Data = "'" + Data + "'";
 					}
