@@ -20,11 +20,11 @@ InstanceAreaTicketManager::~InstanceAreaTicketManager()
 }
 
 // î≠çs.
-InstanceAreaTicket *InstanceAreaTicketManager::Publish()
+InstanceAreaTicket *InstanceAreaTicketManager::Publish(u32 AreaId)
 {
-	InstanceAreaTicket *pTicket = new InstanceAreaTicket();
-
 	u32 Uuid = NextUuid;
+	InstanceAreaTicket *pTicket = new InstanceAreaTicket(Uuid, AreaId);
+
 	TicketList[Uuid] = pTicket;
 	NextUuid++;
 

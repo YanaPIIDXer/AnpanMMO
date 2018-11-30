@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "InstanceAreaTicket.h"
 #include "Client.h"
+#include "Packet/PacketInstanceAreaTicketPublish.h"
 
 // コンストラクタ
-InstanceAreaTicket::InstanceAreaTicket()
+InstanceAreaTicket::InstanceAreaTicket(u32 InUuid, u32 InAreaId)
+	: Uuid(InUuid)
+	, AreaId(InAreaId)
 {
 }
 
@@ -53,4 +56,14 @@ bool InstanceAreaTicket::IsWaiting() const
 	}
 
 	return false;
+}
+
+// 発行チケットをバラ撒く。
+void InstanceAreaTicket::BroadcastPublishPacket()
+{
+	PacketInstanceAreaTicketPublish Packet(AreaId, Uuid);
+	for (InfoMap::iterator It = InfoList.begin(); It != InfoList.end(); ++It)
+	{
+		It->second.pClient.lock()->SendPacket(&Packet);
+	}
 }

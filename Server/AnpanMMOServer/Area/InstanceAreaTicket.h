@@ -44,7 +44,7 @@ private:		// 別名定義.
 public:
 
 	// コンストラクタ
-	InstanceAreaTicket();
+	InstanceAreaTicket(u32 InUuid, u32 InAreaId);
 
 	// デストラクタ
 	~InstanceAreaTicket() {}
@@ -64,7 +64,19 @@ public:
 	// 待機中か？
 	bool IsWaiting() const;
 
+	// エリアＩＤを取得.
+	u32 GetAreaId() const { return AreaId; }
+
+	// 発行パケットをバラ撒く。
+	void BroadcastPublishPacket();
+
 private:
+
+	// UUID
+	u32 Uuid;
+
+	// エリアＩＤ
+	u32 AreaId;
 
 	// 情報リスト
 	InfoMap InfoList;

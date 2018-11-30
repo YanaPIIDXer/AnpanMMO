@@ -10,6 +10,8 @@
 #include "WordCheckServer/WordCheckServerConnection.h"
 #include "Party/PartyManager.h"
 #include "ClientStateAreaChange.h"
+#include "Area/InstanceAreaTicket.h"
+#include "Area/InstanceAreaTicketManager.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
 #include "Packet/PacketSendChat.h"
@@ -116,15 +118,46 @@ void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	const WarpDataItem *pItem = MasterData::GetInstance().GetWarpDataMaster().GetItem(Packet.AreaMoveId);
-	PlayerCharacter *pPlayer = GetParent()->GetCharacter().lock().get();
-	AreaPtr pArea = pPlayer->GetArea();
-	pArea.lock()->RemovePlayerCharacter(pPlayer->GetUuid());
+	const AreaItem *pAreaItem = MasterData::GetInstance().GetAreaMaster().GetItem(pItem->AreaId);
+	if (pAreaItem->Type != AreaItem::INSTANCE_AREA)
+	{
+		// 通常マップへの移動。
+		PlayerCharacter *pPlayer = GetParent()->GetCharacter().lock().get();
+		AreaPtr pArea = pPlayer->GetArea();
+		pArea.lock()->RemovePlayerCharacter(pPlayer->GetUuid());
 
-	PacketAreaMoveResponse ResponsePacket(PacketAreaMoveResponse::Success);
-	GetParent()->SendPacket(&ResponsePacket);
+		PacketAreaMoveResponse ResponsePacket(PacketAreaMoveResponse::Success);
+		GetParent()->SendPacket(&ResponsePacket);
 
-	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector3D(pItem->X, pItem->Y, pItem->Z));
-	GetParent()->ChangeState(pNewState);
+		ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), pItem->AreaId, Vector3D(pItem->X, pItem->Y, pItem->Z));
+		GetParent()->ChangeState(pNewState);
+	}
+	else
+	{
+		// インスタンスマップへの移動を試みた。
+		InstanceAreaTicket *pTicket = InstanceAreaTicketManager::GetInstance().Publish(pItem->AreaId);
+		
+		PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
+		if (pParty.expired())
+		{
+			// ソロ
+			ClientPtr pSelf = ClientManager::GetInstance().Get(GetParent()->GetUuid());
+			pTicket->AddClient(pSelf);
+		}
+		else
+		{
+			// パーティに入っていた場合はメンバ全員を招待。
+			std::vector<PlayerCharacterPtr> Players = pParty.lock()->GetMemberList();
+			for (u32 i = 0; i < Players.size(); i++)
+			{
+				ClientPtr pClient = ClientManager::GetInstance().Get(Players[i].lock()->GetClient()->GetUuid());
+				pTicket->AddClient(pClient);
+			}
+		}
+		
+		// 発行チケットをバラ撒く。
+		pTicket->BroadcastPublishPacket();
+	}
 }
 
 // リスポン要求を受信した。

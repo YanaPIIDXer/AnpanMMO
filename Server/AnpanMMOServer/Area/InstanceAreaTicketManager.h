@@ -21,7 +21,7 @@ public:
 	virtual ~InstanceAreaTicketManager();
 
 	// ”­s.
-	InstanceAreaTicket *Publish();
+	InstanceAreaTicket *Publish(u32 AreaId);
 
 	// æ“¾.
 	InstanceAreaTicket *Get(u32 Uuid);
