@@ -17,7 +17,7 @@ public:
 		Discard,
 	};
 
-	u32 Uuid;
+	u32 TicketId;
 	u8 Process;
 	
 
@@ -25,16 +25,16 @@ public:
 	{
 	}
 
-	PacketInstanceAreaTicketProcess(u32 InUuid, u8 InProcess)
+	PacketInstanceAreaTicketProcess(u32 InTicketId, u8 InProcess)
 	{
-		Uuid = InUuid;
+		TicketId = InTicketId;
 		Process = InProcess;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&Uuid);
+		pStream->Serialize(&TicketId);
 		pStream->Serialize(&Process);
 		
 		return true;
