@@ -1,7 +1,10 @@
 #include "stdafx.h"
 #include "InstanceAreaTicket.h"
 #include "Client.h"
+#include "Character/Player/PlayerCharacter.h"
+#include "ClientState/ClientStateAreaChange.h"
 #include "Packet/PacketInstanceAreaTicketPublish.h"
+#include "Packet/PacketAreaMoveResponse.h"
 
 // コンストラクタ
 InstanceAreaTicket::InstanceAreaTicket(u32 InUuid, u32 InAreaId)
@@ -67,3 +70,23 @@ void InstanceAreaTicket::BroadcastPublishPacket()
 		It->second.pClient.lock()->SendPacket(&Packet);
 	}
 }
+
+// インスタンスエリアに突っ込む。
+void InstanceAreaTicket::EnterToInstanceArea(AreaPtr pArea)
+{
+	// 通常のマップ移動フローと同様に処理を行っていく。
+	PacketAreaMoveResponse Packet(PacketAreaMoveResponse::Success);
+	for (InfoMap::iterator It = InfoList.begin(); It != InfoList.end(); ++It)
+	{
+		PlayerCharacterPtr pCharacter = It->second.pClient.lock()->GetCharacter();
+		AreaPtr pArea = pCharacter.lock()->GetArea();
+		pArea.lock()->RemovePlayerCharacter(pCharacter.lock()->GetUuid());
+
+		It->second.pClient.lock()->SendPacket(&Packet);
+		
+		// @TODO:座標は仮。
+		ClientStateAreaChange *pNewState = new ClientStateAreaChange(It->second.pClient.lock().get(), pArea.lock()->GetId(), Vector3D::Zero);
+		It->second.pClient.lock()->ChangeState(pNewState);
+	}
+}
+

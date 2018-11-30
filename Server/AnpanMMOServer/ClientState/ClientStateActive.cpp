@@ -362,7 +362,8 @@ void ClientStateActive::OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *p
 	if (pTicket->IsReady())
 	{
 		// 準備が完了したのでインスタンスマップを生成してメンバ全員を飛ばす。
-
+		AreaPtr pArea = AreaManager::GetInstance().CreateInstanceArea(pTicket->GetAreaId());
+		pTicket->EnterToInstanceArea(pArea);
 
 		// チケットは破棄。
 		InstanceAreaTicketManager::GetInstance().Remove(Packet.TicketId);

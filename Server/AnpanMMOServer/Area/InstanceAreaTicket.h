@@ -70,6 +70,9 @@ public:
 	// 発行パケットをバラ撒く。
 	void BroadcastPublishPacket();
 
+	// インスタンスエリアに突っ込む。
+	void EnterToInstanceArea(AreaPtr pArea);
+
 private:
 
 	// UUID
