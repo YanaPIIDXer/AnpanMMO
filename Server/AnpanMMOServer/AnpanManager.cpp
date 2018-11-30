@@ -4,6 +4,7 @@
 #include "Packet/PacketAnpanList.h"
 #include "Character/Anpan/Anpan.h"
 #include "AnpanPopArea.h"
+#include "Math/Vector3D.h"
 #include "Master/MasterData.h"
 
 // コンストラクタ
@@ -63,6 +64,15 @@ void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 		AnpanData Data(It->first,pAnpan->GetMasterId(),  Position.X, Position.Y, Position.Z, pAnpan->GetRotation().Get(),Param.Hp, Param.MaxHp);
 		Packet.List.PushBack(Data);
 	}
+}
+
+// 外部からSpawnさせる。
+void AnpanManager::Spawn(u32 MasterId, const Vector3D &Position)
+{
+	const AnpanItem *pItem = MasterData::GetInstance().GetAnpanMaster().GetItem(MasterId);
+	Anpan *pAnpan = new Anpan(Position, pItem->ID, pItem->Hp, pItem->Atk, pItem->Def, pItem->Exp, pItem->Scale);
+	AnpanSharedPtr pSharedPtr = AnpanSharedPtr(pAnpan);
+	SpawnAnpan(pSharedPtr);
 }
 
 

@@ -7,6 +7,7 @@
 
 class PacketAnpanList;
 class AnpanPopArea;
+class Vector3D;
 
 /**
  * アンパン管理クラス
@@ -46,6 +47,9 @@ public:
 
 	// アンパンの数を取得.
 	u32 GetCount() const { return AnpanList.size(); }
+
+	// 外部からSpawnさせる。
+	void Spawn(u32 MasterId, const Vector3D &Position);
 
 private:
 
