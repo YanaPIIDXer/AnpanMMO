@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "UI/Menu/LayeredMenuWidgetBase.h"
 #include "WarpAreaList.generated.h"
 
 /**
  * ワープエリアリスト
  */
 UCLASS()
-class ANPANMMO_API UWarpAreaList : public UUserWidget
+class ANPANMMO_API UWarpAreaList : public ULayeredMenuWidgetBase
 {
 
 	GENERATED_BODY()
@@ -29,19 +29,16 @@ public:
 	// 生成時の処理.
 	virtual void NativeConstruct() override;
 
-	// 破棄時の処理.
-	virtual void NativeDestruct() override;
-
 protected:
 
 	// アイテム追加。
 	UFUNCTION(BlueprintNativeEvent, Category = "WarpAreaList")
-	void AddItem(int32 Id, const FString &Name);
-	void AddItem_Implementation(int32 Id, const FString &Name) {}
+	void AddItem(int32 Id, int32 AreaId, const FString &Name);
+	void AddItem_Implementation(int32 Id, int32 AreaId, const FString &Name) {}
 
 	// エリア移動パケット送信.
 	UFUNCTION(BlueprintCallable, Category = "WarpAreaList")
-	void SendAreaMoveRequest(int32 Id);
+	void SendAreaMoveRequest(int32 MoveId, int32 AreaId);
 
 private:
 

@@ -196,6 +196,10 @@ void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 	Pos.Z += pCharacter->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
 	pCharacter->SetActorLocation(Pos);
 
+	AGameController *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
+	check(pController != nullptr);
+	pController->SetEnableMove(true);
+
 	pMainHUD->OnRecvMapChangeFinished();
 }
 

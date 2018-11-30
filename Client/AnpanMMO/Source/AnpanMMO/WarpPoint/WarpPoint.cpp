@@ -4,6 +4,10 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 #include "Active/UI/WarpAreaList.h"
+#include "Master/MasterData.h"
+#include "MMOGameInstance.h"
+#include "Character/Player/GameController.h"
+#include "Packet/PacketAreaMoveRequest.h"
 
 const float AWarpPoint::CollisionRadius = 300.0f;
 const TCHAR *AWarpPoint::ParticlePath = TEXT("/Game/Effects/Effects/FX_Mobile/Fire/combat/P_AuraCircle_Fire_02.P_AuraCircle_Fire_02");
@@ -63,6 +67,33 @@ void AWarpPoint::Tick(float DeltaTime)
 void AWarpPoint::OnOverlap(UPrimitiveComponent *pOverlappedComponent, AActor *pOtherActor, UPrimitiveComponent *pOtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult)
 {
 	if (pOtherActor != UGameplayStatics::GetPlayerPawn(this, 0)) { return; }
+	auto AllList = MasterData::GetInstance().GetWarpDataMaster().GetAll();
+	TArray<WarpDataItem> ItemList;
+	for (const auto &Item : AllList)
+	{
+		if (Item.WarpDataId == Id)
+		{
+			ItemList.Add(Item);
+		}
+	}
 
-	UWarpAreaList::Create(this, Id);
+	if (ItemList.Num() > 1)
+	{
+		// 移動先が複数あるならメニューを表示.
+		UWarpAreaList::Create(this, Id);
+	}
+	else
+	{
+		// 移動先が一つだけなら問答無用でそこに移動。
+		AGameController *pController = Cast<AGameController>(UGameplayStatics::GetPlayerController(this, 0));
+		check(pController != nullptr);
+		pController->SetEnableMove(false);
+
+		UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+		check(pInst != nullptr);
+
+		pInst->SetAreaIdCache(ItemList[0].AreaId);
+		PacketAreaMoveRequest Packet(ItemList[0].ID);
+		pInst->SendPacket(&Packet);
+	}
 }
