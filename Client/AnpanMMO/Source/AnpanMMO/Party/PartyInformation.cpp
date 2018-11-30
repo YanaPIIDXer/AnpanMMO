@@ -13,6 +13,7 @@
 #include "Packet/PacketPartyJoinMember.h"
 #include "Packet/PacketPartyDissolution.h"
 #include "Packet/PacketPartyExit.h"
+#include "Packet/PacketPartyKick.h"
 
 // コンストラクタ
 PartyInformation::PartyInformation()
@@ -143,6 +144,24 @@ void PartyInformation::OnRecvExitMember(MemoryStreamInterface *pStream)
 
 	if (!MemberList.Contains(Packet.Uuid)) { return; }
 	MemberList.Remove(Packet.Uuid);
+}
+
+// メンバキックを受信した。
+void PartyInformation::OnRecvKickMember(MemoryStreamInterface *pStream)
+{
+	PacketPartyKick Packet;
+	Packet.Serialize(pStream);
+
+	if (!MemberList.Contains(Packet.Uuid)) { return; }
+	MemberList.Remove(Packet.Uuid);
+
+	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(pGameMode.Get(), 0));
+	check(pCharacter != nullptr);
+
+	if (pCharacter->GetUuid() == Packet.Uuid)
+	{
+		USimpleDialog::Show(pGameMode.Get(), "Party Kicked...");
+	}
 }
 
 // 解散を受信した。

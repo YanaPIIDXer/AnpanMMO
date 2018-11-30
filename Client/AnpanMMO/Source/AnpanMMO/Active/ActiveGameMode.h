@@ -127,6 +127,9 @@ private:
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
 
+	// キック結果を受信した。
+	void OnRecvPartyKickResult(MemoryStreamInterface *pStream);
+
 	// パーティ勧誘結果を受信した。
 	void OnRecvPartyInviteResult(MemoryStreamInterface *pStream);
 

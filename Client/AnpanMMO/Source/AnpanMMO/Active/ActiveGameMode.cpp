@@ -25,6 +25,7 @@
 #include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketPlayerRespawn.h"
 #include "Packet/PacketReceiveChat.h"
+#include "Packet/PacketPartyKickResult.h"
 #include "Packet/PacketPartyInviteResult.h"
 
 // コンストラクタ
@@ -59,6 +60,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::PartyJoinMember, std::bind(&PartyInformation::OnRecvJoinMember, &PartyInfo, _1));
 	AddPacketFunction(PacketID::PartyExit, std::bind(&PartyInformation::OnRecvExitMember, &PartyInfo, _1));
 	AddPacketFunction(PacketID::PartyDissolution, std::bind(&PartyInformation::OnRecvDissolution, &PartyInfo, _1));
+	AddPacketFunction(PacketID::PartyKickResult, std::bind(&AActiveGameMode::OnRecvPartyKickResult, this, _1));
+	AddPacketFunction(PacketID::PartyKick, std::bind(&PartyInformation::OnRecvKickMember, &PartyInfo, _1));
 	AddPacketFunction(PacketID::PartyInviteResult, std::bind(&AActiveGameMode::OnRecvPartyInviteResult, this, _1));
 	AddPacketFunction(PacketID::NoticeList, std::bind(&NoticeManager::OnRecvNoticeList, &NoticeMgr, _1));
 	AddPacketFunction(PacketID::ReceiveNotice, std::bind(&NoticeManager::OnRecvNotice, &NoticeMgr, _1));
@@ -290,6 +293,24 @@ void AActiveGameMode::OnRecvChat(MemoryStreamInterface *pStream)
 	bool bIsSelf = (Packet.Uuid == pCharacter->GetStatus().GetUuid());
 
 	pMainHUD->OnRecvChat(Name, Message, bIsSelf);
+}
+
+// パーティキック結果を受信した。
+void AActiveGameMode::OnRecvPartyKickResult(MemoryStreamInterface *pStream)
+{
+	PacketPartyKickResult Packet;
+	Packet.Serialize(pStream);
+
+	FString DisplayText = "Kick Success.";
+	switch (Packet.Result)
+	{
+		case PacketPartyKickResult::Error:
+
+			DisplayText = "Kick Failed...";
+			break;
+	}
+
+	USimpleDialog::Show(this, DisplayText);
 }
 
 // パーティ勧誘結果を受信した。

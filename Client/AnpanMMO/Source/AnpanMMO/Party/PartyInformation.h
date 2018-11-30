@@ -52,6 +52,9 @@ public:
 	// メンバ離脱を受信した。
 	void OnRecvExitMember(MemoryStreamInterface *pStream);
 
+	// メンバキックを受信した。
+	void OnRecvKickMember(MemoryStreamInterface *pStream);
+
 	// 解散を受信した。
 	void OnRecvDissolution(MemoryStreamInterface *pStream);
 

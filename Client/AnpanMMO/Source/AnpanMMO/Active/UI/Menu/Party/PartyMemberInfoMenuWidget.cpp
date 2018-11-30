@@ -1,6 +1,9 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "PartyMemberInfoMenuWidget.h"
+#include "Kismet/GameplayStatics.h"
+#include "MMOGameInstance.h"
+#include "Packet/PacketPartyKickRequest.h"
 
 // コンストラクタ
 UPartyMemberInfoMenuWidget::UPartyMemberInfoMenuWidget(const FObjectInitializer &ObjectInitializer)
@@ -19,5 +22,9 @@ void UPartyMemberInfoMenuWidget::Init(bool bInIsLeader, const FPartyMemberData &
 // キックする
 void UPartyMemberInfoMenuWidget::Kick()
 {
-	UE_LOG(LogTemp, Log, TEXT("%s Kick"), *Data.Name);
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketPartyKickRequest Packet(Data.Uuid);
+	pInst->SendPacket(&Packet);
 }
