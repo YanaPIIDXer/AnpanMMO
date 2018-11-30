@@ -6,6 +6,7 @@
 #include "AnpanMaster.h"
 #include "AnpanPopAreaMaster.h"
 #include "AnpanPopDataMaster.h"
+#include "InstanceInfoMaster.h"
 
 /**
  * マスタデータクラス
@@ -33,6 +34,9 @@ public:
 	// アンパンポップデータマスタ取得.
 	const AnpanPopDataMaster &GetAnpanPopDataMaster() { return AnpanPopData; }
 
+	// インスタンスマップ情報マスタ取得.
+	const InstanceInfoMaster &GetInstanceInfoMaster() { return InstanceInfo; }
+
 private:
 
 	// DBホスト
@@ -58,6 +62,9 @@ private:
 
 	// アンパンポップデータマスタ
 	AnpanPopDataMaster AnpanPopData;
+
+	// インスタンスマップ情報マスタ
+	InstanceInfoMaster InstanceInfo;
 
 	// ======= Singleton ==========
 public:
