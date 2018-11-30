@@ -28,6 +28,7 @@ enum PacketID
 	InstanceAreaTicketPublish,
 	InstanceAreaTicketProcess,
 	InstanceAreaTicketDiscard,
+	SpawnInstanceAreaExitPoint,
 	LogInRequest,
 	LogInResult,
 	CreateCharacterRequest,
