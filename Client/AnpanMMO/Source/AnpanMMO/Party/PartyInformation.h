@@ -40,6 +40,9 @@ public:
 	// メンバ加入を受信した。
 	void OnRecvJoinMember(MemoryStreamInterface *pStream);
 
+	// メンバ離脱を受信した。
+	void OnRecvExitMember(MemoryStreamInterface *pStream);
+
 	// 解散を受信した。
 	void OnRecvDissolution(MemoryStreamInterface *pStream);
 
@@ -52,6 +55,6 @@ private:
 	TWeakObjectPtr<AActiveGameMode> pGameMode;
 
 	// メンバリスト
-	TArray<PartyMemberData> MemberList;
+	TMap<uint32, PartyMemberData> MemberList;
 
 };

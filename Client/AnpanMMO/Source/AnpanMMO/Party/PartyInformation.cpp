@@ -11,6 +11,7 @@
 #include "Packet/PacketPartyJoin.h"
 #include "Packet/PacketPartyJoinMember.h"
 #include "Packet/PacketPartyDissolution.h"
+#include "Packet/PacketPartyExit.h"
 
 // コンストラクタ
 PartyInformation::PartyInformation()
@@ -46,7 +47,7 @@ void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 
 	PartyMemberData Data(pCharacter->GetUuid(), TCHAR_TO_UTF8(*pCharacter->GetName()));
-	MemberList.Add(Data);
+	MemberList.Add(Data.Uuid, Data);
 
 	USimpleDialog::Show(pGameMode.Get(), "Party Create Success!!");
 }
@@ -77,7 +78,7 @@ void PartyInformation::OnRecvJoin(MemoryStreamInterface *pStream)
 	PartyId = Packet.Uuid;
 	for (int i = 0; i < Packet.MemberList.GetCurrentSize(); i++)
 	{
-		MemberList.Add(Packet.MemberList[i]);
+		MemberList.Add(Packet.MemberList[i].Uuid, Packet.MemberList[i]);
 	}
 }
 
@@ -87,7 +88,17 @@ void PartyInformation::OnRecvJoinMember(MemoryStreamInterface *pStream)
 	PacketPartyJoinMember Packet;
 	Packet.Serialize(pStream);
 
-	MemberList.Add(Packet.MemberData);
+	MemberList.Add(Packet.MemberData.Uuid, Packet.MemberData);
+}
+
+// メンバ離脱を受信した。
+void PartyInformation::OnRecvExitMember(MemoryStreamInterface *pStream)
+{
+	PacketPartyExit Packet;
+	Packet.Serialize(pStream);
+
+	if (!MemberList.Contains(Packet.Uuid)) { return; }
+	MemberList.Remove(Packet.Uuid);
 }
 
 // 解散を受信した。
