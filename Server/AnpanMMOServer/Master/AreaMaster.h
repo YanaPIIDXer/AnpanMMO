@@ -22,6 +22,7 @@ public:
 	std::string Name;
 	std::string LevelName;
 	u8 Type;
+	u32 InstanceInfoId;
 
 
 };

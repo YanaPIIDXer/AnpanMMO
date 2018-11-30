@@ -158,6 +158,7 @@
     <ClInclude Include="Area\HeightMap.h" />
     <ClInclude Include="Master\AnpanMaster.h" />
     <ClInclude Include="Master\AnpanPopDataMaster.h" />
+    <ClInclude Include="Master\InstanceInfoMaster.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
     <ClInclude Include="ServerHost.h" />
@@ -244,6 +245,7 @@
     <ClCompile Include="Area\HeightMap.cpp" />
     <ClCompile Include="Master\AnpanMaster.cpp" />
     <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
+    <ClCompile Include="Master\InstanceInfoMaster.cpp" />
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />
     <ClCompile Include="Party\PartyManager.cpp" />

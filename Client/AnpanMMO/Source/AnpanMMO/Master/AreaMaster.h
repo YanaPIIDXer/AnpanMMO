@@ -19,6 +19,7 @@ public:
 	FString Name;
 	FString LevelName;
 	u8 Type;
+	u32 InstanceInfoId;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
@@ -31,6 +32,7 @@ public:
 		if(!pStream->Serialize(&StrLevelName)) { return false; }
 		LevelName = UTF8_TO_TCHAR(StrLevelName.c_str());
 		if(!pStream->Serialize(&Type)) { return false; }
+		if(!pStream->Serialize(&InstanceInfoId)) { return false; }
 
 		return true;
 	}
