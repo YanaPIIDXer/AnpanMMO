@@ -16,14 +16,7 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultFloat(&BindItem.Range);
 	Query.BindResultInt(&BindItem.PopInterval);
 	Query.BindResultInt(&BindItem.MaxCount);
-	Query.BindResultInt(&BindItem.MinHp);
-	Query.BindResultInt(&BindItem.MaxHp);
-	Query.BindResultInt(&BindItem.MinAtk);
-	Query.BindResultInt(&BindItem.MaxAtk);
-	Query.BindResultInt(&BindItem.MinDef);
-	Query.BindResultInt(&BindItem.MaxDef);
-	Query.BindResultInt(&BindItem.MinExp);
-	Query.BindResultInt(&BindItem.MaxExp);
+	Query.BindResultInt(&BindItem.PopId);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
@@ -37,14 +30,7 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 		Item.Range = BindItem.Range;
 		Item.PopInterval = BindItem.PopInterval;
 		Item.MaxCount = BindItem.MaxCount;
-		Item.MinHp = BindItem.MinHp;
-		Item.MaxHp = BindItem.MaxHp;
-		Item.MinAtk = BindItem.MinAtk;
-		Item.MaxAtk = BindItem.MaxAtk;
-		Item.MinDef = BindItem.MinDef;
-		Item.MaxDef = BindItem.MaxDef;
-		Item.MinExp = BindItem.MinExp;
-		Item.MaxExp = BindItem.MaxExp;
+		Item.PopId = BindItem.PopId;
 
 		Items[Item.AutoKey] = Item;
 	}

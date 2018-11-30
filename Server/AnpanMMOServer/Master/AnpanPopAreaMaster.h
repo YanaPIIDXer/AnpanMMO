@@ -19,14 +19,7 @@ public:
 	float Range;
 	s32 PopInterval;
 	u32 MaxCount;
-	s32 MinHp;
-	s32 MaxHp;
-	s32 MinAtk;
-	s32 MaxAtk;
-	s32 MinDef;
-	s32 MaxDef;
-	s32 MinExp;
-	s32 MaxExp;
+	u32 PopId;
 
 
 };

@@ -15,4 +15,5 @@ void MasterData::Load()
 	Area.Load();
 	WarpPoint.Load();
 	WarpData.Load();
+	Anpan.Load();
 }

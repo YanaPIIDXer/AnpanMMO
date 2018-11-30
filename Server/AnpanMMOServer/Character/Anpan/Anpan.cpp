@@ -3,12 +3,13 @@
 #include "Math/DamageCalcUnit.h"
 #include "Packet/PacketStopAnpan.h"
 
-const float Anpan::HalfHeightOffset = 50.0f;
+const float Anpan::BaseRadius = 50.0f;
 
 // コンストラクタ
-Anpan::Anpan(const Vector3D &InPosition, int Hp, int Atk, int Def, int InExp)
+Anpan::Anpan(const Vector3D &InPosition, int Hp, int Atk, int Def, int InExp, float InScaleRate)
 	: AI(this)
 	, Exp(InExp)
+	, ScaleRate(InScaleRate)
 {
 	SetPosition(InPosition);
 	SetRotate(Rotation(180.0f));
