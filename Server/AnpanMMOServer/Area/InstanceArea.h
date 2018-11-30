@@ -50,6 +50,9 @@ private:
 	// 脱出ポイントＩＤ
 	u32 ExitWarpDataId;
 
+	// 初期化されているか？
+	bool bInitialized;
+
 };
 
 #endif		// #ifndef __INSTANCEAREA_H__

@@ -10,6 +10,7 @@ InstanceArea::InstanceArea(u32 InUuid, const AreaItem *pItem)
 	, Uuid(InUuid)
 	, InfoMasterId(pItem->InstanceInfoId)
 	, bSpawnedExitPoint(false)
+	, bInitialized(false)
 {
 }
 
@@ -25,7 +26,7 @@ void InstanceArea::Initialize()
 // Á‹Ž‰Â”\‚©H
 bool InstanceArea::IsAbleDelete() const
 {
-	return (PlayerMgr.GetCount() == 0);
+	return (bInitialized && PlayerMgr.GetCount() == 0);
 }
 
 
@@ -38,5 +39,9 @@ void InstanceArea::Update()
 		PacketSpawnInstanceAreaExitPoint Packet(ExitWarpDataId);
 		BroadcastPacket(&Packet);
 		bSpawnedExitPoint = true;
+	}
+	if (!bInitialized && PlayerMgr.GetCount() > 0)
+	{
+		bInitialized = true;
 	}
 }
