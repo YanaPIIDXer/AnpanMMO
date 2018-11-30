@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,7 +65,7 @@ namespace MasterConverter
 		{
 			foreach (var FilePath in FileList)
 			{
-				Console.WriteLine(FilePath + "の転送中...");
+				Console.WriteLine(Path.GetFileNameWithoutExtension(FilePath) + "の転送中...");
 
 				FileTransporter Transporter = new FileTransporter(FilePath, Host, UserName, Password, Config.HostSQLPath);
 				if (!Transporter.Transport())
