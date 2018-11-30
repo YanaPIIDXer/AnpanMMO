@@ -4,6 +4,7 @@
 #include <boost/unordered_map.hpp>
 
 class InstanceAreaTicket;
+class Vector3D;
 
 /**
  * インスタンスエリアチケットマネージャ
@@ -21,7 +22,7 @@ public:
 	virtual ~InstanceAreaTicketManager();
 
 	// 発行.
-	InstanceAreaTicket *Publish(u32 AreaId);
+	InstanceAreaTicket *Publish(u32 AreaId, const Vector3D &StartPosition);
 
 	// 取得.
 	InstanceAreaTicket *Get(u32 Uuid);

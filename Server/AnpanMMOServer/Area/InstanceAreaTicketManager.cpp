@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "InstanceAreaTicketManager.h"
 #include "InstanceAreaTicket.h"
+#include "Math/Vector3D.h"
 
 InstanceAreaTicketManager InstanceAreaTicketManager::Instance;
 
@@ -20,10 +21,10 @@ InstanceAreaTicketManager::~InstanceAreaTicketManager()
 }
 
 // î≠çs.
-InstanceAreaTicket *InstanceAreaTicketManager::Publish(u32 AreaId)
+InstanceAreaTicket *InstanceAreaTicketManager::Publish(u32 AreaId, const Vector3D &StartPosition)
 {
 	u32 Uuid = NextUuid;
-	InstanceAreaTicket *pTicket = new InstanceAreaTicket(Uuid, AreaId);
+	InstanceAreaTicket *pTicket = new InstanceAreaTicket(Uuid, AreaId, StartPosition);
 
 	TicketList[Uuid] = pTicket;
 	NextUuid++;

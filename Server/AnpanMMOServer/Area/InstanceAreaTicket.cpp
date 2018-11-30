@@ -7,9 +7,10 @@
 #include "Packet/PacketAreaMoveResponse.h"
 
 // コンストラクタ
-InstanceAreaTicket::InstanceAreaTicket(u32 InUuid, u32 InAreaId)
+InstanceAreaTicket::InstanceAreaTicket(u32 InUuid, u32 InAreaId, const Vector3D &InStartPosition)
 	: Uuid(InUuid)
 	, AreaId(InAreaId)
+	, StartPosition(InStartPosition)
 {
 }
 
@@ -84,8 +85,7 @@ void InstanceAreaTicket::EnterToInstanceArea(AreaPtr pArea)
 
 		It->second.pClient.lock()->SendPacket(&Packet);
 		
-		// @TODO:座標は仮。
-		ClientStateAreaChange *pNewState = new ClientStateAreaChange(It->second.pClient.lock().get(), pArea.lock()->GetId(), Vector3D::Zero);
+		ClientStateAreaChange *pNewState = new ClientStateAreaChange(It->second.pClient.lock().get(), pArea.lock()->GetId(), StartPosition);
 		It->second.pClient.lock()->ChangeState(pNewState);
 	}
 }

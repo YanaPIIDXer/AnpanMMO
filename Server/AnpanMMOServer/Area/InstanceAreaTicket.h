@@ -3,6 +3,7 @@
 
 #include <boost/unordered_map.hpp>
 #include "WeakPtrDefine.h"
+#include "Math/Vector3D.h"
 
 // チケットステート
 enum ETicketState
@@ -44,7 +45,7 @@ private:		// 別名定義.
 public:
 
 	// コンストラクタ
-	InstanceAreaTicket(u32 InUuid, u32 InAreaId);
+	InstanceAreaTicket(u32 InUuid, u32 InAreaId, const Vector3D &InStartPosition);
 
 	// デストラクタ
 	~InstanceAreaTicket() {}
@@ -80,6 +81,9 @@ private:
 
 	// エリアＩＤ
 	u32 AreaId;
+
+	// 開始座標.
+	Vector3D StartPosition;
 
 	// 情報リスト
 	InfoMap InfoList;

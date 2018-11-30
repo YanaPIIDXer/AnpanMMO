@@ -137,7 +137,8 @@ void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 	else
 	{
 		// インスタンスマップへの移動を試みた。
-		InstanceAreaTicket *pTicket = InstanceAreaTicketManager::GetInstance().Publish(pItem->AreaId);
+		Vector3D StartPosition(pItem->X, pItem->Y, pItem->Z);
+		InstanceAreaTicket *pTicket = InstanceAreaTicketManager::GetInstance().Publish(pItem->AreaId, StartPosition);
 		
 		PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
 		if (pParty.expired())
