@@ -4,6 +4,7 @@
 #include "Client.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Master/MasterData.h"
+#include "Area/Area.h"
 
 AreaManager AreaManager::Instance;
 
