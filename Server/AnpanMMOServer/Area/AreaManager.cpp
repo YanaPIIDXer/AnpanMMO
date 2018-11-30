@@ -22,6 +22,7 @@ void AreaManager::Initialize()
 	for (unsigned int i = 0; i < Items.size(); i++)
 	{
 		const AreaItem *pItem = MasterData::GetInstance().GetAreaMaster().GetItem(Items[i].ID);
+		if (pItem->Type != AreaItem::NORMAL_AREA) { continue; }
 		Area *pArea = new Area(pItem);
 		AreaSharedPtr pSharedArea = AreaSharedPtr(pArea);
 		Areas[pItem->ID] = pSharedArea;
