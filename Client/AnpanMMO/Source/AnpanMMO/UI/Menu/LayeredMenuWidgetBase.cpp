@@ -51,6 +51,7 @@ void ULayeredMenuWidgetBase::Back()
 	if (pParentMenu != nullptr)
 	{
 		pParentMenu->SetVisibility(ESlateVisibility::Visible);
+		pParentMenu->OnBackFromChild();
 	}
 	else
 	{

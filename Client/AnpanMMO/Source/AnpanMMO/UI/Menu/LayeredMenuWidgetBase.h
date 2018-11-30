@@ -42,6 +42,11 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void Back();
 
+	// 戻ってきた時のイベント
+	UFUNCTION(BlueprintNativeEvent, Category = "Menu")
+	void OnBackFromChild();
+	void OnBackFromChild_Implementation() {}
+
 	// 子を表示.
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void ShowChild(ULayeredMenuWidgetBase *pChildMenu, bool bHideSelf = true);
