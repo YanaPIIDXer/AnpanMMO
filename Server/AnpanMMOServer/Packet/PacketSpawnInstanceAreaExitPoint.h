@@ -13,22 +13,22 @@ public:
 
 	
 
-	u32 WarpDataId;
+	u32 WarpPointId;
 	
 
 	PacketSpawnInstanceAreaExitPoint()
 	{
 	}
 
-	PacketSpawnInstanceAreaExitPoint(u32 InWarpDataId)
+	PacketSpawnInstanceAreaExitPoint(u32 InWarpPointId)
 	{
-		WarpDataId = InWarpDataId;
+		WarpPointId = InWarpPointId;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&WarpDataId);
+		pStream->Serialize(&WarpPointId);
 		
 		return true;
 	}

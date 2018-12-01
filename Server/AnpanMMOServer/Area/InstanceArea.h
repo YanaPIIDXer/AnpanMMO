@@ -48,7 +48,7 @@ private:
 	bool bSpawnedExitPoint;
 
 	// 脱出ポイントＩＤ
-	u32 ExitWarpDataId;
+	u32 ExitWarpPointId;
 
 	// 初期化されているか？
 	bool bInitialized;
