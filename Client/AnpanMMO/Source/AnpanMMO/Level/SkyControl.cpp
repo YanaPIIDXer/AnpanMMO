@@ -40,9 +40,15 @@ ASkyControl::ASkyControl(const FObjectInitializer &ObjectInitializer)
 	ConstructorHelpers::FObjectFinder<UCurveLinearColor> CloudCurveFinder(TEXT("/Engine/EngineSky/C_Sky_Cloud_Color.C_Sky_Cloud_Color"));
 	pCloudColorCurve = CloudCurveFinder.Object;
 
-	pSkyMaterial = pSkySphereMesh->CreateDynamicMaterialInstance(0, pSourceMaterial);
-
 	RootComponent = pSkySphereMesh;
+}
+
+// 開始時の処理.
+void ASkyControl::BeginPlay()
+{
+	Super::BeginPlay();
+
+	pSkyMaterial = pSkySphereMesh->CreateDynamicMaterialInstance(0, pSourceMaterial);
 }
 
 // 毎フレームの処理.

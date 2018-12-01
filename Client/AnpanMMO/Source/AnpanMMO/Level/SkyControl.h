@@ -27,6 +27,9 @@ public:
 	// デストラクタ
 	virtual ~ASkyControl() {}
 
+	// 開始時の処理.
+	virtual void BeginPlay() override;
+
 	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;
 
@@ -35,9 +38,6 @@ public:
 
 	// 太陽の方向を更新.
 	void UpdateSunDirection();
-
-	// ゲーム外（Editor）でもTickさせるか？
-	virtual bool ShouldTickIfViewportsOnly() const override { return true; }
 
 private:
 
