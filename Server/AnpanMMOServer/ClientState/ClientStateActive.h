@@ -17,6 +17,9 @@ public:
 	// デストラクタ
 	virtual ~ClientStateActive() {}
 
+	// State開始時の処理.
+	virtual void BeginState();
+
 private:
 
 	// Pingを受信した。

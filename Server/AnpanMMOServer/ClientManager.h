@@ -34,6 +34,9 @@ public:
 	// カスタマＩＤから取得.
 	ClientPtr GetFromCustomerId(u32 CustomerId);
 
+	// パケットをバラ撒く。
+	void BroadcastPacket(PacketBase *pPacket);
+
 private:
 
 	// クライアントリスト

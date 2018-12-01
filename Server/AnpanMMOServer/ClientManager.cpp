@@ -57,3 +57,12 @@ ClientPtr ClientManager::GetFromCustomerId(u32 CustomerId)
 	}
 	return ClientPtr();
 }
+
+// パケットをバラ撒く。
+void ClientManager::BroadcastPacket(PacketBase *pPacket)
+{
+	for (MapIterator It = Map.begin(); It != Map.end(); ++It)
+	{
+		It->second->SendPacket(pPacket);
+	}
+}

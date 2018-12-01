@@ -159,6 +159,7 @@
     <ClInclude Include="Master\AnpanMaster.h" />
     <ClInclude Include="Master\AnpanPopDataMaster.h" />
     <ClInclude Include="Master\InstanceInfoMaster.h" />
+    <ClInclude Include="Master\TimeInfoMaster.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
     <ClInclude Include="ServerHost.h" />
@@ -207,6 +208,7 @@
     <ClInclude Include="PlayerManager.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TickManager.h" />
+    <ClInclude Include="Time\TimeManager.h" />
     <ClInclude Include="TypeDefs.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="WeakPtrDefine.h" />
@@ -246,6 +248,7 @@
     <ClCompile Include="Master\AnpanMaster.cpp" />
     <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
     <ClCompile Include="Master\InstanceInfoMaster.cpp" />
+    <ClCompile Include="Master\TimeInfoMaster.cpp" />
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />
     <ClCompile Include="Party\PartyManager.cpp" />
@@ -274,6 +277,7 @@
     <ClCompile Include="PlayerManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TickManager.cpp" />
+    <ClCompile Include="Time\TimeManager.cpp" />
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="WordCheckServer\WordCheckPacketReceiver.cpp" />
     <ClCompile Include="WordCheckServer\WordCheckServerConnection.cpp" />
