@@ -8,7 +8,7 @@
 #include "UI/SimpleDialog.h"
 #include "Packet/PacketPing.h"
 
-const float PingManager::Interval = 5.0f;
+const float PingManager::Interval = 10.0f;
 
 // コンストラクタ
 PingManager::PingManager()

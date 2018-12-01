@@ -16,4 +16,5 @@ void MasterData::Load()
 	WarpPoint.Load();
 	WarpData.Load();
 	Anpan.Load();
+	TimeInfo.Load();
 }

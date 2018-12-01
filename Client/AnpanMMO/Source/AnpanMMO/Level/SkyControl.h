@@ -39,7 +39,16 @@ public:
 	// 太陽の方向を更新.
 	void UpdateSunDirection();
 
+	// 時間をセット。
+	void SetTime(uint32 MasterId);
+
+	// 時間を変更.
+	void TimeChange(uint32 MasterId);
+
 private:
+
+	// 変化にかかる時間.
+	static const float ChangeTime;
 
 	// スカイスフィアのメッシュ
 	UPROPERTY()
@@ -116,5 +125,36 @@ private:
 	// 全部の色.
 	UPROPERTY(EditAnywhere, Category = "SkyControl")
 	FLinearColor OverallColor;
+
+	// 以前のライト角度.
+	float PrevLightAngle;
+
+	// 変化後のライト角度.
+	float NextLightAngle;
+
+	// 以前の雲の速度.
+	float PrevCloudSpeed;
+
+	// 変化後の雲の速度.
+	float NextCloudSpeed;
+
+	// 以前の雲の透明度.
+	float PrevCloudOpacity;
+
+	// 変化後の雲の透明度.
+	float NextCloudOpacity;
+
+	// 以前の星の光度.
+	float PrevStarBrightness;
+
+	// 変化後の星の光度.
+	float NextStarBrightness;
+
+	// 変化時間.
+	float ChangeTimer;
+
+
+	// 時間を更新.
+	void UpdateTime(float DeltaTime);
 
 };

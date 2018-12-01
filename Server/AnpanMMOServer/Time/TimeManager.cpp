@@ -6,7 +6,7 @@
 #include "Packet/PacketTimeChange.h"
 
 TimeManager TimeManager::Instance;
-const int TimeManager::TimeZoneChangeInterval = 600000;
+const int TimeManager::TimeZoneChangeInterval = 60000;
 
 // コンストラクタ
 TimeManager::TimeManager()
@@ -72,7 +72,7 @@ void TimeManager::SetTimeZone(u8 NewTimeZone)
 		}
 	}
 
-	s32 Index = Random::Range<s32>(0, Ids.size());
+	s32 Index = Random::Range<s32>(0, Ids.size() - 1);
 	MasterId = Ids[Index];
 
 	PacketTimeChange Packet(MasterId);
