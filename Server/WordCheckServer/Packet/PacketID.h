@@ -59,6 +59,8 @@ enum PacketID
 	ExitPlayer,
 	RespawnRequest,
 	PlayerRespawn,
+	Time,
+	TimeChange,
 	WordCheckChatRequest,
 	WordCheckChatResult,
 	

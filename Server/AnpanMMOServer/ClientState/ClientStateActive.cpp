@@ -12,6 +12,7 @@
 #include "ClientStateAreaChange.h"
 #include "Area/InstanceAreaTicket.h"
 #include "Area/InstanceAreaTicketManager.h"
+#include "Time/TimeManager.h"
 #include "Packet/PacketPing.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
@@ -39,6 +40,7 @@
 #include "Packet/PacketPartyInviteResult.h"
 #include "Packet/PacketPartyInviteResponse.h"
 #include "Packet/PacketInstanceAreaTicketProcess.h"
+#include "Packet/PacketTime.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -58,6 +60,15 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
 	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
 	AddPacketFunction(InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
+}
+
+// State開始時の処理.
+void ClientStateActive::BeginState()
+{
+	// 時間を通知.
+	u32 TimeMasterId = TimeManager::GetInstance().GetMasterId();
+	PacketTime Packet(TimeMasterId);
+	GetParent()->SendPacket(&Packet);
 }
 
 
