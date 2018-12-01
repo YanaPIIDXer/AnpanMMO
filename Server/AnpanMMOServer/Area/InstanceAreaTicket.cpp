@@ -46,10 +46,10 @@ bool InstanceAreaTicket::IsDiscard() const
 {
 	for (InfoMap::const_iterator It = InfoList.begin(); It != InfoList.end(); ++It)
 	{
-		if (It->second.State != TicketStateDiscard) { return false; }
+		if (It->second.State == TicketStateDiscard) { return true; }
 	}
 
-	return true;
+	return false;
 }
 
 // ‘Ò‹@’†‚©H
