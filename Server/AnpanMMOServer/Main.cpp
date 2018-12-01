@@ -10,10 +10,6 @@
 #include "CacheServer/CacheServerConnection.h"
 #include "WordCheckServer/WordCheckServerConnection.h"
 
-#include "lua.hpp"
-#include "lauxlib.h"
-#include "lualib.h"
-
 // エントリポイント
 int main()
 {
@@ -26,15 +22,6 @@ int main()
 		std::cout << "Master Read Faled..." << std::endl;
 		return 1;
 	}
-
-	// ====== Lua Test ======
-	lua_State *pLuaState = luaL_newstate();
-	luaL_openlibs(pLuaState);
-
-	luaL_loadfile(pLuaState, "Test.lua");
-	lua_pcall(pLuaState, 0, 0, 0);
-	lua_close(pLuaState);
-	// =====================
 
 	asio::io_service IOService;
 
