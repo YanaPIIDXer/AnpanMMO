@@ -7,6 +7,7 @@
 #include "WarpDataMaster.h"
 #include "WarpPointMaster.h"
 #include "AnpanMaster.h"
+#include "TimeInfoMaster.h"
 
 /**
  * マスタデータ
@@ -34,6 +35,9 @@ public:
 	// アンパンマスタを取得.
 	const AnpanMaster &GetAnpanMaster() const { return Anpan; }
 
+	// 時間情報マスタを取得.
+	const TimeInfoMaster &GetTimeInfoMaster() const { return TimeInfo; }
+
 private:
 
 	// エリアマスタ
@@ -47,6 +51,9 @@ private:
 
 	// アンパンマスタ
 	AnpanMaster Anpan;
+
+	// 時間情報マスタ
+	TimeInfoMaster TimeInfo;
 
 	// =========== Singleton ============
 public:

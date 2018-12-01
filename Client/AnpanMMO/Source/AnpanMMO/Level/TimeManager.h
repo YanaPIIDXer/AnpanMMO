@@ -22,7 +22,10 @@ public:
 	~TimeManager() {}
 
 	// 天球をセット。
-	void SetSkyControl(ASkyControl *pInSky) { pSky = pInSky; }
+	void SetSkyControl(ASkyControl *pInSky);
+
+	// 開始時の時間を受け取った。
+	void OnRecvTime(MemoryStreamInterface *pStream);
 
 	// 時間変動を受け取った。
 	void OnRecvTimeChange(MemoryStreamInterface *pStream);
@@ -31,5 +34,8 @@ private:
 
 	// 天球.
 	TWeakObjectPtr<ASkyControl> pSky;
+
+	// 現在のマスタＩＤ
+	uint32 CurrentMasterId;
 
 };

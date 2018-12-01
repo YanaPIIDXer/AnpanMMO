@@ -6,11 +6,14 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "Active/ActiveGameMode.h"
+#include "Master/MasterData.h"
+
+const float ASkyControl::ChangeTime = 6.0f;
 
 // コンストラクタ
 ASkyControl::ASkyControl(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
-	, bRefleshMaterial(true)
+	, bRefleshMaterial(false)
 	, bColorsDeterminedBySun(true)
 	, SunBrightness(75.0f)
 	, CloudSpeed(2.0f)
@@ -22,6 +25,7 @@ ASkyControl::ASkyControl(const FObjectInitializer &ObjectInitializer)
 	, HorizonColor(1.979559f, 2.586644f, 3.0f, 1.0f)
 	, CloudColor(0.855778f, 0.91902f, 1.0f, 1.0f)
 	, OverallColor(1.0f, 1.0f, 1.0f, 1.0f)
+	, ChangeTimer(0.0f)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -64,13 +68,17 @@ void ASkyControl::BeginPlay()
 void ASkyControl::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	
+	UpdateTime(DeltaTime);
 	RefleshMaterial();
 }
 
 // マテリアルの更新.
 void ASkyControl::RefleshMaterial()
 {
+	if (!bRefleshMaterial) { return; }
+	bRefleshMaterial = false;
+
 	if (pDirectionalLight != nullptr)
 	{
 		FLinearColor LightDirection = pDirectionalLight->GetActorRotation().Vector();
@@ -152,4 +160,63 @@ void ASkyControl::UpdateSunDirection()
 
 	float Height = UKismetMathLibrary::SelectFloat(FMath::Abs<float>(SunHeight), 0.0f, (SunHeight < 0.0f));
 	pSkyMaterial->SetScalarParameterValue("Sun height", Height);
+}
+
+// 時間をセット。
+void ASkyControl::SetTime(uint32 MasterId)
+{
+	const TimeInfoItem *pItem = MasterData::GetInstance().GetTimeInfoMaster().Get(MasterId);
+	PrevLightAngle = pItem->LightAngle;
+	NextLightAngle = pItem->LightAngle;
+	if (pDirectionalLight != nullptr)
+	{
+		pDirectionalLight->SetActorRotation(FRotator(pItem->LightAngle, 0.0f, 0.0f));
+	}
+	PrevCloudSpeed = pItem->CloudSpeed;
+	NextCloudSpeed = pItem->CloudSpeed;
+	CloudSpeed = pItem->CloudSpeed;
+	PrevCloudOpacity = pItem->CloudOpacity;
+	NextCloudOpacity = pItem->CloudOpacity;
+	CloudOpacity = pItem->CloudOpacity;
+	PrevStarBrightness = pItem->StarsBrightness;
+	NextStarBrightness = pItem->StarsBrightness;
+	StarsBrightness = pItem->StarsBrightness;
+
+	ChangeTimer = 0.0f;
+	bRefleshMaterial = true;
+}
+
+// 時間を変更.
+void ASkyControl::TimeChange(uint32 MasterId)
+{
+	const TimeInfoItem *pItem = MasterData::GetInstance().GetTimeInfoMaster().Get(MasterId);
+	PrevLightAngle = NextLightAngle;
+	NextLightAngle = pItem->LightAngle;
+	PrevCloudSpeed = NextCloudSpeed;
+	NextCloudSpeed = pItem->CloudSpeed;
+	PrevCloudOpacity = NextCloudOpacity;
+	NextCloudOpacity = pItem->CloudOpacity;
+	PrevStarBrightness = NextStarBrightness;
+	NextStarBrightness = pItem->StarsBrightness;
+
+	ChangeTimer = ChangeTime;
+}
+
+
+// 時間を更新.
+void ASkyControl::UpdateTime(float DeltaTime)
+{
+	if (ChangeTimer <= 0.0f) { return; }
+
+	ChangeTimer = FMath::Max<float>(ChangeTimer - DeltaTime, 0.0f);
+	float Rate = 1.0f - (ChangeTimer / ChangeTime);
+
+	if (pDirectionalLight != nullptr)
+	{
+		pDirectionalLight->SetActorRotation(FRotator(FMath::Lerp<float>(PrevLightAngle, NextLightAngle, Rate), 0.0f, 0.0f));
+	}
+	CloudSpeed = FMath::Lerp(PrevCloudSpeed, NextCloudSpeed, Rate);
+	CloudOpacity = FMath::Lerp(PrevCloudOpacity, NextCloudOpacity, Rate);
+	StarsBrightness = FMath::Lerp(PrevStarBrightness, NextStarBrightness, Rate);
+	bRefleshMaterial = true;
 }
