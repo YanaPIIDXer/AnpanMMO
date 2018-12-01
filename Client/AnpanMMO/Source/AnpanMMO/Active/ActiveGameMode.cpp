@@ -41,6 +41,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 {
 	PrimaryActorTick.bCanEverTick = true;
 
+	AddPacketFunction(PacketID::Ping, std::bind(&PingManager::OnRecvPing, &PingMgr, _1));
 	AddPacketFunction(PacketID::AreaMove, std::bind(&AActiveGameMode::OnRecvAreaMove, this, _1));
 	AddPacketFunction(PacketID::AnpanList, std::bind(&AnpanManager::OnRecvList, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::SpawnAnpan, std::bind(&AnpanManager::OnRecvSpawn, &AnpanMgr, _1));
@@ -87,6 +88,7 @@ void AActiveGameMode::BeginPlay()
 	AnpanMgr.SetWorld(GetWorld());
 	WarpPointMgr.SetWorld(GetWorld());
 	PartyInfo.SetGameMode(this);
+	PingMgr.SetGameMode(this);
 	NoticeMgr.OnRecvNoticeDelegate.BindUObject<UMainHUD>(pMainHUD, &UMainHUD::OnRecvNotice);
 	pLevelManager->OnLevelLoadFinished.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnLevelLoadFinished);
 
@@ -110,6 +112,7 @@ void AActiveGameMode::Tick(float DeltaTime)
 
 	AnpanMgr.Poll();
 	pLevelManager->Poll();
+	PingMgr.Poll(DeltaTime);
 }
 
 // プレイヤーキャラ追加.

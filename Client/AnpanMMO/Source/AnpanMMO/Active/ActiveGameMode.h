@@ -9,6 +9,7 @@
 #include "WarpPoint/WarpPointManager.h"
 #include "Party/PartyInformation.h"
 #include "Notice/NoticeManager.h"
+#include "Ping/PingManager.h"
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
@@ -83,6 +84,9 @@ private:
 
 	// ワープポイントマネージャ
 	WarpPointManager WarpPointMgr;
+
+	// Ping管理.
+	PingManager PingMgr;
 
 	// MainHUD
 	UPROPERTY()
