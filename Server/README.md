@@ -17,7 +17,7 @@ http://download.nust.na/pub6/mysql/downloads/connector/c/index.html
 https://sourceforge.net/projects/luabinaries/files/3.2.2/Windows%20Libraries/  
 ダウンロードしたものを展開し、以下の通りパスを通してください。
 **LUA_INCLUDE:{LuaRoot}/include**  
-**LIB_LIB:{LuaRoot}/lib/dll**
+**LIB_LIB:{LuaRoot}**
 
 # Linuxサーバについて
 サーバプログラムをデプロイするLinuxサーバは、用意できたマシンのスペックが足らず、以下のようなスペックとなっております。  
