@@ -67,5 +67,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!TimeInfo.Load(Connection))
+	{
+		std::cout << "TimeInfo Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }
