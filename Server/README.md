@@ -13,8 +13,8 @@ http://download.nust.na/pub6/mysql/downloads/connector/c/index.html
 **MYSQL_C_LIB:{ConnectorRoot}\lib**
 
 # Lua
-以下のURLから**lua3_2_dll.tar.gzを**ダウンロードしてください。
-https://sourceforge.net/projects/luabinaries/files/3.2.2/Windows%20Libraries/  
+以下のURLから**32Bit版を**ダウンロードしてください。
+https://sourceforge.net/projects/luabinaries/files/5.3.4/Windows%20Libraries/Static/
 ダウンロードしたものを展開し、以下の通りパスを通してください。
 **LUA_INCLUDE:{LuaRoot}/include**  
 **LIB_LIB:{LuaRoot}**
