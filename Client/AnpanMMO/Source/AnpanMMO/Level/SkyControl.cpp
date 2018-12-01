@@ -4,6 +4,8 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Components/LightComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Kismet/GameplayStatics.h"
+#include "Active/ActiveGameMode.h"
 
 // コンストラクタ
 ASkyControl::ASkyControl(const FObjectInitializer &ObjectInitializer)
@@ -49,6 +51,13 @@ void ASkyControl::BeginPlay()
 	Super::BeginPlay();
 
 	pSkyMaterial = pSkySphereMesh->CreateDynamicMaterialInstance(0, pSourceMaterial);
+
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	// マップ単体で動作させる事も考慮してcheckではなく普通のNULLチェック。
+	if (pGameMode != nullptr)
+	{
+		pGameMode->RegisterSkyControl(this);
+	}
 }
 
 // 毎フレームの処理.

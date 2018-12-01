@@ -188,6 +188,12 @@ void AActiveGameMode::EraseOtherPlayerPopupMenu()
 	pOtherPlayerMenu = nullptr;
 }
 
+// 天球をセット。
+void AActiveGameMode::RegisterSkyControl(ASkyControl *pSky)
+{
+	TimeMgr.SetSkyControl(pSky);
+}
+
 
 // エリア移動を受信した。
 void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)

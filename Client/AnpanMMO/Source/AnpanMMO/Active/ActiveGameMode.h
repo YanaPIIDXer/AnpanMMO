@@ -10,6 +10,7 @@
 #include "Party/PartyInformation.h"
 #include "Notice/NoticeManager.h"
 #include "Ping/PingManager.h"
+#include "Level/TimeManager.h"
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
@@ -72,6 +73,9 @@ public:
 	// 通知を消去.
 	void RemoveNotice(uint32 Uuid) { NoticeMgr.RemoveNotice(Uuid); }
 
+	// 天球をセット。
+	void RegisterSkyControl(ASkyControl *pSky);
+
 protected:
 
 private:
@@ -87,6 +91,9 @@ private:
 
 	// Ping管理.
 	PingManager PingMgr;
+
+	// 時間管理.
+	TimeManager TimeMgr;
 
 	// MainHUD
 	UPROPERTY()
