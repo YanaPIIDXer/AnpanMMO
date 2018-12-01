@@ -12,6 +12,13 @@ http://download.nust.na/pub6/mysql/downloads/connector/c/index.html
 **MYSQL_C_INCLUDE:{ConnectorRoot}\include**  
 **MYSQL_C_LIB:{ConnectorRoot}\lib**
 
+# Lua
+以下のURLから**32Bit版を**ダウンロードしてください。
+https://sourceforge.net/projects/luabinaries/files/5.3.4/Windows%20Libraries/Static/
+ダウンロードしたものを展開し、以下の通りパスを通してください。
+**LUA_INCLUDE:{LuaRoot}/include**  
+**LIB_LIB:{LuaRoot}**
+
 # Linuxサーバについて
 サーバプログラムをデプロイするLinuxサーバは、用意できたマシンのスペックが足らず、以下のようなスペックとなっております。  
 **OS : Fedora Core 5**  
