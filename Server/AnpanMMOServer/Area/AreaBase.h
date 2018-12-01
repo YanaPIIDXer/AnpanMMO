@@ -23,6 +23,9 @@ public:
 	// デストラクタ
 	virtual ~AreaBase() {}
 
+	// 初期化.
+	virtual void Initialize() {}
+
 	// 毎フレームの処理.
 	void Poll(int DeltaTime);
 

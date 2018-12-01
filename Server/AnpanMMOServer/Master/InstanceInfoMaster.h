@@ -18,7 +18,7 @@ public:
 	float BossX;
 	float BossY;
 	float BossZ;
-	u32 ExitWarpDataId;
+	u32 ExitWarpPointId;
 
 
 };

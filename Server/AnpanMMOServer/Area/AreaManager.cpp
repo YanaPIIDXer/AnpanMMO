@@ -28,6 +28,7 @@ void AreaManager::Initialize()
 		Area *pArea = new Area(pItem);
 		AreaSharedPtr pSharedArea = AreaSharedPtr(pArea);
 		Areas[pItem->ID] = pSharedArea;
+		pArea->Initialize();
 	}
 }
 
@@ -65,6 +66,7 @@ AreaPtr AreaManager::CreateInstanceArea(u32 AreaId)
 	InstanceArea *pArea = new InstanceArea(Uuid, pItem);
 	AreaSharedPtr pSharedPtr = AreaSharedPtr(pArea);
 	Areas[Uuid] = pSharedPtr;
+	pArea->Initialize();
 
 	NextInstanceAreaUuid++;
 	return pSharedPtr;

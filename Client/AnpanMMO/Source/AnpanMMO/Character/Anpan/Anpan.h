@@ -47,6 +47,17 @@ public:
 	// ’â~.
 	void Stop(float X, float Y, float Z, float Rotation);
 
+protected:
+
+	// ‘«Œ³‚ÌÀ•W‚ğæ“¾.
+	UFUNCTION(BlueprintPure, Category = "Anpan")
+	FVector GetFootPosition() const;
+
+
+	// Šgk”{—¦.
+	UPROPERTY(BlueprintReadOnly, Category = "Anpan")
+	float ScaleRate;
+
 private:
 
 	// ”¼ŒaŠî€’l.

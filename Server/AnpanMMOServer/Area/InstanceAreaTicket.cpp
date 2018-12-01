@@ -46,10 +46,10 @@ bool InstanceAreaTicket::IsDiscard() const
 {
 	for (InfoMap::const_iterator It = InfoList.begin(); It != InfoList.end(); ++It)
 	{
-		if (It->second.State != TicketStateDiscard) { return false; }
+		if (It->second.State == TicketStateDiscard) { return true; }
 	}
 
-	return true;
+	return false;
 }
 
 // ‘Ò‹@’†‚©H
@@ -91,8 +91,8 @@ void InstanceAreaTicket::EnterToInstanceArea(AreaPtr pArea)
 	for (InfoMap::iterator It = InfoList.begin(); It != InfoList.end(); ++It)
 	{
 		PlayerCharacterPtr pCharacter = It->second.pClient.lock()->GetCharacter();
-		AreaPtr pArea = pCharacter.lock()->GetArea();
-		pArea.lock()->RemovePlayerCharacter(pCharacter.lock()->GetUuid());
+		AreaPtr pPrevArea = pCharacter.lock()->GetArea();
+		pPrevArea.lock()->RemovePlayerCharacter(pCharacter.lock()->GetUuid());
 
 		It->second.pClient.lock()->SendPacket(&Packet);
 		

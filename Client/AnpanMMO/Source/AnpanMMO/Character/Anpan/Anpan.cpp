@@ -23,6 +23,7 @@ AAnpan *AAnpan::Spawn(UWorld *pWorld, const AnpanData &Data)
 	AAnpan *pAnpan = Util::SpawnFromBlueprint<AAnpan>(pWorld, BlueprintPath, FVector(Data.X, Data.Y, Z), FRotator(0.0f, Data.Rotation, 0.0f));
 	pAnpan->Initialize(Data.Hp, Data.MaxHp);
 	pAnpan->Uuid = Data.Uuid;
+	pAnpan->ScaleRate = pItem->Scale;
 
 	pAnpan->SetActorScale3D(FVector(pItem->Scale, pItem->Scale, pItem->Scale));
 	
@@ -90,4 +91,13 @@ void AAnpan::Rotate(float Rotation, int32 Time)
 void AAnpan::Stop(float X, float Y, float Z, float Rotation)
 {
 	pController->Stop(X, Y, Z, Rotation);
+}
+
+
+// ‘«Œ³‚ÌÀ•W‚ğæ“¾.
+FVector AAnpan::GetFootPosition() const
+{
+	FVector Pos = GetActorLocation();
+	Pos.Z -= (BaseRadius * GetActorScale3D().X);
+	return Pos;
 }

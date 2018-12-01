@@ -13,7 +13,7 @@ bool InstanceInfoMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultFloat(&BindItem.BossX);
 	Query.BindResultFloat(&BindItem.BossY);
 	Query.BindResultFloat(&BindItem.BossZ);
-	Query.BindResultInt(&BindItem.ExitWarpDataId);
+	Query.BindResultInt(&BindItem.ExitWarpPointId);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
@@ -24,7 +24,7 @@ bool InstanceInfoMaster::Load(const MySqlConnection &Connection)
 		Item.BossX = BindItem.BossX;
 		Item.BossY = BindItem.BossY;
 		Item.BossZ = BindItem.BossZ;
-		Item.ExitWarpDataId = BindItem.ExitWarpDataId;
+		Item.ExitWarpPointId = BindItem.ExitWarpPointId;
 
 		Items[Item.Id] = Item;
 	}

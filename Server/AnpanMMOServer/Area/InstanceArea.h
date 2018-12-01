@@ -19,6 +19,9 @@ public:
 	// デストラクタ
 	virtual ~InstanceArea() {}
 
+	// 初期化,
+	virtual void Initialize();
+
 	// ID取得.
 	virtual u32 GetId() const { return Uuid; }
 
@@ -38,11 +41,17 @@ private:
 	// UUID
 	u32 Uuid;
 
+	// インスタンス情報マスタＩＤ
+	u32 InfoMasterId;
+
 	// 脱出ポイント生成済みか？
 	bool bSpawnedExitPoint;
 
 	// 脱出ポイントＩＤ
-	u32 ExitWarpDataId;
+	u32 ExitWarpPointId;
+
+	// 初期化されているか？
+	bool bInitialized;
 
 };
 

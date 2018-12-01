@@ -10,6 +10,7 @@
 #include "MMOGameModeBase.generated.h"
 
 class MemoryStreamInterface;
+class ULayeredMenuWidgetBase;
 using namespace std::placeholders;
 
 /**
@@ -36,6 +37,9 @@ public:
 
 	// 開始時の処理.
 	virtual void BeginPlay() override;
+
+	// 現在のメニューを設定.
+	void SetCurrentMenu(ULayeredMenuWidgetBase *pMenu) { pCurrentMenu = pMenu; }
 	
 protected:
 
@@ -46,6 +50,9 @@ private:
 
 	// パケット解析関数群.
 	FunctionMap PacketFunctions;
+
+	// 現在のメニュー
+	TWeakObjectPtr<ULayeredMenuWidgetBase> pCurrentMenu;
 
 
 	// パケットを受信した。
