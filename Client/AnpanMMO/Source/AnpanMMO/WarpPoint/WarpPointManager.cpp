@@ -21,6 +21,14 @@ void WarpPointManager::Spawn(uint32 AreaId)
 	}
 }
 
+// ワープポイントＩＤから生成.
+void WarpPointManager::SpawnFromWarpPointId(uint32 WarpPointId)
+{
+	const auto *pWarpPointItem = MasterData::GetInstance().GetWarpPointMaster().Get(WarpPointId);
+	auto *pWarpPoint = AWarpPoint::Spawn(pWorld.Get(), pWarpPointItem->X, pWarpPointItem->Y, pWarpPointItem->Z, pWarpPointItem->WarpDataId);
+	WarpPoints.Add(pWarpPoint);
+}
+
 // リセット
 void WarpPointManager::Reset()
 {

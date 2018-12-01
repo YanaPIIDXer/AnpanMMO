@@ -30,6 +30,7 @@
 #include "Packet/PacketPartyInviteResult.h"
 #include "Packet/PacketInstanceAreaTicketPublish.h"
 #include "Packet/PacketInstanceAreaTicketDiscard.h"
+#include "Packet/PacketSpawnInstanceAreaExitPoint.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -70,6 +71,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::ReceiveNotice, std::bind(&NoticeManager::OnRecvNotice, &NoticeMgr, _1));
 	AddPacketFunction(PacketID::InstanceAreaTicketPublish, std::bind(&AActiveGameMode::OnRecvInstanceAreaTicketPublish, this, _1));
 	AddPacketFunction(PacketID::InstanceAreaTicketDiscard, std::bind(&AActiveGameMode::OnRecvInstanceAreaTicketDiscard, this, _1));
+	AddPacketFunction(PacketID::SpawnInstanceAreaExitPoint, std::bind(&AActiveGameMode::OnRecvSpawnInstanceAreaExitPoint, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 }
@@ -362,5 +364,13 @@ void AActiveGameMode::OnRecvInstanceAreaTicketDiscard(MemoryStreamInterface *pSt
 	Packet.Serialize(pStream);
 
 	USimpleDialog::Show(this, "Instance Area Ticket Discard...");
+}
 
+// インスタンスエリア脱出ポイント生成を受信した。
+void AActiveGameMode::OnRecvSpawnInstanceAreaExitPoint(MemoryStreamInterface *pStream)
+{
+	PacketSpawnInstanceAreaExitPoint Packet;
+	Packet.Serialize(pStream);
+
+	WarpPointMgr.SpawnFromWarpPointId(Packet.WarpPointId);
 }

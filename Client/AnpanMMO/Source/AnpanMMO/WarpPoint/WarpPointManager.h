@@ -30,6 +30,9 @@ public:
 	// Spawn
 	void Spawn(uint32 AreaId);
 
+	// ワープポイントＩＤから生成.
+	void SpawnFromWarpPointId(uint32 WarpPointId);
+
 	// リセット
 	void Reset();
 
