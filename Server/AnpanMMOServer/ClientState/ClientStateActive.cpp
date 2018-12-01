@@ -12,6 +12,7 @@
 #include "ClientStateAreaChange.h"
 #include "Area/InstanceAreaTicket.h"
 #include "Area/InstanceAreaTicketManager.h"
+#include "Packet/PacketPing.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketAttack.h"
 #include "Packet/PacketSendChat.h"
@@ -43,6 +44,7 @@
 ClientStateActive::ClientStateActive(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
+	AddPacketFunction(Ping, boost::bind(&ClientStateActive::OnRecvPing, this, _2));
 	AddPacketFunction(MovePlayer, boost::bind(&ClientStateActive::OnRecvMove, this, _2));
 	AddPacketFunction(Attack, boost::bind(&ClientStateActive::OnRecvAttack, this, _2));
 	AddPacketFunction(SendChat, boost::bind(&ClientStateActive::OnRecvChat, this, _2));
@@ -58,6 +60,16 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
 }
 
+
+// Pingを受信した。
+void ClientStateActive::OnRecvPing(MemoryStreamInterface *pStream)
+{
+	PacketPing Packet;
+	Packet.Serialize(pStream);
+
+	// そのまま投げ返す。
+	GetParent()->SendPacket(&Packet);
+}
 
 // 移動を受信した。
 void ClientStateActive::OnRecvMove(MemoryStreamInterface *pStream)

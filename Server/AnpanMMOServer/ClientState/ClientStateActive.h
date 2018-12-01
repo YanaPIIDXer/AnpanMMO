@@ -19,6 +19,9 @@ public:
 
 private:
 
+	// Pingを受信した。
+	void OnRecvPing(MemoryStreamInterface *pStream);
+
 	// 移動を受信した。
 	void OnRecvMove(MemoryStreamInterface *pStream);
 
