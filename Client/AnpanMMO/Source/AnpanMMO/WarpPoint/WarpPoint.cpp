@@ -11,6 +11,7 @@
 
 const float AWarpPoint::CollisionRadius = 300.0f;
 const TCHAR *AWarpPoint::ParticlePath = TEXT("/Game/Effects/Effects/FX_Mobile/Fire/combat/P_AuraCircle_Fire_02.P_AuraCircle_Fire_02");
+const float AWarpPoint::OverlapInterval = 3.0f;
 
 // Spawn
 AWarpPoint *AWarpPoint::Spawn(UWorld *pWorld, float X, float Y, float Z, uint32 InId)
@@ -29,6 +30,8 @@ AWarpPoint *AWarpPoint::Spawn(UWorld *pWorld, float X, float Y, float Z, uint32 
 AWarpPoint::AWarpPoint(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, bInitialized(false)
+	, Id(0)
+	, IgnoreOverlapTime(0.0f)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -51,6 +54,11 @@ void AWarpPoint::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (IgnoreOverlapTime > 0.0f)
+	{
+		IgnoreOverlapTime = FMath::Max<float>(IgnoreOverlapTime - DeltaTime, 0.0f);
+	}
+
 	if (!bInitialized)
 	{
 		// 何故か生成した瞬間にオーバーラップイベントが走っているので１フレーム遅延させる。
@@ -66,7 +74,10 @@ void AWarpPoint::Tick(float DeltaTime)
 // 衝突イベント
 void AWarpPoint::OnOverlap(UPrimitiveComponent *pOverlappedComponent, AActor *pOtherActor, UPrimitiveComponent *pOtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult)
 {
+	if (IgnoreOverlapTime > 0.0f) { return; }
 	if (pOtherActor != UGameplayStatics::GetPlayerPawn(this, 0)) { return; }
+
+	IgnoreOverlapTime = OverlapInterval;
 	auto AllList = MasterData::GetInstance().GetWarpDataMaster().GetAll();
 	TArray<WarpDataItem> ItemList;
 	for (const auto &Item : AllList)

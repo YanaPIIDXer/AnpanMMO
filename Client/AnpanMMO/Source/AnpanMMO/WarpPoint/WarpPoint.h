@@ -45,6 +45,9 @@ private:
 	// パーティクルのパス
 	static const TCHAR *ParticlePath;
 
+	// オーバーラップのインターバル
+	static const float OverlapInterval;
+
 	// コリジョン用の球コンポーネント
 	UPROPERTY()
 	USphereComponent *pCollisionComponent;
@@ -62,4 +65,7 @@ private:
 	// ID
 	uint32 Id;
 
+	// オーバーラップを無視する時間.
+	float IgnoreOverlapTime;
+	
 };
