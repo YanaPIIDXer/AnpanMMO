@@ -70,6 +70,11 @@ public:
 	// 通知を受信した。
 	void OnRecvNotice(int32 Uuid, const NoticeData &Data);
 
+	// ログアウト
+	UFUNCTION(BlueprintNativeEvent, Category = "Menu")
+	void OnLogOut();
+	void OnLogOut_Implementation() {}
+
 protected:
 
 	// 攻撃ボタンが押された。

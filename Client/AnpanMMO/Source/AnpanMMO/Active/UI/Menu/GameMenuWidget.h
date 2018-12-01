@@ -32,6 +32,10 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void ShowPartyMenu();
 
+	// ログアウト
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void LogOut();
+
 private:
 
 	// アセットのパス

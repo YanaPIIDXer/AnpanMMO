@@ -3,7 +3,9 @@
 #include "GameMenuWidget.h"
 #include "Util.h"
 #include "Kismet/GameplayStatics.h"
+#include "MMOGameInstance.h"
 #include "Active/ActiveGameMode.h"
+#include "Active/UI/MainHUD.h"
 #include "Party/PartyCreateMenuWidget.h"
 #include "Party/PartyInfoMenuWidget.h"
 
@@ -42,4 +44,18 @@ void UGameMenuWidget::ShowPartyMenu()
 		auto *pChild = UPartyInfoMenuWidget::Create(this);
 		ShowChild(pChild);
 	}
+}
+
+// ログアウト
+void UGameMenuWidget::LogOut()
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	pInst->Close();
+
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	pGameMode->GetMainHUD()->OnLogOut();
 }
