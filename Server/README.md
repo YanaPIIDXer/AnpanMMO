@@ -14,10 +14,10 @@ http://download.nust.na/pub6/mysql/downloads/connector/c/index.html
 
 # Lua
 以下のURLから**32Bit版を**ダウンロードしてください。
-https://sourceforge.net/projects/luabinaries/files/5.3.4/Windows%20Libraries/Static/
-ダウンロードしたものを展開し、以下の通りパスを通してください。
+https://sourceforge.net/projects/luabinaries/files/5.3.4/Windows%20Libraries/Static/  
+ダウンロードしたものを展開し、以下の通りパスを通してください。  
 **LUA_INCLUDE:{LuaRoot}/include**  
-**LIB_LIB:{LuaRoot}**
+**LUA_LIB:{LuaRoot}**
 
 # Linuxサーバについて
 サーバプログラムをデプロイするLinuxサーバは、用意できたマシンのスペックが足らず、以下のようなスペックとなっております。  
