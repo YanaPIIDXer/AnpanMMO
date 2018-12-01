@@ -10,7 +10,7 @@
 #include "CacheServer/CacheServerConnection.h"
 #include "WordCheckServer/WordCheckServerConnection.h"
 
-#include "lua.h"
+#include "lua.hpp"
 #include "lauxlib.h"
 #include "lualib.h"
 
