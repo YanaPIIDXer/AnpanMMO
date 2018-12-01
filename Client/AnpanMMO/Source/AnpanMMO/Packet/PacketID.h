@@ -52,6 +52,7 @@ enum PacketID
 	PartyDissolutionRequest,
 	PartyDissolutionResult,
 	PartyDissolution,
+	Ping,
 	PlayerList,
 	SpawnPlayer,
 	MovePlayer,
