@@ -20,7 +20,13 @@ ScriptExecuterBase::~ScriptExecuterBase()
 // スクリプトをセット。
 void ScriptExecuterBase::SetScript(const char *pScript)
 {
-	luaL_dostring(pState, pScript);
+	std::string Script = "";
+	
+	// 関数定義を自動でincludeする。
+	Script += "dofile( 'Functions.lua' )\n";
+	Script += pScript;
+
+	luaL_dostring(pState, Script.c_str());
 }
 
 // スクリプトの実行を再開。
