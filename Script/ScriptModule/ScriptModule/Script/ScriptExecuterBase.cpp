@@ -1,23 +1,21 @@
 #include <iostream>
-#include "Include/ScriptExecuter.h"
-
-ScriptExecuter ScriptExecuter::Instance;
+#include "Include/ScriptExecuterBase.h"
 
 // コンストラクタ
-ScriptExecuter::ScriptExecuter()
+ScriptExecuterBase::ScriptExecuterBase()
 {
 	pState = luaL_newstate();
 	luaL_openlibs(pState);
 }
 
 // デストラクタ
-ScriptExecuter::~ScriptExecuter()
+ScriptExecuterBase::~ScriptExecuterBase()
 {
 	lua_close(pState);
 }
 
 // テスト実行.
-void ScriptExecuter::ExecuteTest()
+void ScriptExecuterBase::ExecuteTest()
 {
 	luaL_dostring(pState, "print(\"Execute Test\")");
 	lua_pcall(pState, 0, 0, 0);

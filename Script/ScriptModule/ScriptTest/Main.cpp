@@ -4,7 +4,8 @@
 
 int main()
 {
-	ScriptExecuter::GetInstnace().ExecuteTest();
+	ScriptExecuterBase Executer;
+	Executer.ExecuteTest();
 
 	std::cout << "EnterƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢B" << std::endl;
 	while ((getchar() != '\n'));

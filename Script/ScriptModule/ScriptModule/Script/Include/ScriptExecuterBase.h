@@ -8,13 +8,16 @@
 /**
  * スクリプト実行クラス
  */
-class ScriptExecuter
+class ScriptExecuterBase
 {
 
 public:
 
+	// コンストラクタ
+	ScriptExecuterBase();
+
 	// デストラクタ
-	~ScriptExecuter();
+	virtual ~ScriptExecuterBase();
 
 	// テスト実行.
 	void ExecuteTest();
@@ -23,16 +26,6 @@ private:
 
 	// Luaステート
 	lua_State *pState;
-
-	// ======== Singleton ==========
-public:
-
-	static ScriptExecuter &GetInstnace() { return Instance; }
-
-private:
-
-	ScriptExecuter();
-	static ScriptExecuter Instance;
 
 };
 
