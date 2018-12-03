@@ -21,7 +21,7 @@ public:
 	virtual ~ScriptExecuterBase();
 
 	// スクリプトを実行。
-	void ExecuteScript(const char *pScript);
+	void ExecuteScript(const char *pScriptDir, const char *pScript);
 
 	// スクリプトの実行を再開.
 	void Resume();

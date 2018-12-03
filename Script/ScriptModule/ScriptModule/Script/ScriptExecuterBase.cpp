@@ -23,12 +23,23 @@ ScriptExecuterBase::~ScriptExecuterBase()
 }
 
 // スクリプトを実行。
-void ScriptExecuterBase::ExecuteScript(const char *pScript)
+void ScriptExecuterBase::ExecuteScript(const char *pScriptDir, const char *pScript)
 {
 	std::string Script = "";
 	
 	// 関数定義を自動でincludeする。
-	Script += "dofile( 'LuaScript/Functions.lua' )\n";
+	Script += "dofile( '";
+	Script += pScriptDir;
+	Script += "/Functions.lua' )\n";
+
+	// ディレクトリ区切り文字として「\」が入ってきた時のための対処。
+	size_t Pos = Script.find("\\");
+	while (Pos != std::string::npos)
+	{
+		Script = Script.replace(Pos, 1, "/");
+		Pos = Script.find("\\");
+	}
+
 	Script += pScript;
 
 	luaL_loadstring(pState, Script.c_str());
