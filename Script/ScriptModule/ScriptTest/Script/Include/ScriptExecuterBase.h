@@ -4,6 +4,7 @@
 #include "lua.hpp"
 #include "lauxlib.h"
 #include "lualib.h"
+#include <string>
 
 /**
  * スクリプト実行基底クラス
@@ -23,7 +24,7 @@ public:
 	void ExecuteTest();
 
 	// メッセージを表示.
-	virtual void ShowMessage() = 0;
+	virtual void ShowMessage(const std::string &Message) = 0;
 
 private:
 

@@ -6,6 +6,6 @@ ScriptExecuter::ScriptExecuter()
 }
 
 // メッセージ表示.
-void ScriptExecuter::ShowMessage()
+void ScriptExecuter::ShowMessage(const std::string &Message)
 {
 }
