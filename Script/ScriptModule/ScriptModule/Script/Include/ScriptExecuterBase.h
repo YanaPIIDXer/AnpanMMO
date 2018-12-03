@@ -29,6 +29,11 @@ public:
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message) = 0;
 
+protected:
+
+	// 実行エラー
+	virtual void OnExecuteError(const std::string &ErrorMessage) = 0;
+
 private:
 
 	// Luaステート

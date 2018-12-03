@@ -34,7 +34,7 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	luaL_dostring(pState, Script.c_str());
 	if (lua_pcall(pState, 0, 0, 0))
 	{
-		std::cout << lua_tostring(pState, -1) << std::endl;
+		OnExecuteError(lua_tostring(pState, -1));
 	}
 }
 

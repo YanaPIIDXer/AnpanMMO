@@ -15,3 +15,10 @@ void ScriptExecuter::ShowMessage_Impl(const std::string &Message)
 	while (getchar() != '\n');
 	Resume();
 }
+
+
+// ÀsƒGƒ‰[
+void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
+{
+	std::cout << ErrorMessage << std::endl;
+}
