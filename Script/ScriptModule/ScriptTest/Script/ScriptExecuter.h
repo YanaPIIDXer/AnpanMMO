@@ -17,13 +17,13 @@ public:
 	// デストラクタ
 	virtual ~ScriptExecuter() {}
 
-	// メッセージ表示。
+	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message);
 
 protected:
 
 	// 実行エラー
-	virtual void OnExecuteError(const std::string &Message);
+	virtual void OnExecuteError(const std::string &ErrorMessage);
 
 private:
 

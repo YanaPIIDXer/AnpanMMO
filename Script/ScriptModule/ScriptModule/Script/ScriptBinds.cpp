@@ -1,5 +1,8 @@
 #include "Include/ScriptBinds.h"
 #include "Include/ScriptExecuterBase.h"
+#include "lua.hpp"
+#include "lauxlib.h"
+#include "lualib.h"
 
 // メッセージ表示.
 int ShowMessage_Call(lua_State *pState)

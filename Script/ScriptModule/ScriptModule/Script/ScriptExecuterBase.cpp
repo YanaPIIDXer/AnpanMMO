@@ -2,6 +2,9 @@
 #include "Include/ScriptExecuterBase.h"
 #include <functional>
 #include "Include/ScriptBinds.h"
+#include "lua.hpp"
+#include "lauxlib.h"
+#include "lualib.h"
 
 ScriptExecuterBase *ScriptExecuterBase::pInstance = NULL;
 
