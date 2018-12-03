@@ -128,9 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Script\Include\ScriptBinds.h" />
     <ClInclude Include="Script\Include\ScriptExecuterBase.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Script\ScriptBinds.cpp" />
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

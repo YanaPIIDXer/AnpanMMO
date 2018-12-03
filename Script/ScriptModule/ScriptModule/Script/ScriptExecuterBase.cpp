@@ -1,9 +1,14 @@
 #include <iostream>
 #include "Include/ScriptExecuterBase.h"
+#include <functional>
+#include "Include/ScriptBinds.h"
+
+ScriptExecuterBase *ScriptExecuterBase::pInstance = NULL;
 
 // コンストラクタ
 ScriptExecuterBase::ScriptExecuterBase()
 {
+	pInstance = this;
 	pState = luaL_newstate();
 	luaL_openlibs(pState);
 	luaopen_base(pState);
@@ -17,8 +22,8 @@ ScriptExecuterBase::~ScriptExecuterBase()
 	lua_close(pState);
 }
 
-// スクリプトをセット。
-void ScriptExecuterBase::SetScript(const char *pScript)
+// スクリプトを実行。
+void ScriptExecuterBase::ExecuteScript(const char *pScript)
 {
 	std::string Script = "";
 	
@@ -27,6 +32,10 @@ void ScriptExecuterBase::SetScript(const char *pScript)
 	Script += pScript;
 
 	luaL_dostring(pState, Script.c_str());
+	if (lua_pcall(pState, 0, 0, 0))
+	{
+		std::cout << lua_tostring(pState, -1) << std::endl;
+	}
 }
 
 // スクリプトの実行を再開。
@@ -39,5 +48,6 @@ void ScriptExecuterBase::Resume()
 // 関数をバインド。
 void ScriptExecuterBase::BindFunctions()
 {
-	lua_getglobal(pCoroutineState, "ShowMessage");
+	// メッセージ表示.
+	lua_register(pCoroutineState, "ShowMessage", ShowMessage_Call);
 }

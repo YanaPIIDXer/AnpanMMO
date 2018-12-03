@@ -18,7 +18,7 @@ public:
 	virtual ~ScriptExecuter() {}
 
 	// メッセージ表示。
-	virtual void ShowMessage(const std::string &Message);
+	virtual void ShowMessage_Impl(const std::string &Message);
 
 private:
 

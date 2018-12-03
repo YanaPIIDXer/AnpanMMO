@@ -20,14 +20,14 @@ public:
 	// デストラクタ
 	virtual ~ScriptExecuterBase();
 
-	// スクリプトをセット。
-	void SetScript(const char *pScript);
+	// スクリプトを実行。
+	void ExecuteScript(const char *pScript);
 
 	// スクリプトの実行を再開.
 	void Resume();
 
 	// メッセージを表示.
-	virtual void ShowMessage(const std::string &Message) = 0;
+	virtual void ShowMessage_Impl(const std::string &Message) = 0;
 
 private:
 
@@ -40,6 +40,15 @@ private:
 
 	// 関数をバインド。
 	void BindFunctions();
+
+	// ========= Singletonもどき =============
+public:
+
+	static ScriptExecuterBase *GetInstance() { return pInstance; }
+
+private:
+
+	static ScriptExecuterBase *pInstance;
 
 };
 
