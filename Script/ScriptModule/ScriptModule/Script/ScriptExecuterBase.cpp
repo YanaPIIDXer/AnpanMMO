@@ -28,10 +28,10 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	std::string Script = "";
 	
 	// 関数定義を自動でincludeする。
-	Script += "dofile( 'Functions.lua' )\n";
+	Script += "dofile( 'LuaScript/Functions.lua' )\n";
 	Script += pScript;
 
-	luaL_dostring(pState, Script.c_str());
+	luaL_loadstring(pState, Script.c_str());
 	if (lua_pcall(pState, 0, 0, 0))
 	{
 		OnExecuteError(lua_tostring(pState, -1));
@@ -49,5 +49,5 @@ void ScriptExecuterBase::Resume()
 void ScriptExecuterBase::BindFunctions()
 {
 	// メッセージ表示.
-	lua_register(pCoroutineState, "ShowMessage", ShowMessage_Call);
+	lua_register(pCoroutineState, "ShowMessage_Impl", ShowMessage_Call);
 }
