@@ -1,10 +1,10 @@
 #include <iostream>
 #include <stdio.h>
-#include "Script\Include/ScriptExecuter.h"
+#include "Script/ScriptExecuter.h"
 
 int main()
 {
-	ScriptExecuterBase Executer;
+	ScriptExecuter Executer;
 	Executer.ExecuteTest();
 
 	std::cout << "EnterƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢B" << std::endl;

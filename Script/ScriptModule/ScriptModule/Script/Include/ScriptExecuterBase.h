@@ -1,12 +1,12 @@
-#ifndef __SCRIPTEXECUTER_H__
-#define __SCRIPTEXECUTER_H__
+#ifndef __SCRIPTEXECUTERBASE_H__
+#define __SCRIPTEXECUTERBASE_H__
 
 #include "lua.hpp"
 #include "lauxlib.h"
 #include "lualib.h"
 
 /**
- * スクリプト実行クラス
+ * スクリプト実行基底クラス
  */
 class ScriptExecuterBase
 {
@@ -22,6 +22,9 @@ public:
 	// テスト実行.
 	void ExecuteTest();
 
+	// メッセージを表示.
+	virtual void ShowMessage() = 0;
+
 private:
 
 	// Luaステート
@@ -29,5 +32,5 @@ private:
 
 };
 
-#endif		// #ifndef __SCRIPTEXECUTER_H__
+#endif		// #ifndef __SCRIPTEXECUTERBASE_H__
 	
