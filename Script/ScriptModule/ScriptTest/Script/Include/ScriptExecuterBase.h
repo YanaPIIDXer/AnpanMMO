@@ -20,8 +20,11 @@ public:
 	// デストラクタ
 	virtual ~ScriptExecuterBase();
 
-	// テスト実行.
-	void ExecuteTest();
+	// スクリプトをセット。
+	void SetScript(const char *pScript);
+
+	// スクリプトの実行を再開.
+	void Resume();
 
 	// メッセージを表示.
 	virtual void ShowMessage(const std::string &Message) = 0;
@@ -30,6 +33,13 @@ private:
 
 	// Luaステート
 	lua_State *pState;
+
+	// コルーチン用State
+	lua_State *pCoroutineState;
+
+
+	// 関数をバインド。
+	void BindFunctions();
 
 };
 
