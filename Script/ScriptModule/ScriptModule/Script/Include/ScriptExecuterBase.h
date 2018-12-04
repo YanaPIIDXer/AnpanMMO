@@ -1,10 +1,9 @@
 #ifndef __SCRIPTEXECUTERBASE_H__
 #define __SCRIPTEXECUTERBASE_H__
 
-#include "lua.hpp"
-#include "lauxlib.h"
-#include "lualib.h"
 #include <string>
+
+struct lua_State;
 
 /**
  * スクリプト実行基底クラス
