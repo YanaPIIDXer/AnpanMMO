@@ -19,14 +19,32 @@ public:
 	// デストラクタ
 	virtual ~ScriptExecuterBase();
 
+	// スクリプトが格納されたディレクトリを設定。
+	void SetScriptDir(const char *pScriptDir) { ScriptDir = pScriptDir; }
+
 	// スクリプトを実行。
-	void ExecuteScript(const char *pScriptDir, const char *pScript);
+	void ExecuteScript(const char *pScript);
 
 	// スクリプトの実行を再開.
 	void Resume();
 
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message) = 0;
+
+	// 選択肢がプッシュされた。
+	virtual void PushSelection_Impl(const std::string &Message) = 0;
+
+	// 選択肢表示.
+	virtual void ShowSelection_Impl() = 0;
+
+	// 選択肢が選択された。
+	void OnSelectedSelection(int Index);
+
+	// フラグをセット
+	virtual void SetFlag(const char *pFlagName) = 0;
+
+	// フラグを取得.
+	virtual bool GetFlag(const char *pFlagName) = 0;
 
 protected:
 
@@ -40,6 +58,12 @@ private:
 
 	// コルーチン用State
 	lua_State *pCoroutineState;
+
+	// コルーチンの参照.
+	int CoroutineRef;
+
+	// スクリプトが格納されたディレクトリ
+	std::string ScriptDir;
 
 
 	// 関数をバインド。

@@ -32,7 +32,7 @@ DEPENDS   = $(OBJECTS:.o=.d)
 
 # 依存ファイルを元に実行ファイルを作る
 $(TARGETS): $(OBJECTS) $(LIBS)
-	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lmysqlclient -llua -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
+	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lmysqlclient -llua -llibscriptmodule -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
 
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
