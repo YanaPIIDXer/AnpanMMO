@@ -8,8 +8,23 @@
 int ShowMessage_Call(lua_State *pState)
 {
 	const char *pMessage;
-	pMessage = lua_tostring(pState ,1);
-	lua_pop(pState, lua_gettop(pState));
+	pMessage = luaL_checkstring(pState, 1);
 	ScriptExecuterBase::GetInstance()->ShowMessage_Impl(pMessage);
+	return 0;
+}
+
+// 選択肢をプッシュ
+int PushSelection_Call(lua_State *pState)
+{
+	const char *pMessage;
+	pMessage = luaL_checkstring(pState, 1);
+	ScriptExecuterBase::GetInstance()->PushSelection_Impl(pMessage);
+	return 0;
+}
+
+// 選択肢を表示.
+int ShowSelection_Call(lua_State *pState)
+{
+	ScriptExecuterBase::GetInstance()->ShowSelection_Impl();
 	return 0;
 }

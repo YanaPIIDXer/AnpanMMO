@@ -28,6 +28,15 @@ public:
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message) = 0;
 
+	// 選択肢がプッシュされた。
+	virtual void PushSelection_Impl(const std::string &Message) = 0;
+
+	// 選択肢表示.
+	virtual void ShowSelection_Impl() = 0;
+
+	// 選択肢が選択された。
+	void OnSelectedSelection(int Index);
+
 protected:
 
 	// 実行エラー
@@ -40,6 +49,9 @@ private:
 
 	// コルーチン用State
 	lua_State *pCoroutineState;
+
+	// コルーチンの参照.
+	int CoroutineRef;
 
 
 	// 関数をバインド。
