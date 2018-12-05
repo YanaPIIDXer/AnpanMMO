@@ -10,6 +10,11 @@ public class AnpanMMO : ModuleRules
 		get { return Path.GetFullPath(Path.Combine(ModuleDirectory, "../../Source/ThirdParty/")); }
 	}
 
+	private string ScriptModulePath
+	{
+		get { return Path.GetFullPath(Path.Combine(ModuleDirectory, "../../Source/ScriptModule/")); }
+	}
+
 	public AnpanMMO(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
@@ -26,13 +31,14 @@ public class AnpanMMO : ModuleRules
 
 		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
 		LoadLua(Target);
+		LoadScriptModule(Target);
 	}
 
 	private bool LoadLua(ReadOnlyTargetRules Target)
 	{
 
 		string PlatformString = ".a";
-		switch(Target.Platform)
+		switch (Target.Platform)
 		{
 			case UnrealTargetPlatform.Win64:
 
@@ -53,6 +59,31 @@ public class AnpanMMO : ModuleRules
 
 		PublicDefinitions.Add(string.Format("WITH_LUA_BINDING={0}", 1));
 
+		return true;
+	}
+
+	private bool LoadScriptModule(ReadOnlyTargetRules Target)
+	{
+		string LibraryName = "libscriptmodule.a";
+		switch (Target.Platform)
+		{
+			case UnrealTargetPlatform.Win64:
+
+				LibraryName = "ScriptModule_x64.lib";
+				break;
+
+			case UnrealTargetPlatform.Win32:
+
+				LibraryName = "ScriptModule_x86.lib";
+				break;
+		}
+
+		string LibrariesPath = Path.Combine(ScriptModulePath, "Libraries");
+
+		PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, LibraryName));
+
+		PublicIncludePaths.Add(Path.Combine(ScriptModulePath, "Include"));
+		
 		return true;
 	}
 }
