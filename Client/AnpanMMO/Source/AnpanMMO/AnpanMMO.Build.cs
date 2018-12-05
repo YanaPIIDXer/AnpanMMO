@@ -31,7 +31,7 @@ public class AnpanMMO : ModuleRules
 	private bool LoadLua(ReadOnlyTargetRules Target)
 	{
 
-		string PlatformString = ".so";
+		string PlatformString = ".a";
 		switch(Target.Platform)
 		{
 			case UnrealTargetPlatform.Win64:
