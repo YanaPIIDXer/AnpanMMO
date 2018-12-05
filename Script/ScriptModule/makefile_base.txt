@@ -1,0 +1,12 @@
+COMPILER=gcc 
+TARGET=libscriptmodule.so 
+INCLUDE=-I$(shell echo D:\lib\lua_5_3_4\include) 
+LIBS=-L\lib\lua5_3_4 -llua53 
+OBJROOT=.\obj 
+SRCROOT=.\ScriptModule 
+SOURCES=$(shell SourceList) 
+OBJS=$(addprefix $(OBJROOT)\, $(SOURCES:.cpp=.o)) 
+DEPENDS=$(addprefix $(OBJROOT)\, $(OBJS:.o=.d)) 
+ 
+$(TARGET): $(OBJS) 
+	$(COMPILER) -shared -fPIC $(LIBS) -o $@ $<
