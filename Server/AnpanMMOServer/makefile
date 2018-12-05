@@ -4,9 +4,9 @@ COMPILER  = gcc
 CXXFLAGS    = -g -Wall -Werror
 # ライブラリ関係の指定
 ifeq "$(shell getconf LONG_BIT)" "64"
-  LDFLAGS = -L/usr/local/lib -L/usr/lib -L./
+  LDFLAGS = -L/usr/local/lib -L/usr/lib -L./Lib
 else
-  LDFLAGS = -L/usr/local/lib -L/usr/lib -L./
+  LDFLAGS = -L/usr/local/lib -L/usr/lib -L./Lib
 endif
 LIBS      =
 # インクルードパスの指定。これをちゃんとしておかないとDEPENDS(依存)ファイルがうまく作れない
