@@ -4,11 +4,11 @@ COMPILER  = gcc
 CXXFLAGS    = -g -Wall -Werror
 # ライブラリ関係の指定
 ifeq "$(shell getconf LONG_BIT)" "64"
-  LDFLAGS = -L/usr/local/lib -L/usr/lib
+  LDFLAGS = -L/usr/local/lib -L/usr/lib -L./
 else
-  LDFLAGS = -L/usr/local/lib -L/usr/lib
+  LDFLAGS = -L/usr/local/lib -L/usr/lib -L./
 endif
-LIBS      = 
+LIBS      =
 # インクルードパスの指定。これをちゃんとしておかないとDEPENDS(依存)ファイルがうまく作れない
 INCLUDE   = -I../include -I/usr/local/include -I./
 # 生成される実行ファイル
@@ -24,9 +24,9 @@ SRCDIRS  := $(shell find $(SRCROOT) -type d)
 # ソースディレクトリを元にforeach命令で全cppファイルをリスト化する
 SOURCES   = $(foreach dir, $(SRCDIRS), $(wildcard $(dir)/*.cpp))
 # 上記のcppファイルのリストを元にオブジェクトファイル名を決定
-OBJECTS   = $(addprefix $(OBJROOT)/, $(SOURCES:.cpp=.o)) 
+OBJECTS   = $(addprefix $(OBJROOT)/, $(SOURCES:.cpp=.o))
 # ソースディレクトリと同じ構造で中間バイナリファイルの出力ディレクトリをリスト化
-OBJDIRS   = $(addprefix $(OBJROOT)/, $(SRCDIRS)) 
+OBJDIRS   = $(addprefix $(OBJROOT)/, $(SRCDIRS))
 # 依存ファイル.dを.oファイルから作る
 DEPENDS   = $(OBJECTS:.o=.d)
 
@@ -53,6 +53,6 @@ clean:
 rebuild:
 	@make clean
 	@make
-	
+
 # 依存関係ファイル
 -include $(DEPENDS)
