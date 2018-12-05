@@ -14,3 +14,18 @@ elseif (Selected == 2) then
 else
 	ShowMessage("エラー")
 end
+
+local Flag = GetFlag("Flag")
+if (Flag) then
+	ShowMessage("フラグはtrueです。")
+else
+	ShowMessage("フラグはfalseです。")
+end
+
+SetFlag("Flag")
+Flag = GetFlag("Flag")
+if (Flag) then
+	ShowMessage("フラグはtrueです。")
+else
+	ShowMessage("フラグはfalseです。")
+end

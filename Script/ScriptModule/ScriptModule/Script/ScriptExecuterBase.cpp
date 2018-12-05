@@ -53,7 +53,7 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	// 選択肢用にグローバル変数を用意。
 	Script += "Selected = 0";
 
-	// コルーチンの実行.
+	// コルーチンの実行関数.
 	Script += "repeat\n";
 	Script += "coroutine.resume(colo, 0)\n";
 	Script += "until coroutine.status(colo) == \"dead\"\n";
@@ -107,4 +107,6 @@ void ScriptExecuterBase::BindFunctions()
 	lua_register(pState, "ShowMessage_Impl", ShowMessage_Call);
 	lua_register(pState, "PushSelection_Impl", PushSelection_Call);
 	lua_register(pState, "ShowSelection_Impl", ShowSelection_Call);
+	lua_register(pState, "SetFlag_Impl", SetFlag_Call);
+	lua_register(pState, "GetFlag_Impl", GetFlag_Call);
 }

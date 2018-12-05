@@ -3,6 +3,7 @@
 
 #include "Include/ScriptExecuterBase.h"
 #include <vector>
+#include <map>
 
 /**
  * スクリプト実行クラス
@@ -26,6 +27,12 @@ public:
 
 	// 選択肢を表示.
 	virtual void ShowSelection_Impl();
+	
+	// フラグをセット
+	virtual void SetFlag(const char *pFlagName) { FlagMap[pFlagName] = true; }
+
+	// フラグを取得.
+	virtual bool GetFlag(const char *pFlagName) { return FlagMap[pFlagName]; }
 
 protected:
 
@@ -36,6 +43,9 @@ private:
 
 	// 選択肢リスト
 	std::vector<std::string> Selections;
+
+	// フラグマップ
+	std::map<const char*, bool> FlagMap;
 
 };
 

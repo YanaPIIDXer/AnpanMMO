@@ -14,3 +14,14 @@ function ShowSelection()
 	ShowSelection_Impl()
 	coroutine.yield()
 end
+
+-- フラグをセット。
+function SetFlag(FlagName)
+	SetFlag_Impl(FlagName)
+end
+
+-- フラグを取得.
+function GetFlag(FlagName)
+	local Flag = GetFlag_Impl(FlagName)
+	return Flag
+end

@@ -40,6 +40,12 @@ public:
 	// 選択肢が選択された。
 	void OnSelectedSelection(int Index);
 
+	// フラグをセット
+	virtual void SetFlag(const char *pFlagName) = 0;
+
+	// フラグを取得.
+	virtual bool GetFlag(const char *pFlagName) = 0;
+
 protected:
 
 	// 実行エラー
