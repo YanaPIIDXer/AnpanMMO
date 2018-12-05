@@ -12,6 +12,7 @@ ScriptExecuterBase *ScriptExecuterBase::pInstance = NULL;
 ScriptExecuterBase::ScriptExecuterBase()
 	: pCoroutineState(NULL)
 	, CoroutineRef(0)
+	, ScriptDir("")
 {
 	pInstance = this;
 	pState = luaL_newstate();
@@ -27,11 +28,11 @@ ScriptExecuterBase::~ScriptExecuterBase()
 }
 
 // スクリプトを実行。
-void ScriptExecuterBase::ExecuteScript(const char *pScriptDir, const char *pScript)
+void ScriptExecuterBase::ExecuteScript(const char *pScript)
 {
 	// 関数定義を自動でincludeする。
 	std::string Include = "dofile( '";
-	Include += pScriptDir;
+	Include += ScriptDir;
 	Include += "/Functions.lua' )\n";
 
 	// ディレクトリ区切り文字として「\」が入ってきた時のための対処。
@@ -102,7 +103,7 @@ void ScriptExecuterBase::OnSelectedSelection(int Index)
 // 関数をバインド。
 void ScriptExecuterBase::BindFunctions()
 {
-	// メッセージ表示.
+	// メッセージ表示.ri
 	lua_register(pState, "ShowMessage_Impl", ShowMessage_Call);
 	lua_register(pState, "PushSelection_Impl", PushSelection_Call);
 	lua_register(pState, "ShowSelection_Impl", ShowSelection_Call);

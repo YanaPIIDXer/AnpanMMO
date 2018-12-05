@@ -38,6 +38,7 @@ void ScriptExecuter::ShowSelection_Impl()
 	}
 	int Index = (Ch - '0') - 1;
 	OnSelectedSelection(Index);
+	Selections.clear();
 }
 
 

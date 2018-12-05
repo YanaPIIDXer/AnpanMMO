@@ -19,8 +19,11 @@ public:
 	// デストラクタ
 	virtual ~ScriptExecuterBase();
 
+	// スクリプトが格納されたディレクトリを設定。
+	void SetScriptDir(const char *pScriptDir) { ScriptDir = pScriptDir; }
+
 	// スクリプトを実行。
-	void ExecuteScript(const char *pScriptDir, const char *pScript);
+	void ExecuteScript(const char *pScript);
 
 	// スクリプトの実行を再開.
 	void Resume();
@@ -52,6 +55,9 @@ private:
 
 	// コルーチンの参照.
 	int CoroutineRef;
+
+	// スクリプトが格納されたディレクトリ
+	std::string ScriptDir;
 
 
 	// 関数をバインド。

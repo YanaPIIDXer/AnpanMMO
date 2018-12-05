@@ -23,8 +23,9 @@ int main()
 	}
 
 	ScriptExecuter Executer;
-	Executer.ExecuteScript("LuaScript", Script.c_str());
-
+	Executer.SetScriptDir("LuaScript");
+	Executer.ExecuteScript(Script.c_str());
+	
 	std::cout << "EnterƒL[‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢B" << std::endl;
 	while ((getchar() != '\n'));
 	return 0;
