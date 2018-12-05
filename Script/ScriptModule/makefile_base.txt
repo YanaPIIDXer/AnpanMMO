@@ -9,4 +9,4 @@ OBJS=$(addprefix $(OBJROOT)\, $(SOURCES:.cpp=.o))
 DEPENDS=$(addprefix $(OBJROOT)\, $(OBJS:.o=.d)) 
  
 $(TARGET): $(OBJS) 
-	$(COMPILER) -shared -fPIC $(LIBS) -o $@ $<
+	$(COMPILER) -shared -fPIC $(LIBS) -o $@ $^
