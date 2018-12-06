@@ -11,7 +11,7 @@ copy %SOURCES% %CLIENT_SOURCES%
 
 rem Deploy to Server
 set SERVER_DIR=..\..\Server\AnpanMMOServer\
-copy %INCLUDE% %SERVER_DIR%\Script\
+copy %INCLUDE% %SERVER_DIR%\Script\Include\
 copy %SOURCES% %SERVER_DIR%\Script\
 
 pause
