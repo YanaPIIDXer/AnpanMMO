@@ -19,6 +19,9 @@ public:
 	// デストラクタ
 	virtual ~ScriptExecuter() {}
 
+	// スクリプトを実行.
+	void RunScript(const FString &FileName);
+
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message);
 

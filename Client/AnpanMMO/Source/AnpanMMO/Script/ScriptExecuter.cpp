@@ -1,10 +1,31 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "ScriptExecuter.h"
+#include "Config.h"
+#include "GenericPlatformFile.h"
+#include "FileManagerGeneric.h"
+
 
 // コンストラクタ
 ScriptExecuter::ScriptExecuter()
 {
+}
+
+// スクリプトを実行.
+void ScriptExecuter::RunScript(const FString &FileName)
+{
+	FString Path = Config::GetScriptDirectory() + "\\" + FileName;
+
+	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
+	IFileHandle *pFileHandle = File.OpenRead(*Path);
+	int32 DataSize = pFileHandle->Size();
+	uint8 *pData = new uint8[DataSize];
+	bool bReadResult = pFileHandle->Read(pData, DataSize);
+	check(bReadResult);
+	pFileHandle->Flush();
+	delete pFileHandle;
+
+	ExecuteScript((const char *) pData);
 }
 
 // メッセージを表示.
