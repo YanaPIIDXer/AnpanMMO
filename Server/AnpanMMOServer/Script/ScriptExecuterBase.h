@@ -8,7 +8,7 @@ struct lua_State;
 /**
  * スクリプト実行基底クラス
  */
-class ScriptExecuterBase
+class SCRIPTMODULE_API ScriptExecuterBase
 {
 
 public:

@@ -3,7 +3,8 @@
 // を記述します。
 //
 
-#pragma once
+#ifndef __STDAFX_H__
+#define __STDAFX_H__
 
 #define _WIN32_WINNT 0x0501
 
@@ -17,4 +18,9 @@ using asio::ip::tcp;
 
 #include "TypeDefs.h"
 
+// スクリプトモジュールがクライアントとの互換性を持つためのおまじない
+#define SCRIPTMODULE_API
+
 // TODO: プログラムに必要な追加ヘッダーをここで参照してください
+
+#endif		// #ifndef __STDAFX_H__
