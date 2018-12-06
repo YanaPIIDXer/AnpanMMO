@@ -8,7 +8,7 @@ ifeq "$(shell getconf LONG_BIT)" "64"
 else
   LDFLAGS = -L/usr/local/lib -L/usr/lib
 endif
-LIBS      = 
+LIBS      =
 # インクルードパスの指定。これをちゃんとしておかないとDEPENDS(依存)ファイルがうまく作れない
 INCLUDE   = -I../include -I/usr/local/include -I./
 # 生成される実行ファイル
@@ -24,15 +24,15 @@ SRCDIRS  := $(shell find $(SRCROOT) -type d)
 # ソースディレクトリを元にforeach命令で全cppファイルをリスト化する
 SOURCES   = $(foreach dir, $(SRCDIRS), $(wildcard $(dir)/*.cpp))
 # 上記のcppファイルのリストを元にオブジェクトファイル名を決定
-OBJECTS   = $(addprefix $(OBJROOT)/, $(SOURCES:.cpp=.o)) 
+OBJECTS   = $(addprefix $(OBJROOT)/, $(SOURCES:.cpp=.o))
 # ソースディレクトリと同じ構造で中間バイナリファイルの出力ディレクトリをリスト化
-OBJDIRS   = $(addprefix $(OBJROOT)/, $(SRCDIRS)) 
+OBJDIRS   = $(addprefix $(OBJROOT)/, $(SRCDIRS))
 # 依存ファイル.dを.oファイルから作る
 DEPENDS   = $(OBJECTS:.o=.d)
 
 # 依存ファイルを元に実行ファイルを作る
 $(TARGETS): $(OBJECTS) $(LIBS)
-	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lmysqlclient -llua -llibscriptmodule -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
+	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lmysqlclient -llua -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
 
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
@@ -53,6 +53,6 @@ clean:
 rebuild:
 	@make clean
 	@make
-	
+
 # 依存関係ファイル
 -include $(DEPENDS)

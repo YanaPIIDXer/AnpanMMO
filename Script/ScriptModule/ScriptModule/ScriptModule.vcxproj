@@ -39,7 +39,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -82,22 +82,30 @@
     <TargetName>$(ProjectName)</TargetName>
     <OutDir>$(SolutionDir)</OutDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)\ScriptModule\</OutDir>
+    <IntDir>$(Platform)\</IntDir>
+    <TargetName>$(ProjectName)_x64_Debug</TargetName>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(LUA_INCLUDE)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(LUA_INCLUDE);$(SolutionDir)\ScriptModule</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy ScriptModule.lib ..\ScriptTest\Lib\</Command>
+      <Command>copy ScriptModule_x86_Debug.lib ..\ScriptTest\Lib\</Command>
     </PostBuildEvent>
     <Lib />
     <PreBuildEvent>
-      <Command>copy Script\Include\*.h ..\ScriptTest\Script\Include\</Command>
+      <Command>copy Script\*.h ..\ScriptTest\Script\</Command>
     </PreBuildEvent>
     <Lib />
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)_x86_Debug$(TargetExt)</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -105,7 +113,20 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(LUA_INCLUDE)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)_x86_Debug$(TargetExt)</OutputFile>
+    </Link>
+    <PreBuildEvent>
+      <Command>copy Script\Include\*.h ..\ScriptTest\Script\Include\</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>copy ScriptModule_x64_Debug.lib ..\ScriptTest\Lib\</Command>
+    </PostBuildEvent>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)_x64_Debug$(TargetExt)</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -144,10 +165,15 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Script\ExecuterPool.h" />
     <ClInclude Include="Script\Include\ScriptBinds.h" />
     <ClInclude Include="Script\Include\ScriptExecuterBase.h" />
+    <ClInclude Include="Script\ScriptBinds.h" />
+    <ClInclude Include="Script\ScriptExecuterBase.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Script\ExecuterPool.cpp" />
     <ClCompile Include="Script\ScriptBinds.cpp" />
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
   </ItemGroup>

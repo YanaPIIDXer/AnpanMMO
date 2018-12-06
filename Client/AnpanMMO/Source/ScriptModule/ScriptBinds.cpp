@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "ScriptBinds.h"
 #include "ScriptExecuterBase.h"
 #include "ExecuterPool.h"

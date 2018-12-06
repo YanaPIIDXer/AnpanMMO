@@ -2,6 +2,7 @@
 
 #include "MMOGameInstance.h"
 #include "DLC/PakFileManager.h"
+#include "Config.h"
 
 // コンストラクタ
 UMMOGameInstance::UMMOGameInstance(const FObjectInitializer &ObjectInitializer)
@@ -16,6 +17,8 @@ void UMMOGameInstance::Init()
 	Super::Init();
 
 	PakFileManager::GetInstance().Initialize();
+
+	Script.SetScriptDir(TCHAR_TO_UTF8(*Config::GetScriptDirectory()));
 }
 
 // 終了時の処理.

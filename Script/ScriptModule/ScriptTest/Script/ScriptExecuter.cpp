@@ -5,6 +5,7 @@
 
 // コンストラクタ
 ScriptExecuter::ScriptExecuter()
+	: SelectionCount(0)
 {
 }
 
@@ -19,26 +20,27 @@ void ScriptExecuter::ShowMessage_Impl(const std::string &Message)
 // 選択肢をプッシュ
 void ScriptExecuter::PushSelection_Impl(const std::string &Message)
 {
-	Selections.push_back(Message);
+	Selections[SelectionCount] = Message;
+	SelectionCount++;
 }
 
 // 選択肢を表示.
 void ScriptExecuter::ShowSelection_Impl()
 {
-	for (unsigned int i = 0; i < Selections.size(); i++)
+	for (int i = 0; i < SelectionCount; i++)
 	{
 		std::cout << (i + 1) << ":" << Selections[i] << std::endl;
 	}
 	std::cout << "Select:";
 	char Ch = getchar();
-	while ((Ch - '0') < 1 || (Ch - '0') > Selections.size())
+	while ((Ch - '0') < 1 || (Ch - '0') > SelectionCount)
 	{
 		std::cout << "Select:";
 		Ch = getchar();
 	}
 	int Index = (Ch - '0') - 1;
 	OnSelectedSelection(Index);
-	Selections.clear();
+	SelectionCount = 0;
 }
 
 
@@ -46,4 +48,10 @@ void ScriptExecuter::ShowSelection_Impl()
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
 {
 	std::cout << ErrorMessage << std::endl;
+}
+
+// 終了した。
+void ScriptExecuter::OnFinished()
+{
+	std::cout << "OnFinished" << std::endl;
 }

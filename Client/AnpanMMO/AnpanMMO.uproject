@@ -3,16 +3,25 @@
 	"EngineAssociation": "4.21",
 	"Category": "",
 	"Description": "",
-	"Modules": [
-		{
-			"Name": "AnpanMMO",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"Engine",
-				"UMG",
-				"CoreUObject"
-			]
-		}
-	]
+    "Modules": [
+        {
+            "Name": "AnpanMMO",
+            "Type": "Runtime",
+            "LoadingPhase": "Default",
+            "AdditionalDependencies": [
+                "Engine",
+                "UMG",
+                "CoreUObject"
+            ]
+        },
+        {
+            "Name": "ScriptModule",
+            "Type": "Runtime",
+            "LoadingPhase": "Default",
+            "AdditionalDependencies": [
+                "Engine",
+                "CoreUObject"
+            ]
+        }
+    ]
 }

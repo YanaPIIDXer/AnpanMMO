@@ -1,7 +1,7 @@
 #ifndef __SCRIPTEXECUTER_H__
 #define __SCRIPTEXECUTER_H__
 
-#include "Include/ScriptExecuterBase.h"
+#include "ScriptExecuterBase.h"
 #include <vector>
 #include <map>
 
@@ -39,10 +39,16 @@ protected:
 	// 実行エラー
 	virtual void OnExecuteError(const std::string &Message);
 
+	// 終了した。
+	virtual void OnFinished();
+
 private:
 
 	// 選択肢リスト
-	std::vector<std::string> Selections;
+	std::string Selections[10];
+
+	// 選択肢の数。
+	int SelectionCount;
 
 	// フラグマップ
 	std::map<const char*, bool> FlagMap;
