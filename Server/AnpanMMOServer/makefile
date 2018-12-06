@@ -4,9 +4,9 @@ COMPILER  = gcc
 CXXFLAGS    = -g -Wall -Werror
 # ライブラリ関係の指定
 ifeq "$(shell getconf LONG_BIT)" "64"
-  LDFLAGS = -L/usr/local/lib -L/usr/lib -L./Lib
+  LDFLAGS = -L/usr/local/lib -L/usr/lib
 else
-  LDFLAGS = -L/usr/local/lib -L/usr/lib -L./Lib
+  LDFLAGS = -L/usr/local/lib -L/usr/lib
 endif
 LIBS      =
 # インクルードパスの指定。これをちゃんとしておかないとDEPENDS(依存)ファイルがうまく作れない
@@ -32,7 +32,7 @@ DEPENDS   = $(OBJECTS:.o=.d)
 
 # 依存ファイルを元に実行ファイルを作る
 $(TARGETS): $(OBJECTS) $(LIBS)
-	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lmysqlclient -llua -lscriptmodule -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
+	$(COMPILER) -o $(TARGETDIR)/$@ $^ $(LDFLAGS) -g -lboost_system -lboost_random -lmysqlclient -llua -L/usr/lib/mysql/ -DBOOST_SYSTEM_NO_DEPRECATED
 
 # 中間バイナリのディレクトリを掘りながら.cppを中間ファイル.oに
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
