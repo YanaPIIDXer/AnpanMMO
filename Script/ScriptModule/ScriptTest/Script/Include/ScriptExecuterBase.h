@@ -81,4 +81,3 @@ private:
 };
 
 #endif		// #ifndef __SCRIPTEXECUTERBASE_H__
-	
