@@ -1,7 +1,7 @@
 -- メッセージ表示.
 function ShowMessage(Message)
 	ShowMessage_Impl(this, Message)
-	coroutine.yield()
+	coroutine.yield(1)
 end
 
 -- 選択肢をプッシュ
@@ -12,7 +12,7 @@ end
 -- 選択肢を表示.
 function ShowSelection()
 	ShowSelection_Impl(this)
-	coroutine.yield()
+	coroutine.yield(1)
 end
 
 -- フラグをセット。

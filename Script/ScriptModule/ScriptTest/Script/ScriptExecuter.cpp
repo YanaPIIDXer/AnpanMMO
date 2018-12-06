@@ -49,3 +49,9 @@ void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
 {
 	std::cout << ErrorMessage << std::endl;
 }
+
+// I—¹‚µ‚½B
+void ScriptExecuter::OnFinished()
+{
+	std::cout << "OnFinished" << std::endl;
+}

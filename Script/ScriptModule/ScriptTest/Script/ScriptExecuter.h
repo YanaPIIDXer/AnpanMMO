@@ -39,6 +39,9 @@ protected:
 	// 実行エラー
 	virtual void OnExecuteError(const std::string &Message);
 
+	// 終了した。
+	virtual void OnFinished();
+
 private:
 
 	// 選択肢リスト

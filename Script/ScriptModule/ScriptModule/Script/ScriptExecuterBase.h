@@ -52,6 +52,9 @@ protected:
 	// 実行エラー
 	virtual void OnExecuteError(const std::string &ErrorMessage) = 0;
 
+	// 処理が終了した。
+	virtual void OnFinished() = 0;
+
 private:
 
 	// Luaステート
