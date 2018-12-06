@@ -93,14 +93,14 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(LUA_INCLUDE)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(LUA_INCLUDE);$(SolutionDir)\ScriptModule</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
       <Command>copy ScriptModule_x86_Debug.lib ..\ScriptTest\Lib\</Command>
     </PostBuildEvent>
     <Lib />
     <PreBuildEvent>
-      <Command>copy Script\Include\*.h ..\ScriptTest\Script\Include\</Command>
+      <Command>copy Script\*.h ..\ScriptTest\Script\</Command>
     </PreBuildEvent>
     <Lib />
     <Lib>
@@ -167,6 +167,9 @@
   <ItemGroup>
     <ClInclude Include="Script\Include\ScriptBinds.h" />
     <ClInclude Include="Script\Include\ScriptExecuterBase.h" />
+    <ClInclude Include="Script\ScriptBinds.h" />
+    <ClInclude Include="Script\ScriptExecuterBase.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Script\ScriptBinds.cpp" />

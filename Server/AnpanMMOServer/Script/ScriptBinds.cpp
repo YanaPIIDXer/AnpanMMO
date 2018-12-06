@@ -1,5 +1,6 @@
-#include "Include/ScriptBinds.h"
-#include "Include/ScriptExecuterBase.h"
+#include "stdafx.h"
+#include "ScriptBinds.h"
+#include "ScriptExecuterBase.h"
 #include "lua.hpp"
 #include "lauxlib.h"
 #include "lualib.h"
