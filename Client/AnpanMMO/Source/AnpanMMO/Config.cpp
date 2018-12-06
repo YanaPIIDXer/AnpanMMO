@@ -72,3 +72,20 @@ FString Config::GetDLCDirectory()
 #endif
 	return Path;
 }
+
+// スクリプトディレクトリを取得.
+FString Config::GetScriptDirectory()
+{
+	FString Path = "";
+#if PLATFORM_WINDOWS
+	// Windows向け
+	Path = FPaths::ProjectSavedDir() + "Script";
+#elif PLATFORM_ANDROID
+	// Android向け
+	Path = "/storage/emulated/0/AnapnMMO/Script";
+#elif PLATFORM_IOS
+	// iOS向け
+	Path = "";
+#endif
+	return Path;
+}

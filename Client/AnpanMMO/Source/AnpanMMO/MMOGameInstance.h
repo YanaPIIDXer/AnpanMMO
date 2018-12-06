@@ -6,6 +6,7 @@
 #include "Engine/GameInstance.h"
 #include "Connection/GameServerConnection.h"
 #include "Character/Player/PlayerStatus.h"
+#include "Script/ScriptExecuter.h"
 #include "MMOGameInstance.generated.h"
 
 class PacketBase;
@@ -56,6 +57,9 @@ public:
 	// エリアＩＤキャッシュを取得.
 	uint32 GetAreaIdCache() { return AreaIdCache; }
 
+	// スクリプト実行オブジェクトを取得.
+	ScriptExecuter *GetScript() { return &Script; }
+
 	
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;
@@ -70,6 +74,9 @@ private:
 
 	// エリアＩＤキャッシュ
 	uint32 AreaIdCache;
+
+	// スクリプト実行.
+	ScriptExecuter Script;
 
 
 	// パケットを受信した。

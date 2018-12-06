@@ -33,4 +33,7 @@ public:
 	// DLCディレクトリを取得.
 	static FString GetDLCDirectory();
 
+	// スクリプトディレクトリを取得.
+	static FString GetScriptDirectory();
+
 };
