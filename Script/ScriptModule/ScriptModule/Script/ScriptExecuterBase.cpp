@@ -3,19 +3,15 @@
 #include <iostream>
 #include <functional>
 #include "ScriptBinds.h"
-#include "lua.hpp"
-#include "lauxlib.h"
-#include "lualib.h"
-
-ScriptExecuterBase *ScriptExecuterBase::pInstance = NULL;
+#include "ExecuterPool.h"
 
 // コンストラクタ
 ScriptExecuterBase::ScriptExecuterBase()
 	: pCoroutineState(NULL)
 	, CoroutineRef(0)
 	, ScriptDir("")
+	, Id(0)
 {
-	pInstance = this;
 	pState = luaL_newstate();
 	luaL_openlibs(pState);
 	luaopen_base(pState);
@@ -25,6 +21,7 @@ ScriptExecuterBase::ScriptExecuterBase()
 // デストラクタ
 ScriptExecuterBase::~ScriptExecuterBase()
 {
+	ExecuterPool::GetInstance().Remove(Id);
 	lua_close(pState);
 }
 
@@ -52,7 +49,7 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	Script += "\n)\n";
 
 	// 選択肢用にグローバル変数を用意。
-	Script += "Selected = 0";
+	Script += "Selected = 0\n";
 
 	// コルーチンの実行関数.
 	Script += "repeat\n";
@@ -82,6 +79,11 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	CoroutineRef = luaL_ref(pState, LUA_REGISTRYINDEX);
 	lua_settop(pState, Top);
 
+	// 自分自身（のＩＤ）を登録。
+	Id = ExecuterPool::GetInstance().Register(this);
+	lua_pushnumber(pState, Id);
+	lua_setglobal(pState, "this");
+
 	// 実行開始。
 	lua_resume(pState, pCoroutineState, 0);
 }
@@ -101,13 +103,18 @@ void ScriptExecuterBase::OnSelectedSelection(int Index)
 }
 
 
-// 関数をバインド。
+// 関数群をバインド。
 void ScriptExecuterBase::BindFunctions()
 {
-	// メッセージ表示.ri
-	lua_register(pState, "ShowMessage_Impl", ShowMessage_Call);
-	lua_register(pState, "PushSelection_Impl", PushSelection_Call);
-	lua_register(pState, "ShowSelection_Impl", ShowSelection_Call);
-	lua_register(pState, "SetFlag_Impl", SetFlag_Call);
-	lua_register(pState, "GetFlag_Impl", GetFlag_Call);
+	BindFunction(ShowMessage_Call, "ShowMessage_Impl");
+	BindFunction(PushSelection_Call, "PushSelection_Impl");
+	BindFunction(ShowSelection_Call, "ShowSelection_Impl");
+	BindFunction(SetFlag_Call, "SetFlag_Impl");
+	BindFunction(GetFlag_Call, "GetFlag_Impl");
+}
+
+// 関数をバインド。
+void ScriptExecuterBase::BindFunction(lua_CFunction Func, const char *pName	)
+{
+	lua_register(pState, pName, Func);
 }

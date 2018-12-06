@@ -1,7 +1,7 @@
 #ifndef __SCRIPTEXECUTER_H__
 #define __SCRIPTEXECUTER_H__
 
-#include "Include/ScriptExecuterBase.h"
+#include "ScriptExecuterBase.h"
 #include <vector>
 #include <map>
 
@@ -42,7 +42,10 @@ protected:
 private:
 
 	// 選択肢リスト
-	std::vector<std::string> Selections;
+	std::string Selections[10];
+
+	// 選択肢の数。
+	int SelectionCount;
 
 	// フラグマップ
 	std::map<const char*, bool> FlagMap;

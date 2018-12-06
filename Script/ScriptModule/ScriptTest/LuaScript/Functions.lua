@@ -1,27 +1,27 @@
 -- メッセージ表示.
 function ShowMessage(Message)
-	ShowMessage_Impl(Message)
+	ShowMessage_Impl(this, Message)
 	coroutine.yield()
 end
 
 -- 選択肢をプッシュ
 function PushSelection(Message)
-	PushSelection_Impl(Message)
+	PushSelection_Impl(this, Message)
 end
 
 -- 選択肢を表示.
 function ShowSelection()
-	ShowSelection_Impl()
+	ShowSelection_Impl(this)
 	coroutine.yield()
 end
 
 -- フラグをセット。
 function SetFlag(FlagName)
-	SetFlag_Impl(FlagName)
+	SetFlag_Impl(this, FlagName)
 end
 
 -- フラグを取得.
 function GetFlag(FlagName)
-	local Flag = GetFlag_Impl(FlagName)
+	local Flag = GetFlag_Impl(this, FlagName)
 	return Flag
 end

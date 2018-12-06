@@ -2,8 +2,9 @@
 #define __SCRIPTEXECUTERBASE_H__
 
 #include <string>
-
-struct lua_State;
+#include "lua.hpp"
+#include "lauxlib.h"
+#include "lualib.h"
 
 /**
  * スクリプト実行基底クラス
@@ -65,18 +66,15 @@ private:
 	// スクリプトが格納されたディレクトリ
 	std::string ScriptDir;
 
+	// ID
+	long Id;
 
-	// 関数をバインド。
+
+	// 関数群をバインド。
 	void BindFunctions();
 
-	// ========= Singletonもどき =============
-public:
-
-	static ScriptExecuterBase *GetInstance() { return pInstance; }
-
-private:
-
-	static ScriptExecuterBase *pInstance;
+	// 関数をバインド。
+	void BindFunction(lua_CFunction Func, const char *pName);
 
 };
 
