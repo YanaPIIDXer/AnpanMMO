@@ -13,7 +13,7 @@ rem Windows x64_Release
 devenv /rebuild "release|x64" /out BuildLog/build.log ScriptModule\ScriptModule.vcxproj /project ScriptModule
 
 rem Linux and Mobiles
-GenerateMakeFile
+MakeFileGenerator
 make
 
 rem Deploy to Client

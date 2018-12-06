@@ -25,7 +25,7 @@ namespace MakeFileGenerator
 				string ObjFilePath = ".\\obj\\" + Path.GetDirectoryName(Source) + "\\" + Path.GetFileNameWithoutExtension(Source) + ".o";
 				MakeFile += ObjFilePath + ": " + Source + "\n";
 				MakeFile += "\tif not exist " + Path.GetDirectoryName(ObjFilePath) + " mkdir " + Path.GetDirectoryName(ObjFilePath) + "\n";
-				MakeFile += "\t$(COMPILER) -MD $(INCLUDE) -o $@ -c $<\n\n";
+				MakeFile += "\t$(COMPILER) -MD -m32 $(INCLUDE) -o $@ -c $<\n\n";
 			}
 
 			using (StreamWriter Writer = new StreamWriter("makefile"))

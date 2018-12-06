@@ -2,8 +2,8 @@ COMPILER=gcc
 TARGET=libscriptmodule.a
 INCLUDE=-I$(shell echo D:\lib\lua_5_3_4\include) 
 LIBS=-L\lib\lua_5_3_4 -llua53
-OBJROOT=.\obj 
-SRCROOT=.\ScriptModule 
+OBJROOT=.\obj
+SRCROOT=.\ScriptModule
 SOURCES=$(shell SourceList) 
 OBJS=$(addprefix $(OBJROOT)\, $(SOURCES:.cpp=.o)) 
 DEPENDS=$(addprefix $(OBJROOT)\, $(OBJS:.o=.d)) 
