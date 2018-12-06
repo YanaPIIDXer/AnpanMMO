@@ -3,7 +3,7 @@
 
 #include <map>
 
-class ScriptExecuterBase;
+class SCRIPTMODULE_API ScriptExecuterBase;
 
 /**
  * スクリプト実行オブジェクトプール
@@ -12,7 +12,7 @@ class ScriptExecuterBase;
  * スクリプトからC++側の関数を呼び出す際は引数にIDを渡すようにする。
  * （ポインタのようなもの）
  */
-class ExecuterPool
+class SCRIPTMODULE_API ExecuterPool
 {
 
 public:
