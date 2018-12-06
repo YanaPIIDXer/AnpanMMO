@@ -23,6 +23,8 @@ copy libscriptmodule.a %CLIENT_LIBRARY%
 rem Deploy to Server
 set SERVER_DIR=..\..\Server\AnpanMMOServer\
 copy %INCLUDE% %SERVER_DIR%\Script\
+copy ScriptModule_x64.lib %SERVER_DIR%\Lib
+copy ScriptModule_x86.lib %SERVER_DIR%\Lib
 copy libscriptmodule.a %SERVER_DIR%\Lib
 
 pause
