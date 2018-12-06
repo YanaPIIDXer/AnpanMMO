@@ -23,22 +23,27 @@ public:
 	void RunScript(const FString &FileName);
 
 	// メッセージを表示.
-	virtual void ShowMessage_Impl(const std::string &Message);
+	virtual void ShowMessage_Impl(const std::string &Message) override;
 
 	// 選択肢をプッシュ
-	virtual void PushSelection_Impl(const std::string &Message);
+	virtual void PushSelection_Impl(const std::string &Message) override;
 
 	// 選択肢を表示.
-	virtual void ShowSelection_Impl();
+	virtual void ShowSelection_Impl() override;
 
 	// フラグをセット.
-	virtual void SetFlag(const char *pFlagName);
+	virtual void SetFlag(const char *pFlagName) override;
 
 	// フラグを取得.
-	virtual bool GetFlag(const char *pFlagName);
+	virtual bool GetFlag(const char *pFlagName) override;
+
+protected:
 
 	// 実行エラー
-	virtual void OnExecuteError(const std::string &ErrorMessage);
+	virtual void OnExecuteError(const std::string &ErrorMessage) override;
+
+	// 終了した。
+	virtual void OnFinished() override;
 
 private:
 

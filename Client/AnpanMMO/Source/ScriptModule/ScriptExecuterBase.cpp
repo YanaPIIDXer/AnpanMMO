@@ -41,42 +41,27 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	}
 
 	// スクリプトの内容をコルーチン化.
-	std::string Script = "colo = coroutine.create(\n";
-	Script += "function()\n";
+	std::string Script = "function main()\n";
 	Script += pScript;
-	Script += "\nend";
-	Script += "\n)\n";
+	Script += "\nreturn 1\n";
+	Script += "end\n";
 
 	// 選択肢用にグローバル変数を用意。
 	Script += "Selected = 0\n";
 
-	// コルーチンの実行関数.
-	Script += "repeat\n";
-	Script += "coroutine.resume(colo, 0)\n";
-	Script += "until coroutine.status(colo) == \"dead\"\n";
-
 	Script = Include + Script;
 
-	if (luaL_loadstring(pState, Script.c_str()))
+	if (luaL_dostring(pState, Script.c_str()))
 	{
-		std::string ErrorMsg = "LoadString Error:";
+		std::string ErrorMsg = "DoString Error:";
 		ErrorMsg += lua_tostring(pState, -1);
 		OnExecuteError(ErrorMsg);
 		return;
 	}
 
 	// コルーチンの生成.
-	int Top = lua_gettop(pState);
-	if (pCoroutineState != NULL && CoroutineRef != 0)
-	{
-		luaL_unref(pState, LUA_REGISTRYINDEX, CoroutineRef);
-
-		pCoroutineState = NULL;
-		CoroutineRef = 0;
-	}
 	pCoroutineState = lua_newthread(pState);
-	CoroutineRef = luaL_ref(pState, LUA_REGISTRYINDEX);
-	lua_settop(pState, Top);
+	lua_getglobal(pState, "main");
 
 	// 自分自身（のＩＤ）を登録。
 	Id = ExecuterPool::GetInstance().Register(this);
@@ -84,13 +69,18 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	lua_setglobal(pState, "this");
 
 	// 実行開始。
-	lua_resume(pState, pCoroutineState, 0);
+	Resume();
 }
 
 // スクリプトの実行を再開。
 void ScriptExecuterBase::Resume()
 {
 	lua_resume(pState, pCoroutineState, 0);
+	int Ret = lua_tointeger(pState, -1);
+	if (Ret == 0)
+	{
+		OnFinished();
+	}
 }
 
 // 選択肢が選択された。
@@ -98,7 +88,6 @@ void ScriptExecuterBase::OnSelectedSelection(int Index)
 {
 	lua_pushnumber(pState, Index);
 	lua_setglobal(pState, "Selected");
-	Resume();
 }
 
 
