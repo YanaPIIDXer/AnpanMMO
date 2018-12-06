@@ -81,8 +81,8 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(BOOST_LIB);$(MYSQL_C_LIB);$(LUA_LIB)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;lua53.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(BOOST_LIB);$(MYSQL_C_LIB);$(LUA_LIB);Lib\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;lua53.lib;ScriptModule_x86_Debug.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -108,6 +108,8 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;ScriptModule_x64.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Lib\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -162,6 +164,9 @@
     <ClInclude Include="Master\TimeInfoMaster.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
+    <ClInclude Include="Script\ScriptBinds.h" />
+    <ClInclude Include="Script\ScriptExecuter.h" />
+    <ClInclude Include="Script\ScriptExecuterBase.h" />
     <ClInclude Include="ServerHost.h" />
     <ClInclude Include="StringPack.h" />
     <ClInclude Include="TCPConnection.h" />
@@ -252,6 +257,7 @@
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />
     <ClCompile Include="Party\PartyManager.cpp" />
+    <ClCompile Include="Script\ScriptExecuter.cpp" />
     <ClCompile Include="ServerHost.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />

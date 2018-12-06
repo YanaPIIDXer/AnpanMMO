@@ -1,9 +1,15 @@
 @echo off
 
-rem Windows x86
+rem Windows x86_Debug
+devenv /rebuild "debug|x86" /out BuildLog/build.log ScriptModule\ScriptModule.vcxproj /project ScriptModule
+
+rem Windows x64_Debug
+devenv /rebuild "debug|x64" /out BuildLog/build.log ScriptModule\ScriptModule.vcxproj /project ScriptModule
+
+rem Windows x86_Release
 devenv /rebuild "release|x86" /out BuildLog/build.log ScriptModule\ScriptModule.vcxproj /project ScriptModule
 
-rem Windows x64
+rem Windows x64_Release
 devenv /rebuild "release|x64" /out BuildLog/build.log ScriptModule\ScriptModule.vcxproj /project ScriptModule
 
 rem Linux and Mobiles
@@ -25,6 +31,8 @@ set SERVER_DIR=..\..\Server\AnpanMMOServer\
 copy %INCLUDE% %SERVER_DIR%\Script\
 copy ScriptModule_x64.lib %SERVER_DIR%\Lib
 copy ScriptModule_x86.lib %SERVER_DIR%\Lib
+copy ScriptModule\ScriptModule_x64_Debug.lib %SERVER_DIR%\Lib
+copy ScriptModule\ScriptModule_x86_Debug.lib %SERVER_DIR%\Lib
 copy libscriptmodule.a %SERVER_DIR%\Lib
 
 pause
