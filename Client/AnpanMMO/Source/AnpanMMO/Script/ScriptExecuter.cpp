@@ -18,6 +18,12 @@ void ScriptExecuter::RunScript(const FString &FileName)
 
 	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
 	IFileHandle *pFileHandle = File.OpenRead(*Path);
+	if (pFileHandle == nullptr)
+	{
+		FString ErrorMsg = "ScriptFile:" + FileName + " Load Failed...";
+		OnExecuteError(TCHAR_TO_ANSI(*ErrorMsg));
+		return;
+	}
 	int32 DataSize = pFileHandle->Size();
 	uint8 *pData = new uint8[DataSize];
 	bool bReadResult = pFileHandle->Read(pData, DataSize);
@@ -26,12 +32,13 @@ void ScriptExecuter::RunScript(const FString &FileName)
 	delete pFileHandle;
 
 	ExecuteScript((const char *) pData);
+	delete[] pData;
 }
 
 // メッセージを表示.
 void ScriptExecuter::ShowMessage_Impl(const std::string &Message)
 {
-	UE_LOG(LogTemp, Log, TEXT("Message:%s"), Message.c_str());
+	UE_LOG(LogTemp, Log, TEXT("Message:%s"), UTF8_TO_TCHAR(Message.c_str()));
 }
 
 // 選択肢をプッシュ.
@@ -60,5 +67,5 @@ bool ScriptExecuter::GetFlag(const char *pFlagName)
 // 実行エラー
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
 {
-	UE_LOG(LogTemp, Log, TEXT("ScriptError:%s"), ErrorMessage.c_str());
+	UE_LOG(LogTemp, Log, TEXT("ScriptError:%s"), UTF8_TO_TCHAR(ErrorMessage.c_str()));
 }
