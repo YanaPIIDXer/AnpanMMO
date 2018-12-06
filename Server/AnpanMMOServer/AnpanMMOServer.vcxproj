@@ -164,6 +164,7 @@
     <ClInclude Include="Master\TimeInfoMaster.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
+    <ClInclude Include="Script\ExecuterPool.h" />
     <ClInclude Include="Script\ScriptBinds.h" />
     <ClInclude Include="Script\ScriptExecuter.h" />
     <ClInclude Include="Script\ScriptExecuterBase.h" />
@@ -257,6 +258,7 @@
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />
     <ClCompile Include="Party\PartyManager.cpp" />
+    <ClCompile Include="Script\ExecuterPool.cpp" />
     <ClCompile Include="Script\ScriptBinds.cpp" />
     <ClCompile Include="Script\ScriptExecuter.cpp" />
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
