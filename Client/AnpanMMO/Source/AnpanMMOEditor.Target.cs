@@ -9,6 +9,6 @@ public class AnpanMMOEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 
-		ExtraModuleNames.AddRange( new string[] { "AnpanMMO", "ScriptModule" } );
+		ExtraModuleNames.AddRange( new string[] { "AnpanMMO" } );
 	}
 }

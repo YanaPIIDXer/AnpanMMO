@@ -9,7 +9,7 @@ public class AnpanMMO : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Sockets", "Networking" , "Http", "PakFile", "ScriptModule" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Sockets", "Networking" , "Http", "PakFile" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

@@ -13,7 +13,7 @@ namespace SourceDeploy
 		{
 			string SrcPath = "ScriptModule\\Script\\";
 			string ServerPath = "..\\..\\Server\\AnpanMMOServer\\Script\\";
-			string ClientPath = "..\\..\\Client\\AnpanMMO\\Source\\ScriptModule\\";
+			string ClientPath = "..\\..\\Client\\AnpanMMO\\Source\\AnpanMMO\\Script\\";
 
 			string[] Sources = Directory.GetFiles(SrcPath, "*.*", SearchOption.AllDirectories);
 			foreach(var Source in Sources)
