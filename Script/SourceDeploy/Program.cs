@@ -52,7 +52,7 @@ namespace SourceDeploy
 						Code = Reader.ReadToEnd();
 					}
 
-					Code = Code.Replace("class ", "class SCRIPTMODULE_API ");
+					Code = Code.Replace("class ", "class ANPANMMO_API ");
 					using (StreamWriter Writer = new StreamWriter(ClientPath + FileName, false, Encoding.GetEncoding("Shift-Jis")))
 					{
 						Writer.Write(Code);
