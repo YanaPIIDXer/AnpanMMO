@@ -9,7 +9,7 @@
 /**
  * スクリプト実行基底クラス
  */
-class SCRIPTMODULE_API ScriptExecuterBase
+class ANPANMMO_API ScriptExecuterBase
 {
 
 public:
