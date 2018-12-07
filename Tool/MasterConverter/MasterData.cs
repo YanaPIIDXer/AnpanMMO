@@ -39,6 +39,11 @@ namespace MasterConverter
 		public bool IsServerOnly { get; private set; }
 
 		/// <summary>
+		/// クライアントのみ出力するか？
+		/// </summary>
+		public bool IsClientOnly { get; private set; }
+
+		/// <summary>
 		/// ワードチェックサーバ向けに出力するか？
 		/// </summary>
 		public bool IsForWordCheckServer { get; private set; }
@@ -52,6 +57,7 @@ namespace MasterConverter
 			Name = InName;
 			IsAutoKey = false;
 			IsServerOnly = false;
+			IsClientOnly = false;
 			IsForWordCheckServer = false;
 			EnumList = new List<EnumData>();
 		}
@@ -155,6 +161,14 @@ namespace MasterConverter
 		public void SetEnableServerOnly()
 		{
 			IsServerOnly = true;
+		}
+
+		/// <summary>
+		/// クライアントのみ出力を設定.
+		/// </summary>
+		public void SetEnableClientOly()
+		{
+			IsClientOnly = true;
 		}
 
 		/// <summary>

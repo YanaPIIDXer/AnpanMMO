@@ -158,31 +158,34 @@ namespace MasterConverter
 				string FilePath = Config.TemporaryDirectoryPath + "\\" + FileName;
 				Console.Write(Path.GetFileNameWithoutExtension(FilePath) + "の生成中...");
 
-				SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Master);
-				if (!SQLGen.Generate())
+				if (!Parser.Master.IsClientOnly)
 				{
-					MessageBox.Show("SQLファイルの生成に失敗しました。");
-					Console.WriteLine("失敗。");
-					return false;
-				}
-				Console.WriteLine("完了。");
+					SQLGenerator SQLGen = new SQLGenerator(FilePath, Parser.Master);
+					if (!SQLGen.Generate())
+					{
+						MessageBox.Show("SQLファイルの生成に失敗しました。");
+						Console.WriteLine("失敗。");
+						return false;
+					}
+					Console.WriteLine("完了。");
 
-				Console.Write("サーバソースの生成中...");
+					Console.Write("サーバソースの生成中...");
 
-				string TargetDirectory = GameServerSourceDirectory;
-				if(Parser.Master.IsForWordCheckServer)
-				{
-					TargetDirectory = WordCheckServerDirectory;
+					string TargetDirectory = GameServerSourceDirectory;
+					if (Parser.Master.IsForWordCheckServer)
+					{
+						TargetDirectory = WordCheckServerDirectory;
+					}
+					ServerSourceGenerator ServerSource = new ServerSourceGenerator(TargetDirectory, Parser.Master);
+					if (!ServerSource.Generate())
+					{
+						MessageBox.Show("サーバソースの生成に失敗しました。");
+						Console.WriteLine("失敗。");
+						return false;
+					}
+					Console.WriteLine("完了。");
 				}
-				ServerSourceGenerator ServerSource = new ServerSourceGenerator(TargetDirectory, Parser.Master);
-				if (!ServerSource.Generate())
-				{
-					MessageBox.Show("サーバソースの生成に失敗しました。");
-					Console.WriteLine("失敗。");
-					return false;
-				}
-				Console.WriteLine("完了。");
-
+				
 				if (!Parser.Master.IsServerOnly)
 				{
 					Console.Write("クライアントソースの生成中...");
