@@ -13,15 +13,6 @@
                 "UMG",
                 "CoreUObject"
             ]
-        },
-        {
-            "Name": "ScriptModule",
-            "Type": "Runtime",
-            "LoadingPhase": "Default",
-            "AdditionalDependencies": [
-                "Engine",
-                "CoreUObject"
-            ]
         }
     ]
 }

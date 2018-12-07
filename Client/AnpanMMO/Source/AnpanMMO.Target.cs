@@ -9,6 +9,6 @@ public class AnpanMMOTarget : TargetRules
 	{
 		Type = TargetType.Game;
 
-		ExtraModuleNames.AddRange( new string[] { "AnpanMMO", "ScriptModule" } );
+		ExtraModuleNames.AddRange( new string[] { "AnpanMMO" } );
 	}
 }

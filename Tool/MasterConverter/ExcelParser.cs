@@ -104,6 +104,12 @@ namespace MasterConverter
 						Master.SetEnableServerOnly();
 					}
 
+					// クライアントのみ
+					if(CellValue == "$CLIENT_ONLY")
+					{
+						Master.SetEnableClientOly();
+					}
+
 					// ワードチェックサーバ向けの出力.
 					if(CellValue == "$FOR_WORDCHECK_SERVER")
 					{

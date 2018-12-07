@@ -1,0 +1,17 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "NPC0001",
+	"Description": "NPC0001",
+	"Category": "NPC",
+	"CreatedBy": "YanaP",
+	"CreatedByURL": "http://github.com/YanaPIIDXer",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"Installed": false
+}

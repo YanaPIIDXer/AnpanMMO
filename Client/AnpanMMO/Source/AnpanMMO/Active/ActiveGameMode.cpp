@@ -91,6 +91,7 @@ void AActiveGameMode::BeginPlay()
 	WarpPointMgr.SetWorld(GetWorld());
 	PartyInfo.SetGameMode(this);
 	PingMgr.SetGameMode(this);
+	NPCMgr.SetWorld(GetWorld());
 	NoticeMgr.OnRecvNoticeDelegate.BindUObject<UMainHUD>(pMainHUD, &UMainHUD::OnRecvNotice);
 	pLevelManager->OnLevelLoadFinished.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnLevelLoadFinished);
 
@@ -207,6 +208,7 @@ void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 
 	WarpPointMgr.Spawn(Packet.AreaId);
+	NPCMgr.OnMapChanegd(Packet.AreaId);
 	
 	FVector Pos(Packet.X, Packet.Y, Packet.Z);
 	
@@ -286,6 +288,7 @@ void AActiveGameMode::OnRecvAreaMoveResponse(MemoryStreamInterface *pStream)
 	PlayerMgr.Reset();
 	AnpanMgr.Reset();
 	WarpPointMgr.Reset();
+	NPCMgr.Reset();
 
 	pMainHUD->OnStartMapChange();
 }
