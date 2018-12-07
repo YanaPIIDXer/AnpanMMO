@@ -11,7 +11,7 @@ UNPCDataAsset::UNPCDataAsset(const FObjectInitializer &ObjectInitializer)
 // Žæ“¾.
 USkeletalMesh *UNPCDataAsset::Get(int32 Index)
 {
-	if (Index < 0 || Index >= Assets.Num()) { return nullptr; }
+	check((Index >= 0 && Index < Assets.Num()));
 	USkeletalMesh *pMesh = Assets[Index].Get();
 	return pMesh;
 }
