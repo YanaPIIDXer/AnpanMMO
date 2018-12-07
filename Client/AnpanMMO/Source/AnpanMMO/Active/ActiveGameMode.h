@@ -11,6 +11,7 @@
 #include "Notice/NoticeManager.h"
 #include "Ping/PingManager.h"
 #include "Level/TimeManager.h"
+#include "Character/NPC/NPCManager.h"
 #include "ActiveGameMode.generated.h"
 
 class UMainHUD;
@@ -94,6 +95,9 @@ private:
 
 	// ŠÔŠÇ—.
 	TimeManager TimeMgr;
+
+	// NPCŠÇ—.
+	NPCManager NPCMgr;
 
 	// MainHUD
 	UPROPERTY()

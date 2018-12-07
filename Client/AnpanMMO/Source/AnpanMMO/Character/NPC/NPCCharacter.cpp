@@ -29,7 +29,9 @@ ANPCCharacter *ANPCCharacter::Spawn(UWorld *pWorld, const NPCItem *pItem)
 	UNPCDataAsset *pDataAsset = LoadObject<UNPCDataAsset>(pChara, *DLCPath, *DLCPath);
 	check(pDataAsset != nullptr);
 
-	pChara->GetMesh()->SetSkeletalMesh(pDataAsset->Get(pResourceItem->Index));
+	USkeletalMesh *pMesh = pDataAsset->Get(pResourceItem->Index);
+	check(pMesh != nullptr);
+	pChara->GetMesh()->SetSkeletalMesh(pMesh);
 
 	return pChara;
 }

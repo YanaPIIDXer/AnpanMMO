@@ -12,6 +12,6 @@ UNPCDataAsset::UNPCDataAsset(const FObjectInitializer &ObjectInitializer)
 USkeletalMesh *UNPCDataAsset::Get(int32 Index)
 {
 	check((Index >= 0 && Index < Assets.Num()));
-	USkeletalMesh *pMesh = Assets[Index].Get();
+	USkeletalMesh *pMesh = Assets[Index].LoadSynchronous();
 	return pMesh;
 }
