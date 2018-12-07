@@ -17,4 +17,7 @@ void MasterData::Load()
 	WarpData.Load();
 	Anpan.Load();
 	TimeInfo.Load();
+	NPC.Load();
+	NPCResource.Load();
+	NPCCondition.Load();
 }

@@ -8,6 +8,9 @@
 #include "WarpPointMaster.h"
 #include "AnpanMaster.h"
 #include "TimeInfoMaster.h"
+#include "NPCMaster.h"
+#include "NPCResourceMaster.h"
+#include "NPCConditionMaster.h"
 
 /**
  * マスタデータ
@@ -38,6 +41,15 @@ public:
 	// 時間情報マスタを取得.
 	const TimeInfoMaster &GetTimeInfoMaster() const { return TimeInfo; }
 
+	// NPCマスタを取得.
+	const NPCMaster &GetNPCMaster() const { return NPC; }
+
+	// NPCリソースマスタを取得.
+	const NPCResourceMaster &GetNPCReseourceMaster() const { return NPCResource; }
+
+	// NPCコンディションマスタを取得.
+	const NPCConditionMaster &GetNPCConditionMaster() const { return NPCCondition; }
+
 private:
 
 	// エリアマスタ
@@ -54,6 +66,15 @@ private:
 
 	// 時間情報マスタ
 	TimeInfoMaster TimeInfo;
+
+	// NPCマスタ
+	NPCMaster NPC;
+
+	// NPCリソースマスタ
+	NPCResourceMaster NPCResource;
+
+	// NPCコンディションマスタ
+	NPCConditionMaster NPCCondition;
 
 	// =========== Singleton ============
 public:
