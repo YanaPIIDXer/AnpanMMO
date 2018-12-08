@@ -35,6 +35,9 @@ public:
 	// 主にサーバ側で使用する。
 	void QuickResume();
 
+	// 終了しているか？
+	bool IsFinished() const { return bIsFinished; }
+
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message) = 0;
 
@@ -60,13 +63,7 @@ protected:
 
 	// 処理が終了した。
 	virtual void OnFinished() = 0;
-
-	// デバッグ用にメインスタックを表示.
-	void DebugPrintMainStack();
-
-	// デバッグ用にコルーチンスタックを表示.
-	void DebugPrintCoroutineStack();
-
+	
 	// デバッグメッセージを表示.
 	virtual void ShowDebugMessage(const std::string &Message) = 0;
 
@@ -87,6 +84,9 @@ private:
 	// ID
 	long Id;
 
+	// 終了しているか？
+	bool bIsFinished;
+
 
 	// 関数群をバインド。
 	void BindFunctions();
@@ -99,9 +99,6 @@ private:
 
 	// StateをClose
 	void CloseState();
-
-	// デバッグ用にスタックを表示.
-	void DebugPrintStack(lua_State *pTargetState);
 
 };
 

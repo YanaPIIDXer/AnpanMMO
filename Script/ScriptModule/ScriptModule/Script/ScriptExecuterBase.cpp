@@ -13,6 +13,7 @@ ScriptExecuterBase::ScriptExecuterBase()
 	, CoroutineRef(0)
 	, ScriptDir("")
 	, Id(0)
+	, bIsFinished(false)
 {
 }
 
@@ -74,6 +75,8 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	pCoroutineState = lua_newthread(pState);
 	lua_getglobal(pState, "main");
 
+	bIsFinished = false;
+
 	// 実行開始。
 	Resume();
 }
@@ -82,7 +85,7 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 void ScriptExecuterBase::Resume()
 {
 	lua_resume(pState, pCoroutineState, 0);
-	if (!lua_isinteger(pState, -1))
+	if (!lua_isnumber(pState, -1))
 	{
 		std::string ErrorMsg = "Execute Error:";
 		ErrorMsg += lua_tostring(pState, -1);
@@ -93,6 +96,7 @@ void ScriptExecuterBase::Resume()
 	if (Ret == 0)
 	{
 		CloseState();
+		bIsFinished = true;
 		OnFinished();
 	}
 }
@@ -100,14 +104,17 @@ void ScriptExecuterBase::Resume()
 // 即Resumeする。
 void ScriptExecuterBase::QuickResume()
 {
-	// スタックの中身を全部Pop
+	// スタックを全部撤去.
 	lua_settop(pState, 0);
 
-	// IDのみスタックしておく。
-	lua_pushnumber(pState, Id);
+	// リターンコードをPush
+	lua_pushinteger(pState, 1);
+
+	// yield
+	lua_yield(pState, 1);
 
 	// Resume
-	Resume();
+	//Resume();
 }
 
 // 選択肢が選択された。
@@ -116,19 +123,6 @@ void ScriptExecuterBase::OnSelectedSelection(int Index)
 	lua_pushnumber(pState, Index);
 	lua_setglobal(pState, "Selected");
 	Resume();
-}
-
-
-// デバッグ用にメインスタックを表示.
-void ScriptExecuterBase::DebugPrintMainStack()
-{
-	DebugPrintStack(pState);
-}
-
-// デバッグ用にコルーチンスタックを表示.
-void ScriptExecuterBase::DebugPrintCoroutineStack()
-{
-	DebugPrintStack(pCoroutineState);
 }
 
 
@@ -169,43 +163,4 @@ void ScriptExecuterBase::CloseState()
 
 	lua_close(pState);	
 	pState = NULL;
-}
-
-// デバッグ用にスタックを表示.
-void ScriptExecuterBase::DebugPrintStack(lua_State *pTargetState)
-{
-	// スタック数を取得
-	const int num = lua_gettop(pTargetState);
-	if (num == 0)
-	{
-		ShowDebugMessage("No stack.");
-		return;
-	}
-
-	for (int i = num; i >= 1; --i)
-	{
-		char Str[256];
-
-		// インデックス番号（昇順・降順）
-		sprintf_s(Str, 256, "%03d(%04d):", i, -num + i - 1);
-		ShowDebugMessage(Str);
-
-		// 型確認
-		int type = lua_type(pTargetState, i);
-		switch (type)
-		{
-			case LUA_TNIL: sprintf_s(Str, 256, "NIL"); break;
-			case LUA_TBOOLEAN: sprintf_s(Str, 256, "BOOLEAN %s", lua_toboolean(pTargetState, i) ? "true" : "false"); break;
-			case LUA_TLIGHTUSERDATA: sprintf_s(Str, 256, "LIGHTUSERDATA"); break;
-			case LUA_TNUMBER: sprintf_s(Str, 256, "NUMBER %f", lua_tonumber(pTargetState, i)); break;
-			case LUA_TSTRING: sprintf_s(Str, 256, "STRING %s", lua_tostring(pTargetState, i)); break;
-			case LUA_TTABLE: sprintf_s(Str, 256, "TABLE"); break;
-			case LUA_TFUNCTION: sprintf_s(Str, 256, "FUNCTION"); break;
-			case LUA_TUSERDATA: sprintf_s(Str, 256, "USERDATA"); break;
-			case LUA_TTHREAD: sprintf_s(Str, 256, "THREAD"); break;
-		}
-		ShowDebugMessage(Str);
-	}
-
-	ShowDebugMessage("------------------------------");
 }
