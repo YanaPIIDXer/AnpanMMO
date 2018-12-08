@@ -80,7 +80,6 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 // スクリプトの実行を再開。
 void ScriptExecuterBase::Resume()
 {
-	DebugPrintStack();
 	lua_resume(pState, pCoroutineState, 0);
 	if (!lua_isinteger(pState, -1))
 	{
@@ -172,7 +171,7 @@ void ScriptExecuterBase::CloseState()
 }
 
 // デバッグ用にスタックを表示.
-void ScriptExecuterBase::DebugPrintStack(lua_State *pTargetStack)
+void ScriptExecuterBase::DebugPrintStack(lua_State *pTargetState)
 {
 	// スタック数を取得
 	const int num = lua_gettop(pTargetState);
