@@ -73,7 +73,10 @@ bool AGameController::InputTouch(uint32 Handle, ETouchType::Type Type, const FVe
 				FVector2D Delta = TouchLocation - PrevTouchLocation;
 				SwipeValue += FMath::Abs<float>(Delta.X);
 				SwipeValue += FMath::Abs<float>(Delta.Y);
-				pCamera->Rotate(Delta.X);
+				if (bEnableMove)
+				{
+					pCamera->Rotate(Delta.X);
+				}
 			}
 			break;
 
@@ -152,6 +155,8 @@ void AGameController::MoveRight(float Value)
 // ターゲットを決めるためのレイトレース
 void AGameController::RayTraceForTarget(const FVector2D &ScreenPos)
 {
+	if (!bEnableMove) { return; }
+
 	FVector Pos;
 	FVector Direction;
 	DeprojectScreenPositionToWorld(ScreenPos.X, ScreenPos.Y, Pos, Direction);

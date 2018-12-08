@@ -29,6 +29,15 @@ public:
 	// スクリプトの実行を再開.
 	void Resume();
 
+	// 即Resumeする。
+	// Lua側から呼び出された関数がreturn 0;する前にResumeすると問題が起こるため
+	// その対処。
+	// 主にサーバ側で使用する。
+	void QuickResume();
+
+	// 終了しているか？
+	bool IsFinished() const { return bIsFinished; }
+
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message) = 0;
 
@@ -54,6 +63,9 @@ protected:
 
 	// 処理が終了した。
 	virtual void OnFinished() = 0;
+	
+	// デバッグメッセージを表示.
+	virtual void ShowDebugMessage(const std::string &Message) = 0;
 
 private:
 
@@ -72,12 +84,21 @@ private:
 	// ID
 	long Id;
 
+	// 終了しているか？
+	bool bIsFinished;
+
 
 	// 関数群をバインド。
 	void BindFunctions();
 
 	// 関数をバインド。
 	void BindFunction(lua_CFunction Func, const char *pName);
+
+	// Stateを生成.
+	void CreateState();
+
+	// StateをClose
+	void CloseState();
 
 };
 

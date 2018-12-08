@@ -42,6 +42,9 @@ protected:
 	// 終了した。
 	virtual void OnFinished();
 
+	// デバッグメッセージ表示.
+	virtual void ShowDebugMessage(const std::string &Message);
+
 private:
 
 	// 選択肢リスト

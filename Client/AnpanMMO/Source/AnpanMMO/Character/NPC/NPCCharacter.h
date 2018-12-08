@@ -37,6 +37,10 @@ public:
 	// ‚‚³‚Ì”¼•ª‚ğæ“¾.
 	float GetHalfHeight() const override { return HalfHeight; }
 
+	// ˜b‚µ‚©‚¯‚é
+	UFUNCTION(BlueprintCallable, Category = "NPC")
+	void Talk();
+
 private:
 	
 	// ID

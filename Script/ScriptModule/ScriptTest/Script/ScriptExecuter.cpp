@@ -14,7 +14,7 @@ void ScriptExecuter::ShowMessage_Impl(const std::string &Message)
 {
 	std::cout << Message << std::endl;
 	while (getchar() != '\n');
-	Resume();
+	QuickResume();
 }
 
 // 選択肢をプッシュ
@@ -54,4 +54,10 @@ void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
 void ScriptExecuter::OnFinished()
 {
 	std::cout << "OnFinished" << std::endl;
+}
+
+// デバッグメッセージ表示。
+void ScriptExecuter::ShowDebugMessage(const std::string &Message)
+{
+	std::cout << "DebugMessage:" << Message << std::endl;
 }
