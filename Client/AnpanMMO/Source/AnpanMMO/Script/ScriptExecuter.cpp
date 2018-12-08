@@ -38,7 +38,7 @@ void ScriptExecuter::RunScript(const FString &FileName)
 // メッセージを表示.
 void ScriptExecuter::ShowMessage_Impl(const std::string &Message)
 {
-	FString Msg = Message.c_str();
+	FString Msg = ANSI_TO_TCHAR(Message.c_str());
 	pGameMode->ShowScriptMessage(Msg);
 }
 

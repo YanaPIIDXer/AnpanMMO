@@ -59,10 +59,6 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 		return;
 	}
 
-	// コルーチンの生成.
-	pCoroutineState = lua_newthread(pState);
-	lua_getglobal(pState, "main");
-
 	// 自分自身（のＩＤ）を登録。
 	if (Id == 0)
 	{
@@ -71,6 +67,10 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	lua_pushnumber(pState, Id);
 	lua_setglobal(pState, "this");
 
+	// コルーチンの生成.
+	pCoroutineState = lua_newthread(pState);
+	lua_getglobal(pState, "main");
+
 	// 実行開始。
 	Resume();
 }
@@ -78,7 +78,14 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 // スクリプトの実行を再開。
 void ScriptExecuterBase::Resume()
 {
-	lua_resume(pState, pCoroutineState, 0);
+	if (lua_resume(pState, pCoroutineState, 0))
+	{
+		std::string ErrorMsg = "Execute Error:";
+		ErrorMsg += lua_tostring(pState, -1);
+		OnExecuteError(ErrorMsg);
+		return;
+	}
+
 	int Ret = lua_tointeger(pState, -1);
 	if (Ret == 0)
 	{
