@@ -164,7 +164,6 @@ void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
 	FHitResult Result;
 	if (!GetWorld()->LineTraceSingleByChannel(Result, Start, End, ECollisionChannel::ECC_GameTraceChannel3))
 	{
-		pGameMode->EraseOtherPlayerPopupMenu();
 		if (bHasTarget)
 		{
 			// @TODO:ターゲットが外れた通知。
@@ -172,7 +171,6 @@ void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
 
 		pCurrentTarget = nullptr;
 		bHasTarget = false;
-		UE_LOG(LogTemp, Log, TEXT("Ray Not Hit"));
 		return;
 	}
 
@@ -188,7 +186,6 @@ void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
 	}
 	else
 	{
-		pGameMode->EraseOtherPlayerPopupMenu();
 		if (bHasTarget)
 		{
 			// @TODO:ターゲットが外れた通知。
@@ -197,13 +194,4 @@ void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
 		pCurrentTarget = nullptr;
 		bHasTarget = false;
 	}
-
-	AOtherPlayerCharacter *pCharacter = Cast<AOtherPlayerCharacter>(Result.GetActor());
-	if (pCharacter == nullptr)
-	{
-		pGameMode->EraseOtherPlayerPopupMenu();
-		return;
-	}
-
-	pGameMode->ShowOtherPlayerPopupMenu(pCharacter);
 }

@@ -14,7 +14,6 @@
 #include "DLC/PakFileManager.h"
 #include "UI/SimpleDialog.h"
 #include "UI/Menu/GameMenuWidget.h"
-#include "UI/Menu/OtherPlayerPopupMenu.h"
 #include "UI/Menu/InstanceArea/InstanceAreaTicketMenuWidget.h"
 #include "Components/CapsuleComponent.h"
 #include "Packet/PacketGameReady.h"
@@ -36,7 +35,6 @@
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
 	: Super(ObjectInitializer)
 	, pMainHUD(nullptr)
-	, pOtherPlayerMenu(nullptr)
 	, bInitializedMainHUD(false)
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -173,23 +171,6 @@ void AActiveGameMode::SetHiddenMainHUD(bool bHidden)
 	}
 }
 
-// 他人のポップアップメニューを表示.
-void AActiveGameMode::ShowOtherPlayerPopupMenu(AOtherPlayerCharacter *pCharacter)
-{
-	// 一旦消去.
-	EraseOtherPlayerPopupMenu();
-
-	pOtherPlayerMenu = UOtherPlayerPopupMenu::Show(this, pCharacter);
-}
-
-// 他人のポップアップメニューを消去.
-void AActiveGameMode::EraseOtherPlayerPopupMenu()
-{
-	if (pOtherPlayerMenu == nullptr) { return; }
-
-	pOtherPlayerMenu->RemoveFromParent();
-	pOtherPlayerMenu = nullptr;
-}
 
 // 天球をセット。
 void AActiveGameMode::RegisterSkyControl(ASkyControl *pSky)

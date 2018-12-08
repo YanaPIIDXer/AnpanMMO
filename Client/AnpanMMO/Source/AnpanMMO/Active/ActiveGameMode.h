@@ -16,7 +16,6 @@
 
 class UMainHUD;
 class UGameMenuWidget;
-class UOtherPlayerPopupMenu;
 class ULevelManager;
 class AOtherPlayerCharacter;
 
@@ -59,12 +58,6 @@ public:
 	// メインHUDを表示するかどうかを設定.
 	void SetHiddenMainHUD(bool bHidden);
 
-	// 他人のポップアップメニューを表示.
-	void ShowOtherPlayerPopupMenu(AOtherPlayerCharacter *pCharacter);
-
-	// 他人のポップアップメニューを消去.
-	void EraseOtherPlayerPopupMenu();
-
 	// パーティ情報取得.
 	const PartyInformation &GetPartyInfo() const { return PartyInfo; }
 
@@ -102,10 +95,6 @@ private:
 	// MainHUD
 	UPROPERTY()
 	UMainHUD *pMainHUD;
-
-	// 他人のポップアップメニュー
-	UPROPERTY()
-	UOtherPlayerPopupMenu *pOtherPlayerMenu;
 
 	// レベル管理.
 	UPROPERTY()
