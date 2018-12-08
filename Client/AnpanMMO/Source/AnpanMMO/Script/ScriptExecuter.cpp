@@ -21,7 +21,7 @@ void ScriptExecuter::RunScript(const FString &FileName)
 	if (pFileHandle == nullptr)
 	{
 		FString ErrorMsg = "ScriptFile:" + FileName + " Load Failed...";
-		OnExecuteError(TCHAR_TO_ANSI(*ErrorMsg));
+		OnExecuteError(TCHAR_TO_UTF8(*ErrorMsg));
 		return;
 	}
 	int32 DataSize = pFileHandle->Size();
@@ -31,21 +31,22 @@ void ScriptExecuter::RunScript(const FString &FileName)
 	pFileHandle->Flush();
 	delete pFileHandle;
 
-	ExecuteScript((const char *) pData);
+	// BOMコードを無視する。
+	ExecuteScript((const char *) (pData + 3));
 	delete[] pData;
 }
 
 // メッセージを表示.
 void ScriptExecuter::ShowMessage_Impl(const std::string &Message)
 {
-	FString Msg = ANSI_TO_TCHAR(Message.c_str());
+	FString Msg = UTF8_TO_TCHAR(Message.c_str());
 	pGameMode->ShowScriptMessage(Msg);
 }
 
 // 選択肢をプッシュ.
 void ScriptExecuter::PushSelection_Impl(const std::string &Message)
 {
-	pGameMode->AddScriptSelection(ANSI_TO_TCHAR(Message.c_str()));
+	pGameMode->AddScriptSelection(UTF8_TO_TCHAR(Message.c_str()));
 }
 
 // 選択肢を表示.
@@ -68,7 +69,7 @@ bool ScriptExecuter::GetFlag(const char *pFlagName)
 // 実行エラー
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
 {
-	UE_LOG(LogTemp, Log, TEXT("ScriptError:%s"), ANSI_TO_TCHAR(ErrorMessage.c_str()));
+	UE_LOG(LogTemp, Log, TEXT("ScriptError:%s"), UTF8_TO_TCHAR(ErrorMessage.c_str()));
 
 	// とりあえず終了する。
 	pGameMode->FinishScript();
@@ -83,5 +84,5 @@ void ScriptExecuter::OnFinished()
 // デバッグ用メッセージを表示.
 void ScriptExecuter::ShowDebugMessage(const std::string &Message)
 {
-	UE_LOG(LogTemp, Log, TEXT("Script Debug Message:%s"), ANSI_TO_TCHAR(Message.c_str()));
+	UE_LOG(LogTemp, Log, TEXT("Script Debug Message:%s"), UTF8_TO_TCHAR(Message.c_str()));
 }
