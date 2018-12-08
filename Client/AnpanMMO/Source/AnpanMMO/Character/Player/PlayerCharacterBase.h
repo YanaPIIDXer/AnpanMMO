@@ -38,8 +38,8 @@ public:
 	void Respawn();
 
 	// ‚‚³‚Ì”¼•ª‚ðŽæ“¾.
-	float GetHalfHeight() const { return GetCapsuleComponent()->GetScaledCapsuleHalfHeight(); }
-	
+	virtual float GetHalfHeight() const override { return GetCapsuleComponent()->GetScaledCapsuleHalfHeight(); }
+
 	// UUID‚ðŽæ“¾.
 	//virtual uint32 GetUuid() const = 0;
 	virtual uint32 GetUuid() const { return 0; }

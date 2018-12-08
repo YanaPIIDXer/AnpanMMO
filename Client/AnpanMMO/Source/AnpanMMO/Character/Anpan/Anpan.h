@@ -50,6 +50,9 @@ public:
 	// キャラクタタイプを取得.
 	virtual ECharacterType GetCharacterType() const override { return ECharacterType::Anpan; }
 
+	// 高さの半分を取得.
+	float GetHalfHeight() const override { return (BaseRadius * GetActorScale3D().X); }
+
 protected:
 
 	// 足元の座標を取得.

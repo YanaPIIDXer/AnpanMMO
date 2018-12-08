@@ -56,6 +56,9 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Status")
 	int32 GetMaxHp() const { return MaxHp; }
 
+	// 高さの半分を取得.
+	virtual float GetHalfHeight() const { return 0.0f; }
+	
 	// キャラクタタイプを取得.
 	UFUNCTION(BlueprintPure, Category = "Character")
 	virtual ECharacterType GetCharacterType() const { return ECharacterType::None; }

@@ -31,7 +31,7 @@ ANPCCharacter *ANPCCharacter::Spawn(UWorld *pWorld, const NPCItem *pItem)
 
 	USkeletalMesh *pMesh = pDataAsset->Get(pResourceItem->Index);
 	check(pMesh != nullptr);
-	pChara->GetMesh()->SetSkeletalMesh(pMesh);
+	pChara->SetupMesh(pMesh);
 
 	return pChara;
 }
@@ -39,6 +39,15 @@ ANPCCharacter *ANPCCharacter::Spawn(UWorld *pWorld, const NPCItem *pItem)
 // コンストラクタ
 ANPCCharacter::ANPCCharacter(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, HalfHeight(0.0f)
 {
 }
 
+
+// メッシュのセットアップ
+void ANPCCharacter::SetupMesh(USkeletalMesh *pMesh)
+{
+	GetMesh()->SetSkeletalMesh(pMesh);
+	HalfHeight = pMesh->GetBounds().BoxExtent.GetMax() - pMesh->GetBounds().BoxExtent.GetMin();
+	HalfHeight *= 0.5f;
+}
