@@ -121,6 +121,11 @@ void ScriptExecuterBase::BindFunction(lua_CFunction Func, const char *pName	)
 // StateÇê∂ê¨.
 void ScriptExecuterBase::CreateState()
 {
+	if (pState != NULL)
+	{
+		CloseState();
+	}
+
 	pState = luaL_newstate();
 	luaL_openlibs(pState);
 	luaopen_base(pState);
