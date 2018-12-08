@@ -3,6 +3,7 @@
 
 #include "TCPConnection.h"
 #include "Packet/PacketID.h"
+#include "Script/ScriptExecuter.h"
 
 class PacketBase;
 class ClientStateBase;
@@ -51,6 +52,9 @@ public:
 	// ※主に別プロセスからの受信時に使用。
 	void RecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 
+	// スクリプトを取得.
+	ScriptExecuter *GetScript() { return &Script; }
+
 protected:
 
 	// データを受信した。
@@ -69,6 +73,9 @@ private:
 
 	// キャラクタ
 	shared_ptr<PlayerCharacter> pCharacter;
+
+	// スクリプト
+	ScriptExecuter Script;
 
 };
 
