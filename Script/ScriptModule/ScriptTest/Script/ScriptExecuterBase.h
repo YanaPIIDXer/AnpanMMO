@@ -29,6 +29,12 @@ public:
 	// スクリプトの実行を再開.
 	void Resume();
 
+	// 即Resumeする。
+	// Lua側から呼び出された関数がreturn 0;する前にResumeすると問題が起こるため
+	// その対処。
+	// 主にサーバ側で使用する。
+	void QuickResume();
+
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message) = 0;
 
