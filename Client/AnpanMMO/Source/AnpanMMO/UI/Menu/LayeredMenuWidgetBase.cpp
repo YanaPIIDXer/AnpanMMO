@@ -78,6 +78,8 @@ void ULayeredMenuWidgetBase::Back()
 // 子を表示.
 void ULayeredMenuWidgetBase::ShowChild(ULayeredMenuWidgetBase *pInChildMenu, bool bHideSelf)
 {
+	CloseChild();		// 子が別に開いていた場合は閉じる。
+
 	if (bHideSelf)
 	{
 		SetVisibility(ESlateVisibility::Hidden);
