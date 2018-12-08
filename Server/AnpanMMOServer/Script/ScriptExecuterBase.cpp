@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "ScriptExecuterBase.h"
 #include <iostream>
 #include <stdio.h>
