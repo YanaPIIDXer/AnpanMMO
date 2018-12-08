@@ -32,6 +32,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Menu")
 	void Close();
 
+	// 子を閉じる。
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void CloseChild();
+
 	// パケットを受信した。
 	virtual void OnRecvPacket(PacketID ID) {}
 
@@ -52,13 +56,17 @@ protected:
 
 	// 子を表示.
 	UFUNCTION(BlueprintCallable, Category = "Menu")
-	void ShowChild(ULayeredMenuWidgetBase *pChildMenu, bool bHideSelf = true);
+	void ShowChild(ULayeredMenuWidgetBase *pInChildMenu, bool bHideSelf = true);
 
 private:
 
 	// 親メニュー
 	UPROPERTY()
 	ULayeredMenuWidgetBase *pParentMenu;
+
+	// 子メニュー
+	UPROPERTY()
+	ULayeredMenuWidgetBase *pChildMenu;
 
 	// ZOrder
 	int32 ZOrder;
