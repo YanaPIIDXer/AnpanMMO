@@ -6,27 +6,26 @@
 
 // コンストラクタ
 ScriptExecuterBase::ScriptExecuterBase()
-	: pCoroutineState(NULL)
+	: pState(NULL)
+	, pCoroutineState(NULL)
 	, CoroutineRef(0)
 	, ScriptDir("")
 	, Id(0)
 {
-	pState = luaL_newstate();
-	luaL_openlibs(pState);
-	luaopen_base(pState);
-	BindFunctions();
 }
 
 // デストラクタ
 ScriptExecuterBase::~ScriptExecuterBase()
 {
 	ExecuterPool::GetInstance().Remove(Id);
-	lua_close(pState);
+	CloseState();
 }
 
 // スクリプトを実行。
 void ScriptExecuterBase::ExecuteScript(const char *pScript)
 {
+	CreateState();
+
 	// 関数定義を自動でincludeする。
 	std::string Include = "dofile( '";
 	Include += ScriptDir;
@@ -64,7 +63,10 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	lua_getglobal(pState, "main");
 
 	// 自分自身（のＩＤ）を登録。
-	Id = ExecuterPool::GetInstance().Register(this);
+	if (Id == 0)
+	{
+		Id = ExecuterPool::GetInstance().Register(this);
+	}
 	lua_pushnumber(pState, Id);
 	lua_setglobal(pState, "this");
 
@@ -79,6 +81,7 @@ void ScriptExecuterBase::Resume()
 	int Ret = lua_tointeger(pState, -1);
 	if (Ret == 0)
 	{
+		CloseState();
 		OnFinished();
 	}
 }
@@ -105,4 +108,22 @@ void ScriptExecuterBase::BindFunctions()
 void ScriptExecuterBase::BindFunction(lua_CFunction Func, const char *pName	)
 {
 	lua_register(pState, pName, Func);
+}
+
+// Stateを生成.
+void ScriptExecuterBase::CreateState()
+{
+	pState = luaL_newstate();
+	luaL_openlibs(pState);
+	luaopen_base(pState);
+	BindFunctions();
+}
+
+// StateをClose
+void ScriptExecuterBase::CloseState()
+{
+	if (pState == NULL) { return; }
+
+	lua_close(pState);	
+	pState = NULL;
 }

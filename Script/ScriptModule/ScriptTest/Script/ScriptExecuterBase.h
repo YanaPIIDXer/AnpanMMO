@@ -79,6 +79,12 @@ private:
 	// 関数をバインド。
 	void BindFunction(lua_CFunction Func, const char *pName);
 
+	// Stateを生成.
+	void CreateState();
+
+	// StateをClose
+	void CloseState();
+
 };
 
 #endif		// #ifndef __SCRIPTEXECUTERBASE_H__
