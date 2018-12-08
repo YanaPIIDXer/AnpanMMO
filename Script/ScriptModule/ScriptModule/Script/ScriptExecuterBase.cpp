@@ -78,14 +78,7 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 // スクリプトの実行を再開。
 void ScriptExecuterBase::Resume()
 {
-	if (lua_resume(pState, pCoroutineState, 0))
-	{
-		std::string ErrorMsg = "Execute Error:";
-		ErrorMsg += lua_tostring(pState, -1);
-		OnExecuteError(ErrorMsg);
-		return;
-	}
-
+	lua_resume(pState, pCoroutineState, 0);
 	int Ret = lua_tointeger(pState, -1);
 	if (Ret == 0)
 	{
