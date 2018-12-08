@@ -101,6 +101,7 @@ void ScriptExecuterBase::OnSelectedSelection(int Index)
 {
 	lua_pushnumber(pState, Index);
 	lua_setglobal(pState, "Selected");
+	Resume();
 }
 
 
