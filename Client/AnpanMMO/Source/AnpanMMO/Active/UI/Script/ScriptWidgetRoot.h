@@ -7,6 +7,7 @@
 #include "ScriptWidgetRoot.generated.h"
 
 class UScriptMessageWidget;
+class UScriptSelectionWidget;
 
 /**
  * スクリプトWidgetの親.
@@ -32,6 +33,12 @@ public:
 	// メッセージ表示.
 	void ShowMessage(const FString &Message);
 
+	// 選択肢を追加.
+	void AddSelection(const FString &Item);
+
+	// 選択肢を表示.
+	void ShowSelection();
+
 	// Widgetを閉じる。
 	void CloseWidget();
 
@@ -40,6 +47,10 @@ private:
 	// メッセージWidget
 	UPROPERTY()
 	UScriptMessageWidget *pMessageWidget;
+
+	// 選択肢Widget
+	UPROPERTY()
+	UScriptSelectionWidget *pSelectionWidget;
 
 	// 現在表示中のWidget
 	UPROPERTY()

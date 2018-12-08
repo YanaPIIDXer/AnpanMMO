@@ -45,14 +45,13 @@ void ScriptExecuter::ShowMessage_Impl(const std::string &Message)
 // 選択肢をプッシュ.
 void ScriptExecuter::PushSelection_Impl(const std::string &Message)
 {
+	pGameMode->AddScriptSelection(ANSI_TO_TCHAR(Message.c_str()));
 }
 
 // 選択肢を表示.
 void ScriptExecuter::ShowSelection_Impl()
 {
-	UE_LOG(LogTemp, Log, TEXT("Show Selection"));
-	// 実験中は問答無用でインデックス０を選択。
-	OnSelectedSelection(0);
+	pGameMode->ShowScriptSelection();
 }
 
 // フラグをセット

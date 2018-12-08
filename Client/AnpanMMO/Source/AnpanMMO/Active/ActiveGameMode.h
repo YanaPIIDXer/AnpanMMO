@@ -77,6 +77,12 @@ public:
 	// スクリプトのメッセージ表示.
 	void ShowScriptMessage(const FString &Message);
 
+	// スクリプトの選択肢を追加.
+	void AddScriptSelection(const FString &Item);
+
+	// スクリプトの選択肢を表示.
+	void ShowScriptSelection();
+
 	// スクリプト終了.
 	void FinishScript();
 

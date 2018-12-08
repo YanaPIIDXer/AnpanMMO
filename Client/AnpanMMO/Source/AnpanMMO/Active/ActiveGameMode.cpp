@@ -200,6 +200,18 @@ void AActiveGameMode::ShowScriptMessage(const FString &Message)
 	pScriptWidget->ShowMessage(Message);
 }
 
+// スクリプトの選択肢を追加。
+void AActiveGameMode::AddScriptSelection(const FString &Item)
+{
+	pScriptWidget->AddSelection(Item);
+}
+
+// スクリプトの選択肢を表示.
+void AActiveGameMode::ShowScriptSelection()
+{
+	pScriptWidget->ShowSelection();
+}
+
 // スクリプト終了.
 void AActiveGameMode::FinishScript()
 {
