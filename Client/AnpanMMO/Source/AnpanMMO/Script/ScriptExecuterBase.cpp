@@ -70,6 +70,8 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	pCoroutineState = lua_newthread(pState);
 	lua_getglobal(pState, "main");
 
+	lua_settop(pState, 0);
+
 	// 実行開始。
 	Resume();
 }
