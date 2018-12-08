@@ -18,15 +18,9 @@ APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectIniti
 
 	pMeshComponent->SetRelativeLocation(FVector(0, 0, -110.0f));
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
-	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
-	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_Pawn);
-	pMeshComponent->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_WorldStatic, ECollisionResponse::ECR_Block);
 	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel2, ECollisionResponse::ECR_Overlap);
-	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Block);
-	pMeshComponent->SetGenerateOverlapEvents(true);
-	SetActorEnableCollision(true);
-
+	
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;

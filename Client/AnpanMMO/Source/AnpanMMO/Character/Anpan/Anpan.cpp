@@ -49,6 +49,8 @@ AAnpan::AAnpan(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent->SetStaticMesh(MeshFinder.Object);
 	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel1);
+	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel1, ECollisionResponse::ECR_Block);
+
 	pMeshComponent->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
 	pMeshComponent->SetupAttachment(RootComponent);

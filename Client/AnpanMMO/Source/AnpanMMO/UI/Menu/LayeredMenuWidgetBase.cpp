@@ -8,6 +8,7 @@
 ULayeredMenuWidgetBase::ULayeredMenuWidgetBase(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, pParentMenu(nullptr)
+	, pChildMenu(nullptr)
 	, ZOrder(0)
 {
 }
@@ -45,6 +46,15 @@ void ULayeredMenuWidgetBase::Close()
 	}
 }
 
+// 子を閉じる
+void ULayeredMenuWidgetBase::CloseChild()
+{
+	if (pChildMenu == nullptr) { return; }
+	
+	pChildMenu->RemoveFromParent();
+	pChildMenu = nullptr;
+}
+
 
 // 戻る
 void ULayeredMenuWidgetBase::Back()
@@ -66,12 +76,15 @@ void ULayeredMenuWidgetBase::Back()
 }
 
 // 子を表示.
-void ULayeredMenuWidgetBase::ShowChild(ULayeredMenuWidgetBase *pChildMenu, bool bHideSelf)
+void ULayeredMenuWidgetBase::ShowChild(ULayeredMenuWidgetBase *pInChildMenu, bool bHideSelf)
 {
+	CloseChild();		// 子が別に開いていた場合は閉じる。
+
 	if (bHideSelf)
 	{
 		SetVisibility(ESlateVisibility::Hidden);
 	}
+	pChildMenu = pInChildMenu;
 	pChildMenu->pParentMenu = this;
 	pChildMenu->Show(ZOrder + 1);
 }

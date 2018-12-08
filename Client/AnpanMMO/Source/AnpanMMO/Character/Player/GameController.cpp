@@ -4,6 +4,7 @@
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "Active/ActiveGameMode.h"
+#include "Active/UI/MainHUD.h"
 #include "Engine/Public/DrawDebugHelpers.h"
 
 class AOtherPlayerCharacter;
@@ -22,6 +23,8 @@ AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 	, PrevTouchLocation(FVector2D::ZeroVector)
 	, bEnableMove(true)
 	, SwipeValue(0.0f)
+	, pCurrentTarget(nullptr)
+	, bHasTarget(false)
 {
 }
 
@@ -44,25 +47,13 @@ void AGameController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	// ↓本来なら不要なNULLチェックなんだけど突如落ちるようになったので。
-	if (pCharacter == nullptr) { return; }
+	MoveProc();
 
-	if (pCharacter->IsDead()) { return; }
-
-	if (!bEnableMove) { return; }
-
-	if (InputVector == FVector::ZeroVector) { return; }
-	InputVector.Normalize();
-	FRotator CameraRot = pCamera->GetActorRotation();
-	CameraRot.Pitch = 0.0f;
-	CameraRot.Roll = 0.0f;
-	FVector Vec = CameraRot.RotateVector(InputVector);
-	pCharacter->AddMovementInput(Vec);
-
-	if (InputVector.SizeSquared() > 0.0f)
+	if (bHasTarget && pCurrentTarget == nullptr)
 	{
-		FRotator Rot = Vec.Rotation();
-		pCharacter->SetActorRotation(Rot);
+		// ターゲットにしていたキャラが消えた。
+		bHasTarget = false;
+		NoticeTargetChanged();
 	}
 }
 
@@ -90,7 +81,7 @@ bool AGameController::InputTouch(uint32 Handle, ETouchType::Type Type, const FVe
 
 			if (SwipeValue <= TapCheckThreshold)
 			{
-				RayTraceToOtherPlayer(TouchLocation);
+				RayTraceForTarget(TouchLocation);
 			}
 			break;
 	}
@@ -121,6 +112,31 @@ void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
 	pInputComponent->BindAction(AttackBind, EInputEvent::IE_Pressed, pCharacter.Get(), &AGameCharacter::Attack);
 }
 
+// 移動処理.
+void AGameController::MoveProc()
+{
+	// ↓本来なら不要なNULLチェックなんだけど突如落ちるようになったので。
+	if (pCharacter == nullptr) { return; }
+
+	if (pCharacter->IsDead()) { return; }
+
+	if (!bEnableMove) { return; }
+
+	if (InputVector == FVector::ZeroVector) { return; }
+	InputVector.Normalize();
+	FRotator CameraRot = pCamera->GetActorRotation();
+	CameraRot.Pitch = 0.0f;
+	CameraRot.Roll = 0.0f;
+	FVector Vec = CameraRot.RotateVector(InputVector);
+	pCharacter->AddMovementInput(Vec);
+
+	if (InputVector.SizeSquared() > 0.0f)
+	{
+		FRotator Rot = Vec.Rotation();
+		pCharacter->SetActorRotation(Rot);
+	}
+}
+
 // 前後移動.
 void AGameController::MoveForward(float Value)
 {
@@ -133,8 +149,8 @@ void AGameController::MoveRight(float Value)
 	InputVector.Y = Value;
 }
 
-// 他人に対するレイトレース
-void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
+// ターゲットを決めるためのレイトレース
+void AGameController::RayTraceForTarget(const FVector2D &ScreenPos)
 {
 	FVector Pos;
 	FVector Direction;
@@ -149,16 +165,57 @@ void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
 	FHitResult Result;
 	if (!GetWorld()->LineTraceSingleByChannel(Result, Start, End, ECollisionChannel::ECC_GameTraceChannel3))
 	{
-		pGameMode->EraseOtherPlayerPopupMenu();
+		if (bHasTarget)
+		{
+			if (pCurrentTarget != nullptr)
+			{
+				pCurrentTarget->DestroyTargetCircle();
+			}
+
+			pCurrentTarget = nullptr;
+			bHasTarget = false;
+			NoticeTargetChanged();
+		}
 		return;
 	}
 
-	AOtherPlayerCharacter *pCharacter = Cast<AOtherPlayerCharacter>(Result.GetActor());
-	if (pCharacter == nullptr)
+	ACharacterBase *pChara = Cast<ACharacterBase>(Result.GetActor());
+	if (pChara != nullptr)
 	{
-		pGameMode->EraseOtherPlayerPopupMenu();
-		return;
-	}
+		if (pChara != pCurrentTarget)
+		{
+			if (pCurrentTarget != nullptr)
+			{
+				pCurrentTarget->DestroyTargetCircle();
+			}
 
-	pGameMode->ShowOtherPlayerPopupMenu(pCharacter);
+			pCurrentTarget = pChara;
+			pCurrentTarget->SpawnTargetCircle();
+			bHasTarget = true;
+			NoticeTargetChanged();
+		}
+	}
+	else
+	{
+		if (bHasTarget)
+		{
+			if (pCurrentTarget != nullptr)
+			{
+				pCurrentTarget->DestroyTargetCircle();
+			}
+
+			pCurrentTarget = nullptr;
+			bHasTarget = false;
+			NoticeTargetChanged();
+		}
+	}
+}
+
+// ターゲット切り替え通知.
+void AGameController::NoticeTargetChanged()
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	pGameMode->GetMainHUD()->OnTargetChanged(pCurrentTarget.Get());
 }

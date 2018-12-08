@@ -6,12 +6,34 @@
 #include "GameFramework/Character.h"
 #include "CharacterBase.generated.h"
 
+// キャラクタタイプ
+UENUM(BlueprintType, Category = "Character")
+enum class ECharacterType : uint8
+{
+	None UMETA(Hidden),
+
+	// 自分
+	Player,
+
+	// 他人.
+	Other,
+
+	// アンパン.
+	Anpan,
+
+	// NPC
+	NPC,
+};
+
+class ATargetCircle;
+
 /**
  * キャラクタ基底クラス
  */
 UCLASS()
 class ANPANMMO_API ACharacterBase : public ACharacter
 {
+
 	GENERATED_BODY()
 
 public:
@@ -35,6 +57,19 @@ public:
 	// 最大HP取得.
 	UFUNCTION(BlueprintPure, Category = "Status")
 	int32 GetMaxHp() const { return MaxHp; }
+
+	// 高さの半分を取得.
+	virtual float GetHalfHeight() const { return 0.0f; }
+	
+	// キャラクタタイプを取得.
+	UFUNCTION(BlueprintPure, Category = "Character")
+	virtual ECharacterType GetCharacterType() const { return ECharacterType::None; }
+
+	// ターゲットサークルを生成.
+	void SpawnTargetCircle();
+
+	// ターゲットサークルを撤去.
+	void DestroyTargetCircle();
 
 protected:
 
@@ -64,5 +99,8 @@ private:
 
 	// 最大HP
 	int32 MaxHp;
+
+	// ターゲットサークル
+	TWeakObjectPtr<ATargetCircle> pTargetCircle;
 	
 };

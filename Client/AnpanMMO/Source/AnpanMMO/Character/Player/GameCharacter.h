@@ -54,6 +54,9 @@ public:
 
 	// キャラクタ名を取得.
 	virtual FString GetCharacterName() const override { return Status.GetName(); }
+	
+	// キャラクタタイプを取得.
+	virtual ECharacterType GetCharacterType() const override { return ECharacterType::Player; }
 
 protected:
 

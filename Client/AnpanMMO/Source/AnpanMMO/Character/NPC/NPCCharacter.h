@@ -31,9 +31,22 @@ public:
 	// ID取得.
 	uint32 GetId() const { return Id; }
 
+	// キャラクタタイプを取得.
+	virtual ECharacterType GetCharacterType() const override { return ECharacterType::NPC; }
+
+	// 高さの半分を取得.
+	float GetHalfHeight() const override { return HalfHeight; }
+
 private:
 	
 	// ID
 	uint32 Id;
+
+	// 半分の高さ
+	float HalfHeight;
+
+
+	// メッシュのセットアップ
+	void SetupMesh(USkeletalMesh *pMesh);
 
 };
