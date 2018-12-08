@@ -79,6 +79,13 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 void ScriptExecuterBase::Resume()
 {
 	lua_resume(pState, pCoroutineState, 0);
+	if (!lua_isinteger(pState, -1))
+	{
+		std::string ErrorMsg = "Execute Error:";
+		ErrorMsg += lua_tostring(pState, -1);
+		OnExecuteError(ErrorMsg);
+		return;
+	}
 	int Ret = lua_tointeger(pState, -1);
 	if (Ret == 0)
 	{

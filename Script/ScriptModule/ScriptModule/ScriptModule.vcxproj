@@ -100,7 +100,8 @@
     </PostBuildEvent>
     <Lib />
     <PreBuildEvent>
-      <Command>copy Script\*.h ..\ScriptTest\Script\</Command>
+      <Command>copy Script\*.h ..\ScriptTest\Script\
+copy Script\*.cpp ..\ScriptTest\Script\</Command>
     </PreBuildEvent>
     <Lib />
     <Lib>
