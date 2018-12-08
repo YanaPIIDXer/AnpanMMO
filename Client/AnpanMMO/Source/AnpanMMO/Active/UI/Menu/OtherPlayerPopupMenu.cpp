@@ -65,8 +65,4 @@ void UOtherPlayerPopupMenu::SendPartyInvite()
 // ƒƒjƒ…[‚ğÁ‹.
 void UOtherPlayerPopupMenu::EraseMenu()
 {
-	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
-	check(pGameMode != nullptr);
-
-	pGameMode->EraseOtherPlayerPopupMenu();
 }
