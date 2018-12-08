@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "OtherPlayerPopupMenu.generated.h"
+#include "OtherPlayerMenu.generated.h"
 
 class AOtherPlayerCharacter;
 
@@ -12,21 +12,22 @@ class AOtherPlayerCharacter;
  * 他人に関するポップアップメニュー
  */
 UCLASS()
-class ANPANMMO_API UOtherPlayerPopupMenu : public UUserWidget
+class ANPANMMO_API UOtherPlayerMenu : public UUserWidget
 {
 
 	GENERATED_BODY()
 
 public:
 
-	// 表示.
-	static UOtherPlayerPopupMenu *Show(UObject *pOuter, AOtherPlayerCharacter *pCharacter);
-
 	// コンストラクタ
-	UOtherPlayerPopupMenu(const FObjectInitializer &ObjectInitializer);
+	UOtherPlayerMenu(const FObjectInitializer &ObjectInitializer);
 
 	// デストラクタ
-	virtual ~UOtherPlayerPopupMenu() {}
+	virtual ~UOtherPlayerMenu() {}
+
+	// セットアップ
+	UFUNCTION(BlueprintCallable, Category = "Menu")
+	void Setup(AOtherPlayerCharacter *pCharacter);
 
 protected:
 
@@ -38,19 +39,12 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Party")
 	void SendPartyInvite();
 
-	// メニューを消去.
-	UFUNCTION(BlueprintCallable, Category = "Menu")
-	void EraseMenu();
-
 
 	// キャラクタ名.
 	UPROPERTY(BlueprintReadOnly, Category = "Character")
 	FString CharacterName;
 
 private:
-
-	// アセットパス
-	static const TCHAR *AssetPath;
 
 	// キャラのUUID
 	uint32 CharacterUuid;
