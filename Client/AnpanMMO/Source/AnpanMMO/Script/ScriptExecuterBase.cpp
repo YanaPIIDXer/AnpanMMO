@@ -43,7 +43,7 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	// スクリプトの内容をコルーチン化.
 	std::string Script = "function main()\n";
 	Script += pScript;
-	Script += "\nreturn 1\n";
+	Script += "\nreturn 0\n";
 	Script += "end\n";
 
 	// 選択肢用にグローバル変数を用意。
