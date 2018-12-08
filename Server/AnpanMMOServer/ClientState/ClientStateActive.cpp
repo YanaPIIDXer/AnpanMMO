@@ -108,6 +108,10 @@ void ClientStateActive::OnRecvChat(MemoryStreamInterface *pStream)
 	PacketSendChat Packet;
 	Packet.Serialize(pStream);
 
+	// メッセージが空の時は何もしない。
+	if (Packet.Message == "") { return; }
+
+	// ワードチェックサーバに投げる。
 	WordCheckPacketChatRequest WordCheckPacket(GetParent()->GetUuid(), Packet.Type, Packet.Message);
 	WordCheckServerConnection::GetInstance()->SendPacket(&WordCheckPacket);
 }
