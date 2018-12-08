@@ -67,11 +67,11 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	lua_pushnumber(pState, Id);
 	lua_setglobal(pState, "this");
 
+	lua_settop(pState, 0);
+
 	// コルーチンの生成.
 	pCoroutineState = lua_newthread(pState);
 	lua_getglobal(pState, "main");
-
-	lua_settop(pState, 0);
 
 	// 実行開始。
 	Resume();
