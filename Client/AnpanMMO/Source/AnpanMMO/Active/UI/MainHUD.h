@@ -42,6 +42,11 @@ public:
 	void OnDamaged(int32 Value);
 	void OnDamaged_Implementation(int32 Value) {}
 
+	// ターゲットが変更された。
+	UFUNCTION(BlueprintNativeEvent, Category = "Target")
+	void OnTargetChanged(ACharacterBase *pCharacter);
+	void OnTargetChanged_Implementation(ACharacterBase *pCharacter) {}
+
 	// リスポンした。
 	UFUNCTION(BlueprintNativeEvent, Category = "Respawn")
 	void OnRespawn();

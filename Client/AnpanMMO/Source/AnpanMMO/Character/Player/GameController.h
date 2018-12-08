@@ -92,7 +92,10 @@ private:
 	// 左右移動.
 	void MoveRight(float Value);
 
-	// 他人に対するレイトレース
-	void RayTraceToOtherPlayer(const FVector2D &ScreenPos);
+	// ターゲットを決めるためのレイトレース
+	void RayTraceForTarget(const FVector2D &ScreenPos);
+
+	// ターゲット切り替え通知.
+	void NoticeTargetChanged();
 
 };

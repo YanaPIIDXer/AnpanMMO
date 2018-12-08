@@ -4,6 +4,7 @@
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "Active/ActiveGameMode.h"
+#include "Active/UI/MainHUD.h"
 #include "Engine/Public/DrawDebugHelpers.h"
 
 class AOtherPlayerCharacter;
@@ -51,8 +52,8 @@ void AGameController::Tick(float DeltaTime)
 	if (bHasTarget && pCurrentTarget == nullptr)
 	{
 		// ターゲットにしていたキャラが消えた。
-		// @TODO:キャラクタが消えた時の通知。
 		bHasTarget = false;
+		NoticeTargetChanged();
 	}
 }
 
@@ -80,7 +81,7 @@ bool AGameController::InputTouch(uint32 Handle, ETouchType::Type Type, const FVe
 
 			if (SwipeValue <= TapCheckThreshold)
 			{
-				RayTraceToOtherPlayer(TouchLocation);
+				RayTraceForTarget(TouchLocation);
 			}
 			break;
 	}
@@ -148,8 +149,8 @@ void AGameController::MoveRight(float Value)
 	InputVector.Y = Value;
 }
 
-// 他人に対するレイトレース
-void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
+// ターゲットを決めるためのレイトレース
+void AGameController::RayTraceForTarget(const FVector2D &ScreenPos)
 {
 	FVector Pos;
 	FVector Direction;
@@ -166,11 +167,10 @@ void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
 	{
 		if (bHasTarget)
 		{
-			// @TODO:ターゲットが外れた通知。
+			pCurrentTarget = nullptr;
+			bHasTarget = false;
+			NoticeTargetChanged();
 		}
-
-		pCurrentTarget = nullptr;
-		bHasTarget = false;
 		return;
 	}
 
@@ -181,17 +181,25 @@ void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
 		{
 			pCurrentTarget = pChara;
 			bHasTarget = true;
-			// @TODO:ターゲットが指定された通知.
+			NoticeTargetChanged();
 		}
 	}
 	else
 	{
 		if (bHasTarget)
 		{
-			// @TODO:ターゲットが外れた通知。
+			pCurrentTarget = nullptr;
+			bHasTarget = false;
+			NoticeTargetChanged();
 		}
-
-		pCurrentTarget = nullptr;
-		bHasTarget = false;
 	}
+}
+
+// ターゲット切り替え通知.
+void AGameController::NoticeTargetChanged()
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	pGameMode->GetMainHUD()->OnTargetChanged(pCurrentTarget.Get());
 }
