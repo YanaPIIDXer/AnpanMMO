@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "ScriptExecuterBase.h"
 
+class AActiveGameMode;
+
 /**
  * スクリプト制御クラス
  */
@@ -18,6 +20,9 @@ public:
 
 	// デストラクタ
 	virtual ~ScriptExecuter() {}
+
+	// GameModeを設定.
+	void SetGameMode(AActiveGameMode *pInGameMode) { pGameMode = pInGameMode; }
 
 	// スクリプトを実行.
 	void RunScript(const FString &FileName);
@@ -46,5 +51,8 @@ protected:
 	virtual void OnFinished() override;
 
 private:
+
+	// GameMode
+	TWeakObjectPtr<AActiveGameMode> pGameMode;
 
 };

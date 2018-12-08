@@ -32,6 +32,9 @@ void ULayeredMenuWidgetBase::Close()
 	RemoveFromParent();
 	OnMenuClosed.ExecuteIfBound();
 
+	// Žq‚à•Â‚¶‚éB
+	CloseChild();
+
 	if (pParentMenu != nullptr)
 	{
 		pParentMenu->Close();

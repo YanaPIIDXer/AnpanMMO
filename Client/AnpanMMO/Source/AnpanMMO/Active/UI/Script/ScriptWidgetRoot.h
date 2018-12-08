@@ -6,6 +6,8 @@
 #include "UI/Menu/LayeredMenuWidgetBase.h"
 #include "ScriptWidgetRoot.generated.h"
 
+class UScriptMessageWidget;
+
 /**
  * スクリプトWidgetの親.
  */
@@ -23,8 +25,21 @@ public:
 	// デストラクタ
 	virtual ~UScriptWidgetRoot() {}
 
+	// 初期化.
+	// ※Initializeと言う関数名にしたかったが既に使われているようだ。
+	void Init();
+
+	// メッセージ表示.
+	void ShowMessage(const FString &Message);
+
 private:
 	
+	// メッセージWidget
+	UPROPERTY()
+	UScriptMessageWidget *pMessageWidget;
 
+	// 現在表示中のWidget
+	UPROPERTY()
+	UUserWidget *pCurrentWidget;
 
 };

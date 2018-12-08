@@ -74,6 +74,12 @@ public:
 	// スクリプトの実行開始.
 	void StartScript(const FString &ScriptFileName);
 
+	// スクリプトのメッセージ表示.
+	void ShowScriptMessage(const FString &Message);
+
+	// スクリプト終了.
+	void FinishScript();
+
 protected:
 
 private:

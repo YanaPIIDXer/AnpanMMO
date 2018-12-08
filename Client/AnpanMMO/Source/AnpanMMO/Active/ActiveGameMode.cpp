@@ -94,9 +94,12 @@ void AActiveGameMode::BeginPlay()
 	NPCMgr.SetWorld(GetWorld());
 	NoticeMgr.OnRecvNoticeDelegate.BindUObject<UMainHUD>(pMainHUD, &UMainHUD::OnRecvNotice);
 	pLevelManager->OnLevelLoadFinished.BindUObject<AActiveGameMode>(this, &AActiveGameMode::OnLevelLoadFinished);
+	pScriptWidget->Init();
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
+
+	pInst->GetScript()->SetGameMode(this);
 
 	uint32 AreaId = pInst->GetAreaIdCache();
 	StartLevelLoad(AreaId);
@@ -189,6 +192,18 @@ void AActiveGameMode::StartScript(const FString &ScriptFileName)
 	check(pInst != nullptr);
 
 	pInst->GetScript()->RunScript(ScriptFileName);
+}
+
+// スクリプトのメッセージ表示.
+void AActiveGameMode::ShowScriptMessage(const FString &Message)
+{
+	pScriptWidget->ShowMessage(Message);
+}
+
+// スクリプト終了.
+void AActiveGameMode::FinishScript()
+{
+	pScriptWidget->Close();
 }
 
 
