@@ -48,6 +48,6 @@ ANPCCharacter::ANPCCharacter(const FObjectInitializer &ObjectInitializer)
 void ANPCCharacter::SetupMesh(USkeletalMesh *pMesh)
 {
 	GetMesh()->SetSkeletalMesh(pMesh);
-	HalfHeight = pMesh->GetBounds().BoxExtent.GetMax() - pMesh->GetBounds().BoxExtent.GetMin();
-	HalfHeight *= 0.5f;
+	// @HACK:’´“K“–B
+	HalfHeight = pMesh->GetBounds().SphereRadius * 0.1f;
 }

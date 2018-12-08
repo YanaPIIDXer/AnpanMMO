@@ -167,6 +167,11 @@ void AGameController::RayTraceForTarget(const FVector2D &ScreenPos)
 	{
 		if (bHasTarget)
 		{
+			if (pCurrentTarget != nullptr)
+			{
+				pCurrentTarget->DestroyTargetCircle();
+			}
+
 			pCurrentTarget = nullptr;
 			bHasTarget = false;
 			NoticeTargetChanged();
@@ -179,7 +184,13 @@ void AGameController::RayTraceForTarget(const FVector2D &ScreenPos)
 	{
 		if (pChara != pCurrentTarget)
 		{
+			if (pCurrentTarget != nullptr)
+			{
+				pCurrentTarget->DestroyTargetCircle();
+			}
+
 			pCurrentTarget = pChara;
+			pCurrentTarget->SpawnTargetCircle();
 			bHasTarget = true;
 			NoticeTargetChanged();
 		}
@@ -188,6 +199,11 @@ void AGameController::RayTraceForTarget(const FVector2D &ScreenPos)
 	{
 		if (bHasTarget)
 		{
+			if (pCurrentTarget != nullptr)
+			{
+				pCurrentTarget->DestroyTargetCircle();
+			}
+
 			pCurrentTarget = nullptr;
 			bHasTarget = false;
 			NoticeTargetChanged();

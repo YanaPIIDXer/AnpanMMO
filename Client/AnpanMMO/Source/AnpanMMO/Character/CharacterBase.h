@@ -6,7 +6,6 @@
 #include "GameFramework/Character.h"
 #include "CharacterBase.generated.h"
 
-
 // キャラクタタイプ
 UENUM(BlueprintType, Category = "Character")
 enum class ECharacterType : uint8
@@ -26,12 +25,15 @@ enum class ECharacterType : uint8
 	NPC,
 };
 
+class ATargetCircle;
+
 /**
  * キャラクタ基底クラス
  */
 UCLASS()
 class ANPANMMO_API ACharacterBase : public ACharacter
 {
+
 	GENERATED_BODY()
 
 public:
@@ -63,6 +65,12 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Character")
 	virtual ECharacterType GetCharacterType() const { return ECharacterType::None; }
 
+	// ターゲットサークルを生成.
+	void SpawnTargetCircle();
+
+	// ターゲットサークルを撤去.
+	void DestroyTargetCircle();
+
 protected:
 
 	// 初期化.
@@ -91,5 +99,8 @@ private:
 
 	// 最大HP
 	int32 MaxHp;
+
+	// ターゲットサークル
+	TWeakObjectPtr<ATargetCircle> pTargetCircle;
 	
 };
