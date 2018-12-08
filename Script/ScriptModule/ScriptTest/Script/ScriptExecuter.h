@@ -45,6 +45,9 @@ protected:
 	// デバッグメッセージ表示.
 	virtual void ShowDebugMessage(const std::string &Message);
 
+	// サーバモードか？
+	virtual bool IsServer() const { return true; }
+
 private:
 
 	// 選択肢リスト

@@ -15,6 +15,7 @@ int ShowMessage_Call(lua_State *pState)
 
 	const char *pMessage = luaL_checkstring(pState, -1);
 	if (pExecuter == NULL) { return 0; }
+
 	pExecuter->ShowMessage_Impl(pMessage);
 	return 0;
 }

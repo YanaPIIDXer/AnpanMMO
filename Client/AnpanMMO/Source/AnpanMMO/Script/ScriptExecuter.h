@@ -53,6 +53,9 @@ protected:
 	// デバッグ用メッセージを表示.
 	virtual void ShowDebugMessage(const std::string &Message) override;
 
+	// サーバモードか？
+	virtual bool IsServer() const override { return false; }
+
 private:
 
 	// GameMode
