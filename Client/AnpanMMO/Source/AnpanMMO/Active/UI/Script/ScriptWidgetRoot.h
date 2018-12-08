@@ -32,6 +32,9 @@ public:
 	// メッセージ表示.
 	void ShowMessage(const FString &Message);
 
+	// Widgetを閉じる。
+	void CloseWidget();
+
 private:
 	
 	// メッセージWidget

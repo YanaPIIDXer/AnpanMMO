@@ -203,7 +203,7 @@ void AActiveGameMode::ShowScriptMessage(const FString &Message)
 // スクリプト終了.
 void AActiveGameMode::FinishScript()
 {
-	pScriptWidget->Close();
+	pScriptWidget->CloseWidget();
 }
 
 

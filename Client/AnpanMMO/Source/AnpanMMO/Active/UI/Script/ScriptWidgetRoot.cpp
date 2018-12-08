@@ -27,3 +27,10 @@ void UScriptWidgetRoot::ShowMessage(const FString &Message)
 		ShowChild(pMessageWidget);
 	}
 }
+
+// Widget‚ğ•Â‚¶‚éB
+void UScriptWidgetRoot::CloseWidget()
+{
+	pCurrentWidget = nullptr;
+	Close();
+}
