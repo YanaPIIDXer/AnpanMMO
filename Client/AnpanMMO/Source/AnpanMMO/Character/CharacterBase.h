@@ -16,6 +16,9 @@ enum class ECharacterType : uint8
 	// ©•ª
 	Player,
 
+	// ‘¼l.
+	Other,
+
 	// ƒAƒ“ƒpƒ“.
 	Anpan,
 

@@ -22,6 +22,8 @@ AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 	, PrevTouchLocation(FVector2D::ZeroVector)
 	, bEnableMove(true)
 	, SwipeValue(0.0f)
+	, pCurrentTarget(nullptr)
+	, bHasTarget(false)
 {
 }
 
@@ -44,25 +46,13 @@ void AGameController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	// ↓本来なら不要なNULLチェックなんだけど突如落ちるようになったので。
-	if (pCharacter == nullptr) { return; }
+	MoveProc();
 
-	if (pCharacter->IsDead()) { return; }
-
-	if (!bEnableMove) { return; }
-
-	if (InputVector == FVector::ZeroVector) { return; }
-	InputVector.Normalize();
-	FRotator CameraRot = pCamera->GetActorRotation();
-	CameraRot.Pitch = 0.0f;
-	CameraRot.Roll = 0.0f;
-	FVector Vec = CameraRot.RotateVector(InputVector);
-	pCharacter->AddMovementInput(Vec);
-
-	if (InputVector.SizeSquared() > 0.0f)
+	if (bHasTarget && pCurrentTarget == nullptr)
 	{
-		FRotator Rot = Vec.Rotation();
-		pCharacter->SetActorRotation(Rot);
+		// ターゲットにしていたキャラが消えた。
+		// @TODO:キャラクタが消えた時の通知。
+		bHasTarget = false;
 	}
 }
 
@@ -121,6 +111,31 @@ void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
 	pInputComponent->BindAction(AttackBind, EInputEvent::IE_Pressed, pCharacter.Get(), &AGameCharacter::Attack);
 }
 
+// 移動処理.
+void AGameController::MoveProc()
+{
+	// ↓本来なら不要なNULLチェックなんだけど突如落ちるようになったので。
+	if (pCharacter == nullptr) { return; }
+
+	if (pCharacter->IsDead()) { return; }
+
+	if (!bEnableMove) { return; }
+
+	if (InputVector == FVector::ZeroVector) { return; }
+	InputVector.Normalize();
+	FRotator CameraRot = pCamera->GetActorRotation();
+	CameraRot.Pitch = 0.0f;
+	CameraRot.Roll = 0.0f;
+	FVector Vec = CameraRot.RotateVector(InputVector);
+	pCharacter->AddMovementInput(Vec);
+
+	if (InputVector.SizeSquared() > 0.0f)
+	{
+		FRotator Rot = Vec.Rotation();
+		pCharacter->SetActorRotation(Rot);
+	}
+}
+
 // 前後移動.
 void AGameController::MoveForward(float Value)
 {
@@ -150,7 +165,37 @@ void AGameController::RayTraceToOtherPlayer(const FVector2D &ScreenPos)
 	if (!GetWorld()->LineTraceSingleByChannel(Result, Start, End, ECollisionChannel::ECC_GameTraceChannel3))
 	{
 		pGameMode->EraseOtherPlayerPopupMenu();
+		if (bHasTarget)
+		{
+			// @TODO:ターゲットが外れた通知。
+		}
+
+		pCurrentTarget = nullptr;
+		bHasTarget = false;
+		UE_LOG(LogTemp, Log, TEXT("Ray Not Hit"));
 		return;
+	}
+
+	ACharacterBase *pChara = Cast<ACharacterBase>(Result.GetActor());
+	if (pChara != nullptr)
+	{
+		if (pChara != pCurrentTarget)
+		{
+			pCurrentTarget = pChara;
+			bHasTarget = true;
+			// @TODO:ターゲットが指定された通知.
+		}
+	}
+	else
+	{
+		pGameMode->EraseOtherPlayerPopupMenu();
+		if (bHasTarget)
+		{
+			// @TODO:ターゲットが外れた通知。
+		}
+
+		pCurrentTarget = nullptr;
+		bHasTarget = false;
 	}
 
 	AOtherPlayerCharacter *pCharacter = Cast<AOtherPlayerCharacter>(Result.GetActor());

@@ -49,13 +49,6 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Character")
 	virtual FString GetCharacterName() const { return ""; }
 
-	// キャラクタタイプを取得.
-	virtual ECharacterType GetCharacterType() const override { return ECharacterType::Player; }
-
-	// 自分自身か？
-	UFUNCTION(BlueprintPure, Category = "Character")
-	virtual bool IsSelf() const { return false; }
-
 protected:
 
 	// リスポンした

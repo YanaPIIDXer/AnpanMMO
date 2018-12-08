@@ -2,6 +2,7 @@
 
 #include "CharacterBase.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 
 // コンストラクタ
 ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
@@ -15,6 +16,14 @@ ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
 	auto *pCollisionComponent = GetCapsuleComponent();
 	pCollisionComponent->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 	pCollisionComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_WorldStatic, ECollisionResponse::ECR_Block);
+
+	auto *pMeshComponent = GetMesh();
+	pMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	pMeshComponent->SetCollisionObjectType(ECollisionChannel::ECC_Pawn);
+	pMeshComponent->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
+	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Block);
+	pMeshComponent->SetGenerateOverlapEvents(true);
+	SetActorEnableCollision(true);
 }
 
 // ダメージを与える。

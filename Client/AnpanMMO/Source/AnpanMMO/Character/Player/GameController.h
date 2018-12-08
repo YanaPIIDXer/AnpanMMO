@@ -69,12 +69,22 @@ private:
 	// スワイプ量.
 	float SwipeValue;
 
+	// 現在のターゲット
+	TWeakObjectPtr<ACharacterBase> pCurrentTarget;
+
+	// ターゲットがいるか？
+	// ※ターゲットが突然消えた等のケースに対応するために必要。
+	bool bHasTarget;
+
 
 	// カメラをSpawn
 	void SpawnCamera();
 
 	// PlayerInputComponentのセットアップ
 	void SetupPlayerInput(UInputComponent *pInputComponent);
+
+	// 移動処理.
+	void MoveProc();
 
 	// 前後移動.
 	void MoveForward(float Value);
