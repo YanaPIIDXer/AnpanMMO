@@ -8,20 +8,6 @@
 
 class USimpleDialog;
 
-// キャラクタタイプ
-UENUM(BlueprintType, Category = "Character")
-enum class ECharacterType : uint8
-{
-	// 自分
-	Player,
-
-	// 他人.
-	Other,
-
-	// 敵.
-	Enemy,
-};
-
 /**
  * Blueprint用関数群.
  */

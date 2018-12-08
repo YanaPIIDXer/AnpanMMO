@@ -31,6 +31,9 @@ public:
 	// ID取得.
 	uint32 GetId() const { return Id; }
 
+	// キャラクタタイプを取得.
+	virtual ECharacterType GetCharacterType() const override { return ECharacterType::NPC; }
+
 private:
 	
 	// ID

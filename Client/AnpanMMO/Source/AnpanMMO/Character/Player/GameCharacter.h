@@ -54,6 +54,9 @@ public:
 
 	// キャラクタ名を取得.
 	virtual FString GetCharacterName() const override { return Status.GetName(); }
+	
+	// 自分自身か？
+	virtual bool IsSelf() const override { return true; }
 
 protected:
 

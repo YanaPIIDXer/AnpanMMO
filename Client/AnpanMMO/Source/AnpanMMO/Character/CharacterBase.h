@@ -6,6 +6,23 @@
 #include "GameFramework/Character.h"
 #include "CharacterBase.generated.h"
 
+
+// キャラクタタイプ
+UENUM(BlueprintType, Category = "Character")
+enum class ECharacterType : uint8
+{
+	None UMETA(Hidden),
+
+	// 自分
+	Player,
+
+	// アンパン.
+	Anpan,
+
+	// NPC
+	NPC,
+};
+
 /**
  * キャラクタ基底クラス
  */
@@ -35,6 +52,10 @@ public:
 	// 最大HP取得.
 	UFUNCTION(BlueprintPure, Category = "Status")
 	int32 GetMaxHp() const { return MaxHp; }
+
+	// キャラクタタイプを取得.
+	UFUNCTION(BlueprintPure, Category = "Character")
+	virtual ECharacterType GetCharacterType() const { return ECharacterType::None; }
 
 protected:
 
