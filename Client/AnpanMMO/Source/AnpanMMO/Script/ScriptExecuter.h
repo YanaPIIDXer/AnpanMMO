@@ -50,6 +50,9 @@ protected:
 	// 終了した。
 	virtual void OnFinished() override;
 
+	// デバッグ用メッセージを表示.
+	virtual void ShowDebugMessage(const std::string &Message) override;
+
 private:
 
 	// GameMode

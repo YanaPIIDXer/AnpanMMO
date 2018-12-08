@@ -55,6 +55,12 @@ protected:
 	// 処理が終了した。
 	virtual void OnFinished() = 0;
 
+	// デバッグ用にスタックを表示.
+	void DebugPrintStack();
+
+	// デバッグメッセージを表示.
+	virtual void ShowDebugMessage(const std::string &Message) = 0;
+
 private:
 
 	// Luaステート

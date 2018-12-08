@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "ScriptExecuterBase.h"
 #include <iostream>
+#include <stdio.h>
 #include <functional>
 #include "ScriptBinds.h"
 #include "ExecuterPool.h"
@@ -101,7 +102,47 @@ void ScriptExecuterBase::OnSelectedSelection(int Index)
 {
 	lua_pushnumber(pState, Index);
 	lua_setglobal(pState, "Selected");
-	Resume();
+	//Resume();
+}
+
+
+// デバッグ用にスタックを表示.
+void ScriptExecuterBase::DebugPrintStack()
+{
+	// スタック数を取得
+	const int num = lua_gettop(pState);
+	if (num == 0)
+	{
+		ShowDebugMessage("No stack.");
+		return;
+	}
+
+	for (int i = num; i >= 1; --i)
+	{
+		// インデックス番号（昇順・降順）
+		//printf("%03d(%04d):", i, -num + i - 1);
+		char Str[256];
+		sprintf_s(Str, 256, "%03d(%04d):", i, -num + i - 1);
+		ShowDebugMessage(Str);
+
+		// 型確認
+		int type = lua_type(pState, i);
+		switch (type)
+		{
+			case LUA_TNIL: sprintf_s(Str, 256, "NIL"); break;
+			case LUA_TBOOLEAN: sprintf_s(Str, 256, "BOOLEAN %s", lua_toboolean(pState, i) ? "true" : "false"); break;
+			case LUA_TLIGHTUSERDATA: sprintf_s(Str, 256, "LIGHTUSERDATA"); break;
+			case LUA_TNUMBER: sprintf_s(Str, 256, "NUMBER %f", lua_tonumber(pState, i)); break;
+			case LUA_TSTRING: sprintf_s(Str, 256, "STRING %s", lua_tostring(pState, i)); break;
+			case LUA_TTABLE: sprintf_s(Str, 256, "TABLE"); break;
+			case LUA_TFUNCTION: sprintf_s(Str, 256, "FUNCTION"); break;
+			case LUA_TUSERDATA: sprintf_s(Str, 256, "USERDATA"); break;
+			case LUA_TTHREAD: sprintf_s(Str, 256, "THREAD"); break;
+		}
+		ShowDebugMessage(Str);
+	}
+
+	ShowDebugMessage("------------------------------");
 }
 
 

@@ -80,3 +80,9 @@ void ScriptExecuter::OnFinished()
 {
 	pGameMode->FinishScript();
 }
+
+// デバッグ用メッセージを表示.
+void ScriptExecuter::ShowDebugMessage(const std::string &Message)
+{
+	UE_LOG(LogTemp, Log, TEXT("Script Debug Message:%s"), Message.c_str());
+}

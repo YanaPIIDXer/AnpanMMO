@@ -55,3 +55,9 @@ void ScriptExecuter::OnFinished()
 {
 	std::cout << "OnFinished" << std::endl;
 }
+
+// デバッグメッセージ表示。
+void ScriptExecuter::ShowDebugMessage(const std::string &Message)
+{
+	std::cout << "DebugMessage:" << Message << std::endl;
+}
