@@ -6,6 +6,8 @@
 #include "DLC/DataAsset/NPCDataAsset.h"
 #include "Engine/World.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Active/ActiveGameMode.h"
+#include "Kismet/GameplayStatics.h"
 
 // Spawn
 ANPCCharacter *ANPCCharacter::Spawn(UWorld *pWorld, const NPCItem *pItem)
@@ -41,6 +43,18 @@ ANPCCharacter::ANPCCharacter(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
 	, HalfHeight(0.0f)
 {
+}
+
+// ˜b‚µ‚©‚¯‚é
+void ANPCCharacter::Talk()
+{
+	const NPCItem *pItem = MasterData::GetInstance().GetNPCMaster().Get(Id);
+	check(pItem != nullptr);
+
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	pGameMode->StartScript(pItem->ScriptName);
 }
 
 

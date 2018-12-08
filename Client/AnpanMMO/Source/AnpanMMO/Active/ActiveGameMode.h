@@ -18,6 +18,7 @@ class UMainHUD;
 class UGameMenuWidget;
 class ULevelManager;
 class AOtherPlayerCharacter;
+class UScriptWidgetRoot;
 
 /**
  * ゲーム中GameMode
@@ -70,6 +71,9 @@ public:
 	// 天球をセット。
 	void RegisterSkyControl(ASkyControl *pSky);
 
+	// スクリプトの実行開始.
+	void StartScript(const FString &ScriptFileName);
+
 protected:
 
 private:
@@ -99,6 +103,10 @@ private:
 	// レベル管理.
 	UPROPERTY()
 	ULevelManager *pLevelManager;
+
+	// スクリプトWidget
+	UPROPERTY()
+	UScriptWidgetRoot *pScriptWidget;
 
 	// パーティ情報.
 	PartyInformation PartyInfo;

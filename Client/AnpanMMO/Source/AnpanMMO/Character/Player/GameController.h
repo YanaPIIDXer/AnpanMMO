@@ -37,6 +37,10 @@ public:
 	// 動けるかどうかを設定.
 	void SetEnableMove(bool bInEnableMove) { bEnableMove = bInEnableMove; }
 
+	// ターゲットを取得.
+	UFUNCTION(BlueprintPure, Category = "Target")
+	ACharacterBase *GetCurrentTarget() const { return pCurrentTarget.Get(); }
+
 private:
 	
 	// 前後移動のバインド名.

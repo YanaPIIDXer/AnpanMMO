@@ -15,6 +15,7 @@
 #include "UI/SimpleDialog.h"
 #include "UI/Menu/GameMenuWidget.h"
 #include "UI/Menu/InstanceArea/InstanceAreaTicketMenuWidget.h"
+#include "UI/Script/ScriptWidgetRoot.h"
 #include "Components/CapsuleComponent.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
@@ -75,6 +76,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::TimeChange, std::bind(&TimeManager::OnRecvTimeChange, &TimeMgr, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
+	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
 }
 
 // 開始時の処理.
@@ -176,6 +178,17 @@ void AActiveGameMode::SetHiddenMainHUD(bool bHidden)
 void AActiveGameMode::RegisterSkyControl(ASkyControl *pSky)
 {
 	TimeMgr.SetSkyControl(pSky);
+}
+
+// スクリプトの実行開始.
+void AActiveGameMode::StartScript(const FString &ScriptFileName)
+{
+	pScriptWidget->Show();
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->GetScript()->RunScript(ScriptFileName);
 }
 
 
