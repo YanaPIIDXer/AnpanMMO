@@ -14,7 +14,7 @@ ScriptExecuter::ScriptExecuter()
 // スクリプトを実行.
 void ScriptExecuter::RunScript(const FString &FileName)
 {
-	FString Path = Config::GetScriptDirectory() + "\\" + FileName;
+	FString Path = Config::GetScriptDirectory() + "\\" + FileName + ".lua";
 
 	IPlatformFile &File = FPlatformFileManager::Get().GetPlatformFile();
 	IFileHandle *pFileHandle = File.OpenRead(*Path);
