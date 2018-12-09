@@ -43,41 +43,40 @@ namespace ScriptTransporter
 				}
 				
 				byte[] Bytes = Encoding.UTF8.GetBytes(Code);
-				string Result = "";
 				int Count = 0;
 				int Prev = -1;
-				foreach(byte bt in Bytes)
+
+				FileStream WriteStream = new FileStream(FilePath, FileMode.Create);
+				using (BinaryWriter BinWriter = new BinaryWriter(WriteStream))
 				{
-					for(int i = 0; i < sizeof(byte) * 8; i++)
+					foreach (byte bt in Bytes)
 					{
-						int Bit = (bt >> i) & 0x01;
-						if (Bit != Prev)
+						for (int i = 0; i < sizeof(byte) * 8; i++)
 						{
-							if (Prev != -1)
+							int Bit = (bt >> i) & 0x01;
+							if (Bit != Prev)
 							{
-								byte[] PrevBytes = BitConverter.GetBytes(Prev).Reverse().ToArray();
-								byte[] CountBytes = BitConverter.GetBytes(Count).Reverse().ToArray();
-								Result += PrevBytes;
-								Result += CountBytes;
+								if (Prev != -1)
+								{
+									byte[] PrevBytes = BitConverter.GetBytes(Prev).Reverse().ToArray();
+									byte[] CountBytes = BitConverter.GetBytes(Count).Reverse().ToArray();
+									BinWriter.Write(PrevBytes);
+									BinWriter.Write(CountBytes);
+								}
+								Count = 1;
+								Prev = Bit;
 							}
-							Count = 1;
-							Prev = Bit;
-						}
-						else;
-						{
-							Count++;
+							else;
+							{
+								Count++;
+							}
 						}
 					}
-				}
 
-				byte[] PrevByte = BitConverter.GetBytes(Prev).Reverse().ToArray();
-				byte[] CountByte = BitConverter.GetBytes(Count).Reverse().ToArray();
-				Result += PrevByte;
-				Result += CountByte;
-
-				using (StreamWriter Writer = new StreamWriter(FilePath))
-				{
-					Writer.Write(Result);
+					byte[] PrevByte = BitConverter.GetBytes(Prev).Reverse().ToArray();
+					byte[] CountByte = BitConverter.GetBytes(Count).Reverse().ToArray();
+					BinWriter.Write(PrevByte);
+					BinWriter.Write(CountByte);
 				}
 			}
 			catch(Exception e)
