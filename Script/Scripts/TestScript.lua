@@ -2,30 +2,17 @@
 ShowMessage("Test2")
 ShowMessage("Test3")
 ShowMessage("日本語テスト")
-PushSelection("Test1")
-PushSelection("Test2")
-PushSelection("Test3")
-ShowSelection()
-if (Selected == 0) then
-	ShowMessage("あなたが選択したのはTest1です。")
-elseif (Selected == 1) then
-	ShowMessage("あなたが選択したのはTest2です。")
-elseif (Selected == 2) then
-	ShowMessage("あなたが選択したのはTest3です。")
-else
-	ShowMessage("エラー")
-end
 
-local Flag = GetFlag("Flag")
-if (Flag) then
+local bFlag = GetFlag(Flag)
+if (bFlag) then
 	ShowMessage("フラグはtrueです。")
 else
 	ShowMessage("フラグはfalseです。")
 end
 
-SetFlag("Flag")
-Flag = GetFlag("Flag")
-if (Flag) then
+SetFlag(Flag)
+bFlag = GetFlag(Flag)
+if (bFlag) then
 	ShowMessage("フラグはtrueです。")
 else
 	ShowMessage("フラグはfalseです。")

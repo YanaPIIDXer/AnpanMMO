@@ -45,10 +45,10 @@ public:
 	void OnSelectedSelection(int Index);
 
 	// フラグをセット
-	virtual void SetFlag(const char *pFlagName) = 0;
+	virtual void SetFlag(int Flag) = 0;
 
 	// フラグを取得.
-	virtual bool GetFlag(const char *pFlagName) = 0;
+	virtual bool GetFlag(int Flag) = 0;
 
 protected:
 

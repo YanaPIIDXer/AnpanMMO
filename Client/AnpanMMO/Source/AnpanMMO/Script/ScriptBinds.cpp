@@ -49,8 +49,8 @@ int SetFlag_Call(lua_State *pState)
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	const char *pFlagName = luaL_checkstring(pState, -1);
-	pExecuter->SetFlag(pFlagName);
+	int Flag = luaL_checknumber(pState, -1);
+	pExecuter->SetFlag(Flag);
 	return 0;
 }
 
@@ -61,8 +61,8 @@ int GetFlag_Call(lua_State *pState)
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	const char *pFlagName = luaL_checkstring(pState, -1);
-	bool bFlag = pExecuter->GetFlag(pFlagName);
+	int Flag = luaL_checknumber(pState, -1);
+	bool bFlag = pExecuter->GetFlag(Flag);
 	lua_pushboolean(pState, bFlag);
 
 	return 1;
