@@ -14,21 +14,24 @@ public:
 	
 
 	std::string CharacterName;
+	u8 Job;
 	
 
 	PacketCreateCharacterRequest()
 	{
 	}
 
-	PacketCreateCharacterRequest(std::string InCharacterName)
+	PacketCreateCharacterRequest(std::string InCharacterName, u8 InJob)
 	{
 		CharacterName = InCharacterName;
+		Job = InJob;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&CharacterName);
+		pStream->Serialize(&Job);
 		
 		return true;
 	}
