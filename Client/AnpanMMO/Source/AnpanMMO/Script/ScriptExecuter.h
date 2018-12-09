@@ -61,4 +61,7 @@ private:
 	// GameMode
 	TWeakObjectPtr<AActiveGameMode> pGameMode;
 
+	// フラグマップ
+	TMap<int32, bool> FlagMap;
+
 };

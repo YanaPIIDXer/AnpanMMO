@@ -58,12 +58,18 @@ void ScriptExecuter::ShowSelection_Impl()
 // フラグをセット
 void ScriptExecuter::SetFlag(int Flag)
 {
+	if (!FlagMap.Contains(Flag))
+	{
+		FlagMap.Add(Flag);
+	}
+	FlagMap[Flag] = true;
 }
 
 // フラグを取得.
 bool ScriptExecuter::GetFlag(int Flag)
 {
-	return false;
+	if (!FlagMap.Contains(Flag)) { return false; }
+	return FlagMap[Flag];
 }
 
 // 実行エラー
