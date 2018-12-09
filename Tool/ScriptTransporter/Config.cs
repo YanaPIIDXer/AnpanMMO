@@ -18,5 +18,15 @@ namespace ScriptTransporter
 		/// </summary>
 		public static readonly string TransportSettingFileDirectory = "Targets";
 
+		/// <summary>
+		/// 一時ディレクトリ名.
+		/// </summary>
+		public static readonly string TemporaryDirectory = "Tmp";
+
+		/// <summary>
+		/// スクリプトディレクトリ名.
+		/// </summary>
+		public static readonly string ScriptDirectory = "Scripts";
+
 	}
 }

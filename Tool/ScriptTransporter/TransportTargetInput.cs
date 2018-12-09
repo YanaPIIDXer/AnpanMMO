@@ -63,6 +63,7 @@ namespace ScriptTransporter
 
 			using (StreamWriter Writer = new StreamWriter(Config.TransportSettingFileDirectory + "\\" + NameTextBox.Text + ".dat"))
 			{
+				Writer.WriteLine(HostTextBox.Text);
 				Writer.WriteLine(UserNameTextBox.Text);
 				Writer.WriteLine(PasswordTextBox.Text);
 				Writer.WriteLine(ClientDirectoryTextBox.Text);

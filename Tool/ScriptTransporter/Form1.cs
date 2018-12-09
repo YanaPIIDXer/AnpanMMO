@@ -49,8 +49,48 @@ namespace ScriptTransporter
 				ClientDir = Reader.ReadLine();
 				ServerDir = Reader.ReadLine();
 			}
+			
+			// 一時ディレクトリ作成.
+			if(!Directory.Exists(Config.TemporaryDirectory))
+			{
+				Directory.CreateDirectory(Config.TemporaryDirectory);
+			}
 
+			// スクリプトディレクトリのスクリプトを全部一時ディレクトリにコピー
+			string[] Scripts = Directory.GetFiles(Config.ScriptDirectory, "*.lua", SearchOption.TopDirectoryOnly);
+			foreach(var Script in Scripts)
+			{
+				File.Copy(Script, Config.TemporaryDirectory + "\\" + Path.GetFileName(Script));
+			}
 
+			// まずはサーバに転送。
+			Scripts = Directory.GetFiles(Config.TemporaryDirectory);
+			foreach(var Script in Scripts)
+			{
+				Console.Write(Path.GetFileName(Script) + "の転送中...");
+				FileTransporter Transporter = new FileTransporter(Script, Host, UserName, Password, ServerDir);
+				if(!Transporter.Transport())
+				{
+					Console.WriteLine("失敗。");
+					MessageBox.Show("転送に失敗しました。");
+					DeleteTemporaryDirectory();
+					return;
+				}
+
+				Console.WriteLine("成功。");
+			}
+
+			MessageBox.Show("転送が完了しました。");
+
+			DeleteTemporaryDirectory();
+		}
+
+		/// <summary>
+		/// 一時ディレクトリの削除.
+		/// </summary>
+		private void DeleteTemporaryDirectory()
+		{
+			Directory.Delete(Config.TemporaryDirectory, true);
 		}
 
 		/// <summary>
