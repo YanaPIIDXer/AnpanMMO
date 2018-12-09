@@ -1,19 +1,34 @@
-﻿ShowMessage("Test1")
-ShowMessage("Test2")
-ShowMessage("Test3")
-ShowMessage("日本語テスト")
+﻿ShowMessage("選択肢テスト")
+PushSelection("選択肢１")
+PushSelection("選択肢２")
+PushSelection("選択肢３")
+ShowSelection()
 
-local bFlag = GetFlag(Flag)
-if (bFlag) then
-	ShowMessage("フラグはtrueです。")
+if (Selected == 0) then
+	ShowMessage("選択肢１です。)
+	local bFlag = GetFlag(Test1)
+	if (!bFlag) then
+		ShowMessage("フラグが立っていないので立てます。")
+		SetFlag(Test1)
+	else
+		ShowMessage("フラグが立っています。")
+	end
+elseif (Selected == 1) then
+	ShowMessage("選択肢２です。)
+	local bFlag = GetFlag(Test2)
+	if (!bFlag) then
+		ShowMessage("フラグが立っていないので立てます。")
+		SetFlag(Test2)
+	else
+		ShowMessage("フラグが立っています。")
+	end
 else
-	ShowMessage("フラグはfalseです。")
-end
-
-SetFlag(Flag)
-bFlag = GetFlag(Flag)
-if (bFlag) then
-	ShowMessage("フラグはtrueです。")
-else
-	ShowMessage("フラグはfalseです。")
+	ShowMessage("選択肢３です。)
+	local bFlag = GetFlag(Test3)
+	if (!bFlag) then
+		ShowMessage("フラグが立っていないので立てます。")
+		SetFlag(Test3)
+	else
+		ShowMessage("フラグが立っています。")
+	end
 end
