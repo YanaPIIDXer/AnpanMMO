@@ -66,7 +66,7 @@ namespace ScriptTransporter
 								Count = 1;
 								Prev = Bit;
 							}
-							else;
+							else
 							{
 								Count++;
 							}
