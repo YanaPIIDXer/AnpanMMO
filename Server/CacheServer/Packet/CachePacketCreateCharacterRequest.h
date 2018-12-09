@@ -16,17 +16,19 @@ public:
 
 	u32 CustomerId;
 	std::string CharacterName;
+	u8 Job;
 	
 
 	CachePacketCreateCharacterRequest()
 	{
 	}
 
-	CachePacketCreateCharacterRequest(u32 InClientId, u32 InCustomerId, std::string InCharacterName)
+	CachePacketCreateCharacterRequest(u32 InClientId, u32 InCustomerId, std::string InCharacterName, u8 InJob)
 	{
 		ClientId = InClientId;
 		CustomerId = InCustomerId;
 		CharacterName = InCharacterName;
+		Job = InJob;
 		
 	}
 
@@ -35,6 +37,7 @@ public:
 		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&CustomerId);
 		pStream->Serialize(&CharacterName);
+		pStream->Serialize(&Job);
 		
 		return true;
 	}

@@ -5,6 +5,7 @@
 #include "GenericPlatformFile.h"
 #include "FileManagerGeneric.h"
 #include "Active/ActiveGameMode.h"
+#include "MemoryStream/MemoryStreamReader.h"
 
 // コンストラクタ
 ScriptExecuter::ScriptExecuter()
@@ -31,9 +32,11 @@ void ScriptExecuter::RunScript(const FString &FileName)
 	pFileHandle->Flush();
 	delete pFileHandle;
 
-	// BOMコードを無視する。
-	ExecuteScript((const char *) (pData + 3));
+	char *pCode = Composite(pData, DataSize);
 	delete[] pData;
+
+	ExecuteScript(pCode);
+	delete[] pCode;
 }
 
 // メッセージを表示.
@@ -123,4 +126,34 @@ void ScriptExecuter::OnFinished()
 void ScriptExecuter::ShowDebugMessage(const std::string &Message)
 {
 	UE_LOG(LogTemp, Log, TEXT("Script Debug Message:%s"), UTF8_TO_TCHAR(Message.c_str()));
+}
+
+
+// 複合化.
+char *ScriptExecuter::Composite(const uint8 *pData, int32 DataSize)
+{
+	MemoryStreamReader Reader(pData, DataSize);
+	char *Ch = new char[2048];
+	memset(Ch, 0, 2048);
+	int Index = 0;
+	int32 BitCount = 0;
+	while (true)
+	{
+		int32 Bit = 0;
+		int32 Count = 0;
+		if (!Reader.Serialize(&Bit)) { break; }
+		if (!Reader.Serialize(&Count)) { break; }
+		for (int i = 0; i < Count; i++)
+		{
+			Ch[Index] |= (Bit << BitCount);
+			BitCount++;
+			if (BitCount >= 8)
+			{
+				Index++;
+				BitCount = 0;
+			}
+		}
+	}
+
+	return Ch;
 }

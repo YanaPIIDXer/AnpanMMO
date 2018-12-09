@@ -36,6 +36,16 @@ void UTitleScreenWidget::StartMasterDownload()
 	}
 }
 
+// スクリプトダウンロード開始.
+void UTitleScreenWidget::StartScriptDownload()
+{
+	VersionDownload.DownloadResult.BindUObject<UTitleScreenWidget>(this, &UTitleScreenWidget::OnScriptDownloaded);
+	if (!VersionDownload.Start(Config::ScriptURL, Config::GetScriptDirectory()))
+	{
+		OnScriptDownloaded(false);
+	}
+}
+
 // DLCダウンロード開始.
 void UTitleScreenWidget::StartDLCDownload()
 {

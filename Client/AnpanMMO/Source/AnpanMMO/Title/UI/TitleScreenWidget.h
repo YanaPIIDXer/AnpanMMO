@@ -58,6 +58,15 @@ protected:
 	void OnMasterDownloaded(bool bSuccess);
 	void OnMasterDownloaded_Implementation(bool bSuccess) {}
 
+	// スクリプトダウンロード開始.
+	UFUNCTION(BlueprintCallable,Category = "Script")
+	void StartScriptDownload();
+
+	// スクリプトダウンロードが完了した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Script")
+	void OnScriptDownloaded(bool bSuccess);
+	void OnScriptDownloaded_Implementation(bool bSuccess) {}
+
 	// DLCのダウンロード開始.
 	UFUNCTION(BlueprintCallable, Category = "DLC")
 	void StartDLCDownload();

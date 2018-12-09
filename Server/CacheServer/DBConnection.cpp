@@ -63,24 +63,26 @@ bool DBConnection::IsExistCharacter(int Id, bool &OutResult)
 }
 
 // キャラクタデータ登録.
-bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName)
+bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 {
-	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData values(?, ?, 50, 10, 10, 0, 1, -1000.0, 0.0, 0.0);");
+	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData values(?, ?, ?, 50, 10, 10, 0, 1, -1000.0, 0.0, 0.0);");
 	Query.BindInt(&Id);
 	Query.BindString(pCharacterName);
+	Query.BindChar(&Job);
 	if (!Query.ExecuteQuery()) { return false; }
 	return true;
 }
 
 // キャラクタパラメータ読み込み
-bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp)
+bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJob, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp)
 {
-	MySqlQuery Query = Connection.CreateQuery("select Name, MaxHp, Atk, Def, Exp from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select Name, Job, MaxHp, Atk, Def, Exp from CharacterData where CustomerId = ?");
 	Query.BindInt(&Id);
 
 	char NameStr[256];
 	
 	Query.BindResultString(NameStr);
+	Query.BindResultChar(&OutJob);
 	Query.BindResultInt(&OutMaxHp);
 	Query.BindResultInt(&OutAtk);
 	Query.BindResultInt(&OutDef);

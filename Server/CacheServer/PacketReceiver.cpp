@@ -73,7 +73,7 @@ void PacketReceiver::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream
 
 	u8 ResultCode = CachePacketCreateCharacterResult::Success;
 	char *pCharaName = const_cast<char *>(Packet.CharacterName.c_str());
-	if (!DBConnection::GetInstance().RegisterCharacterData(Packet.CustomerId, pCharaName))
+	if (!DBConnection::GetInstance().RegisterCharacterData(Packet.CustomerId, pCharaName, Packet.Job))
 	{
 		ResultCode = CachePacketCreateCharacterResult::Error;
 	}
@@ -89,12 +89,13 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	std::string Name;
+	u8 Job = 0;
 	s32 MaxHp = 0;
 	s32 Atk = 0;
 	s32 Def = 0;
 	s32 Exp = 0;
 	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, Name, MaxHp, Atk, Def, Exp))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, Name, Job, MaxHp, Atk, Def, Exp))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
@@ -108,7 +109,7 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, Name, MaxHp, Atk, Def, Exp, LastAreaId, LastX, LastY, LastZ);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, Name, Job, MaxHp, Atk, Def, Exp, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 }
 

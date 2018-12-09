@@ -67,4 +67,8 @@ private:
 	// フラグマップ
 	TMap<int32, bool> FlagMap;
 
+
+	// 複合化.
+	char *Composite(const uint8 *pData, int32 DataSize);
+
 };
