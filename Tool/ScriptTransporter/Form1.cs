@@ -63,13 +63,29 @@ namespace ScriptTransporter
 				File.Copy(Script, Config.TemporaryDirectory + "\\" + Path.GetFileName(Script));
 			}
 
-			// まずはサーバに転送。
+			// まずはサーバ用ディレクトリに転送。
 			Scripts = Directory.GetFiles(Config.TemporaryDirectory);
 			foreach(var Script in Scripts)
 			{
 				Console.Write(Path.GetFileName(Script) + "の転送中...");
 				FileTransporter Transporter = new FileTransporter(Script, Host, UserName, Password, ServerDir);
 				if(!Transporter.Transport())
+				{
+					Console.WriteLine("失敗。");
+					MessageBox.Show("転送に失敗しました。");
+					DeleteTemporaryDirectory();
+					return;
+				}
+
+				Console.WriteLine("成功。");
+			}
+
+			// クライアント用ディレクトリに転送。
+			foreach (var Script in Scripts)
+			{
+				Console.Write(Path.GetFileName(Script) + "の転送中...");
+				FileTransporter Transporter = new FileTransporter(Script, Host, UserName, Password, ClientDir);
+				if (!Transporter.Transport())
 				{
 					Console.WriteLine("失敗。");
 					MessageBox.Show("転送に失敗しました。");
