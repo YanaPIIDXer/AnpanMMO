@@ -14,7 +14,7 @@ if (Selected == 0) then
 		ShowMessage("フラグが立っています。")
 	end
 elseif (Selected == 1) then
-	ShowMessage("選択肢２です。)
+	ShowMessage("選択肢２です。")
 	local bFlag = GetFlag(Test2)
 	if (not bFlag) then
 		ShowMessage("フラグが立っていないので立てます。")
@@ -23,7 +23,7 @@ elseif (Selected == 1) then
 		ShowMessage("フラグが立っています。")
 	end
 else
-	ShowMessage("選択肢３です。)
+	ShowMessage("選択肢３です。")
 	local bFlag = GetFlag(Test3)
 	if (not bFlag) then
 		ShowMessage("フラグが立っていないので立てます。")
