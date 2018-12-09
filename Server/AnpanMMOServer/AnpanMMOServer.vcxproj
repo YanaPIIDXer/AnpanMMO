@@ -161,6 +161,7 @@
     <ClInclude Include="Master\AnpanMaster.h" />
     <ClInclude Include="Master\AnpanPopDataMaster.h" />
     <ClInclude Include="Master\InstanceInfoMaster.h" />
+    <ClInclude Include="Master\NPCMaster.h" />
     <ClInclude Include="Master\TimeInfoMaster.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
@@ -168,6 +169,8 @@
     <ClInclude Include="Script\ScriptBinds.h" />
     <ClInclude Include="Script\ScriptExecuter.h" />
     <ClInclude Include="Script\ScriptExecuterBase.h" />
+    <ClInclude Include="Script\ScriptFlag.h" />
+    <ClInclude Include="Script\ScriptFlagManager.h" />
     <ClInclude Include="ServerHost.h" />
     <ClInclude Include="StringPack.h" />
     <ClInclude Include="TCPConnection.h" />
@@ -254,6 +257,7 @@
     <ClCompile Include="Master\AnpanMaster.cpp" />
     <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
     <ClCompile Include="Master\InstanceInfoMaster.cpp" />
+    <ClCompile Include="Master\NPCMaster.cpp" />
     <ClCompile Include="Master\TimeInfoMaster.cpp" />
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />
@@ -262,6 +266,7 @@
     <ClCompile Include="Script\ScriptBinds.cpp" />
     <ClCompile Include="Script\ScriptExecuter.cpp" />
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
+    <ClCompile Include="Script\ScriptFlagManager.cpp" />
     <ClCompile Include="ServerHost.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />

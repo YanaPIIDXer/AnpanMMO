@@ -34,6 +34,11 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	Include += ScriptDir;
 	Include += "/Functions.lua' )\n";
 
+	// フラグ定義も自動でincludeする。
+	Include += "dofile( '";
+	Include += ScriptDir;
+	Include += "/Flags.lua' )\n";
+
 	// ディレクトリ区切り文字として「\」が入ってきた時のための対処。
 	size_t Pos = Include.find("\\");
 	while (Pos != std::string::npos)
@@ -52,6 +57,12 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	Script += "Selected = 0\n";
 
 	Script = Include + Script;
+
+	if (IsServer())
+	{
+		// サーバ上では動かさないものはコメントアウト。
+		CommentOutWithServerMode(Script);
+	}
 
 	if (luaL_dostring(pState, Script.c_str()))
 	{
@@ -101,22 +112,6 @@ void ScriptExecuterBase::Resume()
 	}
 }
 
-// 即Resumeする。
-void ScriptExecuterBase::QuickResume()
-{
-	// スタックを全部撤去.
-	lua_settop(pState, 0);
-
-	// リターンコードをPush
-	lua_pushinteger(pState, 1);
-
-	// yield
-	lua_yield(pState, 1);
-
-	// Resume
-	//Resume();
-}
-
 // 選択肢が選択された。
 void ScriptExecuterBase::OnSelectedSelection(int Index)
 {
@@ -163,4 +158,21 @@ void ScriptExecuterBase::CloseState()
 
 	lua_close(pState);	
 	pState = NULL;
+}
+
+// サーバモードで動かしている時は動かさないものをコメントアウト
+void ScriptExecuterBase::CommentOutWithServerMode(std::string &Code)
+{
+	CommentOutFunction(Code, "ShowMessage");
+}
+
+// 関数のコメントアウト
+void ScriptExecuterBase::CommentOutFunction(std::string &Code, const std::string &FunctionName)
+{
+	size_t Pos = Code.find(FunctionName);
+	while (Pos != std::string::npos)
+	{
+		Code = Code.replace(Pos, FunctionName.length(), "--" + FunctionName);
+		Pos = Code.find(FunctionName, Pos + FunctionName.length() + 2);
+	}
 }

@@ -8,6 +8,8 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "Active/ActiveGameMode.h"
 #include "Kismet/GameplayStatics.h"
+#include "MMOGameInstance.h"
+#include "Packet/PacketNPCTalk.h"
 
 // Spawn
 ANPCCharacter *ANPCCharacter::Spawn(UWorld *pWorld, const NPCItem *pItem)
@@ -50,6 +52,12 @@ void ANPCCharacter::Talk()
 {
 	const NPCItem *pItem = MasterData::GetInstance().GetNPCMaster().Get(Id);
 	check(pItem != nullptr);
+
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketNPCTalk Packet(Id);
+	pInst->SendPacket(&Packet);
 
 	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 	check(pGameMode != nullptr);

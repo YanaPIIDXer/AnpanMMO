@@ -36,6 +36,8 @@ enum PacketID
 	CharacterStatus,
 	NoticeList,
 	ReceiveNotice,
+	NPCTalk,
+	NPCTalkSelection,
 	PartyCreateRequest,
 	PartyCreateResult,
 	PartyInviteRequest,

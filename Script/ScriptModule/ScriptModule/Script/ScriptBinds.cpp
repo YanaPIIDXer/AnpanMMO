@@ -15,6 +15,7 @@ int ShowMessage_Call(lua_State *pState)
 
 	const char *pMessage = luaL_checkstring(pState, -1);
 	if (pExecuter == NULL) { return 0; }
+
 	pExecuter->ShowMessage_Impl(pMessage);
 	return 0;
 }
@@ -49,8 +50,8 @@ int SetFlag_Call(lua_State *pState)
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	const char *pFlagName = luaL_checkstring(pState, -1);
-	pExecuter->SetFlag(pFlagName);
+	int Flag = (int) luaL_checknumber(pState, -1);
+	pExecuter->SetFlag(Flag);
 	return 0;
 }
 
@@ -61,8 +62,8 @@ int GetFlag_Call(lua_State *pState)
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	const char *pFlagName = luaL_checkstring(pState, -1);
-	bool bFlag = pExecuter->GetFlag(pFlagName);
+	int Flag = (int) luaL_checknumber(pState, -1);
+	bool bFlag = pExecuter->GetFlag(Flag);
 	lua_pushboolean(pState, bFlag);
 
 	return 1;

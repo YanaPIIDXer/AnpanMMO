@@ -29,10 +29,10 @@ public:
 	virtual void ShowSelection_Impl();
 	
 	// フラグをセット
-	virtual void SetFlag(const char *pFlagName) { FlagMap[pFlagName] = true; }
+	virtual void SetFlag(int Flag) { FlagMap[Flag] = true; }
 
 	// フラグを取得.
-	virtual bool GetFlag(const char *pFlagName) { return FlagMap[pFlagName]; }
+	virtual bool GetFlag(int Flag) { return FlagMap[Flag]; }
 
 protected:
 
@@ -45,6 +45,9 @@ protected:
 	// デバッグメッセージ表示.
 	virtual void ShowDebugMessage(const std::string &Message);
 
+	// サーバモードか？
+	virtual bool IsServer() const { return true; }
+
 private:
 
 	// 選択肢リスト
@@ -54,7 +57,7 @@ private:
 	int SelectionCount;
 
 	// フラグマップ
-	std::map<const char*, bool> FlagMap;
+	std::map<int, bool> FlagMap;
 
 };
 

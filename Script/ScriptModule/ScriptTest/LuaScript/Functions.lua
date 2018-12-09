@@ -1,26 +1,26 @@
--- ƒƒbƒZ[ƒW•\¦.
+ï»¿-- ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸è¡¨ç¤º.
 function ShowMessage(Message)
 	ShowMessage_Impl(this, Message)
 	coroutine.yield(1)
 end
 
--- ‘I‘ğˆ‚ğƒvƒbƒVƒ…
+-- é¸æŠè‚¢ã‚’ãƒ—ãƒƒã‚·ãƒ¥
 function PushSelection(Message)
 	PushSelection_Impl(this, Message)
 end
 
--- ‘I‘ğˆ‚ğ•\¦.
+-- é¸æŠè‚¢ã‚’è¡¨ç¤º.
 function ShowSelection()
 	ShowSelection_Impl(this)
 	coroutine.yield(1)
 end
 
--- ƒtƒ‰ƒO‚ğƒZƒbƒgB
+-- ãƒ•ãƒ©ã‚°ã‚’ã‚»ãƒƒãƒˆã€‚
 function SetFlag(FlagName)
 	SetFlag_Impl(this, FlagName)
 end
 
--- ƒtƒ‰ƒO‚ğæ“¾.
+-- ãƒ•ãƒ©ã‚°ã‚’å–å¾—.
 function GetFlag(FlagName)
 	local Flag = GetFlag_Impl(this, FlagName)
 	return Flag

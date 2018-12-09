@@ -14,7 +14,6 @@ void ScriptExecuter::ShowMessage_Impl(const std::string &Message)
 {
 	std::cout << Message << std::endl;
 	while (getchar() != '\n');
-	QuickResume();
 }
 
 // 選択肢をプッシュ

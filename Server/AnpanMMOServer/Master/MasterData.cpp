@@ -73,5 +73,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!NPC.Load(Connection))
+	{
+		std::cout << "NPC Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }

@@ -29,12 +29,6 @@ public:
 	// スクリプトの実行を再開.
 	void Resume();
 
-	// 即Resumeする。
-	// Lua側から呼び出された関数がreturn 0;する前にResumeすると問題が起こるため
-	// その対処。
-	// 主にサーバ側で使用する。
-	void QuickResume();
-
 	// 終了しているか？
 	bool IsFinished() const { return bIsFinished; }
 
@@ -51,10 +45,10 @@ public:
 	void OnSelectedSelection(int Index);
 
 	// フラグをセット
-	virtual void SetFlag(const char *pFlagName) = 0;
+	virtual void SetFlag(int Flag) = 0;
 
 	// フラグを取得.
-	virtual bool GetFlag(const char *pFlagName) = 0;
+	virtual bool GetFlag(int Flag) = 0;
 
 protected:
 
@@ -66,6 +60,9 @@ protected:
 	
 	// デバッグメッセージを表示.
 	virtual void ShowDebugMessage(const std::string &Message) = 0;
+
+	// サーバモードか？
+	virtual bool IsServer() const = 0;
 
 private:
 
@@ -99,6 +96,12 @@ private:
 
 	// StateをClose
 	void CloseState();
+
+	// サーバモードで動かしている時は動かさないものをコメントアウト
+	void CommentOutWithServerMode(std::string &Code);
+
+	// 関数のコメントアウト
+	void CommentOutFunction(std::string &Code, const std::string &FunctionName);
 
 };
 

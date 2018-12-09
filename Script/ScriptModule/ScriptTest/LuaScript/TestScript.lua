@@ -1,31 +1,19 @@
-ShowMessage("Test1")
+ï»¿ShowMessage("Test1")
 ShowMessage("Test2")
 ShowMessage("Test3")
-PushSelection("Test1")
-PushSelection("Test2")
-PushSelection("Test3")
-ShowSelection()
-if (Selected == 0) then
-	ShowMessage("‚ ‚È‚½‚ª‘I‘ğ‚µ‚½‚Ì‚ÍTest1‚Å‚·B")
-elseif (Selected == 1) then
-	ShowMessage("‚ ‚È‚½‚ª‘I‘ğ‚µ‚½‚Ì‚ÍTest2‚Å‚·B")
-elseif (Selected == 2) then
-	ShowMessage("‚ ‚È‚½‚ª‘I‘ğ‚µ‚½‚Ì‚ÍTest3‚Å‚·B")
+ShowMessage("æ—¥æœ¬èªãƒ†ã‚¹ãƒˆ")
+
+local bFlag = GetFlag(Flag)
+if (bFlag) then
+	ShowMessage("ãƒ•ãƒ©ã‚°ã¯trueã§ã™ã€‚")
 else
-	ShowMessage("ƒGƒ‰[")
+	ShowMessage("ãƒ•ãƒ©ã‚°ã¯falseã§ã™ã€‚")
 end
 
-local Flag = GetFlag("Flag")
-if (Flag) then
-	ShowMessage("ƒtƒ‰ƒO‚Ítrue‚Å‚·B")
+SetFlag(Flag)
+bFlag = GetFlag(Flag)
+if (bFlag) then
+	ShowMessage("ãƒ•ãƒ©ã‚°ã¯trueã§ã™ã€‚")
 else
-	ShowMessage("ƒtƒ‰ƒO‚Ífalse‚Å‚·B")
-end
-
-SetFlag("Flag")
-Flag = GetFlag("Flag")
-if (Flag) then
-	ShowMessage("ƒtƒ‰ƒO‚Ítrue‚Å‚·B")
-else
-	ShowMessage("ƒtƒ‰ƒO‚Ífalse‚Å‚·B")
+	ShowMessage("ãƒ•ãƒ©ã‚°ã¯falseã§ã™ã€‚")
 end

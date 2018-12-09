@@ -3,6 +3,8 @@
 
 #include "ScriptExecuterBase.h"
 
+class Client;
+
 /**
  * スクリプト実行クラス
  */
@@ -17,7 +19,46 @@ public:
 	// デストラクタ
 	virtual ~ScriptExecuter() {}
 
+	// クライアントをセット。
+	void SetClient(Client *pInClient) { pClient = pInClient; }
+
+	// 読み込んで実行.
+	void LoadAndRun(const std::string &FileName);
+
+	// メッセージを表示.
+	virtual void ShowMessage_Impl(const std::string &Message) {}
+
+	// 選択肢がプッシュされた。
+	virtual void PushSelection_Impl(const std::string &Message) {}
+
+	// 選択肢表示.
+	virtual void ShowSelection_Impl() {}
+
+	// フラグをセット
+	virtual void SetFlag(int Flag);
+
+	// フラグを取得.
+	virtual bool GetFlag(int Flag);
+
+protected:
+
+	// 実行エラー
+	virtual void OnExecuteError(const std::string &ErrorMessage);
+
+	// 処理が終了した。
+	virtual void OnFinished() {}
+
+	// デバッグメッセージを表示.
+	virtual void ShowDebugMessage(const std::string &Message);
+
+	// サーバモードか？
+	virtual bool IsServer() const { return true; }
+
+
 private:
+
+	// クライアント
+	Client *pClient;
 
 };
 

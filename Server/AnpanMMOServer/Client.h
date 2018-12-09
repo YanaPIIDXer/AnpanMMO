@@ -3,6 +3,8 @@
 
 #include "TCPConnection.h"
 #include "Packet/PacketID.h"
+#include "Script/ScriptExecuter.h"
+#include "Script/ScriptFlagManager.h"
 
 class PacketBase;
 class ClientStateBase;
@@ -51,6 +53,15 @@ public:
 	// ※主に別プロセスからの受信時に使用。
 	void RecvPacket(PacketID ID, MemoryStreamInterface *pStream);
 
+	// スクリプトを取得.
+	ScriptExecuter *GetScript() { return &Script; }
+
+	// スクリプトフラグを設定.
+	void SetScriptFlag(int Key);
+
+	// フラグ管理を取得.
+	const ScriptFlagManager &GetScriptFlagManager() const { return FlagManager; }
+
 protected:
 
 	// データを受信した。
@@ -69,6 +80,12 @@ private:
 
 	// キャラクタ
 	shared_ptr<PlayerCharacter> pCharacter;
+
+	// スクリプト
+	ScriptExecuter Script;
+
+	// スクリプトフラグ管理.
+	ScriptFlagManager FlagManager;
 
 };
 

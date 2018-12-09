@@ -8,6 +8,7 @@
 #include "AnpanPopDataMaster.h"
 #include "InstanceInfoMaster.h"
 #include "TimeInfoMaster.h"
+#include "NPCMaster.h"
 
 /**
  * マスタデータクラス
@@ -41,6 +42,9 @@ public:
 	// 時間情報マスタ取得.
 	const TimeInfoMaster &GetTimeInfoMaster() { return TimeInfo; }
 
+	// NPCマスタを取得.
+	const NPCMaster &GetNPCMaster() { return NPC; }
+
 private:
 
 	// DBホスト
@@ -72,6 +76,9 @@ private:
 
 	// 時間情報マスタ
 	TimeInfoMaster TimeInfo;
+
+	// NPCマスタ
+	NPCMaster NPC;
 
 	// ======= Singleton ==========
 public:

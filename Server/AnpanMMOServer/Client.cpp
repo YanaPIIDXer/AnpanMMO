@@ -17,6 +17,8 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	, CustomerId(0)
 {
 	bIsConnected = true;
+	Script.SetScriptDir("../../Script/Scripts");
+	Script.SetClient(this);
 	AsyncRecv();
 }
 
@@ -66,6 +68,12 @@ void Client::RecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 {
 	pStream->Reset();
 	pState->AnalyzePacket(ID, pStream);
+}
+
+// スクリプトフラグを設定.
+void Client::SetScriptFlag(int Key)
+{
+	FlagManager.Set(Key);
 }
 
 

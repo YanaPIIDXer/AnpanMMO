@@ -37,10 +37,10 @@ public:
 	virtual void ShowSelection_Impl() override;
 
 	// フラグをセット.
-	virtual void SetFlag(const char *pFlagName) override;
+	virtual void SetFlag(int Flag) override;
 
 	// フラグを取得.
-	virtual bool GetFlag(const char *pFlagName) override;
+	virtual bool GetFlag(int Flag) override;
 
 protected:
 
@@ -53,9 +53,15 @@ protected:
 	// デバッグ用メッセージを表示.
 	virtual void ShowDebugMessage(const std::string &Message) override;
 
+	// サーバモードか？
+	virtual bool IsServer() const override { return false; }
+
 private:
 
 	// GameMode
 	TWeakObjectPtr<AActiveGameMode> pGameMode;
+
+	// フラグマップ
+	TMap<int32, bool> FlagMap;
 
 };
