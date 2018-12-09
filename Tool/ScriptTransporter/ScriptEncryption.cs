@@ -41,7 +41,7 @@ namespace ScriptTransporter
 				{
 					Code = Reader.ReadToEnd();
 				}
-
+				
 				byte[] Bytes = Encoding.UTF8.GetBytes(Code);
 				string Result = "";
 				int Count = 0;
@@ -55,8 +55,10 @@ namespace ScriptTransporter
 						{
 							if (Prev != -1)
 							{
-								Result += Prev;
-								Result += Count;
+								byte[] PrevBytes = BitConverter.GetBytes(Prev).Reverse().ToArray();
+								byte[] CountBytes = BitConverter.GetBytes(Count).Reverse().ToArray();
+								Result += PrevBytes;
+								Result += CountBytes;
 							}
 							Count = 0;
 							Prev = Bit;
@@ -68,8 +70,10 @@ namespace ScriptTransporter
 					}
 				}
 
-				Result += Prev;
-				Result += Count;
+				byte[] PrevByte = BitConverter.GetBytes(Prev).Reverse().ToArray();
+				byte[] CountByte = BitConverter.GetBytes(Count).Reverse().ToArray();
+				Result += PrevByte;
+				Result += CountByte;
 
 				using (StreamWriter Writer = new StreamWriter(FilePath))
 				{
