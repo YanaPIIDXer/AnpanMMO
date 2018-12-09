@@ -32,6 +32,12 @@ public:
 	// 最後にログアウトした位置を読み込み
 	bool ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY, float &OutZ);
 
+	// スクリプトフラグをロード
+	bool LoadScriptFlags(int Id, u32 &OutBitField1, u32 &OutBitField2, u32 &OutBitField3);
+
+	// スクリプトフラグを保存.
+	bool SaveScriptFlags(int Id, u32 BitField1, u32 BitField2, u32 BitField3);
+
 private:
 
 	// ユーザ情報を格納したファイル名.

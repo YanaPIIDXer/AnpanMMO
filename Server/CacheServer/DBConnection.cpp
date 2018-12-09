@@ -130,6 +130,46 @@ bool DBConnection::ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, f
 	return true;
 }
 
+// スクリプトフラグをロード
+bool DBConnection::LoadScriptFlags(int Id, u32 &OutBitField1, u32 &OutBitField2, u32 &OutBitField3)
+{
+	MySqlQuery Query = Connection.CreateQuery("select BitField1, BitField2, BitField3 from ScriptFlags where CustomerId = ?");
+	
+	Query.BindInt(&Id);
+
+	Query.BindResultInt(&OutBitField1);
+	Query.BindResultInt(&OutBitField2);
+	Query.BindResultInt(&OutBitField3);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	if (!Query.Fetch())
+	{
+		// 新規登録.
+		MySqlQuery InsertQuery = Connection.CreateQuery("insert into ScriptFlags values(?, 0, 0, 0);");
+
+		InsertQuery.BindInt(&Id);
+		if (InsertQuery.ExecuteQuery()) { return false; }
+		OutBitField1 = 0;
+		OutBitField2 = 0;
+		OutBitField3 = 0;
+	}
+	return true;
+}
+
+// スクリプトフラグを保存.
+bool DBConnection::SaveScriptFlags(int Id, u32 BitField1, u32 BitField2, u32 BitField3)
+{
+	MySqlQuery Query = Connection.CreateQuery("update ScriptFlags set BitField1 = ?, BitField2 = ?, BitField3 = ? where CustomerId = ?");
+
+	Query.BindInt(&BitField1);
+	Query.BindInt(&BitField2);
+	Query.BindInt(&BitField3);
+	Query.BindInt(&Id);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	return true;
+}
+
 
 // ユーザデータ登録.
 bool DBConnection::RegisterUserData(char *pUserCode)
