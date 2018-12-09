@@ -17,7 +17,7 @@ class PlayerCharacter : public CharacterBase
 public:
 
 	// コンストラクタ
-	PlayerCharacter(Client *pInClient, int MaxHp, int Atk, int Def, int InExp);
+	PlayerCharacter(Client *pInClient, u8 Job, int MaxHp, int Atk, int Def, int InExp);
 
 	// デストラクタ
 	virtual ~PlayerCharacter();
@@ -36,6 +36,9 @@ public:
 
 	// 名前を取得.
 	const std::string &GetName() const { return Name; }
+
+	// ジョブを取得.
+	u8 GetJob() const { return Job; }
 
 	// キャラクタタイプを取得.
 	virtual u8 GetCharacterType() const { return CharacterType::Player; }
@@ -62,6 +65,9 @@ private:
 
 	// 名前.
 	std::string Name;
+
+	// ジョブ
+	u8 Job;
 
 	// パーティ
 	PartyPtr pParty;

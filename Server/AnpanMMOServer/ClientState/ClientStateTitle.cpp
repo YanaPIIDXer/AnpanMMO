@@ -67,7 +67,7 @@ void ClientStateTitle::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStre
 		return;
 	}
 
-	CachePacketCreateCharacterRequest CacheRequestPacket(GetParent()->GetUuid(), GetParent()->GetCustomerId(), Packet.CharacterName);
+	CachePacketCreateCharacterRequest CacheRequestPacket(GetParent()->GetUuid(), GetParent()->GetCustomerId(), Packet.CharacterName, Packet.Job);
 	CacheServerConnection::GetInstance()->SendPacket(&CacheRequestPacket);
 }
 
@@ -147,8 +147,8 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	}
 
 	Client *pClient = GetParent();
-	pClient->CreateCharacter(Packet.Name, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
-	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	pClient->CreateCharacter(Packet.Name, Packet.Job, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 	pClient->SendPacket(&StatusPacket);
 
 	LastAreaId = Packet.LastAreaId;
