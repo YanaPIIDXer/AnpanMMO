@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ScriptExecuter.h"
+#include "Client.h"
 
 // コンストラクタ
 ScriptExecuter::ScriptExecuter()
@@ -9,13 +10,13 @@ ScriptExecuter::ScriptExecuter()
 // フラグをセット。
 void ScriptExecuter::SetFlag(int Flag)
 {
-
+	pClient->SetScriptFlag(Flag);
 }
 
 // フラグを取得.
 bool ScriptExecuter::GetFlag(int Flag)
 {
-	return false;
+	return pClient->GetScriptFlagManager().Get(Flag);
 }
 
 

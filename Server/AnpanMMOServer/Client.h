@@ -4,6 +4,7 @@
 #include "TCPConnection.h"
 #include "Packet/PacketID.h"
 #include "Script/ScriptExecuter.h"
+#include "Script/ScriptFlagManager.h"
 
 class PacketBase;
 class ClientStateBase;
@@ -55,6 +56,12 @@ public:
 	// スクリプトを取得.
 	ScriptExecuter *GetScript() { return &Script; }
 
+	// スクリプトフラグを設定.
+	void SetScriptFlag(int Key);
+
+	// フラグ管理を取得.
+	const ScriptFlagManager &GetScriptFlagManager() const { return FlagManager; }
+
 protected:
 
 	// データを受信した。
@@ -76,6 +83,9 @@ private:
 
 	// スクリプト
 	ScriptExecuter Script;
+
+	// スクリプトフラグ管理.
+	ScriptFlagManager FlagManager;
 
 };
 

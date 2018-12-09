@@ -70,6 +70,12 @@ void Client::RecvPacket(PacketID ID, MemoryStreamInterface *pStream)
 	pState->AnalyzePacket(ID, pStream);
 }
 
+// スクリプトフラグを設定.
+void Client::SetScriptFlag(int Key)
+{
+	FlagManager.Set(Key);
+}
+
 
 // データを受信した。
 void Client::OnRecvData(size_t Size)

@@ -170,6 +170,7 @@
     <ClInclude Include="Script\ScriptExecuter.h" />
     <ClInclude Include="Script\ScriptExecuterBase.h" />
     <ClInclude Include="Script\ScriptFlag.h" />
+    <ClInclude Include="Script\ScriptFlagManager.h" />
     <ClInclude Include="ServerHost.h" />
     <ClInclude Include="StringPack.h" />
     <ClInclude Include="TCPConnection.h" />
@@ -265,6 +266,7 @@
     <ClCompile Include="Script\ScriptBinds.cpp" />
     <ClCompile Include="Script\ScriptExecuter.cpp" />
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
+    <ClCompile Include="Script\ScriptFlagManager.cpp" />
     <ClCompile Include="ServerHost.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />
