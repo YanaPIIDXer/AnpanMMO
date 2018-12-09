@@ -33,6 +33,8 @@ namespace FlagGenerator
 			{
 				Writer.Write(HeaderGen.Code);
 			}
+
+
 		}
 	}
 }
