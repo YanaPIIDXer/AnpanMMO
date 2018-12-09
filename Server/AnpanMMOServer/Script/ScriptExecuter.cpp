@@ -25,6 +25,7 @@ void ScriptExecuter::LoadAndRun(const std::string &FileName)
 		std::string Line;
 		FileStream >> Line;
 		Code += Line;
+		Code += "\n";
 	}
 
 	// BOM‚ğ–³‹‚·‚éB
