@@ -55,23 +55,7 @@ FString Config::GetMasterDirectory()
 	return Path;
 }
 
-const FString Config::DLCURL = "http://218.220.121.112/~Master/anpanmmo/dlc/";
-
-// DLCディレクトリを取得.
-FString Config::GetDLCDirectory()
-{
-	FString Path = "";
-#if PLATFORM_WINDOWS
-	Path = FPaths::ProjectSavedDir() + "DLC";
-#elif PLATFORM_ANDROID
-	// Android向け
-	Path = "/storage/emulated/0/AnapnMMO/DLC";
-#elif PLATFORM_IOS
-	// iOS向け
-	Path = "";
-#endif
-	return Path;
-}
+const FString Config::ScriptURL = "http://218.220.121.112/~Master/anpanmmoscript/";
 
 // スクリプトディレクトリを取得.
 FString Config::GetScriptDirectory()
@@ -83,6 +67,24 @@ FString Config::GetScriptDirectory()
 #elif PLATFORM_ANDROID
 	// Android向け
 	Path = "/storage/emulated/0/AnapnMMO/Script";
+#elif PLATFORM_IOS
+	// iOS向け
+	Path = "";
+#endif
+	return Path;
+}
+
+const FString Config::DLCURL = "http://218.220.121.112/~Master/anpanmmo/dlc/";
+
+// DLCディレクトリを取得.
+FString Config::GetDLCDirectory()
+{
+	FString Path = "";
+#if PLATFORM_WINDOWS
+	Path = FPaths::ProjectSavedDir() + "DLC";
+#elif PLATFORM_ANDROID
+	// Android向け
+	Path = "/storage/emulated/0/AnapnMMO/DLC";
 #elif PLATFORM_IOS
 	// iOS向け
 	Path = "";

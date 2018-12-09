@@ -27,13 +27,16 @@ public:
 	// マスタディレクトリを取得.
 	static FString GetMasterDirectory();
 
+	// スクリプトＵＲＬ
+	static const FString ScriptURL;
+
+	// スクリプトディレクトリを取得.
+	static FString GetScriptDirectory();
+
 	// DLCのURL
 	static const FString DLCURL;
 
 	// DLCディレクトリを取得.
 	static FString GetDLCDirectory();
-
-	// スクリプトディレクトリを取得.
-	static FString GetScriptDirectory();
 
 };
