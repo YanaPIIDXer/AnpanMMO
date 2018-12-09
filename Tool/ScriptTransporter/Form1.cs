@@ -81,10 +81,19 @@ namespace ScriptTransporter
 			}
 
 			// クライアント用ディレクトリに転送。
-			foreach (var Script in Scripts)
+			VersionGenerator VersionGen = new VersionGenerator(Scripts);
+			if(!VersionGen.Generate())
 			{
-				Console.Write(Path.GetFileName(Script) + "の転送中...");
-				FileTransporter Transporter = new FileTransporter(Script, Host, UserName, Password, ClientDir);
+				MessageBox.Show("バージョンファイルの生成に失敗しました。");
+				DeleteTemporaryDirectory();
+				return;
+			}
+
+			string[] FileList = Directory.GetFiles(Config.TemporaryDirectory);
+			foreach (var FilePath in FileList)
+			{
+				Console.Write(Path.GetFileName(FilePath) + "の転送中...");
+				FileTransporter Transporter = new FileTransporter(FilePath, Host, UserName, Password, ClientDir);
 				if (!Transporter.Transport())
 				{
 					Console.WriteLine("失敗。");

@@ -68,6 +68,7 @@
     <Compile Include="TransportTargetInput.Designer.cs">
       <DependentUpon>TransportTargetInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="VersionGenerator.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
