@@ -96,12 +96,13 @@
       <AdditionalIncludeDirectories>$(LUA_INCLUDE);$(SolutionDir)\ScriptModule</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy ScriptModule_x86_Debug.lib ..\ScriptTest\Lib\</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Lib />
     <PreBuildEvent>
-      <Command>copy Script\*.h ..\ScriptTest\Script\
-copy Script\*.cpp ..\ScriptTest\Script\</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <Lib />
     <Lib>
