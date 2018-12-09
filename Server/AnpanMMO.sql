@@ -38,6 +38,22 @@ CREATE TABLE `CharacterData` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `ScriptFlags`
+--
+
+DROP TABLE IF EXISTS `ScriptFlags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ScriptFlags` (
+  `CustomerId` int(11) NOT NULL,
+  `BitField1` int(10) unsigned DEFAULT NULL,
+  `BitField2` int(10) unsigned DEFAULT NULL,
+  `BitField3` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`CustomerId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `UserData`
 --
 
@@ -48,7 +64,7 @@ CREATE TABLE `UserData` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserCode` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -60,4 +76,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-27 15:00:57
+-- Dump completed on 2018-12-09 14:14:28
