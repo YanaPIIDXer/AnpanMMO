@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `CharacterData`;
 CREATE TABLE `CharacterData` (
   `CustomerId` int(11) NOT NULL,
   `Name` varchar(128) DEFAULT NULL,
+  `Job` int(11) DEFAULT NULL,
   `MaxHp` int(11) DEFAULT NULL,
   `Atk` int(11) DEFAULT NULL,
   `Def` int(11) DEFAULT NULL,
@@ -76,4 +77,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-09 14:14:28
+-- Dump completed on 2018-12-09 22:08:35

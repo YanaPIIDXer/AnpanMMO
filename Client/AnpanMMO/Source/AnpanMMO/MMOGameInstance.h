@@ -46,7 +46,7 @@ public:
 	void SendPacket(PacketBase *pPacket);
 
 	// ステータスを受信した。
-	void OnRecvStatus(uint32 Uuid, const FString &Name, int32 MaxHp, int32 Atk, int32 Def, int32 Exp);
+	void OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, int32 MaxHp, int32 Atk, int32 Def, int32 Exp);
 
 	// ステータスキャッシュ取得.
 	const PlayerStatus &GetStatusCache() const { return StatusCache; }

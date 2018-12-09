@@ -27,10 +27,10 @@ UCharacterNameInputWidget::UCharacterNameInputWidget(const FObjectInitializer &O
 
 
 // リクエストパケット送信.
-void UCharacterNameInputWidget::SendRequestPacket(const FString &Name)
+void UCharacterNameInputWidget::SendRequestPacket(const FString &Name, int32 Job)
 {
 	std::string NameStr = TCHAR_TO_UTF8(*Name);
-	PacketCreateCharacterRequest Packet(NameStr);
+	PacketCreateCharacterRequest Packet(NameStr, Job);
 
 	auto *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
 	check(pInst != nullptr);
