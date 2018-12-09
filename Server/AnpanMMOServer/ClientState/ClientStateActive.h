@@ -64,6 +64,12 @@ private:
 	// インスタンスマップチケットの処理を受信した。
 	void OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *pStream);
 
+	// NPCとの会話を受信した。
+	void OnRecvNPCTalk(MemoryStreamInterface *pStream);
+
+	// NPCとの会話での選択肢を受信した。
+	void OnRecvNPCTalkSelection(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

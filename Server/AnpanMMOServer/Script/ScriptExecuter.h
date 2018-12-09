@@ -22,6 +22,9 @@ public:
 	// クライアントをセット。
 	void SetClient(Client *pInClient) { pClient = pInClient; }
 
+	// 読み込んで実行.
+	void LoadAndRun(const std::string &FileName);
+
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message) {}
 

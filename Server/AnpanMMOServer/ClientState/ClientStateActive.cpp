@@ -41,6 +41,8 @@
 #include "Packet/PacketPartyInviteResponse.h"
 #include "Packet/PacketInstanceAreaTicketProcess.h"
 #include "Packet/PacketTime.h"
+#include "Packet/PacketNPCTalk.h"
+#include "Packet/PacketNPCTalkSelection.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -60,6 +62,8 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
 	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
 	AddPacketFunction(InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
+	AddPacketFunction(NPCTalk, boost::bind(&ClientStateActive::OnRecvNPCTalk, this, _2));
+	AddPacketFunction(NPCTalkSelection, boost::bind(&ClientStateActive::OnRecvNPCTalkSelection, this, _2));
 }
 
 // State開始時の処理.
@@ -402,4 +406,23 @@ void ClientStateActive::OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *p
 		pTicket->BroadcastDiscardPacket();
 		InstanceAreaTicketManager::GetInstance().Remove(Packet.TicketId);
 	}
+}
+
+// NPCとの会話を受信した。
+void ClientStateActive::OnRecvNPCTalk(MemoryStreamInterface *pStream)
+{
+	PacketNPCTalk Packet;
+	Packet.Serialize(pStream);
+
+	const NPCItem *pItem = MasterData::GetInstance().GetNPCMaster().GetItem(Packet.MasterId);
+	GetParent()->GetScript()->LoadAndRun(pItem->ScriptName);
+}
+
+// NPCとの会話での選択肢を受信した。
+void ClientStateActive::OnRecvNPCTalkSelection(MemoryStreamInterface *pStream)
+{
+	PacketNPCTalkSelection Packet;
+	Packet.Serialize(pStream);
+
+	GetParent()->GetScript()->OnSelectedSelection(Packet.Index);
 }
