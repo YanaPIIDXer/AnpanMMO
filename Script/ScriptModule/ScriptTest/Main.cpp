@@ -22,6 +22,8 @@ int main()
 		Script += Line + "\n";
 	}
 
+	Script = Script.substr(3);
+
 	ScriptExecuter Executer;
 	Executer.SetScriptDir("LuaScript");
 	Executer.ExecuteScript(Script.c_str());

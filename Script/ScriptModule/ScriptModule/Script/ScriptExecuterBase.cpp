@@ -34,6 +34,11 @@ void ScriptExecuterBase::ExecuteScript(const char *pScript)
 	Include += ScriptDir;
 	Include += "/Functions.lua' )\n";
 
+	// フラグ定義も自動でincludeする。
+	Include += "dofile( '";
+	Include += ScriptDir;
+	Include += "/Flags.lua' )\n";
+
 	// ディレクトリ区切り文字として「\」が入ってきた時のための対処。
 	size_t Pos = Include.find("\\");
 	while (Pos != std::string::npos)
