@@ -81,6 +81,26 @@ namespace ScriptTransporter
 			}
 
 			// クライアント用ディレクトリに転送。
+			
+			// まずは暗号化.
+			foreach(var Script in Scripts)
+			{
+				string FileName = Path.GetFileName(Script);
+				if(FileName == "Functions.lua" || FileName == "Flags.lua") { continue; }		// 暗号化しないもの。
+				ScriptEncryption Encryption = new ScriptEncryption(Script);
+
+				Console.Write(FileName + "の暗号化中...");
+				if(!Encryption.Encryption())
+				{
+					Console.WriteLine("失敗。");
+					MessageBox.Show("暗号化に失敗しました。");
+					DeleteTemporaryDirectory();
+					return;
+				}
+				Console.WriteLine("成功。");
+			}
+
+			// バージョンファイル生成.
 			VersionGenerator VersionGen = new VersionGenerator(Scripts);
 			if(!VersionGen.Generate())
 			{
@@ -89,6 +109,7 @@ namespace ScriptTransporter
 				return;
 			}
 
+			// 転送.
 			string[] FileList = Directory.GetFiles(Config.TemporaryDirectory);
 			foreach (var FilePath in FileList)
 			{
