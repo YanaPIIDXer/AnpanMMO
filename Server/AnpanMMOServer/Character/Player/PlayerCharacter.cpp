@@ -10,8 +10,8 @@
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, int MaxHp, int Atk, int Def, int InExp)
 	: pClient(pInClient)
-	, Job(InJob)
 	, Exp(InExp)
+	, Job(InJob)
 	, SaveAreaId(0)
 	, SavePosition(Vector3D::Zero)
 {

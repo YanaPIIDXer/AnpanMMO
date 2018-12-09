@@ -94,7 +94,7 @@ void PlayerManager::Reset()
 void PlayerManager::SpawnCharacter(const PlayerData &Data)
 {
 	FString CharacterName = UTF8_TO_TCHAR(Data.Name.c_str());
-	auto *pCharacter = AOtherPlayerCharacter::Spawn(pWorld.Get(), Data.Uuid, FVector(Data.X, Data.Y, Data.Z), FRotator(0.0f, Data.Rotation, 0.0f), Data.Hp, Data.MaxHp, CharacterName);
+	auto *pCharacter = AOtherPlayerCharacter::Spawn(pWorld.Get(), Data.Uuid, FVector(Data.X, Data.Y, Data.Z), FRotator(0.0f, Data.Rotation, 0.0f), Data.Hp, Data.MaxHp, CharacterName, Data.Job);
 	check(pCharacter != nullptr);
 	PlayerMap.Add(Data.Uuid, pCharacter);
 }
