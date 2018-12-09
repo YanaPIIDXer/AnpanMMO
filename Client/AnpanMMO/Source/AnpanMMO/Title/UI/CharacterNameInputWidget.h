@@ -30,7 +30,7 @@ protected:
 
 	// リクエストパケット送信.
 	UFUNCTION(BlueprintCallable, Category = "Request")
-	void SendRequestPacket(const FString &Name);
+	void SendRequestPacket(const FString &Name, int32 Job);
 
 private:
 

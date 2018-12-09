@@ -61,11 +61,12 @@ void UMMOGameInstance::SendPacket(PacketBase *pPacket)
 }
 
 // ステータスを受信した。
-void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, int32 MaxHp, int32 Atk, int32 Def, int32 Exp)
+void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, int32 MaxHp, int32 Atk, int32 Def, int32 Exp)
 {
 	StatusCache.SetUuid(Uuid);
 	StatusCache.Set(MaxHp, Atk, Def);
 	StatusCache.SetName(Name);
+	StatusCache.SetJob(Job);
 	StatusCache.SetExp(Exp);
 }
 
