@@ -35,6 +35,22 @@ namespace ScriptTransporter
 				MessageBox.Show("転送先を選択してください。");
 				return;
 			}
+
+			string Host = "";
+			string UserName = "";
+			string Password = "";
+			string ClientDir = "";
+			string ServerDir = "";
+			using (StreamReader Reader = new StreamReader(Config.TransportSettingFileDirectory + "\\" + TransportTargetListBox.SelectedItem + ".dat"))
+			{
+				Host = Reader.ReadLine();
+				UserName = Reader.ReadLine();
+				Password = Reader.ReadLine();
+				ClientDir = Reader.ReadLine();
+				ServerDir = Reader.ReadLine();
+			}
+
+
 		}
 
 		/// <summary>
