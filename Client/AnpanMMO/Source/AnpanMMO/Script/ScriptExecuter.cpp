@@ -72,6 +72,38 @@ bool ScriptExecuter::GetFlag(int Flag)
 	return FlagMap[Flag];
 }
 
+// ビットフィールドからフラグに変換.
+void ScriptExecuter::ConvertFlagFromBitFields(uint32 BitField1, uint32 BitField2, uint32 BitField3)
+{
+	// １つ目.
+	for (int i = 0; i < 32; i++)
+	{
+		if (BitField1 & (1 << i))
+		{
+			SetFlag(i);
+		}
+	}
+
+	// ２つ目.
+	for (int i = 0; i < 32; i++)
+	{
+		if (BitField2 & (1 << i))
+		{
+			SetFlag(i - 32);
+		}
+	}
+
+	// ３つ目.
+	for (int i = 0; i < 32; i++)
+	{
+		if (BitField3 & (1 << i))
+		{
+			SetFlag(i - 64);
+		}
+	}
+}
+
+
 // 実行エラー
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
 {

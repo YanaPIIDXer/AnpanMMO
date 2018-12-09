@@ -9,11 +9,12 @@
 #include "MMOGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 #include "UI/SimpleDialog.h"
+#include "Master/MasterData.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInResult.h"
 #include "Packet/PacketCreateCharacterResult.h"
 #include "Packet/PacketCharacterStatus.h"
-#include "Master/MasterData.h"
+#include "Packet/PacketScriptFlag.h"
 
 // コンストラクタ
 ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
@@ -24,6 +25,7 @@ ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::LogInResult, std::bind(&ATitleGameMode::OnRecvLogInResult, this, _1));
 	AddPacketFunction(PacketID::CreateCharacterResult, std::bind(&ATitleGameMode::OnRecvCreateCharacterResult, this, _1));
 	AddPacketFunction(PacketID::CharacterStatus, std::bind(&ATitleGameMode::OnRecvCharacterStatus, this, _1));
+	AddPacketFunction(PacketID::ScriptFlag, std::bind(&ATitleGameMode::OnRecvScriptFlag, this, _1));
 }
 
 // 開始時の処理.
@@ -139,8 +141,21 @@ void ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
+
 	FString NameStr = UTF8_TO_TCHAR(Packet.Name.c_str());
 	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+}
+
+// スクリプトフラグを受信した。
+void ATitleGameMode::OnRecvScriptFlag(MemoryStreamInterface *pStream)
+{
+	PacketScriptFlag Packet;
+	Packet.Serialize(pStream);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->GetScript()->ConvertFlagFromBitFields(Packet.BitField1, Packet.BitField2, Packet.BitField3);
 }
 
 // ゲーム画面に進む準備が出来た。

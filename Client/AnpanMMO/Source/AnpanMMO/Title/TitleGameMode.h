@@ -63,6 +63,9 @@ private:
 	// キャラクタステータスを受信した。
 	void OnRecvCharacterStatus(MemoryStreamInterface *pStream);
 
+	// スクリプトフラグを受信した。
+	void OnRecvScriptFlag(MemoryStreamInterface *pStream);
+
 	// ゲーム画面に進む準備が出来た。
 	void OnReadyToGame();
 	
