@@ -60,7 +60,7 @@ namespace ScriptTransporter
 								Result += PrevBytes;
 								Result += CountBytes;
 							}
-							Count = 0;
+							Count = 1;
 							Prev = Bit;
 						}
 						else;
