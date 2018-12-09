@@ -18,6 +18,7 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 {
 	bIsConnected = true;
 	Script.SetScriptDir("../,,/Script/Scripts");
+	Script.SetClient(this);
 	AsyncRecv();
 }
 

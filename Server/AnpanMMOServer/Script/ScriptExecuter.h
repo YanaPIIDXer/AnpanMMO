@@ -3,6 +3,8 @@
 
 #include "ScriptExecuterBase.h"
 
+class Client;
+
 /**
  * スクリプト実行クラス
  */
@@ -17,6 +19,9 @@ public:
 	// デストラクタ
 	virtual ~ScriptExecuter() {}
 
+	// クライアントをセット。
+	void SetClient(Client *pInClient) { pClient = pInClient; }
+
 	// メッセージを表示.
 	virtual void ShowMessage_Impl(const std::string &Message) {}
 
@@ -27,10 +32,10 @@ public:
 	virtual void ShowSelection_Impl() {}
 
 	// フラグをセット
-	virtual void SetFlag(const char *pFlagName);
+	virtual void SetFlag(int Flag);
 
 	// フラグを取得.
-	virtual bool GetFlag(const char *pFlagName);
+	virtual bool GetFlag(int Flag);
 
 protected:
 
@@ -48,6 +53,9 @@ protected:
 
 
 private:
+
+	// クライアント
+	Client *pClient;
 
 };
 

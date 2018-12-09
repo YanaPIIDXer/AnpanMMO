@@ -7,13 +7,13 @@ ScriptExecuter::ScriptExecuter()
 }
 
 // フラグをセット。
-void ScriptExecuter::SetFlag(const char *pFlagName)
+void ScriptExecuter::SetFlag(int Flag)
 {
 
 }
 
 // フラグを取得.
-bool ScriptExecuter::GetFlag(const char *pFlagName)
+bool ScriptExecuter::GetFlag(int Flag)
 {
 	return false;
 }

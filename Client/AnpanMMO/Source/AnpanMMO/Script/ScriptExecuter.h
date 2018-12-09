@@ -37,10 +37,10 @@ public:
 	virtual void ShowSelection_Impl() override;
 
 	// フラグをセット.
-	virtual void SetFlag(const char *pFlagName) override;
+	virtual void SetFlag(int Flag) override;
 
 	// フラグを取得.
-	virtual bool GetFlag(const char *pFlagName) override;
+	virtual bool GetFlag(int Flag) override;
 
 protected:
 

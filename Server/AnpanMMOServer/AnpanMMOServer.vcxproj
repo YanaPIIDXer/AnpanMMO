@@ -169,6 +169,7 @@
     <ClInclude Include="Script\ScriptBinds.h" />
     <ClInclude Include="Script\ScriptExecuter.h" />
     <ClInclude Include="Script\ScriptExecuterBase.h" />
+    <ClInclude Include="Script\ScriptFlag.h" />
     <ClInclude Include="ServerHost.h" />
     <ClInclude Include="StringPack.h" />
     <ClInclude Include="TCPConnection.h" />
