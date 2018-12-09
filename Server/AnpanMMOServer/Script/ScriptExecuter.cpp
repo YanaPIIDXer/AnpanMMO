@@ -12,7 +12,7 @@ ScriptExecuter::ScriptExecuter()
 void ScriptExecuter::LoadAndRun(const std::string &FileName)
 {
 	std::string FilePath = "../../Script/Scripts/" + FileName + ".lua";
-	std::ifstream FileStream(FilePath);
+	std::ifstream FileStream(FilePath.c_str());
 	if (!FileStream)
 	{
 		OnExecuteError("ScriptFile:" + FileName + " Load Failed...");
