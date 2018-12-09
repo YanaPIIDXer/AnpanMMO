@@ -21,10 +21,10 @@ public:
 	bool IsExistCharacter(int Id, bool &OutResult);
 
 	// キャラクタデータ登録.
-	bool RegisterCharacterData(u32 Id, char *pCharacterName);
+	bool RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job);
 
 	// キャラクタパラメータ読み込み
-	bool LoadCharacterParameter(int Id, std::string &OutName, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);
+	bool LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJob, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp);
 
 	// キャラクタパラメータ書き込み
 	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z);
