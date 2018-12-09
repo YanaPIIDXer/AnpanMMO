@@ -76,6 +76,12 @@ void Client::SetScriptFlag(int Key)
 	FlagManager.Set(Key);
 }
 
+// ビットフィールドからスクリプトフラグに変換.
+void Client::ConvertScriptFlagFromBitFields(u32 BitField1, u32 BitField2, u32 BitField3)
+{
+	FlagManager.FromBitField(BitField1, BitField2, BitField3);
+}
+
 
 // データを受信した。
 void Client::OnRecvData(size_t Size)

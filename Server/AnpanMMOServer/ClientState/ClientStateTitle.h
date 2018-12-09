@@ -2,6 +2,7 @@
 #define __CLIENTSTATETITLE_H__
 
 #include "ClientStateBase.h"
+#include "Math/Vector3D.h"
 
 /**
  * タイトル画面State
@@ -19,6 +20,13 @@ public:
 
 private:
 
+	// 最終ログアウト地点.
+	u32 LastAreaId;
+
+	// 最終ログアウト位置.
+	Vector3D LastPosition;
+
+
 	// ログインリクエストを受信した。
 	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
 
@@ -33,6 +41,9 @@ private:
 
 	// キャッシュサーバからキャラクタデータを受信した。
 	void OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream);
+
+	// キャッシュサーバからスクリプトフラグを受信した。
+	void OnRecvCacheScriptFlagResult(MemoryStreamInterface *pStream);
 
 };
 

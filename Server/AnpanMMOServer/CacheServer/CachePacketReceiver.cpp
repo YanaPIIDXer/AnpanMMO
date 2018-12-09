@@ -5,6 +5,7 @@
 #include "Packet/CachePacketLogInResult.h"
 #include "Packet/CachePacketCreateCharacterResult.h"
 #include "Packet/CachePacketCharacterDataResult.h"
+#include "Packet/CachePacketScriptFlagResponse.h"
 
 // コンストラクタ
 CachePacketReceiver::CachePacketReceiver(CacheServerConnection *pInParent)
@@ -13,6 +14,7 @@ CachePacketReceiver::CachePacketReceiver(CacheServerConnection *pInParent)
 	AddPacketFunc(CacheLogInResult, bind(&CachePacketReceiver::OnRecvLogInResult, this, _1));
 	AddPacketFunc(CacheCreateCharacterResult, bind(&CachePacketReceiver::OnRecvCreateCharacterResult, this, _1));
 	AddPacketFunc(CacheCharacterDataResult, bind(&CachePacketReceiver::OnRecvCharacterDataResult, this, _1));
+	AddPacketFunc(CacheScriptFlagResponse, bind(&CachePacketReceiver::OnRecvScriptFlagResponse, this, _1));
 }
 
 // パケット受信.
@@ -45,6 +47,15 @@ void CachePacketReceiver::OnRecvCreateCharacterResult(MemoryStreamInterface *pSt
 void CachePacketReceiver::OnRecvCharacterDataResult(MemoryStreamInterface *pStream)
 {
 	CachePacketCharacterDataResult Packet;
+	Packet.Serialize(pStream);
+
+	ClientManager::GetInstance().Get(Packet.ClientId).lock()->RecvPacket(Packet.GetPacketID(), pStream);
+}
+
+// スクリプトフラグを受信した。
+void CachePacketReceiver::OnRecvScriptFlagResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketScriptFlagResponse Packet;
 	Packet.Serialize(pStream);
 
 	ClientManager::GetInstance().Get(Packet.ClientId).lock()->RecvPacket(Packet.GetPacketID(), pStream);

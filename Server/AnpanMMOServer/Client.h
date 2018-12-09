@@ -62,6 +62,9 @@ public:
 	// フラグ管理を取得.
 	const ScriptFlagManager &GetScriptFlagManager() const { return FlagManager; }
 
+	// ビットフィールドからスクリプトフラグに変換.
+	void ConvertScriptFlagFromBitFields(u32 BitField1, u32 BitField2, u32 BitField3);
+
 protected:
 
 	// データを受信した。

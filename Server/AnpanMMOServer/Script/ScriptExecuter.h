@@ -46,7 +46,7 @@ protected:
 	virtual void OnExecuteError(const std::string &ErrorMessage);
 
 	// 処理が終了した。
-	virtual void OnFinished() {}
+	virtual void OnFinished();
 
 	// デバッグメッセージを表示.
 	virtual void ShowDebugMessage(const std::string &Message);
