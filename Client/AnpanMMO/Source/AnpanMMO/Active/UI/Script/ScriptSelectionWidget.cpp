@@ -4,6 +4,7 @@
 #include "Util.h"
 #include "MMOGameInstance.h"
 #include "Kismet/GameplayStatics.h"
+#include "Packet/PacketNPCTalkSelection.h"
 
 const TCHAR *UScriptSelectionWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Script/SelectionWidget.SelectionWidget");
 
@@ -41,6 +42,9 @@ void UScriptSelectionWidget::Select(int32 Index)
 {
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
 	check(pInst != nullptr);
+
+	PacketNPCTalkSelection Packet(Index);
+	pInst->SendPacket(&Packet);
 
 	pInst->GetScript()->OnSelectedSelection(Index);
 	Back();
