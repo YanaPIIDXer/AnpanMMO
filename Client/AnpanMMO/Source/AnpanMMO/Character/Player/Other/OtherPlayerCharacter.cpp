@@ -7,11 +7,12 @@
 const TCHAR *AOtherPlayerCharacter::AssetPath = TEXT("/Game/Blueprints/System/Active/OtherPlayerCharacter.OtherPlayerCharacter");
 
 // Spawn
-AOtherPlayerCharacter *AOtherPlayerCharacter::Spawn(UWorld *pWorld, uint32 Uuid, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp, const FString &CharacterName)
+AOtherPlayerCharacter *AOtherPlayerCharacter::Spawn(UWorld *pWorld, uint32 Uuid, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp, const FString &CharacterName, uint8 Job)
 {
 	auto pCharacter = Util::SpawnFromBlueprint<AOtherPlayerCharacter>(pWorld, AssetPath, Position, Rotation);
 	pCharacter->Initialize(Hp, MaxHp);
 	pCharacter->Uuid = Uuid;
+	pCharacter->Job = Job;
 	pCharacter->CharacterName = CharacterName;
 
 	// ‘«Œ³‚ÌÀ•W‚ª‘—‚ç‚ê‚Ä‚­‚é‚Ì‚Å’†S‚ÌÀ•W‚É•ÏŠ·.

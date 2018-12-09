@@ -20,7 +20,7 @@ class ANPANMMO_API AOtherPlayerCharacter : public APlayerCharacterBase
 public:
 
 	// Spawn
-	static AOtherPlayerCharacter *Spawn(UWorld *pWorld, uint32 Uuid, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp, const FString &CharacterName);
+	static AOtherPlayerCharacter *Spawn(UWorld *pWorld, uint32 Uuid, const FVector &Position, const FRotator &Rotation, int32 Hp, int32 MaxHp, const FString &CharacterName, uint8 Job);
 
 	// コンストラクタ
 	AOtherPlayerCharacter(const FObjectInitializer &ObjectInitializer);
@@ -48,6 +48,7 @@ public:
 
 	// キャラクタタイプを取得.
 	virtual ECharacterType GetCharacterType() const override { return ECharacterType::Other; }
+
 private:
 
 	// Blueprintのアセットパス
@@ -58,6 +59,9 @@ private:
 
 	// UUID
 	uint32 Uuid;
+
+	// ジョブ
+	uint8 Job;
 
 	// キャラクタ名.
 	FString CharacterName;
