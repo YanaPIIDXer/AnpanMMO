@@ -51,6 +51,9 @@ private:
 	// キャラクタ情報の結果を受信した。
 	void OnRecvCharacterDataResult(MemoryStreamInterface *pStream);
 
+	// スクリプトフラグを受信した。
+	void OnRecvScriptFlagResponse(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __CACHEPACKETRECEIVER_H__

@@ -42,6 +42,9 @@ public:
 	// フラグを取得.
 	virtual bool GetFlag(int Flag) override;
 
+	// ビットフィールドからフラグに変換.
+	void ConvertFlagFromBitFields(uint32 BitField1, uint32 BitField2, uint32 BitField3);
+
 protected:
 
 	// 実行エラー

@@ -12,22 +12,28 @@
 #include "Packet/PacketCreateCharacterRequest.h"
 #include "Packet/PacketCreateCharacterResult.h"
 #include "Packet/PacketCharacterStatus.h"
+#include "Packet/PacketScriptFlag.h"
 #include "Packet/CachePacketLogInRequest.h"
 #include "Packet/CachePacketLogInResult.h"
 #include "Packet/CachePacketCreateCharacterRequest.h"
 #include "Packet/CachePacketCreateCharacterResult.h"
 #include "Packet/CachePacketCharacterDataRequest.h"
 #include "Packet/CachePacketCharacterDataResult.h"
+#include "Packet/CachePacketScriptFlagRequest.h"
+#include "Packet/CachePacketScriptFlagResponse.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
 	: ClientStateBase(pInParent)
+	, LastAreaId(0)
+	, LastPosition(Vector3D::Zero)
 {
 	AddPacketFunction(LogInRequest, boost::bind(&ClientStateTitle::OnRecvLogInRequest, this, _2));
 	AddPacketFunction(CreateCharacterRequest, boost::bind(&ClientStateTitle::OnRecvCreateCharacterRequest, this, _2));
 	AddPacketFunction(CacheLogInResult, boost::bind(&ClientStateTitle::OnRecvCacheLogInResult, this, _2));
 	AddPacketFunction(CacheCreateCharacterResult, boost::bind(&ClientStateTitle::OnRecvCacheCreateCharacterResult, this, _2));
 	AddPacketFunction(CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
+	AddPacketFunction(CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResult, this, _2));
 }
 
 
@@ -145,6 +151,32 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 	pClient->SendPacket(&StatusPacket);
 
-	ClientStateAreaChange *pNextState = new ClientStateAreaChange(pClient, Packet.LastAreaId, Vector3D(Packet.LastX, Packet.LastY, 0.0f));
-	pClient->ChangeState(pNextState);
+	LastAreaId = Packet.LastAreaId;
+	LastPosition = Vector3D(Packet.LastX, Packet.LastY, Packet.LastZ);
+
+	// スクリプトフラグを要求.
+	CachePacketScriptFlagRequest RequestPacket(pClient->GetUuid(), pClient->GetCustomerId());
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+}
+
+// キャッシュサーバからスクリプトフラグを受信した。
+void ClientStateTitle::OnRecvCacheScriptFlagResult(MemoryStreamInterface *pStream)
+{
+	CachePacketScriptFlagResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result == CachePacketScriptFlagResponse::Success)
+	{
+		GetParent()->ConvertScriptFlagFromBitFields(Packet.BitField1, Packet.BitField2, Packet.BitField3);
+
+		PacketScriptFlag FlagPacket(Packet.BitField1, Packet.BitField2, Packet.BitField3);
+		GetParent()->SendPacket(&FlagPacket);
+	}
+	else
+	{
+		std::cout << "CachePacketScriptFlagResponse Error..." << std::endl;
+	}
+
+	ClientStateAreaChange *pNextState = new ClientStateAreaChange(GetParent(), LastAreaId, LastPosition);
+	GetParent()->ChangeState(pNextState);
 }

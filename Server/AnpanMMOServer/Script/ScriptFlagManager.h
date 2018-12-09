@@ -27,6 +27,12 @@ public:
 	// 取得.
 	bool Get(int Key) const;
 
+	// ビットフィールドに変換.
+	void ToBitField(u32 &OutBitField1, u32 &OutBitField2, u32 &OutBitField3) const;
+
+	// ビットフィールドから変換.
+	void FromBitField(u32 BitField1, u32 BitField2, u32 BitField3);
+
 private:
 
 	// フラグマップ

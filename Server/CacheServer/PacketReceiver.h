@@ -52,7 +52,13 @@ private:
 	void OnRecvCharacterDataRequest(MemoryStreamInterface *pStream);
 
 	// キャラクタ保存リクエストを受信した。
-	void OnRecvCharacterDataSave(MemoryStreamInterface *pStream);
+	void OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStream);
+
+	// スクリプトフラグ読み込みリクエストを受信した。
+	void OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream);
+
+	// スクリプトフラグ保存リクエストを受信した。
+	void OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream);
 
 };
 

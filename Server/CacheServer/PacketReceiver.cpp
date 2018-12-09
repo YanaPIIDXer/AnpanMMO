@@ -9,6 +9,9 @@
 #include "Packet/CachePacketCharacterDataRequest.h"
 #include "Packet/CachePacketCharacterDataResult.h"
 #include "Packet/CachePacketCharacterDataSave.h"
+#include "Packet/CachePacketScriptFlagRequest.h"
+#include "Packet/CachePacketScriptFlagResponse.h"
+#include "Packet/CachePacketScriptFlagSaveRequest.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -17,7 +20,9 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CacheLogInRequest, bind(&PacketReceiver::OnRecvLogInRequest, this, _1));
 	AddPacketFunc(CacheCreateCharacterRequest, bind(&PacketReceiver::OnRecvCreateCharacterRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
-	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSave, this, _1));
+	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
+	AddPacketFunc(CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
+	AddPacketFunc(CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -108,7 +113,7 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 }
 
 // キャラクタ保存リクエストを受信した。
-void PacketReceiver::OnRecvCharacterDataSave(MemoryStreamInterface *pStream)
+void PacketReceiver::OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketCharacterDataSave Packet;
 	Packet.Serialize(pStream);
@@ -117,6 +122,32 @@ void PacketReceiver::OnRecvCharacterDataSave(MemoryStreamInterface *pStream)
 	{
 		std::cout << "Character Data Save Failed..." << std::endl;
 	}
+}
+
+// スクリプトフラグ読み込みリクエストを受信した。
+void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketScriptFlagRequest Packet;
+	Packet.Serialize(pStream);
+
+	u32 BitField1, BitField2, BitField3;
+	u8 Result = CachePacketScriptFlagResponse::Success;
+	if (!DBConnection::GetInstance().LoadScriptFlags(Packet.CustomerId, BitField1, BitField2, BitField3))
+	{
+		Result = CachePacketScriptFlagResponse::Error;
+	}
+
+	CachePacketScriptFlagResponse ResponsePacket(Packet.ClientId, Result, BitField1, BitField2, BitField3);
+	pParent->SendPacket(&ResponsePacket);
+}
+
+// クスリプとフラグ保存リクエストを受信した。
+void PacketReceiver::OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketScriptFlagSaveRequest Packet;
+	Packet.Serialize(pStream);
+
+	DBConnection::GetInstance().SaveScriptFlags(Packet.CustomerId, Packet.BitField1, Packet.BitField2, Packet.BitField3);
 }
 
 

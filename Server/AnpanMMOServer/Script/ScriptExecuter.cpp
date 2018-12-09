@@ -2,6 +2,8 @@
 #include "ScriptExecuter.h"
 #include "Client.h"
 #include <fstream>
+#include "CacheServer/CacheServerConnection.h"
+#include "Packet/CachePacketScriptFlagSaveRequest.h"
 
 // コンストラクタ
 ScriptExecuter::ScriptExecuter()
@@ -50,6 +52,16 @@ bool ScriptExecuter::GetFlag(int Flag)
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
 {
 	std::cout << "Script Error:" << ErrorMessage << std::endl;
+}
+
+// 終了した。
+void ScriptExecuter::OnFinished()
+{
+	u32 BitField1, BitField2, BitField3;
+	pClient->GetScriptFlagManager().ToBitField(BitField1, BitField2, BitField3);
+
+	CachePacketScriptFlagSaveRequest Packet(pClient->GetUuid(), pClient->GetCustomerId(), BitField1, BitField2, BitField3);
+	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }
 
 // デバッグメッセージを表示.
