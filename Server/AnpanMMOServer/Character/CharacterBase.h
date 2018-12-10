@@ -7,6 +7,7 @@
 #include "Math/Rotation.h"
 #include "Area/AreaBase.h"
 #include "Skill/SkillControl.h"
+#include "Skill/SkillRecastManager.h"
 
 /**
  * キャラクタ基底クラス
@@ -124,6 +125,9 @@ private:
 
 	// スキル制御.
 	SkillControl Skill;
+
+	// スキルリキャスト管理.
+	SkillRecastManager Recast;
 
 };
 
