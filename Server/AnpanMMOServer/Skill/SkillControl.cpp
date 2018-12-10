@@ -153,6 +153,12 @@ void SkillControl::Activate()
 		}
 	}
 
+	// リキャストタイムが設定されていればリキャスト開始。
+	if (pItem->RecastTime > 0)
+	{
+		pOwner->StartRecast(SkillId);
+	}
+
 	// ここでStateをNutralに戻す。
 	ChangeState(new SkillStateNutral(this));
 }

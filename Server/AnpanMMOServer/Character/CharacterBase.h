@@ -77,6 +77,9 @@ public:
 	// エリアを取得.
 	AreaPtr GetArea() const { return pArea; }
 
+	// リキャスト開始.
+	void StartRecast(u32 SkillId);
+
 protected:
 
 	// 座標.
