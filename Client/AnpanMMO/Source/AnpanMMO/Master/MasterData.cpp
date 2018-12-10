@@ -20,4 +20,5 @@ void MasterData::Load()
 	NPC.Load();
 	NPCResource.Load();
 	NPCCondition.Load();
+	Skill.Load();
 }

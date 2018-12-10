@@ -162,6 +162,7 @@
     <ClInclude Include="Master\AnpanPopDataMaster.h" />
     <ClInclude Include="Master\InstanceInfoMaster.h" />
     <ClInclude Include="Master\NPCMaster.h" />
+    <ClInclude Include="Master\SkillMaster.h" />
     <ClInclude Include="Master\TimeInfoMaster.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
@@ -258,6 +259,7 @@
     <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
     <ClCompile Include="Master\InstanceInfoMaster.cpp" />
     <ClCompile Include="Master\NPCMaster.cpp" />
+    <ClCompile Include="Master\SkillMaster.cpp" />
     <ClCompile Include="Master\TimeInfoMaster.cpp" />
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />

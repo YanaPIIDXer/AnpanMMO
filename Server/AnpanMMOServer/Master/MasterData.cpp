@@ -79,5 +79,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!Skill.Load(Connection))
+	{
+		std::cout << "Skill Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }
