@@ -6,6 +6,7 @@
 #include "Math/Vector3D.h"
 #include "Math/Rotation.h"
 #include "Area/AreaBase.h"
+#include "Skill/SkillControl.h"
 
 /**
  * キャラクタ基底クラス
@@ -108,6 +109,9 @@ private:
 
 	// エリア
 	AreaPtr pArea;
+
+	// スキル制御.
+	SkillControl Skill;
 
 };
 

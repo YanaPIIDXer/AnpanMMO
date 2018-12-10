@@ -6,6 +6,7 @@
 // コンストラクタ
 CharacterBase::CharacterBase()
 	: Uuid(0)
+	, Skill(this)
 {
 }
 
