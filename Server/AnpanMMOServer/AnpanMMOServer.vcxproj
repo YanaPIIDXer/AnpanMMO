@@ -174,7 +174,9 @@
     <ClInclude Include="Script\ScriptFlagManager.h" />
     <ClInclude Include="ServerHost.h" />
     <ClInclude Include="Skill\SkillControl.h" />
+    <ClInclude Include="Skill\State\SkillStateAutoMove.h" />
     <ClInclude Include="Skill\State\SkillStateBase.h" />
+    <ClInclude Include="Skill\State\SkillStateCast.h" />
     <ClInclude Include="Skill\State\SkillStateNutral.h" />
     <ClInclude Include="StringPack.h" />
     <ClInclude Include="TCPConnection.h" />
@@ -274,7 +276,9 @@
     <ClCompile Include="Script\ScriptFlagManager.cpp" />
     <ClCompile Include="ServerHost.cpp" />
     <ClCompile Include="Skill\SkillControl.cpp" />
+    <ClCompile Include="Skill\State\SkillStateAutoMove.cpp" />
     <ClCompile Include="Skill\State\SkillStateBase.cpp" />
+    <ClCompile Include="Skill\State\SkillStateCast.cpp" />
     <ClCompile Include="Skill\State\SkillStateNutral.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />
