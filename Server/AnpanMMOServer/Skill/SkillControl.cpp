@@ -6,6 +6,7 @@
 #include "State/SkillStateNutral.h"
 #include "State/SkillStateCast.h"
 #include "State/SkillStateAutoMove.h"
+#include "Packet/CharacterType.h"
 #include "Packet/PacketSkillCastFinish.h"
 #include "Packet/PacketSkillActivate.h"
 
@@ -85,7 +86,41 @@ void SkillControl::Activate()
 	}
 	else
 	{
-		// @TODO:”ÍˆÍ“à‚ÌƒLƒƒƒ‰‚ð—ñ‹“‚·‚éˆ—‚ðŽÀ‘•B
+		u8 TargetType = 0;
+		switch (pItem->SkillType)
+		{
+			case SkillItem::ATTACK:
+
+				if (pOwner->GetCharacterType() == CharacterType::Player)
+				{
+					TargetType = CharacterType::Enemy;
+				}
+				else
+				{
+					TargetType = CharacterType::Player;
+				}
+				break;
+
+			case SkillItem::HEAL:
+
+				TargetType = pOwner->GetCharacterType();
+				break;
+		}
+
+		Vector3D Center = pOwner->GetPosition();
+		Center += (pOwner->GetCenterVec() * pItem->Distance);
+		switch (pItem->RangeType)
+		{
+			case SkillItem::RANGE_CIRCLE:
+
+				pArea.lock()->CollectCircle(Center, (float) pItem->RangeX, TargetType, Targets);
+				break;
+
+			case SkillItem::RANGE_BOX:
+
+				pArea.lock()->CollectBox(Center, (float) pItem->RangeX, (float) pItem->RangeY, TargetType, Targets);
+				break;
+		}
 	}
 
 	for (u32 i = 0; i < Targets.size(); i++)

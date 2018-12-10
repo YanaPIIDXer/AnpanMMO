@@ -109,6 +109,16 @@ void PlayerManager::BroadcastPacketWithRange(PacketBase *pPacket, const Vector3D
 	}
 }
 
+// CharacterPtrとして全取得.
+void PlayerManager::GetAllAsCharacterPtr(std::vector<CharacterPtr> &OutList) const
+{
+	OutList.clear();
+	for (PlayerMap::const_iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
+	{
+		OutList.push_back(It->second);
+	}
+}
+
 
 // プレイヤーリストパケットを生成.
 void PlayerManager::MakeListPacket(PacketPlayerList &Packet)

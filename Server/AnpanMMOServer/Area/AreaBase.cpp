@@ -2,9 +2,12 @@
 #include "AreaBase.h"
 #include "WeakPtrDefine.h"
 #include "Client.h"
+#include <math.h>
+#include "Character/CharacterBase.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Character/Anpan/Anpan.h"
 #include "Master/AreaMaster.h"
+#include "Packet/CharacterType.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketAddExp.h"
@@ -81,6 +84,67 @@ float AreaBase::GetHeight(float X, float Y) const
 bool AreaBase::CheckMovable(const Vector3D &Start, const Vector3D &End, float ClimbableHeight, Vector3D &OutHit) const
 {
 	return HeightData.CheckMovable(Start, End, ClimbableHeight, OutHit);
+}
+
+// 円形でターゲットを取得.
+void AreaBase::CollectCircle(const Vector3D &Center, float Radius, u8 TargetType, std::vector<CharacterBase *> &OutTargets)
+{
+	std::vector<CharacterPtr> Targets;
+	switch (TargetType)
+	{
+		case CharacterType::Player:
+			
+			PlayerMgr.GetAllAsCharacterPtr(Targets);
+			break;
+
+		case CharacterType::Enemy:
+
+			AnpanMgr.GetAllAsCharacterPtr(Targets);
+			break;
+	}
+
+	for (u32 i = 0; i < Targets.size(); i++)
+	{
+		Vector3D TargetPos = Targets[i].lock()->GetPosition();
+		if ((pow(TargetPos.X - Center.X, 2) + pow(TargetPos.Y - Center.Y, 2)) <= Radius * Radius)
+		{
+			OutTargets.push_back(Targets[i].lock().get());
+		}
+	}
+}
+
+// 矩形でターゲットを取得.
+void AreaBase::CollectBox(const Vector3D &Center, float Width, float Height, u8 TargetType, std::vector<CharacterBase *> &OutTargets)
+{
+	std::vector<CharacterPtr> Targets;
+	switch (TargetType)
+	{
+		case CharacterType::Player:
+
+			PlayerMgr.GetAllAsCharacterPtr(Targets);
+			break;
+
+		case CharacterType::Enemy:
+
+			AnpanMgr.GetAllAsCharacterPtr(Targets);
+			break;
+	}
+
+	Vector3D Left = Center;
+	Left.X -= Width * 0.5f;
+	Left.Y -= Height * 0.5f;
+	
+	Vector3D Right = Center;
+	Right.X += Width * 0.5f;
+	Right.Y += Height * 0.5f;
+	for (u32 i = 0; i < Targets.size(); i++)
+	{
+		Vector3D TargetPos = Targets[i].lock()->GetPosition();
+		if ((TargetPos.X >= Left.X) && (TargetPos.X <= Right.X) && (TargetPos.Y >= Left.Y) && (TargetPos.Y <= Right.Y))
+		{
+			OutTargets.push_back(Targets[i].lock().get());
+		}
+	}
 }
 
 

@@ -8,6 +8,7 @@
 
 struct AreaItem;
 class PacketBase;
+class CharacterBase;
 
 /**
  * エリア基底クラス
@@ -58,6 +59,12 @@ public:
 
 	// インスタンスエリアか？
 	virtual bool IsInstance() const { return false; }
+
+	// 円形でターゲットを取得.
+	void CollectCircle(const Vector3D &Center, float Radius, u8 TargetType, std::vector<CharacterBase *> &OutTargets);
+
+	// 矩形でターゲットを取得.
+	void CollectBox(const Vector3D &Center, float Width, float Height, u8 TargetType, std::vector<CharacterBase *> &OutTargets);
 
 protected:
 

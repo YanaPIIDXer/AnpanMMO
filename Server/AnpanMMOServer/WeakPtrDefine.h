@@ -7,6 +7,9 @@
  * このヘッダに集約する。
  */
 
+class CharacterBase;
+typedef weak_ptr<CharacterBase> CharacterPtr;
+
 class PlayerCharacter;
 typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
 
