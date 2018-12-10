@@ -75,6 +75,16 @@ void AnpanManager::Spawn(u32 MasterId, const Vector3D &Position)
 	SpawnAnpan(pSharedPtr);
 }
 
+// CharacterPtr‚Æ‚µ‚Ä‘Sæ“¾.
+void AnpanManager::GetAllAsCharacterPtr(std::vector<CharacterPtr> &OutList) const
+{
+	OutList.clear();
+	for (AnpanMap::const_iterator It = AnpanList.begin(); It != AnpanList.end(); ++It)
+	{
+		OutList.push_back(It->second);
+	}
+}
+
 
 // ƒAƒ“ƒpƒ“¶¬.
 void AnpanManager::SpawnAnpan(AnpanSharedPtr pAnpan)

@@ -8,6 +8,7 @@
 
 struct AreaItem;
 class PacketBase;
+class CharacterBase;
 
 /**
  * エリア基底クラス
@@ -38,9 +39,6 @@ public:
 	// 移動を受信した。
 	void OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rotation);
 
-	// 攻撃を受信した。
-	void OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid);
-
 	// パケットのブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 
@@ -61,6 +59,12 @@ public:
 
 	// インスタンスエリアか？
 	virtual bool IsInstance() const { return false; }
+
+	// 円形でターゲットを取得.
+	void CollectCircle(const Vector3D &Center, float Radius, u8 TargetType, std::vector<CharacterBase *> &OutTargets);
+
+	// 矩形でターゲットを取得.
+	void CollectBox(const Vector3D &Center, float Width, float Height, u8 TargetType, std::vector<CharacterBase *> &OutTargets);
 
 protected:
 

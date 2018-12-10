@@ -17,8 +17,20 @@ Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int De
 	SetParameter(Hp, Hp, Atk, Def);
 }
 
+// 攻撃.
+void Anpan::AttackTo(CharacterBase *pTarget)
+{
+	/*
+	DamageCalcUnit Calc(GetParameter(), pTarget->GetParameter());
+	int Value = Calc.Calc();
+
+	pTarget->ApplyDamage(shared_from_this(), Value);
+	*/
+}
+
+
 // 毎フレームの処理.
-void Anpan::Poll(int DeltaTime)
+void Anpan::Update(int DeltaTime)
 {
 	AI.Poll(DeltaTime);
 
@@ -43,16 +55,6 @@ void Anpan::Poll(int DeltaTime)
 		GetArea().lock()->BroadcastPacket(&Packet);
 	}
 }
-
-// 攻撃.
-void Anpan::AttackTo(CharacterBase *pTarget)
-{
-	DamageCalcUnit Calc(GetParameter(), pTarget->GetParameter());
-	int Value = Calc.Calc();
-
-	pTarget->ApplyDamage(shared_from_this(), Value);
-}
-
 
 // ダメージを受けた。
 void Anpan::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)

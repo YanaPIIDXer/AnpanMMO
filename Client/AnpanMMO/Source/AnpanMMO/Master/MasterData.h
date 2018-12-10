@@ -11,6 +11,7 @@
 #include "NPCMaster.h"
 #include "NPCResourceMaster.h"
 #include "NPCConditionMaster.h"
+#include "SkillMaster.h"
 
 /**
  * マスタデータ
@@ -50,6 +51,9 @@ public:
 	// NPCコンディションマスタを取得.
 	const NPCConditionMaster &GetNPCConditionMaster() const { return NPCCondition; }
 
+	// スキルマスタ取得.
+	const SkillMaster &GetSkillMaster() const { return Skill; }
+
 private:
 
 	// エリアマスタ
@@ -75,6 +79,9 @@ private:
 
 	// NPCコンディションマスタ
 	NPCConditionMaster NPCCondition;
+
+	// スキルマスタ
+	SkillMaster Skill;
 
 	// =========== Singleton ============
 public:

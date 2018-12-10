@@ -13,7 +13,7 @@ PlayerManager::PlayerManager()
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
-void PlayerManager::Poll()
+void PlayerManager::Poll(s32 DeltaTime)
 {
 	PlayerMap::iterator It = PlayerList.begin();
 	while (It != PlayerList.end())
@@ -27,6 +27,7 @@ void PlayerManager::Poll()
 		}
 		else
 		{
+			It->second.lock()->Poll(DeltaTime);
 			++It;
 		}
 	}
@@ -106,6 +107,16 @@ void PlayerManager::BroadcastPacketWithRange(PacketBase *pPacket, const Vector3D
 		if (SizeSq > RangeSq) { continue; }
 
 		pClient->SendPacket(pPacket);
+	}
+}
+
+// CharacterPtr‚Æ‚µ‚Ä‘SŽæ“¾.
+void PlayerManager::GetAllAsCharacterPtr(std::vector<CharacterPtr> &OutList) const
+{
+	OutList.clear();
+	for (PlayerMap::const_iterator It = PlayerList.begin(); It != PlayerList.end(); ++It)
+	{
+		OutList.push_back(It->second);
 	}
 }
 

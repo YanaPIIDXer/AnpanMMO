@@ -6,6 +6,8 @@
 #include "Math/Vector3D.h"
 #include "Math/Rotation.h"
 #include "Area/AreaBase.h"
+#include "Skill/SkillControl.h"
+#include "Skill/SkillRecastManager.h"
 
 /**
  * キャラクタ基底クラス
@@ -20,6 +22,9 @@ public:
 
 	// デストラクタ
 	virtual ~CharacterBase() {}
+
+	// 毎フレームの処理.
+	void Poll(s32 DeltaTime);
 
 	// パラメータ取得.
 	const CharacterParameter &GetParameter() const { return Parameter; }
@@ -41,6 +46,9 @@ public:
 
 	// ダメージ
 	void ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value);
+
+	// 回復.
+	void Heal(int Value);
 
 	// 正面ベクトルを取得.
 	Vector3D GetCenterVec() const;
@@ -98,6 +106,15 @@ protected:
 	// ダメージを受けた。
 	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue) {}
 
+	// 毎フレームの処理.
+	virtual void Update(s32 DeltaTime) {}
+
+	// スキルコントロールを取得.
+	SkillControl *GetSkillControl() { return &Skill; }
+
+	// スキルリキャスト管理を取得.
+	SkillRecastManager *GetSkillRecast() { return &Recast; }
+
 private:
 
 	// パラメータ
@@ -108,6 +125,12 @@ private:
 
 	// エリア
 	AreaPtr pArea;
+
+	// スキル制御.
+	SkillControl Skill;
+
+	// スキルリキャスト管理.
+	SkillRecastManager Recast;
 
 };
 

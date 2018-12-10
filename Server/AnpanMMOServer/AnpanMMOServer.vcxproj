@@ -162,6 +162,7 @@
     <ClInclude Include="Master\AnpanPopDataMaster.h" />
     <ClInclude Include="Master\InstanceInfoMaster.h" />
     <ClInclude Include="Master\NPCMaster.h" />
+    <ClInclude Include="Master\SkillMaster.h" />
     <ClInclude Include="Master\TimeInfoMaster.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
@@ -172,6 +173,12 @@
     <ClInclude Include="Script\ScriptFlag.h" />
     <ClInclude Include="Script\ScriptFlagManager.h" />
     <ClInclude Include="ServerHost.h" />
+    <ClInclude Include="Skill\SkillControl.h" />
+    <ClInclude Include="Skill\SkillRecastManager.h" />
+    <ClInclude Include="Skill\State\SkillStateAutoMove.h" />
+    <ClInclude Include="Skill\State\SkillStateBase.h" />
+    <ClInclude Include="Skill\State\SkillStateCast.h" />
+    <ClInclude Include="Skill\State\SkillStateNutral.h" />
     <ClInclude Include="StringPack.h" />
     <ClInclude Include="TCPConnection.h" />
     <ClInclude Include="Config.h" />
@@ -258,6 +265,7 @@
     <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
     <ClCompile Include="Master\InstanceInfoMaster.cpp" />
     <ClCompile Include="Master\NPCMaster.cpp" />
+    <ClCompile Include="Master\SkillMaster.cpp" />
     <ClCompile Include="Master\TimeInfoMaster.cpp" />
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />
@@ -268,6 +276,12 @@
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
     <ClCompile Include="Script\ScriptFlagManager.cpp" />
     <ClCompile Include="ServerHost.cpp" />
+    <ClCompile Include="Skill\SkillControl.cpp" />
+    <ClCompile Include="Skill\SkillRecastManager.cpp" />
+    <ClCompile Include="Skill\State\SkillStateAutoMove.cpp" />
+    <ClCompile Include="Skill\State\SkillStateBase.cpp" />
+    <ClCompile Include="Skill\State\SkillStateCast.cpp" />
+    <ClCompile Include="Skill\State\SkillStateNutral.cpp" />
     <ClCompile Include="TCPConnection.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="FlexArray.cpp" />

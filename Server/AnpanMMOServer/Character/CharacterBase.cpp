@@ -2,11 +2,23 @@
 #include "CharacterBase.h"
 #include "Math/MathUtil.h"
 #include "Packet/PacketDamage.h"
+#include "Packet/PacketHeal.h"
 
 // コンストラクタ
 CharacterBase::CharacterBase()
 	: Uuid(0)
+	, Skill(this)
+	, Recast(this)
 {
+}
+
+// 毎フレームの処理.
+void CharacterBase::Poll(s32 DeltaTime)
+{
+	Skill.Poll(DeltaTime);
+	Recast.Poll(DeltaTime);
+	
+	Update(DeltaTime);
 }
 
 // 移動.
@@ -34,6 +46,19 @@ void CharacterBase::ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value)
 	pArea.lock()->BroadcastPacket(&Packet);
 
 	OnDamaged(pAttacker, Value);
+}
+
+// 回復.
+void CharacterBase::Heal(int Value)
+{
+	Parameter.Hp += Value;
+	if (Parameter.Hp > Parameter.MaxHp)
+	{
+		Parameter.Hp = Parameter.MaxHp;
+	}
+
+	PacketHeal Packet(GetCharacterType(), Uuid, Value, Parameter.Hp);
+	pArea.lock()->BroadcastPacket(&Packet);
 }
 
 // 正面ベクトルを取得.

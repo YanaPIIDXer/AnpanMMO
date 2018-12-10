@@ -8,7 +8,6 @@
 #include "Active/ActiveGameMode.h"
 #include "Active/UI/MainHUD.h"
 #include "Kismet/GameplayStatics.h"
-#include "Packet/PacketAttack.h"
 
 // コンストラクタ
 AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
@@ -41,23 +40,6 @@ void AGameCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	Move.Poll(DeltaTime);
-}
-
-// 攻撃.
-void AGameCharacter::Attack()
-{
-	FHitResult Result;
-
-	FVector StartVec = GetActorLocation();
-	FVector EndVec = StartVec + (GetActorForwardVector() * 500.0f);
-	if (!GetWorld()->LineTraceSingleByChannel(Result, StartVec, EndVec, ECollisionChannel::ECC_GameTraceChannel1)) { return; }
-	AAnpan *pAnpan = Cast<AAnpan>(Result.GetActor());
-	if (pAnpan == nullptr) { return; }
-
-	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(GetGameInstance());
-	check(pInst != nullptr);
-	PacketAttack Packet(pAnpan->GetUuid());
-	pInst->SendPacket(&Packet);
 }
 
 // 経験値を受信した。

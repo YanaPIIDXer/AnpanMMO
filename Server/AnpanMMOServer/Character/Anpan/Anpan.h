@@ -19,9 +19,6 @@ public:
 	// デストラクタ
 	virtual ~Anpan() {}
 
-	// 毎フレームの処理.
-	void Poll(int DeltaTime);
-
 	// キャラクタタイプを取得.
 	virtual u8 GetCharacterType() const { return CharacterType::Enemy; }
 
@@ -38,6 +35,9 @@ public:
 	u32 GetMasterId() const { return MasterId; }
 	
 protected:
+
+	// 毎フレームの処理.
+	virtual void Update(int DeltaTime);
 
 	// ダメージを受けた。
 	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue);

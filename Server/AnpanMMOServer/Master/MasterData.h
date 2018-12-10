@@ -9,6 +9,7 @@
 #include "InstanceInfoMaster.h"
 #include "TimeInfoMaster.h"
 #include "NPCMaster.h"
+#include "SkillMaster.h"
 
 /**
  * マスタデータクラス
@@ -45,6 +46,9 @@ public:
 	// NPCマスタを取得.
 	const NPCMaster &GetNPCMaster() { return NPC; }
 
+	// スキルマスタ取得.
+	const SkillMaster &GetSkillMaster() { return Skill; }
+
 private:
 
 	// DBホスト
@@ -79,6 +83,9 @@ private:
 
 	// NPCマスタ
 	NPCMaster NPC;
+
+	// スキルマスタ
+	SkillMaster Skill;
 
 	// ======= Singleton ==========
 public:

@@ -51,6 +51,9 @@ public:
 	// 外部からSpawnさせる。
 	void Spawn(u32 MasterId, const Vector3D &Position);
 
+	// CharacterPtrとして全取得.
+	void GetAllAsCharacterPtr(std::vector<CharacterPtr> &OutList) const;
+
 private:
 
 	// アンパンリスト

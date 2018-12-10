@@ -3,9 +3,8 @@
 
 #include <boost/unordered_map.hpp>
 #include "Math/Vector3D.h"
+#include "WeakPtrDefine.h"
 
-class PlayerCharacter;
-typedef weak_ptr<PlayerCharacter> PlayerCharacterPtr;
 class PacketBase;
 class Client;
 class PacketPlayerList;
@@ -29,7 +28,7 @@ public:
 	~PlayerManager() {}
 
 	// 毎フレームの処理.
-	void Poll();
+	void Poll(s32 DeltaTime);
 
 	// 追加.
 	void Add(u32 Uuid, PlayerCharacterPtr pPlayer);
@@ -51,6 +50,9 @@ public:
 
 	// プレイヤー数を取得.
 	u32 GetCount() const { return PlayerList.size(); }
+
+	// CharacterPtrとして全取得.
+	void GetAllAsCharacterPtr(std::vector<CharacterPtr> &OutList) const;
 
 private:
 

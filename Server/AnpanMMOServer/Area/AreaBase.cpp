@@ -2,10 +2,12 @@
 #include "AreaBase.h"
 #include "WeakPtrDefine.h"
 #include "Client.h"
+#include <math.h>
+#include "Character/CharacterBase.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Character/Anpan/Anpan.h"
 #include "Master/AreaMaster.h"
-#include "Math/DamageCalcUnit.h"
+#include "Packet/CharacterType.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketAddExp.h"
@@ -29,7 +31,7 @@ AreaBase::AreaBase(const AreaItem *pItem)
 // 毎フレームの処理.
 void AreaBase::Poll(int DeltaTime)
 {
-	PlayerMgr.Poll();
+	PlayerMgr.Poll(DeltaTime);
 	AnpanMgr.Poll(DeltaTime);
 	Update();
 }
@@ -60,30 +62,6 @@ void AreaBase::OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rotation)
 	PlayerMgr.OnRecvMove(Uuid, X, Y, Z, Rotation);
 }
 
-// 攻撃を受信した。
-void AreaBase::OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid)
-{
-	PlayerCharacterPtr pAttacker = PlayerMgr.Get(AttackerUuid);
-	AnpanPtr pDefencer = AnpanMgr.Get(DefencerUuid);
-
-	// 連打した時など、サーバ上では既に死んでいるアンパンを殴ろうとする事がある。
-	if (pDefencer.expired()) { return; }
-
-	// ダメージ計算.
-	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
-	int DamageValue = DamageCalc.Calc();
-	pDefencer.lock()->ApplyDamage(pAttacker, DamageValue);
-
-	if (pDefencer.lock()->IsDead())
-	{
-		int Exp = pDefencer.lock()->GetExp();
-		pAttacker.lock()->AddExp(Exp);
-
-		PacketAddExp ExpPacket(pAttacker.lock()->GetExp());
-		pAttacker.lock()->GetClient()->SendPacket(&ExpPacket);
-	}
-}
-
 // パケットのブロードキャスト
 void AreaBase::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 {
@@ -106,6 +84,67 @@ float AreaBase::GetHeight(float X, float Y) const
 bool AreaBase::CheckMovable(const Vector3D &Start, const Vector3D &End, float ClimbableHeight, Vector3D &OutHit) const
 {
 	return HeightData.CheckMovable(Start, End, ClimbableHeight, OutHit);
+}
+
+// 円形でターゲットを取得.
+void AreaBase::CollectCircle(const Vector3D &Center, float Radius, u8 TargetType, std::vector<CharacterBase *> &OutTargets)
+{
+	std::vector<CharacterPtr> Targets;
+	switch (TargetType)
+	{
+		case CharacterType::Player:
+			
+			PlayerMgr.GetAllAsCharacterPtr(Targets);
+			break;
+
+		case CharacterType::Enemy:
+
+			AnpanMgr.GetAllAsCharacterPtr(Targets);
+			break;
+	}
+
+	for (u32 i = 0; i < Targets.size(); i++)
+	{
+		Vector3D TargetPos = Targets[i].lock()->GetPosition();
+		if ((pow(TargetPos.X - Center.X, 2) + pow(TargetPos.Y - Center.Y, 2)) <= Radius * Radius)
+		{
+			OutTargets.push_back(Targets[i].lock().get());
+		}
+	}
+}
+
+// 矩形でターゲットを取得.
+void AreaBase::CollectBox(const Vector3D &Center, float Width, float Height, u8 TargetType, std::vector<CharacterBase *> &OutTargets)
+{
+	std::vector<CharacterPtr> Targets;
+	switch (TargetType)
+	{
+		case CharacterType::Player:
+
+			PlayerMgr.GetAllAsCharacterPtr(Targets);
+			break;
+
+		case CharacterType::Enemy:
+
+			AnpanMgr.GetAllAsCharacterPtr(Targets);
+			break;
+	}
+
+	Vector3D Left = Center;
+	Left.X -= Width * 0.5f;
+	Left.Y -= Height * 0.5f;
+	
+	Vector3D Right = Center;
+	Right.X += Width * 0.5f;
+	Right.Y += Height * 0.5f;
+	for (u32 i = 0; i < Targets.size(); i++)
+	{
+		Vector3D TargetPos = Targets[i].lock()->GetPosition();
+		if ((TargetPos.X >= Left.X) && (TargetPos.X <= Right.X) && (TargetPos.Y >= Left.Y) && (TargetPos.Y <= Right.Y))
+		{
+			OutTargets.push_back(Targets[i].lock().get());
+		}
+	}
 }
 
 
