@@ -47,10 +47,12 @@ void Anpan::Poll(int DeltaTime)
 // UŒ‚.
 void Anpan::AttackTo(CharacterBase *pTarget)
 {
+	/*
 	DamageCalcUnit Calc(GetParameter(), pTarget->GetParameter());
 	int Value = Calc.Calc();
 
 	pTarget->ApplyDamage(shared_from_this(), Value);
+	*/
 }
 
 
