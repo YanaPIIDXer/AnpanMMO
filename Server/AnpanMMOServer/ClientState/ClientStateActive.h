@@ -40,6 +40,9 @@ private:
 	// リスポン要求を受信した。
 	void OnRecvRespawnRequest(MemoryStreamInterface *pStream);
 
+	// スキル使用を受信した。
+	void OnRecvSkillUse(MemoryStreamInterface *pStream);
+
 	// パーティ作成要求を受信した。
 	void OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream);
 

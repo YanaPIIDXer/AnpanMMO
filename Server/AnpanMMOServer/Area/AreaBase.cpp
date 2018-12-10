@@ -62,6 +62,27 @@ void AreaBase::OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rotation)
 	PlayerMgr.OnRecvMove(Uuid, X, Y, Z, Rotation);
 }
 
+// スキル使用を受信した。
+void AreaBase::OnRecvSkillUse(u32 Uuid, u32 SkillId, u8 TargetType, u32 TargetUuid)
+{
+	PlayerCharacterPtr pPlayer = PlayerMgr.Get(Uuid);
+	CharacterBase *pTarget = NULL;
+	switch (TargetType)
+	{
+		case CharacterType::Player:
+
+			pTarget = PlayerMgr.Get(TargetUuid).lock().get();
+			break;
+
+		case CharacterType::Enemy:
+
+			pTarget = AnpanMgr.Get(TargetUuid).lock().get();
+			break;
+	}
+
+	pPlayer.lock()->UseSkill(SkillId, pTarget);
+}
+
 // パケットのブロードキャスト
 void AreaBase::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 {

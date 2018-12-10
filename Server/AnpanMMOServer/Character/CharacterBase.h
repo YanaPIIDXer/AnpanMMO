@@ -77,6 +77,9 @@ public:
 	// エリアを取得.
 	AreaPtr GetArea() const { return pArea; }
 
+	// スキル使用.
+	void UseSkill(u32 SkillId, CharacterBase *pTarget);
+
 	// リキャスト開始.
 	void StartRecast(u32 SkillId);
 
