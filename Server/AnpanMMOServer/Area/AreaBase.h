@@ -39,6 +39,9 @@ public:
 	// 移動を受信した。
 	void OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rotation);
 
+	// スキル使用を受信した。
+	void OnRecvSkillUse(u32 Uuid, u32 SkillId, u8 TargetType, u32 TargetUuid);
+
 	// パケットのブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 

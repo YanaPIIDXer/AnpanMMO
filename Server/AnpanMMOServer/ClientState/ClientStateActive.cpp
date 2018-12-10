@@ -23,6 +23,7 @@
 #include "Packet/PacketAreaMoveRequest.h"
 #include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketRespawnRequest.h"
+#include "Packet/PacketSkillUse.h"
 #include "Packet/PacketPlayerRespawn.h"
 #include "Packet/PacketPartyCreateRequest.h"
 #include "Packet/PacketPartyCreateResult.h"
@@ -53,6 +54,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(WordCheckChatResult, boost::bind(&ClientStateActive::OnRecvChatWordCheckResult, this, _2));
 	AddPacketFunction(AreaMoveRequest, boost::bind(&ClientStateActive::OnRecvAreaMoveRequest, this, _2));
 	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
+	AddPacketFunction(SkillUse, boost::bind(&ClientStateActive::OnRecvSkillUse, this, _2));
 	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
 	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
 	AddPacketFunction(PartyExitRequest, boost::bind(&ClientStateActive::OnRecvPartyExitRequest, this, _2));
@@ -203,6 +205,16 @@ void ClientStateActive::OnRecvRespawnRequest(MemoryStreamInterface *pStream)
 
 	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), 1, Vector3D(-1000.0f, 0.0f, 0.0f));
 	GetParent()->ChangeState(pNewState);
+}
+
+// スキル使用を受信した。
+void ClientStateActive::OnRecvSkillUse(MemoryStreamInterface *pStream)
+{
+	PacketSkillUse Packet;
+	Packet.Serialize(pStream);
+
+	AreaPtr pArea = GetParent()->GetCharacter().lock()->GetArea();
+	pArea.lock()->OnRecvSkillUse(GetParent()->GetUuid(), Packet.SkillId, Packet.TargetType, Packet.TargetUuid);
 }
 
 // パーティ作成要求を受信した。

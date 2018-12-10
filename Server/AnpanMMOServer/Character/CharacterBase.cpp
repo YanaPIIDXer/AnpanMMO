@@ -87,3 +87,15 @@ void CharacterBase::Respawn()
 	Parameter.Hp = Parameter.MaxHp;
 	Position = Vector3D(0.0f, 0.0f, 0.0f);
 }
+
+// スキル使用.
+void CharacterBase::UseSkill(u32 SkillId, CharacterBase *pTarget)
+{
+	Skill.Use(SkillId, pTarget);
+}
+
+// リキャスト開始.
+void CharacterBase::StartRecast(u32 SkillId)
+{
+	Recast.Add(SkillId);
+}
