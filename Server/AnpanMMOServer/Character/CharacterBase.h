@@ -43,6 +43,9 @@ public:
 	// ダメージ
 	void ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value);
 
+	// 回復.
+	void Heal(int Value);
+
 	// 正面ベクトルを取得.
 	Vector3D GetCenterVec() const;
 

@@ -107,7 +107,7 @@ void SkillControl::Activate()
 					// @HACK:とりあえずダメージ計算ユニットを使用。
 					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());
 					s32 Value = Calc.Calc();
-					// @TODO:回復関数の実装。
+					Targets[i]->Heal(Value);
 				}
 				break;
 

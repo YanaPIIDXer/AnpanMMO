@@ -2,6 +2,7 @@
 #include "CharacterBase.h"
 #include "Math/MathUtil.h"
 #include "Packet/PacketDamage.h"
+#include "Packet/PacketHeal.h"
 
 // コンストラクタ
 CharacterBase::CharacterBase()
@@ -35,6 +36,19 @@ void CharacterBase::ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value)
 	pArea.lock()->BroadcastPacket(&Packet);
 
 	OnDamaged(pAttacker, Value);
+}
+
+// 回復.
+void CharacterBase::Heal(int Value)
+{
+	Parameter.Hp += Value;
+	if (Parameter.Hp > Parameter.MaxHp)
+	{
+		Parameter.Hp = Parameter.MaxHp;
+	}
+
+	PacketHeal Packet(GetCharacterType(), Uuid, Value, Parameter.Hp);
+	pArea.lock()->BroadcastPacket(&Packet);
 }
 
 // 正面ベクトルを取得.
