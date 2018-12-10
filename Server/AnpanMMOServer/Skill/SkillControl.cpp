@@ -108,7 +108,7 @@ void SkillControl::Activate()
 		}
 
 		Vector3D Center = pOwner->GetPosition();
-		Center += (pOwner->GetCenterVec() * pItem->Distance);
+		Center += (pOwner->GetCenterVec() * (float) pItem->Distance);
 		switch (pItem->RangeType)
 		{
 			case SkillItem::RANGE_CIRCLE:

@@ -18,9 +18,6 @@ using asio::ip::tcp;
 
 #include "TypeDefs.h"
 
-// スクリプトモジュールがクライアントとの互換性を持つためのおまじない
-#define SCRIPTMODULE_API
-
 // TODO: プログラムに必要な追加ヘッダーをここで参照してください
 
 #endif		// #ifndef __STDAFX_H__
