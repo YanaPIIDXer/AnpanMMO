@@ -10,7 +10,8 @@ bool SkillMaster::Load(const MySqlConnection &Connection)
 	char NameBind[128];
 	Query.BindResultInt(&BindItem.ID);
 	Query.BindResultString(NameBind);
-	Query.BindResultChar(&BindItem.Type);
+	Query.BindResultChar(&BindItem.SkillType);
+	Query.BindResultChar(&BindItem.RangeType);
 	Query.BindResultInt(&BindItem.Distance);
 	Query.BindResultInt(&BindItem.RangeX);
 	Query.BindResultInt(&BindItem.RangeY);
@@ -23,7 +24,8 @@ bool SkillMaster::Load(const MySqlConnection &Connection)
 		SkillItem Item;
 		Item.ID = BindItem.ID;
 		Item.Name = NameBind;
-		Item.Type = BindItem.Type;
+		Item.SkillType = BindItem.SkillType;
+		Item.RangeType = BindItem.RangeType;
 		Item.Distance = BindItem.Distance;
 		Item.RangeX = BindItem.RangeX;
 		Item.RangeY = BindItem.RangeY;

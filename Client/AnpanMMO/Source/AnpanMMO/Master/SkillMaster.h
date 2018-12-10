@@ -10,6 +10,12 @@ public:
 
 	enum
 	{
+		ATTACK = 0,
+		HEAL = 1,
+		BUFF = 2,
+	};
+	enum
+	{
 		NORMAL = 0,
 		RANGE_CIRCLE = 1,
 		RANGE_BOX = 2,
@@ -18,7 +24,8 @@ public:
 
 	u32 ID;
 	FString Name;
-	u8 Type;
+	u8 SkillType;
+	u8 RangeType;
 	s32 Distance;
 	s32 RangeX;
 	s32 RangeY;
@@ -32,7 +39,8 @@ public:
 		std::string StrName;
 		if(!pStream->Serialize(&StrName)) { return false; }
 		Name = UTF8_TO_TCHAR(StrName.c_str());
-		if(!pStream->Serialize(&Type)) { return false; }
+		if(!pStream->Serialize(&SkillType)) { return false; }
+		if(!pStream->Serialize(&RangeType)) { return false; }
 		if(!pStream->Serialize(&Distance)) { return false; }
 		if(!pStream->Serialize(&RangeX)) { return false; }
 		if(!pStream->Serialize(&RangeY)) { return false; }

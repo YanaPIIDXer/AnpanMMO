@@ -13,6 +13,12 @@ public:
 
 	enum
 	{
+		ATTACK = 0,
+		HEAL = 1,
+		BUFF = 2,
+	};
+	enum
+	{
 		NORMAL = 0,
 		RANGE_CIRCLE = 1,
 		RANGE_BOX = 2,
@@ -21,7 +27,8 @@ public:
 
 	u32 ID;
 	std::string Name;
-	u8 Type;
+	u8 SkillType;
+	u8 RangeType;
 	s32 Distance;
 	s32 RangeX;
 	s32 RangeY;
