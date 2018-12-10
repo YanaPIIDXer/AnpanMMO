@@ -10,6 +10,7 @@
 #include "Packet/CharacterType.h"
 #include "Packet/PacketSkillActivate.h"
 #include "Packet/PacketSkillUseFailed.h"
+#include "Packet/PacketSkillRecast.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, int MaxHp, int Atk, int Def, int InExp)
@@ -22,6 +23,7 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, int MaxHp, int Atk
 	SetParameter(MaxHp, MaxHp, Atk, Def);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
 	GetSkillControl()->SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
+	GetSkillRecast()->SetRecastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillRecastFinished, this, _1));
 }
 
 // デストラクタ
@@ -75,5 +77,12 @@ void PlayerCharacter::SaveParameter()
 void PlayerCharacter::OnSkillCanceled(u8 Reason)
 {
 	PacketSkillUseFailed Packet(Reason);
+	GetClient()->SendPacket(&Packet);
+}
+
+// リキャストが完了した。
+void PlayerCharacter::OnSkillRecastFinished(u32 SkillId)
+{
+	PacketSkillRecast Packet(SkillId);
 	GetClient()->SendPacket(&Packet);
 }

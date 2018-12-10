@@ -88,6 +88,9 @@ private:
 	// スキルがキャンセルされた。
 	void OnSkillCanceled(u8 Reason);
 
+	// リキャストが完了した。
+	void OnSkillRecastFinished(u32 SkillId);
+
 };
 
 #endif		// #ifndef __PLAYERCHARACTER_H__

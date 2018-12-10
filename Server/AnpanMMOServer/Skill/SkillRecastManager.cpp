@@ -16,6 +16,10 @@ void SkillRecastManager::Poll(s32 DeltaTime)
 		It->second -= DeltaTime;
 		if (It->second <= 0)
 		{
+			if (RecastFinishedFunc)
+			{
+				RecastFinishedFunc(It->first);
+			}
 			It = RecastList.erase(It);
 		}
 		else

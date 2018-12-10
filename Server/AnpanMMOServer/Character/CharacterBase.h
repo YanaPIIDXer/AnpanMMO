@@ -112,6 +112,9 @@ protected:
 	// スキルコントロールを取得.
 	SkillControl *GetSkillControl() { return &Skill; }
 
+	// スキルリキャスト管理を取得.
+	SkillRecastManager *GetSkillRecast() { return &Recast; }
+
 private:
 
 	// パラメータ
