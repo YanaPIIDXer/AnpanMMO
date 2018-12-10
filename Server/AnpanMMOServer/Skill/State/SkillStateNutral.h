@@ -17,6 +17,9 @@ public:
 	// デストラクタ
 	virtual ~SkillStateNutral() {}
 
+	// ステートタイプを取得.
+	virtual ESkillStateType GetStateType() { return Nutral; }
+
 };
 
 

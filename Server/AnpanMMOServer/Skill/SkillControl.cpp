@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "SkillControl.h"
+#include "Master/MasterData.h"
 #include "State/SkillStateNutral.h"
 #include "State/SkillStateCast.h"
 #include "State/SkillStateAutoMove.h"
@@ -44,30 +45,49 @@ void SkillControl::ChangeState(SkillStateBase *pNewState)
 // キャストが完了した。
 void SkillControl::CastFinished()
 {
-	ChangeState(new SkillStateAutoMove(this));
 	if (OnCastFinishedFunc)
 	{
 		OnCastFinishedFunc();
+	}
+
+	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().GetItem(SkillId);
+	if (pItem->RangeType == SkillItem::NORMAL)
+	{
+		// 通常スキルならオート移動へ。
+		ChangeState(new SkillStateAutoMove(this));
+	}
+	else
+	{
+		// そうでないなら即時発動。
+		Activate();
 	}
 }
 
 // キャンセル
 void SkillControl::Cancel(u8 Reason)
 {
-	ChangeState(new SkillStateNutral(this));
 	if (OnCancelFunc)
 	{
 		OnCancelFunc(Reason);
 	}
+
+	ChangeState(new SkillStateNutral(this));
 }
 
 // 発動.
 void SkillControl::Activate()
 {
-	// ここでStateをNutralに戻す。
-	ChangeState(new SkillStateNutral(this));
 	if (OnActivateFunc)
 	{
 		OnActivateFunc();
 	}
+
+	// ここでStateをNutralに戻す。
+	ChangeState(new SkillStateNutral(this));
+}
+
+// 何かやっているか？
+bool SkillControl::IsActive() const
+{
+	return (pState->GetStateType() != Nutral);
 }

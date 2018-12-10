@@ -3,6 +3,19 @@
 
 class SkillControl;
 
+// スキルステートの種類.
+enum ESkillStateType
+{
+	// 何もしていない
+	Nutral,
+
+	// キャスト中.
+	Cast,
+
+	// オート移動.
+	AutoMove,
+};
+
 /**
  * スキルステート基底クラス
  */
@@ -19,6 +32,9 @@ public:
 
 	// 毎フレームの処理.
 	virtual void Poll(s32 DeltaTime) {}
+
+	// ステートタイプを取得.
+	virtual ESkillStateType GetStateType() = 0;
 
 protected:
 

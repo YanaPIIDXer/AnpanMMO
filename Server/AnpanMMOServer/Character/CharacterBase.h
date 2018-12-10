@@ -99,6 +99,9 @@ protected:
 	// ダメージを受けた。
 	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue) {}
 
+	// スキルコントロールを取得.
+	SkillControl *GetSkillControl() { return &Skill; }
+
 private:
 
 	// パラメータ

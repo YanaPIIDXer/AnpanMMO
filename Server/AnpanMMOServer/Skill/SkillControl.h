@@ -53,6 +53,9 @@ public:
 	// 発動.
 	void Activate();
 
+	// 何かやっているか？
+	bool IsActive() const;
+
 	// キャスト完了時に実行される関数を設定.
 	void SetOnCastFinishedFunction(const OnCastFinishedFunction &Func) { OnCastFinishedFunc = Func; }
 

@@ -20,6 +20,9 @@ public:
 	// 毎フレームの処理.
 	virtual void Poll(s32 DeltaTime);
 
+	// ステートタイプを取得.
+	virtual ESkillStateType GetStateType() { return Cast; }
+
 private:
 
 	// キャスト時間.
