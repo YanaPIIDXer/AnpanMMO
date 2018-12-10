@@ -67,6 +67,7 @@ enum PacketID
 	ScriptFlag,
 	SkillUse,
 	SkillUseFailed,
+	SkillCast,
 	SkillCastFinish,
 	SkillActivate,
 	Time,

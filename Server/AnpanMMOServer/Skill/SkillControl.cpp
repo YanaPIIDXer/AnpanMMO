@@ -35,21 +35,9 @@ void SkillControl::Use(u32 InSkillId, CharacterBase *pInTarget)
 	ChangeState(new SkillStateCast(this));
 }
 
-// ステート変更.
-void SkillControl::ChangeState(SkillStateBase *pNewState)
-{
-	pPrevState = pState;
-	pState = pNewState;
-}
-
 // キャストが完了した。
 void SkillControl::CastFinished()
 {
-	if (OnCastFinishedFunc)
-	{
-		OnCastFinishedFunc();
-	}
-
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().GetItem(SkillId);
 	if (pItem->RangeType == SkillItem::NORMAL)
 	{
@@ -77,11 +65,6 @@ void SkillControl::Cancel(u8 Reason)
 // 発動.
 void SkillControl::Activate()
 {
-	if (OnActivateFunc)
-	{
-		OnActivateFunc(SkillId);
-	}
-
 	// ここでStateをNutralに戻す。
 	ChangeState(new SkillStateNutral(this));
 }
@@ -90,4 +73,12 @@ void SkillControl::Activate()
 bool SkillControl::IsActive() const
 {
 	return (pState->GetStateType() != Nutral);
+}
+
+
+// ステート変更.
+void SkillControl::ChangeState(SkillStateBase *pNewState)
+{
+	pPrevState = pState;
+	pState = pNewState;
 }

@@ -85,12 +85,6 @@ private:
 	// パラメータを保存.
 	void SaveParameter();
 
-	// スキルキャストが完了した。
-	void OnSkillCastFinished();
-
-	// スキルが発動した。
-	void OnSkillActivated(u32 SkillId);
-
 	// スキルがキャンセルされた。
 	void OnSkillCanceled(u8 Reason);
 

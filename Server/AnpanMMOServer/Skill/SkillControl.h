@@ -14,9 +14,7 @@ class SkillControl
 
 private:		// 別名定義.
 
-	typedef boost::function<void(void)> OnCastFinishedFunction;
 	typedef boost::function<void(u8)> OnCancelFunction;
-	typedef boost::function<void(u32)> OnActivateFunction;
 
 public:
 
@@ -56,14 +54,8 @@ public:
 	// 何かやっているか？
 	bool IsActive() const;
 
-	// キャスト完了時に実行される関数を設定.
-	void SetOnCastFinishedFunction(const OnCastFinishedFunction &Func) { OnCastFinishedFunc = Func; }
-
 	// キャンセル時に実行される関数を設定.
 	void SetOnCancelFunction(const OnCancelFunction &Func) { OnCancelFunc = Func; }
-
-	// 発動時に実行される関数を設定.
-	void SetOnActivateFunction(const OnActivateFunction &Func) { OnActivateFunc = Func; }
 
 private:
 
@@ -82,14 +74,8 @@ private:
 	// スキルＩＤ
 	u32 SkillId;
 
-	// キャスト完了時に実行される関数.
-	OnCastFinishedFunction OnCastFinishedFunc;
-
 	// キャンセル時に実行される関数.
 	OnCancelFunction OnCancelFunc;
-
-	// 発動時に実行される関数.
-	OnActivateFunction OnActivateFunc;
 
 };
 

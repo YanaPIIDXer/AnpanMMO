@@ -21,8 +21,6 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, int MaxHp, int Atk
 {
 	SetParameter(MaxHp, MaxHp, Atk, Def);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
-	GetSkillControl()->SetOnCastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillCastFinished, this));
-	GetSkillControl()->SetOnActivateFunction(boost::bind(&PlayerCharacter::OnSkillActivated, this, _1));
 	GetSkillControl()->SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
 }
 
@@ -71,20 +69,6 @@ void PlayerCharacter::SaveParameter()
 	Client *pClient = GetClient();
 	CachePacketCharacterDataSave Packet(pClient->GetUuid(), pClient->GetCustomerId(), Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), SaveAreaId, SavePosition.X, SavePosition.Y, SavePosition.Z);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
-}
-
-// スキルキャストが完了した。
-void PlayerCharacter::OnSkillCastFinished()
-{
-	PacketSkillCastFinish Packet(CharacterType::Player, GetUuid());
-	GetClient()->SendPacket(&Packet);
-}
-
-// スキルが発動した。
-void PlayerCharacter::OnSkillActivated(u32 SkillId)
-{
-	PacketSkillActivate Packet(SkillId);
-	GetClient()->SendPacket(&Packet);
 }
 
 // スキルがキャンセルされた
