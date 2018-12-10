@@ -23,7 +23,7 @@ public:
 protected:
 
 	// スキルコントロールを取得.
-	const SkillControl *GetControl() const { return pControl; }
+	SkillControl *GetControl() const { return pControl; }
 
 private:
 
