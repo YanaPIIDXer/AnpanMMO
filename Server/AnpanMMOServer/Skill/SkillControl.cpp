@@ -1,9 +1,13 @@
 #include "stdafx.h"
 #include "SkillControl.h"
 #include "Master/MasterData.h"
+#include "Character/CharacterBase.h"
+#include "Math/DamageCalcUnit.h"
 #include "State/SkillStateNutral.h"
 #include "State/SkillStateCast.h"
 #include "State/SkillStateAutoMove.h"
+#include "Packet/PacketSkillCastFinish.h"
+#include "Packet/PacketSkillActivate.h"
 
 // コンストラクタ
 SkillControl::SkillControl(CharacterBase *pInOwner)
@@ -38,6 +42,10 @@ void SkillControl::Use(u32 InSkillId, CharacterBase *pInTarget)
 // キャストが完了した。
 void SkillControl::CastFinished()
 {
+	PacketSkillCastFinish Packet(pOwner->GetCharacterType(), pOwner->GetUuid());
+	AreaPtr pArea = pOwner->GetArea();
+	pArea.lock()->BroadcastPacket(&Packet);
+
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().GetItem(SkillId);
 	if (pItem->RangeType == SkillItem::NORMAL)
 	{
@@ -65,6 +73,51 @@ void SkillControl::Cancel(u8 Reason)
 // 発動.
 void SkillControl::Activate()
 {
+	PacketSkillActivate Packet(pOwner->GetCharacterType(), pOwner->GetUuid(), SkillId);
+	AreaPtr pArea = pOwner->GetArea();
+	pArea.lock()->BroadcastPacket(&Packet);
+
+	std::vector<CharacterBase *> Targets;
+	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().GetItem(SkillId);
+	if (pItem->RangeType == SkillItem::NORMAL)
+	{
+		Targets.push_back(pTarget);
+	}
+	else
+	{
+		// @TODO:範囲内のキャラを列挙する処理を実装。
+	}
+
+	for (u32 i = 0; i < Targets.size(); i++)
+	{
+		switch (pItem->SkillType)
+		{
+			case SkillItem::ATTACK:
+
+				{
+					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());
+					s32 Value = Calc.Calc();
+					Targets[i]->ApplyDamage(pOwner->shared_from_this(), Value);
+				}
+				break;
+
+			case SkillItem::HEAL:
+
+				{
+					// @HACK:とりあえずダメージ計算ユニットを使用。
+					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());
+					s32 Value = Calc.Calc();
+					// @TODO:回復関数の実装。
+				}
+				break;
+
+			case SkillItem::BUFF:
+
+				// @TODO:バフ実装時に実装する。
+				break;
+		}
+	}
+
 	// ここでStateをNutralに戻す。
 	ChangeState(new SkillStateNutral(this));
 }
@@ -81,4 +134,5 @@ void SkillControl::ChangeState(SkillStateBase *pNewState)
 {
 	pPrevState = pState;
 	pState = pNewState;
+	pState->BeginState();
 }

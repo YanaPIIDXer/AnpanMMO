@@ -2,6 +2,8 @@
 #include "SkillStateCast.h"
 #include "Master/MasterData.h"
 #include "Skill/SkillControl.h"
+#include "Character/CharacterBase.h"
+#include "Packet/PacketSkillCast.h"
 
 // コンストラクタ
 SkillStateCast::SkillStateCast(SkillControl *pInControl)
@@ -9,6 +11,16 @@ SkillStateCast::SkillStateCast(SkillControl *pInControl)
 {
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().GetItem(pInControl->GetSkillId());
 	CastTime = pItem->CastTime * 1000;
+}
+
+// State開始時の処理.
+void SkillStateCast::BeginState()
+{
+	CharacterBase *pOwner = GetControl()->GetOwner();
+	AreaPtr pArea = pOwner->GetArea();
+
+	PacketSkillCast Packet(pOwner->GetCharacterType(), pOwner->GetUuid());
+	pArea.lock()->BroadcastPacket(&Packet);
 }
 
 // 毎フレームの処理.

@@ -30,6 +30,9 @@ public:
 	// デストラクタ
 	virtual ~SkillStateBase() = 0;
 
+	// State開始時の処理.
+	virtual void BeginState() {}
+
 	// 毎フレームの処理.
 	virtual void Poll(s32 DeltaTime) {}
 

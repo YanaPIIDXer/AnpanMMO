@@ -39,9 +39,6 @@ public:
 	// ターゲットを取得。
 	CharacterBase *GetTarget() const { return pTarget; }
 
-	// ステート変更.
-	void ChangeState(SkillStateBase *pNewState);
-
 	// キャストが完了した。
 	void CastFinished();
 
@@ -76,6 +73,9 @@ private:
 
 	// キャンセル時に実行される関数.
 	OnCancelFunction OnCancelFunc;
+
+	// ステート変更.
+	void ChangeState(SkillStateBase *pNewState);
 
 };
 
