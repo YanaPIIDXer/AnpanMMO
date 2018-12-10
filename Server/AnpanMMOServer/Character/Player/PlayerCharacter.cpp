@@ -7,6 +7,7 @@
 #include "CacheServer/CacheServerConnection.h"
 #include "Packet/CachePacketCharacterDataSave.h"
 #include "Packet/PacketSkillCastFinish.h"
+#include "Packet/CharacterType.h"
 #include "Packet/PacketSkillActivate.h"
 #include "Packet/PacketSkillUseFailed.h"
 
@@ -75,7 +76,7 @@ void PlayerCharacter::SaveParameter()
 // スキルキャストが完了した。
 void PlayerCharacter::OnSkillCastFinished()
 {
-	PacketSkillCastFinish Packet;
+	PacketSkillCastFinish Packet(CharacterType::Player, GetUuid());
 	GetClient()->SendPacket(&Packet);
 }
 
