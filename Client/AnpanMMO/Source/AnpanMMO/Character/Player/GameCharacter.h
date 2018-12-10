@@ -34,9 +34,6 @@ public:
 	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;
 
-	// 攻撃.
-	void Attack();
-
 	// ステータス取得.
 	const PlayerStatus &GetStatus() const { return Status; }
 

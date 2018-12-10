@@ -8,7 +8,6 @@ enum PacketID
 	MoveAnpan,
 	RotateAnpan,
 	StopAnpan,
-	Attack,
 	Damage,
 	CacheLogInRequest,
 	CacheLogInResult,

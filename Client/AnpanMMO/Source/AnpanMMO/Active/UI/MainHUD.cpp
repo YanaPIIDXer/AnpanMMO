@@ -48,7 +48,7 @@ void UMainHUD::OnRecvNotice(int32 Uuid, const NoticeData &Data)
 // 攻撃ボタンが押された。
 void UMainHUD::OnPressedAttackButton()
 {
-	pCharacter->Attack();
+	
 }
 
 // レベルロード開始.

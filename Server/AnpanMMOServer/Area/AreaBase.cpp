@@ -5,7 +5,6 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "Character/Anpan/Anpan.h"
 #include "Master/AreaMaster.h"
-#include "Math/DamageCalcUnit.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketAddExp.h"
@@ -58,30 +57,6 @@ void AreaBase::RemovePlayerCharacter(u32 Uuid)
 void AreaBase::OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rotation)
 {
 	PlayerMgr.OnRecvMove(Uuid, X, Y, Z, Rotation);
-}
-
-// 攻撃を受信した。
-void AreaBase::OnRecvAttack(u32 AttackerUuid, u32 DefencerUuid)
-{
-	PlayerCharacterPtr pAttacker = PlayerMgr.Get(AttackerUuid);
-	AnpanPtr pDefencer = AnpanMgr.Get(DefencerUuid);
-
-	// 連打した時など、サーバ上では既に死んでいるアンパンを殴ろうとする事がある。
-	if (pDefencer.expired()) { return; }
-
-	// ダメージ計算.
-	DamageCalcUnit DamageCalc(pAttacker.lock()->GetParameter(), pDefencer.lock()->GetParameter());
-	int DamageValue = DamageCalc.Calc();
-	pDefencer.lock()->ApplyDamage(pAttacker, DamageValue);
-
-	if (pDefencer.lock()->IsDead())
-	{
-		int Exp = pDefencer.lock()->GetExp();
-		pAttacker.lock()->AddExp(Exp);
-
-		PacketAddExp ExpPacket(pAttacker.lock()->GetExp());
-		pAttacker.lock()->GetClient()->SendPacket(&ExpPacket);
-	}
 }
 
 // パケットのブロードキャスト
