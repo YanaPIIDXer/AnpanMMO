@@ -13,16 +13,22 @@ public:
 
 	
 
+	u32 SkillId;
 	
 
 	PacketSkillActivate()
 	{
 	}
 
-	
+	PacketSkillActivate(u32 InSkillId)
+	{
+		SkillId = InSkillId;
+		
+	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&SkillId);
 		
 		return true;
 	}

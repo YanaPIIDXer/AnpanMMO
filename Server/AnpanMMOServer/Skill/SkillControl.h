@@ -16,7 +16,7 @@ private:		// •Ê–¼’è‹`.
 
 	typedef boost::function<void(void)> OnCastFinishedFunction;
 	typedef boost::function<void(u8)> OnCancelFunction;
-	typedef boost::function<void(void)> OnActivateFunction;
+	typedef boost::function<void(u32)> OnActivateFunction;
 
 public:
 

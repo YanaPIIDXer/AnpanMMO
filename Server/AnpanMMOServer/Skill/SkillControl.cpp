@@ -79,7 +79,7 @@ void SkillControl::Activate()
 {
 	if (OnActivateFunc)
 	{
-		OnActivateFunc();
+		OnActivateFunc(SkillId);
 	}
 
 	// ‚±‚±‚ÅState‚ğNutral‚É–ß‚·B
