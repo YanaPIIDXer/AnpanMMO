@@ -70,6 +70,7 @@ enum PacketID
 	SkillCast,
 	SkillCastFinish,
 	SkillActivate,
+	SkillRecast,
 	Time,
 	TimeChange,
 	WordCheckChatRequest,
