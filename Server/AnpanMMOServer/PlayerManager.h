@@ -28,7 +28,7 @@ public:
 	~PlayerManager() {}
 
 	// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
-	void Poll();
+	void Poll(s32 DeltaTime);
 
 	// ’Ç‰Á.
 	void Add(u32 Uuid, PlayerCharacterPtr pPlayer);

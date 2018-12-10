@@ -31,7 +31,7 @@ AreaBase::AreaBase(const AreaItem *pItem)
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 void AreaBase::Poll(int DeltaTime)
 {
-	PlayerMgr.Poll();
+	PlayerMgr.Poll(DeltaTime);
 	AnpanMgr.Poll(DeltaTime);
 	Update();
 }

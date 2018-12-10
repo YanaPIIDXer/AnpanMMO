@@ -13,7 +13,7 @@ PlayerManager::PlayerManager()
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
-void PlayerManager::Poll()
+void PlayerManager::Poll(s32 DeltaTime)
 {
 	PlayerMap::iterator It = PlayerList.begin();
 	while (It != PlayerList.end())
@@ -27,6 +27,7 @@ void PlayerManager::Poll()
 		}
 		else
 		{
+			It->second.lock()->Poll(DeltaTime);
 			++It;
 		}
 	}

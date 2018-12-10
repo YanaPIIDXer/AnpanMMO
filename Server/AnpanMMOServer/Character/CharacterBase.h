@@ -22,6 +22,9 @@ public:
 	// デストラクタ
 	virtual ~CharacterBase() {}
 
+	// 毎フレームの処理.
+	void Poll(s32 DeltaTime);
+
 	// パラメータ取得.
 	const CharacterParameter &GetParameter() const { return Parameter; }
 
@@ -101,6 +104,9 @@ protected:
 
 	// ダメージを受けた。
 	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue) {}
+
+	// 毎フレームの処理.
+	virtual void Update(s32 DeltaTime) {}
 
 	// スキルコントロールを取得.
 	SkillControl *GetSkillControl() { return &Skill; }

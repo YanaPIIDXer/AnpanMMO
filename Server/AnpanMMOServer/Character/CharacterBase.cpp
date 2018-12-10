@@ -11,6 +11,14 @@ CharacterBase::CharacterBase()
 {
 }
 
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
+void CharacterBase::Poll(s32 DeltaTime)
+{
+	Skill.Poll(DeltaTime);
+	
+	Update(DeltaTime);
+}
+
 // ˆÚ“®.
 void CharacterBase::SetPosition(const Vector3D &MoveTarget)
 {
