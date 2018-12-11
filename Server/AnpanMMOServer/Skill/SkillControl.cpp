@@ -20,6 +20,13 @@ SkillControl::SkillControl(CharacterBase *pInOwner)
 {
 }
 
+// デストラクタ
+SkillControl::~SkillControl()
+{
+	delete pPrevState;
+	delete pState;
+}
+
 // 毎フレームの処理.
 void SkillControl::Poll(s32 DeltaTime)
 {

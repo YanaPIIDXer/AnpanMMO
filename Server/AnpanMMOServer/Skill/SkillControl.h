@@ -22,7 +22,7 @@ public:
 	SkillControl(CharacterBase *pInOwner);
 
 	// デストラクタ
-	~SkillControl() {}
+	~SkillControl();
 
 	// 毎フレームの処理.
 	void Poll(s32 DeltaTime);
