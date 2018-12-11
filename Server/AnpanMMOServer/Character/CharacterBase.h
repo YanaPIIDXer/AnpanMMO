@@ -83,6 +83,9 @@ public:
 	// リキャスト開始.
 	void StartRecast(u32 SkillId);
 
+	// スキルリキャストマネージャ取得.
+	const SkillRecastManager &GetSkillRecastManager() const { return Recast; }
+
 protected:
 
 	// 座標.

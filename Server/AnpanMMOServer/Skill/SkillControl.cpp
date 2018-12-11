@@ -9,6 +9,7 @@
 #include "Packet/CharacterType.h"
 #include "Packet/PacketSkillCastFinish.h"
 #include "Packet/PacketSkillActivate.h"
+#include "Packet/PacketSkillUseFailed.h"
 
 // コンストラクタ
 SkillControl::SkillControl(CharacterBase *pInOwner)
@@ -42,6 +43,12 @@ void SkillControl::Poll(s32 DeltaTime)
 // 使用.
 void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 {
+	if (pOwner->GetSkillRecastManager().IsRecast(InSkillId))
+	{
+		Cancel(PacketSkillUseFailed::RecastTime);
+		return;
+	}
+
 	SkillId = InSkillId;
 	pTarget = pInTarget;
 	ChangeState(new SkillStateCast(this));
