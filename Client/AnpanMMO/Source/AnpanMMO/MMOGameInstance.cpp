@@ -32,6 +32,8 @@ void UMMOGameInstance::Shutdown()
 // Ú‘±.
 bool UMMOGameInstance::Connect(const FString &Host, int Port)
 {
+	Close();
+
 	pConnection = new GameServerConnection();
 	if (!pConnection->Connect(Host, Port))
 	{
