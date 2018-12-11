@@ -73,6 +73,9 @@ public:
 	// スキル発動を受信した。
 	virtual void OnSkillActivate() override;
 
+	// スキルキャンセル
+	void OnSkillCancel();
+
 protected:
 
 	// レベルアップした

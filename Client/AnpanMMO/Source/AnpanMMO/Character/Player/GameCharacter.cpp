@@ -168,6 +168,12 @@ void AGameCharacter::OnSkillActivate()
 	Skill.OnActivate();
 }
 
+// スキルキャンセル
+void AGameCharacter::OnSkillCancel()
+{
+	Skill.OnCancel();
+}
+
 
 // リスポンした。
 void AGameCharacter::OnRespawn()

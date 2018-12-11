@@ -57,6 +57,13 @@ void SkillControl::OnActivate()
 	ChangeState(new SkillStateNutral(this));
 }
 
+// キャンセルされた
+void SkillControl::OnCancel()
+{
+	// ニュートラルに戻す。
+	ChangeState(new SkillStateNutral(this));
+}
+
 // 何かしているか？
 bool SkillControl::IsActive() const
 {

@@ -163,6 +163,9 @@ private:
 	// スキル発動を受信した。
 	void OnRecvSkillActivate(MemoryStreamInterface *pStream);
 
+	// スキル発動失敗を受信した。
+	void OnRecvSkillUseFailed(MemoryStreamInterface *pStream);
+
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
 

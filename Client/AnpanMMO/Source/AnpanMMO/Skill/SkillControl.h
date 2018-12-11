@@ -37,6 +37,9 @@ public:
 	// スキルが発動した。
 	void OnActivate();
 
+	// キャンセルされた
+	void OnCancel();
+
 	// 所有者を取得.
 	TWeakObjectPtr<ACharacterBase> GetOwner() const { return pOwner; }
 

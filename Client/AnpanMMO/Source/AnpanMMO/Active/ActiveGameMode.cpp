@@ -28,6 +28,7 @@
 #include "Packet/PacketSkillCast.h"
 #include "Packet/PacketSkillCastFinish.h"
 #include "Packet/PacketSkillActivate.h"
+#include "Packet/PacketSkillUseFailed.h"
 #include "Packet/PacketReceiveChat.h"
 #include "Packet/PacketPartyKickResult.h"
 #include "Packet/PacketPartyInviteResult.h"
@@ -62,6 +63,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::SkillCast, std::bind(&AActiveGameMode::OnRecvSkillCast, this, _1));
 	AddPacketFunction(PacketID::SkillCastFinish, std::bind(&AActiveGameMode::OnRecvSkillCastFinish, this, _1));
 	AddPacketFunction(PacketID::SkillActivate, std::bind(&AActiveGameMode::OnRecvSkillActivate, this, _1));
+	AddPacketFunction(PacketID::SkillUseFailed, std::bind(&AActiveGameMode::OnRecvSkillUseFailed, this, _1));
 	AddPacketFunction(PacketID::ReceiveChat, std::bind(&AActiveGameMode::OnRecvChat, this, _1));
 	AddPacketFunction(PacketID::PartyCreateResult, std::bind(&PartyInformation::OnRecvCreateResult, &PartyInfo, _1));
 	AddPacketFunction(PacketID::PartyDissolutionResult, std::bind(&PartyInformation::OnRecvDissolutionResult, &PartyInfo, _1));
@@ -376,6 +378,17 @@ void AActiveGameMode::OnRecvSkillActivate(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 
 	pCharacter->OnSkillActivate();
+}
+
+// スキル発動失敗を受信した。
+void AActiveGameMode::OnRecvSkillUseFailed(MemoryStreamInterface *pStream)
+{
+	PacketSkillUseFailed Packet;
+	Packet.Serialize(pStream);
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+	pCharacter->OnSkillCancel();
 }
 
 // チャットを受信した。
