@@ -80,6 +80,15 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Character")
 	virtual FString GetCharacterName() const { return ""; }
 
+	// スキル使用.
+	virtual void OnUseSkill(uint32 SkillId, ACharacterBase *pTarget) {}
+
+	// スキルキャストが完了した。
+	virtual void OnSkillCastFinished() {}
+
+	// スキルのオート移動が完了した。
+	virtual void OnSkillAutoMoveFinished() {}
+
 protected:
 
 	// 初期化.

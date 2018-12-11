@@ -67,6 +67,12 @@ public:
 	// スキル制御オブジェクトを取得.
 	const SkillControl &GetSkillControl() const { return Skill; }
 
+	// スキルキャストが完了した。
+	virtual void OnSkillCastFinished() override;
+
+	// スキルのオート移動が完了した。
+	virtual void OnSkillAutoMoveFinished() override;
+
 protected:
 
 	// レベルアップした

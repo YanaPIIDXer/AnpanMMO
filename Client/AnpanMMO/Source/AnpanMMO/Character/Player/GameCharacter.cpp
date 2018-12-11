@@ -148,6 +148,25 @@ void AGameCharacter::UseSkill(int32 SkillId)
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	pInst->SendPacket(&Packet);
+
+	Skill.UseSkill(SkillId, pTarget);
+}
+
+// スキルキャストが完了した。
+void AGameCharacter::OnSkillCastFinished()
+{
+	// 範囲攻撃のデカール生成は基底クラスで行う。
+	Super::OnSkillCastFinished();
+
+	Skill.OnCastFinished();
+}
+
+// スキルのオート移動が完了した。
+void AGameCharacter::OnSkillAutoMoveFinished()
+{
+	Super::OnSkillAutoMoveFinished();
+
+	Skill.OnAutoMoveFinished();
 }
 
 
