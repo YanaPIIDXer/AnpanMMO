@@ -123,6 +123,9 @@ void AGameController::MoveProc()
 
 	if (pCharacter->IsDead()) { return; }
 
+	// スキル制御が動いているならそっちに任せる。
+	if (pCharacter->GetSkillControl().IsActive()) { return; }
+
 	if (!bEnableMove) { return; }
 
 	if (InputVector == FVector::ZeroVector) { return; }
@@ -156,6 +159,9 @@ void AGameController::MoveRight(float Value)
 void AGameController::RayTraceForTarget(const FVector2D &ScreenPos)
 {
 	if (!bEnableMove) { return; }
+
+	// スキル制御中のターゲット切り替えは認めない。
+	if (pCharacter->GetSkillControl().IsActive()) { return; }
 
 	FVector Pos;
 	FVector Direction;

@@ -6,6 +6,7 @@
 #include "PlayerCharacterBase.h"
 #include "PlayerStatus.h"
 #include "PlayerMove.h"
+#include "Skill/SkillControl.h"
 #include "GameCharacter.generated.h"
 
 class UFloatingPawnMovement;
@@ -63,6 +64,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Skill")
 	void UseSkill(int32 SkillId);
 
+	// スキル制御オブジェクトを取得.
+	const SkillControl &GetSkillControl() const { return Skill; }
+
 protected:
 
 	// レベルアップした
@@ -80,5 +84,8 @@ private:
 
 	// 移動パケット制御.
 	PlayerMove Move;
+
+	// スキル制御.
+	SkillControl Skill;
 
 };
