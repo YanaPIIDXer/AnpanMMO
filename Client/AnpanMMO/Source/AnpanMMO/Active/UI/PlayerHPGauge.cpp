@@ -52,6 +52,14 @@ void UPlayerHPGauge::Damaged(int32 Value)
 	CurrentTime = MutateTime;
 }
 
+// 回復した。
+void UPlayerHPGauge::Healed(int32 Value)
+{
+	PrevHp = CurrentHp;
+	CurrentHp = FMath::Min<int32>(CurrentHp + Value, MaxHp);
+	CurrentTime = MutateTime;
+}
+
 // レベルアップ
 void UPlayerHPGauge::LevelUp(int32 InMaxHp)
 {

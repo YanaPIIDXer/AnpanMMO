@@ -43,6 +43,15 @@ void ACharacterBase::ApplyDamage(int32 Value)
 	}
 }
 
+// 回復.
+void ACharacterBase::Heal(int32 Value)
+{
+	int32 BeforeHp = Hp;
+	Hp = FMath::Min<int32>(Hp + Value, MaxHp);
+
+	OnHeal(BeforeHp, Hp, Value);
+}
+
 // ターゲットサークルを生成.
 void ACharacterBase::SpawnTargetCircle()
 {

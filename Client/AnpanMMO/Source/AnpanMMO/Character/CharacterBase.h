@@ -47,6 +47,9 @@ public:
 	// ダメージを与える。
 	void ApplyDamage(int32 Value);
 
+	// 回復.
+	void Heal(int32 Value);
+
 	// 死んでる？
 	bool IsDead() const { return (Hp <= 0); }
 
@@ -101,6 +104,11 @@ protected:
 	UFUNCTION(BlueprintNativeEvent, Category = "Character")
 	void OnDamaged(int32 BeforeHp, int32 AfterHp, int32 DamageValue);
 	virtual void OnDamaged_Implementation(int32 BeforeHp, int32 AfterHp, int32 DamageValue) {}
+
+	// 回復イベント
+	UFUNCTION(BlueprintNativeEvent, Category = "Character")
+	void OnHeal(int32 BeforeHp, int32 AfterHp, int32 HealValue);
+	void OnHeal_Implementation(int32 BeforeHp, int32 AfterHp, int32 HealValue) {}
 
 	// 死亡イベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Character")

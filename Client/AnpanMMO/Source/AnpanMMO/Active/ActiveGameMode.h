@@ -142,6 +142,9 @@ private:
 	// ダメージを受信した。
 	void OnRecvDamage(MemoryStreamInterface *pStream);
 
+	// 回復を受信した。
+	void OnRecvHeal(MemoryStreamInterface *pStream);
+
 	// 経験値を受信した。
 	void OnRecvAddExp(MemoryStreamInterface *pStream);
 

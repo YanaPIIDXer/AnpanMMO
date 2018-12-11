@@ -30,7 +30,14 @@ void SkillStateAutoMove::Poll(s32 DeltaTime)
 		return;
 	}
 
-	Vector3D Dist = pTarget->GetPosition() - pOwner->GetPosition();
+	if (pTarget.expired())
+	{
+		// ターゲット消失によるスキル中断.
+		GetControl()->Cancel(PacketSkillUseFailed::TargetDisappeared);
+		return;
+	}
+
+	Vector3D Dist = pTarget.lock()->GetPosition() - pOwner->GetPosition();
 	if (Dist.GetSizeSq() <= SkillDistance * SkillDistance)
 	{
 		// 発動.

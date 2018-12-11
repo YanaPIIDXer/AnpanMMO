@@ -2,6 +2,7 @@
 #define __SKILLSTATEAUTOMOVE_H__
 
 #include "SkillStateBase.h"
+#include "WeakPtrDefine.h"
 
 class CharacterBase;
 
@@ -40,7 +41,7 @@ private:
 	CharacterBase *pOwner;
 
 	// ターゲット.
-	CharacterBase *pTarget;
+	CharacterPtr pTarget;
 
 };
 

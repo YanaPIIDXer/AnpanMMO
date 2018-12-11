@@ -20,6 +20,7 @@
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
 #include "Packet/PacketDamage.h"
+#include "Packet/PacketHeal.h"
 #include "Packet/CharacterType.h"
 #include "Packet/PacketAddExp.h"
 #include "Packet/PacketLevelUp.h"
@@ -52,6 +53,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::RotateAnpan, std::bind(&AnpanManager::OnRecvRotate, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::StopAnpan, std::bind(&AnpanManager::OnRecvStop, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::Damage, std::bind(&AActiveGameMode::OnRecvDamage, this, _1));
+	AddPacketFunction(PacketID::Heal, std::bind(&AActiveGameMode::OnRecvHeal, this, _1));
 	AddPacketFunction(PacketID::AddExp, std::bind(&AActiveGameMode::OnRecvAddExp, this, _1));
 	AddPacketFunction(PacketID::LevelUp, std::bind(&AActiveGameMode::OnRecvLevelUp, this, _1));
 	AddPacketFunction(PacketID::SpawnPlayer, std::bind(&PlayerManager::OnRecvSpawn, &PlayerMgr, _1));
@@ -282,9 +284,20 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	PacketDamage Packet;
 	Packet.Serialize(pStream);
 
-	ACharacterBase *pDamageCharacter = GetCharacterFromType(Packet.TargetType, Packet.TargetUuid);
-	check(pDamageCharacter != nullptr);
-	pDamageCharacter->ApplyDamage(Packet.DamageValue);
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.TargetType, Packet.TargetUuid);
+	check(pCharacter != nullptr);
+	pCharacter->ApplyDamage(Packet.DamageValue);
+}
+
+// 回復を受信した。
+void AActiveGameMode::OnRecvHeal(MemoryStreamInterface *pStream)
+{
+	PacketHeal Packet;
+	Packet.Serialize(pStream);
+
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.TargetType, Packet.TargetUuid);
+	check(pCharacter != nullptr);
+	pCharacter->Heal(Packet.HealValue);
 }
 
 // 経験値を受信した。

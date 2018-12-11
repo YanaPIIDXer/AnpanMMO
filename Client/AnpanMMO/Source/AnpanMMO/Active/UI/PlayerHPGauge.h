@@ -38,6 +38,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "HPGauge")
 	void Damaged(int32 Value);
 
+	// 回復した。
+	UFUNCTION(BlueprintCallable, Category = "HpGauge")
+	void Healed(int32 Value);
+
 	// レベルアップ
 	UFUNCTION(BlueprintCallable, Category = "HPGauge")
 	void LevelUp(int32 InMaxHp);

@@ -112,7 +112,7 @@ void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
 
 	pInputComponent->BindAxis(MoveForwardBind, this, &AGameController::MoveForward);
 	pInputComponent->BindAxis(MoveRightBind, this, &AGameController::MoveRight);
-	//pInputComponent->BindAction(AttackBind, EInputEvent::IE_Pressed, pCharacter.Get(), &AGameCharacter::Attack);
+	pInputComponent->BindAction(AttackBind, EInputEvent::IE_Pressed, pCharacter.Get(), &AGameCharacter::UseNormalAttackSkill);
 }
 
 // ˆÚ“®ˆ—.

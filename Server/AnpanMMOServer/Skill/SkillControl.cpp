@@ -15,9 +15,9 @@ SkillControl::SkillControl(CharacterBase *pInOwner)
 	: pState(new SkillStateNutral(this))
 	, pPrevState(NULL)
 	, pOwner(pInOwner)
-	, pTarget(NULL)
 	, SkillId(0)
 {
+	pTarget.reset();
 }
 
 // デストラクタ
@@ -40,7 +40,7 @@ void SkillControl::Poll(s32 DeltaTime)
 }
 
 // 使用.
-void SkillControl::Use(u32 InSkillId, CharacterBase *pInTarget)
+void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 {
 	SkillId = InSkillId;
 	pTarget = pInTarget;
@@ -89,7 +89,10 @@ void SkillControl::Activate()
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().GetItem(SkillId);
 	if (pItem->RangeType == SkillItem::NORMAL)
 	{
-		Targets.push_back(pTarget);
+		if (!pTarget.expired())
+		{
+			Targets.push_back(pTarget.lock().get());
+		}
 	}
 	else
 	{

@@ -42,6 +42,11 @@ public:
 	void OnDamaged(int32 Value);
 	void OnDamaged_Implementation(int32 Value) {}
 
+	// 回復した。
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "MainHUD")
+	void OnHeal(int32 Value);
+	void OnHeal_Implementation(int32 Value) {}
+
 	// ターゲットが変更された。
 	UFUNCTION(BlueprintNativeEvent, Category = "Target")
 	void OnTargetChanged(ACharacterBase *pCharacter);

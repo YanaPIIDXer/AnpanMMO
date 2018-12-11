@@ -63,6 +63,9 @@ public:
 	// スキル使用.
 	UFUNCTION(BlueprintCallable, Category = "Skill")
 	void UseSkill(int32 SkillId);
+	
+	// 通常攻撃スキルを使用.
+	void UseNormalAttackSkill();
 
 	// スキル制御オブジェクトを取得.
 	const SkillControl &GetSkillControl() const { return Skill; }

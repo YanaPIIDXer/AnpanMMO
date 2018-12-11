@@ -77,12 +77,12 @@ bool AGameCharacter::IsSkillUsable(int32 SkillId) const
 {
 	AGameController *pController = Cast<AGameController>(Controller);
 	check(pController != nullptr);
-	
-	ACharacterBase *pTarget = pController->GetCurrentTarget();
-	if (pTarget == nullptr) { return true; }		// ターゲットがいない時は自動で決めるので使用可。
 
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
 	if (pItem == nullptr) { return false; }
+
+	ACharacterBase *pTarget = pController->GetCurrentTarget();
+	if (pTarget == nullptr) { return true; }		// ターゲットがいない時は自動で決めるので使用可。
 
 	if (pItem->RangeType != SkillItem::NORMAL) { return true; }		// 範囲攻撃なら問答無用で使用可。
 
@@ -155,6 +155,13 @@ void AGameCharacter::UseSkill(int32 SkillId)
 	pInst->SendPacket(&Packet);
 
 	Skill.UseSkill(SkillId, pTarget);
+}
+
+// 通常攻撃スキルを使用.
+void AGameCharacter::UseNormalAttackSkill()
+{
+	uint32 SkillId = Status.GetSkillList()[0];
+	UseSkill(SkillId);
 }
 
 // スキルキャストが完了した。
