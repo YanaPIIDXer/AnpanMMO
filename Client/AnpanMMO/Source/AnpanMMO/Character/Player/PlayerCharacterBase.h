@@ -40,15 +40,6 @@ public:
 	// 高さの半分を取得.
 	virtual float GetHalfHeight() const override { return GetCapsuleComponent()->GetScaledCapsuleHalfHeight(); }
 
-	// UUIDを取得.
-	//virtual uint32 GetUuid() const = 0;
-	virtual uint32 GetUuid() const { return 0; }
-
-	// キャラクタ名を取得.
-	//virtual FString GetCharacterName() const = 0;
-	UFUNCTION(BlueprintPure, Category = "Character")
-	virtual FString GetCharacterName() const { return ""; }
-
 protected:
 
 	// リスポンした

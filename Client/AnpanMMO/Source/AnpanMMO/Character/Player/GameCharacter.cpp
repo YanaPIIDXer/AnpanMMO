@@ -8,6 +8,10 @@
 #include "Active/ActiveGameMode.h"
 #include "Active/UI/MainHUD.h"
 #include "Kismet/GameplayStatics.h"
+#include "GameController.h"
+#include "Master/MasterData.h"
+#include "Packet/CharacterType.h"
+#include "Packet/PacketSkillUse.h"
 
 // コンストラクタ
 AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
@@ -60,6 +64,84 @@ void AGameCharacter::OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def)
 FVector AGameCharacter::GetMoveVector() const
 {
 	return GetMovementComponent()->GetLastInputVector();
+}
+
+// スキルが使用可能か？
+bool AGameCharacter::IsSkillUsable(int32 SkillId) const
+{
+	AGameController *pController = Cast<AGameController>(Controller);
+	check(pController != nullptr);
+	
+	ACharacterBase *pTarget = pController->GetCurrentTarget();
+	if (pTarget == nullptr) { return true; }		// ターゲットがいない時は自動で決めるので使用可。
+
+	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
+	check(pItem != nullptr);
+
+	if (pItem->RangeType != SkillItem::NORMAL) { return true; }		// 範囲攻撃なら問答無用で使用可。
+
+	bool bUsable = false;
+	switch (pItem->SkillType)
+	{
+		case SkillItem::ATTACK:
+		case SkillItem::DEBUFF:
+
+			bUsable = (pTarget->GetCharacterType() == ECharacterType::Anpan);
+			break;
+
+		case SkillItem::HEAL:
+		case SkillItem::BUFF:
+
+			bUsable = ((pTarget->GetCharacterType() == ECharacterType::Player) || (pTarget->GetCharacterType() == ECharacterType::Other));
+			break;
+	}
+
+	return bUsable;
+}
+
+// スキル使用。
+void AGameCharacter::UseSkill(int32 SkillId)
+{
+	if (!IsSkillUsable(SkillId)) { return; }
+
+	AGameController *pController = Cast<AGameController>(Controller);
+	check(pController != nullptr);
+
+	ACharacterBase *pTarget = pController->GetCurrentTarget();
+	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
+	check(pItem != nullptr);
+	if (pItem->RangeType == SkillItem::NORMAL && pTarget == nullptr)
+	{
+		switch (pItem->SkillType)
+		{
+
+			case SkillItem::ATTACK:
+			case SkillItem::DEBUFF:
+
+				// @TODO:前方の敵を自動ターゲット。
+				break;
+
+			case SkillItem::HEAL:
+			case SkillItem::BUFF:
+
+				// 回復・バフスキルだった場合はとりあえず自分をターゲットに指定。
+				pTarget = this;
+				break;
+		}
+	}
+
+	uint8 TargetType = 0;
+	uint32 TargetUuid = 0;
+	if (pTarget != nullptr)
+	{
+		TargetType = (pTarget->GetCharacterType() == ECharacterType::Anpan) ? CharacterType::Enemy : CharacterType::Player;
+		TargetUuid = pTarget->GetUuid();
+	}
+
+	PacketSkillUse Packet(SkillId, TargetType, TargetUuid);
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+	pInst->SendPacket(&Packet);
 }
 
 
