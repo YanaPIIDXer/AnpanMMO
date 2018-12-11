@@ -5,6 +5,7 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "Area/AreaManager.h"
 #include "ClientStateActive.h"
+#include "Packet/PacketPing.h"
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
 
@@ -14,9 +15,20 @@ ClientStateAreaChange::ClientStateAreaChange(Client *pInParent, u32 InAreaId, co
 	, AreaId(InAreaId)
 	, Position(InPosition)
 {
+	AddPacketFunction(Ping, boost::bind(&ClientStateAreaChange::OnRecvPing, this, _2));
 	AddPacketFunction(GameReady, boost::bind(&ClientStateAreaChange::OnRecvGameReady, this, _2));
 }
 
+
+// Pingを受信.
+void ClientStateAreaChange::OnRecvPing(MemoryStreamInterface *pStream)
+{
+	PacketPing Packet;
+	Packet.Serialize(pStream);
+
+	// そのまま投げ返す。
+	GetParent()->SendPacket(&Packet);
+}
 
 // ゲーム準備完了を受信.
 void ClientStateAreaChange::OnRecvGameReady(MemoryStreamInterface *pStream)
