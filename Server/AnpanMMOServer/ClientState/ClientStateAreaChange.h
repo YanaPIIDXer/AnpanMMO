@@ -27,6 +27,9 @@ private:
 	Vector3D Position;
 
 
+	// Pingを受信した。
+	void OnRecvPing(MemoryStreamInterface *pStream);
+
 	// ゲーム準備完了を受信した。
 	void OnRecvGameReady(MemoryStreamInterface *pStream);
 

@@ -20,11 +20,17 @@
 #include "Packet/PacketGameReady.h"
 #include "Packet/PacketAreaMove.h"
 #include "Packet/PacketDamage.h"
+#include "Packet/PacketHeal.h"
 #include "Packet/CharacterType.h"
 #include "Packet/PacketAddExp.h"
 #include "Packet/PacketLevelUp.h"
 #include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketPlayerRespawn.h"
+#include "Packet/PacketSkillCast.h"
+#include "Packet/PacketSkillCastFinish.h"
+#include "Packet/PacketSkillActivate.h"
+#include "Packet/PacketSkillUseFailed.h"
+#include "Packet/PacketSkillRecast.h"
 #include "Packet/PacketReceiveChat.h"
 #include "Packet/PacketPartyKickResult.h"
 #include "Packet/PacketPartyInviteResult.h"
@@ -48,6 +54,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::RotateAnpan, std::bind(&AnpanManager::OnRecvRotate, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::StopAnpan, std::bind(&AnpanManager::OnRecvStop, &AnpanMgr, _1));
 	AddPacketFunction(PacketID::Damage, std::bind(&AActiveGameMode::OnRecvDamage, this, _1));
+	AddPacketFunction(PacketID::Heal, std::bind(&AActiveGameMode::OnRecvHeal, this, _1));
 	AddPacketFunction(PacketID::AddExp, std::bind(&AActiveGameMode::OnRecvAddExp, this, _1));
 	AddPacketFunction(PacketID::LevelUp, std::bind(&AActiveGameMode::OnRecvLevelUp, this, _1));
 	AddPacketFunction(PacketID::SpawnPlayer, std::bind(&PlayerManager::OnRecvSpawn, &PlayerMgr, _1));
@@ -56,6 +63,11 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::MovePlayer, std::bind(&PlayerManager::OnRecvMove, &PlayerMgr, _1));
 	AddPacketFunction(PacketID::PlayerRespawn, std::bind(&AActiveGameMode::OnRecvRespawn, this, _1));
 	AddPacketFunction(PacketID::ExitPlayer, std::bind(&PlayerManager::OnRecvExit, &PlayerMgr, _1));
+	AddPacketFunction(PacketID::SkillCast, std::bind(&AActiveGameMode::OnRecvSkillCast, this, _1));
+	AddPacketFunction(PacketID::SkillCastFinish, std::bind(&AActiveGameMode::OnRecvSkillCastFinish, this, _1));
+	AddPacketFunction(PacketID::SkillActivate, std::bind(&AActiveGameMode::OnRecvSkillActivate, this, _1));
+	AddPacketFunction(PacketID::SkillUseFailed, std::bind(&AActiveGameMode::OnRecvSkillUseFailed, this, _1));
+	AddPacketFunction(PacketID::SkillRecast, std::bind(&AActiveGameMode::OnRecvSkillRecast, this, _1));
 	AddPacketFunction(PacketID::ReceiveChat, std::bind(&AActiveGameMode::OnRecvChat, this, _1));
 	AddPacketFunction(PacketID::PartyCreateResult, std::bind(&PartyInformation::OnRecvCreateResult, &PartyInfo, _1));
 	AddPacketFunction(PacketID::PartyDissolutionResult, std::bind(&PartyInformation::OnRecvDissolutionResult, &PartyInfo, _1));
@@ -176,7 +188,6 @@ void AActiveGameMode::SetHiddenMainHUD(bool bHidden)
 	}
 }
 
-
 // 天球をセット。
 void AActiveGameMode::RegisterSkyControl(ASkyControl *pSky)
 {
@@ -218,6 +229,31 @@ void AActiveGameMode::FinishScript()
 	pScriptWidget->CloseWidget();
 }
 
+// キャラから見た前方のターゲットを取得.
+AAnpan *AActiveGameMode::FindCenterTarget(float Distance)
+{
+	return AnpanMgr.FindCenterTarget(Distance);
+}
+
+
+// キャラクタタイプからキャラクタを取得.
+ACharacterBase *AActiveGameMode::GetCharacterFromType(uint8 CharacterType, uint32 Uuid)
+{
+	ACharacterBase *pCharacter = nullptr;
+	switch (CharacterType)
+	{
+		case CharacterType::Player:
+
+			pCharacter = PlayerMgr.Get(Uuid);
+			break;
+
+		case CharacterType::Enemy:
+
+			pCharacter = AnpanMgr.Get(Uuid);
+			break;
+	}
+	return pCharacter;
+}
 
 // エリア移動を受信した。
 void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
@@ -250,22 +286,20 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	PacketDamage Packet;
 	Packet.Serialize(pStream);
 
-	ACharacterBase *pDamageCharacter = nullptr;
-	switch (Packet.TargetType)
-	{
-		case CharacterType::Player:
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.TargetType, Packet.TargetUuid);
+	check(pCharacter != nullptr);
+	pCharacter->ApplyDamage(Packet.DamageValue);
+}
 
-			pDamageCharacter = PlayerMgr.Get(Packet.TargetUuid);
-			break;
+// 回復を受信した。
+void AActiveGameMode::OnRecvHeal(MemoryStreamInterface *pStream)
+{
+	PacketHeal Packet;
+	Packet.Serialize(pStream);
 
-		case CharacterType::Enemy:
-	
-			pDamageCharacter = AnpanMgr.Get(Packet.TargetUuid);
-			break;
-
-	}
-	check(pDamageCharacter != nullptr);
-	pDamageCharacter->ApplyDamage(Packet.DamageValue);
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.TargetType, Packet.TargetUuid);
+	check(pCharacter != nullptr);
+	pCharacter->Heal(Packet.HealValue);
 }
 
 // 経験値を受信した。
@@ -323,6 +357,67 @@ void AActiveGameMode::OnRecvRespawn(MemoryStreamInterface *pStream)
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 	pCharacter->Respawn();
+}
+
+// スキルキャストを受信した。
+void AActiveGameMode::OnRecvSkillCast(MemoryStreamInterface *pStream)
+{
+	PacketSkillCast Packet;
+	Packet.Serialize(pStream);
+
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
+	check(pCharacter != nullptr);
+
+	pCharacter->OnSkillCast(Packet.SkillId);
+}
+
+// スキルキャスト完了を受信した。
+void AActiveGameMode::OnRecvSkillCastFinish(MemoryStreamInterface *pStream)
+{
+	PacketSkillCastFinish Packet;
+	Packet.Serialize(pStream);
+
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
+	check(pCharacter != nullptr);
+
+	pCharacter->OnSkillCastFinished();
+}
+
+// スキル発動を受信した。
+void AActiveGameMode::OnRecvSkillActivate(MemoryStreamInterface *pStream)
+{
+	PacketSkillActivate Packet;
+	Packet.Serialize(pStream);
+
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
+	check(pCharacter != nullptr);
+
+	pCharacter->OnSkillActivate();
+
+	if (pCharacter == UGameplayStatics::GetPlayerCharacter(this, 0))
+	{
+		pMainHUD->OnStartRecast(Packet.SkillId);
+	}
+}
+
+// スキル発動失敗を受信した。
+void AActiveGameMode::OnRecvSkillUseFailed(MemoryStreamInterface *pStream)
+{
+	PacketSkillUseFailed Packet;
+	Packet.Serialize(pStream);
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+	pCharacter->OnSkillCancel();
+}
+
+// スキルのリキャスト完了を受信した。
+void AActiveGameMode::OnRecvSkillRecast(MemoryStreamInterface *pStream)
+{
+	PacketSkillRecast Packet;
+	Packet.Serialize(pStream);
+
+	pMainHUD->OnRecvSkillRecastFinished(Packet.SkillId);
 }
 
 // チャットを受信した。

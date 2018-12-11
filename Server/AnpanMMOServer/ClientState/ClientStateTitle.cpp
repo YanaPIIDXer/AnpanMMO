@@ -11,6 +11,7 @@
 #include "Packet/PacketLogInResult.h"
 #include "Packet/PacketCreateCharacterRequest.h"
 #include "Packet/PacketCreateCharacterResult.h"
+#include "Packet/PacketSkillList.h"
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketScriptFlag.h"
 #include "Packet/CachePacketLogInRequest.h"
@@ -150,6 +151,10 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	pClient->CreateCharacter(Packet.Name, Packet.Job, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
 	pClient->SendPacket(&StatusPacket);
+
+	// @HACK:ダミーのスキルリスト
+	PacketSkillList SkillListPacket(1, 3, 4, 5, 0);
+	pClient->SendPacket(&SkillListPacket);
 
 	LastAreaId = Packet.LastAreaId;
 	LastPosition = Vector3D(Packet.LastX, Packet.LastY, Packet.LastZ);

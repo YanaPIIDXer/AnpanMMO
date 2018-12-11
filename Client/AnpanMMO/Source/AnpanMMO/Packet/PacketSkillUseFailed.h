@@ -15,6 +15,7 @@ public:
 	{
 		RecastTime,
 		Cancel,
+		TargetDisappeared,
 	};
 
 	u8 Reason;

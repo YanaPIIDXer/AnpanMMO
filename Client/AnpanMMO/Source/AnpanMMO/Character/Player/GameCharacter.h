@@ -6,6 +6,7 @@
 #include "PlayerCharacterBase.h"
 #include "PlayerStatus.h"
 #include "PlayerMove.h"
+#include "Skill/SkillControl.h"
 #include "GameCharacter.generated.h"
 
 class UFloatingPawnMovement;
@@ -55,6 +56,29 @@ public:
 	// キャラクタタイプを取得.
 	virtual ECharacterType GetCharacterType() const override { return ECharacterType::Player; }
 
+	// スキルが使用可能か？
+	UFUNCTION(BlueprintPure, Category = "Skill")
+	bool IsSkillUsable(int32 SkillId) const;
+
+	// スキル使用.
+	UFUNCTION(BlueprintCallable, Category = "Skill")
+	void UseSkill(int32 SkillId);
+	
+	// 通常攻撃スキルを使用.
+	void UseNormalAttackSkill();
+
+	// スキル制御オブジェクトを取得.
+	const SkillControl &GetSkillControl() const { return Skill; }
+
+	// スキルキャストが完了した。
+	virtual void OnSkillCastFinished() override;
+
+	// スキル発動を受信した。
+	virtual void OnSkillActivate() override;
+
+	// スキルキャンセル
+	void OnSkillCancel();
+
 protected:
 
 	// レベルアップした
@@ -72,5 +96,8 @@ private:
 
 	// 移動パケット制御.
 	PlayerMove Move;
+
+	// スキル制御.
+	SkillControl Skill;
 
 };

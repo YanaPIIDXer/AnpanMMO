@@ -42,7 +42,7 @@ public:
 	uint32 GetUuid() const { return Uuid; }
 
 	// ジョブをセット
-	void SetJob(u8 InJob) { Job = InJob; }
+	void SetJob(uint8 InJob) { Job = InJob; }
 
 	// ジョブを取得.
 	u8 GetJob() const { return Job; }
@@ -59,6 +59,12 @@ public:
 	// 経験値取得.
 	int32 GetExp() const { return Exp; }
 
+	// スキルリストをセット。
+	void SetSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
+
+	// スキルリストを取得.
+	const TArray<uint32> &GetSkillList() const { return SkillList; }
+
 private:
 
 	// Uuid
@@ -68,7 +74,7 @@ private:
 	FString Name;
 
 	// ジョブ
-	u8 Job;
+	uint8 Job;
 
 	// 最大HP
 	int32 MaxHp;
@@ -81,5 +87,8 @@ private:
 
 	// 経験値.
 	int32 Exp;
+
+	// スキルリスト
+	TArray<uint32> SkillList;
 
 };

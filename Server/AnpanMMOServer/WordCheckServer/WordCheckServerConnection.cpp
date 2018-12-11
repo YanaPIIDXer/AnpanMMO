@@ -59,16 +59,18 @@ void WordCheckServerConnection::SendPacket(PacketBase *pPacket)
 // データを受信した。
 void WordCheckServerConnection::OnRecvData(size_t Size)
 {
-	u8 *pRecvData = RecvBuffer.GetTop();
-	MemoryStreamReader ReadStream(pRecvData, Size);
-	PacketHeader Header;
-	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 3)
+	while (true)
 	{
+		u8 *pRecvData = RecvBuffer.GetTop();
+		MemoryStreamReader ReadStream(pRecvData, Size);
+		PacketHeader Header;
+		if (!Header.Serialize(&ReadStream) || RecvBuffer.GetSize() < Header.GetPacketSize() + 3) { break; }
+
 		RecvBuffer.Pop(3);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
 		Receiver.RecvPacket(Header.GetPacketId(), &BodyStream);
-		
+
 		RecvBuffer.Pop(Header.GetPacketSize());
 	}
 }

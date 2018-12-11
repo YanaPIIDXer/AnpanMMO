@@ -13,6 +13,7 @@ public:
 		ATTACK = 0,
 		HEAL = 1,
 		BUFF = 2,
+		DEBUFF = 3,
 	};
 	enum
 	{

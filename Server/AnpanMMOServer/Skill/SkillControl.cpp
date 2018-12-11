@@ -9,15 +9,23 @@
 #include "Packet/CharacterType.h"
 #include "Packet/PacketSkillCastFinish.h"
 #include "Packet/PacketSkillActivate.h"
+#include "Packet/PacketSkillUseFailed.h"
 
 // コンストラクタ
 SkillControl::SkillControl(CharacterBase *pInOwner)
 	: pState(new SkillStateNutral(this))
 	, pPrevState(NULL)
 	, pOwner(pInOwner)
-	, pTarget(NULL)
 	, SkillId(0)
 {
+	pTarget.reset();
+}
+
+// デストラクタ
+SkillControl::~SkillControl()
+{
+	delete pPrevState;
+	delete pState;
 }
 
 // 毎フレームの処理.
@@ -33,8 +41,14 @@ void SkillControl::Poll(s32 DeltaTime)
 }
 
 // 使用.
-void SkillControl::Use(u32 InSkillId, CharacterBase *pInTarget)
+void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 {
+	if (pOwner->GetSkillRecastManager().IsRecast(InSkillId))
+	{
+		Cancel(PacketSkillUseFailed::RecastTime);
+		return;
+	}
+
 	SkillId = InSkillId;
 	pTarget = pInTarget;
 	ChangeState(new SkillStateCast(this));
@@ -82,7 +96,10 @@ void SkillControl::Activate()
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().GetItem(SkillId);
 	if (pItem->RangeType == SkillItem::NORMAL)
 	{
-		Targets.push_back(pTarget);
+		if (!pTarget.expired())
+		{
+			Targets.push_back(pTarget.lock().get());
+		}
 	}
 	else
 	{
@@ -90,6 +107,7 @@ void SkillControl::Activate()
 		switch (pItem->SkillType)
 		{
 			case SkillItem::ATTACK:
+			case SkillItem::DEBUFF:
 
 				if (pOwner->GetCharacterType() == CharacterType::Player)
 				{
@@ -102,6 +120,7 @@ void SkillControl::Activate()
 				break;
 
 			case SkillItem::HEAL:
+			case SkillItem::BUFF:
 
 				TargetType = pOwner->GetCharacterType();
 				break;
@@ -150,14 +169,15 @@ void SkillControl::Activate()
 
 				// @TODO:バフ実装時に実装する。
 				break;
+
+			case SkillItem::DEBUFF:
+
+				// @TODO:デバフ実装時に実装する。
+				break;
 		}
 	}
 
-	// リキャストタイムが設定されていればリキャスト開始。
-	if (pItem->RecastTime > 0)
-	{
-		pOwner->StartRecast(SkillId);
-	}
+	pOwner->StartRecast(SkillId);
 
 	// ここでStateをNutralに戻す。
 	ChangeState(new SkillStateNutral(this));

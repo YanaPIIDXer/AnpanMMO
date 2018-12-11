@@ -1,10 +1,10 @@
 #ifndef __SKILLCONTROL_H__
 #define __SKILLCONTROL_H__
 
-class SkillStateBase;
-class CharacterBase;
-
 #include <boost/function.hpp>
+#include "WeakPtrDefine.h"
+
+class SkillStateBase;
 
 /**
  * スキル制御.
@@ -22,13 +22,13 @@ public:
 	SkillControl(CharacterBase *pInOwner);
 
 	// デストラクタ
-	~SkillControl() {}
+	~SkillControl();
 
 	// 毎フレームの処理.
 	void Poll(s32 DeltaTime);
 
 	// 使用.
-	void Use(u32 InSkillId, CharacterBase *pInTarget);
+	void Use(u32 InSkillId, CharacterPtr pInTarget);
 
 	// 所有者を取得.
 	CharacterBase *GetOwner() const { return pOwner; }
@@ -37,7 +37,7 @@ public:
 	u32 GetSkillId() const { return SkillId; }
 
 	// ターゲットを取得。
-	CharacterBase *GetTarget() const { return pTarget; }
+	CharacterPtr GetTarget() const { return pTarget; }
 
 	// キャストが完了した。
 	void CastFinished();
@@ -66,7 +66,7 @@ private:
 	CharacterBase *pOwner;
 
 	// ターゲット.
-	CharacterBase *pTarget;
+	CharacterPtr pTarget;
 
 	// スキルＩＤ
 	u32 SkillId;

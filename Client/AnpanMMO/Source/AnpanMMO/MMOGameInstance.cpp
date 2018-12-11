@@ -32,6 +32,8 @@ void UMMOGameInstance::Shutdown()
 // 接続.
 bool UMMOGameInstance::Connect(const FString &Host, int Port)
 {
+	Close();
+
 	pConnection = new GameServerConnection();
 	if (!pConnection->Connect(Host, Port))
 	{
@@ -68,6 +70,12 @@ void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, in
 	StatusCache.SetName(Name);
 	StatusCache.SetJob(Job);
 	StatusCache.SetExp(Exp);
+}
+
+// スキルリストを受信した。
+void UMMOGameInstance::OnRecvSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4)
+{
+	StatusCache.SetSkillList(NormalAttack, Skill1, Skill2, Skill3, Skill4);
 }
 
 

@@ -34,7 +34,7 @@ void CharacterBase::SetRotate(const Rotation &TargetRotation)
 }
 
 // ダメージ
-void CharacterBase::ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value)
+void CharacterBase::ApplyDamage(CharacterPtr pAttacker, int Value)
 {
 	Parameter.Hp -= Value;
 	if (Parameter.Hp <= 0)
@@ -89,7 +89,7 @@ void CharacterBase::Respawn()
 }
 
 // スキル使用.
-void CharacterBase::UseSkill(u32 SkillId, CharacterBase *pTarget)
+void CharacterBase::UseSkill(u32 SkillId, CharacterPtr pTarget)
 {
 	Skill.Use(SkillId, pTarget);
 }

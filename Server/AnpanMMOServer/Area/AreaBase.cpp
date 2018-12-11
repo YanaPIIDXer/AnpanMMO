@@ -66,17 +66,17 @@ void AreaBase::OnRecvMove(u32 Uuid, float X, float Y, float Z, float Rotation)
 void AreaBase::OnRecvSkillUse(u32 Uuid, u32 SkillId, u8 TargetType, u32 TargetUuid)
 {
 	PlayerCharacterPtr pPlayer = PlayerMgr.Get(Uuid);
-	CharacterBase *pTarget = NULL;
+	CharacterPtr pTarget;
 	switch (TargetType)
 	{
 		case CharacterType::Player:
 
-			pTarget = PlayerMgr.Get(TargetUuid).lock().get();
+			pTarget = PlayerMgr.Get(TargetUuid);
 			break;
 
 		case CharacterType::Enemy:
 
-			pTarget = AnpanMgr.Get(TargetUuid).lock().get();
+			pTarget = AnpanMgr.Get(TargetUuid);
 			break;
 	}
 

@@ -87,10 +87,12 @@ void Client::ConvertScriptFlagFromBitFields(u32 BitField1, u32 BitField2, u32 Bi
 void Client::OnRecvData(size_t Size)
 {
 	u8 *pRecvData = RecvBuffer.GetTop();
-	MemoryStreamReader ReadStream(pRecvData, Size);
-	PacketHeader Header;
-	if (Header.Serialize(&ReadStream) && RecvBuffer.GetSize() >= Header.GetPacketSize() + 3)
+	while (true)
 	{
+		MemoryStreamReader ReadStream(pRecvData, Size);
+		PacketHeader Header;
+		if (!Header.Serialize(&ReadStream) || RecvBuffer.GetSize() < Header.GetPacketSize() + 3) { break; }
+
 		RecvBuffer.Pop(3);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());

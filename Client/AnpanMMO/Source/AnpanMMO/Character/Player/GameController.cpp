@@ -112,7 +112,7 @@ void AGameController::SetupPlayerInput(UInputComponent *pInputComponent)
 
 	pInputComponent->BindAxis(MoveForwardBind, this, &AGameController::MoveForward);
 	pInputComponent->BindAxis(MoveRightBind, this, &AGameController::MoveRight);
-	//pInputComponent->BindAction(AttackBind, EInputEvent::IE_Pressed, pCharacter.Get(), &AGameCharacter::Attack);
+	pInputComponent->BindAction(AttackBind, EInputEvent::IE_Pressed, pCharacter.Get(), &AGameCharacter::UseNormalAttackSkill);
 }
 
 // 移動処理.
@@ -122,6 +122,9 @@ void AGameController::MoveProc()
 	if (pCharacter == nullptr) { return; }
 
 	if (pCharacter->IsDead()) { return; }
+
+	// スキル制御が動いているならそっちに任せる。
+	if (pCharacter->GetSkillControl().IsActive()) { return; }
 
 	if (!bEnableMove) { return; }
 
@@ -156,6 +159,9 @@ void AGameController::MoveRight(float Value)
 void AGameController::RayTraceForTarget(const FVector2D &ScreenPos)
 {
 	if (!bEnableMove) { return; }
+
+	// スキル制御中のターゲット切り替えは認めない。
+	if (pCharacter->GetSkillControl().IsActive()) { return; }
 
 	FVector Pos;
 	FVector Direction;

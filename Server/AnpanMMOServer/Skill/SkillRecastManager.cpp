@@ -33,7 +33,7 @@ void SkillRecastManager::Poll(s32 DeltaTime)
 void SkillRecastManager::Add(u32 SkillId)
 {
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().GetItem(SkillId);
-	RecastList[SkillId] = pItem->RecastTime;
+	RecastList[SkillId] = pItem->RecastTime * 1000;
 }
 
 // リキャスト中か？

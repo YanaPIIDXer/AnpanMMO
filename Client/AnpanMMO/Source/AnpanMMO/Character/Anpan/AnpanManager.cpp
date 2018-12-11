@@ -3,6 +3,7 @@
 #include "AnpanManager.h"
 #include "Anpan.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "Kismet/GameplayStatics.h"
 #include "Packet/PacketAnpanList.h"
 #include "Packet/PacketSpawnAnpan.h"
 #include "Packet/PacketMoveAnpan.h"
@@ -85,6 +86,31 @@ void AnpanManager::OnRecvStop(MemoryStreamInterface *pStream)
 
 	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
 	AnpanMap[Packet.Uuid]->Stop(Packet.X, Packet.Y, Packet.Z, Packet.Rotation);
+}
+
+// 前方のターゲットを取得.
+AAnpan *AnpanManager::FindCenterTarget(float Distance)
+{
+	AAnpan *pTarget = nullptr;
+	ACharacter *pCharacter = UGameplayStatics::GetPlayerCharacter(pWorld.Get(), 0);
+	FVector CharacterPos = pCharacter->GetActorLocation();
+	FVector CharacterCenter = pCharacter->GetActorForwardVector();
+	float MinDist = FLT_MAX;
+	for (auto KeyValue : AnpanMap)
+	{
+		AAnpan *pAnpan = KeyValue.Value.Get();
+		FVector Dist = (pAnpan->GetActorLocation() - CharacterPos);
+		Dist.Z = 0.0f;
+		if (Dist.SizeSquared() > Distance * Distance) { continue; }
+		float Dot = FVector::DotProduct(CharacterCenter, Dist.GetSafeNormal());
+		float Angle = FMath::Acos(Dot);
+		if (Angle > 45.0f) { continue; }
+		if (Dist.SizeSquared() > MinDist) { continue; }
+		pTarget = pAnpan;
+		MinDist = Dist.SizeSquared();
+	}
+
+	return pTarget;
 }
 
 // リセット

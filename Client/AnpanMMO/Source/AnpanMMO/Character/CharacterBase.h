@@ -47,6 +47,9 @@ public:
 	// ダメージを与える。
 	void ApplyDamage(int32 Value);
 
+	// 回復.
+	void Heal(int32 Value);
+
 	// 死んでる？
 	bool IsDead() const { return (Hp <= 0); }
 
@@ -71,6 +74,24 @@ public:
 	// ターゲットサークルを撤去.
 	void DestroyTargetCircle();
 
+	// UUIDを取得.
+	//virtual uint32 GetUuid() const = 0;
+	virtual uint32 GetUuid() const { return 0; }
+
+	// キャラクタ名を取得.
+	//virtual FString GetCharacterName() const = 0;
+	UFUNCTION(BlueprintPure, Category = "Character")
+	virtual FString GetCharacterName() const { return ""; }
+
+	// スキルキャストを受信した。
+	virtual void OnSkillCast(uint32 SkillId) {}
+
+	// スキルキャストが完了した。
+	virtual void OnSkillCastFinished() {}
+
+	// スキル発動を受信した。
+	virtual void OnSkillActivate() {}
+
 protected:
 
 	// 初期化.
@@ -83,6 +104,11 @@ protected:
 	UFUNCTION(BlueprintNativeEvent, Category = "Character")
 	void OnDamaged(int32 BeforeHp, int32 AfterHp, int32 DamageValue);
 	virtual void OnDamaged_Implementation(int32 BeforeHp, int32 AfterHp, int32 DamageValue) {}
+
+	// 回復イベント
+	UFUNCTION(BlueprintNativeEvent, Category = "Character")
+	void OnHeal(int32 BeforeHp, int32 AfterHp, int32 HealValue);
+	void OnHeal_Implementation(int32 BeforeHp, int32 AfterHp, int32 HealValue) {}
 
 	// 死亡イベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Character")

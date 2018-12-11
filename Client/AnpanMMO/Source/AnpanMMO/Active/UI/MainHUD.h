@@ -42,6 +42,11 @@ public:
 	void OnDamaged(int32 Value);
 	void OnDamaged_Implementation(int32 Value) {}
 
+	// 回復した。
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "MainHUD")
+	void OnHeal(int32 Value);
+	void OnHeal_Implementation(int32 Value) {}
+
 	// ターゲットが変更された。
 	UFUNCTION(BlueprintNativeEvent, Category = "Target")
 	void OnTargetChanged(ACharacterBase *pCharacter);
@@ -71,6 +76,21 @@ public:
 	UFUNCTION(BlueprintNativeEvent, Category = "Chat")
 	void OnRecvChat(const FString &Name, const FString &Message, bool bIsSelf);
 	void OnRecvChat_Implementation(const FString &Name, const FString &Message, bool bIsSelf) {}
+
+	// スキルリストを受信した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Skill")
+	void OnRecvSkillList(int32 NormalAttack, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4);
+	void OnRecvSkillList_Implementation(int32 NormalAttack, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4) {}
+
+	// リキャスト開始.
+	UFUNCTION(BlueprintNativeEvent, Category = "Skill")
+	void OnStartRecast(int32 SkillId);
+	void OnStartRecast_Implementation(int32 SkillId) {}
+
+	// リキャストが完了した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Skill")
+	void OnRecvSkillRecastFinished(int32 SkillId);
+	void OnRecvSkillRecastFinished_Implementation(int32 SkillId) {}
 
 	// 通知を受信した。
 	void OnRecvNotice(int32 Uuid, const NoticeData &Data);

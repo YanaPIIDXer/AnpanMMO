@@ -45,7 +45,7 @@ public:
 	bool IsDead() const { return (Parameter.Hp <= 0); }
 
 	// ダメージ
-	void ApplyDamage(weak_ptr<CharacterBase> pAttacker, int Value);
+	void ApplyDamage(CharacterPtr pAttacker, int Value);
 
 	// 回復.
 	void Heal(int Value);
@@ -78,10 +78,13 @@ public:
 	AreaPtr GetArea() const { return pArea; }
 
 	// スキル使用.
-	void UseSkill(u32 SkillId, CharacterBase *pTarget);
+	void UseSkill(u32 SkillId, CharacterPtr pTarget);
 
 	// リキャスト開始.
 	void StartRecast(u32 SkillId);
+
+	// スキルリキャストマネージャ取得.
+	const SkillRecastManager &GetSkillRecastManager() const { return Recast; }
 
 protected:
 

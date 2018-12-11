@@ -39,4 +39,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Respawn", meta = (WorldContext = pWorldContext))
 	static void SendRespawnRequest(UObject *pWorldContext);
 
+	// スキル名を取得.
+	UFUNCTION(BlueprintPure, Category = "Skill")
+	static FString GetSkillName(int32 SkillId);
+
+	// リキャストタイムを取得.
+	UFUNCTION(BlueprintPure, Category = "Skill")
+	static int32 GetRecastTime(int32 SkillId);
+
 };

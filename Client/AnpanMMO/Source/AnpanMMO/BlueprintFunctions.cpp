@@ -6,6 +6,7 @@
 #include "Particles/Emitter.h"
 #include "Kismet/GameplayStatics.h"
 #include "MMOGameInstance.h"
+#include "Master/MasterData.h"
 #include "Packet/PacketRespawnRequest.h"
 
 // 単純なダイアログを表示.
@@ -57,4 +58,20 @@ void UBlueprintFunctions::SendRespawnRequest(UObject *pWorldContext)
 
 	PacketRespawnRequest Packet;
 	pInst->SendPacket(&Packet);
+}
+
+// スキル名を取得.
+FString UBlueprintFunctions::GetSkillName(int32 SkillId)
+{
+	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
+	if (pItem == nullptr) { return ""; }
+	return pItem->Name;
+}
+
+// リキャストタイムを取得.
+int32 UBlueprintFunctions::GetRecastTime(int32 SkillId)
+{
+	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
+	if (pItem == nullptr) { return 0; }
+	return pItem->RecastTime;
 }

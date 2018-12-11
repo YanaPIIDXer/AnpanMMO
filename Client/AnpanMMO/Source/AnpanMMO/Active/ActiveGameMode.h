@@ -86,6 +86,9 @@ public:
 	// スクリプト終了.
 	void FinishScript();
 
+	// キャラから見た前方のターゲットを取得.
+	AAnpan *FindCenterTarget(float Distance);
+
 protected:
 
 private:
@@ -130,11 +133,17 @@ private:
 	bool bInitializedMainHUD;
 
 
+	// キャラクタタイプからキャラクタを取得.
+	ACharacterBase *GetCharacterFromType(uint8 CharacterType, uint32 Uuid);
+
 	// エリア移動を受信した。
 	void OnRecvAreaMove(MemoryStreamInterface *pStream);
 
 	// ダメージを受信した。
 	void OnRecvDamage(MemoryStreamInterface *pStream);
+
+	// 回復を受信した。
+	void OnRecvHeal(MemoryStreamInterface *pStream);
 
 	// 経験値を受信した。
 	void OnRecvAddExp(MemoryStreamInterface *pStream);
@@ -147,6 +156,21 @@ private:
 
 	// リスポンを受信した。
 	void OnRecvRespawn(MemoryStreamInterface *pStream);
+
+	// スキルキャストを受信した。
+	void OnRecvSkillCast(MemoryStreamInterface *pStream);
+
+	// スキルキャスト完了を受信した。
+	void OnRecvSkillCastFinish(MemoryStreamInterface *pStream);
+
+	// スキル発動を受信した。
+	void OnRecvSkillActivate(MemoryStreamInterface *pStream);
+
+	// スキル発動失敗を受信した。
+	void OnRecvSkillUseFailed(MemoryStreamInterface *pStream);
+
+	// スキルのリキャスト完了を受信した。
+	void OnRecvSkillRecast(MemoryStreamInterface *pStream);
 
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
