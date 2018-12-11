@@ -19,7 +19,7 @@ void SkillStateCast::BeginState()
 	CharacterBase *pOwner = GetControl()->GetOwner();
 	AreaPtr pArea = pOwner->GetArea();
 
-	PacketSkillCast Packet(GetControl()->GetSkillId());
+	PacketSkillCast Packet(GetControl()->GetSkillId(), pOwner->GetCharacterType(), pOwner->GetUuid());
 	pArea.lock()->BroadcastPacket(&Packet);
 }
 

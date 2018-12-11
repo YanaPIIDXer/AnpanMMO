@@ -50,7 +50,7 @@ void SkillControl::Use(u32 InSkillId, CharacterBase *pInTarget)
 // キャストが完了した。
 void SkillControl::CastFinished()
 {
-	PacketSkillCastFinish Packet;
+	PacketSkillCastFinish Packet(pOwner->GetCharacterType(), pOwner->GetUuid());
 	AreaPtr pArea = pOwner->GetArea();
 	pArea.lock()->BroadcastPacket(&Packet);
 
