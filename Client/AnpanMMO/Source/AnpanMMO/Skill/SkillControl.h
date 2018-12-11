@@ -34,8 +34,8 @@ public:
 	// キャストが完了した.
 	void OnCastFinished();
 
-	// オート移動が完了した。
-	void OnAutoMoveFinished();
+	// スキルが発動した。
+	void OnActivate();
 
 	// 所有者を取得.
 	TWeakObjectPtr<ACharacterBase> GetOwner() const { return pOwner; }

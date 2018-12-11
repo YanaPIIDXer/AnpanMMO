@@ -50,8 +50,8 @@ void SkillControl::OnCastFinished()
 	ChangeState(new SkillStateAutoMove(this));
 }
 
-// オート移動が完了した。
-void SkillControl::OnAutoMoveFinished()
+// スキルが発動した。
+void SkillControl::OnActivate()
 {
 	// ニュートラルに戻す。
 	ChangeState(new SkillStateNutral(this));

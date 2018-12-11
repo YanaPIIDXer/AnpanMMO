@@ -114,7 +114,6 @@ void AGameCharacter::UseSkill(int32 SkillId)
 	{
 		switch (pItem->SkillType)
 		{
-
 			case SkillItem::ATTACK:
 			case SkillItem::DEBUFF:
 
@@ -162,11 +161,11 @@ void AGameCharacter::OnSkillCastFinished()
 }
 
 // スキルのオート移動が完了した。
-void AGameCharacter::OnSkillAutoMoveFinished()
+void AGameCharacter::OnSkillActivate()
 {
-	Super::OnSkillAutoMoveFinished();
+	Super::OnSkillActivate();
 
-	Skill.OnAutoMoveFinished();
+	Skill.OnActivate();
 }
 
 

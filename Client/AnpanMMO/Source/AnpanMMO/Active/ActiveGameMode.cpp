@@ -25,6 +25,9 @@
 #include "Packet/PacketLevelUp.h"
 #include "Packet/PacketAreaMoveResponse.h"
 #include "Packet/PacketPlayerRespawn.h"
+#include "Packet/PacketSkillCast.h"
+#include "Packet/PacketSkillCastFinish.h"
+#include "Packet/PacketSkillActivate.h"
 #include "Packet/PacketReceiveChat.h"
 #include "Packet/PacketPartyKickResult.h"
 #include "Packet/PacketPartyInviteResult.h"
@@ -56,6 +59,9 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::MovePlayer, std::bind(&PlayerManager::OnRecvMove, &PlayerMgr, _1));
 	AddPacketFunction(PacketID::PlayerRespawn, std::bind(&AActiveGameMode::OnRecvRespawn, this, _1));
 	AddPacketFunction(PacketID::ExitPlayer, std::bind(&PlayerManager::OnRecvExit, &PlayerMgr, _1));
+	AddPacketFunction(PacketID::SkillCast, std::bind(&AActiveGameMode::OnRecvSkillCast, this, _1));
+	AddPacketFunction(PacketID::SkillCastFinish, std::bind(&AActiveGameMode::OnRecvSkillCastFinish, this, _1));
+	AddPacketFunction(PacketID::SkillActivate, std::bind(&AActiveGameMode::OnRecvSkillActivate, this, _1));
 	AddPacketFunction(PacketID::ReceiveChat, std::bind(&AActiveGameMode::OnRecvChat, this, _1));
 	AddPacketFunction(PacketID::PartyCreateResult, std::bind(&PartyInformation::OnRecvCreateResult, &PartyInfo, _1));
 	AddPacketFunction(PacketID::PartyDissolutionResult, std::bind(&PartyInformation::OnRecvDissolutionResult, &PartyInfo, _1));
@@ -334,6 +340,42 @@ void AActiveGameMode::OnRecvRespawn(MemoryStreamInterface *pStream)
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 	pCharacter->Respawn();
+}
+
+// スキルキャストを受信した。
+void AActiveGameMode::OnRecvSkillCast(MemoryStreamInterface *pStream)
+{
+	PacketSkillCast Packet;
+	Packet.Serialize(pStream);
+
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
+	check(pCharacter != nullptr);
+
+	pCharacter->OnSkillCast(Packet.SkillId);
+}
+
+// スキルキャスト完了を受信した。
+void AActiveGameMode::OnRecvSkillCastFinish(MemoryStreamInterface *pStream)
+{
+	PacketSkillCastFinish Packet;
+	Packet.Serialize(pStream);
+
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
+	check(pCharacter != nullptr);
+
+	pCharacter->OnSkillCastFinished();
+}
+
+// スキル発動を受信した。
+void AActiveGameMode::OnRecvSkillActivate(MemoryStreamInterface *pStream)
+{
+	PacketSkillActivate Packet;
+	Packet.Serialize(pStream);
+
+	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
+	check(pCharacter != nullptr);
+
+	pCharacter->OnSkillActivate();
 }
 
 // チャットを受信した。

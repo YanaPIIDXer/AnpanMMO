@@ -154,6 +154,15 @@ private:
 	// リスポンを受信した。
 	void OnRecvRespawn(MemoryStreamInterface *pStream);
 
+	// スキルキャストを受信した。
+	void OnRecvSkillCast(MemoryStreamInterface *pStream);
+
+	// スキルキャスト完了を受信した。
+	void OnRecvSkillCastFinish(MemoryStreamInterface *pStream);
+
+	// スキル発動を受信した。
+	void OnRecvSkillActivate(MemoryStreamInterface *pStream);
+
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
 

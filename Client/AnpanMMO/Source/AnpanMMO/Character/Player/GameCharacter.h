@@ -70,8 +70,8 @@ public:
 	// スキルキャストが完了した。
 	virtual void OnSkillCastFinished() override;
 
-	// スキルのオート移動が完了した。
-	virtual void OnSkillAutoMoveFinished() override;
+	// スキル発動を受信した。
+	virtual void OnSkillActivate() override;
 
 protected:
 
