@@ -31,7 +31,7 @@ void SkillStateAutoMove::Poll(s32 DeltaTime)
 	}
 
 	Vector3D Dist = pTarget->GetPosition() - pOwner->GetPosition();
-	if (Dist.GetSizeSq() < SkillDistance * SkillDistance)
+	if (Dist.GetSizeSq() <= SkillDistance * SkillDistance)
 	{
 		// ”­“®.
 		GetControl()->Activate();
