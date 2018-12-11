@@ -90,6 +90,7 @@ void SkillControl::Activate()
 		switch (pItem->SkillType)
 		{
 			case SkillItem::ATTACK:
+			case SkillItem::DEBUFF:
 
 				if (pOwner->GetCharacterType() == CharacterType::Player)
 				{
@@ -102,6 +103,7 @@ void SkillControl::Activate()
 				break;
 
 			case SkillItem::HEAL:
+			case SkillItem::BUFF:
 
 				TargetType = pOwner->GetCharacterType();
 				break;
@@ -149,6 +151,11 @@ void SkillControl::Activate()
 			case SkillItem::BUFF:
 
 				// @TODO:バフ実装時に実装する。
+				break;
+
+			case SkillItem::DEBUFF:
+
+				// @TODO:デバフ実装時に実装する。
 				break;
 		}
 	}
