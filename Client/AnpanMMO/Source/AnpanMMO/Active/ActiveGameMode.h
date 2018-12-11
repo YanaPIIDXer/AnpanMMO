@@ -169,6 +169,9 @@ private:
 	// スキル発動失敗を受信した。
 	void OnRecvSkillUseFailed(MemoryStreamInterface *pStream);
 
+	// スキルのリキャスト完了を受信した。
+	void OnRecvSkillRecast(MemoryStreamInterface *pStream);
+
 	// チャットを受信した。
 	void OnRecvChat(MemoryStreamInterface *pStream);
 

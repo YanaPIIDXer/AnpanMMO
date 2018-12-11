@@ -67,3 +67,11 @@ FString UBlueprintFunctions::GetSkillName(int32 SkillId)
 	if (pItem == nullptr) { return ""; }
 	return pItem->Name;
 }
+
+// リキャストタイムを取得.
+int32 UBlueprintFunctions::GetRecastTime(int32 SkillId)
+{
+	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
+	if (pItem == nullptr) { return 0; }
+	return pItem->RecastTime;
+}

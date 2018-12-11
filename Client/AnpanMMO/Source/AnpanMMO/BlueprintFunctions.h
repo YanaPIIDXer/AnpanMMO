@@ -43,4 +43,8 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Skill")
 	static FString GetSkillName(int32 SkillId);
 
+	// リキャストタイムを取得.
+	UFUNCTION(BlueprintPure, Category = "Skill")
+	static int32 GetRecastTime(int32 SkillId);
+
 };
