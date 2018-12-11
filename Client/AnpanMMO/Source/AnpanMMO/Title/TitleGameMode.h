@@ -63,6 +63,9 @@ private:
 	// キャラクタステータスを受信した。
 	void OnRecvCharacterStatus(MemoryStreamInterface *pStream);
 
+	// スキルリストを受信した。
+	void OnRecvSkillList(MemoryStreamInterface *pStream);
+
 	// スクリプトフラグを受信した。
 	void OnRecvScriptFlag(MemoryStreamInterface *pStream);
 

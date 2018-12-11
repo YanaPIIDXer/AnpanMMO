@@ -48,6 +48,9 @@ public:
 	// ステータスを受信した。
 	void OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, int32 MaxHp, int32 Atk, int32 Def, int32 Exp);
 
+	// スキルリストを受信した。
+	void OnRecvSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
+
 	// ステータスキャッシュ取得.
 	const PlayerStatus &GetStatusCache() const { return StatusCache; }
 

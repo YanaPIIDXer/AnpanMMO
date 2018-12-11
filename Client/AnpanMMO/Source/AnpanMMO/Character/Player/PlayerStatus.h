@@ -59,6 +59,9 @@ public:
 	// 経験値取得.
 	int32 GetExp() const { return Exp; }
 
+	// スキルリストをセット。
+	void SetSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
+
 private:
 
 	// Uuid
@@ -81,5 +84,8 @@ private:
 
 	// 経験値.
 	int32 Exp;
+
+	// スキルリスト
+	TArray<uint32> SkillList;
 
 };

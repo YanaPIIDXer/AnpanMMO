@@ -70,6 +70,12 @@ void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, in
 	StatusCache.SetExp(Exp);
 }
 
+// スキルリストを受信した。
+void UMMOGameInstance::OnRecvSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4)
+{
+	StatusCache.SetSkillList(NormalAttack, Skill1, Ski]ll2, Skill3, Skill4);
+}
+
 
 // パケットを受信した。
 void UMMOGameInstance::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
