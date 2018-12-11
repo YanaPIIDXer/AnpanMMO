@@ -13,25 +13,22 @@ public:
 
 	
 
-	u8 CharacterType;
-	u32 CharacterUuid;
+	u32 SkillId;
 	
 
 	PacketSkillCast()
 	{
 	}
 
-	PacketSkillCast(u8 InCharacterType, u32 InCharacterUuid)
+	PacketSkillCast(u32 InSkillId)
 	{
-		CharacterType = InCharacterType;
-		CharacterUuid = InCharacterUuid;
+		SkillId = InSkillId;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&CharacterType);
-		pStream->Serialize(&CharacterUuid);
+		pStream->Serialize(&SkillId);
 		
 		return true;
 	}
