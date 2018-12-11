@@ -41,4 +41,7 @@ private:
 	// 距離.
 	float Distance;
 
+	// 移動パケットを送ったか？
+	bool bSendMovePacket;
+
 };
