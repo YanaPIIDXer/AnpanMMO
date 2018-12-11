@@ -42,7 +42,7 @@ public:
 	uint32 GetUuid() const { return Uuid; }
 
 	// ジョブをセット
-	void SetJob(u8 InJob) { Job = InJob; }
+	void SetJob(uint8 InJob) { Job = InJob; }
 
 	// ジョブを取得.
 	u8 GetJob() const { return Job; }
@@ -68,7 +68,7 @@ private:
 	FString Name;
 
 	// ジョブ
-	u8 Job;
+	uint8 Job;
 
 	// 最大HP
 	int32 MaxHp;
