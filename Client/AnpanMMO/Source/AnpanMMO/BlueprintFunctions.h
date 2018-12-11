@@ -39,4 +39,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Respawn", meta = (WorldContext = pWorldContext))
 	static void SendRespawnRequest(UObject *pWorldContext);
 
+	// ƒXƒLƒ‹–¼‚ðŽæ“¾.
+	UFUNCTION(BlueprintPure, Category = "Skill")
+	static FString GetSkillName(int32 SkillId);
+
 };

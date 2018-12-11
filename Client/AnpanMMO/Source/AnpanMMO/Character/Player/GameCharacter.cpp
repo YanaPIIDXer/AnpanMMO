@@ -35,7 +35,12 @@ void AGameCharacter::BeginPlay()
 	check(pGameMode != nullptr);
 	pGameMode->AddPlayerCharacter(Status.GetUuid(), this);
 
+	const TArray<uint32> &SkillList = Status.GetSkillList();
+	pGameMode->GetMainHUD()->OnRecvSkillList(SkillList[0], SkillList[1], SkillList[2], SkillList[3], SkillList[4]);
+
 	Move.Initialize(this, pInst);
+
+	Skill.SetOwner(this);
 }
 
 // 毎フレームの処理.
@@ -44,6 +49,7 @@ void AGameCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	Move.Poll(DeltaTime);
+	Skill.Poll();
 }
 
 // 経験値を受信した。
@@ -76,7 +82,7 @@ bool AGameCharacter::IsSkillUsable(int32 SkillId) const
 	if (pTarget == nullptr) { return true; }		// ターゲットがいない時は自動で決めるので使用可。
 
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
-	check(pItem != nullptr);
+	if (pItem == nullptr) { return false; }
 
 	if (pItem->RangeType != SkillItem::NORMAL) { return true; }		// 範囲攻撃なら問答無用で使用可。
 

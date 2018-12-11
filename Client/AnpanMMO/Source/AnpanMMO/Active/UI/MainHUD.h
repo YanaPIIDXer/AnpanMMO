@@ -72,6 +72,11 @@ public:
 	void OnRecvChat(const FString &Name, const FString &Message, bool bIsSelf);
 	void OnRecvChat_Implementation(const FString &Name, const FString &Message, bool bIsSelf) {}
 
+	// スキルリストを受信した。
+	UFUNCTION(BlueprintNativeEvent, Category = "Skill")
+	void OnRecvSkillList(int32 NormalAttack, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4);
+	void OnRecvSkillList_Implementation(int32 NormalAttack, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4) {}
+
 	// 通知を受信した。
 	void OnRecvNotice(int32 Uuid, const NoticeData &Data);
 

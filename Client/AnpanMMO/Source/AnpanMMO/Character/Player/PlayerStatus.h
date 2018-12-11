@@ -62,6 +62,9 @@ public:
 	// スキルリストをセット。
 	void SetSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
 
+	// スキルリストを取得.
+	const TArray<uint32> &GetSkillList() const { return SkillList; }
+
 private:
 
 	// Uuid

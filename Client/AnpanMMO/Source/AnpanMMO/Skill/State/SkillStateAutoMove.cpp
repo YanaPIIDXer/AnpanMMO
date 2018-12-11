@@ -27,11 +27,10 @@ void SkillStateAutoMove::Poll()
 	if (pTarget == nullptr) { return; }		// ターゲットが消えた。
 
 	FVector TargetVec = (pTarget->GetActorLocation() - pOwner->GetActorLocation());
-	TargetVec.Z = 0.0f;
-	TargetVec.Normalize();
-
 	if (TargetVec.SizeSquared() > Distance * Distance)
 	{
+		TargetVec.Z = 0.0f;
+		TargetVec.Normalize();
 		pOwner->AddMovementInput(TargetVec);
 	}
 }
