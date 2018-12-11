@@ -133,6 +133,9 @@ private:
 	bool bInitializedMainHUD;
 
 
+	// キャラクタタイプからキャラクタを取得.
+	ACharacterBase *GetCharacterFromType(uint8 CharacterType, uint32 Uuid);
+
 	// エリア移動を受信した。
 	void OnRecvAreaMove(MemoryStreamInterface *pStream);
 

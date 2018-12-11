@@ -224,6 +224,25 @@ AAnpan *AActiveGameMode::FindCenterTarget(float Distance)
 }
 
 
+// キャラクタタイプからキャラクタを取得.
+ACharacterBase *AActiveGameMode::GetCharacterFromType(uint8 CharacterType, uint32 Uuid)
+{
+	ACharacterBase *pCharacter = nullptr;
+	switch (CharacterType)
+	{
+		case CharacterType::Player:
+
+			pCharacter = PlayerMgr.Get(Uuid);
+			break;
+
+		case CharacterType::Enemy:
+
+			pCharacter = AnpanMgr.Get(Uuid);
+			break;
+	}
+	return pCharacter;
+}
+
 // エリア移動を受信した。
 void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 {
@@ -255,20 +274,7 @@ void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 	PacketDamage Packet;
 	Packet.Serialize(pStream);
 
-	ACharacterBase *pDamageCharacter = nullptr;
-	switch (Packet.TargetType)
-	{
-		case CharacterType::Player:
-
-			pDamageCharacter = PlayerMgr.Get(Packet.TargetUuid);
-			break;
-
-		case CharacterType::Enemy:
-	
-			pDamageCharacter = AnpanMgr.Get(Packet.TargetUuid);
-			break;
-
-	}
+	ACharacterBase *pDamageCharacter = GetCharacterFromType(Packet.TargetType, Packet.TargetUuid);
 	check(pDamageCharacter != nullptr);
 	pDamageCharacter->ApplyDamage(Packet.DamageValue);
 }
