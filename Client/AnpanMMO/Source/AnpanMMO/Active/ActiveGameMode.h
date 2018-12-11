@@ -86,6 +86,9 @@ public:
 	// スクリプト終了.
 	void FinishScript();
 
+	// キャラから見た前方のターゲットを取得.
+	AAnpan *FindCenterTarget(float Distance);
+
 protected:
 
 private:

@@ -50,6 +50,9 @@ public:
 	// 停止を受信した。
 	void OnRecvStop(MemoryStreamInterface *pStream);
 
+	// 前方のターゲットを取得.
+	AAnpan *FindCenterTarget(float Distance);
+
 	// リセット.
 	void Reset();
 

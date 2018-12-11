@@ -176,7 +176,6 @@ void AActiveGameMode::SetHiddenMainHUD(bool bHidden)
 	}
 }
 
-
 // 天球をセット。
 void AActiveGameMode::RegisterSkyControl(ASkyControl *pSky)
 {
@@ -216,6 +215,12 @@ void AActiveGameMode::ShowScriptSelection()
 void AActiveGameMode::FinishScript()
 {
 	pScriptWidget->CloseWidget();
+}
+
+// キャラから見た前方のターゲットを取得.
+AAnpan *AActiveGameMode::FindCenterTarget(float Distance)
+{
+	return AnpanMgr.FindCenterTarget(Distance);
 }
 
 

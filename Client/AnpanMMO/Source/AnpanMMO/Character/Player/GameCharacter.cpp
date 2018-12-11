@@ -118,13 +118,19 @@ void AGameCharacter::UseSkill(int32 SkillId)
 			case SkillItem::ATTACK:
 			case SkillItem::DEBUFF:
 
-				// @TODO:前方の敵を自動ターゲット。
+				// 前方の敵を自動ターゲット。
+				{
+					AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+					check(pGameMode != nullptr);
+					pTarget = pGameMode->FindCenterTarget(pItem->Distance + 1000.0f);
+					if (pTarget == nullptr) { return; }		// ターゲットが見つからなかった場合は中断。
+				}
 				break;
 
 			case SkillItem::HEAL:
 			case SkillItem::BUFF:
 
-				// 回復・バフスキルだった場合はとりあえず自分をターゲットに指定。
+				// 回復・バフスキルだった場合は自分をターゲットに指定。
 				pTarget = this;
 				break;
 		}
