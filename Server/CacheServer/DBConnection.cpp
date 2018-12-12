@@ -100,7 +100,7 @@ bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJ
 // キャラクタパラメータ書き込み
 bool DBConnection::SaveCharacterParameter(int Id, u32 Level, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z)
 {
-	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Level = ? MaxHp = ?, Atk = ?, Def = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ?, LastZ = ? where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Level = ?, MaxHp = ?, Atk = ?, Def = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ?, LastZ = ? where CustomerId = ?");
 
 	Query.BindInt(&Level);
 	Query.BindInt(&MaxHp);
