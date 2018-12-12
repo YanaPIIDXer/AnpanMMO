@@ -15,7 +15,7 @@ const FLinearColor ASkillRangeDecal::AttackColor = FLinearColor(0.0f, 0.0f, 1.0f
 const FLinearColor ASkillRangeDecal::HealColor = FLinearColor(0.0f, 1.0f, 0.0f, 1.0f);
 const FLinearColor ASkillRangeDecal::EnemyAttackColor = FLinearColor(1.0f, 0.0f, 0.0f, 1.0f);
 const FLinearColor ASkillRangeDecal::EnemyHealColor = FLinearColor(1.0f, 1.0f, 0.0f, 1.0f);
-const float ASkillRangeDecal::ScaleAnimationTime = 1.0f;
+const float ASkillRangeDecal::ScaleAnimationTime = 0.3f;
 
 // Spawn
 ASkillRangeDecal *ASkillRangeDecal::Spawn(UWorld *pWorld, const FVector &CharacterPos, const FRotator &CharacterRot, ECharacterType CharacterType, uint32 SkillId)
