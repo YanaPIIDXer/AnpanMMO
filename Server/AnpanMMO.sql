@@ -64,6 +64,7 @@ DROP TABLE IF EXISTS `UserData`;
 CREATE TABLE `UserData` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserCode` varchar(32) DEFAULT NULL,
+  `Gold` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -77,4 +78,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-09 22:08:35
+-- Dump completed on 2018-12-12 19:11:32
