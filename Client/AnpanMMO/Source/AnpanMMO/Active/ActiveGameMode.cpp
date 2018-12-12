@@ -323,7 +323,7 @@ void AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
-	pCharacter->OnRecvLevelUp(Packet.MaxHp, Packet.Atk, Packet.Def);
+	pCharacter->OnRecvLevelUp(Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def);
 	pCharacter->OnRecvExp(Packet.ResultExp);
 
 	pMainHUD->OnLevelUp();

@@ -42,7 +42,7 @@ public:
 	void OnRecvExp(int32 Exp);
 
 	// レベルアップを受信した。
-	void OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def);
+	void OnRecvLevelUp(uint32 Level, int32 MaxHp, int32 Atk, int32 Def);
 
 	// 移動ベクトルの取得.
 	virtual FVector GetMoveVector() const override;

@@ -22,8 +22,9 @@ public:
 	void SetUuid(uint32 InUuid) { Uuid = InUuid; }
 
 	// セット
-	void Set(int32 InMaxHp, int32 InAtk, int32 InDef)
+	void Set(uint32 InLevel, int32 InMaxHp, int32 InAtk, int32 InDef)
 	{
+		Level = InLevel;
 		MaxHp = InMaxHp;
 		Atk = InAtk;
 		Def = InDef;
@@ -53,6 +54,9 @@ public:
 	// ゴールドを取得.
 	uint32 GetGold() const { return Gold; }
 
+	// レベルを取得.
+	uint32 GetLevel() const { return Level; }
+
 	// 最大HP取得.
 	int32 GetMaxHp() const { return MaxHp; }
 
@@ -81,6 +85,9 @@ private:
 
 	// ジョブ
 	uint8 Job;
+
+	// レベル
+	uint32 Level;
 
 	// 最大HP
 	int32 MaxHp;

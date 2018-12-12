@@ -17,7 +17,7 @@ class PlayerCharacter : public CharacterBase
 public:
 
 	// コンストラクタ
-	PlayerCharacter(Client *pInClient, u8 Job, int MaxHp, int Atk, int Def, int InExp, u32 InGold);
+	PlayerCharacter(Client *pInClient, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold);
 
 	// デストラクタ
 	virtual ~PlayerCharacter();

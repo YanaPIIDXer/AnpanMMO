@@ -16,6 +16,7 @@ public:
 	u32 Uuid;
 	std::string Name;
 	u8 Job;
+	u32 Level;
 	s32 Hp;
 	s32 MaxHp;
 	s32 Atk;
@@ -28,11 +29,12 @@ public:
 	{
 	}
 
-	PacketCharacterStatus(u32 InUuid, std::string InName, u8 InJob, s32 InHp, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InGold)
+	PacketCharacterStatus(u32 InUuid, std::string InName, u8 InJob, u32 InLevel, s32 InHp, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InGold)
 	{
 		Uuid = InUuid;
 		Name = InName;
 		Job = InJob;
+		Level = InLevel;
 		Hp = InHp;
 		MaxHp = InMaxHp;
 		Atk = InAtk;
@@ -47,6 +49,7 @@ public:
 		pStream->Serialize(&Uuid);
 		pStream->Serialize(&Name);
 		pStream->Serialize(&Job);
+		pStream->Serialize(&Level);
 		pStream->Serialize(&Hp);
 		pStream->Serialize(&MaxHp);
 		pStream->Serialize(&Atk);

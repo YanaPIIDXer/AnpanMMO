@@ -14,7 +14,7 @@ Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int De
 {
 	SetPosition(InPosition);
 	SetRotate(Rotation(180.0f));
-	SetParameter(Hp, Hp, Atk, Def);
+	SetParameter(1, Hp, Hp, Atk, Def);
 }
 
 // çUåÇ.

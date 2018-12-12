@@ -6,6 +6,7 @@
 PlayerStatus::PlayerStatus()
 	: Uuid(0)
 	, Name("")
+	, Level(1)
 	, MaxHp(1)
 	, Atk(10)
 	, Def(10)

@@ -59,9 +59,9 @@ void AGameCharacter::OnRecvExp(int32 Exp)
 }
 
 // レベルアップを受信した。
-void AGameCharacter::OnRecvLevelUp(int32 MaxHp, int32 Atk, int32 Def)
+void AGameCharacter::OnRecvLevelUp(uint32 Level, int32 MaxHp, int32 Atk, int32 Def)
 {
-	Status.Set(MaxHp, Atk, Def);
+	Status.Set(Level, MaxHp, Atk, Def);
 	UpdateMaxHp(MaxHp);
 	OnLevelUp();
 }
