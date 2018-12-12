@@ -29,6 +29,19 @@ ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Block);
 	pMeshComponent->SetGenerateOverlapEvents(true);
 	SetActorEnableCollision(true);
+
+	OnDestroyed.AddDynamic(this, &ACharacterBase::OnDestroy);
+}
+
+// 破棄された.
+void ACharacterBase::OnDestroy(AActor *pDestroyedActor)
+{
+	// 何故引数に破棄されたActorが渡されるのか。
+	// 他のActorが渡されるケースが存在するのか・・・？
+	// とりあえず自分自身以外のActorが渡されたら何もしないようにしておく。
+	if (pDestroyedActor != this) { return; }
+
+	DestroySkillRangeDecal();
 }
 
 // ダメージを与える。
@@ -78,6 +91,10 @@ void ACharacterBase::DestroyTargetCircle()
 // スキルキャストを受信した。
 void ACharacterBase::OnSkillCast(uint32 SkillId)
 {
+	// スキルキャスト中の別スキル起動によるキャンセルでリークしてしまう可能性がある。
+	// 一旦撤去する。
+	DestroySkillRangeDecal();
+
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
 	check(pItem != nullptr);
 	if (pItem->RangeType != SkillItem::NORMAL)
@@ -89,11 +106,7 @@ void ACharacterBase::OnSkillCast(uint32 SkillId)
 // スキルキャストが完了した。
 void ACharacterBase::OnSkillCastFinished()
 {
-	if (pSkillRangeDecal != nullptr)
-	{
-		pSkillRangeDecal->Destroy();
-		pSkillRangeDecal = nullptr;
-	}
+	DestroySkillRangeDecal();
 }
 
 
@@ -102,4 +115,15 @@ void ACharacterBase::Initialize(int32 InHp, int32 InMaxHp)
 {
 	Hp = InHp;
 	MaxHp = InMaxHp;
+}
+
+
+// スキルの範囲デカールを破棄.
+void ACharacterBase::DestroySkillRangeDecal()
+{
+	if (pSkillRangeDecal != nullptr)
+	{
+		pSkillRangeDecal->Destroy();
+		pSkillRangeDecal = nullptr;
+	}
 }

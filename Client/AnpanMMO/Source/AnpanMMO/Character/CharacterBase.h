@@ -45,6 +45,10 @@ public:
 	// デストラクタ
 	virtual ~ACharacterBase() {}
 
+	// 破棄された.
+	UFUNCTION()
+	void OnDestroy(AActor *pDestroyedActor);
+
 	// ダメージを与える。
 	void ApplyDamage(int32 Value);
 
@@ -128,9 +132,15 @@ private:
 	int32 MaxHp;
 
 	// ターゲットサークル
-	TWeakObjectPtr<ATargetCircle> pTargetCircle;
+	UPROPERTY()
+	ATargetCircle *pTargetCircle;
 
 	// スキルの範囲デカール
-	TWeakObjectPtr<ASkillRangeDecal> pSkillRangeDecal;
+	UPROPERTY()
+	ASkillRangeDecal *pSkillRangeDecal;
 	
+
+	// スキルの範囲デカールを破棄.
+	void DestroySkillRangeDecal();
+
 };

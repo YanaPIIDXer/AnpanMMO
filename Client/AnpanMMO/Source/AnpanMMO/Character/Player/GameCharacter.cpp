@@ -167,7 +167,7 @@ void AGameCharacter::UseNormalAttackSkill()
 // スキルキャストが完了した。
 void AGameCharacter::OnSkillCastFinished()
 {
-	// 範囲攻撃のデカール生成は基底クラスで行う。
+	// 範囲攻撃のデカール制御を基底クラスで行う。
 	Super::OnSkillCastFinished();
 
 	Skill.OnCastFinished();
