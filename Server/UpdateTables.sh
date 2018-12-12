@@ -1,7 +1,7 @@
 #! /bin/bash
 
 if [ $# -ne 2 ]; then
-	echo "ˆø”‚ª‚Q‚Â•K—v‚Å‚·B"
+	echo "UpdateTables.sh Needs 2 Args."
 	exit 1
 fi
 
