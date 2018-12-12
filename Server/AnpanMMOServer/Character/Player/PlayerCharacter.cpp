@@ -12,6 +12,7 @@
 #include "Packet/PacketSkillActivate.h"
 #include "Packet/PacketSkillUseFailed.h"
 #include "Packet/PacketSkillRecast.h"
+#include "Packet/PacketChangeGold.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
@@ -56,6 +57,9 @@ void PlayerCharacter::AddGold(u32 Value)
 
 	CachePacketGoldSave Packet(GetClient()->GetUuid(), GetClient()->GetCustomerId(), Gold);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
+
+	PacketChangeGold ChangePacket(Gold);
+	GetClient()->SendPacket(&ChangePacket);
 }
 
 // ゴールド消費.
@@ -73,6 +77,9 @@ void PlayerCharacter::SubtractGold(u32 Value)
 
 	CachePacketGoldSave Packet(GetClient()->GetUuid(), GetClient()->GetCustomerId(), Gold);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
+
+	PacketChangeGold ChangePacket(Gold);
+	GetClient()->SendPacket(&ChangePacket);
 }
 
 
