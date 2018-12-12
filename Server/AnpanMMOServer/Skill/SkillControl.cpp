@@ -2,6 +2,8 @@
 #include "SkillControl.h"
 #include "Master/MasterData.h"
 #include "Character/CharacterBase.h"
+#include "Character/Player/PlayerCharacter.h"
+#include "Character/Anpan/Anpan.h"
 #include "Math/DamageCalcUnit.h"
 #include "State/SkillStateNutral.h"
 #include "State/SkillStateCast.h"
@@ -152,6 +154,12 @@ void SkillControl::Activate()
 					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());
 					s32 Value = Calc.Calc();
 					Targets[i]->ApplyDamage(pOwner->shared_from_this(), Value);
+					if (Targets[i]->IsDead() && pOwner->GetCharacterType() == CharacterType::Player && Targets[i]->GetCharacterType() == CharacterType::Enemy)
+					{
+						PlayerCharacter *pPlayer = static_cast<PlayerCharacter *>(pOwner);
+						Anpan *pAnpan = static_cast<Anpan *>(Targets[i]);
+						pPlayer->AddExp(pAnpan->GetExp());
+					}
 				}
 				break;
 
