@@ -79,6 +79,13 @@ public:
 	// スキルキャンセル
 	void OnSkillCancel();
 
+	// ゴールドを取得.
+	UFUNCTION(BlueprintPure, Category = "Gold")
+	int32 GetGold() const { return Status.GetGold(); }
+
+	// ゴールドをセット
+	void SetGold(uint32 Gold) { Status.SetGold(Gold); }
+
 protected:
 
 	// レベルアップした

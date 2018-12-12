@@ -10,6 +10,7 @@ PlayerStatus::PlayerStatus()
 	, Atk(10)
 	, Def(10)
 	, Exp(0)
+	, Gold(0)
 {
 }
 

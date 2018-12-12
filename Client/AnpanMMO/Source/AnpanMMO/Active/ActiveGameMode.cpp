@@ -37,6 +37,7 @@
 #include "Packet/PacketInstanceAreaTicketPublish.h"
 #include "Packet/PacketInstanceAreaTicketDiscard.h"
 #include "Packet/PacketSpawnInstanceAreaExitPoint.h"
+#include "Packet/PacketChangeGold.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -86,6 +87,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::SpawnInstanceAreaExitPoint, std::bind(&AActiveGameMode::OnRecvSpawnInstanceAreaExitPoint, this, _1));
 	AddPacketFunction(PacketID::Time, std::bind(&TimeManager::OnRecvTime, &TimeMgr, _1));
 	AddPacketFunction(PacketID::TimeChange, std::bind(&TimeManager::OnRecvTimeChange, &TimeMgr, _1));
+	AddPacketFunction(PacketID::ChangeGold, std::bind(&AActiveGameMode::OnRecvChangeGold, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -503,4 +505,16 @@ void AActiveGameMode::OnRecvSpawnInstanceAreaExitPoint(MemoryStreamInterface *pS
 	Packet.Serialize(pStream);
 
 	WarpPointMgr.SpawnFromWarpPointId(Packet.WarpPointId);
+}
+
+// ゴールド変化を受信した。
+void AActiveGameMode::OnRecvChangeGold(MemoryStreamInterface *pStream)
+{
+	PacketChangeGold Packet;
+	Packet.Serialize(pStream);
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->SetGold(Packet.Gold);
 }

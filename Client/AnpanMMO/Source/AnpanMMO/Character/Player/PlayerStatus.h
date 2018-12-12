@@ -47,6 +47,12 @@ public:
 	// ジョブを取得.
 	u8 GetJob() const { return Job; }
 
+	// ゴールドをセット
+	void SetGold(uint32 InGold) { Gold = InGold; }
+
+	// ゴールドを取得.
+	uint32 GetGold() const { return Gold; }
+
 	// 最大HP取得.
 	int32 GetMaxHp() const { return MaxHp; }
 
@@ -87,6 +93,9 @@ private:
 
 	// 経験値.
 	int32 Exp;
+
+	// ゴールド
+	uint32 Gold;
 
 	// スキルリスト
 	TArray<uint32> SkillList;
