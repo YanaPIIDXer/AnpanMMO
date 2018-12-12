@@ -71,9 +71,10 @@ void AnpanAIStateActive::UpdateAttack(int DeltaTime)
 	if (AttackTimer <= 0)
 	{
 		AttackTimer = 0;
-		if (!IsApproached()) { return; }
+		if (!IsApproached() || GetParent()->IsSkillActive() || GetParent()->IsRecasting(2)) { return; }
 		
-		GetParent()->AttackTo(pCurrentTarget.lock().get());
+		// アンパンチ
+		GetParent()->AttackTo(pCurrentTarget, 2);
 		AttackTimer += AttackInterval;
 	}
 }
@@ -81,6 +82,8 @@ void AnpanAIStateActive::UpdateAttack(int DeltaTime)
 // ターゲットの方向を向く。
 void AnpanAIStateActive::RotateToTarget()
 {
+	if (GetParent()->IsSkillCasting()) { return; }
+
 	Vector3D TargetPos = pCurrentTarget.lock()->GetPosition();
 	Vector3D MyPos = GetParent()->GetPosition();
 	TargetPos.Z = MyPos.Z;		// 高さは考慮しない。
@@ -107,6 +110,7 @@ void AnpanAIStateActive::RotateToTarget()
 // ターゲットに向かって移動する。
 void AnpanAIStateActive::MoveToTarget()
 {
+	if (GetParent()->IsSkillCasting()) { return; }
 	if (IsApproached()) { return; }
 
 	Vector3D TargetPos = pCurrentTarget.lock()->GetPosition();

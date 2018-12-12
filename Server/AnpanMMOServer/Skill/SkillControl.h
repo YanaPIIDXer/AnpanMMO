@@ -51,6 +51,9 @@ public:
 	// 何かやっているか？
 	bool IsActive() const;
 
+	// キャスト中か？
+	bool IsCasting() const;
+
 	// キャンセル時に実行される関数を設定.
 	void SetOnCancelFunction(const OnCancelFunction &Func) { OnCancelFunc = Func; }
 

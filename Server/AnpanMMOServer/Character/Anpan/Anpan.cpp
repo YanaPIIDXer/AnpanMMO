@@ -18,14 +18,9 @@ Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int De
 }
 
 // UŒ‚.
-void Anpan::AttackTo(CharacterBase *pTarget)
+void Anpan::AttackTo(CharacterPtr pTarget, u32 SkillId)
 {
-	/*
-	DamageCalcUnit Calc(GetParameter(), pTarget->GetParameter());
-	int Value = Calc.Calc();
-
-	pTarget->ApplyDamage(shared_from_this(), Value);
-	*/
+	Skill.Use(SkillId, pTarget);
 }
 
 

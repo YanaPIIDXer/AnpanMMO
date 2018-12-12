@@ -86,6 +86,9 @@ public:
 	// スキル使用中か？
 	bool IsSkillActive() const { return Skill.IsActive(); }
 
+	// スキルキャスト中か？
+	bool IsSkillCasting() const { return Skill.IsCasting(); }
+
 	// リキャスト中か？
 	bool IsRecasting(u32 SkillId) const { return Recast.IsRecast(SkillId); }
 

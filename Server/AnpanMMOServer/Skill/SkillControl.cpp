@@ -189,6 +189,12 @@ bool SkillControl::IsActive() const
 	return (pState->GetStateType() != Nutral);
 }
 
+// キャスト中か？
+bool SkillControl::IsCasting() const
+{
+	return (pState->GetStateType() == Cast);
+}
+
 
 // ステート変更.
 void SkillControl::ChangeState(SkillStateBase *pNewState)
