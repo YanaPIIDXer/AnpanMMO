@@ -23,7 +23,7 @@ public:
 	virtual u8 GetCharacterType() const { return CharacterType::Enemy; }
 
 	// UŒ‚.
-	void AttackTo(CharacterBase *pTarget);
+	void AttackTo(CharacterPtr pTarget, u32 SkillId);
 
 	// “|‚µ‚½‚Æ‚«‚ÉŠl“¾‚Å‚«‚éŒoŒ±’l‚ğæ“¾.
 	int GetExp() const { return Exp; }

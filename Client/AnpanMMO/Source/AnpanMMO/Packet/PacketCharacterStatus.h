@@ -21,13 +21,14 @@ public:
 	s32 Atk;
 	s32 Def;
 	s32 Exp;
+	u32 Gold;
 	
 
 	PacketCharacterStatus()
 	{
 	}
 
-	PacketCharacterStatus(u32 InUuid, std::string InName, u8 InJob, s32 InHp, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp)
+	PacketCharacterStatus(u32 InUuid, std::string InName, u8 InJob, s32 InHp, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InGold)
 	{
 		Uuid = InUuid;
 		Name = InName;
@@ -37,6 +38,7 @@ public:
 		Atk = InAtk;
 		Def = InDef;
 		Exp = InExp;
+		Gold = InGold;
 		
 	}
 
@@ -50,6 +52,7 @@ public:
 		pStream->Serialize(&Atk);
 		pStream->Serialize(&Def);
 		pStream->Serialize(&Exp);
+		pStream->Serialize(&Gold);
 		
 		return true;
 	}

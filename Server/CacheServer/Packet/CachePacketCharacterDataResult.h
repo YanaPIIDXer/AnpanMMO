@@ -25,6 +25,7 @@ public:
 	s32 Atk;
 	s32 Def;
 	s32 Exp;
+	u32 Gold;
 	u32 LastAreaId;
 	float LastX;
 	float LastY;
@@ -35,7 +36,7 @@ public:
 	{
 	}
 
-	CachePacketCharacterDataResult(u32 InClientId, u8 InResult, std::string InName, u8 InJob, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
+	CachePacketCharacterDataResult(u32 InClientId, u8 InResult, std::string InName, u8 InJob, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InGold, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
 		Result = InResult;
@@ -45,6 +46,7 @@ public:
 		Atk = InAtk;
 		Def = InDef;
 		Exp = InExp;
+		Gold = InGold;
 		LastAreaId = InLastAreaId;
 		LastX = InLastX;
 		LastY = InLastY;
@@ -62,6 +64,7 @@ public:
 		pStream->Serialize(&Atk);
 		pStream->Serialize(&Def);
 		pStream->Serialize(&Exp);
+		pStream->Serialize(&Gold);
 		pStream->Serialize(&LastAreaId);
 		pStream->Serialize(&LastX);
 		pStream->Serialize(&LastY);

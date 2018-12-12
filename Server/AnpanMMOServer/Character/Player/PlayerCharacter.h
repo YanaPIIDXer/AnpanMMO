@@ -17,7 +17,7 @@ class PlayerCharacter : public CharacterBase
 public:
 
 	// コンストラクタ
-	PlayerCharacter(Client *pInClient, u8 Job, int MaxHp, int Atk, int Def, int InExp);
+	PlayerCharacter(Client *pInClient, u8 Job, int MaxHp, int Atk, int Def, int InExp, u32 InGold);
 
 	// デストラクタ
 	virtual ~PlayerCharacter();
@@ -55,6 +55,15 @@ public:
 	// エリアが切り替わった。
 	void OnAreaChange();
 
+	// ゴールド取得.
+	u32 GetGold() const { return Gold; }
+
+	// ゴールドを追加.
+	void AddGold(u32 Value);
+
+	// ゴールドを消費.
+	void SubtractGold(u32 Value);
+
 private:
 
 	// クライアント
@@ -68,6 +77,9 @@ private:
 
 	// ジョブ
 	u8 Job;
+
+	// ゴールド
+	u32 Gold;
 
 	// パーティ
 	PartyPtr pParty;

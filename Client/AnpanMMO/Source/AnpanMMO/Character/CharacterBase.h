@@ -26,6 +26,7 @@ enum class ECharacterType : uint8
 };
 
 class ATargetCircle;
+class ASkillRangeDecal;
 
 /**
  * キャラクタ基底クラス
@@ -43,6 +44,10 @@ public:
 
 	// デストラクタ
 	virtual ~ACharacterBase() {}
+
+	// 破棄された.
+	UFUNCTION()
+	void OnDestroy(AActor *pDestroyedActor);
 
 	// ダメージを与える。
 	void ApplyDamage(int32 Value);
@@ -84,10 +89,10 @@ public:
 	virtual FString GetCharacterName() const { return ""; }
 
 	// スキルキャストを受信した。
-	virtual void OnSkillCast(uint32 SkillId) {}
+	virtual void OnSkillCast(uint32 SkillId);
 
 	// スキルキャストが完了した。
-	virtual void OnSkillCastFinished() {}
+	virtual void OnSkillCastFinished();
 
 	// スキル発動を受信した。
 	virtual void OnSkillActivate() {}
@@ -127,6 +132,15 @@ private:
 	int32 MaxHp;
 
 	// ターゲットサークル
-	TWeakObjectPtr<ATargetCircle> pTargetCircle;
+	UPROPERTY()
+	ATargetCircle *pTargetCircle;
+
+	// スキルの範囲デカール
+	UPROPERTY()
+	ASkillRangeDecal *pSkillRangeDecal;
 	
+
+	// スキルの範囲デカールを破棄.
+	void DestroySkillRangeDecal();
+
 };

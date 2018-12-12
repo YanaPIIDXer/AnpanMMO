@@ -30,6 +30,7 @@ CREATE TABLE `CharacterData` (
   `Atk` int(11) DEFAULT NULL,
   `Def` int(11) DEFAULT NULL,
   `Exp` int(11) DEFAULT NULL,
+  `Gold` int(10) unsigned DEFAULT NULL,
   `LastArea` int(11) DEFAULT NULL,
   `LastX` float DEFAULT NULL,
   `LastY` float DEFAULT NULL,
@@ -77,4 +78,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-09 22:08:35
+-- Dump completed on 2018-12-12 19:29:34

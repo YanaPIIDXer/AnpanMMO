@@ -6,6 +6,7 @@
 #include "Area/AreaManager.h"
 #include "CacheServer/CacheServerConnection.h"
 #include "Packet/CachePacketCharacterDataSave.h"
+#include "Packet/CachePacketGoldSave.h"
 #include "Packet/PacketSkillCastFinish.h"
 #include "Packet/CharacterType.h"
 #include "Packet/PacketSkillActivate.h"
@@ -13,17 +14,18 @@
 #include "Packet/PacketSkillRecast.h"
 
 // コンストラクタ
-PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, int MaxHp, int Atk, int Def, int InExp)
+PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
 	: pClient(pInClient)
 	, Exp(InExp)
 	, Job(InJob)
+	, Gold(InGold)
 	, SaveAreaId(0)
 	, SavePosition(Vector3D::Zero)
 {
 	SetParameter(MaxHp, MaxHp, Atk, Def);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
-	GetSkillControl()->SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
-	GetSkillRecast()->SetRecastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillRecastFinished, this, _1));
+	Skill.SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
+	Recast.SetRecastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillRecastFinished, this, _1));
 }
 
 // デストラクタ
@@ -45,6 +47,32 @@ void PlayerCharacter::OnAreaChange()
 	AreaPtr pArea = GetArea();
 	if (pArea.lock()->IsInstance()) { return; }
 	SaveAreaId = pArea.lock()->GetId();
+}
+
+// ゴールド追加.
+void PlayerCharacter::AddGold(u32 Value)
+{
+	Gold += Value;
+
+	CachePacketGoldSave Packet(GetClient()->GetUuid(), GetClient()->GetCustomerId(), Gold);
+	CacheServerConnection::GetInstance()->SendPacket(&Packet);
+}
+
+// ゴールド消費.
+void PlayerCharacter::SubtractGold(u32 Value)
+{
+	if (Gold < Value)
+	{
+		// あってはならない事だが・・・
+		Gold = 0;
+	}
+	else
+	{
+		Gold -= Value;
+	}
+
+	CachePacketGoldSave Packet(GetClient()->GetUuid(), GetClient()->GetCustomerId(), Gold);
+	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }
 
 

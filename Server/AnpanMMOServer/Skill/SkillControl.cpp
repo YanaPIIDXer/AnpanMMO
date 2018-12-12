@@ -43,7 +43,7 @@ void SkillControl::Poll(s32 DeltaTime)
 // 使用.
 void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 {
-	if (pOwner->GetSkillRecastManager().IsRecast(InSkillId))
+	if (pOwner->IsRecasting(InSkillId))
 	{
 		Cancel(PacketSkillUseFailed::RecastTime);
 		return;
@@ -187,6 +187,12 @@ void SkillControl::Activate()
 bool SkillControl::IsActive() const
 {
 	return (pState->GetStateType() != Nutral);
+}
+
+// キャスト中か？
+bool SkillControl::IsCasting() const
+{
+	return (pState->GetStateType() == Cast);
 }
 
 
