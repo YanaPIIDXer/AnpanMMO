@@ -148,8 +148,8 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	}
 
 	Client *pClient = GetParent();
-	pClient->CreateCharacter(Packet.Name, Packet.Job, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
-	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	pClient->CreateCharacter(Packet.Name, Packet.Job, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
+	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
 	pClient->SendPacket(&StatusPacket);
 
 	// @HACK:ダミーのスキルリスト

@@ -12,6 +12,7 @@
 #include "Packet/CachePacketScriptFlagRequest.h"
 #include "Packet/CachePacketScriptFlagResponse.h"
 #include "Packet/CachePacketScriptFlagSaveRequest.h"
+#include "Packet/CachePacketGoldSave.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -23,6 +24,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
+	AddPacketFunc(CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -94,8 +96,9 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	s32 Atk = 0;
 	s32 Def = 0;
 	s32 Exp = 0;
+	u32 Gold = 0;
 	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, Name, Job, MaxHp, Atk, Def, Exp))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, Name, Job, MaxHp, Atk, Def, Exp, Gold))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
@@ -109,7 +112,7 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, Name, Job, MaxHp, Atk, Def, Exp, LastAreaId, LastX, LastY, LastZ);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, Name, Job, MaxHp, Atk, Def, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 }
 
@@ -142,13 +145,22 @@ void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
 	pParent->SendPacket(&ResponsePacket);
 }
 
-// クスリプとフラグ保存リクエストを受信した。
+// スクリプトフラグ保存リクエストを受信した。
 void PacketReceiver::OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketScriptFlagSaveRequest Packet;
 	Packet.Serialize(pStream);
 
 	DBConnection::GetInstance().SaveScriptFlags(Packet.CustomerId, Packet.BitField1, Packet.BitField2, Packet.BitField3);
+}
+
+// ゴールド保存リクエストを受信した。
+void PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
+{
+	CachePacketGoldSave Packet;
+	Packet.Serialize(pStream);
+
+	DBConnection::GetInstance().SaveGold(Packet.CustomerId, Packet.Gold);
 }
 
 

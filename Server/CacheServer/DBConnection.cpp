@@ -65,7 +65,7 @@ bool DBConnection::IsExistCharacter(int Id, bool &OutResult)
 // キャラクタデータ登録.
 bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 {
-	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData values(?, ?, ?, 50, 10, 10, 0, 1, -1000.0, 0.0, 0.0);");
+	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData values(?, ?, ?, 50, 10, 10, 0, 0, 1, -1000.0, 0.0, 0.0);");
 	Query.BindInt(&Id);
 	Query.BindString(pCharacterName);
 	Query.BindChar(&Job);
@@ -74,9 +74,9 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 }
 
 // キャラクタパラメータ読み込み
-bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJob, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp)
+bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJob, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold)
 {
-	MySqlQuery Query = Connection.CreateQuery("select Name, Job, MaxHp, Atk, Def, Exp from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select Name, Job, MaxHp, Atk, Def, Exp Gold from CharacterData where CustomerId = ?");
 	Query.BindInt(&Id);
 
 	char NameStr[256];
@@ -87,6 +87,7 @@ bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJ
 	Query.BindResultInt(&OutAtk);
 	Query.BindResultInt(&OutDef);
 	Query.BindResultInt(&OutExp);
+	Query.BindResultInt(&OutGold);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	if (!Query.Fetch()) { return false; }
@@ -108,6 +109,19 @@ bool DBConnection::SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, i
 	Query.BindFloat(&X);
 	Query.BindFloat(&Y);
 	Query.BindFloat(&Z);
+	Query.BindInt(&Id);
+
+	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
+
+// ゴールド書き込み
+bool DBConnection::SaveGold(int Id, u32 Gold)
+{
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Gold = ? where CustomerId = ?");
+
+	Query.BindInt(&Gold);
 	Query.BindInt(&Id);
 
 	if (!Query.ExecuteQuery()) { return false; }

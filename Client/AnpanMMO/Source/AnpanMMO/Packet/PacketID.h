@@ -20,6 +20,7 @@ enum PacketID
 	CacheScriptFlagResponse,
 	CacheScriptFlagSaveRequest,
 	CacheCharacterDataSave,
+	CacheGoldSave,
 	SendChat,
 	ReceiveChat,
 	GameReady,

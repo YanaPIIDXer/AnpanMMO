@@ -60,6 +60,9 @@ private:
 	// スクリプトフラグ保存リクエストを受信した。
 	void OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream);
 
+	// ゴールド保存リクエストを受信した。
+	void OnRecvSaveGold(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__
