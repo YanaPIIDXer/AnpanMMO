@@ -22,8 +22,8 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, int MaxHp, int Atk
 {
 	SetParameter(MaxHp, MaxHp, Atk, Def);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
-	GetSkillControl()->SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
-	GetSkillRecast()->SetRecastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillRecastFinished, this, _1));
+	Skill.SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
+	Recast.SetRecastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillRecastFinished, this, _1));
 }
 
 // デストラクタ

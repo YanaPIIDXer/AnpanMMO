@@ -83,8 +83,11 @@ public:
 	// リキャスト開始.
 	void StartRecast(u32 SkillId);
 
-	// スキルリキャストマネージャ取得.
-	const SkillRecastManager &GetSkillRecastManager() const { return Recast; }
+	// スキル使用中か？
+	bool IsSkillActive() const { return Skill.IsActive(); }
+
+	// リキャスト中か？
+	bool IsRecasting(u32 SkillId) const { return Recast.IsRecast(SkillId); }
 
 protected:
 
@@ -93,6 +96,12 @@ protected:
 
 	// 回転.
 	Rotation Rot;
+
+	// スキル制御.
+	SkillControl Skill;
+
+	// スキルリキャスト管理.
+	SkillRecastManager Recast;
 
 
 	// パラメータ設定.
@@ -118,12 +127,6 @@ protected:
 	// 毎フレームの処理.
 	virtual void Update(s32 DeltaTime) {}
 
-	// スキルコントロールを取得.
-	SkillControl *GetSkillControl() { return &Skill; }
-
-	// スキルリキャスト管理を取得.
-	SkillRecastManager *GetSkillRecast() { return &Recast; }
-
 private:
 
 	// パラメータ
@@ -134,12 +137,6 @@ private:
 
 	// エリア
 	AreaPtr pArea;
-
-	// スキル制御.
-	SkillControl Skill;
-
-	// スキルリキャスト管理.
-	SkillRecastManager Recast;
 
 };
 

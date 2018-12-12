@@ -43,7 +43,7 @@ void SkillControl::Poll(s32 DeltaTime)
 // Žg—p.
 void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 {
-	if (pOwner->GetSkillRecastManager().IsRecast(InSkillId))
+	if (pOwner->IsRecasting(InSkillId))
 	{
 		Cancel(PacketSkillUseFailed::RecastTime);
 		return;
