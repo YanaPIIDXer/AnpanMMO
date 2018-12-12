@@ -26,6 +26,7 @@ enum class ECharacterType : uint8
 };
 
 class ATargetCircle;
+class ASkillRangeDecal;
 
 /**
  * キャラクタ基底クラス
@@ -84,10 +85,10 @@ public:
 	virtual FString GetCharacterName() const { return ""; }
 
 	// スキルキャストを受信した。
-	virtual void OnSkillCast(uint32 SkillId) {}
+	virtual void OnSkillCast(uint32 SkillId);
 
 	// スキルキャストが完了した。
-	virtual void OnSkillCastFinished() {}
+	virtual void OnSkillCastFinished();
 
 	// スキル発動を受信した。
 	virtual void OnSkillActivate() {}
@@ -128,5 +129,8 @@ private:
 
 	// ターゲットサークル
 	TWeakObjectPtr<ATargetCircle> pTargetCircle;
+
+	// スキルの範囲デカール
+	TWeakObjectPtr<ASkillRangeDecal> pSkillRangeDecal;
 	
 };

@@ -4,6 +4,8 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "TargetCircle/TargetCircle.h"
+#include "Master/MasterData.h"
+#include "Skill/SkillRangeDecal.h"
 
 // コンストラクタ
 ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
@@ -11,6 +13,7 @@ ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
 	, Hp(1)
 	, MaxHp(1)
 	, pTargetCircle(nullptr)
+	, pSkillRangeDecal(nullptr)
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -70,6 +73,27 @@ void ACharacterBase::DestroyTargetCircle()
 	if (pTargetCircle == nullptr) { return; }
 	pTargetCircle->Destroy();
 	pTargetCircle = nullptr;
+}
+
+// スキルキャストを受信した。
+void ACharacterBase::OnSkillCast(uint32 SkillId)
+{
+	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
+	check(pItem != nullptr);
+	if (pItem->RangeType != SkillItem::NORMAL)
+	{
+		pSkillRangeDecal = ASkillRangeDecal::Spawn(GetWorld(), GetActorLocation(), GetActorRotation(), GetCharacterType(), SkillId);
+	}
+}
+
+// スキルキャストが完了した。
+void ACharacterBase::OnSkillCastFinished()
+{
+	if (pSkillRangeDecal != nullptr)
+	{
+		pSkillRangeDecal->Destroy();
+		pSkillRangeDecal = nullptr;
+	}
 }
 
 

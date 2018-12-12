@@ -46,6 +46,7 @@ ASkillRangeDecal::ASkillRangeDecal(const FObjectInitializer &ObjectInitializer)
 	PrimaryActorTick.bCanEverTick = true;
 
 	pDecalComponent = CreateDefaultSubobject<UDecalComponent>("DecalCompoennt");
+	pDecalComponent->DecalSize = FVector(100.0f, 100.0f, 1000.0f);
 	RootComponent = pDecalComponent;
 }
 
@@ -59,11 +60,11 @@ void ASkillRangeDecal::Tick(float DeltaTime)
 	float Rate = ElapsedTime / ScaleAnimationTime;
 	CurrentWidth = DecalWidth * Rate;
 	CurrentHeight = DecalHeight * Rate;
-	SetActorScale3D(FVector(CurrentWidth, CurrentHeight, 1.0f));
+	SetActorScale3D(FVector(CurrentWidth * 0.01f, CurrentHeight * 0.01f, 1.0f));
 
 	// αアニメーション
 	Alpha += DeltaTime;
-	pMaterial->SetScalarParameterValue(AlphaParamName, FMath::Sin(Alpha * 2.0f));
+	pMaterial->SetScalarParameterValue(AlphaParamName, FMath::Sin(Alpha * 2.0f) * 1.5f + 0.5f);
 }
 
 
@@ -88,7 +89,7 @@ void ASkillRangeDecal::Setup(ECharacterType CharacterType, uint32 SkillId)
 			break;
 	}
 
-	pMaterial = UMaterialInstanceDynamic::Create(pMaterial, this);
+	pMaterial = UMaterialInstanceDynamic::Create(pSourceMaterial, this);
 	switch (CharacterType)
 	{
 		case ECharacterType::Player:
@@ -148,5 +149,5 @@ void ASkillRangeDecal::Setup(ECharacterType CharacterType, uint32 SkillId)
 		DecalHeight = pItem->RangeX;
 	}
 
-	SetActorScale3D(FVector(CurrentWidth, CurrentHeight, 1.0f));
+	SetActorScale3D(FVector(CurrentWidth * 0.01f, CurrentHeight * 0.01f, 1.0f));
 }
