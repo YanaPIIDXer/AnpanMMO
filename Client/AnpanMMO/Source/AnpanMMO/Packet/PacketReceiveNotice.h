@@ -10,7 +10,7 @@
 class PacketReceiveNotice  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return ReceiveNotice; }
+	virtual u8 GetPacketID() const { return ReceiveNotice; }
 
 	
 

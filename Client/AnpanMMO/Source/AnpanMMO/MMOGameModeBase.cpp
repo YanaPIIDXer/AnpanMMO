@@ -27,14 +27,14 @@ void AMMOGameModeBase::BeginPlay()
 
 
 // パケット解析関数追加.
-void AMMOGameModeBase::AddPacketFunction(PacketID ID, const PacketFunc &Func)
+void AMMOGameModeBase::AddPacketFunction(uint8 ID, const PacketFunc &Func)
 {
 	PacketFunctions[ID] = Func;
 }
 
 
 // パケットを受信した。
-void AMMOGameModeBase::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
+void AMMOGameModeBase::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
 	if(pCurrentMenu != nullptr)
 	{

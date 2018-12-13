@@ -10,7 +10,7 @@
 class CachePacketGoldSave  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CacheGoldSave; }
+	virtual u8 GetPacketID() const { return CacheGoldSave; }
 
 	
 

@@ -11,7 +11,7 @@
 class PacketPlayerList  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return PlayerList; }
+	virtual u8 GetPacketID() const { return PlayerList; }
 
 	
 

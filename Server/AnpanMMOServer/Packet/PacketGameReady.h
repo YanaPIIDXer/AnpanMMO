@@ -9,7 +9,7 @@
 class PacketGameReady  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return GameReady; }
+	virtual u8 GetPacketID() const { return GameReady; }
 
 	
 

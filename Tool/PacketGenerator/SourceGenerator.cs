@@ -140,7 +140,7 @@ namespace NativePacketGenerator
 			string FunctionStr = "";
 			if(!Class.IsPureClass)
 			{
-				FunctionStr = "virtual PacketID GetPacketID() const { return " + Class.PacketID + "; }";
+				FunctionStr = "virtual u8 GetPacketID() const { return " + Class.PacketID + "; }";
 			}
 			Template = Template.Replace("$GET_PACKET_ID_FUNCTION$", FunctionStr);
 

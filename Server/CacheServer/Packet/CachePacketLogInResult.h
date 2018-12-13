@@ -10,7 +10,7 @@
 class CachePacketLogInResult  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CacheLogInResult; }
+	virtual u8 GetPacketID() const { return CacheLogInResult; }
 
 	enum ResultCode
 	{

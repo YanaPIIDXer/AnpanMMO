@@ -25,7 +25,7 @@ class ANPANMMO_API AMMOGameModeBase : public AGameModeBase
 private:		// 別名定義.
 
 	typedef std::function<void(MemoryStreamInterface *)> PacketFunc;
-	typedef std::map<PacketID, PacketFunc> FunctionMap;
+	typedef std::map<uint8, PacketFunc> FunctionMap;
 
 public:
 
@@ -44,7 +44,7 @@ public:
 protected:
 
 	// パケット解析関数追加.
-	void AddPacketFunction(PacketID ID, const PacketFunc &Func);
+	void AddPacketFunction(uint8 ID, const PacketFunc &Func);
 
 private:
 
@@ -56,6 +56,6 @@ private:
 
 
 	// パケットを受信した。
-	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
+	void OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream);
 
 };

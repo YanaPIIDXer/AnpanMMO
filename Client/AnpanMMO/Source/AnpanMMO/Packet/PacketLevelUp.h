@@ -9,7 +9,7 @@
 class PacketLevelUp  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return LevelUp; }
+	virtual u8 GetPacketID() const { return LevelUp; }
 
 	
 

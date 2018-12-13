@@ -9,7 +9,7 @@
 class PacketCharacterStatus  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CharacterStatus; }
+	virtual u8 GetPacketID() const { return CharacterStatus; }
 
 	
 

@@ -10,7 +10,7 @@
 class WordCheckPacketChatRequest  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return WordCheckChatRequest; }
+	virtual u8 GetPacketID() const { return WordCheckChatRequest; }
 
 	
 

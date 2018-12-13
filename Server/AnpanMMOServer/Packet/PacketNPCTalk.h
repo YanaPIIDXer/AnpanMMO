@@ -9,7 +9,7 @@
 class PacketNPCTalk  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return NPCTalk; }
+	virtual u8 GetPacketID() const { return NPCTalk; }
 
 	
 

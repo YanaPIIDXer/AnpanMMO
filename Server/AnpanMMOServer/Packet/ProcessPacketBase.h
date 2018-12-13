@@ -12,6 +12,9 @@ class ProcessPacketBase : public PacketBase
 
 public:
 
+	// 実態を定義するためのダミー
+	virtual u8 GetPacketID() const { return 0; }
+
 	// クライアントＩＤ
 	u32 ClientId;
 

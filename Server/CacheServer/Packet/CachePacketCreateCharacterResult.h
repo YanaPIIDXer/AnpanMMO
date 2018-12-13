@@ -10,7 +10,7 @@
 class CachePacketCreateCharacterResult  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CacheCreateCharacterResult; }
+	virtual u8 GetPacketID() const { return CacheCreateCharacterResult; }
 
 	enum ResultCode
 	{

@@ -9,7 +9,7 @@
 class PacketTime  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return Time; }
+	virtual u8 GetPacketID() const { return Time; }
 
 	
 

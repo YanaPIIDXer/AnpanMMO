@@ -10,7 +10,7 @@
 class CachePacketCharacterDataRequest  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CacheCharacterDataRequest; }
+	virtual u8 GetPacketID() const { return CacheCharacterDataRequest; }
 
 	
 

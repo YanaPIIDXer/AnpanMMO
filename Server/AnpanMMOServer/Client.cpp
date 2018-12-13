@@ -64,7 +64,7 @@ void Client::CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u
 }
 
 // パケットを受信.
-void Client::RecvPacket(PacketID ID, MemoryStreamInterface *pStream)
+void Client::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
 	pStream->Reset();
 	pState->AnalyzePacket(ID, pStream);

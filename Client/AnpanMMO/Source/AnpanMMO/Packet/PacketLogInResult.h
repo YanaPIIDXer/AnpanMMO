@@ -9,7 +9,7 @@
 class PacketLogInResult  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return LogInResult; }
+	virtual u8 GetPacketID() const { return LogInResult; }
 
 	enum ResultCode
 	{

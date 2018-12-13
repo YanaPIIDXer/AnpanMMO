@@ -9,7 +9,7 @@
 class PacketSkillUseFailed  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return SkillUseFailed; }
+	virtual u8 GetPacketID() const { return SkillUseFailed; }
 
 	enum ReasonType
 	{

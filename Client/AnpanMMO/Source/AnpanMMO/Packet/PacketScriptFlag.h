@@ -9,7 +9,7 @@
 class PacketScriptFlag  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return ScriptFlag; }
+	virtual u8 GetPacketID() const { return ScriptFlag; }
 
 	
 

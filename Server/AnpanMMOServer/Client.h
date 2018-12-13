@@ -51,7 +51,7 @@ public:
 
 	// パケットを受信。
 	// ※主に別プロセスからの受信時に使用。
-	void RecvPacket(PacketID ID, MemoryStreamInterface *pStream);
+	void RecvPacket(u8 ID, MemoryStreamInterface *pStream);
 
 	// スクリプトを取得.
 	ScriptExecuter *GetScript() { return &Script; }
