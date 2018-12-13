@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "DBConnection.h"
 #include <fstream>
+#include "Packet/CharacterJob.h"
 
 const std::string DBConnection::UserDataFileName = "DBUserData.txt";
 const char *DBConnection::DBHost = "127.0.0.1";
@@ -84,6 +85,46 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 	Query.BindString(pCharacterName);
 	Query.BindChar(&Job);
 	if (!Query.ExecuteQuery()) { return false; }
+
+	// スキルテーブル
+	// まずはキャラクタＩＤを引っ張る。
+	u32 CharacterId = 0;
+	Query = Connection.CreateQuery("select CharacterId from CharacterData where CustomerId = ?");
+	Query.BindInt(&Id);
+	Query.BindResultInt(&CharacterId);
+	if (!Query.ExecuteQuery()) { return false; }
+	if (!Query.Fetch()) { return false; }
+
+	// テーブル生成.
+	u32 NormalAttackId = 0;
+	switch (Job)
+	{
+		case CharacterJob::Fighter:
+
+			NormalAttackId = 1;
+			break;
+
+		case CharacterJob::Sorcerer:
+
+			NormalAttackId = 6;
+			break;
+
+		case CharacterJob::Healer:
+
+			NormalAttackId = 10;
+			break;
+
+		case CharacterJob::Lancer:
+
+			NormalAttackId = 14;
+			break;
+	}
+
+	Query = Connection.CreateQuery("insert into SkillData Values(?, ? , 0, 0, 0, 0)");
+	Query.BindInt(&CharacterId);
+	Query.BindInt(&NormalAttackId);
+	if (!Query.ExecuteQuery()) { return false; }
+	
 	return true;
 }
 
