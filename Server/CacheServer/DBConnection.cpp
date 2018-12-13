@@ -62,10 +62,24 @@ bool DBConnection::IsExistCharacter(int Id, bool &OutResult)
 	return true;
 }
 
+// キャラクタＩＤを取得.
+bool DBConnection::GetCharacterId(int Id, u32 &OutCharacterId)
+{
+	MySqlQuery Query = Connection.CreateQuery("select CharacterId from CharacterData where CustomerId = ?");
+
+	Query.BindInt(&Id);
+	Query.BindResultInt(&OutCharacterId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	if (!Query.Fetch()) { return false; }
+
+	return true;
+}
+
 // キャラクタデータ登録.
 bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 {
-	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData values(?, ?, ?, 1, 50, 10, 10, 0, 0, 1, -1000.0, 0.0, 0.0);");
+	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData(CustomerId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastArea, LastX, LastY, LastZ) values(?, ?, ?, 1, 50, 10, 10, 0, 0, 1, -1300.0, 4050.0, 42.0);");
 	Query.BindInt(&Id);
 	Query.BindString(pCharacterName);
 	Query.BindChar(&Job);
@@ -74,13 +88,14 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 }
 
 // キャラクタパラメータ読み込み
-bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJob, u32 &OutLevel, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold)
+bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold)
 {
-	MySqlQuery Query = Connection.CreateQuery("select Name, Job, Level, MaxHp, Atk, Def, Exp Gold from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select CharacterId, Name, Job, Level, MaxHp, Atk, Def, Exp Gold from CharacterData where CustomerId = ?");
 	Query.BindInt(&Id);
 
 	char NameStr[256];
 	
+	Query.BindResultInt(&OutCharacterId);
 	Query.BindResultString(NameStr);
 	Query.BindResultChar(&OutJob);
 	Query.BindResultInt(&OutLevel);
@@ -98,9 +113,9 @@ bool DBConnection::LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJ
 }
 
 // キャラクタパラメータ書き込み
-bool DBConnection::SaveCharacterParameter(int Id, u32 Level, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z)
+bool DBConnection::SaveCharacterParameter(u32 CharacterId, u32 Level, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z)
 {
-	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Level = ?, MaxHp = ?, Atk = ?, Def = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ?, LastZ = ? where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Level = ?, MaxHp = ?, Atk = ?, Def = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ?, LastZ = ? where CharacterId = ?");
 
 	Query.BindInt(&Level);
 	Query.BindInt(&MaxHp);
@@ -111,7 +126,7 @@ bool DBConnection::SaveCharacterParameter(int Id, u32 Level, int MaxHp, int Atk,
 	Query.BindFloat(&X);
 	Query.BindFloat(&Y);
 	Query.BindFloat(&Z);
-	Query.BindInt(&Id);
+	Query.BindInt(&CharacterId);
 
 	if (!Query.ExecuteQuery()) { return false; }
 
@@ -119,12 +134,12 @@ bool DBConnection::SaveCharacterParameter(int Id, u32 Level, int MaxHp, int Atk,
 }
 
 // ゴールド書き込み
-bool DBConnection::SaveGold(int Id, u32 Gold)
+bool DBConnection::SaveGold(u32 CharacterId, u32 Gold)
 {
-	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Gold = ? where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Gold = ? where CharacterId = ?");
 
 	Query.BindInt(&Gold);
-	Query.BindInt(&Id);
+	Query.BindInt(&CharacterId);
 
 	if (!Query.ExecuteQuery()) { return false; }
 
@@ -132,11 +147,11 @@ bool DBConnection::SaveGold(int Id, u32 Gold)
 }
 
 // 最後にログアウトした位置を読み込み
-bool DBConnection::ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY, float &OutZ)
+bool DBConnection::ReadLastLogoutPosition(u32 CharacterId, u32 &OutAreaId, float &OutX, float &OutY, float &OutZ)
 {
-	MySqlQuery Query = Connection.CreateQuery("select LastArea, LastX, LastY, LastZ from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select LastArea, LastX, LastY, LastZ from CharacterData where CharacterId = ?");
 
-	Query.BindInt(&Id);
+	Query.BindInt(&CharacterId);
 	Query.BindResultInt(&OutAreaId);
 	Query.BindResultFloat(&OutX);
 	Query.BindResultFloat(&OutY);
@@ -149,11 +164,11 @@ bool DBConnection::ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, f
 }
 
 // スクリプトフラグをロード
-bool DBConnection::LoadScriptFlags(int Id, u32 &OutBitField1, u32 &OutBitField2, u32 &OutBitField3)
+bool DBConnection::LoadScriptFlags(u32 CharacterId, u32 &OutBitField1, u32 &OutBitField2, u32 &OutBitField3)
 {
-	MySqlQuery Query = Connection.CreateQuery("select BitField1, BitField2, BitField3 from ScriptFlags where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select BitField1, BitField2, BitField3 from ScriptFlags where CharacterId = ?");
 	
-	Query.BindInt(&Id);
+	Query.BindInt(&CharacterId);
 
 	Query.BindResultInt(&OutBitField1);
 	Query.BindResultInt(&OutBitField2);
@@ -165,7 +180,7 @@ bool DBConnection::LoadScriptFlags(int Id, u32 &OutBitField1, u32 &OutBitField2,
 		// 新規登録.
 		MySqlQuery InsertQuery = Connection.CreateQuery("insert into ScriptFlags values(?, 0, 0, 0);");
 
-		InsertQuery.BindInt(&Id);
+		InsertQuery.BindInt(&CharacterId);
 		if (InsertQuery.ExecuteQuery()) { return false; }
 		OutBitField1 = 0;
 		OutBitField2 = 0;
@@ -175,14 +190,14 @@ bool DBConnection::LoadScriptFlags(int Id, u32 &OutBitField1, u32 &OutBitField2,
 }
 
 // スクリプトフラグを保存.
-bool DBConnection::SaveScriptFlags(int Id, u32 BitField1, u32 BitField2, u32 BitField3)
+bool DBConnection::SaveScriptFlags(u32 CharacterId, u32 BitField1, u32 BitField2, u32 BitField3)
 {
-	MySqlQuery Query = Connection.CreateQuery("update ScriptFlags set BitField1 = ?, BitField2 = ?, BitField3 = ? where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("update ScriptFlags set BitField1 = ?, BitField2 = ?, BitField3 = ? where CharacterId = ?");
 
 	Query.BindInt(&BitField1);
 	Query.BindInt(&BitField2);
 	Query.BindInt(&BitField3);
-	Query.BindInt(&Id);
+	Query.BindInt(&CharacterId);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	return true;

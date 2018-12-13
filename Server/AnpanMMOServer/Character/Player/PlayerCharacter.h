@@ -17,7 +17,7 @@ class PlayerCharacter : public CharacterBase
 public:
 
 	// コンストラクタ
-	PlayerCharacter(Client *pInClient, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold);
+	PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold);
 
 	// デストラクタ
 	virtual ~PlayerCharacter();
@@ -33,6 +33,9 @@ public:
 
 	// 名前を設定.
 	void SetName(const std::string &InName) { Name = InName; }
+
+	// キャラクタＩＤを取得.
+	u32 GetCharacterId() const { return CharacterId; }
 
 	// 名前を取得.
 	const std::string &GetName() const { return Name; }
@@ -71,6 +74,9 @@ private:
 
 	// 経験値.
 	PlayerExp Exp;
+
+	// キャラクタＩＤ
+	u32 CharacterId;
 
 	// 名前.
 	std::string Name;

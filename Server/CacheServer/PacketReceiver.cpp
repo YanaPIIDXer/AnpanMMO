@@ -55,10 +55,18 @@ void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	u32 LastAreaId = 0;
 	if (ResultCode == CachePacketLogInResult::Success)
 	{
-		float LastX = 0.0f;
-		float LastY = 0.0f;
-		float LastZ = 0.0f;
-		if (!DBConnection::GetInstance().ReadLastLogoutPosition(Id, LastAreaId, LastX, LastY, LastZ))
+		u32 CharacterId = 0;
+		if (DBConnection::GetInstance().GetCharacterId(Id, CharacterId))
+		{
+			float LastX = 0.0f;
+			float LastY = 0.0f;
+			float LastZ = 0.0f;
+			if (!DBConnection::GetInstance().ReadLastLogoutPosition(CharacterId, LastAreaId, LastX, LastY, LastZ))
+			{
+				ResultCode = CachePacketLogInResult::Error;
+			}
+		}
+		else
 		{
 			ResultCode = CachePacketLogInResult::Error;
 		}
@@ -91,6 +99,7 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	std::string Name;
+	u32 CharacterId;
 	u8 Job = 0;
 	u32 Level = 0;
 	s32 MaxHp = 0;
@@ -99,7 +108,7 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	s32 Exp = 0;
 	u32 Gold = 0;
 	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, CharacterId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
@@ -108,12 +117,12 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	float LastX = 0.0f;
 	float LastY = 0.0f;
 	float LastZ = 0.0f;
-	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Packet.CustomerId, LastAreaId, LastX, LastY, LastZ))
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(CharacterId, LastAreaId, LastX, LastY, LastZ))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 }
 
@@ -123,7 +132,7 @@ void PacketReceiver::OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStre
 	CachePacketCharacterDataSave Packet;
 	Packet.Serialize(pStream);
 
-	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CustomerId, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY, Packet.LastZ))
+	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CharacterId, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY, Packet.LastZ))
 	{
 		std::cout << "Character Data Save Failed..." << std::endl;
 	}
@@ -137,7 +146,7 @@ void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
 
 	u32 BitField1, BitField2, BitField3;
 	u8 Result = CachePacketScriptFlagResponse::Success;
-	if (!DBConnection::GetInstance().LoadScriptFlags(Packet.CustomerId, BitField1, BitField2, BitField3))
+	if (!DBConnection::GetInstance().LoadScriptFlags(Packet.CharacterId, BitField1, BitField2, BitField3))
 	{
 		Result = CachePacketScriptFlagResponse::Error;
 	}
@@ -152,7 +161,7 @@ void PacketReceiver::OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream)
 	CachePacketScriptFlagSaveRequest Packet;
 	Packet.Serialize(pStream);
 
-	DBConnection::GetInstance().SaveScriptFlags(Packet.CustomerId, Packet.BitField1, Packet.BitField2, Packet.BitField3);
+	DBConnection::GetInstance().SaveScriptFlags(Packet.CharacterId, Packet.BitField1, Packet.BitField2, Packet.BitField3);
 }
 
 // ゴールド保存リクエストを受信した。
@@ -161,7 +170,7 @@ void PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
 	CachePacketGoldSave Packet;
 	Packet.Serialize(pStream);
 
-	DBConnection::GetInstance().SaveGold(Packet.CustomerId, Packet.Gold);
+	DBConnection::GetInstance().SaveGold(Packet.CharacterId, Packet.Gold);
 }
 
 

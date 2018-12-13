@@ -14,7 +14,7 @@ public:
 
 	
 
-	u32 CustomerId;
+	u32 CharacterId;
 	u32 Gold;
 	
 
@@ -22,10 +22,10 @@ public:
 	{
 	}
 
-	CachePacketGoldSave(u32 InClientId, u32 InCustomerId, u32 InGold)
+	CachePacketGoldSave(u32 InClientId, u32 InCharacterId, u32 InGold)
 	{
 		ClientId = InClientId;
-		CustomerId = InCustomerId;
+		CharacterId = InCharacterId;
 		Gold = InGold;
 		
 	}
@@ -33,7 +33,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
-		pStream->Serialize(&CustomerId);
+		pStream->Serialize(&CharacterId);
 		pStream->Serialize(&Gold);
 		
 		return true;

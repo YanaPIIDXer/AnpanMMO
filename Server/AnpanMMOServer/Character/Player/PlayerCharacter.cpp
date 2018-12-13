@@ -15,9 +15,10 @@
 #include "Packet/PacketChangeGold.h"
 
 // コンストラクタ
-PlayerCharacter::PlayerCharacter(Client *pInClient, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
+PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
 	: pClient(pInClient)
 	, Exp(InExp)
+	, CharacterId(InCharacterId)
 	, Job(InJob)
 	, Gold(InGold)
 	, SaveAreaId(0)
@@ -75,7 +76,7 @@ void PlayerCharacter::SubtractGold(u32 Value)
 		Gold -= Value;
 	}
 
-	CachePacketGoldSave Packet(GetClient()->GetUuid(), GetClient()->GetCustomerId(), Gold);
+	CachePacketGoldSave Packet(GetClient()->GetUuid(), CharacterId, Gold);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 
 	PacketChangeGold ChangePacket(Gold);
@@ -104,7 +105,7 @@ void PlayerCharacter::SaveParameter()
 	const CharacterParameter &Param = GetParameter();
 	if (SaveAreaId == 0) { return; }		// まだエリアに属していない。
 	Client *pClient = GetClient();
-	CachePacketCharacterDataSave Packet(pClient->GetUuid(), pClient->GetCustomerId(), Param.Level, Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), SaveAreaId, SavePosition.X, SavePosition.Y, SavePosition.Z);
+	CachePacketCharacterDataSave Packet(pClient->GetUuid(), CharacterId, Param.Level, Param.MaxHp, Param.Atk, Param.Def, Exp.Get(), SaveAreaId, SavePosition.X, SavePosition.Y, SavePosition.Z);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }
 

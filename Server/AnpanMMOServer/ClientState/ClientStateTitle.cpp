@@ -7,6 +7,7 @@
 #include "Config.h"
 #include "Util.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "Character/Player/PlayerCharacter.h"
 #include "Packet/PacketLogInRequest.h"
 #include "Packet/PacketLogInResult.h"
 #include "Packet/PacketCreateCharacterRequest.h"
@@ -148,7 +149,7 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	}
 
 	Client *pClient = GetParent();
-	pClient->CreateCharacter(Packet.Name, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
+	pClient->CreateCharacter(Packet.CharacterId, Packet.Name, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
 	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.Level, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
 	pClient->SendPacket(&StatusPacket);
 
@@ -160,7 +161,7 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	LastPosition = Vector3D(Packet.LastX, Packet.LastY, Packet.LastZ);
 
 	// スクリプトフラグを要求.
-	CachePacketScriptFlagRequest RequestPacket(pClient->GetUuid(), pClient->GetCustomerId());
+	CachePacketScriptFlagRequest RequestPacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
 }
 

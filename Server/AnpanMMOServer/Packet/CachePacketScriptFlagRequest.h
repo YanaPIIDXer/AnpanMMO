@@ -14,24 +14,24 @@ public:
 
 	
 
-	u32 CustomerId;
+	u32 CharacterId;
 	
 
 	CachePacketScriptFlagRequest()
 	{
 	}
 
-	CachePacketScriptFlagRequest(u32 InClientId, u32 InCustomerId)
+	CachePacketScriptFlagRequest(u32 InClientId, u32 InCharacterId)
 	{
 		ClientId = InClientId;
-		CustomerId = InCustomerId;
+		CharacterId = InCharacterId;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
-		pStream->Serialize(&CustomerId);
+		pStream->Serialize(&CharacterId);
 		
 		return true;
 	}
