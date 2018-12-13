@@ -42,8 +42,11 @@ private:
 	// キャッシュサーバからキャラクタデータを受信した。
 	void OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream);
 
+	// キャッシュサーバからスキルリストを受信した。
+	void OnRecvCacheSkillListResponse(MemoryStreamInterface *pStream);
+
 	// キャッシュサーバからスクリプトフラグを受信した。
-	void OnRecvCacheScriptFlagResult(MemoryStreamInterface *pStream);
+	void OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream);
 
 };
 

@@ -12,8 +12,13 @@ class CachePacketSkillListResponse  : public ProcessPacketBase
 public:
 	virtual u8 GetPacketID() const { return CacheSkillListResponse; }
 
-	
+	enum ResultCode
+	{
+		Success,
+		Error,
+	};
 
+	u8 Result;
 	u32 NormalAttackId;
 	u32 SkillId1;
 	u32 SkillId2;
@@ -25,9 +30,10 @@ public:
 	{
 	}
 
-	CachePacketSkillListResponse(u32 InClientId, u32 InNormalAttackId, u32 InSkillId1, u32 InSkillId2, u32 InSkillId3, u32 InSkillId4)
+	CachePacketSkillListResponse(u32 InClientId, u8 InResult, u32 InNormalAttackId, u32 InSkillId1, u32 InSkillId2, u32 InSkillId3, u32 InSkillId4)
 	{
 		ClientId = InClientId;
+		Result = InResult;
 		NormalAttackId = InNormalAttackId;
 		SkillId1 = InSkillId1;
 		SkillId2 = InSkillId2;
@@ -39,6 +45,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
+		pStream->Serialize(&Result);
 		pStream->Serialize(&NormalAttackId);
 		pStream->Serialize(&SkillId1);
 		pStream->Serialize(&SkillId2);

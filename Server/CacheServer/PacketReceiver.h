@@ -54,6 +54,9 @@ private:
 	// キャラクタ保存リクエストを受信した。
 	void OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStream);
 
+	// スキルリスト要求を受信した。
+	void OnRecvSkillListRequest(MemoryStreamInterface *pStream);
+
 	// スクリプトフラグ読み込みリクエストを受信した。
 	void OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream);
 

@@ -13,6 +13,8 @@
 #include "Packet/CachePacketScriptFlagResponse.h"
 #include "Packet/CachePacketScriptFlagSaveRequest.h"
 #include "Packet/CachePacketGoldSave.h"
+#include "Packet/CachePacketSkillListRequest.h"
+#include "Packet/CachePacketSkillListResponse.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -22,6 +24,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CacheCreateCharacterRequest, bind(&PacketReceiver::OnRecvCreateCharacterRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
+	AddPacketFunc(CacheSkillListRequest, bind(&PacketReceiver::OnRecvSkillListRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
@@ -138,6 +141,27 @@ void PacketReceiver::OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStre
 	}
 }
 
+// スキルリスト要求を受信した。
+void PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSkillListRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = CachePacketSkillListResponse::Success;
+	u32 NormalAttackId = 0;
+	u32 Skill1 = 0;
+	u32 Skill2 = 0;
+	u32 Skill3 = 0;
+	u32 Skill4 = 0;
+	if (!DBConnection::GetInstance().LoadSkillList(Packet.CharacterId, NormalAttackId, Skill1, Skill2, Skill3, Skill4))
+	{
+		Result = CachePacketSkillListResponse::Error;
+	}
+
+	CachePacketSkillListResponse ResponsePacket(Packet.ClientId, Result, NormalAttackId, Skill1, Skill2, Skill3, Skill4);
+	pParent->SendPacket(&ResponsePacket);
+}
+
 // スクリプトフラグ読み込みリクエストを受信した。
 void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
 {
@@ -177,6 +201,7 @@ void PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
 // パケット受信.
 void PacketReceiver::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
+	std::cout << "RecvPacket:" << (int)ID << std::endl;
 	if (PacketFuncs.find(ID) == PacketFuncs.end()) { return; }
 	PacketFuncs[ID](pStream);
 }
