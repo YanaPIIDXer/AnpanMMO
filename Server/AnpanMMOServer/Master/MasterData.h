@@ -10,6 +10,7 @@
 #include "TimeInfoMaster.h"
 #include "NPCMaster.h"
 #include "SkillMaster.h"
+#include "SkillTreeMaster.h"
 
 /**
  * マスタデータクラス
@@ -49,6 +50,9 @@ public:
 	// スキルマスタ取得.
 	const SkillMaster &GetSkillMaster() { return Skill; }
 
+	// スキルツリーマスタ取得.
+	const SkillTreeMaster &GetSkillTreeMaster() { return SkillTree; }
+
 private:
 
 	// DBホスト
@@ -86,6 +90,9 @@ private:
 
 	// スキルマスタ
 	SkillMaster Skill;
+
+	// スキルツリーマスタ
+	SkillTreeMaster SkillTree;
 
 	// ======= Singleton ==========
 public:

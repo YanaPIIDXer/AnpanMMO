@@ -12,6 +12,7 @@
 #include "NPCResourceMaster.h"
 #include "NPCConditionMaster.h"
 #include "SkillMaster.h"
+#include "SkillTreeMaster.h"
 
 /**
  * マスタデータ
@@ -54,6 +55,9 @@ public:
 	// スキルマスタ取得.
 	const SkillMaster &GetSkillMaster() const { return Skill; }
 
+	// スキルツリーマスタ取得.
+	const SkillTreeMaster &GetSkillTreeMaster() const { return SkillTree; }
+
 private:
 
 	// エリアマスタ
@@ -82,6 +86,9 @@ private:
 
 	// スキルマスタ
 	SkillMaster Skill;
+
+	// スキルツリーマスタ
+	SkillTreeMaster SkillTree;
 
 	// =========== Singleton ============
 public:
