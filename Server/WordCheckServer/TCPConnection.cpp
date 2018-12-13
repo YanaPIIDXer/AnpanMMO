@@ -17,6 +17,8 @@ TCPConnection::~TCPConnection()
 // 受信開始.
 void TCPConnection::AsyncRecv()
 {
+	if (!bIsConnected) { return; }
+
 	u8 *pBuffer = &RecvData[0];
 	pSocket->async_receive(asio::buffer(pBuffer, RecvDataSize),
 		bind(&TCPConnection::OnRecv, this, asio::placeholders::error, asio::placeholders::bytes_transferred));
@@ -42,6 +44,8 @@ void TCPConnection::OnRecv(const boost::system::error_code &ErrorCode, size_t Si
 // 送信.
 void TCPConnection::AsyncSend(const u8 *pBuffer, int Size)
 {
+	if (!bIsConnected) { return; }
+
 	shared_ptr<asio::streambuf> pSendBuffer = shared_ptr<asio::streambuf>(new asio::streambuf());
 	pSendBuffer->sputn((const char *)pBuffer, Size);
 
