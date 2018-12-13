@@ -49,11 +49,11 @@ DROP TABLE IF EXISTS `ScriptFlags`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ScriptFlags` (
-  `CustomerId` int(11) NOT NULL,
+  `CharacterId` int(10) unsigned NOT NULL,
   `BitField1` int(10) unsigned DEFAULT NULL,
   `BitField2` int(10) unsigned DEFAULT NULL,
   `BitField3` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`CustomerId`)
+  PRIMARY KEY (`CharacterId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -80,4 +80,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-13 16:59:19
+-- Dump completed on 2018-12-13 17:15:20
