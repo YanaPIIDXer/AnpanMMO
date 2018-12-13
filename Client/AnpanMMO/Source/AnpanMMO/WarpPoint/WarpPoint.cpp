@@ -10,7 +10,7 @@
 #include "Packet/PacketAreaMoveRequest.h"
 
 const float AWarpPoint::CollisionRadius = 300.0f;
-const TCHAR *AWarpPoint::ParticlePath = TEXT("/Game/Effects/Effects/FX_Mobile/Fire/combat/P_AuraCircle_Fire_02.P_AuraCircle_Fire_02");
+const TCHAR *AWarpPoint::ParticlePath = TEXT("/Game/Resources/Effects/Effects/FX_Mobile/Fire/combat/P_AuraCircle_Fire_02.P_AuraCircle_Fire_02");
 const float AWarpPoint::OverlapInterval = 3.0f;
 
 // Spawn

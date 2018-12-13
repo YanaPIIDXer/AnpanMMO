@@ -10,7 +10,7 @@
 #include "Packet/AnpanData.h"
 
 const float AAnpan::BaseRadius = 80.0f;
-const TCHAR *AAnpan::MeshPath = TEXT("/Game/Meshes/Anpan/Mesh/Anpan.Anpan");
+const TCHAR *AAnpan::MeshPath = TEXT("/Game/Resources/Meshes/Anpan/Mesh/Anpan.Anpan");
 const TCHAR *AAnpan::BlueprintPath = TEXT("/Game/Blueprints/System/Active/Anpan.Anpan");
 
 // ê∂ê¨.
