@@ -32,6 +32,9 @@ public:
 	// キャラクタパラメータ書き込み
 	bool SaveCharacterParameter(u32 CharacterId, u32 Level, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z);
 
+	// スキルリスト読み込み
+	bool LoadSkillList(u32 CharacterId, u32 &OutNormalAttackId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4);
+
 	// ゴールド書き込み
 	bool SaveGold(u32 CharacterId, u32 Gold);
 

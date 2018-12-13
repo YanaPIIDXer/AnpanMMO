@@ -85,15 +85,17 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 	Query.BindString(pCharacterName);
 	Query.BindChar(&Job);
 	if (!Query.ExecuteQuery()) { return false; }
+	Query.Close();
 
 	// スキルテーブル
 	// まずはキャラクタＩＤを引っ張る。
 	u32 CharacterId = 0;
-	Query = Connection.CreateQuery("select CharacterId from CharacterData where CustomerId = ?");
+	Query = Connection.CreateQuery("select CharacterId from CharacterData where CustomerId = ?;");
 	Query.BindInt(&Id);
 	Query.BindResultInt(&CharacterId);
 	if (!Query.ExecuteQuery()) { return false; }
 	if (!Query.Fetch()) { return false; }
+	Query.Close();
 
 	// テーブル生成.
 	u32 NormalAttackId = 0;
@@ -120,7 +122,7 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 			break;
 	}
 
-	Query = Connection.CreateQuery("insert into SkillData Values(?, ? , 0, 0, 0, 0)");
+	Query = Connection.CreateQuery("insert into SkillData Values(?, ?, 0, 0, 0, 0);");
 	Query.BindInt(&CharacterId);
 	Query.BindInt(&NormalAttackId);
 	if (!Query.ExecuteQuery()) { return false; }
@@ -170,6 +172,23 @@ bool DBConnection::SaveCharacterParameter(u32 CharacterId, u32 Level, int MaxHp,
 	Query.BindInt(&CharacterId);
 
 	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
+
+// スキルリスト読み込み
+bool DBConnection::LoadSkillList(u32 CharacterId, u32 &OutNormalAttackId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4)
+{
+	MySqlQuery Query = Connection.CreateQuery("select NormalAttackId, Skill1, Skill2, Skill3, Skill4 from SkillData where CharacterId = ?;");
+	Query.BindInt(&CharacterId);
+	Query.BindResultInt(&OutNormalAttackId);
+	Query.BindResultInt(&OutSkill1);
+	Query.BindResultInt(&OutSkill2);
+	Query.BindResultInt(&OutSkill3);
+	Query.BindResultInt(&OutSkill4);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	if (!Query.Fetch()) { return false; }
 
 	return true;
 }
