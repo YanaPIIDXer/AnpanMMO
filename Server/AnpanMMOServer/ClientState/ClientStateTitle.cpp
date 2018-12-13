@@ -7,6 +7,7 @@
 #include "Config.h"
 #include "Util.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "Character/Player/PlayerCharacter.h"
 #include "Packet/PacketLogInRequest.h"
 #include "Packet/PacketLogInResult.h"
 #include "Packet/PacketCreateCharacterRequest.h"
@@ -20,6 +21,8 @@
 #include "Packet/CachePacketCreateCharacterResult.h"
 #include "Packet/CachePacketCharacterDataRequest.h"
 #include "Packet/CachePacketCharacterDataResult.h"
+#include "Packet/CachePacketSkillListRequest.h"
+#include "Packet/CachePacketSkillListResponse.h"
 #include "Packet/CachePacketScriptFlagRequest.h"
 #include "Packet/CachePacketScriptFlagResponse.h"
 
@@ -34,7 +37,8 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 	AddPacketFunction(CacheLogInResult, boost::bind(&ClientStateTitle::OnRecvCacheLogInResult, this, _2));
 	AddPacketFunction(CacheCreateCharacterResult, boost::bind(&ClientStateTitle::OnRecvCacheCreateCharacterResult, this, _2));
 	AddPacketFunction(CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
-	AddPacketFunction(CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResult, this, _2));
+	AddPacketFunction(CacheSkillListResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillListResponse, this, _2));
+	AddPacketFunction(CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResponse, this, _2));
 }
 
 
@@ -148,24 +152,40 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	}
 
 	Client *pClient = GetParent();
-	pClient->CreateCharacter(Packet.Name, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
+	pClient->CreateCharacter(Packet.CharacterId, Packet.Name, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
 	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.Level, Packet.MaxHp, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
 	pClient->SendPacket(&StatusPacket);
-
-	// @HACK:ダミーのスキルリスト
-	PacketSkillList SkillListPacket(1, 3, 4, 5, 0);
-	pClient->SendPacket(&SkillListPacket);
 
 	LastAreaId = Packet.LastAreaId;
 	LastPosition = Vector3D(Packet.LastX, Packet.LastY, Packet.LastZ);
 
+	// スキルリストを要求.
+	CachePacketSkillListRequest RequestPacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId());
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+}
+
+// キャッシュサーバからスキルリストを受信した。
+void ClientStateTitle::OnRecvCacheSkillListResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketSkillListResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != CachePacketSkillListResponse::Success)
+	{
+		std::cout << "SkillList Load Failed..." << std::endl;
+		return;
+	}
+
+	PacketSkillList SkillListPacket(Packet.NormalAttackId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
+	GetParent()->SendPacket(&SkillListPacket);
+
 	// スクリプトフラグを要求.
-	CachePacketScriptFlagRequest RequestPacket(pClient->GetUuid(), pClient->GetCustomerId());
+	CachePacketScriptFlagRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
 }
 
 // キャッシュサーバからスクリプトフラグを受信した。
-void ClientStateTitle::OnRecvCacheScriptFlagResult(MemoryStreamInterface *pStream)
+void ClientStateTitle::OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketScriptFlagResponse Packet;
 	Packet.Serialize(pStream);

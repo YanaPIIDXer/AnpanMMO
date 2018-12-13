@@ -9,7 +9,7 @@
 class PacketChangeGold  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return ChangeGold; }
+	virtual u8 GetPacketID() const { return ChangeGold; }
 
 	
 

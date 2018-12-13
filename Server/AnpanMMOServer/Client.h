@@ -47,11 +47,11 @@ public:
 	weak_ptr<PlayerCharacter> GetCharacter() const { return pCharacter; }
 
 	// キャラクタ作成.
-	void CreateCharacter(const std::string &Name, u8 Job, u32 Level, int MaxHp, int Atk, int Def, int Exp, u32 Gold);
+	void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, int MaxHp, int Atk, int Def, int Exp, u32 Gold);
 
 	// パケットを受信。
 	// ※主に別プロセスからの受信時に使用。
-	void RecvPacket(PacketID ID, MemoryStreamInterface *pStream);
+	void RecvPacket(u8 ID, MemoryStreamInterface *pStream);
 
 	// スクリプトを取得.
 	ScriptExecuter *GetScript() { return &Script; }

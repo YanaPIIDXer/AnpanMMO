@@ -4,8 +4,8 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/SkeletalMesh.h"
 
-const TCHAR *APlayerCharacterBase::MeshPath = TEXT("/Game/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
-const TCHAR *APlayerCharacterBase::AnimInstanceClassPath = TEXT("/Game/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
+const TCHAR *APlayerCharacterBase::MeshPath = TEXT("/Game/Resources/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
+const TCHAR *APlayerCharacterBase::AnimInstanceClassPath = TEXT("/Game/Resources/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
 
 // コンストラクタ
 APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectInitializer)

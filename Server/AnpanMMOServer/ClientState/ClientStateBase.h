@@ -17,7 +17,7 @@ class ClientStateBase
 private:		// 別名定義.
 
 	typedef boost::function<void(Client *, MemoryStreamInterface *)> PacketFunc;
-	typedef std::map<PacketID, PacketFunc> FunctionMap;
+	typedef std::map<u8, PacketFunc> FunctionMap;
 
 public:
 
@@ -32,7 +32,7 @@ public:
 	virtual void BeginState() {}
 
 	// パケット解析.
-	void AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream);
+	void AnalyzePacket(u8 ID, MemoryStreamInterface *pStream);
 	
 protected:
 
@@ -40,7 +40,7 @@ protected:
 	Client *GetParent() const { return pParent; }
 
 	// パケット解析関数を追加.
-	void AddPacketFunction(PacketID ID, const PacketFunc &Func)
+	void AddPacketFunction(u8 ID, const PacketFunc &Func)
 	{
 		PacketFunctions[ID] = Func;
 	}

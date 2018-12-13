@@ -17,7 +17,7 @@ class PacketReceiver
 private:		// 別名定義.
 
 	typedef function<void(MemoryStreamInterface *)> PacketFunc;
-	typedef unordered_map<PacketID, PacketFunc> PacketFuncMap;
+	typedef unordered_map<u8, PacketFunc> PacketFuncMap;
 
 public:
 
@@ -28,7 +28,7 @@ public:
 	~PacketReceiver() {}
 
 	// パケット受信.
-	void RecvPacket(PacketID ID, MemoryStreamInterface *pStream);
+	void RecvPacket(u8 ID, MemoryStreamInterface *pStream);
 
 private:
 
@@ -40,7 +40,7 @@ private:
 
 
 	// パケット受信関数を追加.
-	void AddPacketFunc(PacketID ID, const PacketFunc &Func);
+	void AddPacketFunc(u8 ID, const PacketFunc &Func);
 
 	// チャットのワードチェック要求を受信した。
 	void OnRecvChatWordCheckRequest(MemoryStreamInterface *pStream);

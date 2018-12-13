@@ -11,7 +11,7 @@
 class PacketPartyJoin  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return PartyJoin; }
+	virtual u8 GetPacketID() const { return PartyJoin; }
 
 	
 

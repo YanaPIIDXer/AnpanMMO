@@ -9,7 +9,7 @@
 class PacketInstanceAreaTicketProcess  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return InstanceAreaTicketProcess; }
+	virtual u8 GetPacketID() const { return InstanceAreaTicketProcess; }
 
 	enum ProcessType
 	{

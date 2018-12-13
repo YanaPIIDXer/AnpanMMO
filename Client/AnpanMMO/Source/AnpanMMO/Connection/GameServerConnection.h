@@ -11,7 +11,7 @@
 class PacketBase;
 class MemoryStreamInterface;
 
-DECLARE_DELEGATE_TwoParams(FOnRecvPacketDelegate, PacketID, MemoryStreamInterface *);
+DECLARE_DELEGATE_TwoParams(FOnRecvPacketDelegate, uint8, MemoryStreamInterface *);
 
 /**
  * ゲームサーバ接続.

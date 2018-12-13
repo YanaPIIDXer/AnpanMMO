@@ -10,7 +10,7 @@
 class PacketSpawnAnpan  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return SpawnAnpan; }
+	virtual u8 GetPacketID() const { return SpawnAnpan; }
 
 	
 

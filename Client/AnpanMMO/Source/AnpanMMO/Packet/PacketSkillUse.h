@@ -9,7 +9,7 @@
 class PacketSkillUse  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return SkillUse; }
+	virtual u8 GetPacketID() const { return SkillUse; }
 
 	
 

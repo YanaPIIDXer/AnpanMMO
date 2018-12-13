@@ -25,6 +25,6 @@ public:
 	virtual ~UInstanceAreaWaitingWidget() {}
 	
 	// パケットを受信した。
-	virtual void OnRecvPacket(PacketID ID) override;
+	virtual void OnRecvPacket(uint8 ID) override;
 
 };

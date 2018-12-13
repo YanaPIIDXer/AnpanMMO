@@ -9,7 +9,7 @@
 class PacketHeal  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return Heal; }
+	virtual u8 GetPacketID() const { return Heal; }
 
 	
 

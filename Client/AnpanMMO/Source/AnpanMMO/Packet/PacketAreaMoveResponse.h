@@ -9,7 +9,7 @@
 class PacketAreaMoveResponse  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return AreaMoveResponse; }
+	virtual u8 GetPacketID() const { return AreaMoveResponse; }
 
 	enum ResultCode
 	{

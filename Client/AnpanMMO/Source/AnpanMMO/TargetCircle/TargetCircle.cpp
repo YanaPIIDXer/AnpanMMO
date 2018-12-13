@@ -5,7 +5,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Character/CharacterBase.h"
 
-const TCHAR *ATargetCircle::AssetPath = TEXT("/Game/Meshes/TargetCircle/TargetCircle.TargetCircle");
+const TCHAR *ATargetCircle::AssetPath = TEXT("/Game/Resources/Meshes/TargetCircle/TargetCircle.TargetCircle");
 const float ATargetCircle::HeightOffset = 10.0f;
 const float ATargetCircle::RotateBySec = 60.0f;
 

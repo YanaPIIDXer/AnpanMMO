@@ -9,7 +9,7 @@
 class PacketPartyCreateRequest  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return PartyCreateRequest; }
+	virtual u8 GetPacketID() const { return PartyCreateRequest; }
 
 	
 

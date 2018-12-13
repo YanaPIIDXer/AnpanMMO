@@ -14,7 +14,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 
 
 // パケット受信.
-void PacketReceiver::RecvPacket(PacketID ID, MemoryStreamInterface *pStream)
+void PacketReceiver::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
 	if (PacketFuncs.find(ID) == PacketFuncs.end()) { return; }
 	PacketFuncs[ID](pStream);
@@ -34,7 +34,7 @@ void PacketReceiver::OnRecvChatWordCheckRequest(MemoryStreamInterface *pStream)
 
 
 // パケット受信関数を追加.
-void PacketReceiver::AddPacketFunc(PacketID ID, const PacketFunc &Func)
+void PacketReceiver::AddPacketFunc(u8 ID, const PacketFunc &Func)
 {
 	PacketFuncs[ID] = Func;
 }

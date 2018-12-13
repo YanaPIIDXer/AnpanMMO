@@ -10,11 +10,11 @@
 class CachePacketScriptFlagSaveRequest  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CacheScriptFlagSaveRequest; }
+	virtual u8 GetPacketID() const { return CacheScriptFlagSaveRequest; }
 
 	
 
-	u32 CustomerId;
+	u32 CharacterId;
 	u32 BitField1;
 	u32 BitField2;
 	u32 BitField3;
@@ -24,10 +24,10 @@ public:
 	{
 	}
 
-	CachePacketScriptFlagSaveRequest(u32 InClientId, u32 InCustomerId, u32 InBitField1, u32 InBitField2, u32 InBitField3)
+	CachePacketScriptFlagSaveRequest(u32 InClientId, u32 InCharacterId, u32 InBitField1, u32 InBitField2, u32 InBitField3)
 	{
 		ClientId = InClientId;
-		CustomerId = InCustomerId;
+		CharacterId = InCharacterId;
 		BitField1 = InBitField1;
 		BitField2 = InBitField2;
 		BitField3 = InBitField3;
@@ -37,7 +37,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
-		pStream->Serialize(&CustomerId);
+		pStream->Serialize(&CharacterId);
 		pStream->Serialize(&BitField1);
 		pStream->Serialize(&BitField2);
 		pStream->Serialize(&BitField3);

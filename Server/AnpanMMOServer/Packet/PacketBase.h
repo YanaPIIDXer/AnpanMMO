@@ -3,6 +3,7 @@
 
 class MemoryStreamInterface;
 #include "PacketID.h"
+#include "TypeDefs.h"
 
 // パケット基底クラス
 // 各種パケットはこのクラスを派生して定義する。
@@ -15,7 +16,7 @@ public:
 	virtual ~PacketBase() {}
 
 	// パケットＩＤ取得
-	virtual PacketID GetPacketID() const = 0;
+	virtual u8 GetPacketID() const = 0;
 
 	//シリアライズ
 	virtual bool Serialize(MemoryStreamInterface *pStream) = 0;

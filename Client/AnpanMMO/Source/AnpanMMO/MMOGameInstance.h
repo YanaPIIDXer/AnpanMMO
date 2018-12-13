@@ -83,6 +83,6 @@ private:
 
 
 	// パケットを受信した。
-	void OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream);
+	void OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream);
 	
 };

@@ -9,7 +9,7 @@
 class PacketPartyExitRequest  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return PartyExitRequest; }
+	virtual u8 GetPacketID() const { return PartyExitRequest; }
 
 	
 

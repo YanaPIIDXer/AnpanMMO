@@ -9,7 +9,7 @@
 class PacketMoveAnpan  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return MoveAnpan; }
+	virtual u8 GetPacketID() const { return MoveAnpan; }
 
 	
 

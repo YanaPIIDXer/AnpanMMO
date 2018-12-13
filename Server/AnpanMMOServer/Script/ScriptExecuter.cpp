@@ -3,6 +3,7 @@
 #include "Client.h"
 #include <fstream>
 #include "CacheServer/CacheServerConnection.h"
+#include "Character/Player/PlayerCharacter.h"
 #include "Packet/CachePacketScriptFlagSaveRequest.h"
 
 // コンストラクタ
@@ -60,7 +61,7 @@ void ScriptExecuter::OnFinished()
 	u32 BitField1, BitField2, BitField3;
 	pClient->GetScriptFlagManager().ToBitField(BitField1, BitField2, BitField3);
 
-	CachePacketScriptFlagSaveRequest Packet(pClient->GetUuid(), pClient->GetCustomerId(), BitField1, BitField2, BitField3);
+	CachePacketScriptFlagSaveRequest Packet(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId(), BitField1, BitField2, BitField3);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }
 

@@ -2,7 +2,7 @@
 #include "ClientStateBase.h"
 
 // パケット解析.
-void ClientStateBase::AnalyzePacket(PacketID ID, MemoryStreamInterface *pStream)
+void ClientStateBase::AnalyzePacket(u8 ID, MemoryStreamInterface *pStream)
 {
 	FunctionMap::iterator It = PacketFunctions.find(ID);
 	if(It != PacketFunctions.end())

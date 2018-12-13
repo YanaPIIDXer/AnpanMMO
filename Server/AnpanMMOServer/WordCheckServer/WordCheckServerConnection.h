@@ -2,7 +2,6 @@
 #define __WORDCHECKSERVERCONNECTION_H__
 
 #include "TCPConnection.h"
-#include "WordCheckPacketReceiver.h"
 
 class PacketBase;
 
@@ -35,9 +34,6 @@ protected:
 	virtual void OnDisconnected();
 
 private:
-
-	// パケット受信.
-	WordCheckPacketReceiver Receiver;
 
 	// ============ Singletonもどき ================
 

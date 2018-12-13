@@ -7,8 +7,8 @@
 #include "Classes/Materials/Material.h"
 #include "Classes/Materials/MaterialInstanceDynamic.h"
 
-const TCHAR *ASkillRangeDecal::CircleMaterialPath = TEXT("/Game/Decal/CircleMaterial.CircleMaterial");
-const TCHAR *ASkillRangeDecal::BoxMaterialPath = TEXT("/Game/Decal/BoxMaterial.BoxMaterial");
+const TCHAR *ASkillRangeDecal::CircleMaterialPath = TEXT("/Game/Resources/Decal/CircleMaterial.CircleMaterial");
+const TCHAR *ASkillRangeDecal::BoxMaterialPath = TEXT("/Game/Resources/Decal/BoxMaterial.BoxMaterial");
 const FName ASkillRangeDecal::ColorParamName = TEXT("DecalColor");
 const FName ASkillRangeDecal::AlphaParamName = TEXT("DecalAlpha");
 const FLinearColor ASkillRangeDecal::AttackColor = FLinearColor(0.0f, 0.0f, 1.0f, 1.0f);

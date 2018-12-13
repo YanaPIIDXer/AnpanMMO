@@ -9,7 +9,7 @@
 class PacketSendChat  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return SendChat; }
+	virtual u8 GetPacketID() const { return SendChat; }
 
 	enum ChatType
 	{

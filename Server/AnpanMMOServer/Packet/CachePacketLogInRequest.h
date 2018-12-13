@@ -10,7 +10,7 @@
 class CachePacketLogInRequest  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CacheLogInRequest; }
+	virtual u8 GetPacketID() const { return CacheLogInRequest; }
 
 	
 

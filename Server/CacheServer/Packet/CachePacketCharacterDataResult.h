@@ -10,7 +10,7 @@
 class CachePacketCharacterDataResult  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CacheCharacterDataResult; }
+	virtual u8 GetPacketID() const { return CacheCharacterDataResult; }
 
 	enum ResultCode
 	{
@@ -18,6 +18,7 @@ public:
 		Error,
 	};
 
+	u32 CharacterId;
 	u8 Result;
 	std::string Name;
 	u8 Job;
@@ -37,9 +38,10 @@ public:
 	{
 	}
 
-	CachePacketCharacterDataResult(u32 InClientId, u8 InResult, std::string InName, u8 InJob, u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InGold, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
+	CachePacketCharacterDataResult(u32 InClientId, u32 InCharacterId, u8 InResult, std::string InName, u8 InJob, u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InGold, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
+		CharacterId = InCharacterId;
 		Result = InResult;
 		Name = InName;
 		Job = InJob;
@@ -59,6 +61,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
+		pStream->Serialize(&CharacterId);
 		pStream->Serialize(&Result);
 		pStream->Serialize(&Name);
 		pStream->Serialize(&Job);

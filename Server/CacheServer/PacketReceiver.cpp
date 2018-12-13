@@ -13,6 +13,8 @@
 #include "Packet/CachePacketScriptFlagResponse.h"
 #include "Packet/CachePacketScriptFlagSaveRequest.h"
 #include "Packet/CachePacketGoldSave.h"
+#include "Packet/CachePacketSkillListRequest.h"
+#include "Packet/CachePacketSkillListResponse.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -22,6 +24,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CacheCreateCharacterRequest, bind(&PacketReceiver::OnRecvCreateCharacterRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
+	AddPacketFunc(CacheSkillListRequest, bind(&PacketReceiver::OnRecvSkillListRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
@@ -55,10 +58,18 @@ void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	u32 LastAreaId = 0;
 	if (ResultCode == CachePacketLogInResult::Success)
 	{
-		float LastX = 0.0f;
-		float LastY = 0.0f;
-		float LastZ = 0.0f;
-		if (!DBConnection::GetInstance().ReadLastLogoutPosition(Id, LastAreaId, LastX, LastY, LastZ))
+		u32 CharacterId = 0;
+		if (DBConnection::GetInstance().GetCharacterId(Id, CharacterId))
+		{
+			float LastX = 0.0f;
+			float LastY = 0.0f;
+			float LastZ = 0.0f;
+			if (!DBConnection::GetInstance().ReadLastLogoutPosition(CharacterId, LastAreaId, LastX, LastY, LastZ))
+			{
+				ResultCode = CachePacketLogInResult::Error;
+			}
+		}
+		else
 		{
 			ResultCode = CachePacketLogInResult::Error;
 		}
@@ -91,6 +102,7 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	std::string Name;
+	u32 CharacterId;
 	u8 Job = 0;
 	u32 Level = 0;
 	s32 MaxHp = 0;
@@ -99,7 +111,7 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	s32 Exp = 0;
 	u32 Gold = 0;
 	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, CharacterId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
@@ -108,12 +120,12 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	float LastX = 0.0f;
 	float LastY = 0.0f;
 	float LastZ = 0.0f;
-	if (!DBConnection::GetInstance().ReadLastLogoutPosition(Packet.CustomerId, LastAreaId, LastX, LastY, LastZ))
+	if (!DBConnection::GetInstance().ReadLastLogoutPosition(CharacterId, LastAreaId, LastX, LastY, LastZ))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, ResultCode, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 }
 
@@ -123,10 +135,31 @@ void PacketReceiver::OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStre
 	CachePacketCharacterDataSave Packet;
 	Packet.Serialize(pStream);
 
-	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CustomerId, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY, Packet.LastZ))
+	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CharacterId, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY, Packet.LastZ))
 	{
 		std::cout << "Character Data Save Failed..." << std::endl;
 	}
+}
+
+// スキルリスト要求を受信した。
+void PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSkillListRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = CachePacketSkillListResponse::Success;
+	u32 NormalAttackId = 0;
+	u32 Skill1 = 0;
+	u32 Skill2 = 0;
+	u32 Skill3 = 0;
+	u32 Skill4 = 0;
+	if (!DBConnection::GetInstance().LoadSkillList(Packet.CharacterId, NormalAttackId, Skill1, Skill2, Skill3, Skill4))
+	{
+		Result = CachePacketSkillListResponse::Error;
+	}
+
+	CachePacketSkillListResponse ResponsePacket(Packet.ClientId, Result, NormalAttackId, Skill1, Skill2, Skill3, Skill4);
+	pParent->SendPacket(&ResponsePacket);
 }
 
 // スクリプトフラグ読み込みリクエストを受信した。
@@ -137,7 +170,7 @@ void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
 
 	u32 BitField1, BitField2, BitField3;
 	u8 Result = CachePacketScriptFlagResponse::Success;
-	if (!DBConnection::GetInstance().LoadScriptFlags(Packet.CustomerId, BitField1, BitField2, BitField3))
+	if (!DBConnection::GetInstance().LoadScriptFlags(Packet.CharacterId, BitField1, BitField2, BitField3))
 	{
 		Result = CachePacketScriptFlagResponse::Error;
 	}
@@ -152,7 +185,7 @@ void PacketReceiver::OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream)
 	CachePacketScriptFlagSaveRequest Packet;
 	Packet.Serialize(pStream);
 
-	DBConnection::GetInstance().SaveScriptFlags(Packet.CustomerId, Packet.BitField1, Packet.BitField2, Packet.BitField3);
+	DBConnection::GetInstance().SaveScriptFlags(Packet.CharacterId, Packet.BitField1, Packet.BitField2, Packet.BitField3);
 }
 
 // ゴールド保存リクエストを受信した。
@@ -161,20 +194,21 @@ void PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
 	CachePacketGoldSave Packet;
 	Packet.Serialize(pStream);
 
-	DBConnection::GetInstance().SaveGold(Packet.CustomerId, Packet.Gold);
+	DBConnection::GetInstance().SaveGold(Packet.CharacterId, Packet.Gold);
 }
 
 
 // パケット受信.
-void PacketReceiver::RecvPacket(PacketID ID, MemoryStreamInterface *pStream)
+void PacketReceiver::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
+	std::cout << "RecvPacket:" << (int)ID << std::endl;
 	if (PacketFuncs.find(ID) == PacketFuncs.end()) { return; }
 	PacketFuncs[ID](pStream);
 }
 
 
 // パケット受信関数を追加.
-void PacketReceiver::AddPacketFunc(PacketID ID, const PacketFunc &Func)
+void PacketReceiver::AddPacketFunc(u8 ID, const PacketFunc &Func)
 {
 	PacketFuncs[ID] = Func;
 }

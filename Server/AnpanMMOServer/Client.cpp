@@ -55,16 +55,16 @@ void Client::ChangeState(ClientStateBase *pNextState)
 }
 
 // キャラクタ作成.
-void Client::CreateCharacter(const std::string &Name, u8 Job, u32 Level, int MaxHp, int Atk, int Def, int Exp, u32 Gold)
+void Client::CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, int MaxHp, int Atk, int Def, int Exp, u32 Gold)
 {
-	PlayerCharacter *pChara= new PlayerCharacter(this, Job, Level, MaxHp, Atk, Def, Exp, Gold);
+	PlayerCharacter *pChara= new PlayerCharacter(this, CharacterId, Job, Level, MaxHp, Atk, Def, Exp, Gold);
 	pChara->SetUuid(Uuid);
 	pChara->SetName(Name);
 	pCharacter = shared_ptr<PlayerCharacter>(pChara);
 }
 
 // パケットを受信.
-void Client::RecvPacket(PacketID ID, MemoryStreamInterface *pStream)
+void Client::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
 	pStream->Reset();
 	pState->AnalyzePacket(ID, pStream);

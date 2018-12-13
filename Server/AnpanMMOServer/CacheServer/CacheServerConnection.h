@@ -2,7 +2,6 @@
 #define __CACHESERVERCONNECTION_H__
 
 #include "TCPConnection.h"
-#include "CachePacketReceiver.h"
 
 class PacketBase;
 
@@ -35,9 +34,6 @@ protected:
 	virtual void OnDisconnected();
 
 private:
-
-	// パケット受信.
-	CachePacketReceiver Receiver;
 
 	// ============ Singletonもどき ================
 

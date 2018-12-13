@@ -9,7 +9,7 @@
 class PacketLogInRequest  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return LogInRequest; }
+	virtual u8 GetPacketID() const { return LogInRequest; }
 
 	
 

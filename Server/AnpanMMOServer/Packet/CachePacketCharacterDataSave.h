@@ -10,11 +10,11 @@
 class CachePacketCharacterDataSave  : public ProcessPacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return CacheCharacterDataSave; }
+	virtual u8 GetPacketID() const { return CacheCharacterDataSave; }
 
 	
 
-	u32 CustomerId;
+	u32 CharacterId;
 	u32 Level;
 	s32 MaxHp;
 	s32 Atk;
@@ -30,10 +30,10 @@ public:
 	{
 	}
 
-	CachePacketCharacterDataSave(u32 InClientId, u32 InCustomerId, u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
+	CachePacketCharacterDataSave(u32 InClientId, u32 InCharacterId, u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
-		CustomerId = InCustomerId;
+		CharacterId = InCharacterId;
 		Level = InLevel;
 		MaxHp = InMaxHp;
 		Atk = InAtk;
@@ -49,7 +49,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
-		pStream->Serialize(&CustomerId);
+		pStream->Serialize(&CharacterId);
 		pStream->Serialize(&Level);
 		pStream->Serialize(&MaxHp);
 		pStream->Serialize(&Atk);

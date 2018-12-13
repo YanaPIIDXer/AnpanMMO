@@ -20,26 +20,32 @@ public:
 	// キャラクタデータが存在するか？
 	bool IsExistCharacter(int Id, bool &OutResult);
 
+	// キャラクタＩＤを取得.
+	bool GetCharacterId(int Id, u32 &OutCharacterId);
+
 	// キャラクタデータ登録.
 	bool RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job);
 
 	// キャラクタパラメータ読み込み
-	bool LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJob, u32 &OutLevel, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold);
+	bool LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold);
 
 	// キャラクタパラメータ書き込み
-	bool SaveCharacterParameter(int Id, u32 Level, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z);
+	bool SaveCharacterParameter(u32 CharacterId, u32 Level, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z);
+
+	// スキルリスト読み込み
+	bool LoadSkillList(u32 CharacterId, u32 &OutNormalAttackId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4);
 
 	// ゴールド書き込み
-	bool SaveGold(int Id, u32 Gold);
+	bool SaveGold(u32 CharacterId, u32 Gold);
 
 	// 最後にログアウトした位置を読み込み
-	bool ReadLastLogoutPosition(int Id, u32 &OutAreaId, float &OutX, float &OutY, float &OutZ);
+	bool ReadLastLogoutPosition(u32 CharacterId, u32 &OutAreaId, float &OutX, float &OutY, float &OutZ);
 
 	// スクリプトフラグをロード
-	bool LoadScriptFlags(int Id, u32 &OutBitField1, u32 &OutBitField2, u32 &OutBitField3);
+	bool LoadScriptFlags(u32 CharacterId, u32 &OutBitField1, u32 &OutBitField2, u32 &OutBitField3);
 
 	// スクリプトフラグを保存.
-	bool SaveScriptFlags(int Id, u32 BitField1, u32 BitField2, u32 BitField3);
+	bool SaveScriptFlags(u32 CharacterId, u32 BitField1, u32 BitField2, u32 BitField3);
 
 private:
 

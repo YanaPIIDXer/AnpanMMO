@@ -16,6 +16,8 @@ enum PacketID
 	CacheCreateCharacterResult,
 	CacheCharacterDataRequest,
 	CacheCharacterDataResult,
+	CacheSkillListRequest,
+	CacheSkillListResponse,
 	CacheScriptFlagRequest,
 	CacheScriptFlagResponse,
 	CacheScriptFlagSaveRequest,

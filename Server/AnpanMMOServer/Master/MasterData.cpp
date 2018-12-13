@@ -85,5 +85,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!SkillTree.Load(Connection))
+	{
+		std::cout << "SkillTree Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }

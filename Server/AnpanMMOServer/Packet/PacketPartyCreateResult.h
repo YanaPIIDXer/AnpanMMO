@@ -9,7 +9,7 @@
 class PacketPartyCreateResult  : public PacketBase
 {
 public:
-	virtual PacketID GetPacketID() const { return PartyCreateResult; }
+	virtual u8 GetPacketID() const { return PartyCreateResult; }
 
 	enum ResultCode
 	{
