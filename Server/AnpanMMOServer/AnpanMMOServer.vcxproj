@@ -137,7 +137,6 @@
     <ClInclude Include="Area\InstanceAreaTicketManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Bitmap.h" />
-    <ClInclude Include="CacheServer\CachePacketReceiver.h" />
     <ClInclude Include="CacheServer\CacheServerConnection.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
@@ -229,7 +228,6 @@
     <ClInclude Include="TypeDefs.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="WeakPtrDefine.h" />
-    <ClInclude Include="WordCheckServer\WordCheckPacketReceiver.h" />
     <ClInclude Include="WordCheckServer\WordCheckServerConnection.h" />
   </ItemGroup>
   <ItemGroup>
@@ -243,7 +241,6 @@
     <ClCompile Include="Area\InstanceAreaTicket.cpp" />
     <ClCompile Include="Area\InstanceAreaTicketManager.cpp" />
     <ClCompile Include="Bitmap.cpp" />
-    <ClCompile Include="CacheServer\CachePacketReceiver.cpp" />
     <ClCompile Include="CacheServer\CacheServerConnection.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />
@@ -310,7 +307,6 @@
     <ClCompile Include="TickManager.cpp" />
     <ClCompile Include="Time\TimeManager.cpp" />
     <ClCompile Include="Util.cpp" />
-    <ClCompile Include="WordCheckServer\WordCheckPacketReceiver.cpp" />
     <ClCompile Include="WordCheckServer\WordCheckServerConnection.cpp" />
   </ItemGroup>
   <ItemGroup>

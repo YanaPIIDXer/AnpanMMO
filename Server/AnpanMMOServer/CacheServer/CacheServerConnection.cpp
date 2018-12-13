@@ -1,18 +1,19 @@
 #include "stdafx.h"
 #include "CacheServerConnection.h"
 #include "ServerHost.h"
-#include "Packet/PacketBase.h"
+#include "Client.h"
+#include "ClientManager.h"
 #include "MemoryStream/MemorySizeCaliculateStream.h"
 #include "MemoryStream/MemoryStreamWriter.h"
 #include "MemoryStream/MemoryStreamReader.h"
 #include "Packet/PacketHeader.h"
+#include "Packet/ProcessPacketBase.h"
 
 CacheServerConnection *CacheServerConnection::pInstance = NULL;
 
 // コンストラクタ
 CacheServerConnection::CacheServerConnection(const shared_ptr<tcp::socket> &pInSocket)
 	: TCPConnection(pInSocket)
-	, Receiver(this)
 {
 	pInstance = this;
 }
@@ -68,7 +69,9 @@ void CacheServerConnection::OnRecvData(size_t Size)
 		RecvBuffer.Pop(3);
 
 		MemoryStreamReader BodyStream(RecvBuffer.GetTop(), Header.GetPacketSize());
-		Receiver.RecvPacket(Header.GetPacketId(), &BodyStream);
+		ProcessPacketBase ProcessPacket;
+		ProcessPacket.Serialize(&BodyStream);
+		ClientManager::GetInstance().Get(ProcessPacket.ClientId).lock()->RecvPacket(Header.GetPacketId(), &BodyStream);
 
 		RecvBuffer.Pop(Header.GetPacketSize());
 	}

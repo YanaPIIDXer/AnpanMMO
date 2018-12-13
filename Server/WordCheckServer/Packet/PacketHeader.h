@@ -11,7 +11,7 @@ class PacketHeader
 public:
 
 	// ID取得
-	PacketID GetPacketId(){ return (PacketID) PacketId; }
+	u8 GetPacketId(){ return PacketId; }
 
 	// パケットサイズ取得
 	u16 GetPacketSize(){ return PacketSize; }

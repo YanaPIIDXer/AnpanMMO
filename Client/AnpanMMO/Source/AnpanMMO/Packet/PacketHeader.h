@@ -3,7 +3,6 @@
 
 class MemoryStreamInterface;
 #include "Packet/PacketID.h"
-#include "TypeDefs.h"
 
 // パケットに付随するヘッダ
 class PacketHeader
@@ -12,7 +11,7 @@ class PacketHeader
 public:
 
 	// ID取得
-	PacketID GetPacketId(){ return (PacketID) PacketId; }
+	u8 GetPacketId(){ return PacketId; }
 
 	// パケットサイズ取得
 	u16 GetPacketSize(){ return PacketSize; }
