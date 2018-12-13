@@ -64,7 +64,7 @@ void GameServerConnection::SendPacket(PacketBase *pPacket)
 	//シリアライズ本番
 	MemoryStreamWriter WriteStream(SizeStream.GetSize() + 3);
 
-	u8 Id = (u8)pPacket->GetPacketID();
+	u8 Id = pPacket->GetPacketID();
 	u16 Size = SizeStream.GetSize();
 	WriteStream.Serialize(&Id);
 	WriteStream.Serialize(&Size);

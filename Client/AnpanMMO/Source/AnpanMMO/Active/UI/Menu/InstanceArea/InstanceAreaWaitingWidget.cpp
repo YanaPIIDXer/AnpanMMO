@@ -9,7 +9,7 @@ UInstanceAreaWaitingWidget::UInstanceAreaWaitingWidget(const FObjectInitializer 
 }
 
 // パケットを受信した。
-void UInstanceAreaWaitingWidget::OnRecvPacket(PacketID ID)
+void UInstanceAreaWaitingWidget::OnRecvPacket(uint8 ID)
 {
 	switch (ID)
 	{

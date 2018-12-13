@@ -37,7 +37,7 @@ public:
 	void CloseChild();
 
 	// パケットを受信した。
-	virtual void OnRecvPacket(PacketID ID) {}
+	virtual void OnRecvPacket(uint8 ID) {}
 
 
 	// メニューが閉じられた。

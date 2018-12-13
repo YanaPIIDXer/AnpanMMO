@@ -81,7 +81,7 @@ void UMMOGameInstance::OnRecvSkillList(uint32 NormalAttack, uint32 Skill1, uint3
 
 
 // パケットを受信した。
-void UMMOGameInstance::OnRecvPacket(PacketID ID, MemoryStreamInterface *pStream)
+void UMMOGameInstance::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
 	OnRecvPacketDelegate.ExecuteIfBound(ID, pStream);
 }

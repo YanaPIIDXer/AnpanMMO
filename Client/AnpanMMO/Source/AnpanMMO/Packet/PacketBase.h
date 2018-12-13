@@ -3,6 +3,7 @@
 
 class MemoryStreamInterface;
 #include "PacketID.h"
+#include "TypeDefs.h"
 
 // パケット基底クラス
 // 各種パケットはこのクラスを派生して定義する。
