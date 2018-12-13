@@ -23,7 +23,8 @@ DROP TABLE IF EXISTS `CharacterData`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CharacterData` (
-  `CustomerId` int(11) NOT NULL,
+  `CharacterId` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `CustomerId` int(11) DEFAULT NULL,
   `Name` varchar(128) DEFAULT NULL,
   `Job` int(11) DEFAULT NULL,
   `Level` int(10) unsigned DEFAULT NULL,
@@ -32,11 +33,11 @@ CREATE TABLE `CharacterData` (
   `Def` int(11) DEFAULT NULL,
   `Exp` int(11) DEFAULT NULL,
   `Gold` int(10) unsigned DEFAULT NULL,
-  `LastArea` int(11) DEFAULT NULL,
+  `LastArea` int(10) unsigned DEFAULT NULL,
   `LastX` float DEFAULT NULL,
   `LastY` float DEFAULT NULL,
   `LastZ` float DEFAULT NULL,
-  PRIMARY KEY (`CustomerId`)
+  PRIMARY KEY (`CharacterId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -79,4 +80,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-12 20:42:44
+-- Dump completed on 2018-12-13 16:59:19
