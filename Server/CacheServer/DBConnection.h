@@ -24,10 +24,10 @@ public:
 	bool RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job);
 
 	// キャラクタパラメータ読み込み
-	bool LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJob, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold);
+	bool LoadCharacterParameter(int Id, std::string &OutName, u8 &OutJob, u32 &OutLevel, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold);
 
 	// キャラクタパラメータ書き込み
-	bool SaveCharacterParameter(int Id, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z);
+	bool SaveCharacterParameter(int Id, u32 Level, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z);
 
 	// ゴールド書き込み
 	bool SaveGold(int Id, u32 Gold);

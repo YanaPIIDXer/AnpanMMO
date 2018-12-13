@@ -190,4 +190,7 @@ private:
 	// インスタンスエリア脱出ポイント生成を受信した。
 	void OnRecvSpawnInstanceAreaExitPoint(MemoryStreamInterface *pStream);
 
+	// ゴールド変化を受信した。
+	void OnRecvChangeGold(MemoryStreamInterface *pStream);
+
 };

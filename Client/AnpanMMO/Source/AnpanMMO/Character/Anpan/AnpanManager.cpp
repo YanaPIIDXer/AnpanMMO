@@ -99,6 +99,7 @@ AAnpan *AnpanManager::FindCenterTarget(float Distance)
 	for (auto KeyValue : AnpanMap)
 	{
 		AAnpan *pAnpan = KeyValue.Value.Get();
+		if (pAnpan == nullptr) { continue; }		// 何故かnullptrを返すケースがあるらしい。
 		FVector Dist = (pAnpan->GetActorLocation() - CharacterPos);
 		Dist.Z = 0.0f;
 		if (Dist.SizeSquared() > Distance * Distance) { continue; }

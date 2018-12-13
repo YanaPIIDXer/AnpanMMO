@@ -13,6 +13,7 @@ public:
 
 	
 
+	u32 Level;
 	s32 MaxHp;
 	s32 Atk;
 	s32 Def;
@@ -23,8 +24,9 @@ public:
 	{
 	}
 
-	PacketLevelUp(s32 InMaxHp, s32 InAtk, s32 InDef, s32 InResultExp)
+	PacketLevelUp(u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InResultExp)
 	{
+		Level = InLevel;
 		MaxHp = InMaxHp;
 		Atk = InAtk;
 		Def = InDef;
@@ -34,6 +36,7 @@ public:
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&Level);
 		pStream->Serialize(&MaxHp);
 		pStream->Serialize(&Atk);
 		pStream->Serialize(&Def);

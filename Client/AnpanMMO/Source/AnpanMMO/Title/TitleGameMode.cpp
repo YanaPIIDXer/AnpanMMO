@@ -145,7 +145,7 @@ void ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
 	check(pInst != nullptr);
 
 	FString NameStr = UTF8_TO_TCHAR(Packet.Name.c_str());
-	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.Job, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp);
+	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
 }
 
 // スキルリストを受信した。

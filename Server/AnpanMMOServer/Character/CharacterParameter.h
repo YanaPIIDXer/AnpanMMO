@@ -7,6 +7,9 @@
 struct CharacterParameter
 {
 
+	// ƒŒƒxƒ‹
+	u32 Level;
+
 	// HP
 	int Hp;
 

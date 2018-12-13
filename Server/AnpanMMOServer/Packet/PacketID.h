@@ -29,6 +29,7 @@ enum PacketID
 	AreaMoveResponse,
 	AddExp,
 	LevelUp,
+	ChangeGold,
 	InstanceAreaTicketPublish,
 	InstanceAreaTicketProcess,
 	InstanceAreaTicketDiscard,

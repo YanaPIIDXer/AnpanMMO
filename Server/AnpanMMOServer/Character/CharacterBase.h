@@ -59,6 +59,9 @@ public:
 	// UUIDを取得.
 	u32 GetUuid() const { return Uuid; }
 
+	// レベルを取得.
+	u32 GetLevel() const { return Parameter.Level; }
+
 	// キャラクタタイプを取得.
 	virtual u8 GetCharacterType() const = 0;
 
@@ -108,17 +111,19 @@ protected:
 
 
 	// パラメータ設定.
-	void SetParameter(int Hp, int MaxHp, int Atk, int Def)
+	void SetParameter(u32 Level, int Hp, int MaxHp, int Atk, int Def)
 	{
+		Parameter.Level = Level;
 		Parameter.Hp = Hp;
 		Parameter.MaxHp = MaxHp;
 		Parameter.Atk = Atk;
 		Parameter.Def = Def;
 	}
 
-	// パラメータ追加.
-	void AddParameter(int MaxHp, int Atk, int Def)
+	// レベルアップ
+	void LevelUp(int MaxHp, int Atk, int Def)
 	{
+		Parameter.Level++;
 		Parameter.MaxHp += MaxHp;
 		Parameter.Atk += Atk;
 		Parameter.Def += Def;

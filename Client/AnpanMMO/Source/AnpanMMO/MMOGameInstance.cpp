@@ -63,13 +63,14 @@ void UMMOGameInstance::SendPacket(PacketBase *pPacket)
 }
 
 // ステータスを受信した。
-void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, int32 MaxHp, int32 Atk, int32 Def, int32 Exp)
+void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, uint32 Level, int32 MaxHp, int32 Atk, int32 Def, int32 Exp, u32 Gold)
 {
 	StatusCache.SetUuid(Uuid);
-	StatusCache.Set(MaxHp, Atk, Def);
+	StatusCache.Set(Level, MaxHp, Atk, Def);
 	StatusCache.SetName(Name);
 	StatusCache.SetJob(Job);
 	StatusCache.SetExp(Exp);
+	StatusCache.SetGold(Gold);
 }
 
 // スキルリストを受信した。
