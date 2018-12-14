@@ -56,7 +56,7 @@ public:
 	bool Open(u32 NodeId);
 
 	// クライアントに送り付けるノードデータリストを生成.
-	void GenerateNodeDataList(FlexArray<SkillTreeNode> &DataList);
+	void GenerateNodeDataList(FlexArray<SkillTreeNode> &OutDataList) const;
 
 private:
 

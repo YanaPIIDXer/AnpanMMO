@@ -10,10 +10,15 @@
 class CachePacketSkillTreeResponse  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return CacheSkillTreeeResponse; }
+	virtual u8 GetPacketID() const { return CacheSkillTreeResponse; }
 
-	
+	enum ResultCode
+	{
+		Success,
+		Error,
+	};
 
+	u8 Result;
 	FlexArray<u32> OpenedList;
 	
 
@@ -21,9 +26,10 @@ public:
 	{
 	}
 
-	CachePacketSkillTreeResponse(u32 InClientId, FlexArray<u32> InOpenedList)
+	CachePacketSkillTreeResponse(u32 InClientId, u8 InResult, FlexArray<u32> InOpenedList)
 	{
 		ClientId = InClientId;
+		Result = InResult;
 		OpenedList = InOpenedList;
 		
 	}
@@ -31,6 +37,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
+		pStream->Serialize(&Result);
 		OpenedList.Serialize(pStream);
 		
 		return true;

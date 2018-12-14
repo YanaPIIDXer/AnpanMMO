@@ -58,14 +58,14 @@ bool SkillTree::Open(u32 NodeId)
 }
 
 // クライアントに送り付けるノードデータリストを生成,
-void SkillTree::GenerateNodeDataList(FlexArray<SkillTreeNode> &DataList)
+void SkillTree::GenerateNodeDataList(FlexArray<SkillTreeNode> &OutDataList) const
 {
 	Node *pNode = pRootNode;
 	while (pNode != NULL)
 	{
 		u8 State = (pNode->bIsOpened ? SkillTreeNode::Open : SkillTreeNode::Closed);
 		SkillTreeNode Data(pNode->NodeId, State);
-		DataList.PushBack(Data);
+		OutDataList.PushBack(Data);
 
 		pNode = pNode->pNext;
 	}

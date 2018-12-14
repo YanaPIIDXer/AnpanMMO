@@ -71,6 +71,9 @@ public:
 	// スキルツリー初期化.
 	void InitializeSkillTree(const FlexArray<u32> &OpenedNodes);
 
+	// スキルツリー取得.
+	const SkillTree &GetSkillTree() const { return Tree; }
+
 private:
 
 	// クライアント

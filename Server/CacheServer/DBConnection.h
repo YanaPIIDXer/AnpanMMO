@@ -2,6 +2,7 @@
 #define __DBCONNECTION_H__
 
 #include "MySQL/MySqlConnection.h"
+#include "FlexArray.h"
 
 /**
  * DB接続クラス
@@ -37,6 +38,9 @@ public:
 
 	// スキルリスト保存.
 	bool SaveSkillList(u32 CharacterId, u32 Skill1, u32 Skill2, u32 Skill3, u32 Skill4);
+
+	// スキルツリー読み込み
+	bool LoadSkillTree(u32 CharacterId, FlexArray<u32> &OutOpenedList);
 
 	// ゴールド書き込み
 	bool SaveGold(u32 CharacterId, u32 Gold);

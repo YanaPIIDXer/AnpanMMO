@@ -16,6 +16,8 @@
 #include "Packet/CachePacketSkillListRequest.h"
 #include "Packet/CachePacketSkillListResponse.h"
 #include "Packet/CachePacketSaveSkillListRequest.h"
+#include "Packet/CachePacketSkillTreeRequest.h"
+#include "Packet/CachePacketSkillTreeResponse.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -27,6 +29,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
 	AddPacketFunc(CacheSkillListRequest, bind(&PacketReceiver::OnRecvSkillListRequest, this, _1));
 	AddPacketFunc(CacheSaveSkillListRequest, bind(&PacketReceiver::OnRecvSaveSkillListRequest, this, _1));
+	AddPacketFunc(CacheSkillTreeRequest, bind(&PacketReceiver::OnRecvSkillTreeRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
@@ -176,6 +179,24 @@ void PacketReceiver::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
 	}
 }
 
+// スキルツリーリクエストを受信した。
+void PacketReceiver::OnRecvSkillTreeRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSkillTreeRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = CachePacketSkillTreeResponse::Success;
+	CachePacketSkillTreeResponse ResponsePacket;
+	if (!DBConnection::GetInstance().LoadSkillTree(Packet.CharacterId, ResponsePacket.OpenedList))
+	{
+		Result = CachePacketSkillTreeResponse::Error;
+	}
+
+	ResponsePacket.ClientId = Packet.ClientId;
+	ResponsePacket.Result = Result;
+	pParent->SendPacket(&ResponsePacket);
+}
+
 // スクリプトフラグ読み込みリクエストを受信した。
 void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
 {
@@ -215,7 +236,6 @@ void PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
 // パケット受信.
 void PacketReceiver::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
-	std::cout << "RecvPacket:" << (int)ID << std::endl;
 	if (PacketFuncs.find(ID) == PacketFuncs.end()) { return; }
 	PacketFuncs[ID](pStream);
 }

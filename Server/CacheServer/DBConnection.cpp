@@ -207,6 +207,24 @@ bool DBConnection::SaveSkillList(u32 CharacterId, u32 Skill1, u32 Skill2, u32 Sk
 	return true;
 }
 
+// スキルツリー読み込み
+bool DBConnection::LoadSkillTree(u32 CharacterId, FlexArray<u32> &OutOpenedList)
+{
+	MySqlQuery Query = Connection.CreateQuery("select NodeId from SkillTree where CharacterId = ?;");
+	Query.BindInt(&CharacterId);
+
+	u32 NodeId;
+	Query.BindResultInt(&NodeId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	while (Query.Fetch())
+	{
+		OutOpenedList.PushBack(NodeId);
+	}
+
+	return true;
+}
+
 // ゴールド書き込み
 bool DBConnection::SaveGold(u32 CharacterId, u32 Gold)
 {

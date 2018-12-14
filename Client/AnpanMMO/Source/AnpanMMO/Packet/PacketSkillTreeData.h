@@ -5,6 +5,7 @@
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "FlexArray.h"
+#include "SkillTreeNode.h"
 
 
 class PacketSkillTreeData  : public PacketBase

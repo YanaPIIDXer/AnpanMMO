@@ -60,6 +60,9 @@ private:
 	// スキルリスト保存要求を受信した。
 	void OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream);
 
+	// スキルツリーリクエストを受信した。
+	void OnRecvSkillTreeRequest(MemoryStreamInterface *pStream);
+
 	// スクリプトフラグ読み込みリクエストを受信した。
 	void OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream);
 
