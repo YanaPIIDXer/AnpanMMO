@@ -21,6 +21,7 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	, CharacterId(InCharacterId)
 	, Job(InJob)
 	, Gold(InGold)
+	, Tree(this)
 	, SaveAreaId(0)
 	, SavePosition(Vector3D::Zero)
 {

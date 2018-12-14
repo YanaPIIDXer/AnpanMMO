@@ -3,6 +3,7 @@
 
 #include "Character/CharacterBase.h"
 #include "PlayerExp.h"
+#include "Skill/SkillTree/SkillTree.h"
 #include "WeakPtrDefine.h"
 #include "Packet/CharacterType.h"
 
@@ -89,6 +90,9 @@ private:
 
 	// パーティ
 	PartyPtr pParty;
+
+	// スキルツリー
+	SkillTree Tree;
 
 	// セーブするエリアＩＤ
 	u32 SaveAreaId;
