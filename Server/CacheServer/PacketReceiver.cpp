@@ -16,6 +16,7 @@
 #include "Packet/CachePacketSkillListRequest.h"
 #include "Packet/CachePacketSkillListResponse.h"
 #include "Packet/CachePacketSaveSkillListRequest.h"
+#include "Packet/CachePacketSaveSkillListResponse.h"
 #include "Packet/CachePacketSkillTreeRequest.h"
 #include "Packet/CachePacketSkillTreeResponse.h"
 #include "Packet/CachePacketOpenSkillTree.h"
@@ -175,10 +176,14 @@ void PacketReceiver::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
 	CachePacketSaveSkillListRequest Packet;
 	Packet.Serialize(pStream);
 
-	if (DBConnection::GetInstance().SaveSkillList(Packet.CharacterId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4))
+	u8 Result = CachePacketSaveSkillListResponse::Success;
+	if (!DBConnection::GetInstance().SaveSkillList(Packet.CharacterId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4))
 	{
-		std::cout << "CharacterID:" << Packet.CharacterId << " SkillList Save Failed..." << std::endl;
+		Result = CachePacketSaveSkillListResponse::Error;
 	}
+
+	CachePacketSaveSkillListResponse ResponsePacket(Packet.ClientId, Result);
+	pParent->SendPacket(&ResponsePacket);
 }
 
 // スキルツリーリクエストを受信した。
