@@ -15,6 +15,8 @@ public:
 	{
 		Success,
 		NotEnoughCost,
+		NotOpenedParent,
+		NotEnoughLevel,
 		AlreadyOpened,
 		Error,
 	};
