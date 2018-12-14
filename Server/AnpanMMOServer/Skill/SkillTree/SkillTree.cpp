@@ -2,6 +2,7 @@
 #include "SkillTree.h"
 #include "Character/Player/PlayerCharacter.h"
 #include "Master/MasterData.h"
+#include "Packet/SkillTreeNode.h"
 
 // コンストラクタ
 SkillTree::SkillTree(PlayerCharacter *pInCharacter)
@@ -24,6 +25,19 @@ SkillTree::~SkillTree()
 	pParentNode = NULL;
 }
 
+// クライアントに送り付けるノードデータリストを生成,
+void SkillTree::GenerateNodeDataList(FlexArray<SkillTreeNode> &DataList)
+{
+	Node *pNode = pParentNode;
+	while (pNode != NULL)
+	{
+		u8 State = (pNode->bIsOpened ? SkillTreeNode::Open : SkillTreeNode::Closed);
+		SkillTreeNode Data(pNode->NodeId, State);
+		DataList.PushBack(Data);
+
+		pNode = pNode->pNext;
+	}
+}
 
 // ノード追加.
 void SkillTree::AddNode(Node *pNode)

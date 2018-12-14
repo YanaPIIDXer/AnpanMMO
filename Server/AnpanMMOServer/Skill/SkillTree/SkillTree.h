@@ -1,7 +1,10 @@
 #ifndef __SKILLTREE_H__
 #define __SKILLTREE_H__
 
+#include "FlexArray.h"
+
 class PlayerCharacter;
+class SkillTreeNode;
 
 /**
  * スキルツリークラス
@@ -45,6 +48,9 @@ public:
 
 	// デストラクタ
 	~SkillTree();
+
+	// クライアントに送り付けるノードデータリストを生成.
+	void GenerateNodeDataList(FlexArray<SkillTreeNode> &DataList);
 
 private:
 

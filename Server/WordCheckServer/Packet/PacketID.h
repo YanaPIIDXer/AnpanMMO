@@ -77,7 +77,7 @@ enum PacketID
 	SkillActivate,
 	SkillRecast,
 	SkillList,
-	SkillTree,
+	SkillTreeData,
 	Time,
 	TimeChange,
 	WordCheckChatRequest,

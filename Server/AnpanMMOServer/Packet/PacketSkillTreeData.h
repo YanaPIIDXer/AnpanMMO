@@ -1,5 +1,5 @@
-#ifndef __PACKETSKILLTREE_H__
-#define __PACKETSKILLTREE_H__
+#ifndef __PACKETSKILLTREEDATA_H__
+#define __PACKETSKILLTREEDATA_H__
 
 #include "PacketBase.h"
 #include "PacketID.h"
@@ -7,21 +7,21 @@
 #include "FlexArray.h"
 
 
-class PacketSkillTree  : public PacketBase
+class PacketSkillTreeData  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return SkillTree; }
+	virtual u8 GetPacketID() const { return SkillTreeData; }
 
 	
 
 	FlexArray<SkillTreeNode> Nodes;
 	
 
-	PacketSkillTree()
+	PacketSkillTreeData()
 	{
 	}
 
-	PacketSkillTree(FlexArray<SkillTreeNode> InNodes)
+	PacketSkillTreeData(FlexArray<SkillTreeNode> InNodes)
 	{
 		Nodes = InNodes;
 		
@@ -35,4 +35,4 @@ public:
 	}
 };
 
-#endif		// #ifndef __PACKETSKILLTREE_H__
+#endif		// #ifndef __PACKETSKILLTREEDATA_H__
