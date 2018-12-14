@@ -80,6 +80,7 @@ enum PacketID
 	SkillActivate,
 	SkillRecast,
 	SkillList,
+	SaveSkillList,
 	SkillTreeData,
 	SkillTreeOpenRequest,
 	SkillTreeOpenResult,
