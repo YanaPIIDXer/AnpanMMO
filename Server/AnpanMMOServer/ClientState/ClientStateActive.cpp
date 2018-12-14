@@ -13,6 +13,7 @@
 #include "Area/InstanceAreaTicket.h"
 #include "Area/InstanceAreaTicketManager.h"
 #include "Time/TimeManager.h"
+#include "CacheServer/CacheServerConnection.h"
 #include "Packet/PacketPing.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketSendChat.h"
@@ -43,6 +44,9 @@
 #include "Packet/PacketTime.h"
 #include "Packet/PacketNPCTalk.h"
 #include "Packet/PacketNPCTalkSelection.h"
+#include "Packet/PacketSkillTreeOpenRequest.h"
+#include "Packet/PacketSkillTreeOpenResult.h"
+#include "Packet/CachePacketOpenSkillTree.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -64,6 +68,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
 	AddPacketFunction(NPCTalk, boost::bind(&ClientStateActive::OnRecvNPCTalk, this, _2));
 	AddPacketFunction(NPCTalkSelection, boost::bind(&ClientStateActive::OnRecvNPCTalkSelection, this, _2));
+	AddPacketFunction(SkillTreeOpenRequest, boost::bind(&ClientStateActive::OnRecvSkillTreeOpenRequest, this, _2));
 }
 
 // State開始時の処理.
@@ -425,4 +430,22 @@ void ClientStateActive::OnRecvNPCTalkSelection(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	GetParent()->GetScript()->OnSelectedSelection(Packet.Index);
+}
+
+// スキルツリー開放要求を受信した。
+void ClientStateActive::OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStream)
+{
+	PacketSkillTreeOpenRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = GetParent()->GetCharacter().lock()->OpenSkillTree(Packet.NodeId);
+
+	PacketSkillTreeOpenResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
+
+	if (Result == PacketSkillTreeOpenResult::Success)
+	{
+		CachePacketOpenSkillTree CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.NodeId);
+		CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+	}
 }

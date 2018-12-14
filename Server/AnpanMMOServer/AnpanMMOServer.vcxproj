@@ -175,6 +175,7 @@
     <ClInclude Include="ServerHost.h" />
     <ClInclude Include="Skill\SkillControl.h" />
     <ClInclude Include="Skill\SkillRecastManager.h" />
+    <ClInclude Include="Skill\SkillTree\SkillTree.h" />
     <ClInclude Include="Skill\State\SkillStateAutoMove.h" />
     <ClInclude Include="Skill\State\SkillStateBase.h" />
     <ClInclude Include="Skill\State\SkillStateCast.h" />
@@ -277,6 +278,7 @@
     <ClCompile Include="ServerHost.cpp" />
     <ClCompile Include="Skill\SkillControl.cpp" />
     <ClCompile Include="Skill\SkillRecastManager.cpp" />
+    <ClCompile Include="Skill\SkillTree\SkillTree.cpp" />
     <ClCompile Include="Skill\State\SkillStateAutoMove.cpp" />
     <ClCompile Include="Skill\State\SkillStateBase.cpp" />
     <ClCompile Include="Skill\State\SkillStateCast.cpp" />

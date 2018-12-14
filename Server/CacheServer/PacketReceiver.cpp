@@ -15,6 +15,10 @@
 #include "Packet/CachePacketGoldSave.h"
 #include "Packet/CachePacketSkillListRequest.h"
 #include "Packet/CachePacketSkillListResponse.h"
+#include "Packet/CachePacketSaveSkillListRequest.h"
+#include "Packet/CachePacketSkillTreeRequest.h"
+#include "Packet/CachePacketSkillTreeResponse.h"
+#include "Packet/CachePacketOpenSkillTree.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -25,6 +29,9 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
 	AddPacketFunc(CacheSkillListRequest, bind(&PacketReceiver::OnRecvSkillListRequest, this, _1));
+	AddPacketFunc(CacheSaveSkillListRequest, bind(&PacketReceiver::OnRecvSaveSkillListRequest, this, _1));
+	AddPacketFunc(CacheSkillTreeRequest, bind(&PacketReceiver::OnRecvSkillTreeRequest, this, _1));
+	AddPacketFunc(CacheOpenSkillTree, bind(&PacketReceiver::OnRecvSkillTreeSaveRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
@@ -162,6 +169,48 @@ void PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
 	pParent->SendPacket(&ResponsePacket);
 }
 
+// スキルリスト保存要求を受信した。
+void PacketReceiver::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveSkillListRequest Packet;
+	Packet.Serialize(pStream);
+
+	if (DBConnection::GetInstance().SaveSkillList(Packet.CharacterId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4))
+	{
+		std::cout << "CharacterID:" << Packet.CharacterId << " SkillList Save Failed..." << std::endl;
+	}
+}
+
+// スキルツリーリクエストを受信した。
+void PacketReceiver::OnRecvSkillTreeRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSkillTreeRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = CachePacketSkillTreeResponse::Success;
+	CachePacketSkillTreeResponse ResponsePacket;
+	if (!DBConnection::GetInstance().LoadSkillTree(Packet.CharacterId, ResponsePacket.OpenedList))
+	{
+		Result = CachePacketSkillTreeResponse::Error;
+	}
+
+	ResponsePacket.ClientId = Packet.ClientId;
+	ResponsePacket.Result = Result;
+	pParent->SendPacket(&ResponsePacket);
+}
+
+// スキルツリー保存要求を受信した。
+void PacketReceiver::OnRecvSkillTreeSaveRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketOpenSkillTree Packet;
+	Packet.Serialize(pStream);
+
+	if (!DBConnection::GetInstance().SaveSkillTree(Packet.CharacterId, Packet.NodeId))
+	{
+		std::cout << "SkillTree Save Failed..." << std::endl;
+	}
+}
+
 // スクリプトフラグ読み込みリクエストを受信した。
 void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
 {
@@ -201,7 +250,6 @@ void PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
 // パケット受信.
 void PacketReceiver::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
-	std::cout << "RecvPacket:" << (int)ID << std::endl;
 	if (PacketFuncs.find(ID) == PacketFuncs.end()) { return; }
 	PacketFuncs[ID](pStream);
 }

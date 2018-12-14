@@ -13,6 +13,7 @@
 #include "Packet/PacketSkillUseFailed.h"
 #include "Packet/PacketSkillRecast.h"
 #include "Packet/PacketChangeGold.h"
+#include "Packet/PacketSkillTreeOpenResult.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
@@ -21,6 +22,7 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	, CharacterId(InCharacterId)
 	, Job(InJob)
 	, Gold(InGold)
+	, Tree(this)
 	, SaveAreaId(0)
 	, SavePosition(Vector3D::Zero)
 {
@@ -81,6 +83,53 @@ void PlayerCharacter::SubtractGold(u32 Value)
 
 	PacketChangeGold ChangePacket(Gold);
 	GetClient()->SendPacket(&ChangePacket);
+}
+
+// スキルツリー初期化.
+void PlayerCharacter::InitializeSkillTree(const FlexArray<u32> &OpenedNodes)
+{
+	for (int i = 0; i < OpenedNodes.GetCurrentSize(); i++)
+	{
+		Tree.Open(OpenedNodes[i]);
+	}
+}
+
+// スキルツリーオープン
+u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
+{
+	// 既に開かれているかをチェック
+	bool bIsOpened = false;
+	if (!Tree.IsOpened(NodeId, bIsOpened))
+	{
+		return PacketSkillTreeOpenResult::Error;
+	}
+	if (bIsOpened)
+	{
+		return PacketSkillTreeOpenResult::AlreadyOpened;
+	}
+
+	// コストチェック
+	u32 Cost = 0;
+	if (!Tree.GetCost(NodeId, Cost))
+	{
+		return PacketSkillTreeOpenResult::Error;
+	}
+	if (Gold < Cost)
+	{
+		// コストが足りない。
+		return PacketSkillTreeOpenResult::NotEnoughCost;
+	}
+
+	// オープン
+	if (!Tree.Open(NodeId))
+	{
+		return PacketSkillTreeOpenResult::Error;
+	}
+
+	// コスト消費.
+	SubtractGold(Cost);
+
+	return PacketSkillTreeOpenResult::Success;
 }
 
 

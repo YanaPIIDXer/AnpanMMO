@@ -13,6 +13,7 @@
 #include "Packet/PacketCreateCharacterRequest.h"
 #include "Packet/PacketCreateCharacterResult.h"
 #include "Packet/PacketSkillList.h"
+#include "Packet/PacketSkillTreeData.h"
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketScriptFlag.h"
 #include "Packet/CachePacketLogInRequest.h"
@@ -22,6 +23,8 @@
 #include "Packet/CachePacketCharacterDataRequest.h"
 #include "Packet/CachePacketCharacterDataResult.h"
 #include "Packet/CachePacketSkillListRequest.h"
+#include "Packet/CachePacketSkillTreeRequest.h"
+#include "Packet/CachePacketSkillTreeResponse.h"
 #include "Packet/CachePacketSkillListResponse.h"
 #include "Packet/CachePacketScriptFlagRequest.h"
 #include "Packet/CachePacketScriptFlagResponse.h"
@@ -38,6 +41,7 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 	AddPacketFunction(CacheCreateCharacterResult, boost::bind(&ClientStateTitle::OnRecvCacheCreateCharacterResult, this, _2));
 	AddPacketFunction(CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
 	AddPacketFunction(CacheSkillListResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillListResponse, this, _2));
+	AddPacketFunction(CacheSkillTreeResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillTreeResponse, this, _2));
 	AddPacketFunction(CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResponse, this, _2));
 }
 
@@ -179,6 +183,28 @@ void ClientStateTitle::OnRecvCacheSkillListResponse(MemoryStreamInterface *pStre
 	PacketSkillList SkillListPacket(Packet.NormalAttackId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	GetParent()->SendPacket(&SkillListPacket);
 
+	// スキルツリー情報を要求.
+	CachePacketSkillTreeRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+}
+
+// キャッシュサーバからスキルツリー情報を取得した。
+void ClientStateTitle::OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketSkillTreeResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != CachePacketSkillTreeResponse::Success)
+	{
+		std::cout << "SkillTree Load Failed..." << std::endl;
+		return;
+	}
+
+	GetParent()->GetCharacter().lock()->InitializeSkillTree(Packet.OpenedList);
+	PacketSkillTreeData SkillTreePacket;
+	GetParent()->GetCharacter().lock()->GetSkillTree().GenerateNodeDataList(SkillTreePacket.Nodes);
+	GetParent()->SendPacket(&SkillTreePacket);
+	
 	// スクリプトフラグを要求.
 	CachePacketScriptFlagRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);

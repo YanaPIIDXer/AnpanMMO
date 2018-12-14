@@ -3,6 +3,7 @@
 
 #include "Character/CharacterBase.h"
 #include "PlayerExp.h"
+#include "Skill/SkillTree/SkillTree.h"
 #include "WeakPtrDefine.h"
 #include "Packet/CharacterType.h"
 
@@ -67,6 +68,15 @@ public:
 	// ゴールドを消費.
 	void SubtractGold(u32 Value);
 
+	// スキルツリー初期化.
+	void InitializeSkillTree(const FlexArray<u32> &OpenedNodes);
+
+	// スキルツリー取得.
+	const SkillTree &GetSkillTree() const { return Tree; }
+
+	// スキルツリーオープン
+	u8 OpenSkillTree(u32 NodeId);
+
 private:
 
 	// クライアント
@@ -89,6 +99,9 @@ private:
 
 	// パーティ
 	PartyPtr pParty;
+
+	// スキルツリー
+	SkillTree Tree;
 
 	// セーブするエリアＩＤ
 	u32 SaveAreaId;

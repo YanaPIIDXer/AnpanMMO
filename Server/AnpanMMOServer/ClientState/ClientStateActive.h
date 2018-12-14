@@ -70,6 +70,9 @@ private:
 	// NPCとの会話での選択肢を受信した。
 	void OnRecvNPCTalkSelection(MemoryStreamInterface *pStream);
 
+	// スキルツリー開放要求を受信した。
+	void OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__
