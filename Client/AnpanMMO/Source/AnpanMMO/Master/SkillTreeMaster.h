@@ -22,6 +22,7 @@ public:
 	u32 SkillId;
 	u32 NeedLevel;
 	u32 Cost;
+	u32 ParentNode;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
@@ -31,6 +32,7 @@ public:
 		if(!pStream->Serialize(&SkillId)) { return false; }
 		if(!pStream->Serialize(&NeedLevel)) { return false; }
 		if(!pStream->Serialize(&Cost)) { return false; }
+		if(!pStream->Serialize(&ParentNode)) { return false; }
 
 		return true;
 	}
