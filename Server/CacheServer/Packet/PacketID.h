@@ -24,6 +24,7 @@ enum PacketID
 	CacheSaveSkillListRequest,
 	CacheSkillTreeRequest,
 	CacheSkillTreeResponse,
+	CacheOpenSkillTree,
 	CacheCharacterDataSave,
 	CacheGoldSave,
 	SendChat,
