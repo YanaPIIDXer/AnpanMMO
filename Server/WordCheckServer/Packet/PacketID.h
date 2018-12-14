@@ -22,6 +22,8 @@ enum PacketID
 	CacheScriptFlagResponse,
 	CacheScriptFlagSaveRequest,
 	CacheSaveSkillListRequest,
+	CacheSkillTreeeRequest,
+	CacheSkillTreeeResponse,
 	CacheCharacterDataSave,
 	CacheGoldSave,
 	SendChat,
