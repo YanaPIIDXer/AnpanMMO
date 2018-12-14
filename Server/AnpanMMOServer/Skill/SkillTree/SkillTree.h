@@ -24,7 +24,7 @@ private:	// 内部構造体定義.
 		u32 SkillId;
 
 		// 必要ゴールド
-		u32 Gold;
+		u32 Cost;
 
 		// 解禁済みか？
 		bool bIsOpened;
@@ -34,7 +34,7 @@ private:	// 内部構造体定義.
 
 
 		// コンストラクタ
-		Node(u32 InNodeId, u32 InSkillId, u32 InGold);
+		Node(u32 InNodeId, u32 InSkillId, u32 InCost);
 
 		// デストラクタ
 		~Node();
@@ -49,6 +49,12 @@ public:
 	// デストラクタ
 	~SkillTree();
 
+	// コスト取得.
+	bool GetCost(u32 NodeId, u32 &OutCost) const;
+
+	// 開く
+	bool Open(u32 NodeId);
+
 	// クライアントに送り付けるノードデータリストを生成.
 	void GenerateNodeDataList(FlexArray<SkillTreeNode> &DataList);
 
@@ -57,8 +63,8 @@ private:
 	// キャラクタ
 	PlayerCharacter *pCharacter;
 
-	// 親ノード
-	Node *pParentNode;
+	// 最初のノード
+	Node *pRootNode;
 
 
 	// ノード追加.
