@@ -13,6 +13,7 @@
 #include "Packet/PacketSkillUseFailed.h"
 #include "Packet/PacketSkillRecast.h"
 #include "Packet/PacketChangeGold.h"
+#include "Packet/PacketSkillTreeOpenResult.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
@@ -91,6 +92,33 @@ void PlayerCharacter::InitializeSkillTree(const FlexArray<u32> &OpenedNodes)
 	{
 		Tree.Open(OpenedNodes[i]);
 	}
+}
+
+// スキルツリーオープン
+u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
+{
+	// コストチェック
+	u32 Cost = 0;
+	if (!Tree.GetCost(NodeId, Cost))
+	{
+		return PacketSkillTreeOpenResult::Error;
+	}
+	if (Gold < Cost)
+	{
+		// コストが足りない。
+		return PacketSkillTreeOpenResult::NotEnoughCost;
+	}
+
+	// オープン
+	if (!Tree.Open(NodeId))
+	{
+		return PacketSkillTreeOpenResult::Error;
+	}
+
+	// コスト消費.
+	SubtractGold(Cost);
+
+	return PacketSkillTreeOpenResult::Success;
 }
 
 

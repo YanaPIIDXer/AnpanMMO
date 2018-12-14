@@ -225,6 +225,17 @@ bool DBConnection::LoadSkillTree(u32 CharacterId, FlexArray<u32> &OutOpenedList)
 	return true;
 }
 
+// スキルツリー保存.
+bool DBConnection::SaveSkillTree(u32 CharacterId, u32 NodeId)
+{
+	MySqlQuery Query = Connection.CreateQuery("insert into SkillTree Values(?, ?);");
+	Query.BindInt(&CharacterId);
+	Query.BindInt(&NodeId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	return true;
+}
+
 // ゴールド書き込み
 bool DBConnection::SaveGold(u32 CharacterId, u32 Gold)
 {

@@ -74,6 +74,9 @@ public:
 	// スキルツリー取得.
 	const SkillTree &GetSkillTree() const { return Tree; }
 
+	// スキルツリーオープン
+	u8 OpenSkillTree(u32 NodeId);
+
 private:
 
 	// クライアント

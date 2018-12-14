@@ -42,6 +42,9 @@ public:
 	// スキルツリー読み込み
 	bool LoadSkillTree(u32 CharacterId, FlexArray<u32> &OutOpenedList);
 
+	// スキルツリー保存.
+	bool SaveSkillTree(u32 CharacterId, u32 NodeId);
+
 	// ゴールド書き込み
 	bool SaveGold(u32 CharacterId, u32 Gold);
 
