@@ -84,7 +84,7 @@ DROP TABLE IF EXISTS `SkillTree`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SkillTree` (
   `CharacterId` int(10) unsigned NOT NULL,
-  `TreeId` int(10) unsigned DEFAULT NULL,
+  `NodeId` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`CharacterId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -112,4 +112,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-14 13:30:22
+-- Dump completed on 2018-12-14 15:28:35
