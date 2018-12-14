@@ -193,6 +193,20 @@ bool DBConnection::LoadSkillList(u32 CharacterId, u32 &OutNormalAttackId, u32 &O
 	return true;
 }
 
+// スキルリスト保存.
+bool DBConnection::SaveSkillList(u32 CharacterId, u32 Skill1, u32 Skill2, u32 Skill3, u32 Skill4)
+{
+	MySqlQuery Query = Connection.CreateQuery("update SkillData set Skill1 = ?, Skill2 = ?, Skill3 = ?, Skill4 = ? where CharacterId = ?;");
+	Query.BindInt(&Skill1);
+	Query.BindInt(&Skill2);
+	Query.BindInt(&Skill3);
+	Query.BindInt(&Skill4);
+	Query.BindInt(&CharacterId);
+	if (Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
+
 // ゴールド書き込み
 bool DBConnection::SaveGold(u32 CharacterId, u32 Gold)
 {

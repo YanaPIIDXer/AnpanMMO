@@ -15,6 +15,7 @@
 #include "Packet/CachePacketGoldSave.h"
 #include "Packet/CachePacketSkillListRequest.h"
 #include "Packet/CachePacketSkillListResponse.h"
+#include "Packet/CachePacketSaveSkillListRequest.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -25,6 +26,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
 	AddPacketFunc(CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
 	AddPacketFunc(CacheSkillListRequest, bind(&PacketReceiver::OnRecvSkillListRequest, this, _1));
+	AddPacketFunc(CacheSaveSkillListRequest, bind(&PacketReceiver::OnRecvSaveSkillListRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
 	AddPacketFunc(CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
@@ -160,6 +162,18 @@ void PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
 
 	CachePacketSkillListResponse ResponsePacket(Packet.ClientId, Result, NormalAttackId, Skill1, Skill2, Skill3, Skill4);
 	pParent->SendPacket(&ResponsePacket);
+}
+
+// スキルリスト保存要求を受信した。
+void PacketReceiver::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveSkillListRequest Packet;
+	Packet.Serialize(pStream);
+
+	if (DBConnection::GetInstance().SaveSkillList(Packet.CharacterId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4))
+	{
+		std::cout << "CharacterID:" << Packet.CharacterId << " SkillList Save Failed..." << std::endl;
+	}
 }
 
 // スクリプトフラグ読み込みリクエストを受信した。
