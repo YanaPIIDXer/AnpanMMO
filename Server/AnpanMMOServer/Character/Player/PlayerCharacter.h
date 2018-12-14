@@ -68,6 +68,9 @@ public:
 	// ゴールドを消費.
 	void SubtractGold(u32 Value);
 
+	// スキルツリー初期化.
+	void InitializeSkillTree(const FlexArray<u32> &OpenedNodes);
+
 private:
 
 	// クライアント

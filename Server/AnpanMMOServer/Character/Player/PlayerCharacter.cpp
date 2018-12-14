@@ -84,6 +84,15 @@ void PlayerCharacter::SubtractGold(u32 Value)
 	GetClient()->SendPacket(&ChangePacket);
 }
 
+// スキルツリー初期化.
+void PlayerCharacter::InitializeSkillTree(const FlexArray<u32> &OpenedNodes)
+{
+	for (int i = 0; i < OpenedNodes.GetCurrentSize(); i++)
+	{
+		Tree.Open(OpenedNodes[i]);
+	}
+}
+
 
 // レベルアップコールバック
 void PlayerCharacter::OnLevelUp()
