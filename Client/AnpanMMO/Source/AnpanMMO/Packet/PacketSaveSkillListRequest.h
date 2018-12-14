@@ -1,15 +1,15 @@
-#ifndef __PACKETSAVESKILLLIST_H__
-#define __PACKETSAVESKILLLIST_H__
+#ifndef __PACKETSAVESKILLLISTREQUEST_H__
+#define __PACKETSAVESKILLLISTREQUEST_H__
 
 #include "PacketBase.h"
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 
 
-class PacketSaveSkillList  : public PacketBase
+class PacketSaveSkillListRequest  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return SaveSkillList; }
+	virtual u8 GetPacketID() const { return SaveSkillListRequest; }
 
 	
 
@@ -19,11 +19,11 @@ public:
 	u32 Skill4;
 	
 
-	PacketSaveSkillList()
+	PacketSaveSkillListRequest()
 	{
 	}
 
-	PacketSaveSkillList(u32 InSkill1, u32 InSkill2, u32 InSkill3, u32 InSkill4)
+	PacketSaveSkillListRequest(u32 InSkill1, u32 InSkill2, u32 InSkill3, u32 InSkill4)
 	{
 		Skill1 = InSkill1;
 		Skill2 = InSkill2;
@@ -43,4 +43,4 @@ public:
 	}
 };
 
-#endif		// #ifndef __PACKETSAVESKILLLIST_H__
+#endif		// #ifndef __PACKETSAVESKILLLISTREQUEST_H__

@@ -73,6 +73,9 @@ private:
 	// スキルリスト保存リクエストを受信した。
 	void OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream);
 
+	// キャッシュサーバからスキルリスト保存レスポンスを受信した。
+	void OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *pStream);
+
 	// スキルツリー開放要求を受信した。
 	void OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStream);
 

@@ -44,8 +44,10 @@
 #include "Packet/PacketTime.h"
 #include "Packet/PacketNPCTalk.h"
 #include "Packet/PacketNPCTalkSelection.h"
-#include "Packet/PacketSaveSkillList.h"
+#include "Packet/PacketSaveSkillListRequest.h"
+#include "Packet/PacketSaveSkillListResponse.h"
 #include "Packet/CachePacketSaveSkillListRequest.h"
+#include "Packet/CachePacketSaveSkillListResponse.h"
 #include "Packet/PacketSkillTreeOpenRequest.h"
 #include "Packet/PacketSkillTreeOpenResult.h"
 #include "Packet/CachePacketOpenSkillTree.h"
@@ -70,7 +72,8 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
 	AddPacketFunction(NPCTalk, boost::bind(&ClientStateActive::OnRecvNPCTalk, this, _2));
 	AddPacketFunction(NPCTalkSelection, boost::bind(&ClientStateActive::OnRecvNPCTalkSelection, this, _2));
-	AddPacketFunction(SaveSkillList, boost::bind(&ClientStateActive::OnRecvSaveSkillListRequest, this, _2));
+	AddPacketFunction(SaveSkillListRequest, boost::bind(&ClientStateActive::OnRecvSaveSkillListRequest, this, _2));
+	AddPacketFunction(CacheSaveSkillListResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveSkillListResponse, this, _2));
 	AddPacketFunction(SkillTreeOpenRequest, boost::bind(&ClientStateActive::OnRecvSkillTreeOpenRequest, this, _2));
 }
 
@@ -438,11 +441,27 @@ void ClientStateActive::OnRecvNPCTalkSelection(MemoryStreamInterface *pStream)
 // スキルリスト保存リクエストを受信した。
 void ClientStateActive::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
 {
-	PacketSaveSkillList Packet;
+	PacketSaveSkillListRequest Packet;
 	Packet.Serialize(pStream);
 
 	CachePacketSaveSkillListRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.Skill1, Packet.Skill2, Packet.Skill3, Packet.Skill4);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+}
+
+// キャッシュサーバからスキルリスト保存レスポンスを受信した。
+void ClientStateActive::OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveSkillListResponse Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketSaveSkillListResponse::Success;
+	if (Packet.Result != CachePacketSaveSkillListResponse::Success)
+	{
+		Result = PacketSaveSkillListResponse::Error;
+	}
+
+	PacketSaveSkillListResponse ResponsePacket(Result);
+	GetParent()->SendPacket(&ResponsePacket);
 }
 
 // スキルツリー開放要求を受信した。
