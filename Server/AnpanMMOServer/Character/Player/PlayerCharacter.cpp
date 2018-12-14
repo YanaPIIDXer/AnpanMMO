@@ -97,6 +97,17 @@ void PlayerCharacter::InitializeSkillTree(const FlexArray<u32> &OpenedNodes)
 // スキルツリーオープン
 u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 {
+	// 既に開かれているかをチェック
+	bool bIsOpened = false;
+	if (!Tree.IsOpened(NodeId, bIsOpened))
+	{
+		return PacketSkillTreeOpenResult::Error;
+	}
+	if (bIsOpened)
+	{
+		return PacketSkillTreeOpenResult::AlreadyOpened;
+	}
+
 	// コストチェック
 	u32 Cost = 0;
 	if (!Tree.GetCost(NodeId, Cost))

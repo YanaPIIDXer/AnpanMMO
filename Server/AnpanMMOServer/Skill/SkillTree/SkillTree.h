@@ -55,6 +55,9 @@ public:
 	// 開く
 	bool Open(u32 NodeId);
 
+	// 既に開かれているか？
+	bool IsOpened(u32 NodeId, bool &bOutOpened);
+
 	// クライアントに送り付けるノードデータリストを生成.
 	void GenerateNodeDataList(FlexArray<SkillTreeNode> &OutDataList) const;
 

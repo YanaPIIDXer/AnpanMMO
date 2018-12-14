@@ -57,6 +57,21 @@ bool SkillTree::Open(u32 NodeId)
 	return false;
 }
 
+// 既に開かれているか？
+bool SkillTree::IsOpened(u32 NodeId, bool &bOutOpened)
+{
+	Node *pNode = pRootNode;
+	while (pNode != NULL)
+	{
+		if (pNode->NodeId == NodeId)
+		{
+			bOutOpened = pNode->bIsOpened;
+			return true;
+		}
+	}
+	return false;
+}
+
 // クライアントに送り付けるノードデータリストを生成,
 void SkillTree::GenerateNodeDataList(FlexArray<SkillTreeNode> &OutDataList) const
 {
