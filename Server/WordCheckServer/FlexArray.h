@@ -106,7 +106,7 @@ public:
 		return pArray[Index];
 	}
 
-	// シリアライズB
+	// シリアライズ
 	void Serialize(MemoryStreamInterface *pStream);
 
 private:
@@ -121,6 +121,23 @@ private:
 	int CurrentCapacity;
 
 };
+
+template<>
+void FlexArray<s8>::Serialize(MemoryStreamInterface *pStream);
+template<>
+void FlexArray<u8>::Serialize(MemoryStreamInterface *pStream);
+template<>
+void FlexArray<s16>::Serialize(MemoryStreamInterface *pStream);
+template<>
+void FlexArray<u16>::Serialize(MemoryStreamInterface *pStream);
+template<>
+void FlexArray<s32>::Serialize(MemoryStreamInterface *pStream);
+template<>
+void FlexArray<u32>::Serialize(MemoryStreamInterface *pStream);
+template<>
+void FlexArray<std::string>::Serialize(MemoryStreamInterface *pStream);
+template<>
+void FlexArray<float>::Serialize(MemoryStreamInterface *pStream);
 
 template<typename T>
 void FlexArray<T>::Serialize(MemoryStreamInterface *pStream)
