@@ -4,15 +4,27 @@
 #include "Master/MasterData.h"
 
 // コンストラクタ
-SkillTree::SkillTree(uint8 Job)
+SkillTree::SkillTree()
 	: pRootNode(nullptr)
 {
+}
+
+// デストラクタ
+SkillTree::~SkillTree()
+{
+	delete pRootNode;
+	pRootNode = nullptr;
+}
+
+// 初期化.
+void SkillTree::Initialize(uint8 Job)
+{
 	TArray<SkillTreeItem> Items = MasterData::GetInstance().GetSkillTreeMaster().GetAll();
-	TMap<uint32, SkillTreeNode *> NodeMap;
+	TMap<uint32, Node *> NodeMap;
 	for (const auto &Item : Items)
 	{
 		if (Item.Job != Job) { continue; }
-		SkillTreeNode *pNode = new SkillTreeNode(Item.ID, Item.SkillId, Item.Cost, Item.NeedLevel, Item.ParentNode);
+		Node *pNode = new Node(Item.ID, Item.SkillId, Item.Cost, Item.NeedLevel, Item.ParentNode);
 		NodeMap.Add(Item.ID, pNode);
 	}
 	for (auto KeyValue : NodeMap)
@@ -34,9 +46,27 @@ SkillTree::SkillTree(uint8 Job)
 	}
 }
 
-// デストラクタ
-SkillTree::~SkillTree()
+// 開く
+void SkillTree::Open(uint32 NodeId)
 {
-	delete pRootNode;
-	pRootNode = nullptr;
+	if (pRootNode == nullptr) { return; }
+	pRootNode->Open(NodeId);
+}
+
+
+// =============== SkillTree::Node ===================
+
+// 開く
+void SkillTree::Node::Open(uint32 OpenNodeId)
+{
+	if (NodeId == OpenNodeId)
+	{
+		bIsOpened = true;
+		return;
+	}
+
+	for (auto *pChild : Children)
+	{
+		pChild->Open(OpenNodeId);
+	}
 }
