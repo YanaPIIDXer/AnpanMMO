@@ -101,8 +101,8 @@ u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 	const SkillTreeItem *pItem = MasterData::GetInstance().GetSkillTreeMaster().GetItem(NodeId);
 
 	// 親ノードが開かれているかをチェック
-	bool bIsOpened = false;
-	if (!Tree.IsOpened(pItem->ParentNode, bIsOpened))
+	bool bIsOpened = true;
+	if (pItem->ParentNode != 0 && !Tree.IsOpened(pItem->ParentNode, bIsOpened))
 	{
 		return PacketSkillTreeOpenResult::Error;
 	}
