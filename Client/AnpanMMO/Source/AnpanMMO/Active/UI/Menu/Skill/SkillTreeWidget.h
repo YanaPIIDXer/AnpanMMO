@@ -70,6 +70,6 @@ protected:
 private:
 
 	// スキルツリーノード生成.
-	void GenerateSkillTreeNodeList(SkillTree::Node *pNode, int32 Depth, int32 ChildNo, int32 ChildCount, TArray<FSkillTreeNode> &OutNodeList);
+	void GenerateSkillTreeNodeList(SkillTree::Node *pNode, TArray<FSkillTreeNode> &OutNodeList);
 
 };
