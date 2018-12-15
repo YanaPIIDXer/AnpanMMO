@@ -83,6 +83,9 @@ public:
 	// スキルツリーのノードを開く。
 	void OpenSkillTreeNode(uint32 NodeId);
 
+	// スキルツリーを取得.
+	const SkillTree &GetSkillTree() const { return Tree; }
+
 private:
 
 	// Uuid

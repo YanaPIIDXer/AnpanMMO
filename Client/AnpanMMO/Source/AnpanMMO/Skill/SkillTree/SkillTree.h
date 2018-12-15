@@ -10,7 +10,7 @@
 class ANPANMMO_API SkillTree
 {
 
-private:		// 内部構造体の定義.
+public:		// 内部構造体の定義.
 
 	// ノード
 	struct Node
@@ -74,6 +74,9 @@ public:
 
 	// 開く
 	void Open(uint32 NodeId);
+
+	// ノードを取得.
+	Node *GetNode() const { return pRootNode; }
 
 private:
 
