@@ -22,6 +22,8 @@ public:
 	u32 SkillId;
 	u32 NeedLevel;
 	u32 Cost;
+	float NodeX;
+	float NodeY;
 	u32 ParentNode;
 
 
@@ -32,6 +34,8 @@ public:
 		if(!pStream->Serialize(&SkillId)) { return false; }
 		if(!pStream->Serialize(&NeedLevel)) { return false; }
 		if(!pStream->Serialize(&Cost)) { return false; }
+		if(!pStream->Serialize(&NodeX)) { return false; }
+		if(!pStream->Serialize(&NodeY)) { return false; }
 		if(!pStream->Serialize(&ParentNode)) { return false; }
 
 		return true;

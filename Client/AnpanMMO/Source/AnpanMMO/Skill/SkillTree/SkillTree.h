@@ -33,16 +33,20 @@ public:		// 内部構造体の定義.
 		// 開かれているか？
 		bool bIsOpened;
 
+		// ノードの座標.
+		FVector2D NodePosition;
+
 		// 子ノード群.
 		TArray<Node *> Children;
 
 
 		// コンストラクタ
-		Node(uint32 InNodeId, uint32 InSkillId, uint32 InCost, uint32 InNeedLevel, uint32 InParentNodeId)
+		Node(uint32 InNodeId, uint32 InSkillId, uint32 InCost, uint32 InNeedLevel, float NodeX, float NodeY, uint32 InParentNodeId)
 			: NodeId(InNodeId)
 			, SkillId(InSkillId)
 			, Cost(InCost)
 			, NeedLevel(InNeedLevel)
+			, NodePosition(NodeX, NodeY)
 			, ParentNodeId(InParentNodeId)
 			, bIsOpened(false) {}
 

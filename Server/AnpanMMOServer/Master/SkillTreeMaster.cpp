@@ -13,6 +13,8 @@ bool SkillTreeMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.SkillId);
 	Query.BindResultInt(&BindItem.NeedLevel);
 	Query.BindResultInt(&BindItem.Cost);
+	Query.BindResultFloat(&BindItem.NodeX);
+	Query.BindResultFloat(&BindItem.NodeY);
 	Query.BindResultInt(&BindItem.ParentNode);
 
 	if (!Query.ExecuteQuery()) { return false; }
@@ -24,6 +26,8 @@ bool SkillTreeMaster::Load(const MySqlConnection &Connection)
 		Item.SkillId = BindItem.SkillId;
 		Item.NeedLevel = BindItem.NeedLevel;
 		Item.Cost = BindItem.Cost;
+		Item.NodeX = BindItem.NodeX;
+		Item.NodeY = BindItem.NodeY;
 		Item.ParentNode = BindItem.ParentNode;
 
 		Items[Item.ID] = Item;

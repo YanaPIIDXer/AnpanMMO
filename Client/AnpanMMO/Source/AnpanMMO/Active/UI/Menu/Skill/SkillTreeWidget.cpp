@@ -36,8 +36,7 @@ void USkillTreeWidget::GenerateSkillTreeNodeList(SkillTree::Node *pNode, int32 D
 	Data.SkillId = pNode->SkillId;
 	Data.NeedLevel = pNode->NeedLevel;
 	Data.bIsOpened = pNode->bIsOpened;
-	Data.Position.X = (ChildCount / (ChildNo + 1)) * 200.0f + 300.0f;
-	Data.Position.Y = Depth * 250.0f;
+	Data.Position = pNode->NodePosition;
 	OutNodeList.Add(Data);
 
 	for(int32 i = 0; i < pNode->Children.Num(); i++)

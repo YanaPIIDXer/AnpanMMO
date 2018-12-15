@@ -24,7 +24,7 @@ void SkillTree::Initialize(uint8 Job)
 	for (const auto &Item : Items)
 	{
 		if (Item.Job != Job) { continue; }
-		Node *pNode = new Node(Item.ID, Item.SkillId, Item.Cost, Item.NeedLevel, Item.ParentNode);
+		Node *pNode = new Node(Item.ID, Item.SkillId, Item.Cost, Item.NeedLevel, Item.NodeX, Item.NodeY, Item.ParentNode);
 		NodeMap.Add(Item.ID, pNode);
 	}
 	for (auto KeyValue : NodeMap)
