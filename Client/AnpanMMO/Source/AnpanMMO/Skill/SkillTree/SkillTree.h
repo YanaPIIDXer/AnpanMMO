@@ -20,16 +20,28 @@ struct SkillTreeNode
 	uint32 NeedLevel;
 
 	// 親ノードＩＤ
-	uint32 ParentId;
+	uint32 ParentNodeId;
+
+	// 子ノード群.
+	TArray<SkillTreeNode *> Children;
 
 
 	// コンストラクタ
-	SkillTreeNode(uint32 InNodeId, uint32 InSkillId, uint32 InCost, uint32 InNeedLevel, uint32 InParentId)
+	SkillTreeNode(uint32 InNodeId, uint32 InSkillId, uint32 InCost, uint32 InNeedLevel, uint32 InParentNodeId)
 		: NodeId(InNodeId)
 		, SkillId(InSkillId)
 		, Cost(InCost)
 		, NeedLevel(InNeedLevel)
-		, ParentId(InParentId) {}
+		, ParentNodeId(InParentNodeId) {}
+
+	// デストラクタ
+	~SkillTreeNode()
+	{
+		for (auto *pChild : Children)
+		{
+			delete pChild;
+		}
+	}
 
 };
 
@@ -45,11 +57,11 @@ public:
 	SkillTree(uint8 Job);
 
 	// デストラクタ
-	~SkillTree() {}
+	~SkillTree();
 
 private:
 
-	// ノードリスト
-	TMap<uint32, SkillTreeNode> Nodes;
+	// ルートノード
+	SkillTreeNode *pRootNode;
 
 };
