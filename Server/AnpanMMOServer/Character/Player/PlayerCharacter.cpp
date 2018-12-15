@@ -2,11 +2,12 @@
 #include "PlayerCharacter.h"
 #include "Client.h"
 #include "Math/Random.h"
-#include "Packet/PacketLevelUp.h"
 #include "Area/AreaManager.h"
+#include "Master/MasterData.h"
 #include "CacheServer/CacheServerConnection.h"
 #include "Packet/CachePacketCharacterDataSave.h"
 #include "Packet/CachePacketGoldSave.h"
+#include "Packet/PacketLevelUp.h"
 #include "Packet/PacketSkillCastFinish.h"
 #include "Packet/CharacterType.h"
 #include "Packet/PacketSkillActivate.h"
@@ -97,8 +98,20 @@ void PlayerCharacter::InitializeSkillTree(const FlexArray<u32> &OpenedNodes)
 // スキルツリーオープン
 u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 {
-	// 既に開かれているかをチェック
+	const SkillTreeItem *pItem = MasterData::GetInstance().GetSkillTreeMaster().GetItem(NodeId);
+
+	// 親ノードが開かれているかをチェック
 	bool bIsOpened = false;
+	if (!Tree.IsOpened(pItem->ParentNode, bIsOpened))
+	{
+		return PacketSkillTreeOpenResult::Error;
+	}
+	if (!bIsOpened)
+	{
+		return PacketSkillTreeOpenResult::NotOpenedParent;
+	}
+
+	// 既に開かれているかどうかをチェック
 	if (!Tree.IsOpened(NodeId, bIsOpened))
 	{
 		return PacketSkillTreeOpenResult::Error;
@@ -108,13 +121,14 @@ u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 		return PacketSkillTreeOpenResult::AlreadyOpened;
 	}
 
-	// コストチェック
-	u32 Cost = 0;
-	if (!Tree.GetCost(NodeId, Cost))
+	// レベルチェック
+	if (GetParameter().Level < pItem->NeedLevel)
 	{
-		return PacketSkillTreeOpenResult::Error;
+		return PacketSkillTreeOpenResult::NotEnoughLevel;
 	}
-	if (Gold < Cost)
+
+	// コストチェック
+	if (Gold < pItem->Cost)
 	{
 		// コストが足りない。
 		return PacketSkillTreeOpenResult::NotEnoughCost;
@@ -127,7 +141,7 @@ u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 	}
 
 	// コスト消費.
-	SubtractGold(Cost);
+	SubtractGold(pItem->Cost);
 
 	return PacketSkillTreeOpenResult::Success;
 }
