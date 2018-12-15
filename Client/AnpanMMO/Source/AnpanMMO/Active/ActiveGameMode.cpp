@@ -38,6 +38,7 @@
 #include "Packet/PacketInstanceAreaTicketDiscard.h"
 #include "Packet/PacketSpawnInstanceAreaExitPoint.h"
 #include "Packet/PacketChangeGold.h"
+#include "Packet/PacketSkillTreeOpenResult.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -88,6 +89,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::Time, std::bind(&TimeManager::OnRecvTime, &TimeMgr, _1));
 	AddPacketFunction(PacketID::TimeChange, std::bind(&TimeManager::OnRecvTimeChange, &TimeMgr, _1));
 	AddPacketFunction(PacketID::ChangeGold, std::bind(&AActiveGameMode::OnRecvChangeGold, this, _1));
+	AddPacketFunction(PacketID::SkillTreeOpenResult, std::bind(&AActiveGameMode::OnRecvSkillTreeOpenResult, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -517,4 +519,48 @@ void AActiveGameMode::OnRecvChangeGold(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 
 	pCharacter->SetGold(Packet.Gold);
+}
+
+// スキルツリー開放結果を受信した。
+void AActiveGameMode::OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream)
+{
+	PacketSkillTreeOpenResult Packet;
+	Packet.Serialize(pStream);
+
+	FString ErrorMsg = "Error...";
+	switch (Packet.Result)
+	{
+		case PacketSkillTreeOpenResult::AlreadyOpened:
+
+			ErrorMsg = "Already Opened...";
+			break;
+
+		case PacketSkillTreeOpenResult::NotEnoughCost:
+
+			ErrorMsg = "Not Enogth Cost...";
+			break;
+
+		case PacketSkillTreeOpenResult::NotEnoughLevel:
+
+			ErrorMsg = "Not Enogth Level...";
+			break;
+
+		case PacketSkillTreeOpenResult::NotOpenedParent:
+
+			ErrorMsg = "Not Opened Parent...";
+			break;
+	}
+
+	if (Packet.Result != PacketSkillTreeOpenResult::Success)
+	{
+		USimpleDialog::Show(this, ErrorMsg, 100);
+		return;
+	}
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->OpenSkillTreeNode(Packet.NodeId);
+
+	USimpleDialog::Show(this, "Node Open!", 100);
 }

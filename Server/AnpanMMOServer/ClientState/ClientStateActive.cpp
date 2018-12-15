@@ -472,7 +472,7 @@ void ClientStateActive::OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStrea
 
 	u8 Result = GetParent()->GetCharacter().lock()->OpenSkillTree(Packet.NodeId);
 
-	PacketSkillTreeOpenResult ResultPacket(Result);
+	PacketSkillTreeOpenResult ResultPacket(Result, Packet.NodeId);
 	GetParent()->SendPacket(&ResultPacket);
 
 	if (Result == PacketSkillTreeOpenResult::Success)

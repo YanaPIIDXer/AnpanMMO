@@ -7,9 +7,11 @@
 #include "Connection/GameServerConnection.h"
 #include "Character/Player/PlayerStatus.h"
 #include "Script/ScriptExecuter.h"
+#include "FlexArray.h"
 #include "MMOGameInstance.generated.h"
 
 class PacketBase;
+class SkillTreeNode;
 
 /**
  * GameInstance
@@ -50,6 +52,9 @@ public:
 
 	// スキルリストを受信した。
 	void OnRecvSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
+
+	// スキルツリーデータを受信した。
+	void OnRecvSkillTreeData(const FlexArray<SkillTreeNode> &Nodes);
 
 	// ステータスキャッシュ取得.
 	const PlayerStatus &GetStatusCache() const { return StatusCache; }

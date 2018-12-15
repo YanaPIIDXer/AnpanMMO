@@ -36,14 +36,14 @@ void AMMOGameModeBase::AddPacketFunction(uint8 ID, const PacketFunc &Func)
 // パケットを受信した。
 void AMMOGameModeBase::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
-	if(pCurrentMenu != nullptr)
-	{
-		pCurrentMenu->OnRecvPacket(ID);
-	}
-
 	auto It = PacketFunctions.find(ID);
 	if (It != PacketFunctions.end())
 	{
 		It->second(pStream);
+	}
+
+	if (pCurrentMenu != nullptr)
+	{
+		pCurrentMenu->OnRecvPacket(ID);
 	}
 }

@@ -15,6 +15,7 @@
 #include "Packet/PacketCreateCharacterResult.h"
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketSkillList.h"
+#include "Packet/PacketSkillTreeData.h"
 #include "Packet/PacketScriptFlag.h"
 
 // コンストラクタ
@@ -27,6 +28,7 @@ ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::CreateCharacterResult, std::bind(&ATitleGameMode::OnRecvCreateCharacterResult, this, _1));
 	AddPacketFunction(PacketID::CharacterStatus, std::bind(&ATitleGameMode::OnRecvCharacterStatus, this, _1));
 	AddPacketFunction(PacketID::SkillList, std::bind(&ATitleGameMode::OnRecvSkillList, this, _1));
+	AddPacketFunction(PacketID::SkillTreeData, std::bind(&ATitleGameMode::OnRecvSkillTreeData, this, _1));
 	AddPacketFunction(PacketID::ScriptFlag, std::bind(&ATitleGameMode::OnRecvScriptFlag, this, _1));
 }
 
@@ -158,6 +160,18 @@ void ATitleGameMode::OnRecvSkillList(MemoryStreamInterface *pStream)
 	check(pInst != nullptr);
 
 	pInst->OnRecvSkillList(Packet.NormalAttack, Packet.Skill1, Packet.Skill2, Packet.Skill3, Packet.Skill4);
+}
+
+// スキルツリーデータを受信した。
+void ATitleGameMode::OnRecvSkillTreeData(MemoryStreamInterface *pStream)
+{
+	PacketSkillTreeData Packet;
+	Packet.Serialize(pStream);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->OnRecvSkillTreeData(Packet.Nodes);
 }
 
 // スクリプトフラグを受信した。

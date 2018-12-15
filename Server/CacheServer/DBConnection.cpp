@@ -133,7 +133,7 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 // キャラクタパラメータ読み込み
 bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold)
 {
-	MySqlQuery Query = Connection.CreateQuery("select CharacterId, Name, Job, Level, MaxHp, Atk, Def, Exp Gold from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select CharacterId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold from CharacterData where CustomerId = ?");
 	Query.BindInt(&Id);
 
 	char NameStr[256];

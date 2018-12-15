@@ -25,6 +25,9 @@ public:
 	u32 SkillId;
 	u32 NeedLevel;
 	u32 Cost;
+	float NodeX;
+	float NodeY;
+	u32 ParentNode;
 
 
 };

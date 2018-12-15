@@ -193,4 +193,7 @@ private:
 	// ゴールド変化を受信した。
 	void OnRecvChangeGold(MemoryStreamInterface *pStream);
 
+	// スキルツリー開放結果を受信した。
+	void OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream);
+
 };

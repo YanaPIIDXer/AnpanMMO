@@ -3,6 +3,7 @@
 #include "MMOGameInstance.h"
 #include "DLC/PakFileManager.h"
 #include "Config.h"
+#include "Packet/SkillTreeNode.h"
 
 // コンストラクタ
 UMMOGameInstance::UMMOGameInstance(const FObjectInitializer &ObjectInitializer)
@@ -77,6 +78,18 @@ void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, ui
 void UMMOGameInstance::OnRecvSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4)
 {
 	StatusCache.SetSkillList(NormalAttack, Skill1, Skill2, Skill3, Skill4);
+}
+
+// スキルツリーデータを受信した。
+void UMMOGameInstance::OnRecvSkillTreeData(const FlexArray<SkillTreeNode> &Nodes)
+{
+	for (int i = 0; i < Nodes.GetCurrentSize(); i++)
+	{
+		if (Nodes[i].State == SkillTreeNode::Open)
+		{
+			StatusCache.OpenSkillTreeNode(Nodes[i].NodeId);
+		}
+	}
 }
 
 

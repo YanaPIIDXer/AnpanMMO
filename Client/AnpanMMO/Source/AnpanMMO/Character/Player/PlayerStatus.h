@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Skill/SkillTree/SkillTree.h"
 
 /**
  * プレイヤーステータス
@@ -43,7 +44,11 @@ public:
 	uint32 GetUuid() const { return Uuid; }
 
 	// ジョブをセット
-	void SetJob(uint8 InJob) { Job = InJob; }
+	void SetJob(uint8 InJob)
+	{
+		Job = InJob;
+		Tree.Initialize(Job);
+	}
 
 	// ジョブを取得.
 	u8 GetJob() const { return Job; }
@@ -74,6 +79,12 @@ public:
 
 	// スキルリストを取得.
 	const TArray<uint32> &GetSkillList() const { return SkillList; }
+
+	// スキルツリーのノードを開く。
+	void OpenSkillTreeNode(uint32 NodeId);
+
+	// スキルツリーを取得.
+	const SkillTree &GetSkillTree() const { return Tree; }
 
 private:
 
@@ -106,5 +117,8 @@ private:
 
 	// スキルリスト
 	TArray<uint32> SkillList;
+
+	// スキルツリー
+	SkillTree Tree;
 
 };

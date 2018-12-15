@@ -86,6 +86,13 @@ public:
 	// ゴールドをセット
 	void SetGold(uint32 Gold) { Status.SetGold(Gold); }
 
+	// スキルツリーノードを開放.
+	void OpenSkillTreeNode(uint32 NodeId);
+
+	// レベルを取得.
+	UFUNCTION(BlueprintPure, Category = "Status")
+	int32 GetLevel() const { return Status.GetLevel(); }
+
 protected:
 
 	// レベルアップした

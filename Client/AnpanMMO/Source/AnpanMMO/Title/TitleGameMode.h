@@ -66,6 +66,9 @@ private:
 	// スキルリストを受信した。
 	void OnRecvSkillList(MemoryStreamInterface *pStream);
 
+	// スキルツリーデータを受信した。
+	void OnRecvSkillTreeData(MemoryStreamInterface *pStream);
+
 	// スクリプトフラグを受信した。
 	void OnRecvScriptFlag(MemoryStreamInterface *pStream);
 

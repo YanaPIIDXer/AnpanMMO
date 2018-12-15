@@ -25,3 +25,9 @@ void PlayerStatus::SetSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill
 	SkillList.Add(Skill3);
 	SkillList.Add(Skill4);
 }
+
+// スキルツリーのノードを開く。
+void PlayerStatus::OpenSkillTreeNode(uint32 NodeId)
+{
+	Tree.Open(NodeId);
+}
