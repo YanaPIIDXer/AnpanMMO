@@ -74,10 +74,14 @@ protected:
 	UFUNCTION(BlueprintNativeEvent, Category = "SkillTree")
 	void InitEvent(const TArray<FSkillTreeNode> &NodeList);
 	void InitEvent_Implementation(const TArray<FSkillTreeNode> &NodeList) {}
+	
+	// 開放リクエスト送信.
+	UFUNCTION(BlueprintCallable, Category = "SkillTree")
+	void SendOpenRequest(const FSkillTreeNode &Item);
 
 private:
 
-	// スキルツリーノード生成.
+	// スキルツリーノードリスト生成.
 	void GenerateSkillTreeNodeList(SkillTree::Node *pNode, SkillTree::Node *pParentNode, TArray<FSkillTreeNode> &OutNodeList);
 
 };

@@ -23,8 +23,14 @@ public:
 	// デストラクタ
 	virtual ~USkillMenu() {}
 
+	// パケットを受信した。
+	virtual void OnRecvPacket(uint8 ID) override;
+
 protected:
 
-private:
-	
+	// メニューの再初期化.
+	UFUNCTION(BlueprintNativeEvent, Category = "SkillMenu")
+	void RefleshMenu();
+	void RefleshMenu_Implementation() {}
+
 };

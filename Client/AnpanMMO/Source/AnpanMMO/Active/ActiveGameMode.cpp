@@ -553,7 +553,7 @@ void AActiveGameMode::OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream)
 
 	if (Packet.Result != PacketSkillTreeOpenResult::Success)
 	{
-		USimpleDialog::Show(this, ErrorMsg);
+		USimpleDialog::Show(this, ErrorMsg, 100);
 		return;
 	}
 
@@ -561,4 +561,6 @@ void AActiveGameMode::OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 
 	pCharacter->OpenSkillTreeNode(Packet.NodeId);
+
+	USimpleDialog::Show(this, "Node Open!", 100);
 }

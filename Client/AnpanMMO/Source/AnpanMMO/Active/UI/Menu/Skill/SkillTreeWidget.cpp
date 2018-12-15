@@ -3,6 +3,8 @@
 #include "SkillTreeWidget.h"
 #include "Kismet/GameplayStatics.h"
 #include "Character/Player/GameCharacter.h"
+#include "MMOGameInstance.h"
+#include "Packet/PacketSkillTreeOpenRequest.h"
 
 // コンストラクタ
 USkillTreeWidget::USkillTreeWidget(const FObjectInitializer &ObjectInitializer)
@@ -28,7 +30,18 @@ void USkillTreeWidget::Init()
 }
 
 
-// スキルツリーノード生成.
+// 開放リクエスト送信.
+void USkillTreeWidget::SendOpenRequest(const FSkillTreeNode &Item)
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketSkillTreeOpenRequest Packet(Item.NodeId);
+	pInst->SendPacket(&Packet);
+}
+
+
+// スキルツリーノードリスト生成.
 void USkillTreeWidget::GenerateSkillTreeNodeList(SkillTree::Node *pNode, SkillTree::Node *pParentNode, TArray<FSkillTreeNode> &OutNodeList)
 {
 	FSkillTreeNode Data;
