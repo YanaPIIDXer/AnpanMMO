@@ -29,7 +29,7 @@ void SkillTree::Initialize(uint8 Job)
 	}
 	for (auto KeyValue : NodeMap)
 	{
-		if (KeyValue.Key == 0)
+		if (KeyValue.Value->ParentNodeId == 0)
 		{
 			delete pRootNode;
 			pRootNode = KeyValue.Value;

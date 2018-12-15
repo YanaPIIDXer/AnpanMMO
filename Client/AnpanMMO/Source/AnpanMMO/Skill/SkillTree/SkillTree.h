@@ -53,6 +53,7 @@ public:		// “à•”\‘¢‘Ì‚Ì’è‹`.
 			{
 				delete pChild;
 			}
+			Children.Empty();
 		}
 
 		// ŠJ‚­

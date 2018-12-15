@@ -18,8 +18,12 @@ void USkillTreeWidget::Init()
 
 	SkillTree::Node *pRootNode = pChara->GetStatus().GetSkillTree().GetNode();
 	TArray<FSkillTreeNode> NodeList;
-	GenerateSkillTreeNodeList(pRootNode, 0, 0, 1, NodeList);
 
+	if (pRootNode != nullptr)
+	{
+		GenerateSkillTreeNodeList(pRootNode, 0, 0, 1, NodeList);
+	}
+	
 	InitEvent(NodeList);
 }
 
@@ -32,8 +36,8 @@ void USkillTreeWidget::GenerateSkillTreeNodeList(SkillTree::Node *pNode, int32 D
 	Data.SkillId = pNode->SkillId;
 	Data.NeedLevel = pNode->NeedLevel;
 	Data.bIsOpened = pNode->bIsOpened;
-	Data.Position.X = (ChildCount / ChildNo) * 200.0f;
-	Data.Position.Y = Depth * 100.0f;
+	Data.Position.X = (ChildCount / (ChildNo + 1)) * 200.0f + 300.0f;
+	Data.Position.Y = Depth * 250.0f;
 	OutNodeList.Add(Data);
 
 	for(int32 i = 0; i < pNode->Children.Num(); i++)
