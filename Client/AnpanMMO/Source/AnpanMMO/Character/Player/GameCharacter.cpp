@@ -187,6 +187,12 @@ void AGameCharacter::OnSkillCancel()
 	Skill.OnCancel();
 }
 
+// スキルツリーノードを開放.
+void AGameCharacter::OpenSkillTreeNode(uint32 NodeId)
+{
+	Status.OpenSkillTreeNode(NodeId);
+}
+
 
 // リスポンした。
 void AGameCharacter::OnRespawn()

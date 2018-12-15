@@ -22,21 +22,24 @@ public:
 	};
 
 	u8 Result;
+	u32 NodeId;
 	
 
 	PacketSkillTreeOpenResult()
 	{
 	}
 
-	PacketSkillTreeOpenResult(u8 InResult)
+	PacketSkillTreeOpenResult(u8 InResult, u32 InNodeId)
 	{
 		Result = InResult;
+		NodeId = InNodeId;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&Result);
+		pStream->Serialize(&NodeId);
 		
 		return true;
 	}

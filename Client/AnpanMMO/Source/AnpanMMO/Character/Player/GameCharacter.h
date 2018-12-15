@@ -86,6 +86,9 @@ public:
 	// ゴールドをセット
 	void SetGold(uint32 Gold) { Status.SetGold(Gold); }
 
+	// スキルツリーノードを開放.
+	void OpenSkillTreeNode(uint32 NodeId);
+
 protected:
 
 	// レベルアップした
