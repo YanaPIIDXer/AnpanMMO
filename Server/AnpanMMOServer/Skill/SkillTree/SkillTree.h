@@ -32,7 +32,7 @@ private:		// 別名定義.
 public:
 
 	// コンストラクタ
-	SkillTree(PlayerCharacter *pInCharacter);
+	SkillTree(u8 Job);
 
 	// デストラクタ
 	~SkillTree() {}
@@ -47,9 +47,6 @@ public:
 	void GenerateNodeDataList(FlexArray<SkillTreeNode> &OutDataList) const;
 
 private:
-
-	// キャラクタ
-	PlayerCharacter *pCharacter;
 
 	// ノードマップ
 	NodeMap Nodes;

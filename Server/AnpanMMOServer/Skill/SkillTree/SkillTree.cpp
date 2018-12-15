@@ -1,17 +1,15 @@
 #include "stdafx.h"
 #include "SkillTree.h"
-#include "Character/Player/PlayerCharacter.h"
 #include "Master/MasterData.h"
 #include "Packet/SkillTreeNode.h"
 
 // コンストラクタ
-SkillTree::SkillTree(PlayerCharacter *pInCharacter)
-	: pCharacter(pInCharacter)
+SkillTree::SkillTree(u8 Job)
 {
 	std::vector<SkillTreeItem> Items = MasterData::GetInstance().GetSkillTreeMaster().GetAll();
 	for (u32 i = 0; i < Items.size(); i++)
 	{
-		if (Items[i].Job != pCharacter->GetJob()) { continue; }
+		if (Items[i].Job != Job) { continue; }
 		Node Nd;
 		Nd.Cost = Items[i].Cost;
 		Nd.bIsOpened = false;
