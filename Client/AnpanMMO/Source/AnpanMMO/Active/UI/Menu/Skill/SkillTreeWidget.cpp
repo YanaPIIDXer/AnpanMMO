@@ -21,7 +21,7 @@ void USkillTreeWidget::Init()
 
 	if (pRootNode != nullptr)
 	{
-		GenerateSkillTreeNodeList(pRootNode, NodeList);
+		GenerateSkillTreeNodeList(pRootNode, nullptr, NodeList);
 	}
 	
 	InitEvent(NodeList);
@@ -29,18 +29,20 @@ void USkillTreeWidget::Init()
 
 
 // スキルツリーノード生成.
-void USkillTreeWidget::GenerateSkillTreeNodeList(SkillTree::Node *pNode, TArray<FSkillTreeNode> &OutNodeList)
+void USkillTreeWidget::GenerateSkillTreeNodeList(SkillTree::Node *pNode, SkillTree::Node *pParentNode, TArray<FSkillTreeNode> &OutNodeList)
 {
 	FSkillTreeNode Data;
 	Data.NodeId = pNode->NodeId;
 	Data.SkillId = pNode->SkillId;
 	Data.NeedLevel = pNode->NeedLevel;
+	Data.Cost = pNode->Cost;
 	Data.bIsOpened = pNode->bIsOpened;
+	Data.bIsParentOpened = (pParentNode != nullptr ? pParentNode->bIsOpened : true);
 	Data.Position = pNode->NodePosition;
 	OutNodeList.Add(Data);
 
 	for(auto *pChild : pNode->Children)
 	{
-		GenerateSkillTreeNodeList(pChild, OutNodeList);
+		GenerateSkillTreeNodeList(pChild, pNode, OutNodeList);
 	}
 }

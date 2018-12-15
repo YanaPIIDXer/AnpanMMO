@@ -29,9 +29,17 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	int32 NeedLevel;
 
+	// コスト
+	UPROPERTY(BlueprintReadOnly)
+	int32 Cost;
+
 	// 開いているか？
 	UPROPERTY(BlueprintReadOnly)
 	bool bIsOpened;
+
+	// 親ノードが開いているか？
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsParentOpened;
 
 	// 座標.
 	UPROPERTY(BlueprintReadOnly)
@@ -70,6 +78,6 @@ protected:
 private:
 
 	// スキルツリーノード生成.
-	void GenerateSkillTreeNodeList(SkillTree::Node *pNode, TArray<FSkillTreeNode> &OutNodeList);
+	void GenerateSkillTreeNodeList(SkillTree::Node *pNode, SkillTree::Node *pParentNode, TArray<FSkillTreeNode> &OutNodeList);
 
 };
