@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "SkillMenu.h"
+#include "Skill/SkillTree/SkillTree.h"
 #include "Blueprint/UserWidget.h"
 #include "SkillListWidget.generated.h"
 
@@ -32,7 +33,16 @@ protected:
 
 	// 初期化イベント
 	UFUNCTION(BlueprintNativeEvent, Category = "SkillList")
-	void InitEvent();
-	void InitEvent_Implementation() {}
+	void InitEvent(const TArray<FSkillTreeNode> &Nodes, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4);
+	void InitEvent_Implementation(const TArray<FSkillTreeNode> &Nodes, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4) {}
+
+	// スキルリスト保存リクエストを送信.
+	UFUNCTION(BlueprintCallable, Category = "SkillList")
+	void SendSaveSkillListRequest(int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4);
 	
+private:
+
+	// 開かれているノードを列挙.
+	void CollectOpenedNode(SkillTree::Node *pNode, TArray<FSkillTreeNode> &OutNodes);
+
 };

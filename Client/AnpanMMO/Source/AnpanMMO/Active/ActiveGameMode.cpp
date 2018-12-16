@@ -39,6 +39,7 @@
 #include "Packet/PacketSpawnInstanceAreaExitPoint.h"
 #include "Packet/PacketChangeGold.h"
 #include "Packet/PacketSkillTreeOpenResult.h"
+#include "Packet/PacketSaveSkillListResponse.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -90,6 +91,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::TimeChange, std::bind(&TimeManager::OnRecvTimeChange, &TimeMgr, _1));
 	AddPacketFunction(PacketID::ChangeGold, std::bind(&AActiveGameMode::OnRecvChangeGold, this, _1));
 	AddPacketFunction(PacketID::SkillTreeOpenResult, std::bind(&AActiveGameMode::OnRecvSkillTreeOpenResult, this, _1));
+	AddPacketFunction(PacketID::SaveSkillListResponse, std::bind(&AActiveGameMode::OnRecvSaveSkillListResponse, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -563,4 +565,26 @@ void AActiveGameMode::OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream)
 	pCharacter->OpenSkillTreeNode(Packet.NodeId);
 
 	USimpleDialog::Show(this, "Node Open!", 100);
+}
+
+// スキルリスト保存レスポンスを受信した。
+void AActiveGameMode::OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream)
+{
+	PacketSaveSkillListResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != PacketSaveSkillListResponse::Success)
+	{
+		USimpleDialog::Show(this, "Error...", 100);
+		return;
+	}
+
+	USimpleDialog::Show(this, "Saved!", 100);
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->OnRecvSkillList(Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
+
+	pMainHUD->OnRecvSkillList(pCharacter->GetStatus().GetSkillList()[0], Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 }
