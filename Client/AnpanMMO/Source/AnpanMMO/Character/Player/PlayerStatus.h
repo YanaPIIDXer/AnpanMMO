@@ -83,6 +83,9 @@ public:
 	// スキルツリーのノードを開く。
 	void OpenSkillTreeNode(uint32 NodeId);
 
+	// スキルツリーの再構築.
+	void RefleshSkillTree() { Tree.Reflesh(); }
+
 	// スキルツリーを取得.
 	const SkillTree &GetSkillTree() const { return Tree; }
 

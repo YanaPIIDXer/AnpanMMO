@@ -18,12 +18,12 @@ void USkillTreeWidget::Init()
 	AGameCharacter *pChara = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
 	check(pChara != nullptr);
 
-	SkillTree::Node *pRootNode = pChara->GetStatus().GetSkillTree().GetNode();
+	SkillTree::Node RootNode = pChara->GetStatus().GetSkillTree().GetRootNode();
 	TArray<FSkillTreeNode> NodeList;
 
-	if (pRootNode != nullptr)
+	if (RootNode.NodeId != 0)
 	{
-		GenerateSkillTreeNodeList(pRootNode, nullptr, NodeList);
+		GenerateSkillTreeNodeList(&RootNode, nullptr, NodeList);
 	}
 	
 	InitEvent(NodeList);
@@ -42,7 +42,7 @@ void USkillTreeWidget::SendOpenRequest(const FSkillTreeNode &Item)
 
 
 // スキルツリーノードリスト生成.
-void USkillTreeWidget::GenerateSkillTreeNodeList(SkillTree::Node *pNode, SkillTree::Node *pParentNode, TArray<FSkillTreeNode> &OutNodeList)
+void USkillTreeWidget::GenerateSkillTreeNodeList(const SkillTree::Node *pNode, const SkillTree::Node *pParentNode, TArray<FSkillTreeNode> &OutNodeList)
 {
 	FSkillTreeNode Data;
 	Data.NodeId = pNode->NodeId;
@@ -54,7 +54,7 @@ void USkillTreeWidget::GenerateSkillTreeNodeList(SkillTree::Node *pNode, SkillTr
 	Data.Position = pNode->NodePosition;
 	OutNodeList.Add(Data);
 
-	for(auto *pChild : pNode->Children)
+	for (const auto *pChild : pNode->Children)
 	{
 		GenerateSkillTreeNodeList(pChild, pNode, OutNodeList);
 	}

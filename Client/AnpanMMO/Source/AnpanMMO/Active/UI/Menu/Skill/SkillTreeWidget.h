@@ -43,6 +43,6 @@ protected:
 private:
 
 	// スキルツリーノードリスト生成.
-	void GenerateSkillTreeNodeList(SkillTree::Node *pNode, SkillTree::Node *pParentNode, TArray<FSkillTreeNode> &OutNodeList);
+	void GenerateSkillTreeNodeList(const SkillTree::Node *pNode, const SkillTree::Node *pParentNode, TArray<FSkillTreeNode> &OutNodeList);
 
 };
