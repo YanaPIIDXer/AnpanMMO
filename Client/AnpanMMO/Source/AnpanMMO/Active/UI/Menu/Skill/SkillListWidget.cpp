@@ -26,7 +26,7 @@ void USkillListWidget::Init()
 	}
 
 	const TArray<uint32> &SkillList = pChara->GetStatus().GetSkillList();
-
+	
 	InitEvent(Nodes, SkillList[1], SkillList[2], SkillList[3], SkillList[4]);
 }
 

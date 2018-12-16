@@ -54,7 +54,7 @@ void USkillTreeWidget::GenerateSkillTreeNodeList(const SkillTree::Node *pNode, c
 	Data.Position = pNode->NodePosition;
 	OutNodeList.Add(Data);
 
-	for (const auto *pChild: pNode->Children)
+	for (const auto *pChild : pNode->Children)
 	{
 		GenerateSkillTreeNodeList(pChild, pNode, OutNodeList);
 	}

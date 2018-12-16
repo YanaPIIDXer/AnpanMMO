@@ -26,12 +26,12 @@ void SkillTree::Initialize(uint8 Job)
 // ÉmÅ[ÉhÇÃçƒç\íz.
 void SkillTree::Reflesh()
 {
-	for (auto KeyValue : NodeMap)
+	for (auto &KeyValue : NodeMap)
 	{
-		KeyValue.Value.Children.Empty();
+		KeyValue.Value.Children.RemoveAt(0, KeyValue.Value.Children.Num());
 	}
 
-	for(auto KeyValue : NodeMap)
+	for(auto &KeyValue : NodeMap)
 	{
 		if (KeyValue.Value.ParentNodeId == 0)
 		{
