@@ -9,7 +9,7 @@
 class PacketSaveSkillListResponse  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return SaveSkillListResponse; }
+	virtual u8 GetPacketID() const { return PacketID::SaveSkillListResponse; }
 
 	enum ResultCode
 	{

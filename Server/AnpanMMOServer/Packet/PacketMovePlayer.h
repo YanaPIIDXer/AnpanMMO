@@ -9,7 +9,7 @@
 class PacketMovePlayer  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return MovePlayer; }
+	virtual u8 GetPacketID() const { return PacketID::MovePlayer; }
 
 	
 

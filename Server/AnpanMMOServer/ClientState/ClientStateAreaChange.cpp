@@ -15,8 +15,8 @@ ClientStateAreaChange::ClientStateAreaChange(Client *pInParent, u32 InAreaId, co
 	, AreaId(InAreaId)
 	, Position(InPosition)
 {
-	AddPacketFunction(Ping, boost::bind(&ClientStateAreaChange::OnRecvPing, this, _2));
-	AddPacketFunction(GameReady, boost::bind(&ClientStateAreaChange::OnRecvGameReady, this, _2));
+	AddPacketFunction(PacketID::Ping, boost::bind(&ClientStateAreaChange::OnRecvPing, this, _2));
+	AddPacketFunction(PacketID::GameReady, boost::bind(&ClientStateAreaChange::OnRecvGameReady, this, _2));
 }
 
 

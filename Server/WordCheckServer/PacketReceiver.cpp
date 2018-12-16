@@ -9,7 +9,7 @@
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	: pParent(pInParent)
 {
-	AddPacketFunc(WordCheckChatRequest, boost::bind(&PacketReceiver::OnRecvChatWordCheckRequest, this, _1));
+	AddPacketFunc(PacketID::WordCheckChatRequest, boost::bind(&PacketReceiver::OnRecvChatWordCheckRequest, this, _1));
 }
 
 

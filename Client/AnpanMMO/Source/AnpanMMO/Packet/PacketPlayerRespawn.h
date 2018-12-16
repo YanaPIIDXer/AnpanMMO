@@ -9,7 +9,7 @@
 class PacketPlayerRespawn  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PlayerRespawn; }
+	virtual u8 GetPacketID() const { return PacketID::PlayerRespawn; }
 
 	
 

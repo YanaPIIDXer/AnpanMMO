@@ -51,7 +51,7 @@ namespace NativePacketGenerator
 				{
 					if(!Class.IsPureClass)
 					{
-						IDs += Class.PacketID + ",\n\t";
+						IDs += Class.PacketID + ",\n\t\t";
 					}
 				}
 				Result = Result.Replace("$PACKET_ID_LIST$", IDs);

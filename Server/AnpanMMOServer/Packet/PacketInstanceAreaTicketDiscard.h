@@ -9,7 +9,7 @@
 class PacketInstanceAreaTicketDiscard  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return InstanceAreaTicketDiscard; }
+	virtual u8 GetPacketID() const { return PacketID::InstanceAreaTicketDiscard; }
 
 	
 

@@ -9,7 +9,7 @@
 class PacketExitPlayer  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return ExitPlayer; }
+	virtual u8 GetPacketID() const { return PacketID::ExitPlayer; }
 
 	
 

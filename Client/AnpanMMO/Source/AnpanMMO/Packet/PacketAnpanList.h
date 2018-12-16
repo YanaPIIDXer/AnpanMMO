@@ -11,7 +11,7 @@
 class PacketAnpanList  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return AnpanList; }
+	virtual u8 GetPacketID() const { return PacketID::AnpanList; }
 
 	
 

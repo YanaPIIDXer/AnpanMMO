@@ -11,7 +11,7 @@
 class PacketSkillTreeData  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return SkillTreeData; }
+	virtual u8 GetPacketID() const { return PacketID::SkillTreeData; }
 
 	
 

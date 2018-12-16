@@ -9,7 +9,7 @@
 class PacketCreateCharacterRequest  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return CreateCharacterRequest; }
+	virtual u8 GetPacketID() const { return PacketID::CreateCharacterRequest; }
 
 	
 

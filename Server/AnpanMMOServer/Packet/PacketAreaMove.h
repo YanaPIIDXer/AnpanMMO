@@ -9,7 +9,7 @@
 class PacketAreaMove  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return AreaMove; }
+	virtual u8 GetPacketID() const { return PacketID::AreaMove; }
 
 	
 

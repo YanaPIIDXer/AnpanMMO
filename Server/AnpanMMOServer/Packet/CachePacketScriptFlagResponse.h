@@ -10,7 +10,7 @@
 class CachePacketScriptFlagResponse  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return CacheScriptFlagResponse; }
+	virtual u8 GetPacketID() const { return PacketID::CacheScriptFlagResponse; }
 
 	enum ResultCode
 	{

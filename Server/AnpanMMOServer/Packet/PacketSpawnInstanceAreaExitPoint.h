@@ -9,7 +9,7 @@
 class PacketSpawnInstanceAreaExitPoint  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return SpawnInstanceAreaExitPoint; }
+	virtual u8 GetPacketID() const { return PacketID::SpawnInstanceAreaExitPoint; }
 
 	
 

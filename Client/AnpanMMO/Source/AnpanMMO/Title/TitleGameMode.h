@@ -7,7 +7,7 @@
 #include <functional>
 #include "TitleGameMode.generated.h"
 
-enum PacketID;
+class PacketID;
 class MemoryStreamInterface;
 class UTitleScreenWidget;
 class UCharacterNameInputWidget;

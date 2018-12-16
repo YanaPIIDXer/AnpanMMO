@@ -56,25 +56,25 @@
 ClientStateActive::ClientStateActive(Client *pInParent)
 	: ClientStateBase(pInParent)
 {
-	AddPacketFunction(Ping, boost::bind(&ClientStateActive::OnRecvPing, this, _2));
-	AddPacketFunction(MovePlayer, boost::bind(&ClientStateActive::OnRecvMove, this, _2));
-	AddPacketFunction(SendChat, boost::bind(&ClientStateActive::OnRecvChat, this, _2));
-	AddPacketFunction(WordCheckChatResult, boost::bind(&ClientStateActive::OnRecvChatWordCheckResult, this, _2));
-	AddPacketFunction(AreaMoveRequest, boost::bind(&ClientStateActive::OnRecvAreaMoveRequest, this, _2));
-	AddPacketFunction(RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
-	AddPacketFunction(SkillUse, boost::bind(&ClientStateActive::OnRecvSkillUse, this, _2));
-	AddPacketFunction(PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
-	AddPacketFunction(PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
-	AddPacketFunction(PartyExitRequest, boost::bind(&ClientStateActive::OnRecvPartyExitRequest, this, _2));
-	AddPacketFunction(PartyKickRequest, boost::bind(&ClientStateActive::OnRecvPartyKickRequest, this, _2));
-	AddPacketFunction(PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
-	AddPacketFunction(PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
-	AddPacketFunction(InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
-	AddPacketFunction(NPCTalk, boost::bind(&ClientStateActive::OnRecvNPCTalk, this, _2));
-	AddPacketFunction(NPCTalkSelection, boost::bind(&ClientStateActive::OnRecvNPCTalkSelection, this, _2));
-	AddPacketFunction(SaveSkillListRequest, boost::bind(&ClientStateActive::OnRecvSaveSkillListRequest, this, _2));
-	AddPacketFunction(CacheSaveSkillListResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveSkillListResponse, this, _2));
-	AddPacketFunction(SkillTreeOpenRequest, boost::bind(&ClientStateActive::OnRecvSkillTreeOpenRequest, this, _2));
+	AddPacketFunction(PacketID::Ping, boost::bind(&ClientStateActive::OnRecvPing, this, _2));
+	AddPacketFunction(PacketID::MovePlayer, boost::bind(&ClientStateActive::OnRecvMove, this, _2));
+	AddPacketFunction(PacketID::SendChat, boost::bind(&ClientStateActive::OnRecvChat, this, _2));
+	AddPacketFunction(PacketID::WordCheckChatResult, boost::bind(&ClientStateActive::OnRecvChatWordCheckResult, this, _2));
+	AddPacketFunction(PacketID::AreaMoveRequest, boost::bind(&ClientStateActive::OnRecvAreaMoveRequest, this, _2));
+	AddPacketFunction(PacketID::RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
+	AddPacketFunction(PacketID::SkillUse, boost::bind(&ClientStateActive::OnRecvSkillUse, this, _2));
+	AddPacketFunction(PacketID::PartyCreateRequest, boost::bind(&ClientStateActive::OnRecvPartyCraeteRequest, this, _2));
+	AddPacketFunction(PacketID::PartyDissolutionRequest, boost::bind(&ClientStateActive::OnRecvPartyDissolutionRequest, this, _2));
+	AddPacketFunction(PacketID::PartyExitRequest, boost::bind(&ClientStateActive::OnRecvPartyExitRequest, this, _2));
+	AddPacketFunction(PacketID::PartyKickRequest, boost::bind(&ClientStateActive::OnRecvPartyKickRequest, this, _2));
+	AddPacketFunction(PacketID::PartyInviteRequest, boost::bind(&ClientStateActive::OnRecvPartyInviteRequest, this, _2));
+	AddPacketFunction(PacketID::PartyInviteResponse, boost::bind(&ClientStateActive::OnRecvPartyInviteResponse, this, _2));
+	AddPacketFunction(PacketID::InstanceAreaTicketProcess, boost::bind(&ClientStateActive::OnRecvInstanceAreaTicketProcess, this, _2));
+	AddPacketFunction(PacketID::NPCTalk, boost::bind(&ClientStateActive::OnRecvNPCTalk, this, _2));
+	AddPacketFunction(PacketID::NPCTalkSelection, boost::bind(&ClientStateActive::OnRecvNPCTalkSelection, this, _2));
+	AddPacketFunction(PacketID::SaveSkillListRequest, boost::bind(&ClientStateActive::OnRecvSaveSkillListRequest, this, _2));
+	AddPacketFunction(PacketID::CacheSaveSkillListResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveSkillListResponse, this, _2));
+	AddPacketFunction(PacketID::SkillTreeOpenRequest, boost::bind(&ClientStateActive::OnRecvSkillTreeOpenRequest, this, _2));
 }
 
 // StateäJénéûÇÃèàóù.
