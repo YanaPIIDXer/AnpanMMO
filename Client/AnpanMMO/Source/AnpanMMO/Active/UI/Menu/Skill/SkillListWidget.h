@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SkillMenu.h"
 #include "Blueprint/UserWidget.h"
 #include "SkillListWidget.generated.h"
 
