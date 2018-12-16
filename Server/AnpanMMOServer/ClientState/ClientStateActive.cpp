@@ -460,7 +460,7 @@ void ClientStateActive::OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *
 		Result = PacketSaveSkillListResponse::Error;
 	}
 
-	PacketSaveSkillListResponse ResponsePacket(Result);
+	PacketSaveSkillListResponse ResponsePacket(Result, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	GetParent()->SendPacket(&ResponsePacket);
 }
 

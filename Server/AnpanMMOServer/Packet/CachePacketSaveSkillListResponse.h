@@ -19,16 +19,24 @@ public:
 	};
 
 	u8 Result;
+	u32 SkillId1;
+	u32 SkillId2;
+	u32 SkillId3;
+	u32 SkillId4;
 	
 
 	CachePacketSaveSkillListResponse()
 	{
 	}
 
-	CachePacketSaveSkillListResponse(u32 InClientId, u8 InResult)
+	CachePacketSaveSkillListResponse(u32 InClientId, u8 InResult, u32 InSkillId1, u32 InSkillId2, u32 InSkillId3, u32 InSkillId4)
 	{
 		ClientId = InClientId;
 		Result = InResult;
+		SkillId1 = InSkillId1;
+		SkillId2 = InSkillId2;
+		SkillId3 = InSkillId3;
+		SkillId4 = InSkillId4;
 		
 	}
 
@@ -36,6 +44,10 @@ public:
 	{
 		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
+		pStream->Serialize(&SkillId1);
+		pStream->Serialize(&SkillId2);
+		pStream->Serialize(&SkillId3);
+		pStream->Serialize(&SkillId4);
 		
 		return true;
 	}
