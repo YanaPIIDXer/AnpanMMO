@@ -444,7 +444,106 @@ void ClientStateActive::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStrea
 	PacketSaveSkillListRequest Packet;
 	Packet.Serialize(pStream);
 
-	CachePacketSaveSkillListRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.Skill1, Packet.Skill2, Packet.Skill3, Packet.Skill4);
+	u32 Skill1, Skill2, Skill3, Skill4;
+	const SkillTree &Tree = GetParent()->GetCharacter().lock()->GetSkillTree();
+	bool bIsOpened = false;
+	if (Packet.NodeId1 == 0)
+	{
+		Skill1 = 0;
+		bIsOpened = true;
+	}
+	else if (!Tree.IsOpened(Packet.NodeId1, bIsOpened))
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::Error);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+	if (!bIsOpened)
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::NodeNotOpened);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+	else if (Packet.NodeId1 != 0 && !Tree.GetSkillId(Packet.NodeId1, Skill1))
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::Error);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+
+	if (Packet.NodeId2 == 0)
+	{
+		Skill2 = 0;
+		bIsOpened = true;
+	}
+	else if (!Tree.IsOpened(Packet.NodeId2, bIsOpened))
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::Error);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+	if (!bIsOpened)
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::NodeNotOpened);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+	else if (Packet.NodeId2 != 0 && !Tree.GetSkillId(Packet.NodeId2, Skill2))
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::Error);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+
+	if (Packet.NodeId3 == 0)
+	{
+		Skill3 = 0;
+		bIsOpened = true;
+	}
+	else if (!Tree.IsOpened(Packet.NodeId3, bIsOpened))
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::Error);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+	if (!bIsOpened)
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::NodeNotOpened);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+	else if (Packet.NodeId3 != 0 && !Tree.GetSkillId(Packet.NodeId3, Skill3))
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::Error);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+
+	if (Packet.NodeId4 == 0)
+	{
+		Skill4 = 0;
+		bIsOpened = true;
+	}
+	else if (!Tree.IsOpened(Packet.NodeId4, bIsOpened))
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::Error);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+	if (!bIsOpened)
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::NodeNotOpened);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+	else if(Packet.NodeId4 != 0 && !Tree.GetSkillId(Packet.NodeId4, Skill4))
+	{
+		PacketSaveSkillListResponse ResponsePacket(PacketSaveSkillListResponse::Error);
+		GetParent()->SendPacket(&ResponsePacket);
+		return;
+	}
+
+	CachePacketSaveSkillListRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Skill1, Skill2, Skill3, Skill4);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 }
 

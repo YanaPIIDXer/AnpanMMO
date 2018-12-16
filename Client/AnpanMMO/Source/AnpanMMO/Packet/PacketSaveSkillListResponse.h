@@ -14,6 +14,7 @@ public:
 	enum ResultCode
 	{
 		Success,
+		NodeNotOpened,
 		Error,
 	};
 
