@@ -53,16 +53,8 @@ public:		// 内部構造体の定義.
 		// デストラクタ
 		~Node()
 		{
-			for (auto *pChild : Children)
-			{
-				delete pChild;
-			}
 			Children.Empty();
 		}
-
-		// 開く
-		void Open(uint32 OpenNodeId);
-
 	};
 
 
@@ -72,20 +64,29 @@ public:
 	SkillTree();
 
 	// デストラクタ
-	~SkillTree();
+	~SkillTree() {}
 
 	// 初期化.
 	void Initialize(uint8 Job);
 
+	// ノードの再構築.
+	void Reflesh();
+
 	// 開く
 	void Open(uint32 NodeId);
 
-	// ノードを取得.
-	Node *GetNode() const { return pRootNode; }
+	// ルートノードを取得.
+	const Node &GetRootNode() const;
 
 private:
 
-	// ルートノード
-	Node *pRootNode;
+	// ノードマップ
+	TMap<uint32, Node> NodeMap;
+
+	// ルートノードID
+	uint32 RootNodeId;
+
+	// ルートノードが見つからなかった時のダミーノード
+	Node DummyNode;
 
 };

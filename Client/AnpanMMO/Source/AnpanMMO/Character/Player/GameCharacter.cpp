@@ -30,6 +30,7 @@ void AGameCharacter::BeginPlay()
 	check(pInst != nullptr);
 	Status = pInst->GetStatusCache();
 	Initialize(Status.GetMaxHp(), Status.GetMaxHp());
+	Status.RefleshSkillTree();
 
 	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 	check(pGameMode != nullptr);

@@ -18,11 +18,11 @@ void USkillListWidget::Init()
 	AGameCharacter *pChara = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
 	check(pChara != nullptr);
 
-	SkillTree::Node *pRootNode = pChara->GetStatus().GetSkillTree().GetNode();
+	const SkillTree::Node &RootNode = pChara->GetStatus().GetSkillTree().GetRootNode();
 	TArray<FSkillTreeNode> Nodes;
-	if (pRootNode != nullptr)
+	if (RootNode.NodeId != 0)
 	{
-		CollectOpenedNode(pRootNode, Nodes);
+		CollectOpenedNode(&RootNode, Nodes);
 	}
 
 	const TArray<uint32> &SkillList = pChara->GetStatus().GetSkillList();
@@ -43,7 +43,7 @@ void USkillListWidget::SendSaveSkillListRequest(int32 Skill1, int32 Skill2, int3
 
 
 // äJÇ©ÇÍÇƒÇ¢ÇÈÉmÅ[ÉhÇóÒãì.
-void USkillListWidget::CollectOpenedNode(SkillTree::Node *pNode, TArray<FSkillTreeNode> &OutNodes)
+void USkillListWidget::CollectOpenedNode(const SkillTree::Node *pNode, TArray<FSkillTreeNode> &OutNodes)
 {
 	if (pNode->bIsOpened)
 	{
@@ -53,7 +53,7 @@ void USkillListWidget::CollectOpenedNode(SkillTree::Node *pNode, TArray<FSkillTr
 		OutNodes.Add(Item);
 	}
 
-	for (auto *pChild : pNode->Children)
+	for (const auto *pChild : pNode->Children)
 	{
 		CollectOpenedNode(pChild, OutNodes);
 	}

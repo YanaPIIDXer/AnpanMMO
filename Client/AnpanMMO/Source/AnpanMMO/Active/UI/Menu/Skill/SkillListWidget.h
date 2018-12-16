@@ -43,6 +43,6 @@ protected:
 private:
 
 	// ŠJ‚©‚ê‚Ä‚¢‚éƒm[ƒh‚ğ—ñ‹“.
-	void CollectOpenedNode(SkillTree::Node *pNode, TArray<FSkillTreeNode> &OutNodes);
+	void CollectOpenedNode(const SkillTree::Node *pNode, TArray<FSkillTreeNode> &OutNodes);
 
 };

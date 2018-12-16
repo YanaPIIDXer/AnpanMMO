@@ -5,43 +5,45 @@
 
 // コンストラクタ
 SkillTree::SkillTree()
-	: pRootNode(nullptr)
+	: RootNodeId(0)
+	, DummyNode(0, 0, 0, 0, 0.0f, 0.0f, 0)
 {
-}
-
-// デストラクタ
-SkillTree::~SkillTree()
-{
-	delete pRootNode;
-	pRootNode = nullptr;
 }
 
 // 初期化.
 void SkillTree::Initialize(uint8 Job)
 {
 	TArray<SkillTreeItem> Items = MasterData::GetInstance().GetSkillTreeMaster().GetAll();
-	TMap<uint32, Node *> NodeMap;
 	for (const auto &Item : Items)
 	{
 		if (Item.Job != Job) { continue; }
-		Node *pNode = new Node(Item.ID, Item.SkillId, Item.Cost, Item.NeedLevel, Item.NodeX, Item.NodeY, Item.ParentNode);
-		NodeMap.Add(Item.ID, pNode);
+		Node Nd(Item.ID, Item.SkillId, Item.Cost, Item.NeedLevel, Item.NodeX, Item.NodeY, Item.ParentNode);
+		NodeMap.Add(Item.ID, Nd);
 	}
+	Reflesh();
+}
+
+// ノードの再構築.
+void SkillTree::Reflesh()
+{
 	for (auto KeyValue : NodeMap)
 	{
-		if (KeyValue.Value->ParentNodeId == 0)
+		KeyValue.Value.Children.Empty();
+	}
+
+	for(auto KeyValue : NodeMap)
+	{
+		if (KeyValue.Value.ParentNodeId == 0)
 		{
-			delete pRootNode;
-			pRootNode = KeyValue.Value;
+			RootNodeId = KeyValue.Value.NodeId;
 		}
 		else
 		{
-			if (!NodeMap.Contains(KeyValue.Value->ParentNodeId))
+			if (!NodeMap.Contains(KeyValue.Value.ParentNodeId))
 			{
-				delete KeyValue.Value;
 				continue;
 			}
-			NodeMap[KeyValue.Value->ParentNodeId]->Children.Add(KeyValue.Value);
+			NodeMap[KeyValue.Value.ParentNodeId].Children.Add(&NodeMap[KeyValue.Key]);
 		}
 	}
 }
@@ -49,24 +51,13 @@ void SkillTree::Initialize(uint8 Job)
 // 開く
 void SkillTree::Open(uint32 NodeId)
 {
-	if (pRootNode == nullptr) { return; }
-	pRootNode->Open(NodeId);
+	if (!NodeMap.Contains(NodeId)) { return; }
+	NodeMap[NodeId].bIsOpened = true;
 }
 
-
-// =============== SkillTree::Node ===================
-
-// 開く
-void SkillTree::Node::Open(uint32 OpenNodeId)
+// ルートノードを取得.
+const SkillTree::Node &SkillTree::GetRootNode() const
 {
-	if (NodeId == OpenNodeId)
-	{
-		bIsOpened = true;
-		return;
-	}
-
-	for (auto *pChild : Children)
-	{
-		pChild->Open(OpenNodeId);
-	}
+	if (!NodeMap.Contains(RootNodeId)) { return DummyNode; }
+	return NodeMap[RootNodeId];
 }
