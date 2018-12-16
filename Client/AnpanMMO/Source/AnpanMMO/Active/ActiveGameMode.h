@@ -196,4 +196,7 @@ private:
 	// スキルツリー開放結果を受信した。
 	void OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream);
 
+	// スキルリスト保存レスポンスを受信した。
+	void OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream);
+
 };

@@ -193,6 +193,12 @@ void AGameCharacter::OpenSkillTreeNode(uint32 NodeId)
 	Status.OpenSkillTreeNode(NodeId);
 }
 
+// スキルリストを受信した。
+void AGameCharacter::OnRecvSkillList(uint32 SkillId1, uint32 SkillId2, uint32 SkillId3, uint32 SkillId4)
+{
+	Status.SetSkillList(Status.GetSkillList()[0], SkillId1, SkillId2, SkillId3, SkillId4);
+}
+
 
 // リスポンした。
 void AGameCharacter::OnRespawn()

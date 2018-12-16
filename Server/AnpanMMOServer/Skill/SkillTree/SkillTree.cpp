@@ -12,6 +12,7 @@ SkillTree::SkillTree(u8 Job)
 		if (Items[i].Job != Job) { continue; }
 		Node Nd;
 		Nd.Cost = Items[i].Cost;
+		Nd.SkillId = Items[i].SkillId;
 		Nd.bIsOpened = false;
 		Nodes[Items[i].ID] = Nd;
 	}
@@ -26,10 +27,20 @@ bool SkillTree::Open(u32 NodeId)
 }
 
 // Šù‚ÉŠJ‚©‚ê‚Ä‚¢‚é‚©H
-bool SkillTree::IsOpened(u32 NodeId, bool &bOutOpened)
+bool SkillTree::IsOpened(u32 NodeId, bool &bOutOpened) const
 {
-	if (Nodes.find(NodeId) == Nodes.end()) { return false; }
-	bOutOpened = Nodes[NodeId].bIsOpened;
+	NodeMap::const_iterator It = Nodes.find(NodeId);
+	if (It == Nodes.end()) { return false; }
+	bOutOpened = It->second.bIsOpened;
+	return true;
+}
+
+// ƒXƒLƒ‹‚h‚c‚ðŽæ“¾.
+bool SkillTree::GetSkillId(u32 NodeId, u32 &OutSkillId) const
+{
+	NodeMap::const_iterator It = Nodes.find(NodeId);
+	if (It == Nodes.end()) { return false; }
+	OutSkillId = It->second.SkillId;
 	return true;
 }
 

@@ -13,31 +13,31 @@ public:
 
 	
 
-	u32 Skill1;
-	u32 Skill2;
-	u32 Skill3;
-	u32 Skill4;
+	u32 SkillId1;
+	u32 SkillId2;
+	u32 SkillId3;
+	u32 SkillId4;
 	
 
 	PacketSaveSkillListRequest()
 	{
 	}
 
-	PacketSaveSkillListRequest(u32 InSkill1, u32 InSkill2, u32 InSkill3, u32 InSkill4)
+	PacketSaveSkillListRequest(u32 InSkillId1, u32 InSkillId2, u32 InSkillId3, u32 InSkillId4)
 	{
-		Skill1 = InSkill1;
-		Skill2 = InSkill2;
-		Skill3 = InSkill3;
-		Skill4 = InSkill4;
+		SkillId1 = InSkillId1;
+		SkillId2 = InSkillId2;
+		SkillId3 = InSkillId3;
+		SkillId4 = InSkillId4;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&Skill1);
-		pStream->Serialize(&Skill2);
-		pStream->Serialize(&Skill3);
-		pStream->Serialize(&Skill4);
+		pStream->Serialize(&SkillId1);
+		pStream->Serialize(&SkillId2);
+		pStream->Serialize(&SkillId3);
+		pStream->Serialize(&SkillId4);
 		
 		return true;
 	}

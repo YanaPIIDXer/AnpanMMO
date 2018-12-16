@@ -89,6 +89,9 @@ public:
 	// スキルツリーノードを開放.
 	void OpenSkillTreeNode(uint32 NodeId);
 
+	// スキルリストを受信した。
+	void OnRecvSkillList(uint32 SkillId1, uint32 SkillId2, uint32 SkillId3, uint32 SkillId4);
+
 	// レベルを取得.
 	UFUNCTION(BlueprintPure, Category = "Status")
 	int32 GetLevel() const { return Status.GetLevel(); }

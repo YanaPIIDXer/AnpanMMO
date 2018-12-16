@@ -444,7 +444,7 @@ void ClientStateActive::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStrea
 	PacketSaveSkillListRequest Packet;
 	Packet.Serialize(pStream);
 
-	CachePacketSaveSkillListRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.Skill1, Packet.Skill2, Packet.Skill3, Packet.Skill4);
+	CachePacketSaveSkillListRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 }
 
@@ -460,7 +460,7 @@ void ClientStateActive::OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *
 		Result = PacketSaveSkillListResponse::Error;
 	}
 
-	PacketSaveSkillListResponse ResponsePacket(Result);
+	PacketSaveSkillListResponse ResponsePacket(Result, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	GetParent()->SendPacket(&ResponsePacket);
 }
 

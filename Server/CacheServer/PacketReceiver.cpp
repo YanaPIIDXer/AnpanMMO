@@ -182,7 +182,7 @@ void PacketReceiver::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
 		Result = CachePacketSaveSkillListResponse::Error;
 	}
 
-	CachePacketSaveSkillListResponse ResponsePacket(Packet.ClientId, Result);
+	CachePacketSaveSkillListResponse ResponsePacket(Packet.ClientId, Result, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	pParent->SendPacket(&ResponsePacket);
 }
 
