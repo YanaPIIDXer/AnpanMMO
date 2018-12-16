@@ -202,7 +202,7 @@ bool DBConnection::SaveSkillList(u32 CharacterId, u32 Skill1, u32 Skill2, u32 Sk
 	Query.BindInt(&Skill3);
 	Query.BindInt(&Skill4);
 	Query.BindInt(&CharacterId);
-	if (Query.ExecuteQuery()) { return false; }
+	if (!Query.ExecuteQuery()) { return false; }
 
 	return true;
 }
