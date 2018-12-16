@@ -11,7 +11,7 @@
 class PacketNoticeList  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return NoticeList; }
+	virtual u8 GetPacketID() const { return PacketID::NoticeList; }
 
 	
 

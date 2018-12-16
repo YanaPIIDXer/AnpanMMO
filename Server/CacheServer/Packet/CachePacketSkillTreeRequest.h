@@ -10,7 +10,7 @@
 class CachePacketSkillTreeRequest  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return CacheSkillTreeRequest; }
+	virtual u8 GetPacketID() const { return PacketID::CacheSkillTreeRequest; }
 
 	
 

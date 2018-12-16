@@ -9,7 +9,7 @@
 class PacketInstanceAreaTicketPublish  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return InstanceAreaTicketPublish; }
+	virtual u8 GetPacketID() const { return PacketID::InstanceAreaTicketPublish; }
 
 	
 

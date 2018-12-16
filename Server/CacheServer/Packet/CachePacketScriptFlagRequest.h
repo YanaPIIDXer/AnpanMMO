@@ -10,7 +10,7 @@
 class CachePacketScriptFlagRequest  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return CacheScriptFlagRequest; }
+	virtual u8 GetPacketID() const { return PacketID::CacheScriptFlagRequest; }
 
 	
 

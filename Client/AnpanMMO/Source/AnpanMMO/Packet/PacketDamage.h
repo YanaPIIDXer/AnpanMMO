@@ -9,7 +9,7 @@
 class PacketDamage  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return Damage; }
+	virtual u8 GetPacketID() const { return PacketID::Damage; }
 
 	
 

@@ -9,7 +9,7 @@
 class PacketStopAnpan  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return StopAnpan; }
+	virtual u8 GetPacketID() const { return PacketID::StopAnpan; }
 
 	
 

@@ -9,7 +9,7 @@
 class PacketSkillCastFinish  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return SkillCastFinish; }
+	virtual u8 GetPacketID() const { return PacketID::SkillCastFinish; }
 
 	
 

@@ -10,7 +10,7 @@
 class PacketSpawnPlayer  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return SpawnPlayer; }
+	virtual u8 GetPacketID() const { return PacketID::SpawnPlayer; }
 
 	
 

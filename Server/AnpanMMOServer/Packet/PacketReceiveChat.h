@@ -9,7 +9,7 @@
 class PacketReceiveChat  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return ReceiveChat; }
+	virtual u8 GetPacketID() const { return PacketID::ReceiveChat; }
 
 	
 

@@ -10,7 +10,7 @@
 class CachePacketSkillTreeResponse  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return CacheSkillTreeResponse; }
+	virtual u8 GetPacketID() const { return PacketID::CacheSkillTreeResponse; }
 
 	enum ResultCode
 	{

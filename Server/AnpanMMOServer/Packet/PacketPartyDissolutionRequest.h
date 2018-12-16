@@ -9,7 +9,7 @@
 class PacketPartyDissolutionRequest  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PartyDissolutionRequest; }
+	virtual u8 GetPacketID() const { return PacketID::PartyDissolutionRequest; }
 
 	
 

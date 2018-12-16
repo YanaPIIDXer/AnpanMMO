@@ -9,7 +9,7 @@
 class PacketPartyExitResult  : public PacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PartyExitResult; }
+	virtual u8 GetPacketID() const { return PacketID::PartyExitResult; }
 
 	enum ResultCode
 	{
