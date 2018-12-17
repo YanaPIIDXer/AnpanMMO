@@ -205,8 +205,8 @@ void SkillControl::Activate()
 	if (ItemId != 0 && OnUsedItemFunc)
 	{
 		OnUsedItemFunc(ItemId);
-		ItemId = 0;
 	}
+	ItemId = 0;
 
 	// Ç±Ç±Ç≈StateÇNutralÇ…ñﬂÇ∑ÅB
 	ChangeState(new SkillStateNutral(this));
