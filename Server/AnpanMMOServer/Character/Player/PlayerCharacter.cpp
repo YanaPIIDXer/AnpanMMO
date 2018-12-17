@@ -166,8 +166,8 @@ void PlayerCharacter::SubtractItem(u32 ItemId, u32 Count)
 	PacketItemSubtract Packet(ItemId, Count);
 	GetClient()->SendPacket(&Packet);
 
-	u32 Count = Items.GetCount(ItemId);
-	CachePacketItemCountChangeRequest CachePacket(GetClient()->GetUuid(), CharacterId, ItemId, Count);
+	u32 ItemCount = Items.GetCount(ItemId);
+	CachePacketItemCountChangeRequest CachePacket(GetClient()->GetUuid(), CharacterId, ItemId, ItemCount);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 }
 
