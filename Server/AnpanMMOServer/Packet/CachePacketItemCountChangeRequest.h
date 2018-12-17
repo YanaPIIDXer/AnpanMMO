@@ -1,5 +1,5 @@
-#ifndef __CACHEPACKETITEMSUBTRACTREQUEST_H__
-#define __CACHEPACKETITEMSUBTRACTREQUEST_H__
+#ifndef __CACHEPACKETITEMCOUNTCHANGEREQUEST_H__
+#define __CACHEPACKETITEMCOUNTCHANGEREQUEST_H__
 
 #include "PacketBase.h"
 #include "PacketID.h"
@@ -7,10 +7,10 @@
 #include "ProcessPacketBase.h"
 
 
-class CachePacketItemSubtractRequest  : public ProcessPacketBase
+class CachePacketItemCountChangeRequest  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheItemSubtractRequest; }
+	virtual u8 GetPacketID() const { return PacketID::CacheItemCountChangeRequest; }
 
 	
 
@@ -19,11 +19,11 @@ public:
 	u32 Count;
 	
 
-	CachePacketItemSubtractRequest()
+	CachePacketItemCountChangeRequest()
 	{
 	}
 
-	CachePacketItemSubtractRequest(u32 InClientId, u32 InCharacterId, u32 InItemId, u32 InCount)
+	CachePacketItemCountChangeRequest(u32 InClientId, u32 InCharacterId, u32 InItemId, u32 InCount)
 	{
 		ClientId = InClientId;
 		CharacterId = InCharacterId;
@@ -43,4 +43,4 @@ public:
 	}
 };
 
-#endif		// #ifndef __CACHEPACKETITEMSUBTRACTREQUEST_H__
+#endif		// #ifndef __CACHEPACKETITEMCOUNTCHANGEREQUEST_H__
