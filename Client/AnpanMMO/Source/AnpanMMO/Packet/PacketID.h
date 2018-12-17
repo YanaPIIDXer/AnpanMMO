@@ -51,6 +51,7 @@ public:
 		SpawnInstanceAreaExitPoint,
 		ItemList,
 		ItemUse,
+		ItemAdd,
 		ItemSubtract,
 		ItemSubtractRequest,
 		LogInRequest,
