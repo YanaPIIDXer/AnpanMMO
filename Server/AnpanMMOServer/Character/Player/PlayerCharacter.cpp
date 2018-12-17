@@ -16,6 +16,7 @@
 #include "Packet/PacketChangeGold.h"
 #include "Packet/PacketSkillTreeOpenResult.h"
 #include "Packet/ItemData.h"
+#include "Packet/PacketItemAdd.h"
 #include "Packet/PacketItemSubtract.h"
 #include "Packet/CachePacketItemCountChangeRequest.h"
 
@@ -164,6 +165,19 @@ void PlayerCharacter::UseItem(u32 ItemId, CharacterPtr pTarget)
 {
 	if (Items.GetCount(ItemId) == 0) { return; }
 	Skill.UseItem(ItemId, pTarget);
+}
+
+// アイテム追加.
+void PlayerCharacter::AddItem(u32 ItemId, u32 Count)
+{
+	Items.Add(ItemId, Count);
+
+	PacketItemAdd Packet(ItemId, Count);
+	GetClient()->SendPacket(&Packet);
+
+	u32 ItemCount = Items.GetCount(ItemId);
+	CachePacketItemCountChangeRequest CachePacket(GetClient()->GetUuid(), CharacterId, ItemId, ItemCount);
+	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 }
 
 // アイテム破棄.

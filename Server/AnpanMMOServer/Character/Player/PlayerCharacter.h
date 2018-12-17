@@ -85,6 +85,9 @@ public:
 	// アイテム使用.
 	void UseItem(u32 ItemId, CharacterPtr pTarget);
 
+	// アイテム追加.
+	void AddItem(u32 ItemId, u32 Count);
+
 	// アイテム破棄.
 	void SubtractItem(u32 ItemId, u32 Count);
 
