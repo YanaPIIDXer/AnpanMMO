@@ -272,18 +272,31 @@ bool DBConnection::ChangeItemCount(u32 CharacterId, u32 ItemId, u32 Count)
 	{
 		// 存在するのでupdate
 		Query.Close();
-		Query = Connection.CreateQuery("update ItemData set Count = ? where CharacterId = ? and ItemId = ?;");
+		if (Count > 0)
+		{
+			Query = Connection.CreateQuery("update ItemData set Count = ? where CharacterId = ? and ItemId = ?;");
 
-		Query.BindInt(&Count);
-		Query.BindInt(&CharacterId);
-		Query.BindInt(&ItemId);
+			Query.BindInt(&Count);
+			Query.BindInt(&CharacterId);
+			Query.BindInt(&ItemId);
 
-		if (!Query.ExecuteQuery()) { return false; }
+			if (!Query.ExecuteQuery()) { return false; }
+		}
+		else
+		{
+			// ０個ならテーブルから削除。
+			Query = Connection.CreateQuery("delete from ItemData where CharacterId = ? and ItemId = ?;");
+			Query.BindInt(&CharacterId);
+			Query.BindInt(&ItemId);
+
+			if (!Query.ExecuteQuery()) { return false; }
+		}
 	}
 	else
 	{
 		// 存在しないのでinsert
 		Query.Close();
+		if (Count == 0) { return true; }	// ０個なら何もしない。
 		Query = Connection.CreateQuery("insert into ItemData values(?, ?, ?);");
 		Query.BindInt(&CharacterId);
 		Query.BindInt(&ItemId);
