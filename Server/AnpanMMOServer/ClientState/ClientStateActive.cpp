@@ -51,6 +51,7 @@
 #include "Packet/PacketSkillTreeOpenRequest.h"
 #include "Packet/PacketSkillTreeOpenResult.h"
 #include "Packet/CachePacketOpenSkillTree.h"
+#include "Packet/PacketItemUse.h"
 #include "Packet/PacketItemSubtractRequest.h"
 
 // コンストラクタ
@@ -76,6 +77,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::SaveSkillListRequest, boost::bind(&ClientStateActive::OnRecvSaveSkillListRequest, this, _2));
 	AddPacketFunction(PacketID::CacheSaveSkillListResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveSkillListResponse, this, _2));
 	AddPacketFunction(PacketID::SkillTreeOpenRequest, boost::bind(&ClientStateActive::OnRecvSkillTreeOpenRequest, this, _2));
+	AddPacketFunction(PacketID::ItemUse, boost::bind(&ClientStateActive::OnRecvItemUse, this, _2));
 	AddPacketFunction(PacketID::ItemSubtractRequest, boost::bind(&ClientStateActive::OnRecvItemSubtractRequest, this, _2));
 }
 
@@ -482,6 +484,15 @@ void ClientStateActive::OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStrea
 		CachePacketOpenSkillTree CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.NodeId);
 		CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 	}
+}
+
+// アイテム使用を受信した。
+void ClientStateActive::OnRecvItemUse(MemoryStreamInterface *pStream)
+{
+	PacketItemUse Packet;
+	Packet.Serialize(pStream);
+
+	GetParent()->GetCharacter().lock()->GetArea().lock()->OnRecvItemUse(GetParent()->GetUuid(), Packet.ItemId, Packet.TargetType, Packet.TargetUuid);
 }
 
 // アイテム破棄リクエストを受信した。

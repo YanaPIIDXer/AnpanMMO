@@ -79,6 +79,9 @@ private:
 	// スキルツリー開放要求を受信した。
 	void OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStream);
 
+	// アイテム使用を受信した。
+	void OnRecvItemUse(MemoryStreamInterface *pStream);
+
 	// アイテム破棄リクエストを受信した。
 	void OnRecvItemSubtractRequest(MemoryStreamInterface *pStream);
 

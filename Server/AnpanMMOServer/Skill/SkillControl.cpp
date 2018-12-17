@@ -19,6 +19,7 @@ SkillControl::SkillControl(CharacterBase *pInOwner)
 	, pPrevState(NULL)
 	, pOwner(pInOwner)
 	, SkillId(0)
+	, ItemId(0)
 {
 	pTarget.reset();
 }
@@ -52,8 +53,22 @@ void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 	}
 
 	SkillId = InSkillId;
+	ItemId = 0;
 	pTarget = pInTarget;
 	ChangeState(new SkillStateCast(this));
+}
+
+// アイテム使用.
+void SkillControl::UseItem(u32 InItemId, CharacterPtr pInTarget)
+{
+	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().GetItem(InItemId);
+	if (pItem == NULL)
+	{
+		Cancel(PacketSkillUseFailed::Cancel);
+		return;
+	}
+	Use(pItem->SkillId, pInTarget);
+	ItemId = InItemId;
 }
 
 // キャストが完了した。
@@ -186,6 +201,12 @@ void SkillControl::Activate()
 	}
 
 	pOwner->StartRecast(SkillId);
+
+	if (ItemId != 0 && OnUsedItemFunc)
+	{
+		OnUsedItemFunc(ItemId);
+		ItemId = 0;
+	}
 
 	// ここでStateをNutralに戻す。
 	ChangeState(new SkillStateNutral(this));

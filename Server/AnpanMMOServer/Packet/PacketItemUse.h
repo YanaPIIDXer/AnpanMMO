@@ -14,21 +14,27 @@ public:
 	
 
 	u32 ItemId;
+	u8 TargetType;
+	u32 TargetUuid;
 	
 
 	PacketItemUse()
 	{
 	}
 
-	PacketItemUse(u32 InItemId)
+	PacketItemUse(u32 InItemId, u8 InTargetType, u32 InTargetUuid)
 	{
 		ItemId = InItemId;
+		TargetType = InTargetType;
+		TargetUuid = InTargetUuid;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&ItemId);
+		pStream->Serialize(&TargetType);
+		pStream->Serialize(&TargetUuid);
 		
 		return true;
 	}

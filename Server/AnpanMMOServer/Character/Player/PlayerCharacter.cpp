@@ -33,6 +33,7 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	SetParameter(Level, MaxHp, MaxHp, Atk, Def);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
 	Skill.SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
+	Skill.SetOnUsedItemFunction(boost::bind(&PlayerCharacter::OnUsedItem, this, _1));
 	Recast.SetRecastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillRecastFinished, this, _1));
 }
 
@@ -158,6 +159,13 @@ void PlayerCharacter::OnRecvItemList(const FlexArray<ItemData> &List)
 	}
 }
 
+// アイテム使用.
+void PlayerCharacter::UseItem(u32 ItemId, CharacterPtr pTarget)
+{
+	if (Items.GetCount(ItemId) == 0) { return; }
+	Skill.UseItem(ItemId, pTarget);
+}
+
 // アイテム破棄.
 void PlayerCharacter::SubtractItem(u32 ItemId, u32 Count)
 {
@@ -209,4 +217,10 @@ void PlayerCharacter::OnSkillRecastFinished(u32 SkillId)
 {
 	PacketSkillRecast Packet(SkillId);
 	GetClient()->SendPacket(&Packet);
+}
+
+// アイテムを使用した。
+void PlayerCharacter::OnUsedItem(u32 ItemId)
+{
+	SubtractItem(ItemId, 1);
 }

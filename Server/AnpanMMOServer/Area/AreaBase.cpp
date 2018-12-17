@@ -83,6 +83,27 @@ void AreaBase::OnRecvSkillUse(u32 Uuid, u32 SkillId, u8 TargetType, u32 TargetUu
 	pPlayer.lock()->UseSkill(SkillId, pTarget);
 }
 
+// アイテム使用を受信した。
+void AreaBase::OnRecvItemUse(u32 Uuid, u32 ItemId, u8 TargetType, u32 TargetUuid)
+{
+	PlayerCharacterPtr pPlayer = PlayerMgr.Get(Uuid);
+	CharacterPtr pTarget;
+	switch (TargetType)
+	{
+		case CharacterType::Player:
+
+			pTarget = PlayerMgr.Get(TargetUuid);
+			break;
+
+		case CharacterType::Enemy:
+
+			pTarget = AnpanMgr.Get(TargetUuid);
+			break;
+	}
+
+	pPlayer.lock()->UseItem(ItemId, pTarget);
+}
+
 // パケットのブロードキャスト
 void AreaBase::BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient)
 {

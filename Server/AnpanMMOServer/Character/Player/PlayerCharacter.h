@@ -82,6 +82,9 @@ public:
 	// アイテムリストを受信した。
 	void OnRecvItemList(const FlexArray<ItemData> &List);
 
+	// アイテム使用.
+	void UseItem(u32 ItemId, CharacterPtr pTarget);
+
 	// アイテム破棄.
 	void SubtractItem(u32 ItemId, u32 Count);
 
@@ -132,6 +135,9 @@ private:
 
 	// リキャストが完了した。
 	void OnSkillRecastFinished(u32 SkillId);
+
+	// アイテムを使用した。
+	void OnUsedItem(u32 ItemId);
 
 };
 

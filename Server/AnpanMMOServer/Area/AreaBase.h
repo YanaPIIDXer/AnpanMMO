@@ -42,6 +42,9 @@ public:
 	// スキル使用を受信した。
 	void OnRecvSkillUse(u32 Uuid, u32 SkillId, u8 TargetType, u32 TargetUuid);
 
+	// アイテム使用を受信した。
+	void OnRecvItemUse(u32 Uuid, u32 ItemId, u8 TargetType, u32 TargetUuid);
+
 	// パケットのブロードキャスト
 	void BroadcastPacket(PacketBase *pPacket, Client *pIgnoreClient = NULL);
 
