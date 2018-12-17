@@ -62,7 +62,7 @@ void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 void SkillControl::UseItem(u32 InItemId, CharacterPtr pInTarget)
 {
 	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().GetItem(InItemId);
-	if (pItem == NULL)
+	if (pItem == NULL || pItem->SkillId == 0)
 	{
 		Cancel(PacketSkillUseFailed::Cancel);
 		return;
