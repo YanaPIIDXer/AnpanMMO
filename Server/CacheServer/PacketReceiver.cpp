@@ -20,6 +20,9 @@
 #include "Packet/CachePacketSkillTreeRequest.h"
 #include "Packet/CachePacketSkillTreeResponse.h"
 #include "Packet/CachePacketOpenSkillTree.h"
+#include "Packet/CachePacketItemListRequest.h"
+#include "Packet/CachePacketItemListResponse.h"
+#include "Packet/CachePacketItemCountChangeRequest.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -35,6 +38,8 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(PacketID::CacheOpenSkillTree, bind(&PacketReceiver::OnRecvSkillTreeSaveRequest, this, _1));
 	AddPacketFunc(PacketID::CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
 	AddPacketFunc(PacketID::CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
+	AddPacketFunc(PacketID::CacheItemListRequest, bind(&PacketReceiver::OnRecvItemListRequest, this, _1));
+	AddPacketFunc(PacketID::CacheItemCountChangeRequest, bind(&PacketReceiver::OnRecvItemCountChange, this, _1));
 	AddPacketFunc(PacketID::CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
 }
 
@@ -240,6 +245,35 @@ void PacketReceiver::OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	DBConnection::GetInstance().SaveScriptFlags(Packet.CharacterId, Packet.BitField1, Packet.BitField2, Packet.BitField3);
+}
+
+// アイテムリストリクエストを受信した。
+void PacketReceiver::OnRecvItemListRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketItemListRequest Packet;
+	Packet.Serialize(pStream);
+
+	CachePacketItemListResponse ResponsePacket;
+	ResponsePacket.ClientId = Packet.ClientId;
+	ResponsePacket.Result = CachePacketItemListResponse::Success;
+	if (!DBConnection::GetInstance().LoadItemList(Packet.CharacterId, ResponsePacket.Items))
+	{
+		ResponsePacket.Result = CachePacketItemListResponse::Error;
+	}
+
+	pParent->SendPacket(&ResponsePacket);
+}
+
+// アイテム数変動を受信した。
+void PacketReceiver::OnRecvItemCountChange(MemoryStreamInterface *pStream)
+{
+	CachePacketItemCountChangeRequest Packet;
+	Packet.Serialize(pStream);
+
+	if (!DBConnection::GetInstance().ChangeItemCount(Packet.CharacterId, Packet.ItemId, Packet.Count))
+	{
+		std::cout << "Item Count Change Failed..." << std::endl;
+	}
 }
 
 // ゴールド保存リクエストを受信した。

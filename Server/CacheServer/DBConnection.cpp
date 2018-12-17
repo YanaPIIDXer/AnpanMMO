@@ -2,6 +2,7 @@
 #include "DBConnection.h"
 #include <fstream>
 #include "Packet/CharacterJob.h"
+#include "Packet/ItemData.h"
 
 const std::string DBConnection::UserDataFileName = "DBUserData.txt";
 const char *DBConnection::DBHost = "127.0.0.1";
@@ -233,6 +234,64 @@ bool DBConnection::SaveSkillTree(u32 CharacterId, u32 NodeId)
 	Query.BindInt(&NodeId);
 
 	if (!Query.ExecuteQuery()) { return false; }
+	return true;
+}
+
+// アイテムリスト読み込み
+bool DBConnection::LoadItemList(u32 CharacterId, FlexArray<ItemData> &OutItemList)
+{
+	MySqlQuery Query = Connection.CreateQuery("select ItemId, Count from ItemData where CharacterId = ?");
+
+	Query.BindInt(&CharacterId);
+
+	ItemData BindData;
+	Query.BindResultInt(&BindData.ItemId);
+	Query.BindResultInt(&BindData.Count);
+	if (!Query.ExecuteQuery()) { return false; }
+	while (Query.Fetch())
+	{
+		OutItemList.PushBack(BindData);
+	}
+
+	return true;
+}
+
+// アイテム数変化.
+bool DBConnection::ChangeItemCount(u32 CharacterId, u32 ItemId, u32 Count)
+{
+	// まずは既にリストに存在するかどうかをチェック
+	MySqlQuery Query = Connection.CreateQuery("select ItemId fron ItemData where CharacterId = ? and ItemId = ?");
+
+	Query.BindInt(&CharacterId);
+	Query.BindInt(&ItemId);
+
+	u32 Dummy = 0;
+	Query.BindResultInt(&Dummy);
+	if (!Query.ExecuteQuery()) { return false; }
+	if (Query.Fetch())
+	{
+		// 存在するのでupdate
+		Query.Close();
+		Query = Connection.CreateQuery("update ItemData set Count = ? where CharacterId = ? and ItemId = ?;");
+
+		Query.BindInt(&Count);
+		Query.BindInt(&CharacterId);
+		Query.BindInt(&ItemId);
+
+		if (!Query.ExecuteQuery()) { return false; }
+	}
+	else
+	{
+		// 存在しないのでinsert
+		Query.Close();
+		Query = Connection.CreateQuery("insert into ItemData values(?, ?, ?);");
+		Query.BindInt(&CharacterId);
+		Query.BindInt(&ItemId);
+		Query.BindInt(&Count);
+
+		if (!Query.ExecuteQuery()) { return false; }
+	}
+
 	return true;
 }
 
