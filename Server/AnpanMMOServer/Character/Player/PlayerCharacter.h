@@ -6,6 +6,7 @@
 #include "Skill/SkillTree/SkillTree.h"
 #include "WeakPtrDefine.h"
 #include "Packet/CharacterType.h"
+#include "Item/ItemList.h"
 
 class Client;
 
@@ -102,6 +103,9 @@ private:
 
 	// スキルツリー
 	SkillTree Tree;
+
+	// アイテムリスト
+	ItemList Items;
 
 	// セーブするエリアＩＤ
 	u32 SaveAreaId;
