@@ -27,6 +27,9 @@ public:
 	// 消費.
 	void Subtract(u32 ItemId, u32 Count);
 
+	// 個数を取得.
+	u32 GetCount(u32 ItemId) const;
+
 private:
 
 	// アイテムマップ

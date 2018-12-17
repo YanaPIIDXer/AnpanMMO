@@ -17,6 +17,7 @@
 #include "Packet/PacketSkillTreeOpenResult.h"
 #include "Packet/ItemData.h"
 #include "Packet/PacketItemSubtract.h"
+#include "Packet/CachePacketItemCountChangeRequest.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
@@ -164,6 +165,10 @@ void PlayerCharacter::SubtractItem(u32 ItemId, u32 Count)
 
 	PacketItemSubtract Packet(ItemId, Count);
 	GetClient()->SendPacket(&Packet);
+
+	u32 Count = Items.GetCount(ItemId);
+	CachePacketItemCountChangeRequest CachePacket(GetClient()->GetUuid(), CharacterId, ItemId, Count);
+	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 }
 
 

@@ -32,3 +32,11 @@ void ItemList::Subtract(u32 ItemId, u32 Count)
 		Items.erase(ItemId);
 	}
 }
+
+// ŒÂ”‚ðŽæ“¾.
+u32 ItemList::GetCount(u32 ItemId) const
+{
+	ItemMap::const_iterator It = Items.find(ItemId);
+	if (It == Items.end()) { return 0; }
+	return It->second;
+}
