@@ -91,5 +91,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!Item.Load(Connection))
+	{
+		std::cout << "Item Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }
