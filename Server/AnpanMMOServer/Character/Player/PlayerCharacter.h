@@ -82,6 +82,9 @@ public:
 	// アイテムリストを受信した。
 	void OnRecvItemList(const FlexArray<ItemData> &List);
 
+	// アイテム破棄.
+	void SubtractItem(u32 ItemId, u32 Count);
+
 private:
 
 	// クライアント

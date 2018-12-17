@@ -16,6 +16,7 @@
 #include "Packet/PacketChangeGold.h"
 #include "Packet/PacketSkillTreeOpenResult.h"
 #include "Packet/ItemData.h"
+#include "Packet/PacketItemSubtract.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
@@ -154,6 +155,15 @@ void PlayerCharacter::OnRecvItemList(const FlexArray<ItemData> &List)
 	{
 		Items.Add(List[i].ItemId, List[i].Count);
 	}
+}
+
+// アイテム破棄.
+void PlayerCharacter::SubtractItem(u32 ItemId, u32 Count)
+{
+	Items.Subtract(ItemId, Count);
+
+	PacketItemSubtract Packet(ItemId, Count);
+	GetClient()->SendPacket(&Packet);
 }
 
 
