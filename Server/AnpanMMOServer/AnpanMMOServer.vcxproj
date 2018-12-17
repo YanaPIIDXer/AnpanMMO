@@ -161,6 +161,7 @@
     <ClInclude Include="Master\AnpanMaster.h" />
     <ClInclude Include="Master\AnpanPopDataMaster.h" />
     <ClInclude Include="Master\InstanceInfoMaster.h" />
+    <ClInclude Include="Master\ItemDropMaster.h" />
     <ClInclude Include="Master\ItemMaster.h" />
     <ClInclude Include="Master\NPCMaster.h" />
     <ClInclude Include="Master\SkillMaster.h" />
@@ -266,6 +267,7 @@
     <ClCompile Include="Master\AnpanMaster.cpp" />
     <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
     <ClCompile Include="Master\InstanceInfoMaster.cpp" />
+    <ClCompile Include="Master\ItemDropMaster.cpp" />
     <ClCompile Include="Master\ItemMaster.cpp" />
     <ClCompile Include="Master\NPCMaster.cpp" />
     <ClCompile Include="Master\SkillMaster.cpp" />

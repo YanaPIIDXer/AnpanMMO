@@ -6,11 +6,12 @@
 const float Anpan::BaseRadius = 80.0f;
 
 // コンストラクタ
-Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate)
+Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate, u32 InDropId)
 	: AI(this)
 	, MasterId(InMasterId)
 	, Exp(InExp)
 	, ScaleRate(InScaleRate)
+	, DropId(InDropId)
 {
 	SetPosition(InPosition);
 	SetRotate(Rotation(180.0f));

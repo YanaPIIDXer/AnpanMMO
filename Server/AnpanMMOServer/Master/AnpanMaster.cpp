@@ -14,6 +14,7 @@ bool AnpanMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.Def);
 	Query.BindResultInt(&BindItem.Exp);
 	Query.BindResultFloat(&BindItem.Scale);
+	Query.BindResultInt(&BindItem.DropId);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
@@ -25,6 +26,7 @@ bool AnpanMaster::Load(const MySqlConnection &Connection)
 		Item.Def = BindItem.Def;
 		Item.Exp = BindItem.Exp;
 		Item.Scale = BindItem.Scale;
+		Item.DropId = BindItem.DropId;
 
 		Items[Item.ID] = Item;
 	}

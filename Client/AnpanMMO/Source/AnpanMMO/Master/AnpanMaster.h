@@ -16,6 +16,7 @@ public:
 	s32 Def;
 	s32 Exp;
 	float Scale;
+	u32 DropId;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
@@ -26,6 +27,7 @@ public:
 		if(!pStream->Serialize(&Def)) { return false; }
 		if(!pStream->Serialize(&Exp)) { return false; }
 		if(!pStream->Serialize(&Scale)) { return false; }
+		if(!pStream->Serialize(&DropId)) { return false; }
 
 		return true;
 	}

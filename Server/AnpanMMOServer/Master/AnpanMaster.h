@@ -19,6 +19,7 @@ public:
 	s32 Def;
 	s32 Exp;
 	float Scale;
+	u32 DropId;
 
 
 };

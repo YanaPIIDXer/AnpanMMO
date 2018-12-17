@@ -5,6 +5,7 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "Character/Anpan/Anpan.h"
 #include "Math/DamageCalcUnit.h"
+#include "Math/Random.h"
 #include "State/SkillStateNutral.h"
 #include "State/SkillStateCast.h"
 #include "State/SkillStateAutoMove.h"
@@ -171,9 +172,61 @@ void SkillControl::Activate()
 					Targets[i]->ApplyDamage(pOwner->shared_from_this(), Value);
 					if (Targets[i]->IsDead() && pOwner->GetCharacterType() == CharacterType::Player && Targets[i]->GetCharacterType() == CharacterType::Enemy)
 					{
+						// 経験値.
 						PlayerCharacter *pPlayer = static_cast<PlayerCharacter *>(pOwner);
 						Anpan *pAnpan = static_cast<Anpan *>(Targets[i]);
 						pPlayer->AddExp(pAnpan->GetExp());
+
+						// アイテムドロップ
+						const ItemDropItem *pDropItem = MasterData::GetInstance().GetItemDropMaster().GetItem(pAnpan->GetDropId());
+						if (pDropItem != NULL)
+						{
+							u8 DropType = ItemDropItem::NONE;
+							u32 DropId = 0;
+							u32 DropCount = 0;
+							int Index = Random::Range<int>(0, 2);
+							switch (Index)
+							{
+								case 0:
+
+									DropType = pDropItem->Type1;
+									DropId = pDropItem->Id1;
+									DropCount = pDropItem->Count1;
+									break;
+
+								case 1:
+
+									DropType = pDropItem->Type2;
+									DropId = pDropItem->Id2;
+									DropCount = pDropItem->Count2;
+									break;
+
+								case 2:
+
+									DropType = pDropItem->Type3;
+									DropId = pDropItem->Id3;
+									DropCount = pDropItem->Count3;
+									break;
+							}
+							switch (DropType)
+							{
+								case ItemDropItem::ITEM:
+
+									// アイテム
+									if (DropId != 0)
+									{
+										pPlayer->AddItem(DropId, DropCount);
+									}
+									break;
+
+								case ItemDropItem::GOLD:
+
+									// ゴールド
+									pPlayer->AddGold(DropCount);
+									break;
+							}
+
+						}
 					}
 				}
 				break;
@@ -205,8 +258,8 @@ void SkillControl::Activate()
 	if (ItemId != 0 && OnUsedItemFunc)
 	{
 		OnUsedItemFunc(ItemId);
-		ItemId = 0;
 	}
+	ItemId = 0;
 
 	// ここでStateをNutralに戻す。
 	ChangeState(new SkillStateNutral(this));
