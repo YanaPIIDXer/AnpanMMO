@@ -9,6 +9,7 @@
 #include "Item/ItemList.h"
 
 class Client;
+class ItemData;
 
 /**
  * プレイヤーキャラクタ
@@ -77,6 +78,9 @@ public:
 
 	// スキルツリーオープン
 	u8 OpenSkillTree(u32 NodeId);
+
+	// アイテムリストを受信した。
+	void OnRecvItemList(const FlexArray<ItemData> &List);
 
 private:
 

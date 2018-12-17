@@ -48,6 +48,9 @@ private:
 	// キャッシュサーバからスキルツリー情報を受信した。
 	void OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStream);
 
+	// キャッシュサーバからアイテムリストを受信した。
+	void OnRecvCacheItemListResponse(MemoryStreamInterface *pStream);
+
 	// キャッシュサーバからスクリプトフラグを受信した。
 	void OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream);
 

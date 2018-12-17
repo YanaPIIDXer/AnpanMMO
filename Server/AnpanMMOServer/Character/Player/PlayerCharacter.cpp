@@ -15,6 +15,7 @@
 #include "Packet/PacketSkillRecast.h"
 #include "Packet/PacketChangeGold.h"
 #include "Packet/PacketSkillTreeOpenResult.h"
+#include "Packet/ItemData.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
@@ -144,6 +145,15 @@ u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 	SubtractGold(pItem->Cost);
 
 	return PacketSkillTreeOpenResult::Success;
+}
+
+// アイテムリストを受信した。
+void PlayerCharacter::OnRecvItemList(const FlexArray<ItemData> &List)
+{
+	for (int i = 0; i < List.GetCurrentSize(); i++)
+	{
+		Items.Add(List[i].ItemId, List[i].Count);
+	}
 }
 
 
