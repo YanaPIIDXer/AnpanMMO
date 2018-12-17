@@ -35,6 +35,7 @@ public:
 		CacheGoldSave,
 		CacheItemListRequest,
 		CacheItemListResponse,
+		CacheItemAddRequest,
 		CacheItemSubtractRequest,
 		SendChat,
 		ReceiveChat,
