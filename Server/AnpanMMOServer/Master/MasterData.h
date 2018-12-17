@@ -12,6 +12,7 @@
 #include "SkillMaster.h"
 #include "SkillTreeMaster.h"
 #include "ItemMaster.h"
+#include "ItemDropMaster.h"
 
 /**
  * マスタデータクラス
@@ -57,6 +58,9 @@ public:
 	// アイテムマスタ取得.
 	const ItemMaster &GetItemMaster() { return Item; }
 
+	// アイテムドロップマスタ取得.
+	const ItemDropMaster &GetItemDropMaster() { return ItemDrop; }
+
 private:
 
 	// DBホスト
@@ -100,6 +104,9 @@ private:
 
 	// アイテムマスタ
 	ItemMaster Item;
+
+	// アイテムドロップマスタ
+	ItemDropMaster ItemDrop;
 
 	// ======= Singleton ==========
 public:
