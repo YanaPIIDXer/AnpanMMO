@@ -14,7 +14,7 @@ class Anpan : public CharacterBase
 public:
 
 	// コンストラクタ
-	Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate);
+	Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate, u32 InDropId);
 
 	// デストラクタ
 	virtual ~Anpan() {}
@@ -33,6 +33,9 @@ public:
 
 	// マスタＩＤを取得.
 	u32 GetMasterId() const { return MasterId; }
+
+	// ドロップＩＤを取得.
+	u32 GetDropId() const { return DropId; }
 	
 protected:
 
@@ -58,6 +61,9 @@ private:
 
 	// 拡縮倍率.
 	float ScaleRate;
+
+	// ドロップＩＤ
+	u32 DropId;
 
 };
 
