@@ -22,4 +22,5 @@ void MasterData::Load()
 	NPCCondition.Load();
 	Skill.Load();
 	SkillTree.Load();
+	Item.Load();
 }

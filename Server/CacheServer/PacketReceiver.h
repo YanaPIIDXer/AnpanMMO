@@ -72,6 +72,12 @@ private:
 	// スクリプトフラグ保存リクエストを受信した。
 	void OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream);
 
+	// アイテムリストリクエストを受信した。
+	void OnRecvItemListRequest(MemoryStreamInterface *pStream);
+
+	// アイテム数変動を受信した。
+	void OnRecvItemCountChange(MemoryStreamInterface *pStream);
+
 	// ゴールド保存リクエストを受信した。
 	void OnRecvSaveGold(MemoryStreamInterface *pStream);
 

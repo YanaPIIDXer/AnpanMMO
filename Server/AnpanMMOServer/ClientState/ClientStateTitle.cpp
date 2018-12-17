@@ -15,6 +15,7 @@
 #include "Packet/PacketSkillList.h"
 #include "Packet/PacketSkillTreeData.h"
 #include "Packet/PacketCharacterStatus.h"
+#include "Packet/PacketItemList.h"
 #include "Packet/PacketScriptFlag.h"
 #include "Packet/CachePacketLogInRequest.h"
 #include "Packet/CachePacketLogInResult.h"
@@ -26,6 +27,8 @@
 #include "Packet/CachePacketSkillTreeRequest.h"
 #include "Packet/CachePacketSkillTreeResponse.h"
 #include "Packet/CachePacketSkillListResponse.h"
+#include "Packet/CachePacketItemListRequest.h"
+#include "Packet/CachePacketItemListResponse.h"
 #include "Packet/CachePacketScriptFlagRequest.h"
 #include "Packet/CachePacketScriptFlagResponse.h"
 
@@ -42,6 +45,7 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 	AddPacketFunction(PacketID::CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
 	AddPacketFunction(PacketID::CacheSkillListResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillListResponse, this, _2));
 	AddPacketFunction(PacketID::CacheSkillTreeResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillTreeResponse, this, _2));
+	AddPacketFunction(PacketID::CacheItemListResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemListResponse, this, _2));
 	AddPacketFunction(PacketID::CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResponse, this, _2));
 }
 
@@ -205,6 +209,33 @@ void ClientStateTitle::OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStre
 	GetParent()->GetCharacter().lock()->GetSkillTree().GenerateNodeDataList(SkillTreePacket.Nodes);
 	GetParent()->SendPacket(&SkillTreePacket);
 	
+	// アイテムリストを要求.
+	CachePacketItemListRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+}
+
+// キャッシュサーバからアイテムリストを受信した。
+void ClientStateTitle::OnRecvCacheItemListResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketItemListResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != CachePacketItemListResponse::Success)
+	{
+		std::cout << "Item List Load Failed..." << std::endl;
+		return;
+	}
+
+	GetParent()->GetCharacter().lock()->OnRecvItemList(Packet.Items);
+
+	PacketItemList ListPacket;
+	for (int i = 0; i < Packet.Items.GetCurrentSize(); i++)
+	{
+		ListPacket.Items.PushBack(Packet.Items[i]);
+	}
+
+	GetParent()->SendPacket(&ListPacket);
+
 	// スクリプトフラグを要求.
 	CachePacketScriptFlagRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);

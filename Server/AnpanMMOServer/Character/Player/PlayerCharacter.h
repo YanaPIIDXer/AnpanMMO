@@ -6,8 +6,10 @@
 #include "Skill/SkillTree/SkillTree.h"
 #include "WeakPtrDefine.h"
 #include "Packet/CharacterType.h"
+#include "Item/ItemList.h"
 
 class Client;
+class ItemData;
 
 /**
  * プレイヤーキャラクタ
@@ -77,6 +79,18 @@ public:
 	// スキルツリーオープン
 	u8 OpenSkillTree(u32 NodeId);
 
+	// アイテムリストを受信した。
+	void OnRecvItemList(const FlexArray<ItemData> &List);
+
+	// アイテム使用.
+	void UseItem(u32 ItemId, CharacterPtr pTarget);
+
+	// アイテム追加.
+	void AddItem(u32 ItemId, u32 Count);
+
+	// アイテム破棄.
+	void SubtractItem(u32 ItemId, u32 Count);
+
 private:
 
 	// クライアント
@@ -103,6 +117,9 @@ private:
 	// スキルツリー
 	SkillTree Tree;
 
+	// アイテムリスト
+	ItemList Items;
+
 	// セーブするエリアＩＤ
 	u32 SaveAreaId;
 
@@ -121,6 +138,9 @@ private:
 
 	// リキャストが完了した。
 	void OnSkillRecastFinished(u32 SkillId);
+
+	// アイテムを使用した。
+	void OnUsedItem(u32 ItemId);
 
 };
 

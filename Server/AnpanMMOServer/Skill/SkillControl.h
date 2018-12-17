@@ -16,6 +16,8 @@ private:		// 別名定義.
 
 	typedef boost::function<void(u8)> OnCancelFunction;
 
+	typedef boost::function<void(u32)> OnUsedItemFunction;
+
 public:
 
 	// コンストラクタ
@@ -29,6 +31,9 @@ public:
 
 	// 使用.
 	void Use(u32 InSkillId, CharacterPtr pInTarget);
+
+	// アイテム使用.
+	void UseItem(u32 InItemId, CharacterPtr pInTarget);
 
 	// 所有者を取得.
 	CharacterBase *GetOwner() const { return pOwner; }
@@ -57,6 +62,9 @@ public:
 	// キャンセル時に実行される関数を設定.
 	void SetOnCancelFunction(const OnCancelFunction &Func) { OnCancelFunc = Func; }
 
+	// アイテム使用後に実行される関数を設定.
+	void SetOnUsedItemFunction(const OnUsedItemFunction &Func) { OnUsedItemFunc = Func; }
+
 private:
 
 	// State
@@ -74,8 +82,14 @@ private:
 	// スキルＩＤ
 	u32 SkillId;
 
+	// アイテムＩＤ
+	u32 ItemId;
+
 	// キャンセル時に実行される関数.
 	OnCancelFunction OnCancelFunc;
+
+	// アイテム使用後に実行される関数.
+	OnUsedItemFunction OnUsedItemFunc;
 
 	// ステート変更.
 	void ChangeState(SkillStateBase *pNewState);

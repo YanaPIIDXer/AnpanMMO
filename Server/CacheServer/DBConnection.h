@@ -4,6 +4,8 @@
 #include "MySQL/MySqlConnection.h"
 #include "FlexArray.h"
 
+class ItemData;
+
 /**
  * DB接続クラス
  */
@@ -44,6 +46,12 @@ public:
 
 	// スキルツリー保存.
 	bool SaveSkillTree(u32 CharacterId, u32 NodeId);
+
+	// アイテムリスト読み込み
+	bool LoadItemList(u32 CharacterId, FlexArray<ItemData> &OutItemList);
+
+	// アイテム数変化.
+	bool ChangeItemCount(u32 CharacterId, u32 ItemId, u32 Count);
 
 	// ゴールド書き込み
 	bool SaveGold(u32 CharacterId, u32 Gold);

@@ -15,6 +15,10 @@
 #include "Packet/PacketSkillRecast.h"
 #include "Packet/PacketChangeGold.h"
 #include "Packet/PacketSkillTreeOpenResult.h"
+#include "Packet/ItemData.h"
+#include "Packet/PacketItemAdd.h"
+#include "Packet/PacketItemSubtract.h"
+#include "Packet/CachePacketItemCountChangeRequest.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold)
@@ -30,6 +34,7 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	SetParameter(Level, MaxHp, MaxHp, Atk, Def);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
 	Skill.SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
+	Skill.SetOnUsedItemFunction(boost::bind(&PlayerCharacter::OnUsedItem, this, _1));
 	Recast.SetRecastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillRecastFinished, this, _1));
 }
 
@@ -146,6 +151,48 @@ u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 	return PacketSkillTreeOpenResult::Success;
 }
 
+// アイテムリストを受信した。
+void PlayerCharacter::OnRecvItemList(const FlexArray<ItemData> &List)
+{
+	for (int i = 0; i < List.GetCurrentSize(); i++)
+	{
+		Items.Add(List[i].ItemId, List[i].Count);
+	}
+}
+
+// アイテム使用.
+void PlayerCharacter::UseItem(u32 ItemId, CharacterPtr pTarget)
+{
+	if (Items.GetCount(ItemId) == 0) { return; }
+	Skill.UseItem(ItemId, pTarget);
+}
+
+// アイテム追加.
+void PlayerCharacter::AddItem(u32 ItemId, u32 Count)
+{
+	Items.Add(ItemId, Count);
+
+	PacketItemAdd Packet(ItemId, Count);
+	GetClient()->SendPacket(&Packet);
+
+	u32 ItemCount = Items.GetCount(ItemId);
+	CachePacketItemCountChangeRequest CachePacket(GetClient()->GetUuid(), CharacterId, ItemId, ItemCount);
+	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+}
+
+// アイテム破棄.
+void PlayerCharacter::SubtractItem(u32 ItemId, u32 Count)
+{
+	Items.Subtract(ItemId, Count);
+
+	PacketItemSubtract Packet(ItemId, Count);
+	GetClient()->SendPacket(&Packet);
+
+	u32 ItemCount = Items.GetCount(ItemId);
+	CachePacketItemCountChangeRequest CachePacket(GetClient()->GetUuid(), CharacterId, ItemId, ItemCount);
+	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+}
+
 
 // レベルアップコールバック
 void PlayerCharacter::OnLevelUp()
@@ -184,4 +231,10 @@ void PlayerCharacter::OnSkillRecastFinished(u32 SkillId)
 {
 	PacketSkillRecast Packet(SkillId);
 	GetClient()->SendPacket(&Packet);
+}
+
+// アイテムを使用した。
+void PlayerCharacter::OnUsedItem(u32 ItemId)
+{
+	SubtractItem(ItemId, 1);
 }
