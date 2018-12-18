@@ -27,6 +27,10 @@
 #include "Packet/CachePacketItemShortcutResponse.h"
 #include "Packet/CachePacketSaveItemShortcutRequest.h"
 #include "Packet/CachePacketSaveItemShortcutResponse.h"
+#include "Packet/CachePacketQuestDataRequest.h"
+#include "Packet/CachePacketQuestDataResponse.h"
+#include "Packet/CachePacketSaveQuestDataRequest.h"
+#include "Packet/CachePacketQuestRetireRequest.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -47,6 +51,9 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(PacketID::CacheItemShortcutRequest, bind(&PacketReceiver::OnRecvItemShortcutRequest, this, _1));
 	AddPacketFunc(PacketID::CacheSaveItemShortcutRequest, bind(&PacketReceiver::OnRecvSaveItemShortcutRequest, this, _1));
 	AddPacketFunc(PacketID::CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
+	AddPacketFunc(PacketID::CacheQuestDataRequest, bind(&PacketReceiver::OnRecvQuestDataRequest, this, _1));
+	AddPacketFunc(PacketID::CacheSaveQuestDataRequest, bind(&PacketReceiver::OnRecvSaveQuestDataRequest, this, _1));
+	AddPacketFunc(PacketID::CacheQuestRetireRequest, bind(&PacketReceiver::OnRecvRetireQuestDataRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -322,6 +329,47 @@ void PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
 	Packet.Serialize(pStream);
 
 	DBConnection::GetInstance().SaveGold(Packet.CharacterId, Packet.Gold);
+}
+
+// クエストデータリクエストを受信した。
+void PacketReceiver::OnRecvQuestDataRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketQuestDataRequest Packet;
+	Packet.Serialize(pStream);
+
+	CachePacketQuestDataResponse ResponsePacket;
+	ResponsePacket.ClientId = Packet.ClientId;
+	ResponsePacket.Result = CachePacketQuestDataResponse::Success;
+	if (!DBConnection::GetInstance().LoadQuestData(Packet.CharacterId, ResponsePacket.Quests))
+	{
+		ResponsePacket.Result = CachePacketQuestDataResponse::Error;
+	}
+
+	pParent->SendPacket(&ResponsePacket);
+}
+
+// クエストデータ保存リクエストを受信した。
+void PacketReceiver::OnRecvSaveQuestDataRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveQuestDataRequest Packet;
+	Packet.Serialize(pStream);
+
+	if (!DBConnection::GetInstance().SaveQuestData(Packet.CharacterId, Packet.Data.QuestId, Packet.Data.StageNo, Packet.Data.State))
+	{
+		std::cout << "QuestData Save Failed..." << std::endl;
+	}
+}
+
+// クエスト破棄リクエストを受信した。
+void PacketReceiver::OnRecvRetireQuestDataRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketQuestRetireRequest Packet;
+	Packet.Serialize(pStream);
+
+	if (!DBConnection::GetInstance().EraseQuestData(Packet.CharacterId, Packet.QuestId))
+	{
+		std::cout << "Erase QuestData Failed..." << std::endl;
+	}
 }
 
 

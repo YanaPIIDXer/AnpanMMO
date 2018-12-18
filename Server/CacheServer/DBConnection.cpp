@@ -3,6 +3,7 @@
 #include <fstream>
 #include "Packet/CharacterJob.h"
 #include "Packet/ItemData.h"
+#include "Packet/QuestData.h"
 
 const std::string DBConnection::UserDataFileName = "DBUserData.txt";
 const char *DBConnection::DBHost = "127.0.0.1";
@@ -416,6 +417,73 @@ bool DBConnection::SaveScriptFlags(u32 CharacterId, u32 BitField1, u32 BitField2
 	return true;
 }
 
+// クエストデータ読み込み
+bool DBConnection::LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataList)
+{
+	MySqlQuery Query = Connection.CreateQuery("select QuestId, StageNo, State from QuestData where CharacterId = ?");
+	Query.BindInt(&CharacterId);
+
+	QuestData BindData;
+	Query.BindResultInt(&BindData.QuestId);
+	Query.BindResultInt(&BindData.StageNo);
+	Query.BindResultChar(&BindData.State);
+	
+	if (!Query.ExecuteQuery()) { return false; }
+	while (Query.Fetch())
+	{
+		OutDataList.PushBack(BindData);
+	}
+
+	return true;
+}
+
+// クエストデータ保存.
+bool DBConnection::SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u8 State)
+{
+	// まずは既に保存されているかどうかをチェック
+	MySqlQuery Query = Connection.CreateQuery("select QuestId from QuestData where CharacterId = ? and QuestId = ?;");
+	Query.BindInt(&CharacterId);
+	Query.BindInt(&QuestId);
+	if (!Query.ExecuteQuery()) { return false; }
+	if (Query.Fetch())
+	{
+		// 存在するので上書き。
+		Query.Close();
+		Query = Connection.CreateQuery("update QuestData set StageNo = ?, State = ? where CharacterId = ? and QuestId = ?;");
+		Query.BindInt(&StageNo);
+		Query.BindChar(&State);
+		Query.BindInt(&CharacterId);
+		Query.BindInt(&QuestId);
+
+		if (!Query.ExecuteQuery()) { return false; }
+	}
+	else
+	{
+		// 存在しないので新規追加。
+		Query.Close();
+		Query = Connection.CreateQuery("insert into QuestData Value(?, ?, ?, ?);");
+		Query.BindInt(&CharacterId);
+		Query.BindInt(&QuestId);
+		Query.BindInt(&StageNo);
+		Query.BindChar(&State);
+
+		if (!Query.ExecuteQuery()) { return false; }
+	}
+	
+	return true;
+}
+
+// クエストデータ破棄.
+bool DBConnection::EraseQuestData(u32 CharacterId, u32 QuestId)
+{
+	MySqlQuery Query = Connection.CreateQuery("delete from QuestData where CharacterId = ? and QuestId = ?;");
+	Query.BindInt(&CharacterId);
+	Query.BindInt(&QuestId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
 
 // ユーザデータ登録.
 bool DBConnection::RegisterUserData(char *pUserCode)
