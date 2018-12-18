@@ -19,14 +19,14 @@ public:
 
 	u32 QuestId;
 	u32 StageNo;
-	u32 State;
+	u8 State;
 	
 
 	QuestData()
 	{
 	}
 
-	QuestData(u32 InQuestId, u32 InStageNo, u32 InState)
+	QuestData(u32 InQuestId, u32 InStageNo, u8 InState)
 	{
 		QuestId = InQuestId;
 		StageNo = InStageNo;
