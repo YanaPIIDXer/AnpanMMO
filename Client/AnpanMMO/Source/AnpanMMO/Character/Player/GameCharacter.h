@@ -96,6 +96,12 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Status")
 	int32 GetLevel() const { return Status.GetLevel(); }
 
+	// アイテム追加.
+	void AddItem(uint32 ItemId, uint32 Count) { Status.AddItem(ItemId, Count); }
+
+	// アイテム削除.
+	void SubtractItem(uint32 ItemId, uint32 Count) { Status.SubtractItem(ItemId, Count); }
+
 protected:
 
 	// レベルアップした
