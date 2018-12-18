@@ -532,6 +532,6 @@ void ClientStateActive::OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterfac
 		Result = PacketSaveItemShortcutResult::Error;
 	}
 
-	PacketSaveItemShortcutResult ResultPacket(Result);
+	PacketSaveItemShortcutResult ResultPacket(Result, Packet.ItemId1, Packet.ItemId2);
 	GetParent()->SendPacket(&ResultPacket);
 }

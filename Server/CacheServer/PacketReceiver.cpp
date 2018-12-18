@@ -311,7 +311,7 @@ void PacketReceiver::OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStrea
 		Result = CachePacketSaveItemShortcutResponse::Error;
 	}
 
-	CachePacketSaveItemShortcutResponse ResponsePacket(Packet.ClientId, Result);
+	CachePacketSaveItemShortcutResponse ResponsePacket(Packet.ClientId, Result, Packet.ItemId1, Packet.ItemId2);
 	pParent->SendPacket(&ResponsePacket);
 }
 

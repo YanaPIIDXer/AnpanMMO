@@ -19,16 +19,20 @@ public:
 	};
 
 	u8 Result;
+	u32 ItemId1;
+	u32 ItemId2;
 	
 
 	CachePacketSaveItemShortcutResponse()
 	{
 	}
 
-	CachePacketSaveItemShortcutResponse(u32 InClientId, u8 InResult)
+	CachePacketSaveItemShortcutResponse(u32 InClientId, u8 InResult, u32 InItemId1, u32 InItemId2)
 	{
 		ClientId = InClientId;
 		Result = InResult;
+		ItemId1 = InItemId1;
+		ItemId2 = InItemId2;
 		
 	}
 
@@ -36,6 +40,8 @@ public:
 	{
 		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
+		pStream->Serialize(&ItemId1);
+		pStream->Serialize(&ItemId2);
 		
 		return true;
 	}
