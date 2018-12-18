@@ -14,8 +14,13 @@ class CachePacketQuestDataResponse  : public ProcessPacketBase
 public:
 	virtual u8 GetPacketID() const { return PacketID::CacheQuestDataResponse; }
 
-	
+	enum ResultCode
+	{
+		Success,
+		Error,
+	};
 
+	u8 Result;
 	FlexArray<QuestData> Quests;
 	
 
@@ -23,9 +28,10 @@ public:
 	{
 	}
 
-	CachePacketQuestDataResponse(u32 InClientId, FlexArray<QuestData> InQuests)
+	CachePacketQuestDataResponse(u32 InClientId, u8 InResult, FlexArray<QuestData> InQuests)
 	{
 		ClientId = InClientId;
+		Result = InResult;
 		Quests = InQuests;
 		
 	}
@@ -33,6 +39,7 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
+		pStream->Serialize(&Result);
 		Quests.Serialize(pStream);
 		
 		return true;
