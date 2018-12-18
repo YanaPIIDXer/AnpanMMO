@@ -36,7 +36,26 @@ void UItemMenu::Init()
 		Items.Add(ItemData);
 	}
 
-	InitEvent(Items);
+	const TArray<uint32> &ItemShortcuts = pCharacter->GetStatus().GetItemList().GetItemShortcut();
+
+	FItemData ItemShortcut1, ItemShortcut2;
+	ItemShortcut1.ItemId = ItemShortcuts[0];
+	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemShortcuts[0]);
+	if (pItem != nullptr)
+	{
+		ItemShortcut1.Name = pItem->Name;
+	}
+	ItemShortcut1.Count = pCharacter->GetStatus().GetItemList().GetCount(ItemShortcuts[0]);
+
+	ItemShortcut2.ItemId = ItemShortcuts[1];
+	pItem = MasterData::GetInstance().GetItemMaster().Get(ItemShortcuts[1]);
+	if (pItem != nullptr)
+	{
+		ItemShortcut2.Name = pItem->Name;
+	}
+	ItemShortcut2.Count = pCharacter->GetStatus().GetItemList().GetCount(ItemShortcuts[1]);
+
+	InitEvent(Items, ItemShortcut1, ItemShortcut2);
 }
 
 // パケットを受信した。
