@@ -43,6 +43,7 @@ public:
 		CacheQuestDataRequest,
 		CacheQuestDataResponse,
 		CacheSaveQuestDataRequest,
+		CacheQuestRetireRequest,
 		SendChat,
 		ReceiveChat,
 		GameReady,
