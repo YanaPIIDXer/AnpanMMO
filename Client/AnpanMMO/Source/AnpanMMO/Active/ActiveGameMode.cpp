@@ -652,4 +652,6 @@ void AActiveGameMode::OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStrea
 	check(pCharacter != nullptr);
 
 	pCharacter->UpdateItemShortcut(Packet.ItemId1, Packet.ItemId2);
+
+	USimpleDialog::Show(this, "Item Shortcut Saved!", 100);
 }

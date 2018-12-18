@@ -56,8 +56,8 @@ protected:
 
 	// 初期化イベント
 	UFUNCTION(BlueprintNativeEvent, Category = "ItemMenu")
-	void InitEvent(const TArray<FItemData> &Items);
-	void InitEvent_Implementation(const TArray<FItemData> &Items) {}
+	void InitEvent(const TArray<FItemData> &Items, const FItemData &ItemShortcut1, const FItemData &ItemShortcut2);
+	void InitEvent_Implementation(const TArray<FItemData> &Items, const FItemData &ItemShortcut1, const FItemData &ItemShortcut2) {}
 
 	// 使用.
 	UFUNCTION(BlueprintCallable, Category = "ItemMenu")
