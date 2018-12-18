@@ -12,6 +12,7 @@
 
 class PacketBase;
 class SkillTreeNode;
+class ItemData;
 
 /**
  * GameInstance
@@ -55,6 +56,9 @@ public:
 
 	// スキルツリーデータを受信した。
 	void OnRecvSkillTreeData(const FlexArray<SkillTreeNode> &Nodes);
+
+	// アイテムリストを受信した。
+	void OnRecvItemList(const FlexArray<ItemData> &Items);
 
 	// ステータスキャッシュ取得.
 	const PlayerStatus &GetStatusCache() const { return StatusCache; }

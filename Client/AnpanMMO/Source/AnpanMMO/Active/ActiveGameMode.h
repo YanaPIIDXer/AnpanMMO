@@ -199,4 +199,10 @@ private:
 	// スキルリスト保存レスポンスを受信した。
 	void OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream);
 
+	// アイテム追加を受信した。
+	void OnRecvAddItem(MemoryStreamInterface *pStream);
+
+	// アイテム消滅を受信した。
+	void OnRecvSubtractItem(MemoryStreamInterface *pStream);
+
 };

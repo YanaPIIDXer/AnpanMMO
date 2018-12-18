@@ -4,6 +4,7 @@
 #include "DLC/PakFileManager.h"
 #include "Config.h"
 #include "Packet/SkillTreeNode.h"
+#include "Packet/ItemData.h"
 
 // コンストラクタ
 UMMOGameInstance::UMMOGameInstance(const FObjectInitializer &ObjectInitializer)
@@ -89,6 +90,15 @@ void UMMOGameInstance::OnRecvSkillTreeData(const FlexArray<SkillTreeNode> &Nodes
 		{
 			StatusCache.OpenSkillTreeNode(Nodes[i].NodeId);
 		}
+	}
+}
+
+// アイテムリストを受信した。
+void UMMOGameInstance::OnRecvItemList(const FlexArray<ItemData> &Items)
+{
+	for (int i = 0; i < Items.GetCurrentSize(); i++)
+	{
+		StatusCache.AddItem(Items[i].ItemId, Items[i].Count);
 	}
 }
 
