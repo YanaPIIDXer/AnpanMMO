@@ -67,4 +67,8 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "ItemMenu")
 	void Subtract(const FItemData &Data, int32 Count);
 
+	// ショートカット保存.
+	UFUNCTION(BlueprintCallable, Category = "ItemMenu")
+	void SaveShortcut(const FItemData &Data1, const FItemData &Data2);
+
 };

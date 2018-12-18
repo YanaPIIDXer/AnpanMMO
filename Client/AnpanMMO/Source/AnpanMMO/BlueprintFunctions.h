@@ -43,8 +43,24 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Skill")
 	static FString GetSkillName(int32 SkillId);
 
-	// リキャストタイムを取得.
+	// スキルリキャストタイムを取得.
 	UFUNCTION(BlueprintPure, Category = "Skill")
 	static int32 GetRecastTime(int32 SkillId);
+
+	// アイテムのリキャストタイムを取得.
+	UFUNCTION(BlueprintPure, Category = "Item")
+	static int32 GetItemRecastTime(int32 ItemId);
+
+	// アイテムＩＤからスキルＩＤを取得.
+	UFUNCTION(BlueprintPure, Category = "Item")
+	static int32 GetSkillIdFromItemId(int32 ItemId);
+
+	// アイテム名取得.
+	UFUNCTION(BlueprintPure, Category = "Item")
+	static FString GetItemName(int32 ItemId);
+
+	// 有効なアイテムか？
+	UFUNCTION(BlueprintPure, Category = "Item")
+	static bool IsValidItem(int32 ItemId);
 
 };

@@ -51,6 +51,9 @@ private:
 	// キャッシュサーバからアイテムリストを受信した。
 	void OnRecvCacheItemListResponse(MemoryStreamInterface *pStream);
 
+	// キャッシュサーバからアイテムショートカットを受信した。
+	void OnRecvCacheItemShortcutResponse(MemoryStreamInterface *pStream);
+
 	// キャッシュサーバからスクリプトフラグを受信した。
 	void OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream);
 

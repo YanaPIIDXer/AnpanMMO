@@ -205,4 +205,7 @@ private:
 	// アイテム消滅を受信した。
 	void OnRecvSubtractItem(MemoryStreamInterface *pStream);
 
+	// アイテムショートカット保存結果を受信した。
+	void OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStream);
+
 };

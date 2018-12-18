@@ -42,6 +42,7 @@
 #include "Packet/PacketSaveSkillListResponse.h"
 #include "Packet/PacketItemAdd.h"
 #include "Packet/PacketItemSubtract.h"
+#include "Packet/PacketSaveItemShortcutResult.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -96,6 +97,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::SaveSkillListResponse, std::bind(&AActiveGameMode::OnRecvSaveSkillListResponse, this, _1));
 	AddPacketFunction(PacketID::ItemAdd, std::bind(&AActiveGameMode::OnRecvAddItem, this, _1));
 	AddPacketFunction(PacketID::ItemSubtract, std::bind(&AActiveGameMode::OnRecvSubtractItem, this, _1));
+	AddPacketFunction(PacketID::SaveItemShortcutResult, std::bind(&AActiveGameMode::OnRecvSaveItemShortcutResult, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -632,4 +634,22 @@ void AActiveGameMode::OnRecvSubtractItem(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 
 	pCharacter->SubtractItem(Packet.ItemId, Packet.Count);
+}
+
+// アイテムショートカット保存結果を受信した。
+void AActiveGameMode::OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStream)
+{
+	PacketSaveItemShortcutResult Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != PacketSaveItemShortcutResult::Success)
+	{
+		USimpleDialog::Show(this, "Item Shortcut Save Failed...", 100);
+		return;
+	}
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->UpdateItemShortcut(Packet.ItemId1, Packet.ItemId2);
 }

@@ -78,6 +78,12 @@ private:
 	// アイテム数変動を受信した。
 	void OnRecvItemCountChange(MemoryStreamInterface *pStream);
 
+	// アイテムショートカット読み込みリクエストを受信した。
+	void OnRecvItemShortcutRequest(MemoryStreamInterface *pStream);
+
+	// アイテムショートカット書き込みリクエストを受信した。
+	void OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream);
+
 	// ゴールド保存リクエストを受信した。
 	void OnRecvSaveGold(MemoryStreamInterface *pStream);
 

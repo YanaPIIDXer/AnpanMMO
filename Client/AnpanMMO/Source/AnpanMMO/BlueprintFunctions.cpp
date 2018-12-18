@@ -75,3 +75,34 @@ int32 UBlueprintFunctions::GetRecastTime(int32 SkillId)
 	if (pItem == nullptr) { return 0; }
 	return pItem->RecastTime;
 }
+
+// アイテムのリキャストタイムを取得.
+int32 UBlueprintFunctions::GetItemRecastTime(int32 ItemId)
+{
+	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemId);
+	if (pItem == nullptr) { return 0; }
+	return GetRecastTime(pItem->SkillId);
+}
+
+// アイテムＩＤからスキルＩＤを取得.
+int32 UBlueprintFunctions::GetSkillIdFromItemId(int32 ItemId)
+{
+	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemId);
+	if (pItem == nullptr) { return 0; }
+	return pItem->SkillId;
+}
+
+// アイテム名取得.
+FString UBlueprintFunctions::GetItemName(int32 ItemId)
+{
+	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemId);
+	if (pItem == nullptr) { return ""; }
+	return pItem->Name;
+}
+
+// 有効なアイテムか？
+bool UBlueprintFunctions::IsValidItem(int32 ItemId)
+{
+	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemId);
+	return (pItem != nullptr);
+}

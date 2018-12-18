@@ -53,6 +53,10 @@
 #include "Packet/CachePacketOpenSkillTree.h"
 #include "Packet/PacketItemUse.h"
 #include "Packet/PacketItemSubtractRequest.h"
+#include "Packet/PacketSaveItemShortcutRequest.h"
+#include "Packet/CachePacketSaveItemShortcutRequest.h"
+#include "Packet/CachePacketSaveItemShortcutResponse.h"
+#include "Packet/PacketSaveItemShortcutResult.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -79,6 +83,8 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::SkillTreeOpenRequest, boost::bind(&ClientStateActive::OnRecvSkillTreeOpenRequest, this, _2));
 	AddPacketFunction(PacketID::ItemUse, boost::bind(&ClientStateActive::OnRecvItemUse, this, _2));
 	AddPacketFunction(PacketID::ItemSubtractRequest, boost::bind(&ClientStateActive::OnRecvItemSubtractRequest, this, _2));
+	AddPacketFunction(PacketID::SaveItemShortcutRequest, boost::bind(&ClientStateActive::OnRecvSaveItemShortcutRequest, this, _2));
+	AddPacketFunction(PacketID::CacheSaveItemShortcutResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveItemShortcutResponse, this, _2));
 }
 
 // State開始時の処理.
@@ -502,4 +508,30 @@ void ClientStateActive::OnRecvItemSubtractRequest(MemoryStreamInterface *pStream
 	Packet.Serialize(pStream);
 
 	GetParent()->GetCharacter().lock()->SubtractItem(Packet.ItemId, Packet.Count);
+}
+
+// アイテムショートカット保存リクエストを受信した。
+void ClientStateActive::OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream)
+{
+	PacketSaveItemShortcutRequest Packet;
+	Packet.Serialize(pStream);
+
+	CachePacketSaveItemShortcutRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.ItemId1, Packet.ItemId2);
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+}
+
+// キャッシュサーバからアイテムショートカット保存結果を受信した。
+void ClientStateActive::OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveItemShortcutResponse Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = PacketSaveItemShortcutResult::Success;
+	if (Packet.Result != CachePacketSaveItemShortcutResponse::Success)
+	{
+		Result = PacketSaveItemShortcutResult::Error;
+	}
+
+	PacketSaveItemShortcutResult ResultPacket(Result, Packet.ItemId1, Packet.ItemId2);
+	GetParent()->SendPacket(&ResultPacket);
 }

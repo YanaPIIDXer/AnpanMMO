@@ -99,6 +99,9 @@ public:
 	// アイテム削除.
 	void SubtractItem(uint32 ItemId, uint32 Count) { Items.Subtract(ItemId, Count); }
 
+	// アイテムショートカットを更新.
+	void UpdateItemShortcut(uint32 ItemId1, uint32 ItemId2) { Items.UpdateItemShortcut(ItemId1, ItemId2); }
+
 private:
 
 	// Uuid
