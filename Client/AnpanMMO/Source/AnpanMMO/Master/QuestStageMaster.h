@@ -11,7 +11,7 @@ public:
 	enum
 	{
 		NPC = 0,
-		KILL_ANPAN = 1,
+		KILL_ANPAN_IN_AREA = 1,
 		COLLECT_ITEM = 2,
 	};
 
