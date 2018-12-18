@@ -260,7 +260,7 @@ bool DBConnection::LoadItemList(u32 CharacterId, FlexArray<ItemData> &OutItemLis
 bool DBConnection::ChangeItemCount(u32 CharacterId, u32 ItemId, u32 Count)
 {
 	// まずは既にリストに存在するかどうかをチェック
-	MySqlQuery Query = Connection.CreateQuery("select ItemId fron ItemData where CharacterId = ? and ItemId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select ItemId from ItemData where CharacterId = ? and ItemId = ?;");
 
 	Query.BindInt(&CharacterId);
 	Query.BindInt(&ItemId);
