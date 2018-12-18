@@ -31,6 +31,10 @@ public:
 	// 個数を取得.
 	uint32 GetCount(uint32 ItemId) const;
 
+	// 所持するアイテムリストを列挙.
+	// ※個数は考えない。
+	TArray<uint32> CollectItemList() const;
+
 private:
 
 	// アイテムマップ

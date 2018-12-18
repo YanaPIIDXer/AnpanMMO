@@ -39,3 +39,14 @@ uint32 ItemList::GetCount(uint32 ItemId) const
 	if (!Items.Contains(ItemId)) { return 0; }
 	return Items[ItemId];
 }
+
+// 所持するアイテムリストを列挙.
+TArray<uint32> ItemList::CollectItemList() const
+{
+	TArray<uint32> List;
+	for(const auto &KeyValue : Items)
+	{
+		List.Add(KeyValue.Key);
+	}
+	return List;
+}
