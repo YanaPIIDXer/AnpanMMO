@@ -19,7 +19,7 @@ int main()
 	}
 	else
 	{
-		std::cout << "Master Read Faled..." << std::endl;
+		std::cout << "Master Read Failed..." << std::endl;
 		return 1;
 	}
 
