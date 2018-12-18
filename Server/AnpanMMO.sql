@@ -80,7 +80,7 @@ DROP TABLE IF EXISTS `QuestData`;
 CREATE TABLE `QuestData` (
   `CharacterId` int(10) unsigned DEFAULT NULL,
   `QuestId` int(10) unsigned DEFAULT NULL,
-  `StageId` int(10) unsigned DEFAULT NULL,
+  `StageNo` int(10) unsigned DEFAULT NULL,
   `State` tinyint(3) unsigned DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -155,4 +155,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-18 21:47:48
+-- Dump completed on 2018-12-18 22:23:31
