@@ -8,10 +8,16 @@ struct QuestItem
 
 public:
 
+	enum
+	{
+		MAIN_QUEST = 0,
+		SUB_QUEST = 1,
+	};
 
 
 	u32 Id;
 	FString Name;
+	u8 Type;
 	u32 StartStageId;
 	u32 RewardId;
 	u32 NextQuestId;
@@ -23,6 +29,7 @@ public:
 		std::string StrName;
 		if(!pStream->Serialize(&StrName)) { return false; }
 		Name = UTF8_TO_TCHAR(StrName.c_str());
+		if(!pStream->Serialize(&Type)) { return false; }
 		if(!pStream->Serialize(&StartStageId)) { return false; }
 		if(!pStream->Serialize(&RewardId)) { return false; }
 		if(!pStream->Serialize(&NextQuestId)) { return false; }

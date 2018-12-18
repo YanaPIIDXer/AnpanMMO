@@ -11,10 +11,16 @@ struct QuestItem
 
 public:
 
+	enum
+	{
+		MAIN_QUEST = 0,
+		SUB_QUEST = 1,
+	};
 
 
 	u32 Id;
 	std::string Name;
+	u8 Type;
 	u32 StartStageId;
 	u32 RewardId;
 	u32 NextQuestId;
