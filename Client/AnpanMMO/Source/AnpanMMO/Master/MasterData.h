@@ -14,6 +14,8 @@
 #include "SkillMaster.h"
 #include "SkillTreeMaster.h"
 #include "ItemMaster.h"
+#include "QuestMaster.h"
+#include "QuestRewardMaster.h"
 
 /**
  * マスタデータ
@@ -62,6 +64,12 @@ public:
 	// アイテムマスタ取得.
 	const ItemMaster &GetItemMaster() const { return Item; }
 
+	// クエストマスタ取得.
+	const QuestMaster &GetQuestMaster() const { return Quest; }
+
+	// クエスト報酬マスタ取得.
+	const QuestRewardMaster &GetQuestRewardMaster() const { return QuestReward; }
+
 private:
 
 	// エリアマスタ
@@ -96,6 +104,12 @@ private:
 
 	// アイテムマスタ
 	ItemMaster Item;
+
+	// クエストマスタ
+	QuestMaster Quest;
+
+	// クエスト報酬マスタ
+	QuestRewardMaster QuestReward;
 
 	// =========== Singleton ============
 public:

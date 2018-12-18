@@ -5,6 +5,7 @@
 #include "FlexArray.h"
 
 class ItemData;
+class QuestData;
 
 /**
  * DB接続クラス
@@ -70,6 +71,15 @@ public:
 
 	// スクリプトフラグを保存.
 	bool SaveScriptFlags(u32 CharacterId, u32 BitField1, u32 BitField2, u32 BitField3);
+
+	// クエストデータ読み込み。
+	bool LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataList);
+
+	// クエストデータ保存.
+	bool SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u8 State);
+
+	// クエストデータ破棄.
+	bool EraseQuestData(u32 CharacterId, u32 QuestId);
 
 private:
 

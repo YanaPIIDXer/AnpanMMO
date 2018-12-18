@@ -87,6 +87,15 @@ private:
 	// ゴールド保存リクエストを受信した。
 	void OnRecvSaveGold(MemoryStreamInterface *pStream);
 
+	// クエストデータリクエストを受信した。
+	void OnRecvQuestDataRequest(MemoryStreamInterface *pStream);
+
+	// クエストデータ保存リクエストを受信した。
+	void OnRecvSaveQuestDataRequest(MemoryStreamInterface *pStream);
+
+	// クエスト破棄リクエストを受信した。
+	void OnRecvRetireQuestDataRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__

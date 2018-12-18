@@ -164,6 +164,9 @@
     <ClInclude Include="Master\ItemDropMaster.h" />
     <ClInclude Include="Master\ItemMaster.h" />
     <ClInclude Include="Master\NPCMaster.h" />
+    <ClInclude Include="Master\QuestMaster.h" />
+    <ClInclude Include="Master\QuestRewardMaster.h" />
+    <ClInclude Include="Master\QuestStageMaster.h" />
     <ClInclude Include="Master\SkillMaster.h" />
     <ClInclude Include="Master\SkillTreeMaster.h" />
     <ClInclude Include="Master\TimeInfoMaster.h" />
@@ -270,6 +273,9 @@
     <ClCompile Include="Master\ItemDropMaster.cpp" />
     <ClCompile Include="Master\ItemMaster.cpp" />
     <ClCompile Include="Master\NPCMaster.cpp" />
+    <ClCompile Include="Master\QuestMaster.cpp" />
+    <ClCompile Include="Master\QuestRewardMaster.cpp" />
+    <ClCompile Include="Master\QuestStageMaster.cpp" />
     <ClCompile Include="Master\SkillMaster.cpp" />
     <ClCompile Include="Master\SkillTreeMaster.cpp" />
     <ClCompile Include="Master\TimeInfoMaster.cpp" />
