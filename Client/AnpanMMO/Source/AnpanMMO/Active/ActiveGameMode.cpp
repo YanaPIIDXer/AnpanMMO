@@ -40,6 +40,8 @@
 #include "Packet/PacketChangeGold.h"
 #include "Packet/PacketSkillTreeOpenResult.h"
 #include "Packet/PacketSaveSkillListResponse.h"
+#include "Packet/PacketItemAdd.h"
+#include "Packet/PacketItemSubtract.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -92,6 +94,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::ChangeGold, std::bind(&AActiveGameMode::OnRecvChangeGold, this, _1));
 	AddPacketFunction(PacketID::SkillTreeOpenResult, std::bind(&AActiveGameMode::OnRecvSkillTreeOpenResult, this, _1));
 	AddPacketFunction(PacketID::SaveSkillListResponse, std::bind(&AActiveGameMode::OnRecvSaveSkillListResponse, this, _1));
+	AddPacketFunction(PacketID::ItemAdd, std::bind(&AActiveGameMode::OnRecvAddItem, this, _1));
+	AddPacketFunction(PacketID::ItemSubtract, std::bind(&AActiveGameMode::OnRecvSubtractItem, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -327,10 +331,16 @@ void AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
+
+	uint32 Prev = pCharacter->GetLevel();
+
 	pCharacter->OnRecvLevelUp(Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def);
 	pCharacter->OnRecvExp(Packet.ResultExp);
 
 	pMainHUD->OnLevelUp();
+
+	FString SystemMsg = FString::Printf(TEXT("Level Up! %d -> %d"), Prev, Packet.Level);
+	pMainHUD->ShowSystemMessage(SystemMsg);
 }
 
 // エリア移動結果を受信した。
@@ -520,6 +530,13 @@ void AActiveGameMode::OnRecvChangeGold(MemoryStreamInterface *pStream)
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 
+	uint32 Current = pCharacter->GetGold();
+	if (Current < Packet.Gold)
+	{
+		FString SystemMsg = FString::Printf(TEXT("Add Gold:%d"), Packet.Gold - Current);
+		pMainHUD->ShowSystemMessage(SystemMsg);
+	}
+
 	pCharacter->SetGold(Packet.Gold);
 }
 
@@ -587,4 +604,32 @@ void AActiveGameMode::OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream
 	pCharacter->OnRecvSkillList(Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 
 	pMainHUD->OnRecvSkillList(pCharacter->GetStatus().GetSkillList()[0], Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
+}
+
+// アイテム追加を受信した。
+void AActiveGameMode::OnRecvAddItem(MemoryStreamInterface *pStream)
+{
+	PacketItemAdd Packet;
+	Packet.Serialize(pStream);
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->AddItem(Packet.ItemId, Packet.Count);
+	
+	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(Packet.ItemId);
+	FString SystemMsg = FString::Printf(TEXT("Add Item:%s * %d"), *pItem->Name, Packet.Count);
+	pMainHUD->ShowSystemMessage(SystemMsg);
+}
+
+// アイテム消滅を受信した。
+void AActiveGameMode::OnRecvSubtractItem(MemoryStreamInterface *pStream)
+{
+	PacketItemSubtract Packet;
+	Packet.Serialize(pStream);
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->SubtractItem(Packet.ItemId, Packet.Count);
 }

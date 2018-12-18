@@ -16,6 +16,7 @@
 #include "Packet/PacketCharacterStatus.h"
 #include "Packet/PacketSkillList.h"
 #include "Packet/PacketSkillTreeData.h"
+#include "Packet/PacketItemList.h"
 #include "Packet/PacketScriptFlag.h"
 
 // コンストラクタ
@@ -29,6 +30,7 @@ ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::CharacterStatus, std::bind(&ATitleGameMode::OnRecvCharacterStatus, this, _1));
 	AddPacketFunction(PacketID::SkillList, std::bind(&ATitleGameMode::OnRecvSkillList, this, _1));
 	AddPacketFunction(PacketID::SkillTreeData, std::bind(&ATitleGameMode::OnRecvSkillTreeData, this, _1));
+	AddPacketFunction(PacketID::ItemList, std::bind(&ATitleGameMode::OnRecvItemList, this, _1));
 	AddPacketFunction(PacketID::ScriptFlag, std::bind(&ATitleGameMode::OnRecvScriptFlag, this, _1));
 }
 
@@ -172,6 +174,18 @@ void ATitleGameMode::OnRecvSkillTreeData(MemoryStreamInterface *pStream)
 	check(pInst != nullptr);
 
 	pInst->OnRecvSkillTreeData(Packet.Nodes);
+}
+
+// アイテムリストを受信した。
+void ATitleGameMode::OnRecvItemList(MemoryStreamInterface *pStream)
+{
+	PacketItemList Packet;
+	Packet.Serialize(pStream);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->OnRecvItemList(Packet.Items);
 }
 
 // スクリプトフラグを受信した。

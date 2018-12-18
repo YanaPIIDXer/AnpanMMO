@@ -60,7 +60,7 @@ public:
 	const SkillTreeMaster &GetSkillTreeMaster() const { return SkillTree; }
 
 	// アイテムマスタ取得.
-	const ItemMaster &GetITemMaster() const { return Item; }
+	const ItemMaster &GetItemMaster() const { return Item; }
 
 private:
 

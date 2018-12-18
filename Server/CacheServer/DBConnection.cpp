@@ -260,7 +260,7 @@ bool DBConnection::LoadItemList(u32 CharacterId, FlexArray<ItemData> &OutItemLis
 bool DBConnection::ChangeItemCount(u32 CharacterId, u32 ItemId, u32 Count)
 {
 	// まずは既にリストに存在するかどうかをチェック
-	MySqlQuery Query = Connection.CreateQuery("select ItemId fron ItemData where CharacterId = ? and ItemId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select ItemId from ItemData where CharacterId = ? and ItemId = ?;");
 
 	Query.BindInt(&CharacterId);
 	Query.BindInt(&ItemId);
@@ -305,6 +305,44 @@ bool DBConnection::ChangeItemCount(u32 CharacterId, u32 ItemId, u32 Count)
 		if (!Query.ExecuteQuery()) { return false; }
 	}
 
+	return true;
+}
+
+// アイテムショートカット読み込み。
+bool DBConnection::LoadItemShortcut(u32 CharacterId, u32 &OutItemId1, u32 &OutItemId2)
+{
+	MySqlQuery Query = Connection.CreateQuery("select ItemId1, ItemId2 from ItemShortcut where CharacterId = ?");
+
+	Query.BindInt(&CharacterId);
+
+	Query.BindResultInt(&OutItemId1);
+	Query.BindResultInt(&OutItemId2);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	if (!Query.Fetch())
+	{
+		// まだデータが存在しないので作成しておく。
+		Query.Close();
+		Query = Connection.CreateQuery("insert into ItemShortcut Values(?, 0, 0);");
+		Query.BindInt(&CharacterId);
+
+		if (!Query.ExecuteQuery()) { return false; }
+		OutItemId1 = 0;
+		OutItemId2 = 0;
+	}
+
+	return true;
+}
+
+// アイテムショートカット書き込み。
+bool DBConnection::SaveItemShortcut(u32 CharacterId, u32 ItemId1, u32 ItemId2)
+{
+	MySqlQuery Query = Connection.CreateQuery("update ItemShortcut set ItemId1 = ?, ItemId2 = ? where CharacterId = ?;");
+	Query.BindInt(&ItemId1);
+	Query.BindInt(&ItemId2);
+	Query.BindInt(&CharacterId);
+
+	if (!Query.ExecuteQuery()) { return false; }
 	return true;
 }
 

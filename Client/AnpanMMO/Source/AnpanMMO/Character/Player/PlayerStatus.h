@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Skill/SkillTree/SkillTree.h"
+#include "Item/ItemList.h"
 
 /**
  * プレイヤーステータス
@@ -89,6 +90,15 @@ public:
 	// スキルツリーを取得.
 	const SkillTree &GetSkillTree() const { return Tree; }
 
+	// アイテムリストを取得.
+	const ItemList &GetItemList() const { return Items; }
+
+	// アイテム追加.
+	void AddItem(uint32 ItemId, uint32 Count) { Items.Add(ItemId, Count); }
+
+	// アイテム削除.
+	void SubtractItem(uint32 ItemId, uint32 Count) { Items.Subtract(ItemId, Count); }
+
 private:
 
 	// Uuid
@@ -123,5 +133,8 @@ private:
 
 	// スキルツリー
 	SkillTree Tree;
+
+	// アイテムリスト
+	ItemList Items;
 
 };
