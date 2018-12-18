@@ -56,6 +56,21 @@ CREATE TABLE `ItemData` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `ItemShortcut`
+--
+
+DROP TABLE IF EXISTS `ItemShortcut`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ItemShortcut` (
+  `CharacterId` int(10) unsigned NOT NULL,
+  `ItemId1` int(10) unsigned DEFAULT NULL,
+  `ItemId2` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`CharacterId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `ScriptFlags`
 --
 
@@ -125,4 +140,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-17 14:29:35
+-- Dump completed on 2018-12-18 13:00:40
