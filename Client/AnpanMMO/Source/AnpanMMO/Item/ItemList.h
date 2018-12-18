@@ -35,9 +35,18 @@ public:
 	// ※個数は考えない。
 	TArray<uint32> CollectItemList() const;
 
+	// アイテムショートカットを更新.
+	void UpdateItemShortcut(uint32 ItemId1, uint32 ItemId2);
+
+	// アイテムショートカットを取得.
+	const TArray<uint32> &GetItemShortcut() const { return ItemShortcut; }
+
 private:
 
 	// アイテムマップ
 	ItemMap Items;
+
+	// アイテムショートカット
+	TArray<uint32> ItemShortcut;
 
 };

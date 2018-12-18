@@ -8,6 +8,7 @@
 #include "Packet/PacketItemUse.h"
 #include "Packet/PacketItemSubtractRequest.h"
 #include "Packet/CharacterType.h"
+#include "Packet/PacketSaveItemShortcutRequest.h"
 
 // コンストラクタ
 UItemMenu::UItemMenu(const FObjectInitializer &ObjectInitializer)
@@ -71,6 +72,17 @@ void UItemMenu::Use(const FItemData &Data)
 void UItemMenu::Subtract(const FItemData &Data, int32 Count)
 {
 	PacketItemSubtractRequest Packet(Data.ItemId, Count);
+
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	pInst->SendPacket(&Packet);
+}
+
+// ショートカット保存.
+void UItemMenu::SaveShortcut(const FItemData &Data1, const FItemData &Data2)
+{
+	PacketSaveItemShortcutRequest Packet(Data1.ItemId, Data2.ItemId);
 
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
 	check(pInst != nullptr);

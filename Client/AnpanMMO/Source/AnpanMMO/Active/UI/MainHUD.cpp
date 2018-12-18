@@ -38,18 +38,19 @@ void UMainHUD::NativeConstruct()
 	pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 }
 
+// アイテムショートカット更新.
+void UMainHUD::UpdateItemShortcut()
+{
+	TArray<int32> ItemShortcut = pCharacter->GetItemShortcutForBlurprint();
+	OnUpdateItemShortcut(ItemShortcut);
+}
+
 // 通知を受信した。
 void UMainHUD::OnRecvNotice(int32 Uuid, const NoticeData &Data)
 {
 	NotReadNoticeCount++;
 }
 
-
-// 攻撃ボタンが押された。
-void UMainHUD::OnPressedAttackButton()
-{
-	
-}
 
 // レベルロード開始.
 void UMainHUD::StartLevelLoad()

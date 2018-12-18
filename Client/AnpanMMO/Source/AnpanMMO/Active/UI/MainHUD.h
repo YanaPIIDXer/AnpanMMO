@@ -97,6 +97,9 @@ public:
 	void OnRecvSkillRecastFinished(int32 SkillId);
 	void OnRecvSkillRecastFinished_Implementation(int32 SkillId) {}
 
+	// アイテムショートカット更新.
+	void UpdateItemShortcut();
+
 	// 通知を受信した。
 	void OnRecvNotice(int32 Uuid, const NoticeData &Data);
 
@@ -106,10 +109,6 @@ public:
 	void OnLogOut_Implementation() {}
 
 protected:
-
-	// 攻撃ボタンが押された。
-	UFUNCTION(BlueprintCallable, Category = "Attack")
-	void OnPressedAttackButton();
 
 	// レベルロード開始.
 	UFUNCTION(BlueprintCallable, Category = "MapChange")
@@ -130,6 +129,11 @@ protected:
 	// 未読通知の数.
 	UPROPERTY(BlueprintReadOnly, Category = "Notice")
 	int32 NotReadNoticeCount;
+
+	// アイテムショートカット更新.
+	UFUNCTION(BlueprintNativeEvent, Category = "ItemShortcut")
+	void OnUpdateItemShortcut(const TArray<int32> &ItemShortcut);
+	void OnUpdateItemShortcut_Implementation(const TArray<int32> &ItemShortcut) {}
 
 private:
 	

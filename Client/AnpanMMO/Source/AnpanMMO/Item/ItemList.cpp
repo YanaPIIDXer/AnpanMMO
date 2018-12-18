@@ -50,3 +50,12 @@ TArray<uint32> ItemList::CollectItemList() const
 	}
 	return List;
 }
+
+// アイテムショートカットを更新.
+void ItemList::UpdateItemShortcut(uint32 ItemId1, uint32 ItemId2)
+{
+	ItemShortcut.RemoveAt(0, ItemShortcut.Num());
+
+	ItemShortcut.Add(ItemId1);
+	ItemShortcut.Add(ItemId2);
+}

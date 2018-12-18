@@ -60,9 +60,17 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Skill")
 	bool IsSkillUsable(int32 SkillId) const;
 
+	// アイテムが使用可能か？
+	UFUNCTION(BlueprintPure, Category = "ItemShortcut")
+	bool IsItemUsable(int32 ItemId) const;
+
 	// スキル使用.
 	UFUNCTION(BlueprintCallable, Category = "Skill")
 	void UseSkill(int32 SkillId);
+
+	// アイテム使用.
+	UFUNCTION(BlueprintCallable, Category = "ItemShortcut")
+	void UseItem(int32 ItemId);
 	
 	// 通常攻撃スキルを使用.
 	void UseNormalAttackSkill();
@@ -102,6 +110,17 @@ public:
 	// アイテム削除.
 	void SubtractItem(uint32 ItemId, uint32 Count) { Status.SubtractItem(ItemId, Count); }
 
+	// アイテムショートカットを更新.
+	void UpdateItemShortcut(uint32 ItemId1, uint32 ItemId2);
+
+	// BP向けにアイテムショートカットを取得.
+	UFUNCTION(BlueprintCallable, Category = "ItemShortcut")
+	TArray<int32> GetItemShortcutForBlurprint();
+
+	// アイテム数を取得.
+	UFUNCTION(BlueprintPure, Category = "Item")
+	int32 GetItemCount(int32 ItemId) const { return Status.GetItemList().GetCount(ItemId); }
+
 protected:
 
 	// レベルアップした
@@ -122,5 +141,9 @@ private:
 
 	// スキル制御.
 	SkillControl Skill;
+
+
+	// スキルターゲット取得.
+	ACharacterBase *GetSkillTarget(uint32 SkillId);
 
 };

@@ -60,6 +60,9 @@ public:
 	// アイテムリストを受信した。
 	void OnRecvItemList(const FlexArray<ItemData> &Items);
 
+	// アイテムショートカットを受信した。
+	void OnRecvItemShortcht(uint32 ItemId1, uint32 ItemId2);
+
 	// ステータスキャッシュ取得.
 	const PlayerStatus &GetStatusCache() const { return StatusCache; }
 

@@ -72,6 +72,9 @@ private:
 	// アイテムリストを受信した。
 	void OnRecvItemList(MemoryStreamInterface *pStream);
 
+	// アイテムショートカットを受信した。
+	void OnRecvItemShortcut(MemoryStreamInterface *pStream);
+
 	// スクリプトフラグを受信した。
 	void OnRecvScriptFlag(MemoryStreamInterface *pStream);
 

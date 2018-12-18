@@ -102,6 +102,12 @@ void UMMOGameInstance::OnRecvItemList(const FlexArray<ItemData> &Items)
 	}
 }
 
+// アイテムショートカットを受信した。
+void UMMOGameInstance::OnRecvItemShortcht(uint32 ItemId1, uint32 ItemId2)
+{
+	StatusCache.UpdateItemShortcut(ItemId1, ItemId2);
+}
+
 
 // パケットを受信した。
 void UMMOGameInstance::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
