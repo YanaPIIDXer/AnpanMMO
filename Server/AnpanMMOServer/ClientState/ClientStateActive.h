@@ -85,6 +85,12 @@ private:
 	// アイテム破棄リクエストを受信した。
 	void OnRecvItemSubtractRequest(MemoryStreamInterface *pStream);
 
+	// アイテムショートカット保存リクエストを受信した。
+	void OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream);
+
+	// キャッシュサーバからアイテムショートカット保存結果を受信した。
+	void OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

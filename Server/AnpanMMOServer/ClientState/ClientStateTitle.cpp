@@ -29,6 +29,9 @@
 #include "Packet/CachePacketSkillListResponse.h"
 #include "Packet/CachePacketItemListRequest.h"
 #include "Packet/CachePacketItemListResponse.h"
+#include "Packet/CachePacketItemShortcutRequest.h"
+#include "Packet/CachePacketItemShortcutResponse.h"
+#include "Packet/PacketItemShortcut.h"
 #include "Packet/CachePacketScriptFlagRequest.h"
 #include "Packet/CachePacketScriptFlagResponse.h"
 
@@ -46,6 +49,7 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 	AddPacketFunction(PacketID::CacheSkillListResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillListResponse, this, _2));
 	AddPacketFunction(PacketID::CacheSkillTreeResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillTreeResponse, this, _2));
 	AddPacketFunction(PacketID::CacheItemListResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemListResponse, this, _2));
+	AddPacketFunction(PacketID::CacheItemShortcutResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemShortcutResponse, this, _2));
 	AddPacketFunction(PacketID::CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResponse, this, _2));
 }
 
@@ -235,6 +239,28 @@ void ClientStateTitle::OnRecvCacheItemListResponse(MemoryStreamInterface *pStrea
 	}
 
 	GetParent()->SendPacket(&ListPacket);
+
+	// アイテムショートカットを要求.
+	CachePacketItemShortcutRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+}
+
+// キャッシュサーバからアイテムショートカットを受信した。
+void ClientStateTitle::OnRecvCacheItemShortcutResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketItemShortcutResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != CachePacketItemShortcutResponse::Success)
+	{
+		std::cout << "Item Shortcut Load Failed..." << std::endl;
+		return;
+	}
+
+	// アイテムショートカットはクライアントに通知するだけ。
+	// ※サーバ側が特に何かをする訳ではない。
+	PacketItemShortcut ShortcutPacket(Packet.ItemId1, Packet.ItemId2);
+	GetParent()->SendPacket(&ShortcutPacket);
 
 	// スクリプトフラグを要求.
 	CachePacketScriptFlagRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());

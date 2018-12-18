@@ -23,6 +23,10 @@
 #include "Packet/CachePacketItemListRequest.h"
 #include "Packet/CachePacketItemListResponse.h"
 #include "Packet/CachePacketItemCountChangeRequest.h"
+#include "Packet/CachePacketItemShortcutRequest.h"
+#include "Packet/CachePacketItemShortcutResponse.h"
+#include "Packet/CachePacketSaveItemShortcutRequest.h"
+#include "Packet/CachePacketSaveItemShortcutResponse.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -40,6 +44,8 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(PacketID::CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
 	AddPacketFunc(PacketID::CacheItemListRequest, bind(&PacketReceiver::OnRecvItemListRequest, this, _1));
 	AddPacketFunc(PacketID::CacheItemCountChangeRequest, bind(&PacketReceiver::OnRecvItemCountChange, this, _1));
+	AddPacketFunc(PacketID::CacheItemShortcutRequest, bind(&PacketReceiver::OnRecvItemShortcutRequest, this, _1));
+	AddPacketFunc(PacketID::CacheSaveItemShortcutRequest, bind(&PacketReceiver::OnRecvSaveItemShortcutRequest, this, _1));
 	AddPacketFunc(PacketID::CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
 }
 
@@ -274,6 +280,39 @@ void PacketReceiver::OnRecvItemCountChange(MemoryStreamInterface *pStream)
 	{
 		std::cout << "Item Count Change Failed..." << std::endl;
 	}
+}
+
+// アイテムショートカット読み込みリクエストを受信した。
+void PacketReceiver::OnRecvItemShortcutRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketItemShortcutRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = CachePacketItemShortcutResponse::Success;
+	u32 ItemId1 = 0, ItemId2 = 0;
+	if (!DBConnection::GetInstance().LoadItemShortcut(Packet.CharacterId, ItemId1, ItemId2))
+	{
+		Result = CachePacketItemShortcutResponse::Error;
+	}
+
+	CachePacketItemShortcutResponse ResponsePacket(Packet.ClientId, Result, ItemId1, ItemId2);
+	pParent->SendPacket(&ResponsePacket);
+}
+
+// アイテムショートカット書き込みリクエストを受信した。
+void PacketReceiver::OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveItemShortcutRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = CachePacketSaveItemShortcutResponse::Success;
+	if (!DBConnection::GetInstance().SaveItemShortcut(Packet.CharacterId, Packet.ItemId1, Packet.ItemId2))
+	{
+		Result = CachePacketSaveItemShortcutResponse::Error;
+	}
+
+	CachePacketSaveItemShortcutResponse ResponsePacket(Packet.ClientId, Result);
+	pParent->SendPacket(&ResponsePacket);
 }
 
 // ゴールド保存リクエストを受信した。
