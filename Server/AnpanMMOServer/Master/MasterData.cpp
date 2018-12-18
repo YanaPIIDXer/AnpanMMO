@@ -103,5 +103,23 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!Quest.Load(Connection))
+	{
+		std::cout << "Quest Master Load Failed..." << std::endl;
+		return false;
+	}
+
+	if (!QuestStage.Load(Connection))
+	{
+		std::cout << "QuestStage Master Load Failed..." << std::endl;
+		return false;
+	}
+
+	if (!QuestReward.Load(Connection))
+	{
+		std::cout << "QuestReward Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }

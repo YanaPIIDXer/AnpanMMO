@@ -13,6 +13,9 @@
 #include "SkillTreeMaster.h"
 #include "ItemMaster.h"
 #include "ItemDropMaster.h"
+#include "QuestMaster.h"
+#include "QuestStageMaster.h"
+#include "QuestRewardMaster.h"
 
 /**
  * マスタデータクラス
@@ -61,6 +64,15 @@ public:
 	// アイテムドロップマスタ取得.
 	const ItemDropMaster &GetItemDropMaster() { return ItemDrop; }
 
+	// クエストマスタ取得.
+	const QuestMaster &GetQuestMaster() { return Quest; }
+
+	// クエストステージマスタ取得.
+	const QuestStageMaster &GetQuestStageMaster() { return QuestStage; }
+
+	// クエスト報酬マスタ取得.
+	const QuestRewardMaster &GetQuestRewardMaster() { return QuestReward; }
+
 private:
 
 	// DBホスト
@@ -107,6 +119,15 @@ private:
 
 	// アイテムドロップマスタ
 	ItemDropMaster ItemDrop;
+
+	// クエストマスタ
+	QuestMaster Quest;
+
+	// クエストステージマスタ
+	QuestStageMaster QuestStage;
+
+	// クエスト報酬マスタ
+	QuestRewardMaster QuestReward;
 
 	// ======= Singleton ==========
 public:

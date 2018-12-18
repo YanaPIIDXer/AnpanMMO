@@ -23,4 +23,6 @@ void MasterData::Load()
 	Skill.Load();
 	SkillTree.Load();
 	Item.Load();
+	Quest.Load();
+	QuestReward.Load();
 }
