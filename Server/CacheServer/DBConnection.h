@@ -53,6 +53,12 @@ public:
 	// アイテム数変化.
 	bool ChangeItemCount(u32 CharacterId, u32 ItemId, u32 Count);
 
+	// アイテムショートカット読み込み。
+	bool LoadItemShortcut(u32 CharacterId, u32 &OutItemId1, u32 &OutItemId2);
+
+	// アイテムショートカット書き込み。
+	bool SaveItemShortcut(u32 CharacterId, u32 ItemId1, u32 ItemId2);
+
 	// ゴールド書き込み
 	bool SaveGold(u32 CharacterId, u32 Gold);
 
