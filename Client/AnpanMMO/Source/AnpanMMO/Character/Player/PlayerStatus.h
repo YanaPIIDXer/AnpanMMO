@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Skill/SkillTree/SkillTree.h"
+#include "Item/ItemList.h"
 
 /**
  * プレイヤーステータス
@@ -89,6 +90,9 @@ public:
 	// スキルツリーを取得.
 	const SkillTree &GetSkillTree() const { return Tree; }
 
+	// アイテムリストを取得.
+	const ItemList &GetItemList() const { return Items; }
+
 private:
 
 	// Uuid
@@ -123,5 +127,8 @@ private:
 
 	// スキルツリー
 	SkillTree Tree;
+
+	// アイテムリスト
+	ItemList Items;
 
 };
