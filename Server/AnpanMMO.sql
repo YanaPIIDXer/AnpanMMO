@@ -71,6 +71,21 @@ CREATE TABLE `ItemShortcut` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `QuestData`
+--
+
+DROP TABLE IF EXISTS `QuestData`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `QuestData` (
+  `CharacterId` int(10) unsigned DEFAULT NULL,
+  `QuestId` int(10) unsigned DEFAULT NULL,
+  `StageId` int(10) unsigned DEFAULT NULL,
+  `State` tinyint(3) unsigned DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `ScriptFlags`
 --
 
@@ -140,4 +155,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-18 13:00:40
+-- Dump completed on 2018-12-18 21:47:48
