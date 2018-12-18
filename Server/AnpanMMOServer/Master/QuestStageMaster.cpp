@@ -10,7 +10,7 @@ bool QuestStageMaster::Load(const MySqlConnection &Connection)
 
 	Query.BindResultInt(&BindItem.Id);
 	Query.BindResultChar(&BindItem.Condition);
-	Query.BindResultInt(&BindItem.AreaId);
+	Query.BindResultInt(&BindItem.TargetId);
 	Query.BindResultInt(&BindItem.Count);
 	Query.BindResultInt(&BindItem.NextStageId);
 
@@ -20,7 +20,7 @@ bool QuestStageMaster::Load(const MySqlConnection &Connection)
 		QuestStageItem Item;
 		Item.Id = BindItem.Id;
 		Item.Condition = BindItem.Condition;
-		Item.AreaId = BindItem.AreaId;
+		Item.TargetId = BindItem.TargetId;
 		Item.Count = BindItem.Count;
 		Item.NextStageId = BindItem.NextStageId;
 
