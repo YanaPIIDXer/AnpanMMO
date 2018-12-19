@@ -121,6 +121,7 @@ void QuestManager::OnKilledAnpan(u32 AreaId)
 	for (ActiveQuestMap::iterator It = ActiveQuests.begin(); It != ActiveQuests.end(); ++It)
 	{
 		const QuestStageItem *pItem = GetCurrentStageData(It->first);
+
 		if (pItem->Condition != QuestStageItem::KILL_ANPAN_IN_AREA || pItem->TargetId != AreaId) { continue; }
 
 		It->second->KillCount++;
@@ -128,14 +129,16 @@ void QuestManager::OnKilledAnpan(u32 AreaId)
 		PacketQuestAnpanKill Packet(It->first);
 		pClient->SendPacket(&Packet);
 
-		// キャッシュサーバにも通知.
-		CachePacketSaveQuestDataRequest CachePacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId(), *It->second);
-		CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
-
 		if (It->second->KillCount >= pItem->Count)
 		{
 			// 規定数殺害したのでステージ進行。
 			ProgressStage(It->first);
+		}
+		else
+		{
+			// キャッシュサーバにも通知.
+			CachePacketSaveQuestDataRequest CachePacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId(), *It->second);
+			CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 		}
 	}
 }
