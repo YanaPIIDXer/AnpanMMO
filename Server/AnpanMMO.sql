@@ -38,7 +38,7 @@ CREATE TABLE `CharacterData` (
   `LastY` float DEFAULT NULL,
   `LastZ` float DEFAULT NULL,
   PRIMARY KEY (`CharacterId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +82,8 @@ CREATE TABLE `QuestData` (
   `QuestId` int(10) unsigned DEFAULT NULL,
   `StageNo` int(10) unsigned DEFAULT NULL,
   `KillCount` int(10) unsigned DEFAULT NULL,
-  `State` tinyint(3) unsigned DEFAULT NULL
+  `State` tinyint(3) unsigned DEFAULT NULL,
+  `IsActive` tinyint(3) unsigned DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -156,4 +157,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-19  9:57:08
+-- Dump completed on 2018-12-19 19:51:32
