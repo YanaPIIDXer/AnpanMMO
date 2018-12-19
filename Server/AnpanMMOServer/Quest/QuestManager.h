@@ -4,6 +4,8 @@
 #include "Packet/QuestData.h"
 #include <boost/unordered_map.hpp>
 
+class Client;
+
 /**
  * クエスト管理.
  */
@@ -17,7 +19,7 @@ private:		// 別名定義.
 public:
 
 	// コンストラクタ
-	QuestManager();
+	QuestManager(Client *pInClient);
 
 	// デストラクタ
 	~QuestManager() {}
@@ -25,7 +27,16 @@ public:
 	// 追加.
 	void Add(const QuestData &Data);
 
+	// 受注.
+	void Accept(u32 QuestId);
+
+	// ステージ進行.
+	void ProgressStage(u32 QuestId);
+
 private:
+
+	// クライアント
+	Client *pClient;
 
 	// クエストマップ
 	QuestMap Quests;

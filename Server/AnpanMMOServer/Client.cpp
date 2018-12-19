@@ -15,6 +15,7 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	, pState(new ClientStateTitle(this))
 	, Uuid(0)
 	, CustomerId(0)
+	, QuestMgr(this)
 {
 	bIsConnected = true;
 	Script.SetScriptDir("../../Script/Scripts");
