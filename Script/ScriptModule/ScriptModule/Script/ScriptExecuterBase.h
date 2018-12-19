@@ -53,6 +53,9 @@ public:
 	// クエストが進行中か？
 	virtual bool IsQuestActive(u32 QuestId) = 0;
 
+	// クエスト進行.
+	virtual void ProgressQuest(u32 QuestId) = 0;
+
 protected:
 
 	// 実行エラー

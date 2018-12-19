@@ -60,7 +60,11 @@ int GetFlag_Call(lua_State *pState)
 {
 	long Id = (long) luaL_checknumber(pState, -2);
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
-	if (pExecuter == NULL) { return 0; }
+	if (pExecuter == NULL)
+	{
+		lua_pushboolean(pState, false);
+		return 1;
+	}
 
 	int Flag = (int) luaL_checknumber(pState, -1);
 	bool bFlag = pExecuter->GetFlag(Flag);
@@ -74,11 +78,28 @@ int IsQuestActive_Call(lua_State *pState)
 {
 	long Id = (long)luaL_checknumber(pState, -2);
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
-	if (pExecuter == NULL) { return 0; }
+	if (pExecuter == NULL)
+	{
+		lua_pushboolean(pState, false);
+		return 1;
+	}
 
 	u32 QuestId = (u32)luaL_checknumber(pState, -1);
 	bool bIsActive = pExecuter->IsQuestActive(QuestId);
 	lua_pushboolean(pState, bIsActive);
 
 	return 1;
+}
+
+// クエスト進行.
+int ProgressQuest_Call(lua_State *pState)
+{
+	long Id = (long)luaL_checknumber(pState, -2);
+	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
+	if (pExecuter == NULL) { return 0; }
+
+	u32 QuestId = (u32)luaL_checknumber(pState, -1);
+	pExecuter->ProgressQuest(QuestId);
+
+	return 0;
 }

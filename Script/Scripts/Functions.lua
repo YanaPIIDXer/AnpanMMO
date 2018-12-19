@@ -31,3 +31,8 @@ function IsQuestActive(QuestId)
 	local bIsActive = IsQuestActive_Impl(this, QuestId)
 	return bIsActive
 end
+
+-- クエスト進行.
+function ProgressQuest(QuestId)
+	ProgressQuest_Impl(this, QuestId)
+end

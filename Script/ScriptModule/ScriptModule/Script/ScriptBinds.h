@@ -27,4 +27,7 @@ int GetFlag_Call(lua_State *pState);
 // クエストが進行中か？
 int IsQuestActive_Call(lua_State *pState);
 
+// クエスト進行.
+int ProgressQuest_Call(lua_State *pState);
+
 #endif		// #ifndef __SCRIPTBINDS_H__
