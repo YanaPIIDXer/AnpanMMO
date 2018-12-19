@@ -36,3 +36,9 @@ end
 function ProgressQuest(QuestId)
 	ProgressQuest_Impl(this, QuestId)
 end
+
+-- クエストのステージ番号を取得.
+function GetQuestStageNo(QuestId)
+	local StageNo = GetQuestStageNo_Impl(this, QuestId)
+	return StageNo
+end

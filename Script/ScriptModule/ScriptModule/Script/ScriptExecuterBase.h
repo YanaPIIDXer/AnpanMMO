@@ -56,6 +56,9 @@ public:
 	// クエスト進行.
 	virtual void ProgressQuest(u32 QuestId) = 0;
 
+	// クエストのステージ番号を取得.
+	virtual u32 GetQuestStageNo(u32 QuestId) = 0;
+
 protected:
 
 	// 実行エラー

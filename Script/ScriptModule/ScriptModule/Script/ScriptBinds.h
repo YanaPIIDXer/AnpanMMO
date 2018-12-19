@@ -30,4 +30,7 @@ int IsQuestActive_Call(lua_State *pState);
 // クエスト進行.
 int ProgressQuest_Call(lua_State *pState);
 
+// クエストのステージ番号を取得.
+int GetQuestStageNo_Call(lua_State *pState);
+
 #endif		// #ifndef __SCRIPTBINDS_H__

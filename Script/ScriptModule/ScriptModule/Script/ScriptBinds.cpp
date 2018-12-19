@@ -10,10 +10,10 @@
 int ShowMessage_Call(lua_State *pState)
 {
 	long Id = (long)luaL_checknumber(pState, -2);
+	const char *pMessage = luaL_checkstring(pState, -1);
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	const char *pMessage = luaL_checkstring(pState, -1);
 	if (pExecuter == NULL) { return 0; }
 
 	pExecuter->ShowMessage_Impl(pMessage);
@@ -24,10 +24,10 @@ int ShowMessage_Call(lua_State *pState)
 int PushSelection_Call(lua_State *pState)
 {
 	long Id = (long)luaL_checknumber(pState, -2);
+	const char *pMessage = luaL_checkstring(pState, -1);
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	const char *pMessage = luaL_checkstring(pState, -1);
 	pExecuter->PushSelection_Impl(pMessage);
 	return 0;
 }
@@ -47,10 +47,10 @@ int ShowSelection_Call(lua_State *pState)
 int SetFlag_Call(lua_State *pState)
 {
 	long Id = (long)luaL_checknumber(pState, -2);
+	int Flag = (int)luaL_checknumber(pState, -1);
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	int Flag = (int) luaL_checknumber(pState, -1);
 	pExecuter->SetFlag(Flag);
 	return 0;
 }
@@ -59,6 +59,7 @@ int SetFlag_Call(lua_State *pState)
 int GetFlag_Call(lua_State *pState)
 {
 	long Id = (long) luaL_checknumber(pState, -2);
+	int Flag = (int)luaL_checknumber(pState, -1);
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL)
 	{
@@ -66,7 +67,6 @@ int GetFlag_Call(lua_State *pState)
 		return 1;
 	}
 
-	int Flag = (int) luaL_checknumber(pState, -1);
 	bool bFlag = pExecuter->GetFlag(Flag);
 	lua_pushboolean(pState, bFlag);
 
@@ -77,6 +77,7 @@ int GetFlag_Call(lua_State *pState)
 int IsQuestActive_Call(lua_State *pState)
 {
 	long Id = (long)luaL_checknumber(pState, -2);
+	u32 QuestId = (u32)luaL_checknumber(pState, -1);
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL)
 	{
@@ -84,7 +85,6 @@ int IsQuestActive_Call(lua_State *pState)
 		return 1;
 	}
 
-	u32 QuestId = (u32)luaL_checknumber(pState, -1);
 	bool bIsActive = pExecuter->IsQuestActive(QuestId);
 	lua_pushboolean(pState, bIsActive);
 
@@ -95,11 +95,29 @@ int IsQuestActive_Call(lua_State *pState)
 int ProgressQuest_Call(lua_State *pState)
 {
 	long Id = (long)luaL_checknumber(pState, -2);
+	u32 QuestId = (u32)luaL_checknumber(pState, -1);
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	u32 QuestId = (u32)luaL_checknumber(pState, -1);
 	pExecuter->ProgressQuest(QuestId);
 
 	return 0;
+}
+
+// クエストのステージ番号を取得.
+int GetQuestStageNo_Call(lua_State *pState)
+{
+	long Id = (long)luaL_checknumber(pState, -2);
+	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
+	if (pExecuter == NULL)
+	{
+		lua_pushnumber(pState, 0);
+		return 1;
+	}
+
+	u32 QuestId = (u32)luaL_checknumber(pState, -1);
+	u32 StageNo = pExecuter->GetQuestStageNo(QuestId);
+
+	lua_pushnumber(pState, StageNo);
+	return 1;
 }
