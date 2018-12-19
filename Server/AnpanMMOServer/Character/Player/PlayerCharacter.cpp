@@ -35,6 +35,7 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
 	Skill.SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
 	Skill.SetOnUsedItemFunction(boost::bind(&PlayerCharacter::OnUsedItem, this, _1));
+	Skill.SetOnKilledFunction(boost::bind(&PlayerCharacter::OnKilled, this, _1));
 	Recast.SetRecastFinishedFunction(boost::bind(&PlayerCharacter::OnSkillRecastFinished, this, _1));
 }
 
@@ -237,4 +238,66 @@ void PlayerCharacter::OnSkillRecastFinished(u32 SkillId)
 void PlayerCharacter::OnUsedItem(u32 ItemId)
 {
 	SubtractItem(ItemId, 1);
+}
+
+// 殺害した。
+void PlayerCharacter::OnKilled(CharacterBase *pKilledCharacter)
+{
+	// 経験値.
+	AddExp(pKilledCharacter->GetExp());
+
+	// アイテムドロップ
+	GetDrop(pKilledCharacter->GetDropId());
+}
+
+// ドロップアイテムを取得.
+void PlayerCharacter::GetDrop(u32 DropId)
+{
+	const ItemDropItem *pDropItem = MasterData::GetInstance().GetItemDropMaster().GetItem(DropId);
+	if (pDropItem == NULL) { return; }
+
+	u8 DropType = ItemDropItem::NONE;
+	u32 DropItemId = 0;
+	u32 DropCount = 0;
+	int Index = Random::Range<int>(0, 2);
+	switch (Index)
+	{
+		case 0:
+
+			DropType = pDropItem->Type1;
+			DropItemId = pDropItem->Id1;
+			DropCount = pDropItem->Count1;
+			break;
+
+		case 1:
+
+			DropType = pDropItem->Type2;
+			DropItemId = pDropItem->Id2;
+			DropCount = pDropItem->Count2;
+			break;
+
+		case 2:
+
+			DropType = pDropItem->Type3;
+			DropItemId = pDropItem->Id3;
+			DropCount = pDropItem->Count3;
+			break;
+	}
+	switch (DropType)
+	{
+		case ItemDropItem::ITEM:
+
+			// アイテム
+			if (DropItemId != 0)
+			{
+				AddItem(DropItemId, DropCount);
+			}
+			break;
+
+		case ItemDropItem::GOLD:
+
+			// ゴールド
+			AddGold(DropCount);
+			break;
+	}
 }

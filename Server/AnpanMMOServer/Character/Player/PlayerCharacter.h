@@ -142,6 +142,12 @@ private:
 	// アイテムを使用した。
 	void OnUsedItem(u32 ItemId);
 
+	// 殺害した。
+	void OnKilled(CharacterBase *pKilledCharacter);
+
+	// ドロップアイテムを取得。
+	void GetDrop(u32 DropId);
+
 };
 
 #endif		// #ifndef __PLAYERCHARACTER_H__

@@ -95,6 +95,12 @@ public:
 	// リキャスト中か？
 	bool IsRecasting(u32 SkillId) const { return Recast.IsRecast(SkillId); }
 
+	// 倒した時の経験値取得.
+	virtual int GetExp() const { return 0; }
+
+	// ドロップＩＤ取得.
+	virtual u32 GetDropId() const { return 0; }
+
 protected:
 
 	// 座標.
