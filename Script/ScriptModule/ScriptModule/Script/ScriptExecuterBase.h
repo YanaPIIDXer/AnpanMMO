@@ -50,6 +50,9 @@ public:
 	// フラグを取得.
 	virtual bool GetFlag(int Flag) = 0;
 
+	// クエストが進行中か？
+	virtual bool IsQuestActive(u32 QuestId) = 0;
+
 protected:
 
 	// 実行エラー

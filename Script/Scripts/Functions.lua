@@ -25,3 +25,9 @@ function GetFlag(FlagName)
 	local Flag = GetFlag_Impl(this, FlagName)
 	return Flag
 end
+
+-- クエストが進行中か？
+function IsQuestActive(QuestId)
+	local bIsActive = IsQuestActive_Impl(this, QuestId)
+	return bIsActive
+end

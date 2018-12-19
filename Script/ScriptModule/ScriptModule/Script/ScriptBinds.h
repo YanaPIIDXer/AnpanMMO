@@ -24,4 +24,7 @@ int SetFlag_Call(lua_State *pState);
 // フラグを取得.
 int GetFlag_Call(lua_State *pState);
 
+// クエストが進行中か？
+int IsQuestActive_Call(lua_State *pState);
+
 #endif		// #ifndef __SCRIPTBINDS_H__

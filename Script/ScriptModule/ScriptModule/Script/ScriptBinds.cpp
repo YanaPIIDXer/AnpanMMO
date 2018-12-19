@@ -68,3 +68,17 @@ int GetFlag_Call(lua_State *pState)
 
 	return 1;
 }
+
+// クエストが進行中か？
+int IsQuestActive_Call(lua_State *pState)
+{
+	long Id = (long)luaL_checknumber(pState, -2);
+	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
+	if (pExecuter == NULL) { return 0; }
+
+	u32 QuestId = (u32)luaL_checknumber(pState, -1);
+	bool bIsActive = pExecuter->IsQuestActive(QuestId);
+	lua_pushboolean(pState, bIsActive);
+
+	return 1;
+}

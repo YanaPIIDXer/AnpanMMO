@@ -129,6 +129,7 @@ void ScriptExecuterBase::BindFunctions()
 	BindFunction(ShowSelection_Call, "ShowSelection_Impl");
 	BindFunction(SetFlag_Call, "SetFlag_Impl");
 	BindFunction(GetFlag_Call, "GetFlag_Impl");
+	BindFunction(IsQuestActive_Call, "IsQuestActive_Impl");
 }
 
 // 関数をバインド。

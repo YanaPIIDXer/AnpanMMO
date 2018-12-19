@@ -180,6 +180,9 @@
     <ClCompile Include="Script\ScriptBinds.cpp" />
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Scripts\Functions.lua" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
