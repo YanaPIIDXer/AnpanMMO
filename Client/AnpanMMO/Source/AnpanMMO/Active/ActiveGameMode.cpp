@@ -43,6 +43,11 @@
 #include "Packet/PacketItemAdd.h"
 #include "Packet/PacketItemSubtract.h"
 #include "Packet/PacketSaveItemShortcutResult.h"
+#include "Packet/PacketQuestAccept.h"
+#include "Packet/PacketQuestAnpanKill.h"
+#include "Packet/PacketQuestStageChange.h"
+#include "Packet/PacketQuestClear.h"
+#include "Packet/PacketQuestRetireResponse.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -98,6 +103,11 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::ItemAdd, std::bind(&AActiveGameMode::OnRecvAddItem, this, _1));
 	AddPacketFunction(PacketID::ItemSubtract, std::bind(&AActiveGameMode::OnRecvSubtractItem, this, _1));
 	AddPacketFunction(PacketID::SaveItemShortcutResult, std::bind(&AActiveGameMode::OnRecvSaveItemShortcutResult, this, _1));
+	AddPacketFunction(PacketID::QuestAccept, std::bind(&AActiveGameMode::OnRecvAcceptQuest, this, _1));
+	AddPacketFunction(PacketID::QuestAnpanKill, std::bind(&AActiveGameMode::OnRecvQuestKilledAnpan, this, _1));
+	AddPacketFunction(PacketID::QuestStageChange, std::bind(&AActiveGameMode::OnRecvProgressQuest, this, _1));
+	AddPacketFunction(PacketID::QuestClear, std::bind(&AActiveGameMode::OnRecvClearQuest, this, _1));
+	AddPacketFunction(PacketID::QuestRetireResponse, std::bind(&AActiveGameMode::OnRecvRetireQuestResponse, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -654,4 +664,82 @@ void AActiveGameMode::OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStrea
 	pCharacter->UpdateItemShortcut(Packet.ItemId1, Packet.ItemId2);
 
 	USimpleDialog::Show(this, "Item Shortcut Saved!", 100);
+}
+
+// クエスト受注を受信した。
+void AActiveGameMode::OnRecvAcceptQuest(MemoryStreamInterface *pStream)
+{
+	PacketQuestAccept Packet;
+	Packet.Serialize(pStream);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	QuestData Data(Packet.QuestId, 0, 0, QuestData::Active);
+	pInst->AddQuestData(Data);
+}
+
+// クエスト進行を受信した。
+void AActiveGameMode::OnRecvProgressQuest(MemoryStreamInterface *pStream)
+{
+	PacketQuestStageChange Packet;
+	Packet.Serialize(pStream);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->ProgressQuest(Packet.QuestId, Packet.StageNo);
+}
+
+// クエストでのアンパン殺害を受信した。
+void AActiveGameMode::OnRecvQuestKilledAnpan(MemoryStreamInterface *pStream)
+{
+	PacketQuestAnpanKill Packet;
+	Packet.Serialize(pStream);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->QuestKillAnpan(Packet.QuestId);
+}
+
+// クエストクリアを受信した。
+void AActiveGameMode::OnRecvClearQuest(MemoryStreamInterface *pStream)
+{
+	PacketQuestClear Packet;
+	Packet.Serialize(pStream);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->ClearQuest(Packet.QuestId);
+}
+
+// クエスト破棄レスポンスを受信した。
+void AActiveGameMode::OnRecvRetireQuestResponse(MemoryStreamInterface *pStream)
+{
+	PacketQuestRetireResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != PacketQuestRetireResponse::Success)
+	{
+		FString ErrorMsg = "Error...";
+		switch (Packet.Result)
+		{
+			case PacketQuestRetireResponse::MainQuest:
+
+				ErrorMsg = "This is Main Quest...";
+				break;
+		}
+
+		USimpleDialog::Show(this, ErrorMsg, 100);
+		return;
+	}
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->RetireQuest(Packet.QuestId);
+
+	USimpleDialog::Show(this, "Quest Retire.", 100);
 }

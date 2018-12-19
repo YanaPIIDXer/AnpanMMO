@@ -82,6 +82,19 @@ public:
 	// クエストデータ追加.
 	void AddQuestData(const QuestData &Data);
 	
+	// クエストでのアンパン殺害.
+	void QuestKillAnpan(uint32 QuestId);
+
+	// クエスト進行.
+	void ProgressQuest(uint32 QuestId, uint32 StageNo);
+
+	// クエストクリア
+	void ClearQuest(uint32 QuestId);
+
+	// クエスト破棄.
+	void RetireQuest(uint32 QuestId);
+
+
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;
 

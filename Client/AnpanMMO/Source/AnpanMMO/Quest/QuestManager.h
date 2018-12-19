@@ -26,14 +26,23 @@ public:
 	// 追加.
 	void Add(const QuestData &Data);
 
+	// アンパン殺害.
+	void KillAnpan(uint32 QuestId);
+
+	// ステージ進行.
+	void ProgressStage(uint32 QuestId, uint32 StageNo);
+
+	// クリア
+	void Clear(uint32 QuestId);
+
 	// 破棄.
-	void Retire(u32 QuestId);
+	void Retire(uint32 QuestId);
 
 	// 進行中か？
-	bool IsActive(u32 QuestId) const;
+	bool IsActive(uint32 QuestId) const;
 
 	// ステージ番号を取得.
-	uint32 GetStageNo(u32 QuestId) const;
+	uint32 GetStageNo(uint32 QuestId) const;
 
 private:
 
