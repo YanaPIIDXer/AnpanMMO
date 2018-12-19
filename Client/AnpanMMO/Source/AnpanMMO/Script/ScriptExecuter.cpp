@@ -5,6 +5,8 @@
 #include "GenericPlatformFile.h"
 #include "FileManagerGeneric.h"
 #include "Active/ActiveGameMode.h"
+#include "MMOGameInstance.h"
+#include "Kismet/GameplayStatics.h"
 #include "MemoryStream/MemoryStreamReader.h"
 
 // コンストラクタ
@@ -73,6 +75,24 @@ bool ScriptExecuter::GetFlag(int Flag)
 {
 	if (!FlagMap.Contains(Flag)) { return false; }
 	return FlagMap[Flag];
+}
+
+// クエストが進行中か？
+bool ScriptExecuter::IsQuestActive(u32 QuestId)
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(pGameMode.Get()));
+	check(pInst != nullptr);
+
+	return pInst->GetQuestManager().IsActive(QuestId);
+}
+
+// クエストのステージ番号を取得.
+u32 ScriptExecuter::GetQuestStageNo(u32 QuestId)
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(pGameMode.Get()));
+	check(pInst != nullptr);
+
+	return pInst->GetQuestManager().GetStageNo(QuestId);
 }
 
 // ビットフィールドからフラグに変換.
