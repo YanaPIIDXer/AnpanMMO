@@ -73,10 +73,13 @@ public:
 	bool SaveScriptFlags(u32 CharacterId, u32 BitField1, u32 BitField2, u32 BitField3);
 
 	// クエストデータ読み込み。
-	bool LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataList);
+	bool LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataList, u32 &OutActiveQuestId);
 
 	// クエストデータ保存.
 	bool SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u32 KillCount, u8 State);
+
+	// アクティブクエストを保存.
+	bool SaveActiveQuest(u32 CharacterId, u32 QuestId);
 
 	// クエストデータ破棄.
 	bool EraseQuestData(u32 CharacterId, u32 QuestId);

@@ -22,17 +22,19 @@ public:
 
 	u8 Result;
 	FlexArray<QuestData> Quests;
+	u32 ActiveQuestId;
 	
 
 	CachePacketQuestDataResponse()
 	{
 	}
 
-	CachePacketQuestDataResponse(u32 InClientId, u8 InResult, FlexArray<QuestData> InQuests)
+	CachePacketQuestDataResponse(u32 InClientId, u8 InResult, FlexArray<QuestData> InQuests, u32 InActiveQuestId)
 	{
 		ClientId = InClientId;
 		Result = InResult;
 		Quests = InQuests;
+		ActiveQuestId = InActiveQuestId;
 		
 	}
 
@@ -41,6 +43,7 @@ public:
 		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
 		Quests.Serialize(pStream);
+		pStream->Serialize(&ActiveQuestId);
 		
 		return true;
 	}

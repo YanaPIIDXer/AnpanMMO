@@ -31,6 +31,7 @@
 #include "Packet/CachePacketQuestDataResponse.h"
 #include "Packet/CachePacketSaveQuestDataRequest.h"
 #include "Packet/CachePacketQuestRetireRequest.h"
+#include "Packet/CachePacketSaveActiveQuestRequest.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -54,6 +55,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(PacketID::CacheQuestDataRequest, bind(&PacketReceiver::OnRecvQuestDataRequest, this, _1));
 	AddPacketFunc(PacketID::CacheSaveQuestDataRequest, bind(&PacketReceiver::OnRecvSaveQuestDataRequest, this, _1));
 	AddPacketFunc(PacketID::CacheQuestRetireRequest, bind(&PacketReceiver::OnRecvRetireQuestDataRequest, this, _1));
+	AddPacketFunc(PacketID::CacheSaveActiveQuestRequest, bind(&PacketReceiver::OnRecvSaveActiveQuestRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -340,7 +342,7 @@ void PacketReceiver::OnRecvQuestDataRequest(MemoryStreamInterface *pStream)
 	CachePacketQuestDataResponse ResponsePacket;
 	ResponsePacket.ClientId = Packet.ClientId;
 	ResponsePacket.Result = CachePacketQuestDataResponse::Success;
-	if (!DBConnection::GetInstance().LoadQuestData(Packet.CharacterId, ResponsePacket.Quests))
+	if (!DBConnection::GetInstance().LoadQuestData(Packet.CharacterId, ResponsePacket.Quests, ResponsePacket.ActiveQuestId))
 	{
 		ResponsePacket.Result = CachePacketQuestDataResponse::Error;
 	}
@@ -369,6 +371,18 @@ void PacketReceiver::OnRecvRetireQuestDataRequest(MemoryStreamInterface *pStream
 	if (!DBConnection::GetInstance().EraseQuestData(Packet.CharacterId, Packet.QuestId))
 	{
 		std::cout << "Erase QuestData Failed..." << std::endl;
+	}
+}
+
+// アクティブクエスト保存リクエストを受信した。
+void PacketReceiver::OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveActiveQuestRequest Packet;
+	Packet.Serialize(pStream);
+
+	if (!DBConnection::GetInstance().SaveActiveQuest(Packet.CharacterId, Packet.QuestId))
+	{
+		std::cout << "Save Active Quest Failed..." << std::endl;
 	}
 }
 

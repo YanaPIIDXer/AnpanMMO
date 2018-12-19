@@ -314,6 +314,7 @@ void ClientStateTitle::OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStre
 		GetParent()->AddQuestData(Packet.Quests[i]);
 		DataPacket.Quests.PushBack(Packet.Quests[i]);
 	}
+	DataPacket.ActiveQuestId = Packet.ActiveQuestId;
 	GetParent()->SendPacket(&DataPacket);
 
 	// マップ切り替えStateへ。
