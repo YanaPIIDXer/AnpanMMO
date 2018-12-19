@@ -128,6 +128,10 @@ void QuestManager::OnKilledAnpan(u32 AreaId)
 		PacketQuestAnpanKill Packet(It->first);
 		pClient->SendPacket(&Packet);
 
+		// キャッシュサーバにも通知.
+		CachePacketSaveQuestDataRequest CachePacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId(), *It->second);
+		CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+
 		if (It->second->KillCount >= pItem->Count)
 		{
 			// 規定数殺害したのでステージ進行。
