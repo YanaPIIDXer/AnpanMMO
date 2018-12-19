@@ -161,7 +161,7 @@ int AcceptQuest_Call(lua_State *pState)
 	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
 	if (pExecuter == NULL) { return 0; }
 
-	pExecuter->AccpetQuest(QuestId);
+	pExecuter->AcceptQuest(QuestId);
 
 	return 0;
 }

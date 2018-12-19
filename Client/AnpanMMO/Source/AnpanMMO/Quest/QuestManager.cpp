@@ -63,3 +63,18 @@ uint32 QuestManager::GetStageNo(uint32 QuestId) const
 	if (!Quests.Contains(QuestId)) { return 0; }
 	return Quests[QuestId].StageNo;
 }
+
+// 進行中のクエストを列挙.
+TArray<const QuestData *> QuestManager::CollectProgressingQuests() const
+{
+	TArray<const QuestData *> List;
+	for (const auto &KeyValue : Quests)
+	{
+		if (KeyValue.Value.State == QuestData::Active)
+		{
+			List.Add(&KeyValue.Value);
+		}
+	}
+
+	return List;
+}

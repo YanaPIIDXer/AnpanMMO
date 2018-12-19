@@ -56,7 +56,7 @@ public:
 	virtual void ConsumeItem(u32 ItemId, u32 Count);
 
 	// クエスト受注.
-	virtual void AccpetQuest(u32 QuestId);
+	virtual void AcceptQuest(u32 QuestId);
 
 protected:
 
