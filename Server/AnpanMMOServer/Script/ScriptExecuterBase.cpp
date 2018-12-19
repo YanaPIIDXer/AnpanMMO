@@ -103,7 +103,7 @@ void ScriptExecuterBase::Resume()
 		OnExecuteError(ErrorMsg);
 		return;
 	}
-	int Ret = lua_tointeger(pState, -1);
+	int Ret = (int) lua_tointeger(pState, -1);
 	if (Ret == 0)
 	{
 		CloseState();
@@ -129,6 +129,9 @@ void ScriptExecuterBase::BindFunctions()
 	BindFunction(ShowSelection_Call, "ShowSelection_Impl");
 	BindFunction(SetFlag_Call, "SetFlag_Impl");
 	BindFunction(GetFlag_Call, "GetFlag_Impl");
+	BindFunction(IsQuestActive_Call, "IsQuestActive_Impl");
+	BindFunction(ProgressQuest_Call, "ProgressQuest_Impl");
+	BindFunction(GetQuestStageNo_Call, "GetQuestStageNo_Impl");
 }
 
 // 関数をバインド。

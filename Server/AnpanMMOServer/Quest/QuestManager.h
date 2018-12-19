@@ -41,6 +41,12 @@ public:
 	// アンパンを殺害した。
 	void OnKilledAnpan(u32 AreaId);
 
+	// 進行中か？
+	bool IsActive(u32 QuestId) const { return (ActiveQuests.find(QuestId) != ActiveQuests.end()); }
+
+	// ステージ番号を取得.
+	u32 GetStageNo(u32 QuestId) const;
+
 private:
 
 	// クライアント

@@ -72,6 +72,9 @@ public:
 	// クエストデータ追加.
 	void AddQuestData(const QuestData &Data);
 
+	// クエスト進行.
+	void ProgressQuest(u32 QuestId);
+
 	// アンパンを殺害した。
 	void OnKilledAnpan(u32 AreaId);
 

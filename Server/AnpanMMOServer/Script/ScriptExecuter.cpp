@@ -48,6 +48,24 @@ bool ScriptExecuter::GetFlag(int Flag)
 	return pClient->GetScriptFlagManager().Get(Flag);
 }
 
+// クエストが進行中か？
+bool ScriptExecuter::IsQuestActive(u32 QuestId)
+{
+	return pClient->GetQuestManager().IsActive(QuestId);
+}
+
+// クエスト進行.
+void ScriptExecuter::ProgressQuest(u32 QuestId)
+{
+	pClient->ProgressQuest(QuestId);
+}
+
+// クエストのステージ番号を取得.
+u32 ScriptExecuter::GetQuestStageNo(u32 QuestId)
+{
+	return pClient->GetQuestManager().GetStageNo(QuestId);
+}
+
 
 // 実行エラー
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)

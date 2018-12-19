@@ -89,6 +89,12 @@ void Client::AddQuestData(const QuestData &Data)
 	QuestMgr.Add(Data);
 }
 
+// クエスト進行.
+void Client::ProgressQuest(u32 QuestId)
+{
+	QuestMgr.ProgressStage(QuestId);
+}
+
 // アンパンを殺害した。
 void Client::OnKilledAnpan(u32 AreaId)
 {
