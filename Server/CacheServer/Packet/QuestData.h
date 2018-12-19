@@ -19,6 +19,7 @@ public:
 
 	u32 QuestId;
 	u32 StageNo;
+	u32 KillCount;
 	u8 State;
 	
 
@@ -26,10 +27,11 @@ public:
 	{
 	}
 
-	QuestData(u32 InQuestId, u32 InStageNo, u8 InState)
+	QuestData(u32 InQuestId, u32 InStageNo, u32 InKillCount, u8 InState)
 	{
 		QuestId = InQuestId;
 		StageNo = InStageNo;
+		KillCount = InKillCount;
 		State = InState;
 		
 	}
@@ -38,6 +40,7 @@ public:
 	{
 		pStream->Serialize(&QuestId);
 		pStream->Serialize(&StageNo);
+		pStream->Serialize(&KillCount);
 		pStream->Serialize(&State);
 		
 		return true;

@@ -76,7 +76,7 @@ public:
 	bool LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataList);
 
 	// クエストデータ保存.
-	bool SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u8 State);
+	bool SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u32 KillCount, u8 State);
 
 	// クエストデータ破棄.
 	bool EraseQuestData(u32 CharacterId, u32 QuestId);

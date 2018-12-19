@@ -354,7 +354,7 @@ void PacketReceiver::OnRecvSaveQuestDataRequest(MemoryStreamInterface *pStream)
 	CachePacketSaveQuestDataRequest Packet;
 	Packet.Serialize(pStream);
 
-	if (!DBConnection::GetInstance().SaveQuestData(Packet.CharacterId, Packet.Data.QuestId, Packet.Data.StageNo, Packet.Data.State))
+	if (!DBConnection::GetInstance().SaveQuestData(Packet.CharacterId, Packet.Data.QuestId, Packet.Data.StageNo, Packet.Data.KillCount, Packet.Data.State))
 	{
 		std::cout << "QuestData Save Failed..." << std::endl;
 	}
