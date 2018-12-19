@@ -73,7 +73,7 @@ void QuestManager::ProgressStage(u32 QuestId)
 	{
 		Quests[QuestId].State = QuestData::Cleared;
 
-		// 進行中のクエストマップからも消去.
+		// 進行中のクエストマップから消去.
 		ActiveQuests.erase(QuestId);
 
 		PacketQuestClear Packet(QuestId);
@@ -153,7 +153,7 @@ const QuestStageItem *QuestManager::GetCurrentStageData(u32 QuestId) const
 
 	const QuestItem *pQuestItem = MasterData::GetInstance().GetQuestMaster().GetItem(QuestId);
 	const QuestStageItem *pStageItem = MasterData::GetInstance().GetQuestStageMaster().GetItem(pQuestItem->StartStageId);
-	for (u32 i = 0; i < Data.StageNo - 1; i++)
+	for (u32 i = 0; i < Data.StageNo; i++)
 	{
 		if (pStageItem->NextStageId == 0) { return NULL; }
 		pStageItem = MasterData::GetInstance().GetQuestStageMaster().GetItem(pStageItem->NextStageId);
