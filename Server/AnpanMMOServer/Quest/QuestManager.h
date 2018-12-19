@@ -5,6 +5,7 @@
 #include <boost/unordered_map.hpp>
 
 class Client;
+struct QuestStageItem;
 
 /**
  * クエスト管理.
@@ -40,6 +41,10 @@ private:
 
 	// クエストマップ
 	QuestMap Quests;
+
+
+	// 現在のステージ情報を取得.
+	const QuestStageItem *GetCurrentStageData(u32 QuestId) const;
 
 };
 
