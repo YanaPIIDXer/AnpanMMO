@@ -65,7 +65,24 @@ void QuestManager::ProgressStage(u32 QuestId)
 			Accept(pItem->NextQuestId);
 		}
 
-		// @TODO:報酬をバラ撒く。
+		const QuestRewardItem *pRewardItem = MasterData::GetInstance().GetQuestRewardMaster().GetItem(pItem->RewardId);
+		if (pRewardItem != NULL)
+		{
+			switch (pRewardItem->Type)
+			{
+				case QuestRewardItem::ITEM:
+
+					// アイテム
+					pClient->GetCharacter().lock()->AddItem(pRewardItem->ItemId, pRewardItem->Count);
+					break;
+
+				case QuestRewardItem::GOLD:
+
+					// ゴールド
+					pClient->GetCharacter().lock()->AddGold(pRewardItem->Count);
+					break;
+			}
+		}
 	}
 	else
 	{
