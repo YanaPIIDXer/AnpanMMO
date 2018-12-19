@@ -434,6 +434,18 @@ bool DBConnection::LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataL
 		OutDataList.PushBack(BindData);
 	}
 
+	if (OutDataList.GetCurrentSize() == 0)
+	{
+		// クエストデータが無い場合、一番最初のメインクエストを受けている事にする。
+		Query.Close();
+		Query = Connection.CreateQuery("insert into QuestData Value(?, 1, 0, 0);");
+		Query.BindInt(&CharacterId);
+		if (!Query.ExecuteQuery()) { return false; }
+
+		QuestData Data(1, 0, QuestData::Active);
+		OutDataList.PushBack(Data);
+	}
+
 	return true;
 }
 
