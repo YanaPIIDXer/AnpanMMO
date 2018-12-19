@@ -16,6 +16,7 @@ class QuestManager
 private:		// 別名定義.
 
 	typedef boost::unordered_map<u32, QuestData> QuestMap;
+	typedef boost::unordered_map<u32, QuestData *> ActiveQuestMap;
 
 public:
 
@@ -34,6 +35,9 @@ public:
 	// ステージ進行.
 	void ProgressStage(u32 QuestId);
 
+	// アンパンを殺害した。
+	void OnKilledAnpan(u32 AreaId);
+
 private:
 
 	// クライアント
@@ -41,6 +45,9 @@ private:
 
 	// クエストマップ
 	QuestMap Quests;
+
+	// 進行中のクエストマップ
+	ActiveQuestMap ActiveQuests;
 
 
 	// 現在のステージ情報を取得.

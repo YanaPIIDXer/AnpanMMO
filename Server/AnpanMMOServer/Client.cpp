@@ -89,6 +89,12 @@ void Client::AddQuestData(const QuestData &Data)
 	QuestMgr.Add(Data);
 }
 
+// アンパンを殺害した。
+void Client::OnKilledAnpan(u32 AreaId)
+{
+	QuestMgr.OnKilledAnpan(AreaId);
+}
+
 
 // データを受信した。
 void Client::OnRecvData(size_t Size)

@@ -19,14 +19,18 @@ QuestManager::QuestManager(Client *pInClient)
 void QuestManager::Add(const QuestData &Data)
 {
 	Quests[Data.QuestId] = Data;
+	if (Data.State == QuestData::Active)
+	{
+		ActiveQuests[Data.QuestId] = &Quests[Data.QuestId];
+	}
 }
 
 // 受注.
 void QuestManager::Accept(u32 QuestId)
 {
 	QuestData Data(QuestId, 0, 0, QuestData::Active);
-	Quests[Data.QuestId] = Data;
-
+	Add(Data);
+	
 	PacketQuestAccept Packet(QuestId);
 	pClient->SendPacket(&Packet);
 
@@ -47,6 +51,9 @@ void QuestManager::ProgressStage(u32 QuestId)
 	if (bIsCleared)
 	{
 		Quests[QuestId].State = QuestData::Cleared;
+
+		// 進行中のクエストマップからも消去.
+		ActiveQuests.erase(QuestId);
 
 		PacketQuestClear Packet(QuestId);
 		pClient->SendPacket(&Packet);
@@ -70,13 +77,32 @@ void QuestManager::ProgressStage(u32 QuestId)
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 }
 
+// アンパンを殺害した。
+void QuestManager::OnKilledAnpan(u32 AreaId)
+{
+	for (ActiveQuestMap::iterator It = ActiveQuests.begin(); It != ActiveQuests.end(); ++It)
+	{
+		const QuestStageItem *pItem = GetCurrentStageData(It->first);
+		if (pItem->Condition != QuestStageItem::KILL_ANPAN_IN_AREA || pItem->TargetId != AreaId) { continue; }
+
+		It->second->KillCount++;
+		if (It->second->KillCount >= pItem->Count)
+		{
+			// 規定数殺害したのでステージ進行。
+			ProgressStage(It->first);
+		}
+	}
+}
+
 
 // 現在のステージ情報を取得.
 const QuestStageItem *QuestManager::GetCurrentStageData(u32 QuestId) const
 {
+	const QuestData &Data = Quests.find(QuestId)->second;
+	if (Data.State == QuestData::Cleared) { return NULL; }
+
 	const QuestItem *pQuestItem = MasterData::GetInstance().GetQuestMaster().GetItem(QuestId);
 	const QuestStageItem *pStageItem = MasterData::GetInstance().GetQuestStageMaster().GetItem(pQuestItem->StartStageId);
-	const QuestData &Data = Quests.find(QuestId)->second;
 	for (u32 i = 0; i < Data.StageNo - 1; i++)
 	{
 		if (pStageItem->NextStageId == 0) { return NULL; }

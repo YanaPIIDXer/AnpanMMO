@@ -248,6 +248,10 @@ void PlayerCharacter::OnKilled(CharacterBase *pKilledCharacter)
 
 	// アイテムドロップ
 	GetDrop(pKilledCharacter->GetDropId());
+
+	// クライアント（クエスト）への通知.
+	u32 AreaId = GetArea().lock()->GetMasterId();
+	pClient->OnKilledAnpan(AreaId);
 }
 
 // ドロップアイテムを取得.

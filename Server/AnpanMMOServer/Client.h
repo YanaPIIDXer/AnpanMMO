@@ -72,6 +72,9 @@ public:
 	// クエストデータ追加.
 	void AddQuestData(const QuestData &Data);
 
+	// アンパンを殺害した。
+	void OnKilledAnpan(u32 AreaId);
+
 protected:
 
 	// データを受信した。
