@@ -173,6 +173,7 @@
     <ClInclude Include="Script\ScriptBinds.h" />
     <ClInclude Include="Script\ScriptExecuterBase.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TypeDefs.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Script\ExecuterPool.cpp" />
