@@ -33,4 +33,10 @@ int ProgressQuest_Call(lua_State *pState);
 // クエストのステージ番号を取得.
 int GetQuestStageNo_Call(lua_State *pState);
 
+// アイテムの個数を取得.
+int GetItemCount_Call(lua_State *pState);
+
+// アイテムを消費.
+int ConsumeItem_Call(lua_State *pState);
+
 #endif		// #ifndef __SCRIPTBINDS_H__
