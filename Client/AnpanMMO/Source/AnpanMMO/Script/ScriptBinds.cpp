@@ -135,7 +135,7 @@ int GetItemCount_Call(lua_State *pState)
 	u32 ItemId = (u32)luaL_checknumber(pState, -1);
 	u32 Count = pExecuter->GetItemCount(ItemId);
 
-	lua_pushnumber(pState, ItemId);
+	lua_pushnumber(pState, Count);
 	return 1;
 }
 
