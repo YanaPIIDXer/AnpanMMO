@@ -20,6 +20,7 @@ public:
 
 	u32 Id;
 	std::string Name;
+	std::string Explain;
 	u8 Type;
 	u32 StartStageId;
 	u32 RewardId;

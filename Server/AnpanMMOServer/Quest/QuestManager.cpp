@@ -121,7 +121,6 @@ void QuestManager::OnKilledAnpan(u32 AreaId)
 	for (ActiveQuestMap::iterator It = ActiveQuests.begin(); It != ActiveQuests.end(); ++It)
 	{
 		const QuestStageItem *pItem = GetCurrentStageData(It->first);
-
 		if (pItem->Condition != QuestStageItem::KILL_ANPAN_IN_AREA || pItem->TargetId != AreaId) { continue; }
 
 		It->second->KillCount++;

@@ -17,6 +17,7 @@ public:
 
 	u32 Id;
 	FString Name;
+	FString Explain;
 	u8 Type;
 	u32 StartStageId;
 	u32 RewardId;
@@ -29,6 +30,9 @@ public:
 		std::string StrName;
 		if(!pStream->Serialize(&StrName)) { return false; }
 		Name = UTF8_TO_TCHAR(StrName.c_str());
+		std::string StrExplain;
+		if(!pStream->Serialize(&StrExplain)) { return false; }
+		Explain = UTF8_TO_TCHAR(StrExplain.c_str());
 		if(!pStream->Serialize(&Type)) { return false; }
 		if(!pStream->Serialize(&StartStageId)) { return false; }
 		if(!pStream->Serialize(&RewardId)) { return false; }
