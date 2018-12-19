@@ -40,6 +40,15 @@ public:
 	// フラグを取得.
 	virtual bool GetFlag(int Flag);
 
+	// クエストが進行中か？
+	virtual bool IsQuestActive(u32 QuestId);
+
+	// クエスト進行.
+	virtual void ProgressQuest(u32 QuestId);
+
+	// クエストのステージ番号を取得.
+	virtual u32 GetQuestStageNo(u32 QuestId);
+
 protected:
 
 	// 実行エラー

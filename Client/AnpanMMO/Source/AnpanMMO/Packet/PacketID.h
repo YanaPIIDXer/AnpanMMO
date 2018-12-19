@@ -99,6 +99,7 @@ public:
 		PlayerRespawn,
 		QuestData,
 		QuestAccept,
+		QuestAnpanKill,
 		QuestStageChange,
 		QuestClear,
 		QuestRetireRequest,

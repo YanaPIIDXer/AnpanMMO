@@ -7,6 +7,7 @@
 #include "Connection/GameServerConnection.h"
 #include "Character/Player/PlayerStatus.h"
 #include "Script/ScriptExecuter.h"
+#include "Quest/QuestManager.h"
 #include "FlexArray.h"
 #include "MMOGameInstance.generated.h"
 
@@ -75,7 +76,25 @@ public:
 	// スクリプト実行オブジェクトを取得.
 	ScriptExecuter *GetScript() { return &Script; }
 
+	// クエスト管理取得.
+	const QuestManager &GetQuestManager() const { return QuestMgr; }
+
+	// クエストデータ追加.
+	void AddQuestData(const QuestData &Data);
 	
+	// クエストでのアンパン殺害.
+	void QuestKillAnpan(uint32 QuestId);
+
+	// クエスト進行.
+	void ProgressQuest(uint32 QuestId, uint32 StageNo);
+
+	// クエストクリア
+	void ClearQuest(uint32 QuestId);
+
+	// クエスト破棄.
+	void RetireQuest(uint32 QuestId);
+
+
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;
 
@@ -92,6 +111,9 @@ private:
 
 	// スクリプト実行.
 	ScriptExecuter Script;
+
+	// クエスト管理.
+	QuestManager QuestMgr;
 
 
 	// パケットを受信した。

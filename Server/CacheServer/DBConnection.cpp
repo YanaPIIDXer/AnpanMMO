@@ -420,12 +420,13 @@ bool DBConnection::SaveScriptFlags(u32 CharacterId, u32 BitField1, u32 BitField2
 // クエストデータ読み込み
 bool DBConnection::LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataList)
 {
-	MySqlQuery Query = Connection.CreateQuery("select QuestId, StageNo, State from QuestData where CharacterId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select QuestId, StageNo, KillCount, State from QuestData where CharacterId = ?");
 	Query.BindInt(&CharacterId);
 
 	QuestData BindData;
 	Query.BindResultInt(&BindData.QuestId);
 	Query.BindResultInt(&BindData.StageNo);
+	Query.BindResultInt(&BindData.KillCount);
 	Query.BindResultChar(&BindData.State);
 	
 	if (!Query.ExecuteQuery()) { return false; }
@@ -434,11 +435,23 @@ bool DBConnection::LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataL
 		OutDataList.PushBack(BindData);
 	}
 
+	if (OutDataList.GetCurrentSize() == 0)
+	{
+		// クエストデータが無い場合、一番最初のメインクエストを受けている事にする。
+		Query.Close();
+		Query = Connection.CreateQuery("insert into QuestData Value(?, 1, 0, 0, 0);");
+		Query.BindInt(&CharacterId);
+		if (!Query.ExecuteQuery()) { return false; }
+
+		QuestData Data(1, 0, 0, QuestData::Active);
+		OutDataList.PushBack(Data);
+	}
+
 	return true;
 }
 
 // クエストデータ保存.
-bool DBConnection::SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u8 State)
+bool DBConnection::SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u32 KillCount, u8 State)
 {
 	// まずは既に保存されているかどうかをチェック
 	MySqlQuery Query = Connection.CreateQuery("select QuestId from QuestData where CharacterId = ? and QuestId = ?;");
@@ -449,8 +462,9 @@ bool DBConnection::SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u8 S
 	{
 		// 存在するので上書き。
 		Query.Close();
-		Query = Connection.CreateQuery("update QuestData set StageNo = ?, State = ? where CharacterId = ? and QuestId = ?;");
+		Query = Connection.CreateQuery("update QuestData set StageNo = ?, KillCount = ?, State = ? where CharacterId = ? and QuestId = ?;");
 		Query.BindInt(&StageNo);
+		Query.BindInt(&KillCount);
 		Query.BindChar(&State);
 		Query.BindInt(&CharacterId);
 		Query.BindInt(&QuestId);
@@ -461,10 +475,11 @@ bool DBConnection::SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u8 S
 	{
 		// 存在しないので新規追加。
 		Query.Close();
-		Query = Connection.CreateQuery("insert into QuestData Value(?, ?, ?, ?);");
+		Query = Connection.CreateQuery("insert into QuestData Value(?, ?, ?, ?, ?);");
 		Query.BindInt(&CharacterId);
 		Query.BindInt(&QuestId);
 		Query.BindInt(&StageNo);
+		Query.BindInt(&KillCount);
 		Query.BindChar(&State);
 
 		if (!Query.ExecuteQuery()) { return false; }

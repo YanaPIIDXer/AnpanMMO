@@ -208,4 +208,19 @@ private:
 	// アイテムショートカット保存結果を受信した。
 	void OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStream);
 
+	// クエスト受注を受信した。
+	void OnRecvAcceptQuest(MemoryStreamInterface *pStream);
+
+	// クエスト進行を受信した。
+	void OnRecvProgressQuest(MemoryStreamInterface *pStream);
+
+	// クエストでのアンパン殺害を受信した。
+	void OnRecvQuestKilledAnpan(MemoryStreamInterface *pStream);
+
+	// クエストクリアを受信した。
+	void OnRecvClearQuest(MemoryStreamInterface *pStream);
+
+	// クエスト破棄レスポンスを受信した。
+	void OnRecvRetireQuestResponse(MemoryStreamInterface *pStream);
+
 };

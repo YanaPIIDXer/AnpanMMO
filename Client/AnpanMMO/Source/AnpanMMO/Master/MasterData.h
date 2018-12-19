@@ -15,6 +15,7 @@
 #include "SkillTreeMaster.h"
 #include "ItemMaster.h"
 #include "QuestMaster.h"
+#include "QuestStageMaster.h"
 #include "QuestRewardMaster.h"
 
 /**
@@ -67,6 +68,9 @@ public:
 	// クエストマスタ取得.
 	const QuestMaster &GetQuestMaster() const { return Quest; }
 
+	// クエストステージマスタ取得.
+	const QuestStageMaster &GetQuestStageMaster() const { return QuestStage; }
+
 	// クエスト報酬マスタ取得.
 	const QuestRewardMaster &GetQuestRewardMaster() const { return QuestReward; }
 
@@ -107,6 +111,9 @@ private:
 
 	// クエストマスタ
 	QuestMaster Quest;
+
+	// クエストステージマスタ
+	QuestStageMaster QuestStage;
 
 	// クエスト報酬マスタ
 	QuestRewardMaster QuestReward;

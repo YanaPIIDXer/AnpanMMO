@@ -108,6 +108,36 @@ void UMMOGameInstance::OnRecvItemShortcht(uint32 ItemId1, uint32 ItemId2)
 	StatusCache.UpdateItemShortcut(ItemId1, ItemId2);
 }
 
+// クエストデータ追加.
+void UMMOGameInstance::AddQuestData(const QuestData &Data)
+{
+	QuestMgr.Add(Data);
+}
+
+// クエストでのアンパン殺害.
+void UMMOGameInstance::QuestKillAnpan(uint32 QuestId)
+{
+	QuestMgr.KillAnpan(QuestId);
+}
+
+// クエスト進行.
+void UMMOGameInstance::ProgressQuest(uint32 QuestId, uint32 StageNo)
+{
+	QuestMgr.ProgressStage(QuestId, StageNo);
+}
+
+// クエストクリア
+void UMMOGameInstance::ClearQuest(uint32 QuestId)
+{
+	QuestMgr.Clear(QuestId);
+}
+
+// クエスト破棄.
+void UMMOGameInstance::RetireQuest(uint32 QuestId)
+{
+	QuestMgr.Retire(QuestId);
+}
+
 
 // パケットを受信した。
 void UMMOGameInstance::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)

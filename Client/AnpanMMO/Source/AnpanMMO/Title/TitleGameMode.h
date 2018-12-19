@@ -78,6 +78,9 @@ private:
 	// スクリプトフラグを受信した。
 	void OnRecvScriptFlag(MemoryStreamInterface *pStream);
 
+	// クエストデータを受信した。
+	void OnRecvQuestData(MemoryStreamInterface *pStream);
+
 	// ゲーム画面に進む準備が出来た。
 	void OnReadyToGame();
 	

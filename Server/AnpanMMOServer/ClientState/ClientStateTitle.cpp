@@ -34,6 +34,9 @@
 #include "Packet/PacketItemShortcut.h"
 #include "Packet/CachePacketScriptFlagRequest.h"
 #include "Packet/CachePacketScriptFlagResponse.h"
+#include "Packet/CachePacketQuestDataRequest.h"
+#include "Packet/CachePacketQuestDataResponse.h"
+#include "Packet/PacketQuestData.h"
 
 // コンストラクタ
 ClientStateTitle::ClientStateTitle(Client *pInParent)
@@ -51,6 +54,7 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 	AddPacketFunction(PacketID::CacheItemListResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemListResponse, this, _2));
 	AddPacketFunction(PacketID::CacheItemShortcutResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemShortcutResponse, this, _2));
 	AddPacketFunction(PacketID::CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResponse, this, _2));
+	AddPacketFunction(PacketID::CacheQuestDataResponse, boost::bind(&ClientStateTitle::OnRecvCacheQuestDataResponse, this, _2));
 }
 
 
@@ -285,6 +289,34 @@ void ClientStateTitle::OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStr
 		std::cout << "CachePacketScriptFlagResponse Error..." << std::endl;
 	}
 
+	// クエストデータ要求.
+	CachePacketQuestDataRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+}
+
+// キャッシュサーバからクエストデータを受信した。
+void ClientStateTitle::OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketQuestDataResponse Packet;
+	Packet.Serialize(pStream);
+
+	if (Packet.Result != CachePacketQuestDataResponse::Success)
+	{
+		std::cout << "CachePacketQuestDataResponse Error..." << std::endl;
+		return;
+	}
+
+	// クライアントに投げ付ける。
+	// ＋こっちのクエスト管理にも追加しておく。
+	PacketQuestData DataPacket;
+	for (int i = 0; i < Packet.Quests.GetCurrentSize(); i++)
+	{
+		GetParent()->AddQuestData(Packet.Quests[i]);
+		DataPacket.Quests.PushBack(Packet.Quests[i]);
+	}
+	GetParent()->SendPacket(&DataPacket);
+
+	// マップ切り替えStateへ。
 	ClientStateAreaChange *pNextState = new ClientStateAreaChange(GetParent(), LastAreaId, LastPosition);
 	GetParent()->ChangeState(pNextState);
 }

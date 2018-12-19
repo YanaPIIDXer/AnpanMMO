@@ -15,6 +15,7 @@
 // コンストラクタ
 AreaBase::AreaBase(const AreaItem *pItem)
 {
+	MasterId = pItem->ID;
 	AnpanMgr.Initialize(pItem->ID);
 	AnpanMgr.SetSpawnCallback(bind(&AreaBase::OnSpawnAnpan, this, _1, _2));
 	std::string HeightMapPath = "../../HeightMap/HeightMaps/" + pItem->LevelName + ".bmp";

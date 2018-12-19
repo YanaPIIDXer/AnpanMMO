@@ -5,6 +5,7 @@
 #include "Packet/PacketID.h"
 #include "Script/ScriptExecuter.h"
 #include "Script/ScriptFlagManager.h"
+#include "Quest/QuestManager.h"
 
 class PacketBase;
 class ClientStateBase;
@@ -65,6 +66,21 @@ public:
 	// ビットフィールドからスクリプトフラグに変換.
 	void ConvertScriptFlagFromBitFields(u32 BitField1, u32 BitField2, u32 BitField3);
 
+	// クエスト管理を取得.
+	const QuestManager &GetQuestManager() const { return QuestMgr; }
+
+	// クエストデータ追加.
+	void AddQuestData(const QuestData &Data);
+
+	// クエスト進行.
+	void ProgressQuest(u32 QuestId);
+
+	// アンパンを殺害した。
+	void OnKilledAnpan(u32 AreaId);
+
+	// クエスト破棄.
+	u8 RetireQuest(u32 QuestId);
+
 protected:
 
 	// データを受信した。
@@ -89,6 +105,9 @@ private:
 
 	// スクリプトフラグ管理.
 	ScriptFlagManager FlagManager;
+
+	// クエスト管理.
+	QuestManager QuestMgr;
 
 };
 

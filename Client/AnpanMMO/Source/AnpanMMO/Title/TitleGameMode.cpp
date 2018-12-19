@@ -19,6 +19,7 @@
 #include "Packet/PacketItemList.h"
 #include "Packet/PacketItemShortcut.h"
 #include "Packet/PacketScriptFlag.h"
+#include "Packet/PacketQuestData.h"
 
 // コンストラクタ
 ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
@@ -212,6 +213,21 @@ void ATitleGameMode::OnRecvScriptFlag(MemoryStreamInterface *pStream)
 	check(pInst != nullptr);
 
 	pInst->GetScript()->ConvertFlagFromBitFields(Packet.BitField1, Packet.BitField2, Packet.BitField3);
+}
+
+// クエストデータを受信した。
+void ATitleGameMode::OnRecvQuestData(MemoryStreamInterface *pStream)
+{
+	PacketQuestData Packet;
+	Packet.Serialize(pStream);
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	for (int32 i = 0; i < Packet.Quests.GetCurrentSize(); i++)
+	{
+		pInst->AddQuestData(Packet.Quests[i]);
+	}
 }
 
 // ゲーム画面に進む準備が出来た。

@@ -173,11 +173,15 @@
     <ClInclude Include="Script\ScriptBinds.h" />
     <ClInclude Include="Script\ScriptExecuterBase.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TypeDefs.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Script\ExecuterPool.cpp" />
     <ClCompile Include="Script\ScriptBinds.cpp" />
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Scripts\Functions.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

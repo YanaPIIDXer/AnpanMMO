@@ -26,7 +26,7 @@ public:
 	void AttackTo(CharacterPtr pTarget, u32 SkillId);
 
 	// “|‚µ‚½‚Æ‚«‚ÉŠl“¾‚Å‚«‚éŒoŒ±’l‚ğæ“¾.
-	int GetExp() const { return Exp; }
+	virtual int GetExp() const { return Exp; }
 	
 	// ”¼Œa‚ğæ“¾.
 	float GetRadius() const { return (BaseRadius * ScaleRate); }
@@ -35,7 +35,7 @@ public:
 	u32 GetMasterId() const { return MasterId; }
 
 	// ƒhƒƒbƒv‚h‚c‚ğæ“¾.
-	u32 GetDropId() const { return DropId; }
+	virtual u32 GetDropId() const { return DropId; }
 	
 protected:
 

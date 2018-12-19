@@ -91,6 +91,9 @@ private:
 	// キャッシュサーバからアイテムショートカット保存結果を受信した。
 	void OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterface *pStream);
 
+	// クエスト破棄要求を受信した。
+	void OnRecvQuestRetireRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

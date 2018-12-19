@@ -38,7 +38,7 @@ CREATE TABLE `CharacterData` (
   `LastY` float DEFAULT NULL,
   `LastZ` float DEFAULT NULL,
   PRIMARY KEY (`CharacterId`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,6 +81,7 @@ CREATE TABLE `QuestData` (
   `CharacterId` int(10) unsigned DEFAULT NULL,
   `QuestId` int(10) unsigned DEFAULT NULL,
   `StageNo` int(10) unsigned DEFAULT NULL,
+  `KillCount` int(10) unsigned DEFAULT NULL,
   `State` tinyint(3) unsigned DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -143,7 +144,7 @@ CREATE TABLE `UserData` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserCode` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -155,4 +156,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-18 22:23:31
+-- Dump completed on 2018-12-19  9:57:08

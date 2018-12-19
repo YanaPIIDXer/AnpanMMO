@@ -25,3 +25,20 @@ function GetFlag(FlagName)
 	local Flag = GetFlag_Impl(this, FlagName)
 	return Flag
 end
+
+-- クエストが進行中か？
+function IsQuestActive(QuestId)
+	local bIsActive = IsQuestActive_Impl(this, QuestId)
+	return bIsActive
+end
+
+-- クエスト進行.
+function ProgressQuest(QuestId)
+	ProgressQuest_Impl(this, QuestId)
+end
+
+-- クエストのステージ番号を取得.
+function GetQuestStageNo(QuestId)
+	local StageNo = GetQuestStageNo_Impl(this, QuestId)
+	return StageNo
+end

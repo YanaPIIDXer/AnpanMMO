@@ -15,6 +15,7 @@ Client::Client(const shared_ptr<tcp::socket> &pInSocket)
 	, pState(new ClientStateTitle(this))
 	, Uuid(0)
 	, CustomerId(0)
+	, QuestMgr(this)
 {
 	bIsConnected = true;
 	Script.SetScriptDir("../../Script/Scripts");
@@ -80,6 +81,30 @@ void Client::SetScriptFlag(int Key)
 void Client::ConvertScriptFlagFromBitFields(u32 BitField1, u32 BitField2, u32 BitField3)
 {
 	FlagManager.FromBitField(BitField1, BitField2, BitField3);
+}
+
+// クエストデータ追加.
+void Client::AddQuestData(const QuestData &Data)
+{
+	QuestMgr.Add(Data);
+}
+
+// クエスト進行.
+void Client::ProgressQuest(u32 QuestId)
+{
+	QuestMgr.ProgressStage(QuestId);
+}
+
+// アンパンを殺害した。
+void Client::OnKilledAnpan(u32 AreaId)
+{
+	QuestMgr.OnKilledAnpan(AreaId);
+}
+
+// クエスト破棄.
+u8 Client::RetireQuest(u32 QuestId)
+{
+	return QuestMgr.Retire(QuestId);
 }
 
 

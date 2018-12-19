@@ -18,6 +18,8 @@ private:		// 別名定義.
 
 	typedef boost::function<void(u32)> OnUsedItemFunction;
 
+	typedef boost::function<void(CharacterBase *)> OnKilledFunction;
+
 public:
 
 	// コンストラクタ
@@ -65,6 +67,9 @@ public:
 	// アイテム使用後に実行される関数を設定.
 	void SetOnUsedItemFunction(const OnUsedItemFunction &Func) { OnUsedItemFunc = Func; }
 
+	// 殺害後に実行される関数を設定.
+	void SetOnKilledFunction(const OnKilledFunction &Func) { OnKilledFunc = Func; }
+
 private:
 
 	// State
@@ -90,6 +95,9 @@ private:
 
 	// アイテム使用後に実行される関数.
 	OnUsedItemFunction OnUsedItemFunc;
+
+	// 殺害後に実行される関数.
+	OnKilledFunction OnKilledFunc;
 
 	// ステート変更.
 	void ChangeState(SkillStateBase *pNewState);

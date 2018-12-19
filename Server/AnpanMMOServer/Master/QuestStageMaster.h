@@ -14,13 +14,14 @@ public:
 	enum
 	{
 		NPC = 0,
-		KILL_ANPAN = 1,
+		KILL_ANPAN_IN_AREA = 1,
+		COLLECT_ITEM = 2,
 	};
 
 
 	u32 Id;
 	u8 Condition;
-	u32 AreaId;
+	u32 TargetId;
 	u32 Count;
 	u32 NextStageId;
 
