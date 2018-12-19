@@ -89,6 +89,12 @@ void Client::AddQuestData(const QuestData &Data)
 	QuestMgr.Add(Data);
 }
 
+// クエスト受注.
+void Client::AcceptQuest(u32 QuestId)
+{
+	QuestMgr.Accept(QuestId);
+}
+
 // クエスト進行.
 void Client::ProgressQuest(u32 QuestId)
 {

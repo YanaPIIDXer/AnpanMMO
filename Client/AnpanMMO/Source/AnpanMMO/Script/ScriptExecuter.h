@@ -59,6 +59,10 @@ public:
 	// ※クライアント側は何もしない。
 	virtual void ConsumeItem(u32 ItemId, u32 Count) override {}
 
+	// クエスト受注.
+	// ※クライアント側は何もしない。
+	virtual void AccpetQuest(u32 QuestId) override {}
+
 	// ビットフィールドからフラグに変換.
 	void ConvertFlagFromBitFields(uint32 BitField1, uint32 BitField2, uint32 BitField3);
 

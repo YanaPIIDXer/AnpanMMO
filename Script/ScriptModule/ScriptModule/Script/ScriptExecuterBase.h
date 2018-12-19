@@ -65,6 +65,9 @@ public:
 	// アイテムを消費.
 	virtual void ConsumeItem(u32 ItemId, u32 Count) = 0;
 
+	// クエスト受注.
+	virtual void AccpetQuest(u32 QuestId) = 0;
+
 protected:
 
 	// 実行エラー

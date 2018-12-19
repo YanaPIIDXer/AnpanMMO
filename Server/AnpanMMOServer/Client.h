@@ -72,6 +72,9 @@ public:
 	// クエストデータ追加.
 	void AddQuestData(const QuestData &Data);
 
+	// クエスト受注.
+	void AcceptQuest(u32 QuestId);
+
 	// クエスト進行.
 	void ProgressQuest(u32 QuestId);
 
