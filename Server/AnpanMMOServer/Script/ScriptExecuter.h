@@ -72,7 +72,6 @@ protected:
 	// サーバモードか？
 	virtual bool IsServer() const { return true; }
 
-
 private:
 
 	// クライアント
