@@ -155,7 +155,7 @@ const QuestStageItem *QuestManager::GetCurrentStageData(u32 QuestId) const
 	const QuestStageItem *pStageItem = MasterData::GetInstance().GetQuestStageMaster().GetItem(pQuestItem->StartStageId);
 	for (u32 i = 0; i < Data.StageNo; i++)
 	{
-		if (pStageItem->NextStageId == 0) { return NULL; }
+		if (pStageItem == NULL) { return NULL; }
 		pStageItem = MasterData::GetInstance().GetQuestStageMaster().GetItem(pStageItem->NextStageId);
 	}
 
