@@ -57,6 +57,9 @@ private:
 	// キャッシュサーバからスクリプトフラグを受信した。
 	void OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream);
 
+	// キャッシュサーバからクエストデータを受信した。
+	void OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __CLIENTSTATETITLE_H__
