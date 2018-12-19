@@ -79,7 +79,7 @@ void ScriptExecuter::ConsumeItem(u32 ItemId, u32 Count)
 }
 
 // クエスト受注.
-void ScriptExecuter::AcceptQuest(u32 QuestId)
+void ScriptExecuter::AccpetQuest(u32 QuestId)
 {
 	pClient->AcceptQuest(QuestId);
 }
