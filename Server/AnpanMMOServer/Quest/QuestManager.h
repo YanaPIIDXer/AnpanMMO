@@ -32,6 +32,9 @@ public:
 	// 受注.
 	void Accept(u32 QuestId);
 
+	// 破棄.
+	u8 Retire(u32 QuestId);
+
 	// ステージ進行.
 	void ProgressStage(u32 QuestId);
 

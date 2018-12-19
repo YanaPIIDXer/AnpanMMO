@@ -7,7 +7,9 @@
 #include "Packet/PacketQuestAccept.h"
 #include "Packet/PacketQuestClear.h"
 #include "Packet/PacketQuestStageChange.h"
+#include "Packet/PacketQuestRetireResponse.h"
 #include "Packet/CachePacketSaveQuestDataRequest.h"
+#include "Packet/CachePacketQuestRetireRequest.h"
 
 // コンストラクタ
 QuestManager::QuestManager(Client *pInClient)
@@ -36,6 +38,24 @@ void QuestManager::Accept(u32 QuestId)
 
 	CachePacketSaveQuestDataRequest CachePacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId(), Data);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+}
+
+// 破棄.
+u8 QuestManager::Retire(u32 QuestId)
+{
+	if (ActiveQuests.find(QuestId) == ActiveQuests.end()) { return PacketQuestRetireResponse::Error; }
+	const QuestItem *pItem = MasterData::GetInstance().GetQuestMaster().GetItem(QuestId);
+	if (pItem->Type == QuestItem::MAIN_QUEST) { return PacketQuestRetireResponse::MainQuest; }
+
+	// クエストマップから消去.
+	Quests.erase(QuestId);
+	ActiveQuests.erase(QuestId);
+
+	// キャッシュサーバにも通知.
+	CachePacketQuestRetireRequest Packet(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId(), QuestId);
+	CacheServerConnection::GetInstance()->SendPacket(&Packet);
+
+	return PacketQuestRetireResponse::Success;
 }
 
 // ステージ進行.

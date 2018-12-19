@@ -57,6 +57,8 @@
 #include "Packet/CachePacketSaveItemShortcutRequest.h"
 #include "Packet/CachePacketSaveItemShortcutResponse.h"
 #include "Packet/PacketSaveItemShortcutResult.h"
+#include "Packet/PacketQuestRetireRequest.h"
+#include "Packet/PacketQuestRetireResponse.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -85,6 +87,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::ItemSubtractRequest, boost::bind(&ClientStateActive::OnRecvItemSubtractRequest, this, _2));
 	AddPacketFunction(PacketID::SaveItemShortcutRequest, boost::bind(&ClientStateActive::OnRecvSaveItemShortcutRequest, this, _2));
 	AddPacketFunction(PacketID::CacheSaveItemShortcutResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveItemShortcutResponse, this, _2));
+	AddPacketFunction(PacketID::QuestRetireRequest, boost::bind(&ClientStateActive::OnRecvQuestRetireRequest, this, _2));
 }
 
 // State開始時の処理.
@@ -534,4 +537,16 @@ void ClientStateActive::OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterfac
 
 	PacketSaveItemShortcutResult ResultPacket(Result, Packet.ItemId1, Packet.ItemId2);
 	GetParent()->SendPacket(&ResultPacket);
+}
+
+// クエスト破棄要求を受信した。
+void ClientStateActive::OnRecvQuestRetireRequest(MemoryStreamInterface *pStream)
+{
+	PacketQuestRetireRequest Packet;
+	Packet.Serialize(pStream);
+
+	u8 Result = GetParent()->RetireQuest(Packet.QuestId);
+
+	PacketQuestRetireResponse ResponsePacket(Packet.QuestId, Result);
+	GetParent()->SendPacket(&ResponsePacket);
 }

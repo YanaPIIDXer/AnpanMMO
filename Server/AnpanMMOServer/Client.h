@@ -75,6 +75,9 @@ public:
 	// アンパンを殺害した。
 	void OnKilledAnpan(u32 AreaId);
 
+	// クエスト破棄.
+	u8 RetireQuest(u32 QuestId);
+
 protected:
 
 	// データを受信した。

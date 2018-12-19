@@ -95,6 +95,12 @@ void Client::OnKilledAnpan(u32 AreaId)
 	QuestMgr.OnKilledAnpan(AreaId);
 }
 
+// クエスト破棄.
+u8 Client::RetireQuest(u32 QuestId)
+{
+	return QuestMgr.Retire(QuestId);
+}
+
 
 // データを受信した。
 void Client::OnRecvData(size_t Size)
