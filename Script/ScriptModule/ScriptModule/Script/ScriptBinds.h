@@ -39,4 +39,7 @@ int GetItemCount_Call(lua_State *pState);
 // アイテムを消費.
 int ConsumeItem_Call(lua_State *pState);
 
+// クエスト受注.
+int AcceptQuest_Call(lua_State *pState);
+
 #endif		// #ifndef __SCRIPTBINDS_H__

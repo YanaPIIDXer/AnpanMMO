@@ -55,6 +55,9 @@ public:
 	// アイテム消費.
 	virtual void ConsumeItem(u32 ItemId, u32 Count);
 
+	// クエスト受注.
+	virtual void AcceptQuest(u32 QuestId);
+
 protected:
 
 	// 実行エラー
@@ -68,7 +71,6 @@ protected:
 
 	// サーバモードか？
 	virtual bool IsServer() const { return true; }
-
 
 private:
 

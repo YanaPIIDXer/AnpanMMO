@@ -7,9 +7,10 @@ bool QuestMaster::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from Quest;");
 
 	QuestItem BindItem;
-	char NameBind[128];
+	char NameBind[128];	char ExplainBind[128];
 	Query.BindResultInt(&BindItem.Id);
 	Query.BindResultString(NameBind);
+	Query.BindResultString(ExplainBind);
 	Query.BindResultChar(&BindItem.Type);
 	Query.BindResultInt(&BindItem.StartStageId);
 	Query.BindResultInt(&BindItem.RewardId);
@@ -21,6 +22,7 @@ bool QuestMaster::Load(const MySqlConnection &Connection)
 		QuestItem Item;
 		Item.Id = BindItem.Id;
 		Item.Name = NameBind;
+		Item.Explain = ExplainBind;
 		Item.Type = BindItem.Type;
 		Item.StartStageId = BindItem.StartStageId;
 		Item.RewardId = BindItem.RewardId;

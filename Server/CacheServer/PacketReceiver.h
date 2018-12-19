@@ -96,6 +96,9 @@ private:
 	// クエスト破棄リクエストを受信した。
 	void OnRecvRetireQuestDataRequest(MemoryStreamInterface *pStream);
 
+	// アクティブクエスト保存リクエストを受信した。
+	void OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__

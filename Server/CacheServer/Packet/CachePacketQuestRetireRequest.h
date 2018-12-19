@@ -5,7 +5,6 @@
 #include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
-#include "QuestData.h"
 
 
 class CachePacketQuestRetireRequest  : public ProcessPacketBase

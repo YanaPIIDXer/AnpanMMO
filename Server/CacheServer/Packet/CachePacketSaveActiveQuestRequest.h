@@ -1,5 +1,5 @@
-#ifndef __CACHEPACKETQUESTRETIREREQUEST_H__
-#define __CACHEPACKETQUESTRETIREREQUEST_H__
+#ifndef __CACHEPACKETSAVEACTIVEQUESTREQUEST_H__
+#define __CACHEPACKETSAVEACTIVEQUESTREQUEST_H__
 
 #include "PacketBase.h"
 #include "PacketID.h"
@@ -7,10 +7,10 @@
 #include "ProcessPacketBase.h"
 
 
-class CachePacketQuestRetireRequest  : public ProcessPacketBase
+class CachePacketSaveActiveQuestRequest  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheQuestRetireRequest; }
+	virtual u8 GetPacketID() const { return PacketID::CacheSaveActiveQuestRequest; }
 
 	
 
@@ -18,11 +18,11 @@ public:
 	u32 QuestId;
 	
 
-	CachePacketQuestRetireRequest()
+	CachePacketSaveActiveQuestRequest()
 	{
 	}
 
-	CachePacketQuestRetireRequest(u32 InClientId, u32 InCharacterId, u32 InQuestId)
+	CachePacketSaveActiveQuestRequest(u32 InClientId, u32 InCharacterId, u32 InQuestId)
 	{
 		ClientId = InClientId;
 		CharacterId = InCharacterId;
@@ -40,4 +40,4 @@ public:
 	}
 };
 
-#endif		// #ifndef __CACHEPACKETQUESTRETIREREQUEST_H__
+#endif		// #ifndef __CACHEPACKETSAVEACTIVEQUESTREQUEST_H__

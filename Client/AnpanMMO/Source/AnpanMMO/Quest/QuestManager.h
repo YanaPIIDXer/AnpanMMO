@@ -44,6 +44,9 @@ public:
 	// ステージ番号を取得.
 	uint32 GetStageNo(uint32 QuestId) const;
 
+	// 進行中のクエストを列挙.
+	TArray<const QuestData *> CollectProgressingQuests() const;
+
 private:
 
 	// クエストマップ

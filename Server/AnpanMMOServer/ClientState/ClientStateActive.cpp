@@ -59,6 +59,8 @@
 #include "Packet/PacketSaveItemShortcutResult.h"
 #include "Packet/PacketQuestRetireRequest.h"
 #include "Packet/PacketQuestRetireResponse.h"
+#include "Packet/PacketSaveActiveQuest.h"
+#include "Packet/CachePacketSaveActiveQuestRequest.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -88,6 +90,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::SaveItemShortcutRequest, boost::bind(&ClientStateActive::OnRecvSaveItemShortcutRequest, this, _2));
 	AddPacketFunction(PacketID::CacheSaveItemShortcutResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveItemShortcutResponse, this, _2));
 	AddPacketFunction(PacketID::QuestRetireRequest, boost::bind(&ClientStateActive::OnRecvQuestRetireRequest, this, _2));
+	AddPacketFunction(PacketID::SaveActiveQuest, boost::bind(&ClientStateActive::OnRecvSaveActiveQuest, this, _2));
 }
 
 // State開始時の処理.
@@ -549,4 +552,14 @@ void ClientStateActive::OnRecvQuestRetireRequest(MemoryStreamInterface *pStream)
 
 	PacketQuestRetireResponse ResponsePacket(Packet.QuestId, Result);
 	GetParent()->SendPacket(&ResponsePacket);
+}
+
+// アクティブクエスト保存を受信した。
+void ClientStateActive::OnRecvSaveActiveQuest(MemoryStreamInterface *pStream)
+{
+	PacketSaveActiveQuest Packet;
+	Packet.Serialize(pStream);
+
+	CachePacketSaveActiveQuestRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.QuestId);
+	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 }

@@ -53,3 +53,8 @@ end
 function ConsumeItem(ItemId, Count)
 	ConsumeItem_Impl(this, ItemId, Count)
 end
+
+-- クエスト受注.
+function AcceptQuest(QuestId)
+	AcceptQuest_Impl(this, QuestId)
+end

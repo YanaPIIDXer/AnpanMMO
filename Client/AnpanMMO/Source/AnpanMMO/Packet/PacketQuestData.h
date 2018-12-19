@@ -16,21 +16,24 @@ public:
 	
 
 	FlexArray<QuestData> Quests;
+	u32 ActiveQuestId;
 	
 
 	PacketQuestData()
 	{
 	}
 
-	PacketQuestData(FlexArray<QuestData> InQuests)
+	PacketQuestData(FlexArray<QuestData> InQuests, u32 InActiveQuestId)
 	{
 		Quests = InQuests;
+		ActiveQuestId = InActiveQuestId;
 		
 	}
 
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		Quests.Serialize(pStream);
+		pStream->Serialize(&ActiveQuestId);
 		
 		return true;
 	}

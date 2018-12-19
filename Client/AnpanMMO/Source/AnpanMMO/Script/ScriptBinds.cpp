@@ -152,3 +152,16 @@ int ConsumeItem_Call(lua_State *pState)
 
 	return 0;
 }
+
+// クエスト受注.
+int AcceptQuest_Call(lua_State *pState)
+{
+	long Id = (long)luaL_checknumber(pState, -2);
+	u32 QuestId = (u32)luaL_checknumber(pState, -1);
+	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
+	if (pExecuter == NULL) { return 0; }
+
+	pExecuter->AcceptQuest(QuestId);
+
+	return 0;
+}

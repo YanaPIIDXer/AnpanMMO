@@ -418,33 +418,43 @@ bool DBConnection::SaveScriptFlags(u32 CharacterId, u32 BitField1, u32 BitField2
 }
 
 // クエストデータ読み込み
-bool DBConnection::LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataList)
+bool DBConnection::LoadQuestData(u32 CharacterId, FlexArray<QuestData> &OutDataList, u32 &OutActiveQuestId)
 {
-	MySqlQuery Query = Connection.CreateQuery("select QuestId, StageNo, KillCount, State from QuestData where CharacterId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select QuestId, StageNo, KillCount, State, IsActive from QuestData where CharacterId = ?");
 	Query.BindInt(&CharacterId);
 
+	OutActiveQuestId = 0;
+
 	QuestData BindData;
+	u8 ActiveFlag = 0;
 	Query.BindResultInt(&BindData.QuestId);
 	Query.BindResultInt(&BindData.StageNo);
 	Query.BindResultInt(&BindData.KillCount);
 	Query.BindResultChar(&BindData.State);
+	Query.BindResultChar(&ActiveFlag);
 	
 	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
 	{
 		OutDataList.PushBack(BindData);
+		if (ActiveFlag)
+		{
+			OutActiveQuestId = BindData.QuestId;
+		}
 	}
 
 	if (OutDataList.GetCurrentSize() == 0)
 	{
 		// クエストデータが無い場合、一番最初のメインクエストを受けている事にする。
 		Query.Close();
-		Query = Connection.CreateQuery("insert into QuestData Value(?, 1, 0, 0, 0);");
+		Query = Connection.CreateQuery("insert into QuestData Value(?, 1, 0, 0, 0, 1);");
 		Query.BindInt(&CharacterId);
 		if (!Query.ExecuteQuery()) { return false; }
 
 		QuestData Data(1, 0, 0, QuestData::Active);
 		OutDataList.PushBack(Data);
+
+		OutActiveQuestId = 1;
 	}
 
 	return true;
@@ -475,7 +485,7 @@ bool DBConnection::SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u32 
 	{
 		// 存在しないので新規追加。
 		Query.Close();
-		Query = Connection.CreateQuery("insert into QuestData Value(?, ?, ?, ?, ?);");
+		Query = Connection.CreateQuery("insert into QuestData Value(?, ?, ?, ?, ?, 0);");
 		Query.BindInt(&CharacterId);
 		Query.BindInt(&QuestId);
 		Query.BindInt(&StageNo);
@@ -485,6 +495,27 @@ bool DBConnection::SaveQuestData(u32 CharacterId, u32 QuestId, u32 StageNo, u32 
 		if (!Query.ExecuteQuery()) { return false; }
 	}
 	
+	return true;
+}
+
+// アクティブクエストを保存.
+bool DBConnection::SaveActiveQuest(u32 CharacterId, u32 QuestId)
+{
+	// まずは全部のフラグを下ろす。
+	MySqlQuery Query = Connection.CreateQuery("update QuestData set IsActive = 0 where CharacterId = ?;");
+	Query.BindInt(&CharacterId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+
+	Query.Close();
+
+	// 指定されたクエストＩＤをアクティブにする。
+	Query = Connection.CreateQuery("update QuestData set IsActive = 1 where CharacterId = ? and QuestId = ?;");
+	Query.BindInt(&CharacterId);
+	Query.BindInt(&QuestId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+
 	return true;
 }
 
