@@ -73,7 +73,7 @@ void QuestManager::ProgressStage(u32 QuestId)
 	{
 		Quests[QuestId].State = QuestData::Cleared;
 
-		// 進行中のクエストマップからも消去.
+		// 進行中のクエストマップから消去.
 		ActiveQuests.erase(QuestId);
 
 		PacketQuestClear Packet(QuestId);
@@ -121,6 +121,7 @@ void QuestManager::OnKilledAnpan(u32 AreaId)
 	for (ActiveQuestMap::iterator It = ActiveQuests.begin(); It != ActiveQuests.end(); ++It)
 	{
 		const QuestStageItem *pItem = GetCurrentStageData(It->first);
+
 		if (pItem->Condition != QuestStageItem::KILL_ANPAN_IN_AREA || pItem->TargetId != AreaId) { continue; }
 
 		It->second->KillCount++;
@@ -132,6 +133,12 @@ void QuestManager::OnKilledAnpan(u32 AreaId)
 		{
 			// 規定数殺害したのでステージ進行。
 			ProgressStage(It->first);
+		}
+		else
+		{
+			// キャッシュサーバにも通知.
+			CachePacketSaveQuestDataRequest CachePacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId(), *It->second);
+			CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 		}
 	}
 }
@@ -153,9 +160,9 @@ const QuestStageItem *QuestManager::GetCurrentStageData(u32 QuestId) const
 
 	const QuestItem *pQuestItem = MasterData::GetInstance().GetQuestMaster().GetItem(QuestId);
 	const QuestStageItem *pStageItem = MasterData::GetInstance().GetQuestStageMaster().GetItem(pQuestItem->StartStageId);
-	for (u32 i = 0; i < Data.StageNo - 1; i++)
+	for (u32 i = 0; i < Data.StageNo; i++)
 	{
-		if (pStageItem->NextStageId == 0) { return NULL; }
+		if (pStageItem == NULL) { return NULL; }
 		pStageItem = MasterData::GetInstance().GetQuestStageMaster().GetItem(pStageItem->NextStageId);
 	}
 

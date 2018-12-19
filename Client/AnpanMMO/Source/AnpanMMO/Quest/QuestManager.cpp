@@ -12,7 +12,7 @@ void QuestManager::Add(const QuestData &Data)
 {
 	if (!Quests.Contains(Data.QuestId))
 	{
-		Quests[Data.QuestId] = Data;
+		Quests.Add(Data.QuestId, Data);
 	}
 	else
 	{
