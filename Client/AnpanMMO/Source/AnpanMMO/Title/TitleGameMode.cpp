@@ -35,6 +35,7 @@ ATitleGameMode::ATitleGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::ItemList, std::bind(&ATitleGameMode::OnRecvItemList, this, _1));
 	AddPacketFunction(PacketID::ItemShortcut, std::bind(&ATitleGameMode::OnRecvItemShortcut, this, _1));
 	AddPacketFunction(PacketID::ScriptFlag, std::bind(&ATitleGameMode::OnRecvScriptFlag, this, _1));
+	AddPacketFunction(PacketID::QuestData, std::bind(&ATitleGameMode::OnRecvQuestData, this, _1));
 }
 
 // äJénéûÇÃèàóù.
