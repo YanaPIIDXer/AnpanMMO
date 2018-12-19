@@ -6,3 +6,17 @@
 QuestManager::QuestManager()
 {
 }
+
+// ’Ç‰Á.
+void QuestManager::Add(const QuestData &Data)
+{
+	if (!Quests.Contains(Data.QuestId))
+	{
+		Quests[Data.QuestId] = Data;
+	}
+	else
+	{
+		// ‚Æ‚è‚ ‚¦‚¸ã‘‚«B
+		Quests[Data.QuestId] = Data;
+	}
+}

@@ -307,9 +307,11 @@ void ClientStateTitle::OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStre
 	}
 
 	// クライアントに投げ付ける。
+	// ＋こっちのクエスト管理にも追加しておく。
 	PacketQuestData DataPacket;
 	for (int i = 0; i < Packet.Quests.GetCurrentSize(); i++)
 	{
+		GetParent()->AddQuestData(Packet.Quests[i]);
 		DataPacket.Quests.PushBack(Packet.Quests[i]);
 	}
 	GetParent()->SendPacket(&DataPacket);

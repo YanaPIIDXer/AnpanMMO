@@ -5,3 +5,9 @@
 QuestManager::QuestManager()
 {
 }
+
+// ’Ç‰Á.
+void QuestManager::Add(const QuestData &Data)
+{
+	Quests[Data.QuestId] = Data;
+}

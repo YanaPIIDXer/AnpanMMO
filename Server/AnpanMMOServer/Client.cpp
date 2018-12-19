@@ -82,6 +82,12 @@ void Client::ConvertScriptFlagFromBitFields(u32 BitField1, u32 BitField2, u32 Bi
 	FlagManager.FromBitField(BitField1, BitField2, BitField3);
 }
 
+// クエストデータ追加.
+void Client::AddQuestData(const QuestData &Data)
+{
+	QuestMgr.Add(Data);
+}
+
 
 // データを受信した。
 void Client::OnRecvData(size_t Size)

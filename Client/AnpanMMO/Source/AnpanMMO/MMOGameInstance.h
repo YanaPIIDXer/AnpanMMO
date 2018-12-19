@@ -76,6 +76,11 @@ public:
 	// スクリプト実行オブジェクトを取得.
 	ScriptExecuter *GetScript() { return &Script; }
 
+	// クエスト管理取得.
+	const QuestManager &GetQuestManager() const { return QuestMgr; }
+
+	// クエストデータ追加.
+	void AddQuestData(const QuestData &Data);
 	
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;

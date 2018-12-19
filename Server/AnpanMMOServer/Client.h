@@ -66,6 +66,12 @@ public:
 	// ビットフィールドからスクリプトフラグに変換.
 	void ConvertScriptFlagFromBitFields(u32 BitField1, u32 BitField2, u32 BitField3);
 
+	// クエスト管理を取得.
+	const QuestManager &GetQuestManager() const { return QuestMgr; }
+
+	// クエストデータ追加.
+	void AddQuestData(const QuestData &Data);
+
 protected:
 
 	// データを受信した。
@@ -92,7 +98,7 @@ private:
 	ScriptFlagManager FlagManager;
 
 	// クエスト管理.
-	QuestManager QusetMgr;
+	QuestManager QuestMgr;
 
 };
 

@@ -108,6 +108,12 @@ void UMMOGameInstance::OnRecvItemShortcht(uint32 ItemId1, uint32 ItemId2)
 	StatusCache.UpdateItemShortcut(ItemId1, ItemId2);
 }
 
+// クエストデータ追加.
+void UMMOGameInstance::AddQuestData(const QuestData &Data)
+{
+	QuestMgr.Add(Data);
+}
+
 
 // パケットを受信した。
 void UMMOGameInstance::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)

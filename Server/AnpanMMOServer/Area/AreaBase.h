@@ -60,6 +60,9 @@ public:
 	// ID取得.
 	virtual u32 GetId() const = 0;
 
+	// マスタＩＤを取得.
+	u32 GetMasterId() const { return MasterId; }
+
 	// 消去可能か？
 	virtual bool IsAbleDelete() const = 0;
 
@@ -79,6 +82,9 @@ protected:
 
 	// アンパン管理.
 	AnpanManager AnpanMgr;
+
+	// マスタＩＤ
+	u32 MasterId;
 
 
 	// 更新.
