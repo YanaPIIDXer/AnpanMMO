@@ -42,3 +42,14 @@ function GetQuestStageNo(QuestId)
 	local StageNo = GetQuestStageNo_Impl(this, QuestId)
 	return StageNo
 end
+
+-- アイテムの個数を取得.
+function GetItemCount(ItemId)
+	local Count = GetItemCount_Impl(this, ItemId)
+	return Count
+end
+
+-- アイテムを消費.
+function ConsumeItem(ItemId, Count)
+	ConsumeItem_Impl(this, ItemId, Count)
+end

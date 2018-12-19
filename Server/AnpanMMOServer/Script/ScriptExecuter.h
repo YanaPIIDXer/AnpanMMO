@@ -49,6 +49,12 @@ public:
 	// クエストのステージ番号を取得.
 	virtual u32 GetQuestStageNo(u32 QuestId);
 
+	// アイテムの個数を取得.
+	virtual u32 GetItemCount(u32 ItemId);
+
+	// アイテム消費.
+	virtual void ConsumeItem(u32 ItemId, u32 Count);
+
 protected:
 
 	// 実行エラー

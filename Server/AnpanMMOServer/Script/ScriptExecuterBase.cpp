@@ -132,6 +132,8 @@ void ScriptExecuterBase::BindFunctions()
 	BindFunction(IsQuestActive_Call, "IsQuestActive_Impl");
 	BindFunction(ProgressQuest_Call, "ProgressQuest_Impl");
 	BindFunction(GetQuestStageNo_Call, "GetQuestStageNo_Impl");
+	BindFunction(GetItemCount_Call, "GetItemCount_Impl");
+	BindFunction(ConsumeItem_Call, "ConsumeItem_Impl");
 }
 
 // 関数をバインド。
