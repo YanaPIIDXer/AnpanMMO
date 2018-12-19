@@ -5,6 +5,7 @@
 #include "Packet/PacketID.h"
 #include "Script/ScriptExecuter.h"
 #include "Script/ScriptFlagManager.h"
+#include "Quest/QuestManager.h"
 
 class PacketBase;
 class ClientStateBase;
@@ -89,6 +90,9 @@ private:
 
 	// スクリプトフラグ管理.
 	ScriptFlagManager FlagManager;
+
+	// クエスト管理.
+	QuestManager QusetMgr;
 
 };
 

@@ -7,6 +7,7 @@
 #include "Connection/GameServerConnection.h"
 #include "Character/Player/PlayerStatus.h"
 #include "Script/ScriptExecuter.h"
+#include "Quest/QuestManager.h"
 #include "FlexArray.h"
 #include "MMOGameInstance.generated.h"
 
@@ -92,6 +93,9 @@ private:
 
 	// スクリプト実行.
 	ScriptExecuter Script;
+
+	// クエスト管理.
+	QuestManager QuestMgr;
 
 
 	// パケットを受信した。
