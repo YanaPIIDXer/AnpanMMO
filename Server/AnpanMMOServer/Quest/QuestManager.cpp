@@ -5,6 +5,7 @@
 #include "Master/MasterData.h"
 #include "CacheServer/CacheServerConnection.h"
 #include "Packet/PacketQuestAccept.h"
+#include "Packet/PacketQuestAnpanKill.h"
 #include "Packet/PacketQuestClear.h"
 #include "Packet/PacketQuestStageChange.h"
 #include "Packet/PacketQuestRetireResponse.h"
@@ -123,6 +124,10 @@ void QuestManager::OnKilledAnpan(u32 AreaId)
 		if (pItem->Condition != QuestStageItem::KILL_ANPAN_IN_AREA || pItem->TargetId != AreaId) { continue; }
 
 		It->second->KillCount++;
+
+		PacketQuestAnpanKill Packet(It->first);
+		pClient->SendPacket(&Packet);
+
 		if (It->second->KillCount >= pItem->Count)
 		{
 			// 規定数殺害したのでステージ進行。
