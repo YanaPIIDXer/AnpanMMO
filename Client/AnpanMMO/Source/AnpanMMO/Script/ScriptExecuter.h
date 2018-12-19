@@ -52,6 +52,13 @@ public:
 	// クエストのステージ番号を取得.
 	virtual u32 GetQuestStageNo(u32 QuestId) override;
 
+	// アイテムの個数を取得.
+	virtual u32 GetItemCount(u32 ItemId) override;
+
+	// アイテム消費.
+	// ※クライアント側は何もしない。
+	virtual void ConsumeItem(u32 ItemId, u32 Count) override {}
+
 	// ビットフィールドからフラグに変換.
 	void ConvertFlagFromBitFields(uint32 BitField1, uint32 BitField2, uint32 BitField3);
 

@@ -91,6 +91,9 @@ public:
 	// アイテム破棄.
 	void SubtractItem(u32 ItemId, u32 Count);
 
+	// アイテムリストを取得.
+	const ItemList &GetItemList() const { return Items; }
+
 private:
 
 	// クライアント

@@ -6,6 +6,7 @@
 #include "FileManagerGeneric.h"
 #include "Active/ActiveGameMode.h"
 #include "MMOGameInstance.h"
+#include "Character/Player/GameCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "MemoryStream/MemoryStreamReader.h"
 
@@ -93,6 +94,13 @@ u32 ScriptExecuter::GetQuestStageNo(u32 QuestId)
 	check(pInst != nullptr);
 
 	return pInst->GetQuestManager().GetStageNo(QuestId);
+}
+
+// アイテムの個数を取得.
+u32 ScriptExecuter::GetItemCount(u32 ItemId)
+{
+	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(pGameMode.Get(), 0));
+	return pCharacter->GetItemCount(ItemId);
 }
 
 // ビットフィールドからフラグに変換.

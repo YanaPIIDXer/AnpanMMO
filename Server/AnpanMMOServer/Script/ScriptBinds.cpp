@@ -121,3 +121,35 @@ int GetQuestStageNo_Call(lua_State *pState)
 	lua_pushnumber(pState, StageNo);
 	return 1;
 }
+
+// アイテムの個数を取得.
+int GetItemCount_Call(lua_State *pState)
+{
+	long Id = (long)luaL_checknumber(pState, -2);
+	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
+	if (pExecuter == NULL)
+	{
+		lua_pushnumber(pState, 0);
+		return 1;
+	}
+
+	u32 ItemId = (u32)luaL_checknumber(pState, -1);
+	u32 Count = pExecuter->GetItemCount(ItemId);
+
+	lua_pushnumber(pState, ItemId);
+	return 1;
+}
+
+// アイテムを消費.
+int ConsumeItem_Call(lua_State *pState)
+{
+	long Id = (long)luaL_checknumber(pState, -3);
+	u32 ItemId = (u32)luaL_checknumber(pState, -2);
+	u32 Count = (u32)luaL_checknumber(pState, -1);
+	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
+	if (pExecuter == NULL) { return 0; }
+
+	pExecuter->ConsumeItem(ItemId, Count);
+
+	return 0;
+}

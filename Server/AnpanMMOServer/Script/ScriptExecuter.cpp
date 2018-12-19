@@ -66,6 +66,18 @@ u32 ScriptExecuter::GetQuestStageNo(u32 QuestId)
 	return pClient->GetQuestManager().GetStageNo(QuestId);
 }
 
+// アイテムの個数を取得.
+u32 ScriptExecuter::GetItemCount(u32 ItemId)
+{
+	return pClient->GetCharacter().lock()->GetItemList().GetCount(ItemId);
+}
+
+// アイテム消費.
+void ScriptExecuter::ConsumeItem(u32 ItemId, u32 Count)
+{
+	pClient->GetCharacter().lock()->SubtractItem(ItemId, Count);
+}
+
 
 // 実行エラー
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)
