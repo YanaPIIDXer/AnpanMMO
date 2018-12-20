@@ -53,6 +53,9 @@ public:
 	// デストラクタ
 	virtual ~UQuestMenu() {}
 
+	// パケットを受信した。
+	virtual void OnRecvPacket(uint8 ID) override;
+
 protected:
 
 	// 初期化.

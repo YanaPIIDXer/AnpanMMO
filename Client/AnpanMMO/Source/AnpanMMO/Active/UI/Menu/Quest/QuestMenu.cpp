@@ -13,6 +13,19 @@ UQuestMenu::UQuestMenu(const FObjectInitializer &ObjectInitializer)
 {
 }
 
+// パケットを受信した。
+void UQuestMenu::OnRecvPacket(uint8 ID)
+{
+	switch (ID)
+	{
+		case PacketID::QuestRetireResponse:
+
+			// クエスト破棄受信後は再構築.
+			Init();
+			break;
+	}
+}
+
 
 // 初期化.
 void UQuestMenu::Init()
