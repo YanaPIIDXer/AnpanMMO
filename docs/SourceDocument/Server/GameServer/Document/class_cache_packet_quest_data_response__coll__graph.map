@@ -1,5 +1,0 @@
-<map id="CachePacketQuestDataResponse" name="CachePacketQuestDataResponse">
-<area shape="rect" id="node2" href="$class_process_packet_base.html" title="ProcessPacketBase" alt="" coords="5,81,147,108"/>
-<area shape="rect" id="node3" href="$class_packet_base.html" title="PacketBase" alt="" coords="29,5,123,32"/>
-<area shape="rect" id="node4" href="$class_flex_array.html" title="FlexArray\&lt; QuestData \&gt;" alt="" coords="171,81,335,108"/>
-</map>

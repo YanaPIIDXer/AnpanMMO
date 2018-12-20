@@ -1,7 +1,0 @@
-<map id="PlayerCharacter" name="PlayerCharacter">
-<area shape="rect" id="node2" href="$class_character_base.html" title="CharacterBase" alt="" coords="297,122,405,149"/>
-<area shape="rect" id="node4" href="$class_skill_recast_manager.html" title="SkillRecastManager" alt="" coords="32,71,171,98"/>
-<area shape="rect" id="node5" href="$class_rotation.html" title="Rotation" alt="" coords="66,122,137,149"/>
-<area shape="rect" id="node6" href="$class_skill_control.html" title="SkillControl" alt="" coords="57,173,145,199"/>
-<area shape="rect" id="node7" href="$class_vector3_d.html" title="Vector3D" alt="" coords="63,262,139,289"/>
-</map>
