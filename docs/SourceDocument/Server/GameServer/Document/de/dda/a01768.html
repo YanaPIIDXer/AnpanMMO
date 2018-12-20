@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: ProcessPacketBase クラス</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="../../df/d7b/a01765.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">ProcessPacketBase クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../dd/d5c/a00752_source.html">ProcessPacketBase.h</a>&gt;</code></p>
+<div class="dynheader">
+ProcessPacketBase の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dab/a01767.png" border="0" usemap="#_process_packet_base_inherit__map" alt="Inheritance graph"/></div>
+<map name="_process_packet_base_inherit__map" id="_process_packet_base_inherit__map">
+<area shape="rect" id="node3" href="../../d8/d0d/a01280.html" title="CachePacketCharacterData\lRequest" alt="" coords="361,5,543,47"/>
+<area shape="rect" id="node4" href="../../dd/d18/a01284.html" title="CachePacketCharacterData\lResult" alt="" coords="361,71,543,112"/>
+<area shape="rect" id="node5" href="../../d7/d8d/a01288.html" title="CachePacketCharacterDataSave" alt="" coords="347,137,557,163"/>
+<area shape="rect" id="node6" href="../../d8/d7a/a01292.html" title="CachePacketCreateCharacter\lRequest" alt="" coords="355,188,549,229"/>
+<area shape="rect" id="node7" href="../../d4/d64/a01296.html" title="CachePacketCreateCharacter\lResult" alt="" coords="355,253,549,295"/>
+<area shape="rect" id="node8" href="../../d8/dc5/a01300.html" title="CachePacketGoldSave" alt="" coords="375,319,529,346"/>
+<area shape="rect" id="node9" href="../../d6/dae/a01304.html" title="CachePacketItemCountChange\lRequest" alt="" coords="351,371,553,412"/>
+<area shape="rect" id="node10" href="../../d1/d56/a01308.html" title="CachePacketItemListRequest" alt="" coords="355,437,549,463"/>
+<area shape="rect" id="node11" href="../../d7/d41/a01312.html" title="CachePacketItemListResponse" alt="" coords="350,487,554,514"/>
+<area shape="rect" id="node12" href="../../d4/d49/a01316.html" title="CachePacketItemShortcutRequest" alt="" coords="341,538,563,565"/>
+<area shape="rect" id="node13" href="../../df/dec/a01320.html" title="CachePacketItemShortcutResponse" alt="" coords="336,589,568,615"/>
+<area shape="rect" id="node14" href="../../d5/d53/a01324.html" title="CachePacketLogInRequest" alt="" coords="363,639,541,666"/>
+<area shape="rect" id="node15" href="../../dc/dd9/a01328.html" title="CachePacketLogInResult" alt="" coords="368,690,536,717"/>
+<area shape="rect" id="node16" href="../../d9/d45/a01332.html" title="CachePacketOpenSkillTree" alt="" coords="361,741,543,767"/>
+<area shape="rect" id="node17" href="../../df/d93/a01336.html" title="CachePacketQuestDataRequest" alt="" coords="347,791,557,818"/>
+<area shape="rect" id="node18" href="../../d7/d51/a01340.html" title="CachePacketQuestDataResponse" alt="" coords="342,842,562,869"/>
+<area shape="rect" id="node19" href="../../dc/d54/a01344.html" title="CachePacketQuestRetireRequest" alt="" coords="343,893,561,919"/>
+<area shape="rect" id="node20" href="../../d7/d57/a01348.html" title="CachePacketSaveActiveQuest\lRequest" alt="" coords="353,944,551,985"/>
+<area shape="rect" id="node21" href="../../d0/d85/a01352.html" title="CachePacketSaveItemShortcut\lRequest" alt="" coords="351,1009,553,1051"/>
+<area shape="rect" id="node22" href="../../d2/d3f/a01356.html" title="CachePacketSaveItemShortcut\lResponse" alt="" coords="351,1075,553,1116"/>
+<area shape="rect" id="node23" href="../../d9/d79/a01360.html" title="CachePacketSaveQuestData\lRequest" alt="" coords="357,1140,547,1181"/>
+<area shape="rect" id="node24" href="../../de/d1f/a01364.html" title="CachePacketSaveSkillList\lRequest" alt="" coords="365,1205,539,1247"/>
+<area shape="rect" id="node25" href="../../dd/d0c/a01368.html" title="CachePacketSaveSkillList\lResponse" alt="" coords="365,1271,539,1312"/>
+<area shape="rect" id="node26" href="../../df/d0b/a01372.html" title="CachePacketScriptFlagRequest" alt="" coords="349,1337,555,1363"/>
+<area shape="rect" id="node27" href="../../d2/d29/a01376.html" title="CachePacketScriptFlagResponse" alt="" coords="343,1387,561,1414"/>
+<area shape="rect" id="node28" href="../../dd/d6d/a01380.html" title="CachePacketScriptFlagSave\lRequest" alt="" coords="359,1439,545,1480"/>
+<area shape="rect" id="node29" href="../../d7/dde/a01384.html" title="CachePacketSkillListRequest" alt="" coords="355,1505,549,1531"/>
+<area shape="rect" id="node30" href="../../d0/d36/a01388.html" title="CachePacketSkillListResponse" alt="" coords="350,1555,554,1582"/>
+<area shape="rect" id="node31" href="../../d1/dcc/a01392.html" title="CachePacketSkillTreeRequest" alt="" coords="353,1606,551,1633"/>
+<area shape="rect" id="node32" href="../../d9/d45/a01396.html" title="CachePacketSkillTreeResponse" alt="" coords="348,1657,556,1683"/>
+<area shape="rect" id="node33" href="../../d0/dce/a01780.html" title="WordCheckPacketChatRequest" alt="" coords="349,1707,555,1734"/>
+<area shape="rect" id="node34" href="../../d6/d3d/a01784.html" title="WordCheckPacketChatResult" alt="" coords="355,1758,549,1785"/>
+<area shape="rect" id="node2" href="../../dc/d85/a01436.html" title="PacketBase" alt="" coords="5,867,99,894"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+ProcessPacketBase 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d79/a01766.png" border="0" usemap="#_process_packet_base_coll__map" alt="Collaboration graph"/></div>
+<map name="_process_packet_base_coll__map" id="_process_packet_base_coll__map">
+<area shape="rect" id="node2" href="../../dc/d85/a01436.html" title="PacketBase" alt="" coords="29,5,123,32"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9754ed248a470abb62b5e0cf1213fa6d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../dc/d2c/a00893.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/a01768.html#a9754ed248a470abb62b5e0cf1213fa6d">GetPacketID</a> () const</td></tr>
+<tr class="separator:a9754ed248a470abb62b5e0cf1213fa6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9c610ce35b5a0bb034c180a9571bef"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/a01768.html#a5e9c610ce35b5a0bb034c180a9571bef">Serialize</a> (<a class="el" href="../../d0/d33/a01252.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="separator:a5e9c610ce35b5a0bb034c180a9571bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a01436"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a01436')"><img src="../../closed.png" alt="-"/>&#160;基底クラス <a class="el" href="../../dc/d85/a01436.html">PacketBase</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a8784f3bc29a63570e38619d940131223 inherit pub_methods_a01436"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d85/a01436.html#a8784f3bc29a63570e38619d940131223">~PacketBase</a> ()</td></tr>
+<tr class="separator:a8784f3bc29a63570e38619d940131223 inherit pub_methods_a01436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:ac790a295ae07e447dfc05b4e8e681c8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d2c/a00893.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dda/a01768.html#ac790a295ae07e447dfc05b4e8e681c8f">ClientId</a></td></tr>
+<tr class="separator:ac790a295ae07e447dfc05b4e8e681c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>他プロセスとの通信用パケットベースクラス </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="a9754ed248a470abb62b5e0cf1213fa6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9754ed248a470abb62b5e0cf1213fa6d">&#9670;&nbsp;</a></span>GetPacketID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../dc/d2c/a00893.html#aed742c436da53c1080638ce6ef7d13de">u8</a> ProcessPacketBase::GetPacketID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../dc/d85/a01436.html#a25571c44a21c4e9e15df719b2073ba62">PacketBase</a>を実装しています。</p>
+
+<p><a class="el" href="../../d7/d41/a01312.html#a842147599ca671ce81ace289463c4b39">CachePacketItemListResponse</a>, <a class="el" href="../../d7/d51/a01340.html#a86f4440bf5a8946ba013e83e600b7a45">CachePacketQuestDataResponse</a>, <a class="el" href="../../d9/d79/a01360.html#a3bbcd2cd351678f5b4d726b7da5b00e0">CachePacketSaveQuestDataRequest</a>, <a class="el" href="../../d8/d0d/a01280.html#a3b689a3af595c94165e300c492ae0032">CachePacketCharacterDataRequest</a>, <a class="el" href="../../dd/d18/a01284.html#a6963aafe92d3cd61c0d680676448654d">CachePacketCharacterDataResult</a>, <a class="el" href="../../d7/d8d/a01288.html#ae3af50aa8731c293429c9207568209c1">CachePacketCharacterDataSave</a>, <a class="el" href="../../d8/d7a/a01292.html#a155d4740f21d730bc46e5be47746a037">CachePacketCreateCharacterRequest</a>, <a class="el" href="../../d4/d64/a01296.html#a73c39b7d9cd932a6aee8d0a8e3473f00">CachePacketCreateCharacterResult</a>, <a class="el" href="../../d8/dc5/a01300.html#a75ee91b673c8772d5b3bb10f6f54180f">CachePacketGoldSave</a>, <a class="el" href="../../d6/dae/a01304.html#a5bfa052968ff411a552e01f8dbc023ce">CachePacketItemCountChangeRequest</a>, <a class="el" href="../../d1/d56/a01308.html#a9c02c19fdaee51d44fd5702e5a7a3437">CachePacketItemListRequest</a>, <a class="el" href="../../d4/d49/a01316.html#a23a6e68cc818dc4be20057313a05a9b1">CachePacketItemShortcutRequest</a>, <a class="el" href="../../df/dec/a01320.html#a20d357c18f217b502b1eb85ba3cae694">CachePacketItemShortcutResponse</a>, <a class="el" href="../../d5/d53/a01324.html#a4fdda8aa750221cd90a996317864904c">CachePacketLogInRequest</a>, <a class="el" href="../../dc/dd9/a01328.html#a0ab18abc1334d6efcd3f792940517b89">CachePacketLogInResult</a>, <a class="el" href="../../d9/d45/a01332.html#acfb524e551fcb38720da8c5abfb2f2c0">CachePacketOpenSkillTree</a>, <a class="el" href="../../df/d93/a01336.html#a9ca8ba2f30690c3e2782be5ebef78896">CachePacketQuestDataRequest</a>, <a class="el" href="../../dc/d54/a01344.html#a8a27d78e025292e0fb25fe326a6cc2f0">CachePacketQuestRetireRequest</a>, <a class="el" href="../../d7/d57/a01348.html#a6f3d173c972d0f032c0dc4047b83ea03">CachePacketSaveActiveQuestRequest</a>, <a class="el" href="../../d0/d85/a01352.html#a300b30af9a5f684389cf5b47ac9b4027">CachePacketSaveItemShortcutRequest</a>, <a class="el" href="../../d2/d3f/a01356.html#afddc38c3182bbf74125a6b7593d2d29e">CachePacketSaveItemShortcutResponse</a>, <a class="el" href="../../de/d1f/a01364.html#a2640fac16d6caaa6426a52b9adaea303">CachePacketSaveSkillListRequest</a>, <a class="el" href="../../dd/d0c/a01368.html#a12965a488ce36ec42dd3a69a145f75e1">CachePacketSaveSkillListResponse</a>, <a class="el" href="../../df/d0b/a01372.html#a4e56851f3e305a38f3b8e65c2bf8d476">CachePacketScriptFlagRequest</a>, <a class="el" href="../../d2/d29/a01376.html#ab81556a51438d123bf857908b72a256b">CachePacketScriptFlagResponse</a>, <a class="el" href="../../dd/d6d/a01380.html#a040ae5fa2fb2a97e625f8d36cf122ffc">CachePacketScriptFlagSaveRequest</a>, <a class="el" href="../../d7/dde/a01384.html#a6b88ab9ec9923d1b379bb6a0a4f16267">CachePacketSkillListRequest</a>, <a class="el" href="../../d0/d36/a01388.html#a2fe41a337674c5ac3b9d2b0cab89f0a5">CachePacketSkillListResponse</a>, <a class="el" href="../../d1/dcc/a01392.html#a08b462a8abf532b6beb34baa2db5c104">CachePacketSkillTreeRequest</a>, <a class="el" href="../../d9/d45/a01396.html#a074e7f49752ea1fe30eff0846d7006e9">CachePacketSkillTreeResponse</a>, <a class="el" href="../../d0/dce/a01780.html#ab75a3e47c036cd203dd8820217b15405">WordCheckPacketChatRequest</a>, <a class="el" href="../../d6/d3d/a01784.html#a420659efb8635fb9c7dc40ce8fc26370">WordCheckPacketChatResult</a> (計32項目)で再実装されています。</p>
+
+</div>
+</div>
+<a id="a5e9c610ce35b5a0bb034c180a9571bef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e9c610ce35b5a0bb034c180a9571bef">&#9670;&nbsp;</a></span>Serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ProcessPacketBase::Serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d33/a01252.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="../../dc/d85/a01436.html#ab4e30d95c9ddc4ccb36376fc93d1398d">PacketBase</a>を実装しています。</p>
+
+<p><a class="el" href="../../dd/d18/a01284.html#af75521d3732be118045062bad4aefb68">CachePacketCharacterDataResult</a>, <a class="el" href="../../d7/d8d/a01288.html#aba7723abd5c9b1a495a7dd03d4489727">CachePacketCharacterDataSave</a>, <a class="el" href="../../d0/d36/a01388.html#a71f23cc0dbb1da7aec3748b866b972c5">CachePacketSkillListResponse</a>, <a class="el" href="../../dd/d0c/a01368.html#a291538bed6fbfbdd4d3e5956ff564b0e">CachePacketSaveSkillListResponse</a>, <a class="el" href="../../d7/d51/a01340.html#a7e6aa2ae37eee38a5097f9c7376c52a7">CachePacketQuestDataResponse</a>, <a class="el" href="../../d2/d29/a01376.html#a31e33ff55ecc08278c36279248e317ac">CachePacketScriptFlagResponse</a>, <a class="el" href="../../dc/dd9/a01328.html#a9deb3fbfba43d94ad907b1c290f19ecd">CachePacketLogInResult</a>, <a class="el" href="../../d7/d41/a01312.html#a4435722acbd596f5c2ab0570c0970221">CachePacketItemListResponse</a>, <a class="el" href="../../df/dec/a01320.html#a3a608f884371e615cd5a77f466b03655">CachePacketItemShortcutResponse</a>, <a class="el" href="../../d2/d3f/a01356.html#acf457a2451d4edfaf2163583f38ba9d7">CachePacketSaveItemShortcutResponse</a>, <a class="el" href="../../de/d1f/a01364.html#a8a846382df24cd71cc571452908292ec">CachePacketSaveSkillListRequest</a>, <a class="el" href="../../dd/d6d/a01380.html#a474c687c14284106e46df67acbfb8794">CachePacketScriptFlagSaveRequest</a>, <a class="el" href="../../d9/d45/a01396.html#ac3f239f2c03d17fde754dfe843086ede">CachePacketSkillTreeResponse</a>, <a class="el" href="../../d8/d7a/a01292.html#a100fe0d6807e6532352100aa850f2b3d">CachePacketCreateCharacterRequest</a>, <a class="el" href="../../d4/d64/a01296.html#ac8e929313644e33ad31ed199808bc5b1">CachePacketCreateCharacterResult</a>, <a class="el" href="../../d6/dae/a01304.html#a566afeeefda839911bceca5f75d2719f">CachePacketItemCountChangeRequest</a>, <a class="el" href="../../d0/d85/a01352.html#a9b9bc67e68a69b17722aa6f897963df1">CachePacketSaveItemShortcutRequest</a>, <a class="el" href="../../d9/d79/a01360.html#a4f0075b6f91117962859823dfa6cf8fb">CachePacketSaveQuestDataRequest</a>, <a class="el" href="../../d8/dc5/a01300.html#afdaa60983c11e24f6023341faf9ce86d">CachePacketGoldSave</a>, <a class="el" href="../../d9/d45/a01332.html#ac78b74e42c28d557fb97ccb32c751d26">CachePacketOpenSkillTree</a>, <a class="el" href="../../dc/d54/a01344.html#ab73d123f8698867220c94c4ba7a23e39">CachePacketQuestRetireRequest</a>, <a class="el" href="../../d7/d57/a01348.html#ac84f91759ca462449bba4b0ce28f4693">CachePacketSaveActiveQuestRequest</a>, <a class="el" href="../../d0/dce/a01780.html#a83c80c53c02181a46fb084e66313335f">WordCheckPacketChatRequest</a>, <a class="el" href="../../d6/d3d/a01784.html#a4c2669db53a0454dbb9bc4310987250f">WordCheckPacketChatResult</a>, <a class="el" href="../../d8/d0d/a01280.html#a148d1e377bb4401f37fe8df0df010eea">CachePacketCharacterDataRequest</a>, <a class="el" href="../../d1/d56/a01308.html#a708f0a814f55ec962ae538fde7af7c42">CachePacketItemListRequest</a>, <a class="el" href="../../d4/d49/a01316.html#a9bef17558b62886ccbd0de54adb59623">CachePacketItemShortcutRequest</a>, <a class="el" href="../../d5/d53/a01324.html#ad0fbf383987a415291d4f18890f66309">CachePacketLogInRequest</a>, <a class="el" href="../../df/d93/a01336.html#a24b4df24f4d33d9c9e3eea4349c77530">CachePacketQuestDataRequest</a>, <a class="el" href="../../df/d0b/a01372.html#a8b45fc4abf8804ef626e55a8c7f57712">CachePacketScriptFlagRequest</a>, <a class="el" href="../../d7/dde/a01384.html#a82d68dcf1928dd631d0ebc33f7a52a06">CachePacketSkillListRequest</a>, <a class="el" href="../../d1/dcc/a01392.html#a77cf21a6b1e576e5d13ad77e82f5c008">CachePacketSkillTreeRequest</a> (計32項目)で再実装されています。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ac790a295ae07e447dfc05b4e8e681c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac790a295ae07e447dfc05b4e8e681c8f">&#9670;&nbsp;</a></span>ClientId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d2c/a00893.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ProcessPacketBase::ClientId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="../../dd/d5c/a00752_source.html">ProcessPacketBase.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

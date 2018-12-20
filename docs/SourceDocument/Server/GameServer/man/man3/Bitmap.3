@@ -1,0 +1,55 @@
+.TH "Bitmap" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Bitmap
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Bitmap\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBBitmap\fP ()"
+.br
+.ti -1c
+.RI "\fB~Bitmap\fP ()"
+.br
+.ti -1c
+.RI "bool \fBLoad\fP (const std::string &FilePath)"
+.br
+.ti -1c
+.RI "\fBColor24\fP \fBGetPixel\fP (int X, int Y) const"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBGetWidth\fP () const"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBGetHeight\fP () const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+ビットマップクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "Bitmap::Bitmap ()"
+
+.SS "Bitmap::~Bitmap ()"
+
+.SH "関数詳解"
+.PP 
+.SS "\fBs32\fP Bitmap::GetHeight () const\fC [inline]\fP"
+
+.SS "\fBColor24\fP Bitmap::GetPixel (int X, int Y) const"
+
+.SS "\fBs32\fP Bitmap::GetWidth () const\fC [inline]\fP"
+
+.SS "bool Bitmap::Load (const std::string & FilePath)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

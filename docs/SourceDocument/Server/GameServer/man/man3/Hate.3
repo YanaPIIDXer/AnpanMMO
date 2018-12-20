@@ -1,0 +1,50 @@
+.TH "Hate" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Hate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Hate\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBHate\fP ()"
+.br
+.ti -1c
+.RI "\fB~Hate\fP ()"
+.br
+.ti -1c
+.RI "void \fBPoll\fP ()"
+.br
+.ti -1c
+.RI "void \fBAdd\fP (weak_ptr< \fBCharacterBase\fP > pCharacter, int Value)"
+.br
+.ti -1c
+.RI "weak_ptr< \fBCharacterBase\fP > \fBGetTop\fP () const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+ヘイト管理クラス 
+.SH "構築子と解体子"
+.PP 
+.SS "Hate::Hate ()"
+
+.SS "Hate::~Hate ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void Hate::Add (weak_ptr< \fBCharacterBase\fP > pCharacter, int Value)"
+
+.SS "weak_ptr< \fBCharacterBase\fP > Hate::GetTop () const"
+
+.SS "void Hate::Poll ()"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

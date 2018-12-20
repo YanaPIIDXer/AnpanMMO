@@ -1,0 +1,45 @@
+.TH "AnpanPopArea" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnpanPopArea
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AnpanPopArea\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAnpanPopArea\fP (const \fBAnpanPopAreaItem\fP *pMasterItem)"
+.br
+.ti -1c
+.RI "\fB~AnpanPopArea\fP ()"
+.br
+.ti -1c
+.RI "void \fBPoll\fP (int DeltaTime)"
+.br
+.ti -1c
+.RI "void \fBSetSpawnFunction\fP (const SpawnFunc &InSpawnFunction)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+アンパンが生成されるエリア 
+.SH "構築子と解体子"
+.PP 
+.SS "AnpanPopArea::AnpanPopArea (const \fBAnpanPopAreaItem\fP * pMasterItem)"
+
+.SS "AnpanPopArea::~AnpanPopArea ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void AnpanPopArea::Poll (int DeltaTime)"
+
+.SS "void AnpanPopArea::SetSpawnFunction (const SpawnFunc & InSpawnFunction)\fC [inline]\fP"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

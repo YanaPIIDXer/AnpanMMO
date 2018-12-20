@@ -1,0 +1,56 @@
+.TH "InstanceAreaTicketManager" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InstanceAreaTicketManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <InstanceAreaTicketManager\&.h>\fP
+.PP
+noncopyableを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~InstanceAreaTicketManager\fP ()"
+.br
+.ti -1c
+.RI "\fBInstanceAreaTicket\fP * \fBPublish\fP (\fBu32\fP AreaId, const \fBVector3D\fP &StartPosition)"
+.br
+.ti -1c
+.RI "\fBInstanceAreaTicket\fP * \fBGet\fP (\fBu32\fP Uuid)"
+.br
+.ti -1c
+.RI "void \fBRemove\fP (\fBu32\fP Uuid)"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBInstanceAreaTicketManager\fP & \fBGetInstance\fP ()"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+インスタンスエリアチケットマネージャ 
+.SH "構築子と解体子"
+.PP 
+.SS "InstanceAreaTicketManager::~InstanceAreaTicketManager ()\fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "\fBInstanceAreaTicket\fP * InstanceAreaTicketManager::Get (\fBu32\fP Uuid)"
+
+.SS "static \fBInstanceAreaTicketManager\fP& InstanceAreaTicketManager::GetInstance ()\fC [inline]\fP, \fC [static]\fP"
+
+.SS "\fBInstanceAreaTicket\fP * InstanceAreaTicketManager::Publish (\fBu32\fP AreaId, const \fBVector3D\fP & StartPosition)"
+
+.SS "void InstanceAreaTicketManager::Remove (\fBu32\fP Uuid)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

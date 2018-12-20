@@ -1,0 +1,50 @@
+.TH "HeightMap" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HeightMap
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HeightMap\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBHeightMap\fP ()"
+.br
+.ti -1c
+.RI "\fB~HeightMap\fP ()"
+.br
+.ti -1c
+.RI "bool \fBLoad\fP (const std::string &FilePath)"
+.br
+.ti -1c
+.RI "float \fBGetHeight\fP (float X, float Z) const"
+.br
+.ti -1c
+.RI "bool \fBCheckMovable\fP (const \fBVector3D\fP &Start, const \fBVector3D\fP &End, float ClimbableHeight, \fBVector3D\fP &OutHit) const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+ハイトマップ 
+.SH "構築子と解体子"
+.PP 
+.SS "HeightMap::HeightMap ()"
+
+.SS "HeightMap::~HeightMap ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "bool HeightMap::CheckMovable (const \fBVector3D\fP & Start, const \fBVector3D\fP & End, float ClimbableHeight, \fBVector3D\fP & OutHit) const"
+
+.SS "float HeightMap::GetHeight (float X, float Z) const"
+
+.SS "bool HeightMap::Load (const std::string & FilePath)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

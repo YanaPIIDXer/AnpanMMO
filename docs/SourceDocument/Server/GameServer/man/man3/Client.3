@@ -1,0 +1,144 @@
+.TH "Client" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Client
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Client\&.h>\fP
+.PP
+\fBTCPConnection\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBClient\fP (const shared_ptr< tcp::socket > &pInSocket)"
+.br
+.ti -1c
+.RI "virtual \fB~Client\fP ()"
+.br
+.ti -1c
+.RI "void \fBSendPacket\fP (\fBPacketBase\fP *pPacket)"
+.br
+.ti -1c
+.RI "void \fBChangeState\fP (\fBClientStateBase\fP *pNextState)"
+.br
+.ti -1c
+.RI "void \fBSetUuid\fP (\fBu32\fP InUuid)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGetUuid\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetCustomerId\fP (\fBu32\fP InCustomerId)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGetCustomerId\fP () const"
+.br
+.ti -1c
+.RI "weak_ptr< \fBPlayerCharacter\fP > \fBGetCharacter\fP () const"
+.br
+.ti -1c
+.RI "void \fBCreateCharacter\fP (\fBu32\fP CharacterId, const std::string &Name, \fBu8\fP Job, \fBu32\fP Level, int MaxHp, int Atk, int Def, int Exp, \fBu32\fP Gold)"
+.br
+.ti -1c
+.RI "void \fBRecvPacket\fP (\fBu8\fP ID, \fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "\fBScriptExecuter\fP * \fBGetScript\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetScriptFlag\fP (int Key)"
+.br
+.ti -1c
+.RI "const \fBScriptFlagManager\fP & \fBGetScriptFlagManager\fP () const"
+.br
+.ti -1c
+.RI "void \fBConvertScriptFlagFromBitFields\fP (\fBu32\fP BitField1, \fBu32\fP BitField2, \fBu32\fP BitField3)"
+.br
+.ti -1c
+.RI "const \fBQuestManager\fP & \fBGetQuestManager\fP () const"
+.br
+.ti -1c
+.RI "void \fBAddQuestData\fP (const \fBQuestData\fP &Data)"
+.br
+.ti -1c
+.RI "void \fBAcceptQuest\fP (\fBu32\fP QuestId)"
+.br
+.ti -1c
+.RI "void \fBProgressQuest\fP (\fBu32\fP QuestId)"
+.br
+.ti -1c
+.RI "void \fBOnKilledAnpan\fP (\fBu32\fP AreaId)"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBRetireQuest\fP (\fBu32\fP QuestId)"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBOnRecvData\fP (size_t Size)"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+クライアントクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "Client::Client (const shared_ptr< tcp::socket > & pInSocket)"
+
+.SS "Client::~Client ()\fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void Client::AcceptQuest (\fBu32\fP QuestId)"
+
+.SS "void Client::AddQuestData (const \fBQuestData\fP & Data)"
+
+.SS "void Client::ChangeState (\fBClientStateBase\fP * pNextState)"
+
+.SS "void Client::ConvertScriptFlagFromBitFields (\fBu32\fP BitField1, \fBu32\fP BitField2, \fBu32\fP BitField3)"
+
+.SS "void Client::CreateCharacter (\fBu32\fP CharacterId, const std::string & Name, \fBu8\fP Job, \fBu32\fP Level, int MaxHp, int Atk, int Def, int Exp, \fBu32\fP Gold)"
+
+.SS "weak_ptr<\fBPlayerCharacter\fP> Client::GetCharacter () const\fC [inline]\fP"
+
+.SS "\fBu32\fP Client::GetCustomerId () const\fC [inline]\fP"
+
+.SS "const \fBQuestManager\fP& Client::GetQuestManager () const\fC [inline]\fP"
+
+.SS "\fBScriptExecuter\fP* Client::GetScript ()\fC [inline]\fP"
+
+.SS "const \fBScriptFlagManager\fP& Client::GetScriptFlagManager () const\fC [inline]\fP"
+
+.SS "\fBu32\fP Client::GetUuid () const\fC [inline]\fP"
+
+.SS "void Client::OnKilledAnpan (\fBu32\fP AreaId)"
+
+.SS "void Client::OnRecvData (size_t Size)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+\fBTCPConnection\fPを再実装しています。
+.SS "void Client::ProgressQuest (\fBu32\fP QuestId)"
+
+.SS "void Client::RecvPacket (\fBu8\fP ID, \fBMemoryStreamInterface\fP * pStream)"
+
+.SS "\fBu8\fP Client::RetireQuest (\fBu32\fP QuestId)"
+
+.SS "void Client::SendPacket (\fBPacketBase\fP * pPacket)"
+
+.SS "void Client::SetCustomerId (\fBu32\fP InCustomerId)\fC [inline]\fP"
+
+.SS "void Client::SetScriptFlag (int Key)"
+
+.SS "void Client::SetUuid (\fBu32\fP InUuid)\fC [inline]\fP"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: InstanceAreaTicket.cpp ファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1a445cb237d74f7a5f8d11ec3b0585cc.html">Server</a></li><li class="navelem"><a class="el" href="../../dir_f54e6cb803bdfaa9f32d2f9ec38bb873.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="../../dir_63188eb323f66dc2fd959c1eefa6785a.html">Area</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">InstanceAreaTicket.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/d17/a00872_source.html">stdafx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/dee/a00053_source.html">InstanceAreaTicket.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/db1/a00140_source.html">Client.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d88/a00128_source.html">Character/Player/PlayerCharacter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/ddf/a00164_source.html">ClientState/ClientStateAreaChange.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/ddb/a00542_source.html">Packet/PacketInstanceAreaTicketPublish.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d33/a00536_source.html">Packet/PacketInstanceAreaTicketDiscard.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d1e/a00497_source.html">Packet/PacketAreaMoveResponse.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+InstanceAreaTicket.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d79/a00051.png" border="0" usemap="#_instance_area_ticket_8cpp" alt=""/></div>
+<map name="_instance_area_ticket_8cpp" id="_instance_area_ticket_8cpp">
+<area shape="rect" id="node2" href="../../dc/d17/a00872.html" title="stdafx.h" alt="" coords="729,162,797,189"/>
+<area shape="rect" id="node15" href="../../dc/dee/a00053.html" title="InstanceAreaTicket.h" alt="" coords="1720,162,1864,189"/>
+<area shape="rect" id="node21" href="../../d5/db1/a00140.html" title="Client.h" alt="" coords="3245,80,3312,107"/>
+<area shape="rect" id="node32" href="../../d1/d88/a00128.html" title="Character/Player/PlayerCharacter.h" alt="" coords="2524,80,2751,107"/>
+<area shape="rect" id="node45" href="../../db/ddf/a00164.html" title="ClientState/ClientStateArea\lChange.h" alt="" coords="1488,155,1669,196"/>
+<area shape="rect" id="node48" href="../../d0/ddb/a00542.html" title="Packet/PacketInstanceArea\lTicketPublish.h" alt="" coords="4181,244,4365,285"/>
+<area shape="rect" id="node49" href="../../d4/d33/a00536.html" title="Packet/PacketInstanceArea\lTicketDiscard.h" alt="" coords="3715,244,3899,285"/>
+<area shape="rect" id="node50" href="../../d4/d1e/a00497.html" title="Packet/PacketAreaMoveResponse.h" alt="" coords="3923,251,4157,278"/>
+<area shape="rect" id="node5" href="../../df/d03/a00062.html" title="basic_repeating_timer.h" alt="" coords="683,251,843,278"/>
+<area shape="rect" id="node14" href="../../dc/d2c/a00893.html" title="TypeDefs.h" alt="" coords="3319,423,3406,449"/>
+<area shape="rect" id="node17" href="../../d5/dd3/a00902.html" title="WeakPtrDefine.h" alt="" coords="1871,341,1991,367"/>
+<area shape="rect" id="node18" href="../../dc/d50/a00332.html" title="Math/Vector3D.h" alt="" coords="1371,251,1491,278"/>
+<area shape="rect" id="node22" href="../../d5/d69/a00878.html" title="TCPConnection.h" alt="" coords="3111,162,3233,189"/>
+<area shape="rect" id="node24" href="../../db/d44/a00533.html" title="Packet/PacketID.h" alt="" coords="3720,423,3851,449"/>
+<area shape="rect" id="node25" href="../../d0/dad/a00806.html" title="Script/ScriptExecuter.h" alt="" coords="3513,162,3671,189"/>
+<area shape="rect" id="node27" href="../../d3/d60/a00818.html" title="Script/ScriptFlagManager.h" alt="" coords="2906,162,3086,189"/>
+<area shape="rect" id="node28" href="../../df/d0c/a00788.html" title="Quest/QuestManager.h" alt="" coords="3308,162,3465,189"/>
+<area shape="rect" id="node23" href="../../dc/d84/a00338.html" title="MemoryBuffer.h" alt="" coords="3051,251,3165,278"/>
+<area shape="rect" id="node26" href="../../d8/db7/a00812.html" title="ScriptExecuterBase.h" alt="" coords="3541,251,3691,278"/>
+<area shape="rect" id="node29" href="../../d2/ddd/a00755.html" title="Packet/QuestData.h" alt="" coords="3377,251,3517,278"/>
+<area shape="rect" id="node30" href="../../de/d4e/a00500.html" title="PacketBase.h" alt="" coords="3689,341,3793,367"/>
+<area shape="rect" id="node31" href="../../d1/dc6/a00347.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3461,333,3665,375"/>
+<area shape="rect" id="node33" href="../../df/d6a/a00119.html" title="Character/CharacterBase.h" alt="" coords="2060,162,2239,189"/>
+<area shape="rect" id="node40" href="../../de/d76/a00134.html" title="PlayerExp.h" alt="" coords="2465,162,2559,189"/>
+<area shape="rect" id="node41" href="../../d0/d11/a00842.html" title="Skill/SkillTree/SkillTree.h" alt="" coords="2715,162,2882,189"/>
+<area shape="rect" id="node43" href="../../d9/d34/a00476.html" title="Packet/CharacterType.h" alt="" coords="3189,251,3352,278"/>
+<area shape="rect" id="node44" href="../../de/db1/a00197.html" title="Item/ItemList.h" alt="" coords="2583,162,2691,189"/>
+<area shape="rect" id="node34" href="../../df/dc8/a00122.html" title="CharacterParameter.h" alt="" coords="2168,251,2317,278"/>
+<area shape="rect" id="node35" href="../../d8/d23/a00326.html" title="Math/Rotation.h" alt="" coords="2544,251,2659,278"/>
+<area shape="rect" id="node36" href="../../d3/d52/a00023.html" title="Area/AreaBase.h" alt="" coords="1718,251,1839,278"/>
+<area shape="rect" id="node37" href="../../d9/daf/a00830.html" title="Skill/SkillControl.h" alt="" coords="1965,251,2093,278"/>
+<area shape="rect" id="node39" href="../../d3/d13/a00836.html" title="Skill/SkillRecastManager.h" alt="" coords="2341,251,2520,278"/>
+<area shape="rect" id="node42" href="../../d9/dd0/a00191.html" title="FlexArray.h" alt="" coords="2886,251,2975,278"/>
+<area shape="rect" id="node46" href="../../d5/dcb/a00170.html" title="ClientStateBase.h" alt="" coords="1515,251,1642,278"/>
+</map>
+</div>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

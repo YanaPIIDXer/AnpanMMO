@@ -1,0 +1,64 @@
+.TH "CachePacketOpenSkillTree" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CachePacketOpenSkillTree
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CachePacketOpenSkillTree\&.h>\fP
+.PP
+\fBProcessPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBCachePacketOpenSkillTree\fP ()"
+.br
+.ti -1c
+.RI "\fBCachePacketOpenSkillTree\fP (\fBu32\fP InClientId, \fBu32\fP InCharacterId, \fBu32\fP InNodeId)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBCharacterId\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBNodeId\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "CachePacketOpenSkillTree::CachePacketOpenSkillTree ()\fC [inline]\fP"
+
+.SS "CachePacketOpenSkillTree::CachePacketOpenSkillTree (\fBu32\fP InClientId, \fBu32\fP InCharacterId, \fBu32\fP InNodeId)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP CachePacketOpenSkillTree::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBProcessPacketBase\fPを再実装しています。
+.SS "bool CachePacketOpenSkillTree::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBProcessPacketBase\fPを再実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBu32\fP CachePacketOpenSkillTree::CharacterId"
+
+.SS "\fBu32\fP CachePacketOpenSkillTree::NodeId"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

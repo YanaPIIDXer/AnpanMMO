@@ -1,0 +1,54 @@
+.TH "ExecuterPool" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ExecuterPool
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ExecuterPool\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fB~ExecuterPool\fP ()"
+.br
+.ti -1c
+.RI "long \fBRegister\fP (\fBScriptExecuterBase\fP *pExecuter)"
+.br
+.ti -1c
+.RI "\fBScriptExecuterBase\fP * \fBGet\fP (long Id)"
+.br
+.ti -1c
+.RI "void \fBRemove\fP (long Id)"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBExecuterPool\fP & \fBGetInstance\fP ()"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+スクリプト実行オブジェクトプール クラスのメンバ関数がバインド出来ない関係で作られた。 IDとスクリプト実行オブジェクトを紐付け、 スクリプトからC++側の関数を呼び出す際は引数にIDを渡すようにする。 （ポインタのようなもの） 
+.SH "構築子と解体子"
+.PP 
+.SS "ExecuterPool::~ExecuterPool ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "\fBScriptExecuterBase\fP * ExecuterPool::Get (long Id)"
+
+.SS "static \fBExecuterPool\fP& ExecuterPool::GetInstance ()\fC [inline]\fP, \fC [static]\fP"
+
+.SS "long ExecuterPool::Register (\fBScriptExecuterBase\fP * pExecuter)"
+
+.SS "void ExecuterPool::Remove (long Id)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。
