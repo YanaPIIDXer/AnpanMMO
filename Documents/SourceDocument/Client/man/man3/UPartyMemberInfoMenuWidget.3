@@ -1,0 +1,68 @@
+.TH "UPartyMemberInfoMenuWidget" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UPartyMemberInfoMenuWidget
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PartyMemberInfoMenuWidget\&.h>\fP
+.PP
+\fBULayeredMenuWidgetBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBUPartyMemberInfoMenuWidget\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~UPartyMemberInfoMenuWidget\fP ()"
+.br
+.ti -1c
+.RI "void \fBInit\fP (bool bInIsLeader, const \fBFPartyMemberData\fP &InData)"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBKick\fP ()"
+.br
+.in -1c
+.SS "限定公開変数類"
+
+.in +1c
+.ti -1c
+.RI "bool \fBbIsLeader\fP"
+.br
+.ti -1c
+.RI "\fBFPartyMemberData\fP \fBData\fP"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+パーティメンバ情報メニュークラス 
+.SH "構築子と解体子"
+.PP 
+.SS "UPartyMemberInfoMenuWidget::UPartyMemberInfoMenuWidget (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual UPartyMemberInfoMenuWidget::~UPartyMemberInfoMenuWidget ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void UPartyMemberInfoMenuWidget::Init (bool bInIsLeader, const \fBFPartyMemberData\fP & InData)"
+
+.SS "void UPartyMemberInfoMenuWidget::Kick ()\fC [protected]\fP"
+
+.SH "メンバ詳解"
+.PP 
+.SS "bool UPartyMemberInfoMenuWidget::bIsLeader\fC [protected]\fP"
+
+.SS "\fBFPartyMemberData\fP UPartyMemberInfoMenuWidget::Data\fC [protected]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

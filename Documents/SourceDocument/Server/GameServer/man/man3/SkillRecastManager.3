@@ -1,0 +1,55 @@
+.TH "SkillRecastManager" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SkillRecastManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SkillRecastManager\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSkillRecastManager\fP (\fBCharacterBase\fP *pInOwner)"
+.br
+.ti -1c
+.RI "\fB~SkillRecastManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBPoll\fP (\fBs32\fP DeltaTime)"
+.br
+.ti -1c
+.RI "void \fBAdd\fP (\fBu32\fP SkillId)"
+.br
+.ti -1c
+.RI "bool \fBIsRecast\fP (\fBu32\fP SkillId) const"
+.br
+.ti -1c
+.RI "void \fBSetRecastFinishedFunction\fP (const RecastFinishedFunction &Func)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+スキルリキャストタイム管理\&. 
+.SH "構築子と解体子"
+.PP 
+.SS "SkillRecastManager::SkillRecastManager (\fBCharacterBase\fP * pInOwner)"
+
+.SS "SkillRecastManager::~SkillRecastManager ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void SkillRecastManager::Add (\fBu32\fP SkillId)"
+
+.SS "bool SkillRecastManager::IsRecast (\fBu32\fP SkillId) const"
+
+.SS "void SkillRecastManager::Poll (\fBs32\fP DeltaTime)"
+
+.SS "void SkillRecastManager::SetRecastFinishedFunction (const RecastFinishedFunction & Func)\fC [inline]\fP"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

@@ -1,0 +1,54 @@
+.TH "CharacterJob" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CharacterJob
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CharacterJob\&.h>\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP { \fBFighter\fP, \fBSorcerer\fP, \fBHealer\fP, \fBLancer\fP }"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBCharacterJob\fP ()"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SH "列挙型メンバ詳解"
+.PP 
+.SS "enum \fBCharacterJob::Type\fP"
+
+.PP
+\fB列挙値\fP
+.in +1c
+.TP
+\fB\fIFighter \fP\fP
+.TP
+\fB\fISorcerer \fP\fP
+.TP
+\fB\fIHealer \fP\fP
+.TP
+\fB\fILancer \fP\fP
+.SH "構築子と解体子"
+.PP 
+.SS "CharacterJob::CharacterJob ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "bool CharacterJob::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

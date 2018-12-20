@@ -1,0 +1,74 @@
+.TH "MathUtil" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MathUtil
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MathUtil\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "template<> int \fBLerp\fP (int Start, int End, float Rate)"
+.br
+.ti -1c
+.RI "template<> float \fBLerp\fP (float Start, float End, float Rate)"
+.br
+.ti -1c
+.RI "template<> \fBVector3D\fP \fBLerp\fP (\fBVector3D\fP Start, \fBVector3D\fP End, float Rate)"
+.br
+.ti -1c
+.RI "template<> \fBRotation\fP \fBLerp\fP (\fBRotation\fP Start, \fBRotation\fP End, float Rate)"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "template<class T > static T \fBLerp\fP (T Start, T End, float Rate)"
+.br
+.ti -1c
+.RI "static float \fBDegToRad\fP (float Deg)"
+.br
+.ti -1c
+.RI "static float \fBRadToDeg\fP (float Rad)"
+.br
+.ti -1c
+.RI "static \fBVector3D\fP \fBRotateVector\fP (const \fBVector3D\fP &Vec, float Deg)"
+.br
+.ti -1c
+.RI "static float \fBDot\fP (const \fBVector3D\fP &A, const \fBVector3D\fP &B)"
+.br
+.ti -1c
+.RI "static \fBVector3D\fP \fBCross\fP (const \fBVector3D\fP &A, const \fBVector3D\fP &B)"
+.br
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "static \fBVector3D\fP MathUtil::Cross (const \fBVector3D\fP & A, const \fBVector3D\fP & B)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static float MathUtil::DegToRad (float Deg)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static float MathUtil::Dot (const \fBVector3D\fP & A, const \fBVector3D\fP & B)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "template<> int MathUtil::Lerp (int Start, int End, float Rate)"
+
+.SS "template<class T > static T MathUtil::Lerp (T Start, T End, float Rate)\fC [static]\fP"
+
+.SS "template<> float MathUtil::Lerp (float Start, float End, float Rate)"
+
+.SS "template<> \fBVector3D\fP MathUtil::Lerp (\fBVector3D\fP Start, \fBVector3D\fP End, float Rate)"
+
+.SS "template<> \fBRotation\fP MathUtil::Lerp (\fBRotation\fP Start, \fBRotation\fP End, float Rate)"
+
+.SS "static float MathUtil::RadToDeg (float Rad)\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static \fBVector3D\fP MathUtil::RotateVector (const \fBVector3D\fP & Vec, float Deg)\fC [inline]\fP, \fC [static]\fP"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

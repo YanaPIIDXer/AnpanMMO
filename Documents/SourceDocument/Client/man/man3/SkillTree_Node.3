@@ -1,0 +1,76 @@
+.TH "SkillTree::Node" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SkillTree::Node
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SkillTree\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBNode\fP (uint32 InNodeId, uint32 InSkillId, uint32 InCost, uint32 InNeedLevel, float NodeX, float NodeY, uint32 InParentNodeId)"
+.br
+.ti -1c
+.RI "\fB~Node\fP ()"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "uint32 \fBNodeId\fP"
+.br
+.ti -1c
+.RI "uint32 \fBSkillId\fP"
+.br
+.ti -1c
+.RI "uint32 \fBCost\fP"
+.br
+.ti -1c
+.RI "uint32 \fBNeedLevel\fP"
+.br
+.ti -1c
+.RI "uint32 \fBParentNodeId\fP"
+.br
+.ti -1c
+.RI "bool \fBbIsOpened\fP"
+.br
+.ti -1c
+.RI "FVector2D \fBNodePosition\fP"
+.br
+.ti -1c
+.RI "TArray< \fBNode\fP * > \fBChildren\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "SkillTree::Node::Node (uint32 InNodeId, uint32 InSkillId, uint32 InCost, uint32 InNeedLevel, float NodeX, float NodeY, uint32 InParentNodeId)\fC [inline]\fP"
+
+.SS "SkillTree::Node::~Node ()\fC [inline]\fP"
+
+.SH "メンバ詳解"
+.PP 
+.SS "bool SkillTree::Node::bIsOpened"
+
+.SS "TArray<\fBNode\fP *> SkillTree::Node::Children"
+
+.SS "uint32 SkillTree::Node::Cost"
+
+.SS "uint32 SkillTree::Node::NeedLevel"
+
+.SS "uint32 SkillTree::Node::NodeId"
+
+.SS "FVector2D SkillTree::Node::NodePosition"
+
+.SS "uint32 SkillTree::Node::ParentNodeId"
+
+.SS "uint32 SkillTree::Node::SkillId"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

@@ -1,0 +1,142 @@
+.TH "CachePacketCharacterDataResult" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CachePacketCharacterDataResult
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CachePacketCharacterDataResult\&.h>\fP
+.PP
+\fBProcessPacketBase\fPを継承しています。
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "enum \fBResultCode\fP { \fBSuccess\fP, \fBError\fP }"
+.br
+.in -1c
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBCachePacketCharacterDataResult\fP ()"
+.br
+.ti -1c
+.RI "\fBCachePacketCharacterDataResult\fP (\fBu32\fP InClientId, \fBu32\fP InCharacterId, \fBu8\fP InResult, std::string InName, \fBu8\fP InJob, \fBu32\fP InLevel, \fBs32\fP InMaxHp, \fBs32\fP InAtk, \fBs32\fP InDef, \fBs32\fP InExp, \fBu32\fP InGold, \fBu32\fP InLastAreaId, float InLastX, float InLastY, float InLastZ)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBCharacterId\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBResult\fP"
+.br
+.ti -1c
+.RI "std::string \fBName\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBJob\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBLevel\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBMaxHp\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBAtk\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBDef\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBExp\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGold\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBLastAreaId\fP"
+.br
+.ti -1c
+.RI "float \fBLastX\fP"
+.br
+.ti -1c
+.RI "float \fBLastY\fP"
+.br
+.ti -1c
+.RI "float \fBLastZ\fP"
+.br
+.in -1c
+.SH "列挙型メンバ詳解"
+.PP 
+.SS "enum \fBCachePacketCharacterDataResult::ResultCode\fP"
+
+.PP
+\fB列挙値\fP
+.in +1c
+.TP
+\fB\fISuccess \fP\fP
+.TP
+\fB\fIError \fP\fP
+.SH "構築子と解体子"
+.PP 
+.SS "CachePacketCharacterDataResult::CachePacketCharacterDataResult ()\fC [inline]\fP"
+
+.SS "CachePacketCharacterDataResult::CachePacketCharacterDataResult (\fBu32\fP InClientId, \fBu32\fP InCharacterId, \fBu8\fP InResult, std::string InName, \fBu8\fP InJob, \fBu32\fP InLevel, \fBs32\fP InMaxHp, \fBs32\fP InAtk, \fBs32\fP InDef, \fBs32\fP InExp, \fBu32\fP InGold, \fBu32\fP InLastAreaId, float InLastX, float InLastY, float InLastZ)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP CachePacketCharacterDataResult::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBProcessPacketBase\fPを再実装しています。
+.SS "bool CachePacketCharacterDataResult::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBProcessPacketBase\fPを再実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBs32\fP CachePacketCharacterDataResult::Atk"
+
+.SS "\fBu32\fP CachePacketCharacterDataResult::CharacterId"
+
+.SS "\fBs32\fP CachePacketCharacterDataResult::Def"
+
+.SS "\fBs32\fP CachePacketCharacterDataResult::Exp"
+
+.SS "\fBu32\fP CachePacketCharacterDataResult::Gold"
+
+.SS "\fBu8\fP CachePacketCharacterDataResult::Job"
+
+.SS "\fBu32\fP CachePacketCharacterDataResult::LastAreaId"
+
+.SS "float CachePacketCharacterDataResult::LastX"
+
+.SS "float CachePacketCharacterDataResult::LastY"
+
+.SS "float CachePacketCharacterDataResult::LastZ"
+
+.SS "\fBu32\fP CachePacketCharacterDataResult::Level"
+
+.SS "\fBs32\fP CachePacketCharacterDataResult::MaxHp"
+
+.SS "std::string CachePacketCharacterDataResult::Name"
+
+.SS "\fBu8\fP CachePacketCharacterDataResult::Result"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

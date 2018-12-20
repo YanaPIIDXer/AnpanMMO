@@ -1,0 +1,80 @@
+.TH "PlayerManager" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlayerManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PlayerManager\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayerManager\fP ()"
+.br
+.ti -1c
+.RI "\fB~PlayerManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBPoll\fP (\fBs32\fP DeltaTime)"
+.br
+.ti -1c
+.RI "void \fBAdd\fP (\fBu32\fP Uuid, \fBPlayerCharacterPtr\fP pPlayer)"
+.br
+.ti -1c
+.RI "void \fBRemove\fP (\fBu32\fP Uuid)"
+.br
+.ti -1c
+.RI "\fBPlayerCharacterPtr\fP \fBGet\fP (\fBu32\fP Uuid) const"
+.br
+.ti -1c
+.RI "void \fBOnRecvMove\fP (\fBu32\fP Uuid, float X, float Y, float Z, float Rot)"
+.br
+.ti -1c
+.RI "void \fBBroadcastPacket\fP (\fBPacketBase\fP *pPacket, \fBClient\fP *pIgnoreClient=NULL)"
+.br
+.ti -1c
+.RI "void \fBBroadcastPacketWithRange\fP (\fBPacketBase\fP *pPacket, const \fBVector3D\fP &Center, float Range, \fBClient\fP *pIgnoreClient=NULL)"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGetCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBGetAllAsCharacterPtr\fP (std::vector< \fBCharacterPtr\fP > &OutList) const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+プレイヤー管理クラス 
+.SH "構築子と解体子"
+.PP 
+.SS "PlayerManager::PlayerManager ()"
+
+.SS "PlayerManager::~PlayerManager ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void PlayerManager::Add (\fBu32\fP Uuid, \fBPlayerCharacterPtr\fP pPlayer)"
+
+.SS "void PlayerManager::BroadcastPacket (\fBPacketBase\fP * pPacket, \fBClient\fP * pIgnoreClient = \fCNULL\fP)"
+
+.SS "void PlayerManager::BroadcastPacketWithRange (\fBPacketBase\fP * pPacket, const \fBVector3D\fP & Center, float Range, \fBClient\fP * pIgnoreClient = \fCNULL\fP)"
+
+.SS "\fBPlayerCharacterPtr\fP PlayerManager::Get (\fBu32\fP Uuid) const"
+
+.SS "void PlayerManager::GetAllAsCharacterPtr (std::vector< \fBCharacterPtr\fP > & OutList) const"
+
+.SS "\fBu32\fP PlayerManager::GetCount () const\fC [inline]\fP"
+
+.SS "void PlayerManager::OnRecvMove (\fBu32\fP Uuid, float X, float Y, float Z, float Rot)"
+
+.SS "void PlayerManager::Poll (\fBs32\fP DeltaTime)"
+
+.SS "void PlayerManager::Remove (\fBu32\fP Uuid)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

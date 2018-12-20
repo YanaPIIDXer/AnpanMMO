@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: InstanceAreaTicket クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="class_instance_area_ticket-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">InstanceAreaTicket クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_instance_area_ticket_8h_source.html">InstanceAreaTicket.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ab1aab50e007199af94b929575b5c4ca5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#ab1aab50e007199af94b929575b5c4ca5">InstanceAreaTicket</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InUuid, <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InAreaId, const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;InStartPosition)</td></tr>
+<tr class="separator:ab1aab50e007199af94b929575b5c4ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdaee12a66208fd8f169d57098ede1d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#acdaee12a66208fd8f169d57098ede1d7">~InstanceAreaTicket</a> ()</td></tr>
+<tr class="separator:acdaee12a66208fd8f169d57098ede1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6ca48b21c5da9f19bf486a94c34c472"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#aa6ca48b21c5da9f19bf486a94c34c472">AddClient</a> (<a class="el" href="_weak_ptr_define_8h.html#aa7f84f5a6940f250777352687c32c0c1">ClientPtr</a> pClient)</td></tr>
+<tr class="separator:aa6ca48b21c5da9f19bf486a94c34c472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a53cfb8d5fea52c39b73ec63e58ca4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#a00a53cfb8d5fea52c39b73ec63e58ca4">RecvProcess</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid, <a class="el" href="_instance_area_ticket_8h.html#aaa22f21d34a2574938acb19ce7001440">ETicketState</a> Process)</td></tr>
+<tr class="separator:a00a53cfb8d5fea52c39b73ec63e58ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fc1496fa205fcddc85b7e9e10bc0ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#a93fc1496fa205fcddc85b7e9e10bc0ce">IsReady</a> () const</td></tr>
+<tr class="separator:a93fc1496fa205fcddc85b7e9e10bc0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcd6de026ccaac1cbfd22402bb0553c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#a9dcd6de026ccaac1cbfd22402bb0553c">IsDiscard</a> () const</td></tr>
+<tr class="separator:a9dcd6de026ccaac1cbfd22402bb0553c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca59816fd46a7ab22722016557eea53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#a7ca59816fd46a7ab22722016557eea53">IsWaiting</a> () const</td></tr>
+<tr class="separator:a7ca59816fd46a7ab22722016557eea53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb27b69218e7ddd790a47473438d90f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#adb27b69218e7ddd790a47473438d90f1">GetAreaId</a> () const</td></tr>
+<tr class="separator:adb27b69218e7ddd790a47473438d90f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f45150525636b152c1e742871651ae1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#a0f45150525636b152c1e742871651ae1">BroadcastPublishPacket</a> ()</td></tr>
+<tr class="separator:a0f45150525636b152c1e742871651ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b8d8d99022dc3287b6780d62df1e9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#a99b8d8d99022dc3287b6780d62df1e9b">BroadcastDiscardPacket</a> ()</td></tr>
+<tr class="separator:a99b8d8d99022dc3287b6780d62df1e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6febdb67403cf5b3800f40f9cf16c88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_instance_area_ticket.html#ab6febdb67403cf5b3800f40f9cf16c88">EnterToInstanceArea</a> (<a class="el" href="_weak_ptr_define_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> pArea)</td></tr>
+<tr class="separator:ab6febdb67403cf5b3800f40f9cf16c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>インスタンスマップチケット </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ab1aab50e007199af94b929575b5c4ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1aab50e007199af94b929575b5c4ca5">&#9670;&nbsp;</a></span>InstanceAreaTicket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">InstanceAreaTicket::InstanceAreaTicket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InUuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InAreaId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>InStartPosition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acdaee12a66208fd8f169d57098ede1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdaee12a66208fd8f169d57098ede1d7">&#9670;&nbsp;</a></span>~InstanceAreaTicket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">InstanceAreaTicket::~InstanceAreaTicket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aa6ca48b21c5da9f19bf486a94c34c472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ca48b21c5da9f19bf486a94c34c472">&#9670;&nbsp;</a></span>AddClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstanceAreaTicket::AddClient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_weak_ptr_define_8h.html#aa7f84f5a6940f250777352687c32c0c1">ClientPtr</a>&#160;</td>
+          <td class="paramname"><em>pClient</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99b8d8d99022dc3287b6780d62df1e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b8d8d99022dc3287b6780d62df1e9b">&#9670;&nbsp;</a></span>BroadcastDiscardPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstanceAreaTicket::BroadcastDiscardPacket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f45150525636b152c1e742871651ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f45150525636b152c1e742871651ae1">&#9670;&nbsp;</a></span>BroadcastPublishPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstanceAreaTicket::BroadcastPublishPacket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6febdb67403cf5b3800f40f9cf16c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6febdb67403cf5b3800f40f9cf16c88">&#9670;&nbsp;</a></span>EnterToInstanceArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstanceAreaTicket::EnterToInstanceArea </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_weak_ptr_define_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a>&#160;</td>
+          <td class="paramname"><em>pArea</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb27b69218e7ddd790a47473438d90f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb27b69218e7ddd790a47473438d90f1">&#9670;&nbsp;</a></span>GetAreaId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InstanceAreaTicket::GetAreaId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9dcd6de026ccaac1cbfd22402bb0553c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dcd6de026ccaac1cbfd22402bb0553c">&#9670;&nbsp;</a></span>IsDiscard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InstanceAreaTicket::IsDiscard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93fc1496fa205fcddc85b7e9e10bc0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93fc1496fa205fcddc85b7e9e10bc0ce">&#9670;&nbsp;</a></span>IsReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InstanceAreaTicket::IsReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ca59816fd46a7ab22722016557eea53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca59816fd46a7ab22722016557eea53">&#9670;&nbsp;</a></span>IsWaiting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InstanceAreaTicket::IsWaiting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00a53cfb8d5fea52c39b73ec63e58ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a53cfb8d5fea52c39b73ec63e58ca4">&#9670;&nbsp;</a></span>RecvProcess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstanceAreaTicket::RecvProcess </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Uuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_instance_area_ticket_8h.html#aaa22f21d34a2574938acb19ce7001440">ETicketState</a>&#160;</td>
+          <td class="paramname"><em>Process</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>D:/Prog/AnpanMMO/Server/AnpanMMOServer/Area/<a class="el" href="_instance_area_ticket_8h_source.html">InstanceAreaTicket.h</a></li>
+<li>D:/Prog/AnpanMMO/Server/AnpanMMOServer/Area/<a class="el" href="_instance_area_ticket_8cpp.html">InstanceAreaTicket.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

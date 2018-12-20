@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: D:/Prog/AnpanMMO/Server/AnpanMMOServer/ServerHost.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1a445cb237d74f7a5f8d11ec3b0585cc.html">Server</a></li><li class="navelem"><a class="el" href="dir_f54e6cb803bdfaa9f32d2f9ec38bb873.html">AnpanMMOServer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ServerHost.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_server_host_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __SERVERHOST_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __SERVERHOST_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_server_host.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_server_host.html">ServerHost</a></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">// キャッシュサーバホスト</span></div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_server_host.html#afcf53d0c8f7d9df6825751d63e804ebe">   14</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="class_server_host.html#afcf53d0c8f7d9df6825751d63e804ebe">CacheServerHost</a>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// ワードチェックサーバホスト</span></div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_server_host.html#a83655e1303a015eeb0a32d74159026a7">   17</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="class_server_host.html#a83655e1303a015eeb0a32d74159026a7">WordCheckServerHost</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// ゲームサーバポート</span></div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_server_host.html#ad7f1c9e9a63a115897caa3315c2a07f2">   20</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_server_host.html#ad7f1c9e9a63a115897caa3315c2a07f2">GameServerPort</a>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// キャッシュサーバポート</span></div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_server_host.html#a00560a75b4e30d88b3dbb9d965cc3f1b">   23</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_server_host.html#a00560a75b4e30d88b3dbb9d965cc3f1b">CacheServerPort</a>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// ワードチェックサーバポート</span></div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_server_host.html#ad03a57c7dd5d713b0496fc6971ed2142">   26</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_server_host.html#ad03a57c7dd5d713b0496fc6971ed2142">WordCheckServerPort</a>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif      // #ifndef __SERVERHOST_H__</span></div><div class="ttc" id="class_server_host_html_ad7f1c9e9a63a115897caa3315c2a07f2"><div class="ttname"><a href="class_server_host.html#ad7f1c9e9a63a115897caa3315c2a07f2">ServerHost::GameServerPort</a></div><div class="ttdeci">static const int GameServerPort</div><div class="ttdef"><b>Definition:</b> ServerHost.h:20</div></div>
+<div class="ttc" id="class_server_host_html_ad03a57c7dd5d713b0496fc6971ed2142"><div class="ttname"><a href="class_server_host.html#ad03a57c7dd5d713b0496fc6971ed2142">ServerHost::WordCheckServerPort</a></div><div class="ttdeci">static const int WordCheckServerPort</div><div class="ttdef"><b>Definition:</b> ServerHost.h:26</div></div>
+<div class="ttc" id="class_server_host_html_a83655e1303a015eeb0a32d74159026a7"><div class="ttname"><a href="class_server_host.html#a83655e1303a015eeb0a32d74159026a7">ServerHost::WordCheckServerHost</a></div><div class="ttdeci">static const std::string WordCheckServerHost</div><div class="ttdef"><b>Definition:</b> ServerHost.h:17</div></div>
+<div class="ttc" id="class_server_host_html_a00560a75b4e30d88b3dbb9d965cc3f1b"><div class="ttname"><a href="class_server_host.html#a00560a75b4e30d88b3dbb9d965cc3f1b">ServerHost::CacheServerPort</a></div><div class="ttdeci">static const int CacheServerPort</div><div class="ttdef"><b>Definition:</b> ServerHost.h:23</div></div>
+<div class="ttc" id="class_server_host_html_afcf53d0c8f7d9df6825751d63e804ebe"><div class="ttname"><a href="class_server_host.html#afcf53d0c8f7d9df6825751d63e804ebe">ServerHost::CacheServerHost</a></div><div class="ttdeci">static const std::string CacheServerHost</div><div class="ttdef"><b>Definition:</b> ServerHost.h:14</div></div>
+<div class="ttc" id="class_server_host_html"><div class="ttname"><a href="class_server_host.html">ServerHost</a></div><div class="ttdef"><b>Definition:</b> ServerHost.h:8</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

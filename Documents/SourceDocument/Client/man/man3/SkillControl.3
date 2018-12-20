@@ -1,0 +1,85 @@
+.TH "SkillControl" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SkillControl
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SkillControl\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSkillControl\fP ()"
+.br
+.ti -1c
+.RI "\fB~SkillControl\fP ()"
+.br
+.ti -1c
+.RI "void \fBPoll\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetOwner\fP (\fBACharacterBase\fP *pInOwner)"
+.br
+.ti -1c
+.RI "void \fBUseSkill\fP (uint32 SkillId, \fBACharacterBase\fP *pInTarget)"
+.br
+.ti -1c
+.RI "void \fBOnCastFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnActivate\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnCancel\fP ()"
+.br
+.ti -1c
+.RI "TWeakObjectPtr< \fBACharacterBase\fP > \fBGetOwner\fP () const"
+.br
+.ti -1c
+.RI "TWeakObjectPtr< \fBACharacterBase\fP > \fBGetTarget\fP () const"
+.br
+.ti -1c
+.RI "const \fBSkillItem\fP & \fBGetSkillData\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsActive\fP () const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+スキル制御クラス 
+.SH "構築子と解体子"
+.PP 
+.SS "SkillControl::SkillControl ()"
+
+.SS "SkillControl::~SkillControl ()"
+
+.SH "関数詳解"
+.PP 
+.SS "TWeakObjectPtr<\fBACharacterBase\fP> SkillControl::GetOwner () const\fC [inline]\fP"
+
+.SS "const \fBSkillItem\fP& SkillControl::GetSkillData () const\fC [inline]\fP"
+
+.SS "TWeakObjectPtr<\fBACharacterBase\fP> SkillControl::GetTarget () const\fC [inline]\fP"
+
+.SS "bool SkillControl::IsActive () const"
+
+.SS "void SkillControl::OnActivate ()"
+
+.SS "void SkillControl::OnCancel ()"
+
+.SS "void SkillControl::OnCastFinished ()"
+
+.SS "void SkillControl::Poll ()"
+
+.SS "void SkillControl::SetOwner (\fBACharacterBase\fP * pInOwner)\fC [inline]\fP"
+
+.SS "void SkillControl::UseSkill (uint32 SkillId, \fBACharacterBase\fP * pInTarget)"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

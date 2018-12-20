@@ -1,0 +1,92 @@
+.TH "Anpan" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Anpan
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Anpan\&.h>\fP
+.PP
+\fBCharacterBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAnpan\fP (const \fBVector3D\fP &InPosition, \fBu32\fP InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate, \fBu32\fP InDropId)"
+.br
+.ti -1c
+.RI "virtual \fB~Anpan\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetCharacterType\fP () const"
+.br
+.ti -1c
+.RI "void \fBAttackTo\fP (\fBCharacterPtr\fP pTarget, \fBu32\fP SkillId)"
+.br
+.ti -1c
+.RI "virtual int \fBGetExp\fP () const"
+.br
+.ti -1c
+.RI "float \fBGetRadius\fP () const"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGetMasterId\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBu32\fP \fBGetDropId\fP () const"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBUpdate\fP (int DeltaTime)"
+.br
+.ti -1c
+.RI "virtual void \fBOnDamaged\fP (weak_ptr< \fBCharacterBase\fP > pAttacker, int DamageValue)"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+アンパンクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "Anpan::Anpan (const \fBVector3D\fP & InPosition, \fBu32\fP InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate, \fBu32\fP InDropId)"
+
+.SS "virtual Anpan::~Anpan ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void Anpan::AttackTo (\fBCharacterPtr\fP pTarget, \fBu32\fP SkillId)"
+
+.SS "virtual \fBu8\fP Anpan::GetCharacterType () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBCharacterBase\fPを実装しています。
+.SS "virtual \fBu32\fP Anpan::GetDropId () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBCharacterBase\fPを再実装しています。
+.SS "virtual int Anpan::GetExp () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBCharacterBase\fPを再実装しています。
+.SS "\fBu32\fP Anpan::GetMasterId () const\fC [inline]\fP"
+
+.SS "float Anpan::GetRadius () const\fC [inline]\fP"
+
+.SS "void Anpan::OnDamaged (weak_ptr< \fBCharacterBase\fP > pAttacker, int DamageValue)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+\fBCharacterBase\fPを再実装しています。
+.SS "void Anpan::Update (int DeltaTime)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+\fBCharacterBase\fPを再実装しています。
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

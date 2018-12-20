@@ -1,0 +1,56 @@
+.TH "ProcessPacketBase" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ProcessPacketBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ProcessPacketBase\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.PP
+\fBCachePacketCharacterDataRequest\fP, \fBCachePacketCharacterDataResult\fP, \fBCachePacketCharacterDataSave\fP, \fBCachePacketCreateCharacterRequest\fP, \fBCachePacketCreateCharacterResult\fP, \fBCachePacketGoldSave\fP, \fBCachePacketItemCountChangeRequest\fP, \fBCachePacketItemListRequest\fP, \fBCachePacketItemListResponse\fP, \fBCachePacketItemShortcutRequest\fP, \fBCachePacketItemShortcutResponse\fP, \fBCachePacketLogInRequest\fP, \fBCachePacketLogInResult\fP, \fBCachePacketOpenSkillTree\fP, \fBCachePacketQuestDataRequest\fP, \fBCachePacketQuestDataResponse\fP, \fBCachePacketQuestRetireRequest\fP, \fBCachePacketSaveActiveQuestRequest\fP, \fBCachePacketSaveItemShortcutRequest\fP, \fBCachePacketSaveItemShortcutResponse\fP, \fBCachePacketSaveQuestDataRequest\fP, \fBCachePacketSaveSkillListRequest\fP, \fBCachePacketSaveSkillListResponse\fP, \fBCachePacketScriptFlagRequest\fP, \fBCachePacketScriptFlagResponse\fP, \fBCachePacketScriptFlagSaveRequest\fP, \fBCachePacketSkillListRequest\fP, \fBCachePacketSkillListResponse\fP, \fBCachePacketSkillTreeRequest\fP, \fBCachePacketSkillTreeResponse\fP, \fBWordCheckPacketChatRequest\fP, \fBWordCheckPacketChatResult\fP (計32項目)に継承されています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBClientId\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+他プロセスとの通信用パケットベースクラス 
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP ProcessPacketBase::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.PP
+\fBCachePacketItemListResponse\fP, \fBCachePacketQuestDataResponse\fP, \fBCachePacketSaveQuestDataRequest\fP, \fBCachePacketCharacterDataRequest\fP, \fBCachePacketCharacterDataResult\fP, \fBCachePacketCharacterDataSave\fP, \fBCachePacketCreateCharacterRequest\fP, \fBCachePacketCreateCharacterResult\fP, \fBCachePacketGoldSave\fP, \fBCachePacketItemCountChangeRequest\fP, \fBCachePacketItemListRequest\fP, \fBCachePacketItemShortcutRequest\fP, \fBCachePacketItemShortcutResponse\fP, \fBCachePacketLogInRequest\fP, \fBCachePacketLogInResult\fP, \fBCachePacketOpenSkillTree\fP, \fBCachePacketQuestDataRequest\fP, \fBCachePacketQuestRetireRequest\fP, \fBCachePacketSaveActiveQuestRequest\fP, \fBCachePacketSaveItemShortcutRequest\fP, \fBCachePacketSaveItemShortcutResponse\fP, \fBCachePacketSaveSkillListRequest\fP, \fBCachePacketSaveSkillListResponse\fP, \fBCachePacketScriptFlagRequest\fP, \fBCachePacketScriptFlagResponse\fP, \fBCachePacketScriptFlagSaveRequest\fP, \fBCachePacketSkillListRequest\fP, \fBCachePacketSkillListResponse\fP, \fBCachePacketSkillTreeRequest\fP, \fBCachePacketSkillTreeResponse\fP, \fBWordCheckPacketChatRequest\fP, \fBWordCheckPacketChatResult\fP (計32項目)で再実装されています。
+.SS "virtual bool ProcessPacketBase::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.PP
+\fBCachePacketCharacterDataResult\fP, \fBCachePacketCharacterDataSave\fP, \fBCachePacketSkillListResponse\fP, \fBCachePacketSaveSkillListResponse\fP, \fBCachePacketQuestDataResponse\fP, \fBCachePacketScriptFlagResponse\fP, \fBCachePacketLogInResult\fP, \fBCachePacketItemListResponse\fP, \fBCachePacketItemShortcutResponse\fP, \fBCachePacketSaveItemShortcutResponse\fP, \fBCachePacketSaveSkillListRequest\fP, \fBCachePacketScriptFlagSaveRequest\fP, \fBCachePacketSkillTreeResponse\fP, \fBCachePacketCreateCharacterRequest\fP, \fBCachePacketCreateCharacterResult\fP, \fBCachePacketItemCountChangeRequest\fP, \fBCachePacketSaveItemShortcutRequest\fP, \fBCachePacketSaveQuestDataRequest\fP, \fBCachePacketGoldSave\fP, \fBCachePacketOpenSkillTree\fP, \fBCachePacketQuestRetireRequest\fP, \fBCachePacketSaveActiveQuestRequest\fP, \fBWordCheckPacketChatRequest\fP, \fBWordCheckPacketChatResult\fP, \fBCachePacketCharacterDataRequest\fP, \fBCachePacketItemListRequest\fP, \fBCachePacketItemShortcutRequest\fP, \fBCachePacketLogInRequest\fP, \fBCachePacketQuestDataRequest\fP, \fBCachePacketScriptFlagRequest\fP, \fBCachePacketSkillListRequest\fP, \fBCachePacketSkillTreeRequest\fP (計32項目)で再実装されています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBu32\fP ProcessPacketBase::ClientId"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

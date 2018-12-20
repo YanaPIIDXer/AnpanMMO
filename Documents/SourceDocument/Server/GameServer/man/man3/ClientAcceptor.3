@@ -1,0 +1,40 @@
+.TH "ClientAcceptor" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClientAcceptor
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClientAcceptor\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBClientAcceptor\fP (asio::io_service &InIOService, int Port)"
+.br
+.ti -1c
+.RI "void \fBPoll\fP ()"
+.br
+.ti -1c
+.RI "void \fBStart\fP ()"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+クライアントの接続を待機するクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "ClientAcceptor::ClientAcceptor (asio::io_service & InIOService, int Port)"
+
+.SH "関数詳解"
+.PP 
+.SS "void ClientAcceptor::Poll ()"
+
+.SS "void ClientAcceptor::Start ()"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

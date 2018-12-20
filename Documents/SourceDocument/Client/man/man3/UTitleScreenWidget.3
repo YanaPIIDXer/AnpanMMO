@@ -1,0 +1,151 @@
+.TH "UTitleScreenWidget" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UTitleScreenWidget
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TitleScreenWidget\&.h>\fP
+.PP
+UUserWidgetを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBUTitleScreenWidget\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~UTitleScreenWidget\fP ()"
+.br
+.ti -1c
+.RI "void \fBStartFade\fP ()"
+.br
+.ti -1c
+.RI "void \fBStartFade_Implementation\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnFailedLogIn\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnFailedLogIn_Implementation\fP ()"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBUTitleScreenWidget\fP * \fBShow\fP (UObject *pOuter)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "FOnConnect \fBOnConnect\fP"
+.br
+.ti -1c
+.RI "FOnReadyToGame \fBOnReadyToGame\fP"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBStartMasterDownload\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnMasterDownloaded\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBOnMasterDownloaded_Implementation\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBStartScriptDownload\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnScriptDownloaded\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBOnScriptDownloaded_Implementation\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBStartDLCDownload\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnDLCDownloaded\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBOnDLCDownloaded_Implementation\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBConnectToGameServer\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnConnectedGameServer\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBOnConnectedGameServer_Implementation\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBOnFadeFinish\fP ()"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+タイトル画面Widget 
+.SH "構築子と解体子"
+.PP 
+.SS "UTitleScreenWidget::UTitleScreenWidget (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual UTitleScreenWidget::~UTitleScreenWidget ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void UTitleScreenWidget::ConnectToGameServer ()\fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnConnectedGameServer (bool bSuccess)\fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnConnectedGameServer_Implementation (bool bSuccess)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnDLCDownloaded (bool bSuccess)\fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnDLCDownloaded_Implementation (bool bSuccess)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnFadeFinish ()\fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnFailedLogIn ()"
+
+.SS "void UTitleScreenWidget::OnFailedLogIn_Implementation ()\fC [inline]\fP"
+
+.SS "void UTitleScreenWidget::OnMasterDownloaded (bool bSuccess)\fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnMasterDownloaded_Implementation (bool bSuccess)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnScriptDownloaded (bool bSuccess)\fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::OnScriptDownloaded_Implementation (bool bSuccess)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "\fBUTitleScreenWidget\fP * UTitleScreenWidget::Show (UObject * pOuter)\fC [static]\fP"
+
+.SS "void UTitleScreenWidget::StartDLCDownload ()\fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::StartFade ()"
+
+.SS "void UTitleScreenWidget::StartFade_Implementation ()\fC [inline]\fP"
+
+.SS "void UTitleScreenWidget::StartMasterDownload ()\fC [protected]\fP"
+
+.SS "void UTitleScreenWidget::StartScriptDownload ()\fC [protected]\fP"
+
+.SH "メンバ詳解"
+.PP 
+.SS "FOnConnect UTitleScreenWidget::OnConnect"
+
+.SS "FOnReadyToGame UTitleScreenWidget::OnReadyToGame"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

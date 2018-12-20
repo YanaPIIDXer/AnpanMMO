@@ -1,0 +1,52 @@
+.TH "AGameCamera" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AGameCamera
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GameCamera\&.h>\fP
+.PP
+ACameraActorを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAGameCamera\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~AGameCamera\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBTick\fP (float DeltaTime) override"
+.br
+.ti -1c
+.RI "void \fBSetGameCharacter\fP (\fBAGameCharacter\fP *pInPlayer)"
+.br
+.ti -1c
+.RI "void \fBRotate\fP (float Yaw)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+プレイヤーカメラ 
+.SH "構築子と解体子"
+.PP 
+.SS "AGameCamera::AGameCamera (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual AGameCamera::~AGameCamera ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void AGameCamera::Rotate (float Yaw)"
+
+.SS "void AGameCamera::SetGameCharacter (\fBAGameCharacter\fP * pInPlayer)\fC [inline]\fP"
+
+.SS "void AGameCamera::Tick (float DeltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

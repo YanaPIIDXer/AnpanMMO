@@ -1,0 +1,64 @@
+.TH "WordCheckPacketChatResult" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WordCheckPacketChatResult
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WordCheckPacketChatResult\&.h>\fP
+.PP
+\fBProcessPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBWordCheckPacketChatResult\fP ()"
+.br
+.ti -1c
+.RI "\fBWordCheckPacketChatResult\fP (\fBu32\fP InClientId, \fBu8\fP InType, std::string InMessage)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu8\fP \fBType\fP"
+.br
+.ti -1c
+.RI "std::string \fBMessage\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "WordCheckPacketChatResult::WordCheckPacketChatResult ()\fC [inline]\fP"
+
+.SS "WordCheckPacketChatResult::WordCheckPacketChatResult (\fBu32\fP InClientId, \fBu8\fP InType, std::string InMessage)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP WordCheckPacketChatResult::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBProcessPacketBase\fPを再実装しています。
+.SS "bool WordCheckPacketChatResult::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBProcessPacketBase\fPを再実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "std::string WordCheckPacketChatResult::Message"
+
+.SS "\fBu8\fP WordCheckPacketChatResult::Type"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

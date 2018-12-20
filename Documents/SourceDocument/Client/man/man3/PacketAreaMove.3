@@ -1,0 +1,74 @@
+.TH "PacketAreaMove" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PacketAreaMove
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PacketAreaMove\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBPacketAreaMove\fP ()"
+.br
+.ti -1c
+.RI "\fBPacketAreaMove\fP (\fBu32\fP InAreaId, float InX, float InY, float InZ)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBAreaId\fP"
+.br
+.ti -1c
+.RI "float \fBX\fP"
+.br
+.ti -1c
+.RI "float \fBY\fP"
+.br
+.ti -1c
+.RI "float \fBZ\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PacketAreaMove::PacketAreaMove ()\fC [inline]\fP"
+
+.SS "PacketAreaMove::PacketAreaMove (\fBu32\fP InAreaId, float InX, float InY, float InZ)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP PacketAreaMove::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SS "bool PacketAreaMove::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBu32\fP PacketAreaMove::AreaId"
+
+.SS "float PacketAreaMove::X"
+
+.SS "float PacketAreaMove::Y"
+
+.SS "float PacketAreaMove::Z"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

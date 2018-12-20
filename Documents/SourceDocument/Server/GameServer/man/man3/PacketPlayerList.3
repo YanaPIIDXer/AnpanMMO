@@ -1,0 +1,59 @@
+.TH "PacketPlayerList" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PacketPlayerList
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PacketPlayerList\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBPacketPlayerList\fP ()"
+.br
+.ti -1c
+.RI "\fBPacketPlayerList\fP (\fBFlexArray\fP< \fBPlayerData\fP > InList)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBFlexArray\fP< \fBPlayerData\fP > \fBList\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PacketPlayerList::PacketPlayerList ()\fC [inline]\fP"
+
+.SS "PacketPlayerList::PacketPlayerList (\fBFlexArray\fP< \fBPlayerData\fP > InList)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP PacketPlayerList::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SS "bool PacketPlayerList::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBFlexArray\fP<\fBPlayerData\fP> PacketPlayerList::List"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

@@ -1,0 +1,6 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$class_skill_state_base.html" title="SkillStateBase" alt="" coords="5,56,113,83"/>
+<area shape="rect" id="node2" href="$class_skill_state_auto_move.html" title="SkillStateAutoMove" alt="" coords="161,5,296,32"/>
+<area shape="rect" id="node3" href="$class_skill_state_cast.html" title="SkillStateCast" alt="" coords="176,56,281,83"/>
+<area shape="rect" id="node4" href="$class_skill_state_nutral.html" title="SkillStateNutral" alt="" coords="173,107,285,133"/>
+</map>

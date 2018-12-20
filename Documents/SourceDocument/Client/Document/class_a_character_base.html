@@ -1,0 +1,868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: ACharacterBase クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="class_a_character_base-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">ACharacterBase クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_character_base_8h_source.html">CharacterBase.h</a>&gt;</code></p>
+<div class="dynheader">
+ACharacterBase の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_a_character_base__inherit__graph.png" border="0" usemap="#_a_character_base_inherit__map" alt="Inheritance graph"/></div>
+<map name="_a_character_base_inherit__map" id="_a_character_base_inherit__map">
+<area shape="rect" id="node3" href="class_a_anpan.html" title="AAnpan" alt="" coords="5,155,73,181"/>
+<area shape="rect" id="node4" href="class_a_n_p_c_character.html" title="ANPCCharacter" alt="" coords="98,155,213,181"/>
+<area shape="rect" id="node5" href="class_a_player_character_base.html" title="APlayerCharacterBase" alt="" coords="237,155,391,181"/>
+<area shape="rect" id="node6" href="class_a_game_character.html" title="AGameCharacter" alt="" coords="171,229,294,256"/>
+<area shape="rect" id="node7" href="class_a_other_player_character.html" title="AOtherPlayerCharacter" alt="" coords="319,229,475,256"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+ACharacterBase 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_a_character_base__coll__graph.png" border="0" usemap="#_a_character_base_coll__map" alt="Collaboration graph"/></div>
+<map name="_a_character_base_coll__map" id="_a_character_base_coll__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae355cb8fa81cc19bd1e9014ca9c4b886"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#ae355cb8fa81cc19bd1e9014ca9c4b886">ACharacterBase</a> (const FObjectInitializer &amp;ObjectInitializer)</td></tr>
+<tr class="separator:ae355cb8fa81cc19bd1e9014ca9c4b886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e62a5934e75bd06d0f57c24be8662fa"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a3e62a5934e75bd06d0f57c24be8662fa">~ACharacterBase</a> ()</td></tr>
+<tr class="separator:a3e62a5934e75bd06d0f57c24be8662fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1ee1b2fcca4782c42a30a402d12911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#acf1ee1b2fcca4782c42a30a402d12911">OnDestroy</a> (AActor *pDestroyedActor)</td></tr>
+<tr class="separator:acf1ee1b2fcca4782c42a30a402d12911"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4ef648f55cd781fd79fe8709d01cea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a9c4ef648f55cd781fd79fe8709d01cea">ApplyDamage</a> (int32 Value)</td></tr>
+<tr class="separator:a9c4ef648f55cd781fd79fe8709d01cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27cac6304412e470bb2f031f1194b85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#ab27cac6304412e470bb2f031f1194b85">Heal</a> (int32 Value)</td></tr>
+<tr class="separator:ab27cac6304412e470bb2f031f1194b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa7151a5abe24606acb5cf5dcfdac7c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#afa7151a5abe24606acb5cf5dcfdac7c8">IsDead</a> () const</td></tr>
+<tr class="separator:afa7151a5abe24606acb5cf5dcfdac7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0cf46573d2d73ea1e67af9f7156558"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a4c0cf46573d2d73ea1e67af9f7156558">GetHp</a> () const</td></tr>
+<tr class="separator:a4c0cf46573d2d73ea1e67af9f7156558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf46c9333d490ef602c1c19bae2e9f89"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#acf46c9333d490ef602c1c19bae2e9f89">GetMaxHp</a> () const</td></tr>
+<tr class="separator:acf46c9333d490ef602c1c19bae2e9f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f37e409a2948e2d15a6d3a46aa7536d"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a9f37e409a2948e2d15a6d3a46aa7536d">GetHalfHeight</a> () const</td></tr>
+<tr class="separator:a9f37e409a2948e2d15a6d3a46aa7536d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae87a790ce45e8e5bae4cbf8e1ce928eb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_character_base_8h.html#ad34afea9f542b01a1f4e6d48fdfe1be3">ECharacterType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#ae87a790ce45e8e5bae4cbf8e1ce928eb">GetCharacterType</a> () const</td></tr>
+<tr class="separator:ae87a790ce45e8e5bae4cbf8e1ce928eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab907e95da60084597b1929acd5b5a9be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#ab907e95da60084597b1929acd5b5a9be">SpawnTargetCircle</a> ()</td></tr>
+<tr class="separator:ab907e95da60084597b1929acd5b5a9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac478ade848f97a78c64e535d532f61f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#ac478ade848f97a78c64e535d532f61f9">DestroyTargetCircle</a> ()</td></tr>
+<tr class="separator:ac478ade848f97a78c64e535d532f61f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed7e07b4da32750d3e475419fd99dbad"><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#aed7e07b4da32750d3e475419fd99dbad">GetUuid</a> () const</td></tr>
+<tr class="separator:aed7e07b4da32750d3e475419fd99dbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54c43f445d5118350dd20cc6b2cafdcc"><td class="memItemLeft" align="right" valign="top">virtual FString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a54c43f445d5118350dd20cc6b2cafdcc">GetCharacterName</a> () const</td></tr>
+<tr class="separator:a54c43f445d5118350dd20cc6b2cafdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57c1a87257db354c58d4ab286ee0cbc2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a57c1a87257db354c58d4ab286ee0cbc2">OnSkillCast</a> (uint32 SkillId)</td></tr>
+<tr class="separator:a57c1a87257db354c58d4ab286ee0cbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a964867193958403128283d62bfe251a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a964867193958403128283d62bfe251a3">OnSkillCastFinished</a> ()</td></tr>
+<tr class="separator:a964867193958403128283d62bfe251a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ee36362eee31572b8753be2010a2bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#ae4ee36362eee31572b8753be2010a2bb">OnSkillActivate</a> ()</td></tr>
+<tr class="separator:ae4ee36362eee31572b8753be2010a2bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a78583d70312aa528063c53a6cd4bfab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a78583d70312aa528063c53a6cd4bfab7">Initialize</a> (int32 InHp, int32 InMaxHp)</td></tr>
+<tr class="separator:a78583d70312aa528063c53a6cd4bfab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1131fec4368441d80a899e0a632bdc5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a1131fec4368441d80a899e0a632bdc5c">UpdateMaxHp</a> (int32 InMaxHp)</td></tr>
+<tr class="separator:a1131fec4368441d80a899e0a632bdc5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b8f5ba7c8e642dfbb1734db1ba7038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#ab2b8f5ba7c8e642dfbb1734db1ba7038">OnDamaged</a> (int32 BeforeHp, int32 AfterHp, int32 DamageValue)</td></tr>
+<tr class="separator:ab2b8f5ba7c8e642dfbb1734db1ba7038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96058a917cef6671ee2d69b9f415bee2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a96058a917cef6671ee2d69b9f415bee2">OnDamaged_Implementation</a> (int32 BeforeHp, int32 AfterHp, int32 DamageValue)</td></tr>
+<tr class="separator:a96058a917cef6671ee2d69b9f415bee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc703ac86e6bb9bf12cbb6942bd0221c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#acc703ac86e6bb9bf12cbb6942bd0221c">OnHeal</a> (int32 BeforeHp, int32 AfterHp, int32 HealValue)</td></tr>
+<tr class="separator:acc703ac86e6bb9bf12cbb6942bd0221c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a94df0d86e26e89def1522cc6f1df2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a17a94df0d86e26e89def1522cc6f1df2">OnHeal_Implementation</a> (int32 BeforeHp, int32 AfterHp, int32 HealValue)</td></tr>
+<tr class="separator:a17a94df0d86e26e89def1522cc6f1df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f6c91ac81ceb0d18392ba78bab3c593"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a4f6c91ac81ceb0d18392ba78bab3c593">OnDead</a> ()</td></tr>
+<tr class="separator:a4f6c91ac81ceb0d18392ba78bab3c593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c28eff5367dcb442dcd2bc54dcdab10"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a3c28eff5367dcb442dcd2bc54dcdab10">OnDead_Implementation</a> ()</td></tr>
+<tr class="separator:a3c28eff5367dcb442dcd2bc54dcdab10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed738c98e0a3bd00db6c6c9553cb435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_character_base.html#a7ed738c98e0a3bd00db6c6c9553cb435">SetHP</a> (int InHp)</td></tr>
+<tr class="separator:a7ed738c98e0a3bd00db6c6c9553cb435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>キャラクタ基底クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ae355cb8fa81cc19bd1e9014ca9c4b886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae355cb8fa81cc19bd1e9014ca9c4b886">&#9670;&nbsp;</a></span>ACharacterBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ACharacterBase::ACharacterBase </td>
+          <td>(</td>
+          <td class="paramtype">const FObjectInitializer &amp;&#160;</td>
+          <td class="paramname"><em>ObjectInitializer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e62a5934e75bd06d0f57c24be8662fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e62a5934e75bd06d0f57c24be8662fa">&#9670;&nbsp;</a></span>~ACharacterBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual ACharacterBase::~ACharacterBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a9c4ef648f55cd781fd79fe8709d01cea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4ef648f55cd781fd79fe8709d01cea">&#9670;&nbsp;</a></span>ApplyDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::ApplyDamage </td>
+          <td>(</td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>Value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac478ade848f97a78c64e535d532f61f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac478ade848f97a78c64e535d532f61f9">&#9670;&nbsp;</a></span>DestroyTargetCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::DestroyTargetCircle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54c43f445d5118350dd20cc6b2cafdcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c43f445d5118350dd20cc6b2cafdcc">&#9670;&nbsp;</a></span>GetCharacterName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual FString ACharacterBase::GetCharacterName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_a_game_character.html#aee9e3a0ee7fe5bd804b02ed3df06be1e">AGameCharacter</a>, <a class="el" href="class_a_other_player_character.html#a756dd190a3300bf6d7f2d06d2e521838">AOtherPlayerCharacter</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="ae87a790ce45e8e5bae4cbf8e1ce928eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae87a790ce45e8e5bae4cbf8e1ce928eb">&#9670;&nbsp;</a></span>GetCharacterType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_character_base_8h.html#ad34afea9f542b01a1f4e6d48fdfe1be3">ECharacterType</a> ACharacterBase::GetCharacterType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_a_game_character.html#abe884f9fe22eba7065852a1f618c48b9">AGameCharacter</a>, <a class="el" href="class_a_anpan.html#a640281a9e8b31c54082c1a3a2bb1020f">AAnpan</a>, <a class="el" href="class_a_other_player_character.html#ac9af9d2f3462b8c1aa1431860b72318a">AOtherPlayerCharacter</a>, <a class="el" href="class_a_n_p_c_character.html#aff9e9d68845af317e8bbc857720bddf6">ANPCCharacter</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a9f37e409a2948e2d15a6d3a46aa7536d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f37e409a2948e2d15a6d3a46aa7536d">&#9670;&nbsp;</a></span>GetHalfHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float ACharacterBase::GetHalfHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_a_anpan.html#a421aa664350302a3791e1570faac30b2">AAnpan</a>, <a class="el" href="class_a_player_character_base.html#a1309e0bb6c17f95e041a4ff80d48ec2f">APlayerCharacterBase</a>, <a class="el" href="class_a_n_p_c_character.html#a67b787cadb75fc1cb8d70501a76d0848">ANPCCharacter</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a4c0cf46573d2d73ea1e67af9f7156558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c0cf46573d2d73ea1e67af9f7156558">&#9670;&nbsp;</a></span>GetHp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32 ACharacterBase::GetHp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf46c9333d490ef602c1c19bae2e9f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf46c9333d490ef602c1c19bae2e9f89">&#9670;&nbsp;</a></span>GetMaxHp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32 ACharacterBase::GetMaxHp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed7e07b4da32750d3e475419fd99dbad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed7e07b4da32750d3e475419fd99dbad">&#9670;&nbsp;</a></span>GetUuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual uint32 ACharacterBase::GetUuid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_a_game_character.html#a9093a7a33d31c8e2df786aabb409ea5a">AGameCharacter</a>, <a class="el" href="class_a_other_player_character.html#a4eba331a247242980c8c5b1294798f45">AOtherPlayerCharacter</a>, <a class="el" href="class_a_anpan.html#ac885729993cf5f5107b1cdf378b6f072">AAnpan</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="ab27cac6304412e470bb2f031f1194b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab27cac6304412e470bb2f031f1194b85">&#9670;&nbsp;</a></span>Heal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::Heal </td>
+          <td>(</td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>Value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78583d70312aa528063c53a6cd4bfab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78583d70312aa528063c53a6cd4bfab7">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>InHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>InMaxHp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa7151a5abe24606acb5cf5dcfdac7c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa7151a5abe24606acb5cf5dcfdac7c8">&#9670;&nbsp;</a></span>IsDead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ACharacterBase::IsDead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2b8f5ba7c8e642dfbb1734db1ba7038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b8f5ba7c8e642dfbb1734db1ba7038">&#9670;&nbsp;</a></span>OnDamaged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::OnDamaged </td>
+          <td>(</td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>BeforeHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>AfterHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>DamageValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96058a917cef6671ee2d69b9f415bee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96058a917cef6671ee2d69b9f415bee2">&#9670;&nbsp;</a></span>OnDamaged_Implementation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ACharacterBase::OnDamaged_Implementation </td>
+          <td>(</td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>BeforeHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>AfterHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>DamageValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f6c91ac81ceb0d18392ba78bab3c593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f6c91ac81ceb0d18392ba78bab3c593">&#9670;&nbsp;</a></span>OnDead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::OnDead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c28eff5367dcb442dcd2bc54dcdab10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c28eff5367dcb442dcd2bc54dcdab10">&#9670;&nbsp;</a></span>OnDead_Implementation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ACharacterBase::OnDead_Implementation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf1ee1b2fcca4782c42a30a402d12911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1ee1b2fcca4782c42a30a402d12911">&#9670;&nbsp;</a></span>OnDestroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::OnDestroy </td>
+          <td>(</td>
+          <td class="paramtype">AActor *&#160;</td>
+          <td class="paramname"><em>pDestroyedActor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc703ac86e6bb9bf12cbb6942bd0221c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc703ac86e6bb9bf12cbb6942bd0221c">&#9670;&nbsp;</a></span>OnHeal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::OnHeal </td>
+          <td>(</td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>BeforeHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>AfterHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>HealValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17a94df0d86e26e89def1522cc6f1df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a94df0d86e26e89def1522cc6f1df2">&#9670;&nbsp;</a></span>OnHeal_Implementation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::OnHeal_Implementation </td>
+          <td>(</td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>BeforeHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>AfterHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>HealValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4ee36362eee31572b8753be2010a2bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ee36362eee31572b8753be2010a2bb">&#9670;&nbsp;</a></span>OnSkillActivate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ACharacterBase::OnSkillActivate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_a_game_character.html#ae1a02afbbcc5d10590aa0a0fc47ccd6e">AGameCharacter</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a57c1a87257db354c58d4ab286ee0cbc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c1a87257db354c58d4ab286ee0cbc2">&#9670;&nbsp;</a></span>OnSkillCast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::OnSkillCast </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>SkillId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a964867193958403128283d62bfe251a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a964867193958403128283d62bfe251a3">&#9670;&nbsp;</a></span>OnSkillCastFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::OnSkillCastFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_a_game_character.html#ac78049d523f91b66998016512339a590">AGameCharacter</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a7ed738c98e0a3bd00db6c6c9553cb435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed738c98e0a3bd00db6c6c9553cb435">&#9670;&nbsp;</a></span>SetHP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::SetHP </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>InHp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab907e95da60084597b1929acd5b5a9be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab907e95da60084597b1929acd5b5a9be">&#9670;&nbsp;</a></span>SpawnTargetCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::SpawnTargetCircle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1131fec4368441d80a899e0a632bdc5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1131fec4368441d80a899e0a632bdc5c">&#9670;&nbsp;</a></span>UpdateMaxHp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ACharacterBase::UpdateMaxHp </td>
+          <td>(</td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>InMaxHp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>D:/Prog/AnpanMMO/Client/AnpanMMO/Source/AnpanMMO/Character/<a class="el" href="_character_base_8h_source.html">CharacterBase.h</a></li>
+<li>D:/Prog/AnpanMMO/Client/AnpanMMO/Source/AnpanMMO/Character/<a class="el" href="_character_base_8cpp.html">CharacterBase.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,48 @@
+.TH "ServerHost" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ServerHost
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ServerHost\&.h>\fP
+.SS "静的公開変数類"
+
+.in +1c
+.ti -1c
+.RI "static const std::string \fBCacheServerHost\fP = '127\&.0\&.0\&.1'"
+.br
+.ti -1c
+.RI "static const std::string \fBWordCheckServerHost\fP = '127\&.0\&.0\&.1'"
+.br
+.ti -1c
+.RI "static const int \fBGameServerPort\fP = 4424"
+.br
+.ti -1c
+.RI "static const int \fBCacheServerPort\fP = 4425"
+.br
+.ti -1c
+.RI "static const int \fBWordCheckServerPort\fP = 4426"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+他サーバのホスト ※各種サーバで使い回すコード 
+.SH "メンバ詳解"
+.PP 
+.SS "const std::string ServerHost::CacheServerHost = '127\&.0\&.0\&.1'\fC [static]\fP"
+
+.SS "const int ServerHost::CacheServerPort = 4425\fC [static]\fP"
+
+.SS "const int ServerHost::GameServerPort = 4424\fC [static]\fP"
+
+.SS "const std::string ServerHost::WordCheckServerHost = '127\&.0\&.0\&.1'\fC [static]\fP"
+
+.SS "const int ServerHost::WordCheckServerPort = 4426\fC [static]\fP"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。
