@@ -1,0 +1,69 @@
+.TH "PacketSkillUse" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PacketSkillUse
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PacketSkillUse\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBPacketSkillUse\fP ()"
+.br
+.ti -1c
+.RI "\fBPacketSkillUse\fP (\fBu32\fP InSkillId, \fBu8\fP InTargetType, \fBu32\fP InTargetUuid)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBSkillId\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBTargetType\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBTargetUuid\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PacketSkillUse::PacketSkillUse ()\fC [inline]\fP"
+
+.SS "PacketSkillUse::PacketSkillUse (\fBu32\fP InSkillId, \fBu8\fP InTargetType, \fBu32\fP InTargetUuid)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP PacketSkillUse::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SS "bool PacketSkillUse::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBu32\fP PacketSkillUse::SkillId"
+
+.SS "\fBu8\fP PacketSkillUse::TargetType"
+
+.SS "\fBu32\fP PacketSkillUse::TargetUuid"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

@@ -1,0 +1,75 @@
+.TH "WordCheckServerConnection" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WordCheckServerConnection
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WordCheckServerConnection\&.h>\fP
+.PP
+\fBTCPConnection\fP, noncopyableを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBWordCheckServerConnection\fP (const shared_ptr< tcp::socket > &pInSocket)"
+.br
+.ti -1c
+.RI "virtual \fB~WordCheckServerConnection\fP ()"
+.br
+.ti -1c
+.RI "bool \fBConnect\fP ()"
+.br
+.ti -1c
+.RI "void \fBSendPacket\fP (\fBPacketBase\fP *pPacket)"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBWordCheckServerConnection\fP * \fBGetInstance\fP ()"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBOnRecvData\fP (size_t Size)"
+.br
+.ti -1c
+.RI "virtual void \fBOnDisconnected\fP ()"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+キャッシュサーバとの接続\&. 
+.SH "構築子と解体子"
+.PP 
+.SS "WordCheckServerConnection::WordCheckServerConnection (const shared_ptr< tcp::socket > & pInSocket)"
+
+.SS "virtual WordCheckServerConnection::~WordCheckServerConnection ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "bool WordCheckServerConnection::Connect ()"
+
+.SS "static \fBWordCheckServerConnection\fP* WordCheckServerConnection::GetInstance ()\fC [inline]\fP, \fC [static]\fP"
+
+.SS "void WordCheckServerConnection::OnDisconnected ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+\fBTCPConnection\fPを再実装しています。
+.SS "void WordCheckServerConnection::OnRecvData (size_t Size)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+\fBTCPConnection\fPを再実装しています。
+.SS "void WordCheckServerConnection::SendPacket (\fBPacketBase\fP * pPacket)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

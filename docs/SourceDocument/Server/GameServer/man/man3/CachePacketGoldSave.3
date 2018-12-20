@@ -1,0 +1,64 @@
+.TH "CachePacketGoldSave" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CachePacketGoldSave
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CachePacketGoldSave\&.h>\fP
+.PP
+\fBProcessPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBCachePacketGoldSave\fP ()"
+.br
+.ti -1c
+.RI "\fBCachePacketGoldSave\fP (\fBu32\fP InClientId, \fBu32\fP InCharacterId, \fBu32\fP InGold)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBCharacterId\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGold\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "CachePacketGoldSave::CachePacketGoldSave ()\fC [inline]\fP"
+
+.SS "CachePacketGoldSave::CachePacketGoldSave (\fBu32\fP InClientId, \fBu32\fP InCharacterId, \fBu32\fP InGold)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP CachePacketGoldSave::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBProcessPacketBase\fPを再実装しています。
+.SS "bool CachePacketGoldSave::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBProcessPacketBase\fPを再実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBu32\fP CachePacketGoldSave::CharacterId"
+
+.SS "\fBu32\fP CachePacketGoldSave::Gold"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

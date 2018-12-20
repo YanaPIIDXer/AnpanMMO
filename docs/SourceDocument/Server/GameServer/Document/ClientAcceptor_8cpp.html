@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: ClientAcceptor.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ClientAcceptor.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="stdafx_8h_source.html">stdafx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ClientAcceptor_8h_source.html">ClientAcceptor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ClientManager_8h_source.html">ClientManager.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ClientAcceptor.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="ClientAcceptor_8cpp__incl.png" border="0" usemap="#ClientAcceptor_8cpp" alt=""/></div>
+<map name="ClientAcceptor_8cpp" id="ClientAcceptor_8cpp">
+<area shape="rect" id="node2" href="stdafx_8h.html" title="stdafx.h" alt="" coords="1469,80,1537,107"/>
+<area shape="rect" id="node15" href="ClientAcceptor_8h.html" title="ClientAcceptor.h" alt="" coords="1955,80,2073,107"/>
+<area shape="rect" id="node16" href="ClientManager_8h.html" title="ClientManager.h" alt="" coords="1815,80,1931,107"/>
+<area shape="rect" id="node5" href="basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="810,155,970,181"/>
+<area shape="rect" id="node14" href="TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="1763,483,1849,509"/>
+<area shape="rect" id="node18" href="Client_8h.html" title="クライアントクラス " alt="" coords="2074,155,2141,181"/>
+<area shape="rect" id="node33" href="WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="2442,237,2562,263"/>
+<area shape="rect" id="node19" href="TCPConnection_8h.html" title="TCPConnection.h" alt="" coords="1677,237,1799,263"/>
+<area shape="rect" id="node21" href="PacketID_8h.html" title="Packet/PacketID.h" alt="" coords="2107,483,2238,509"/>
+<area shape="rect" id="node22" href="ScriptExecuter_8h.html" title="Script/ScriptExecuter.h" alt="" coords="2261,237,2418,263"/>
+<area shape="rect" id="node28" href="ScriptFlagManager_8h.html" title="Script/ScriptFlagManager.h" alt="" coords="1824,237,2004,263"/>
+<area shape="rect" id="node29" href="QuestManager_8h.html" title="Quest/QuestManager.h" alt="" coords="2029,237,2186,263"/>
+<area shape="rect" id="node20" href="MemoryBuffer_8h.html" title="MemoryBuffer.h" alt="" coords="1685,319,1799,345"/>
+<area shape="rect" id="node23" href="ScriptExecuterBase_8h.html" title="ScriptExecuterBase.h" alt="" coords="2310,319,2459,345"/>
+<area shape="rect" id="node30" href="QuestData_8h.html" title="Packet/QuestData.h" alt="" coords="2031,319,2171,345"/>
+<area shape="rect" id="node31" href="PacketBase_8h.html" title="PacketBase.h" alt="" coords="1802,401,1906,427"/>
+<area shape="rect" id="node32" href="MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="1931,393,2135,435"/>
+</map>
+</div>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

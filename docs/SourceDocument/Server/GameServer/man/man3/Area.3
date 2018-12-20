@@ -1,0 +1,52 @@
+.TH "Area" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Area
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Area\&.h>\fP
+.PP
+\fBAreaBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBArea\fP (const \fBAreaItem\fP *pItem)"
+.br
+.ti -1c
+.RI "virtual \fB~Area\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBu32\fP \fBGetId\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBIsAbleDelete\fP () const"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+エリアクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "Area::Area (const \fBAreaItem\fP * pItem)"
+
+.SS "virtual Area::~Area ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu32\fP Area::GetId () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAreaBase\fPを実装しています。
+.SS "virtual bool Area::IsAbleDelete () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAreaBase\fPを実装しています。
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

@@ -1,0 +1,72 @@
+.TH "TimeInfoItem" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TimeInfoItem
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TimeInfoMaster\&.h>\fP
+.SS "公開型"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBMORNING\fP = 0, \fBAFTERNOON\fP = 1, \fBEVENING\fP = 2, \fBNIGHT\fP = 3 }"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBId\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBTimeType\fP"
+.br
+.ti -1c
+.RI "float \fBLightAngle\fP"
+.br
+.ti -1c
+.RI "float \fBCloudSpeed\fP"
+.br
+.ti -1c
+.RI "float \fBCloudOpacity\fP"
+.br
+.ti -1c
+.RI "float \fBStarsBrightness\fP"
+.br
+.in -1c
+.SH "列挙型メンバ詳解"
+.PP 
+.SS "anonymous enum"
+
+.PP
+\fB列挙値\fP
+.in +1c
+.TP
+\fB\fIMORNING \fP\fP
+.TP
+\fB\fIAFTERNOON \fP\fP
+.TP
+\fB\fIEVENING \fP\fP
+.TP
+\fB\fINIGHT \fP\fP
+.SH "メンバ詳解"
+.PP 
+.SS "float TimeInfoItem::CloudOpacity"
+
+.SS "float TimeInfoItem::CloudSpeed"
+
+.SS "\fBu32\fP TimeInfoItem::Id"
+
+.SS "float TimeInfoItem::LightAngle"
+
+.SS "float TimeInfoItem::StarsBrightness"
+
+.SS "\fBu8\fP TimeInfoItem::TimeType"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

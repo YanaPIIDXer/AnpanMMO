@@ -1,0 +1,11 @@
+<map id="ClientManager.h" name="ClientManager.h">
+<area shape="rect" id="node2" href="$CacheServerConnection_8cpp.html" title="CacheServerConnection.cpp" alt="" coords="5,80,191,107"/>
+<area shape="rect" id="node3" href="$ClientAcceptor_8cpp.html" title="ClientAcceptor.cpp" alt="" coords="215,80,347,107"/>
+<area shape="rect" id="node4" href="$ClientManager_8cpp.html" title="ClientManager.cpp" alt="" coords="371,80,502,107"/>
+<area shape="rect" id="node5" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="526,80,673,107"/>
+<area shape="rect" id="node6" href="$ClientStateTitle_8cpp.html" title="ClientStateTitle.cpp" alt="" coords="697,80,832,107"/>
+<area shape="rect" id="node7" href="$Main_8cpp.html" title="Main.cpp" alt="" coords="857,80,931,107"/>
+<area shape="rect" id="node8" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="955,80,1083,107"/>
+<area shape="rect" id="node9" href="$TimeManager_8cpp.html" title="TimeManager.cpp" alt="" coords="1107,80,1233,107"/>
+<area shape="rect" id="node10" href="$WordCheckServerConnection_8cpp.html" title="WordCheckServerConnection.cpp" alt="" coords="1257,80,1473,107"/>
+</map>

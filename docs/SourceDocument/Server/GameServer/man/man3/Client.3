@@ -1,0 +1,376 @@
+.TH "Client" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Client \- クライアントクラス  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Client\&.h>\fP
+.PP
+\fBTCPConnection\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBClient\fP (const shared_ptr< tcp::socket > &pInSocket)"
+.br
+.RI "コンストラクタ "
+.ti -1c
+.RI "virtual \fB~Client\fP ()"
+.br
+.RI "デストラクタ "
+.ti -1c
+.RI "void \fBSendPacket\fP (\fBPacketBase\fP *pPacket)"
+.br
+.RI "パケット送信\&. "
+.ti -1c
+.RI "void \fBChangeState\fP (\fBClientStateBase\fP *pNextState)"
+.br
+.RI "ステート切り替え "
+.ti -1c
+.RI "void \fBSetUuid\fP (\fBu32\fP InUuid)"
+.br
+.RI "UUIDをセット "
+.ti -1c
+.RI "\fBu32\fP \fBGetUuid\fP () const"
+.br
+.RI "UUIDを取得\&. "
+.ti -1c
+.RI "void \fBSetCustomerId\fP (\fBu32\fP InCustomerId)"
+.br
+.RI "カスタマＩＤをセット "
+.ti -1c
+.RI "\fBu32\fP \fBGetCustomerId\fP () const"
+.br
+.RI "カスタマＩＤを取得\&. "
+.ti -1c
+.RI "\fBPlayerCharacterPtr\fP \fBGetCharacter\fP () const"
+.br
+.RI "キャラクタを取得\&. "
+.ti -1c
+.RI "void \fBCreateCharacter\fP (\fBu32\fP CharacterId, const std::string &Name, \fBu8\fP Job, \fBu32\fP Level, int MaxHp, int Atk, int Def, int Exp, \fBu32\fP Gold)"
+.br
+.RI "キャラクタを作成\&. "
+.ti -1c
+.RI "void \fBRecvPacket\fP (\fBu8\fP ID, \fBMemoryStreamInterface\fP *pStream)"
+.br
+.RI "パケット受信\&. "
+.ti -1c
+.RI "\fBScriptExecuter\fP * \fBGetScript\fP ()"
+.br
+.RI "スクリプト制御オブジェクト取得\&. "
+.ti -1c
+.RI "void \fBSetScriptFlag\fP (int Key)"
+.br
+.RI "スクリプトフラグを設定\&. "
+.ti -1c
+.RI "const \fBScriptFlagManager\fP & \fBGetScriptFlagManager\fP () const"
+.br
+.RI "スクリプトフラグ管理取得\&. return const \fBScriptFlagManager\fP & スクリプトフラグ管理\&. "
+.ti -1c
+.RI "void \fBConvertScriptFlagFromBitFields\fP (\fBu32\fP BitField1, \fBu32\fP BitField2, \fBu32\fP BitField3)"
+.br
+.RI "ビットフィールドからスクリプトフラグに変換\&. "
+.ti -1c
+.RI "const \fBQuestManager\fP & \fBGetQuestManager\fP () const"
+.br
+.RI "クエスト管理取得\&. "
+.ti -1c
+.RI "void \fBAddQuestData\fP (const \fBQuestData\fP &Data)"
+.br
+.RI "クエストデータ追加\&. "
+.ti -1c
+.RI "void \fBAcceptQuest\fP (\fBu32\fP QuestId)"
+.br
+.RI "クエスト受注\&. "
+.ti -1c
+.RI "void \fBProgressQuest\fP (\fBu32\fP QuestId)"
+.br
+.RI "クエスト進行\&. "
+.ti -1c
+.RI "void \fBOnKilledAnpan\fP (\fBu32\fP AreaId)"
+.br
+.RI "アンパン殺害\&. "
+.ti -1c
+.RI "\fBu8\fP \fBRetireQuest\fP (\fBu32\fP QuestId)"
+.br
+.RI "クエスト破棄\&. "
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBOnRecvData\fP (size_t Size)"
+.br
+.RI "データを受信した。 "
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+クライアントクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "Client::Client (const shared_ptr< tcp::socket > & pInSocket)"
+
+.PP
+コンストラクタ 
+.PP
+\fB引数:\fP
+.RS 4
+\fIpInSocket\fP ソケットのshared_ptr 
+.RE
+.PP
+
+.SS "Client::~Client ()\fC [virtual]\fP"
+
+.PP
+デストラクタ 
+.SH "関数詳解"
+.PP 
+.SS "void Client::AcceptQuest (\fBu32\fP QuestId)"
+
+.PP
+クエスト受注\&. 
+.PP
+\fB引数:\fP
+.RS 4
+\fIQuestId\fP クエストＩＤ 
+.RE
+.PP
+
+.SS "void Client::AddQuestData (const \fBQuestData\fP & Data)"
+
+.PP
+クエストデータ追加\&. 
+.PP
+\fB引数:\fP
+.RS 4
+\fI\fBQuestData\fP\fP クエストデータ 
+.RE
+.PP
+
+.SS "void Client::ChangeState (\fBClientStateBase\fP * pNextState)"
+
+.PP
+ステート切り替え 
+.PP
+\fB引数:\fP
+.RS 4
+\fIpNextState\fP 遷移先のState 
+.RE
+.PP
+
+.SS "void Client::ConvertScriptFlagFromBitFields (\fBu32\fP BitField1, \fBu32\fP BitField2, \fBu32\fP BitField3)"
+
+.PP
+ビットフィールドからスクリプトフラグに変換\&. 
+.PP
+\fB引数:\fP
+.RS 4
+\fIBitField1\fP ビットフィールド１ 
+.br
+\fIBitField2\fP ビットフィールド２ 
+.br
+\fIBitField3\fP ビットフィールド３ 
+.RE
+.PP
+
+.SS "void Client::CreateCharacter (\fBu32\fP CharacterId, const std::string & Name, \fBu8\fP Job, \fBu32\fP Level, int MaxHp, int Atk, int Def, int Exp, \fBu32\fP Gold)"
+
+.PP
+キャラクタを作成\&. 
+.PP
+\fB引数:\fP
+.RS 4
+\fICharacterId\fP キャラクタＩＤ 
+.br
+\fIName\fP キャラクタ名\&. 
+.br
+\fIJob\fP ジョブ 
+.br
+\fILevel\fP レベル [in] MaxHp 最大ＨＰ 
+.br
+\fIAtk\fP 攻撃力\&. 
+.br
+\fIDef\fP 防御力\&. 
+.br
+\fIExp\fP 経験値\&. 
+.br
+\fIGold\fP ゴールド 
+.RE
+.PP
+
+.SS "\fBPlayerCharacterPtr\fP Client::GetCharacter () const\fC [inline]\fP"
+
+.PP
+キャラクタを取得\&. weak_ptrを返す。 
+.PP
+\fB戻り値:\fP
+.RS 4
+PlayerCharacterPtr キャラクタへのweak_ptr 
+.RE
+.PP
+
+.SS "\fBu32\fP Client::GetCustomerId () const\fC [inline]\fP"
+
+.PP
+カスタマＩＤを取得\&. 
+.PP
+\fB戻り値:\fP
+.RS 4
+u32 カスタマＩＤ 
+.RE
+.PP
+
+.SS "const \fBQuestManager\fP & Client::GetQuestManager () const\fC [inline]\fP"
+
+.PP
+クエスト管理取得\&. 
+.PP
+\fB戻り値:\fP
+.RS 4
+const \fBQuestManager\fP & クエスト管理\&. 
+.RE
+.PP
+
+.SS "\fBScriptExecuter\fP * Client::GetScript ()\fC [inline]\fP"
+
+.PP
+スクリプト制御オブジェクト取得\&. 
+.PP
+\fB戻り値:\fP
+.RS 4
+\fBScriptExecuter\fP * スクリプト管理オブジェクトへのポインタ 
+.RE
+.PP
+
+.SS "const \fBScriptFlagManager\fP & Client::GetScriptFlagManager () const\fC [inline]\fP"
+
+.PP
+スクリプトフラグ管理取得\&. return const \fBScriptFlagManager\fP & スクリプトフラグ管理\&. 
+.SS "\fBu32\fP Client::GetUuid () const\fC [inline]\fP"
+
+.PP
+UUIDを取得\&. 
+.PP
+\fB戻り値:\fP
+.RS 4
+u32 UUID 
+.RE
+.PP
+
+.SS "void Client::OnKilledAnpan (\fBu32\fP AreaId)"
+
+.PP
+アンパン殺害\&. 殺害したエリアのＩＤを渡す。 
+.PP
+\fB引数:\fP
+.RS 4
+\fIAreaId\fP 殺害したエリアＩＤ 
+.RE
+.PP
+
+.SS "void Client::OnRecvData (size_t Size)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+データを受信した。 
+.PP
+\fB引数:\fP
+.RS 4
+\fISize\fP 受信したデータサイズ 
+.RE
+.PP
+
+.PP
+\fBTCPConnection\fPを再実装しています。
+.SS "void Client::ProgressQuest (\fBu32\fP QuestId)"
+
+.PP
+クエスト進行\&. 
+.PP
+\fB引数:\fP
+.RS 4
+\fIQuestId\fP クエストＩＤ 
+.RE
+.PP
+
+.SS "void Client::RecvPacket (\fBu8\fP ID, \fBMemoryStreamInterface\fP * pStream)"
+
+.PP
+パケット受信\&. 主に他サーバからのレスポンス受信時に使用する。 
+.PP
+\fB引数:\fP
+.RS 4
+\fIID\fP パケットＩＤ 
+.br
+\fIpStream\fP ストリーム 
+.RE
+.PP
+
+.SS "\fBu8\fP Client::RetireQuest (\fBu32\fP QuestId)"
+
+.PP
+クエスト破棄\&. 
+.PP
+\fB引数:\fP
+.RS 4
+\fIQuestId\fP クエストＩＤ 
+.RE
+.PP
+\fB戻り値:\fP
+.RS 4
+u8 リザルトコード 
+.RE
+.PP
+
+.SS "void Client::SendPacket (\fBPacketBase\fP * pPacket)"
+
+.PP
+パケット送信\&. 
+.PP
+\fB引数:\fP
+.RS 4
+\fIpPacket\fP パケット 
+.RE
+.PP
+
+.SS "void Client::SetCustomerId (\fBu32\fP InCustomerId)\fC [inline]\fP"
+
+.PP
+カスタマＩＤをセット UUIDとは異なる。 
+.PP
+\fB引数:\fP
+.RS 4
+\fIInCustomerId\fP カスタマＩＤ 
+.RE
+.PP
+
+.SS "void Client::SetScriptFlag (int Key)"
+
+.PP
+スクリプトフラグを設定\&. 
+.PP
+\fB引数:\fP
+.RS 4
+\fIKey\fP キー 
+.RE
+.PP
+
+.SS "void Client::SetUuid (\fBu32\fP InUuid)\fC [inline]\fP"
+
+.PP
+UUIDをセット 
+.PP
+\fB引数:\fP
+.RS 4
+\fIInUuid\fP UUID 
+.RE
+.PP
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

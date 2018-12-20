@@ -1,0 +1,100 @@
+.TH "AnpanAIStateBase" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnpanAIStateBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AnpanAIStateBase\&.h>\fP
+.PP
+\fBAnpanAIStateActive\fP, \fBAnpanAIStateNonActive\fPに継承されています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAnpanAIStateBase\fP (\fBAnpan\fP *pInParent)"
+.br
+.ti -1c
+.RI "virtual \fB~AnpanAIStateBase\fP ()=0"
+.br
+.ti -1c
+.RI "void \fBPoll\fP (int DeltaTime)"
+.br
+.ti -1c
+.RI "void \fBSetAI\fP (\fBAnpanAI\fP *pInAI)"
+.br
+.ti -1c
+.RI "virtual void \fBOnDamaged\fP ()"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBUpdate\fP (int DeltaTime)"
+.br
+.ti -1c
+.RI "\fBAnpan\fP * \fBGetParent\fP ()"
+.br
+.ti -1c
+.RI "\fBAnpanAI\fP * \fBGetAI\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetMove\fP (const \fBVector3D\fP &InMoveTarget, int Time)"
+.br
+.ti -1c
+.RI "void \fBSetRotate\fP (const \fBRotation\fP &InRotateTarget, int Time)"
+.br
+.ti -1c
+.RI "void \fBStop\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsMoving\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsRotating\fP () const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+アンパンＡＩステート基底クラス 
+.SH "構築子と解体子"
+.PP 
+.SS "AnpanAIStateBase::AnpanAIStateBase (\fBAnpan\fP * pInParent)"
+
+.SS "AnpanAIStateBase::~AnpanAIStateBase ()\fC [pure virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "\fBAnpanAI\fP* AnpanAIStateBase::GetAI ()\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "\fBAnpan\fP* AnpanAIStateBase::GetParent ()\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "bool AnpanAIStateBase::IsMoving () const\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "bool AnpanAIStateBase::IsRotating () const\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "virtual void AnpanAIStateBase::OnDamaged ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAnpanAIStateNonActive\fPで再実装されています。
+.SS "void AnpanAIStateBase::Poll (int DeltaTime)"
+
+.SS "void AnpanAIStateBase::SetAI (\fBAnpanAI\fP * pInAI)\fC [inline]\fP"
+
+.SS "void AnpanAIStateBase::SetMove (const \fBVector3D\fP & InMoveTarget, int Time)\fC [protected]\fP"
+
+.SS "void AnpanAIStateBase::SetRotate (const \fBRotation\fP & InRotateTarget, int Time)\fC [protected]\fP"
+
+.SS "void AnpanAIStateBase::Stop ()\fC [protected]\fP"
+
+.SS "virtual void AnpanAIStateBase::Update (int DeltaTime)\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAnpanAIStateNonActive\fP, \fBAnpanAIStateActive\fPで再実装されています。
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。
