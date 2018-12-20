@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gameserverconnection',['GameServerConnection',['../dd/dcb/a01104.html',1,'']]]
+  ['gameserverconnection',['GameServerConnection',['../classGameServerConnection.html',1,'']]]
 ];

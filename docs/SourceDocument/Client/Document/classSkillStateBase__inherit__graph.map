@@ -1,0 +1,5 @@
+<map id="SkillStateBase" name="SkillStateBase">
+<area shape="rect" id="node2" href="$classSkillStateAutoMove.html" title="SkillStateAutoMove" alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node3" href="$classSkillStateCast.html" title="SkillStateCast" alt="" coords="164,80,269,107"/>
+<area shape="rect" id="node4" href="$classSkillStateNutral.html" title="SkillStateNutral" alt="" coords="294,80,406,107"/>
+</map>
