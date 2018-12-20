@@ -84,6 +84,12 @@ void ScriptExecuter::AcceptQuest(u32 QuestId)
 	pClient->AcceptQuest(QuestId);
 }
 
+// クエストをクリアしているか？
+bool ScriptExecuter::IsQuestClear(u32 QuestId)
+{
+	return pClient->GetQuestManager().IsClear(QuestId);
+}
+
 
 // 実行エラー
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)

@@ -58,3 +58,9 @@ end
 function AcceptQuest(QuestId)
 	AcceptQuest_Impl(this, QuestId)
 end
+
+-- クエストをクリアしているか？
+function IsQuestClear(QuestId)
+	local bIsClear = IsQuestClear_Impl(this, QuestId)
+	return bIsClear
+end

@@ -79,6 +79,9 @@ public:
 	// クエスト管理取得.
 	const QuestManager &GetQuestManager() const { return QuestMgr; }
 
+	// クエストマネージャを初期化.
+	void InitializeQuestManager() { QuestMgr.Initialize(); }
+
 	// クエストデータ追加.
 	void AddQuestData(const QuestData &Data);
 	
@@ -93,6 +96,15 @@ public:
 
 	// クエスト破棄.
 	void RetireQuest(uint32 QuestId);
+
+	// アクティブクエストを設定.
+	void SetActiveQuest(uint32 QuestId, bool bSendSavePacket) { QuestMgr.SetActiveQuest(QuestId, bSendSavePacket); }
+
+	// アクティブクエストの情報を取得.
+	const QuestData *GetActiveQuestData() { return QuestMgr.GetActiveQuestData(); }
+
+	// アクティブクエストが更新された時のdelegate取得.
+	FOnActiveQuestUpdated &OnActiveQuestUpdated() { return QuestMgr.OnActiveQuestUpdated; }
 
 
 	// パケット受信delegate

@@ -63,4 +63,12 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Item")
 	static bool IsValidItem(int32 ItemId);
 
+	// ƒGƒŠƒA–¼‚ðŽæ“¾.
+	UFUNCTION(BlueprintPure, Category = "Area")
+	static FString GetAreaName(int32 AreaId);
+
+	// NPC–¼‚ðŽæ“¾.
+	UFUNCTION(BlueprintPure, Category = "NPC")
+	static FString GetNPCName(int32 NPCId);
+
 };

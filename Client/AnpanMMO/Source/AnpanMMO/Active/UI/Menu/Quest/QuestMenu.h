@@ -53,6 +53,9 @@ public:
 	// デストラクタ
 	virtual ~UQuestMenu() {}
 
+	// パケットを受信した。
+	virtual void OnRecvPacket(uint8 ID) override;
+
 protected:
 
 	// 初期化.
@@ -63,5 +66,13 @@ protected:
 	UFUNCTION(BlueprintNativeEvent, Category = "QuestMenu")
 	void InitEvent(const TArray<FQuestData> &List);
 	void InitEvent_Implementation(const TArray<FQuestData> &List) {}
+	
+	// クエスト破棄.
+	UFUNCTION(BlueprintCallable, Category = "QuestMenu")
+	void RetireQuest(const FQuestData &Data);
+
+	// アクティブクエストを変更.
+	UFUNCTION(BlueprintCallable, Category = "QuestMenu")
+	void ChangeActiveQuest(const FQuestData &Data);
 
 };

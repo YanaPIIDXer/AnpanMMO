@@ -225,10 +225,14 @@ void ATitleGameMode::OnRecvQuestData(MemoryStreamInterface *pStream)
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
+	pInst->InitializeQuestManager();
+
 	for (int32 i = 0; i < Packet.Quests.GetCurrentSize(); i++)
 	{
 		pInst->AddQuestData(Packet.Quests[i]);
 	}
+
+	pInst->SetActiveQuest(Packet.ActiveQuestId, false);
 }
 
 // ゲーム画面に進む準備が出来た。

@@ -165,3 +165,21 @@ int AcceptQuest_Call(lua_State *pState)
 
 	return 0;
 }
+
+// クエストをクリアしているか？
+int IsQuestClear_Call(lua_State *pState)
+{
+	long Id = (long)luaL_checknumber(pState, -2);
+	u32 QuestId = (u32)luaL_checknumber(pState, -1);
+	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
+	if (pExecuter == NULL)
+	{
+		lua_pushboolean(pState, false);
+		return 1;
+	}
+
+	bool bIsClear = pExecuter->IsQuestClear(QuestId);
+	lua_pushboolean(pState, bIsClear);
+
+	return 1;
+}

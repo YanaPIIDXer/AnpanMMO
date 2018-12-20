@@ -42,4 +42,7 @@ int ConsumeItem_Call(lua_State *pState);
 // クエスト受注.
 int AcceptQuest_Call(lua_State *pState);
 
+// クエストをクリアしているか？
+int IsQuestClear_Call(lua_State *pState);
+
 #endif		// #ifndef __SCRIPTBINDS_H__

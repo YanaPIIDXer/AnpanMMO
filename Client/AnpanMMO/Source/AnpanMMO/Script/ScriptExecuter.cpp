@@ -103,6 +103,15 @@ u32 ScriptExecuter::GetItemCount(u32 ItemId)
 	return pCharacter->GetItemCount(ItemId);
 }
 
+// クエストをクリアしているか？
+bool ScriptExecuter::IsQuestClear(u32 QuestId)
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(pGameMode.Get()));
+	check(pInst != nullptr);
+
+	return pInst->GetQuestManager().IsClear(QuestId);
+}
+
 // ビットフィールドからフラグに変換.
 void ScriptExecuter::ConvertFlagFromBitFields(uint32 BitField1, uint32 BitField2, uint32 BitField3)
 {
