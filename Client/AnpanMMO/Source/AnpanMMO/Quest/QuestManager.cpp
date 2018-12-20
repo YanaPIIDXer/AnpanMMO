@@ -93,6 +93,13 @@ bool QuestManager::IsActive(uint32 QuestId) const
 	return (Quests[QuestId].State == QuestData::Active);
 }
 
+// クリアしているか？
+bool QuestManager::IsClear(uint32 QuestId) const
+{
+	if (!Quests.Contains(QuestId)) { return false; }
+	return (Quests[QuestId].State == QuestData::Cleared);
+}
+
 // ステージ番号を取得.
 uint32 QuestManager::GetStageNo(uint32 QuestId) const
 {

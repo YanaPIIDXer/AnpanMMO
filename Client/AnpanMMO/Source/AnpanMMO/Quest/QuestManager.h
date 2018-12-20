@@ -53,6 +53,9 @@ public:
 	// 進行中か？
 	bool IsActive(uint32 QuestId) const;
 
+	// クリアしているか？
+	bool IsClear(uint32 QuestId) const;
+
 	// ステージ番号を取得.
 	uint32 GetStageNo(uint32 QuestId) const;
 

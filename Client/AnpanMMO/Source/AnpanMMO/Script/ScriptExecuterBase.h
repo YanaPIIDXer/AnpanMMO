@@ -68,6 +68,9 @@ public:
 	// クエスト受注.
 	virtual void AcceptQuest(u32 QuestId) = 0;
 
+	// クエストをクリアしているか？
+	virtual bool IsQuestClear(u32 QuestId) = 0;
+
 protected:
 
 	// 実行エラー

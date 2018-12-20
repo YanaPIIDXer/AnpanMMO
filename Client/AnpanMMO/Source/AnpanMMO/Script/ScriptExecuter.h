@@ -63,6 +63,9 @@ public:
 	// ※クライアント側は何もしない。
 	virtual void AcceptQuest(u32 QuestId) override {}
 
+	// クエストをクリアしているか？
+	virtual bool IsQuestClear(u32 QuestId) override;
+
 	// ビットフィールドからフラグに変換.
 	void ConvertFlagFromBitFields(uint32 BitField1, uint32 BitField2, uint32 BitField3);
 

@@ -142,6 +142,14 @@ void QuestManager::OnKilledAnpan(u32 AreaId)
 	}
 }
 
+// クリアしているか？
+bool QuestManager::IsClear(u32 QuestId) const
+{
+	QuestMap::const_iterator It = Quests.find(QuestId);
+	if (It == Quests.end()) { return false; }
+	return (It->second.State == QuestData::Cleared);
+}
+
 // ステージ番号を取得.
 u32 QuestManager::GetStageNo(u32 QuestId) const
 {

@@ -44,6 +44,9 @@ public:
 	// 進行中か？
 	bool IsActive(u32 QuestId) const { return (ActiveQuests.find(QuestId) != ActiveQuests.end()); }
 
+	// クリアしているか？
+	bool IsClear(u32 QuestId) const;
+
 	// ステージ番号を取得.
 	u32 GetStageNo(u32 QuestId) const;
 
