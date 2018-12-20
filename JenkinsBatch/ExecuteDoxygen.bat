@@ -11,6 +11,7 @@ doxygen Doxyfile
 
 rem Commit and Push
 cd %DOCUMENT_ROOT%
+git fetch origin Work
 git add *
 git commit -m "ドキュメントの更新。"
 git push origin Work
