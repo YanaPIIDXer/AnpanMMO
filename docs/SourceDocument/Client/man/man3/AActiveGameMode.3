@@ -1,0 +1,125 @@
+.TH "AActiveGameMode" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AActiveGameMode
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ActiveGameMode\&.h>\fP
+.PP
+\fBAMMOGameModeBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAActiveGameMode\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~AActiveGameMode\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBBeginPlay\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBTick\fP (float DeltaTime) override"
+.br
+.ti -1c
+.RI "void \fBAddPlayerCharacter\fP (uint32 Uuid, \fBAPlayerCharacterBase\fP *pPlayer)"
+.br
+.ti -1c
+.RI "\fBUMainHUD\fP * \fBGetMainHUD\fP () const"
+.br
+.ti -1c
+.RI "void \fBStartLevelLoad\fP (uint32 AreaId)"
+.br
+.ti -1c
+.RI "void \fBOnLevelLoadFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetHiddenMainHUD\fP (bool bHidden)"
+.br
+.ti -1c
+.RI "const \fBPartyInformation\fP & \fBGetPartyInfo\fP () const"
+.br
+.ti -1c
+.RI "TArray< \fBNoticeInformation\fP > \fBGetNoticeList\fP () const"
+.br
+.ti -1c
+.RI "void \fBRemoveNotice\fP (uint32 Uuid)"
+.br
+.ti -1c
+.RI "void \fBRegisterSkyControl\fP (\fBASkyControl\fP *pSky)"
+.br
+.ti -1c
+.RI "void \fBStartScript\fP (const FString &ScriptFileName)"
+.br
+.ti -1c
+.RI "void \fBShowScriptMessage\fP (const FString &Message)"
+.br
+.ti -1c
+.RI "void \fBAddScriptSelection\fP (const FString &Item)"
+.br
+.ti -1c
+.RI "void \fBShowScriptSelection\fP ()"
+.br
+.ti -1c
+.RI "void \fBFinishScript\fP ()"
+.br
+.ti -1c
+.RI "\fBAAnpan\fP * \fBFindCenterTarget\fP (float Distance)"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+ゲーム中GameMode 
+.SH "構築子と解体子"
+.PP 
+.SS "AActiveGameMode::AActiveGameMode (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual AActiveGameMode::~AActiveGameMode ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void AActiveGameMode::AddPlayerCharacter (uint32 Uuid, \fBAPlayerCharacterBase\fP * pPlayer)"
+
+.SS "void AActiveGameMode::AddScriptSelection (const FString & Item)"
+
+.SS "void AActiveGameMode::BeginPlay ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAMMOGameModeBase\fPを再実装しています。
+.SS "\fBAAnpan\fP * AActiveGameMode::FindCenterTarget (float Distance)"
+
+.SS "void AActiveGameMode::FinishScript ()"
+
+.SS "\fBUMainHUD\fP* AActiveGameMode::GetMainHUD () const\fC [inline]\fP"
+
+.SS "TArray<\fBNoticeInformation\fP> AActiveGameMode::GetNoticeList () const\fC [inline]\fP"
+
+.SS "const \fBPartyInformation\fP& AActiveGameMode::GetPartyInfo () const\fC [inline]\fP"
+
+.SS "void AActiveGameMode::OnLevelLoadFinished ()"
+
+.SS "void AActiveGameMode::RegisterSkyControl (\fBASkyControl\fP * pSky)"
+
+.SS "void AActiveGameMode::RemoveNotice (uint32 Uuid)\fC [inline]\fP"
+
+.SS "void AActiveGameMode::SetHiddenMainHUD (bool bHidden)"
+
+.SS "void AActiveGameMode::ShowScriptMessage (const FString & Message)"
+
+.SS "void AActiveGameMode::ShowScriptSelection ()"
+
+.SS "void AActiveGameMode::StartLevelLoad (uint32 AreaId)"
+
+.SS "void AActiveGameMode::StartScript (const FString & ScriptFileName)"
+
+.SS "void AActiveGameMode::Tick (float DeltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

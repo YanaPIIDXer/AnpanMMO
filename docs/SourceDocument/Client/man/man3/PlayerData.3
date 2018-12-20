@@ -1,0 +1,88 @@
+.TH "PlayerData" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlayerData
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PlayerData\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayerData\fP ()"
+.br
+.ti -1c
+.RI "\fBPlayerData\fP (\fBu32\fP InUuid, float InX, float InY, float InZ, float InRotation, \fBs32\fP InHp, \fBs32\fP InMaxHp, std::string InName, \fBu8\fP InJob)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBUuid\fP"
+.br
+.ti -1c
+.RI "float \fBX\fP"
+.br
+.ti -1c
+.RI "float \fBY\fP"
+.br
+.ti -1c
+.RI "float \fBZ\fP"
+.br
+.ti -1c
+.RI "float \fBRotation\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBHp\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBMaxHp\fP"
+.br
+.ti -1c
+.RI "std::string \fBName\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBJob\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PlayerData::PlayerData ()\fC [inline]\fP"
+
+.SS "PlayerData::PlayerData (\fBu32\fP InUuid, float InX, float InY, float InZ, float InRotation, \fBs32\fP InHp, \fBs32\fP InMaxHp, std::string InName, \fBu8\fP InJob)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "bool PlayerData::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP"
+
+.SH "メンバ詳解"
+.PP 
+.SS "\fBs32\fP PlayerData::Hp"
+
+.SS "\fBu8\fP PlayerData::Job"
+
+.SS "\fBs32\fP PlayerData::MaxHp"
+
+.SS "std::string PlayerData::Name"
+
+.SS "float PlayerData::Rotation"
+
+.SS "\fBu32\fP PlayerData::Uuid"
+
+.SS "float PlayerData::X"
+
+.SS "float PlayerData::Y"
+
+.SS "float PlayerData::Z"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

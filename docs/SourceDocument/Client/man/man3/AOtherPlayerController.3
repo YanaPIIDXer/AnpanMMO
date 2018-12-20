@@ -1,0 +1,57 @@
+.TH "AOtherPlayerController" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AOtherPlayerController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <OtherPlayerController\&.h>\fP
+.PP
+AControllerを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAOtherPlayerController\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~AOtherPlayerController\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBPossess\fP (APawn *aPawn) override"
+.br
+.ti -1c
+.RI "virtual void \fBTick\fP (float DeltaTime) override"
+.br
+.ti -1c
+.RI "void \fBMove\fP (float X, float Y, float Z, float Rotation)"
+.br
+.ti -1c
+.RI "FVector \fBGetMoveVector\fP () const"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+他人のコントローラ 
+.SH "構築子と解体子"
+.PP 
+.SS "AOtherPlayerController::AOtherPlayerController (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual AOtherPlayerController::~AOtherPlayerController ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "FVector AOtherPlayerController::GetMoveVector () const"
+
+.SS "void AOtherPlayerController::Move (float X, float Y, float Z, float Rotation)"
+
+.SS "void AOtherPlayerController::Possess (APawn * aPawn)\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void AOtherPlayerController::Tick (float DeltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

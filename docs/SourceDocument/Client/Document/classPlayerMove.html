@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: PlayerMove クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classPlayerMove-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">PlayerMove クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="PlayerMove_8h_source.html">PlayerMove.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ade3e09d2666b34f2f758ed62d5f2cf06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerMove.html#ade3e09d2666b34f2f758ed62d5f2cf06">PlayerMove</a> ()</td></tr>
+<tr class="separator:ade3e09d2666b34f2f758ed62d5f2cf06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33c9a13c235656ab29fcf1568682877"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerMove.html#ad33c9a13c235656ab29fcf1568682877">~PlayerMove</a> ()</td></tr>
+<tr class="separator:ad33c9a13c235656ab29fcf1568682877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab482335f5bb7afbe31d0979f726fcaea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerMove.html#ab482335f5bb7afbe31d0979f726fcaea">Initialize</a> (<a class="el" href="classAGameCharacter.html">AGameCharacter</a> *pInCharacter, <a class="el" href="classUMMOGameInstance.html">UMMOGameInstance</a> *pInInst)</td></tr>
+<tr class="separator:ab482335f5bb7afbe31d0979f726fcaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3737b94f402a704508db1200207dd21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerMove.html#ac3737b94f402a704508db1200207dd21">Poll</a> (float DeltaTime)</td></tr>
+<tr class="separator:ac3737b94f402a704508db1200207dd21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>プレイヤー移動パケット処理クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ade3e09d2666b34f2f758ed62d5f2cf06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3e09d2666b34f2f758ed62d5f2cf06">&#9670;&nbsp;</a></span>PlayerMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlayerMove::PlayerMove </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad33c9a13c235656ab29fcf1568682877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33c9a13c235656ab29fcf1568682877">&#9670;&nbsp;</a></span>~PlayerMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlayerMove::~PlayerMove </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ab482335f5bb7afbe31d0979f726fcaea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab482335f5bb7afbe31d0979f726fcaea">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerMove::Initialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classAGameCharacter.html">AGameCharacter</a> *&#160;</td>
+          <td class="paramname"><em>pInCharacter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classUMMOGameInstance.html">UMMOGameInstance</a> *&#160;</td>
+          <td class="paramname"><em>pInInst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac3737b94f402a704508db1200207dd21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3737b94f402a704508db1200207dd21">&#9670;&nbsp;</a></span>Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerMove::Poll </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="PlayerMove_8h_source.html">PlayerMove.h</a></li>
+<li><a class="el" href="PlayerMove_8cpp.html">PlayerMove.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

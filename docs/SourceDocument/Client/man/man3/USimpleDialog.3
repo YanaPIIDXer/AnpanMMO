@@ -1,0 +1,75 @@
+.TH "USimpleDialog" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+USimpleDialog
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SimpleDialog\&.h>\fP
+.PP
+UUserWidgetを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBUSimpleDialog\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~USimpleDialog\fP ()"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBUSimpleDialog\fP * \fBShow\fP (UObject *pOuter, const FString &InDisplayText, int32 ZOrder=0)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "FOnDialogOK \fBOnDialogOK\fP"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBOnOK\fP ()"
+.br
+.in -1c
+.SS "限定公開変数類"
+
+.in +1c
+.ti -1c
+.RI "FString \fBDisplayText\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+単純なダイアログ 
+.SH "構築子と解体子"
+.PP 
+.SS "USimpleDialog::USimpleDialog (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual USimpleDialog::~USimpleDialog ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void USimpleDialog::OnOK ()\fC [protected]\fP"
+
+.SS "\fBUSimpleDialog\fP * USimpleDialog::Show (UObject * pOuter, const FString & InDisplayText, int32 ZOrder = \fC0\fP)\fC [static]\fP"
+
+.SH "メンバ詳解"
+.PP 
+.SS "FString USimpleDialog::DisplayText\fC [protected]\fP"
+
+.SS "FOnDialogOK USimpleDialog::OnDialogOK"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

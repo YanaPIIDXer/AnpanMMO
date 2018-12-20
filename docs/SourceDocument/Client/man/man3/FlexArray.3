@@ -1,0 +1,152 @@
+.TH "FlexArray< T >" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FlexArray< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <FlexArray\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBFlexArray\fP (int DefaultCapacity=20)"
+.br
+.ti -1c
+.RI "\fBFlexArray\fP (const \fBFlexArray\fP &Arg)"
+.br
+.ti -1c
+.RI "\fB~FlexArray\fP ()"
+.br
+.ti -1c
+.RI "void \fBPushBack\fP (T NewItem)"
+.br
+.ti -1c
+.RI "void \fBInsert\fP (T NewItem, int Index)"
+.br
+.ti -1c
+.RI "void \fBReallocate\fP (int Capacity)"
+.br
+.ti -1c
+.RI "int \fBGetCurrentSize\fP () const"
+.br
+.ti -1c
+.RI "void \fBRemove\fP (T Item)"
+.br
+.ti -1c
+.RI "T \fBoperator[]\fP (int Index) const"
+.br
+.ti -1c
+.RI "void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "template<> void \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "template<typename T> \fBFlexArray\fP< T >::\fBFlexArray\fP (int DefaultCapacity = \fC20\fP)\fC [inline]\fP"
+
+.SS "template<typename T> \fBFlexArray\fP< T >::\fBFlexArray\fP (const \fBFlexArray\fP< T > & Arg)\fC [inline]\fP"
+
+.SS "template<typename T> \fBFlexArray\fP< T >::~\fBFlexArray\fP ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "template<typename T> int \fBFlexArray\fP< T >::GetCurrentSize () const\fC [inline]\fP"
+
+.SS "template<typename T> void \fBFlexArray\fP< T >::Insert (T NewItem, int Index)\fC [inline]\fP"
+
+.SS "template<typename T> T \fBFlexArray\fP< T >::operator[] (int Index) const\fC [inline]\fP"
+
+.SS "template<typename T> void \fBFlexArray\fP< T >::PushBack (T NewItem)\fC [inline]\fP"
+
+.SS "template<typename T> void \fBFlexArray\fP< T >::Reallocate (int Capacity)\fC [inline]\fP"
+
+.SS "template<typename T> void \fBFlexArray\fP< T >::Remove (T Item)\fC [inline]\fP"
+
+.SS "template<> void \fBFlexArray\fP< \fBs8\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBu8\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBs16\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBu16\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBs32\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBu32\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< std::string >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< float >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<typename T > void \fBFlexArray\fP< T >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBs8\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBu8\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBs16\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBu16\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBs32\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< \fBu32\fP >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< std::string >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "template<> void \fBFlexArray\fP< float >::Serialize (\fBMemoryStreamInterface\fP * pStream)"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

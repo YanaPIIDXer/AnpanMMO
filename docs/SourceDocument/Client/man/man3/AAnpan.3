@@ -1,0 +1,112 @@
+.TH "AAnpan" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AAnpan
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Anpan\&.h>\fP
+.PP
+\fBACharacterBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAAnpan\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~AAnpan\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBBeginPlay\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBPossessedBy\fP (AController *NewController) override"
+.br
+.ti -1c
+.RI "uint32 \fBGetUuid\fP () const"
+.br
+.ti -1c
+.RI "void \fBMove\fP (float X, float Y, float Z, int32 Time)"
+.br
+.ti -1c
+.RI "void \fBRotate\fP (float Rotation, int32 Time)"
+.br
+.ti -1c
+.RI "void \fBStop\fP (float X, float Y, float Z, float Rotation)"
+.br
+.ti -1c
+.RI "virtual \fBECharacterType\fP \fBGetCharacterType\fP () const override"
+.br
+.ti -1c
+.RI "float \fBGetHalfHeight\fP () const override"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBAAnpan\fP * \fBSpawn\fP (UWorld *pWorld, const \fBAnpanData\fP &Data)"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "FVector \fBGetFootPosition\fP () const"
+.br
+.in -1c
+.SS "限定公開変数類"
+
+.in +1c
+.ti -1c
+.RI "float \fBScaleRate\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+アンパンクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "AAnpan::AAnpan (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual AAnpan::~AAnpan ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void AAnpan::BeginPlay ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "virtual \fBECharacterType\fP AAnpan::GetCharacterType () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "FVector AAnpan::GetFootPosition () const\fC [protected]\fP"
+
+.SS "float AAnpan::GetHalfHeight () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "uint32 AAnpan::GetUuid () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "void AAnpan::Move (float X, float Y, float Z, int32 Time)"
+
+.SS "void AAnpan::PossessedBy (AController * NewController)\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void AAnpan::Rotate (float Rotation, int32 Time)"
+
+.SS "\fBAAnpan\fP * AAnpan::Spawn (UWorld * pWorld, const \fBAnpanData\fP & Data)\fC [static]\fP"
+
+.SS "void AAnpan::Stop (float X, float Y, float Z, float Rotation)"
+
+.SH "メンバ詳解"
+.PP 
+.SS "float AAnpan::ScaleRate\fC [protected]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

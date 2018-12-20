@@ -1,0 +1,71 @@
+.TH "UWarpAreaList" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UWarpAreaList
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WarpAreaList\&.h>\fP
+.PP
+\fBULayeredMenuWidgetBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBUWarpAreaList\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~UWarpAreaList\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBNativeConstruct\fP () override"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static void \fBCreate\fP (UObject *pOuter, uint32 Id)"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBAddItem\fP (int32 Id, int32 AreaId, const FString &Name)"
+.br
+.ti -1c
+.RI "void \fBAddItem_Implementation\fP (int32 Id, int32 AreaId, const FString &Name)"
+.br
+.ti -1c
+.RI "void \fBSendAreaMoveRequest\fP (int32 MoveId, int32 AreaId)"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+ワープエリアリスト 
+.SH "構築子と解体子"
+.PP 
+.SS "UWarpAreaList::UWarpAreaList (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual UWarpAreaList::~UWarpAreaList ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void UWarpAreaList::AddItem (int32 Id, int32 AreaId, const FString & Name)\fC [protected]\fP"
+
+.SS "void UWarpAreaList::AddItem_Implementation (int32 Id, int32 AreaId, const FString & Name)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void UWarpAreaList::Create (UObject * pOuter, uint32 Id)\fC [static]\fP"
+
+.SS "void UWarpAreaList::NativeConstruct ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void UWarpAreaList::SendAreaMoveRequest (int32 MoveId, int32 AreaId)\fC [protected]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

@@ -1,0 +1,62 @@
+.TH "AAnpanController" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AAnpanController
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AnpanController\&.h>\fP
+.PP
+AControllerを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAAnpanController\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~AAnpanController\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBPossess\fP (APawn *aPawn) override"
+.br
+.ti -1c
+.RI "virtual void \fBTick\fP (float DeltaTime) override"
+.br
+.ti -1c
+.RI "void \fBMove\fP (float X, float Y, float Z, int32 Time)"
+.br
+.ti -1c
+.RI "void \fBRotate\fP (float Rotation, int32 Time)"
+.br
+.ti -1c
+.RI "void \fBStop\fP (float X, float Y, float Z, float Rotation)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+アンパンコントローラクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "AAnpanController::AAnpanController (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual AAnpanController::~AAnpanController ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void AAnpanController::Move (float X, float Y, float Z, int32 Time)"
+
+.SS "void AAnpanController::Possess (APawn * aPawn)\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void AAnpanController::Rotate (float Rotation, int32 Time)"
+
+.SS "void AAnpanController::Stop (float X, float Y, float Z, float Rotation)"
+
+.SS "void AAnpanController::Tick (float DeltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

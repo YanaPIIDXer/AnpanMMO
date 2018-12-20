@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: PlayerManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classPlayerManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">PlayerManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="PlayerManager_8h_source.html">PlayerManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae093e4e4e7eecdf5b46de72f5827d71d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#ae093e4e4e7eecdf5b46de72f5827d71d">PlayerManager</a> ()</td></tr>
+<tr class="separator:ae093e4e4e7eecdf5b46de72f5827d71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53de6b16914b7591fc2bd3038069ac7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#ab53de6b16914b7591fc2bd3038069ac7">~PlayerManager</a> ()</td></tr>
+<tr class="separator:ab53de6b16914b7591fc2bd3038069ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6241df16241ba0a0eb7faf8cc60005ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#a6241df16241ba0a0eb7faf8cc60005ec">SetWorld</a> (UWorld *pInWorld)</td></tr>
+<tr class="separator:a6241df16241ba0a0eb7faf8cc60005ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65d7640778fe9fc5ae019a3cc9d44c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#ad65d7640778fe9fc5ae019a3cc9d44c4">Add</a> (uint8 Uuid, <a class="el" href="classAPlayerCharacterBase.html">APlayerCharacterBase</a> *pPlayer)</td></tr>
+<tr class="separator:ad65d7640778fe9fc5ae019a3cc9d44c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49de8103c3f25663549d0261ae1e218a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAPlayerCharacterBase.html">APlayerCharacterBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#a49de8103c3f25663549d0261ae1e218a">Get</a> (uint32 Uuid) const</td></tr>
+<tr class="separator:a49de8103c3f25663549d0261ae1e218a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ea3844e4d468b4b162e6999fcb93c0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#a6ea3844e4d468b4b162e6999fcb93c0c">OnRecvSpawn</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="separator:a6ea3844e4d468b4b162e6999fcb93c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a921eedc7d1b0b98dc50769ee5b16d69a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#a921eedc7d1b0b98dc50769ee5b16d69a">OnRecvList</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="separator:a921eedc7d1b0b98dc50769ee5b16d69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb3edb3e3b77309a61afdbeedcf82932"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#afb3edb3e3b77309a61afdbeedcf82932">OnRecvMove</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="separator:afb3edb3e3b77309a61afdbeedcf82932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc38528df503b36d20ad45bbae25e108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#afc38528df503b36d20ad45bbae25e108">OnRecvExit</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="separator:afc38528df503b36d20ad45bbae25e108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4b15d5b40dd78989c908a2246579c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerManager.html#a4f4b15d5b40dd78989c908a2246579c2">Reset</a> ()</td></tr>
+<tr class="separator:a4f4b15d5b40dd78989c908a2246579c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>プレイヤー管理. </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ae093e4e4e7eecdf5b46de72f5827d71d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae093e4e4e7eecdf5b46de72f5827d71d">&#9670;&nbsp;</a></span>PlayerManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlayerManager::PlayerManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab53de6b16914b7591fc2bd3038069ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53de6b16914b7591fc2bd3038069ac7">&#9670;&nbsp;</a></span>~PlayerManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlayerManager::~PlayerManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ad65d7640778fe9fc5ae019a3cc9d44c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65d7640778fe9fc5ae019a3cc9d44c4">&#9670;&nbsp;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerManager::Add </td>
+          <td>(</td>
+          <td class="paramtype">uint8&#160;</td>
+          <td class="paramname"><em>Uuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classAPlayerCharacterBase.html">APlayerCharacterBase</a> *&#160;</td>
+          <td class="paramname"><em>pPlayer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a49de8103c3f25663549d0261ae1e218a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49de8103c3f25663549d0261ae1e218a">&#9670;&nbsp;</a></span>Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAPlayerCharacterBase.html">APlayerCharacterBase</a> * PlayerManager::Get </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>Uuid</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc38528df503b36d20ad45bbae25e108"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc38528df503b36d20ad45bbae25e108">&#9670;&nbsp;</a></span>OnRecvExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerManager::OnRecvExit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a921eedc7d1b0b98dc50769ee5b16d69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a921eedc7d1b0b98dc50769ee5b16d69a">&#9670;&nbsp;</a></span>OnRecvList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerManager::OnRecvList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afb3edb3e3b77309a61afdbeedcf82932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb3edb3e3b77309a61afdbeedcf82932">&#9670;&nbsp;</a></span>OnRecvMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerManager::OnRecvMove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ea3844e4d468b4b162e6999fcb93c0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea3844e4d468b4b162e6999fcb93c0c">&#9670;&nbsp;</a></span>OnRecvSpawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerManager::OnRecvSpawn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f4b15d5b40dd78989c908a2246579c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f4b15d5b40dd78989c908a2246579c2">&#9670;&nbsp;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerManager::Reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6241df16241ba0a0eb7faf8cc60005ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6241df16241ba0a0eb7faf8cc60005ec">&#9670;&nbsp;</a></span>SetWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerManager::SetWorld </td>
+          <td>(</td>
+          <td class="paramtype">UWorld *&#160;</td>
+          <td class="paramname"><em>pInWorld</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="PlayerManager_8h_source.html">PlayerManager.h</a></li>
+<li><a class="el" href="PlayerManager_8cpp.html">PlayerManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
