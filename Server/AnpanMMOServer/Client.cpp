@@ -1,3 +1,9 @@
+/**
+ * @file Client.h
+ * @brief クライアントクラス
+ * @author YanaP
+ */
+
 #include "stdafx.h"
 #include "Client.h"
 #include "Packet/PacketBase.h"
