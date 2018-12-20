@@ -94,6 +94,12 @@ public:
 	// クエスト破棄.
 	void RetireQuest(uint32 QuestId);
 
+	// アクティブクエストを設定.
+	void SetActiveQuest(uint32 QuestId) { QuestMgr.SetActiveQuest(QuestId); }
+
+	// アクティブクエストの情報を取得.
+	const QuestData *GetActiveQuestData() { return QuestMgr.GetActiveQuestData(); }
+
 
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;

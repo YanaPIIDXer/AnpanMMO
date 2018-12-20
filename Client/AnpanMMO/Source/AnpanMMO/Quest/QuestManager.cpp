@@ -4,6 +4,7 @@
 
 // コンストラクタ
 QuestManager::QuestManager()
+	: ActiveQuestId(0)
 {
 }
 
@@ -77,4 +78,11 @@ TArray<const QuestData *> QuestManager::CollectProgressingQuests() const
 	}
 
 	return List;
+}
+
+// アクティブクエストのデータを取得.
+const QuestData *QuestManager::GetActiveQuestData() const
+{
+	if (!Quests.Contains(ActiveQuestId)) { return nullptr; }
+	return &Quests[ActiveQuestId];
 }

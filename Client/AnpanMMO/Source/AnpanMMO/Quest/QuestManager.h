@@ -47,9 +47,18 @@ public:
 	// 進行中のクエストを列挙.
 	TArray<const QuestData *> CollectProgressingQuests() const;
 
+	// アクティブクエストを設定.
+	void SetActiveQuest(uint32 QuestId) { ActiveQuestId = QuestId; }
+
+	// アクティブクエストのデータを取得.
+	const QuestData *GetActiveQuestData() const;
+
 private:
 
 	// クエストマップ
 	QuestMap Quests;
+
+	// アクティブクエストＩＤ
+	uint32 ActiveQuestId;
 
 };

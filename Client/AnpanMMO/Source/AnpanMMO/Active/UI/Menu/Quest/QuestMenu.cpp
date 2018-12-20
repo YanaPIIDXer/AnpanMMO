@@ -35,6 +35,8 @@ void UQuestMenu::Init()
 
 	TArray<const QuestData *> List = pInst->GetQuestManager().CollectProgressingQuests();
 	TArray<FQuestData> DataList;
+
+	const QuestData *pActiveQuestData = pInst->GetActiveQuestData();
 	for (const auto *pData : List)
 	{
 		const QuestItem *pItem = MasterData::GetInstance().GetQuestMaster().Get(pData->QuestId);
@@ -45,7 +47,7 @@ void UQuestMenu::Init()
 		Data.Name = pItem->Name;
 		Data.Explain = pItem->Explain;
 		Data.bIsMainQuest = (pItem->Type == QuestItem::MAIN_QUEST);
-		Data.bIsActive = false;		// @TODO:後で対応.
+		Data.bIsActive = (pActiveQuestData != nullptr && pActiveQuestData->QuestId == pItem->Id);
 		if (Data.bIsMainQuest)
 		{
 			// メインクエストは先頭に。
@@ -78,6 +80,8 @@ void UQuestMenu::ChangeActiveQuest(const FQuestData &Data)
 
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
 	check(pInst != nullptr);
+
+	pInst->SetActiveQuest(Data.QuestId);
 
 	pInst->SendPacket(&Packet);
 }

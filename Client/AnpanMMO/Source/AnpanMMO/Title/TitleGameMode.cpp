@@ -229,6 +229,8 @@ void ATitleGameMode::OnRecvQuestData(MemoryStreamInterface *pStream)
 	{
 		pInst->AddQuestData(Packet.Quests[i]);
 	}
+
+	pInst->SetActiveQuest(Packet.ActiveQuestId);
 }
 
 // ゲーム画面に進む準備が出来た。
