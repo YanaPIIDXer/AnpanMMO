@@ -5,6 +5,7 @@ rem fetch remote branch
 git fetch origin Work
 git checkout Work
 git merge origin/Work
+git pull
 
 rem Client
 cd %DOCUMENT_ROOT%\Client\
