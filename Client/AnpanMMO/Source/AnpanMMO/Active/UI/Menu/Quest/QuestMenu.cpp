@@ -31,7 +31,15 @@ void UQuestMenu::Init()
 		Data.Explain = pItem->Explain;
 		Data.bIsMainQuest = (pItem->Type == QuestItem::MAIN_QUEST);
 		Data.bIsActive = false;		// @TODO:後で対応.
-		DataList.Add(Data);
+		if (Data.bIsMainQuest)
+		{
+			// メインクエストは先頭に。
+			DataList.Insert(Data, 0);
+		}
+		else
+		{
+			DataList.Add(Data);
+		}
 	}
 
 	InitEvent(DataList);
