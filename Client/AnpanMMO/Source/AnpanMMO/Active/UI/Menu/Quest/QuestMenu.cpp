@@ -4,6 +4,8 @@
 #include "MMOGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 #include "Master/MasterData.h"
+#include "Packet/PacketQuestRetireRequest.h"
+#include "Packet/PacketSaveActiveQuest.h"
 
 // コンストラクタ
 UQuestMenu::UQuestMenu(const FObjectInitializer &ObjectInitializer)
@@ -43,4 +45,26 @@ void UQuestMenu::Init()
 	}
 
 	InitEvent(DataList);
+}
+
+// クエスト破棄.
+void UQuestMenu::RetireQuest(const FQuestData &Data)
+{
+	PacketQuestRetireRequest Packet(Data.QuestId);
+
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	pInst->SendPacket(&Packet);
+}
+
+// アクティブクエストを変更.
+void UQuestMenu::ChangeActiveQuest(const FQuestData &Data)
+{
+	PacketSaveActiveQuest Packet(Data.QuestId);
+
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	pInst->SendPacket(&Packet);
 }
