@@ -2,6 +2,7 @@
 
 #include "QuestManager.h"
 #include "MMOGameInstance.h"
+#include "Master/MasterData.h"
 #include "Packet/PacketSaveActiveQuest.h"
 
 // コンストラクタ
@@ -28,6 +29,19 @@ void QuestManager::Add(const QuestData &Data)
 	{
 		// とりあえず上書き。
 		Quests[Data.QuestId] = Data;
+	}
+
+	const QuestItem *pItem = MasterData::GetInstance().GetQuestMaster().Get(Data.QuestId);
+	check(pItem != nullptr);
+	const QuestItem *pActiveItem = MasterData::GetInstance().GetQuestMaster().Get(ActiveQuestId);
+	if (pActiveItem == nullptr) { return; }
+
+	// アクティブクエストがメインクエストだった場合、
+	// 尚且つ受注したクエストがメインクエストだった場合、
+	// アクティブクエストを新しいメインクエストに変更する。
+	if (pItem->Type == QuestItem::MAIN_QUEST && pActiveItem->Type == QuestItem::MAIN_QUEST)
+	{
+		SetActiveQuest(Data.QuestId, true);
 	}
 }
 
@@ -105,6 +119,9 @@ TArray<const QuestData *> QuestManager::CollectProgressingQuests() const
 void QuestManager::SetActiveQuest(uint32 QuestId, bool bSendSavePacket)
 {
 	ActiveQuestId = QuestId;
+
+	OnActiveQuestUpdated.ExecuteIfBound(&Quests[QuestId]);
+
 	if (bSendSavePacket)
 	{
 		PacketSaveActiveQuest Packet(QuestId);
