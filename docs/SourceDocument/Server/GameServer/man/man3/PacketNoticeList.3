@@ -1,0 +1,59 @@
+.TH "PacketNoticeList" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PacketNoticeList
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PacketNoticeList\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBPacketNoticeList\fP ()"
+.br
+.ti -1c
+.RI "\fBPacketNoticeList\fP (\fBFlexArray\fP< \fBNoticeData\fP > InNotices)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBFlexArray\fP< \fBNoticeData\fP > \fBNotices\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PacketNoticeList::PacketNoticeList ()\fC [inline]\fP"
+
+.SS "PacketNoticeList::PacketNoticeList (\fBFlexArray\fP< \fBNoticeData\fP > InNotices)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP PacketNoticeList::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SS "bool PacketNoticeList::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBFlexArray\fP<\fBNoticeData\fP> PacketNoticeList::Notices"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

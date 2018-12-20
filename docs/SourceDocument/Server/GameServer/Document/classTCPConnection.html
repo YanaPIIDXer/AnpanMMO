@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: TCPConnection クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="classTCPConnection-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">TCPConnection クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="TCPConnection_8h_source.html">TCPConnection.h</a>&gt;</code></p>
+<div class="dynheader">
+TCPConnection の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classTCPConnection__inherit__graph.png" border="0" usemap="#TCPConnection_inherit__map" alt="Inheritance graph"/></div>
+<map name="TCPConnection_inherit__map" id="TCPConnection_inherit__map">
+<area shape="rect" id="node2" href="classCacheServerConnection.html" title="CacheServerConnection" alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node3" href="classClient.html" title="クライアントクラス " alt="" coords="190,80,245,107"/>
+<area shape="rect" id="node4" href="classWordCheckServerConnection.html" title="WordCheckServerConnection" alt="" coords="269,80,459,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+TCPConnection 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classTCPConnection__coll__graph.png" border="0" usemap="#TCPConnection_coll__map" alt="Collaboration graph"/></div>
+<map name="TCPConnection_coll__map" id="TCPConnection_coll__map">
+<area shape="rect" id="node2" href="classMemoryBuffer.html" title="MemoryBuffer" alt="" coords="10,5,113,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae1956568836381e3015a1ae4fa9db311"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#ae1956568836381e3015a1ae4fa9db311">TCPConnection</a> (const shared_ptr&lt; tcp::socket &gt; &amp;pInSocket)</td></tr>
+<tr class="separator:ae1956568836381e3015a1ae4fa9db311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2ec6e845bc1e69e2eb1d7ebb1c90cf"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#a4e2ec6e845bc1e69e2eb1d7ebb1c90cf">~TCPConnection</a> ()=0</td></tr>
+<tr class="separator:a4e2ec6e845bc1e69e2eb1d7ebb1c90cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea4f4e91745fad91189a7b5fe8b2717"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#a0ea4f4e91745fad91189a7b5fe8b2717">IsConnected</a> () const</td></tr>
+<tr class="separator:a0ea4f4e91745fad91189a7b5fe8b2717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a373f4c028cd3f53bb2b1fe82c25464c4"><td class="memItemLeft" align="right" valign="top">tcp::socket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#a373f4c028cd3f53bb2b1fe82c25464c4">GetSocket</a> ()</td></tr>
+<tr class="separator:a373f4c028cd3f53bb2b1fe82c25464c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc370c27676080e6a90743b4a6ea3e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#afdc370c27676080e6a90743b4a6ea3e2">AsyncRecv</a> ()</td></tr>
+<tr class="separator:afdc370c27676080e6a90743b4a6ea3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03f8dd8314b0e72d3f6e21d6c6bf3cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#af03f8dd8314b0e72d3f6e21d6c6bf3cc">OnRecvData</a> (size_t Size)</td></tr>
+<tr class="separator:af03f8dd8314b0e72d3f6e21d6c6bf3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80854d5f4dc2e262751d146cb2582ab"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#af80854d5f4dc2e262751d146cb2582ab">OnDisconnected</a> ()</td></tr>
+<tr class="separator:af80854d5f4dc2e262751d146cb2582ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2add2f8d17c25e01d3fa21d98491f9fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd">AsyncSend</a> (const <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> *pBuffer, int Size)</td></tr>
+<tr class="separator:a2add2f8d17c25e01d3fa21d98491f9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:ab248fc147fd4597825b49dfdd376c7da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMemoryBuffer.html">MemoryBuffer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#ab248fc147fd4597825b49dfdd376c7da">RecvBuffer</a></td></tr>
+<tr class="separator:ab248fc147fd4597825b49dfdd376c7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9285aa2ebd3a615d5c433faa8718b3c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#a9285aa2ebd3a615d5c433faa8718b3c5">bIsConnected</a></td></tr>
+<tr class="separator:a9285aa2ebd3a615d5c433faa8718b3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>TCP接続クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="ae1956568836381e3015a1ae4fa9db311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1956568836381e3015a1ae4fa9db311">&#9670;&nbsp;</a></span>TCPConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TCPConnection::TCPConnection </td>
+          <td>(</td>
+          <td class="paramtype">const shared_ptr&lt; tcp::socket &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pInSocket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e2ec6e845bc1e69e2eb1d7ebb1c90cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2ec6e845bc1e69e2eb1d7ebb1c90cf">&#9670;&nbsp;</a></span>~TCPConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TCPConnection::~TCPConnection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="afdc370c27676080e6a90743b4a6ea3e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc370c27676080e6a90743b4a6ea3e2">&#9670;&nbsp;</a></span>AsyncRecv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCPConnection::AsyncRecv </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2add2f8d17c25e01d3fa21d98491f9fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2add2f8d17c25e01d3fa21d98491f9fd">&#9670;&nbsp;</a></span>AsyncSend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TCPConnection::AsyncSend </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> *&#160;</td>
+          <td class="paramname"><em>pBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a373f4c028cd3f53bb2b1fe82c25464c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373f4c028cd3f53bb2b1fe82c25464c4">&#9670;&nbsp;</a></span>GetSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tcp::socket* TCPConnection::GetSocket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ea4f4e91745fad91189a7b5fe8b2717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea4f4e91745fad91189a7b5fe8b2717">&#9670;&nbsp;</a></span>IsConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TCPConnection::IsConnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af80854d5f4dc2e262751d146cb2582ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80854d5f4dc2e262751d146cb2582ab">&#9670;&nbsp;</a></span>OnDisconnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void TCPConnection::OnDisconnected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classCacheServerConnection.html#a4df9b6ae4280d56bb0a98dd326aa0391">CacheServerConnection</a>, <a class="el" href="classWordCheckServerConnection.html#aaa2ff1e4147a3867d79a1b7c2d23503f">WordCheckServerConnection</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="af03f8dd8314b0e72d3f6e21d6c6bf3cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03f8dd8314b0e72d3f6e21d6c6bf3cc">&#9670;&nbsp;</a></span>OnRecvData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void TCPConnection::OnRecvData </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>Size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classClient.html#a4b0db04a1228e3ee23255bcee1ab546e">Client</a>, <a class="el" href="classCacheServerConnection.html#a2be522fed646b5acd3259c0f904990a3">CacheServerConnection</a>, <a class="el" href="classWordCheckServerConnection.html#a7963b274f852847c4ea928a7da4040d8">WordCheckServerConnection</a>で再実装されています。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a9285aa2ebd3a615d5c433faa8718b3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9285aa2ebd3a615d5c433faa8718b3c5">&#9670;&nbsp;</a></span>bIsConnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TCPConnection::bIsConnected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab248fc147fd4597825b49dfdd376c7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab248fc147fd4597825b49dfdd376c7da">&#9670;&nbsp;</a></span>RecvBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMemoryBuffer.html">MemoryBuffer</a> TCPConnection::RecvBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="TCPConnection_8h_source.html">TCPConnection.h</a></li>
+<li><a class="el" href="TCPConnection_8cpp.html">TCPConnection.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

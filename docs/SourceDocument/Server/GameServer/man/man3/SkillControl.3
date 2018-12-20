@@ -1,0 +1,105 @@
+.TH "SkillControl" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SkillControl
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SkillControl\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSkillControl\fP (\fBCharacterBase\fP *pInOwner)"
+.br
+.ti -1c
+.RI "\fB~SkillControl\fP ()"
+.br
+.ti -1c
+.RI "void \fBPoll\fP (\fBs32\fP DeltaTime)"
+.br
+.ti -1c
+.RI "void \fBUse\fP (\fBu32\fP InSkillId, \fBCharacterPtr\fP pInTarget)"
+.br
+.ti -1c
+.RI "void \fBUseItem\fP (\fBu32\fP InItemId, \fBCharacterPtr\fP pInTarget)"
+.br
+.ti -1c
+.RI "\fBCharacterBase\fP * \fBGetOwner\fP () const"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGetSkillId\fP () const"
+.br
+.ti -1c
+.RI "\fBCharacterPtr\fP \fBGetTarget\fP () const"
+.br
+.ti -1c
+.RI "void \fBCastFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBCancel\fP (\fBu8\fP Reason)"
+.br
+.ti -1c
+.RI "void \fBActivate\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsActive\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsCasting\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetOnCancelFunction\fP (const OnCancelFunction &Func)"
+.br
+.ti -1c
+.RI "void \fBSetOnUsedItemFunction\fP (const OnUsedItemFunction &Func)"
+.br
+.ti -1c
+.RI "void \fBSetOnKilledFunction\fP (const OnKilledFunction &Func)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+スキル制御\&. 
+.SH "構築子と解体子"
+.PP 
+.SS "SkillControl::SkillControl (\fBCharacterBase\fP * pInOwner)"
+
+.SS "SkillControl::~SkillControl ()"
+
+.SH "関数詳解"
+.PP 
+.SS "void SkillControl::Activate ()"
+
+.SS "void SkillControl::Cancel (\fBu8\fP Reason)"
+
+.SS "void SkillControl::CastFinished ()"
+
+.SS "\fBCharacterBase\fP* SkillControl::GetOwner () const\fC [inline]\fP"
+
+.SS "\fBu32\fP SkillControl::GetSkillId () const\fC [inline]\fP"
+
+.SS "\fBCharacterPtr\fP SkillControl::GetTarget () const\fC [inline]\fP"
+
+.SS "bool SkillControl::IsActive () const"
+
+.SS "bool SkillControl::IsCasting () const"
+
+.SS "void SkillControl::Poll (\fBs32\fP DeltaTime)"
+
+.SS "void SkillControl::SetOnCancelFunction (const OnCancelFunction & Func)\fC [inline]\fP"
+
+.SS "void SkillControl::SetOnKilledFunction (const OnKilledFunction & Func)\fC [inline]\fP"
+
+.SS "void SkillControl::SetOnUsedItemFunction (const OnUsedItemFunction & Func)\fC [inline]\fP"
+
+.SS "void SkillControl::Use (\fBu32\fP InSkillId, \fBCharacterPtr\fP pInTarget)"
+
+.SS "void SkillControl::UseItem (\fBu32\fP InItemId, \fBCharacterPtr\fP pInTarget)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

@@ -1,0 +1,104 @@
+.TH "PacketCharacterStatus" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PacketCharacterStatus
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PacketCharacterStatus\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBPacketCharacterStatus\fP ()"
+.br
+.ti -1c
+.RI "\fBPacketCharacterStatus\fP (\fBu32\fP InUuid, std::string InName, \fBu8\fP InJob, \fBu32\fP InLevel, \fBs32\fP InHp, \fBs32\fP InMaxHp, \fBs32\fP InAtk, \fBs32\fP InDef, \fBs32\fP InExp, \fBu32\fP InGold)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBUuid\fP"
+.br
+.ti -1c
+.RI "std::string \fBName\fP"
+.br
+.ti -1c
+.RI "\fBu8\fP \fBJob\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBLevel\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBHp\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBMaxHp\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBAtk\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBDef\fP"
+.br
+.ti -1c
+.RI "\fBs32\fP \fBExp\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGold\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PacketCharacterStatus::PacketCharacterStatus ()\fC [inline]\fP"
+
+.SS "PacketCharacterStatus::PacketCharacterStatus (\fBu32\fP InUuid, std::string InName, \fBu8\fP InJob, \fBu32\fP InLevel, \fBs32\fP InHp, \fBs32\fP InMaxHp, \fBs32\fP InAtk, \fBs32\fP InDef, \fBs32\fP InExp, \fBu32\fP InGold)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP PacketCharacterStatus::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SS "bool PacketCharacterStatus::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBs32\fP PacketCharacterStatus::Atk"
+
+.SS "\fBs32\fP PacketCharacterStatus::Def"
+
+.SS "\fBs32\fP PacketCharacterStatus::Exp"
+
+.SS "\fBu32\fP PacketCharacterStatus::Gold"
+
+.SS "\fBs32\fP PacketCharacterStatus::Hp"
+
+.SS "\fBu8\fP PacketCharacterStatus::Job"
+
+.SS "\fBu32\fP PacketCharacterStatus::Level"
+
+.SS "\fBs32\fP PacketCharacterStatus::MaxHp"
+
+.SS "std::string PacketCharacterStatus::Name"
+
+.SS "\fBu32\fP PacketCharacterStatus::Uuid"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

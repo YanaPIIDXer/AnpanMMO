@@ -1,0 +1,35 @@
+.TH "WarpPointMaster" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WarpPointMaster
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WarpPointMaster\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "bool \fBLoad\fP (const \fBMySqlConnection\fP &Connection)"
+.br
+.ti -1c
+.RI "const \fBWarpPointItem\fP * \fBGetItem\fP (\fBu32\fP Key) const"
+.br
+.ti -1c
+.RI "std::vector< \fBWarpPointItem\fP > \fBGetAll\fP () const"
+.br
+.in -1c
+.SH "関数詳解"
+.PP 
+.SS "std::vector< \fBWarpPointItem\fP > WarpPointMaster::GetAll () const"
+
+.SS "const \fBWarpPointItem\fP * WarpPointMaster::GetItem (\fBu32\fP Key) const"
+
+.SS "bool WarpPointMaster::Load (const \fBMySqlConnection\fP & Connection)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

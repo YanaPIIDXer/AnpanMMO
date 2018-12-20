@@ -1,0 +1,752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: ScriptExecuterBase クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="classScriptExecuterBase-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">ScriptExecuterBase クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ScriptExecuterBase_8h_source.html">ScriptExecuterBase.h</a>&gt;</code></p>
+<div class="dynheader">
+ScriptExecuterBase の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classScriptExecuterBase__inherit__graph.png" border="0" usemap="#ScriptExecuterBase_inherit__map" alt="Inheritance graph"/></div>
+<map name="ScriptExecuterBase_inherit__map" id="ScriptExecuterBase_inherit__map">
+<area shape="rect" id="node2" href="classScriptExecuter.html" title="ScriptExecuter" alt="" coords="21,80,129,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a7806afa83ccf1d9c0b828317fb4ff3e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a7806afa83ccf1d9c0b828317fb4ff3e3">ScriptExecuterBase</a> ()</td></tr>
+<tr class="separator:a7806afa83ccf1d9c0b828317fb4ff3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75cb1a9903d4593e59c4f2626b5a373"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#ad75cb1a9903d4593e59c4f2626b5a373">~ScriptExecuterBase</a> ()</td></tr>
+<tr class="separator:ad75cb1a9903d4593e59c4f2626b5a373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f93fc0bda8ff3d0173e7edbe13560c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#ab0f93fc0bda8ff3d0173e7edbe13560c">SetScriptDir</a> (const char *pScriptDir)</td></tr>
+<tr class="separator:ab0f93fc0bda8ff3d0173e7edbe13560c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80542c0f12e8bd5b2f8cbe0ce681c521"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521">ExecuteScript</a> (const char *pScript)</td></tr>
+<tr class="separator:a80542c0f12e8bd5b2f8cbe0ce681c521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdcd42abb73d97defc33559893eace03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#abdcd42abb73d97defc33559893eace03">Resume</a> ()</td></tr>
+<tr class="separator:abdcd42abb73d97defc33559893eace03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7efcf67738ed8a6139ea9a4620bc703"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#ae7efcf67738ed8a6139ea9a4620bc703">IsFinished</a> () const</td></tr>
+<tr class="separator:ae7efcf67738ed8a6139ea9a4620bc703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c59828d465e91eee3ae63718aa964e3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a2c59828d465e91eee3ae63718aa964e3">ShowMessage_Impl</a> (const std::string &amp;Message)=0</td></tr>
+<tr class="separator:a2c59828d465e91eee3ae63718aa964e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc494a288aa30ce77df103d77bf3d6e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#adc494a288aa30ce77df103d77bf3d6e9">PushSelection_Impl</a> (const std::string &amp;Message)=0</td></tr>
+<tr class="separator:adc494a288aa30ce77df103d77bf3d6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeeb6ef0add20efeea695f551a683816"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#afeeb6ef0add20efeea695f551a683816">ShowSelection_Impl</a> ()=0</td></tr>
+<tr class="separator:afeeb6ef0add20efeea695f551a683816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab103683247db1bbb0adaa91672c2583a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a">OnSelectedSelection</a> (int Index)</td></tr>
+<tr class="separator:ab103683247db1bbb0adaa91672c2583a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa480306075704b8c4201ee0577a4fcfa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#aa480306075704b8c4201ee0577a4fcfa">SetFlag</a> (int Flag)=0</td></tr>
+<tr class="separator:aa480306075704b8c4201ee0577a4fcfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa69de27e3313f75f5edb2a915075fc1e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#aa69de27e3313f75f5edb2a915075fc1e">GetFlag</a> (int Flag)=0</td></tr>
+<tr class="separator:aa69de27e3313f75f5edb2a915075fc1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e7b9c10c7d681933c8b32ea4c84c72"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#af7e7b9c10c7d681933c8b32ea4c84c72">IsQuestActive</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> QuestId)=0</td></tr>
+<tr class="separator:af7e7b9c10c7d681933c8b32ea4c84c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6ce324266e4cd7902fd388714bb8482"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#aa6ce324266e4cd7902fd388714bb8482">ProgressQuest</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> QuestId)=0</td></tr>
+<tr class="separator:aa6ce324266e4cd7902fd388714bb8482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb1d7d4359c62076b9cf85491388a6f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a3eb1d7d4359c62076b9cf85491388a6f">GetQuestStageNo</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> QuestId)=0</td></tr>
+<tr class="separator:a3eb1d7d4359c62076b9cf85491388a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9235ecfcabec47de8bfcb9f0efe17a4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#aa9235ecfcabec47de8bfcb9f0efe17a4">GetItemCount</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ItemId)=0</td></tr>
+<tr class="separator:aa9235ecfcabec47de8bfcb9f0efe17a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b363076b93ded45903d2fc62612f98e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a7b363076b93ded45903d2fc62612f98e">ConsumeItem</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ItemId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Count)=0</td></tr>
+<tr class="separator:a7b363076b93ded45903d2fc62612f98e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfa5596b302c04df341a35266a42998"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a9cfa5596b302c04df341a35266a42998">AcceptQuest</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> QuestId)=0</td></tr>
+<tr class="separator:a9cfa5596b302c04df341a35266a42998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f88565d7ef21b2823d02396c349c44b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a6f88565d7ef21b2823d02396c349c44b">IsQuestClear</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> QuestId)=0</td></tr>
+<tr class="separator:a6f88565d7ef21b2823d02396c349c44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2f229d9f75d1399bfd27d3f48d1feea2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a2f229d9f75d1399bfd27d3f48d1feea2">OnExecuteError</a> (const std::string &amp;ErrorMessage)=0</td></tr>
+<tr class="separator:a2f229d9f75d1399bfd27d3f48d1feea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c2df7a037d011962fd3efc8a0ec5508"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a2c2df7a037d011962fd3efc8a0ec5508">OnFinished</a> ()=0</td></tr>
+<tr class="separator:a2c2df7a037d011962fd3efc8a0ec5508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96b9a0a81d5d7a67a56b0f87db424df1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a96b9a0a81d5d7a67a56b0f87db424df1">ShowDebugMessage</a> (const std::string &amp;Message)=0</td></tr>
+<tr class="separator:a96b9a0a81d5d7a67a56b0f87db424df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08445d39c88141803fb76c8defbac651"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a08445d39c88141803fb76c8defbac651">IsServer</a> () const =0</td></tr>
+<tr class="separator:a08445d39c88141803fb76c8defbac651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>スクリプト実行基底クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a7806afa83ccf1d9c0b828317fb4ff3e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7806afa83ccf1d9c0b828317fb4ff3e3">&#9670;&nbsp;</a></span>ScriptExecuterBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ScriptExecuterBase::ScriptExecuterBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad75cb1a9903d4593e59c4f2626b5a373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75cb1a9903d4593e59c4f2626b5a373">&#9670;&nbsp;</a></span>~ScriptExecuterBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ScriptExecuterBase::~ScriptExecuterBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a9cfa5596b302c04df341a35266a42998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfa5596b302c04df341a35266a42998">&#9670;&nbsp;</a></span>AcceptQuest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::AcceptQuest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>QuestId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a19372f6de313efc8773b5163f3f9ce90">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a7b363076b93ded45903d2fc62612f98e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b363076b93ded45903d2fc62612f98e">&#9670;&nbsp;</a></span>ConsumeItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::ConsumeItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>ItemId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a2578ede8840a091ed68a48ab8e5847b5">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a80542c0f12e8bd5b2f8cbe0ce681c521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80542c0f12e8bd5b2f8cbe0ce681c521">&#9670;&nbsp;</a></span>ExecuteScript()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScriptExecuterBase::ExecuteScript </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pScript</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa69de27e3313f75f5edb2a915075fc1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa69de27e3313f75f5edb2a915075fc1e">&#9670;&nbsp;</a></span>GetFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ScriptExecuterBase::GetFlag </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a22d62ba9ca8f243c1e9343a2cf4e551b">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="aa9235ecfcabec47de8bfcb9f0efe17a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9235ecfcabec47de8bfcb9f0efe17a4">&#9670;&nbsp;</a></span>GetItemCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ScriptExecuterBase::GetItemCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>ItemId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a9c29606ada41487570cff22f3cef6dfe">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a3eb1d7d4359c62076b9cf85491388a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eb1d7d4359c62076b9cf85491388a6f">&#9670;&nbsp;</a></span>GetQuestStageNo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ScriptExecuterBase::GetQuestStageNo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>QuestId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#af48fa3bbd7d8388b36968c4d75ee2f02">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="ae7efcf67738ed8a6139ea9a4620bc703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7efcf67738ed8a6139ea9a4620bc703">&#9670;&nbsp;</a></span>IsFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScriptExecuterBase::IsFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7e7b9c10c7d681933c8b32ea4c84c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7e7b9c10c7d681933c8b32ea4c84c72">&#9670;&nbsp;</a></span>IsQuestActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ScriptExecuterBase::IsQuestActive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>QuestId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a477ed2f589f241056fe5e68d7cf2abc8">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a6f88565d7ef21b2823d02396c349c44b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f88565d7ef21b2823d02396c349c44b">&#9670;&nbsp;</a></span>IsQuestClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ScriptExecuterBase::IsQuestClear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>QuestId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#ab71d3a5c4f5ca8a80d8506f3ea2cef99">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a08445d39c88141803fb76c8defbac651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08445d39c88141803fb76c8defbac651">&#9670;&nbsp;</a></span>IsServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ScriptExecuterBase::IsServer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a61ceae86cc63c5e43490ddb7266f80e6">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a2f229d9f75d1399bfd27d3f48d1feea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f229d9f75d1399bfd27d3f48d1feea2">&#9670;&nbsp;</a></span>OnExecuteError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::OnExecuteError </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ErrorMessage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#aa973aeadb9e9e814a9b91db01fdf073c">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a2c2df7a037d011962fd3efc8a0ec5508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2df7a037d011962fd3efc8a0ec5508">&#9670;&nbsp;</a></span>OnFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::OnFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a54ca2111fc1fa73e0110fa744755d51b">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="ab103683247db1bbb0adaa91672c2583a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab103683247db1bbb0adaa91672c2583a">&#9670;&nbsp;</a></span>OnSelectedSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScriptExecuterBase::OnSelectedSelection </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6ce324266e4cd7902fd388714bb8482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ce324266e4cd7902fd388714bb8482">&#9670;&nbsp;</a></span>ProgressQuest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::ProgressQuest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>QuestId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a0aeb0df9813d44b4314642cc6feb3653">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="adc494a288aa30ce77df103d77bf3d6e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc494a288aa30ce77df103d77bf3d6e9">&#9670;&nbsp;</a></span>PushSelection_Impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::PushSelection_Impl </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>Message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a040917b5207af38dcb2519ebab922715">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="abdcd42abb73d97defc33559893eace03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdcd42abb73d97defc33559893eace03">&#9670;&nbsp;</a></span>Resume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScriptExecuterBase::Resume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa480306075704b8c4201ee0577a4fcfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa480306075704b8c4201ee0577a4fcfa">&#9670;&nbsp;</a></span>SetFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::SetFlag </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#abaa4bc3d3f19cdc8b7890aada3750f38">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="ab0f93fc0bda8ff3d0173e7edbe13560c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f93fc0bda8ff3d0173e7edbe13560c">&#9670;&nbsp;</a></span>SetScriptDir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScriptExecuterBase::SetScriptDir </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pScriptDir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96b9a0a81d5d7a67a56b0f87db424df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96b9a0a81d5d7a67a56b0f87db424df1">&#9670;&nbsp;</a></span>ShowDebugMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::ShowDebugMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>Message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#aa64f254895689e1710ce1dd6f93b47ff">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a2c59828d465e91eee3ae63718aa964e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c59828d465e91eee3ae63718aa964e3">&#9670;&nbsp;</a></span>ShowMessage_Impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::ShowMessage_Impl </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>Message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#a9fb255567036528da86b17b6f0d1a36e">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="afeeb6ef0add20efeea695f551a683816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeeb6ef0add20efeea695f551a683816">&#9670;&nbsp;</a></span>ShowSelection_Impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuterBase::ShowSelection_Impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classScriptExecuter.html#ac01586aea660b44635c4ee38e3b69a9f">ScriptExecuter</a>で実装されています。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="ScriptExecuterBase_8h_source.html">ScriptExecuterBase.h</a></li>
+<li><a class="el" href="ScriptExecuterBase_8cpp.html">ScriptExecuterBase.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
