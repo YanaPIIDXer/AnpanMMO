@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "Packet/QuestData.h"
 
+DECLARE_DELEGATE_OneParam(FOnActiveQuestUpdated, const QuestData *);
+
 class UMMOGameInstance;
 
 /**
@@ -62,6 +64,9 @@ public:
 
 	// アクティブクエストのデータを取得.
 	const QuestData *GetActiveQuestData() const;
+
+	// アクティブクエストが更新された。
+	FOnActiveQuestUpdated OnActiveQuestUpdated;
 
 private:
 

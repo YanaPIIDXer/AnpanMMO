@@ -36,6 +36,10 @@ void QuestManager::KillAnpan(uint32 QuestId)
 {
 	if (!Quests.Contains(QuestId)) { return; }
 	Quests[QuestId].KillCount++;
+	if (QuestId == ActiveQuestId)
+	{
+		OnActiveQuestUpdated.ExecuteIfBound(&Quests[QuestId]);
+	}
 }
 
 // ステージ進行.
@@ -44,6 +48,10 @@ void QuestManager::ProgressStage(uint32 QuestId, uint32 StageNo)
 	if (!Quests.Contains(QuestId)) { return; }
 	Quests[QuestId].StageNo = StageNo;
 	Quests[QuestId].KillCount = 0;
+	if (QuestId == ActiveQuestId)
+	{
+		OnActiveQuestUpdated.ExecuteIfBound(&Quests[QuestId]);
+	}
 }
 
 // クリア
@@ -51,6 +59,10 @@ void QuestManager::Clear(uint32 QuestId)
 {
 	if (!Quests.Contains(QuestId)) { return; }
 	Quests[QuestId].State = QuestData::Cleared;
+	if (QuestId == ActiveQuestId)
+	{
+		OnActiveQuestUpdated.ExecuteIfBound(&Quests[QuestId]);
+	}
 }
 
 // 破棄.

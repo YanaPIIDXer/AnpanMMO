@@ -103,6 +103,9 @@ public:
 	// アクティブクエストの情報を取得.
 	const QuestData *GetActiveQuestData() { return QuestMgr.GetActiveQuestData(); }
 
+	// アクティブクエストが更新された時のdelegate取得.
+	FOnActiveQuestUpdated &OnActiveQuestUpdated() { return QuestMgr.OnActiveQuestUpdated; }
+
 
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;
