@@ -130,7 +130,7 @@ public:
 	/**
 	 * @fn const ScriptFlagManager &GetScriptFlagManager() const
 	 * @brief スクリプトフラグ管理取得.
-	 * return const ScriptFlagManager & スクリプトフラグ管理.
+	 * @return const ScriptFlagManager & スクリプトフラグ管理.
 	 */
 	const ScriptFlagManager &GetScriptFlagManager() const { return FlagManager; }
 
