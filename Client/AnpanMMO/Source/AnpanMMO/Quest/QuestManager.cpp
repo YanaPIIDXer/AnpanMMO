@@ -1,11 +1,20 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "QuestManager.h"
+#include "MMOGameInstance.h"
+#include "Packet/PacketSaveActiveQuest.h"
 
 // コンストラクタ
 QuestManager::QuestManager()
 	: ActiveQuestId(0)
+	, pInst(nullptr)
 {
+}
+
+// 初期化.
+void QuestManager::Initialize()
+{
+	Quests.Empty();
 }
 
 // 追加.
@@ -79,6 +88,18 @@ TArray<const QuestData *> QuestManager::CollectProgressingQuests() const
 
 	return List;
 }
+
+// アクティブクエストを設定.
+void QuestManager::SetActiveQuest(uint32 QuestId, bool bSendSavePacket)
+{
+	ActiveQuestId = QuestId;
+	if (bSendSavePacket)
+	{
+		PacketSaveActiveQuest Packet(QuestId);
+		pInst->SendPacket(&Packet);
+	}
+}
+
 
 // アクティブクエストのデータを取得.
 const QuestData *QuestManager::GetActiveQuestData() const

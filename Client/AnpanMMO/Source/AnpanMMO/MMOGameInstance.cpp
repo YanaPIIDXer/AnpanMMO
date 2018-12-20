@@ -18,6 +18,8 @@ void UMMOGameInstance::Init()
 {
 	Super::Init();
 
+	QuestMgr.SetGameInstance(this);
+
 	PakFileManager::GetInstance().Initialize();
 
 	Script.SetScriptDir(TCHAR_TO_UTF8(*Config::GetScriptDirectory()));

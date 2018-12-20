@@ -5,7 +5,6 @@
 #include "Kismet/GameplayStatics.h"
 #include "Master/MasterData.h"
 #include "Packet/PacketQuestRetireRequest.h"
-#include "Packet/PacketSaveActiveQuest.h"
 
 // コンストラクタ
 UQuestMenu::UQuestMenu(const FObjectInitializer &ObjectInitializer)
@@ -76,12 +75,8 @@ void UQuestMenu::RetireQuest(const FQuestData &Data)
 // アクティブクエストを変更.
 void UQuestMenu::ChangeActiveQuest(const FQuestData &Data)
 {
-	PacketSaveActiveQuest Packet(Data.QuestId);
-
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
 	check(pInst != nullptr);
 
-	pInst->SetActiveQuest(Data.QuestId);
-
-	pInst->SendPacket(&Packet);
+	pInst->SetActiveQuest(Data.QuestId, true);
 }

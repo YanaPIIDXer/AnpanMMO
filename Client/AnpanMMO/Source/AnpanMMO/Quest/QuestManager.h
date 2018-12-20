@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "Packet/QuestData.h"
 
+class UMMOGameInstance;
+
 /**
  * クエスト管理.
  */
@@ -22,6 +24,14 @@ public:
 
 	// デストラクタ
 	~QuestManager() {}
+
+	// GameInstanceを設定。
+	// ※本当はコンストラクタでやりたいんだけど、
+	//   コンストラクタでやると自動生成コードで怒られるので仕方なくの対処。
+	void SetGameInstance(UMMOGameInstance *pInInst) { pInst = pInInst; }
+
+	// 初期化.
+	void Initialize();
 
 	// 追加.
 	void Add(const QuestData &Data);
@@ -48,7 +58,7 @@ public:
 	TArray<const QuestData *> CollectProgressingQuests() const;
 
 	// アクティブクエストを設定.
-	void SetActiveQuest(uint32 QuestId) { ActiveQuestId = QuestId; }
+	void SetActiveQuest(uint32 QuestId, bool bSendSavePacket);
 
 	// アクティブクエストのデータを取得.
 	const QuestData *GetActiveQuestData() const;
@@ -60,5 +70,8 @@ private:
 
 	// アクティブクエストＩＤ
 	uint32 ActiveQuestId;
+
+	// GameInstance
+	TWeakObjectPtr<UMMOGameInstance> pInst;
 
 };
