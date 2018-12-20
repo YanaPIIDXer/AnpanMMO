@@ -13,4 +13,4 @@ rem Commit and Push
 cd %DOCUMENT_ROOT%
 git add *
 git commit -m "ドキュメントの更新。"
-git push origin master
+git push origin Work
