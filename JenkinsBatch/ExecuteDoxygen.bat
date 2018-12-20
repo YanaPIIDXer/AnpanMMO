@@ -1,6 +1,9 @@
 @echo off
 set DOCUMENT_ROOT=%WORKSPACE%\docs\SourceDocument
 
+rem fetch remote branch
+git fetch origin Work
+
 rem Client
 cd %DOCUMENT_ROOT%\Client\
 doxygen Doxyfile
@@ -11,7 +14,6 @@ doxygen Doxyfile
 
 rem Commit and Push
 cd %DOCUMENT_ROOT%
-git fetch origin Work
 git add *
 git commit -m "ドキュメントの更新。"
 git push origin Work
