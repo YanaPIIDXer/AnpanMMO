@@ -107,7 +107,7 @@ public:
 	/**
 	 * @fn void RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 	 * @brief パケット受信.
-	 * @detail 主に他サーバからのレスポンス受信時に使用する。
+	 * @details 主に他サーバからのレスポンス受信時に使用する。
 	 * @param[in] ID パケットＩＤ
 	 * @param[in] pStream ストリーム
 	 */
@@ -174,7 +174,7 @@ public:
 	/**
 	 * @fn void OnKilledAnpan(u32 AreaId)
 	 * @brief アンパン殺害.
-	 * @detail 殺害したエリアのＩＤを渡す。
+	 * @details 殺害したエリアのＩＤを渡す。
 	 * @param[in] AreaId 殺害したエリアＩＤ
 	 */
 	void OnKilledAnpan(u32 AreaId);
