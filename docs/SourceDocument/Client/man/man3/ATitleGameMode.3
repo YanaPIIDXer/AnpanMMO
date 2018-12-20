@@ -1,0 +1,63 @@
+.TH "ATitleGameMode" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ATitleGameMode
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TitleGameMode\&.h>\fP
+.PP
+\fBAMMOGameModeBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBATitleGameMode\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~ATitleGameMode\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBBeginPlay\fP () override"
+.br
+.ti -1c
+.RI "void \fBSendLogInRequest\fP ()"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBOnLogInResult\fP (bool bSuccess)"
+.br
+.ti -1c
+.RI "void \fBOnLogInResult_Implementation\fP (bool bSuccess)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+タイトル画面GameMode 
+.SH "構築子と解体子"
+.PP 
+.SS "ATitleGameMode::ATitleGameMode (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual ATitleGameMode::~ATitleGameMode ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void ATitleGameMode::BeginPlay ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAMMOGameModeBase\fPを再実装しています。
+.SS "void ATitleGameMode::OnLogInResult (bool bSuccess)\fC [protected]\fP"
+
+.SS "void ATitleGameMode::OnLogInResult_Implementation (bool bSuccess)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void ATitleGameMode::SendLogInRequest ()"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

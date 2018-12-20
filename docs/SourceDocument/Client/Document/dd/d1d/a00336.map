@@ -1,0 +1,18 @@
+<map id="MasterData.h" name="MasterData.h">
+<area shape="rect" id="node3" href="$de/d55/a00323.html" title="AreaMaster.h" alt="" coords="135,80,235,107"/>
+<area shape="rect" id="node7" href="$db/dbc/a00395.html" title="WarpDataMaster.h" alt="" coords="259,80,390,107"/>
+<area shape="rect" id="node8" href="$d7/d00/a00401.html" title="WarpPointMaster.h" alt="" coords="415,80,549,107"/>
+<area shape="rect" id="node9" href="$da/de0/a00317.html" title="AnpanMaster.h" alt="" coords="573,80,684,107"/>
+<area shape="rect" id="node10" href="$dc/dc9/a00389.html" title="TimeInfoMaster.h" alt="" coords="708,80,829,107"/>
+<area shape="rect" id="node11" href="$d1/dc6/a00347.html" title="NPCMaster.h" alt="" coords="853,80,953,107"/>
+<area shape="rect" id="node12" href="$db/ddc/a00353.html" title="NPCResourceMaster.h" alt="" coords="978,80,1133,107"/>
+<area shape="rect" id="node13" href="$d3/d93/a00341.html" title="NPCConditionMaster.h" alt="" coords="1157,80,1311,107"/>
+<area shape="rect" id="node14" href="$d4/d13/a00377.html" title="SkillMaster.h" alt="" coords="1335,80,1434,107"/>
+<area shape="rect" id="node15" href="$da/dee/a00383.html" title="SkillTreeMaster.h" alt="" coords="1458,80,1581,107"/>
+<area shape="rect" id="node16" href="$dd/d4e/a00329.html" title="ItemMaster.h" alt="" coords="1605,80,1703,107"/>
+<area shape="rect" id="node17" href="$d4/def/a00359.html" title="QuestMaster.h" alt="" coords="1728,80,1836,107"/>
+<area shape="rect" id="node18" href="$d6/d80/a00371.html" title="QuestStageMaster.h" alt="" coords="1860,80,2003,107"/>
+<area shape="rect" id="node19" href="$dd/db5/a00365.html" title="QuestRewardMaster.h" alt="" coords="2027,80,2177,107"/>
+<area shape="rect" id="node4" href="$d8/d91/a00410.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="1043,155,1247,196"/>
+<area shape="rect" id="node5" href="$df/de8/a00839.html" title="TypeDefs.h" alt="" coords="1055,244,1141,271"/>
+</map>

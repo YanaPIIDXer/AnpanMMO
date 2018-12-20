@@ -1,0 +1,59 @@
+.TH "PacketTimeChange" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PacketTimeChange
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PacketTimeChange\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBPacketTimeChange\fP ()"
+.br
+.ti -1c
+.RI "\fBPacketTimeChange\fP (\fBu32\fP InMasterId)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu32\fP \fBMasterId\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PacketTimeChange::PacketTimeChange ()\fC [inline]\fP"
+
+.SS "PacketTimeChange::PacketTimeChange (\fBu32\fP InMasterId)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP PacketTimeChange::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SS "bool PacketTimeChange::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBu32\fP PacketTimeChange::MasterId"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

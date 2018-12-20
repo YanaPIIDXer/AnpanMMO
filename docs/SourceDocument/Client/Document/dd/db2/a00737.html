@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: PingManager.cpp ファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_922c588100a187620fdc1533bc178f73.html">Client</a></li><li class="navelem"><a class="el" href="../../dir_f24dacf344806f6d5d2f1a89fba5b7da.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="../../dir_c4f82f6e8b5ec07f54af1897fd87ad3d.html">Source</a></li><li class="navelem"><a class="el" href="../../dir_2821647bb76fb81679b19f21c963d29a.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="../../dir_86f648a228ef143e88aceb92fdd255e8.html">Ping</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PingManager.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/dce/a00740_source.html">PingManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/dad/a00005_source.html">Active/ActiveGameMode.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d51/a00017_source.html">Active/UI/MainHUD.h</a>&quot;</code><br />
+<code>#include &quot;Kismet/GameplayStatics.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/dd3/a00428_source.html">MMOGameInstance.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d49/a00863_source.html">UI/SimpleDialog.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d14/a00608_source.html">Packet/PacketPing.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+PingManager.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/da6/a00738.png" border="0" usemap="#_ping_manager_8cpp" alt=""/></div>
+<map name="_ping_manager_8cpp" id="_ping_manager_8cpp">
+<area shape="rect" id="node2" href="../../dc/dce/a00740.html" title="PingManager.h" alt="" coords="422,155,531,181"/>
+<area shape="rect" id="node4" href="../../dd/dad/a00005.html" title="Active/ActiveGameMode.h" alt="" coords="1319,80,1493,107"/>
+<area shape="rect" id="node29" href="../../d4/d51/a00017.html" title="Active/UI/MainHUD.h" alt="" coords="2025,80,2168,107"/>
+<area shape="rect" id="node33" href="../../d4/dd3/a00428.html" title="MMOGameInstance.h" alt="" coords="2838,155,2987,181"/>
+<area shape="rect" id="node48" href="../../d7/d49/a00863.html" title="UI/SimpleDialog.h" alt="" coords="2259,80,2385,107"/>
+<area shape="rect" id="node50" href="../../d4/d14/a00608.html" title="Packet/PacketPing.h" alt="" coords="3792,304,3937,331"/>
+<area shape="rect" id="node5" href="../../d1/d7e/a00434.html" title="MMOGameModeBase.h" alt="" coords="377,304,539,331"/>
+<area shape="rect" id="node11" href="../../d1/da8/a00230.html" title="Character/Player/PlayerManager.h" alt="" coords="1221,155,1442,181"/>
+<area shape="rect" id="node16" href="../../db/ddf/a00164.html" title="Character/Anpan/AnpanManager.h" alt="" coords="1517,229,1738,256"/>
+<area shape="rect" id="node17" href="../../d3/d8a/a00899.html" title="WarpPoint/WarpPointManager.h" alt="" coords="1568,155,1777,181"/>
+<area shape="rect" id="node18" href="../../d6/dc0/a00734.html" title="Party/PartyInformation.h" alt="" coords="1863,229,2026,256"/>
+<area shape="rect" id="node24" href="../../de/df8/a00440.html" title="Notice/NoticeManager.h" alt="" coords="2152,229,2313,256"/>
+<area shape="rect" id="node26" href="../../d1/d5d/a00311.html" title="Level/TimeManager.h" alt="" coords="1053,155,1197,181"/>
+<area shape="rect" id="node27" href="../../d7/d25/a00182.html" title="Character/NPC/NPCManager.h" alt="" coords="607,155,808,181"/>
+<area shape="rect" id="node9" href="../../d4/d1f/a00506.html" title="Packet/PacketID.h" alt="" coords="2898,468,3029,495"/>
+<area shape="rect" id="node12" href="../../d5/ddf/a00224.html" title="PlayerCharacterBase.h" alt="" coords="1235,229,1391,256"/>
+<area shape="rect" id="node13" href="../../d5/dcb/a00170.html" title="Character/CharacterBase.h" alt="" coords="1362,304,1541,331"/>
+<area shape="rect" id="node19" href="../../dd/dd8/a00719.html" title="Packet/PartyMemberData.h" alt="" coords="2685,304,2868,331"/>
+<area shape="rect" id="node20" href="../../dc/d8e/a00473.html" title="PacketBase.h" alt="" coords="3027,386,3131,413"/>
+<area shape="rect" id="node22" href="../../d8/d91/a00410.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3284,379,3488,420"/>
+<area shape="rect" id="node21" href="../../df/de8/a00839.html" title="TypeDefs.h" alt="" coords="3247,468,3333,495"/>
+<area shape="rect" id="node25" href="../../dd/d63/a00455.html" title="Packet/NoticeData.h" alt="" coords="2892,304,3035,331"/>
+<area shape="rect" id="node35" href="../../d7/d03/a00254.html" title="Connection/GameServerConnection.h" alt="" coords="2571,229,2809,256"/>
+<area shape="rect" id="node39" href="../../d2/dc8/a00242.html" title="Character/Player/PlayerStatus.h" alt="" coords="2337,229,2547,256"/>
+<area shape="rect" id="node42" href="../../d3/d2c/a00764.html" title="Script/ScriptExecuter.h" alt="" coords="3559,304,3717,331"/>
+<area shape="rect" id="node44" href="../../d4/dfa/a00746.html" title="Quest/QuestManager.h" alt="" coords="2834,229,2991,256"/>
+<area shape="rect" id="node46" href="../../d2/d04/a00281.html" title="FlexArray.h" alt="" coords="3488,229,3577,256"/>
+<area shape="rect" id="node38" href="../../d9/db6/a00146.html" title="Buffer.h" alt="" coords="2493,304,2559,331"/>
+<area shape="rect" id="node40" href="../../df/d0c/a00788.html" title="Skill/SkillTree/SkillTree.h" alt="" coords="2251,304,2417,331"/>
+<area shape="rect" id="node41" href="../../d6/d82/a00293.html" title="Item/ItemList.h" alt="" coords="2067,304,2175,331"/>
+<area shape="rect" id="node43" href="../../d0/d7e/a00770.html" title="ScriptExecuterBase.h" alt="" coords="3563,386,3713,413"/>
+<area shape="rect" id="node45" href="../../d8/db9/a00725.html" title="Packet/QuestData.h" alt="" coords="3395,304,3535,331"/>
+</map>
+</div>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

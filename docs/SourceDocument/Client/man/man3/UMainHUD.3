@@ -1,0 +1,261 @@
+.TH "UMainHUD" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UMainHUD
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MainHUD\&.h>\fP
+.PP
+UUserWidgetを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBUMainHUD\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~UMainHUD\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBNativeConstruct\fP () override"
+.br
+.ti -1c
+.RI "void \fBOnHUDInitialize\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnHUDInitialize_Implementation\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnDamaged\fP (int32 Value)"
+.br
+.ti -1c
+.RI "void \fBOnDamaged_Implementation\fP (int32 Value)"
+.br
+.ti -1c
+.RI "void \fBOnHeal\fP (int32 Value)"
+.br
+.ti -1c
+.RI "void \fBOnHeal_Implementation\fP (int32 Value)"
+.br
+.ti -1c
+.RI "void \fBOnTargetChanged\fP (\fBACharacterBase\fP *pCharacter)"
+.br
+.ti -1c
+.RI "void \fBOnTargetChanged_Implementation\fP (\fBACharacterBase\fP *pCharacter)"
+.br
+.ti -1c
+.RI "void \fBOnRespawn\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnRespawn_Implementation\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnLevelUp\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnLevelUp_Implementation\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnStartMapChange\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnStartMapChange_Implementation\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnRecvMapChangeFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnRecvMapChangeFinished_Implementation\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnRecvChat\fP (const FString &Name, const FString &Message, bool bIsSelf)"
+.br
+.ti -1c
+.RI "void \fBOnRecvChat_Implementation\fP (const FString &Name, const FString &Message, bool bIsSelf)"
+.br
+.ti -1c
+.RI "void \fBShowSystemMessage\fP (const FString &Message)"
+.br
+.ti -1c
+.RI "void \fBShowSystemMessage_Implementation\fP (const FString &Message)"
+.br
+.ti -1c
+.RI "void \fBOnRecvSkillList\fP (int32 NormalAttack, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4)"
+.br
+.ti -1c
+.RI "void \fBOnRecvSkillList_Implementation\fP (int32 NormalAttack, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4)"
+.br
+.ti -1c
+.RI "void \fBOnStartRecast\fP (int32 SkillId)"
+.br
+.ti -1c
+.RI "void \fBOnStartRecast_Implementation\fP (int32 SkillId)"
+.br
+.ti -1c
+.RI "void \fBOnRecvSkillRecastFinished\fP (int32 SkillId)"
+.br
+.ti -1c
+.RI "void \fBOnRecvSkillRecastFinished_Implementation\fP (int32 SkillId)"
+.br
+.ti -1c
+.RI "void \fBUpdateItemShortcut\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnRecvNotice\fP (int32 Uuid, const \fBNoticeData\fP &Data)"
+.br
+.ti -1c
+.RI "void \fBOnLogOut\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnLogOut_Implementation\fP ()"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBUMainHUD\fP * \fBShow\fP (UObject *pOuter)"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBStartLevelLoad\fP ()"
+.br
+.ti -1c
+.RI "void \fBShowGameMenu\fP ()"
+.br
+.ti -1c
+.RI "bool \fBHasNotReadNotice\fP () const"
+.br
+.ti -1c
+.RI "void \fBShowNoticeMenu\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnUpdateItemShortcut\fP (const TArray< int32 > &ItemShortcut)"
+.br
+.ti -1c
+.RI "void \fBOnUpdateItemShortcut_Implementation\fP (const TArray< int32 > &ItemShortcut)"
+.br
+.ti -1c
+.RI "void \fBOnActiveQuestUpdatedEvent\fP (\fBEQuestType\fP Type, int32 TargetId, int32 CurrentCount, int32 MaxCount)"
+.br
+.ti -1c
+.RI "void \fBOnActiveQuestUpdatedEvent_Implementation\fP (\fBEQuestType\fP Type, int32 TargetId, int32 CurrentCount, int32 MaxCount)"
+.br
+.ti -1c
+.RI "void \fBShowActiveQuestData\fP ()"
+.br
+.in -1c
+.SS "限定公開変数類"
+
+.in +1c
+.ti -1c
+.RI "int32 \fBNotReadNoticeCount\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+メインHUD 
+.SH "構築子と解体子"
+.PP 
+.SS "UMainHUD::UMainHUD (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual UMainHUD::~UMainHUD ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "bool UMainHUD::HasNotReadNotice () const\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void UMainHUD::NativeConstruct ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void UMainHUD::OnActiveQuestUpdatedEvent (\fBEQuestType\fP Type, int32 TargetId, int32 CurrentCount, int32 MaxCount)\fC [protected]\fP"
+
+.SS "void UMainHUD::OnActiveQuestUpdatedEvent_Implementation (\fBEQuestType\fP Type, int32 TargetId, int32 CurrentCount, int32 MaxCount)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void UMainHUD::OnDamaged (int32 Value)"
+
+.SS "void UMainHUD::OnDamaged_Implementation (int32 Value)\fC [inline]\fP"
+
+.SS "void UMainHUD::OnHeal (int32 Value)"
+
+.SS "void UMainHUD::OnHeal_Implementation (int32 Value)\fC [inline]\fP"
+
+.SS "void UMainHUD::OnHUDInitialize ()"
+
+.SS "void UMainHUD::OnHUDInitialize_Implementation ()\fC [inline]\fP"
+
+.SS "void UMainHUD::OnLevelUp ()"
+
+.SS "void UMainHUD::OnLevelUp_Implementation ()\fC [inline]\fP"
+
+.SS "void UMainHUD::OnLogOut ()"
+
+.SS "void UMainHUD::OnLogOut_Implementation ()\fC [inline]\fP"
+
+.SS "void UMainHUD::OnRecvChat (const FString & Name, const FString & Message, bool bIsSelf)"
+
+.SS "void UMainHUD::OnRecvChat_Implementation (const FString & Name, const FString & Message, bool bIsSelf)\fC [inline]\fP"
+
+.SS "void UMainHUD::OnRecvMapChangeFinished ()"
+
+.SS "void UMainHUD::OnRecvMapChangeFinished_Implementation ()\fC [inline]\fP"
+
+.SS "void UMainHUD::OnRecvNotice (int32 Uuid, const \fBNoticeData\fP & Data)"
+
+.SS "void UMainHUD::OnRecvSkillList (int32 NormalAttack, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4)"
+
+.SS "void UMainHUD::OnRecvSkillList_Implementation (int32 NormalAttack, int32 Skill1, int32 Skill2, int32 Skill3, int32 Skill4)\fC [inline]\fP"
+
+.SS "void UMainHUD::OnRecvSkillRecastFinished (int32 SkillId)"
+
+.SS "void UMainHUD::OnRecvSkillRecastFinished_Implementation (int32 SkillId)\fC [inline]\fP"
+
+.SS "void UMainHUD::OnRespawn ()"
+
+.SS "void UMainHUD::OnRespawn_Implementation ()\fC [inline]\fP"
+
+.SS "void UMainHUD::OnStartMapChange ()"
+
+.SS "void UMainHUD::OnStartMapChange_Implementation ()\fC [inline]\fP"
+
+.SS "void UMainHUD::OnStartRecast (int32 SkillId)"
+
+.SS "void UMainHUD::OnStartRecast_Implementation (int32 SkillId)\fC [inline]\fP"
+
+.SS "void UMainHUD::OnTargetChanged (\fBACharacterBase\fP * pCharacter)"
+
+.SS "void UMainHUD::OnTargetChanged_Implementation (\fBACharacterBase\fP * pCharacter)\fC [inline]\fP"
+
+.SS "void UMainHUD::OnUpdateItemShortcut (const TArray< int32 > & ItemShortcut)\fC [protected]\fP"
+
+.SS "void UMainHUD::OnUpdateItemShortcut_Implementation (const TArray< int32 > & ItemShortcut)\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "\fBUMainHUD\fP * UMainHUD::Show (UObject * pOuter)\fC [static]\fP"
+
+.SS "void UMainHUD::ShowActiveQuestData ()\fC [protected]\fP"
+
+.SS "void UMainHUD::ShowGameMenu ()\fC [protected]\fP"
+
+.SS "void UMainHUD::ShowNoticeMenu ()\fC [protected]\fP"
+
+.SS "void UMainHUD::ShowSystemMessage (const FString & Message)"
+
+.SS "void UMainHUD::ShowSystemMessage_Implementation (const FString & Message)\fC [inline]\fP"
+
+.SS "void UMainHUD::StartLevelLoad ()\fC [protected]\fP"
+
+.SS "void UMainHUD::UpdateItemShortcut ()"
+
+.SH "メンバ詳解"
+.PP 
+.SS "int32 UMainHUD::NotReadNoticeCount\fC [protected]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

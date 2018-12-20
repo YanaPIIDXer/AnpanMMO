@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['targetid',['TargetId',['../d8/df3/a01216.html#ad4bffbeefe9c979e6d4ea81e7340745b',1,'QuestStageItem']]],
+  ['targettype',['TargetType',['../d2/d3f/a01356.html#afeccae27b13df8b8a88a9062fd86aef4',1,'PacketDamage::TargetType()'],['../df/d0b/a01372.html#a1f5531ac08a4daafab2ff398e6bff3c5',1,'PacketHeal::TargetType()'],['../dc/d10/a01412.html#af8552f18d6ca8b1332b488ad041f2bb3',1,'PacketItemUse::TargetType()'],['../dd/deb/a01628.html#a87d644d92b54ea2ed23e08ce51345b9b',1,'PacketSkillUse::TargetType()']]],
+  ['targetuuid',['TargetUuid',['../d2/d3f/a01356.html#afec2af9dcd28e52c422fb4313bb018f2',1,'PacketDamage::TargetUuid()'],['../df/d0b/a01372.html#ada9280890d56f562b50d3fa0a3b93e27',1,'PacketHeal::TargetUuid()'],['../dc/d10/a01412.html#ab3ab7d1b15b93b0d91a9bd532ae675ac',1,'PacketItemUse::TargetUuid()'],['../d1/d38/a01480.html#ad3441be04b42950e5e92da9134962f07',1,'PacketPartyInviteRequest::TargetUuid()'],['../dd/deb/a01628.html#a4c8e73408236649e878d8fb63414a12c',1,'PacketSkillUse::TargetUuid()']]],
+  ['ticketid',['TicketId',['../d7/dde/a01384.html#af3eb11cef0c25d97fc6f2294892ceea3',1,'PacketInstanceAreaTicketProcess::TicketId()'],['../d0/d36/a01388.html#a191bd2dc178e2bf7bc9d417e61aad539',1,'PacketInstanceAreaTicketPublish::TicketId()']]],
+  ['timetype',['TimeType',['../d5/d6e/a01240.html#ad1a8816074c57228b5ba704faf38d3df',1,'TimeInfoItem']]],
+  ['type',['Type',['../d9/d42/a01156.html#a1d0e77ff7efab1d7528edbfe4b671371',1,'AreaItem::Type()'],['../d2/dd2/a01164.html#af65017cc324a9ed0e8c3c31f1391494d',1,'ItemItem::Type()'],['../dc/dcc/a01200.html#a6b67335a6baeb2d22883d3213bb809b0',1,'QuestItem::Type()'],['../d9/d31/a01208.html#ac7dfad9f08c53ee42cd965f20549a461',1,'QuestRewardItem::Type()'],['../d7/d41/a01312.html#a1c0f78d9f0f9f0e26891df4bfc5e4d44',1,'NoticeData::Type()'],['../de/d40/a01592.html#a9d0194a0eb654c7d602effb72ee8eab9',1,'PacketSendChat::Type()']]]
+];

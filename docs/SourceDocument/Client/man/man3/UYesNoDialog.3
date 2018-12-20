@@ -1,0 +1,85 @@
+.TH "UYesNoDialog" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UYesNoDialog
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <YesNoDialog\&.h>\fP
+.PP
+UUserWidgetを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBUYesNoDialog\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~UYesNoDialog\fP ()"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBUYesNoDialog\fP * \fBShow\fP (UObject *pOuter, const FString &\fBDisplayText\fP, int32 ZOrder=0)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "FOnDialogResult \fBOnYes\fP"
+.br
+.ti -1c
+.RI "FOnDialogResult \fBOnNo\fP"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBOnSelectedYes\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnSelectedNo\fP ()"
+.br
+.in -1c
+.SS "限定公開変数類"
+
+.in +1c
+.ti -1c
+.RI "FString \fBDisplayText\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+はい・いいえのダイアログ 
+.SH "構築子と解体子"
+.PP 
+.SS "UYesNoDialog::UYesNoDialog (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual UYesNoDialog::~UYesNoDialog ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void UYesNoDialog::OnSelectedNo ()\fC [protected]\fP"
+
+.SS "void UYesNoDialog::OnSelectedYes ()\fC [protected]\fP"
+
+.SS "\fBUYesNoDialog\fP * UYesNoDialog::Show (UObject * pOuter, const FString & DisplayText, int32 ZOrder = \fC0\fP)\fC [static]\fP"
+
+.SH "メンバ詳解"
+.PP 
+.SS "FString UYesNoDialog::DisplayText\fC [protected]\fP"
+
+.SS "FOnDialogResult UYesNoDialog::OnNo"
+
+.SS "FOnDialogResult UYesNoDialog::OnYes"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

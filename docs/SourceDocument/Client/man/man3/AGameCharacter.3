@@ -1,0 +1,212 @@
+.TH "AGameCharacter" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AGameCharacter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GameCharacter\&.h>\fP
+.PP
+\fBAPlayerCharacterBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBAGameCharacter\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~AGameCharacter\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBBeginPlay\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBTick\fP (float DeltaTime) override"
+.br
+.ti -1c
+.RI "const \fBPlayerStatus\fP & \fBGetStatus\fP () const"
+.br
+.ti -1c
+.RI "void \fBOnRecvExp\fP (int32 Exp)"
+.br
+.ti -1c
+.RI "void \fBOnRecvLevelUp\fP (uint32 Level, int32 MaxHp, int32 Atk, int32 Def)"
+.br
+.ti -1c
+.RI "virtual FVector \fBGetMoveVector\fP () const override"
+.br
+.ti -1c
+.RI "virtual uint32 \fBGetUuid\fP () const override"
+.br
+.ti -1c
+.RI "virtual FString \fBGetCharacterName\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBECharacterType\fP \fBGetCharacterType\fP () const override"
+.br
+.ti -1c
+.RI "bool \fBIsSkillUsable\fP (int32 SkillId) const"
+.br
+.ti -1c
+.RI "bool \fBIsItemUsable\fP (int32 ItemId) const"
+.br
+.ti -1c
+.RI "void \fBUseSkill\fP (int32 SkillId)"
+.br
+.ti -1c
+.RI "void \fBUseItem\fP (int32 ItemId)"
+.br
+.ti -1c
+.RI "void \fBUseNormalAttackSkill\fP ()"
+.br
+.ti -1c
+.RI "const \fBSkillControl\fP & \fBGetSkillControl\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBOnSkillCastFinished\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBOnSkillActivate\fP () override"
+.br
+.ti -1c
+.RI "void \fBOnSkillCancel\fP ()"
+.br
+.ti -1c
+.RI "int32 \fBGetGold\fP () const"
+.br
+.ti -1c
+.RI "void \fBSetGold\fP (uint32 Gold)"
+.br
+.ti -1c
+.RI "void \fBOpenSkillTreeNode\fP (uint32 NodeId)"
+.br
+.ti -1c
+.RI "void \fBOnRecvSkillList\fP (uint32 SkillId1, uint32 SkillId2, uint32 SkillId3, uint32 SkillId4)"
+.br
+.ti -1c
+.RI "int32 \fBGetLevel\fP () const"
+.br
+.ti -1c
+.RI "void \fBAddItem\fP (uint32 ItemId, uint32 Count)"
+.br
+.ti -1c
+.RI "void \fBSubtractItem\fP (uint32 ItemId, uint32 Count)"
+.br
+.ti -1c
+.RI "void \fBUpdateItemShortcut\fP (uint32 ItemId1, uint32 ItemId2)"
+.br
+.ti -1c
+.RI "TArray< int32 > \fBGetItemShortcutForBlurprint\fP ()"
+.br
+.ti -1c
+.RI "int32 \fBGetItemCount\fP (int32 ItemId) const"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "void \fBOnLevelUp\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnLevelUp_Implementation\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBOnRespawn\fP () override"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+プレイヤーキャラクタクラス 
+.SH "構築子と解体子"
+.PP 
+.SS "AGameCharacter::AGameCharacter (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual AGameCharacter::~AGameCharacter ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void AGameCharacter::AddItem (uint32 ItemId, uint32 Count)\fC [inline]\fP"
+
+.SS "void AGameCharacter::BeginPlay ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAPlayerCharacterBase\fPを再実装しています。
+.SS "virtual FString AGameCharacter::GetCharacterName () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "virtual \fBECharacterType\fP AGameCharacter::GetCharacterType () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "int32 AGameCharacter::GetGold () const\fC [inline]\fP"
+
+.SS "int32 AGameCharacter::GetItemCount (int32 ItemId) const\fC [inline]\fP"
+
+.SS "TArray< int32 > AGameCharacter::GetItemShortcutForBlurprint ()"
+
+.SS "int32 AGameCharacter::GetLevel () const\fC [inline]\fP"
+
+.SS "FVector AGameCharacter::GetMoveVector () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAPlayerCharacterBase\fPを再実装しています。
+.SS "const \fBSkillControl\fP& AGameCharacter::GetSkillControl () const\fC [inline]\fP"
+
+.SS "const \fBPlayerStatus\fP& AGameCharacter::GetStatus () const\fC [inline]\fP"
+
+.SS "virtual uint32 AGameCharacter::GetUuid () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "bool AGameCharacter::IsItemUsable (int32 ItemId) const"
+
+.SS "bool AGameCharacter::IsSkillUsable (int32 SkillId) const"
+
+.SS "void AGameCharacter::OnLevelUp ()\fC [protected]\fP"
+
+.SS "void AGameCharacter::OnLevelUp_Implementation ()\fC [inline]\fP, \fC [protected]\fP"
+
+.SS "void AGameCharacter::OnRecvExp (int32 Exp)"
+
+.SS "void AGameCharacter::OnRecvLevelUp (uint32 Level, int32 MaxHp, int32 Atk, int32 Def)"
+
+.SS "void AGameCharacter::OnRecvSkillList (uint32 SkillId1, uint32 SkillId2, uint32 SkillId3, uint32 SkillId4)"
+
+.SS "void AGameCharacter::OnRespawn ()\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+\fBAPlayerCharacterBase\fPを再実装しています。
+.SS "void AGameCharacter::OnSkillActivate ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "void AGameCharacter::OnSkillCancel ()"
+
+.SS "void AGameCharacter::OnSkillCastFinished ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "void AGameCharacter::OpenSkillTreeNode (uint32 NodeId)"
+
+.SS "void AGameCharacter::SetGold (uint32 Gold)\fC [inline]\fP"
+
+.SS "void AGameCharacter::SubtractItem (uint32 ItemId, uint32 Count)\fC [inline]\fP"
+
+.SS "void AGameCharacter::Tick (float DeltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void AGameCharacter::UpdateItemShortcut (uint32 ItemId1, uint32 ItemId2)"
+
+.SS "void AGameCharacter::UseItem (int32 ItemId)"
+
+.SS "void AGameCharacter::UseNormalAttackSkill ()"
+
+.SS "void AGameCharacter::UseSkill (int32 SkillId)"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

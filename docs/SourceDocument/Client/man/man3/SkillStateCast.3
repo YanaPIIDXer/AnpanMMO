@@ -1,0 +1,45 @@
+.TH "SkillStateCast" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SkillStateCast
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SkillStateCast\&.h>\fP
+.PP
+\fBSkillStateBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSkillStateCast\fP (\fBSkillControl\fP *pInControl)"
+.br
+.ti -1c
+.RI "virtual \fB~SkillStateCast\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBESkillStateType\fP \fBGetStateType\fP () override"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+スキルステート：キャスト中\&. 
+.SH "構築子と解体子"
+.PP 
+.SS "SkillStateCast::SkillStateCast (\fBSkillControl\fP * pInControl)"
+
+.SS "virtual SkillStateCast::~SkillStateCast ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBESkillStateType\fP SkillStateCast::GetStateType ()\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBSkillStateBase\fPを実装しています。
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

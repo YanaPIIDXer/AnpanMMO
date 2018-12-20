@@ -1,0 +1,67 @@
+.TH "UOtherPlayerMenu" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UOtherPlayerMenu
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <OtherPlayerMenu\&.h>\fP
+.PP
+UUserWidgetを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBUOtherPlayerMenu\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~UOtherPlayerMenu\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetup\fP (\fBAOtherPlayerCharacter\fP *pCharacter)"
+.br
+.in -1c
+.SS "限定公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "bool \fBIsAblePartyInvite\fP () const"
+.br
+.ti -1c
+.RI "void \fBSendPartyInvite\fP ()"
+.br
+.in -1c
+.SS "限定公開変数類"
+
+.in +1c
+.ti -1c
+.RI "FString \fBCharacterName\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+他人に関するポップアップメニュー 
+.SH "構築子と解体子"
+.PP 
+.SS "UOtherPlayerMenu::UOtherPlayerMenu (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual UOtherPlayerMenu::~UOtherPlayerMenu ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "bool UOtherPlayerMenu::IsAblePartyInvite () const\fC [protected]\fP"
+
+.SS "void UOtherPlayerMenu::SendPartyInvite ()\fC [protected]\fP"
+
+.SS "void UOtherPlayerMenu::Setup (\fBAOtherPlayerCharacter\fP * pCharacter)"
+
+.SH "メンバ詳解"
+.PP 
+.SS "FString UOtherPlayerMenu::CharacterName\fC [protected]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

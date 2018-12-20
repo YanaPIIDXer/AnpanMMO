@@ -1,0 +1,21 @@
+<map id="NoticeData.h" name="NoticeData.h">
+<area shape="rect" id="node2" href="$d2/de7/a00014.html" title="MainHUD.cpp" alt="" coords="5,229,108,256"/>
+<area shape="rect" id="node3" href="$d5/df9/a00044.html" title="NoticeMenuWidget.cpp" alt="" coords="133,229,290,256"/>
+<area shape="rect" id="node4" href="$de/df8/a00440.html" title="NoticeManager.h" alt="" coords="766,80,886,107"/>
+<area shape="rect" id="node19" href="$d9/d87/a00551.html" title="PacketNoticeList.h" alt="" coords="1091,80,1223,107"/>
+<area shape="rect" id="node20" href="$db/d3a/a00641.html" title="PacketReceiveNotice.h" alt="" coords="911,80,1067,107"/>
+<area shape="rect" id="node5" href="$dd/dad/a00005.html" title="ActiveGameMode.h" alt="" coords="847,155,981,181"/>
+<area shape="rect" id="node18" href="$d4/da8/a00437.html" title="NoticeManager.cpp" alt="" coords="1005,155,1140,181"/>
+<area shape="rect" id="node6" href="$d7/d46/a00002.html" title="ActiveGameMode.cpp" alt="" coords="1302,229,1451,256"/>
+<area shape="rect" id="node7" href="$db/db2/a00020.html" title="GameMenuWidget.cpp" alt="" coords="1475,229,1630,256"/>
+<area shape="rect" id="node8" href="$d5/de0/a00050.html" title="OtherPlayerMenu.cpp" alt="" coords="1655,229,1803,256"/>
+<area shape="rect" id="node9" href="$df/d03/a00062.html" title="PartyInfoMenuWidget.cpp" alt="" coords="1827,229,1998,256"/>
+<area shape="rect" id="node10" href="$d7/d3f/a00173.html" title="NPCCharacter.cpp" alt="" coords="2022,229,2153,256"/>
+<area shape="rect" id="node11" href="$d9/dd0/a00191.html" title="GameCharacter.cpp" alt="" coords="2177,229,2315,256"/>
+<area shape="rect" id="node12" href="$de/d79/a00203.html" title="GameController.cpp" alt="" coords="315,229,452,256"/>
+<area shape="rect" id="node13" href="$d0/d61/a00302.html" title="SkyControl.cpp" alt="" coords="476,229,587,256"/>
+<area shape="rect" id="node14" href="$df/df7/a00731.html" title="PartyInformation.cpp" alt="" coords="611,229,753,256"/>
+<area shape="rect" id="node15" href="$dd/db2/a00737.html" title="PingManager.cpp" alt="" coords="777,229,899,256"/>
+<area shape="rect" id="node16" href="$d3/d4f/a00761.html" title="ScriptExecuter.cpp" alt="" coords="923,229,1057,256"/>
+<area shape="rect" id="node17" href="$d6/d2f/a00854.html" title="LayeredMenuWidgetBase.cpp" alt="" coords="1081,229,1277,256"/>
+</map>

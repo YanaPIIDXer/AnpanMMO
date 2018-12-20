@@ -1,0 +1,50 @@
+.TH "PingManager" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PingManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PingManager\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBPingManager\fP ()"
+.br
+.ti -1c
+.RI "\fB~PingManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBPoll\fP (float DeltaTime)"
+.br
+.ti -1c
+.RI "void \fBSetGameMode\fP (\fBAActiveGameMode\fP *pInGameMode)"
+.br
+.ti -1c
+.RI "void \fBOnRecvPing\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+Tick管理\&. 
+.SH "構築子と解体子"
+.PP 
+.SS "PingManager::PingManager ()"
+
+.SS "PingManager::~PingManager ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void PingManager::OnRecvPing (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "void PingManager::Poll (float DeltaTime)"
+
+.SS "void PingManager::SetGameMode (\fBAActiveGameMode\fP * pInGameMode)\fC [inline]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

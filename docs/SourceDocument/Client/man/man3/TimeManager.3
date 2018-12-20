@@ -1,0 +1,50 @@
+.TH "TimeManager" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TimeManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TimeManager\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBTimeManager\fP ()"
+.br
+.ti -1c
+.RI "\fB~TimeManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetSkyControl\fP (\fBASkyControl\fP *pInSky)"
+.br
+.ti -1c
+.RI "void \fBOnRecvTime\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "void \fBOnRecvTimeChange\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+時間管理\&. 
+.SH "構築子と解体子"
+.PP 
+.SS "TimeManager::TimeManager ()"
+
+.SS "TimeManager::~TimeManager ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void TimeManager::OnRecvTime (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "void TimeManager::OnRecvTimeChange (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "void TimeManager::SetSkyControl (\fBASkyControl\fP * pInSky)"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。
