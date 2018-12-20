@@ -1,5 +1,0 @@
-<map id="TCPConnection" name="TCPConnection">
-<area shape="rect" id="node2" href="$class_cache_server_connection.html" title="CacheServerConnection" alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="$class_client.html" title="Client" alt="" coords="190,80,245,107"/>
-<area shape="rect" id="node4" href="$class_word_check_server_connection.html" title="WordCheckServerConnection" alt="" coords="269,80,459,107"/>
-</map>

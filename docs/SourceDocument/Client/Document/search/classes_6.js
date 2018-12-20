@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['httpconnection',['HttpConnection',['../class_http_connection.html',1,'']]]
+  ['httpconnection',['HttpConnection',['../d2/dd7/a01108.html',1,'']]]
 ];

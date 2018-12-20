@@ -1,0 +1,34 @@
+<map id="SkyControl.cpp" name="SkyControl.cpp">
+<area shape="rect" id="node2" href="$d3/d07/a00305.html" title="SkyControl.h" alt="" coords="4573,80,4670,107"/>
+<area shape="rect" id="node14" href="$dd/dad/a00005.html" title="Active/ActiveGameMode.h" alt="" coords="875,80,1050,107"/>
+<area shape="rect" id="node36" href="$df/d91/a00335.html" title="Master/MasterData.h" alt="" coords="3511,162,3655,189"/>
+<area shape="rect" id="node15" href="$d1/d7e/a00434.html" title="MMOGameModeBase.h" alt="" coords="1704,244,1867,271"/>
+<area shape="rect" id="node21" href="$d1/da8/a00230.html" title="Character/Player/PlayerManager.h" alt="" coords="745,162,967,189"/>
+<area shape="rect" id="node25" href="$db/ddf/a00164.html" title="Character/Anpan/AnpanManager.h" alt="" coords="1021,326,1243,353"/>
+<area shape="rect" id="node26" href="$d3/d8a/a00899.html" title="WarpPoint/WarpPointManager.h" alt="" coords="1267,326,1477,353"/>
+<area shape="rect" id="node27" href="$d6/dc0/a00734.html" title="Party/PartyInformation.h" alt="" coords="1945,162,2108,189"/>
+<area shape="rect" id="node30" href="$de/df8/a00440.html" title="Notice/NoticeManager.h" alt="" coords="2262,162,2423,189"/>
+<area shape="rect" id="node32" href="$dc/dce/a00740.html" title="Ping/PingManager.h" alt="" coords="5,326,144,353"/>
+<area shape="rect" id="node33" href="$d1/d5d/a00311.html" title="Level/TimeManager.h" alt="" coords="168,326,312,353"/>
+<area shape="rect" id="node34" href="$d7/d25/a00182.html" title="Character/NPC/NPCManager.h" alt="" coords="249,162,450,189"/>
+<area shape="rect" id="node19" href="$d4/d1f/a00506.html" title="Packet/PacketID.h" alt="" coords="2281,326,2412,353"/>
+<area shape="rect" id="node22" href="$d5/ddf/a00224.html" title="PlayerCharacterBase.h" alt="" coords="741,244,897,271"/>
+<area shape="rect" id="node23" href="$d5/dcb/a00170.html" title="Character/CharacterBase.h" alt="" coords="819,326,997,353"/>
+<area shape="rect" id="node28" href="$dd/dd8/a00719.html" title="Packet/PartyMemberData.h" alt="" coords="2065,244,2247,271"/>
+<area shape="rect" id="node29" href="$d8/d91/a00410.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3345,319,3549,360"/>
+<area shape="rect" id="node31" href="$dd/d63/a00455.html" title="Packet/NoticeData.h" alt="" coords="2271,244,2414,271"/>
+<area shape="rect" id="node37" href="$de/d55/a00323.html" title="AreaMaster.h" alt="" coords="2882,244,2982,271"/>
+<area shape="rect" id="node38" href="$db/dbc/a00395.html" title="WarpDataMaster.h" alt="" coords="3007,244,3137,271"/>
+<area shape="rect" id="node39" href="$d7/d00/a00401.html" title="WarpPointMaster.h" alt="" coords="3162,244,3297,271"/>
+<area shape="rect" id="node40" href="$da/de0/a00317.html" title="AnpanMaster.h" alt="" coords="3321,244,3431,271"/>
+<area shape="rect" id="node41" href="$dc/dc9/a00389.html" title="TimeInfoMaster.h" alt="" coords="3455,244,3577,271"/>
+<area shape="rect" id="node42" href="$d1/dc6/a00347.html" title="NPCMaster.h" alt="" coords="3601,244,3701,271"/>
+<area shape="rect" id="node43" href="$db/ddc/a00353.html" title="NPCResourceMaster.h" alt="" coords="3725,244,3880,271"/>
+<area shape="rect" id="node44" href="$d3/d93/a00341.html" title="NPCConditionMaster.h" alt="" coords="3904,244,4059,271"/>
+<area shape="rect" id="node45" href="$d4/d13/a00377.html" title="SkillMaster.h" alt="" coords="4083,244,4181,271"/>
+<area shape="rect" id="node46" href="$da/dee/a00383.html" title="SkillTreeMaster.h" alt="" coords="4205,244,4328,271"/>
+<area shape="rect" id="node47" href="$dd/d4e/a00329.html" title="ItemMaster.h" alt="" coords="4352,244,4451,271"/>
+<area shape="rect" id="node48" href="$d4/def/a00359.html" title="QuestMaster.h" alt="" coords="4475,244,4583,271"/>
+<area shape="rect" id="node49" href="$d6/d80/a00371.html" title="QuestStageMaster.h" alt="" coords="2541,244,2683,271"/>
+<area shape="rect" id="node50" href="$dd/db5/a00365.html" title="QuestRewardMaster.h" alt="" coords="2707,244,2858,271"/>
+</map>

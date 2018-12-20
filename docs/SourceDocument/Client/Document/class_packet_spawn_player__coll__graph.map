@@ -1,4 +1,0 @@
-<map id="PacketSpawnPlayer" name="PacketSpawnPlayer">
-<area shape="rect" id="node2" href="$class_packet_base.html" title="PacketBase" alt="" coords="5,5,99,32"/>
-<area shape="rect" id="node3" href="$class_player_data.html" title="PlayerData" alt="" coords="123,5,210,32"/>
-</map>

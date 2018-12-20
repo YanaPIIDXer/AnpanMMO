@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: PacketPartyDissolutionResult.h ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_922c588100a187620fdc1533bc178f73.html">Client</a></li><li class="navelem"><a class="el" href="../../dir_f24dacf344806f6d5d2f1a89fba5b7da.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="../../dir_c4f82f6e8b5ec07f54af1897fd87ad3d.html">Source</a></li><li class="navelem"><a class="el" href="../../dir_2821647bb76fb81679b19f21c963d29a.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="../../dir_0c50015adbe83152abc92ddfd3ee1a24.html">Packet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PacketPartyDissolutionResult.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d06/a00572.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __PACKETPARTYDISSOLUTIONRESULT_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __PACKETPARTYDISSOLUTIONRESULT_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d8e/a00473.html">PacketBase.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/d1f/a00506.html">PacketID.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d91/a00410.html">MemoryStream/MemoryStreamInterface.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d8b/a01464.html">PacketPartyDissolutionResult</a>  : <span class="keyword">public</span> <a class="code" href="../../df/d93/a01336.html">PacketBase</a></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html#a1c61a0f46be03998bbd2b71a787d87ae">   12</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../df/de8/a00839.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="../../db/d8b/a01464.html#a1c61a0f46be03998bbd2b71a787d87ae">GetPacketID</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d2/d29/a01376.html#aaac69b977036b9b9d40419b939c1570aa978997622868722f225288a28d18dfc2">PacketID::PartyDissolutionResult</a>; }</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3">   14</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3">ResultCode</a></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3a7c94e9f3a649a5f55a1ecbdeea1399b1">   16</a></span>&#160;        <a class="code" href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3a7c94e9f3a649a5f55a1ecbdeea1399b1">Success</a>,</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3ab10181981dc13bdd20c520a9ff33cd3e">   17</a></span>&#160;        <a class="code" href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3ab10181981dc13bdd20c520a9ff33cd3e">Error</a>,</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html#a427e07d6a45be3a8320ff5ba5fe6e903">   20</a></span>&#160;    <a class="code" href="../../df/de8/a00839.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="../../db/d8b/a01464.html#a427e07d6a45be3a8320ff5ba5fe6e903">Result</a>;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html#afd6286941701b7a94438aa028d6ef439">   23</a></span>&#160;    <a class="code" href="../../db/d8b/a01464.html#afd6286941701b7a94438aa028d6ef439">PacketPartyDissolutionResult</a>()</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html#ab8a3bcd0f876be07320c7e307f05408a">   27</a></span>&#160;    <a class="code" href="../../db/d8b/a01464.html#ab8a3bcd0f876be07320c7e307f05408a">PacketPartyDissolutionResult</a>(<a class="code" href="../../df/de8/a00839.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InResult)</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="../../db/d8b/a01464.html#a427e07d6a45be3a8320ff5ba5fe6e903">Result</a> = InResult;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../db/d8b/a01464.html#ae79cb5f1f089cda85d653ed755beff3f">   33</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../db/d8b/a01464.html#ae79cb5f1f089cda85d653ed755beff3f">Serialize</a>(<a class="code" href="../../dc/dd9/a01268.html">MemoryStreamInterface</a> *pStream)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        pStream-&gt;<a class="code" href="../../dc/dd9/a01268.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="../../db/d8b/a01464.html#a427e07d6a45be3a8320ff5ba5fe6e903">Result</a>);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif      // #ifndef __PACKETPARTYDISSOLUTIONRESULT_H__</span></div><div class="ttc" id="a00410_html"><div class="ttname"><a href="../../d8/d91/a00410.html">MemoryStreamInterface.h</a></div></div>
+<div class="ttc" id="a01464_html_a1c61a0f46be03998bbd2b71a787d87ae"><div class="ttname"><a href="../../db/d8b/a01464.html#a1c61a0f46be03998bbd2b71a787d87ae">PacketPartyDissolutionResult::GetPacketID</a></div><div class="ttdeci">virtual u8 GetPacketID() const</div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:12</div></div>
+<div class="ttc" id="a01336_html"><div class="ttname"><a href="../../df/d93/a01336.html">PacketBase</a></div><div class="ttdef"><b>Definition:</b> PacketBase.h:10</div></div>
+<div class="ttc" id="a01268_html"><div class="ttname"><a href="../../dc/dd9/a01268.html">MemoryStreamInterface</a></div><div class="ttdef"><b>Definition:</b> MemoryStreamInterface.h:8</div></div>
+<div class="ttc" id="a01464_html_ab8a3bcd0f876be07320c7e307f05408a"><div class="ttname"><a href="../../db/d8b/a01464.html#ab8a3bcd0f876be07320c7e307f05408a">PacketPartyDissolutionResult::PacketPartyDissolutionResult</a></div><div class="ttdeci">PacketPartyDissolutionResult(u8 InResult)</div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:27</div></div>
+<div class="ttc" id="a01268_html_a6a4fb8faf2a4f94ea6b56334aba31ebf"><div class="ttname"><a href="../../dc/dd9/a01268.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">MemoryStreamInterface::Serialize</a></div><div class="ttdeci">virtual bool Serialize(s32 *pValue)=0</div></div>
+<div class="ttc" id="a01464_html"><div class="ttname"><a href="../../db/d8b/a01464.html">PacketPartyDissolutionResult</a></div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:9</div></div>
+<div class="ttc" id="a00506_html"><div class="ttname"><a href="../../d4/d1f/a00506.html">PacketID.h</a></div></div>
+<div class="ttc" id="a01464_html_a427e07d6a45be3a8320ff5ba5fe6e903"><div class="ttname"><a href="../../db/d8b/a01464.html#a427e07d6a45be3a8320ff5ba5fe6e903">PacketPartyDissolutionResult::Result</a></div><div class="ttdeci">u8 Result</div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:20</div></div>
+<div class="ttc" id="a01464_html_ae79cb5f1f089cda85d653ed755beff3f"><div class="ttname"><a href="../../db/d8b/a01464.html#ae79cb5f1f089cda85d653ed755beff3f">PacketPartyDissolutionResult::Serialize</a></div><div class="ttdeci">bool Serialize(MemoryStreamInterface *pStream)</div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:33</div></div>
+<div class="ttc" id="a01464_html_add83f4366e7db2a4522438acf9baa7d3a7c94e9f3a649a5f55a1ecbdeea1399b1"><div class="ttname"><a href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3a7c94e9f3a649a5f55a1ecbdeea1399b1">PacketPartyDissolutionResult::Success</a></div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:16</div></div>
+<div class="ttc" id="a01376_html_aaac69b977036b9b9d40419b939c1570aa978997622868722f225288a28d18dfc2"><div class="ttname"><a href="../../d2/d29/a01376.html#aaac69b977036b9b9d40419b939c1570aa978997622868722f225288a28d18dfc2">PacketID::PartyDissolutionResult</a></div><div class="ttdef"><b>Definition:</b> PacketID.h:92</div></div>
+<div class="ttc" id="a01464_html_add83f4366e7db2a4522438acf9baa7d3ab10181981dc13bdd20c520a9ff33cd3e"><div class="ttname"><a href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3ab10181981dc13bdd20c520a9ff33cd3e">PacketPartyDissolutionResult::Error</a></div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:17</div></div>
+<div class="ttc" id="a01464_html_add83f4366e7db2a4522438acf9baa7d3"><div class="ttname"><a href="../../db/d8b/a01464.html#add83f4366e7db2a4522438acf9baa7d3">PacketPartyDissolutionResult::ResultCode</a></div><div class="ttdeci">ResultCode</div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:14</div></div>
+<div class="ttc" id="a01464_html_afd6286941701b7a94438aa028d6ef439"><div class="ttname"><a href="../../db/d8b/a01464.html#afd6286941701b7a94438aa028d6ef439">PacketPartyDissolutionResult::PacketPartyDissolutionResult</a></div><div class="ttdeci">PacketPartyDissolutionResult()</div><div class="ttdef"><b>Definition:</b> PacketPartyDissolutionResult.h:23</div></div>
+<div class="ttc" id="a00473_html"><div class="ttname"><a href="../../dc/d8e/a00473.html">PacketBase.h</a></div></div>
+<div class="ttc" id="a00839_html_aed742c436da53c1080638ce6ef7d13de"><div class="ttname"><a href="../../df/de8/a00839.html#aed742c436da53c1080638ce6ef7d13de">u8</a></div><div class="ttdeci">unsigned char u8</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:6</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<map id="TCPConnection.h" name="TCPConnection.h">
+<area shape="rect" id="node2" href="$db/db6/a00074.html" title="CacheServerConnection.h" alt="" coords="413,80,584,107"/>
+<area shape="rect" id="node10" href="$d5/db1/a00140.html" title="Client.h" alt="" coords="1102,80,1169,107"/>
+<area shape="rect" id="node24" href="$d0/d85/a00908.html" title="WordCheckServerConnection.h" alt="" coords="25,155,228,181"/>
+<area shape="rect" id="node25" href="$d1/d93/a00875.html" title="TCPConnection.cpp" alt="" coords="1194,80,1331,107"/>
+<area shape="rect" id="node3" href="$d0/d89/a00071.html" title="CacheServerConnection.cpp" alt="" coords="692,229,878,256"/>
+<area shape="rect" id="node4" href="$dc/dfe/a00125.html" title="PlayerCharacter.cpp" alt="" coords="668,155,808,181"/>
+<area shape="rect" id="node5" href="$d3/df8/a00155.html" title="ClientStateActive.cpp" alt="" coords="198,229,345,256"/>
+<area shape="rect" id="node6" href="$d7/d3f/a00173.html" title="ClientStateTitle.cpp" alt="" coords="1363,229,1498,256"/>
+<area shape="rect" id="node7" href="$d3/db1/a00200.html" title="Main.cpp" alt="" coords="89,229,164,256"/>
+<area shape="rect" id="node8" href="$d3/d00/a00785.html" title="QuestManager.cpp" alt="" coords="354,155,486,181"/>
+<area shape="rect" id="node9" href="$d5/d72/a00803.html" title="ScriptExecuter.cpp" alt="" coords="510,155,644,181"/>
+<area shape="rect" id="node11" href="$db/db2/a00020.html" title="AreaBase.cpp" alt="" coords="1177,155,1281,181"/>
+<area shape="rect" id="node12" href="$dc/d87/a00032.html" title="AreaManager.cpp" alt="" coords="1306,155,1430,181"/>
+<area shape="rect" id="node13" href="$d5/de0/a00050.html" title="InstanceAreaTicket.cpp" alt="" coords="1454,155,1612,181"/>
+<area shape="rect" id="node14" href="$d2/df5/a00137.html" title="Client.cpp" alt="" coords="1637,155,1717,181"/>
+<area shape="rect" id="node15" href="$d7/d9a/a00152.html" title="ClientManager.h" alt="" coords="986,155,1102,181"/>
+<area shape="rect" id="node18" href="$d8/dba/a00773.html" title="PartyManager.cpp" alt="" coords="1904,229,2032,256"/>
+<area shape="rect" id="node20" href="$da/d5b/a00905.html" title="WordCheckServerConnection.cpp" alt="" coords="452,229,668,256"/>
+<area shape="rect" id="node21" href="$d6/d7d/a00161.html" title="ClientStateAreaChange.cpp" alt="" coords="1742,155,1924,181"/>
+<area shape="rect" id="node22" href="$d5/dae/a00767.html" title="Party.cpp" alt="" coords="1948,155,2027,181"/>
+<area shape="rect" id="node23" href="$d3/d95/a00779.html" title="PlayerManager.cpp" alt="" coords="2051,155,2186,181"/>
+<area shape="rect" id="node16" href="$d7/dce/a00143.html" title="ClientAcceptor.cpp" alt="" coords="1207,229,1339,256"/>
+<area shape="rect" id="node17" href="$da/d1e/a00149.html" title="ClientManager.cpp" alt="" coords="902,229,1033,256"/>
+<area shape="rect" id="node19" href="$d7/d92/a00887.html" title="TimeManager.cpp" alt="" coords="1057,229,1182,256"/>
+</map>

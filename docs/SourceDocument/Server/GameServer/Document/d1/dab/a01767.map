@@ -1,0 +1,35 @@
+<map id="ProcessPacketBase" name="ProcessPacketBase">
+<area shape="rect" id="node3" href="$d8/d0d/a01280.html" title="CachePacketCharacterData\lRequest" alt="" coords="361,5,543,47"/>
+<area shape="rect" id="node4" href="$dd/d18/a01284.html" title="CachePacketCharacterData\lResult" alt="" coords="361,71,543,112"/>
+<area shape="rect" id="node5" href="$d7/d8d/a01288.html" title="CachePacketCharacterDataSave" alt="" coords="347,137,557,163"/>
+<area shape="rect" id="node6" href="$d8/d7a/a01292.html" title="CachePacketCreateCharacter\lRequest" alt="" coords="355,188,549,229"/>
+<area shape="rect" id="node7" href="$d4/d64/a01296.html" title="CachePacketCreateCharacter\lResult" alt="" coords="355,253,549,295"/>
+<area shape="rect" id="node8" href="$d8/dc5/a01300.html" title="CachePacketGoldSave" alt="" coords="375,319,529,346"/>
+<area shape="rect" id="node9" href="$d6/dae/a01304.html" title="CachePacketItemCountChange\lRequest" alt="" coords="351,371,553,412"/>
+<area shape="rect" id="node10" href="$d1/d56/a01308.html" title="CachePacketItemListRequest" alt="" coords="355,437,549,463"/>
+<area shape="rect" id="node11" href="$d7/d41/a01312.html" title="CachePacketItemListResponse" alt="" coords="350,487,554,514"/>
+<area shape="rect" id="node12" href="$d4/d49/a01316.html" title="CachePacketItemShortcutRequest" alt="" coords="341,538,563,565"/>
+<area shape="rect" id="node13" href="$df/dec/a01320.html" title="CachePacketItemShortcutResponse" alt="" coords="336,589,568,615"/>
+<area shape="rect" id="node14" href="$d5/d53/a01324.html" title="CachePacketLogInRequest" alt="" coords="363,639,541,666"/>
+<area shape="rect" id="node15" href="$dc/dd9/a01328.html" title="CachePacketLogInResult" alt="" coords="368,690,536,717"/>
+<area shape="rect" id="node16" href="$d9/d45/a01332.html" title="CachePacketOpenSkillTree" alt="" coords="361,741,543,767"/>
+<area shape="rect" id="node17" href="$df/d93/a01336.html" title="CachePacketQuestDataRequest" alt="" coords="347,791,557,818"/>
+<area shape="rect" id="node18" href="$d7/d51/a01340.html" title="CachePacketQuestDataResponse" alt="" coords="342,842,562,869"/>
+<area shape="rect" id="node19" href="$dc/d54/a01344.html" title="CachePacketQuestRetireRequest" alt="" coords="343,893,561,919"/>
+<area shape="rect" id="node20" href="$d7/d57/a01348.html" title="CachePacketSaveActiveQuest\lRequest" alt="" coords="353,944,551,985"/>
+<area shape="rect" id="node21" href="$d0/d85/a01352.html" title="CachePacketSaveItemShortcut\lRequest" alt="" coords="351,1009,553,1051"/>
+<area shape="rect" id="node22" href="$d2/d3f/a01356.html" title="CachePacketSaveItemShortcut\lResponse" alt="" coords="351,1075,553,1116"/>
+<area shape="rect" id="node23" href="$d9/d79/a01360.html" title="CachePacketSaveQuestData\lRequest" alt="" coords="357,1140,547,1181"/>
+<area shape="rect" id="node24" href="$de/d1f/a01364.html" title="CachePacketSaveSkillList\lRequest" alt="" coords="365,1205,539,1247"/>
+<area shape="rect" id="node25" href="$dd/d0c/a01368.html" title="CachePacketSaveSkillList\lResponse" alt="" coords="365,1271,539,1312"/>
+<area shape="rect" id="node26" href="$df/d0b/a01372.html" title="CachePacketScriptFlagRequest" alt="" coords="349,1337,555,1363"/>
+<area shape="rect" id="node27" href="$d2/d29/a01376.html" title="CachePacketScriptFlagResponse" alt="" coords="343,1387,561,1414"/>
+<area shape="rect" id="node28" href="$dd/d6d/a01380.html" title="CachePacketScriptFlagSave\lRequest" alt="" coords="359,1439,545,1480"/>
+<area shape="rect" id="node29" href="$d7/dde/a01384.html" title="CachePacketSkillListRequest" alt="" coords="355,1505,549,1531"/>
+<area shape="rect" id="node30" href="$d0/d36/a01388.html" title="CachePacketSkillListResponse" alt="" coords="350,1555,554,1582"/>
+<area shape="rect" id="node31" href="$d1/dcc/a01392.html" title="CachePacketSkillTreeRequest" alt="" coords="353,1606,551,1633"/>
+<area shape="rect" id="node32" href="$d9/d45/a01396.html" title="CachePacketSkillTreeResponse" alt="" coords="348,1657,556,1683"/>
+<area shape="rect" id="node33" href="$d0/dce/a01780.html" title="WordCheckPacketChatRequest" alt="" coords="349,1707,555,1734"/>
+<area shape="rect" id="node34" href="$d6/d3d/a01784.html" title="WordCheckPacketChatResult" alt="" coords="355,1758,549,1785"/>
+<area shape="rect" id="node2" href="$dc/d85/a01436.html" title="PacketBase" alt="" coords="5,867,99,894"/>
+</map>
