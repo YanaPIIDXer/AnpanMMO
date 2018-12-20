@@ -1,0 +1,59 @@
+.TH "SkillStateAutoMove" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SkillStateAutoMove
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SkillStateAutoMove\&.h>\fP
+.PP
+\fBSkillStateBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBSkillStateAutoMove\fP (\fBSkillControl\fP *pInControl)"
+.br
+.ti -1c
+.RI "virtual \fB~SkillStateAutoMove\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBBeginState\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBPoll\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBESkillStateType\fP \fBGetStateType\fP () override"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+スキルステート：オート移動中\&. 
+.SH "構築子と解体子"
+.PP 
+.SS "SkillStateAutoMove::SkillStateAutoMove (\fBSkillControl\fP * pInControl)"
+
+.SS "virtual SkillStateAutoMove::~SkillStateAutoMove ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void SkillStateAutoMove::BeginState ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBSkillStateBase\fPを再実装しています。
+.SS "virtual \fBESkillStateType\fP SkillStateAutoMove::GetStateType ()\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBSkillStateBase\fPを実装しています。
+.SS "void SkillStateAutoMove::Poll ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBSkillStateBase\fPを再実装しています。
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

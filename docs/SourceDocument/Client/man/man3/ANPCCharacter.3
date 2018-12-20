@@ -1,0 +1,71 @@
+.TH "ANPCCharacter" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ANPCCharacter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NPCCharacter\&.h>\fP
+.PP
+\fBACharacterBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBANPCCharacter\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~ANPCCharacter\fP ()"
+.br
+.ti -1c
+.RI "uint32 \fBGetId\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBECharacterType\fP \fBGetCharacterType\fP () const override"
+.br
+.ti -1c
+.RI "float \fBGetHalfHeight\fP () const override"
+.br
+.ti -1c
+.RI "void \fBTalk\fP ()"
+.br
+.in -1c
+.SS "静的公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "static \fBANPCCharacter\fP * \fBSpawn\fP (UWorld *pWorld, const \fBNPCItem\fP *pItem)"
+.br
+.in -1c
+.SS "その他の継承メンバ"
+.SH "詳解"
+.PP 
+NPCキャラクタ 
+.SH "構築子と解体子"
+.PP 
+.SS "ANPCCharacter::ANPCCharacter (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual ANPCCharacter::~ANPCCharacter ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBECharacterType\fP ANPCCharacter::GetCharacterType () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "float ANPCCharacter::GetHalfHeight () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+\fBACharacterBase\fPを再実装しています。
+.SS "uint32 ANPCCharacter::GetId () const\fC [inline]\fP"
+
+.SS "\fBANPCCharacter\fP * ANPCCharacter::Spawn (UWorld * pWorld, const \fBNPCItem\fP * pItem)\fC [static]\fP"
+
+.SS "void ANPCCharacter::Talk ()"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。
