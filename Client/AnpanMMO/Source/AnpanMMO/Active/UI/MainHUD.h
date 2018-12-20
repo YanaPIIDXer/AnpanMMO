@@ -8,6 +8,24 @@
 
 class AGameCharacter;
 class NoticeData;
+class QuestData;
+
+// クエストタイプ
+UENUM(BlueprintType)
+enum class EQuestType : uint8
+{
+	// 何もない
+	None,
+
+	// NPCに話しかける
+	TalkNPC,
+
+	// アンパンをブッ殺す
+	KillAnpan,
+
+	// アイテム収集.
+	CollectItem,
+};
 
 /**
  * メインHUD
@@ -135,6 +153,15 @@ protected:
 	void OnUpdateItemShortcut(const TArray<int32> &ItemShortcut);
 	void OnUpdateItemShortcut_Implementation(const TArray<int32> &ItemShortcut) {}
 
+	// アクティブクエストが更新された。
+	UFUNCTION(BlueprintNativeEvent, Category = "Quest")
+	void OnActiveQuestUpdatedEvent(EQuestType Type, int32 TargetId, int32 CurrentCount, int32 MaxCount);
+	void OnActiveQuestUpdatedEvent_Implementation(EQuestType Type, int32 TargetId, int32 CurrentCount, int32 MaxCount) {}
+
+	// アクティブクエストの情報を表示.
+	UFUNCTION(BlueprintCallable, Category = "Quest")
+	void ShowActiveQuestData();
+
 private:
 	
 	// Blueprintのアセットパス
@@ -142,5 +169,9 @@ private:
 
 	// キャラクタ
 	TWeakObjectPtr<AGameCharacter> pCharacter;
+
+
+	// アクティブクエストが更新された。
+	void OnActiveQuestUpdated(const QuestData *pQuestData);
 
 };

@@ -106,3 +106,19 @@ bool UBlueprintFunctions::IsValidItem(int32 ItemId)
 	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemId);
 	return (pItem != nullptr);
 }
+
+// ƒGƒŠƒA–¼‚ðŽæ“¾.
+FString UBlueprintFunctions::GetAreaName(int32 AreaId)
+{
+	const AreaItem *pItem = MasterData::GetInstance().GetAreaMaster().Get(AreaId);
+	if (pItem == nullptr) { return ""; }
+	return pItem->Name;
+}
+
+// NPC–¼‚ðŽæ“¾.
+FString UBlueprintFunctions::GetNPCName(int32 NPCId)
+{
+	const NPCItem *pItem = MasterData::GetInstance().GetNPCMaster().Get(NPCId);
+	if (pItem == nullptr) { return ""; }
+	return pItem->Name;
+}

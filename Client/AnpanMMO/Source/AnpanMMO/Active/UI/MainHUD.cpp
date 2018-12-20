@@ -9,6 +9,8 @@
 #include "Packet/NoticeData.h"
 #include "Menu/GameMenuWidget.h"
 #include "Menu/Notice/NoticeMenuWidget.h"
+#include "Master/MasterData.h"
+#include "Packet/QuestData.h"
 
 const TCHAR *UMainHUD::AssetPath = TEXT("/Game/Blueprints/UI/Active/MainHUD.MainHUD");
 
@@ -36,6 +38,12 @@ void UMainHUD::NativeConstruct()
 	Super::NativeConstruct();
 
 	pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+	pInst->OnActiveQuestUpdated().BindUObject<UMainHUD>(this, &UMainHUD::OnActiveQuestUpdated);
+
+	OnActiveQuestUpdated(pInst->GetActiveQuestData());
 }
 
 // アイテムショートカット更新.
@@ -76,4 +84,56 @@ void UMainHUD::ShowNoticeMenu()
 {
 	NotReadNoticeCount = 0;
 	UNoticeMenuWidget::ShowWidget(this);
+}
+
+// アクティブクエストの情報を表示.
+void UMainHUD::ShowActiveQuestData()
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	OnActiveQuestUpdated(pInst->GetActiveQuestData());
+
+}
+
+
+// アクティブクエストが更新された。
+void UMainHUD::OnActiveQuestUpdated(const QuestData *pQuestData)
+{
+	if (pQuestData == nullptr || pQuestData->State == QuestData::Cleared)
+	{
+		OnActiveQuestUpdatedEvent(EQuestType::None, 0, 0, 0);
+		return;
+	}
+
+	const QuestItem *pItem = MasterData::GetInstance().GetQuestMaster().Get(pQuestData->QuestId);
+	check(pItem != nullptr);
+
+	const QuestStageItem *pStageItem = MasterData::GetInstance().GetQuestStageMaster().Get(pItem->StartStageId);
+	for (uint32 i = 0; i < pQuestData->StageNo; i++)
+	{
+		pStageItem = MasterData::GetInstance().GetQuestStageMaster().Get(pStageItem->NextStageId);
+	}
+	check(pStageItem != nullptr);
+
+	EQuestType Type = EQuestType::None;
+	switch (pStageItem->Condition)
+	{
+		case QuestStageItem::NPC:
+
+			Type = EQuestType::TalkNPC;
+			break;
+
+		case QuestStageItem::KILL_ANPAN_IN_AREA:
+
+			Type = EQuestType::KillAnpan;
+			break;
+
+		case QuestStageItem::COLLECT_ITEM:
+
+			Type = EQuestType::CollectItem;
+			break;
+	}
+
+	OnActiveQuestUpdatedEvent(Type, pStageItem->TargetId, pQuestData->KillCount, pStageItem->Count);
 }

@@ -120,7 +120,14 @@ void QuestManager::SetActiveQuest(uint32 QuestId, bool bSendSavePacket)
 {
 	ActiveQuestId = QuestId;
 
-	OnActiveQuestUpdated.ExecuteIfBound(&Quests[QuestId]);
+	if (Quests.Contains(QuestId))
+	{
+		OnActiveQuestUpdated.ExecuteIfBound(&Quests[QuestId]);
+	}
+	else
+	{
+		OnActiveQuestUpdated.ExecuteIfBound(nullptr);
+	}
 
 	if (bSendSavePacket)
 	{
