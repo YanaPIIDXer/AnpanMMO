@@ -96,7 +96,7 @@ public:
 	 * @param[in] Name キャラクタ名.
 	 * @param[in] Job ジョブ
 	 * @param[in] Level レベル
-	 * @parap[in] MaxHp 最大ＨＰ
+	 * @param[in] MaxHp 最大ＨＰ
 	 * @param[in] Atk 攻撃力.
 	 * @param[in] Def 防御力.
 	 * @param[in] Exp 経験値.
@@ -153,7 +153,7 @@ public:
 	/**
 	 * @fn void AddQuestData(const QuestData &Data)
 	 * @brief クエストデータ追加.
-	 * @param[in] QuestData クエストデータ
+	 * @param[in] Data クエストデータ
 	 */
 	void AddQuestData(const QuestData &Data);
 
