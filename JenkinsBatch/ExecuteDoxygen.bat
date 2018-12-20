@@ -5,7 +5,6 @@ rem fetch remote branch
 git fetch origin Work
 git checkout Work
 git merge origin/Work
-git pull origin Work
 
 rem Client
 cd %DOCUMENT_ROOT%\Client\
@@ -19,4 +18,5 @@ rem Commit and Push
 cd %DOCUMENT_ROOT%
 git add *
 git commit -m "ドキュメントの更新。"
+git pull origin Work
 git push origin Work
