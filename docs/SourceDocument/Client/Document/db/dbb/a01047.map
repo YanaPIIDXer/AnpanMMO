@@ -1,7 +1,0 @@
-<map id="ACharacterBase" name="ACharacterBase">
-<area shape="rect" id="node3" href="$d8/d79/a01036.html" title="AAnpan" alt="" coords="5,155,73,181"/>
-<area shape="rect" id="node4" href="$d9/dce/a01052.html" title="ANPCCharacter" alt="" coords="98,155,213,181"/>
-<area shape="rect" id="node5" href="$da/d93/a01084.html" title="APlayerCharacterBase" alt="" coords="237,155,391,181"/>
-<area shape="rect" id="node6" href="$d9/db3/a01064.html" title="AGameCharacter" alt="" coords="171,229,294,256"/>
-<area shape="rect" id="node7" href="$d6/d80/a01076.html" title="AOtherPlayerCharacter" alt="" coords="319,229,475,256"/>
-</map>
