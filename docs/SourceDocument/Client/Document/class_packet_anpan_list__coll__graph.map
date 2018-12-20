@@ -1,4 +1,0 @@
-<map id="PacketAnpanList" name="PacketAnpanList">
-<area shape="rect" id="node2" href="$class_packet_base.html" title="PacketBase" alt="" coords="5,5,99,32"/>
-<area shape="rect" id="node3" href="$class_flex_array.html" title="FlexArray\&lt; AnpanData \&gt;" alt="" coords="123,5,290,32"/>
-</map>

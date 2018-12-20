@@ -1,6 +1,0 @@
-<map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node2" href="$class_a_skill_range_decal.html" title="ASkillRangeDecal" alt="" coords="116,5,243,32"/>
-<area shape="rect" id="node3" href="$class_a_sky_control.html" title="ASkyControl" alt="" coords="132,56,227,83"/>
-<area shape="rect" id="node4" href="$class_a_target_circle.html" title="ATargetCircle" alt="" coords="129,107,229,133"/>
-<area shape="rect" id="node5" href="$class_a_warp_point.html" title="AWarpPoint" alt="" coords="133,157,225,184"/>
-</map>

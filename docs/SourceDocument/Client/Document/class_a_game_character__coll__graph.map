@@ -1,4 +1,0 @@
-<map id="AGameCharacter" name="AGameCharacter">
-<area shape="rect" id="node2" href="$class_a_player_character_base.html" title="APlayerCharacterBase" alt="" coords="5,155,160,181"/>
-<area shape="rect" id="node3" href="$class_a_character_base.html" title="ACharacterBase" alt="" coords="24,80,141,107"/>
-</map>
