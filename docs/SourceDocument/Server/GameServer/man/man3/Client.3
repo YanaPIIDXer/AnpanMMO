@@ -1,4 +1,4 @@
-.TH "Client" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.TH "Client" 3 "2018年12月21日(金)" "GameServer" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -69,7 +69,7 @@ Client \- クライアントクラス
 .ti -1c
 .RI "const \fBScriptFlagManager\fP & \fBGetScriptFlagManager\fP () const"
 .br
-.RI "スクリプトフラグ管理取得\&. return const \fBScriptFlagManager\fP & スクリプトフラグ管理\&. "
+.RI "スクリプトフラグ管理取得\&. "
 .ti -1c
 .RI "void \fBConvertScriptFlagFromBitFields\fP (\fBu32\fP BitField1, \fBu32\fP BitField2, \fBu32\fP BitField3)"
 .br
@@ -252,7 +252,14 @@ const \fBQuestManager\fP & クエスト管理\&.
 .SS "const \fBScriptFlagManager\fP & Client::GetScriptFlagManager () const\fC [inline]\fP"
 
 .PP
-スクリプトフラグ管理取得\&. return const \fBScriptFlagManager\fP & スクリプトフラグ管理\&. 
+スクリプトフラグ管理取得\&. 
+.PP
+\fB戻り値:\fP
+.RS 4
+const \fBScriptFlagManager\fP & スクリプトフラグ管理\&. 
+.RE
+.PP
+
 .SS "\fBu32\fP Client::GetUuid () const\fC [inline]\fP"
 
 .PP
