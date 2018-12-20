@@ -1,0 +1,106 @@
+.TH "MemoryStreamInterface" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MemoryStreamInterface
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MemoryStreamInterface\&.h>\fP
+.PP
+\fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fP, \fBMemoryStreamWriter\fPに継承されています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~MemoryStreamInterface\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (\fBs32\fP *pValue)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (\fBu32\fP *pValue)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (\fBs16\fP *pValue)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (\fBu16\fP *pValue)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (\fBs8\fP *pValue)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (\fBu8\fP *pValue)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (std::string *pValue)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBSerialize\fP (float *pValue)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBIsReadMode\fP () const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBIsError\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBReset\fP ()=0"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "virtual MemoryStreamInterface::~MemoryStreamInterface ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual bool MemoryStreamInterface::IsError () const\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::IsReadMode () const\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual void MemoryStreamInterface::Reset ()\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::Serialize (\fBs32\fP * pValue)\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::Serialize (\fBu32\fP * pValue)\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::Serialize (\fBs16\fP * pValue)\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::Serialize (\fBu16\fP * pValue)\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::Serialize (\fBs8\fP * pValue)\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::Serialize (\fBu8\fP * pValue)\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::Serialize (std::string * pValue)\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+.SS "virtual bool MemoryStreamInterface::Serialize (float * pValue)\fC [pure virtual]\fP"
+
+.PP
+\fBMemoryStreamWriter\fP, \fBMemorySizeCaliculateStream\fP, \fBMemoryStreamReader\fPで実装されています。
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

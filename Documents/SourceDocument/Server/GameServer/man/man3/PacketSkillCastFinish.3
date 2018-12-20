@@ -1,0 +1,64 @@
+.TH "PacketSkillCastFinish" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PacketSkillCastFinish
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PacketSkillCastFinish\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBPacketSkillCastFinish\fP ()"
+.br
+.ti -1c
+.RI "\fBPacketSkillCastFinish\fP (\fBu8\fP InCharacterType, \fBu32\fP InCharacterUuid)"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "\fBu8\fP \fBCharacterType\fP"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBCharacterUuid\fP"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PacketSkillCastFinish::PacketSkillCastFinish ()\fC [inline]\fP"
+
+.SS "PacketSkillCastFinish::PacketSkillCastFinish (\fBu8\fP InCharacterType, \fBu32\fP InCharacterUuid)\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP PacketSkillCastFinish::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SS "bool PacketSkillCastFinish::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SH "メンバ詳解"
+.PP 
+.SS "\fBu8\fP PacketSkillCastFinish::CharacterType"
+
+.SS "\fBu32\fP PacketSkillCastFinish::CharacterUuid"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

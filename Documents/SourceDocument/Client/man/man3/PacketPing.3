@@ -1,0 +1,43 @@
+.TH "PacketPing" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PacketPing
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PacketPing\&.h>\fP
+.PP
+\fBPacketBase\fPを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBu8\fP \fBGetPacketID\fP () const"
+.br
+.ti -1c
+.RI "\fBPacketPing\fP ()"
+.br
+.ti -1c
+.RI "bool \fBSerialize\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.in -1c
+.SH "構築子と解体子"
+.PP 
+.SS "PacketPing::PacketPing ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "virtual \fBu8\fP PacketPing::GetPacketID () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+.SS "bool PacketPing::Serialize (\fBMemoryStreamInterface\fP * pStream)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+\fBPacketBase\fPを実装しています。
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

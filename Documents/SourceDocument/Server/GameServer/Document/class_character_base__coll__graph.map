@@ -1,0 +1,6 @@
+<map id="CharacterBase" name="CharacterBase">
+<area shape="rect" id="node3" href="$class_skill_recast_manager.html" title="SkillRecastManager" alt="" coords="32,71,171,98"/>
+<area shape="rect" id="node4" href="$class_rotation.html" title="Rotation" alt="" coords="66,122,137,149"/>
+<area shape="rect" id="node5" href="$class_skill_control.html" title="SkillControl" alt="" coords="57,173,145,199"/>
+<area shape="rect" id="node6" href="$class_vector3_d.html" title="Vector3D" alt="" coords="63,262,139,289"/>
+</map>

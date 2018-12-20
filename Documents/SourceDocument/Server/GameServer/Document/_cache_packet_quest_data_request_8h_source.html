@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: D:/Prog/AnpanMMO/Server/AnpanMMOServer/Packet/CachePacketQuestDataRequest.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1a445cb237d74f7a5f8d11ec3b0585cc.html">Server</a></li><li class="navelem"><a class="el" href="dir_f54e6cb803bdfaa9f32d2f9ec38bb873.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_cc7971119e0dffc5686674c1b9bb2f00.html">Packet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CachePacketQuestDataRequest.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_cache_packet_quest_data_request_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __CACHEPACKETQUESTDATAREQUEST_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __CACHEPACKETQUESTDATAREQUEST_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_packet_base_8h.html">PacketBase.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_packet_i_d_8h.html">PacketID.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_memory_stream_interface_8h.html">MemoryStream/MemoryStreamInterface.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_process_packet_base_8h.html">ProcessPacketBase.h</a>&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_cache_packet_quest_data_request.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_cache_packet_quest_data_request.html">CachePacketQuestDataRequest</a>  : <span class="keyword">public</span> <a class="code" href="class_process_packet_base.html">ProcessPacketBase</a></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_cache_packet_quest_data_request.html#a9ca8ba2f30690c3e2782be5ebef78896">   13</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="class_cache_packet_quest_data_request.html#a9ca8ba2f30690c3e2782be5ebef78896">GetPacketID</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_packet_i_d.html#aaac69b977036b9b9d40419b939c1570aa4d1d878f6bb618c4d543d4d00161b710">PacketID::CacheQuestDataRequest</a>; }</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_cache_packet_quest_data_request.html#aa8c5d4a16ef30374aaf644133f523d73">   17</a></span>&#160;    <a class="code" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> <a class="code" href="class_cache_packet_quest_data_request.html#aa8c5d4a16ef30374aaf644133f523d73">CharacterId</a>;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    </div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_cache_packet_quest_data_request.html#a9667fae1a903d740cfa270c5793eb864">   20</a></span>&#160;    <a class="code" href="class_cache_packet_quest_data_request.html#a9667fae1a903d740cfa270c5793eb864">CachePacketQuestDataRequest</a>()</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_cache_packet_quest_data_request.html#aff55038f92b5b515dc99634c92943d73">   24</a></span>&#160;    <a class="code" href="class_cache_packet_quest_data_request.html#aff55038f92b5b515dc99634c92943d73">CachePacketQuestDataRequest</a>(<a class="code" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InClientId, <a class="code" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InCharacterId)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_process_packet_base.html#ac790a295ae07e447dfc05b4e8e681c8f">ClientId</a> = InClientId;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_cache_packet_quest_data_request.html#aa8c5d4a16ef30374aaf644133f523d73">CharacterId</a> = InCharacterId;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_cache_packet_quest_data_request.html#a24b4df24f4d33d9c9e3eea4349c77530">   31</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_cache_packet_quest_data_request.html#a24b4df24f4d33d9c9e3eea4349c77530">Serialize</a>(<a class="code" href="class_memory_stream_interface.html">MemoryStreamInterface</a> *pStream)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="class_process_packet_base.html#a5e9c610ce35b5a0bb034c180a9571bef">ProcessPacketBase::Serialize</a>(pStream);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        pStream-&gt;<a class="code" href="class_memory_stream_interface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="class_cache_packet_quest_data_request.html#aa8c5d4a16ef30374aaf644133f523d73">CharacterId</a>);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        </div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif      // #ifndef __CACHEPACKETQUESTDATAREQUEST_H__</span></div><div class="ttc" id="class_memory_stream_interface_html_a6a4fb8faf2a4f94ea6b56334aba31ebf"><div class="ttname"><a href="class_memory_stream_interface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">MemoryStreamInterface::Serialize</a></div><div class="ttdeci">virtual bool Serialize(s32 *pValue)=0</div></div>
+<div class="ttc" id="_type_defs_8h_html_a10e94b422ef0c20dcdec20d31a1f5049"><div class="ttname"><a href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a></div><div class="ttdeci">unsigned int u32</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:10</div></div>
+<div class="ttc" id="_process_packet_base_8h_html"><div class="ttname"><a href="_process_packet_base_8h.html">ProcessPacketBase.h</a></div></div>
+<div class="ttc" id="class_packet_i_d_html_aaac69b977036b9b9d40419b939c1570aa4d1d878f6bb618c4d543d4d00161b710"><div class="ttname"><a href="class_packet_i_d.html#aaac69b977036b9b9d40419b939c1570aa4d1d878f6bb618c4d543d4d00161b710">PacketID::CacheQuestDataRequest</a></div><div class="ttdef"><b>Definition:</b> PacketID.h:43</div></div>
+<div class="ttc" id="_memory_stream_interface_8h_html"><div class="ttname"><a href="_memory_stream_interface_8h.html">MemoryStreamInterface.h</a></div></div>
+<div class="ttc" id="class_cache_packet_quest_data_request_html_a24b4df24f4d33d9c9e3eea4349c77530"><div class="ttname"><a href="class_cache_packet_quest_data_request.html#a24b4df24f4d33d9c9e3eea4349c77530">CachePacketQuestDataRequest::Serialize</a></div><div class="ttdeci">bool Serialize(MemoryStreamInterface *pStream)</div><div class="ttdef"><b>Definition:</b> CachePacketQuestDataRequest.h:31</div></div>
+<div class="ttc" id="_packet_base_8h_html"><div class="ttname"><a href="_packet_base_8h.html">PacketBase.h</a></div></div>
+<div class="ttc" id="class_process_packet_base_html_ac790a295ae07e447dfc05b4e8e681c8f"><div class="ttname"><a href="class_process_packet_base.html#ac790a295ae07e447dfc05b4e8e681c8f">ProcessPacketBase::ClientId</a></div><div class="ttdeci">u32 ClientId</div><div class="ttdef"><b>Definition:</b> ProcessPacketBase.h:19</div></div>
+<div class="ttc" id="class_process_packet_base_html"><div class="ttname"><a href="class_process_packet_base.html">ProcessPacketBase</a></div><div class="ttdef"><b>Definition:</b> ProcessPacketBase.h:10</div></div>
+<div class="ttc" id="class_cache_packet_quest_data_request_html_a9667fae1a903d740cfa270c5793eb864"><div class="ttname"><a href="class_cache_packet_quest_data_request.html#a9667fae1a903d740cfa270c5793eb864">CachePacketQuestDataRequest::CachePacketQuestDataRequest</a></div><div class="ttdeci">CachePacketQuestDataRequest()</div><div class="ttdef"><b>Definition:</b> CachePacketQuestDataRequest.h:20</div></div>
+<div class="ttc" id="class_cache_packet_quest_data_request_html"><div class="ttname"><a href="class_cache_packet_quest_data_request.html">CachePacketQuestDataRequest</a></div><div class="ttdef"><b>Definition:</b> CachePacketQuestDataRequest.h:10</div></div>
+<div class="ttc" id="class_cache_packet_quest_data_request_html_aff55038f92b5b515dc99634c92943d73"><div class="ttname"><a href="class_cache_packet_quest_data_request.html#aff55038f92b5b515dc99634c92943d73">CachePacketQuestDataRequest::CachePacketQuestDataRequest</a></div><div class="ttdeci">CachePacketQuestDataRequest(u32 InClientId, u32 InCharacterId)</div><div class="ttdef"><b>Definition:</b> CachePacketQuestDataRequest.h:24</div></div>
+<div class="ttc" id="class_cache_packet_quest_data_request_html_aa8c5d4a16ef30374aaf644133f523d73"><div class="ttname"><a href="class_cache_packet_quest_data_request.html#aa8c5d4a16ef30374aaf644133f523d73">CachePacketQuestDataRequest::CharacterId</a></div><div class="ttdeci">u32 CharacterId</div><div class="ttdef"><b>Definition:</b> CachePacketQuestDataRequest.h:17</div></div>
+<div class="ttc" id="_packet_i_d_8h_html"><div class="ttname"><a href="_packet_i_d_8h.html">PacketID.h</a></div></div>
+<div class="ttc" id="class_memory_stream_interface_html"><div class="ttname"><a href="class_memory_stream_interface.html">MemoryStreamInterface</a></div><div class="ttdef"><b>Definition:</b> MemoryStreamInterface.h:8</div></div>
+<div class="ttc" id="class_cache_packet_quest_data_request_html_a9ca8ba2f30690c3e2782be5ebef78896"><div class="ttname"><a href="class_cache_packet_quest_data_request.html#a9ca8ba2f30690c3e2782be5ebef78896">CachePacketQuestDataRequest::GetPacketID</a></div><div class="ttdeci">virtual u8 GetPacketID() const</div><div class="ttdef"><b>Definition:</b> CachePacketQuestDataRequest.h:13</div></div>
+<div class="ttc" id="_type_defs_8h_html_aed742c436da53c1080638ce6ef7d13de"><div class="ttname"><a href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></div><div class="ttdeci">unsigned char u8</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:6</div></div>
+<div class="ttc" id="class_process_packet_base_html_a5e9c610ce35b5a0bb034c180a9571bef"><div class="ttname"><a href="class_process_packet_base.html#a5e9c610ce35b5a0bb034c180a9571bef">ProcessPacketBase::Serialize</a></div><div class="ttdeci">virtual bool Serialize(MemoryStreamInterface *pStream)</div><div class="ttdef"><b>Definition:</b> ProcessPacketBase.h:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

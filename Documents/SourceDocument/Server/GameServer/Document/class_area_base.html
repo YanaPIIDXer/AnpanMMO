@@ -1,0 +1,837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: AreaBase クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="class_area_base-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">AreaBase クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_area_base_8h_source.html">AreaBase.h</a>&gt;</code></p>
+<div class="dynheader">
+AreaBase の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_area_base__inherit__graph.png" border="0" usemap="#_area_base_inherit__map" alt="Inheritance graph"/></div>
+<map name="_area_base_inherit__map" id="_area_base_inherit__map">
+<area shape="rect" id="node3" href="class_area.html" title="Area" alt="" coords="13,169,62,196"/>
+<area shape="rect" id="node4" href="class_instance_area.html" title="InstanceArea" alt="" coords="87,169,185,196"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+AreaBase 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_area_base__coll__graph.png" border="0" usemap="#_area_base_coll__map" alt="Collaboration graph"/></div>
+<map name="_area_base_coll__map" id="_area_base_coll__map">
+<area shape="rect" id="node3" href="class_anpan_manager.html" title="AnpanManager" alt="" coords="192,13,301,39"/>
+<area shape="rect" id="node4" href="class_player_manager.html" title="PlayerManager" alt="" coords="325,13,435,39"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a38c050576a6dfc4d9f4394f52643d78b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a38c050576a6dfc4d9f4394f52643d78b">AreaBase</a> (const <a class="el" href="struct_area_item.html">AreaItem</a> *pItem)</td></tr>
+<tr class="separator:a38c050576a6dfc4d9f4394f52643d78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b0caecc33e966914464a007430a092d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a5b0caecc33e966914464a007430a092d">~AreaBase</a> ()</td></tr>
+<tr class="separator:a5b0caecc33e966914464a007430a092d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f88dbdf542e61513ea196893a3e741c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a8f88dbdf542e61513ea196893a3e741c">Initialize</a> ()</td></tr>
+<tr class="separator:a8f88dbdf542e61513ea196893a3e741c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa35e9e9e396d9da4f5d6738079e7833b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#aa35e9e9e396d9da4f5d6738079e7833b">Poll</a> (int DeltaTime)</td></tr>
+<tr class="separator:aa35e9e9e396d9da4f5d6738079e7833b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dcdfbb9eff48e5402b87e990bdf1aab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a8dcdfbb9eff48e5402b87e990bdf1aab">AddPlayerCharacter</a> (const <a class="el" href="_weak_ptr_define_8h.html#a521917366f163f43d1d84fffbc5f0756">PlayerCharacterPtr</a> &amp;pPlayer)</td></tr>
+<tr class="separator:a8dcdfbb9eff48e5402b87e990bdf1aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a692dbb7c1dbab7077d8726eb983d915a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a692dbb7c1dbab7077d8726eb983d915a">RemovePlayerCharacter</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid)</td></tr>
+<tr class="separator:a692dbb7c1dbab7077d8726eb983d915a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab0cce8571e45011d93fa00426ab3c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#aab0cce8571e45011d93fa00426ab3c22">OnRecvMove</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid, float X, float Y, float Z, float <a class="el" href="class_rotation.html">Rotation</a>)</td></tr>
+<tr class="separator:aab0cce8571e45011d93fa00426ab3c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1199e74b590f790efdb82966032d29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a5b1199e74b590f790efdb82966032d29">OnRecvSkillUse</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid, <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId, <a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> TargetType, <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> TargetUuid)</td></tr>
+<tr class="separator:a5b1199e74b590f790efdb82966032d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c275fad404278d74490814da9605a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a85c275fad404278d74490814da9605a6">OnRecvItemUse</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid, <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ItemId, <a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> TargetType, <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> TargetUuid)</td></tr>
+<tr class="separator:a85c275fad404278d74490814da9605a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a946d6eb75590a7d0c2702c7f7aa4d16c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a946d6eb75590a7d0c2702c7f7aa4d16c">BroadcastPacket</a> (<a class="el" href="class_packet_base.html">PacketBase</a> *pPacket, <a class="el" href="class_client.html">Client</a> *pIgnoreClient=NULL)</td></tr>
+<tr class="separator:a946d6eb75590a7d0c2702c7f7aa4d16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b8562f04de35c129dcb65beebbdc5cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a9b8562f04de35c129dcb65beebbdc5cd">BroadcastPacketWithRange</a> (<a class="el" href="class_packet_base.html">PacketBase</a> *pPacket, const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;Center, float Range, <a class="el" href="class_client.html">Client</a> *pIgnoreClient=NULL)</td></tr>
+<tr class="separator:a9b8562f04de35c129dcb65beebbdc5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a775cd05bb21d22ff4ab4e95712b9b3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a4a775cd05bb21d22ff4ab4e95712b9b3">GetHeight</a> (float X, float Y) const</td></tr>
+<tr class="separator:a4a775cd05bb21d22ff4ab4e95712b9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6f3f4dd2909326ece195fadae96980"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#acb6f3f4dd2909326ece195fadae96980">CheckMovable</a> (const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;Start, const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;End, float ClimbableHeight, <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;OutHit) const</td></tr>
+<tr class="separator:acb6f3f4dd2909326ece195fadae96980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4a714d85bf71137845643548d5856c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a9d4a714d85bf71137845643548d5856c">GetId</a> () const =0</td></tr>
+<tr class="separator:a9d4a714d85bf71137845643548d5856c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc736976c30847840c69bd2e80863c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#adcc736976c30847840c69bd2e80863c4">GetMasterId</a> () const</td></tr>
+<tr class="separator:adcc736976c30847840c69bd2e80863c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6740169f3d35c1194e7101e60157a00f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a6740169f3d35c1194e7101e60157a00f">IsAbleDelete</a> () const =0</td></tr>
+<tr class="separator:a6740169f3d35c1194e7101e60157a00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75635c522c3b8d5475812692df916dd0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a75635c522c3b8d5475812692df916dd0">IsInstance</a> () const</td></tr>
+<tr class="separator:a75635c522c3b8d5475812692df916dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae141c33845bdbf3291630c1eb28cfafe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#ae141c33845bdbf3291630c1eb28cfafe">CollectCircle</a> (const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;Center, float Radius, <a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> TargetType, std::vector&lt; <a class="el" href="class_character_base.html">CharacterBase</a> *&gt; &amp;OutTargets)</td></tr>
+<tr class="separator:ae141c33845bdbf3291630c1eb28cfafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0535b2fecd614ad1af1f90464280581e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a0535b2fecd614ad1af1f90464280581e">CollectBox</a> (const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;Center, float Width, float Height, <a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> TargetType, std::vector&lt; <a class="el" href="class_character_base.html">CharacterBase</a> *&gt; &amp;OutTargets)</td></tr>
+<tr class="separator:a0535b2fecd614ad1af1f90464280581e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:aef1d5ff74b55370f2d865ac8e06775ad"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#aef1d5ff74b55370f2d865ac8e06775ad">Update</a> ()</td></tr>
+<tr class="separator:aef1d5ff74b55370f2d865ac8e06775ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a2ba7d4287152153d70239a6921406981"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_manager.html">PlayerManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a2ba7d4287152153d70239a6921406981">PlayerMgr</a></td></tr>
+<tr class="separator:a2ba7d4287152153d70239a6921406981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52678cb8eb5e27058fa5ff21145e8d49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_anpan_manager.html">AnpanManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#a52678cb8eb5e27058fa5ff21145e8d49">AnpanMgr</a></td></tr>
+<tr class="separator:a52678cb8eb5e27058fa5ff21145e8d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8eb9cb8eabf5e953ac4ea86ea2b98c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_area_base.html#ae8eb9cb8eabf5e953ac4ea86ea2b98c5">MasterId</a></td></tr>
+<tr class="separator:ae8eb9cb8eabf5e953ac4ea86ea2b98c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>エリア基底クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a38c050576a6dfc4d9f4394f52643d78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38c050576a6dfc4d9f4394f52643d78b">&#9670;&nbsp;</a></span>AreaBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AreaBase::AreaBase </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_area_item.html">AreaItem</a> *&#160;</td>
+          <td class="paramname"><em>pItem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b0caecc33e966914464a007430a092d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b0caecc33e966914464a007430a092d">&#9670;&nbsp;</a></span>~AreaBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual AreaBase::~AreaBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a8dcdfbb9eff48e5402b87e990bdf1aab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dcdfbb9eff48e5402b87e990bdf1aab">&#9670;&nbsp;</a></span>AddPlayerCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::AddPlayerCharacter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_weak_ptr_define_8h.html#a521917366f163f43d1d84fffbc5f0756">PlayerCharacterPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>pPlayer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a946d6eb75590a7d0c2702c7f7aa4d16c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a946d6eb75590a7d0c2702c7f7aa4d16c">&#9670;&nbsp;</a></span>BroadcastPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::BroadcastPacket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_packet_base.html">PacketBase</a> *&#160;</td>
+          <td class="paramname"><em>pPacket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_client.html">Client</a> *&#160;</td>
+          <td class="paramname"><em>pIgnoreClient</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b8562f04de35c129dcb65beebbdc5cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b8562f04de35c129dcb65beebbdc5cd">&#9670;&nbsp;</a></span>BroadcastPacketWithRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::BroadcastPacketWithRange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_packet_base.html">PacketBase</a> *&#160;</td>
+          <td class="paramname"><em>pPacket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>Center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_client.html">Client</a> *&#160;</td>
+          <td class="paramname"><em>pIgnoreClient</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb6f3f4dd2909326ece195fadae96980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb6f3f4dd2909326ece195fadae96980">&#9670;&nbsp;</a></span>CheckMovable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AreaBase::CheckMovable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>Start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>End</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ClimbableHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>OutHit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0535b2fecd614ad1af1f90464280581e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0535b2fecd614ad1af1f90464280581e">&#9670;&nbsp;</a></span>CollectBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::CollectBox </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>Center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>TargetType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_character_base.html">CharacterBase</a> *&gt; &amp;&#160;</td>
+          <td class="paramname"><em>OutTargets</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae141c33845bdbf3291630c1eb28cfafe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae141c33845bdbf3291630c1eb28cfafe">&#9670;&nbsp;</a></span>CollectCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::CollectCircle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>Center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>TargetType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_character_base.html">CharacterBase</a> *&gt; &amp;&#160;</td>
+          <td class="paramname"><em>OutTargets</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a775cd05bb21d22ff4ab4e95712b9b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a775cd05bb21d22ff4ab4e95712b9b3">&#9670;&nbsp;</a></span>GetHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AreaBase::GetHeight </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d4a714d85bf71137845643548d5856c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d4a714d85bf71137845643548d5856c">&#9670;&nbsp;</a></span>GetId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> AreaBase::GetId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_instance_area.html#ac71f0ca4d9078cd64b438dd9dab00961">InstanceArea</a>, <a class="el" href="class_area.html#a691140a45c93e5853928bfb2e4a2426d">Area</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="adcc736976c30847840c69bd2e80863c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc736976c30847840c69bd2e80863c4">&#9670;&nbsp;</a></span>GetMasterId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> AreaBase::GetMasterId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f88dbdf542e61513ea196893a3e741c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f88dbdf542e61513ea196893a3e741c">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void AreaBase::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_instance_area.html#aca5cdff8995ab000177e32b6fb9c4c7b">InstanceArea</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a6740169f3d35c1194e7101e60157a00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6740169f3d35c1194e7101e60157a00f">&#9670;&nbsp;</a></span>IsAbleDelete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool AreaBase::IsAbleDelete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_instance_area.html#ac3b08e286ec19a28506f4e910257f88c">InstanceArea</a>, <a class="el" href="class_area.html#a03e4a3272235427054cbce9545bd8ea6">Area</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a75635c522c3b8d5475812692df916dd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75635c522c3b8d5475812692df916dd0">&#9670;&nbsp;</a></span>IsInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool AreaBase::IsInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_instance_area.html#adb7c2017946110caba6edd5090dbc7a5">InstanceArea</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a85c275fad404278d74490814da9605a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85c275fad404278d74490814da9605a6">&#9670;&nbsp;</a></span>OnRecvItemUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::OnRecvItemUse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Uuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>ItemId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>TargetType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>TargetUuid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab0cce8571e45011d93fa00426ab3c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab0cce8571e45011d93fa00426ab3c22">&#9670;&nbsp;</a></span>OnRecvMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::OnRecvMove </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Uuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Rotation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b1199e74b590f790efdb82966032d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1199e74b590f790efdb82966032d29">&#9670;&nbsp;</a></span>OnRecvSkillUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::OnRecvSkillUse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Uuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>SkillId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>TargetType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>TargetUuid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa35e9e9e396d9da4f5d6738079e7833b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa35e9e9e396d9da4f5d6738079e7833b">&#9670;&nbsp;</a></span>Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::Poll </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a692dbb7c1dbab7077d8726eb983d915a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a692dbb7c1dbab7077d8726eb983d915a">&#9670;&nbsp;</a></span>RemovePlayerCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AreaBase::RemovePlayerCharacter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Uuid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef1d5ff74b55370f2d865ac8e06775ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef1d5ff74b55370f2d865ac8e06775ad">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void AreaBase::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_instance_area.html#a9ab2117e62f63d3eb74f8463f919d481">InstanceArea</a>で再実装されています。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a52678cb8eb5e27058fa5ff21145e8d49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52678cb8eb5e27058fa5ff21145e8d49">&#9670;&nbsp;</a></span>AnpanMgr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_anpan_manager.html">AnpanManager</a> AreaBase::AnpanMgr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8eb9cb8eabf5e953ac4ea86ea2b98c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8eb9cb8eabf5e953ac4ea86ea2b98c5">&#9670;&nbsp;</a></span>MasterId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> AreaBase::MasterId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ba7d4287152153d70239a6921406981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba7d4287152153d70239a6921406981">&#9670;&nbsp;</a></span>PlayerMgr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player_manager.html">PlayerManager</a> AreaBase::PlayerMgr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>D:/Prog/AnpanMMO/Server/AnpanMMOServer/Area/<a class="el" href="_area_base_8h_source.html">AreaBase.h</a></li>
+<li>D:/Prog/AnpanMMO/Server/AnpanMMOServer/Area/<a class="el" href="_area_base_8cpp.html">AreaBase.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

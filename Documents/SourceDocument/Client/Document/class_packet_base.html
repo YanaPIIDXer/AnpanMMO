@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: PacketBase クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="class_packet_base-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">PacketBase クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_packet_base_8h_source.html">PacketBase.h</a>&gt;</code></p>
+
+<p><a class="el" href="class_packet_add_exp.html">PacketAddExp</a>, <a class="el" href="class_packet_anpan_list.html">PacketAnpanList</a>, <a class="el" href="class_packet_area_move.html">PacketAreaMove</a>, <a class="el" href="class_packet_area_move_request.html">PacketAreaMoveRequest</a>, <a class="el" href="class_packet_area_move_response.html">PacketAreaMoveResponse</a>, <a class="el" href="class_packet_change_gold.html">PacketChangeGold</a>, <a class="el" href="class_packet_character_status.html">PacketCharacterStatus</a>, <a class="el" href="class_packet_create_character_request.html">PacketCreateCharacterRequest</a>, <a class="el" href="class_packet_create_character_result.html">PacketCreateCharacterResult</a>, <a class="el" href="class_packet_damage.html">PacketDamage</a>, <a class="el" href="class_packet_exit_player.html">PacketExitPlayer</a>, <a class="el" href="class_packet_game_ready.html">PacketGameReady</a>, <a class="el" href="class_packet_heal.html">PacketHeal</a>, <a class="el" href="class_packet_instance_area_ticket_discard.html">PacketInstanceAreaTicketDiscard</a>, <a class="el" href="class_packet_instance_area_ticket_process.html">PacketInstanceAreaTicketProcess</a>, <a class="el" href="class_packet_instance_area_ticket_publish.html">PacketInstanceAreaTicketPublish</a>, <a class="el" href="class_packet_item_add.html">PacketItemAdd</a>, <a class="el" href="class_packet_item_list.html">PacketItemList</a>, <a class="el" href="class_packet_item_shortcut.html">PacketItemShortcut</a>, <a class="el" href="class_packet_item_subtract.html">PacketItemSubtract</a>, <a class="el" href="class_packet_item_subtract_request.html">PacketItemSubtractRequest</a>, <a class="el" href="class_packet_item_use.html">PacketItemUse</a>, <a class="el" href="class_packet_level_up.html">PacketLevelUp</a>, <a class="el" href="class_packet_log_in_request.html">PacketLogInRequest</a>, <a class="el" href="class_packet_log_in_result.html">PacketLogInResult</a>, <a class="el" href="class_packet_move_anpan.html">PacketMoveAnpan</a>, <a class="el" href="class_packet_move_player.html">PacketMovePlayer</a>, <a class="el" href="class_packet_notice_list.html">PacketNoticeList</a>, <a class="el" href="class_packet_n_p_c_talk.html">PacketNPCTalk</a>, <a class="el" href="class_packet_n_p_c_talk_selection.html">PacketNPCTalkSelection</a>, <a class="el" href="class_packet_party_create_request.html">PacketPartyCreateRequest</a>, <a class="el" href="class_packet_party_create_result.html">PacketPartyCreateResult</a>, <a class="el" href="class_packet_party_dissolution.html">PacketPartyDissolution</a>, <a class="el" href="class_packet_party_dissolution_request.html">PacketPartyDissolutionRequest</a>, <a class="el" href="class_packet_party_dissolution_result.html">PacketPartyDissolutionResult</a>, <a class="el" href="class_packet_party_exit.html">PacketPartyExit</a>, <a class="el" href="class_packet_party_exit_request.html">PacketPartyExitRequest</a>, <a class="el" href="class_packet_party_exit_result.html">PacketPartyExitResult</a>, <a class="el" href="class_packet_party_invite_request.html">PacketPartyInviteRequest</a>, <a class="el" href="class_packet_party_invite_response.html">PacketPartyInviteResponse</a>, <a class="el" href="class_packet_party_invite_result.html">PacketPartyInviteResult</a>, <a class="el" href="class_packet_party_join.html">PacketPartyJoin</a>, <a class="el" href="class_packet_party_join_member.html">PacketPartyJoinMember</a>, <a class="el" href="class_packet_party_kick.html">PacketPartyKick</a>, <a class="el" href="class_packet_party_kick_request.html">PacketPartyKickRequest</a>, <a class="el" href="class_packet_party_kick_result.html">PacketPartyKickResult</a>, <a class="el" href="class_packet_ping.html">PacketPing</a>, <a class="el" href="class_packet_player_list.html">PacketPlayerList</a>, <a class="el" href="class_packet_player_respawn.html">PacketPlayerRespawn</a>, <a class="el" href="class_packet_quest_accept.html">PacketQuestAccept</a>, <a class="el" href="class_packet_quest_anpan_kill.html">PacketQuestAnpanKill</a>, <a class="el" href="class_packet_quest_clear.html">PacketQuestClear</a>, <a class="el" href="class_packet_quest_data.html">PacketQuestData</a>, <a class="el" href="class_packet_quest_retire_request.html">PacketQuestRetireRequest</a>, <a class="el" href="class_packet_quest_retire_response.html">PacketQuestRetireResponse</a>, <a class="el" href="class_packet_quest_stage_change.html">PacketQuestStageChange</a>, <a class="el" href="class_packet_receive_chat.html">PacketReceiveChat</a>, <a class="el" href="class_packet_receive_notice.html">PacketReceiveNotice</a>, <a class="el" href="class_packet_respawn_request.html">PacketRespawnRequest</a>, <a class="el" href="class_packet_rotate_anpan.html">PacketRotateAnpan</a>, <a class="el" href="class_packet_save_active_quest.html">PacketSaveActiveQuest</a>, <a class="el" href="class_packet_save_item_shortcut_request.html">PacketSaveItemShortcutRequest</a>, <a class="el" href="class_packet_save_item_shortcut_result.html">PacketSaveItemShortcutResult</a>, <a class="el" href="class_packet_save_skill_list_request.html">PacketSaveSkillListRequest</a>, <a class="el" href="class_packet_save_skill_list_response.html">PacketSaveSkillListResponse</a>, <a class="el" href="class_packet_script_flag.html">PacketScriptFlag</a>, <a class="el" href="class_packet_send_chat.html">PacketSendChat</a>, <a class="el" href="class_packet_skill_activate.html">PacketSkillActivate</a>, <a class="el" href="class_packet_skill_cast.html">PacketSkillCast</a>, <a class="el" href="class_packet_skill_cast_finish.html">PacketSkillCastFinish</a>, <a class="el" href="class_packet_skill_list.html">PacketSkillList</a>, <a class="el" href="class_packet_skill_recast.html">PacketSkillRecast</a>, <a class="el" href="class_packet_skill_tree_data.html">PacketSkillTreeData</a>, <a class="el" href="class_packet_skill_tree_open_request.html">PacketSkillTreeOpenRequest</a>, <a class="el" href="class_packet_skill_tree_open_result.html">PacketSkillTreeOpenResult</a>, <a class="el" href="class_packet_skill_use.html">PacketSkillUse</a>, <a class="el" href="class_packet_skill_use_failed.html">PacketSkillUseFailed</a>, <a class="el" href="class_packet_spawn_anpan.html">PacketSpawnAnpan</a>, <a class="el" href="class_packet_spawn_instance_area_exit_point.html">PacketSpawnInstanceAreaExitPoint</a>, <a class="el" href="class_packet_spawn_player.html">PacketSpawnPlayer</a>, <a class="el" href="class_packet_stop_anpan.html">PacketStopAnpan</a>, <a class="el" href="class_packet_time.html">PacketTime</a>, <a class="el" href="class_packet_time_change.html">PacketTimeChange</a> (計83項目)に継承されています。</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a8784f3bc29a63570e38619d940131223"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_packet_base.html#a8784f3bc29a63570e38619d940131223">~PacketBase</a> ()</td></tr>
+<tr class="separator:a8784f3bc29a63570e38619d940131223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25571c44a21c4e9e15df719b2073ba62"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_packet_base.html#a25571c44a21c4e9e15df719b2073ba62">GetPacketID</a> () const =0</td></tr>
+<tr class="separator:a25571c44a21c4e9e15df719b2073ba62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e30d95c9ddc4ccb36376fc93d1398d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_packet_base.html#ab4e30d95c9ddc4ccb36376fc93d1398d">Serialize</a> (<a class="el" href="class_memory_stream_interface.html">MemoryStreamInterface</a> *pStream)=0</td></tr>
+<tr class="separator:ab4e30d95c9ddc4ccb36376fc93d1398d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a8784f3bc29a63570e38619d940131223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8784f3bc29a63570e38619d940131223">&#9670;&nbsp;</a></span>~PacketBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual PacketBase::~PacketBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a25571c44a21c4e9e15df719b2073ba62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25571c44a21c4e9e15df719b2073ba62">&#9670;&nbsp;</a></span>GetPacketID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PacketBase::GetPacketID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_packet_anpan_list.html#af4a036cb23592016f72ef3fb617b6d0a">PacketAnpanList</a>, <a class="el" href="class_packet_item_list.html#a3d80202cd2c922e6203a625462eebd66">PacketItemList</a>, <a class="el" href="class_packet_notice_list.html#adeed05eda98da5cdcef4ac52c67de367">PacketNoticeList</a>, <a class="el" href="class_packet_party_join.html#a8c991c52b39508f533e6cab6654d56dd">PacketPartyJoin</a>, <a class="el" href="class_packet_player_list.html#aa154b3462758955cc07c6a7d0a6dfd12">PacketPlayerList</a>, <a class="el" href="class_packet_quest_data.html#a087056d05728e087014f9936572868f1">PacketQuestData</a>, <a class="el" href="class_packet_skill_tree_data.html#a80346e6cc4fb38f556a1864777830180">PacketSkillTreeData</a>, <a class="el" href="class_packet_party_join_member.html#a1c0867d83579d05966329cd1d6251343">PacketPartyJoinMember</a>, <a class="el" href="class_packet_receive_notice.html#ae29aa924776698bb1133e9ed996a6676">PacketReceiveNotice</a>, <a class="el" href="class_packet_spawn_anpan.html#a46bc5019b6958f5c7d2307e064c5f15d">PacketSpawnAnpan</a>, <a class="el" href="class_packet_spawn_player.html#af80a2ccf2660a6f0c76be8361e13f1d3">PacketSpawnPlayer</a>, <a class="el" href="class_packet_add_exp.html#a9d7c6a03e056f247f4fe64d0a0c6090b">PacketAddExp</a>, <a class="el" href="class_packet_area_move.html#a771e5ff4b05c6bf96c9b9741a40e7ca7">PacketAreaMove</a>, <a class="el" href="class_packet_area_move_request.html#aa6d4c559b369b937c8880c061db3832a">PacketAreaMoveRequest</a>, <a class="el" href="class_packet_area_move_response.html#af8425dd86d3a73373d9ac9c0882f390d">PacketAreaMoveResponse</a>, <a class="el" href="class_packet_change_gold.html#af8d56ca1df91ff0fd1f4be85a61c7d18">PacketChangeGold</a>, <a class="el" href="class_packet_character_status.html#af626803acc7b87adad14219fde3302f9">PacketCharacterStatus</a>, <a class="el" href="class_packet_create_character_request.html#ab6a7583f14e13a5057b9b48f6dba11e4">PacketCreateCharacterRequest</a>, <a class="el" href="class_packet_create_character_result.html#ab6fc185e85a70f6373922b3b35627a76">PacketCreateCharacterResult</a>, <a class="el" href="class_packet_damage.html#a54508aaf8ae75ad69b8a3895f5814a4d">PacketDamage</a>, <a class="el" href="class_packet_exit_player.html#a16c77833b32ee70624755546e2e49ef3">PacketExitPlayer</a>, <a class="el" href="class_packet_game_ready.html#a1fe5e9085cc886310c788f4f8a6b863d">PacketGameReady</a>, <a class="el" href="class_packet_heal.html#a9e138453cd5ac23d49e137566678bd7f">PacketHeal</a>, <a class="el" href="class_packet_instance_area_ticket_discard.html#a3750a5691875a75d9a19c8f5a1514eb0">PacketInstanceAreaTicketDiscard</a>, <a class="el" href="class_packet_instance_area_ticket_process.html#a366bd0c9c1237899d8254017c07f6804">PacketInstanceAreaTicketProcess</a>, <a class="el" href="class_packet_instance_area_ticket_publish.html#a70a5c63af547391a2d261298de577ac2">PacketInstanceAreaTicketPublish</a>, <a class="el" href="class_packet_item_add.html#a2b126bcbd0ef7e7de22cd5caadef2cf7">PacketItemAdd</a>, <a class="el" href="class_packet_item_shortcut.html#a7bfd854680e01d52a4ee445bf4fff26d">PacketItemShortcut</a>, <a class="el" href="class_packet_item_subtract.html#a95fbe1282059b08a08b384a39d6fbb55">PacketItemSubtract</a>, <a class="el" href="class_packet_item_subtract_request.html#a9dc47ac24ea1e20380a7704c7a25ad1c">PacketItemSubtractRequest</a>, <a class="el" href="class_packet_item_use.html#ae7a72f7e2b744753a1a2c818d8e7c4f5">PacketItemUse</a>, <a class="el" href="class_packet_level_up.html#adb8c395898071a2d62a2f15b1f34676e">PacketLevelUp</a>, <a class="el" href="class_packet_log_in_request.html#a2d61046fca1f270190394543e86e8529">PacketLogInRequest</a>, <a class="el" href="class_packet_log_in_result.html#a604b3d59d3fa11df48fcab0a952b64d7">PacketLogInResult</a>, <a class="el" href="class_packet_move_anpan.html#a3acb85c6e07ceb7e98e02feff378f6eb">PacketMoveAnpan</a>, <a class="el" href="class_packet_move_player.html#aed7d109f88f1a3e7a858fd87173c230d">PacketMovePlayer</a>, <a class="el" href="class_packet_n_p_c_talk.html#abac57df3eb6052e7ce01574066812b14">PacketNPCTalk</a>, <a class="el" href="class_packet_n_p_c_talk_selection.html#aa9ea24736f167fd37b943073241797e6">PacketNPCTalkSelection</a>, <a class="el" href="class_packet_party_create_request.html#a7ba3d2a231d8a350e3233c59de8372da">PacketPartyCreateRequest</a>, <a class="el" href="class_packet_party_create_result.html#a4c657cef56439614c13fffb2a9736b9f">PacketPartyCreateResult</a>, <a class="el" href="class_packet_party_dissolution.html#a7915307453af066bf3c6c67eead21073">PacketPartyDissolution</a>, <a class="el" href="class_packet_party_dissolution_request.html#aa2dd292e9c42293a75e26825f4476dc4">PacketPartyDissolutionRequest</a>, <a class="el" href="class_packet_party_dissolution_result.html#a1c61a0f46be03998bbd2b71a787d87ae">PacketPartyDissolutionResult</a>, <a class="el" href="class_packet_party_exit.html#a41248753e8d855d742f02caa2cc8d2e1">PacketPartyExit</a>, <a class="el" href="class_packet_party_exit_request.html#a6e834b2ad391c89fa76eb00ce9ff2891">PacketPartyExitRequest</a>, <a class="el" href="class_packet_party_exit_result.html#a68cd469658f7e48a5ad0f7c6099c3fe1">PacketPartyExitResult</a>, <a class="el" href="class_packet_party_invite_request.html#a445e944d38dd0ec3635d3e51966cc901">PacketPartyInviteRequest</a>, <a class="el" href="class_packet_party_invite_response.html#a15a66591bfb78e7a242ff3380b39dae7">PacketPartyInviteResponse</a>, <a class="el" href="class_packet_party_invite_result.html#ad4afd68c7c13b2710cb6d07e990e728a">PacketPartyInviteResult</a>, <a class="el" href="class_packet_party_kick.html#a587e31ae67967ce2bb048e031889b828">PacketPartyKick</a>, <a class="el" href="class_packet_party_kick_request.html#a830ed85f37b43d7119e7c8776532ef00">PacketPartyKickRequest</a>, <a class="el" href="class_packet_party_kick_result.html#a39213cbe7dc085c0fd2bcc249566fb5b">PacketPartyKickResult</a>, <a class="el" href="class_packet_ping.html#a1ebd0914e14e5beacf76ce4ca60ae37d">PacketPing</a>, <a class="el" href="class_packet_player_respawn.html#af045f42938e1093eb347030ddcc9e3b5">PacketPlayerRespawn</a>, <a class="el" href="class_packet_quest_accept.html#ac7890215763342ce673d90d626a0d6e6">PacketQuestAccept</a>, <a class="el" href="class_packet_quest_anpan_kill.html#a75a77b7a29dbd3050c5699d3b4cce1ed">PacketQuestAnpanKill</a>, <a class="el" href="class_packet_quest_clear.html#ac74da254240fd3c781c6eead54f47645">PacketQuestClear</a>, <a class="el" href="class_packet_quest_retire_request.html#ad413366a30482928ebd684bafda30999">PacketQuestRetireRequest</a>, <a class="el" href="class_packet_quest_retire_response.html#a43ef30f27e52b241571505b472768464">PacketQuestRetireResponse</a>, <a class="el" href="class_packet_quest_stage_change.html#a988358968c59c364a758c87179ce48a4">PacketQuestStageChange</a>, <a class="el" href="class_packet_receive_chat.html#a5bdf1078c5e6a34282d24501377f0e6a">PacketReceiveChat</a>, <a class="el" href="class_packet_respawn_request.html#a7e633e566b47147c0e5189a06f5afc06">PacketRespawnRequest</a>, <a class="el" href="class_packet_rotate_anpan.html#a32cbc3f44709561def736ef46716dfc2">PacketRotateAnpan</a>, <a class="el" href="class_packet_save_active_quest.html#aa4e63926f5813e8240de0eee8059605c">PacketSaveActiveQuest</a>, <a class="el" href="class_packet_save_item_shortcut_request.html#a617ef01ad76f1b21e9bc6986276030e1">PacketSaveItemShortcutRequest</a>, <a class="el" href="class_packet_save_item_shortcut_result.html#a4574f92008ec95860103c3a001b31435">PacketSaveItemShortcutResult</a>, <a class="el" href="class_packet_save_skill_list_request.html#ad80f6578669d9ddbbe6ab19367ae7781">PacketSaveSkillListRequest</a>, <a class="el" href="class_packet_save_skill_list_response.html#afed99e29003e6f92971165e8cb42cc27">PacketSaveSkillListResponse</a>, <a class="el" href="class_packet_script_flag.html#a41c2d97f8cb8fb1bc8d49981f5c429a2">PacketScriptFlag</a>, <a class="el" href="class_packet_send_chat.html#a614ef63f0fd79fffce1a15d0626eb962">PacketSendChat</a>, <a class="el" href="class_packet_skill_activate.html#a2f204193a7cfef78db65fe3fb097f878">PacketSkillActivate</a>, <a class="el" href="class_packet_skill_cast.html#a0cf7ce7324a5c0ffa4d61e4277a043b0">PacketSkillCast</a>, <a class="el" href="class_packet_skill_cast_finish.html#a3f3eb149bb1e3684df7cb49e4129ce01">PacketSkillCastFinish</a>, <a class="el" href="class_packet_skill_list.html#ab8421e20878bc61b0f75d68af08a7722">PacketSkillList</a>, <a class="el" href="class_packet_skill_recast.html#ad07c2aec1dcfaece97aed0b58c0aff24">PacketSkillRecast</a>, <a class="el" href="class_packet_skill_tree_open_request.html#a565a84b8bfeea7a9181dc5e3e948857e">PacketSkillTreeOpenRequest</a>, <a class="el" href="class_packet_skill_tree_open_result.html#ac67583e9f6a2255323509f6251e99e65">PacketSkillTreeOpenResult</a>, <a class="el" href="class_packet_skill_use.html#ad6cbb257515279f342bbbf5d06ef8531">PacketSkillUse</a>, <a class="el" href="class_packet_skill_use_failed.html#a7672e709a38b14c2d1816499f95dfd09">PacketSkillUseFailed</a>, <a class="el" href="class_packet_spawn_instance_area_exit_point.html#ad5f9815da116c1996c56ece6f628ea1e">PacketSpawnInstanceAreaExitPoint</a>, <a class="el" href="class_packet_stop_anpan.html#ae4f72c0e801a96c8d52815b7ce8cd8dd">PacketStopAnpan</a>, <a class="el" href="class_packet_time.html#a0c868af6fa75af99bea7b9117f2e75b9">PacketTime</a>, <a class="el" href="class_packet_time_change.html#a1d1ba0fe51d909f290ee4bb38824b3f5">PacketTimeChange</a> (計83項目)で実装されています。</p>
+
+</div>
+</div>
+<a id="ab4e30d95c9ddc4ccb36376fc93d1398d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e30d95c9ddc4ccb36376fc93d1398d">&#9670;&nbsp;</a></span>Serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool PacketBase::Serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_memory_stream_interface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_packet_character_status.html#a8f03c0c6f6fc60e56a335b530a2d37e8">PacketCharacterStatus</a>, <a class="el" href="class_packet_save_skill_list_response.html#af82bd392b537cc5ab80fa9123419f552">PacketSaveSkillListResponse</a>, <a class="el" href="class_packet_log_in_result.html#a53f39c22221a47b60bb2f3d77b0b78d5">PacketLogInResult</a>, <a class="el" href="class_packet_skill_tree_open_result.html#a7d2183f88ca67f023a76ed0f0d0eff1a">PacketSkillTreeOpenResult</a>, <a class="el" href="class_packet_level_up.html#a462f2d2595775ddc941f563dadfef3ca">PacketLevelUp</a>, <a class="el" href="class_packet_move_anpan.html#a8c49f37b302da302d16f66e8a1f1ab27">PacketMoveAnpan</a>, <a class="el" href="class_packet_move_player.html#a6a5ab5d38f794d96e9bb57a1e6b34f27">PacketMovePlayer</a>, <a class="el" href="class_packet_save_item_shortcut_result.html#a25c9d838784936b96988ae09684adfe9">PacketSaveItemShortcutResult</a>, <a class="el" href="class_packet_skill_list.html#aefe089fcf67554af220232b0833fb040">PacketSkillList</a>, <a class="el" href="class_packet_stop_anpan.html#a6b7b9635d2604b9946f9dfe9d4aa537f">PacketStopAnpan</a>, <a class="el" href="class_packet_party_create_result.html#aa7d5192df9c4e535011b0214b2a22d89">PacketPartyCreateResult</a>, <a class="el" href="class_packet_quest_retire_response.html#abebfbe9698b1ce0366847558869bd9ef">PacketQuestRetireResponse</a>, <a class="el" href="class_packet_area_move.html#af633a4b924d1959f4cdaba369fc12b74">PacketAreaMove</a>, <a class="el" href="class_packet_create_character_result.html#a580d876e18bf28c4174d638ae95cc0cb">PacketCreateCharacterResult</a>, <a class="el" href="class_packet_damage.html#a6584b2c3756ee1364e7d27f683c8e333">PacketDamage</a>, <a class="el" href="class_packet_heal.html#adbb1947d08e8ac609d3cab35509d63cb">PacketHeal</a>, <a class="el" href="class_packet_instance_area_ticket_process.html#ac8e97950b5e2ee09d39137f96eb7157c">PacketInstanceAreaTicketProcess</a>, <a class="el" href="class_packet_party_invite_response.html#a94a13d0e00d172fc90b70cde53b6c9b5">PacketPartyInviteResponse</a>, <a class="el" href="class_packet_player_respawn.html#a5f284486cda7533fb5389eb143ac8e49">PacketPlayerRespawn</a>, <a class="el" href="class_packet_save_skill_list_request.html#a530bf335ed5cac6e6d8bbdf3cedb3fcc">PacketSaveSkillListRequest</a>, <a class="el" href="class_packet_send_chat.html#a286288410ba199d3b422c1975fe68e05">PacketSendChat</a>, <a class="el" href="class_packet_party_invite_result.html#a780e22b83d83365c421118b58210b61e">PacketPartyInviteResult</a>, <a class="el" href="class_packet_skill_use_failed.html#a1d8a884f9f3915b1127cd9c7f5fafea9">PacketSkillUseFailed</a>, <a class="el" href="class_packet_area_move_response.html#aa16bd88b87137373e5b3b71158046822">PacketAreaMoveResponse</a>, <a class="el" href="class_packet_item_use.html#a784404a99b2c7c73688aa57261f32c02">PacketItemUse</a>, <a class="el" href="class_packet_party_dissolution_result.html#ae79cb5f1f089cda85d653ed755beff3f">PacketPartyDissolutionResult</a>, <a class="el" href="class_packet_party_exit_result.html#a2d97c13f26b499716d7346dc17c72dfe">PacketPartyExitResult</a>, <a class="el" href="class_packet_party_join.html#a94f2ae1b54753cfef684ff88e7dd4dde">PacketPartyJoin</a>, <a class="el" href="class_packet_party_kick_result.html#a894743e300e6123e662e3b1ee816aa39">PacketPartyKickResult</a>, <a class="el" href="class_packet_quest_data.html#a03dc73a1fc3f78323017d94e97cd9f0c">PacketQuestData</a>, <a class="el" href="class_packet_receive_chat.html#a7e49098a9fd0682022427effbebfd168">PacketReceiveChat</a>, <a class="el" href="class_packet_rotate_anpan.html#a196a11c7d8f45c09c6561559552d208a">PacketRotateAnpan</a>, <a class="el" href="class_packet_script_flag.html#a29b2243d9ec4aaaf0f4f77727e551cbf">PacketScriptFlag</a>, <a class="el" href="class_packet_skill_activate.html#ab9fc7b3db9858da0532b39cac0e373b4">PacketSkillActivate</a>, <a class="el" href="class_packet_skill_cast.html#a50c543e08be7f6b636e191898c8626ef">PacketSkillCast</a>, <a class="el" href="class_packet_skill_use.html#aea51fb33a6bbabcb8568a9e136d18926">PacketSkillUse</a>, <a class="el" href="class_packet_anpan_list.html#a55b9c081fc3b57f19ffacc150cc42299">PacketAnpanList</a>, <a class="el" href="class_packet_create_character_request.html#aa67a1c0b14bca276606c25f8c95edb6d">PacketCreateCharacterRequest</a>, <a class="el" href="class_packet_instance_area_ticket_publish.html#aa7d71080b8de6241e27b0b65ef51e7a9">PacketInstanceAreaTicketPublish</a>, <a class="el" href="class_packet_item_add.html#a615b014be987125320d50213b6f48026">PacketItemAdd</a>, <a class="el" href="class_packet_item_list.html#a321852c6dce8695baf5d1fcf8ff03e2c">PacketItemList</a>, <a class="el" href="class_packet_item_shortcut.html#a95e4866aa1cecff2f7373171d753abf7">PacketItemShortcut</a>, <a class="el" href="class_packet_item_subtract.html#a37d6765fdb5cbdae6e28819bc541d03b">PacketItemSubtract</a>, <a class="el" href="class_packet_item_subtract_request.html#a3b2c1be1602efdcefd9d92bfab0c1b2f">PacketItemSubtractRequest</a>, <a class="el" href="class_packet_notice_list.html#ac848432699d2a96696aa69f030fcf0b8">PacketNoticeList</a>, <a class="el" href="class_packet_player_list.html#a1b3832afe4b4742333ef09786273694c">PacketPlayerList</a>, <a class="el" href="class_packet_quest_stage_change.html#a78b6766e872def3fc78f2e21772d9059">PacketQuestStageChange</a>, <a class="el" href="class_packet_save_item_shortcut_request.html#ac081122bb0981d9ec65ebfc21fd413e5">PacketSaveItemShortcutRequest</a>, <a class="el" href="class_packet_skill_cast_finish.html#a6b9270a49002675a3468798623f7bfc8">PacketSkillCastFinish</a>, <a class="el" href="class_packet_skill_tree_data.html#ae8596665cf4820286f3e60167659d8b8">PacketSkillTreeData</a>, <a class="el" href="class_packet_party_join_member.html#aa968ed5590d5e6bf6f97a49bbc7f53d2">PacketPartyJoinMember</a>, <a class="el" href="class_packet_receive_notice.html#a7f8c8fdd05e43e77f4c02548022d72fb">PacketReceiveNotice</a>, <a class="el" href="class_packet_spawn_anpan.html#a3db625116386b24b8cb272e535035019">PacketSpawnAnpan</a>, <a class="el" href="class_packet_spawn_player.html#a25f5697a5bbe444fa28e202a9b929c10">PacketSpawnPlayer</a>, <a class="el" href="class_packet_add_exp.html#a685691227ab62a7819f7d29042dce8ac">PacketAddExp</a>, <a class="el" href="class_packet_area_move_request.html#a4d933a5ea8894f8971124ad1b2bba5f3">PacketAreaMoveRequest</a>, <a class="el" href="class_packet_change_gold.html#ae22ed9e63f1e49ca274720c93f8d61ad">PacketChangeGold</a>, <a class="el" href="class_packet_exit_player.html#a46bc5e50f0848f07b513d4c6d7d9d35d">PacketExitPlayer</a>, <a class="el" href="class_packet_log_in_request.html#a05d8238017280f4a110e92b2cbc36dbd">PacketLogInRequest</a>, <a class="el" href="class_packet_n_p_c_talk.html#ae4224a7973fad0edf8220a738628da47">PacketNPCTalk</a>, <a class="el" href="class_packet_n_p_c_talk_selection.html#af1bb33825c1cb9aaec4b1a269faac296">PacketNPCTalkSelection</a>, <a class="el" href="class_packet_party_exit.html#a44bbb9e3162328b2c6e4a63b3133d5f4">PacketPartyExit</a>, <a class="el" href="class_packet_party_invite_request.html#ab7da60c809af156e842f6ae18fe9e4da">PacketPartyInviteRequest</a>, <a class="el" href="class_packet_party_kick.html#ac49e967eeb6f265f27fc5f9cf1e82cfb">PacketPartyKick</a>, <a class="el" href="class_packet_party_kick_request.html#a893d0544d433772069b697498cf3c500">PacketPartyKickRequest</a>, <a class="el" href="class_packet_quest_accept.html#a54cb0514f381284ebbd3da70b339c300">PacketQuestAccept</a>, <a class="el" href="class_packet_quest_anpan_kill.html#a10d2d723f180a8b05c6f43f83a4d5025">PacketQuestAnpanKill</a>, <a class="el" href="class_packet_quest_clear.html#a18fe93f1573346f4d2d844be89c376a5">PacketQuestClear</a>, <a class="el" href="class_packet_quest_retire_request.html#ad094252e92f5cefd21369b24208a34c6">PacketQuestRetireRequest</a>, <a class="el" href="class_packet_save_active_quest.html#aeaf6a4b5655ee01f70850eb42b9887d2">PacketSaveActiveQuest</a>, <a class="el" href="class_packet_skill_recast.html#a2ef6600915e73656a5c803b132b6863b">PacketSkillRecast</a>, <a class="el" href="class_packet_skill_tree_open_request.html#ad457158f1a93025e77de6ea5108b0c40">PacketSkillTreeOpenRequest</a>, <a class="el" href="class_packet_spawn_instance_area_exit_point.html#ac251294e6d865b4771dd4df256875adf">PacketSpawnInstanceAreaExitPoint</a>, <a class="el" href="class_packet_time.html#a5dbe6f3f6d7c61ad622f3580015459d0">PacketTime</a>, <a class="el" href="class_packet_time_change.html#a70611df6bdf8d5b1c0a98fdcb033b150">PacketTimeChange</a>, <a class="el" href="class_packet_game_ready.html#a1dd605ac3b4650ba2b22a143622a4246">PacketGameReady</a>, <a class="el" href="class_packet_instance_area_ticket_discard.html#a850a7aa672ecdc815b344da1ac10bc78">PacketInstanceAreaTicketDiscard</a>, <a class="el" href="class_packet_party_create_request.html#ac2b23d6367c283843c813e5605676399">PacketPartyCreateRequest</a>, <a class="el" href="class_packet_party_dissolution.html#afeff6cc8ca7a47f65d007b6d3b2eddf3">PacketPartyDissolution</a>, <a class="el" href="class_packet_party_dissolution_request.html#afc03cf8b58ba9c7b8213ba784ecc614c">PacketPartyDissolutionRequest</a>, <a class="el" href="class_packet_party_exit_request.html#abca7c3aaef07894c8d55156202edc0a6">PacketPartyExitRequest</a>, <a class="el" href="class_packet_ping.html#a56c64845f0c4ebc8b4641aa36cf432a0">PacketPing</a>, <a class="el" href="class_packet_respawn_request.html#a918d918555bee46757bcdf7675b5ebaf">PacketRespawnRequest</a> (計83項目)で実装されています。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>D:/Prog/AnpanMMO/Client/AnpanMMO/Source/AnpanMMO/Packet/<a class="el" href="_packet_base_8h_source.html">PacketBase.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

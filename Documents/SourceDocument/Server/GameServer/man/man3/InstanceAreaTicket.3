@@ -1,0 +1,80 @@
+.TH "InstanceAreaTicket" 3 "2018年12月20日(木)" "GameServer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InstanceAreaTicket
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <InstanceAreaTicket\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBInstanceAreaTicket\fP (\fBu32\fP InUuid, \fBu32\fP InAreaId, const \fBVector3D\fP &InStartPosition)"
+.br
+.ti -1c
+.RI "\fB~InstanceAreaTicket\fP ()"
+.br
+.ti -1c
+.RI "void \fBAddClient\fP (\fBClientPtr\fP pClient)"
+.br
+.ti -1c
+.RI "void \fBRecvProcess\fP (\fBu32\fP Uuid, \fBETicketState\fP Process)"
+.br
+.ti -1c
+.RI "bool \fBIsReady\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsDiscard\fP () const"
+.br
+.ti -1c
+.RI "bool \fBIsWaiting\fP () const"
+.br
+.ti -1c
+.RI "\fBu32\fP \fBGetAreaId\fP () const"
+.br
+.ti -1c
+.RI "void \fBBroadcastPublishPacket\fP ()"
+.br
+.ti -1c
+.RI "void \fBBroadcastDiscardPacket\fP ()"
+.br
+.ti -1c
+.RI "void \fBEnterToInstanceArea\fP (\fBAreaPtr\fP pArea)"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+インスタンスマップチケット 
+.SH "構築子と解体子"
+.PP 
+.SS "InstanceAreaTicket::InstanceAreaTicket (\fBu32\fP InUuid, \fBu32\fP InAreaId, const \fBVector3D\fP & InStartPosition)"
+
+.SS "InstanceAreaTicket::~InstanceAreaTicket ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void InstanceAreaTicket::AddClient (\fBClientPtr\fP pClient)"
+
+.SS "void InstanceAreaTicket::BroadcastDiscardPacket ()"
+
+.SS "void InstanceAreaTicket::BroadcastPublishPacket ()"
+
+.SS "void InstanceAreaTicket::EnterToInstanceArea (\fBAreaPtr\fP pArea)"
+
+.SS "\fBu32\fP InstanceAreaTicket::GetAreaId () const\fC [inline]\fP"
+
+.SS "bool InstanceAreaTicket::IsDiscard () const"
+
+.SS "bool InstanceAreaTicket::IsReady () const"
+
+.SS "bool InstanceAreaTicket::IsWaiting () const"
+
+.SS "void InstanceAreaTicket::RecvProcess (\fBu32\fP Uuid, \fBETicketState\fP Process)"
+
+
+.SH "著者"
+.PP 
+ GameServerのソースコードから抽出しました。

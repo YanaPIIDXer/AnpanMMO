@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: D:/Prog/AnpanMMO/Server/AnpanMMOServer/MySQL/MySqlConnection.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1a445cb237d74f7a5f8d11ec3b0585cc.html">Server</a></li><li class="navelem"><a class="el" href="dir_f54e6cb803bdfaa9f32d2f9ec38bb873.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_106bd623c1d866cf91bee3c1928629f4.html">MySQL</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MySqlConnection.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_my_sql_connection_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __MYSQLCONNECTION_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __MYSQLCONNECTION_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;mysql.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;mysql/mysql.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_my_sql_query_8h.html">MySqlQuery.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_my_sql_connection.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_my_sql_connection.html">MySqlConnection</a></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// コンストラクタ</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_my_sql_connection.html#a7da5a7c761cd2f552fe817a526b25c47">MySqlConnection</a>();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// デストラクタ</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_my_sql_connection.html#a190fd5271c80e81ca8e9b9a838ac8d6a">~MySqlConnection</a>();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// 接続.</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_my_sql_connection.html#ab2d0fe84b8261b61b910e03072fcdf7d">Connect</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pHost, <span class="keyword">const</span> <span class="keywordtype">char</span> *pUserName, <span class="keyword">const</span> <span class="keywordtype">char</span> *pPassword, <span class="keyword">const</span> <span class="keywordtype">char</span> *pDBName);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// 単純なクエリ実行.</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_my_sql_connection.html#a6e1c4be2948bc691f33ecacb45e1aff9">SimpleQuery</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pQuery) <span class="keyword">const</span>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// クエリ生成.</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_my_sql_query.html">MySqlQuery</a> <a class="code" href="class_my_sql_connection.html#adbc84aace3d28a910acd38a757034916">CreateQuery</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *pQuery) <span class="keyword">const</span>;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// 閉じる.</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_my_sql_connection.html#a0f0563f9208454698275fc6e35846a68">Close</a>();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// MySQLへの接続.</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    MYSQL *pConnection;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif      // #ifndef __MYSQLCONNECTION_H__</span></div><div class="ttc" id="class_my_sql_query_html"><div class="ttname"><a href="class_my_sql_query.html">MySqlQuery</a></div><div class="ttdef"><b>Definition:</b> MySqlQuery.h:16</div></div>
+<div class="ttc" id="class_my_sql_connection_html_a0f0563f9208454698275fc6e35846a68"><div class="ttname"><a href="class_my_sql_connection.html#a0f0563f9208454698275fc6e35846a68">MySqlConnection::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdef"><b>Definition:</b> MySqlConnection.cpp:51</div></div>
+<div class="ttc" id="class_my_sql_connection_html_a6e1c4be2948bc691f33ecacb45e1aff9"><div class="ttname"><a href="class_my_sql_connection.html#a6e1c4be2948bc691f33ecacb45e1aff9">MySqlConnection::SimpleQuery</a></div><div class="ttdeci">bool SimpleQuery(const char *pQuery) const</div><div class="ttdef"><b>Definition:</b> MySqlConnection.cpp:35</div></div>
+<div class="ttc" id="_my_sql_query_8h_html"><div class="ttname"><a href="_my_sql_query_8h.html">MySqlQuery.h</a></div></div>
+<div class="ttc" id="class_my_sql_connection_html_ab2d0fe84b8261b61b910e03072fcdf7d"><div class="ttname"><a href="class_my_sql_connection.html#ab2d0fe84b8261b61b910e03072fcdf7d">MySqlConnection::Connect</a></div><div class="ttdeci">bool Connect(const char *pHost, const char *pUserName, const char *pPassword, const char *pDBName)</div><div class="ttdef"><b>Definition:</b> MySqlConnection.cpp:17</div></div>
+<div class="ttc" id="class_my_sql_connection_html_a7da5a7c761cd2f552fe817a526b25c47"><div class="ttname"><a href="class_my_sql_connection.html#a7da5a7c761cd2f552fe817a526b25c47">MySqlConnection::MySqlConnection</a></div><div class="ttdeci">MySqlConnection()</div><div class="ttdef"><b>Definition:</b> MySqlConnection.cpp:5</div></div>
+<div class="ttc" id="class_my_sql_connection_html_adbc84aace3d28a910acd38a757034916"><div class="ttname"><a href="class_my_sql_connection.html#adbc84aace3d28a910acd38a757034916">MySqlConnection::CreateQuery</a></div><div class="ttdeci">MySqlQuery CreateQuery(const char *pQuery) const</div><div class="ttdef"><b>Definition:</b> MySqlConnection.cpp:44</div></div>
+<div class="ttc" id="class_my_sql_connection_html_a190fd5271c80e81ca8e9b9a838ac8d6a"><div class="ttname"><a href="class_my_sql_connection.html#a190fd5271c80e81ca8e9b9a838ac8d6a">MySqlConnection::~MySqlConnection</a></div><div class="ttdeci">~MySqlConnection()</div><div class="ttdef"><b>Definition:</b> MySqlConnection.cpp:11</div></div>
+<div class="ttc" id="class_my_sql_connection_html"><div class="ttname"><a href="class_my_sql_connection.html">MySqlConnection</a></div><div class="ttdef"><b>Definition:</b> MySqlConnection.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

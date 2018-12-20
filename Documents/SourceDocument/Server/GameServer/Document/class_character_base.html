@@ -1,0 +1,1086 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: CharacterBase クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="class_character_base-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">CharacterBase クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_character_base_8h_source.html">CharacterBase.h</a>&gt;</code></p>
+<div class="dynheader">
+CharacterBase の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_character_base__inherit__graph.png" border="0" usemap="#_character_base_inherit__map" alt="Inheritance graph"/></div>
+<map name="_character_base_inherit__map" id="_character_base_inherit__map">
+<area shape="rect" id="node3" href="class_anpan.html" title="Anpan" alt="" coords="17,169,76,196"/>
+<area shape="rect" id="node4" href="class_player_character.html" title="PlayerCharacter" alt="" coords="100,169,215,196"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+CharacterBase 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_character_base__coll__graph.png" border="0" usemap="#_character_base_coll__map" alt="Collaboration graph"/></div>
+<map name="_character_base_coll__map" id="_character_base_coll__map">
+<area shape="rect" id="node3" href="class_skill_recast_manager.html" title="SkillRecastManager" alt="" coords="32,71,171,98"/>
+<area shape="rect" id="node4" href="class_rotation.html" title="Rotation" alt="" coords="66,122,137,149"/>
+<area shape="rect" id="node5" href="class_skill_control.html" title="SkillControl" alt="" coords="57,173,145,199"/>
+<area shape="rect" id="node6" href="class_vector3_d.html" title="Vector3D" alt="" coords="63,262,139,289"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af842f374bfb27efe6da4db4e822a3c72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#af842f374bfb27efe6da4db4e822a3c72">CharacterBase</a> ()</td></tr>
+<tr class="separator:af842f374bfb27efe6da4db4e822a3c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af750ca6cbe1346a3768b65f61934360c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#af750ca6cbe1346a3768b65f61934360c">~CharacterBase</a> ()</td></tr>
+<tr class="separator:af750ca6cbe1346a3768b65f61934360c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ca6b09f2a6e31f0add39128ff1b5d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a73ca6b09f2a6e31f0add39128ff1b5d9">Poll</a> (<a class="el" href="_type_defs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> DeltaTime)</td></tr>
+<tr class="separator:a73ca6b09f2a6e31f0add39128ff1b5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababe79e449b8f9aa4c2078c021156241"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_character_parameter.html">CharacterParameter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#ababe79e449b8f9aa4c2078c021156241">GetParameter</a> () const</td></tr>
+<tr class="separator:ababe79e449b8f9aa4c2078c021156241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3989fc3d743766bc9554060e98b5e6a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a3989fc3d743766bc9554060e98b5e6a0">SetPosition</a> (const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;MoveTarget)</td></tr>
+<tr class="separator:a3989fc3d743766bc9554060e98b5e6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7d36bb07aecc589d8c8a351748ff8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a0d7d36bb07aecc589d8c8a351748ff8b">SetRotate</a> (const <a class="el" href="class_rotation.html">Rotation</a> &amp;TargetRotation)</td></tr>
+<tr class="separator:a0d7d36bb07aecc589d8c8a351748ff8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf8057da8a29413efc04b642ad7949b2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#aaf8057da8a29413efc04b642ad7949b2">GetPosition</a> () const</td></tr>
+<tr class="separator:aaf8057da8a29413efc04b642ad7949b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af419d46a1cf16394b89ebfa29550b6da"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_rotation.html">Rotation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#af419d46a1cf16394b89ebfa29550b6da">GetRotation</a> () const</td></tr>
+<tr class="separator:af419d46a1cf16394b89ebfa29550b6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4654af77eeea1dd5297b2805fa1c5c93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a4654af77eeea1dd5297b2805fa1c5c93">IsDead</a> () const</td></tr>
+<tr class="separator:a4654af77eeea1dd5297b2805fa1c5c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2cbfd441a0e0bc45ff3f1ca1925939a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#ab2cbfd441a0e0bc45ff3f1ca1925939a">ApplyDamage</a> (<a class="el" href="_weak_ptr_define_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pAttacker, int Value)</td></tr>
+<tr class="separator:ab2cbfd441a0e0bc45ff3f1ca1925939a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8606f23b177a9a0f4d9196b45ee50990"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a8606f23b177a9a0f4d9196b45ee50990">Heal</a> (int Value)</td></tr>
+<tr class="separator:a8606f23b177a9a0f4d9196b45ee50990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3f3257cc9cbc93928a4d1bff2a3d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b">GetCenterVec</a> () const</td></tr>
+<tr class="separator:a2b3f3257cc9cbc93928a4d1bff2a3d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1f38e44ca8669dd32e5defc280fe82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a6e1f38e44ca8669dd32e5defc280fe82">SetUuid</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InUuid)</td></tr>
+<tr class="separator:a6e1f38e44ca8669dd32e5defc280fe82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7550f7499249cbef53aad08ee81e986e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a7550f7499249cbef53aad08ee81e986e">GetUuid</a> () const</td></tr>
+<tr class="separator:a7550f7499249cbef53aad08ee81e986e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37869b47274edd63a93c6c8c5f1530e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a37869b47274edd63a93c6c8c5f1530e1">GetLevel</a> () const</td></tr>
+<tr class="separator:a37869b47274edd63a93c6c8c5f1530e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b21d5dc74631551b33e097cb9a07227"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a1b21d5dc74631551b33e097cb9a07227">GetCharacterType</a> () const =0</td></tr>
+<tr class="separator:a1b21d5dc74631551b33e097cb9a07227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ceea9f6cd8145814f8dcc3641322a8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a6ceea9f6cd8145814f8dcc3641322a8e">Move</a> (const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;MoveValue)</td></tr>
+<tr class="separator:a6ceea9f6cd8145814f8dcc3641322a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c74a47c7fbdbb2f3187c5be4589fa77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a2c74a47c7fbdbb2f3187c5be4589fa77">Rotate</a> (float RotateValue)</td></tr>
+<tr class="separator:a2c74a47c7fbdbb2f3187c5be4589fa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8133cdd94e9ce926382103e7ef9caf77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a8133cdd94e9ce926382103e7ef9caf77">Respawn</a> ()</td></tr>
+<tr class="separator:a8133cdd94e9ce926382103e7ef9caf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35378ed4601e66d8415bd721addc0d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#af35378ed4601e66d8415bd721addc0d2">SetArea</a> (const <a class="el" href="_weak_ptr_define_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> &amp;pInArea)</td></tr>
+<tr class="separator:af35378ed4601e66d8415bd721addc0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9648779454b629071237b7c2cf910b87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_weak_ptr_define_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a9648779454b629071237b7c2cf910b87">GetArea</a> () const</td></tr>
+<tr class="separator:a9648779454b629071237b7c2cf910b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb905131a5519c3c374e5333e1bf018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a7eb905131a5519c3c374e5333e1bf018">UseSkill</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId, <a class="el" href="_weak_ptr_define_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pTarget)</td></tr>
+<tr class="separator:a7eb905131a5519c3c374e5333e1bf018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7624448e24270e773875fce180b0e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#aad7624448e24270e773875fce180b0e7">StartRecast</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId)</td></tr>
+<tr class="separator:aad7624448e24270e773875fce180b0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5a7ea43f44fda956abba9366b55b4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#abf5a7ea43f44fda956abba9366b55b4f">IsSkillActive</a> () const</td></tr>
+<tr class="separator:abf5a7ea43f44fda956abba9366b55b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26332cd9fe87098d43413835f49a14f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#ac26332cd9fe87098d43413835f49a14f">IsSkillCasting</a> () const</td></tr>
+<tr class="separator:ac26332cd9fe87098d43413835f49a14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d286187aebe8df0521052c7e5a99d80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a3d286187aebe8df0521052c7e5a99d80">IsRecasting</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId) const</td></tr>
+<tr class="separator:a3d286187aebe8df0521052c7e5a99d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf6a1938d1e3f5f7919b3206c8ba765"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#aabf6a1938d1e3f5f7919b3206c8ba765">GetExp</a> () const</td></tr>
+<tr class="separator:aabf6a1938d1e3f5f7919b3206c8ba765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8159dda925c3aa7cf090210862c1f559"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a8159dda925c3aa7cf090210862c1f559">GetDropId</a> () const</td></tr>
+<tr class="separator:a8159dda925c3aa7cf090210862c1f559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0fec6ef6399f366ff55fa9478f8b2862"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a0fec6ef6399f366ff55fa9478f8b2862">SetParameter</a> (<a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, int Hp, int MaxHp, int Atk, int Def)</td></tr>
+<tr class="separator:a0fec6ef6399f366ff55fa9478f8b2862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4896eb258099c538ca2a1b9920dda67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#aa4896eb258099c538ca2a1b9920dda67">LevelUp</a> (int MaxHp, int Atk, int Def)</td></tr>
+<tr class="separator:aa4896eb258099c538ca2a1b9920dda67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a6e428e70e442ab27623f6c9ae5a81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a82a6e428e70e442ab27623f6c9ae5a81">OnDamaged</a> (weak_ptr&lt; <a class="el" href="class_character_base.html">CharacterBase</a> &gt; pAttacker, int DamageValue)</td></tr>
+<tr class="separator:a82a6e428e70e442ab27623f6c9ae5a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff3a32f5b5cd5232fbdda611e722430"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#acff3a32f5b5cd5232fbdda611e722430">Update</a> (<a class="el" href="_type_defs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> DeltaTime)</td></tr>
+<tr class="separator:acff3a32f5b5cd5232fbdda611e722430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a7bb9a1746383089944b5d8d5a76d7194"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector3_d.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a7bb9a1746383089944b5d8d5a76d7194">Position</a></td></tr>
+<tr class="separator:a7bb9a1746383089944b5d8d5a76d7194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b65a8ef35645be1c517db387c3db935"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rotation.html">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a3b65a8ef35645be1c517db387c3db935">Rot</a></td></tr>
+<tr class="separator:a3b65a8ef35645be1c517db387c3db935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaaef243db27cf8505b8e78f33355d51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_skill_control.html">SkillControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#acaaef243db27cf8505b8e78f33355d51">Skill</a></td></tr>
+<tr class="separator:acaaef243db27cf8505b8e78f33355d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e707d934d0642c4bed52392286d39d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_skill_recast_manager.html">SkillRecastManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character_base.html#a3e707d934d0642c4bed52392286d39d3">Recast</a></td></tr>
+<tr class="separator:a3e707d934d0642c4bed52392286d39d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>キャラクタ基底クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="af842f374bfb27efe6da4db4e822a3c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af842f374bfb27efe6da4db4e822a3c72">&#9670;&nbsp;</a></span>CharacterBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CharacterBase::CharacterBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af750ca6cbe1346a3768b65f61934360c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af750ca6cbe1346a3768b65f61934360c">&#9670;&nbsp;</a></span>~CharacterBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CharacterBase::~CharacterBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ab2cbfd441a0e0bc45ff3f1ca1925939a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2cbfd441a0e0bc45ff3f1ca1925939a">&#9670;&nbsp;</a></span>ApplyDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::ApplyDamage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_weak_ptr_define_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a>&#160;</td>
+          <td class="paramname"><em>pAttacker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9648779454b629071237b7c2cf910b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9648779454b629071237b7c2cf910b87">&#9670;&nbsp;</a></span>GetArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_weak_ptr_define_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> CharacterBase::GetArea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2b3f3257cc9cbc93928a4d1bff2a3d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3f3257cc9cbc93928a4d1bff2a3d5b">&#9670;&nbsp;</a></span>GetCenterVec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector3_d.html">Vector3D</a> CharacterBase::GetCenterVec </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b21d5dc74631551b33e097cb9a07227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b21d5dc74631551b33e097cb9a07227">&#9670;&nbsp;</a></span>GetCharacterType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_type_defs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> CharacterBase::GetCharacterType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_player_character.html#a0576c190494fa2225202a8f314ebdd4b">PlayerCharacter</a>, <a class="el" href="class_anpan.html#ac4e0f36ab70c1d54f3c0f8ed9e907310">Anpan</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a8159dda925c3aa7cf090210862c1f559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8159dda925c3aa7cf090210862c1f559">&#9670;&nbsp;</a></span>GetDropId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CharacterBase::GetDropId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_anpan.html#ac3ab7b1c68f9ebf893e281642f5676f1">Anpan</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="aabf6a1938d1e3f5f7919b3206c8ba765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf6a1938d1e3f5f7919b3206c8ba765">&#9670;&nbsp;</a></span>GetExp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int CharacterBase::GetExp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_player_character.html#a7cba0b86d81aa4325a9df3ef784421af">PlayerCharacter</a>, <a class="el" href="class_anpan.html#ad7a4642b35efc44cb118a4c159519190">Anpan</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a37869b47274edd63a93c6c8c5f1530e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37869b47274edd63a93c6c8c5f1530e1">&#9670;&nbsp;</a></span>GetLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CharacterBase::GetLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ababe79e449b8f9aa4c2078c021156241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababe79e449b8f9aa4c2078c021156241">&#9670;&nbsp;</a></span>GetParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_character_parameter.html">CharacterParameter</a>&amp; CharacterBase::GetParameter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf8057da8a29413efc04b642ad7949b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf8057da8a29413efc04b642ad7949b2">&#9670;&nbsp;</a></span>GetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_vector3_d.html">Vector3D</a>&amp; CharacterBase::GetPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af419d46a1cf16394b89ebfa29550b6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af419d46a1cf16394b89ebfa29550b6da">&#9670;&nbsp;</a></span>GetRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_rotation.html">Rotation</a>&amp; CharacterBase::GetRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7550f7499249cbef53aad08ee81e986e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7550f7499249cbef53aad08ee81e986e">&#9670;&nbsp;</a></span>GetUuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CharacterBase::GetUuid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8606f23b177a9a0f4d9196b45ee50990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8606f23b177a9a0f4d9196b45ee50990">&#9670;&nbsp;</a></span>Heal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Heal </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4654af77eeea1dd5297b2805fa1c5c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4654af77eeea1dd5297b2805fa1c5c93">&#9670;&nbsp;</a></span>IsDead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsDead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d286187aebe8df0521052c7e5a99d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d286187aebe8df0521052c7e5a99d80">&#9670;&nbsp;</a></span>IsRecasting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsRecasting </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>SkillId</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf5a7ea43f44fda956abba9366b55b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5a7ea43f44fda956abba9366b55b4f">&#9670;&nbsp;</a></span>IsSkillActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsSkillActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac26332cd9fe87098d43413835f49a14f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26332cd9fe87098d43413835f49a14f">&#9670;&nbsp;</a></span>IsSkillCasting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsSkillCasting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4896eb258099c538ca2a1b9920dda67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4896eb258099c538ca2a1b9920dda67">&#9670;&nbsp;</a></span>LevelUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::LevelUp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>MaxHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Atk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Def</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ceea9f6cd8145814f8dcc3641322a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ceea9f6cd8145814f8dcc3641322a8e">&#9670;&nbsp;</a></span>Move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>MoveValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82a6e428e70e442ab27623f6c9ae5a81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82a6e428e70e442ab27623f6c9ae5a81">&#9670;&nbsp;</a></span>OnDamaged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CharacterBase::OnDamaged </td>
+          <td>(</td>
+          <td class="paramtype">weak_ptr&lt; <a class="el" href="class_character_base.html">CharacterBase</a> &gt;&#160;</td>
+          <td class="paramname"><em>pAttacker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>DamageValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_anpan.html#a79f0eb1d276ef2b73700650c85484ba1">Anpan</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a73ca6b09f2a6e31f0add39128ff1b5d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ca6b09f2a6e31f0add39128ff1b5d9">&#9670;&nbsp;</a></span>Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Poll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a>&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8133cdd94e9ce926382103e7ef9caf77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8133cdd94e9ce926382103e7ef9caf77">&#9670;&nbsp;</a></span>Respawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Respawn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c74a47c7fbdbb2f3187c5be4589fa77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c74a47c7fbdbb2f3187c5be4589fa77">&#9670;&nbsp;</a></span>Rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Rotate </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>RotateValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af35378ed4601e66d8415bd721addc0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af35378ed4601e66d8415bd721addc0d2">&#9670;&nbsp;</a></span>SetArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetArea </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_weak_ptr_define_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>pInArea</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fec6ef6399f366ff55fa9478f8b2862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fec6ef6399f366ff55fa9478f8b2862">&#9670;&nbsp;</a></span>SetParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetParameter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Hp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>MaxHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Atk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Def</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3989fc3d743766bc9554060e98b5e6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3989fc3d743766bc9554060e98b5e6a0">&#9670;&nbsp;</a></span>SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector3_d.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>MoveTarget</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d7d36bb07aecc589d8c8a351748ff8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d7d36bb07aecc589d8c8a351748ff8b">&#9670;&nbsp;</a></span>SetRotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetRotate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rotation.html">Rotation</a> &amp;&#160;</td>
+          <td class="paramname"><em>TargetRotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e1f38e44ca8669dd32e5defc280fe82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1f38e44ca8669dd32e5defc280fe82">&#9670;&nbsp;</a></span>SetUuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetUuid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InUuid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad7624448e24270e773875fce180b0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7624448e24270e773875fce180b0e7">&#9670;&nbsp;</a></span>StartRecast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::StartRecast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>SkillId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acff3a32f5b5cd5232fbdda611e722430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff3a32f5b5cd5232fbdda611e722430">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CharacterBase::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a>&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_anpan.html#a647dd781c00dbaff8e933735aecd508a">Anpan</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a7eb905131a5519c3c374e5333e1bf018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb905131a5519c3c374e5333e1bf018">&#9670;&nbsp;</a></span>UseSkill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::UseSkill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_type_defs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>SkillId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_weak_ptr_define_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a>&#160;</td>
+          <td class="paramname"><em>pTarget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a7bb9a1746383089944b5d8d5a76d7194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb9a1746383089944b5d8d5a76d7194">&#9670;&nbsp;</a></span>Position</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector3_d.html">Vector3D</a> CharacterBase::Position</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e707d934d0642c4bed52392286d39d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e707d934d0642c4bed52392286d39d3">&#9670;&nbsp;</a></span>Recast</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_skill_recast_manager.html">SkillRecastManager</a> CharacterBase::Recast</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b65a8ef35645be1c517db387c3db935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b65a8ef35645be1c517db387c3db935">&#9670;&nbsp;</a></span>Rot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rotation.html">Rotation</a> CharacterBase::Rot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acaaef243db27cf8505b8e78f33355d51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaaef243db27cf8505b8e78f33355d51">&#9670;&nbsp;</a></span>Skill</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_skill_control.html">SkillControl</a> CharacterBase::Skill</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>D:/Prog/AnpanMMO/Server/AnpanMMOServer/Character/<a class="el" href="_character_base_8h_source.html">CharacterBase.h</a></li>
+<li>D:/Prog/AnpanMMO/Server/AnpanMMOServer/Character/<a class="el" href="_character_base_8cpp.html">CharacterBase.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

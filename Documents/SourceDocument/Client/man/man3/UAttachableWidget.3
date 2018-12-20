@@ -1,0 +1,73 @@
+.TH "UAttachableWidget" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UAttachableWidget
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AttachableWidget\&.h>\fP
+.PP
+UUserWidgetを継承しています。
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBUAttachableWidget\fP (const FObjectInitializer &ObjectInitializer)"
+.br
+.ti -1c
+.RI "virtual \fB~UAttachableWidget\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBNativeConstruct\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBNativeTick\fP (const FGeometry &InGeometry, float InDeltaTime) override"
+.br
+.ti -1c
+.RI "void \fBSetTarget\fP (AActor *pInTargetActor)"
+.br
+.ti -1c
+.RI "void \fBSetOffset\fP (const FVector &InOffset)"
+.br
+.in -1c
+.SS "限定公開変数類"
+
+.in +1c
+.ti -1c
+.RI "ESlateVisibility \fBVisible\fP"
+.br
+.ti -1c
+.RI "FVector2D \fBDisplayPosition\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+Actorに追従するWidget 
+.SH "構築子と解体子"
+.PP 
+.SS "UAttachableWidget::UAttachableWidget (const FObjectInitializer & ObjectInitializer)"
+
+.SS "virtual UAttachableWidget::~UAttachableWidget ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "void UAttachableWidget::NativeConstruct ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void UAttachableWidget::NativeTick (const FGeometry & InGeometry, float InDeltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void UAttachableWidget::SetOffset (const FVector & InOffset)\fC [inline]\fP"
+
+.SS "void UAttachableWidget::SetTarget (AActor * pInTargetActor)\fC [inline]\fP"
+
+.SH "メンバ詳解"
+.PP 
+.SS "FVector2D UAttachableWidget::DisplayPosition\fC [protected]\fP"
+
+.SS "ESlateVisibility UAttachableWidget::Visible\fC [protected]\fP"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

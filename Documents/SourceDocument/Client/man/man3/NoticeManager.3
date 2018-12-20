@@ -1,0 +1,66 @@
+.TH "NoticeManager" 3 "2018年12月20日(木)" "AnpanMMO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NoticeManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NoticeManager\&.h>\fP
+.SS "公開メンバ関数"
+
+.in +1c
+.ti -1c
+.RI "\fBNoticeManager\fP ()"
+.br
+.ti -1c
+.RI "\fB~NoticeManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBOnRecvNoticeList\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "void \fBOnRecvNotice\fP (\fBMemoryStreamInterface\fP *pStream)"
+.br
+.ti -1c
+.RI "TArray< \fBNoticeInformation\fP > \fBGetNoticeList\fP () const"
+.br
+.ti -1c
+.RI "void \fBRemoveNotice\fP (uint32 Uuid)"
+.br
+.in -1c
+.SS "公開変数類"
+
+.in +1c
+.ti -1c
+.RI "FOnRecvNotice \fBOnRecvNoticeDelegate\fP"
+.br
+.in -1c
+.SH "詳解"
+.PP 
+通知マネージャ 
+.SH "構築子と解体子"
+.PP 
+.SS "NoticeManager::NoticeManager ()"
+
+.SS "NoticeManager::~NoticeManager ()\fC [inline]\fP"
+
+.SH "関数詳解"
+.PP 
+.SS "TArray< \fBNoticeInformation\fP > NoticeManager::GetNoticeList () const"
+
+.SS "void NoticeManager::OnRecvNotice (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "void NoticeManager::OnRecvNoticeList (\fBMemoryStreamInterface\fP * pStream)"
+
+.SS "void NoticeManager::RemoveNotice (uint32 Uuid)"
+
+.SH "メンバ詳解"
+.PP 
+.SS "FOnRecvNotice NoticeManager::OnRecvNoticeDelegate"
+
+
+.SH "著者"
+.PP 
+ AnpanMMOのソースコードから抽出しました。

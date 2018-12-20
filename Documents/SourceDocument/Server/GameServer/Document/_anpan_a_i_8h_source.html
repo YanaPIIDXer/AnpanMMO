@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: D:/Prog/AnpanMMO/Server/AnpanMMOServer/Character/Anpan/AI/AnpanAI.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_1a445cb237d74f7a5f8d11ec3b0585cc.html">Server</a></li><li class="navelem"><a class="el" href="dir_f54e6cb803bdfaa9f32d2f9ec38bb873.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_669e748a955e9dbd32552016988c9e4c.html">Character</a></li><li class="navelem"><a class="el" href="dir_a651d7d395fd08ae0a3197451fc8fadf.html">Anpan</a></li><li class="navelem"><a class="el" href="dir_1bcf4be9d9349a0f4dfe9e6435bea258.html">AI</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">AnpanAI.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_anpan_a_i_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __ANPANAI_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __ANPANAI_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_anpan_a_i_packet_data_8h.html">AnpanAIPacketData.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_hate_8h.html">Hate.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="class_anpan.html">Anpan</a>;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="class_anpan_a_i_state_base.html">AnpanAIStateBase</a>;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="class_character_base.html">CharacterBase</a>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_anpan_a_i.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_anpan_a_i.html">AnpanAI</a></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// コンストラクタ</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_anpan_a_i.html#a05eb2025dffa9c8018c1d59ed8431ee1">AnpanAI</a>(<a class="code" href="class_anpan.html">Anpan</a> *pInParent);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// デストラクタ</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_anpan_a_i.html#ad582bb3229ccd3e7b6e5ded531d55fb0">~AnpanAI</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// 毎フレームの処理.</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_anpan_a_i.html#ac128bf0bf22fbc9893cc35274dd00292">Poll</a>(<span class="keywordtype">int</span> DeltaTime);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// ステート切り替え.</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_anpan_a_i.html#a15917b0f76fd9c9eb003a99c4c1a0f3e">ChangeState</a>(<a class="code" href="class_anpan_a_i_state_base.html">AnpanAIStateBase</a> *pNewState);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// 移動パケットデータの生成.</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_anpan_a_i.html#a895eace53f8e19d4121f499d4f5ddbb2">CreateMovePacketData</a>(<span class="keyword">const</span> <a class="code" href="class_vector3_d.html">Vector3D</a> &amp;Position, <span class="keywordtype">int</span> Time);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// 移動パケットデータの取得.</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    shared_ptr&lt;AnpanMovePacketData&gt; <a class="code" href="class_anpan_a_i.html#a7a79f6ede1e964379122402b24ae68f2">SweepMovePacketData</a>();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// 回転パケットデータの生成.</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_anpan_a_i.html#abfb1658e9b23f52a085ed248ab056a32">CreateRotatePacketData</a>(<span class="keyword">const</span> <a class="code" href="class_rotation.html">Rotation</a> &amp;Rot, <span class="keywordtype">int</span> Time);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// 回転パケットデータの取得.</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    shared_ptr&lt;AnpanRotatePacketData&gt; <a class="code" href="class_anpan_a_i.html#ad37ac45b0e38fb2c739a5e2f37c1e82e">SweepRotatePacketData</a>();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// 停止パケットの送信をセット。</span></div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_anpan_a_i.html#ab7352bf6ac5cc9899a6ec8ab4aacde87">   44</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_anpan_a_i.html#ab7352bf6ac5cc9899a6ec8ab4aacde87">SetSendStopPacket</a>() { bIsNeedSendStopPacket = <span class="keyword">true</span>; }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// 停止パケットの送信を取得.</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_anpan_a_i.html#a6545a1116b5cd78ea6d3319ff628b287">SweepSendStopPacketFlag</a>();</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// ダメージを受けた。</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_anpan_a_i.html#ada352c7389a8b9d1bf5ce2849d58f38d">OnDamaged</a>(weak_ptr&lt;CharacterBase&gt; pAttacker, <span class="keywordtype">int</span> DamageValue);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// ヘイト管理取得.</span></div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_anpan_a_i.html#aeba6b3442c66916108e2bf79b0ebc41d">   53</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_hate.html">Hate</a> &amp;<a class="code" href="class_anpan_a_i.html#aeba6b3442c66916108e2bf79b0ebc41d">GetHate</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> HateManager; }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// 親.</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_anpan.html">Anpan</a> *pParent;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// ステート</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_anpan_a_i_state_base.html">AnpanAIStateBase</a> *pState;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// 前のState</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_anpan_a_i_state_base.html">AnpanAIStateBase</a> *pPrevState;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// 移動パケットデータ</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    shared_ptr&lt;AnpanMovePacketData&gt; pMovePacketData;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// 回転パケットデータ</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    shared_ptr&lt;AnpanRotatePacketData&gt; pRotatePacketData;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// ヘイト管理.</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_hate.html">Hate</a> HateManager;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// 停止パケットを送る必要があるか？</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> bIsNeedSendStopPacket;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif      // #ifndef __ANPANAI_H__</span></div><div class="ttc" id="class_anpan_a_i_html_ad582bb3229ccd3e7b6e5ded531d55fb0"><div class="ttname"><a href="class_anpan_a_i.html#ad582bb3229ccd3e7b6e5ded531d55fb0">AnpanAI::~AnpanAI</a></div><div class="ttdeci">~AnpanAI()</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:20</div></div>
+<div class="ttc" id="class_anpan_a_i_html_a05eb2025dffa9c8018c1d59ed8431ee1"><div class="ttname"><a href="class_anpan_a_i.html#a05eb2025dffa9c8018c1d59ed8431ee1">AnpanAI::AnpanAI</a></div><div class="ttdeci">AnpanAI(Anpan *pInParent)</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:8</div></div>
+<div class="ttc" id="class_anpan_a_i_html_a7a79f6ede1e964379122402b24ae68f2"><div class="ttname"><a href="class_anpan_a_i.html#a7a79f6ede1e964379122402b24ae68f2">AnpanAI::SweepMovePacketData</a></div><div class="ttdeci">shared_ptr&lt; AnpanMovePacketData &gt; SweepMovePacketData()</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:59</div></div>
+<div class="ttc" id="class_anpan_a_i_html_ac128bf0bf22fbc9893cc35274dd00292"><div class="ttname"><a href="class_anpan_a_i.html#ac128bf0bf22fbc9893cc35274dd00292">AnpanAI::Poll</a></div><div class="ttdeci">void Poll(int DeltaTime)</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:33</div></div>
+<div class="ttc" id="class_anpan_a_i_html_abfb1658e9b23f52a085ed248ab056a32"><div class="ttname"><a href="class_anpan_a_i.html#abfb1658e9b23f52a085ed248ab056a32">AnpanAI::CreateRotatePacketData</a></div><div class="ttdeci">void CreateRotatePacketData(const Rotation &amp;Rot, int Time)</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:67</div></div>
+<div class="ttc" id="_anpan_a_i_packet_data_8h_html"><div class="ttname"><a href="_anpan_a_i_packet_data_8h.html">AnpanAIPacketData.h</a></div></div>
+<div class="ttc" id="class_character_base_html"><div class="ttname"><a href="class_character_base.html">CharacterBase</a></div><div class="ttdef"><b>Definition:</b> CharacterBase.h:15</div></div>
+<div class="ttc" id="class_anpan_html"><div class="ttname"><a href="class_anpan.html">Anpan</a></div><div class="ttdef"><b>Definition:</b> Anpan.h:11</div></div>
+<div class="ttc" id="_hate_8h_html"><div class="ttname"><a href="_hate_8h.html">Hate.h</a></div></div>
+<div class="ttc" id="class_anpan_a_i_html_a15917b0f76fd9c9eb003a99c4c1a0f3e"><div class="ttname"><a href="class_anpan_a_i.html#a15917b0f76fd9c9eb003a99c4c1a0f3e">AnpanAI::ChangeState</a></div><div class="ttdeci">void ChangeState(AnpanAIStateBase *pNewState)</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:45</div></div>
+<div class="ttc" id="class_anpan_a_i_state_base_html"><div class="ttname"><a href="class_anpan_a_i_state_base.html">AnpanAIStateBase</a></div><div class="ttdef"><b>Definition:</b> AnpanAIStateBase.h:13</div></div>
+<div class="ttc" id="class_vector3_d_html"><div class="ttname"><a href="class_vector3_d.html">Vector3D</a></div><div class="ttdef"><b>Definition:</b> Vector3D.h:8</div></div>
+<div class="ttc" id="class_anpan_a_i_html_aeba6b3442c66916108e2bf79b0ebc41d"><div class="ttname"><a href="class_anpan_a_i.html#aeba6b3442c66916108e2bf79b0ebc41d">AnpanAI::GetHate</a></div><div class="ttdeci">const Hate &amp; GetHate() const</div><div class="ttdef"><b>Definition:</b> AnpanAI.h:53</div></div>
+<div class="ttc" id="class_rotation_html"><div class="ttname"><a href="class_rotation.html">Rotation</a></div><div class="ttdef"><b>Definition:</b> Rotation.h:5</div></div>
+<div class="ttc" id="class_anpan_a_i_html_a6545a1116b5cd78ea6d3319ff628b287"><div class="ttname"><a href="class_anpan_a_i.html#a6545a1116b5cd78ea6d3319ff628b287">AnpanAI::SweepSendStopPacketFlag</a></div><div class="ttdeci">bool SweepSendStopPacketFlag()</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:81</div></div>
+<div class="ttc" id="class_anpan_a_i_html_ab7352bf6ac5cc9899a6ec8ab4aacde87"><div class="ttname"><a href="class_anpan_a_i.html#ab7352bf6ac5cc9899a6ec8ab4aacde87">AnpanAI::SetSendStopPacket</a></div><div class="ttdeci">void SetSendStopPacket()</div><div class="ttdef"><b>Definition:</b> AnpanAI.h:44</div></div>
+<div class="ttc" id="class_anpan_a_i_html_a895eace53f8e19d4121f499d4f5ddbb2"><div class="ttname"><a href="class_anpan_a_i.html#a895eace53f8e19d4121f499d4f5ddbb2">AnpanAI::CreateMovePacketData</a></div><div class="ttdeci">void CreateMovePacketData(const Vector3D &amp;Position, int Time)</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:53</div></div>
+<div class="ttc" id="class_hate_html"><div class="ttname"><a href="class_hate.html">Hate</a></div><div class="ttdef"><b>Definition:</b> Hate.h:29</div></div>
+<div class="ttc" id="class_anpan_a_i_html_ada352c7389a8b9d1bf5ce2849d58f38d"><div class="ttname"><a href="class_anpan_a_i.html#ada352c7389a8b9d1bf5ce2849d58f38d">AnpanAI::OnDamaged</a></div><div class="ttdeci">void OnDamaged(weak_ptr&lt; CharacterBase &gt; pAttacker, int DamageValue)</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:89</div></div>
+<div class="ttc" id="class_anpan_a_i_html_ad37ac45b0e38fb2c739a5e2f37c1e82e"><div class="ttname"><a href="class_anpan_a_i.html#ad37ac45b0e38fb2c739a5e2f37c1e82e">AnpanAI::SweepRotatePacketData</a></div><div class="ttdeci">shared_ptr&lt; AnpanRotatePacketData &gt; SweepRotatePacketData()</div><div class="ttdef"><b>Definition:</b> AnpanAI.cpp:73</div></div>
+<div class="ttc" id="class_anpan_a_i_html"><div class="ttname"><a href="class_anpan_a_i.html">AnpanAI</a></div><div class="ttdef"><b>Definition:</b> AnpanAI.h:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
