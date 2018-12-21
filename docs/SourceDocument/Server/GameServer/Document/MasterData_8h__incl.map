@@ -1,0 +1,17 @@
+<map id="MasterData.h" name="MasterData.h">
+<area shape="rect" id="node2" href="$AreaMaster_8h.html" title="AreaMaster.h" alt="" coords="1291,80,1391,107"/>
+<area shape="rect" id="node5" href="$WarpDataMaster_8h.html" title="WarpDataMaster.h" alt="" coords="1415,80,1546,107"/>
+<area shape="rect" id="node6" href="$AnpanMaster_8h.html" title="AnpanMaster.h" alt="" coords="1571,80,1681,107"/>
+<area shape="rect" id="node7" href="$AnpanPopAreaMaster_8h.html" title="AnpanPopAreaMaster.h" alt="" coords="1706,80,1866,107"/>
+<area shape="rect" id="node8" href="$AnpanPopDataMaster_8h.html" title="AnpanPopDataMaster.h" alt="" coords="1890,80,2050,107"/>
+<area shape="rect" id="node9" href="$InstanceInfoMaster_8h.html" title="InstanceInfoMaster.h" alt="" coords="2075,80,2217,107"/>
+<area shape="rect" id="node10" href="$TimeInfoMaster_8h.html" title="TimeInfoMaster.h" alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node11" href="$NPCMaster_8h.html" title="NPCMaster.h" alt="" coords="151,80,251,107"/>
+<area shape="rect" id="node12" href="$SkillMaster_8h.html" title="SkillMaster.h" alt="" coords="275,80,374,107"/>
+<area shape="rect" id="node13" href="$SkillTreeMaster_8h.html" title="SkillTreeMaster.h" alt="" coords="398,80,521,107"/>
+<area shape="rect" id="node14" href="$ItemMaster_8h.html" title="ItemMaster.h" alt="" coords="545,80,643,107"/>
+<area shape="rect" id="node15" href="$ItemDropMaster_8h.html" title="ItemDropMaster.h" alt="" coords="667,80,793,107"/>
+<area shape="rect" id="node16" href="$QuestMaster_8h.html" title="QuestMaster.h" alt="" coords="817,80,925,107"/>
+<area shape="rect" id="node17" href="$QuestStageMaster_8h.html" title="QuestStageMaster.h" alt="" coords="949,80,1092,107"/>
+<area shape="rect" id="node18" href="$QuestRewardMaster_8h.html" title="QuestRewardMaster.h" alt="" coords="1116,80,1267,107"/>
+</map>
