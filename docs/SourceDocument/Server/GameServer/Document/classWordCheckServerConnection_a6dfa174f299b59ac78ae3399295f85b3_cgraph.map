@@ -1,0 +1,4 @@
+<map id="WordCheckServerConnection::Connect" name="WordCheckServerConnection::Connect">
+<area shape="rect" id="node2" href="$classTCPConnection.html#a373f4c028cd3f53bb2b1fe82c25464c4" title="TCPConnection::GetSocket" alt="" coords="245,5,428,32"/>
+<area shape="rect" id="node3" href="$classTCPConnection.html#afdc370c27676080e6a90743b4a6ea3e2" title="TCPConnection::AsyncRecv" alt="" coords="244,56,429,83"/>
+</map>

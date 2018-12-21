@@ -1,0 +1,6 @@
+<map id="UMMOGameInstance::Close" name="UMMOGameInstance::Close">
+<area shape="rect" id="node2" href="$classUGameMenuWidget.html#af386a981ff7aabde8dd70e26986a7534" title="UGameMenuWidget::LogOut" alt="" coords="253,5,442,32"/>
+<area shape="rect" id="node3" href="$classUMMOGameInstance.html#a4e3d66d915ce43978a7d1fbabd69147b" title="UMMOGameInstance::Shutdown" alt="" coords="241,56,453,83"/>
+<area shape="rect" id="node4" href="$classUMMOGameInstance.html#afecf75abd0ed3c7152f2e736f8193e62" title="UMMOGameInstance::Connect" alt="" coords="246,107,449,133"/>
+<area shape="rect" id="node5" href="$classUTitleScreenWidget.html#a91da46198026a84973d304fbbcade000" title="UTitleScreenWidget\l::ConnectToGameServer" alt="" coords="501,99,664,141"/>
+</map>

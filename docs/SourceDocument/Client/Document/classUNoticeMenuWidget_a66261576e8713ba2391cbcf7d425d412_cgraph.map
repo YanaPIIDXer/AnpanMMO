@@ -1,0 +1,5 @@
+<map id="UNoticeMenuWidget::NativeConstruct" name="UNoticeMenuWidget::NativeConstruct">
+<area shape="rect" id="node2" href="$classAActiveGameMode.html#ab8e673bd465da95e238ecfb01682a0c5" title="AActiveGameMode::GetNoticeList" alt="" coords="203,5,423,32"/>
+<area shape="rect" id="node3" href="$classUPartyInviteNotice.html#ae903dcf4b8455aa841a7104380db185f" title="UPartyInviteNotice\l::Create" alt="" coords="249,57,377,98"/>
+<area shape="rect" id="node4" href="$classUNoticeMenuWidget.html#a950f416888a032c4353598fabd1efd4c" title="UNoticeMenuWidget::\lOnInit" alt="" coords="238,122,387,163"/>
+</map>

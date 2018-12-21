@@ -1,0 +1,5 @@
+<map id="AnpanManager::Spawn" name="AnpanManager::Spawn">
+<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="223,5,390,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#ac1370cf9c1b3e99c881c1fc4d478673b" title="MasterData::GetAnpanMaster" alt="" coords="209,56,404,83"/>
+<area shape="rect" id="node4" href="$classAnpanMaster.html#af437d118332c97e819c5d34de9583c48" title="AnpanMaster::GetItem" alt="" coords="230,107,383,133"/>
+</map>

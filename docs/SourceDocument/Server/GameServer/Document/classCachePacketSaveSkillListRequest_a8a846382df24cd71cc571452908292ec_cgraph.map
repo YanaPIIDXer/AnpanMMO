@@ -1,0 +1,4 @@
+<map id="CachePacketSaveSkillListRequest::Serialize" name="CachePacketSaveSkillListRequest::Serialize">
+<area shape="rect" id="node2" href="$classProcessPacketBase.html#a5e9c610ce35b5a0bb034c180a9571bef" title="ProcessPacketBase::\lSerialize" alt="" coords="228,5,377,47"/>
+<area shape="rect" id="node3" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="425,35,585,76"/>
+</map>

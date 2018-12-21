@@ -1,0 +1,6 @@
+<map id="HttpConnection::StartDownload" name="HttpConnection::StartDownload">
+<area shape="rect" id="node2" href="$classVersionDownloader.html#a8561de22623e27d2c61637f4e06ae515" title="VersionDownloader::\lStart" alt="" coords="256,71,397,112"/>
+<area shape="rect" id="node3" href="$classUTitleScreenWidget.html#a9f96685afc4129487f1acea2da7ea8ac" title="UTitleScreenWidget\l::StartMasterDownload" alt="" coords="445,5,600,47"/>
+<area shape="rect" id="node4" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="449,71,597,112"/>
+<area shape="rect" id="node5" href="$classUTitleScreenWidget.html#afdbc1ecdae725bbd1460eaa7a7883d7e" title="UTitleScreenWidget\l::StartDLCDownload" alt="" coords="453,136,592,177"/>
+</map>

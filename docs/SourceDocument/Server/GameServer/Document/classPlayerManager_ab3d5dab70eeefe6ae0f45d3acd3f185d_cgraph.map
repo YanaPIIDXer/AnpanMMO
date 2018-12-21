@@ -1,0 +1,8 @@
+<map id="PlayerManager::Poll" name="PlayerManager::Poll">
+<area shape="rect" id="node2" href="$classPlayerManager.html#ae856745bf6d69cc9ff54df6861049f37" title="PlayerManager::Broadcast\lPacket" alt="" coords="192,86,368,127"/>
+<area shape="rect" id="node3" href="$classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="416,93,551,120"/>
+<area shape="rect" id="node4" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="621,5,771,32"/>
+<area shape="rect" id="node5" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="599,57,793,98"/>
+<area shape="rect" id="node6" href="$classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="609,123,783,149"/>
+<area shape="rect" id="node7" href="$classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd" title="TCPConnection::AsyncSend" alt="" coords="603,173,789,200"/>
+</map>

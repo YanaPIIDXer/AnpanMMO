@@ -1,0 +1,4 @@
+<map id="MasterData::GetNPCReseourceMaster" name="MasterData::GetNPCReseourceMaster">
+<area shape="rect" id="node2" href="$classANPCCharacter.html#a62519ea082b4a6c191e63dbb6a5e5e79" title="ANPCCharacter::Spawn" alt="" coords="260,13,421,39"/>
+<area shape="rect" id="node3" href="$classNPCManager.html#a15e31dcf91098eb0dfe17d59e4555da9" title="NPCManager::OnMapChanegd" alt="" coords="469,13,669,39"/>
+</map>

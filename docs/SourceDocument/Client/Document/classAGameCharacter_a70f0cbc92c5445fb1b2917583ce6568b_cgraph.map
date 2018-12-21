@@ -1,0 +1,6 @@
+<map id="AGameCharacter::UpdateItemShortcut" name="AGameCharacter::UpdateItemShortcut">
+<area shape="rect" id="node2" href="$classPlayerStatus.html#a7dde5f9d0eb1c361a004748d267c675e" title="PlayerStatus::UpdateItem\lShortcut" alt="" coords="273,5,443,47"/>
+<area shape="rect" id="node3" href="$classAActiveGameMode.html#ae918e1128e7ca8d06a548631f99efa90" title="AActiveGameMode::GetMainHUD" alt="" coords="249,71,467,98"/>
+<area shape="rect" id="node4" href="$classUMainHUD.html#ad42d50b7c1b79ce93971e40fc5d0f396" title="UMainHUD::UpdateItemShortcut" alt="" coords="253,122,463,149"/>
+<area shape="rect" id="node5" href="$classUMainHUD.html#a3820356f833bdc21f2629bf01c5b6e5c" title="UMainHUD::OnUpdateItemShortcut" alt="" coords="515,122,741,149"/>
+</map>

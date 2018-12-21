@@ -1,0 +1,4 @@
+<map id="Bitmap::Load" name="Bitmap::Load">
+<area shape="rect" id="node2" href="$structBitmapFileHeader.html#a85f07f14aff164c550c08bc906c9c17c" title="BitmapFileHeader::Read" alt="" coords="152,5,315,32"/>
+<area shape="rect" id="node3" href="$structBitmapInfoData.html#a4183700c703c5da0c52c4e22e555fd6f" title="BitmapInfoData::Read" alt="" coords="159,56,307,83"/>
+</map>

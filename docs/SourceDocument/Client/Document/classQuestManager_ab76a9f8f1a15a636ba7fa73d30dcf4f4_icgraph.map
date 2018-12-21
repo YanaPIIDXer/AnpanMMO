@@ -1,0 +1,4 @@
+<map id="QuestManager::SetActiveQuest" name="QuestManager::SetActiveQuest">
+<area shape="rect" id="node2" href="$classQuestManager.html#add9cb020fe2b4bf1e4268d4c089f160d" title="QuestManager::Add" alt="" coords="259,5,397,32"/>
+<area shape="rect" id="node3" href="$classUMMOGameInstance.html#aab2210e02d29d11be9d84838b34535ab" title="UMMOGameInstance::AddQuestData" alt="" coords="445,5,685,32"/>
+</map>

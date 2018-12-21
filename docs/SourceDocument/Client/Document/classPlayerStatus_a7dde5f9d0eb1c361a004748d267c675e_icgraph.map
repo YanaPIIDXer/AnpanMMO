@@ -1,0 +1,4 @@
+<map id="PlayerStatus::UpdateItemShortcut" name="PlayerStatus::UpdateItemShortcut">
+<area shape="rect" id="node2" href="$classAGameCharacter.html#a70f0cbc92c5445fb1b2917583ce6568b" title="AGameCharacter::UpdateItem\lShortcut" alt="" coords="226,5,422,47"/>
+<area shape="rect" id="node3" href="$classUMMOGameInstance.html#aeaf7e2c3b545df42fc55e7de6dde4f53" title="UMMOGameInstance::OnRecv\lItemShortcht" alt="" coords="224,71,424,112"/>
+</map>
