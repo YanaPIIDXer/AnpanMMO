@@ -31,8 +31,8 @@ public:
 
 	
 
-	//! 
-	FlexArray<SkillTreeNode> ノードリスト;
+	//! ノードリスト
+	FlexArray<SkillTreeNode> Nodes;
 	
 
 	/**
@@ -45,9 +45,9 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	PacketSkillTreeData(FlexArray<SkillTreeNode> Inノードリスト)
+	PacketSkillTreeData(FlexArray<SkillTreeNode> InNodes)
 	{
-		ノードリスト = Inノードリスト;
+		Nodes = InNodes;
 		
 	}
 
@@ -60,7 +60,7 @@ public:
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		ノードリスト.Serialize(pStream);
+		Nodes.Serialize(pStream);
 		
 		return true;
 	}
