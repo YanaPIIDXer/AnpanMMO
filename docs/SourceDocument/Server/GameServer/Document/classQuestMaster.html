@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: QuestMaster クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classQuestMaster-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">QuestMaster クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="QuestMaster_8h_source.html">QuestMaster.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aff63873bf3a3bc4ba52da88ea8e793f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5">Load</a> (const <a class="el" href="classMySqlConnection.html">MySqlConnection</a> &amp;Connection)</td></tr>
+<tr class="separator:aff63873bf3a3bc4ba52da88ea8e793f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69eac98d02de5e91c48c66a1b7c27675"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structQuestItem.html">QuestItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuestMaster.html#a69eac98d02de5e91c48c66a1b7c27675">GetItem</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Key) const</td></tr>
+<tr class="separator:a69eac98d02de5e91c48c66a1b7c27675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af98d4c5f619e54644f5a26779dc2b2a8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structQuestItem.html">QuestItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuestMaster.html#af98d4c5f619e54644f5a26779dc2b2a8">GetAll</a> () const</td></tr>
+<tr class="separator:af98d4c5f619e54644f5a26779dc2b2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="af98d4c5f619e54644f5a26779dc2b2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af98d4c5f619e54644f5a26779dc2b2a8">&#9670;&nbsp;</a></span>GetAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structQuestItem.html">QuestItem</a> &gt; QuestMaster::GetAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69eac98d02de5e91c48c66a1b7c27675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69eac98d02de5e91c48c66a1b7c27675">&#9670;&nbsp;</a></span>GetItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structQuestItem.html">QuestItem</a> * QuestMaster::GetItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classQuestMaster_a69eac98d02de5e91c48c66a1b7c27675_icgraph.png" border="0" usemap="#classQuestMaster_a69eac98d02de5e91c48c66a1b7c27675_icgraph" alt=""/></div>
+<map name="classQuestMaster_a69eac98d02de5e91c48c66a1b7c27675_icgraph" id="classQuestMaster_a69eac98d02de5e91c48c66a1b7c27675_icgraph">
+<area shape="rect" id="node2" href="classQuestManager.html#adf5b23ef2c836e314413c225ffb271c1" title="QuestManager::Retire" alt="" coords="230,5,379,32"/>
+<area shape="rect" id="node4" href="classQuestManager.html#aa039a1a7926a271591f2c87cd0b5749b" title="QuestManager::ProgressStage" alt="" coords="204,56,405,83"/>
+<area shape="rect" id="node3" href="classClient.html#a070655e087f5434c692cd69e017500a7" title="クエスト破棄. " alt="" coords="488,5,620,32"/>
+<area shape="rect" id="node5" href="classClient.html#ac32fa4a2c15cf3401b051912bc60c0d8" title="クエスト進行. " alt="" coords="479,56,629,83"/>
+<area shape="rect" id="node7" href="classQuestManager.html#a41100b1c045a59a69eb08e1fe1172ee7" title="QuestManager::OnKilledAnpan" alt="" coords="453,108,655,135"/>
+<area shape="rect" id="node6" href="classScriptExecuter.html#a0aeb0df9813d44b4314642cc6feb3653" title="ScriptExecuter::Progress\lQuest" alt="" coords="703,46,871,87"/>
+<area shape="rect" id="node8" href="classClient.html#a75daac065136a877d159f2db2b37434b" title="アンパン殺害. " alt="" coords="712,112,861,139"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aff63873bf3a3bc4ba52da88ea8e793f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff63873bf3a3bc4ba52da88ea8e793f5">&#9670;&nbsp;</a></span>Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QuestMaster::Load </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMySqlConnection.html">MySqlConnection</a> &amp;&#160;</td>
+          <td class="paramname"><em>Connection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classQuestMaster_aff63873bf3a3bc4ba52da88ea8e793f5_cgraph.png" border="0" usemap="#classQuestMaster_aff63873bf3a3bc4ba52da88ea8e793f5_cgraph" alt=""/></div>
+<map name="classQuestMaster_aff63873bf3a3bc4ba52da88ea8e793f5_cgraph" id="classQuestMaster_aff63873bf3a3bc4ba52da88ea8e793f5_cgraph">
+<area shape="rect" id="node2" href="classMySqlConnection.html#adbc84aace3d28a910acd38a757034916" title="MySqlConnection::CreateQuery" alt="" coords="187,5,392,32"/>
+<area shape="rect" id="node3" href="classMySqlQuery.html#aad5f86cf405f21600709c19a3b605215" title="MySqlQuery::BindResultInt" alt="" coords="200,56,379,83"/>
+<area shape="rect" id="node5" href="classMySqlQuery.html#a5a0881ce9283513288677f1343c4db3e" title="MySqlQuery::BindResultString" alt="" coords="190,107,389,133"/>
+<area shape="rect" id="node7" href="classMySqlQuery.html#ac8d2c77420215803ff251409c726dbca" title="MySqlQuery::BindResultChar" alt="" coords="193,157,385,184"/>
+<area shape="rect" id="node9" href="classMySqlQuery.html#a62fe367e2ddf5cad93fa52bc77d0fa49" title="MySqlQuery::ExecuteQuery" alt="" coords="197,208,382,235"/>
+<area shape="rect" id="node11" href="classMySqlQuery.html#a7fc7ae2045620aa9c19e8c59dea7b087" title="MySqlQuery::Fetch" alt="" coords="222,259,357,285"/>
+<area shape="rect" id="node4" href="classMySqlBinds.html#a46b9423237690f11f08027a781186522" title="MySqlBinds::AddInt" alt="" coords="450,56,587,83"/>
+<area shape="rect" id="node6" href="classMySqlBinds.html#acfc2edf2a3dd69f047e786a9d7b21cd8" title="MySqlBinds::AddString" alt="" coords="440,107,597,133"/>
+<area shape="rect" id="node8" href="classMySqlBinds.html#a2b7e3431271f20244353bd693effc033" title="MySqlBinds::AddChar" alt="" coords="443,157,594,184"/>
+<area shape="rect" id="node10" href="classMySqlBinds.html#aabfe21824abcf75f0a7af0a69ceceb05" title="MySqlBinds::Get" alt="" coords="458,208,579,235"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classQuestMaster_aff63873bf3a3bc4ba52da88ea8e793f5_icgraph.png" border="0" usemap="#classQuestMaster_aff63873bf3a3bc4ba52da88ea8e793f5_icgraph" alt=""/></div>
+<map name="classQuestMaster_aff63873bf3a3bc4ba52da88ea8e793f5_icgraph" id="classQuestMaster_aff63873bf3a3bc4ba52da88ea8e793f5_icgraph">
+<area shape="rect" id="node2" href="classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="MasterData::Read" alt="" coords="187,5,313,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="QuestMaster_8h_source.html">QuestMaster.h</a></li>
+<li><a class="el" href="QuestMaster_8cpp.html">QuestMaster.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

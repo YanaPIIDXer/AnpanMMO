@@ -1,0 +1,4 @@
+<map id="ItemMaster::GetItem" name="ItemMaster::GetItem">
+<area shape="rect" id="node2" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="195,5,339,32"/>
+<area shape="rect" id="node3" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="PlayerCharacter::UseItem" alt="" coords="387,5,557,32"/>
+</map>

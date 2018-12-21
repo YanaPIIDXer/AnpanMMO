@@ -1,0 +1,4 @@
+<map id="TimeManager::OnRecvTimeChange" name="TimeManager::OnRecvTimeChange">
+<area shape="rect" id="node2" href="$classPacketTimeChange.html#a70611df6bdf8d5b1c0a98fdcb033b150" title="シリアライズ " alt="" coords="279,13,472,39"/>
+<area shape="rect" id="node3" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="520,5,680,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="AreaBase::OnRecvSkillUse" name="AreaBase::OnRecvSkillUse">
+<area shape="rect" id="node2" href="$classPlayerManager.html#a8373aa2aafc6d79aed32c4b23be5a15e" title="PlayerManager::Get" alt="" coords="233,5,372,32"/>
+<area shape="rect" id="node3" href="$classAnpanManager.html#a849f4c009b6da15e5abe0af74d5d2873" title="AnpanManager::Get" alt="" coords="233,56,372,83"/>
+</map>

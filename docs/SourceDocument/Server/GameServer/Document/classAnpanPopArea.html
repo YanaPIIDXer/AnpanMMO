@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: AnpanPopArea クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classAnpanPopArea-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">AnpanPopArea クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="AnpanPopArea_8h_source.html">AnpanPopArea.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a43dd0eca99756b13c1118fe23a1a8ef3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanPopArea.html#a43dd0eca99756b13c1118fe23a1a8ef3">AnpanPopArea</a> (const <a class="el" href="structAnpanPopAreaItem.html">AnpanPopAreaItem</a> *pMasterItem)</td></tr>
+<tr class="separator:a43dd0eca99756b13c1118fe23a1a8ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc95c42330fc354985495bfba1f018f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanPopArea.html#abbc95c42330fc354985495bfba1f018f">~AnpanPopArea</a> ()</td></tr>
+<tr class="separator:abbc95c42330fc354985495bfba1f018f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacd862f8a05d570613daa749d2aa54e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanPopArea.html#aaacd862f8a05d570613daa749d2aa54e">Poll</a> (int DeltaTime)</td></tr>
+<tr class="separator:aaacd862f8a05d570613daa749d2aa54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b3190280cd6b1b231168ab22be983df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanPopArea.html#a6b3190280cd6b1b231168ab22be983df">SetSpawnFunction</a> (const SpawnFunc &amp;InSpawnFunction)</td></tr>
+<tr class="separator:a6b3190280cd6b1b231168ab22be983df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>アンパンが生成されるエリア </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a43dd0eca99756b13c1118fe23a1a8ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43dd0eca99756b13c1118fe23a1a8ef3">&#9670;&nbsp;</a></span>AnpanPopArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnpanPopArea::AnpanPopArea </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structAnpanPopAreaItem.html">AnpanPopAreaItem</a> *&#160;</td>
+          <td class="paramname"><em>pMasterItem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbc95c42330fc354985495bfba1f018f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc95c42330fc354985495bfba1f018f">&#9670;&nbsp;</a></span>~AnpanPopArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AnpanPopArea::~AnpanPopArea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aaacd862f8a05d570613daa749d2aa54e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacd862f8a05d570613daa749d2aa54e">&#9670;&nbsp;</a></span>Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnpanPopArea::Poll </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b3190280cd6b1b231168ab22be983df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b3190280cd6b1b231168ab22be983df">&#9670;&nbsp;</a></span>SetSpawnFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnpanPopArea::SetSpawnFunction </td>
+          <td>(</td>
+          <td class="paramtype">const SpawnFunc &amp;&#160;</td>
+          <td class="paramname"><em>InSpawnFunction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAnpanPopArea_a6b3190280cd6b1b231168ab22be983df_icgraph.png" border="0" usemap="#classAnpanPopArea_a6b3190280cd6b1b231168ab22be983df_icgraph" alt=""/></div>
+<map name="classAnpanPopArea_a6b3190280cd6b1b231168ab22be983df_icgraph" id="classAnpanPopArea_a6b3190280cd6b1b231168ab22be983df_icgraph">
+<area shape="rect" id="node2" href="classAnpanManager.html#a10b32c4ce632571ec012ca6b92257016" title="AnpanManager::Initialize" alt="" coords="280,5,444,32"/>
+<area shape="rect" id="node3" href="classAreaBase.html#a38c050576a6dfc4d9f4394f52643d78b" title="AreaBase::AreaBase" alt="" coords="492,5,636,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="AnpanPopArea_8h_source.html">AnpanPopArea.h</a></li>
+<li><a class="el" href="AnpanPopArea_8cpp.html">AnpanPopArea.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

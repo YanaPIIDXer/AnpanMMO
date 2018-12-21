@@ -1,0 +1,9 @@
+<map id="UNoticeMenuItem::Action" name="UNoticeMenuItem::Action">
+<area shape="rect" id="node2" href="$classUNoticeBase.html#a30e96c047ebff61c50712f271ec304ad" title="UNoticeBase::Action" alt="" coords="243,56,385,83"/>
+<area shape="rect" id="node5" href="$classULayeredMenuWidgetBase.html#ac47178b046fdc632be37ff6f457e3fe5" title="ULayeredMenuWidgetBase\l::Close" alt="" coords="224,149,404,190"/>
+<area shape="rect" id="node3" href="$classUNoticeBase.html#a07108151401a4210acb176dda3b79f62" title="UNoticeBase::OnAction" alt="" coords="503,5,663,32"/>
+<area shape="rect" id="node4" href="$classAActiveGameMode.html#a774ea3e191f4d0d1f68644f974303dcd" title="AActiveGameMode::RemoveNotice" alt="" coords="471,56,695,83"/>
+<area shape="rect" id="node6" href="$classULayeredMenuWidgetBase.html#aaa200e099b2273d2ae5d94c68cf80f8b" title="ULayeredMenuWidgetBase\l::CloseChild" alt="" coords="493,107,673,149"/>
+<area shape="rect" id="node7" href="$classAMMOGameModeBase.html#a1824e65168012abf6d7766162cb46439" title="AMMOGameModeBase::SetCurrentMenu" alt="" coords="452,173,715,200"/>
+<area shape="rect" id="node8" href="$classAActiveGameMode.html#a0468c5e21d7fdd391d62c0345084de43" title="AActiveGameMode::SetHidden\lMainHUD" alt="" coords="483,225,684,266"/>
+</map>

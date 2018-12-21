@@ -1,0 +1,4 @@
+<map id="PlayerManager::Add" name="PlayerManager::Add">
+<area shape="rect" id="node2" href="$classAActiveGameMode.html#ae846a31372bd96dc9e0427e6efbe3e96" title="AActiveGameMode::AddPlayer\lCharacter" alt="" coords="193,5,395,47"/>
+<area shape="rect" id="node3" href="$classAGameCharacter.html#a86daf7483d1c4e9f33692cdd6590517a" title="AGameCharacter::BeginPlay" alt="" coords="443,13,632,39"/>
+</map>

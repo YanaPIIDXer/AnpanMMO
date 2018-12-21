@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: Main.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">Main.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="stdafx_8h_source.html">stdafx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ClientAcceptor_8h_source.html">ClientAcceptor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ClientManager_8h_source.html">ClientManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TickManager_8h_source.html">TickManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MasterData_8h_source.html">Master/MasterData.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AreaManager_8h_source.html">Area/AreaManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PartyManager_8h_source.html">Party/PartyManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TimeManager_8h_source.html">Time/TimeManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ServerHost_8h_source.html">ServerHost.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CacheServerConnection_8h_source.html">CacheServer/CacheServerConnection.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="WordCheckServerConnection_8h_source.html">WordCheckServer/WordCheckServerConnection.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Main.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="Main_8cpp__incl.png" border="0" usemap="#Main_8cpp" alt=""/></div>
+<map name="Main_8cpp" id="Main_8cpp">
+<area shape="rect" id="node2" href="stdafx_8h.html" title="stdafx.h" alt="" coords="663,87,731,114"/>
+<area shape="rect" id="node15" href="ClientAcceptor_8h.html" title="ClientAcceptor.h" alt="" coords="1318,87,1437,114"/>
+<area shape="rect" id="node16" href="ClientManager_8h.html" title="ClientManager.h" alt="" coords="4049,87,4165,114"/>
+<area shape="rect" id="node24" href="TickManager_8h.html" title="TickManager.h" alt="" coords="1653,87,1760,114"/>
+<area shape="rect" id="node27" href="MasterData_8h.html" title="Master/MasterData.h" alt="" coords="2780,87,2924,114"/>
+<area shape="rect" id="node43" href="AreaManager_8h.html" title="Area/AreaManager.h" alt="" coords="1461,87,1603,114"/>
+<area shape="rect" id="node45" href="PartyManager_8h.html" title="Party/PartyManager.h" alt="" coords="3875,87,4024,114"/>
+<area shape="rect" id="node47" href="TimeManager_8h.html" title="Time/TimeManager.h" alt="" coords="4189,87,4331,114"/>
+<area shape="rect" id="node48" href="ServerHost_8h.html" title="ServerHost.h" alt="" coords="4356,87,4452,114"/>
+<area shape="rect" id="node49" href="CacheServerConnection_8h.html" title="CacheServer/CacheServerConnection.h" alt="" coords="4476,87,4724,114"/>
+<area shape="rect" id="node50" href="WordCheckServerConnection_8h.html" title="WordCheckServer/WordCheck\lServerConnection.h" alt="" coords="4749,80,4947,121"/>
+<area shape="rect" id="node5" href="basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="617,169,777,196"/>
+<area shape="rect" id="node14" href="TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="802,169,889,196"/>
+<area shape="rect" id="node18" href="Client_8h.html" title="クライアントクラス " alt="" coords="4251,169,4317,196"/>
+<area shape="rect" id="node23" href="WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="3952,251,4072,278"/>
+<area shape="rect" id="node19" href="TCPConnection_8h.html" title="TCPConnection.h" alt="" coords="4688,251,4811,278"/>
+<area shape="rect" id="node20" href="PacketID_8h.html" title="Packet/PacketID.h" alt="" coords="4301,251,4432,278"/>
+<area shape="rect" id="node21" href="ScriptExecuter_8h.html" title="Script/ScriptExecuter.h" alt="" coords="4456,251,4613,278"/>
+<area shape="rect" id="node22" href="ScriptFlagManager_8h.html" title="Script/ScriptFlagManager.h" alt="" coords="4097,251,4277,278"/>
+<area shape="rect" id="node28" href="AreaMaster_8h.html" title="AreaMaster.h" alt="" coords="3197,169,3297,196"/>
+<area shape="rect" id="node29" href="WarpDataMaster_8h.html" title="WarpDataMaster.h" alt="" coords="3321,169,3452,196"/>
+<area shape="rect" id="node30" href="AnpanMaster_8h.html" title="AnpanMaster.h" alt="" coords="3477,169,3587,196"/>
+<area shape="rect" id="node31" href="AnpanPopAreaMaster_8h.html" title="AnpanPopAreaMaster.h" alt="" coords="3612,169,3772,196"/>
+<area shape="rect" id="node32" href="AnpanPopDataMaster_8h.html" title="AnpanPopDataMaster.h" alt="" coords="3796,169,3956,196"/>
+<area shape="rect" id="node33" href="InstanceInfoMaster_8h.html" title="InstanceInfoMaster.h" alt="" coords="1745,169,1887,196"/>
+<area shape="rect" id="node34" href="TimeInfoMaster_8h.html" title="TimeInfoMaster.h" alt="" coords="1911,169,2033,196"/>
+<area shape="rect" id="node35" href="NPCMaster_8h.html" title="NPCMaster.h" alt="" coords="2057,169,2157,196"/>
+<area shape="rect" id="node36" href="SkillMaster_8h.html" title="SkillMaster.h" alt="" coords="2181,169,2280,196"/>
+<area shape="rect" id="node37" href="SkillTreeMaster_8h.html" title="SkillTreeMaster.h" alt="" coords="2304,169,2427,196"/>
+<area shape="rect" id="node38" href="ItemMaster_8h.html" title="ItemMaster.h" alt="" coords="2451,169,2549,196"/>
+<area shape="rect" id="node39" href="ItemDropMaster_8h.html" title="ItemDropMaster.h" alt="" coords="2573,169,2699,196"/>
+<area shape="rect" id="node40" href="QuestMaster_8h.html" title="QuestMaster.h" alt="" coords="2723,169,2831,196"/>
+<area shape="rect" id="node41" href="QuestStageMaster_8h.html" title="QuestStageMaster.h" alt="" coords="2855,169,2998,196"/>
+<area shape="rect" id="node42" href="QuestRewardMaster_8h.html" title="QuestRewardMaster.h" alt="" coords="3022,169,3173,196"/>
+<area shape="rect" id="node44" href="AreaBase_8h.html" title="AreaBase.h" alt="" coords="1363,169,1453,196"/>
+<area shape="rect" id="node46" href="Party_8h.html" title="Party.h" alt="" coords="3980,169,4044,196"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="Main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#Main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="Main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="Main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" id="node2" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="344,9,511,36"/>
+<area shape="rect" id="node3" href="classboost_1_1asio_1_1basic__repeating__timer.html#a7af0e71dd77433b1002f0cba12ea1418" title="boost::asio::basic\l_repeating_timer::start" alt="" coords="119,213,271,254"/>
+<area shape="rect" id="node4" href="classClientAcceptor.html#af987de82ea8e8f3662cc3389e8118a48" title="ClientAcceptor::Poll" alt="" coords="127,279,264,305"/>
+<area shape="rect" id="node5" href="classClientAcceptor.html#a15a28f5ffe74b5e6d8db706a789013a1" title="ClientAcceptor::Start" alt="" coords="124,329,267,356"/>
+<area shape="rect" id="node6" href="classClientManager.html#ad98ab355c6850fc5c505a905615e9371" title="ClientManager::Poll" alt="" coords="128,380,263,407"/>
+<area shape="rect" id="node7" href="classClientManager.html#a5bcb76e594e140bb2bf0f68ae172e164" title="ClientManager::GetInstance" alt="" coords="104,431,287,457"/>
+<area shape="rect" id="node8" href="classAreaManager.html#a11e23ee626a64f008d118bd3a7631ef6" title="AreaManager::GetInstance" alt="" coords="107,481,284,508"/>
+<area shape="rect" id="node9" href="classAreaManager.html#a8657ae85994cc5505cce3db3968dfb6e" title="AreaManager::Initialize" alt="" coords="118,161,273,188"/>
+<area shape="rect" id="node10" href="classTickManager.html#a44630fd94539427412fe786f4433a43c" title="TickManager::GetInstance" alt="" coords="340,60,515,87"/>
+<area shape="rect" id="node11" href="classTickManager.html#a57d2db48c1b5b4d2275907cc2cf6d93a" title="TickManager::Add" alt="" coords="364,111,491,137"/>
+<area shape="rect" id="node17" href="classPartyManager.html#a521910315f4c1de7fc7113358af02500" title="PartyManager::Poll" alt="" coords="129,532,262,559"/>
+<area shape="rect" id="node18" href="classPartyManager.html#a0b877aa989ca0a57c10a3d3417ce000e" title="PartyManager::GetInstance" alt="" coords="105,583,286,609"/>
+<area shape="rect" id="node19" href="classTimeManager.html#adad57d270254cfad9aef9033b0f997ae" title="TimeManager::Poll" alt="" coords="130,633,261,660"/>
+<area shape="rect" id="node20" href="classTimeManager.html#a3ea7d94ec3ea7dc3733e9e25e8b671c9" title="TimeManager::GetInstance" alt="" coords="106,684,285,711"/>
+<area shape="rect" id="node21" href="classTimeManager.html#a9b0fb8112689de85ff3b88ce128f01e3" title="TimeManager::Initialize" alt="" coords="118,735,273,761"/>
+<area shape="rect" id="node22" href="classTickManager.html#a4be5c8fa02e34328ea3885acdfa10877" title="TickManager::Poll" alt="" coords="132,785,259,812"/>
+<area shape="rect" id="node12" href="classAreaManager.html#ac0828bd808dc51d9671037b08f7ac968" title="AreaManager::Poll" alt="" coords="363,364,492,391"/>
+<area shape="rect" id="node13" href="classMasterData.html#a9037642db7f7d98ab6c5f4c10ac7da54" title="MasterData::GetAreaMaster" alt="" coords="335,161,520,188"/>
+<area shape="rect" id="node14" href="classAreaMaster.html#a1ea25f3c62579991f17e40c71f258466" title="AreaMaster::GetAll" alt="" coords="361,212,494,239"/>
+<area shape="rect" id="node15" href="classAreaMaster.html#aa20a66ecd786d6fe06d4378258949438" title="AreaMaster::GetItem" alt="" coords="356,263,499,289"/>
+<area shape="rect" id="node16" href="classAreaBase.html#a8f88dbdf542e61513ea196893a3e741c" title="AreaBase::Initialize" alt="" coords="360,313,495,340"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<map id="PlayerStatus::Set" name="PlayerStatus::Set">
+<area shape="rect" id="node2" href="$classAGameCharacter.html#a03b8fce9149999780ba8b1cc40b2006e" title="AGameCharacter::OnRecvLevelUp" alt="" coords="179,5,399,32"/>
+<area shape="rect" id="node3" href="$classUMMOGameInstance.html#a2ffea87310c953d0105b7b399d6dd816" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="189,57,389,98"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="AGameCharacter::OnRespawn" name="AGameCharacter::OnRespawn">
+<area shape="rect" id="node2" href="$classACharacterBase.html#a7ed738c98e0a3bd00db6c6c9553cb435" title="ACharacterBase::SetHP" alt="" coords="255,5,418,32"/>
+<area shape="rect" id="node3" href="$classPlayerStatus.html#ae36fd8457cba17f72cd285a45e27620a" title="PlayerStatus::GetMaxHp" alt="" coords="253,56,420,83"/>
+</map>

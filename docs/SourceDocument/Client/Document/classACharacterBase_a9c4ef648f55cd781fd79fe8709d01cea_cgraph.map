@@ -1,0 +1,5 @@
+<map id="ACharacterBase::ApplyDamage" name="ACharacterBase::ApplyDamage">
+<area shape="rect" id="node2" href="$classACharacterBase.html#afa7151a5abe24606acb5cf5dcfdac7c8" title="ACharacterBase::IsDead" alt="" coords="276,5,441,32"/>
+<area shape="rect" id="node3" href="$classACharacterBase.html#ab2b8f5ba7c8e642dfbb1734db1ba7038" title="ACharacterBase::OnDamaged" alt="" coords="260,56,457,83"/>
+<area shape="rect" id="node4" href="$classACharacterBase.html#a4f6c91ac81ceb0d18392ba78bab3c593" title="ACharacterBase::OnDead" alt="" coords="273,107,445,133"/>
+</map>

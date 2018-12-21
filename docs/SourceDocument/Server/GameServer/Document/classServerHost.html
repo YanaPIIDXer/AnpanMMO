@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: ServerHost クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-attribs">静的公開変数類</a> &#124;
+<a href="classServerHost-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">ServerHost クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ServerHost_8h_source.html">ServerHost.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+静的公開変数類</h2></td></tr>
+<tr class="memitem:afcf53d0c8f7d9df6825751d63e804ebe"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerHost.html#afcf53d0c8f7d9df6825751d63e804ebe">CacheServerHost</a> = &quot;127.0.0.1&quot;</td></tr>
+<tr class="separator:afcf53d0c8f7d9df6825751d63e804ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83655e1303a015eeb0a32d74159026a7"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerHost.html#a83655e1303a015eeb0a32d74159026a7">WordCheckServerHost</a> = &quot;127.0.0.1&quot;</td></tr>
+<tr class="separator:a83655e1303a015eeb0a32d74159026a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f1c9e9a63a115897caa3315c2a07f2"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerHost.html#ad7f1c9e9a63a115897caa3315c2a07f2">GameServerPort</a> = 4424</td></tr>
+<tr class="separator:ad7f1c9e9a63a115897caa3315c2a07f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00560a75b4e30d88b3dbb9d965cc3f1b"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerHost.html#a00560a75b4e30d88b3dbb9d965cc3f1b">CacheServerPort</a> = 4425</td></tr>
+<tr class="separator:a00560a75b4e30d88b3dbb9d965cc3f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad03a57c7dd5d713b0496fc6971ed2142"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerHost.html#ad03a57c7dd5d713b0496fc6971ed2142">WordCheckServerPort</a> = 4426</td></tr>
+<tr class="separator:ad03a57c7dd5d713b0496fc6971ed2142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>他サーバのホスト ※各種サーバで使い回すコード </p>
+</div><h2 class="groupheader">メンバ詳解</h2>
+<a id="afcf53d0c8f7d9df6825751d63e804ebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf53d0c8f7d9df6825751d63e804ebe">&#9670;&nbsp;</a></span>CacheServerHost</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ServerHost::CacheServerHost = &quot;127.0.0.1&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00560a75b4e30d88b3dbb9d965cc3f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00560a75b4e30d88b3dbb9d965cc3f1b">&#9670;&nbsp;</a></span>CacheServerPort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int ServerHost::CacheServerPort = 4425</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7f1c9e9a63a115897caa3315c2a07f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f1c9e9a63a115897caa3315c2a07f2">&#9670;&nbsp;</a></span>GameServerPort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int ServerHost::GameServerPort = 4424</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83655e1303a015eeb0a32d74159026a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83655e1303a015eeb0a32d74159026a7">&#9670;&nbsp;</a></span>WordCheckServerHost</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ServerHost::WordCheckServerHost = &quot;127.0.0.1&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad03a57c7dd5d713b0496fc6971ed2142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad03a57c7dd5d713b0496fc6971ed2142">&#9670;&nbsp;</a></span>WordCheckServerPort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int ServerHost::WordCheckServerPort = 4426</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="ServerHost_8h_source.html">ServerHost.h</a></li>
+<li><a class="el" href="ServerHost_8cpp.html">ServerHost.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

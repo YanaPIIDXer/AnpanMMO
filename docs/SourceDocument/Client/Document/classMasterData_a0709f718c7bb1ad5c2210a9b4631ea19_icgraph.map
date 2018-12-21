@@ -1,0 +1,5 @@
+<map id="MasterData::GetNPCMaster" name="MasterData::GetNPCMaster">
+<area shape="rect" id="node2" href="$classUBlueprintFunctions.html#a4cc93d22e3af532caf65e9d02da47260" title="UBlueprintFunctions\l::GetNPCName" alt="" coords="269,5,408,47"/>
+<area shape="rect" id="node3" href="$classANPCCharacter.html#af6372c0e3a0f32c0079922936ff6fdaf" title="ANPCCharacter::Talk" alt="" coords="265,71,412,98"/>
+<area shape="rect" id="node4" href="$classNPCManager.html#a15e31dcf91098eb0dfe17d59e4555da9" title="NPCManager::OnMapChanegd" alt="" coords="239,122,439,149"/>
+</map>

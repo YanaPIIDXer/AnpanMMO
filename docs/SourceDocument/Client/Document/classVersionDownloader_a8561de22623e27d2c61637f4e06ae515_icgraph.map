@@ -1,0 +1,5 @@
+<map id="VersionDownloader::Start" name="VersionDownloader::Start">
+<area shape="rect" id="node2" href="$classUTitleScreenWidget.html#a9f96685afc4129487f1acea2da7ea8ac" title="UTitleScreenWidget\l::StartMasterDownload" alt="" coords="195,5,349,47"/>
+<area shape="rect" id="node3" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="198,71,346,112"/>
+<area shape="rect" id="node4" href="$classUTitleScreenWidget.html#afdbc1ecdae725bbd1460eaa7a7883d7e" title="UTitleScreenWidget\l::StartDLCDownload" alt="" coords="203,136,341,177"/>
+</map>

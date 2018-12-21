@@ -1,0 +1,6 @@
+<map id="SkillStateBase::GetStateType" name="SkillStateBase::GetStateType">
+<area shape="rect" id="node2" href="$classSkillControl.html#ae4d7b9d305c9a9f8047bbe8cec503f5d" title="SkillControl::IsActive" alt="" coords="254,5,395,32"/>
+<area shape="rect" id="node4" href="$classSkillControl.html#a1184144783440fed9d833be7fbcc59c1" title="SkillControl::IsCasting" alt="" coords="249,56,400,83"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f" title="CharacterBase::IsSkillActive" alt="" coords="452,5,639,32"/>
+<area shape="rect" id="node5" href="$classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f" title="CharacterBase::IsSkillCasting" alt="" coords="448,56,643,83"/>
+</map>

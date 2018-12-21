@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: CachePacketQuestRetireRequest クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="classCachePacketQuestRetireRequest-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">CachePacketQuestRetireRequest クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>クエスト破棄リクエスト  
+ <a href="classCachePacketQuestRetireRequest.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="CachePacketQuestRetireRequest_8h_source.html">CachePacketQuestRetireRequest.h</a>&gt;</code></p>
+<div class="dynheader">
+CachePacketQuestRetireRequest の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCachePacketQuestRetireRequest__inherit__graph.png" border="0" usemap="#CachePacketQuestRetireRequest_inherit__map" alt="Inheritance graph"/></div>
+<map name="CachePacketQuestRetireRequest_inherit__map" id="CachePacketQuestRetireRequest_inherit__map">
+<area shape="rect" id="node2" href="classProcessPacketBase.html" title="ProcessPacketBase" alt="" coords="43,80,185,107"/>
+<area shape="rect" id="node3" href="classPacketBase.html" title="PacketBase" alt="" coords="67,5,161,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+CachePacketQuestRetireRequest 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCachePacketQuestRetireRequest__coll__graph.png" border="0" usemap="#CachePacketQuestRetireRequest_coll__map" alt="Collaboration graph"/></div>
+<map name="CachePacketQuestRetireRequest_coll__map" id="CachePacketQuestRetireRequest_coll__map">
+<area shape="rect" id="node2" href="classProcessPacketBase.html" title="ProcessPacketBase" alt="" coords="43,80,185,107"/>
+<area shape="rect" id="node3" href="classPacketBase.html" title="PacketBase" alt="" coords="67,5,161,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a953a86c8831c463a1f30e8841e22d026"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketQuestRetireRequest.html#a953a86c8831c463a1f30e8841e22d026">GetPacketID</a> () const</td></tr>
+<tr class="memdesc:a953a86c8831c463a1f30e8841e22d026"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケットＩＤ取得.  <a href="#a953a86c8831c463a1f30e8841e22d026">[詳解]</a><br /></td></tr>
+<tr class="separator:a953a86c8831c463a1f30e8841e22d026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e554510ff66bdd180c641c5e219ec6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketQuestRetireRequest.html#a1e554510ff66bdd180c641c5e219ec6e">CachePacketQuestRetireRequest</a> ()</td></tr>
+<tr class="memdesc:a1e554510ff66bdd180c641c5e219ec6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a1e554510ff66bdd180c641c5e219ec6e">[詳解]</a><br /></td></tr>
+<tr class="separator:a1e554510ff66bdd180c641c5e219ec6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28957bad2af82434f54eb90d33db8da8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketQuestRetireRequest.html#a28957bad2af82434f54eb90d33db8da8">CachePacketQuestRetireRequest</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InClientId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InCharacterId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InQuestId)</td></tr>
+<tr class="memdesc:a28957bad2af82434f54eb90d33db8da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a28957bad2af82434f54eb90d33db8da8">[詳解]</a><br /></td></tr>
+<tr class="separator:a28957bad2af82434f54eb90d33db8da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab73d123f8698867220c94c4ba7a23e39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketQuestRetireRequest.html#ab73d123f8698867220c94c4ba7a23e39">Serialize</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="memdesc:ab73d123f8698867220c94c4ba7a23e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアライズ  <a href="#ab73d123f8698867220c94c4ba7a23e39">[詳解]</a><br /></td></tr>
+<tr class="separator:ab73d123f8698867220c94c4ba7a23e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classPacketBase.html">PacketBase</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketBase.html#a8784f3bc29a63570e38619d940131223">~PacketBase</a> ()</td></tr>
+<tr class="separator:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a9811a1092ab2aa7035e2a547835019ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketQuestRetireRequest.html#a9811a1092ab2aa7035e2a547835019ae">CharacterId</a></td></tr>
+<tr class="memdesc:a9811a1092ab2aa7035e2a547835019ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">キャラクタID  <a href="#a9811a1092ab2aa7035e2a547835019ae">[詳解]</a><br /></td></tr>
+<tr class="separator:a9811a1092ab2aa7035e2a547835019ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183aa53d4c740f0ce23e9a83d00e1153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketQuestRetireRequest.html#a183aa53d4c740f0ce23e9a83d00e1153">QuestId</a></td></tr>
+<tr class="memdesc:a183aa53d4c740f0ce23e9a83d00e1153"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストID  <a href="#a183aa53d4c740f0ce23e9a83d00e1153">[詳解]</a><br /></td></tr>
+<tr class="separator:a183aa53d4c740f0ce23e9a83d00e1153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classProcessPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classProcessPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classProcessPacketBase.html">ProcessPacketBase</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:ac790a295ae07e447dfc05b4e8e681c8f inherit pub_attribs_classProcessPacketBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProcessPacketBase.html#ac790a295ae07e447dfc05b4e8e681c8f">ClientId</a></td></tr>
+<tr class="separator:ac790a295ae07e447dfc05b4e8e681c8f inherit pub_attribs_classProcessPacketBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>クエスト破棄リクエスト </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a1e554510ff66bdd180c641c5e219ec6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e554510ff66bdd180c641c5e219ec6e">&#9670;&nbsp;</a></span>CachePacketQuestRetireRequest() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CachePacketQuestRetireRequest::CachePacketQuestRetireRequest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a id="a28957bad2af82434f54eb90d33db8da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28957bad2af82434f54eb90d33db8da8">&#9670;&nbsp;</a></span>CachePacketQuestRetireRequest() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CachePacketQuestRetireRequest::CachePacketQuestRetireRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InClientId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InCharacterId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InQuestId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a953a86c8831c463a1f30e8841e22d026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953a86c8831c463a1f30e8841e22d026">&#9670;&nbsp;</a></span>GetPacketID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> CachePacketQuestRetireRequest::GetPacketID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>パケットＩＤ取得. </p>
+<dl class="section return"><dt>戻り値</dt><dd>パケットＩＤ </dd></dl>
+
+<p><a class="el" href="classProcessPacketBase.html#a9754ed248a470abb62b5e0cf1213fa6d">ProcessPacketBase</a>を再実装しています。</p>
+
+</div>
+</div>
+<a id="ab73d123f8698867220c94c4ba7a23e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab73d123f8698867220c94c4ba7a23e39">&#9670;&nbsp;</a></span>Serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CachePacketQuestRetireRequest::Serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>シリアライズ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pStream</td><td>ストリーム  成功したらtrueを返す。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classProcessPacketBase.html#a5e9c610ce35b5a0bb034c180a9571bef">ProcessPacketBase</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCachePacketQuestRetireRequest_ab73d123f8698867220c94c4ba7a23e39_cgraph.png" border="0" usemap="#classCachePacketQuestRetireRequest_ab73d123f8698867220c94c4ba7a23e39_cgraph" alt=""/></div>
+<map name="classCachePacketQuestRetireRequest_ab73d123f8698867220c94c4ba7a23e39_cgraph" id="classCachePacketQuestRetireRequest_ab73d123f8698867220c94c4ba7a23e39_cgraph">
+<area shape="rect" id="node2" href="classProcessPacketBase.html#a5e9c610ce35b5a0bb034c180a9571bef" title="ProcessPacketBase::\lSerialize" alt="" coords="271,5,420,47"/>
+<area shape="rect" id="node3" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="468,35,628,76"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a9811a1092ab2aa7035e2a547835019ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9811a1092ab2aa7035e2a547835019ae">&#9670;&nbsp;</a></span>CharacterId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CachePacketQuestRetireRequest::CharacterId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>キャラクタID </p>
+
+</div>
+</div>
+<a id="a183aa53d4c740f0ce23e9a83d00e1153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a183aa53d4c740f0ce23e9a83d00e1153">&#9670;&nbsp;</a></span>QuestId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CachePacketQuestRetireRequest::QuestId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>クエストID </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="CachePacketQuestRetireRequest_8h_source.html">CachePacketQuestRetireRequest.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

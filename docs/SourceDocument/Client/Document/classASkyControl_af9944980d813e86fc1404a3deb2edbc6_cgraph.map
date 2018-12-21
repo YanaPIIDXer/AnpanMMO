@@ -1,0 +1,4 @@
+<map id="ASkyControl::BeginPlay" name="ASkyControl::BeginPlay">
+<area shape="rect" id="node2" href="$classAActiveGameMode.html#ab2b8c69e38557368ef4b3c61ba97b291" title="AActiveGameMode::Register\lSkyControl" alt="" coords="216,5,405,47"/>
+<area shape="rect" id="node3" href="$classTimeManager.html#a05a82f752d8083ca61bc26ef52a72404" title="TimeManager::SetSkyControl" alt="" coords="453,13,645,39"/>
+</map>

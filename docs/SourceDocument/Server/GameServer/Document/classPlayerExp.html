@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: PlayerExp クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classPlayerExp-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">PlayerExp クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="PlayerExp_8h_source.html">PlayerExp.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3d1d2dc34a114e47201954eeb48fa82e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerExp.html#a3d1d2dc34a114e47201954eeb48fa82e">PlayerExp</a> (int InExp)</td></tr>
+<tr class="separator:a3d1d2dc34a114e47201954eeb48fa82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2302bad30c44cffd0723d279237010ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerExp.html#a2302bad30c44cffd0723d279237010ef">~PlayerExp</a> ()</td></tr>
+<tr class="separator:a2302bad30c44cffd0723d279237010ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9adba40107ecf26b23b4221f10fa4c6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerExp.html#a9adba40107ecf26b23b4221f10fa4c6c">Add</a> (int Value)</td></tr>
+<tr class="separator:a9adba40107ecf26b23b4221f10fa4c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343507b3f9687b0b4d0b9c63a7c3800a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerExp.html#a343507b3f9687b0b4d0b9c63a7c3800a">Get</a> () const</td></tr>
+<tr class="separator:a343507b3f9687b0b4d0b9c63a7c3800a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e1899ec4b4e925619d29f5e60658fa8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerExp.html#a1e1899ec4b4e925619d29f5e60658fa8">SetLevelUpCallback</a> (const function&lt; void()&gt; &amp;InLevelUpCallback)</td></tr>
+<tr class="separator:a1e1899ec4b4e925619d29f5e60658fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>プレイヤーの経験値管理. </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a3d1d2dc34a114e47201954eeb48fa82e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1d2dc34a114e47201954eeb48fa82e">&#9670;&nbsp;</a></span>PlayerExp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlayerExp::PlayerExp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>InExp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2302bad30c44cffd0723d279237010ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2302bad30c44cffd0723d279237010ef">&#9670;&nbsp;</a></span>~PlayerExp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PlayerExp::~PlayerExp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a9adba40107ecf26b23b4221f10fa4c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9adba40107ecf26b23b4221f10fa4c6c">&#9670;&nbsp;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerExp::Add </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlayerExp_a9adba40107ecf26b23b4221f10fa4c6c_icgraph.png" border="0" usemap="#classPlayerExp_a9adba40107ecf26b23b4221f10fa4c6c_icgraph" alt=""/></div>
+<map name="classPlayerExp_a9adba40107ecf26b23b4221f10fa4c6c_icgraph" id="classPlayerExp_a9adba40107ecf26b23b4221f10fa4c6c_icgraph">
+<area shape="rect" id="node2" href="classPlayerCharacter.html#af674ca1a9358d11e18e38eca81072f63" title="PlayerCharacter::AddExp" alt="" coords="167,5,336,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a343507b3f9687b0b4d0b9c63a7c3800a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343507b3f9687b0b4d0b9c63a7c3800a">&#9670;&nbsp;</a></span>Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PlayerExp::Get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlayerExp_a343507b3f9687b0b4d0b9c63a7c3800a_icgraph.png" border="0" usemap="#classPlayerExp_a343507b3f9687b0b4d0b9c63a7c3800a_icgraph" alt=""/></div>
+<map name="classPlayerExp_a343507b3f9687b0b4d0b9c63a7c3800a_icgraph" id="classPlayerExp_a343507b3f9687b0b4d0b9c63a7c3800a_icgraph">
+<area shape="rect" id="node2" href="classPlayerCharacter.html#a7cba0b86d81aa4325a9df3ef784421af" title="PlayerCharacter::GetExp" alt="" coords="164,5,331,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1e1899ec4b4e925619d29f5e60658fa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e1899ec4b4e925619d29f5e60658fa8">&#9670;&nbsp;</a></span>SetLevelUpCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerExp::SetLevelUpCallback </td>
+          <td>(</td>
+          <td class="paramtype">const function&lt; void()&gt; &amp;&#160;</td>
+          <td class="paramname"><em>InLevelUpCallback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlayerExp_a1e1899ec4b4e925619d29f5e60658fa8_icgraph.png" border="0" usemap="#classPlayerExp_a1e1899ec4b4e925619d29f5e60658fa8_icgraph" alt=""/></div>
+<map name="classPlayerExp_a1e1899ec4b4e925619d29f5e60658fa8_icgraph" id="classPlayerExp_a1e1899ec4b4e925619d29f5e60658fa8_icgraph">
+<area shape="rect" id="node2" href="classPlayerCharacter.html#abddeba0759ba2f6b15bf7e8aae8c0929" title="PlayerCharacter::PlayerCharacter" alt="" coords="259,5,475,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="PlayerExp_8h_source.html">PlayerExp.h</a></li>
+<li><a class="el" href="PlayerExp_8cpp.html">PlayerExp.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

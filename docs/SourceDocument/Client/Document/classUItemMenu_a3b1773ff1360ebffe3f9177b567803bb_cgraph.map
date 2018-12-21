@@ -1,0 +1,6 @@
+<map id="UItemMenu::Init" name="UItemMenu::Init">
+<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="175,5,341,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a4d5f0af7e2f2ab9762503a44cd948245" title="MasterData::GetItemMaster" alt="" coords="167,56,349,83"/>
+<area shape="rect" id="node4" href="$classItemMaster.html#ad886791bdb2ab7e6a3bbd22578669951" title="ItemMaster::Get" alt="" coords="200,107,316,133"/>
+<area shape="rect" id="node5" href="$classUItemMenu.html#a252d284f1cf4d7729efe4bd59a8413e8" title="UItemMenu::InitEvent" alt="" coords="185,157,331,184"/>
+</map>

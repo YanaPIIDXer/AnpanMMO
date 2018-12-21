@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: PacketQuestStageChange.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_58500045402c98f32a20fd6026d67718.html">Packet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PacketQuestStageChange.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="PacketQuestStageChange_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef __PACKETQUESTSTAGECHANGE_H__</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define __PACKETQUESTSTAGECHANGE_H__</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PacketBase_8h.html">PacketBase.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MemoryStreamInterface_8h.html">MemoryStream/MemoryStreamInterface.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PacketID_8h.html">PacketID.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPacketQuestStageChange.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPacketQuestStageChange.html">PacketQuestStageChange</a>  : <span class="keyword">public</span> <a class="code" href="classPacketBase.html">PacketBase</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classPacketQuestStageChange.html#aafc86888d2f42532f31ecfc255478a64">   28</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="classPacketQuestStageChange.html#aafc86888d2f42532f31ecfc255478a64">GetPacketID</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaae8ef7aa15c3ed7fe43f7dd6296298cf">PacketID::QuestStageChange</a>; }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classPacketQuestStageChange.html#a4e86d25b3a0fa25d5c298c8b33f3a41d">   33</a></span>&#160;    <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> <a class="code" href="classPacketQuestStageChange.html#a4e86d25b3a0fa25d5c298c8b33f3a41d">QuestId</a>;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classPacketQuestStageChange.html#a52028e6ca0904da67c19454ed8bf0360">   35</a></span>&#160;    <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> <a class="code" href="classPacketQuestStageChange.html#a52028e6ca0904da67c19454ed8bf0360">StageNo</a>;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classPacketQuestStageChange.html#a1f8544945fb2bacfe7b8500d9f618f6f">   41</a></span>&#160;    <a class="code" href="classPacketQuestStageChange.html#a1f8544945fb2bacfe7b8500d9f618f6f">PacketQuestStageChange</a>()</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classPacketQuestStageChange.html#a6146f02e3ef6b9d08d288d3ac20943dd">   48</a></span>&#160;    <a class="code" href="classPacketQuestStageChange.html#a6146f02e3ef6b9d08d288d3ac20943dd">PacketQuestStageChange</a>(<a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InQuestId, <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InStageNo)</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classPacketQuestStageChange.html#a4e86d25b3a0fa25d5c298c8b33f3a41d">QuestId</a> = InQuestId;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classPacketQuestStageChange.html#a52028e6ca0904da67c19454ed8bf0360">StageNo</a> = InStageNo;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classPacketQuestStageChange.html#a78b6766e872def3fc78f2e21772d9059">   62</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPacketQuestStageChange.html#a78b6766e872def3fc78f2e21772d9059">Serialize</a>(<a class="code" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classPacketQuestStageChange.html#a4e86d25b3a0fa25d5c298c8b33f3a41d">QuestId</a>);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classPacketQuestStageChange.html#a52028e6ca0904da67c19454ed8bf0360">StageNo</a>);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        </div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif      // #ifndef __PACKETQUESTSTAGECHANGE_H__</span></div><div class="ttc" id="TypeDefs_8h_html_aed742c436da53c1080638ce6ef7d13de"><div class="ttname"><a href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></div><div class="ttdeci">unsigned char u8</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:6</div></div>
+<div class="ttc" id="classPacketQuestStageChange_html_a4e86d25b3a0fa25d5c298c8b33f3a41d"><div class="ttname"><a href="classPacketQuestStageChange.html#a4e86d25b3a0fa25d5c298c8b33f3a41d">PacketQuestStageChange::QuestId</a></div><div class="ttdeci">u32 QuestId</div><div class="ttdoc">クエストＩＤ </div><div class="ttdef"><b>Definition:</b> PacketQuestStageChange.h:33</div></div>
+<div class="ttc" id="classPacketQuestStageChange_html_a6146f02e3ef6b9d08d288d3ac20943dd"><div class="ttname"><a href="classPacketQuestStageChange.html#a6146f02e3ef6b9d08d288d3ac20943dd">PacketQuestStageChange::PacketQuestStageChange</a></div><div class="ttdeci">PacketQuestStageChange(u32 InQuestId, u32 InStageNo)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> PacketQuestStageChange.h:48</div></div>
+<div class="ttc" id="classPacketQuestStageChange_html_a52028e6ca0904da67c19454ed8bf0360"><div class="ttname"><a href="classPacketQuestStageChange.html#a52028e6ca0904da67c19454ed8bf0360">PacketQuestStageChange::StageNo</a></div><div class="ttdeci">u32 StageNo</div><div class="ttdoc">ステージ番号 </div><div class="ttdef"><b>Definition:</b> PacketQuestStageChange.h:35</div></div>
+<div class="ttc" id="classMemoryStreamInterface_html_a6a4fb8faf2a4f94ea6b56334aba31ebf"><div class="ttname"><a href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">MemoryStreamInterface::Serialize</a></div><div class="ttdeci">virtual bool Serialize(s32 *pValue)=0</div></div>
+<div class="ttc" id="PacketBase_8h_html"><div class="ttname"><a href="PacketBase_8h.html">PacketBase.h</a></div></div>
+<div class="ttc" id="TypeDefs_8h_html_a10e94b422ef0c20dcdec20d31a1f5049"><div class="ttname"><a href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a></div><div class="ttdeci">unsigned int u32</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:10</div></div>
+<div class="ttc" id="classPacketQuestStageChange_html_a78b6766e872def3fc78f2e21772d9059"><div class="ttname"><a href="classPacketQuestStageChange.html#a78b6766e872def3fc78f2e21772d9059">PacketQuestStageChange::Serialize</a></div><div class="ttdeci">bool Serialize(MemoryStreamInterface *pStream)</div><div class="ttdoc">シリアライズ </div><div class="ttdef"><b>Definition:</b> PacketQuestStageChange.h:62</div></div>
+<div class="ttc" id="classPacketID_html_aaac69b977036b9b9d40419b939c1570aaae8ef7aa15c3ed7fe43f7dd6296298cf"><div class="ttname"><a href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaae8ef7aa15c3ed7fe43f7dd6296298cf">PacketID::QuestStageChange</a></div><div class="ttdoc">クエストステージ進行 </div><div class="ttdef"><b>Definition:</b> PacketID.h:151</div></div>
+<div class="ttc" id="classPacketBase_html"><div class="ttname"><a href="classPacketBase.html">PacketBase</a></div><div class="ttdef"><b>Definition:</b> PacketBase.h:9</div></div>
+<div class="ttc" id="classMemoryStreamInterface_html"><div class="ttname"><a href="classMemoryStreamInterface.html">MemoryStreamInterface</a></div><div class="ttdef"><b>Definition:</b> MemoryStreamInterface.h:8</div></div>
+<div class="ttc" id="classPacketQuestStageChange_html_aafc86888d2f42532f31ecfc255478a64"><div class="ttname"><a href="classPacketQuestStageChange.html#aafc86888d2f42532f31ecfc255478a64">PacketQuestStageChange::GetPacketID</a></div><div class="ttdeci">virtual u8 GetPacketID() const</div><div class="ttdoc">パケットＩＤ取得. </div><div class="ttdef"><b>Definition:</b> PacketQuestStageChange.h:28</div></div>
+<div class="ttc" id="classPacketQuestStageChange_html"><div class="ttname"><a href="classPacketQuestStageChange.html">PacketQuestStageChange</a></div><div class="ttdoc">クエストステージ進行 </div><div class="ttdef"><b>Definition:</b> PacketQuestStageChange.h:18</div></div>
+<div class="ttc" id="MemoryStreamInterface_8h_html"><div class="ttname"><a href="MemoryStreamInterface_8h.html">MemoryStreamInterface.h</a></div></div>
+<div class="ttc" id="classPacketQuestStageChange_html_a1f8544945fb2bacfe7b8500d9f618f6f"><div class="ttname"><a href="classPacketQuestStageChange.html#a1f8544945fb2bacfe7b8500d9f618f6f">PacketQuestStageChange::PacketQuestStageChange</a></div><div class="ttdeci">PacketQuestStageChange()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> PacketQuestStageChange.h:41</div></div>
+<div class="ttc" id="PacketID_8h_html"><div class="ttname"><a href="PacketID_8h.html">PacketID.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

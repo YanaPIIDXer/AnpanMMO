@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: CachePacketSkillListResponse クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="classCachePacketSkillListResponse-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">CachePacketSkillListResponse クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>スキルリストレスポンス  
+ <a href="classCachePacketSkillListResponse.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="CachePacketSkillListResponse_8h_source.html">CachePacketSkillListResponse.h</a>&gt;</code></p>
+<div class="dynheader">
+CachePacketSkillListResponse の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCachePacketSkillListResponse__inherit__graph.png" border="0" usemap="#CachePacketSkillListResponse_inherit__map" alt="Inheritance graph"/></div>
+<map name="CachePacketSkillListResponse_inherit__map" id="CachePacketSkillListResponse_inherit__map">
+<area shape="rect" id="node2" href="classProcessPacketBase.html" title="ProcessPacketBase" alt="" coords="37,80,178,107"/>
+<area shape="rect" id="node3" href="classPacketBase.html" title="PacketBase" alt="" coords="61,5,154,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+CachePacketSkillListResponse 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCachePacketSkillListResponse__coll__graph.png" border="0" usemap="#CachePacketSkillListResponse_coll__map" alt="Collaboration graph"/></div>
+<map name="CachePacketSkillListResponse_coll__map" id="CachePacketSkillListResponse_coll__map">
+<area shape="rect" id="node2" href="classProcessPacketBase.html" title="ProcessPacketBase" alt="" coords="37,80,178,107"/>
+<area shape="rect" id="node3" href="classPacketBase.html" title="PacketBase" alt="" coords="61,5,154,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:aeed8fe9833675bdd86148e96b626d49c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#aeed8fe9833675bdd86148e96b626d49c">ResultCode</a> { <a class="el" href="classCachePacketSkillListResponse.html#aeed8fe9833675bdd86148e96b626d49cad482ea18875d3e6a2c2f14f301390f50">Success</a>, 
+<a class="el" href="classCachePacketSkillListResponse.html#aeed8fe9833675bdd86148e96b626d49caacc2065ca046dea1d2823f356c103ee4">Error</a>
+ }</td></tr>
+<tr class="separator:aeed8fe9833675bdd86148e96b626d49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a920808e1e27fb4505052dc173423b7f7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#a920808e1e27fb4505052dc173423b7f7">GetPacketID</a> () const</td></tr>
+<tr class="memdesc:a920808e1e27fb4505052dc173423b7f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケットＩＤ取得.  <a href="#a920808e1e27fb4505052dc173423b7f7">[詳解]</a><br /></td></tr>
+<tr class="separator:a920808e1e27fb4505052dc173423b7f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3bd96fb1226440c79add00d614129a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#a2f3bd96fb1226440c79add00d614129a">CachePacketSkillListResponse</a> ()</td></tr>
+<tr class="memdesc:a2f3bd96fb1226440c79add00d614129a"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a2f3bd96fb1226440c79add00d614129a">[詳解]</a><br /></td></tr>
+<tr class="separator:a2f3bd96fb1226440c79add00d614129a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f4d7bdcc22bebbe782d5e6393abb68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#a16f4d7bdcc22bebbe782d5e6393abb68">CachePacketSkillListResponse</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InClientId, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InResult, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InNormalAttackId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InSkillId1, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InSkillId2, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InSkillId3, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InSkillId4)</td></tr>
+<tr class="memdesc:a16f4d7bdcc22bebbe782d5e6393abb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a16f4d7bdcc22bebbe782d5e6393abb68">[詳解]</a><br /></td></tr>
+<tr class="separator:a16f4d7bdcc22bebbe782d5e6393abb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f23cc0dbb1da7aec3748b866b972c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#a71f23cc0dbb1da7aec3748b866b972c5">Serialize</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="memdesc:a71f23cc0dbb1da7aec3748b866b972c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアライズ  <a href="#a71f23cc0dbb1da7aec3748b866b972c5">[詳解]</a><br /></td></tr>
+<tr class="separator:a71f23cc0dbb1da7aec3748b866b972c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classPacketBase.html">PacketBase</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketBase.html#a8784f3bc29a63570e38619d940131223">~PacketBase</a> ()</td></tr>
+<tr class="separator:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:ab77887309f65a52e415ed14dc6264862"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#ab77887309f65a52e415ed14dc6264862">Result</a></td></tr>
+<tr class="memdesc:ab77887309f65a52e415ed14dc6264862"><td class="mdescLeft">&#160;</td><td class="mdescRight">結果  <a href="#ab77887309f65a52e415ed14dc6264862">[詳解]</a><br /></td></tr>
+<tr class="separator:ab77887309f65a52e415ed14dc6264862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab632c06e1d9f14a20b33d5962f9c839d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#ab632c06e1d9f14a20b33d5962f9c839d">NormalAttackId</a></td></tr>
+<tr class="memdesc:ab632c06e1d9f14a20b33d5962f9c839d"><td class="mdescLeft">&#160;</td><td class="mdescRight">通常攻撃ＩＤ  <a href="#ab632c06e1d9f14a20b33d5962f9c839d">[詳解]</a><br /></td></tr>
+<tr class="separator:ab632c06e1d9f14a20b33d5962f9c839d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5da49efb9df62bedd5eabe749f62385"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#ae5da49efb9df62bedd5eabe749f62385">SkillId1</a></td></tr>
+<tr class="memdesc:ae5da49efb9df62bedd5eabe749f62385"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルＩＤ１  <a href="#ae5da49efb9df62bedd5eabe749f62385">[詳解]</a><br /></td></tr>
+<tr class="separator:ae5da49efb9df62bedd5eabe749f62385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891de95053bb4b546c09606d2211772b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#a891de95053bb4b546c09606d2211772b">SkillId2</a></td></tr>
+<tr class="memdesc:a891de95053bb4b546c09606d2211772b"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルＩＤ２  <a href="#a891de95053bb4b546c09606d2211772b">[詳解]</a><br /></td></tr>
+<tr class="separator:a891de95053bb4b546c09606d2211772b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433240e29d0e7f02cfed6ea2f0561a51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#a433240e29d0e7f02cfed6ea2f0561a51">SkillId3</a></td></tr>
+<tr class="memdesc:a433240e29d0e7f02cfed6ea2f0561a51"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルＩＤ３  <a href="#a433240e29d0e7f02cfed6ea2f0561a51">[詳解]</a><br /></td></tr>
+<tr class="separator:a433240e29d0e7f02cfed6ea2f0561a51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74ff750b96ad414f52413ba77e8dfbbe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketSkillListResponse.html#a74ff750b96ad414f52413ba77e8dfbbe">SkillId4</a></td></tr>
+<tr class="memdesc:a74ff750b96ad414f52413ba77e8dfbbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルＩＤ４  <a href="#a74ff750b96ad414f52413ba77e8dfbbe">[詳解]</a><br /></td></tr>
+<tr class="separator:a74ff750b96ad414f52413ba77e8dfbbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classProcessPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classProcessPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classProcessPacketBase.html">ProcessPacketBase</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:ac790a295ae07e447dfc05b4e8e681c8f inherit pub_attribs_classProcessPacketBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProcessPacketBase.html#ac790a295ae07e447dfc05b4e8e681c8f">ClientId</a></td></tr>
+<tr class="separator:ac790a295ae07e447dfc05b4e8e681c8f inherit pub_attribs_classProcessPacketBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>スキルリストレスポンス </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="aeed8fe9833675bdd86148e96b626d49c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed8fe9833675bdd86148e96b626d49c">&#9670;&nbsp;</a></span>ResultCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classCachePacketSkillListResponse.html#aeed8fe9833675bdd86148e96b626d49c">CachePacketSkillListResponse::ResultCode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="aeed8fe9833675bdd86148e96b626d49cad482ea18875d3e6a2c2f14f301390f50"></a>Success&#160;</td><td class="fielddoc"><p>成功 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeed8fe9833675bdd86148e96b626d49caacc2065ca046dea1d2823f356c103ee4"></a>Error&#160;</td><td class="fielddoc"><p>エラー </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a2f3bd96fb1226440c79add00d614129a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f3bd96fb1226440c79add00d614129a">&#9670;&nbsp;</a></span>CachePacketSkillListResponse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CachePacketSkillListResponse::CachePacketSkillListResponse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a id="a16f4d7bdcc22bebbe782d5e6393abb68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f4d7bdcc22bebbe782d5e6393abb68">&#9670;&nbsp;</a></span>CachePacketSkillListResponse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CachePacketSkillListResponse::CachePacketSkillListResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InClientId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>InResult</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InNormalAttackId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InSkillId1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InSkillId2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InSkillId3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InSkillId4</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a920808e1e27fb4505052dc173423b7f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920808e1e27fb4505052dc173423b7f7">&#9670;&nbsp;</a></span>GetPacketID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> CachePacketSkillListResponse::GetPacketID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>パケットＩＤ取得. </p>
+<dl class="section return"><dt>戻り値</dt><dd>パケットＩＤ </dd></dl>
+
+<p><a class="el" href="classProcessPacketBase.html#a9754ed248a470abb62b5e0cf1213fa6d">ProcessPacketBase</a>を再実装しています。</p>
+
+</div>
+</div>
+<a id="a71f23cc0dbb1da7aec3748b866b972c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f23cc0dbb1da7aec3748b866b972c5">&#9670;&nbsp;</a></span>Serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CachePacketSkillListResponse::Serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>シリアライズ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pStream</td><td>ストリーム  成功したらtrueを返す。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classProcessPacketBase.html#a5e9c610ce35b5a0bb034c180a9571bef">ProcessPacketBase</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCachePacketSkillListResponse_a71f23cc0dbb1da7aec3748b866b972c5_cgraph.png" border="0" usemap="#classCachePacketSkillListResponse_a71f23cc0dbb1da7aec3748b866b972c5_cgraph" alt=""/></div>
+<map name="classCachePacketSkillListResponse_a71f23cc0dbb1da7aec3748b866b972c5_cgraph" id="classCachePacketSkillListResponse_a71f23cc0dbb1da7aec3748b866b972c5_cgraph">
+<area shape="rect" id="node2" href="classProcessPacketBase.html#a5e9c610ce35b5a0bb034c180a9571bef" title="ProcessPacketBase::\lSerialize" alt="" coords="257,5,407,47"/>
+<area shape="rect" id="node3" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="455,35,615,76"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ab632c06e1d9f14a20b33d5962f9c839d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab632c06e1d9f14a20b33d5962f9c839d">&#9670;&nbsp;</a></span>NormalAttackId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CachePacketSkillListResponse::NormalAttackId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>通常攻撃ＩＤ </p>
+
+</div>
+</div>
+<a id="ab77887309f65a52e415ed14dc6264862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab77887309f65a52e415ed14dc6264862">&#9670;&nbsp;</a></span>Result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> CachePacketSkillListResponse::Result</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>結果 </p>
+
+</div>
+</div>
+<a id="ae5da49efb9df62bedd5eabe749f62385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5da49efb9df62bedd5eabe749f62385">&#9670;&nbsp;</a></span>SkillId1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CachePacketSkillListResponse::SkillId1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スキルＩＤ１ </p>
+
+</div>
+</div>
+<a id="a891de95053bb4b546c09606d2211772b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a891de95053bb4b546c09606d2211772b">&#9670;&nbsp;</a></span>SkillId2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CachePacketSkillListResponse::SkillId2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スキルＩＤ２ </p>
+
+</div>
+</div>
+<a id="a433240e29d0e7f02cfed6ea2f0561a51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433240e29d0e7f02cfed6ea2f0561a51">&#9670;&nbsp;</a></span>SkillId3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CachePacketSkillListResponse::SkillId3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スキルＩＤ３ </p>
+
+</div>
+</div>
+<a id="a74ff750b96ad414f52413ba77e8dfbbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ff750b96ad414f52413ba77e8dfbbe">&#9670;&nbsp;</a></span>SkillId4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CachePacketSkillListResponse::SkillId4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スキルＩＤ４ </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="CachePacketSkillListResponse_8h_source.html">CachePacketSkillListResponse.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -1,0 +1,1359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: CharacterBase クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="classCharacterBase-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">CharacterBase クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="CharacterBase_8h_source.html">CharacterBase.h</a>&gt;</code></p>
+<div class="dynheader">
+CharacterBase の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase__inherit__graph.png" border="0" usemap="#CharacterBase_inherit__map" alt="Inheritance graph"/></div>
+<map name="CharacterBase_inherit__map" id="CharacterBase_inherit__map">
+<area shape="rect" id="node3" href="classAnpan.html" title="Anpan" alt="" coords="17,169,76,196"/>
+<area shape="rect" id="node4" href="classPlayerCharacter.html" title="PlayerCharacter" alt="" coords="100,169,215,196"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+CharacterBase 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase__coll__graph.png" border="0" usemap="#CharacterBase_coll__map" alt="Collaboration graph"/></div>
+<map name="CharacterBase_coll__map" id="CharacterBase_coll__map">
+<area shape="rect" id="node3" href="classSkillRecastManager.html" title="SkillRecastManager" alt="" coords="32,71,171,98"/>
+<area shape="rect" id="node4" href="classRotation.html" title="Rotation" alt="" coords="66,122,137,149"/>
+<area shape="rect" id="node5" href="classSkillControl.html" title="SkillControl" alt="" coords="57,173,145,199"/>
+<area shape="rect" id="node6" href="classVector3D.html" title="Vector3D" alt="" coords="63,262,139,289"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af842f374bfb27efe6da4db4e822a3c72"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">CharacterBase</a> ()</td></tr>
+<tr class="separator:af842f374bfb27efe6da4db4e822a3c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af750ca6cbe1346a3768b65f61934360c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af750ca6cbe1346a3768b65f61934360c">~CharacterBase</a> ()</td></tr>
+<tr class="separator:af750ca6cbe1346a3768b65f61934360c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73ca6b09f2a6e31f0add39128ff1b5d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a73ca6b09f2a6e31f0add39128ff1b5d9">Poll</a> (<a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> DeltaTime)</td></tr>
+<tr class="separator:a73ca6b09f2a6e31f0add39128ff1b5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababe79e449b8f9aa4c2078c021156241"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structCharacterParameter.html">CharacterParameter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ababe79e449b8f9aa4c2078c021156241">GetParameter</a> () const</td></tr>
+<tr class="separator:ababe79e449b8f9aa4c2078c021156241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3989fc3d743766bc9554060e98b5e6a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0">SetPosition</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;MoveTarget)</td></tr>
+<tr class="separator:a3989fc3d743766bc9554060e98b5e6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7d36bb07aecc589d8c8a351748ff8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b">SetRotate</a> (const <a class="el" href="classRotation.html">Rotation</a> &amp;TargetRotation)</td></tr>
+<tr class="separator:a0d7d36bb07aecc589d8c8a351748ff8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf8057da8a29413efc04b642ad7949b2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classVector3D.html">Vector3D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2">GetPosition</a> () const</td></tr>
+<tr class="separator:aaf8057da8a29413efc04b642ad7949b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af419d46a1cf16394b89ebfa29550b6da"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classRotation.html">Rotation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af419d46a1cf16394b89ebfa29550b6da">GetRotation</a> () const</td></tr>
+<tr class="separator:af419d46a1cf16394b89ebfa29550b6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4654af77eeea1dd5297b2805fa1c5c93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a4654af77eeea1dd5297b2805fa1c5c93">IsDead</a> () const</td></tr>
+<tr class="separator:a4654af77eeea1dd5297b2805fa1c5c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2cbfd441a0e0bc45ff3f1ca1925939a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ab2cbfd441a0e0bc45ff3f1ca1925939a">ApplyDamage</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pAttacker, int Value)</td></tr>
+<tr class="separator:ab2cbfd441a0e0bc45ff3f1ca1925939a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8606f23b177a9a0f4d9196b45ee50990"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a8606f23b177a9a0f4d9196b45ee50990">Heal</a> (int Value)</td></tr>
+<tr class="separator:a8606f23b177a9a0f4d9196b45ee50990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3f3257cc9cbc93928a4d1bff2a3d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVector3D.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b">GetCenterVec</a> () const</td></tr>
+<tr class="separator:a2b3f3257cc9cbc93928a4d1bff2a3d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1f38e44ca8669dd32e5defc280fe82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a6e1f38e44ca8669dd32e5defc280fe82">SetUuid</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InUuid)</td></tr>
+<tr class="separator:a6e1f38e44ca8669dd32e5defc280fe82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7550f7499249cbef53aad08ee81e986e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e">GetUuid</a> () const</td></tr>
+<tr class="separator:a7550f7499249cbef53aad08ee81e986e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37869b47274edd63a93c6c8c5f1530e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a37869b47274edd63a93c6c8c5f1530e1">GetLevel</a> () const</td></tr>
+<tr class="separator:a37869b47274edd63a93c6c8c5f1530e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b21d5dc74631551b33e097cb9a07227"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a1b21d5dc74631551b33e097cb9a07227">GetCharacterType</a> () const =0</td></tr>
+<tr class="separator:a1b21d5dc74631551b33e097cb9a07227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ceea9f6cd8145814f8dcc3641322a8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a6ceea9f6cd8145814f8dcc3641322a8e">Move</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;MoveValue)</td></tr>
+<tr class="separator:a6ceea9f6cd8145814f8dcc3641322a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c74a47c7fbdbb2f3187c5be4589fa77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a2c74a47c7fbdbb2f3187c5be4589fa77">Rotate</a> (float RotateValue)</td></tr>
+<tr class="separator:a2c74a47c7fbdbb2f3187c5be4589fa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8133cdd94e9ce926382103e7ef9caf77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a8133cdd94e9ce926382103e7ef9caf77">Respawn</a> ()</td></tr>
+<tr class="separator:a8133cdd94e9ce926382103e7ef9caf77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35378ed4601e66d8415bd721addc0d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af35378ed4601e66d8415bd721addc0d2">SetArea</a> (const <a class="el" href="WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> &amp;pInArea)</td></tr>
+<tr class="separator:af35378ed4601e66d8415bd721addc0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9648779454b629071237b7c2cf910b87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87">GetArea</a> () const</td></tr>
+<tr class="separator:a9648779454b629071237b7c2cf910b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb905131a5519c3c374e5333e1bf018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018">UseSkill</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId, <a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pTarget)</td></tr>
+<tr class="separator:a7eb905131a5519c3c374e5333e1bf018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7624448e24270e773875fce180b0e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aad7624448e24270e773875fce180b0e7">StartRecast</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId)</td></tr>
+<tr class="separator:aad7624448e24270e773875fce180b0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5a7ea43f44fda956abba9366b55b4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f">IsSkillActive</a> () const</td></tr>
+<tr class="separator:abf5a7ea43f44fda956abba9366b55b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26332cd9fe87098d43413835f49a14f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f">IsSkillCasting</a> () const</td></tr>
+<tr class="separator:ac26332cd9fe87098d43413835f49a14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d286187aebe8df0521052c7e5a99d80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80">IsRecasting</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId) const</td></tr>
+<tr class="separator:a3d286187aebe8df0521052c7e5a99d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf6a1938d1e3f5f7919b3206c8ba765"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aabf6a1938d1e3f5f7919b3206c8ba765">GetExp</a> () const</td></tr>
+<tr class="separator:aabf6a1938d1e3f5f7919b3206c8ba765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8159dda925c3aa7cf090210862c1f559"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a8159dda925c3aa7cf090210862c1f559">GetDropId</a> () const</td></tr>
+<tr class="separator:a8159dda925c3aa7cf090210862c1f559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0fec6ef6399f366ff55fa9478f8b2862"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862">SetParameter</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, int Hp, int MaxHp, int Atk, int Def)</td></tr>
+<tr class="separator:a0fec6ef6399f366ff55fa9478f8b2862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4896eb258099c538ca2a1b9920dda67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aa4896eb258099c538ca2a1b9920dda67">LevelUp</a> (int MaxHp, int Atk, int Def)</td></tr>
+<tr class="separator:aa4896eb258099c538ca2a1b9920dda67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a6e428e70e442ab27623f6c9ae5a81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a82a6e428e70e442ab27623f6c9ae5a81">OnDamaged</a> (weak_ptr&lt; <a class="el" href="classCharacterBase.html">CharacterBase</a> &gt; pAttacker, int DamageValue)</td></tr>
+<tr class="separator:a82a6e428e70e442ab27623f6c9ae5a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff3a32f5b5cd5232fbdda611e722430"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#acff3a32f5b5cd5232fbdda611e722430">Update</a> (<a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> DeltaTime)</td></tr>
+<tr class="separator:acff3a32f5b5cd5232fbdda611e722430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a7bb9a1746383089944b5d8d5a76d7194"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVector3D.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7bb9a1746383089944b5d8d5a76d7194">Position</a></td></tr>
+<tr class="separator:a7bb9a1746383089944b5d8d5a76d7194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b65a8ef35645be1c517db387c3db935"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRotation.html">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3b65a8ef35645be1c517db387c3db935">Rot</a></td></tr>
+<tr class="separator:a3b65a8ef35645be1c517db387c3db935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaaef243db27cf8505b8e78f33355d51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSkillControl.html">SkillControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#acaaef243db27cf8505b8e78f33355d51">Skill</a></td></tr>
+<tr class="separator:acaaef243db27cf8505b8e78f33355d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e707d934d0642c4bed52392286d39d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSkillRecastManager.html">SkillRecastManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3e707d934d0642c4bed52392286d39d3">Recast</a></td></tr>
+<tr class="separator:a3e707d934d0642c4bed52392286d39d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>キャラクタ基底クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="af842f374bfb27efe6da4db4e822a3c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af842f374bfb27efe6da4db4e822a3c72">&#9670;&nbsp;</a></span>CharacterBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CharacterBase::CharacterBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af750ca6cbe1346a3768b65f61934360c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af750ca6cbe1346a3768b65f61934360c">&#9670;&nbsp;</a></span>~CharacterBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual CharacterBase::~CharacterBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ab2cbfd441a0e0bc45ff3f1ca1925939a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2cbfd441a0e0bc45ff3f1ca1925939a">&#9670;&nbsp;</a></span>ApplyDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::ApplyDamage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a>&#160;</td>
+          <td class="paramname"><em>pAttacker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_ab2cbfd441a0e0bc45ff3f1ca1925939a_cgraph.png" border="0" usemap="#classCharacterBase_ab2cbfd441a0e0bc45ff3f1ca1925939a_cgraph" alt=""/></div>
+<map name="classCharacterBase_ab2cbfd441a0e0bc45ff3f1ca1925939a_cgraph" id="classCharacterBase_ab2cbfd441a0e0bc45ff3f1ca1925939a_cgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#a1b21d5dc74631551b33e097cb9a07227" title="CharacterBase::GetCharacterType" alt="" coords="251,5,472,32"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#a82a6e428e70e442ab27623f6c9ae5a81" title="CharacterBase::OnDamaged" alt="" coords="267,56,455,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9648779454b629071237b7c2cf910b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9648779454b629071237b7c2cf910b87">&#9670;&nbsp;</a></span>GetArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> CharacterBase::GetArea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a9648779454b629071237b7c2cf910b87_icgraph.png" border="0" usemap="#classCharacterBase_a9648779454b629071237b7c2cf910b87_icgraph" alt=""/></div>
+<map name="classCharacterBase_a9648779454b629071237b7c2cf910b87_icgraph" id="classCharacterBase_a9648779454b629071237b7c2cf910b87_icgraph">
+<area shape="rect" id="node2" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="269,5,377,32"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a1069177954ab1377aa2ea360ae130f37" title="AnpanAIStateBase::SetMove" alt="" coords="227,56,418,83"/>
+<area shape="rect" id="node4" href="classPlayerCharacter.html#ab2df472f50de0370a3bc2b4a538a034c" title="PlayerCharacter::OnMoved" alt="" coords="234,107,411,133"/>
+<area shape="rect" id="node7" href="classPlayerCharacter.html#a1afee0a074986b5d0d03f086c9748a0b" title="PlayerCharacter::OnAreaChange" alt="" coords="217,157,428,184"/>
+<area shape="rect" id="node8" href="classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="486,208,658,235"/>
+<area shape="rect" id="node10" href="classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="251,259,394,285"/>
+<area shape="rect" id="node12" href="classSkillStateCast.html#a7a7f19ee6eae4e3b12f5a573f46c0e96" title="SkillStateCast::BeginState" alt="" coords="234,309,411,336"/>
+<area shape="rect" id="node5" href="classPlayerManager.html#aaa2707c2d315cf1fe3fe44a0e1d09798" title="PlayerManager::OnRecvMove" alt="" coords="476,107,668,133"/>
+<area shape="rect" id="node6" href="classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22" title="AreaBase::OnRecvMove" alt="" coords="716,107,879,133"/>
+<area shape="rect" id="node9" href="classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="730,208,865,235"/>
+<area shape="rect" id="node11" href="classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="505,259,639,301"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2b3f3257cc9cbc93928a4d1bff2a3d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3f3257cc9cbc93928a4d1bff2a3d5b">&#9670;&nbsp;</a></span>GetCenterVec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVector3D.html">Vector3D</a> CharacterBase::GetCenterVec </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a2b3f3257cc9cbc93928a4d1bff2a3d5b_cgraph.png" border="0" usemap="#classCharacterBase_a2b3f3257cc9cbc93928a4d1bff2a3d5b_cgraph" alt=""/></div>
+<map name="classCharacterBase_a2b3f3257cc9cbc93928a4d1bff2a3d5b_cgraph" id="classCharacterBase_a2b3f3257cc9cbc93928a4d1bff2a3d5b_cgraph">
+<area shape="rect" id="node2" href="classMathUtil.html#ab34f00845bc0a5917f4becf9202e1916" title="MathUtil::RotateVector" alt="" coords="252,5,407,32"/>
+<area shape="rect" id="node4" href="classRotation.html#ad5aebbfc6c26285b0579ad1e1b11d812" title="Rotation::Get" alt="" coords="280,56,379,83"/>
+<area shape="rect" id="node3" href="classMathUtil.html#a63bc45ff42ceb1a12ef90093c452df43" title="MathUtil::DegToRad" alt="" coords="455,5,593,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a2b3f3257cc9cbc93928a4d1bff2a3d5b_icgraph.png" border="0" usemap="#classCharacterBase_a2b3f3257cc9cbc93928a4d1bff2a3d5b_icgraph" alt=""/></div>
+<map name="classCharacterBase_a2b3f3257cc9cbc93928a4d1bff2a3d5b_icgraph" id="classCharacterBase_a2b3f3257cc9cbc93928a4d1bff2a3d5b_icgraph">
+<area shape="rect" id="node2" href="classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="252,35,395,61"/>
+<area shape="rect" id="node3" href="classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="443,5,615,32"/>
+<area shape="rect" id="node5" href="classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="461,57,596,98"/>
+<area shape="rect" id="node4" href="classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="663,5,797,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1b21d5dc74631551b33e097cb9a07227"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b21d5dc74631551b33e097cb9a07227">&#9670;&nbsp;</a></span>GetCharacterType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> CharacterBase::GetCharacterType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classPlayerCharacter.html#a0576c190494fa2225202a8f314ebdd4b">PlayerCharacter</a>, <a class="el" href="classAnpan.html#ac4e0f36ab70c1d54f3c0f8ed9e907310">Anpan</a>で実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a1b21d5dc74631551b33e097cb9a07227_icgraph.png" border="0" usemap="#classCharacterBase_a1b21d5dc74631551b33e097cb9a07227_icgraph" alt=""/></div>
+<map name="classCharacterBase_a1b21d5dc74631551b33e097cb9a07227_icgraph" id="classCharacterBase_a1b21d5dc74631551b33e097cb9a07227_icgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#ab2cbfd441a0e0bc45ff3f1ca1925939a" title="CharacterBase::ApplyDamage" alt="" coords="275,5,472,32"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#a8606f23b177a9a0f4d9196b45ee50990" title="CharacterBase::Heal" alt="" coords="302,56,445,83"/>
+<area shape="rect" id="node4" href="classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="520,107,692,133"/>
+<area shape="rect" id="node6" href="classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="302,157,445,184"/>
+<area shape="rect" id="node8" href="classSkillStateCast.html#a7a7f19ee6eae4e3b12f5a573f46c0e96" title="SkillStateCast::BeginState" alt="" coords="285,208,462,235"/>
+<area shape="rect" id="node5" href="classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="740,107,875,133"/>
+<area shape="rect" id="node7" href="classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="539,158,673,199"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8159dda925c3aa7cf090210862c1f559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8159dda925c3aa7cf090210862c1f559">&#9670;&nbsp;</a></span>GetDropId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CharacterBase::GetDropId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAnpan.html#ac3ab7b1c68f9ebf893e281642f5676f1">Anpan</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="aabf6a1938d1e3f5f7919b3206c8ba765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf6a1938d1e3f5f7919b3206c8ba765">&#9670;&nbsp;</a></span>GetExp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int CharacterBase::GetExp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classPlayerCharacter.html#a7cba0b86d81aa4325a9df3ef784421af">PlayerCharacter</a>, <a class="el" href="classAnpan.html#ad7a4642b35efc44cb118a4c159519190">Anpan</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a37869b47274edd63a93c6c8c5f1530e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37869b47274edd63a93c6c8c5f1530e1">&#9670;&nbsp;</a></span>GetLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CharacterBase::GetLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ababe79e449b8f9aa4c2078c021156241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababe79e449b8f9aa4c2078c021156241">&#9670;&nbsp;</a></span>GetParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structCharacterParameter.html">CharacterParameter</a>&amp; CharacterBase::GetParameter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_ababe79e449b8f9aa4c2078c021156241_icgraph.png" border="0" usemap="#classCharacterBase_ababe79e449b8f9aa4c2078c021156241_icgraph" alt=""/></div>
+<map name="classCharacterBase_ababe79e449b8f9aa4c2078c021156241_icgraph" id="classCharacterBase_ababe79e449b8f9aa4c2078c021156241_icgraph">
+<area shape="rect" id="node2" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="PlayerCharacter::OpenSkillTree" alt="" coords="251,5,455,32"/>
+<area shape="rect" id="node3" href="classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="281,56,424,83"/>
+<area shape="rect" id="node4" href="classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="503,27,675,53"/>
+<area shape="rect" id="node6" href="classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="521,78,656,119"/>
+<area shape="rect" id="node5" href="classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="723,27,857,53"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf8057da8a29413efc04b642ad7949b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf8057da8a29413efc04b642ad7949b2">&#9670;&nbsp;</a></span>GetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classVector3D.html">Vector3D</a>&amp; CharacterBase::GetPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_aaf8057da8a29413efc04b642ad7949b2_icgraph.png" border="0" usemap="#classCharacterBase_aaf8057da8a29413efc04b642ad7949b2_icgraph" alt=""/></div>
+<map name="classCharacterBase_aaf8057da8a29413efc04b642ad7949b2_icgraph" id="classCharacterBase_aaf8057da8a29413efc04b642ad7949b2_icgraph">
+<area shape="rect" id="node2" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="279,5,387,32"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a1069177954ab1377aa2ea360ae130f37" title="AnpanAIStateBase::SetMove" alt="" coords="237,56,428,83"/>
+<area shape="rect" id="node4" href="classPlayerCharacter.html#ab2df472f50de0370a3bc2b4a538a034c" title="PlayerCharacter::OnMoved" alt="" coords="244,107,421,133"/>
+<area shape="rect" id="node7" href="classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="261,157,404,184"/>
+<area shape="rect" id="node10" href="classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="505,206,639,247"/>
+<area shape="rect" id="node5" href="classPlayerManager.html#aaa2707c2d315cf1fe3fe44a0e1d09798" title="PlayerManager::OnRecvMove" alt="" coords="476,104,668,131"/>
+<area shape="rect" id="node6" href="classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22" title="AreaBase::OnRecvMove" alt="" coords="716,104,879,131"/>
+<area shape="rect" id="node8" href="classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="486,155,658,181"/>
+<area shape="rect" id="node9" href="classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="730,155,865,181"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af419d46a1cf16394b89ebfa29550b6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af419d46a1cf16394b89ebfa29550b6da">&#9670;&nbsp;</a></span>GetRotation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classRotation.html">Rotation</a>&amp; CharacterBase::GetRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_af419d46a1cf16394b89ebfa29550b6da_icgraph.png" border="0" usemap="#classCharacterBase_af419d46a1cf16394b89ebfa29550b6da_icgraph" alt=""/></div>
+<map name="classCharacterBase_af419d46a1cf16394b89ebfa29550b6da_icgraph" id="classCharacterBase_af419d46a1cf16394b89ebfa29550b6da_icgraph">
+<area shape="rect" id="node2" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="284,5,392,32"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a23739dce596e326a445fa3e66cbd0f58" title="AnpanAIStateBase::SetRotate" alt="" coords="239,56,437,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7550f7499249cbef53aad08ee81e986e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7550f7499249cbef53aad08ee81e986e">&#9670;&nbsp;</a></span>GetUuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CharacterBase::GetUuid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a7550f7499249cbef53aad08ee81e986e_icgraph.png" border="0" usemap="#classCharacterBase_a7550f7499249cbef53aad08ee81e986e_icgraph" alt=""/></div>
+<map name="classCharacterBase_a7550f7499249cbef53aad08ee81e986e_icgraph" id="classCharacterBase_a7550f7499249cbef53aad08ee81e986e_icgraph">
+<area shape="rect" id="node2" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="273,5,381,32"/>
+<area shape="rect" id="node3" href="classAnpanAI.html#a895eace53f8e19d4121f499d4f5ddbb2" title="AnpanAI::CreateMovePacketData" alt="" coords="220,56,435,83"/>
+<area shape="rect" id="node5" href="classAnpanAI.html#abfb1658e9b23f52a085ed248ab056a32" title="AnpanAI::CreateRotatePacketData" alt="" coords="216,107,439,133"/>
+<area shape="rect" id="node7" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="PlayerCharacter::AddGold" alt="" coords="241,157,414,184"/>
+<area shape="rect" id="node8" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="PlayerCharacter::SubtractGold" alt="" coords="228,208,427,235"/>
+<area shape="rect" id="node10" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="PlayerCharacter::AddItem" alt="" coords="242,259,413,285"/>
+<area shape="rect" id="node11" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="PlayerCharacter::SubtractItem" alt="" coords="229,309,426,336"/>
+<area shape="rect" id="node12" href="classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="503,360,675,387"/>
+<area shape="rect" id="node14" href="classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="256,411,399,437"/>
+<area shape="rect" id="node16" href="classSkillStateCast.html#a7a7f19ee6eae4e3b12f5a573f46c0e96" title="SkillStateCast::BeginState" alt="" coords="239,461,416,488"/>
+<area shape="rect" id="node4" href="classAnpanAIStateBase.html#a1069177954ab1377aa2ea360ae130f37" title="AnpanAIStateBase::SetMove" alt="" coords="493,56,684,83"/>
+<area shape="rect" id="node6" href="classAnpanAIStateBase.html#a23739dce596e326a445fa3e66cbd0f58" title="AnpanAIStateBase::SetRotate" alt="" coords="489,107,688,133"/>
+<area shape="rect" id="node9" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="PlayerCharacter::OpenSkillTree" alt="" coords="487,208,691,235"/>
+<area shape="rect" id="node13" href="classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="739,360,873,387"/>
+<area shape="rect" id="node15" href="classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="521,411,656,453"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8606f23b177a9a0f4d9196b45ee50990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8606f23b177a9a0f4d9196b45ee50990">&#9670;&nbsp;</a></span>Heal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Heal </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a8606f23b177a9a0f4d9196b45ee50990_cgraph.png" border="0" usemap="#classCharacterBase_a8606f23b177a9a0f4d9196b45ee50990_cgraph" alt=""/></div>
+<map name="classCharacterBase_a8606f23b177a9a0f4d9196b45ee50990_cgraph" id="classCharacterBase_a8606f23b177a9a0f4d9196b45ee50990_cgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#a1b21d5dc74631551b33e097cb9a07227" title="CharacterBase::GetCharacterType" alt="" coords="196,5,417,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4654af77eeea1dd5297b2805fa1c5c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4654af77eeea1dd5297b2805fa1c5c93">&#9670;&nbsp;</a></span>IsDead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsDead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d286187aebe8df0521052c7e5a99d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d286187aebe8df0521052c7e5a99d80">&#9670;&nbsp;</a></span>IsRecasting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsRecasting </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>SkillId</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a3d286187aebe8df0521052c7e5a99d80_cgraph.png" border="0" usemap="#classCharacterBase_a3d286187aebe8df0521052c7e5a99d80_cgraph" alt=""/></div>
+<map name="classCharacterBase_a3d286187aebe8df0521052c7e5a99d80_cgraph" id="classCharacterBase_a3d286187aebe8df0521052c7e5a99d80_cgraph">
+<area shape="rect" id="node2" href="classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="237,5,376,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a3d286187aebe8df0521052c7e5a99d80_icgraph.png" border="0" usemap="#classCharacterBase_a3d286187aebe8df0521052c7e5a99d80_icgraph" alt=""/></div>
+<map name="classCharacterBase_a3d286187aebe8df0521052c7e5a99d80_icgraph" id="classCharacterBase_a3d286187aebe8df0521052c7e5a99d80_icgraph">
+<area shape="rect" id="node2" href="classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="237,56,356,83"/>
+<area shape="rect" id="node3" href="classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="Anpan::AttackTo" alt="" coords="427,5,545,32"/>
+<area shape="rect" id="node4" href="classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="CharacterBase::UseSkill" alt="" coords="404,56,568,83"/>
+<area shape="rect" id="node5" href="classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="414,107,558,133"/>
+<area shape="rect" id="node6" href="classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="PlayerCharacter::UseItem" alt="" coords="616,107,787,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abf5a7ea43f44fda956abba9366b55b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5a7ea43f44fda956abba9366b55b4f">&#9670;&nbsp;</a></span>IsSkillActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsSkillActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_abf5a7ea43f44fda956abba9366b55b4f_cgraph.png" border="0" usemap="#classCharacterBase_abf5a7ea43f44fda956abba9366b55b4f_cgraph" alt=""/></div>
+<map name="classCharacterBase_abf5a7ea43f44fda956abba9366b55b4f_cgraph" id="classCharacterBase_abf5a7ea43f44fda956abba9366b55b4f_cgraph">
+<area shape="rect" id="node2" href="classSkillControl.html#ae4d7b9d305c9a9f8047bbe8cec503f5d" title="SkillControl::IsActive" alt="" coords="240,5,381,32"/>
+<area shape="rect" id="node3" href="classSkillStateBase.html#a65e63e4c3e787df759f29b8cef5427ac" title="SkillStateBase::GetStateType" alt="" coords="429,5,625,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac26332cd9fe87098d43413835f49a14f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26332cd9fe87098d43413835f49a14f">&#9670;&nbsp;</a></span>IsSkillCasting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsSkillCasting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_ac26332cd9fe87098d43413835f49a14f_cgraph.png" border="0" usemap="#classCharacterBase_ac26332cd9fe87098d43413835f49a14f_cgraph" alt=""/></div>
+<map name="classCharacterBase_ac26332cd9fe87098d43413835f49a14f_cgraph" id="classCharacterBase_ac26332cd9fe87098d43413835f49a14f_cgraph">
+<area shape="rect" id="node2" href="classSkillControl.html#a1184144783440fed9d833be7fbcc59c1" title="SkillControl::IsCasting" alt="" coords="248,5,399,32"/>
+<area shape="rect" id="node3" href="classSkillStateBase.html#a65e63e4c3e787df759f29b8cef5427ac" title="SkillStateBase::GetStateType" alt="" coords="447,5,643,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa4896eb258099c538ca2a1b9920dda67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4896eb258099c538ca2a1b9920dda67">&#9670;&nbsp;</a></span>LevelUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::LevelUp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>MaxHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Atk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Def</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ceea9f6cd8145814f8dcc3641322a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ceea9f6cd8145814f8dcc3641322a8e">&#9670;&nbsp;</a></span>Move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classVector3D.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>MoveValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82a6e428e70e442ab27623f6c9ae5a81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82a6e428e70e442ab27623f6c9ae5a81">&#9670;&nbsp;</a></span>OnDamaged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CharacterBase::OnDamaged </td>
+          <td>(</td>
+          <td class="paramtype">weak_ptr&lt; <a class="el" href="classCharacterBase.html">CharacterBase</a> &gt;&#160;</td>
+          <td class="paramname"><em>pAttacker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>DamageValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAnpan.html#a79f0eb1d276ef2b73700650c85484ba1">Anpan</a>で再実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a82a6e428e70e442ab27623f6c9ae5a81_icgraph.png" border="0" usemap="#classCharacterBase_a82a6e428e70e442ab27623f6c9ae5a81_icgraph" alt=""/></div>
+<map name="classCharacterBase_a82a6e428e70e442ab27623f6c9ae5a81_icgraph" id="classCharacterBase_a82a6e428e70e442ab27623f6c9ae5a81_icgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#ab2cbfd441a0e0bc45ff3f1ca1925939a" title="CharacterBase::ApplyDamage" alt="" coords="241,5,439,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a73ca6b09f2a6e31f0add39128ff1b5d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ca6b09f2a6e31f0add39128ff1b5d9">&#9670;&nbsp;</a></span>Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Poll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a>&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a73ca6b09f2a6e31f0add39128ff1b5d9_cgraph.png" border="0" usemap="#classCharacterBase_a73ca6b09f2a6e31f0add39128ff1b5d9_cgraph" alt=""/></div>
+<map name="classCharacterBase_a73ca6b09f2a6e31f0add39128ff1b5d9_cgraph" id="classCharacterBase_a73ca6b09f2a6e31f0add39128ff1b5d9_cgraph">
+<area shape="rect" id="node2" href="classSkillControl.html#add7271b2a9d0d776426c46f87a84c9f5" title="SkillControl::Poll" alt="" coords="211,5,330,32"/>
+<area shape="rect" id="node4" href="classSkillRecastManager.html#a1a3eaf2ff59653c1369f2039c28fa0a5" title="SkillRecastManager\l::Poll" alt="" coords="201,57,340,98"/>
+<area shape="rect" id="node5" href="classCharacterBase.html#acff3a32f5b5cd5232fbdda611e722430" title="CharacterBase::Update" alt="" coords="192,123,349,149"/>
+<area shape="rect" id="node3" href="classSkillStateBase.html#ad0bdaab3d02010961736f5792f625771" title="SkillStateBase::Poll" alt="" coords="397,5,536,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8133cdd94e9ce926382103e7ef9caf77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8133cdd94e9ce926382103e7ef9caf77">&#9670;&nbsp;</a></span>Respawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Respawn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c74a47c7fbdbb2f3187c5be4589fa77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c74a47c7fbdbb2f3187c5be4589fa77">&#9670;&nbsp;</a></span>Rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::Rotate </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>RotateValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a2c74a47c7fbdbb2f3187c5be4589fa77_cgraph.png" border="0" usemap="#classCharacterBase_a2c74a47c7fbdbb2f3187c5be4589fa77_cgraph" alt=""/></div>
+<map name="classCharacterBase_a2c74a47c7fbdbb2f3187c5be4589fa77_cgraph" id="classCharacterBase_a2c74a47c7fbdbb2f3187c5be4589fa77_cgraph">
+<area shape="rect" id="node2" href="classRotation.html#a72051e7d3bf12d7635c5e6e10f210f66" title="Rotation::Set" alt="" coords="208,5,307,32"/>
+<area shape="rect" id="node3" href="classRotation.html#ad5aebbfc6c26285b0579ad1e1b11d812" title="Rotation::Get" alt="" coords="208,56,307,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af35378ed4601e66d8415bd721addc0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af35378ed4601e66d8415bd721addc0d2">&#9670;&nbsp;</a></span>SetArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetArea </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>pInArea</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fec6ef6399f366ff55fa9478f8b2862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fec6ef6399f366ff55fa9478f8b2862">&#9670;&nbsp;</a></span>SetParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetParameter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Hp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>MaxHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Atk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Def</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a0fec6ef6399f366ff55fa9478f8b2862_icgraph.png" border="0" usemap="#classCharacterBase_a0fec6ef6399f366ff55fa9478f8b2862_icgraph" alt=""/></div>
+<map name="classCharacterBase_a0fec6ef6399f366ff55fa9478f8b2862_icgraph" id="classCharacterBase_a0fec6ef6399f366ff55fa9478f8b2862_icgraph">
+<area shape="rect" id="node2" href="classAnpan.html#af1834fc86bd0ed77e6c5f0c68564960c" title="Anpan::Anpan" alt="" coords="305,5,409,32"/>
+<area shape="rect" id="node3" href="classPlayerCharacter.html#abddeba0759ba2f6b15bf7e8aae8c0929" title="PlayerCharacter::PlayerCharacter" alt="" coords="249,56,465,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3989fc3d743766bc9554060e98b5e6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3989fc3d743766bc9554060e98b5e6a0">&#9670;&nbsp;</a></span>SetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetPosition </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classVector3D.html">Vector3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>MoveTarget</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a3989fc3d743766bc9554060e98b5e6a0_icgraph.png" border="0" usemap="#classCharacterBase_a3989fc3d743766bc9554060e98b5e6a0_icgraph" alt=""/></div>
+<map name="classCharacterBase_a3989fc3d743766bc9554060e98b5e6a0_icgraph" id="classCharacterBase_a3989fc3d743766bc9554060e98b5e6a0_icgraph">
+<area shape="rect" id="node2" href="classAnpan.html#af1834fc86bd0ed77e6c5f0c68564960c" title="Anpan::Anpan" alt="" coords="280,5,384,32"/>
+<area shape="rect" id="node3" href="classPlayerManager.html#aaa2707c2d315cf1fe3fe44a0e1d09798" title="PlayerManager::OnRecvMove" alt="" coords="236,56,428,83"/>
+<area shape="rect" id="node4" href="classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22" title="AreaBase::OnRecvMove" alt="" coords="476,56,639,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0d7d36bb07aecc589d8c8a351748ff8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d7d36bb07aecc589d8c8a351748ff8b">&#9670;&nbsp;</a></span>SetRotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetRotate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRotation.html">Rotation</a> &amp;&#160;</td>
+          <td class="paramname"><em>TargetRotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a0d7d36bb07aecc589d8c8a351748ff8b_icgraph.png" border="0" usemap="#classCharacterBase_a0d7d36bb07aecc589d8c8a351748ff8b_icgraph" alt=""/></div>
+<map name="classCharacterBase_a0d7d36bb07aecc589d8c8a351748ff8b_icgraph" id="classCharacterBase_a0d7d36bb07aecc589d8c8a351748ff8b_icgraph">
+<area shape="rect" id="node2" href="classAnpan.html#af1834fc86bd0ed77e6c5f0c68564960c" title="Anpan::Anpan" alt="" coords="272,5,376,32"/>
+<area shape="rect" id="node3" href="classPlayerManager.html#aaa2707c2d315cf1fe3fe44a0e1d09798" title="PlayerManager::OnRecvMove" alt="" coords="228,56,420,83"/>
+<area shape="rect" id="node4" href="classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22" title="AreaBase::OnRecvMove" alt="" coords="468,56,631,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6e1f38e44ca8669dd32e5defc280fe82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1f38e44ca8669dd32e5defc280fe82">&#9670;&nbsp;</a></span>SetUuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::SetUuid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InUuid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a6e1f38e44ca8669dd32e5defc280fe82_icgraph.png" border="0" usemap="#classCharacterBase_a6e1f38e44ca8669dd32e5defc280fe82_icgraph" alt=""/></div>
+<map name="classCharacterBase_a6e1f38e44ca8669dd32e5defc280fe82_icgraph" id="classCharacterBase_a6e1f38e44ca8669dd32e5defc280fe82_icgraph">
+<area shape="rect" id="node2" href="classClient.html#ae1b96dafe39fc573b41ee855874b59b6" title="キャラクタを作成. " alt="" coords="216,5,373,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aad7624448e24270e773875fce180b0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7624448e24270e773875fce180b0e7">&#9670;&nbsp;</a></span>StartRecast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::StartRecast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>SkillId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_aad7624448e24270e773875fce180b0e7_cgraph.png" border="0" usemap="#classCharacterBase_aad7624448e24270e773875fce180b0e7_cgraph" alt=""/></div>
+<map name="classCharacterBase_aad7624448e24270e773875fce180b0e7_cgraph" id="classCharacterBase_aad7624448e24270e773875fce180b0e7_cgraph">
+<area shape="rect" id="node2" href="classSkillRecastManager.html#ab6eab67102b4f0a21aca601919995ac0" title="SkillRecastManager::Add" alt="" coords="239,56,408,83"/>
+<area shape="rect" id="node3" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="464,5,631,32"/>
+<area shape="rect" id="node4" href="classMasterData.html#ae5d4b7d43fbffbb2373ff7bf206ad775" title="MasterData::GetSkillMaster" alt="" coords="456,56,639,83"/>
+<area shape="rect" id="node5" href="classSkillMaster.html#a643a201efa176b21e6fbb0bdc7d4bafd" title="SkillMaster::GetItem" alt="" coords="477,107,618,133"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_aad7624448e24270e773875fce180b0e7_icgraph.png" border="0" usemap="#classCharacterBase_aad7624448e24270e773875fce180b0e7_icgraph" alt=""/></div>
+<map name="classCharacterBase_aad7624448e24270e773875fce180b0e7_icgraph" id="classCharacterBase_aad7624448e24270e773875fce180b0e7_icgraph">
+<area shape="rect" id="node2" href="classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="239,35,381,61"/>
+<area shape="rect" id="node3" href="classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="429,5,601,32"/>
+<area shape="rect" id="node5" href="classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="448,57,583,98"/>
+<area shape="rect" id="node4" href="classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="649,5,784,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acff3a32f5b5cd5232fbdda611e722430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff3a32f5b5cd5232fbdda611e722430">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CharacterBase::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a>&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a">Anpan</a>で再実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_acff3a32f5b5cd5232fbdda611e722430_icgraph.png" border="0" usemap="#classCharacterBase_acff3a32f5b5cd5232fbdda611e722430_icgraph" alt=""/></div>
+<map name="classCharacterBase_acff3a32f5b5cd5232fbdda611e722430_icgraph" id="classCharacterBase_acff3a32f5b5cd5232fbdda611e722430_icgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#a73ca6b09f2a6e31f0add39128ff1b5d9" title="CharacterBase::Poll" alt="" coords="211,5,349,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7eb905131a5519c3c374e5333e1bf018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb905131a5519c3c374e5333e1bf018">&#9670;&nbsp;</a></span>UseSkill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::UseSkill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>SkillId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a>&#160;</td>
+          <td class="paramname"><em>pTarget</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a7eb905131a5519c3c374e5333e1bf018_cgraph.png" border="0" usemap="#classCharacterBase_a7eb905131a5519c3c374e5333e1bf018_cgraph" alt=""/></div>
+<map name="classCharacterBase_a7eb905131a5519c3c374e5333e1bf018_cgraph" id="classCharacterBase_a7eb905131a5519c3c374e5333e1bf018_cgraph">
+<area shape="rect" id="node2" href="classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="217,38,336,65"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="CharacterBase::IsRecasting" alt="" coords="384,13,568,39"/>
+<area shape="rect" id="node5" href="classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="408,63,544,90"/>
+<area shape="rect" id="node4" href="classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="616,5,755,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a7bb9a1746383089944b5d8d5a76d7194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb9a1746383089944b5d8d5a76d7194">&#9670;&nbsp;</a></span>Position</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVector3D.html">Vector3D</a> CharacterBase::Position</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e707d934d0642c4bed52392286d39d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e707d934d0642c4bed52392286d39d3">&#9670;&nbsp;</a></span>Recast</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSkillRecastManager.html">SkillRecastManager</a> CharacterBase::Recast</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b65a8ef35645be1c517db387c3db935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b65a8ef35645be1c517db387c3db935">&#9670;&nbsp;</a></span>Rot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRotation.html">Rotation</a> CharacterBase::Rot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acaaef243db27cf8505b8e78f33355d51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaaef243db27cf8505b8e78f33355d51">&#9670;&nbsp;</a></span>Skill</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSkillControl.html">SkillControl</a> CharacterBase::Skill</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="CharacterBase_8h_source.html">CharacterBase.h</a></li>
+<li><a class="el" href="CharacterBase_8cpp.html">CharacterBase.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

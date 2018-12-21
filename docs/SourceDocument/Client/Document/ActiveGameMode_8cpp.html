@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: ActiveGameMode.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_c0aefc36c0c85c1401ae7e6a1c19544c.html">Client</a></li><li class="navelem"><a class="el" href="dir_9ab2dcf5e54e5f17c8eae6eb52035cdc.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_eb5ee35ee71401b9298e9eb984ea73fd.html">Source</a></li><li class="navelem"><a class="el" href="dir_68024ed3f28085d5e932f994151c03d4.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_d2b3afe3a7fc5e90bb16c75f8fc08a47.html">Active</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ActiveGameMode.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="ActiveGameMode_8h_source.html">ActiveGameMode.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MMOGameInstance_8h_source.html">MMOGameInstance.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CharacterBase_8h_source.html">Character/CharacterBase.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Anpan_8h_source.html">Character/Anpan/Anpan.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MainHUD_8h_source.html">Active/UI/MainHUD.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LevelManager_8h_source.html">Level/LevelManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GameCharacter_8h_source.html">Character/Player/GameCharacter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GameController_8h_source.html">Character/Player/GameController.h</a>&quot;</code><br />
+<code>#include &quot;Kismet/GameplayStatics.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="MasterData_8h_source.html">Master/MasterData.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Config_8h_source.html">Config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PakFileManager_8h_source.html">DLC/PakFileManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SimpleDialog_8h_source.html">UI/SimpleDialog.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GameMenuWidget_8h_source.html">UI/Menu/GameMenuWidget.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InstanceAreaTicketMenuWidget_8h_source.html">UI/Menu/InstanceArea/InstanceAreaTicketMenuWidget.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScriptWidgetRoot_8h_source.html">UI/Script/ScriptWidgetRoot.h</a>&quot;</code><br />
+<code>#include &quot;Components/CapsuleComponent.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketGameReady_8h_source.html">Packet/PacketGameReady.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketAreaMove_8h_source.html">Packet/PacketAreaMove.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketDamage_8h_source.html">Packet/PacketDamage.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketHeal_8h_source.html">Packet/PacketHeal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CharacterType_8h_source.html">Packet/CharacterType.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketAddExp_8h_source.html">Packet/PacketAddExp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketLevelUp_8h_source.html">Packet/PacketLevelUp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketAreaMoveResponse_8h_source.html">Packet/PacketAreaMoveResponse.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketPlayerRespawn_8h_source.html">Packet/PacketPlayerRespawn.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSkillCast_8h_source.html">Packet/PacketSkillCast.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSkillCastFinish_8h_source.html">Packet/PacketSkillCastFinish.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSkillActivate_8h_source.html">Packet/PacketSkillActivate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSkillUseFailed_8h_source.html">Packet/PacketSkillUseFailed.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSkillRecast_8h_source.html">Packet/PacketSkillRecast.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketReceiveChat_8h_source.html">Packet/PacketReceiveChat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketPartyKickResult_8h_source.html">Packet/PacketPartyKickResult.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketPartyInviteResult_8h_source.html">Packet/PacketPartyInviteResult.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketInstanceAreaTicketPublish_8h_source.html">Packet/PacketInstanceAreaTicketPublish.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketInstanceAreaTicketDiscard_8h_source.html">Packet/PacketInstanceAreaTicketDiscard.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSpawnInstanceAreaExitPoint_8h_source.html">Packet/PacketSpawnInstanceAreaExitPoint.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketChangeGold_8h_source.html">Packet/PacketChangeGold.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSkillTreeOpenResult_8h_source.html">Packet/PacketSkillTreeOpenResult.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSaveSkillListResponse_8h_source.html">Packet/PacketSaveSkillListResponse.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketItemAdd_8h_source.html">Packet/PacketItemAdd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketItemSubtract_8h_source.html">Packet/PacketItemSubtract.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketSaveItemShortcutResult_8h_source.html">Packet/PacketSaveItemShortcutResult.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketQuestAccept_8h_source.html">Packet/PacketQuestAccept.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketQuestAnpanKill_8h_source.html">Packet/PacketQuestAnpanKill.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketQuestStageChange_8h_source.html">Packet/PacketQuestStageChange.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketQuestClear_8h_source.html">Packet/PacketQuestClear.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PacketQuestRetireResponse_8h_source.html">Packet/PacketQuestRetireResponse.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ActiveGameMode.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="ActiveGameMode_8cpp__incl.png" border="0" usemap="#ActiveGameMode_8cpp" alt=""/></div>
+<map name="ActiveGameMode_8cpp" id="ActiveGameMode_8cpp">
+<area shape="rect" id="node2" href="ActiveGameMode_8h.html" title="ActiveGameMode.h" alt="" coords="5,177,140,203"/>
+<area shape="rect" id="node4" href="MMOGameInstance_8h.html" title="MMOGameInstance.h" alt="" coords="165,177,314,203"/>
+<area shape="rect" id="node5" href="CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="338,177,517,203"/>
+<area shape="rect" id="node6" href="Anpan_8h.html" title="Character/Anpan/Anpan.h" alt="" coords="469,87,639,114"/>
+<area shape="rect" id="node7" href="MainHUD_8h.html" title="Active/UI/MainHUD.h" alt="" coords="592,177,735,203"/>
+<area shape="rect" id="node8" href="LevelManager_8h.html" title="Level/LevelManager.h" alt="" coords="759,177,904,203"/>
+<area shape="rect" id="node9" href="GameCharacter_8h.html" title="Character/Player/GameCharacter.h" alt="" coords="928,177,1153,203"/>
+<area shape="rect" id="node10" href="GameController_8h.html" title="Character/Player/GameController.h" alt="" coords="926,87,1150,114"/>
+<area shape="rect" id="node12" href="MasterData_8h.html" title="Master/MasterData.h" alt="" coords="1229,177,1373,203"/>
+<area shape="rect" id="node13" href="Config_8h.html" title="Config.h" alt="" coords="1397,177,1466,203"/>
+<area shape="rect" id="node14" href="PakFileManager_8h.html" title="DLC/PakFileManager.h" alt="" coords="1491,177,1647,203"/>
+<area shape="rect" id="node15" href="SimpleDialog_8h.html" title="UI/SimpleDialog.h" alt="" coords="1671,177,1797,203"/>
+<area shape="rect" id="node16" href="GameMenuWidget_8h.html" title="UI/Menu/GameMenuWidget.h" alt="" coords="1821,177,2015,203"/>
+<area shape="rect" id="node17" href="InstanceAreaTicketMenuWidget_8h.html" title="UI/Menu/InstanceArea\l/InstanceAreaTicketMenuWidget.h" alt="" coords="2039,169,2261,211"/>
+<area shape="rect" id="node18" href="ScriptWidgetRoot_8h.html" title="UI/Script/ScriptWidgetRoot.h" alt="" coords="2285,177,2474,203"/>
+<area shape="rect" id="node20" href="PacketGameReady_8h.html" title="準備完了 " alt="" coords="1979,87,2169,114"/>
+<area shape="rect" id="node21" href="PacketAreaMove_8h.html" title="エリア移動 " alt="" coords="2194,87,2370,114"/>
+<area shape="rect" id="node22" href="PacketDamage_8h.html" title="ダメージ " alt="" coords="2395,87,2561,114"/>
+<area shape="rect" id="node23" href="PacketHeal_8h.html" title="回復 " alt="" coords="2585,87,2731,114"/>
+<area shape="rect" id="node24" href="CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="2755,87,2918,114"/>
+<area shape="rect" id="node25" href="PacketAddExp_8h.html" title="経験値追加 " alt="" coords="2942,87,3107,114"/>
+<area shape="rect" id="node26" href="PacketLevelUp_8h.html" title="レベルアップ " alt="" coords="3132,87,3296,114"/>
+<area shape="rect" id="node27" href="PacketAreaMoveResponse_8h.html" title="エリア移動レスポンス " alt="" coords="3321,87,3555,114"/>
+<area shape="rect" id="node28" href="PacketPlayerRespawn_8h.html" title="プレイヤーリスポン " alt="" coords="3580,87,3789,114"/>
+<area shape="rect" id="node29" href="PacketSkillCast_8h.html" title="スキル詠唱開始 " alt="" coords="3814,87,3985,114"/>
+<area shape="rect" id="node30" href="PacketSkillCastFinish_8h.html" title="スキル詠唱完了 " alt="" coords="4009,87,4216,114"/>
+<area shape="rect" id="node31" href="PacketSkillActivate_8h.html" title="スキル発動 " alt="" coords="4240,87,4431,114"/>
+<area shape="rect" id="node32" href="PacketSkillUseFailed_8h.html" title="スキル使用失敗 " alt="" coords="4455,87,4658,114"/>
+<area shape="rect" id="node33" href="PacketSkillRecast_8h.html" title="リキャスト完了 " alt="" coords="4683,87,4868,114"/>
+<area shape="rect" id="node34" href="PacketReceiveChat_8h.html" title="チャット受信 " alt="" coords="4892,87,5083,114"/>
+<area shape="rect" id="node35" href="PacketPartyKickResult_8h.html" title="パーティメンバキック結果 " alt="" coords="5107,87,5321,114"/>
+<area shape="rect" id="node36" href="PacketPartyInviteResult_8h.html" title="パーティ勧誘結果 " alt="" coords="5345,80,5513,121"/>
+<area shape="rect" id="node37" href="PacketInstanceAreaTicketPublish_8h.html" title="インスタンスマップチケット発行 " alt="" coords="5537,80,5721,121"/>
+<area shape="rect" id="node38" href="PacketInstanceAreaTicketDiscard_8h.html" title="インスタンスマップチケット破棄 " alt="" coords="5745,80,5929,121"/>
+<area shape="rect" id="node39" href="PacketSpawnInstanceAreaExitPoint_8h.html" title="インスタンスマップ脱出ポイント生成 " alt="" coords="5953,80,6149,121"/>
+<area shape="rect" id="node40" href="PacketChangeGold_8h.html" title="ゴールド変化 " alt="" coords="6173,87,6364,114"/>
+<area shape="rect" id="node41" href="PacketSkillTreeOpenResult_8h.html" title="スキルツリー開放結果 " alt="" coords="6389,80,6578,121"/>
+<area shape="rect" id="node42" href="PacketSaveSkillListResponse_8h.html" title="スキルリスト保存レスポンス " alt="" coords="6603,80,6785,121"/>
+<area shape="rect" id="node43" href="PacketItemAdd_8h.html" title="アイテム追加 " alt="" coords="6809,87,6976,114"/>
+<area shape="rect" id="node44" href="PacketItemSubtract_8h.html" title="アイテム消費 " alt="" coords="7000,87,7193,114"/>
+<area shape="rect" id="node45" href="PacketSaveItemShortcutResult_8h.html" title="アイテムショートカット保存結果 " alt="" coords="7218,80,7429,121"/>
+<area shape="rect" id="node46" href="PacketQuestAccept_8h.html" title="クエスト受注 " alt="" coords="7453,87,7647,114"/>
+<area shape="rect" id="node47" href="PacketQuestAnpanKill_8h.html" title="クエストアンパンキル " alt="" coords="7672,87,7881,114"/>
+<area shape="rect" id="node48" href="PacketQuestStageChange_8h.html" title="クエストステージ進行 " alt="" coords="7906,87,8138,114"/>
+<area shape="rect" id="node49" href="PacketQuestClear_8h.html" title="クエストクリア " alt="" coords="8162,87,8346,114"/>
+<area shape="rect" id="node50" href="PacketQuestRetireResponse_8h.html" title="クエスト破棄レスポンス " alt="" coords="8371,80,8548,121"/>
+</map>
+</div>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

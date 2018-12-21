@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: MySqlBinds.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_bacde065333b357772799e6551c7ec64.html">MySQL</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MySqlBinds.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="MySqlBinds_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __MYSQLBINDS_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __MYSQLBINDS_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;mysql.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;mysql/mysql.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classMySqlBinds.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMySqlBinds.html">MySqlBinds</a></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// コンストラクタ</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classMySqlBinds.html#a37666d47904944b70e437762e886f569">MySqlBinds</a>();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// デストラクタ</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classMySqlBinds.html#a517bc4e4ea3e2325dc8bf6070f7bf762">~MySqlBinds</a>();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// int追加.</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#a46b9423237690f11f08027a781186522">AddInt</a>(<span class="keywordtype">int</span> *pPtr);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// unsigned int追加。</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#a46b9423237690f11f08027a781186522">AddInt</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *pPtr);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// short追加.</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#abef19952156a534fc9a428ce85180a0a">AddShort</a>(<span class="keywordtype">short</span> *pPtr);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// unsigned short追加.</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#abef19952156a534fc9a428ce85180a0a">AddShort</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> *pPtr);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// char追加.</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#a2b7e3431271f20244353bd693effc033">AddChar</a>(<span class="keywordtype">char</span> *pPtr);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// unsigned char追加.</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#a2b7e3431271f20244353bd693effc033">AddChar</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *pPtr);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// float追加.</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#a837369350388e4b99f3161312d96a07d">AddFloat</a>(<span class="keywordtype">float</span> *pPtr);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// 文字列追加.</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#acfc2edf2a3dd69f047e786a9d7b21cd8">AddString</a>(<span class="keywordtype">char</span> *pPtr, <span class="keywordtype">bool</span> bForResult);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// ワイド文字列追加.</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMySqlBinds.html#a3628397b4c2f34f169dbd04f009b6f8a">AddWString</a>(<span class="keywordtype">wchar_t</span> *pPtr, <span class="keywordtype">bool</span> bForResult);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// 取得.</span></div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classMySqlBinds.html#aabfe21824abcf75f0a7af0a69ceceb05">   54</a></span>&#160;    MYSQL_BIND *<a class="code" href="classMySqlBinds.html#aabfe21824abcf75f0a7af0a69ceceb05">Get</a>() { <span class="keywordflow">return</span> pBinds; }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// String型のバッファ長.</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> StringBufferLength;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// バインド</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    MYSQL_BIND *pBinds;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// 配列長.</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> Length;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// 領域拡張.</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> Reallocate();</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif      // #ifndef __MYSQLBINDS_H__</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="ttc" id="classMySqlBinds_html_acfc2edf2a3dd69f047e786a9d7b21cd8"><div class="ttname"><a href="classMySqlBinds.html#acfc2edf2a3dd69f047e786a9d7b21cd8">MySqlBinds::AddString</a></div><div class="ttdeci">void AddString(char *pPtr, bool bForResult)</div><div class="ttdef"><b>Definition:</b> MySqlBinds.cpp:122</div></div>
+<div class="ttc" id="classMySqlBinds_html_abef19952156a534fc9a428ce85180a0a"><div class="ttname"><a href="classMySqlBinds.html#abef19952156a534fc9a428ce85180a0a">MySqlBinds::AddShort</a></div><div class="ttdeci">void AddShort(short *pPtr)</div><div class="ttdef"><b>Definition:</b> MySqlBinds.cpp:50</div></div>
+<div class="ttc" id="classMySqlBinds_html_a3628397b4c2f34f169dbd04f009b6f8a"><div class="ttname"><a href="classMySqlBinds.html#a3628397b4c2f34f169dbd04f009b6f8a">MySqlBinds::AddWString</a></div><div class="ttdeci">void AddWString(wchar_t *pPtr, bool bForResult)</div><div class="ttdef"><b>Definition:</b> MySqlBinds.cpp:143</div></div>
+<div class="ttc" id="classMySqlBinds_html_a517bc4e4ea3e2325dc8bf6070f7bf762"><div class="ttname"><a href="classMySqlBinds.html#a517bc4e4ea3e2325dc8bf6070f7bf762">MySqlBinds::~MySqlBinds</a></div><div class="ttdeci">~MySqlBinds()</div><div class="ttdef"><b>Definition:</b> MySqlBinds.cpp:14</div></div>
+<div class="ttc" id="classMySqlBinds_html"><div class="ttname"><a href="classMySqlBinds.html">MySqlBinds</a></div><div class="ttdef"><b>Definition:</b> MySqlBinds.h:15</div></div>
+<div class="ttc" id="classMySqlBinds_html_a837369350388e4b99f3161312d96a07d"><div class="ttname"><a href="classMySqlBinds.html#a837369350388e4b99f3161312d96a07d">MySqlBinds::AddFloat</a></div><div class="ttdeci">void AddFloat(float *pPtr)</div><div class="ttdef"><b>Definition:</b> MySqlBinds.cpp:108</div></div>
+<div class="ttc" id="classMySqlBinds_html_a37666d47904944b70e437762e886f569"><div class="ttname"><a href="classMySqlBinds.html#a37666d47904944b70e437762e886f569">MySqlBinds::MySqlBinds</a></div><div class="ttdeci">MySqlBinds()</div><div class="ttdef"><b>Definition:</b> MySqlBinds.cpp:7</div></div>
+<div class="ttc" id="classMySqlBinds_html_a2b7e3431271f20244353bd693effc033"><div class="ttname"><a href="classMySqlBinds.html#a2b7e3431271f20244353bd693effc033">MySqlBinds::AddChar</a></div><div class="ttdeci">void AddChar(char *pPtr)</div><div class="ttdef"><b>Definition:</b> MySqlBinds.cpp:79</div></div>
+<div class="ttc" id="classMySqlBinds_html_a46b9423237690f11f08027a781186522"><div class="ttname"><a href="classMySqlBinds.html#a46b9423237690f11f08027a781186522">MySqlBinds::AddInt</a></div><div class="ttdeci">void AddInt(int *pPtr)</div><div class="ttdef"><b>Definition:</b> MySqlBinds.cpp:21</div></div>
+<div class="ttc" id="classMySqlBinds_html_aabfe21824abcf75f0a7af0a69ceceb05"><div class="ttname"><a href="classMySqlBinds.html#aabfe21824abcf75f0a7af0a69ceceb05">MySqlBinds::Get</a></div><div class="ttdeci">MYSQL_BIND * Get()</div><div class="ttdef"><b>Definition:</b> MySqlBinds.h:54</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

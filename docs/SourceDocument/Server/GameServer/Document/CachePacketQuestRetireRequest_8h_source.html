@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: CachePacketQuestRetireRequest.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_58500045402c98f32a20fd6026d67718.html">Packet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CachePacketQuestRetireRequest.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="CachePacketQuestRetireRequest_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef __CACHEPACKETQUESTRETIREREQUEST_H__</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define __CACHEPACKETQUESTRETIREREQUEST_H__</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PacketBase_8h.html">PacketBase.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MemoryStreamInterface_8h.html">MemoryStream/MemoryStreamInterface.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ProcessPacketBase_8h.html">ProcessPacketBase.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CacheServerPacketID_8h.html">CacheServerPacketID.h</a>&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classCachePacketQuestRetireRequest.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCachePacketQuestRetireRequest.html">CachePacketQuestRetireRequest</a>  : <span class="keyword">public</span> <a class="code" href="classProcessPacketBase.html">ProcessPacketBase</a></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classCachePacketQuestRetireRequest.html#a953a86c8831c463a1f30e8841e22d026">   29</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="classCachePacketQuestRetireRequest.html#a953a86c8831c463a1f30e8841e22d026">GetPacketID</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aae0997cbe1995ace1001559fee7c63f10">CachePacketID::CacheQuestRetireRequest</a>; }</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classCachePacketQuestRetireRequest.html#a9811a1092ab2aa7035e2a547835019ae">   34</a></span>&#160;    <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> <a class="code" href="classCachePacketQuestRetireRequest.html#a9811a1092ab2aa7035e2a547835019ae">CharacterId</a>;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classCachePacketQuestRetireRequest.html#a183aa53d4c740f0ce23e9a83d00e1153">   36</a></span>&#160;    <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> <a class="code" href="classCachePacketQuestRetireRequest.html#a183aa53d4c740f0ce23e9a83d00e1153">QuestId</a>;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classCachePacketQuestRetireRequest.html#a1e554510ff66bdd180c641c5e219ec6e">   42</a></span>&#160;    <a class="code" href="classCachePacketQuestRetireRequest.html#a1e554510ff66bdd180c641c5e219ec6e">CachePacketQuestRetireRequest</a>()</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classCachePacketQuestRetireRequest.html#a28957bad2af82434f54eb90d33db8da8">   49</a></span>&#160;    <a class="code" href="classCachePacketQuestRetireRequest.html#a28957bad2af82434f54eb90d33db8da8">CachePacketQuestRetireRequest</a>(<a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InClientId, <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InCharacterId, <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InQuestId)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classProcessPacketBase.html#ac790a295ae07e447dfc05b4e8e681c8f">ClientId</a> = InClientId;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classCachePacketQuestRetireRequest.html#a9811a1092ab2aa7035e2a547835019ae">CharacterId</a> = InCharacterId;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classCachePacketQuestRetireRequest.html#a183aa53d4c740f0ce23e9a83d00e1153">QuestId</a> = InQuestId;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classCachePacketQuestRetireRequest.html#ab73d123f8698867220c94c4ba7a23e39">   64</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classCachePacketQuestRetireRequest.html#ab73d123f8698867220c94c4ba7a23e39">Serialize</a>(<a class="code" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classProcessPacketBase.html#a5e9c610ce35b5a0bb034c180a9571bef">ProcessPacketBase::Serialize</a>(pStream);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classCachePacketQuestRetireRequest.html#a9811a1092ab2aa7035e2a547835019ae">CharacterId</a>);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classCachePacketQuestRetireRequest.html#a183aa53d4c740f0ce23e9a83d00e1153">QuestId</a>);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif      // #ifndef __CACHEPACKETQUESTRETIREREQUEST_H__</span></div><div class="ttc" id="classCachePacketQuestRetireRequest_html_a953a86c8831c463a1f30e8841e22d026"><div class="ttname"><a href="classCachePacketQuestRetireRequest.html#a953a86c8831c463a1f30e8841e22d026">CachePacketQuestRetireRequest::GetPacketID</a></div><div class="ttdeci">virtual u8 GetPacketID() const</div><div class="ttdoc">パケットＩＤ取得. </div><div class="ttdef"><b>Definition:</b> CachePacketQuestRetireRequest.h:29</div></div>
+<div class="ttc" id="TypeDefs_8h_html_aed742c436da53c1080638ce6ef7d13de"><div class="ttname"><a href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></div><div class="ttdeci">unsigned char u8</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:6</div></div>
+<div class="ttc" id="classCachePacketQuestRetireRequest_html_a9811a1092ab2aa7035e2a547835019ae"><div class="ttname"><a href="classCachePacketQuestRetireRequest.html#a9811a1092ab2aa7035e2a547835019ae">CachePacketQuestRetireRequest::CharacterId</a></div><div class="ttdeci">u32 CharacterId</div><div class="ttdoc">キャラクタID </div><div class="ttdef"><b>Definition:</b> CachePacketQuestRetireRequest.h:34</div></div>
+<div class="ttc" id="classProcessPacketBase_html_ac790a295ae07e447dfc05b4e8e681c8f"><div class="ttname"><a href="classProcessPacketBase.html#ac790a295ae07e447dfc05b4e8e681c8f">ProcessPacketBase::ClientId</a></div><div class="ttdeci">u32 ClientId</div><div class="ttdef"><b>Definition:</b> ProcessPacketBase.h:19</div></div>
+<div class="ttc" id="classMemoryStreamInterface_html_a6a4fb8faf2a4f94ea6b56334aba31ebf"><div class="ttname"><a href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">MemoryStreamInterface::Serialize</a></div><div class="ttdeci">virtual bool Serialize(s32 *pValue)=0</div></div>
+<div class="ttc" id="classCachePacketQuestRetireRequest_html_ab73d123f8698867220c94c4ba7a23e39"><div class="ttname"><a href="classCachePacketQuestRetireRequest.html#ab73d123f8698867220c94c4ba7a23e39">CachePacketQuestRetireRequest::Serialize</a></div><div class="ttdeci">bool Serialize(MemoryStreamInterface *pStream)</div><div class="ttdoc">シリアライズ </div><div class="ttdef"><b>Definition:</b> CachePacketQuestRetireRequest.h:64</div></div>
+<div class="ttc" id="classCachePacketID_html_a99a915636ffa57eb2db2da468975421aae0997cbe1995ace1001559fee7c63f10"><div class="ttname"><a href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aae0997cbe1995ace1001559fee7c63f10">CachePacketID::CacheQuestRetireRequest</a></div><div class="ttdoc">クエスト破棄リクエスト </div><div class="ttdef"><b>Definition:</b> CacheServerPacketID.h:81</div></div>
+<div class="ttc" id="PacketBase_8h_html"><div class="ttname"><a href="PacketBase_8h.html">PacketBase.h</a></div></div>
+<div class="ttc" id="CacheServerPacketID_8h_html"><div class="ttname"><a href="CacheServerPacketID_8h.html">CacheServerPacketID.h</a></div></div>
+<div class="ttc" id="TypeDefs_8h_html_a10e94b422ef0c20dcdec20d31a1f5049"><div class="ttname"><a href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a></div><div class="ttdeci">unsigned int u32</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:10</div></div>
+<div class="ttc" id="classCachePacketQuestRetireRequest_html_a183aa53d4c740f0ce23e9a83d00e1153"><div class="ttname"><a href="classCachePacketQuestRetireRequest.html#a183aa53d4c740f0ce23e9a83d00e1153">CachePacketQuestRetireRequest::QuestId</a></div><div class="ttdeci">u32 QuestId</div><div class="ttdoc">クエストID </div><div class="ttdef"><b>Definition:</b> CachePacketQuestRetireRequest.h:36</div></div>
+<div class="ttc" id="classCachePacketQuestRetireRequest_html"><div class="ttname"><a href="classCachePacketQuestRetireRequest.html">CachePacketQuestRetireRequest</a></div><div class="ttdoc">クエスト破棄リクエスト </div><div class="ttdef"><b>Definition:</b> CachePacketQuestRetireRequest.h:19</div></div>
+<div class="ttc" id="classCachePacketQuestRetireRequest_html_a1e554510ff66bdd180c641c5e219ec6e"><div class="ttname"><a href="classCachePacketQuestRetireRequest.html#a1e554510ff66bdd180c641c5e219ec6e">CachePacketQuestRetireRequest::CachePacketQuestRetireRequest</a></div><div class="ttdeci">CachePacketQuestRetireRequest()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> CachePacketQuestRetireRequest.h:42</div></div>
+<div class="ttc" id="classProcessPacketBase_html_a5e9c610ce35b5a0bb034c180a9571bef"><div class="ttname"><a href="classProcessPacketBase.html#a5e9c610ce35b5a0bb034c180a9571bef">ProcessPacketBase::Serialize</a></div><div class="ttdeci">virtual bool Serialize(MemoryStreamInterface *pStream)</div><div class="ttdef"><b>Definition:</b> ProcessPacketBase.h:22</div></div>
+<div class="ttc" id="ProcessPacketBase_8h_html"><div class="ttname"><a href="ProcessPacketBase_8h.html">ProcessPacketBase.h</a></div></div>
+<div class="ttc" id="classMemoryStreamInterface_html"><div class="ttname"><a href="classMemoryStreamInterface.html">MemoryStreamInterface</a></div><div class="ttdef"><b>Definition:</b> MemoryStreamInterface.h:8</div></div>
+<div class="ttc" id="classCachePacketQuestRetireRequest_html_a28957bad2af82434f54eb90d33db8da8"><div class="ttname"><a href="classCachePacketQuestRetireRequest.html#a28957bad2af82434f54eb90d33db8da8">CachePacketQuestRetireRequest::CachePacketQuestRetireRequest</a></div><div class="ttdeci">CachePacketQuestRetireRequest(u32 InClientId, u32 InCharacterId, u32 InQuestId)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> CachePacketQuestRetireRequest.h:49</div></div>
+<div class="ttc" id="MemoryStreamInterface_8h_html"><div class="ttname"><a href="MemoryStreamInterface_8h.html">MemoryStreamInterface.h</a></div></div>
+<div class="ttc" id="classProcessPacketBase_html"><div class="ttname"><a href="classProcessPacketBase.html">ProcessPacketBase</a></div><div class="ttdef"><b>Definition:</b> ProcessPacketBase.h:10</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>
