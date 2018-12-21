@@ -15,6 +15,10 @@ class $SCOPE_NAME$
 
 public:
 
+	/**
+	 * @enum EID
+	 * パケットＩＤ
+	 */
 	enum EID
 	{
 		$PACKET_ID_LIST$

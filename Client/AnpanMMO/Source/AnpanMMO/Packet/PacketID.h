@@ -15,6 +15,10 @@ class PacketID
 
 public:
 
+	/**
+	 * @enum EID
+	 * パケットＩＤ
+	 */
 	enum EID
 	{
 		//! アンパンリスト

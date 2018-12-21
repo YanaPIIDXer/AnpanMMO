@@ -62,7 +62,7 @@ u8 Response;
 	/**
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
 	 * @brief シリアライズ
-	 * @param in pStream ストリーム
+	 * @param[in] pStream ストリーム
 	 * @retrns 成功したらtrueを返す。
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)

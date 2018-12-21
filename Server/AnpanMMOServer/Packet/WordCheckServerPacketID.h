@@ -15,6 +15,10 @@ class WordCheckPacketID
 
 public:
 
+	/**
+	 * @enum EID
+	 * パケットＩＤ
+	 */
 	enum EID
 	{
 		//! ワードチェック要求

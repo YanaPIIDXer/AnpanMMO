@@ -15,6 +15,10 @@ class CachePacketID
 
 public:
 
+	/**
+	 * @enum EID
+	 * パケットＩＤ
+	 */
 	enum EID
 	{
 		//! ログインリクエスト
