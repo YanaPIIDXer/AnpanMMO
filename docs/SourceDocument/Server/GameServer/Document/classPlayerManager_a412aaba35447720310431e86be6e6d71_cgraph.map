@@ -1,0 +1,7 @@
+<map id="PlayerManager::BroadcastPacketWithRange" name="PlayerManager::BroadcastPacketWithRange">
+<area shape="rect" id="node2" href="$classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="229,93,364,120"/>
+<area shape="rect" id="node3" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="434,5,585,32"/>
+<area shape="rect" id="node4" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="412,57,607,98"/>
+<area shape="rect" id="node5" href="$classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="422,123,597,149"/>
+<area shape="rect" id="node6" href="$classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd" title="TCPConnection::AsyncSend" alt="" coords="416,173,603,200"/>
+</map>

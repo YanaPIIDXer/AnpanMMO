@@ -1,0 +1,5 @@
+<map id="UGameMenuWidget::LogOut" name="UGameMenuWidget::LogOut">
+<area shape="rect" id="node2" href="$classUMMOGameInstance.html#ad26101221629a067ab4372101feba3c3" title="UMMOGameInstance::Close" alt="" coords="257,5,445,32"/>
+<area shape="rect" id="node3" href="$classAActiveGameMode.html#ae918e1128e7ca8d06a548631f99efa90" title="AActiveGameMode::GetMainHUD" alt="" coords="243,56,460,83"/>
+<area shape="rect" id="node4" href="$classUMainHUD.html#a5d6335e2ed66157dcb7d5da038b89963" title="UMainHUD::OnLogOut" alt="" coords="275,107,428,133"/>
+</map>

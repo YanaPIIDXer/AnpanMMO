@@ -1,0 +1,4 @@
+<map id="CharacterBase::GetRotation" name="CharacterBase::GetRotation">
+<area shape="rect" id="node2" href="$classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="284,5,392,32"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#a23739dce596e326a445fa3e66cbd0f58" title="AnpanAIStateBase::SetRotate" alt="" coords="239,56,437,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="PacketPartyJoinMember::Serialize" name="PacketPartyJoinMember::Serialize">
+<area shape="rect" id="node2" href="$classPartyMemberData.html#a265b9868421b18aa053945f8c1dbee66" title="PartyMemberData::Serialize" alt="" coords="217,13,403,39"/>
+<area shape="rect" id="node3" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="451,5,611,47"/>
+</map>

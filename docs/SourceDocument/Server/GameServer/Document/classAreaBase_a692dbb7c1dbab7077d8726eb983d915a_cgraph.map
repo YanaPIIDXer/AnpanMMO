@@ -1,0 +1,9 @@
+<map id="AreaBase::RemovePlayerCharacter" name="AreaBase::RemovePlayerCharacter">
+<area shape="rect" id="node2" href="$classPlayerManager.html#a4cf4bcfb7974a219b6ab73417a157e79" title="PlayerManager::Remove" alt="" coords="280,93,443,120"/>
+<area shape="rect" id="node3" href="$classPlayerManager.html#ae856745bf6d69cc9ff54df6861049f37" title="PlayerManager::Broadcast\lPacket" alt="" coords="491,86,667,127"/>
+<area shape="rect" id="node4" href="$classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="715,93,849,120"/>
+<area shape="rect" id="node5" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="919,5,1070,32"/>
+<area shape="rect" id="node6" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="897,57,1092,98"/>
+<area shape="rect" id="node7" href="$classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="907,123,1082,149"/>
+<area shape="rect" id="node8" href="$classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd" title="TCPConnection::AsyncSend" alt="" coords="901,173,1088,200"/>
+</map>

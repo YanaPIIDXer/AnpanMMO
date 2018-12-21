@@ -1,0 +1,5 @@
+<map id="IsQuestActive_Call" name="IsQuestActive_Call">
+<area shape="rect" id="node2" href="$classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="184,5,363,32"/>
+<area shape="rect" id="node3" href="$classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="209,56,338,83"/>
+<area shape="rect" id="node4" href="$classScriptExecuterBase.html#af7e7b9c10c7d681933c8b32ea4c84c72" title="ScriptExecuterBase\l::IsQuestActive" alt="" coords="204,107,343,149"/>
+</map>

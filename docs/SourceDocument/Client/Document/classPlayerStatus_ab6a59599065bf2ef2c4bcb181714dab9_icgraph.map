@@ -1,0 +1,4 @@
+<map id="PlayerStatus::SetSkillList" name="PlayerStatus::SetSkillList">
+<area shape="rect" id="node2" href="$classAGameCharacter.html#a78768138a67f8c68a7877003fc06d4ec" title="AGameCharacter::OnRecvSkillList" alt="" coords="224,5,445,32"/>
+<area shape="rect" id="node3" href="$classUMMOGameInstance.html#ab34395cf7c78172b877b3b26e26c84ae" title="UMMOGameInstance::OnRecv\lSkillList" alt="" coords="235,57,435,98"/>
+</map>

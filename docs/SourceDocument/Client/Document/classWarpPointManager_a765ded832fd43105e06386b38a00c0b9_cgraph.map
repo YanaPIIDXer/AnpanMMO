@@ -1,0 +1,6 @@
+<map id="WarpPointManager::Spawn" name="WarpPointManager::Spawn">
+<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="239,5,406,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#ae2f1c1bafa1e3b95fd1fcf06bf7b1538" title="MasterData::GetWarpPoint\lMaster" alt="" coords="233,57,412,98"/>
+<area shape="rect" id="node4" href="$classWarpPointMaster.html#a90d14d7e16c1dec554c703c20b352d23" title="WarpPointMaster::GetAll" alt="" coords="239,123,406,149"/>
+<area shape="rect" id="node5" href="$classAWarpPoint.html#a66e6b534f8dd4d8810165901d828aadc" title="AWarpPoint::Spawn" alt="" coords="253,173,392,200"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="UMMOGameInstance::Connect" name="UMMOGameInstance::Connect">
+<area shape="rect" id="node2" href="$classUMMOGameInstance.html#ad26101221629a067ab4372101feba3c3" title="UMMOGameInstance::Close" alt="" coords="256,5,444,32"/>
+<area shape="rect" id="node3" href="$classGameServerConnection.html#a9d0972403cc827f7d4af8c3d6ff3aeaa" title="GameServerConnection\l::Connect" alt="" coords="271,57,429,98"/>
+<area shape="rect" id="node4" href="$classGameServerConnection.html#af6e4a912f94763e1ef77582af4dc23c4" title="GameServerConnection\l::Close" alt="" coords="492,57,651,98"/>
+</map>

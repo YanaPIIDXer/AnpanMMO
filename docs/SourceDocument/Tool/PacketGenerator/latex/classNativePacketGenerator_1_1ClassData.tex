@@ -1,0 +1,344 @@
+\hypertarget{classNativePacketGenerator_1_1ClassData}{}\section{Native\+Packet\+Generator.\+Class\+Data クラス}
+\label{classNativePacketGenerator_1_1ClassData}\index{Native\+Packet\+Generator.\+Class\+Data@{Native\+Packet\+Generator.\+Class\+Data}}
+
+
+Excelのシートから解析したクラス情報.  
+
+
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_aea0289ee3086a4157ae1e6b1278bb63b}{Class\+Data}} (string In\+Class\+Name)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a20ce7909453ff018fd7a7c9fb83f25e7}{Add\+Include}} (string File\+Name)
+\begin{DoxyCompactList}\small\item\em 追加インクルードするファイルを追加. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_acc79c0c995d1965840714e736249800e}{Add\+Member}} (\mbox{\hyperlink{structNativePacketGenerator_1_1ClassMemberData}{Class\+Member\+Data}} Data)
+\begin{DoxyCompactList}\small\item\em メンバ追加. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a1b4737fa85d6a577aed5adc3987ee61b}{Add\+Enum}} (string Type\+Name, string Name, string \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a7d166d01f44d0774b52fb30a0ceee6ba}{Comment}})
+\begin{DoxyCompactList}\small\item\em Enum追加. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_ae935d137b63d28d6ac48d90a8b782f21}{Set\+For\+Cache\+Server\+Flag}} ()
+\begin{DoxyCompactList}\small\item\em キャッシュサーバ向けフラグを立てる。 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_adb1f8de945f766875c98195a5b556acc}{Set\+For\+Word\+Check\+Server\+Flag}} ()
+\begin{DoxyCompactList}\small\item\em ワードチェックサーバ向けフラグを立てる。 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{プロパティ}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_ae0f105d4f47837085a3bc4f90e2f4404}{Class\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em クラス名. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a6a15b97586de5d3f69b48a1f556b460d}{Scope\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em スコープ名. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a725ec9075101d1744d21c69ca41bcd27}{Base\+Class\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a2ca4c4ba5da802ed6a736efae338180a}{Includes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 追加インクルード \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a413aaadc4e8ec360bf9902159bb1f456}{Is\+Pure\+Class}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em 純粋なクラスか？ ※何も継承していないクラスか？ \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_af6f1e3ce3d6acf846175754aeeac7897}{Packet\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em パケットＩＤ \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a7d166d01f44d0774b52fb30a0ceee6ba}{Comment}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em クラスコメント \end{DoxyCompactList}\item 
+Dictionary$<$ string, List$<$ \mbox{\hyperlink{classNativePacketGenerator_1_1EnumData}{Enum\+Data}} $>$ $>$ \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a17fef0118f351cd06f49657dacdc8a75}{Enum\+List}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Enumリスト \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{structNativePacketGenerator_1_1ClassMemberData}{Class\+Member\+Data}} $>$ \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a27ee843ec889d2174d8d48275ace5ddf}{Members}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em メンバ情報. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a0a3e8076591167022fcf6146b6170737}{Is\+For\+Cache\+Server}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em キャッシュサーバ向けか？ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_ad3989f1c0c88949f21444a1cf0185add}{Is\+For\+Word\+Check\+Server}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em ワードチェックサーバ向けか？ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNativePacketGenerator_1_1ClassData_a731672882786506135e4636178812c60}{Is\+Process\+Packet}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em プロセスパケットか？ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+Excelのシートから解析したクラス情報. 
+
+
+
+ Class\+Data.\+cs の 87 行目に定義があります。
+
+
+
+\subsection{構築子と解体子}
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_aea0289ee3086a4157ae1e6b1278bb63b}\label{classNativePacketGenerator_1_1ClassData_aea0289ee3086a4157ae1e6b1278bb63b}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Class\+Data@{Class\+Data}}
+\index{Class\+Data@{Class\+Data}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Class\+Data()}{ClassData()}}
+{\footnotesize\ttfamily Native\+Packet\+Generator.\+Class\+Data.\+Class\+Data (\begin{DoxyParamCaption}\item[{string}]{In\+Class\+Name }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em In\+Class\+Name} & クラス名\\
+\hline
+\end{DoxyParams}
+
+
+ Class\+Data.\+cs の 178 行目に定義があります。
+
+
+
+\subsection{メソッド詳解}
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a1b4737fa85d6a577aed5adc3987ee61b}\label{classNativePacketGenerator_1_1ClassData_a1b4737fa85d6a577aed5adc3987ee61b}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Add\+Enum@{Add\+Enum}}
+\index{Add\+Enum@{Add\+Enum}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Add\+Enum()}{AddEnum()}}
+{\footnotesize\ttfamily void Native\+Packet\+Generator.\+Class\+Data.\+Add\+Enum (\begin{DoxyParamCaption}\item[{string}]{Type\+Name,  }\item[{string}]{Name,  }\item[{string}]{Comment }\end{DoxyParamCaption})}
+
+
+
+Enum追加. 
+
+
+\begin{DoxyParams}{引数}
+{\em Type\+Name} & Enumの型名\\
+\hline
+{\em Name} & 要素名\\
+\hline
+{\em Comment} & コメント\\
+\hline
+\end{DoxyParams}
+
+
+ Class\+Data.\+cs の 209 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a20ce7909453ff018fd7a7c9fb83f25e7}\label{classNativePacketGenerator_1_1ClassData_a20ce7909453ff018fd7a7c9fb83f25e7}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Add\+Include@{Add\+Include}}
+\index{Add\+Include@{Add\+Include}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Add\+Include()}{AddInclude()}}
+{\footnotesize\ttfamily void Native\+Packet\+Generator.\+Class\+Data.\+Add\+Include (\begin{DoxyParamCaption}\item[{string}]{File\+Name }\end{DoxyParamCaption})}
+
+
+
+追加インクルードするファイルを追加. 
+
+
+\begin{DoxyParams}{引数}
+{\em File\+Name} & ファイル名\\
+\hline
+\end{DoxyParams}
+
+
+ Class\+Data.\+cs の 189 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_acc79c0c995d1965840714e736249800e}\label{classNativePacketGenerator_1_1ClassData_acc79c0c995d1965840714e736249800e}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Add\+Member@{Add\+Member}}
+\index{Add\+Member@{Add\+Member}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Add\+Member()}{AddMember()}}
+{\footnotesize\ttfamily void Native\+Packet\+Generator.\+Class\+Data.\+Add\+Member (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNativePacketGenerator_1_1ClassMemberData}{Class\+Member\+Data}}}]{Data }\end{DoxyParamCaption})}
+
+
+
+メンバ追加. 
+
+
+\begin{DoxyParams}{引数}
+{\em Data} & メンバデータ\\
+\hline
+\end{DoxyParams}
+
+
+ Class\+Data.\+cs の 198 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_ae935d137b63d28d6ac48d90a8b782f21}\label{classNativePacketGenerator_1_1ClassData_ae935d137b63d28d6ac48d90a8b782f21}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Set\+For\+Cache\+Server\+Flag@{Set\+For\+Cache\+Server\+Flag}}
+\index{Set\+For\+Cache\+Server\+Flag@{Set\+For\+Cache\+Server\+Flag}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Set\+For\+Cache\+Server\+Flag()}{SetForCacheServerFlag()}}
+{\footnotesize\ttfamily void Native\+Packet\+Generator.\+Class\+Data.\+Set\+For\+Cache\+Server\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+キャッシュサーバ向けフラグを立てる。 
+
+
+
+ Class\+Data.\+cs の 221 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_adb1f8de945f766875c98195a5b556acc}\label{classNativePacketGenerator_1_1ClassData_adb1f8de945f766875c98195a5b556acc}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Set\+For\+Word\+Check\+Server\+Flag@{Set\+For\+Word\+Check\+Server\+Flag}}
+\index{Set\+For\+Word\+Check\+Server\+Flag@{Set\+For\+Word\+Check\+Server\+Flag}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Set\+For\+Word\+Check\+Server\+Flag()}{SetForWordCheckServerFlag()}}
+{\footnotesize\ttfamily void Native\+Packet\+Generator.\+Class\+Data.\+Set\+For\+Word\+Check\+Server\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ワードチェックサーバ向けフラグを立てる。 
+
+
+
+ Class\+Data.\+cs の 230 行目に定義があります。
+
+
+
+\subsection{プロパティ詳解}
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a725ec9075101d1744d21c69ca41bcd27}\label{classNativePacketGenerator_1_1ClassData_a725ec9075101d1744d21c69ca41bcd27}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Base\+Class\+Name@{Base\+Class\+Name}}
+\index{Base\+Class\+Name@{Base\+Class\+Name}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Base\+Class\+Name}{BaseClassName}}
+{\footnotesize\ttfamily string Native\+Packet\+Generator.\+Class\+Data.\+Base\+Class\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+ Class\+Data.\+cs の 104 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_ae0f105d4f47837085a3bc4f90e2f4404}\label{classNativePacketGenerator_1_1ClassData_ae0f105d4f47837085a3bc4f90e2f4404}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Class\+Name@{Class\+Name}}
+\index{Class\+Name@{Class\+Name}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Class\+Name}{ClassName}}
+{\footnotesize\ttfamily string Native\+Packet\+Generator.\+Class\+Data.\+Class\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+クラス名. 
+
+
+
+ Class\+Data.\+cs の 92 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a7d166d01f44d0774b52fb30a0ceee6ba}\label{classNativePacketGenerator_1_1ClassData_a7d166d01f44d0774b52fb30a0ceee6ba}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Comment@{Comment}}
+\index{Comment@{Comment}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Comment}{Comment}}
+{\footnotesize\ttfamily string Native\+Packet\+Generator.\+Class\+Data.\+Comment\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+クラスコメント 
+
+
+
+ Class\+Data.\+cs の 139 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a17fef0118f351cd06f49657dacdc8a75}\label{classNativePacketGenerator_1_1ClassData_a17fef0118f351cd06f49657dacdc8a75}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Enum\+List@{Enum\+List}}
+\index{Enum\+List@{Enum\+List}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Enum\+List}{EnumList}}
+{\footnotesize\ttfamily Dictionary$<$string, List$<$\mbox{\hyperlink{classNativePacketGenerator_1_1EnumData}{Enum\+Data}}$>$ $>$ Native\+Packet\+Generator.\+Class\+Data.\+Enum\+List\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Enumリスト 
+
+
+
+ Class\+Data.\+cs の 144 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a2ca4c4ba5da802ed6a736efae338180a}\label{classNativePacketGenerator_1_1ClassData_a2ca4c4ba5da802ed6a736efae338180a}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Includes@{Includes}}
+\index{Includes@{Includes}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Includes}{Includes}}
+{\footnotesize\ttfamily List$<$string$>$ Native\+Packet\+Generator.\+Class\+Data.\+Includes\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+追加インクルード 
+
+
+
+ Class\+Data.\+cs の 122 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a0a3e8076591167022fcf6146b6170737}\label{classNativePacketGenerator_1_1ClassData_a0a3e8076591167022fcf6146b6170737}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Is\+For\+Cache\+Server@{Is\+For\+Cache\+Server}}
+\index{Is\+For\+Cache\+Server@{Is\+For\+Cache\+Server}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Is\+For\+Cache\+Server}{IsForCacheServer}}
+{\footnotesize\ttfamily bool Native\+Packet\+Generator.\+Class\+Data.\+Is\+For\+Cache\+Server\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+キャッシュサーバ向けか？ 
+
+
+
+ Class\+Data.\+cs の 156 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_ad3989f1c0c88949f21444a1cf0185add}\label{classNativePacketGenerator_1_1ClassData_ad3989f1c0c88949f21444a1cf0185add}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Is\+For\+Word\+Check\+Server@{Is\+For\+Word\+Check\+Server}}
+\index{Is\+For\+Word\+Check\+Server@{Is\+For\+Word\+Check\+Server}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Is\+For\+Word\+Check\+Server}{IsForWordCheckServer}}
+{\footnotesize\ttfamily bool Native\+Packet\+Generator.\+Class\+Data.\+Is\+For\+Word\+Check\+Server\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+ワードチェックサーバ向けか？ 
+
+
+
+ Class\+Data.\+cs の 161 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a731672882786506135e4636178812c60}\label{classNativePacketGenerator_1_1ClassData_a731672882786506135e4636178812c60}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Is\+Process\+Packet@{Is\+Process\+Packet}}
+\index{Is\+Process\+Packet@{Is\+Process\+Packet}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Is\+Process\+Packet}{IsProcessPacket}}
+{\footnotesize\ttfamily bool Native\+Packet\+Generator.\+Class\+Data.\+Is\+Process\+Packet\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+プロセスパケットか？ 
+
+
+
+ Class\+Data.\+cs の 167 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a413aaadc4e8ec360bf9902159bb1f456}\label{classNativePacketGenerator_1_1ClassData_a413aaadc4e8ec360bf9902159bb1f456}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Is\+Pure\+Class@{Is\+Pure\+Class}}
+\index{Is\+Pure\+Class@{Is\+Pure\+Class}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Is\+Pure\+Class}{IsPureClass}}
+{\footnotesize\ttfamily bool Native\+Packet\+Generator.\+Class\+Data.\+Is\+Pure\+Class\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+純粋なクラスか？ ※何も継承していないクラスか？ 
+
+
+
+ Class\+Data.\+cs の 129 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a27ee843ec889d2174d8d48275ace5ddf}\label{classNativePacketGenerator_1_1ClassData_a27ee843ec889d2174d8d48275ace5ddf}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Members@{Members}}
+\index{Members@{Members}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Members}{Members}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{structNativePacketGenerator_1_1ClassMemberData}{Class\+Member\+Data}}$>$ Native\+Packet\+Generator.\+Class\+Data.\+Members\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+メンバ情報. 
+
+
+
+ Class\+Data.\+cs の 150 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_af6f1e3ce3d6acf846175754aeeac7897}\label{classNativePacketGenerator_1_1ClassData_af6f1e3ce3d6acf846175754aeeac7897}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Packet\+ID@{Packet\+ID}}
+\index{Packet\+ID@{Packet\+ID}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Packet\+ID}{PacketID}}
+{\footnotesize\ttfamily string Native\+Packet\+Generator.\+Class\+Data.\+Packet\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+パケットＩＤ 
+
+
+
+ Class\+Data.\+cs の 134 行目に定義があります。
+
+\mbox{\Hypertarget{classNativePacketGenerator_1_1ClassData_a6a15b97586de5d3f69b48a1f556b460d}\label{classNativePacketGenerator_1_1ClassData_a6a15b97586de5d3f69b48a1f556b460d}} 
+\index{Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}!Scope\+Name@{Scope\+Name}}
+\index{Scope\+Name@{Scope\+Name}!Native\+Packet\+Generator\+::\+Class\+Data@{Native\+Packet\+Generator\+::\+Class\+Data}}
+\subsubsection{\texorpdfstring{Scope\+Name}{ScopeName}}
+{\footnotesize\ttfamily string Native\+Packet\+Generator.\+Class\+Data.\+Scope\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+スコープ名. 
+
+
+
+ Class\+Data.\+cs の 97 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ClassData_8cs}{Class\+Data.\+cs}}\end{DoxyCompactItemize}

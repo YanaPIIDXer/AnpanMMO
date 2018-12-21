@@ -1,0 +1,10 @@
+<map id="UTitleScreenWidget::ConnectToGameServer" name="UTitleScreenWidget::ConnectToGameServer">
+<area shape="rect" id="node2" href="$classUMMOGameInstance.html#afecf75abd0ed3c7152f2e736f8193e62" title="UMMOGameInstance::Connect" alt="" coords="216,45,419,72"/>
+<area shape="rect" id="node6" href="$classUTitleScreenWidget.html#abbeb45cfe2ee92ffaa7bc0a7e0260470" title="UTitleScreenWidget\l::OnConnectedGameServer" alt="" coords="227,97,407,138"/>
+<area shape="rect" id="node7" href="$classATitleGameMode.html#a5f0a0af070f122f9802788b9b3856895" title="ATitleGameMode::SendLogIn\lRequest" alt="" coords="222,162,413,203"/>
+<area shape="rect" id="node3" href="$classUMMOGameInstance.html#ad26101221629a067ab4372101feba3c3" title="UMMOGameInstance::Close" alt="" coords="467,5,655,32"/>
+<area shape="rect" id="node4" href="$classGameServerConnection.html#a9d0972403cc827f7d4af8c3d6ff3aeaa" title="GameServerConnection\l::Connect" alt="" coords="481,57,640,98"/>
+<area shape="rect" id="node5" href="$classGameServerConnection.html#af6e4a912f94763e1ef77582af4dc23c4" title="GameServerConnection\l::Close" alt="" coords="703,57,861,98"/>
+<area shape="rect" id="node8" href="$classConfig.html#abd12b58570195044d3369081a563d3aa" title="Config::GetIdFilePath" alt="" coords="488,140,633,167"/>
+<area shape="rect" id="node9" href="$classIdManager.html#a9377bc0de9294ee42b35808fdc9e48f0" title="IdManager::GetId" alt="" coords="500,191,621,217"/>
+</map>

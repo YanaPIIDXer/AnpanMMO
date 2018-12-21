@@ -1,0 +1,4 @@
+<map id="UMainHUD::UpdateItemShortcut" name="UMainHUD::UpdateItemShortcut">
+<area shape="rect" id="node2" href="$classAGameCharacter.html#a86daf7483d1c4e9f33692cdd6590517a" title="AGameCharacter::BeginPlay" alt="" coords="266,5,455,32"/>
+<area shape="rect" id="node3" href="$classAGameCharacter.html#a70f0cbc92c5445fb1b2917583ce6568b" title="AGameCharacter::UpdateItem\lShortcut" alt="" coords="263,57,459,98"/>
+</map>

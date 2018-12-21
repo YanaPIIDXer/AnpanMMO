@@ -1,0 +1,5 @@
+<map id="Party::BroadcastPacket" name="Party::BroadcastPacket">
+<area shape="rect" id="node2" href="$classParty.html#aa04acc931eae4304507c53280d7080dc" title="Party::Poll" alt="" coords="215,5,298,32"/>
+<area shape="rect" id="node3" href="$classParty.html#a56ee1ef20749f5153d54d527516cd1ff" title="Party::Join" alt="" coords="215,56,299,83"/>
+<area shape="rect" id="node4" href="$classPartyManager.html#a1a361e389ce8c89004577af816c918be" title="PartyManager::Create" alt="" coords="347,56,496,83"/>
+</map>

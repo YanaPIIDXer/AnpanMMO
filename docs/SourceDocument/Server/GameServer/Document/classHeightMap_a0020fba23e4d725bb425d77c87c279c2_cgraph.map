@@ -1,0 +1,5 @@
+<map id="HeightMap::Load" name="HeightMap::Load">
+<area shape="rect" id="node2" href="$classBitmap.html#a006b201033ec5473f93128f118f4ee0b" title="Bitmap::Load" alt="" coords="173,31,272,57"/>
+<area shape="rect" id="node3" href="$structBitmapFileHeader.html#a85f07f14aff164c550c08bc906c9c17c" title="BitmapFileHeader::Read" alt="" coords="320,5,483,32"/>
+<area shape="rect" id="node4" href="$structBitmapInfoData.html#a4183700c703c5da0c52c4e22e555fd6f" title="BitmapInfoData::Read" alt="" coords="327,56,475,83"/>
+</map>

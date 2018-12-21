@@ -1,0 +1,4 @@
+<map id="VersionDownloader::Start" name="VersionDownloader::Start">
+<area shape="rect" id="node2" href="$classHttpConnection.html#a0dcc79842dc827d9b9b7ccda59b3115a" title="HttpConnection::StartDownload" alt="" coords="195,13,397,39"/>
+<area shape="rect" id="node3" href="$classHttpConnection.html#a6bea587b0ded1630fc0b97367a10f023" title="HttpConnection::Close" alt="" coords="445,13,597,39"/>
+</map>

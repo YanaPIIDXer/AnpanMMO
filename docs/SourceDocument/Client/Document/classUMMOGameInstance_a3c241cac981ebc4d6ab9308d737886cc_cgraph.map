@@ -1,0 +1,4 @@
+<map id="UMMOGameInstance::OnRecvItemList" name="UMMOGameInstance::OnRecvItemList">
+<area shape="rect" id="node2" href="$classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7" title="FlexArray::GetCurrentSize" alt="" coords="253,5,428,32"/>
+<area shape="rect" id="node3" href="$classPlayerStatus.html#a9489711490f9e6c8e5a2d375d82b7daf" title="PlayerStatus::AddItem" alt="" coords="264,56,417,83"/>
+</map>

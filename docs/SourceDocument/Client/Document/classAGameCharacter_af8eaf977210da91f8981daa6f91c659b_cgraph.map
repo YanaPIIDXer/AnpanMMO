@@ -1,0 +1,12 @@
+<map id="AGameCharacter::IsItemUsable" name="AGameCharacter::IsItemUsable">
+<area shape="rect" id="node2" href="$classPlayerStatus.html#a2aaae642c6e9c3b2523912db1220bd1c" title="PlayerStatus::GetItemList" alt="" coords="275,5,447,32"/>
+<area shape="rect" id="node3" href="$classItemList.html#a85f13eb24ad602abff9a737ccb960903" title="ItemList::GetCount" alt="" coords="296,56,427,83"/>
+<area shape="rect" id="node4" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="544,132,711,159"/>
+<area shape="rect" id="node5" href="$classMasterData.html#a4d5f0af7e2f2ab9762503a44cd948245" title="MasterData::GetItemMaster" alt="" coords="270,157,453,184"/>
+<area shape="rect" id="node6" href="$classItemMaster.html#ad886791bdb2ab7e6a3bbd22578669951" title="ItemMaster::Get" alt="" coords="303,208,419,235"/>
+<area shape="rect" id="node7" href="$classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="259,259,464,285"/>
+<area shape="rect" id="node8" href="$classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="536,195,719,221"/>
+<area shape="rect" id="node9" href="$classSkillMaster.html#a9664da6db4693699deddbf2ba10da548" title="SkillMaster::Get" alt="" coords="569,245,685,272"/>
+<area shape="rect" id="node10" href="$classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="531,297,723,338"/>
+<area shape="rect" id="node11" href="$classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="512,363,743,389"/>
+</map>
