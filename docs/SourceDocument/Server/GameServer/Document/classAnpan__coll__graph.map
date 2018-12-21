@@ -1,7 +1,0 @@
-<map id="Anpan" name="Anpan">
-<area shape="rect" id="node2" href="$classCharacterBase.html" title="CharacterBase" alt="" coords="297,122,405,149"/>
-<area shape="rect" id="node4" href="$classSkillRecastManager.html" title="SkillRecastManager" alt="" coords="32,71,171,98"/>
-<area shape="rect" id="node5" href="$classRotation.html" title="Rotation" alt="" coords="66,122,137,149"/>
-<area shape="rect" id="node6" href="$classSkillControl.html" title="SkillControl" alt="" coords="57,173,145,199"/>
-<area shape="rect" id="node7" href="$classVector3D.html" title="Vector3D" alt="" coords="63,262,139,289"/>
-</map>
