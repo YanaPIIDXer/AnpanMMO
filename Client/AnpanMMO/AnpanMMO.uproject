@@ -4,25 +4,25 @@
 	"Category": "",
 	"Description": "",
 	"Modules": [
-	{
-		"Name": "AnpanMMO",
-		"Type": "Runtime",
-		"LoadingPhase": "Default",
-		"AdditionalDependencies": [
-			"Engine",
-			"UMG",
-			"CoreUObject"
-		]
-	},
-	{
-		"Name": "Tests",
-		"Type": "Editor",
-		"LoadingPhase": "Default",
-		"AdditionalDependencies": [
-			"Engine",
-			"UMG",
-			"CoreUObject"
-		]
-        }
-    ]
+		{
+			"Name": "AnpanMMO",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"UMG",
+				"CoreUObject"
+			]
+		},
+		{
+			"Name": "Tests",
+			"Type": "Editor",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"UMG",
+				"CoreUObject"
+			]
+		}
+	]
 }
