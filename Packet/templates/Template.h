@@ -22,7 +22,7 @@ public:
 	/**
 	 * @fn u8 GetPacketID() const
 	 * @brief パケットＩＤ取得.
-	 * @returns パケットＩＤ
+	 * @return パケットＩＤ
 	 */
 	$GET_PACKET_ID_FUNCTION$
 
@@ -47,7 +47,7 @@ public:
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
 	 * @brief シリアライズ
 	 * @param[in] pStream ストリーム
-	 * @retrns 成功したらtrueを返す。
+	 * @retrn 成功したらtrueを返す。
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
