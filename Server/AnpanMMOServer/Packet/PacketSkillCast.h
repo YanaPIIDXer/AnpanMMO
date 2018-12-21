@@ -29,12 +29,12 @@ public:
 
 	
 
-	//! 
-u32 SkillId;
-	//! 
-u8 CharacterType;
-	//! 
-u32 CharacterUuid;
+	//! スキルＩＤ
+	u32 SkillId;
+	//! キャラクタタイプ
+	u8 CharacterType;
+	//! キャラクタＵＵＩＤ
+	u32 CharacterUuid;
 	
 
 	/**

@@ -29,10 +29,10 @@ public:
 
 	
 
-	//! 
-u32 ItemId;
-	//! 
-u32 Count;
+	//! ƒAƒCƒeƒ€‚h‚c
+	u32 ItemId;
+	//! ŒÂ”
+	u32 Count;
 	
 
 	/**

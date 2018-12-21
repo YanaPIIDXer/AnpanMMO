@@ -30,12 +30,12 @@ public:
 
 	
 
-	//! 
-u32 CustomerId;
-	//! 
-std::string CharacterName;
-	//! 
-u8 Job;
+	//! カスタマID
+	u32 CustomerId;
+	//! キャラクタ名
+	std::string CharacterName;
+	//! ジョブ
+	u8 Job;
 	
 
 	/**

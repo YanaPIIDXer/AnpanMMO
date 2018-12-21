@@ -32,18 +32,18 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
-	//! 
-FlexArray<QuestData> Quests;
-	//! 
-u32 ActiveQuestId;
+	//! 結果
+	u8 Result;
+	//! クエストリスト
+	FlexArray<QuestData> Quests;
+	//! アクティブクエストＩＤ
+	u32 ActiveQuestId;
 	
 
 	/**

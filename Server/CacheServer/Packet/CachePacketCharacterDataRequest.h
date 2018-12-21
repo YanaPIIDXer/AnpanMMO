@@ -30,8 +30,8 @@ public:
 
 	
 
-	//! 
-u32 CustomerId;
+	//! カスタマＩＤ
+	u32 CustomerId;
 	
 
 	/**

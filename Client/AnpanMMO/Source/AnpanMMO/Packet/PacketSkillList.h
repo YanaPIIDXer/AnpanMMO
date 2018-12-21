@@ -29,16 +29,16 @@ public:
 
 	
 
-	//! 
-u32 NormalAttack;
-	//! 
-u32 Skill1;
-	//! 
-u32 Skill2;
-	//! 
-u32 Skill3;
-	//! 
-u32 Skill4;
+	//! ’ÊíUŒ‚‚h‚c
+	u32 NormalAttack;
+	//! ƒXƒLƒ‹‚h‚c‚P
+	u32 Skill1;
+	//! ƒXƒLƒ‹‚h‚c‚Q
+	u32 Skill2;
+	//! ƒXƒLƒ‹‚h‚c‚R
+	u32 Skill3;
+	//! ƒXƒLƒ‹‚h‚c‚S
+	u32 Skill4;
 	
 
 	/**

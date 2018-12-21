@@ -29,8 +29,8 @@ public:
 
 	
 
-	//! 
-u32 MasterId;
+	//! ƒ}ƒXƒ^‚h‚c
+	u32 MasterId;
 	
 
 	/**

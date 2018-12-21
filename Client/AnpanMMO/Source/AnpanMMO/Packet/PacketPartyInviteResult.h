@@ -38,7 +38,7 @@ public:
 	};
 
 	//! 
-u8 Result;
+	u8 Result;
 	
 
 	/**

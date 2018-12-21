@@ -29,18 +29,18 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		MainQuest = メインクエスト,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! メインクエスト
+		MainQuest,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u32 QuestId;
-	//! 
-u8 Result;
+	//! クエストＩＤ
+	u32 QuestId;
+	//! 結果
+	u8 Result;
 	
 
 	/**

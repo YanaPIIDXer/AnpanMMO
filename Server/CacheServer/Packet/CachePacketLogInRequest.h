@@ -30,8 +30,8 @@ public:
 
 	
 
-	//! 
-std::string UserCode;
+	//! ユーザコード
+	std::string UserCode;
 	
 
 	/**

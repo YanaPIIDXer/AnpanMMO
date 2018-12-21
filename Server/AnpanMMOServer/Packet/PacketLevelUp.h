@@ -29,16 +29,16 @@ public:
 
 	
 
-	//! 
-u32 Level;
-	//! 
-s32 MaxHp;
-	//! 
-s32 Atk;
-	//! 
-s32 Def;
-	//! 
-s32 ResultExp;
+	//! ƒŒƒxƒ‹
+	u32 Level;
+	//! Å‘å‚g‚o
+	s32 MaxHp;
+	//! UŒ‚—Í
+	s32 Atk;
+	//! –hŒä—Í
+	s32 Def;
+	//! ŒoŒ±’l
+	s32 ResultExp;
 	
 
 	/**

@@ -29,26 +29,26 @@ public:
 
 	
 
-	//! 
-u32 Uuid;
-	//! 
-std::string Name;
-	//! 
-u8 Job;
-	//! 
-u32 Level;
-	//! 
-s32 Hp;
-	//! 
-s32 MaxHp;
-	//! 
-s32 Atk;
-	//! 
-s32 Def;
-	//! 
-s32 Exp;
-	//! 
-u32 Gold;
+	//! UUID
+	u32 Uuid;
+	//! 名前
+	std::string Name;
+	//! ジョブ
+	u8 Job;
+	//! レベル
+	u32 Level;
+	//! HP
+	s32 Hp;
+	//! 最大HP
+	s32 MaxHp;
+	//! 攻撃力
+	s32 Atk;
+	//! 防御力
+	s32 Def;
+	//! 経験値
+	s32 Exp;
+	//! ゴールド
+	u32 Gold;
 	
 
 	/**

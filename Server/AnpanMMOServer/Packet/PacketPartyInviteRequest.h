@@ -30,7 +30,7 @@ public:
 	
 
 	//! 
-u32 TargetUuid;
+	u32 TargetUuid;
 	
 
 	/**

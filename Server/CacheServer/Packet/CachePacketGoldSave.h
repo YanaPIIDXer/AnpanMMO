@@ -30,10 +30,10 @@ public:
 
 	
 
-	//! 
-u32 CharacterId;
-	//! 
-u32 Gold;
+	//! キャラクタＩＤ
+	u32 CharacterId;
+	//! ゴールド
+	u32 Gold;
 	
 
 	/**

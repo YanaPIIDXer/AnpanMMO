@@ -30,40 +30,40 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u32 CharacterId;
-	//! 
-u8 Result;
-	//! 
-std::string Name;
-	//! 
-u8 Job;
-	//! 
-u32 Level;
-	//! 
-s32 MaxHp;
-	//! 
-s32 Atk;
-	//! 
-s32 Def;
-	//! 
-s32 Exp;
-	//! 
-u32 Gold;
-	//! 
-u32 LastAreaId;
-	//! 
-float LastX;
-	//! 
-float LastY;
-	//! 
-float LastZ;
+	//! キャラクタＩＤ
+	u32 CharacterId;
+	//! 結果
+	u8 Result;
+	//! 名前
+	std::string Name;
+	//! ジョブ
+	u8 Job;
+	//! レベル
+	u32 Level;
+	//! 最大ＨＰ
+	s32 MaxHp;
+	//! 攻撃力
+	s32 Atk;
+	//! 防御力
+	s32 Def;
+	//! 経験値
+	s32 Exp;
+	//! ゴールド
+	u32 Gold;
+	//! 最終ログアウトエリアＩＤ
+	u32 LastAreaId;
+	//! 最終ログアウトＸ座標
+	float LastX;
+	//! 最終ログアウトＹ座標
+	float LastY;
+	//! 最終ログアウトＺ座標
+	float LastZ;
 	
 
 	/**

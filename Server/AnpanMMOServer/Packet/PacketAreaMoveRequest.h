@@ -29,8 +29,8 @@ public:
 
 	
 
-	//! 
-u32 AreaMoveId;
+	//! ƒGƒŠƒA‚h‚c
+	u32 AreaMoveId;
 	
 
 	/**

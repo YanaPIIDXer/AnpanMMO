@@ -29,10 +29,10 @@ public:
 
 	
 
-	//! 
-u32 QuestId;
-	//! 
-u32 StageNo;
+	//! クエストＩＤ
+	u32 QuestId;
+	//! ステージ番号
+	u32 StageNo;
 	
 
 	/**

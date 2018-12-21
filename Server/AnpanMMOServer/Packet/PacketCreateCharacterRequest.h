@@ -29,10 +29,10 @@ public:
 
 	
 
-	//! 
-std::string CharacterName;
-	//! 
-u8 Job;
+	//! キャラクタ名
+	std::string CharacterName;
+	//! ジョブ
+	u8 Job;
 	
 
 	/**

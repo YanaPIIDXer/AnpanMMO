@@ -29,12 +29,12 @@ public:
 
 	
 
-	//! 
-u32 ItemId;
-	//! 
-u8 TargetType;
-	//! 
-u32 TargetUuid;
+	//! アイテムＩＤ
+	u32 ItemId;
+	//! ターゲットタイプ
+	u8 TargetType;
+	//! ターゲットのＵＵＩＤ
+	u32 TargetUuid;
 	
 
 	/**

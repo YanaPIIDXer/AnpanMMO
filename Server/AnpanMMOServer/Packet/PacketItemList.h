@@ -31,8 +31,8 @@ public:
 
 	
 
-	//! 
-FlexArray<ItemData> Items;
+	//! アイテムリスト
+	FlexArray<ItemData> Items;
 	
 
 	/**

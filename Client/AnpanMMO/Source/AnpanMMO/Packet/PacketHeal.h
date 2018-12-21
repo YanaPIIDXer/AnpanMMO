@@ -29,14 +29,14 @@ public:
 
 	
 
-	//! 
-u8 TargetType;
-	//! 
-u32 TargetUuid;
-	//! 
-s32 HealValue;
-	//! 
-s32 ResultHp;
+	//! ターゲットタイプ
+	u8 TargetType;
+	//! ターゲットのUUID
+	u32 TargetUuid;
+	//! 回復量
+	s32 HealValue;
+	//! 回復後のHP
+	s32 ResultHp;
 	
 
 	/**

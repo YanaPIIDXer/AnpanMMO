@@ -29,10 +29,10 @@ public:
 
 	
 
-	//! 
-u8 CharacterType;
-	//! 
-u32 CharacterUuid;
+	//! キャラクタタイプ
+	u8 CharacterType;
+	//! キャラクタＵＵＩＤ
+	u32 CharacterUuid;
 	
 
 	/**

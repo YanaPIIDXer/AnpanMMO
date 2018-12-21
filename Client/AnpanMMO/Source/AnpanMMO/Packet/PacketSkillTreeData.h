@@ -32,7 +32,7 @@ public:
 	
 
 	//! 
-FlexArray<SkillTreeNode> ノードリスト;
+	FlexArray<SkillTreeNode> ノードリスト;
 	
 
 	/**

@@ -29,12 +29,12 @@ public:
 
 	
 
-	//! 
-u32 Uuid;
-	//! 
-float Rotation;
-	//! 
-s32 RotateMilliSec;
+	//! UUID
+	u32 Uuid;
+	//! ‰ñ“]
+	float Rotation;
+	//! ‰ñ“]ŠÔiƒ~ƒŠ•bj
+	s32 RotateMilliSec;
 	
 
 	/**

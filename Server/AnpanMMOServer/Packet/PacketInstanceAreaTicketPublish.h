@@ -29,10 +29,10 @@ public:
 
 	
 
-	//! 
-u32 AreaId;
-	//! 
-u32 TicketId;
+	//! エリアＩＤ
+	u32 AreaId;
+	//! チケットＩＤ
+	u32 TicketId;
 	
 
 	/**

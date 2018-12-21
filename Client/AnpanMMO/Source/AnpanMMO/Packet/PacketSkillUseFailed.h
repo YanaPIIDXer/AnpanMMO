@@ -29,16 +29,16 @@ public:
 
 	enum ReasonType
 	{
-		//! 
-		RecastTime = リキャスト中,
-		//! 
-		Cancel = キャンセル,
-		//! 
-		TargetDisappeared = ターゲット消失,
+		//! リキャスト中
+		RecastTime,
+		//! キャンセル
+		Cancel,
+		//! ターゲット消失
+		TargetDisappeared,
 	};
 
-	//! 
-u8 Reason;
+	//! 失敗理由
+	u8 Reason;
 	
 
 	/**

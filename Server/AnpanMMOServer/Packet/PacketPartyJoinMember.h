@@ -30,8 +30,8 @@ public:
 
 	
 
-	//! 
-PartyMemberData MemberData;
+	//! メンバデータ
+	PartyMemberData MemberData;
 	
 
 	/**

@@ -38,9 +38,9 @@ public:
 	};
 
 	//! 
-u8 Result;
+	u8 Result;
 	//! 
-u32 PartyId;
+	u32 PartyId;
 	
 
 	/**

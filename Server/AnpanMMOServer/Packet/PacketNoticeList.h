@@ -31,8 +31,8 @@ public:
 
 	
 
-	//! 
-FlexArray<NoticeData> Notices;
+	//! ’Ê’mƒŠƒXƒg
+	FlexArray<NoticeData> Notices;
 	
 
 	/**

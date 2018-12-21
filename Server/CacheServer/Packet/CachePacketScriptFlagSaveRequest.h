@@ -30,14 +30,14 @@ public:
 
 	
 
-	//! 
-u32 CharacterId;
-	//! 
-u32 BitField1;
-	//! 
-u32 BitField2;
-	//! 
-u32 BitField3;
+	//! キャラクタＩＤ
+	u32 CharacterId;
+	//! ビットフィールド１
+	u32 BitField1;
+	//! ビットフィールド２
+	u32 BitField2;
+	//! ビットフィールド３
+	u32 BitField3;
 	
 
 	/**
