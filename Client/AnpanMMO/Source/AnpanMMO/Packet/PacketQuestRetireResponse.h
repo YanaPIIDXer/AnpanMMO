@@ -1,6 +1,6 @@
 /**
  * @file PacketQuestRetireResponse.h
- * @brief ã‚¯ã‚¨ã‚¹ãƒˆç ´æ£„ãƒ¬ã‚¹ãƒãƒ³ã‚¹
+ * @brief ƒNƒGƒXƒg”jŠüƒŒƒXƒ|ƒ“ƒX
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief ã‚¯ã‚¨ã‚¹ãƒˆç ´æ£„ãƒ¬ã‚¹ãƒãƒ³ã‚¹
+ * @brief ƒNƒGƒXƒg”jŠüƒŒƒXƒ|ƒ“ƒX
  */
 class PacketQuestRetireResponse  : public PacketBase
 {
@@ -22,19 +22,19 @@ public:
 
 	/**
 	 * @fn u8 GetPacketID() const
-	 * @brief ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½cï¿½æ“¾.
-	 * @returns ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½c
+	 * @brief ƒpƒPƒbƒg‚h‚cæ“¾.
+	 * @returns ƒpƒPƒbƒg‚h‚c
 	 */
 	virtual u8 GetPacketID() const { return PacketID::QuestRetireResponse; }
 
 	enum ResultCode
 	{
 		//! 
-		Success = æˆåŠŸ,
+		Success = ¬Œ÷,
 		//! 
-		MainQuest = ãƒ¡ã‚¤ãƒ³ã‚¯ã‚¨ã‚¹ãƒˆ,
+		MainQuest = ƒƒCƒ“ƒNƒGƒXƒg,
 		//! 
-		Error = ã‚¨ãƒ©ãƒ¼,
+		Error = ƒGƒ‰[,
 	};
 
 	//! 
@@ -44,14 +44,14 @@ u8 Result;
 	
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	PacketQuestRetireResponse()
 	{
 	}
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	PacketQuestRetireResponse(u32 InQuestId, u8 InResult)
 	{
@@ -63,9 +63,9 @@ u8 Result;
 
 	/**
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
-	 * @brief ï¿½Vï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Cï¿½Y
-	 * @param in pStream ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
-	 * @retrns ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½B
+	 * @brief ƒVƒŠƒAƒ‰ƒCƒY
+	 * @param in pStream ƒXƒgƒŠ[ƒ€
+	 * @retrns ¬Œ÷‚µ‚½‚çtrue‚ğ•Ô‚·B
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{

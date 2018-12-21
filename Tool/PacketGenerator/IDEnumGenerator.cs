@@ -46,7 +46,7 @@ namespace NativePacketGenerator
 		{
 			try
 			{
-				StreamReader Reader = new StreamReader(TemplateFileName);
+				StreamReader Reader = new StreamReader(TemplateFileName, Encoding.GetEncoding("Shift-JIS"));
 				Result = Reader.ReadToEnd();
 				Result = Result.Replace("$SCOPE_NAME$", ScopeName);
 				string IDs = "";
@@ -55,6 +55,7 @@ namespace NativePacketGenerator
 				{
 					if(!Class.IsPureClass)
 					{
+						IDs += "//! " + Class.Comment + "\n\t\t";
 						string Str = Class.PacketID + " = " + string.Format("0x{0:X2}", Count);
 						IDs += Str + ",\n\t\t";
 						Count++;

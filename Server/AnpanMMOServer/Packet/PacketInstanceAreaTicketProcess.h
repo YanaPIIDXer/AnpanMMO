@@ -1,6 +1,6 @@
 /**
  * @file PacketInstanceAreaTicketProcess.h
- * @brief ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒãƒƒãƒ—ãƒã‚±ãƒƒãƒˆå‡¦ç†
+ * @brief ƒCƒ“ƒXƒ^ƒ“ƒXƒ}ƒbƒvƒ`ƒPƒbƒgˆ—
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãƒãƒƒãƒ—ãƒã‚±ãƒƒãƒˆå‡¦ç†
+ * @brief ƒCƒ“ƒXƒ^ƒ“ƒXƒ}ƒbƒvƒ`ƒPƒbƒgˆ—
  */
 class PacketInstanceAreaTicketProcess  : public PacketBase
 {
@@ -22,17 +22,17 @@ public:
 
 	/**
 	 * @fn u8 GetPacketID() const
-	 * @brief ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½cï¿½æ“¾.
-	 * @returns ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½c
+	 * @brief ƒpƒPƒbƒg‚h‚cæ“¾.
+	 * @returns ƒpƒPƒbƒg‚h‚c
 	 */
 	virtual u8 GetPacketID() const { return PacketID::InstanceAreaTicketProcess; }
 
 	enum ProcessType
 	{
 		//! 
-		Enter = å…¥ã‚‹,
+		Enter = “ü‚é,
 		//! 
-		Discard = ç ´æ£„,
+		Discard = ”jŠü,
 	};
 
 	//! 
@@ -42,14 +42,14 @@ u8 Process;
 	
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	PacketInstanceAreaTicketProcess()
 	{
 	}
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	PacketInstanceAreaTicketProcess(u32 InTicketId, u8 InProcess)
 	{
@@ -61,9 +61,9 @@ u8 Process;
 
 	/**
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
-	 * @brief ï¿½Vï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Cï¿½Y
-	 * @param in pStream ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
-	 * @retrns ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½B
+	 * @brief ƒVƒŠƒAƒ‰ƒCƒY
+	 * @param in pStream ƒXƒgƒŠ[ƒ€
+	 * @retrns ¬Œ÷‚µ‚½‚çtrue‚ğ•Ô‚·B
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{

@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillTreeOpenResult.h
- * @brief ã‚¹ã‚­ãƒ«ãƒ„ãƒªãƒ¼é–‹æ”¾çµæœ
+ * @brief ƒXƒLƒ‹ƒcƒŠ[ŠJ•úŒ‹‰Ê
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief ã‚¹ã‚­ãƒ«ãƒ„ãƒªãƒ¼é–‹æ”¾çµæœ
+ * @brief ƒXƒLƒ‹ƒcƒŠ[ŠJ•úŒ‹‰Ê
  */
 class PacketSkillTreeOpenResult  : public PacketBase
 {
@@ -22,25 +22,25 @@ public:
 
 	/**
 	 * @fn u8 GetPacketID() const
-	 * @brief ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½cï¿½æ“¾.
-	 * @returns ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½c
+	 * @brief ƒpƒPƒbƒg‚h‚cæ“¾.
+	 * @returns ƒpƒPƒbƒg‚h‚c
 	 */
 	virtual u8 GetPacketID() const { return PacketID::SkillTreeOpenResult; }
 
 	enum ResultCode
 	{
 		//! 
-		Success = æˆåŠŸ,
+		Success = ¬Œ÷,
 		//! 
-		NotEnoughCost = ã‚´ãƒ¼ãƒ«ãƒ‰ãŒè¶³ã‚Šãªã„,
+		NotEnoughCost = ƒS[ƒ‹ƒh‚ª‘«‚è‚È‚¢,
 		//! 
-		NotOpenedParent = è¦ªãŒé–‹ã‹ã‚Œã¦ã„ãªã„,
+		NotOpenedParent = e‚ªŠJ‚©‚ê‚Ä‚¢‚È‚¢,
 		//! 
-		NotEnoughLevel = ãƒ¬ãƒ™ãƒ«ãŒè¶³ã‚Šãªã„,
+		NotEnoughLevel = ƒŒƒxƒ‹‚ª‘«‚è‚È‚¢,
 		//! 
-		AlreadyOpened = æ—¢ã«é–‹ã‹ã‚Œã¦ã„ã‚‹,
+		AlreadyOpened = Šù‚ÉŠJ‚©‚ê‚Ä‚¢‚é,
 		//! 
-		Error = ã‚¨ãƒ©ãƒ¼,
+		Error = ƒGƒ‰[,
 	};
 
 	//! 
@@ -50,14 +50,14 @@ u32 NodeId;
 	
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	PacketSkillTreeOpenResult()
 	{
 	}
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	PacketSkillTreeOpenResult(u8 InResult, u32 InNodeId)
 	{
@@ -69,9 +69,9 @@ u32 NodeId;
 
 	/**
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
-	 * @brief ï¿½Vï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Cï¿½Y
-	 * @param in pStream ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
-	 * @retrns ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½B
+	 * @brief ƒVƒŠƒAƒ‰ƒCƒY
+	 * @param in pStream ƒXƒgƒŠ[ƒ€
+	 * @retrns ¬Œ÷‚µ‚½‚çtrue‚ğ•Ô‚·B
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{

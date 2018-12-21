@@ -1,6 +1,6 @@
 /**
  * @file WordCheckPacketChatRequest.h
- * @brief ãƒ¯ãƒ¼ãƒ‰ãƒã‚§ãƒƒã‚¯è¦æ±‚
+ * @brief ƒ[ƒhƒ`ƒFƒbƒN—v‹
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief ãƒ¯ãƒ¼ãƒ‰ãƒã‚§ãƒƒã‚¯è¦æ±‚
+ * @brief ƒ[ƒhƒ`ƒFƒbƒN—v‹
  */
 class WordCheckPacketChatRequest  : public ProcessPacketBase
 {
@@ -23,8 +23,8 @@ public:
 
 	/**
 	 * @fn u8 GetPacketID() const
-	 * @brief ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½cï¿½æ“¾.
-	 * @returns ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½c
+	 * @brief ƒpƒPƒbƒg‚h‚cæ“¾.
+	 * @returns ƒpƒPƒbƒg‚h‚c
 	 */
 	virtual u8 GetPacketID() const { return WordCheckPacketID::WordCheckChatRequest; }
 
@@ -37,14 +37,14 @@ std::string Message;
 	
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	WordCheckPacketChatRequest()
 	{
 	}
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	WordCheckPacketChatRequest(u32 InClientId, u8 InType, std::string InMessage)
 	{
@@ -57,9 +57,9 @@ std::string Message;
 
 	/**
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
-	 * @brief ï¿½Vï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Cï¿½Y
-	 * @param in pStream ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
-	 * @retrns ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½B
+	 * @brief ƒVƒŠƒAƒ‰ƒCƒY
+	 * @param in pStream ƒXƒgƒŠ[ƒ€
+	 * @retrns ¬Œ÷‚µ‚½‚çtrue‚ğ•Ô‚·B
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{

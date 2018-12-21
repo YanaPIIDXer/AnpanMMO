@@ -1,6 +1,6 @@
 /**
  * @file $FILE_NAME$
- * @brief �p�P�b�g�h�c��`.
+ * @brief パケットＩＤ定義.
  * @author NativePacketGenerator
  */
 
@@ -8,7 +8,7 @@
 #define __WORDCHECKSERVERPACKETID_H__
 
 /**
- * @brief �p�P�b�g�h�c��`.
+ * @brief パケットＩＤ定義.
  */
 class WordCheckPacketID
 {
@@ -17,7 +17,9 @@ public:
 
 	enum EID
 	{
+		//! ワードチェック要求
 		WordCheckChatRequest = 0x80,
+		//! ワードチェック結果
 		WordCheckChatResult = 0x81,
 		
 	};

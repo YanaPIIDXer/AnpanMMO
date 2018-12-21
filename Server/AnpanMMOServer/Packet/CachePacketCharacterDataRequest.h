@@ -1,6 +1,6 @@
 /**
  * @file CachePacketCharacterDataRequest.h
- * @brief ã‚­ãƒ£ãƒ©ã‚¯ã‚¿æƒ…å ±ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+ * @brief ƒLƒƒƒ‰ƒNƒ^î•ñƒŠƒNƒGƒXƒg
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief ã‚­ãƒ£ãƒ©ã‚¯ã‚¿æƒ…å ±ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+ * @brief ƒLƒƒƒ‰ƒNƒ^î•ñƒŠƒNƒGƒXƒg
  */
 class CachePacketCharacterDataRequest  : public ProcessPacketBase
 {
@@ -23,8 +23,8 @@ public:
 
 	/**
 	 * @fn u8 GetPacketID() const
-	 * @brief ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½cï¿½æ“¾.
-	 * @returns ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½c
+	 * @brief ƒpƒPƒbƒg‚h‚cæ“¾.
+	 * @returns ƒpƒPƒbƒg‚h‚c
 	 */
 	virtual u8 GetPacketID() const { return CachePacketID::CacheCharacterDataRequest; }
 
@@ -35,14 +35,14 @@ u32 CustomerId;
 	
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	CachePacketCharacterDataRequest()
 	{
 	}
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	CachePacketCharacterDataRequest(u32 InClientId, u32 InCustomerId)
 	{
@@ -54,9 +54,9 @@ u32 CustomerId;
 
 	/**
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
-	 * @brief ï¿½Vï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Cï¿½Y
-	 * @param in pStream ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
-	 * @retrns ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½B
+	 * @brief ƒVƒŠƒAƒ‰ƒCƒY
+	 * @param in pStream ƒXƒgƒŠ[ƒ€
+	 * @retrns ¬Œ÷‚µ‚½‚çtrue‚ğ•Ô‚·B
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{

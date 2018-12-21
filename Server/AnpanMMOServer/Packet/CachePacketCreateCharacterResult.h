@@ -1,6 +1,6 @@
 /**
  * @file CachePacketCreateCharacterResult.h
- * @brief ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ä½œæˆçµæœ
+ * @brief ƒLƒƒƒ‰ƒNƒ^ì¬Œ‹‰Ê
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ä½œæˆçµæœ
+ * @brief ƒLƒƒƒ‰ƒNƒ^ì¬Œ‹‰Ê
  */
 class CachePacketCreateCharacterResult  : public ProcessPacketBase
 {
@@ -23,17 +23,17 @@ public:
 
 	/**
 	 * @fn u8 GetPacketID() const
-	 * @brief ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½cï¿½æ“¾.
-	 * @returns ï¿½pï¿½Pï¿½bï¿½gï¿½hï¿½c
+	 * @brief ƒpƒPƒbƒg‚h‚cæ“¾.
+	 * @returns ƒpƒPƒbƒg‚h‚c
 	 */
 	virtual u8 GetPacketID() const { return CachePacketID::CacheCreateCharacterResult; }
 
 	enum ResultCode
 	{
 		//! 
-		Success = æˆåŠŸ,
+		Success = ¬Œ÷,
 		//! 
-		Error = ã‚¨ãƒ©ãƒ¼,
+		Error = ƒGƒ‰[,
 	};
 
 	//! 
@@ -41,14 +41,14 @@ u8 Result;
 	
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	CachePacketCreateCharacterResult()
 	{
 	}
 
 	/**
-	 * @brief ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
 	CachePacketCreateCharacterResult(u32 InClientId, u8 InResult)
 	{
@@ -60,9 +60,9 @@ u8 Result;
 
 	/**
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
-	 * @brief ï¿½Vï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Cï¿½Y
-	 * @param in pStream ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
-	 * @retrns ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½B
+	 * @brief ƒVƒŠƒAƒ‰ƒCƒY
+	 * @param in pStream ƒXƒgƒŠ[ƒ€
+	 * @retrns ¬Œ÷‚µ‚½‚çtrue‚ğ•Ô‚·B
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
