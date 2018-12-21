@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wordcheckchatrequest',['WordCheckChatRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaa6e196393d2241cd61a3e4242eef7df5',1,'PacketID']]],
-  ['wordcheckchatresult',['WordCheckChatResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aae7ba3baa18ac66bffb2ecd777fbd1922',1,'PacketID']]]
+  ['wordcheckchatrequest',['WordCheckChatRequest',['../classWordCheckPacketID.html#a0a86bea5ef9e505a763d7bacbb771abea316b4c4d163bf19c7ecfe51b63afe94d',1,'WordCheckPacketID']]],
+  ['wordcheckchatresult',['WordCheckChatResult',['../classWordCheckPacketID.html#a0a86bea5ef9e505a763d7bacbb771abeae0d659578d4dd2ba3afe308e05904d6a',1,'WordCheckPacketID']]]
 ];

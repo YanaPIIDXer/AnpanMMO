@@ -37,25 +37,25 @@
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	: pParent(pInParent)
 {
-	AddPacketFunc(PacketID::CacheLogInRequest, bind(&PacketReceiver::OnRecvLogInRequest, this, _1));
-	AddPacketFunc(PacketID::CacheCreateCharacterRequest, bind(&PacketReceiver::OnRecvCreateCharacterRequest, this, _1));
-	AddPacketFunc(PacketID::CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
-	AddPacketFunc(PacketID::CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
-	AddPacketFunc(PacketID::CacheSkillListRequest, bind(&PacketReceiver::OnRecvSkillListRequest, this, _1));
-	AddPacketFunc(PacketID::CacheSaveSkillListRequest, bind(&PacketReceiver::OnRecvSaveSkillListRequest, this, _1));
-	AddPacketFunc(PacketID::CacheSkillTreeRequest, bind(&PacketReceiver::OnRecvSkillTreeRequest, this, _1));
-	AddPacketFunc(PacketID::CacheOpenSkillTree, bind(&PacketReceiver::OnRecvSkillTreeSaveRequest, this, _1));
-	AddPacketFunc(PacketID::CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
-	AddPacketFunc(PacketID::CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
-	AddPacketFunc(PacketID::CacheItemListRequest, bind(&PacketReceiver::OnRecvItemListRequest, this, _1));
-	AddPacketFunc(PacketID::CacheItemCountChangeRequest, bind(&PacketReceiver::OnRecvItemCountChange, this, _1));
-	AddPacketFunc(PacketID::CacheItemShortcutRequest, bind(&PacketReceiver::OnRecvItemShortcutRequest, this, _1));
-	AddPacketFunc(PacketID::CacheSaveItemShortcutRequest, bind(&PacketReceiver::OnRecvSaveItemShortcutRequest, this, _1));
-	AddPacketFunc(PacketID::CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
-	AddPacketFunc(PacketID::CacheQuestDataRequest, bind(&PacketReceiver::OnRecvQuestDataRequest, this, _1));
-	AddPacketFunc(PacketID::CacheSaveQuestDataRequest, bind(&PacketReceiver::OnRecvSaveQuestDataRequest, this, _1));
-	AddPacketFunc(PacketID::CacheQuestRetireRequest, bind(&PacketReceiver::OnRecvRetireQuestDataRequest, this, _1));
-	AddPacketFunc(PacketID::CacheSaveActiveQuestRequest, bind(&PacketReceiver::OnRecvSaveActiveQuestRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheLogInRequest, bind(&PacketReceiver::OnRecvLogInRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheCreateCharacterRequest, bind(&PacketReceiver::OnRecvCreateCharacterRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheCharacterDataRequest, bind(&PacketReceiver::OnRecvCharacterDataRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheCharacterDataSave, bind(&PacketReceiver::OnRecvCharacterDataSaveRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheSkillListRequest, bind(&PacketReceiver::OnRecvSkillListRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheSaveSkillListRequest, bind(&PacketReceiver::OnRecvSaveSkillListRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheSkillTreeRequest, bind(&PacketReceiver::OnRecvSkillTreeRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheOpenSkillTree, bind(&PacketReceiver::OnRecvSkillTreeSaveRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheScriptFlagRequest, bind(&PacketReceiver::OnRecvLoadScriptFlagRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheScriptFlagSaveRequest, bind(&PacketReceiver::OnRecvSaveScriptFlagRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheItemListRequest, bind(&PacketReceiver::OnRecvItemListRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheItemCountChangeRequest, bind(&PacketReceiver::OnRecvItemCountChange, this, _1));
+	AddPacketFunc(CachePacketID::CacheItemShortcutRequest, bind(&PacketReceiver::OnRecvItemShortcutRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheSaveItemShortcutRequest, bind(&PacketReceiver::OnRecvSaveItemShortcutRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheGoldSave, bind(&PacketReceiver::OnRecvSaveGold, this, _1));
+	AddPacketFunc(CachePacketID::CacheQuestDataRequest, bind(&PacketReceiver::OnRecvQuestDataRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheSaveQuestDataRequest, bind(&PacketReceiver::OnRecvSaveQuestDataRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheQuestRetireRequest, bind(&PacketReceiver::OnRecvRetireQuestDataRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheSaveActiveQuestRequest, bind(&PacketReceiver::OnRecvSaveActiveQuestRequest, this, _1));
 }
 
 // ログインリクエストを受信した。

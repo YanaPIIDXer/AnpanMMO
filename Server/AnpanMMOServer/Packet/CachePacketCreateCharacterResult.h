@@ -1,30 +1,55 @@
+/**
+ * @file CachePacketCreateCharacterResult.h
+ * @brief キャラクタ作成結果
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETCREATECHARACTERRESULT_H__
 #define __CACHEPACKETCREATECHARACTERRESULT_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
+/**
+ * @brief キャラクタ作成結果
+ */
 class CachePacketCreateCharacterResult  : public ProcessPacketBase
 {
+
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheCreateCharacterResult; }
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
+	virtual u8 GetPacketID() const { return CachePacketID::CacheCreateCharacterResult; }
 
 	enum ResultCode
 	{
-		Success,
-		Error,
+		//! 
+		Success = 成功,
+		//! 
+		Error = エラー,
 	};
 
-	u8 Result;
+	//! 
+u8 Result;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketCreateCharacterResult()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketCreateCharacterResult(u32 InClientId, u8 InResult)
 	{
 		ClientId = InClientId;
@@ -32,6 +57,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

@@ -1,35 +1,67 @@
+/**
+ * @file CachePacketCharacterDataSave.h
+ * @brief キャラクタ保存リクエスト
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETCHARACTERDATASAVE_H__
 #define __CACHEPACKETCHARACTERDATASAVE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
+/**
+ * @brief キャラクタ保存リクエスト
+ */
 class CachePacketCharacterDataSave  : public ProcessPacketBase
 {
+
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheCharacterDataSave; }
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
+	virtual u8 GetPacketID() const { return CachePacketID::CacheCharacterDataSave; }
 
 	
 
-	u32 CharacterId;
-	u32 Level;
-	s32 MaxHp;
-	s32 Atk;
-	s32 Def;
-	s32 Exp;
-	u32 LastAreaId;
-	float LastX;
-	float LastY;
-	float LastZ;
+	//! 
+u32 CharacterId;
+	//! 
+u32 Level;
+	//! 
+s32 MaxHp;
+	//! 
+s32 Atk;
+	//! 
+s32 Def;
+	//! 
+s32 Exp;
+	//! 
+u32 LastAreaId;
+	//! 
+float LastX;
+	//! 
+float LastY;
+	//! 
+float LastZ;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketCharacterDataSave()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketCharacterDataSave(u32 InClientId, u32 InCharacterId, u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
@@ -46,6 +78,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

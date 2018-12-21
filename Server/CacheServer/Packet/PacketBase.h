@@ -2,7 +2,6 @@
 #define __PACKETBASE_H__
 
 class MemoryStreamInterface;
-#include "PacketID.h"
 #include "TypeDefs.h"
 
 // パケット基底クラス

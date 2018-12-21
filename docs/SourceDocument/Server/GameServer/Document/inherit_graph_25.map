@@ -1,6 +1,3 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$classClientStateBase.html" title="ClientStateBase" alt="" coords="5,56,121,83"/>
-<area shape="rect" id="node2" href="$classClientStateActive.html" title="ClientStateActive" alt="" coords="187,5,309,32"/>
-<area shape="rect" id="node3" href="$classClientStateAreaChange.html" title="ClientStateAreaChange" alt="" coords="169,56,327,83"/>
-<area shape="rect" id="node4" href="$classClientStateTitle.html" title="ClientStateTitle" alt="" coords="193,107,303,133"/>
+<area shape="rect" id="node1" href="$classClientAcceptor.html" title="ClientAcceptor" alt="" coords="5,5,112,32"/>
 </map>

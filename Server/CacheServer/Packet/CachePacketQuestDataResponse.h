@@ -1,34 +1,61 @@
+/**
+ * @file CachePacketQuestDataResponse.h
+ * @brief クエストデータレスポンス
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETQUESTDATARESPONSE_H__
 #define __CACHEPACKETQUESTDATARESPONSE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
 #include "FlexArray.h"
 #include "QuestData.h"
+#include "CacheServerPacketID.h"
 
 
+/**
+ * @brief クエストデータレスポンス
+ */
 class CachePacketQuestDataResponse  : public ProcessPacketBase
 {
+
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheQuestDataResponse; }
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
+	virtual u8 GetPacketID() const { return CachePacketID::CacheQuestDataResponse; }
 
 	enum ResultCode
 	{
-		Success,
-		Error,
+		//! 
+		Success = 成功,
+		//! 
+		Error = エラー,
 	};
 
-	u8 Result;
-	FlexArray<QuestData> Quests;
-	u32 ActiveQuestId;
+	//! 
+u8 Result;
+	//! 
+FlexArray<QuestData> Quests;
+	//! 
+u32 ActiveQuestId;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketQuestDataResponse()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketQuestDataResponse(u32 InClientId, u8 InResult, FlexArray<QuestData> InQuests, u32 InActiveQuestId)
 	{
 		ClientId = InClientId;
@@ -38,6 +65,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

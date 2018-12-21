@@ -2,7 +2,6 @@
 #define __PACKETHEADER_H__
 
 class MemoryStreamInterface;
-#include "Packet/PacketID.h"
 
 // パケットに付随するヘッダ
 class PacketHeader

@@ -2,7 +2,6 @@
 #define __ITEMDATA_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 
 

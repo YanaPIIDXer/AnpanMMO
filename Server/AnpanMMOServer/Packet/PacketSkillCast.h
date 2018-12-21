@@ -1,27 +1,52 @@
+/**
+ * @file PacketSkillCast.h
+ * @brief スキル詠唱開始
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETSKILLCAST_H__
 #define __PACKETSKILLCAST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
+/**
+ * @brief スキル詠唱開始
+ */
 class PacketSkillCast  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
 	virtual u8 GetPacketID() const { return PacketID::SkillCast; }
 
 	
 
-	u32 SkillId;
-	u8 CharacterType;
-	u32 CharacterUuid;
+	//! 
+u32 SkillId;
+	//! 
+u8 CharacterType;
+	//! 
+u32 CharacterUuid;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketSkillCast()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketSkillCast(u32 InSkillId, u8 InCharacterType, u32 InCharacterUuid)
 	{
 		SkillId = InSkillId;
@@ -30,6 +55,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&SkillId);

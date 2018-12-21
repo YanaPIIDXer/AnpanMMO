@@ -1,26 +1,50 @@
+/**
+ * @file PacketCreateCharacterRequest.h
+ * @brief キャラクタ作成リクエスト
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETCREATECHARACTERREQUEST_H__
 #define __PACKETCREATECHARACTERREQUEST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
+/**
+ * @brief キャラクタ作成リクエスト
+ */
 class PacketCreateCharacterRequest  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
 	virtual u8 GetPacketID() const { return PacketID::CreateCharacterRequest; }
 
 	
 
-	std::string CharacterName;
-	u8 Job;
+	//! 
+std::string CharacterName;
+	//! 
+u8 Job;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketCreateCharacterRequest()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketCreateCharacterRequest(std::string InCharacterName, u8 InJob)
 	{
 		CharacterName = InCharacterName;
@@ -28,6 +52,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&CharacterName);

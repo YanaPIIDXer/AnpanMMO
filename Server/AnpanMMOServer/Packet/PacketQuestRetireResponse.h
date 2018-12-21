@@ -1,31 +1,58 @@
+/**
+ * @file PacketQuestRetireResponse.h
+ * @brief クエスト破棄レスポンス
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETQUESTRETIRERESPONSE_H__
 #define __PACKETQUESTRETIRERESPONSE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
+/**
+ * @brief クエスト破棄レスポンス
+ */
 class PacketQuestRetireResponse  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
 	virtual u8 GetPacketID() const { return PacketID::QuestRetireResponse; }
 
 	enum ResultCode
 	{
-		Success,
-		MainQuest,
-		Error,
+		//! 
+		Success = 成功,
+		//! 
+		MainQuest = メインクエスト,
+		//! 
+		Error = エラー,
 	};
 
-	u32 QuestId;
-	u8 Result;
+	//! 
+u32 QuestId;
+	//! 
+u8 Result;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketQuestRetireResponse()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketQuestRetireResponse(u32 InQuestId, u8 InResult)
 	{
 		QuestId = InQuestId;
@@ -33,6 +60,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&QuestId);

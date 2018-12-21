@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: CachePacketID クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="classCachePacketID-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">CachePacketID クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>パケットＩＤ定義.  
+ <a href="classCachePacketID.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="CacheServerPacketID_8h_source.html">CacheServerPacketID.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a99a915636ffa57eb2db2da468975421a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421a">EID</a> { <br />
+&#160;&#160;<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa982fe8d93e25f66f3bfcbb8064fa3d41">CacheLogInRequest</a> = 0x40, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa4ba33018c1665be4d9128f5c9fe4cc23">CacheLogInResult</a> = 0x41, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa47d5b538b6f354ecd4686589e8e3b785">CacheCreateCharacterRequest</a> = 0x42, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa3cc37db7b53959097b44460abe177573">CacheCreateCharacterResult</a> = 0x43, 
+<br />
+&#160;&#160;<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa16a8633bdd3fb902c2c56695c1252999">CacheCharacterDataRequest</a> = 0x44, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aaf8892a9f0528568c74cd0073911b5a50">CacheCharacterDataResult</a> = 0x45, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aab44c756025be8f43d0ec603762ec660d">CacheSkillListRequest</a> = 0x46, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa797358705aa4d1ecc905c533b6aaa0b5">CacheSkillListResponse</a> = 0x47, 
+<br />
+&#160;&#160;<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa1024f768490e9b46ea3eff9948e8de84">CacheScriptFlagRequest</a> = 0x48, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa8317ba1019624c00c9014ceae84609fd">CacheScriptFlagResponse</a> = 0x49, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aaad656df17b53677921b23b1823f7f17b">CacheScriptFlagSaveRequest</a> = 0x4A, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa0deade317678bdf62c38fc5cc8677e80">CacheSaveSkillListRequest</a> = 0x4B, 
+<br />
+&#160;&#160;<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa7c2d2f609fad0cc2dd885c7a06f10172">CacheSaveSkillListResponse</a> = 0x4C, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aaf2945edb6a26ac1cd02a61ab4df1cb90">CacheSkillTreeRequest</a> = 0x4D, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa9fe9c5c86aad2e8bef1e7cc3b9c1e327">CacheSkillTreeResponse</a> = 0x4E, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa63471e27ac04f0033c129fdd714d4f4d">CacheOpenSkillTree</a> = 0x4F, 
+<br />
+&#160;&#160;<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aaacefa1b9e135093e3d963ecec7c2b029">CacheCharacterDataSave</a> = 0x50, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aad4ebdd92a3f64b32f42b83705ce84d62">CacheGoldSave</a> = 0x51, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa07aa1cf0ddb917aa2c45b4338c90bcdb">CacheItemListRequest</a> = 0x52, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aad0c952a7848f78ea62326608903704c2">CacheItemListResponse</a> = 0x53, 
+<br />
+&#160;&#160;<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aac0ae3f9398a272976d48f6f380ba7a97">CacheItemCountChangeRequest</a> = 0x54, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa3085ae97104875ecb6ba23364ae5cd0d">CacheItemShortcutRequest</a> = 0x55, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aac252f5c59dd27696d5b328209bac8004">CacheItemShortcutResponse</a> = 0x56, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aaeae6878c3e212cad5cd0ac5c527d10a3">CacheSaveItemShortcutRequest</a> = 0x57, 
+<br />
+&#160;&#160;<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa54a8e7f15504e17021466e83b4aa9b62">CacheSaveItemShortcutResponse</a> = 0x58, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aaffcadf07a93bcaa81f9c7e56bc47abb8">CacheQuestDataRequest</a> = 0x59, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa33f3ce646214123e99e8d25da6281938">CacheQuestDataResponse</a> = 0x5A, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa235ae294d59f8aaf874a34259f41506f">CacheSaveQuestDataRequest</a> = 0x5B, 
+<br />
+&#160;&#160;<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aae0997cbe1995ace1001559fee7c63f10">CacheQuestRetireRequest</a> = 0x5C, 
+<a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa1414d267bd4b99d53454082f7558b932">CacheSaveActiveQuestRequest</a> = 0x5D
+<br />
+ }</td></tr>
+<tr class="separator:a99a915636ffa57eb2db2da468975421a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>パケットＩＤ定義. </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a99a915636ffa57eb2db2da468975421a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99a915636ffa57eb2db2da468975421a">&#9670;&nbsp;</a></span>EID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classCachePacketID.html#a99a915636ffa57eb2db2da468975421a">CachePacketID::EID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>パケットＩＤ </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa982fe8d93e25f66f3bfcbb8064fa3d41"></a>CacheLogInRequest&#160;</td><td class="fielddoc"><p>ログインリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa4ba33018c1665be4d9128f5c9fe4cc23"></a>CacheLogInResult&#160;</td><td class="fielddoc"><p>ログインリクエスト結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa47d5b538b6f354ecd4686589e8e3b785"></a>CacheCreateCharacterRequest&#160;</td><td class="fielddoc"><p>キャラクタ作成リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa3cc37db7b53959097b44460abe177573"></a>CacheCreateCharacterResult&#160;</td><td class="fielddoc"><p>キャラクタ作成結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa16a8633bdd3fb902c2c56695c1252999"></a>CacheCharacterDataRequest&#160;</td><td class="fielddoc"><p>キャラクタ情報リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aaf8892a9f0528568c74cd0073911b5a50"></a>CacheCharacterDataResult&#160;</td><td class="fielddoc"><p>キャラクタ情報レスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aab44c756025be8f43d0ec603762ec660d"></a>CacheSkillListRequest&#160;</td><td class="fielddoc"><p>スキルリストリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa797358705aa4d1ecc905c533b6aaa0b5"></a>CacheSkillListResponse&#160;</td><td class="fielddoc"><p>スキルリストレスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa1024f768490e9b46ea3eff9948e8de84"></a>CacheScriptFlagRequest&#160;</td><td class="fielddoc"><p>スクリプトフラグリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa8317ba1019624c00c9014ceae84609fd"></a>CacheScriptFlagResponse&#160;</td><td class="fielddoc"><p>スクリプトフラグレスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aaad656df17b53677921b23b1823f7f17b"></a>CacheScriptFlagSaveRequest&#160;</td><td class="fielddoc"><p>スクリプトフラグ保存リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa0deade317678bdf62c38fc5cc8677e80"></a>CacheSaveSkillListRequest&#160;</td><td class="fielddoc"><p>スキルリスト保存リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa7c2d2f609fad0cc2dd885c7a06f10172"></a>CacheSaveSkillListResponse&#160;</td><td class="fielddoc"><p>スキルリスト保存レスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aaf2945edb6a26ac1cd02a61ab4df1cb90"></a>CacheSkillTreeRequest&#160;</td><td class="fielddoc"><p>スキルツリーリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa9fe9c5c86aad2e8bef1e7cc3b9c1e327"></a>CacheSkillTreeResponse&#160;</td><td class="fielddoc"><p>スキルツリーレスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa63471e27ac04f0033c129fdd714d4f4d"></a>CacheOpenSkillTree&#160;</td><td class="fielddoc"><p>スキルツリー開放 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aaacefa1b9e135093e3d963ecec7c2b029"></a>CacheCharacterDataSave&#160;</td><td class="fielddoc"><p>キャラクタ保存リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aad4ebdd92a3f64b32f42b83705ce84d62"></a>CacheGoldSave&#160;</td><td class="fielddoc"><p>ゴールド保存リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa07aa1cf0ddb917aa2c45b4338c90bcdb"></a>CacheItemListRequest&#160;</td><td class="fielddoc"><p>アイテムリストリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aad0c952a7848f78ea62326608903704c2"></a>CacheItemListResponse&#160;</td><td class="fielddoc"><p>アイテムリストレスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aac0ae3f9398a272976d48f6f380ba7a97"></a>CacheItemCountChangeRequest&#160;</td><td class="fielddoc"><p>アイテム数変化リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa3085ae97104875ecb6ba23364ae5cd0d"></a>CacheItemShortcutRequest&#160;</td><td class="fielddoc"><p>アイテムショートカットリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aac252f5c59dd27696d5b328209bac8004"></a>CacheItemShortcutResponse&#160;</td><td class="fielddoc"><p>アイテムショートカットレスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aaeae6878c3e212cad5cd0ac5c527d10a3"></a>CacheSaveItemShortcutRequest&#160;</td><td class="fielddoc"><p>アイテムショートカット保存リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa54a8e7f15504e17021466e83b4aa9b62"></a>CacheSaveItemShortcutResponse&#160;</td><td class="fielddoc"><p>アイテムショートカット保存レスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aaffcadf07a93bcaa81f9c7e56bc47abb8"></a>CacheQuestDataRequest&#160;</td><td class="fielddoc"><p>クエストデータリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa33f3ce646214123e99e8d25da6281938"></a>CacheQuestDataResponse&#160;</td><td class="fielddoc"><p>クエストデータレスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa235ae294d59f8aaf874a34259f41506f"></a>CacheSaveQuestDataRequest&#160;</td><td class="fielddoc"><p>クエストデータ保存リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aae0997cbe1995ace1001559fee7c63f10"></a>CacheQuestRetireRequest&#160;</td><td class="fielddoc"><p>クエスト破棄リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a99a915636ffa57eb2db2da468975421aa1414d267bd4b99d53454082f7558b932"></a>CacheSaveActiveQuestRequest&#160;</td><td class="fielddoc"><p>アクティブクエスト保存リクエスト </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="CacheServerPacketID_8h_source.html">CacheServerPacketID.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

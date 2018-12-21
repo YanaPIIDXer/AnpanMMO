@@ -68,7 +68,7 @@ namespace NativePacketGenerator
 		/// <returns>読み込んだテキスト</returns>
 		private string ReadFromFile(string FileName)
 		{
-			StreamReader Reader = new StreamReader(FileName);
+			StreamReader Reader = new StreamReader(FileName, Encoding.GetEncoding("Shift-JIS"));
 			string Result = Reader.ReadToEnd();
 			Reader.Close();
 			return Result;
@@ -84,7 +84,11 @@ namespace NativePacketGenerator
 			var OutputPath = TargetPath + "\\" + Class.ClassName + ".h";
 			try
 			{
-				StreamWriter Writer = new StreamWriter(OutputPath);
+				StreamWriter Writer = new StreamWriter(OutputPath, false, Encoding.GetEncoding("Shift-JIS"));
+
+				// ファイル名はここで置換.
+				Result = Result.Replace("$FILE_NAME$", Path.GetFileName(OutputPath));
+
 				Writer.Write(Result);
 				Writer.Close();
 			}
@@ -115,6 +119,9 @@ namespace NativePacketGenerator
 			// インクルードガード
 			Template = Template.Replace("$INCLUDE_GUARD$", "__" + Class.ClassName.ToUpper() + "_H__");
 
+			// クラスコメント
+			Template = Template.Replace("$CLASS_COMMENT$", Class.Comment);
+
 			// 追加インクルード
 			string Includes = "";
 			foreach(var FileName in Class.Includes)
@@ -140,7 +147,7 @@ namespace NativePacketGenerator
 			string FunctionStr = "";
 			if(!Class.IsPureClass)
 			{
-				FunctionStr = "virtual u8 GetPacketID() const { return PacketID::" + Class.PacketID + "; }";
+				FunctionStr = "virtual u8 GetPacketID() const { return " + Class.ScopeName + "::" + Class.PacketID + "; }";
 			}
 			Template = Template.Replace("$GET_PACKET_ID_FUNCTION$", FunctionStr);
 
@@ -151,6 +158,7 @@ namespace NativePacketGenerator
 				Enums += "enum " + KeyValue.Key + "\n\t{\n";
 				foreach(var Data in  Class.EnumList[KeyValue.Key])
 				{
+					Enums += "\t\t//! " + Data.Comment + "\n";
 					Enums += "\t\t" + Data.Name;
 					if(!string.IsNullOrEmpty(Data.Value))
 					{
@@ -167,6 +175,7 @@ namespace NativePacketGenerator
 			for(int i = 0; i < Class.Members.Count; i++)
 			{
 				var MemberData = Class.Members[i];
+				Members += "//! " + MemberData.Comment + "\n";
 				Members += MemberData.TypeName + " " + MemberData.Name + ";\n\t";
 			}
 			Template = Template.Replace("$MEMBERS$", Members);

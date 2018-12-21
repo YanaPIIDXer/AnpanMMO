@@ -34,7 +34,7 @@ var searchData=
   ['calc',['Calc',['../classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4',1,'DamageCalcUnit']]],
   ['calccharbyte',['CalcCharByte',['../classUtil.html#a2098a3c7704e9486c61afcee057b68cd',1,'Util']]],
   ['calcstringlength',['CalcStringLength',['../classUtil.html#ab98a1bbec2f7cc3e8878313ec016a3c5',1,'Util']]],
-  ['cancel',['Cancel',['../classSkillControl.html#a022eab8ffc068f5241993800e892d099',1,'SkillControl::Cancel()'],['../classboost_1_1asio_1_1basic__repeating__timer.html#a935a3e868d78ee17e093773215a9e4b5',1,'boost::asio::basic_repeating_timer::cancel()']]],
+  ['cancel',['cancel',['../classboost_1_1asio_1_1basic__repeating__timer.html#a935a3e868d78ee17e093773215a9e4b5',1,'boost::asio::basic_repeating_timer::cancel()'],['../classSkillControl.html#a022eab8ffc068f5241993800e892d099',1,'SkillControl::Cancel()']]],
   ['castfinished',['CastFinished',['../classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52',1,'SkillControl']]],
   ['change_5finterval',['change_interval',['../classboost_1_1asio_1_1basic__repeating__timer.html#a04aaa4f10915e8a955e350d732f1b0f4',1,'boost::asio::basic_repeating_timer']]],
   ['changestate',['ChangeState',['../classAnpanAI.html#a15917b0f76fd9c9eb003a99c4c1a0f3e',1,'AnpanAI::ChangeState()'],['../classClient.html#acadcf9b410423d70b9523661713becc9',1,'Client::ChangeState()']]],

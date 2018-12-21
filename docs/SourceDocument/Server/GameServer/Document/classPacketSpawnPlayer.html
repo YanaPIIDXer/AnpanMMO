@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>プレイヤー生成  
+ <a href="classPacketSpawnPlayer.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="PacketSpawnPlayer_8h_source.html">PacketSpawnPlayer.h</a>&gt;</code></p>
 <div class="dynheader">
 PacketSpawnPlayer の継承関係図</div>
@@ -91,13 +94,17 @@ PacketSpawnPlayer 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:af80a2ccf2660a6f0c76be8361e13f1d3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSpawnPlayer.html#af80a2ccf2660a6f0c76be8361e13f1d3">GetPacketID</a> () const</td></tr>
-<tr class="separator:af80a2ccf2660a6f0c76be8361e13f1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb929b5f7b865150b5a631a6fb0c543c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSpawnPlayer.html#afb929b5f7b865150b5a631a6fb0c543c">GetPacketID</a> () const</td></tr>
+<tr class="memdesc:afb929b5f7b865150b5a631a6fb0c543c"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケットＩＤ取得.  <a href="#afb929b5f7b865150b5a631a6fb0c543c">[詳解]</a><br /></td></tr>
+<tr class="separator:afb929b5f7b865150b5a631a6fb0c543c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0729b89c868bc6464eacf846ddd768a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSpawnPlayer.html#a0729b89c868bc6464eacf846ddd768a4">PacketSpawnPlayer</a> ()</td></tr>
+<tr class="memdesc:a0729b89c868bc6464eacf846ddd768a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a0729b89c868bc6464eacf846ddd768a4">[詳解]</a><br /></td></tr>
 <tr class="separator:a0729b89c868bc6464eacf846ddd768a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a479a6248dbe9b32494862d540c54ae5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSpawnPlayer.html#a479a6248dbe9b32494862d540c54ae5d">PacketSpawnPlayer</a> (<a class="el" href="classPlayerData.html">PlayerData</a> InData)</td></tr>
+<tr class="memdesc:a479a6248dbe9b32494862d540c54ae5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a479a6248dbe9b32494862d540c54ae5d">[詳解]</a><br /></td></tr>
 <tr class="separator:a479a6248dbe9b32494862d540c54ae5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25f5697a5bbe444fa28e202a9b929c10"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSpawnPlayer.html#a25f5697a5bbe444fa28e202a9b929c10">Serialize</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="memdesc:a25f5697a5bbe444fa28e202a9b929c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアライズ  <a href="#a25f5697a5bbe444fa28e202a9b929c10">[詳解]</a><br /></td></tr>
 <tr class="separator:a25f5697a5bbe444fa28e202a9b929c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classPacketBase.html">PacketBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketBase.html#a8784f3bc29a63570e38619d940131223">~PacketBase</a> ()</td></tr>
@@ -108,7 +115,9 @@ PacketSpawnPlayer 連携図</div>
 <tr class="memitem:a0e6ccb4cb7fb47806c8edd063c6b752e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlayerData.html">PlayerData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSpawnPlayer.html#a0e6ccb4cb7fb47806c8edd063c6b752e">Data</a></td></tr>
 <tr class="separator:a0e6ccb4cb7fb47806c8edd063c6b752e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>プレイヤー生成 </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a0729b89c868bc6464eacf846ddd768a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0729b89c868bc6464eacf846ddd768a4">&#9670;&nbsp;</a></span>PacketSpawnPlayer() <span class="overload">[1/2]</span></h2>
 
@@ -131,6 +140,8 @@ PacketSpawnPlayer 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
 
 </div>
 </div>
@@ -158,11 +169,13 @@ PacketSpawnPlayer 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="af80a2ccf2660a6f0c76be8361e13f1d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af80a2ccf2660a6f0c76be8361e13f1d3">&#9670;&nbsp;</a></span>GetPacketID()</h2>
+<a id="afb929b5f7b865150b5a631a6fb0c543c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb929b5f7b865150b5a631a6fb0c543c">&#9670;&nbsp;</a></span>GetPacketID()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +184,7 @@ PacketSpawnPlayer 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PacketSpawnPlayer::GetPacketID </td>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PacketSpawnPlayer::GetPacketID </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -183,6 +196,9 @@ PacketSpawnPlayer 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>パケットＩＤ取得. </p>
+<dl class="section return"><dt>戻り値</dt><dd>パケットＩＤ </dd></dl>
 
 <p><a class="el" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62">PacketBase</a>を実装しています。</p>
 
@@ -211,6 +227,14 @@ PacketSpawnPlayer 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>シリアライズ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pStream</td><td>ストリーム  成功したらtrueを返す。 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><a class="el" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d">PacketBase</a>を実装しています。</p>
 

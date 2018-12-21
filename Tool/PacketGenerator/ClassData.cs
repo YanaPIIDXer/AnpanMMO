@@ -23,6 +23,11 @@ namespace NativePacketGenerator
 		public string Name;
 
 		/// <summary>
+		/// コメント
+		/// </summary>
+		public string Comment;
+
+		/// <summary>
 		/// 標準的な型か？
 		/// ※シリアライズ関数がStreamInterfaceに用意されているか？
 		/// </summary>
@@ -59,10 +64,12 @@ namespace NativePacketGenerator
 		/// </summary>
 		/// <param name="InName">名前</param>
 		/// <param name="InValue">値</param>
-		public EnumData(string InName, string InValue)
+		/// <param name="InComment">コメント</param>
+		public EnumData(string InName, string InValue, string InComment)
 		{
 			Name = InName;
 			Value = InValue;
+			Comment = InComment;
 		}
 
 		/// <summary>
@@ -74,6 +81,11 @@ namespace NativePacketGenerator
 		/// 値.
 		/// </summary>
 		public string Value { get; private set; }
+
+		/// <summary>
+		/// コメント
+		/// </summary>
+		public string Comment { get; private set; }
 	}
 	
 	/// <summary>
@@ -85,6 +97,11 @@ namespace NativePacketGenerator
 		/// クラス名.
 		/// </summary>
 		public string ClassName { get; private set; }
+
+		/// <summary>
+		/// スコープ名.
+		/// </summary>
+		public string ScopeName { get; private set; }
 
 		/// <summary>
 		/// 基底クラス名
@@ -122,6 +139,11 @@ namespace NativePacketGenerator
 		/// パケットＩＤ
 		/// </summary>
 		public string PacketID { get; set; }
+
+		/// <summary>
+		/// クラスコメント
+		/// </summary>
+		public string Comment { get; set; }
 
 		/// <summary>
 		/// Enumリスト
@@ -164,6 +186,7 @@ namespace NativePacketGenerator
 		{
 			ClassName = InClassName;
 			IsForCacheServer = false;
+			ScopeName = "PacketID";
 		}
 
 		/// <summary>
@@ -190,13 +213,14 @@ namespace NativePacketGenerator
 		/// <param name="TypeName">Enumの型名</param>
 		/// <param name="Name">要素名</param>
 		/// <param name="Value">値</param>
-		public void AddEnum(string TypeName, string Name, string Value)
+		/// <param name="Comment">コメント</param>
+		public void AddEnum(string TypeName, string Name, string Value, string Comment)
 		{
 			if(!EnumList.ContainsKey(TypeName))
 			{
 				EnumList.Add(TypeName, new List<EnumData>());
 			}
-			EnumList[TypeName].Add(new EnumData(Name, Value));
+			EnumList[TypeName].Add(new EnumData(Name, Value, Comment));
 		}
 
 		/// <summary>
@@ -205,6 +229,7 @@ namespace NativePacketGenerator
 		public void SetForCacheServerFlag()
 		{
 			IsForCacheServer = true;
+			ScopeName = "CachePacketID";
 		}
 
 		/// <summary>
@@ -213,6 +238,7 @@ namespace NativePacketGenerator
 		public void SetForWordCheckServerFlag()
 		{
 			IsForWordCheckServer = true;
+			ScopeName = "WordCheckPacketID";
 		}
 
 	}

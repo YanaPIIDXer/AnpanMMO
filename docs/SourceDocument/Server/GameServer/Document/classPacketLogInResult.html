@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>ログインリクエスト結果  
+ <a href="classPacketLogInResult.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="PacketLogInResult_8h_source.html">PacketLogInResult.h</a>&gt;</code></p>
 <div class="dynheader">
 PacketLogInResult の継承関係図</div>
@@ -91,22 +94,26 @@ PacketLogInResult 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 公開型</h2></td></tr>
-<tr class="memitem:a314bab1854b475e4203d1cc8ec23cacc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23cacc">ResultCode</a> { <a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23caccaeb83766abd117fbecc3b4b98f286e799">Success</a>, 
-<a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23cacca3c6274d63778c48ae7b8a8e0f4829eed">DoubleLogIn</a>, 
-<a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23caccac0d1ccc4a3e70720fd4c40ad6da85b5b">NoCharacter</a>, 
-<a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23cacca26860ab5a0675bd76044285377ca9d72">Error</a>
+<tr class="memitem:a314bab1854b475e4203d1cc8ec23cacc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23cacc">ResultCode</a> { <a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23caccaeb83766abd117fbecc3b4b98f286e799">Success</a> = 成功, 
+<a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23cacca3c6274d63778c48ae7b8a8e0f4829eed">DoubleLogIn</a> = ダブルログイン, 
+<a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23caccac0d1ccc4a3e70720fd4c40ad6da85b5b">NoCharacter</a> = キャラクタが存在しない, 
+<a class="el" href="classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23cacca26860ab5a0675bd76044285377ca9d72">Error</a> = エラー
  }</td></tr>
 <tr class="separator:a314bab1854b475e4203d1cc8ec23cacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a604b3d59d3fa11df48fcab0a952b64d7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketLogInResult.html#a604b3d59d3fa11df48fcab0a952b64d7">GetPacketID</a> () const</td></tr>
-<tr class="separator:a604b3d59d3fa11df48fcab0a952b64d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbbc1e0786887b742f973a48d17b3881"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketLogInResult.html#abbbc1e0786887b742f973a48d17b3881">GetPacketID</a> () const</td></tr>
+<tr class="memdesc:abbbc1e0786887b742f973a48d17b3881"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケットＩＤ取得.  <a href="#abbbc1e0786887b742f973a48d17b3881">[詳解]</a><br /></td></tr>
+<tr class="separator:abbbc1e0786887b742f973a48d17b3881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7c44f11c6682e52984fb9b3bcf2a6d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketLogInResult.html#ab7c44f11c6682e52984fb9b3bcf2a6d2">PacketLogInResult</a> ()</td></tr>
+<tr class="memdesc:ab7c44f11c6682e52984fb9b3bcf2a6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#ab7c44f11c6682e52984fb9b3bcf2a6d2">[詳解]</a><br /></td></tr>
 <tr class="separator:ab7c44f11c6682e52984fb9b3bcf2a6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e3613e448d9b925da8c126a2b1c34f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketLogInResult.html#a4e3613e448d9b925da8c126a2b1c34f0">PacketLogInResult</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InResult, <a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> InUuid, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InLastAreaId)</td></tr>
+<tr class="memdesc:a4e3613e448d9b925da8c126a2b1c34f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a4e3613e448d9b925da8c126a2b1c34f0">[詳解]</a><br /></td></tr>
 <tr class="separator:a4e3613e448d9b925da8c126a2b1c34f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53f39c22221a47b60bb2f3d77b0b78d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketLogInResult.html#a53f39c22221a47b60bb2f3d77b0b78d5">Serialize</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="memdesc:a53f39c22221a47b60bb2f3d77b0b78d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアライズ  <a href="#a53f39c22221a47b60bb2f3d77b0b78d5">[詳解]</a><br /></td></tr>
 <tr class="separator:a53f39c22221a47b60bb2f3d77b0b78d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classPacketBase.html">PacketBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketBase.html#a8784f3bc29a63570e38619d940131223">~PacketBase</a> ()</td></tr>
@@ -121,7 +128,9 @@ PacketLogInResult 連携図</div>
 <tr class="memitem:a9a589e4a157dedcc8d8c0ef95eda1a8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketLogInResult.html#a9a589e4a157dedcc8d8c0ef95eda1a8d">LastAreaId</a></td></tr>
 <tr class="separator:a9a589e4a157dedcc8d8c0ef95eda1a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">列挙型メンバ詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ログインリクエスト結果 </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
 <a id="a314bab1854b475e4203d1cc8ec23cacc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a314bab1854b475e4203d1cc8ec23cacc">&#9670;&nbsp;</a></span>ResultCode</h2>
 
@@ -166,6 +175,8 @@ PacketLogInResult 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+
 </div>
 </div>
 <a id="a4e3613e448d9b925da8c126a2b1c34f0"></a>
@@ -208,11 +219,13 @@ PacketLogInResult 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a604b3d59d3fa11df48fcab0a952b64d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a604b3d59d3fa11df48fcab0a952b64d7">&#9670;&nbsp;</a></span>GetPacketID()</h2>
+<a id="abbbc1e0786887b742f973a48d17b3881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbbc1e0786887b742f973a48d17b3881">&#9670;&nbsp;</a></span>GetPacketID()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,7 +234,7 @@ PacketLogInResult 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PacketLogInResult::GetPacketID </td>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PacketLogInResult::GetPacketID </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -233,6 +246,9 @@ PacketLogInResult 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>パケットＩＤ取得. </p>
+<dl class="section return"><dt>戻り値</dt><dd>パケットＩＤ </dd></dl>
 
 <p><a class="el" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62">PacketBase</a>を実装しています。</p>
 
@@ -261,6 +277,14 @@ PacketLogInResult 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>シリアライズ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pStream</td><td>ストリーム  成功したらtrueを返す。 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><a class="el" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d">PacketBase</a>を実装しています。</p>
 

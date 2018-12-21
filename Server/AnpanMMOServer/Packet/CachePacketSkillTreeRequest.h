@@ -1,26 +1,49 @@
+/**
+ * @file CachePacketSkillTreeRequest.h
+ * @brief スキルツリーリクエスト
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETSKILLTREEREQUEST_H__
 #define __CACHEPACKETSKILLTREEREQUEST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
+/**
+ * @brief スキルツリーリクエスト
+ */
 class CachePacketSkillTreeRequest  : public ProcessPacketBase
 {
+
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheSkillTreeRequest; }
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
+	virtual u8 GetPacketID() const { return CachePacketID::CacheSkillTreeRequest; }
 
 	
 
-	u32 CharacterId;
+	//! 
+u32 CharacterId;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketSkillTreeRequest()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketSkillTreeRequest(u32 InClientId, u32 InCharacterId)
 	{
 		ClientId = InClientId;
@@ -28,6 +51,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

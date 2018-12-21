@@ -6,6 +6,7 @@ var searchData=
   ['cachepacketcreatecharacterrequest',['CachePacketCreateCharacterRequest',['../classCachePacketCreateCharacterRequest.html',1,'']]],
   ['cachepacketcreatecharacterresult',['CachePacketCreateCharacterResult',['../classCachePacketCreateCharacterResult.html',1,'']]],
   ['cachepacketgoldsave',['CachePacketGoldSave',['../classCachePacketGoldSave.html',1,'']]],
+  ['cachepacketid',['CachePacketID',['../classCachePacketID.html',1,'']]],
   ['cachepacketitemcountchangerequest',['CachePacketItemCountChangeRequest',['../classCachePacketItemCountChangeRequest.html',1,'']]],
   ['cachepacketitemlistrequest',['CachePacketItemListRequest',['../classCachePacketItemListRequest.html',1,'']]],
   ['cachepacketitemlistresponse',['CachePacketItemListResponse',['../classCachePacketItemListResponse.html',1,'']]],

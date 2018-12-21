@@ -1,8 +1,8 @@
 <map id="PacketItemList.h" name="PacketItemList.h">
-<area shape="rect" id="node2" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="86,162,190,189"/>
-<area shape="rect" id="node3" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="5,244,92,271"/>
-<area shape="rect" id="node5" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="215,155,419,196"/>
-<area shape="rect" id="node7" href="$ItemData_8h.html" title="ItemData.h" alt="" coords="35,80,121,107"/>
-<area shape="rect" id="node8" href="$FlexArray_8h.html" title="FlexArray.h" alt="" coords="196,80,285,107"/>
-<area shape="rect" id="node4" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="148,244,235,271"/>
+<area shape="rect" id="node2" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="5,162,109,189"/>
+<area shape="rect" id="node4" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="134,155,338,196"/>
+<area shape="rect" id="node6" href="$ItemData_8h.html" title="ItemData.h" alt="" coords="113,80,199,107"/>
+<area shape="rect" id="node7" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="362,162,449,189"/>
+<area shape="rect" id="node8" href="$FlexArray_8h.html" title="FlexArray.h" alt="" coords="274,80,363,107"/>
+<area shape="rect" id="node3" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="57,244,143,271"/>
 </map>

@@ -6,7 +6,7 @@
 <area shape="rect" id="node4" href="$IdManager_8cpp.html" title="IdManager.cpp" alt="" coords="5,155,112,181"/>
 <area shape="rect" id="node6" href="$FlexArray_8h.html" title="FlexArray.h" alt="" coords="5077,155,5166,181"/>
 <area shape="rect" id="node7" href="$FlexArray_8cpp.html" title="FlexArray.cpp" alt="" coords="5091,229,5194,256"/>
-<area shape="rect" id="node8" href="$PacketAnpanList_8h.html" title="PacketAnpanList.h" alt="" coords="3439,229,3571,256"/>
+<area shape="rect" id="node8" href="$PacketAnpanList_8h.html" title="アンパンリスト " alt="" coords="3439,229,3571,256"/>
 <area shape="rect" id="node9" href="$AnpanManager_8cpp.html" title="AnpanManager.cpp" alt="" coords="4313,304,4447,331"/>
 <area shape="rect" id="node10" href="$AreaMaster_8h.html" title="AreaMaster.h" alt="" coords="5293,155,5393,181"/>
 <area shape="rect" id="node11" href="$WarpDataMaster_8h.html" title="WarpDataMaster.h" alt="" coords="5417,155,5548,181"/>
@@ -22,7 +22,7 @@
 <area shape="rect" id="node21" href="$QuestMaster_8h.html" title="QuestMaster.h" alt="" coords="3543,155,3651,181"/>
 <area shape="rect" id="node22" href="$QuestStageMaster_8h.html" title="QuestStageMaster.h" alt="" coords="3675,155,3818,181"/>
 <area shape="rect" id="node23" href="$QuestRewardMaster_8h.html" title="QuestRewardMaster.h" alt="" coords="3842,155,3993,181"/>
-<area shape="rect" id="node24" href="$PacketRespawnRequest_8h.html" title="PacketRespawnRequest.h" alt="" coords="1761,155,1935,181"/>
+<area shape="rect" id="node24" href="$PacketRespawnRequest_8h.html" title="プレイヤーリスポン要求 " alt="" coords="1761,155,1935,181"/>
 <area shape="rect" id="node25" href="$PlayerManager_8cpp.html" title="PlayerManager.cpp" alt="" coords="2441,229,2575,256"/>
 <area shape="rect" id="node26" href="$TimeManager_8cpp.html" title="TimeManager.cpp" alt="" coords="4017,155,4143,181"/>
 <area shape="rect" id="node27" href="$MemorySizeCaliculateStream_8h.html" title="MemorySizeCaliculateStream.h" alt="" coords="4167,155,4372,181"/>
@@ -35,17 +35,17 @@
 <area shape="rect" id="node34" href="$CharacterJob_8h.html" title="CharacterJob.h" alt="" coords="2207,155,2316,181"/>
 <area shape="rect" id="node35" href="$CharacterType_8h.html" title="CharacterType.h" alt="" coords="2340,155,2457,181"/>
 <area shape="rect" id="node36" href="$NoticeData_8h.html" title="NoticeData.h" alt="" coords="2626,155,2723,181"/>
-<area shape="rect" id="node37" href="$PacketAddExp_8h.html" title="PacketAddExp.h" alt="" coords="2481,155,2601,181"/>
-<area shape="rect" id="node38" href="$PacketAreaMove_8h.html" title="PacketAreaMove.h" alt="" coords="2748,155,2879,181"/>
-<area shape="rect" id="node39" href="$PacketAreaMoveRequest_8h.html" title="PacketAreaMoveRequest.h" alt="" coords="2903,155,3081,181"/>
-<area shape="rect" id="node40" href="$PacketAreaMoveResponse_8h.html" title="PacketAreaMoveResponse.h" alt="" coords="3228,155,3417,181"/>
-<area shape="rect" id="node41" href="$PacketChangeGold_8h.html" title="PacketChangeGold.h" alt="" coords="329,155,474,181"/>
-<area shape="rect" id="node42" href="$PacketCharacterStatus_8h.html" title="PacketCharacterStatus.h" alt="" coords="499,155,667,181"/>
-<area shape="rect" id="node43" href="$PacketCreateCharacterRequest_8h.html" title="PacketCreateCharacterRequest.h" alt="" coords="691,155,907,181"/>
-<area shape="rect" id="node44" href="$PacketCreateCharacterResult_8h.html" title="PacketCreateCharacterResult.h" alt="" coords="931,155,1136,181"/>
-<area shape="rect" id="node45" href="$PacketDamage_8h.html" title="PacketDamage.h" alt="" coords="1160,155,1283,181"/>
-<area shape="rect" id="node46" href="$PacketExitPlayer_8h.html" title="PacketExitPlayer.h" alt="" coords="1602,155,1737,181"/>
-<area shape="rect" id="node47" href="$PacketGameReady_8h.html" title="PacketGameReady.h" alt="" coords="1307,155,1453,181"/>
+<area shape="rect" id="node37" href="$PacketAddExp_8h.html" title="経験値追加 " alt="" coords="2481,155,2601,181"/>
+<area shape="rect" id="node38" href="$PacketAreaMove_8h.html" title="エリア移動 " alt="" coords="2748,155,2879,181"/>
+<area shape="rect" id="node39" href="$PacketAreaMoveRequest_8h.html" title="エリア移動リクエスト " alt="" coords="2903,155,3081,181"/>
+<area shape="rect" id="node40" href="$PacketAreaMoveResponse_8h.html" title="エリア移動レスポンス " alt="" coords="3228,155,3417,181"/>
+<area shape="rect" id="node41" href="$PacketChangeGold_8h.html" title="ゴールド変化 " alt="" coords="329,155,474,181"/>
+<area shape="rect" id="node42" href="$PacketCharacterStatus_8h.html" title="キャラクタパラメータ " alt="" coords="499,155,667,181"/>
+<area shape="rect" id="node43" href="$PacketCreateCharacterRequest_8h.html" title="キャラクタ作成リクエスト " alt="" coords="691,155,907,181"/>
+<area shape="rect" id="node44" href="$PacketCreateCharacterResult_8h.html" title="キャラクタ作成結果 " alt="" coords="931,155,1136,181"/>
+<area shape="rect" id="node45" href="$PacketDamage_8h.html" title="ダメージ " alt="" coords="1160,155,1283,181"/>
+<area shape="rect" id="node46" href="$PacketExitPlayer_8h.html" title="プレイヤー退出 " alt="" coords="1602,155,1737,181"/>
+<area shape="rect" id="node47" href="$PacketGameReady_8h.html" title="準備完了 " alt="" coords="1307,155,1453,181"/>
 <area shape="rect" id="node48" href="$PacketHeader_8cpp.html" title="PacketHeader.cpp" alt="" coords="4923,155,5053,181"/>
-<area shape="rect" id="node49" href="$PacketHeal_8h.html" title="PacketHeal.h" alt="" coords="1478,155,1578,181"/>
+<area shape="rect" id="node49" href="$PacketHeal_8h.html" title="回復 " alt="" coords="1478,155,1578,181"/>
 </map>

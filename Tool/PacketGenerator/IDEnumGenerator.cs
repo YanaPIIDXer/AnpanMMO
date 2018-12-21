@@ -39,19 +39,26 @@ namespace NativePacketGenerator
 		/// <summary>
 		/// 生成.
 		/// </summary>
+		/// <param name="IDShiftCount">IDをシフトさせるビット数</param>
+		/// <param name="ScopeName">スコープ名</param>
 		/// <returns>成功したらtrue</returns>
-		public bool Generate()
+		public bool Generate(int IDShiftCount, string ScopeName)
 		{
 			try
 			{
-				StreamReader Reader = new StreamReader(TemplateFileName);
+				StreamReader Reader = new StreamReader(TemplateFileName, Encoding.GetEncoding("Shift-JIS"));
 				Result = Reader.ReadToEnd();
+				Result = Result.Replace("$SCOPE_NAME$", ScopeName);
 				string IDs = "";
+				byte Count = (byte)(1 << IDShiftCount);
 				foreach(var Class in Classes)
 				{
 					if(!Class.IsPureClass)
 					{
-						IDs += Class.PacketID + ",\n\t\t";
+						IDs += "//! " + Class.Comment + "\n\t\t";
+						string Str = Class.PacketID + " = " + string.Format("0x{0:X2}", Count);
+						IDs += Str + ",\n\t\t";
+						Count++;
 					}
 				}
 				Result = Result.Replace("$PACKET_ID_LIST$", IDs);
@@ -77,7 +84,11 @@ namespace NativePacketGenerator
 			try
 			{
 				string FullPath = Path.GetFullPath(TargetPath);
-				StreamWriter Writer = new StreamWriter(FullPath);
+				StreamWriter Writer = new StreamWriter(FullPath, false, Encoding.GetEncoding("Shift-JIS"));
+
+				// インクルードガードはここで置換する。
+				Result = Result.Replace("$INCLUDE_GUARD$", "__" + Path.GetFileNameWithoutExtension(TargetPath).ToUpper() + "_H__");
+
 				Writer.Write(Result);
 				Writer.Close();
 			}

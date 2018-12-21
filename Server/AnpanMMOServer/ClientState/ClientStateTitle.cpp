@@ -46,15 +46,15 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 {
 	AddPacketFunction(PacketID::LogInRequest, boost::bind(&ClientStateTitle::OnRecvLogInRequest, this, _2));
 	AddPacketFunction(PacketID::CreateCharacterRequest, boost::bind(&ClientStateTitle::OnRecvCreateCharacterRequest, this, _2));
-	AddPacketFunction(PacketID::CacheLogInResult, boost::bind(&ClientStateTitle::OnRecvCacheLogInResult, this, _2));
-	AddPacketFunction(PacketID::CacheCreateCharacterResult, boost::bind(&ClientStateTitle::OnRecvCacheCreateCharacterResult, this, _2));
-	AddPacketFunction(PacketID::CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
-	AddPacketFunction(PacketID::CacheSkillListResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillListResponse, this, _2));
-	AddPacketFunction(PacketID::CacheSkillTreeResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillTreeResponse, this, _2));
-	AddPacketFunction(PacketID::CacheItemListResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemListResponse, this, _2));
-	AddPacketFunction(PacketID::CacheItemShortcutResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemShortcutResponse, this, _2));
-	AddPacketFunction(PacketID::CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResponse, this, _2));
-	AddPacketFunction(PacketID::CacheQuestDataResponse, boost::bind(&ClientStateTitle::OnRecvCacheQuestDataResponse, this, _2));
+	AddPacketFunction(CachePacketID::CacheLogInResult, boost::bind(&ClientStateTitle::OnRecvCacheLogInResult, this, _2));
+	AddPacketFunction(CachePacketID::CacheCreateCharacterResult, boost::bind(&ClientStateTitle::OnRecvCacheCreateCharacterResult, this, _2));
+	AddPacketFunction(CachePacketID::CacheCharacterDataResult, boost::bind(&ClientStateTitle::OnRecvCacheCharacterDataResult, this, _2));
+	AddPacketFunction(CachePacketID::CacheSkillListResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillListResponse, this, _2));
+	AddPacketFunction(CachePacketID::CacheSkillTreeResponse, boost::bind(&ClientStateTitle::OnRecvCacheSkillTreeResponse, this, _2));
+	AddPacketFunction(CachePacketID::CacheItemListResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemListResponse, this, _2));
+	AddPacketFunction(CachePacketID::CacheItemShortcutResponse, boost::bind(&ClientStateTitle::OnRecvCacheItemShortcutResponse, this, _2));
+	AddPacketFunction(CachePacketID::CacheScriptFlagResponse, boost::bind(&ClientStateTitle::OnRecvCacheScriptFlagResponse, this, _2));
+	AddPacketFunction(CachePacketID::CacheQuestDataResponse, boost::bind(&ClientStateTitle::OnRecvCacheQuestDataResponse, this, _2));
 }
 
 

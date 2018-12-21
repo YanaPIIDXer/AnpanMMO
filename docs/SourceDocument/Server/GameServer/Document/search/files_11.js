@@ -8,5 +8,6 @@ var searchData=
   ['wordcheckpacketchatrequest_2eh',['WordCheckPacketChatRequest.h',['../WordCheckPacketChatRequest_8h.html',1,'']]],
   ['wordcheckpacketchatresult_2eh',['WordCheckPacketChatResult.h',['../WordCheckPacketChatResult_8h.html',1,'']]],
   ['wordcheckserverconnection_2ecpp',['WordCheckServerConnection.cpp',['../WordCheckServerConnection_8cpp.html',1,'']]],
-  ['wordcheckserverconnection_2eh',['WordCheckServerConnection.h',['../WordCheckServerConnection_8h.html',1,'']]]
+  ['wordcheckserverconnection_2eh',['WordCheckServerConnection.h',['../WordCheckServerConnection_8h.html',1,'']]],
+  ['wordcheckserverpacketid_2eh',['WordCheckServerPacketID.h',['../WordCheckServerPacketID_8h.html',1,'']]]
 ];

@@ -1,35 +1,65 @@
+/**
+ * @file CachePacketSkillListResponse.h
+ * @brief スキルリストレスポンス
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETSKILLLISTRESPONSE_H__
 #define __CACHEPACKETSKILLLISTRESPONSE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
+/**
+ * @brief スキルリストレスポンス
+ */
 class CachePacketSkillListResponse  : public ProcessPacketBase
 {
+
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheSkillListResponse; }
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
+	virtual u8 GetPacketID() const { return CachePacketID::CacheSkillListResponse; }
 
 	enum ResultCode
 	{
-		Success,
-		Error,
+		//! 
+		Success = 成功,
+		//! 
+		Error = エラー,
 	};
 
-	u8 Result;
-	u32 NormalAttackId;
-	u32 SkillId1;
-	u32 SkillId2;
-	u32 SkillId3;
-	u32 SkillId4;
+	//! 
+u8 Result;
+	//! 
+u32 NormalAttackId;
+	//! 
+u32 SkillId1;
+	//! 
+u32 SkillId2;
+	//! 
+u32 SkillId3;
+	//! 
+u32 SkillId4;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketSkillListResponse()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketSkillListResponse(u32 InClientId, u8 InResult, u32 InNormalAttackId, u32 InSkillId1, u32 InSkillId2, u32 InSkillId3, u32 InSkillId4)
 	{
 		ClientId = InClientId;
@@ -42,6 +72,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

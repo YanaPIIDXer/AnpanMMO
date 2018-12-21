@@ -1,27 +1,51 @@
+/**
+ * @file CachePacketSaveActiveQuestRequest.h
+ * @brief アクティブクエスト保存リクエスト
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETSAVEACTIVEQUESTREQUEST_H__
 #define __CACHEPACKETSAVEACTIVEQUESTREQUEST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
+/**
+ * @brief アクティブクエスト保存リクエスト
+ */
 class CachePacketSaveActiveQuestRequest  : public ProcessPacketBase
 {
+
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheSaveActiveQuestRequest; }
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
+	virtual u8 GetPacketID() const { return CachePacketID::CacheSaveActiveQuestRequest; }
 
 	
 
-	u32 CharacterId;
-	u32 QuestId;
+	//! 
+u32 CharacterId;
+	//! 
+u32 QuestId;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketSaveActiveQuestRequest()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketSaveActiveQuestRequest(u32 InClientId, u32 InCharacterId, u32 InQuestId)
 	{
 		ClientId = InClientId;
@@ -30,6 +54,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

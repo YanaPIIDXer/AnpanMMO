@@ -1,30 +1,56 @@
+/**
+ * @file PacketPartyInviteResponse.h
+ * @brief パーティ勧誘レスポンス
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETPARTYINVITERESPONSE_H__
 #define __PACKETPARTYINVITERESPONSE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
+/**
+ * @brief パーティ勧誘レスポンス
+ */
 class PacketPartyInviteResponse  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
 	virtual u8 GetPacketID() const { return PacketID::PartyInviteResponse; }
 
 	enum ResponseCode
 	{
+		//! 
 		Accept,
+		//! 
 		Refuse,
 	};
 
-	u32 CustomerId;
-	u8 Response;
+	//! 
+u32 CustomerId;
+	//! 
+u8 Response;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketPartyInviteResponse()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketPartyInviteResponse(u32 InCustomerId, u8 InResponse)
 	{
 		CustomerId = InCustomerId;
@@ -32,6 +58,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&CustomerId);

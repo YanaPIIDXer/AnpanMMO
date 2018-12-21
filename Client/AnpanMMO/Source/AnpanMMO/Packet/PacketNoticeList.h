@@ -1,33 +1,63 @@
+/**
+ * @file PacketNoticeList.h
+ * @brief 通知リスト
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETNOTICELIST_H__
 #define __PACKETNOTICELIST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "NoticeData.h"
 #include "FlexArray.h"
+#include "PacketID.h"
 
 
+/**
+ * @brief 通知リスト
+ */
 class PacketNoticeList  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
 	virtual u8 GetPacketID() const { return PacketID::NoticeList; }
 
 	
 
-	FlexArray<NoticeData> Notices;
+	//! 
+FlexArray<NoticeData> Notices;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketNoticeList()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	PacketNoticeList(FlexArray<NoticeData> InNotices)
 	{
 		Notices = InNotices;
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		Notices.Serialize(pStream);

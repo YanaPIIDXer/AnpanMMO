@@ -1,27 +1,51 @@
+/**
+ * @file CachePacketQuestRetireRequest.h
+ * @brief クエスト破棄リクエスト
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETQUESTRETIREREQUEST_H__
 #define __CACHEPACKETQUESTRETIREREQUEST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
+/**
+ * @brief クエスト破棄リクエスト
+ */
 class CachePacketQuestRetireRequest  : public ProcessPacketBase
 {
+
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheQuestRetireRequest; }
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief パケットＩＤ取得.
+	 * @returns パケットＩＤ
+	 */
+	virtual u8 GetPacketID() const { return CachePacketID::CacheQuestRetireRequest; }
 
 	
 
-	u32 CharacterId;
-	u32 QuestId;
+	//! 
+u32 CharacterId;
+	//! 
+u32 QuestId;
 	
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketQuestRetireRequest()
 	{
 	}
 
+	/**
+	 * @brief コンストラクタ
+	 */
 	CachePacketQuestRetireRequest(u32 InClientId, u32 InCharacterId, u32 InQuestId)
 	{
 		ClientId = InClientId;
@@ -30,6 +54,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief シリアライズ
+	 * @param[in] pStream ストリーム
+	 * @retrns 成功したらtrueを返す。
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

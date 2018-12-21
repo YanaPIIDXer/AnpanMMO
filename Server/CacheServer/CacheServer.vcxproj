@@ -184,7 +184,6 @@
     <ClInclude Include="Packet\ProcessPacketBase.h" />
     <ClInclude Include="Packet\PacketBase.h" />
     <ClInclude Include="Packet\PacketHeader.h" />
-    <ClInclude Include="Packet\PacketID.h" />
     <ClInclude Include="Packet\QuestData.h" />
     <ClInclude Include="ServerHost.h" />
     <ClInclude Include="stdafx.h" />

@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>スキル詠唱完了  
+ <a href="classPacketSkillCastFinish.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="PacketSkillCastFinish_8h_source.html">PacketSkillCastFinish.h</a>&gt;</code></p>
 <div class="dynheader">
 PacketSkillCastFinish の継承関係図</div>
@@ -90,13 +93,17 @@ PacketSkillCastFinish 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a3f3eb149bb1e3684df7cb49e4129ce01"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSkillCastFinish.html#a3f3eb149bb1e3684df7cb49e4129ce01">GetPacketID</a> () const</td></tr>
-<tr class="separator:a3f3eb149bb1e3684df7cb49e4129ce01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f3778a2329d5a98e9cc0a2b5784b19"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSkillCastFinish.html#a04f3778a2329d5a98e9cc0a2b5784b19">GetPacketID</a> () const</td></tr>
+<tr class="memdesc:a04f3778a2329d5a98e9cc0a2b5784b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケットＩＤ取得.  <a href="#a04f3778a2329d5a98e9cc0a2b5784b19">[詳解]</a><br /></td></tr>
+<tr class="separator:a04f3778a2329d5a98e9cc0a2b5784b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a390fcd5206188b3cf108983797f60f35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSkillCastFinish.html#a390fcd5206188b3cf108983797f60f35">PacketSkillCastFinish</a> ()</td></tr>
+<tr class="memdesc:a390fcd5206188b3cf108983797f60f35"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a390fcd5206188b3cf108983797f60f35">[詳解]</a><br /></td></tr>
 <tr class="separator:a390fcd5206188b3cf108983797f60f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6d768c80a3e9b3f158e0356738df469"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSkillCastFinish.html#ae6d768c80a3e9b3f158e0356738df469">PacketSkillCastFinish</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InCharacterType, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InCharacterUuid)</td></tr>
+<tr class="memdesc:ae6d768c80a3e9b3f158e0356738df469"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#ae6d768c80a3e9b3f158e0356738df469">[詳解]</a><br /></td></tr>
 <tr class="separator:ae6d768c80a3e9b3f158e0356738df469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9270a49002675a3468798623f7bfc8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSkillCastFinish.html#a6b9270a49002675a3468798623f7bfc8">Serialize</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="memdesc:a6b9270a49002675a3468798623f7bfc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアライズ  <a href="#a6b9270a49002675a3468798623f7bfc8">[詳解]</a><br /></td></tr>
 <tr class="separator:a6b9270a49002675a3468798623f7bfc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classPacketBase.html">PacketBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketBase.html#a8784f3bc29a63570e38619d940131223">~PacketBase</a> ()</td></tr>
@@ -109,7 +116,9 @@ PacketSkillCastFinish 連携図</div>
 <tr class="memitem:acb3d0d19af0ae0b8c0644e1d1f7dca0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketSkillCastFinish.html#acb3d0d19af0ae0b8c0644e1d1f7dca0e">CharacterUuid</a></td></tr>
 <tr class="separator:acb3d0d19af0ae0b8c0644e1d1f7dca0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">構築子と解体子</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>スキル詠唱完了 </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a390fcd5206188b3cf108983797f60f35"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a390fcd5206188b3cf108983797f60f35">&#9670;&nbsp;</a></span>PacketSkillCastFinish() <span class="overload">[1/2]</span></h2>
 
@@ -132,6 +141,8 @@ PacketSkillCastFinish 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
 
 </div>
 </div>
@@ -169,11 +180,13 @@ PacketSkillCastFinish 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a3f3eb149bb1e3684df7cb49e4129ce01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f3eb149bb1e3684df7cb49e4129ce01">&#9670;&nbsp;</a></span>GetPacketID()</h2>
+<a id="a04f3778a2329d5a98e9cc0a2b5784b19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f3778a2329d5a98e9cc0a2b5784b19">&#9670;&nbsp;</a></span>GetPacketID()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +195,7 @@ PacketSkillCastFinish 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PacketSkillCastFinish::GetPacketID </td>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PacketSkillCastFinish::GetPacketID </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -194,6 +207,9 @@ PacketSkillCastFinish 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>パケットＩＤ取得. </p>
+<dl class="section return"><dt>戻り値</dt><dd>パケットＩＤ </dd></dl>
 
 <p><a class="el" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62">PacketBase</a>を実装しています。</p>
 
@@ -222,6 +238,14 @@ PacketSkillCastFinish 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>シリアライズ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pStream</td><td>ストリーム  成功したらtrueを返す。 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><a class="el" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d">PacketBase</a>を実装しています。</p>
 
