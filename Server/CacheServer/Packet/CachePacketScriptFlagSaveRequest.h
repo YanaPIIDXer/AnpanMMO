@@ -1,3 +1,9 @@
+/**
+ * @file CachePacketScriptFlagSaveRequest.h
+ * @brief スクリプトフラグ保存リクエスト
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETSCRIPTFLAGSAVEREQUEST_H__
 #define __CACHEPACKETSCRIPTFLAGSAVEREQUEST_H__
 
@@ -7,23 +13,43 @@
 #include "CacheServerPacketID.h"
 
 
+/**
+ * @brief スクリプトフラグ保存リクエスト
+ */
 class CachePacketScriptFlagSaveRequest  : public ProcessPacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief �p�P�b�g�h�c�擾.
+	 * @returns �p�P�b�g�h�c
+	 */
 	virtual u8 GetPacketID() const { return CachePacketID::CacheScriptFlagSaveRequest; }
 
 	
 
-	u32 CharacterId;
-	u32 BitField1;
-	u32 BitField2;
-	u32 BitField3;
+	//! 
+u32 CharacterId;
+	//! 
+u32 BitField1;
+	//! 
+u32 BitField2;
+	//! 
+u32 BitField3;
 	
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	CachePacketScriptFlagSaveRequest()
 	{
 	}
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	CachePacketScriptFlagSaveRequest(u32 InClientId, u32 InCharacterId, u32 InBitField1, u32 InBitField2, u32 InBitField3)
 	{
 		ClientId = InClientId;
@@ -34,6 +60,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief �V���A���C�Y
+	 * @param in pStream �X�g���[��
+	 * @retrns ����������true��Ԃ��B
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

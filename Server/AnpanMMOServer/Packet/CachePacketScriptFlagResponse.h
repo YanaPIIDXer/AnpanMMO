@@ -1,3 +1,9 @@
+/**
+ * @file CachePacketScriptFlagResponse.h
+ * @brief スクリプトフラグレスポンス
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETSCRIPTFLAGRESPONSE_H__
 #define __CACHEPACKETSCRIPTFLAGRESPONSE_H__
 
@@ -7,27 +13,49 @@
 #include "CacheServerPacketID.h"
 
 
+/**
+ * @brief スクリプトフラグレスポンス
+ */
 class CachePacketScriptFlagResponse  : public ProcessPacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief �p�P�b�g�h�c�擾.
+	 * @returns �p�P�b�g�h�c
+	 */
 	virtual u8 GetPacketID() const { return CachePacketID::CacheScriptFlagResponse; }
 
 	enum ResultCode
 	{
-		Success,
-		Error,
+		//! 
+		Success = 成功,
+		//! 
+		Error = エラー,
 	};
 
-	u8 Result;
-	u32 BitField1;
-	u32 BitField2;
-	u32 BitField3;
+	//! 
+u8 Result;
+	//! 
+u32 BitField1;
+	//! 
+u32 BitField2;
+	//! 
+u32 BitField3;
 	
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	CachePacketScriptFlagResponse()
 	{
 	}
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	CachePacketScriptFlagResponse(u32 InClientId, u8 InResult, u32 InBitField1, u32 InBitField2, u32 InBitField3)
 	{
 		ClientId = InClientId;
@@ -38,6 +66,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief �V���A���C�Y
+	 * @param in pStream �X�g���[��
+	 * @retrns ����������true��Ԃ��B
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

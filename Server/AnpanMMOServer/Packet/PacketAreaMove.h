@@ -1,3 +1,9 @@
+/**
+ * @file PacketAreaMove.h
+ * @brief エリア移動
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETAREAMOVE_H__
 #define __PACKETAREAMOVE_H__
 
@@ -6,23 +12,43 @@
 #include "PacketID.h"
 
 
+/**
+ * @brief エリア移動
+ */
 class PacketAreaMove  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief �p�P�b�g�h�c�擾.
+	 * @returns �p�P�b�g�h�c
+	 */
 	virtual u8 GetPacketID() const { return PacketID::AreaMove; }
 
 	
 
-	u32 AreaId;
-	float X;
-	float Y;
-	float Z;
+	//! 
+u32 AreaId;
+	//! 
+float X;
+	//! 
+float Y;
+	//! 
+float Z;
 	
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	PacketAreaMove()
 	{
 	}
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	PacketAreaMove(u32 InAreaId, float InX, float InY, float InZ)
 	{
 		AreaId = InAreaId;
@@ -32,6 +58,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief �V���A���C�Y
+	 * @param in pStream �X�g���[��
+	 * @retrns ����������true��Ԃ��B
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&AreaId);

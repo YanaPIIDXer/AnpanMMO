@@ -1,3 +1,9 @@
+/**
+ * @file PacketSaveSkillListResponse.h
+ * @brief スキルリスト保存レスポンス
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETSAVESKILLLISTRESPONSE_H__
 #define __PACKETSAVESKILLLISTRESPONSE_H__
 
@@ -6,28 +12,51 @@
 #include "PacketID.h"
 
 
+/**
+ * @brief スキルリスト保存レスポンス
+ */
 class PacketSaveSkillListResponse  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief �p�P�b�g�h�c�擾.
+	 * @returns �p�P�b�g�h�c
+	 */
 	virtual u8 GetPacketID() const { return PacketID::SaveSkillListResponse; }
 
 	enum ResultCode
 	{
-		Success,
-		Error,
+		//! 
+		Success = 成功,
+		//! 
+		Error = エラー,
 	};
 
-	u8 Result;
-	u32 SkillId1;
-	u32 SkillId2;
-	u32 SkillId3;
-	u32 SkillId4;
+	//! 
+u8 Result;
+	//! 
+u32 SkillId1;
+	//! 
+u32 SkillId2;
+	//! 
+u32 SkillId3;
+	//! 
+u32 SkillId4;
 	
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	PacketSaveSkillListResponse()
 	{
 	}
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	PacketSaveSkillListResponse(u8 InResult, u32 InSkillId1, u32 InSkillId2, u32 InSkillId3, u32 InSkillId4)
 	{
 		Result = InResult;
@@ -38,6 +67,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief �V���A���C�Y
+	 * @param in pStream �X�g���[��
+	 * @retrns ����������true��Ԃ��B
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&Result);

@@ -1,3 +1,9 @@
+/**
+ * @file CachePacketSkillTreeResponse.h
+ * @brief スキルツリーレスポンス
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHEPACKETSKILLTREERESPONSE_H__
 #define __CACHEPACKETSKILLTREERESPONSE_H__
 
@@ -7,25 +13,45 @@
 #include "CacheServerPacketID.h"
 
 
+/**
+ * @brief スキルツリーレスポンス
+ */
 class CachePacketSkillTreeResponse  : public ProcessPacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief �p�P�b�g�h�c�擾.
+	 * @returns �p�P�b�g�h�c
+	 */
 	virtual u8 GetPacketID() const { return CachePacketID::CacheSkillTreeResponse; }
 
 	enum ResultCode
 	{
-		Success,
-		Error,
+		//! 
+		Success = 成功,
+		//! 
+		Error = エラー,
 	};
 
-	u8 Result;
-	FlexArray<u32> OpenedList;
+	//! 
+u8 Result;
+	//! 
+FlexArray<u32> OpenedList;
 	
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	CachePacketSkillTreeResponse()
 	{
 	}
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	CachePacketSkillTreeResponse(u32 InClientId, u8 InResult, FlexArray<u32> InOpenedList)
 	{
 		ClientId = InClientId;
@@ -34,6 +60,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief �V���A���C�Y
+	 * @param in pStream �X�g���[��
+	 * @retrns ����������true��Ԃ��B
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);

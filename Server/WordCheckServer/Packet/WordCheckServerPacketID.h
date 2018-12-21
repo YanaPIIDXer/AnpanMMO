@@ -1,6 +1,15 @@
+/**
+ * @file $FILE_NAME$
+ * @brief �p�P�b�g�h�c��`.
+ * @author NativePacketGenerator
+ */
+
 #ifndef __WORDCHECKSERVERPACKETID_H__
 #define __WORDCHECKSERVERPACKETID_H__
 
+/**
+ * @brief �p�P�b�g�h�c��`.
+ */
 class WordCheckPacketID
 {
 

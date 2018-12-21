@@ -1,3 +1,9 @@
+/**
+ * @file PacketMovePlayer.h
+ * @brief プレイヤー移動
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETMOVEPLAYER_H__
 #define __PACKETMOVEPLAYER_H__
 
@@ -6,24 +12,45 @@
 #include "PacketID.h"
 
 
+/**
+ * @brief プレイヤー移動
+ */
 class PacketMovePlayer  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief �p�P�b�g�h�c�擾.
+	 * @returns �p�P�b�g�h�c
+	 */
 	virtual u8 GetPacketID() const { return PacketID::MovePlayer; }
 
 	
 
-	u32 Uuid;
-	float X;
-	float Y;
-	float Z;
-	float Rotation;
+	//! 
+u32 Uuid;
+	//! 
+float X;
+	//! 
+float Y;
+	//! 
+float Z;
+	//! 
+float Rotation;
 	
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	PacketMovePlayer()
 	{
 	}
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	PacketMovePlayer(u32 InUuid, float InX, float InY, float InZ, float InRotation)
 	{
 		Uuid = InUuid;
@@ -34,6 +61,13 @@ public:
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief �V���A���C�Y
+	 * @param in pStream �X�g���[��
+	 * @retrns ����������true��Ԃ��B
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		pStream->Serialize(&Uuid);

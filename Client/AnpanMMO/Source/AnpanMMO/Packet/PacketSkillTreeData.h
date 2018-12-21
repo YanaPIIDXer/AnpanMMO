@@ -1,3 +1,9 @@
+/**
+ * @file PacketSkillTreeData.h
+ * @brief スキルツリーデータ
+ * @author NativePacketGenerator
+ */
+
 #ifndef __PACKETSKILLTREEDATA_H__
 #define __PACKETSKILLTREEDATA_H__
 
@@ -8,29 +14,53 @@
 #include "PacketID.h"
 
 
+/**
+ * @brief スキルツリーデータ
+ */
 class PacketSkillTreeData  : public PacketBase
 {
+
 public:
+
+	/**
+	 * @fn u8 GetPacketID() const
+	 * @brief �p�P�b�g�h�c�擾.
+	 * @returns �p�P�b�g�h�c
+	 */
 	virtual u8 GetPacketID() const { return PacketID::SkillTreeData; }
 
 	
 
-	FlexArray<SkillTreeNode> Nodes;
+	//! 
+FlexArray<SkillTreeNode> ノードリスト;
 	
 
+	/**
+	 * @brief �R���X�g���N�^
+	 */
 	PacketSkillTreeData()
 	{
 	}
 
-	PacketSkillTreeData(FlexArray<SkillTreeNode> InNodes)
+	/**
+	 * @brief �R���X�g���N�^
+	 */
+	PacketSkillTreeData(FlexArray<SkillTreeNode> Inノードリスト)
 	{
-		Nodes = InNodes;
+		ノードリスト = Inノードリスト;
 		
 	}
 
+
+	/**
+	 * @fn bool Serialize(MemoryStreamInterface *pStream)
+	 * @brief �V���A���C�Y
+	 * @param in pStream �X�g���[��
+	 * @retrns ����������true��Ԃ��B
+	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		Nodes.Serialize(pStream);
+		ノードリスト.Serialize(pStream);
 		
 		return true;
 	}

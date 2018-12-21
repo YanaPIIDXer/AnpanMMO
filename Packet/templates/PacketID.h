@@ -1,6 +1,15 @@
+/**
+ * @file $FILE_NAME$
+ * @brief パケットＩＤ定義.
+ * @author NativePacketGenerator
+ */
+
 #ifndef $INCLUDE_GUARD$
 #define $INCLUDE_GUARD$
 
+/**
+ * @brief パケットＩＤ定義.
+ */
 class $SCOPE_NAME$
 {
 

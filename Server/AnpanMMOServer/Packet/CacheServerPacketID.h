@@ -1,6 +1,15 @@
+/**
+ * @file $FILE_NAME$
+ * @brief �p�P�b�g�h�c��`.
+ * @author NativePacketGenerator
+ */
+
 #ifndef __CACHESERVERPACKETID_H__
 #define __CACHESERVERPACKETID_H__
 
+/**
+ * @brief �p�P�b�g�h�c��`.
+ */
 class CachePacketID
 {
 

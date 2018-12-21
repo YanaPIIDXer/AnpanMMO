@@ -85,6 +85,10 @@ namespace NativePacketGenerator
 			try
 			{
 				StreamWriter Writer = new StreamWriter(OutputPath);
+
+				// ファイル名はここで置換.
+				Result = Result.Replace("$FILE_NAME$", Path.GetFileName(OutputPath));
+
 				Writer.Write(Result);
 				Writer.Close();
 			}
@@ -114,6 +118,9 @@ namespace NativePacketGenerator
 
 			// インクルードガード
 			Template = Template.Replace("$INCLUDE_GUARD$", "__" + Class.ClassName.ToUpper() + "_H__");
+
+			// クラスコメント
+			Template = Template.Replace("$CLASS_COMMENT$", Class.Comment);
 
 			// 追加インクルード
 			string Includes = "";
@@ -151,6 +158,7 @@ namespace NativePacketGenerator
 				Enums += "enum " + KeyValue.Key + "\n\t{\n";
 				foreach(var Data in  Class.EnumList[KeyValue.Key])
 				{
+					Enums += "\t\t//! " + Data.Comment + "\n";
 					Enums += "\t\t" + Data.Name;
 					if(!string.IsNullOrEmpty(Data.Value))
 					{
@@ -167,6 +175,7 @@ namespace NativePacketGenerator
 			for(int i = 0; i < Class.Members.Count; i++)
 			{
 				var MemberData = Class.Members[i];
+				Members += "//! " + MemberData.Comment + "\n";
 				Members += MemberData.TypeName + " " + MemberData.Name + ";\n\t";
 			}
 			Template = Template.Replace("$MEMBERS$", Members);
