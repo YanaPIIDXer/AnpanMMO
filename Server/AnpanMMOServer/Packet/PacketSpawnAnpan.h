@@ -30,8 +30,8 @@ public:
 
 	
 
-	//! 
-AnpanData Data;
+	//! アンパンのデータ
+	AnpanData Data;
 	
 
 	/**

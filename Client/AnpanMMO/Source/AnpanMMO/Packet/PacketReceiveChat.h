@@ -29,12 +29,12 @@ public:
 
 	
 
-	//! 
-u32 Uuid;
-	//! 
-std::string Name;
-	//! 
-std::string Message;
+	//! ‚t‚t‚h‚c
+	u32 Uuid;
+	//! ƒLƒƒƒ‰ƒNƒ^–¼
+	std::string Name;
+	//! ƒƒbƒZ[ƒW
+	std::string Message;
 	
 
 	/**

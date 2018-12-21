@@ -29,16 +29,16 @@ public:
 
 	enum ChatType
 	{
-		//! 
-		Say = Say,
-		//! 
-		Shout = Shout,
+		//! Say
+		Say,
+		//! Shout
+		Shout,
 	};
 
-	//! 
-u8 Type;
-	//! 
-std::string Message;
+	//! タイプ
+	u8 Type;
+	//! メッセージ
+	std::string Message;
 	
 
 	/**

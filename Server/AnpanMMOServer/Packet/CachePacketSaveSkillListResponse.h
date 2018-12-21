@@ -30,22 +30,22 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
-	//! 
-u32 SkillId1;
-	//! 
-u32 SkillId2;
-	//! 
-u32 SkillId3;
-	//! 
-u32 SkillId4;
+	//! 結果
+	u8 Result;
+	//! スキルＩＤ１
+	u32 SkillId1;
+	//! スキルＩＤ２
+	u32 SkillId2;
+	//! スキルＩＤ３
+	u32 SkillId3;
+	//! スキルＩＤ４
+	u32 SkillId4;
 	
 
 	/**

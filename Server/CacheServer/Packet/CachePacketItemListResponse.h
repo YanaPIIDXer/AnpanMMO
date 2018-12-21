@@ -32,16 +32,16 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
-	//! 
-FlexArray<ItemData> Items;
+	//! 結果
+	u8 Result;
+	//! アイテムリスト
+	FlexArray<ItemData> Items;
 	
 
 	/**

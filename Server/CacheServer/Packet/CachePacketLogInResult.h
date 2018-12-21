@@ -30,20 +30,20 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		NoCharacter = キャラクタがいない,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! キャラクタがいない
+		NoCharacter,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
-	//! 
-s32 CustomerId;
-	//! 
-u32 LastAreaId;
+	//! 結果
+	u8 Result;
+	//! カスタマID
+	s32 CustomerId;
+	//! 最終ログアウトエリアID
+	u32 LastAreaId;
 	
 
 	/**

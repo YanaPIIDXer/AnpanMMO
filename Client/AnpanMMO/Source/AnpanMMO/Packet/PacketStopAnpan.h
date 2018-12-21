@@ -29,16 +29,16 @@ public:
 
 	
 
-	//! 
-u32 Uuid;
-	//! 
-float X;
-	//! 
-float Y;
-	//! 
-float Z;
-	//! 
-float Rotation;
+	//! UUID
+	u32 Uuid;
+	//! XÀ•W
+	float X;
+	//! YÀ•W
+	float Y;
+	//! ZÀ•W
+	float Z;
+	//! ‰ñ“]
+	float Rotation;
 	
 
 	/**

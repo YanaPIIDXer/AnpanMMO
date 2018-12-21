@@ -29,8 +29,8 @@ public:
 
 	
 
-	//! 
-u32 NodeId;
+	//! ƒm[ƒh‚h‚c
+	u32 NodeId;
 	
 
 	/**

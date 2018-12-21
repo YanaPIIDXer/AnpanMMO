@@ -30,20 +30,20 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
-	//! 
-u32 BitField1;
-	//! 
-u32 BitField2;
-	//! 
-u32 BitField3;
+	//! 結果
+	u8 Result;
+	//! ビットフィールド１
+	u32 BitField1;
+	//! ビットフィールド２
+	u32 BitField2;
+	//! ビットフィールド３
+	u32 BitField3;
 	
 
 	/**

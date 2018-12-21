@@ -29,8 +29,8 @@ public:
 
 	
 
-	//! 
-u32 SkillId;
+	//! ƒXƒLƒ‹‚h‚c
+	u32 SkillId;
 	
 
 	/**

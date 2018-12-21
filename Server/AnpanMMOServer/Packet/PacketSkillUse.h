@@ -29,12 +29,12 @@ public:
 
 	
 
-	//! 
-u32 SkillId;
-	//! 
-u8 TargetType;
-	//! 
-u32 TargetUuid;
+	//! スキルＩＤ
+	u32 SkillId;
+	//! ターゲットタイプ
+	u8 TargetType;
+	//! ターゲットＵＵＩＤ
+	u32 TargetUuid;
 	
 
 	/**

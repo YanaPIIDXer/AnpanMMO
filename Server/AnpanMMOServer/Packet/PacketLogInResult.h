@@ -29,22 +29,22 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		DoubleLogIn = ダブルログイン,
-		//! 
-		NoCharacter = キャラクタが存在しない,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! ダブルログイン
+		DoubleLogIn,
+		//! キャラクタが存在しない
+		NoCharacter,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
-	//! 
-s32 Uuid;
-	//! 
-u32 LastAreaId;
+	//! 結果
+	u8 Result;
+	//! UUID
+	s32 Uuid;
+	//! 最終ログアウトエリアＩＤ
+	u32 LastAreaId;
 	
 
 	/**

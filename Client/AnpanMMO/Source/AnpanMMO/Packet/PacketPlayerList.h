@@ -31,8 +31,8 @@ public:
 
 	
 
-	//! 
-FlexArray<PlayerData> List;
+	//! プレイヤーリスト
+	FlexArray<PlayerData> List;
 	
 
 	/**

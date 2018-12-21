@@ -94,10 +94,10 @@ PacketCreateCharacterResult 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 公開型</h2></td></tr>
-<tr class="memitem:a76ac4cb65949221d75a6891d1adef276"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276">ResultCode</a> { <a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276a7b3068f8116956ae4524ee9042456f4b">Success</a> = 成功, 
-<a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276af92b2c761e38af62fdfd3d6b4acbeedc">TooLongName</a> = 長すぎる名前, 
-<a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276a9380a700f1921c03a49e122654264441">EmptyName</a> = 名前が空欄, 
-<a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276a8db357f118812684e5d8a36b59d4c455">Error</a> = エラー
+<tr class="memitem:a76ac4cb65949221d75a6891d1adef276"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276">ResultCode</a> { <a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276a7b3068f8116956ae4524ee9042456f4b">Success</a>, 
+<a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276af92b2c761e38af62fdfd3d6b4acbeedc">TooLongName</a>, 
+<a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276a9380a700f1921c03a49e122654264441">EmptyName</a>, 
+<a class="el" href="classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276a8db357f118812684e5d8a36b59d4c455">Error</a>
  }</td></tr>
 <tr class="separator:a76ac4cb65949221d75a6891d1adef276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -122,6 +122,7 @@ PacketCreateCharacterResult 連携図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 公開変数類</h2></td></tr>
 <tr class="memitem:a225719a3bdff577a5374859e99e7a9b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketCreateCharacterResult.html#a225719a3bdff577a5374859e99e7a9b3">Result</a></td></tr>
+<tr class="memdesc:a225719a3bdff577a5374859e99e7a9b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">結果  <a href="#a225719a3bdff577a5374859e99e7a9b3">[詳解]</a><br /></td></tr>
 <tr class="separator:a225719a3bdff577a5374859e99e7a9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -139,10 +140,14 @@ PacketCreateCharacterResult 連携図</div>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a76ac4cb65949221d75a6891d1adef276a7b3068f8116956ae4524ee9042456f4b"></a>Success&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a76ac4cb65949221d75a6891d1adef276af92b2c761e38af62fdfd3d6b4acbeedc"></a>TooLongName&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a76ac4cb65949221d75a6891d1adef276a9380a700f1921c03a49e122654264441"></a>EmptyName&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a76ac4cb65949221d75a6891d1adef276a8db357f118812684e5d8a36b59d4c455"></a>Error&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a76ac4cb65949221d75a6891d1adef276a7b3068f8116956ae4524ee9042456f4b"></a>Success&#160;</td><td class="fielddoc"><p>成功 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a76ac4cb65949221d75a6891d1adef276af92b2c761e38af62fdfd3d6b4acbeedc"></a>TooLongName&#160;</td><td class="fielddoc"><p>長すぎる名前 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a76ac4cb65949221d75a6891d1adef276a9380a700f1921c03a49e122654264441"></a>EmptyName&#160;</td><td class="fielddoc"><p>名前が空欄 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a76ac4cb65949221d75a6891d1adef276a8db357f118812684e5d8a36b59d4c455"></a>Error&#160;</td><td class="fielddoc"><p>エラー </p>
+</td></tr>
 </table>
 
 </div>
@@ -282,6 +287,8 @@ PacketCreateCharacterResult 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>結果 </p>
 
 </div>
 </div>

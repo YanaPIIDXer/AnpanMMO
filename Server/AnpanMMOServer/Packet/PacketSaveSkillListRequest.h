@@ -29,14 +29,14 @@ public:
 
 	
 
-	//! 
-u32 SkillId1;
-	//! 
-u32 SkillId2;
-	//! 
-u32 SkillId3;
-	//! 
-u32 SkillId4;
+	//! ƒXƒLƒ‹‚h‚c‚P
+	u32 SkillId1;
+	//! ƒXƒLƒ‹‚h‚c‚Q
+	u32 SkillId2;
+	//! ƒXƒLƒ‹‚h‚c‚R
+	u32 SkillId3;
+	//! ƒXƒLƒ‹‚h‚c‚S
+	u32 SkillId4;
 	
 
 	/**

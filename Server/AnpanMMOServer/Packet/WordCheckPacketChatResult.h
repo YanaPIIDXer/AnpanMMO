@@ -30,10 +30,10 @@ public:
 
 	
 
-	//! 
-u8 Type;
-	//! 
-std::string Message;
+	//! タイプ
+	u8 Type;
+	//! メッセージ
+	std::string Message;
 	
 
 	/**

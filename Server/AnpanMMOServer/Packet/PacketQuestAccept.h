@@ -29,8 +29,8 @@ public:
 
 	
 
-	//! 
-u32 QuestId;
+	//! クエストＩＤ
+	u32 QuestId;
 	
 
 	/**

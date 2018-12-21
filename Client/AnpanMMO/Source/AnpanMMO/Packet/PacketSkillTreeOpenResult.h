@@ -29,24 +29,24 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		NotEnoughCost = ゴールドが足りない,
-		//! 
-		NotOpenedParent = 親が開かれていない,
-		//! 
-		NotEnoughLevel = レベルが足りない,
-		//! 
-		AlreadyOpened = 既に開かれている,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! ゴールドが足りない
+		NotEnoughCost,
+		//! 親が開かれていない
+		NotOpenedParent,
+		//! レベルが足りない
+		NotEnoughLevel,
+		//! 既に開かれている
+		AlreadyOpened,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
-	//! 
-u32 NodeId;
+	//! 結果
+	u8 Result;
+	//! ノードＩＤ
+	u32 NodeId;
 	
 
 	/**

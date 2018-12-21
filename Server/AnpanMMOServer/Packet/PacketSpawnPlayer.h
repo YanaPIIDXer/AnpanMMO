@@ -30,8 +30,8 @@ public:
 
 	
 
-	//! 
-PlayerData Data;
+	//! プレイヤーデータ
+	PlayerData Data;
 	
 
 	/**

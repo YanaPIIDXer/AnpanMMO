@@ -29,16 +29,16 @@ public:
 
 	
 
-	//! 
-u32 Uuid;
-	//! 
-float X;
-	//! 
-float Y;
-	//! 
-float Z;
-	//! 
-s32 MoveMilliSec;
+	//! UUID
+	u32 Uuid;
+	//! X座標
+	float X;
+	//! Y座標
+	float Y;
+	//! Z座標
+	float Z;
+	//! 移動時間（ミリ秒）
+	s32 MoveMilliSec;
 	
 
 	/**

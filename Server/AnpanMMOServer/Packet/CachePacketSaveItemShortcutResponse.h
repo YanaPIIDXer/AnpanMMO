@@ -30,18 +30,18 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
-	//! 
-u32 ItemId1;
-	//! 
-u32 ItemId2;
+	//! 結果
+	u8 Result;
+	//! アイテムＩＤ１
+	u32 ItemId1;
+	//! アイテムＩＤ２
+	u32 ItemId2;
 	
 
 	/**

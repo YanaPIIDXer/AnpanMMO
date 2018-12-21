@@ -29,16 +29,16 @@ public:
 
 	enum ProcessType
 	{
-		//! 
-		Enter = “ü‚é,
-		//! 
-		Discard = ”jŠü,
+		//! “ü‚é
+		Enter,
+		//! ”jŠü
+		Discard,
 	};
 
-	//! 
-u32 TicketId;
-	//! 
-u8 Process;
+	//! ƒ`ƒPƒbƒg‚h‚c
+	u32 TicketId;
+	//! ˆ—“à—e
+	u8 Process;
 	
 
 	/**

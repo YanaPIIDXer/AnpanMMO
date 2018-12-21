@@ -108,9 +108,8 @@ namespace NativePacketGenerator
 							{
 								string TypeName = (string)WorkSheet.Cells[i, 2].Value;
 								string Name = (string)WorkSheet.Cells[i, 3].Value;
-								string Value = (string)WorkSheet.Cells[i, 4].Value;
-								string Comment = (string)WorkSheet.Cells[i, 5].Value;
-								Class.AddEnum(TypeName, Name, Value, Comment);
+								string Comment = (string)WorkSheet.Cells[i, 4].Value;
+								Class.AddEnum(TypeName, Name, Comment);
 							}
 							break;
 
@@ -119,7 +118,7 @@ namespace NativePacketGenerator
 							{
 								string TypeName = (string)WorkSheet.Cells[i, 2].Value;
 								string MemberName = (string)WorkSheet.Cells[i, 3].Value;
-								string Comment = (string)WorkSheet.Cells[1, 4].Value;
+								string Comment = (string)WorkSheet.Cells[i, 4].Value;
 								ClassMemberData Data = new ClassMemberData();
 								Data.TypeName = TypeName;
 								Data.Name = MemberName;

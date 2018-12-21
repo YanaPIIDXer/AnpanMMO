@@ -29,14 +29,14 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		Fatal = エラー,
+		//! 成功
+		Success,
+		//! エラー
+		Fatal,
 	};
 
-	//! 
-u8 Result;
+	//! 結果
+	u8 Result;
 	
 
 	/**

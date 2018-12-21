@@ -29,14 +29,14 @@ public:
 
 	
 
-	//! 
-u32 AreaId;
-	//! 
-float X;
-	//! 
-float Y;
-	//! 
-float Z;
+	//! ƒGƒŠƒA‚h‚c
+	u32 AreaId;
+	//! ‚wÀ•W
+	float X;
+	//! ‚xÀ•W
+	float Y;
+	//! ‚yÀ•W
+	float Z;
 	
 
 	/**

@@ -29,8 +29,8 @@ public:
 
 	
 
-	//! 
-u32 Uuid;
+	//! UUID
+	u32 Uuid;
 	
 
 	/**

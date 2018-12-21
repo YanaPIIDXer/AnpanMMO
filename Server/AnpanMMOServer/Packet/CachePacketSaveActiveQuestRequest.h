@@ -30,10 +30,10 @@ public:
 
 	
 
-	//! 
-u32 CharacterId;
-	//! 
-u32 QuestId;
+	//! キャラクタID
+	u32 CharacterId;
+	//! クエストID
+	u32 QuestId;
 	
 
 	/**

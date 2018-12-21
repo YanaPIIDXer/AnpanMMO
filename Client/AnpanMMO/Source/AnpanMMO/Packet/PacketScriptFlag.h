@@ -29,12 +29,12 @@ public:
 
 	
 
-	//! 
-u32 BitField1;
-	//! 
-u32 BitField2;
-	//! 
-u32 BitField3;
+	//! ビットフィールド１
+	u32 BitField1;
+	//! ビットフィールド２
+	u32 BitField2;
+	//! ビットフィールド３
+	u32 BitField3;
 	
 
 	/**

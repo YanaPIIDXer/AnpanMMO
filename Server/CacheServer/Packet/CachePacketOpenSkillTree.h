@@ -30,10 +30,10 @@ public:
 
 	
 
-	//! 
-u32 CharacterId;
-	//! 
-u32 NodeId;
+	//! ƒLƒƒƒ‰ƒNƒ^‚h‚c
+	u32 CharacterId;
+	//! ƒm[ƒh‚h‚c
+	u32 NodeId;
 	
 
 	/**

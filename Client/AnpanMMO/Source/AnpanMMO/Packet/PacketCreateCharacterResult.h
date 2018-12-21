@@ -29,18 +29,18 @@ public:
 
 	enum ResultCode
 	{
-		//! 
-		Success = 成功,
-		//! 
-		TooLongName = 長すぎる名前,
-		//! 
-		EmptyName = 名前が空欄,
-		//! 
-		Error = エラー,
+		//! 成功
+		Success,
+		//! 長すぎる名前
+		TooLongName,
+		//! 名前が空欄
+		EmptyName,
+		//! エラー
+		Error,
 	};
 
-	//! 
-u8 Result;
+	//! 結果
+	u8 Result;
 	
 
 	/**

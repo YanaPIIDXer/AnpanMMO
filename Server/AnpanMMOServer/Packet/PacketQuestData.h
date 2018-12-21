@@ -31,10 +31,10 @@ public:
 
 	
 
-	//! 
-FlexArray<QuestData> Quests;
-	//! 
-u32 ActiveQuestId;
+	//! クエストリスト
+	FlexArray<QuestData> Quests;
+	//! アクティブクエストＩＤ
+	u32 ActiveQuestId;
 	
 
 	/**

@@ -30,8 +30,8 @@ public:
 
 	
 
-	//! 
-u32 CharacterId;
+	//! ƒLƒƒƒ‰ƒNƒ^‚h‚c
+	u32 CharacterId;
 	
 
 	/**

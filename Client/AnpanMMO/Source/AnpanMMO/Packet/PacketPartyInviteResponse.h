@@ -36,9 +36,9 @@ public:
 	};
 
 	//! 
-u32 CustomerId;
+	u32 CustomerId;
 	//! 
-u8 Response;
+	u8 Response;
 	
 
 	/**

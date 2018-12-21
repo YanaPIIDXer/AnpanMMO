@@ -29,14 +29,14 @@ public:
 
 	
 
-	//! 
-u8 TargetType;
-	//! 
-u32 TargetUuid;
-	//! 
-s32 DamageValue;
-	//! 
-s32 ResultHp;
+	//! ターゲットタイプ
+	u8 TargetType;
+	//! ターゲットのUUID
+	u32 TargetUuid;
+	//! ダメージ量
+	s32 DamageValue;
+	//! ダメージ後のHP
+	s32 ResultHp;
 	
 
 	/**

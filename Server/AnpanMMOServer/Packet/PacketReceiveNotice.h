@@ -30,8 +30,8 @@ public:
 
 	
 
-	//! 
-NoticeData Notice;
+	//! 通知データ
+	NoticeData Notice;
 	
 
 	/**

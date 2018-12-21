@@ -31,10 +31,10 @@ public:
 
 	
 
-	//! 
-u32 Uuid;
-	//! 
-FlexArray<PartyMemberData> MemberList;
+	//! UUID
+	u32 Uuid;
+	//! ƒƒ“ƒoƒŠƒXƒg
+	FlexArray<PartyMemberData> MemberList;
 	
 
 	/**

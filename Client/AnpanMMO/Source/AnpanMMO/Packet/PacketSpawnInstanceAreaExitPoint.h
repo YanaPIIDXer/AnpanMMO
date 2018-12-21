@@ -29,8 +29,8 @@ public:
 
 	
 
-	//! 
-u32 WarpPointId;
+	//! ワープポイントＩＤ
+	u32 WarpPointId;
 	
 
 	/**

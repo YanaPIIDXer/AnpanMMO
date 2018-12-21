@@ -29,8 +29,8 @@ public:
 
 	
 
-	//! 
-u32 Gold;
+	//! ƒS[ƒ‹ƒh
+	u32 Gold;
 	
 
 	/**

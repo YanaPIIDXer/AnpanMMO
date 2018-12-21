@@ -160,10 +160,6 @@ namespace NativePacketGenerator
 				{
 					Enums += "\t\t//! " + Data.Comment + "\n";
 					Enums += "\t\t" + Data.Name;
-					if(!string.IsNullOrEmpty(Data.Value))
-					{
-						Enums += " = " + Data.Value;
-					}
 					Enums += ",\n";
 				}
 				Enums += "\t};";
@@ -175,7 +171,7 @@ namespace NativePacketGenerator
 			for(int i = 0; i < Class.Members.Count; i++)
 			{
 				var MemberData = Class.Members[i];
-				Members += "//! " + MemberData.Comment + "\n";
+				Members += "//! " + MemberData.Comment + "\n\t";
 				Members += MemberData.TypeName + " " + MemberData.Name + ";\n\t";
 			}
 			Template = Template.Replace("$MEMBERS$", Members);

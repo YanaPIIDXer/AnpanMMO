@@ -30,12 +30,12 @@ public:
 
 	
 
-	//! 
-u32 CharacterId;
-	//! 
-u32 ItemId1;
-	//! 
-u32 ItemId2;
+	//! キャラクタＩＤ
+	u32 CharacterId;
+	//! アイテムＩＤ１
+	u32 ItemId1;
+	//! アイテムＩＤ２
+	u32 ItemId2;
 	
 
 	/**

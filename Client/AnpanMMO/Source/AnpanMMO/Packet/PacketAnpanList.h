@@ -31,8 +31,8 @@ public:
 
 	
 
-	//! 
-FlexArray<AnpanData> List;
+	//! アンパンリスト
+	FlexArray<AnpanData> List;
 	
 
 	/**

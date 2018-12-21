@@ -63,12 +63,10 @@ namespace NativePacketGenerator
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InName">名前</param>
-		/// <param name="InValue">値</param>
 		/// <param name="InComment">コメント</param>
-		public EnumData(string InName, string InValue, string InComment)
+		public EnumData(string InName, string InComment)
 		{
 			Name = InName;
-			Value = InValue;
 			Comment = InComment;
 		}
 
@@ -76,11 +74,6 @@ namespace NativePacketGenerator
 		/// 名前,
 		/// </summary>
 		public string Name { get; private set; }
-
-		/// <summary>
-		/// 値.
-		/// </summary>
-		public string Value { get; private set; }
 
 		/// <summary>
 		/// コメント
@@ -212,15 +205,14 @@ namespace NativePacketGenerator
 		/// </summary>
 		/// <param name="TypeName">Enumの型名</param>
 		/// <param name="Name">要素名</param>
-		/// <param name="Value">値</param>
 		/// <param name="Comment">コメント</param>
-		public void AddEnum(string TypeName, string Name, string Value, string Comment)
+		public void AddEnum(string TypeName, string Name, string Comment)
 		{
 			if(!EnumList.ContainsKey(TypeName))
 			{
 				EnumList.Add(TypeName, new List<EnumData>());
 			}
-			EnumList[TypeName].Add(new EnumData(Name, Value, Comment));
+			EnumList[TypeName].Add(new EnumData(Name, Comment));
 		}
 
 		/// <summary>
