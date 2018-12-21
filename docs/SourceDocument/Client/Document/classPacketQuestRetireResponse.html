@@ -94,9 +94,9 @@ PacketQuestRetireResponse 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 公開型</h2></td></tr>
-<tr class="memitem:a513be418f1e73dd2141d6b1c600555e1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketQuestRetireResponse.html#a513be418f1e73dd2141d6b1c600555e1">ResultCode</a> { <a class="el" href="classPacketQuestRetireResponse.html#a513be418f1e73dd2141d6b1c600555e1aca57f59bdeb4132954147636f3946e4e">Success</a> = 成功, 
-<a class="el" href="classPacketQuestRetireResponse.html#a513be418f1e73dd2141d6b1c600555e1af96b79a96602ed0571a96c53dba3bee9">MainQuest</a> = メインクエスト, 
-<a class="el" href="classPacketQuestRetireResponse.html#a513be418f1e73dd2141d6b1c600555e1a6a4cc2898989932c70668feee31c3ed0">Error</a> = エラー
+<tr class="memitem:a513be418f1e73dd2141d6b1c600555e1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketQuestRetireResponse.html#a513be418f1e73dd2141d6b1c600555e1">ResultCode</a> { <a class="el" href="classPacketQuestRetireResponse.html#a513be418f1e73dd2141d6b1c600555e1aca57f59bdeb4132954147636f3946e4e">Success</a>, 
+<a class="el" href="classPacketQuestRetireResponse.html#a513be418f1e73dd2141d6b1c600555e1af96b79a96602ed0571a96c53dba3bee9">MainQuest</a>, 
+<a class="el" href="classPacketQuestRetireResponse.html#a513be418f1e73dd2141d6b1c600555e1a6a4cc2898989932c70668feee31c3ed0">Error</a>
  }</td></tr>
 <tr class="separator:a513be418f1e73dd2141d6b1c600555e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -121,8 +121,10 @@ PacketQuestRetireResponse 連携図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 公開変数類</h2></td></tr>
 <tr class="memitem:abc852c667e8d0a8dfa8ccc8a190ef045"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketQuestRetireResponse.html#abc852c667e8d0a8dfa8ccc8a190ef045">QuestId</a></td></tr>
+<tr class="memdesc:abc852c667e8d0a8dfa8ccc8a190ef045"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストＩＤ  <a href="#abc852c667e8d0a8dfa8ccc8a190ef045">[詳解]</a><br /></td></tr>
 <tr class="separator:abc852c667e8d0a8dfa8ccc8a190ef045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab158ce828c8fbd42e88a3c3925d6691a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketQuestRetireResponse.html#ab158ce828c8fbd42e88a3c3925d6691a">Result</a></td></tr>
+<tr class="memdesc:ab158ce828c8fbd42e88a3c3925d6691a"><td class="mdescLeft">&#160;</td><td class="mdescRight">結果  <a href="#ab158ce828c8fbd42e88a3c3925d6691a">[詳解]</a><br /></td></tr>
 <tr class="separator:ab158ce828c8fbd42e88a3c3925d6691a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -140,9 +142,12 @@ PacketQuestRetireResponse 連携図</div>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a513be418f1e73dd2141d6b1c600555e1aca57f59bdeb4132954147636f3946e4e"></a>Success&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a513be418f1e73dd2141d6b1c600555e1af96b79a96602ed0571a96c53dba3bee9"></a>MainQuest&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a513be418f1e73dd2141d6b1c600555e1a6a4cc2898989932c70668feee31c3ed0"></a>Error&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a513be418f1e73dd2141d6b1c600555e1aca57f59bdeb4132954147636f3946e4e"></a>Success&#160;</td><td class="fielddoc"><p>成功 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a513be418f1e73dd2141d6b1c600555e1af96b79a96602ed0571a96c53dba3bee9"></a>MainQuest&#160;</td><td class="fielddoc"><p>メインクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a513be418f1e73dd2141d6b1c600555e1a6a4cc2898989932c70668feee31c3ed0"></a>Error&#160;</td><td class="fielddoc"><p>エラー </p>
+</td></tr>
 </table>
 
 </div>
@@ -293,6 +298,8 @@ PacketQuestRetireResponse 連携図</div>
       </table>
 </div><div class="memdoc">
 
+<p>クエストＩＤ </p>
+
 </div>
 </div>
 <a id="ab158ce828c8fbd42e88a3c3925d6691a"></a>
@@ -306,6 +313,8 @@ PacketQuestRetireResponse 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>結果 </p>
 
 </div>
 </div>

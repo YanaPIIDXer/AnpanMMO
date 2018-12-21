@@ -60,8 +60,7 @@ var menudata={children:[
 {text:"x",url:"functions_x.html#index_x"},
 {text:"y",url:"functions_y.html#index_y"},
 {text:"z",url:"functions_z.html#index_z"},
-{text:"~",url:"functions_0x7e.html#index_0x7e"},
-{text:"ノ",url:"functions_�.html#index_�"}]},
+{text:"~",url:"functions_0x7e.html#index_0x7e"}]},
 {text:"関数",url:"functions_func.html",children:[
 {text:"a",url:"functions_func.html#index_a"},
 {text:"b",url:"functions_func_b.html#index_b"},
@@ -111,8 +110,7 @@ var menudata={children:[
 {text:"w",url:"functions_vars_w.html#index_w"},
 {text:"x",url:"functions_vars_x.html#index_x"},
 {text:"y",url:"functions_vars_y.html#index_y"},
-{text:"z",url:"functions_vars_z.html#index_z"},
-{text:"ノ",url:"functions_vars_�.html#index_�"}]},
+{text:"z",url:"functions_vars_z.html#index_z"}]},
 {text:"型定義",url:"functions_type.html"},
 {text:"列挙型",url:"functions_enum.html",children:[
 {text:"c",url:"functions_enum.html#index_c"},
