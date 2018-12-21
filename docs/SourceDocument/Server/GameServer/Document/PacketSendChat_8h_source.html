@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: PacketSendChat.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_58500045402c98f32a20fd6026d67718.html">Packet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PacketSendChat.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="PacketSendChat_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __PACKETSENDCHAT_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __PACKETSENDCHAT_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PacketBase_8h.html">PacketBase.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PacketID_8h.html">PacketID.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MemoryStreamInterface_8h.html">MemoryStream/MemoryStreamInterface.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classPacketSendChat.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPacketSendChat.html">PacketSendChat</a>  : <span class="keyword">public</span> <a class="code" href="classPacketBase.html">PacketBase</a></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#a614ef63f0fd79fffce1a15d0626eb962">   12</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="classPacketSendChat.html#a614ef63f0fd79fffce1a15d0626eb962">GetPacketID</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa93a96ac3d227079fdc0026d4fa411f5f">PacketID::SendChat</a>; }</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8a">   14</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8a">ChatType</a></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8aac63a2a5f6fd258f6d780fc73ac9c95bb">   16</a></span>&#160;        <a class="code" href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8aac63a2a5f6fd258f6d780fc73ac9c95bb">Say</a>,</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8aa271177b7afe559318b8d98d9b43e1758">   17</a></span>&#160;        <a class="code" href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8aa271177b7afe559318b8d98d9b43e1758">Shout</a>,</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#a9d0194a0eb654c7d602effb72ee8eab9">   20</a></span>&#160;    <a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="classPacketSendChat.html#a9d0194a0eb654c7d602effb72ee8eab9">Type</a>;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#af65fb20879fa53c103199b3e13160793">   21</a></span>&#160;    std::string <a class="code" href="classPacketSendChat.html#af65fb20879fa53c103199b3e13160793">Message</a>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#ae40a290788b2bb281fcb0ac01d7a33e0">   24</a></span>&#160;    <a class="code" href="classPacketSendChat.html#ae40a290788b2bb281fcb0ac01d7a33e0">PacketSendChat</a>()</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#aa55e84db65947ae9e93fef8325115667">   28</a></span>&#160;    <a class="code" href="classPacketSendChat.html#aa55e84db65947ae9e93fef8325115667">PacketSendChat</a>(<a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InType, std::string InMessage)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classPacketSendChat.html#a9d0194a0eb654c7d602effb72ee8eab9">Type</a> = InType;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classPacketSendChat.html#af65fb20879fa53c103199b3e13160793">Message</a> = InMessage;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classPacketSendChat.html#a286288410ba199d3b422c1975fe68e05">   35</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPacketSendChat.html#a286288410ba199d3b422c1975fe68e05">Serialize</a>(<a class="code" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classPacketSendChat.html#a9d0194a0eb654c7d602effb72ee8eab9">Type</a>);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classPacketSendChat.html#af65fb20879fa53c103199b3e13160793">Message</a>);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        </div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif      // #ifndef __PACKETSENDCHAT_H__</span></div><div class="ttc" id="classPacketSendChat_html_ac9e76b61f41b8510868ea71f760f7b8a"><div class="ttname"><a href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8a">PacketSendChat::ChatType</a></div><div class="ttdeci">ChatType</div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:14</div></div>
+<div class="ttc" id="classPacketSendChat_html_a286288410ba199d3b422c1975fe68e05"><div class="ttname"><a href="classPacketSendChat.html#a286288410ba199d3b422c1975fe68e05">PacketSendChat::Serialize</a></div><div class="ttdeci">bool Serialize(MemoryStreamInterface *pStream)</div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:35</div></div>
+<div class="ttc" id="TypeDefs_8h_html_aed742c436da53c1080638ce6ef7d13de"><div class="ttname"><a href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></div><div class="ttdeci">unsigned char u8</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:6</div></div>
+<div class="ttc" id="classPacketSendChat_html_a9d0194a0eb654c7d602effb72ee8eab9"><div class="ttname"><a href="classPacketSendChat.html#a9d0194a0eb654c7d602effb72ee8eab9">PacketSendChat::Type</a></div><div class="ttdeci">u8 Type</div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:20</div></div>
+<div class="ttc" id="classPacketSendChat_html_a614ef63f0fd79fffce1a15d0626eb962"><div class="ttname"><a href="classPacketSendChat.html#a614ef63f0fd79fffce1a15d0626eb962">PacketSendChat::GetPacketID</a></div><div class="ttdeci">virtual u8 GetPacketID() const</div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:12</div></div>
+<div class="ttc" id="classMemoryStreamInterface_html_a6a4fb8faf2a4f94ea6b56334aba31ebf"><div class="ttname"><a href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">MemoryStreamInterface::Serialize</a></div><div class="ttdeci">virtual bool Serialize(s32 *pValue)=0</div></div>
+<div class="ttc" id="classPacketSendChat_html_ac9e76b61f41b8510868ea71f760f7b8aac63a2a5f6fd258f6d780fc73ac9c95bb"><div class="ttname"><a href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8aac63a2a5f6fd258f6d780fc73ac9c95bb">PacketSendChat::Say</a></div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:16</div></div>
+<div class="ttc" id="classPacketSendChat_html"><div class="ttname"><a href="classPacketSendChat.html">PacketSendChat</a></div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:9</div></div>
+<div class="ttc" id="PacketBase_8h_html"><div class="ttname"><a href="PacketBase_8h.html">PacketBase.h</a></div></div>
+<div class="ttc" id="classPacketSendChat_html_ac9e76b61f41b8510868ea71f760f7b8aa271177b7afe559318b8d98d9b43e1758"><div class="ttname"><a href="classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8aa271177b7afe559318b8d98d9b43e1758">PacketSendChat::Shout</a></div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:17</div></div>
+<div class="ttc" id="classPacketID_html_aaac69b977036b9b9d40419b939c1570aa93a96ac3d227079fdc0026d4fa411f5f"><div class="ttname"><a href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa93a96ac3d227079fdc0026d4fa411f5f">PacketID::SendChat</a></div><div class="ttdef"><b>Definition:</b> PacketID.h:48</div></div>
+<div class="ttc" id="classPacketSendChat_html_af65fb20879fa53c103199b3e13160793"><div class="ttname"><a href="classPacketSendChat.html#af65fb20879fa53c103199b3e13160793">PacketSendChat::Message</a></div><div class="ttdeci">std::string Message</div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:21</div></div>
+<div class="ttc" id="classPacketSendChat_html_ae40a290788b2bb281fcb0ac01d7a33e0"><div class="ttname"><a href="classPacketSendChat.html#ae40a290788b2bb281fcb0ac01d7a33e0">PacketSendChat::PacketSendChat</a></div><div class="ttdeci">PacketSendChat()</div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:24</div></div>
+<div class="ttc" id="classPacketBase_html"><div class="ttname"><a href="classPacketBase.html">PacketBase</a></div><div class="ttdef"><b>Definition:</b> PacketBase.h:10</div></div>
+<div class="ttc" id="classMemoryStreamInterface_html"><div class="ttname"><a href="classMemoryStreamInterface.html">MemoryStreamInterface</a></div><div class="ttdef"><b>Definition:</b> MemoryStreamInterface.h:8</div></div>
+<div class="ttc" id="classPacketSendChat_html_aa55e84db65947ae9e93fef8325115667"><div class="ttname"><a href="classPacketSendChat.html#aa55e84db65947ae9e93fef8325115667">PacketSendChat::PacketSendChat</a></div><div class="ttdeci">PacketSendChat(u8 InType, std::string InMessage)</div><div class="ttdef"><b>Definition:</b> PacketSendChat.h:28</div></div>
+<div class="ttc" id="MemoryStreamInterface_8h_html"><div class="ttname"><a href="MemoryStreamInterface_8h.html">MemoryStreamInterface.h</a></div></div>
+<div class="ttc" id="PacketID_8h_html"><div class="ttname"><a href="PacketID_8h.html">PacketID.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

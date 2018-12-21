@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: MathUtil.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_b6f8a53aa5bc84c152b3cb01962aca31.html">Math</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MathUtil.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="MathUtil_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __MATHUTIL_H__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __MATHUTIL_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="MathUtil_8h.html#a525335710b53cb064ca56b936120431e">    4</a></span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Vector3D_8h.html">Vector3D.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// 演算関係.</span></div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classMathUtil.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMathUtil.html">MathUtil</a></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// 補間.</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">static</span> T <a class="code" href="classMathUtil.html#aa88ede81b6a920c95430b4858a86e8c0">Lerp</a>(T Start, T End, <span class="keywordtype">float</span> Rate);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// DegreeをRadianに変換.</span></div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classMathUtil.html#a63bc45ff42ceb1a12ef90093c452df43">   19</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classMathUtil.html#a63bc45ff42ceb1a12ef90093c452df43">DegToRad</a>(<span class="keywordtype">float</span> Deg)</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">if</span> (fabsf(Deg) &lt; FLT_EPSILON) { <span class="keywordflow">return</span> 0.0f; }</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(Deg * M_PI / 180.0f);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">// RadianをDegreeに変換.</span></div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classMathUtil.html#a2e19c178bb6bfcf5559623f5af6c0483">   26</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classMathUtil.html#a2e19c178bb6bfcf5559623f5af6c0483">RadToDeg</a>(<span class="keywordtype">float</span> Rad)</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (fabsf(Rad) &lt; FLT_EPSILON) { <span class="keywordflow">return</span> 0.0f; }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)(Rad * 180.0f / M_PI);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// ベクトルを回転.</span></div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classMathUtil.html#ab34f00845bc0a5917f4becf9202e1916">   33</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classVector3D.html">Vector3D</a> <a class="code" href="classMathUtil.html#ab34f00845bc0a5917f4becf9202e1916">RotateVector</a>(<span class="keyword">const</span> <a class="code" href="classVector3D.html">Vector3D</a> &amp;Vec, <span class="keywordtype">float</span> Deg)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classVector3D.html">Vector3D</a> Result;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">float</span> Rad = <a class="code" href="classMathUtil.html#a63bc45ff42ceb1a12ef90093c452df43">DegToRad</a>(Deg);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Result.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a> = ((Vec.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a> * cosf(Rad)) - (Vec.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a> * sinf(Rad)));</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        Result.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a> = ((Vec.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a> * sinf(Rad)) + (Vec.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a> * cosf(Rad)));</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        Result.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a> = Vec.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> Result;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// 内積.</span></div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classMathUtil.html#abe9b1ab840eba0fcafd503abd0c173e7">   44</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="classMathUtil.html#abe9b1ab840eba0fcafd503abd0c173e7">Dot</a>(<span class="keyword">const</span> <a class="code" href="classVector3D.html">Vector3D</a> &amp;A, <span class="keyword">const</span> <a class="code" href="classVector3D.html">Vector3D</a> &amp;B)</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> ((A.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a> * B.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a>) + (A.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a> * B.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a>) + (A.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a> * B.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a>));</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// 外積.</span></div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classMathUtil.html#a206259d15b93f12e15e1fc51a6cf35eb">   50</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classVector3D.html">Vector3D</a> <a class="code" href="classMathUtil.html#a206259d15b93f12e15e1fc51a6cf35eb">Cross</a>(<span class="keyword">const</span> <a class="code" href="classVector3D.html">Vector3D</a> &amp;A, <span class="keyword">const</span> <a class="code" href="classVector3D.html">Vector3D</a> &amp;B)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classVector3D.html">Vector3D</a> Vec;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Vec.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a> = (A.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a> * B.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a>) - (A.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a> * B.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a>);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        Vec.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a> = (A.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a> * B.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a>) - (A.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a> * B.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a>);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        Vec.<a class="code" href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Z</a> = (A.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a> * B.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a>) - (A.<a class="code" href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Y</a> * B.<a class="code" href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">X</a>);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> Vec;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif      // #ifndef __MATHUTIL_H__</span></div><div class="ttc" id="classMathUtil_html_a63bc45ff42ceb1a12ef90093c452df43"><div class="ttname"><a href="classMathUtil.html#a63bc45ff42ceb1a12ef90093c452df43">MathUtil::DegToRad</a></div><div class="ttdeci">static float DegToRad(float Deg)</div><div class="ttdef"><b>Definition:</b> MathUtil.h:19</div></div>
+<div class="ttc" id="classMathUtil_html_a2e19c178bb6bfcf5559623f5af6c0483"><div class="ttname"><a href="classMathUtil.html#a2e19c178bb6bfcf5559623f5af6c0483">MathUtil::RadToDeg</a></div><div class="ttdeci">static float RadToDeg(float Rad)</div><div class="ttdef"><b>Definition:</b> MathUtil.h:26</div></div>
+<div class="ttc" id="classVector3D_html_acb4a5822ce838ad2886e6068f6fa0d19"><div class="ttname"><a href="classVector3D.html#acb4a5822ce838ad2886e6068f6fa0d19">Vector3D::Z</a></div><div class="ttdeci">float Z</div><div class="ttdef"><b>Definition:</b> Vector3D.h:32</div></div>
+<div class="ttc" id="classMathUtil_html_abe9b1ab840eba0fcafd503abd0c173e7"><div class="ttname"><a href="classMathUtil.html#abe9b1ab840eba0fcafd503abd0c173e7">MathUtil::Dot</a></div><div class="ttdeci">static float Dot(const Vector3D &amp;A, const Vector3D &amp;B)</div><div class="ttdef"><b>Definition:</b> MathUtil.h:44</div></div>
+<div class="ttc" id="classVector3D_html"><div class="ttname"><a href="classVector3D.html">Vector3D</a></div><div class="ttdef"><b>Definition:</b> Vector3D.h:8</div></div>
+<div class="ttc" id="classVector3D_html_a5c37b3cde8f692696d7988047b39afcc"><div class="ttname"><a href="classVector3D.html#a5c37b3cde8f692696d7988047b39afcc">Vector3D::X</a></div><div class="ttdeci">float X</div><div class="ttdef"><b>Definition:</b> Vector3D.h:30</div></div>
+<div class="ttc" id="classVector3D_html_aae67ab67ab6be1bd1d4bb31ec97d6e36"><div class="ttname"><a href="classVector3D.html#aae67ab67ab6be1bd1d4bb31ec97d6e36">Vector3D::Y</a></div><div class="ttdeci">float Y</div><div class="ttdef"><b>Definition:</b> Vector3D.h:31</div></div>
+<div class="ttc" id="classMathUtil_html_aa88ede81b6a920c95430b4858a86e8c0"><div class="ttname"><a href="classMathUtil.html#aa88ede81b6a920c95430b4858a86e8c0">MathUtil::Lerp</a></div><div class="ttdeci">static T Lerp(T Start, T End, float Rate)</div></div>
+<div class="ttc" id="classMathUtil_html_ab34f00845bc0a5917f4becf9202e1916"><div class="ttname"><a href="classMathUtil.html#ab34f00845bc0a5917f4becf9202e1916">MathUtil::RotateVector</a></div><div class="ttdeci">static Vector3D RotateVector(const Vector3D &amp;Vec, float Deg)</div><div class="ttdef"><b>Definition:</b> MathUtil.h:33</div></div>
+<div class="ttc" id="classMathUtil_html"><div class="ttname"><a href="classMathUtil.html">MathUtil</a></div><div class="ttdef"><b>Definition:</b> MathUtil.h:9</div></div>
+<div class="ttc" id="Vector3D_8h_html"><div class="ttname"><a href="Vector3D_8h.html">Vector3D.h</a></div></div>
+<div class="ttc" id="classMathUtil_html_a206259d15b93f12e15e1fc51a6cf35eb"><div class="ttname"><a href="classMathUtil.html#a206259d15b93f12e15e1fc51a6cf35eb">MathUtil::Cross</a></div><div class="ttdeci">static Vector3D Cross(const Vector3D &amp;A, const Vector3D &amp;B)</div><div class="ttdef"><b>Definition:</b> MathUtil.h:50</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

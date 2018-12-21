@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: ScriptBinds.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_e79256f22943bdf83a212d486e26e93f.html">Script</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle">
+<div class="title">ScriptBinds.cpp ファイル</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="stdafx_8h_source.html">stdafx.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScriptBinds_8h_source.html">ScriptBinds.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScriptExecuterBase_8h_source.html">ScriptExecuterBase.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ExecuterPool_8h_source.html">ExecuterPool.h</a>&quot;</code><br />
+<code>#include &quot;lua.hpp&quot;</code><br />
+<code>#include &quot;lauxlib.h&quot;</code><br />
+<code>#include &quot;lualib.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+ScriptBinds.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="ScriptBinds_8cpp__incl.png" border="0" usemap="#ScriptBinds_8cpp" alt=""/></div>
+<map name="ScriptBinds_8cpp" id="ScriptBinds_8cpp">
+<area shape="rect" id="node2" href="stdafx_8h.html" title="stdafx.h" alt="" coords="514,80,582,107"/>
+<area shape="rect" id="node15" href="ScriptBinds_8h.html" title="ScriptBinds.h" alt="" coords="642,80,742,107"/>
+<area shape="rect" id="node16" href="ScriptExecuterBase_8h.html" title="ScriptExecuterBase.h" alt="" coords="817,80,967,107"/>
+<area shape="rect" id="node21" href="ExecuterPool_8h.html" title="ExecuterPool.h" alt="" coords="1093,80,1203,107"/>
+<area shape="rect" id="node5" href="basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="585,155,745,181"/>
+<area shape="rect" id="node14" href="TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="338,155,425,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ad04e7f790a695f09a6e4516366011284"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#ad04e7f790a695f09a6e4516366011284">ShowMessage_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:ad04e7f790a695f09a6e4516366011284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4069ecedbe278bffcb2ccc7553d9a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#adc4069ecedbe278bffcb2ccc7553d9a7">PushSelection_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:adc4069ecedbe278bffcb2ccc7553d9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9da4476967136ab4c8ffbc0e4142414"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#aa9da4476967136ab4c8ffbc0e4142414">ShowSelection_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:aa9da4476967136ab4c8ffbc0e4142414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5808a55be2101d9d629dbd85c6349c4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a5808a55be2101d9d629dbd85c6349c4d">SetFlag_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:a5808a55be2101d9d629dbd85c6349c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed5bd558b46deb8f58309b8d5fc7b64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a7ed5bd558b46deb8f58309b8d5fc7b64">GetFlag_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:a7ed5bd558b46deb8f58309b8d5fc7b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe818a5dd78d2632e4a00b7edc1a6579"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#afe818a5dd78d2632e4a00b7edc1a6579">IsQuestActive_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:afe818a5dd78d2632e4a00b7edc1a6579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ffaa5f2d461b97aa730d641f153e9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a02ffaa5f2d461b97aa730d641f153e9c">ProgressQuest_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:a02ffaa5f2d461b97aa730d641f153e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a439cdd8835fac278ee5a18be6e2a57c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a439cdd8835fac278ee5a18be6e2a57c1">GetQuestStageNo_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:a439cdd8835fac278ee5a18be6e2a57c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aab5414b38c603354c7b0f7cfbd286d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a6aab5414b38c603354c7b0f7cfbd286d">GetItemCount_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:a6aab5414b38c603354c7b0f7cfbd286d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a908ed1c475cb39fe93247dc16ab0cf12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a908ed1c475cb39fe93247dc16ab0cf12">ConsumeItem_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:a908ed1c475cb39fe93247dc16ab0cf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9505d8111e0672e33b46003c624f1ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#af9505d8111e0672e33b46003c624f1ab">AcceptQuest_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:af9505d8111e0672e33b46003c624f1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c2ca074e8c0e11c58380502945dbf1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#ab3c2ca074e8c0e11c58380502945dbf1">IsQuestClear_Call</a> (lua_State *pState)</td></tr>
+<tr class="separator:ab3c2ca074e8c0e11c58380502945dbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="af9505d8111e0672e33b46003c624f1ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9505d8111e0672e33b46003c624f1ab">&#9670;&nbsp;</a></span>AcceptQuest_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AcceptQuest_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a908ed1c475cb39fe93247dc16ab0cf12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a908ed1c475cb39fe93247dc16ab0cf12">&#9670;&nbsp;</a></span>ConsumeItem_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConsumeItem_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ed5bd558b46deb8f58309b8d5fc7b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed5bd558b46deb8f58309b8d5fc7b64">&#9670;&nbsp;</a></span>GetFlag_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetFlag_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6aab5414b38c603354c7b0f7cfbd286d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aab5414b38c603354c7b0f7cfbd286d">&#9670;&nbsp;</a></span>GetItemCount_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetItemCount_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a439cdd8835fac278ee5a18be6e2a57c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a439cdd8835fac278ee5a18be6e2a57c1">&#9670;&nbsp;</a></span>GetQuestStageNo_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetQuestStageNo_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe818a5dd78d2632e4a00b7edc1a6579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe818a5dd78d2632e4a00b7edc1a6579">&#9670;&nbsp;</a></span>IsQuestActive_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IsQuestActive_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3c2ca074e8c0e11c58380502945dbf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c2ca074e8c0e11c58380502945dbf1">&#9670;&nbsp;</a></span>IsQuestClear_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IsQuestClear_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a02ffaa5f2d461b97aa730d641f153e9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ffaa5f2d461b97aa730d641f153e9c">&#9670;&nbsp;</a></span>ProgressQuest_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProgressQuest_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc4069ecedbe278bffcb2ccc7553d9a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc4069ecedbe278bffcb2ccc7553d9a7">&#9670;&nbsp;</a></span>PushSelection_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PushSelection_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5808a55be2101d9d629dbd85c6349c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5808a55be2101d9d629dbd85c6349c4d">&#9670;&nbsp;</a></span>SetFlag_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SetFlag_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad04e7f790a695f09a6e4516366011284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04e7f790a695f09a6e4516366011284">&#9670;&nbsp;</a></span>ShowMessage_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ShowMessage_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa9da4476967136ab4c8ffbc0e4142414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9da4476967136ab4c8ffbc0e4142414">&#9670;&nbsp;</a></span>ShowSelection_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ShowSelection_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

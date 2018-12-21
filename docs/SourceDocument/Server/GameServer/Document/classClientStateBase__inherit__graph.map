@@ -1,0 +1,5 @@
+<map id="ClientStateBase" name="ClientStateBase">
+<area shape="rect" id="node2" href="$classClientStateActive.html" title="ClientStateActive" alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node3" href="$classClientStateAreaChange.html" title="ClientStateAreaChange" alt="" coords="151,80,309,107"/>
+<area shape="rect" id="node4" href="$classClientStateTitle.html" title="ClientStateTitle" alt="" coords="333,80,444,107"/>
+</map>

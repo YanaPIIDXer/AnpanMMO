@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['damage',['Damage',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf93a5d0a569eba849ba5ad707dd9a453',1,'PacketID']]],
+  ['damagecalcunit',['DamageCalcUnit',['../classDamageCalcUnit.html',1,'DamageCalcUnit'],['../classDamageCalcUnit.html#ad12529bfb7edff2df371826786baee8b',1,'DamageCalcUnit::DamageCalcUnit()']]],
+  ['damagecalcunit_2ecpp',['DamageCalcUnit.cpp',['../DamageCalcUnit_8cpp.html',1,'']]],
+  ['damagecalcunit_2eh',['DamageCalcUnit.h',['../DamageCalcUnit_8h.html',1,'']]],
+  ['damagevalue',['DamageValue',['../classPacketDamage.html#a05650b44c14401ca55b787a22ca123c1',1,'PacketDamage']]],
+  ['data',['Data',['../classCachePacketSaveQuestDataRequest.html#a89d25ce8581a50f4ef8d3e814f5113b1',1,'CachePacketSaveQuestDataRequest::Data()'],['../classPacketSpawnAnpan.html#acbf123d399b0d245056825c2f00e53b7',1,'PacketSpawnAnpan::Data()'],['../classPacketSpawnPlayer.html#a0e6ccb4cb7fb47806c8edd063c6b752e',1,'PacketSpawnPlayer::Data()']]],
+  ['debuff',['DEBUFF',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a164f8ffb979192902a50fdd68000483b',1,'SkillItem']]],
+  ['def',['Def',['../structCharacterParameter.html#a48dff22f6644a2e2e97b55225cda4932',1,'CharacterParameter::Def()'],['../structAnpanItem.html#ac54f25203b956cbbf4cc7cda20a41493',1,'AnpanItem::Def()'],['../classCachePacketCharacterDataResult.html#a7a0f8fd5726170c0ae8cd3cf9ee45acb',1,'CachePacketCharacterDataResult::Def()'],['../classCachePacketCharacterDataSave.html#a02aa4f4f7ec1e107275dc3ee93ba2dc9',1,'CachePacketCharacterDataSave::Def()'],['../classPacketCharacterStatus.html#a4c1597bcb5bd6affaa63c2f8c79a26ae',1,'PacketCharacterStatus::Def()'],['../classPacketLevelUp.html#ae2a2d4b35ec2d86ca69016c8e9454fb0',1,'PacketLevelUp::Def()']]],
+  ['degtorad',['DegToRad',['../classMathUtil.html#a63bc45ff42ceb1a12ef90093c452df43',1,'MathUtil']]],
+  ['delivery',['DELIVERY',['../structItemItem.html#a7df7ef5d0604b5d87fb7729fdae571b2ab15117c73400ac5c9cf9745a6e46ccf0',1,'ItemItem']]],
+  ['discard',['Discard',['../classPacketInstanceAreaTicketProcess.html#a81ebcab04e423c924ea98f16c4dd0aa3a208f5d111b0a0a9c631be525be8e84e0',1,'PacketInstanceAreaTicketProcess']]],
+  ['dissolution',['Dissolution',['../classPartyManager.html#aade2a6874f8844dab77e648a674fddc9',1,'PartyManager']]],
+  ['distance',['Distance',['../structSkillItem.html#a2b3513c87115c385d1aa10cfbdb734dc',1,'SkillItem']]],
+  ['dot',['Dot',['../classMathUtil.html#abe9b1ab840eba0fcafd503abd0c173e7',1,'MathUtil']]],
+  ['doublelogin',['DoubleLogIn',['../classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23cacca3c6274d63778c48ae7b8a8e0f4829eed',1,'PacketLogInResult']]],
+  ['dropid',['DropId',['../structAnpanItem.html#a6479319c8b1c87009362412136fde8f4',1,'AnpanItem']]]
+];
