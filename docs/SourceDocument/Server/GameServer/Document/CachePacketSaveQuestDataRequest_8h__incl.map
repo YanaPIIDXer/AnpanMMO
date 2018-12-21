@@ -1,8 +1,0 @@
-<map id="CachePacketSaveQuestDataRequest.h" name="CachePacketSaveQuestDataRequest.h">
-<area shape="rect" id="node2" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="86,177,190,203"/>
-<area shape="rect" id="node3" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="5,259,92,285"/>
-<area shape="rect" id="node5" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="215,169,419,211"/>
-<area shape="rect" id="node7" href="$ProcessPacketBase_8h.html" title="ProcessPacketBase.h" alt="" coords="207,95,359,121"/>
-<area shape="rect" id="node8" href="$QuestData_8h.html" title="QuestData.h" alt="" coords="88,95,183,121"/>
-<area shape="rect" id="node4" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="148,259,235,285"/>
-</map>

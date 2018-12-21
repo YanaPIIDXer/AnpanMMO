@@ -1,9 +1,0 @@
-<map id="QuestStageMaster.cpp" name="QuestStageMaster.cpp">
-<area shape="rect" id="node2" href="$stdafx_8h.html" title="stdafx.h" alt="" coords="650,80,718,107"/>
-<area shape="rect" id="node15" href="$QuestStageMaster_8h.html" title="QuestStageMaster.h" alt="" coords="1374,80,1517,107"/>
-<area shape="rect" id="node18" href="$MySqlConnection_8h.html" title="MySQL/MySqlConnection.h" alt="" coords="1547,80,1730,107"/>
-<area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="604,155,764,181"/>
-<area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="789,155,875,181"/>
-<area shape="rect" id="node20" href="$MySqlQuery_8h.html" title="MySqlQuery.h" alt="" coords="1586,155,1691,181"/>
-<area shape="rect" id="node21" href="$MySqlBinds_8h.html" title="MySqlBinds.h" alt="" coords="1542,237,1645,263"/>
-</map>

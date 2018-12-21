@@ -1,8 +1,0 @@
-<map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node2" href="$classACharacterBase.html" title="ACharacterBase" alt="" coords="140,56,257,83"/>
-<area shape="rect" id="node3" href="$classAAnpan.html" title="AAnpan" alt="" coords="349,5,417,32"/>
-<area shape="rect" id="node4" href="$classANPCCharacter.html" title="ANPCCharacter" alt="" coords="325,56,440,83"/>
-<area shape="rect" id="node5" href="$classAPlayerCharacterBase.html" title="APlayerCharacterBase" alt="" coords="305,107,460,133"/>
-<area shape="rect" id="node6" href="$classAGameCharacter.html" title="AGameCharacter" alt="" coords="525,81,647,108"/>
-<area shape="rect" id="node7" href="$classAOtherPlayerCharacter.html" title="AOtherPlayerCharacter" alt="" coords="508,132,664,159"/>
-</map>

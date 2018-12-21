@@ -1,7 +1,0 @@
-<map id="CachePacketSaveSkillListRequest.h" name="CachePacketSaveSkillListRequest.h">
-<area shape="rect" id="node2" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="70,177,174,203"/>
-<area shape="rect" id="node3" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="5,259,92,285"/>
-<area shape="rect" id="node5" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="199,169,403,211"/>
-<area shape="rect" id="node7" href="$ProcessPacketBase_8h.html" title="ProcessPacketBase.h" alt="" coords="121,95,273,121"/>
-<area shape="rect" id="node4" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="147,259,233,285"/>
-</map>

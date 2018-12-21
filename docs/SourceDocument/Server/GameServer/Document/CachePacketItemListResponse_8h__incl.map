@@ -1,9 +1,0 @@
-<map id="CachePacketItemListResponse.h" name="CachePacketItemListResponse.h">
-<area shape="rect" id="node2" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="102,162,206,189"/>
-<area shape="rect" id="node3" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="21,244,108,271"/>
-<area shape="rect" id="node5" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="231,155,435,196"/>
-<area shape="rect" id="node7" href="$ProcessPacketBase_8h.html" title="ProcessPacketBase.h" alt="" coords="191,80,343,107"/>
-<area shape="rect" id="node8" href="$ItemData_8h.html" title="ItemData.h" alt="" coords="31,80,117,107"/>
-<area shape="rect" id="node9" href="$FlexArray_8h.html" title="FlexArray.h" alt="" coords="419,80,508,107"/>
-<area shape="rect" id="node4" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="164,244,251,271"/>
-</map>
