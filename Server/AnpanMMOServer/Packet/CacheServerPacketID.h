@@ -1,6 +1,6 @@
 /**
  * @file $FILE_NAME$
- * @brief ãƒ‘ã‚±ãƒƒãƒˆï¼©ï¼¤å®šç¾©.
+ * @brief ƒpƒPƒbƒg‚h‚c’è‹`.
  * @author NativePacketGenerator
  */
 
@@ -8,7 +8,7 @@
 #define __CACHESERVERPACKETID_H__
 
 /**
- * @brief ãƒ‘ã‚±ãƒƒãƒˆï¼©ï¼¤å®šç¾©.
+ * @brief ƒpƒPƒbƒg‚h‚c’è‹`.
  */
 class CachePacketID
 {
@@ -17,65 +17,65 @@ public:
 
 	enum EID
 	{
-		//! ãƒ­ã‚°ã‚¤ãƒ³ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒƒOƒCƒ“ƒŠƒNƒGƒXƒg
 		CacheLogInRequest = 0x40,
-		//! ãƒ­ã‚°ã‚¤ãƒ³ãƒªã‚¯ã‚¨ã‚¹ãƒˆçµæžœ
+		//! ƒƒOƒCƒ“ƒŠƒNƒGƒXƒgŒ‹‰Ê
 		CacheLogInResult = 0x41,
-		//! ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ä½œæˆãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒLƒƒƒ‰ƒNƒ^ì¬ƒŠƒNƒGƒXƒg
 		CacheCreateCharacterRequest = 0x42,
-		//! ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ä½œæˆçµæžœ
+		//! ƒLƒƒƒ‰ƒNƒ^ì¬Œ‹‰Ê
 		CacheCreateCharacterResult = 0x43,
-		//! ã‚­ãƒ£ãƒ©ã‚¯ã‚¿æƒ…å ±ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒLƒƒƒ‰ƒNƒ^î•ñƒŠƒNƒGƒXƒg
 		CacheCharacterDataRequest = 0x44,
-		//! ã‚­ãƒ£ãƒ©ã‚¯ã‚¿æƒ…å ±ãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒLƒƒƒ‰ƒNƒ^î•ñƒŒƒXƒ|ƒ“ƒX
 		CacheCharacterDataResult = 0x45,
-		//! ã‚¹ã‚­ãƒ«ãƒªã‚¹ãƒˆãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒXƒLƒ‹ƒŠƒXƒgƒŠƒNƒGƒXƒg
 		CacheSkillListRequest = 0x46,
-		//! ã‚¹ã‚­ãƒ«ãƒªã‚¹ãƒˆãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒXƒLƒ‹ƒŠƒXƒgƒŒƒXƒ|ƒ“ƒX
 		CacheSkillListResponse = 0x47,
-		//! ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒ•ãƒ©ã‚°ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒXƒNƒŠƒvƒgƒtƒ‰ƒOƒŠƒNƒGƒXƒg
 		CacheScriptFlagRequest = 0x48,
-		//! ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒ•ãƒ©ã‚°ãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒXƒNƒŠƒvƒgƒtƒ‰ƒOƒŒƒXƒ|ƒ“ƒX
 		CacheScriptFlagResponse = 0x49,
-		//! ã‚¹ã‚¯ãƒªãƒ—ãƒˆãƒ•ãƒ©ã‚°ä¿å­˜ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒXƒNƒŠƒvƒgƒtƒ‰ƒO•Û‘¶ƒŠƒNƒGƒXƒg
 		CacheScriptFlagSaveRequest = 0x4A,
-		//! ã‚¹ã‚­ãƒ«ãƒªã‚¹ãƒˆä¿å­˜ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒXƒLƒ‹ƒŠƒXƒg•Û‘¶ƒŠƒNƒGƒXƒg
 		CacheSaveSkillListRequest = 0x4B,
-		//! ã‚¹ã‚­ãƒ«ãƒªã‚¹ãƒˆä¿å­˜ãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒXƒLƒ‹ƒŠƒXƒg•Û‘¶ƒŒƒXƒ|ƒ“ƒX
 		CacheSaveSkillListResponse = 0x4C,
-		//! ã‚¹ã‚­ãƒ«ãƒ„ãƒªãƒ¼ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒXƒLƒ‹ƒcƒŠ[ƒŠƒNƒGƒXƒg
 		CacheSkillTreeRequest = 0x4D,
-		//! ã‚¹ã‚­ãƒ«ãƒ„ãƒªãƒ¼ãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒXƒLƒ‹ƒcƒŠ[ƒŒƒXƒ|ƒ“ƒX
 		CacheSkillTreeResponse = 0x4E,
-		//! ã‚¹ã‚­ãƒ«ãƒ„ãƒªãƒ¼é–‹æ”¾
+		//! ƒXƒLƒ‹ƒcƒŠ[ŠJ•ú
 		CacheOpenSkillTree = 0x4F,
-		//! ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ä¿å­˜ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒLƒƒƒ‰ƒNƒ^•Û‘¶ƒŠƒNƒGƒXƒg
 		CacheCharacterDataSave = 0x50,
-		//! ã‚´ãƒ¼ãƒ«ãƒ‰ä¿å­˜ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒS[ƒ‹ƒh•Û‘¶ƒŠƒNƒGƒXƒg
 		CacheGoldSave = 0x51,
-		//! ã‚¢ã‚¤ãƒ†ãƒ ãƒªã‚¹ãƒˆãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒAƒCƒeƒ€ƒŠƒXƒgƒŠƒNƒGƒXƒg
 		CacheItemListRequest = 0x52,
-		//! ã‚¢ã‚¤ãƒ†ãƒ ãƒªã‚¹ãƒˆãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒAƒCƒeƒ€ƒŠƒXƒgƒŒƒXƒ|ƒ“ƒX
 		CacheItemListResponse = 0x53,
-		//! ã‚¢ã‚¤ãƒ†ãƒ æ•°å¤‰åŒ–ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒAƒCƒeƒ€”•Ï‰»ƒŠƒNƒGƒXƒg
 		CacheItemCountChangeRequest = 0x54,
-		//! ã‚¢ã‚¤ãƒ†ãƒ ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒAƒCƒeƒ€ƒVƒ‡[ƒgƒJƒbƒgƒŠƒNƒGƒXƒg
 		CacheItemShortcutRequest = 0x55,
-		//! ã‚¢ã‚¤ãƒ†ãƒ ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒAƒCƒeƒ€ƒVƒ‡[ƒgƒJƒbƒgƒŒƒXƒ|ƒ“ƒX
 		CacheItemShortcutResponse = 0x56,
-		//! ã‚¢ã‚¤ãƒ†ãƒ ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆä¿å­˜ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒAƒCƒeƒ€ƒVƒ‡[ƒgƒJƒbƒg•Û‘¶ƒŠƒNƒGƒXƒg
 		CacheSaveItemShortcutRequest = 0x57,
-		//! ã‚¢ã‚¤ãƒ†ãƒ ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆä¿å­˜ãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒAƒCƒeƒ€ƒVƒ‡[ƒgƒJƒbƒg•Û‘¶ƒŒƒXƒ|ƒ“ƒX
 		CacheSaveItemShortcutResponse = 0x58,
-		//! ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒNƒGƒXƒgƒf[ƒ^ƒŠƒNƒGƒXƒg
 		CacheQuestDataRequest = 0x59,
-		//! ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ãƒ¬ã‚¹ãƒãƒ³ã‚¹
+		//! ƒNƒGƒXƒgƒf[ƒ^ƒŒƒXƒ|ƒ“ƒX
 		CacheQuestDataResponse = 0x5A,
-		//! ã‚¯ã‚¨ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿ä¿å­˜ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒNƒGƒXƒgƒf[ƒ^•Û‘¶ƒŠƒNƒGƒXƒg
 		CacheSaveQuestDataRequest = 0x5B,
-		//! ã‚¯ã‚¨ã‚¹ãƒˆç ´æ£„ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒNƒGƒXƒg”jŠüƒŠƒNƒGƒXƒg
 		CacheQuestRetireRequest = 0x5C,
-		//! ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚¯ã‚¨ã‚¹ãƒˆä¿å­˜ãƒªã‚¯ã‚¨ã‚¹ãƒˆ
+		//! ƒAƒNƒeƒBƒuƒNƒGƒXƒg•Û‘¶ƒŠƒNƒGƒXƒg
 		CacheSaveActiveQuestRequest = 0x5D,
 		
 	};

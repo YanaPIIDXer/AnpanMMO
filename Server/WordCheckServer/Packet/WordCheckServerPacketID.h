@@ -1,6 +1,6 @@
 /**
  * @file $FILE_NAME$
- * @brief ãƒ‘ã‚±ãƒƒãƒˆï¼©ï¼¤å®šç¾©.
+ * @brief ƒpƒPƒbƒg‚h‚c’è‹`.
  * @author NativePacketGenerator
  */
 
@@ -8,7 +8,7 @@
 #define __WORDCHECKSERVERPACKETID_H__
 
 /**
- * @brief ãƒ‘ã‚±ãƒƒãƒˆï¼©ï¼¤å®šç¾©.
+ * @brief ƒpƒPƒbƒg‚h‚c’è‹`.
  */
 class WordCheckPacketID
 {
@@ -17,9 +17,9 @@ public:
 
 	enum EID
 	{
-		//! ãƒ¯ãƒ¼ãƒ‰ãƒã‚§ãƒƒã‚¯è¦æ±‚
+		//! ƒ[ƒhƒ`ƒFƒbƒN—v‹
 		WordCheckChatRequest = 0x80,
-		//! ãƒ¯ãƒ¼ãƒ‰ãƒã‚§ãƒƒã‚¯çµæœ
+		//! ƒ[ƒhƒ`ƒFƒbƒNŒ‹‰Ê
 		WordCheckChatResult = 0x81,
 		
 	};

@@ -84,7 +84,7 @@ namespace NativePacketGenerator
 			try
 			{
 				string FullPath = Path.GetFullPath(TargetPath);
-				StreamWriter Writer = new StreamWriter(FullPath);
+				StreamWriter Writer = new StreamWriter(FullPath, false, Encoding.GetEncoding("Shift-JIS"));
 
 				// インクルードガードはここで置換する。
 				Result = Result.Replace("$INCLUDE_GUARD$", "__" + Path.GetFileNameWithoutExtension(TargetPath).ToUpper() + "_H__");
