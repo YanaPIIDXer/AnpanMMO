@@ -2,15 +2,15 @@
 #define __CACHEPACKETCREATECHARACTERRESULT_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketCreateCharacterResult  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheCreateCharacterResult; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheCreateCharacterResult; }
 
 	enum ResultCode
 	{

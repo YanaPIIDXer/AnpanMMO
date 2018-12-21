@@ -2,8 +2,8 @@
 #define __PACKETCREATECHARACTERRESULT_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
 class PacketCreateCharacterResult  : public PacketBase

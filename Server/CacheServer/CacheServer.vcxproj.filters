@@ -48,9 +48,6 @@
     <ClInclude Include="Packet\PacketHeader.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Packet\PacketID.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="MySQL\MySqlBinds.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>

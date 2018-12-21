@@ -2,9 +2,9 @@
 #define __PACKETSPAWNANPAN_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "AnpanData.h"
+#include "PacketID.h"
 
 
 class PacketSpawnAnpan  : public PacketBase

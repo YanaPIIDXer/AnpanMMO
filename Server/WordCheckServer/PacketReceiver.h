@@ -3,7 +3,6 @@
 
 #include <boost/function.hpp>
 #include <boost/unordered_map.hpp>
-#include "Packet/PacketID.h"
 
 class GameServerConnection;
 class MemoryStreamInterface;

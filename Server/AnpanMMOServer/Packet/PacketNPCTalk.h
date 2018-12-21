@@ -2,8 +2,8 @@
 #define __PACKETNPCTALK_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
 class PacketNPCTalk  : public PacketBase

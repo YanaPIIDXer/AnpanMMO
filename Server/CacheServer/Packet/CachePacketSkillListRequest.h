@@ -2,15 +2,15 @@
 #define __CACHEPACKETSKILLLISTREQUEST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketSkillListRequest  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheSkillListRequest; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheSkillListRequest; }
 
 	
 

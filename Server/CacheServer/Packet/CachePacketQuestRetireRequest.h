@@ -2,15 +2,15 @@
 #define __CACHEPACKETQUESTRETIREREQUEST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketQuestRetireRequest  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheQuestRetireRequest; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheQuestRetireRequest; }
 
 	
 

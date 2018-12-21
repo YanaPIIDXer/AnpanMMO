@@ -2,17 +2,17 @@
 #define __CACHEPACKETQUESTDATARESPONSE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
 #include "FlexArray.h"
 #include "QuestData.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketQuestDataResponse  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheQuestDataResponse; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheQuestDataResponse; }
 
 	enum ResultCode
 	{

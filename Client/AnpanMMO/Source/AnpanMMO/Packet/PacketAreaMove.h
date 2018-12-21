@@ -2,8 +2,8 @@
 #define __PACKETAREAMOVE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
 class PacketAreaMove  : public PacketBase

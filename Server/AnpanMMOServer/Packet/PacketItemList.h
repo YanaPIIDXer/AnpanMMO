@@ -2,10 +2,10 @@
 #define __PACKETITEMLIST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ItemData.h"
 #include "FlexArray.h"
+#include "PacketID.h"
 
 
 class PacketItemList  : public PacketBase

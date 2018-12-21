@@ -69,7 +69,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::Ping, boost::bind(&ClientStateActive::OnRecvPing, this, _2));
 	AddPacketFunction(PacketID::MovePlayer, boost::bind(&ClientStateActive::OnRecvMove, this, _2));
 	AddPacketFunction(PacketID::SendChat, boost::bind(&ClientStateActive::OnRecvChat, this, _2));
-	AddPacketFunction(PacketID::WordCheckChatResult, boost::bind(&ClientStateActive::OnRecvChatWordCheckResult, this, _2));
+	AddPacketFunction(WordCheckPacketID::WordCheckChatResult, boost::bind(&ClientStateActive::OnRecvChatWordCheckResult, this, _2));
 	AddPacketFunction(PacketID::AreaMoveRequest, boost::bind(&ClientStateActive::OnRecvAreaMoveRequest, this, _2));
 	AddPacketFunction(PacketID::RespawnRequest, boost::bind(&ClientStateActive::OnRecvRespawnRequest, this, _2));
 	AddPacketFunction(PacketID::SkillUse, boost::bind(&ClientStateActive::OnRecvSkillUse, this, _2));
@@ -83,12 +83,12 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::NPCTalk, boost::bind(&ClientStateActive::OnRecvNPCTalk, this, _2));
 	AddPacketFunction(PacketID::NPCTalkSelection, boost::bind(&ClientStateActive::OnRecvNPCTalkSelection, this, _2));
 	AddPacketFunction(PacketID::SaveSkillListRequest, boost::bind(&ClientStateActive::OnRecvSaveSkillListRequest, this, _2));
-	AddPacketFunction(PacketID::CacheSaveSkillListResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveSkillListResponse, this, _2));
+	AddPacketFunction(CachePacketID::CacheSaveSkillListResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveSkillListResponse, this, _2));
 	AddPacketFunction(PacketID::SkillTreeOpenRequest, boost::bind(&ClientStateActive::OnRecvSkillTreeOpenRequest, this, _2));
 	AddPacketFunction(PacketID::ItemUse, boost::bind(&ClientStateActive::OnRecvItemUse, this, _2));
 	AddPacketFunction(PacketID::ItemSubtractRequest, boost::bind(&ClientStateActive::OnRecvItemSubtractRequest, this, _2));
 	AddPacketFunction(PacketID::SaveItemShortcutRequest, boost::bind(&ClientStateActive::OnRecvSaveItemShortcutRequest, this, _2));
-	AddPacketFunction(PacketID::CacheSaveItemShortcutResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveItemShortcutResponse, this, _2));
+	AddPacketFunction(CachePacketID::CacheSaveItemShortcutResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveItemShortcutResponse, this, _2));
 	AddPacketFunction(PacketID::QuestRetireRequest, boost::bind(&ClientStateActive::OnRecvQuestRetireRequest, this, _2));
 	AddPacketFunction(PacketID::SaveActiveQuest, boost::bind(&ClientStateActive::OnRecvSaveActiveQuest, this, _2));
 }

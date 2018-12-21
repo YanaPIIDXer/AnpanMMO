@@ -2,15 +2,15 @@
 #define __CACHEPACKETSCRIPTFLAGSAVEREQUEST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketScriptFlagSaveRequest  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheScriptFlagSaveRequest; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheScriptFlagSaveRequest; }
 
 	
 

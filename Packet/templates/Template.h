@@ -2,7 +2,6 @@
 #define $INCLUDE_GUARD$
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 $INCLUDES$
 

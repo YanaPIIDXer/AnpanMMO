@@ -2,10 +2,10 @@
 #define __PACKETANPANLIST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "FlexArray.h"
 #include "AnpanData.h"
+#include "PacketID.h"
 
 
 class PacketAnpanList  : public PacketBase

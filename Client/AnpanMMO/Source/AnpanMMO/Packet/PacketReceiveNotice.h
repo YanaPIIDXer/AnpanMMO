@@ -2,9 +2,9 @@
 #define __PACKETRECEIVENOTICE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "NoticeData.h"
+#include "PacketID.h"
 
 
 class PacketReceiveNotice  : public PacketBase

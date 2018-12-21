@@ -46,18 +46,45 @@ namespace NativePacketGenerator
 				}
 				foreach(var Class in Parser.Classes)
 				{
+					if(Class.IsPureClass) { continue; }
+					if(Class.IsForCacheServer)
+					{
+						Class.Includes.Add("CacheServerPacketID.h");
+					}
+					else if(Class.IsForWordCheckServer)
+					{
+						Class.Includes.Add("WordCheckServerPacketID.h");
+					}
+					else
+					{
+						Class.Includes.Add("PacketID.h");
+					}
 					Classes.Add(Class);
 				}
 			}
 
-			IDEnumGenerator IDGen = new IDEnumGenerator(Classes);
-			if (!IDGen.Generate()) { return; }
-			if (!IDGen.Write(ServerPath + "\\PacketID.h")) { return; }
-			if (!IDGen.Write(ClientPath + "\\PacketID.h")) { return; }
-			if (!IDGen.Write(CacheServerPath + "\\PacketID.h")) { return; }
-			if (!IDGen.Write(WordCheckServerPath + "\\PacketID.h")) { return; }
+			// ゲームサーバ、クライアント
+			List<ClassData> GameServerClasses = new List<ClassData>(from Class in Classes where	(!Class.IsForCacheServer && !Class.IsForWordCheckServer) select Class);
+			IDEnumGenerator GameServerIDGen = new IDEnumGenerator(GameServerClasses);
+			if (!GameServerIDGen.Generate(0, "PacketID")) { return; }
+			if (!GameServerIDGen.Write(ServerPath + "\\PacketID.h")) { return; }
+			if (!GameServerIDGen.Write(ClientPath + "\\PacketID.h")) { return; }
 
-			foreach(var Class in Classes)
+			// キャッシュサーバ
+			List<ClassData> CacheServerClasses = new List<ClassData>(from Class in Classes where (Class.IsForCacheServer) select Class);
+			IDEnumGenerator CacheServerIDGen = new IDEnumGenerator(CacheServerClasses);
+			if (!CacheServerIDGen.Generate(6, "CachePacketID")) { return; }
+			if (!CacheServerIDGen.Write(ServerPath + "\\CacheServerPacketID.h")) { return; }
+			if (!CacheServerIDGen.Write(CacheServerPath + "\\CacheServerPacketID.h")) { return; }
+
+			// ワードチェックサーバ
+			List<ClassData> WordCheckServerClasses = new List<ClassData>(from Class in Classes where (Class.IsForWordCheckServer) select Class);
+			IDEnumGenerator WordCheckServerIDGen = new IDEnumGenerator(WordCheckServerClasses);
+			if (!WordCheckServerIDGen.Generate(7, "WordCheckPacketID")) { return; }
+			if (!WordCheckServerIDGen.Write(ServerPath + "\\WordCheckServerPacketID.h")) { return; }
+			if (!WordCheckServerIDGen.Write(WordCheckServerPath + "\\WordCheckServerPacketID.h")) { return; }
+
+			foreach (var Class in Classes)
 			{
 				SourceGenerator Gen = new SourceGenerator(Class);
 				if (!Gen.Generate()) { return; }

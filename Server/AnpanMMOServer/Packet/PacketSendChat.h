@@ -2,8 +2,8 @@
 #define __PACKETSENDCHAT_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
 class PacketSendChat  : public PacketBase

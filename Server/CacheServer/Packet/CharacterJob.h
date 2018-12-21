@@ -2,7 +2,6 @@
 #define __CHARACTERJOB_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 
 

@@ -2,15 +2,15 @@
 #define __WORDCHECKPACKETCHATREQUEST_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "WordCheckServerPacketID.h"
 
 
 class WordCheckPacketChatRequest  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::WordCheckChatRequest; }
+	virtual u8 GetPacketID() const { return WordCheckPacketID::WordCheckChatRequest; }
 
 	
 

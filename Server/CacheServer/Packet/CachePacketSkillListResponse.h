@@ -2,15 +2,15 @@
 #define __CACHEPACKETSKILLLISTRESPONSE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketSkillListResponse  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheSkillListResponse; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheSkillListResponse; }
 
 	enum ResultCode
 	{

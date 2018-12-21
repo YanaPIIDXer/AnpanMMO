@@ -2,8 +2,8 @@
 #define __PACKETSKILLUSE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "PacketID.h"
 
 
 class PacketSkillUse  : public PacketBase

@@ -1,7 +1,7 @@
-#ifndef __PACKETID_H__
-#define __PACKETID_H__
+#ifndef $INCLUDE_GUARD$
+#define $INCLUDE_GUARD$
 
-class PacketID
+class $SCOPE_NAME$
 {
 
 public:
@@ -12,4 +12,4 @@ public:
 	};
 };
 
-#endif		// #ifndef __PACKETID_H__
+#endif		// #ifndef $INCLUDE_GUARD$

@@ -87,6 +87,11 @@ namespace NativePacketGenerator
 		public string ClassName { get; private set; }
 
 		/// <summary>
+		/// スコープ名.
+		/// </summary>
+		public string ScopeName { get; private set; }
+
+		/// <summary>
 		/// 基底クラス名
 		/// </summary>
 		private string _BaseClassName;
@@ -164,6 +169,7 @@ namespace NativePacketGenerator
 		{
 			ClassName = InClassName;
 			IsForCacheServer = false;
+			ScopeName = "PacketID";
 		}
 
 		/// <summary>
@@ -205,6 +211,7 @@ namespace NativePacketGenerator
 		public void SetForCacheServerFlag()
 		{
 			IsForCacheServer = true;
+			ScopeName = "CachePacketID";
 		}
 
 		/// <summary>
@@ -213,6 +220,7 @@ namespace NativePacketGenerator
 		public void SetForWordCheckServerFlag()
 		{
 			IsForWordCheckServer = true;
+			ScopeName = "WordCheckPacketID";
 		}
 
 	}

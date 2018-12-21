@@ -2,15 +2,15 @@
 #define __CACHEPACKETOPENSKILLTREE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketOpenSkillTree  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheOpenSkillTree; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheOpenSkillTree; }
 
 	
 

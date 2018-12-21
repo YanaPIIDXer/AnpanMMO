@@ -2,15 +2,15 @@
 #define __CACHEPACKETLOGINRESULT_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketLogInResult  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheLogInResult; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheLogInResult; }
 
 	enum ResultCode
 	{

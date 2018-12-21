@@ -2,15 +2,15 @@
 #define __CACHEPACKETSAVEITEMSHORTCUTRESPONSE_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 class CachePacketSaveItemShortcutResponse  : public ProcessPacketBase
 {
 public:
-	virtual u8 GetPacketID() const { return PacketID::CacheSaveItemShortcutResponse; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheSaveItemShortcutResponse; }
 
 	enum ResultCode
 	{

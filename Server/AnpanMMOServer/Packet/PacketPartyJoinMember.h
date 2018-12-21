@@ -2,9 +2,9 @@
 #define __PACKETPARTYJOINMEMBER_H__
 
 #include "PacketBase.h"
-#include "PacketID.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "PartyMemberData.h"
+#include "PacketID.h"
 
 
 class PacketPartyJoinMember  : public PacketBase
