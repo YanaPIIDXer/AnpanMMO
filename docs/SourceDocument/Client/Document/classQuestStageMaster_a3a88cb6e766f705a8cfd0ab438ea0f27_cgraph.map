@@ -1,5 +1,0 @@
-<map id="QuestStageMaster::Load" name="QuestStageMaster::Load">
-<area shape="rect" id="node2" href="$classConfig.html#a2984265d03df3c14d0a02595484d8d0b" title="Config::GetMasterDirectory" alt="" coords="220,5,399,32"/>
-<area shape="rect" id="node3" href="$structQuestStageItem.html#a33517ae4b36c10cb2966f8c20fed2ee9" title="QuestStageItem::Serialize" alt="" coords="222,56,397,83"/>
-<area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="447,49,607,90"/>
-</map>

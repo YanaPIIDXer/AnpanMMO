@@ -1,7 +1,0 @@
-<map id="AreaMaster::Get" name="AreaMaster::Get">
-<area shape="rect" id="node2" href="$classAActiveGameMode.html#a0d93719855ac59396597701d396c3a92" title="AActiveGameMode::StartLevelLoad" alt="" coords="172,31,399,57"/>
-<area shape="rect" id="node5" href="$classUBlueprintFunctions.html#a4961e640c87f890f0c8638bad29d717d" title="UBlueprintFunctions\l::GetAreaName" alt="" coords="216,82,355,123"/>
-<area shape="rect" id="node6" href="$classUWarpAreaList.html#ac04ed1b89c654ee0314114a11183712d" title="UWarpAreaList::NativeConstruct" alt="" coords="181,148,390,175"/>
-<area shape="rect" id="node3" href="$classAActiveGameMode.html#a78bc21f3d2cf5af61f80c435b571ac44" title="AActiveGameMode::BeginPlay" alt="" coords="447,5,647,32"/>
-<area shape="rect" id="node4" href="$classUMainHUD.html#a1e8a3ed8c060154e615aac2c53dc1b73" title="UMainHUD::StartLevelLoad" alt="" coords="457,56,636,83"/>
-</map>

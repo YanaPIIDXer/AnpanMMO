@@ -1,4 +1,0 @@
-<map id="PlayerManager::OnRecvMove" name="PlayerManager::OnRecvMove">
-<area shape="rect" id="node2" href="$classPacketMovePlayer.html#a6a5ab5d38f794d96e9bb57a1e6b34f27" title="シリアライズ " alt="" coords="245,13,433,39"/>
-<area shape="rect" id="node3" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="481,5,641,47"/>
-</map>

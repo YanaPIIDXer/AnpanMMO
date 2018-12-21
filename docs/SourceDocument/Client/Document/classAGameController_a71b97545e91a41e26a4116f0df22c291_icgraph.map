@@ -1,7 +1,0 @@
-<map id="AGameController::GetCurrentTarget" name="AGameController::GetCurrentTarget">
-<area shape="rect" id="node2" href="$classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="245,35,451,61"/>
-<area shape="rect" id="node3" href="$classAGameCharacter.html#af8eaf977210da91f8981daa6f91c659b" title="AGameCharacter::IsItemUsable" alt="" coords="499,8,704,35"/>
-<area shape="rect" id="node5" href="$classAGameCharacter.html#a91cb1cfd26b21143670971e237efe410" title="AGameCharacter::UseSkill" alt="" coords="512,60,691,87"/>
-<area shape="rect" id="node4" href="$classAGameCharacter.html#af17b8bc5b6f7e487adebcb350e2fc809" title="AGameCharacter::UseItem" alt="" coords="760,5,939,32"/>
-<area shape="rect" id="node6" href="$classAGameCharacter.html#a1456594a9a8782496ae8be3054567bd8" title="AGameCharacter::UseNormal\lAttackSkill" alt="" coords="752,57,947,98"/>
-</map>

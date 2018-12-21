@@ -1,4 +1,0 @@
-<map id="ItemList::GetCount" name="ItemList::GetCount">
-<area shape="rect" id="node2" href="$classAGameCharacter.html#af8eaf977210da91f8981daa6f91c659b" title="AGameCharacter::IsItemUsable" alt="" coords="184,5,389,32"/>
-<area shape="rect" id="node3" href="$classAGameCharacter.html#af17b8bc5b6f7e487adebcb350e2fc809" title="AGameCharacter::UseItem" alt="" coords="437,5,616,32"/>
-</map>

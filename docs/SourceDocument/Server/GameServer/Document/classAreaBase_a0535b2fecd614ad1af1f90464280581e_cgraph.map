@@ -1,4 +1,0 @@
-<map id="AreaBase::CollectBox" name="AreaBase::CollectBox">
-<area shape="rect" id="node2" href="$classPlayerManager.html#a63266995806c8635a9013fa0fe14f1a8" title="PlayerManager::GetAllAsCharacterPtr" alt="" coords="204,5,447,32"/>
-<area shape="rect" id="node3" href="$classAnpanManager.html#a76d26d090055f20d637295effca1561f" title="AnpanManager::GetAllAsCharacterPtr" alt="" coords="204,56,447,83"/>
-</map>

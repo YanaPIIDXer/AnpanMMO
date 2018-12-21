@@ -1,8 +1,0 @@
-<map id="HttpConnection::Close" name="HttpConnection::Close">
-<area shape="rect" id="node2" href="$classHttpConnection.html#acb8dccc6bb58adf22089deec89a5da6e" title="HttpConnection::~HttpConnection" alt="" coords="205,27,421,54"/>
-<area shape="rect" id="node3" href="$classHttpConnection.html#a0dcc79842dc827d9b9b7ccda59b3115a" title="HttpConnection::StartDownload" alt="" coords="212,78,415,105"/>
-<area shape="rect" id="node4" href="$classVersionDownloader.html#a8561de22623e27d2c61637f4e06ae515" title="VersionDownloader::\lStart" alt="" coords="469,71,611,112"/>
-<area shape="rect" id="node5" href="$classUTitleScreenWidget.html#a9f96685afc4129487f1acea2da7ea8ac" title="UTitleScreenWidget\l::StartMasterDownload" alt="" coords="659,5,813,47"/>
-<area shape="rect" id="node6" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="662,71,810,112"/>
-<area shape="rect" id="node7" href="$classUTitleScreenWidget.html#afdbc1ecdae725bbd1460eaa7a7883d7e" title="UTitleScreenWidget\l::StartDLCDownload" alt="" coords="667,136,805,177"/>
-</map>

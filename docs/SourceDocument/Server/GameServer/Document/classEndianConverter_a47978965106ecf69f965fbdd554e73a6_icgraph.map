@@ -1,7 +1,0 @@
-<map id="EndianConverter::Convert" name="EndianConverter::Convert">
-<area shape="rect" id="node2" href="$classEndianConverter.html#ad78c6bd7c38e4e1f2eec4ce490f171e9" title="EndianConverter::Convert" alt="" coords="220,5,387,32"/>
-<area shape="rect" id="node3" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="227,57,379,98"/>
-<area shape="rect" id="node5" href="$classMemoryStreamWriter.html#a8bc2b40d0257751ed12ad2415b74258e" title="MemoryStreamWriter\l::Serialize" alt="" coords="230,122,377,163"/>
-<area shape="rect" id="node4" href="$classMemoryStreamReader.html#a1563459f7ff0683dd54114351d489add" title="MemoryStreamReader\l::Serialize" alt="" coords="435,57,587,98"/>
-<area shape="rect" id="node6" href="$classMemoryStreamWriter.html#ac751c7ba5a1287e23d0a04fbbe307b6c" title="MemoryStreamWriter\l::Serialize" alt="" coords="437,122,584,163"/>
-</map>

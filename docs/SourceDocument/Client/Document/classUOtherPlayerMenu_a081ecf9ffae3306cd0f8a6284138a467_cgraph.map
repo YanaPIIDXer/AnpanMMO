@@ -1,4 +1,0 @@
-<map id="UOtherPlayerMenu::Setup" name="UOtherPlayerMenu::Setup">
-<area shape="rect" id="node2" href="$classAOtherPlayerCharacter.html#a756dd190a3300bf6d7f2d06d2e521838" title="AOtherPlayerCharacter\l::GetCharacterName" alt="" coords="228,5,384,47"/>
-<area shape="rect" id="node3" href="$classAOtherPlayerCharacter.html#a4eba331a247242980c8c5b1294798f45" title="AOtherPlayerCharacter\l::GetUuid" alt="" coords="228,71,384,112"/>
-</map>

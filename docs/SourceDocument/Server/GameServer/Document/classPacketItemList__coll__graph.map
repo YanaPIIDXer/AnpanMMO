@@ -1,4 +1,0 @@
-<map id="PacketItemList" name="PacketItemList">
-<area shape="rect" id="node2" href="$classPacketBase.html" title="PacketBase" alt="" coords="5,5,99,32"/>
-<area shape="rect" id="node3" href="$classFlexArray.html" title="FlexArray\&lt; ItemData \&gt;" alt="" coords="123,5,277,32"/>
-</map>

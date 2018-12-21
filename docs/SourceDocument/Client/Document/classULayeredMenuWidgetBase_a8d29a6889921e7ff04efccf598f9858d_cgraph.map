@@ -1,5 +1,0 @@
-<map id="ULayeredMenuWidgetBase::Back" name="ULayeredMenuWidgetBase::Back">
-<area shape="rect" id="node2" href="$classULayeredMenuWidgetBase.html#afa1893e0fbde3031f8fd6a2ef750b8b5" title="ULayeredMenuWidgetBase\l::OnBackFromChild" alt="" coords="275,5,455,47"/>
-<area shape="rect" id="node3" href="$classAMMOGameModeBase.html#a1824e65168012abf6d7766162cb46439" title="AMMOGameModeBase::SetCurrentMenu" alt="" coords="233,71,496,98"/>
-<area shape="rect" id="node4" href="$classAActiveGameMode.html#a0468c5e21d7fdd391d62c0345084de43" title="AActiveGameMode::SetHidden\lMainHUD" alt="" coords="264,123,465,164"/>
-</map>

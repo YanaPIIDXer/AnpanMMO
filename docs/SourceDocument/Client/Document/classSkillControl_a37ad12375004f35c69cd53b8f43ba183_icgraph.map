@@ -1,4 +1,0 @@
-<map id="SkillControl::UseSkill" name="SkillControl::UseSkill">
-<area shape="rect" id="node2" href="$classAGameCharacter.html#a91cb1cfd26b21143670971e237efe410" title="AGameCharacter::UseSkill" alt="" coords="197,13,376,39"/>
-<area shape="rect" id="node3" href="$classAGameCharacter.html#a1456594a9a8782496ae8be3054567bd8" title="AGameCharacter::UseNormal\lAttackSkill" alt="" coords="424,5,619,47"/>
-</map>

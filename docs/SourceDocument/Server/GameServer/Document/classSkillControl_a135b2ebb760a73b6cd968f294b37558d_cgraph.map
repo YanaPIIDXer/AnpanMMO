@@ -1,5 +1,0 @@
-<map id="SkillControl::Use" name="SkillControl::Use">
-<area shape="rect" id="node2" href="$classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="CharacterBase::IsRecasting" alt="" coords="172,13,356,39"/>
-<area shape="rect" id="node4" href="$classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="196,63,332,90"/>
-<area shape="rect" id="node3" href="$classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="404,5,543,47"/>
-</map>

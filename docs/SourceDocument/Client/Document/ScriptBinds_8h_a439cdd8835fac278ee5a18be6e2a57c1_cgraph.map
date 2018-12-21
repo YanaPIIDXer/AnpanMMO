@@ -1,5 +1,0 @@
-<map id="GetQuestStageNo_Call" name="GetQuestStageNo_Call">
-<area shape="rect" id="node2" href="$classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="211,5,389,32"/>
-<area shape="rect" id="node3" href="$classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="235,56,365,83"/>
-<area shape="rect" id="node4" href="$classScriptExecuterBase.html#a3eb1d7d4359c62076b9cf85491388a6f" title="ScriptExecuterBase\l::GetQuestStageNo" alt="" coords="231,107,369,149"/>
-</map>

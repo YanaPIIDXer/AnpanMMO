@@ -1,5 +1,0 @@
-<map id="ClientManager::Get" name="ClientManager::Get">
-<area shape="rect" id="node2" href="$classCacheServerConnection.html#a2be522fed646b5acd3259c0f904990a3" title="CacheServerConnection\l::OnRecvData" alt="" coords="203,5,363,47"/>
-<area shape="rect" id="node3" href="$classPartyManager.html#aade2a6874f8844dab77e648a674fddc9" title="PartyManager::Dissolution" alt="" coords="196,71,371,98"/>
-<area shape="rect" id="node4" href="$classWordCheckServerConnection.html#a7963b274f852847c4ea928a7da4040d8" title="WordCheckServerConnection\l::OnRecvData" alt="" coords="188,123,379,164"/>
-</map>

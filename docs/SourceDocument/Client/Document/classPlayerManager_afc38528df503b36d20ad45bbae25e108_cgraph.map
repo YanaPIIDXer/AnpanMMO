@@ -1,4 +1,0 @@
-<map id="PlayerManager::OnRecvExit" name="PlayerManager::OnRecvExit">
-<area shape="rect" id="node2" href="$classPacketExitPlayer.html#a46bc5e50f0848f07b513d4c6d7d9d35d" title="シリアライズ " alt="" coords="239,13,420,39"/>
-<area shape="rect" id="node3" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="468,5,628,47"/>
-</map>

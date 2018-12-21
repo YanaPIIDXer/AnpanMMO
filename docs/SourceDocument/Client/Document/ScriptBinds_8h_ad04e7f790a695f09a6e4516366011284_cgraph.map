@@ -1,5 +1,0 @@
-<map id="ShowMessage_Call" name="ShowMessage_Call">
-<area shape="rect" id="node2" href="$classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="189,5,368,32"/>
-<area shape="rect" id="node3" href="$classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="214,56,343,83"/>
-<area shape="rect" id="node4" href="$classScriptExecuterBase.html#a2c59828d465e91eee3ae63718aa964e3" title="ScriptExecuterBase\l::ShowMessage_Impl" alt="" coords="205,107,352,149"/>
-</map>

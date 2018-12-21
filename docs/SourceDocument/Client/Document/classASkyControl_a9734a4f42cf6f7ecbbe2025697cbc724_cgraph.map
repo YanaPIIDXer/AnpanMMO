@@ -1,5 +1,0 @@
-<map id="ASkyControl::SetTime" name="ASkyControl::SetTime">
-<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="224,5,391,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#a890be049174f7f2defe0fae51e673bd5" title="MasterData::GetTimeInfoMaster" alt="" coords="204,56,411,83"/>
-<area shape="rect" id="node4" href="$classTimeInfoMaster.html#a8a6cb8d65ecc9cade13f854e2821c3b3" title="TimeInfoMaster::Get" alt="" coords="238,107,377,133"/>
-</map>

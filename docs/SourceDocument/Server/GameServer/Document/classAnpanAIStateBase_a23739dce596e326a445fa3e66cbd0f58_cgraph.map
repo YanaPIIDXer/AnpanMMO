@@ -1,6 +1,0 @@
-<map id="AnpanAIStateBase::SetRotate" name="AnpanAIStateBase::SetRotate">
-<area shape="rect" id="node2" href="$classCharacterBase.html#af419d46a1cf16394b89ebfa29550b6da" title="CharacterBase::GetRotation" alt="" coords="271,5,456,32"/>
-<area shape="rect" id="node3" href="$classRotation.html#ad5aebbfc6c26285b0579ad1e1b11d812" title="Rotation::Get" alt="" coords="314,56,413,83"/>
-<area shape="rect" id="node4" href="$classAnpanAI.html#abfb1658e9b23f52a085ed248ab056a32" title="AnpanAI::CreateRotatePacketData" alt="" coords="252,107,475,133"/>
-<area shape="rect" id="node5" href="$classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="523,107,685,133"/>
-</map>

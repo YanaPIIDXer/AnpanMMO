@@ -1,5 +1,0 @@
-<map id="ACharacterBase::Initialize" name="ACharacterBase::Initialize">
-<area shape="rect" id="node2" href="$classAAnpan.html#aab67aca71ba52dd60d80ac8c33503789" title="AAnpan::Spawn" alt="" coords="263,5,377,32"/>
-<area shape="rect" id="node3" href="$classAGameCharacter.html#a86daf7483d1c4e9f33692cdd6590517a" title="AGameCharacter::BeginPlay" alt="" coords="225,56,415,83"/>
-<area shape="rect" id="node4" href="$classAOtherPlayerCharacter.html#a73fc2f430e5dc21ab9570f4b8d2215f7" title="AOtherPlayerCharacter\l::Spawn" alt="" coords="242,107,398,149"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="PacketPartyDissolution::Serialize" name="PacketPartyDissolution::Serialize">
-<area shape="rect" id="node2" href="$classPartyInformation.html#af435ebbd111c9608ad9978c7f4d504e4" title="PartyInformation::OnRecv\lDissolution" alt="" coords="212,5,381,47"/>
-<area shape="rect" id="node3" href="$classAActiveGameMode.html#a9dd196c028a3f4b41a339572c85ebecf" title="AActiveGameMode::AActive\lGameMode" alt="" coords="429,5,615,47"/>
-</map>

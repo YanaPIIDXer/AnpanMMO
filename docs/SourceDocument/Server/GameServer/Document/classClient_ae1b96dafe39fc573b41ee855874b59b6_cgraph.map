@@ -1,4 +1,0 @@
-<map id="Client::CreateCharacter" name="Client::CreateCharacter">
-<area shape="rect" id="node2" href="$classCharacterBase.html#a6e1f38e44ca8669dd32e5defc280fe82" title="CharacterBase::SetUuid" alt="" coords="218,5,381,32"/>
-<area shape="rect" id="node3" href="$classPlayerCharacter.html#aad92d9ce8eae2a34ce35f49c14dfc421" title="PlayerCharacter::SetName" alt="" coords="211,56,388,83"/>
-</map>

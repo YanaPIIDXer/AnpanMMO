@@ -1,6 +1,0 @@
-<map id="AnpanData.h" name="AnpanData.h">
-<area shape="rect" id="node2" href="$PacketAnpanList_8h.html" title="アンパンリスト " alt="" coords="7,80,139,107"/>
-<area shape="rect" id="node5" href="$PacketSpawnAnpan_8h.html" title="アンパン生成 " alt="" coords="163,80,313,107"/>
-<area shape="rect" id="node3" href="$AnpanManager_8cpp.html" title="AnpanManager.cpp" alt="" coords="5,155,140,181"/>
-<area shape="rect" id="node4" href="$AreaBase_8cpp.html" title="AreaBase.cpp" alt="" coords="175,155,279,181"/>
-</map>

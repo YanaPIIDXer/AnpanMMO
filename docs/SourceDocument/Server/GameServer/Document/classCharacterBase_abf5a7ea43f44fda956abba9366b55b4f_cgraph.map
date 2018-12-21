@@ -1,4 +1,0 @@
-<map id="CharacterBase::IsSkillActive" name="CharacterBase::IsSkillActive">
-<area shape="rect" id="node2" href="$classSkillControl.html#ae4d7b9d305c9a9f8047bbe8cec503f5d" title="SkillControl::IsActive" alt="" coords="240,5,381,32"/>
-<area shape="rect" id="node3" href="$classSkillStateBase.html#a65e63e4c3e787df759f29b8cef5427ac" title="SkillStateBase::GetStateType" alt="" coords="429,5,625,32"/>
-</map>

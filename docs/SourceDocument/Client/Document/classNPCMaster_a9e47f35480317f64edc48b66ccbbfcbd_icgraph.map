@@ -1,4 +1,0 @@
-<map id="NPCMaster::Get" name="NPCMaster::Get">
-<area shape="rect" id="node2" href="$classUBlueprintFunctions.html#a4cc93d22e3af532caf65e9d02da47260" title="UBlueprintFunctions\l::GetNPCName" alt="" coords="176,5,315,47"/>
-<area shape="rect" id="node3" href="$classANPCCharacter.html#af6372c0e3a0f32c0079922936ff6fdaf" title="ANPCCharacter::Talk" alt="" coords="172,71,319,98"/>
-</map>

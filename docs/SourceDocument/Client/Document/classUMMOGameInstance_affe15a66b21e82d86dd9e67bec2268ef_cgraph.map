@@ -1,5 +1,0 @@
-<map id="UMMOGameInstance::OnRecvSkillTreeData" name="UMMOGameInstance::OnRecvSkillTreeData">
-<area shape="rect" id="node2" href="$classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7" title="FlexArray::GetCurrentSize" alt="" coords="274,5,449,32"/>
-<area shape="rect" id="node3" href="$classPlayerStatus.html#ad91030072833a617192904d4b3081e2e" title="PlayerStatus::OpenSkillTreeNode" alt="" coords="253,56,469,83"/>
-<area shape="rect" id="node4" href="$classSkillTree.html#a557965aaa477ea490b3e9ba0e3480cdc" title="SkillTree::Open" alt="" coords="517,56,628,83"/>
-</map>

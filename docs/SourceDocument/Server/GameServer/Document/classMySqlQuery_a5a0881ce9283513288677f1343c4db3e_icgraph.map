@@ -1,8 +1,0 @@
-<map id="MySqlQuery::BindResultString" name="MySqlQuery::BindResultString">
-<area shape="rect" id="node2" href="$classAreaMaster.html#a7706c1bfc83c8a74fa7ec427cee0674d" title="AreaMaster::Load" alt="" coords="256,5,381,32"/>
-<area shape="rect" id="node3" href="$classItemMaster.html#a8abdcb220ce80f002d472ff5699853a4" title="ItemMaster::Load" alt="" coords="257,56,380,83"/>
-<area shape="rect" id="node5" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="256,107,381,133"/>
-<area shape="rect" id="node6" href="$classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5" title="QuestMaster::Load" alt="" coords="252,157,385,184"/>
-<area shape="rect" id="node7" href="$classSkillMaster.html#a6f7833604c2201645fd893995930394a" title="SkillMaster::Load" alt="" coords="257,208,380,235"/>
-<area shape="rect" id="node4" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="MasterData::Read" alt="" coords="433,132,560,159"/>
-</map>

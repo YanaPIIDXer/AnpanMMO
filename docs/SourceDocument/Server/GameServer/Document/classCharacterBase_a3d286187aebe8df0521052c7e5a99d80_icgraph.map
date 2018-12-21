@@ -1,7 +1,0 @@
-<map id="CharacterBase::IsRecasting" name="CharacterBase::IsRecasting">
-<area shape="rect" id="node2" href="$classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="237,56,356,83"/>
-<area shape="rect" id="node3" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="Anpan::AttackTo" alt="" coords="427,5,545,32"/>
-<area shape="rect" id="node4" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="CharacterBase::UseSkill" alt="" coords="404,56,568,83"/>
-<area shape="rect" id="node5" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="414,107,558,133"/>
-<area shape="rect" id="node6" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="PlayerCharacter::UseItem" alt="" coords="616,107,787,133"/>
-</map>

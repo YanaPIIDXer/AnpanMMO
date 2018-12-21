@@ -1,7 +1,0 @@
-<map id="USkillListWidget::Init" name="USkillListWidget::Init">
-<area shape="rect" id="node2" href="$classAGameCharacter.html#a9f16189ed5a069ce10c86104c51466f0" title="AGameCharacter::GetStatus" alt="" coords="196,5,385,32"/>
-<area shape="rect" id="node3" href="$classPlayerStatus.html#ada554a2fe5ee8143c19512e4e83ae742" title="PlayerStatus::GetSkillTree" alt="" coords="203,56,379,83"/>
-<area shape="rect" id="node4" href="$classSkillTree.html#a5b458e7fdb36959fa7c53b53d6fa826d" title="SkillTree::GetRootNode" alt="" coords="211,107,370,133"/>
-<area shape="rect" id="node5" href="$classPlayerStatus.html#a010bdb5c134639bcd8403a039814af72" title="PlayerStatus::GetSkillList" alt="" coords="205,157,377,184"/>
-<area shape="rect" id="node6" href="$classUSkillListWidget.html#a9316ba8bc773d3203e6fb91f6556d43c" title="USkillListWidget::InitEvent" alt="" coords="203,208,378,235"/>
-</map>

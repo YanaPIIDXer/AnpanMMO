@@ -1,4 +1,0 @@
-<map id="ScriptExecuter::GetQuestStageNo" name="ScriptExecuter::GetQuestStageNo">
-<area shape="rect" id="node2" href="$classClient.html#a305aafd3c545bd284aaccdc59576cc08" title="クエスト管理取得. " alt="" coords="234,5,403,32"/>
-<area shape="rect" id="node3" href="$classQuestManager.html#a3242238cf9d6f84d7caa9b11c2b8598f" title="QuestManager::GetStageNo" alt="" coords="225,56,412,83"/>
-</map>

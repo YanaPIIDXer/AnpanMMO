@@ -1,4 +1,0 @@
-<map id="CharacterBase::ApplyDamage" name="CharacterBase::ApplyDamage">
-<area shape="rect" id="node2" href="$classCharacterBase.html#a1b21d5dc74631551b33e097cb9a07227" title="CharacterBase::GetCharacterType" alt="" coords="251,5,472,32"/>
-<area shape="rect" id="node3" href="$classCharacterBase.html#a82a6e428e70e442ab27623f6c9ae5a81" title="CharacterBase::OnDamaged" alt="" coords="267,56,455,83"/>
-</map>

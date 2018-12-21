@@ -1,5 +1,0 @@
-<map id="SkillTree::SkillTree" name="SkillTree::SkillTree">
-<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="185,5,351,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#af4ca808baa9f20a9b29253536822a23c" title="MasterData::GetSkillTree\lMaster" alt="" coords="184,57,352,98"/>
-<area shape="rect" id="node4" href="$classSkillTreeMaster.html#a66f93b5f66680ee7a170462c056ce2f9" title="SkillTreeMaster::GetAll" alt="" coords="190,123,346,149"/>
-</map>

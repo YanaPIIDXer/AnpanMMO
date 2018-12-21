@@ -1,4 +1,0 @@
-<map id="UWarpAreaList::Create" name="UWarpAreaList::Create">
-<area shape="rect" id="node2" href="$classAWarpPoint.html#a7bae9d66011f5272afb5700687c9e78e" title="AWarpPoint::OnOverlap" alt="" coords="209,5,369,32"/>
-<area shape="rect" id="node3" href="$classAWarpPoint.html#ab45ac53c9386015b32136aabe39a90ba" title="AWarpPoint::Tick" alt="" coords="417,5,541,32"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="UMMOGameInstance::Init" name="UMMOGameInstance::Init">
-<area shape="rect" id="node2" href="$classQuestManager.html#aab10aa6171946ad575c94612994a7bbe" title="QuestManager::SetGameInstance" alt="" coords="225,5,444,32"/>
-<area shape="rect" id="node3" href="$classPakFileManager.html#ab8d96d9c1c303571a537765c94721f79" title="PakFileManager::GetInstance" alt="" coords="237,56,432,83"/>
-<area shape="rect" id="node4" href="$classPakFileManager.html#aba262728df66d4da810f767fa512a2b6" title="PakFileManager::Initialize" alt="" coords="249,107,420,133"/>
-<area shape="rect" id="node5" href="$classScriptExecuterBase.html#ab0f93fc0bda8ff3d0173e7edbe13560c" title="ScriptExecuterBase\l::SetScriptDir" alt="" coords="265,158,404,199"/>
-<area shape="rect" id="node6" href="$classConfig.html#a3aac6e291c2cb2fb2804a48d38c9290a" title="Config::GetScriptDirectory" alt="" coords="248,224,421,251"/>
-</map>

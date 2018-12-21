@@ -1,6 +1,0 @@
-<map id="HeightMap::CheckMovable" name="HeightMap::CheckMovable">
-<area shape="rect" id="node2" href="$classHeightMap.html#a82efe82fdc788a9707f728592030d310" title="HeightMap::GetHeight" alt="" coords="229,56,380,83"/>
-<area shape="rect" id="node3" href="$classBitmap.html#a0a051f683ff80cfa67c8ab1f3f28dae5" title="Bitmap::GetWidth" alt="" coords="429,5,556,32"/>
-<area shape="rect" id="node4" href="$classBitmap.html#a008fecd08bbde0e9aab650f51a040277" title="Bitmap::GetHeight" alt="" coords="428,56,557,83"/>
-<area shape="rect" id="node5" href="$classBitmap.html#ab18513d6b9d6d8ef13ba8ea428fdbcec" title="Bitmap::GetPixel" alt="" coords="432,107,553,133"/>
-</map>

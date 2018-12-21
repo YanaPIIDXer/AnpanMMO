@@ -1,6 +1,0 @@
-<map id="GameServerConnection::Close" name="GameServerConnection::Close">
-<area shape="rect" id="node2" href="$classGameServerConnection.html#a774c2c2e55f2dc5c8bcf9254954b38df" title="GameServerConnection\l::~GameServerConnection" alt="" coords="212,5,387,47"/>
-<area shape="rect" id="node3" href="$classGameServerConnection.html#a9d0972403cc827f7d4af8c3d6ff3aeaa" title="GameServerConnection\l::Connect" alt="" coords="220,71,379,112"/>
-<area shape="rect" id="node4" href="$classUMMOGameInstance.html#afecf75abd0ed3c7152f2e736f8193e62" title="UMMOGameInstance::Connect" alt="" coords="435,78,637,105"/>
-<area shape="rect" id="node5" href="$classUTitleScreenWidget.html#a91da46198026a84973d304fbbcade000" title="UTitleScreenWidget\l::ConnectToGameServer" alt="" coords="685,71,848,112"/>
-</map>

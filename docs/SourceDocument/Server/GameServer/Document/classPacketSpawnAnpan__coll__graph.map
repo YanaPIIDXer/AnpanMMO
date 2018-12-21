@@ -1,4 +1,0 @@
-<map id="PacketSpawnAnpan" name="PacketSpawnAnpan">
-<area shape="rect" id="node2" href="$classPacketBase.html" title="PacketBase" alt="" coords="5,5,99,32"/>
-<area shape="rect" id="node3" href="$classAnpanData.html" title="AnpanData" alt="" coords="123,5,210,32"/>
-</map>

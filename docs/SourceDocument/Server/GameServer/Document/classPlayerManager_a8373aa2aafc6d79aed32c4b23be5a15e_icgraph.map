@@ -1,4 +1,0 @@
-<map id="PlayerManager::Get" name="PlayerManager::Get">
-<area shape="rect" id="node2" href="$classAreaBase.html#a5b1199e74b590f790efdb82966032d29" title="AreaBase::OnRecvSkillUse" alt="" coords="192,5,372,32"/>
-<area shape="rect" id="node3" href="$classAreaBase.html#a85c275fad404278d74490814da9605a6" title="AreaBase::OnRecvItemUse" alt="" coords="192,56,372,83"/>
-</map>

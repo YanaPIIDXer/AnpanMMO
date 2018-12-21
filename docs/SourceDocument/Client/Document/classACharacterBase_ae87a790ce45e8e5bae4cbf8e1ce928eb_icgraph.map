@@ -1,8 +1,0 @@
-<map id="ACharacterBase::GetCharacterType" name="ACharacterBase::GetCharacterType">
-<area shape="rect" id="node2" href="$classACharacterBase.html#a57c1a87257db354c58d4ab286ee0cbc2" title="ACharacterBase::OnSkillCast" alt="" coords="289,5,484,32"/>
-<area shape="rect" id="node3" href="$classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="284,107,489,133"/>
-<area shape="rect" id="node5" href="$classAGameCharacter.html#af17b8bc5b6f7e487adebcb350e2fc809" title="AGameCharacter::UseItem" alt="" coords="799,77,977,104"/>
-<area shape="rect" id="node6" href="$classAGameCharacter.html#a91cb1cfd26b21143670971e237efe410" title="AGameCharacter::UseSkill" alt="" coords="551,157,729,184"/>
-<area shape="rect" id="node4" href="$classAGameCharacter.html#af8eaf977210da91f8981daa6f91c659b" title="AGameCharacter::IsItemUsable" alt="" coords="537,107,743,133"/>
-<area shape="rect" id="node7" href="$classAGameCharacter.html#a1456594a9a8782496ae8be3054567bd8" title="AGameCharacter::UseNormal\lAttackSkill" alt="" coords="791,150,985,191"/>
-</map>

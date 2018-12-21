@@ -1,5 +1,0 @@
-<map id="SetFlag_Call" name="SetFlag_Call">
-<area shape="rect" id="node2" href="$classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="149,5,328,32"/>
-<area shape="rect" id="node3" href="$classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="174,56,303,83"/>
-<area shape="rect" id="node4" href="$classScriptExecuterBase.html#aa480306075704b8c4201ee0577a4fcfa" title="ScriptExecuterBase\l::SetFlag" alt="" coords="169,107,308,149"/>
-</map>

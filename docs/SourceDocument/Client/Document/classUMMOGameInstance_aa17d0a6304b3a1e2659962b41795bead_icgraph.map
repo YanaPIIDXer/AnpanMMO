@@ -1,5 +1,0 @@
-<map id="UMMOGameInstance::SetAreaIdCache" name="UMMOGameInstance::SetAreaIdCache">
-<area shape="rect" id="node2" href="$classUWarpAreaList.html#a8df7d8ad476be165a30da0d6f91389c5" title="UWarpAreaList::SendAreaMove\lRequest" alt="" coords="256,5,461,47"/>
-<area shape="rect" id="node3" href="$classAWarpPoint.html#a7bae9d66011f5272afb5700687c9e78e" title="AWarpPoint::OnOverlap" alt="" coords="279,71,439,98"/>
-<area shape="rect" id="node4" href="$classAWarpPoint.html#ab45ac53c9386015b32136aabe39a90ba" title="AWarpPoint::Tick" alt="" coords="509,71,633,98"/>
-</map>

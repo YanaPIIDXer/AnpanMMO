@@ -1,7 +1,0 @@
-<map id="ACharacterBase::OnSkillCast" name="ACharacterBase::OnSkillCast">
-<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="280,5,447,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="272,56,455,83"/>
-<area shape="rect" id="node4" href="$classSkillMaster.html#a9664da6db4693699deddbf2ba10da548" title="SkillMaster::Get" alt="" coords="305,107,421,133"/>
-<area shape="rect" id="node5" href="$classASkillRangeDecal.html#ab50150453634653d7d857a6799113806" title="ASkillRangeDecal::Spawn" alt="" coords="277,157,450,184"/>
-<area shape="rect" id="node6" href="$classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="248,208,479,235"/>
-</map>

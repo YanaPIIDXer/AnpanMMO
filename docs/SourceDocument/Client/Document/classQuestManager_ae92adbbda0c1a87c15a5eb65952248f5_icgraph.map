@@ -1,4 +1,0 @@
-<map id="QuestManager::CollectProgressingQuests" name="QuestManager::CollectProgressingQuests">
-<area shape="rect" id="node2" href="$classUQuestMenu.html#a4591287f03f41fd3ed6999d29b4cc402" title="UQuestMenu::Init" alt="" coords="277,13,400,39"/>
-<area shape="rect" id="node3" href="$classUQuestMenu.html#ade8dde830305652d1271ecca0dd6b93c" title="UQuestMenu::OnRecvPacket" alt="" coords="448,13,640,39"/>
-</map>

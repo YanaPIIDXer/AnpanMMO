@@ -1,4 +1,0 @@
-<map id="CacheServerConnection::Connect" name="CacheServerConnection::Connect">
-<area shape="rect" id="node2" href="$classTCPConnection.html#a373f4c028cd3f53bb2b1fe82c25464c4" title="TCPConnection::GetSocket" alt="" coords="215,5,397,32"/>
-<area shape="rect" id="node3" href="$classTCPConnection.html#afdc370c27676080e6a90743b4a6ea3e2" title="TCPConnection::AsyncRecv" alt="" coords="213,56,399,83"/>
-</map>

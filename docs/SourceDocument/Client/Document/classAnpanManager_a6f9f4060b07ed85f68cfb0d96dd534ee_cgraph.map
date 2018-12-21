@@ -1,4 +1,0 @@
-<map id="AnpanManager::OnRecvRotate" name="AnpanManager::OnRecvRotate">
-<area shape="rect" id="node2" href="$classPacketRotateAnpan.html#a196a11c7d8f45c09c6561559552d208a" title="シリアライズ " alt="" coords="253,5,400,47"/>
-<area shape="rect" id="node3" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="448,5,608,47"/>
-</map>

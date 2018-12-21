@@ -1,5 +1,0 @@
-<map id="NPCConditionMaster::Load" name="NPCConditionMaster::Load">
-<area shape="rect" id="node2" href="$classConfig.html#a2984265d03df3c14d0a02595484d8d0b" title="Config::GetMasterDirectory" alt="" coords="200,5,379,32"/>
-<area shape="rect" id="node3" href="$structNPCConditionItem.html#a25db0912af622746d775368efb6cddc9" title="NPCConditionItem::Serialize" alt="" coords="196,56,383,83"/>
-<area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="431,49,591,90"/>
-</map>

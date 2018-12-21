@@ -1,5 +1,0 @@
-<map id="GetItemCount_Call" name="GetItemCount_Call">
-<area shape="rect" id="node2" href="$classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="184,5,363,32"/>
-<area shape="rect" id="node3" href="$classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="209,56,338,83"/>
-<area shape="rect" id="node4" href="$classScriptExecuterBase.html#aa9235ecfcabec47de8bfcb9f0efe17a4" title="ScriptExecuterBase\l::GetItemCount" alt="" coords="204,107,343,149"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="AnpanManager::Spawn" name="AnpanManager::Spawn">
-<area shape="rect" id="node2" href="$classInstanceArea.html#aca5cdff8995ab000177e32b6fb9c4c7b" title="InstanceArea::Initialize" alt="" coords="209,5,363,32"/>
-<area shape="rect" id="node3" href="$classAreaManager.html#ae0ed460d6d1d9c26a0821623b111ca5f" title="AreaManager::CreateInstanceArea" alt="" coords="411,5,632,32"/>
-</map>

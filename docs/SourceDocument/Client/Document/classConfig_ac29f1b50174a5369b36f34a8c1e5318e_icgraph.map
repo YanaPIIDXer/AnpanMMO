@@ -1,6 +1,0 @@
-<map id="Config::GetDLCDirectory" name="Config::GetDLCDirectory">
-<area shape="rect" id="node2" href="$classAActiveGameMode.html#a0d93719855ac59396597701d396c3a92" title="AActiveGameMode::StartLevelLoad" alt="" coords="217,31,444,57"/>
-<area shape="rect" id="node5" href="$classUTitleScreenWidget.html#afdbc1ecdae725bbd1460eaa7a7883d7e" title="UTitleScreenWidget\l::StartDLCDownload" alt="" coords="261,82,400,123"/>
-<area shape="rect" id="node3" href="$classAActiveGameMode.html#a78bc21f3d2cf5af61f80c435b571ac44" title="AActiveGameMode::BeginPlay" alt="" coords="492,5,692,32"/>
-<area shape="rect" id="node4" href="$classUMainHUD.html#a1e8a3ed8c060154e615aac2c53dc1b73" title="UMainHUD::StartLevelLoad" alt="" coords="503,56,681,83"/>
-</map>

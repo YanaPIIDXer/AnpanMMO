@@ -1,5 +1,0 @@
-<map id="HeightMap::GetHeight" name="HeightMap::GetHeight">
-<area shape="rect" id="node2" href="$classBitmap.html#a0a051f683ff80cfa67c8ab1f3f28dae5" title="Bitmap::GetWidth" alt="" coords="205,5,332,32"/>
-<area shape="rect" id="node3" href="$classBitmap.html#a008fecd08bbde0e9aab650f51a040277" title="Bitmap::GetHeight" alt="" coords="204,56,333,83"/>
-<area shape="rect" id="node4" href="$classBitmap.html#ab18513d6b9d6d8ef13ba8ea428fdbcec" title="Bitmap::GetPixel" alt="" coords="208,107,329,133"/>
-</map>

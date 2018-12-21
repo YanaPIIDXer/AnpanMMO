@@ -1,6 +1,0 @@
-<map id="Client::SendPacket" name="Client::SendPacket">
-<area shape="rect" id="node2" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="210,5,361,32"/>
-<area shape="rect" id="node3" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="188,57,383,98"/>
-<area shape="rect" id="node4" href="$classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="198,123,373,149"/>
-<area shape="rect" id="node5" href="$classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd" title="TCPConnection::AsyncSend" alt="" coords="192,173,379,200"/>
-</map>

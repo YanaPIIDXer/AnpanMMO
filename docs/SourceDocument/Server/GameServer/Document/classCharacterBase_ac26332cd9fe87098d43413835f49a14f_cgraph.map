@@ -1,4 +1,0 @@
-<map id="CharacterBase::IsSkillCasting" name="CharacterBase::IsSkillCasting">
-<area shape="rect" id="node2" href="$classSkillControl.html#a1184144783440fed9d833be7fbcc59c1" title="SkillControl::IsCasting" alt="" coords="248,5,399,32"/>
-<area shape="rect" id="node3" href="$classSkillStateBase.html#a65e63e4c3e787df759f29b8cef5427ac" title="SkillStateBase::GetStateType" alt="" coords="447,5,643,32"/>
-</map>

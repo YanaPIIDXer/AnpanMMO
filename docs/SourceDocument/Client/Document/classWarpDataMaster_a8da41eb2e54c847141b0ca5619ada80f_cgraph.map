@@ -1,5 +1,0 @@
-<map id="WarpDataMaster::Load" name="WarpDataMaster::Load">
-<area shape="rect" id="node2" href="$classConfig.html#a2984265d03df3c14d0a02595484d8d0b" title="Config::GetMasterDirectory" alt="" coords="209,5,388,32"/>
-<area shape="rect" id="node3" href="$structWarpDataItem.html#a0722033c7864d5c7cbba633f6a64db15" title="WarpDataItem::Serialize" alt="" coords="217,56,380,83"/>
-<area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="436,49,596,90"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="AGameCharacter::OnRecvSkillList" name="AGameCharacter::OnRecvSkillList">
-<area shape="rect" id="node2" href="$classPlayerStatus.html#ab6a59599065bf2ef2c4bcb181714dab9" title="PlayerStatus::SetSkillList" alt="" coords="275,5,446,32"/>
-<area shape="rect" id="node3" href="$classPlayerStatus.html#a010bdb5c134639bcd8403a039814af72" title="PlayerStatus::GetSkillList" alt="" coords="275,56,447,83"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="UMainHUD::ShowNoticeMenu" name="UMainHUD::ShowNoticeMenu">
-<area shape="rect" id="node2" href="$classUNoticeMenuWidget.html#af8e72811234f0d3426198b06501f11bd" title="UNoticeMenuWidget::\lShowWidget" alt="" coords="248,27,397,69"/>
-<area shape="rect" id="node3" href="$classULayeredMenuWidgetBase.html#af5e429752404b96df6adda063cc6ab81" title="ULayeredMenuWidgetBase\l::Show" alt="" coords="445,27,625,69"/>
-<area shape="rect" id="node4" href="$classAMMOGameModeBase.html#a1824e65168012abf6d7766162cb46439" title="AMMOGameModeBase::SetCurrentMenu" alt="" coords="673,5,936,32"/>
-<area shape="rect" id="node5" href="$classAActiveGameMode.html#a0468c5e21d7fdd391d62c0345084de43" title="AActiveGameMode::SetHidden\lMainHUD" alt="" coords="704,57,905,98"/>
-</map>

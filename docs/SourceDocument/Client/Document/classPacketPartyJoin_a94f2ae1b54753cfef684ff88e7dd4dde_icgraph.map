@@ -1,4 +1,0 @@
-<map id="PacketPartyJoin::Serialize" name="PacketPartyJoin::Serialize">
-<area shape="rect" id="node2" href="$classPartyInformation.html#a0f41718e5c102fc3b464ab4d26cb8cbf" title="PartyInformation::OnRecvJoin" alt="" coords="228,13,420,39"/>
-<area shape="rect" id="node3" href="$classAActiveGameMode.html#a9dd196c028a3f4b41a339572c85ebecf" title="AActiveGameMode::AActive\lGameMode" alt="" coords="468,5,653,47"/>
-</map>

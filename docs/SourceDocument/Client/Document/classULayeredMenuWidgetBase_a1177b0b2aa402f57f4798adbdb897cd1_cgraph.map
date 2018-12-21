@@ -1,6 +1,0 @@
-<map id="ULayeredMenuWidgetBase::ShowChild" name="ULayeredMenuWidgetBase::ShowChild">
-<area shape="rect" id="node2" href="$classULayeredMenuWidgetBase.html#aaa200e099b2273d2ae5d94c68cf80f8b" title="ULayeredMenuWidgetBase\l::CloseChild" alt="" coords="233,5,413,47"/>
-<area shape="rect" id="node3" href="$classULayeredMenuWidgetBase.html#af5e429752404b96df6adda063cc6ab81" title="ULayeredMenuWidgetBase\l::Show" alt="" coords="233,71,413,112"/>
-<area shape="rect" id="node4" href="$classAMMOGameModeBase.html#a1824e65168012abf6d7766162cb46439" title="AMMOGameModeBase::SetCurrentMenu" alt="" coords="461,49,724,75"/>
-<area shape="rect" id="node5" href="$classAActiveGameMode.html#a0468c5e21d7fdd391d62c0345084de43" title="AActiveGameMode::SetHidden\lMainHUD" alt="" coords="492,100,693,141"/>
-</map>

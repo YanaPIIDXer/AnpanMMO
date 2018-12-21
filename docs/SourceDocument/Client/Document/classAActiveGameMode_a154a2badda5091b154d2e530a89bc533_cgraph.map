@@ -1,7 +1,0 @@
-<map id="AActiveGameMode::FinishScript" name="AActiveGameMode::FinishScript">
-<area shape="rect" id="node2" href="$classUScriptWidgetRoot.html#ad77cb32704b4b2aa7e971e580607d923" title="UScriptWidgetRoot::\lCloseWidget" alt="" coords="264,64,405,105"/>
-<area shape="rect" id="node3" href="$classULayeredMenuWidgetBase.html#ac47178b046fdc632be37ff6f457e3fe5" title="ULayeredMenuWidgetBase\l::Close" alt="" coords="453,64,633,105"/>
-<area shape="rect" id="node4" href="$classULayeredMenuWidgetBase.html#aaa200e099b2273d2ae5d94c68cf80f8b" title="ULayeredMenuWidgetBase\l::CloseChild" alt="" coords="723,5,903,47"/>
-<area shape="rect" id="node5" href="$classAMMOGameModeBase.html#a1824e65168012abf6d7766162cb46439" title="AMMOGameModeBase::SetCurrentMenu" alt="" coords="681,71,944,98"/>
-<area shape="rect" id="node6" href="$classAActiveGameMode.html#a0468c5e21d7fdd391d62c0345084de43" title="AActiveGameMode::SetHidden\lMainHUD" alt="" coords="712,123,913,164"/>
-</map>

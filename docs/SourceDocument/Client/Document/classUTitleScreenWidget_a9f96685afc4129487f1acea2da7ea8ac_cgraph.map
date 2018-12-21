@@ -1,7 +1,0 @@
-<map id="UTitleScreenWidget::StartMasterDownload" name="UTitleScreenWidget::StartMasterDownload">
-<area shape="rect" id="node2" href="$classUTitleScreenWidget.html#afa1731f5f4dade90a64573121abb5335" title="UTitleScreenWidget\l::OnMasterDownloaded" alt="" coords="219,5,376,47"/>
-<area shape="rect" id="node3" href="$classVersionDownloader.html#a8561de22623e27d2c61637f4e06ae515" title="VersionDownloader::\lStart" alt="" coords="227,71,368,112"/>
-<area shape="rect" id="node6" href="$classConfig.html#a2984265d03df3c14d0a02595484d8d0b" title="Config::GetMasterDirectory" alt="" coords="208,137,387,163"/>
-<area shape="rect" id="node4" href="$classHttpConnection.html#a0dcc79842dc827d9b9b7ccda59b3115a" title="HttpConnection::StartDownload" alt="" coords="435,78,637,105"/>
-<area shape="rect" id="node5" href="$classHttpConnection.html#a6bea587b0ded1630fc0b97367a10f023" title="HttpConnection::Close" alt="" coords="685,78,837,105"/>
-</map>

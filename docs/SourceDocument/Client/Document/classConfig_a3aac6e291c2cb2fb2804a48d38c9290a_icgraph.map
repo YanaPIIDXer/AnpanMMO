@@ -1,5 +1,0 @@
-<map id="Config::GetScriptDirectory" name="Config::GetScriptDirectory">
-<area shape="rect" id="node2" href="$classUMMOGameInstance.html#abc81ee500b49699c3cfda1f9af1a3e0f" title="UMMOGameInstance::Init" alt="" coords="227,5,399,32"/>
-<area shape="rect" id="node3" href="$classScriptExecuter.html#a380a39546e474729e1153d9cb940d2f0" title="ScriptExecuter::RunScript" alt="" coords="227,56,400,83"/>
-<area shape="rect" id="node4" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="239,107,387,149"/>
-</map>

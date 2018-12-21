@@ -1,4 +1,0 @@
-<map id="PlayerCharacter::OnRecvItemList" name="PlayerCharacter::OnRecvItemList">
-<area shape="rect" id="node2" href="$classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7" title="FlexArray::GetCurrentSize" alt="" coords="268,5,443,32"/>
-<area shape="rect" id="node3" href="$classItemList.html#ad988a51cb7fd94a620ad933032ecfa32" title="ItemList::Add" alt="" coords="306,56,405,83"/>
-</map>

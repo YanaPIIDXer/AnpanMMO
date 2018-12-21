@@ -1,4 +1,0 @@
-<map id="AGameController::SetEnableMove" name="AGameController::SetEnableMove">
-<area shape="rect" id="node2" href="$classAWarpPoint.html#a7bae9d66011f5272afb5700687c9e78e" title="AWarpPoint::OnOverlap" alt="" coords="272,5,432,32"/>
-<area shape="rect" id="node3" href="$classAWarpPoint.html#ab45ac53c9386015b32136aabe39a90ba" title="AWarpPoint::Tick" alt="" coords="480,5,604,32"/>
-</map>

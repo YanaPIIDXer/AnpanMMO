@@ -1,4 +1,0 @@
-<map id="PlayerStatus::OpenSkillTreeNode" name="PlayerStatus::OpenSkillTreeNode">
-<area shape="rect" id="node2" href="$classAGameCharacter.html#a5d0b9018459b63b90e80e5e6efc8f6e2" title="AGameCharacter::OpenSkill\lTreeNode" alt="" coords="276,5,463,47"/>
-<area shape="rect" id="node3" href="$classUMMOGameInstance.html#affe15a66b21e82d86dd9e67bec2268ef" title="UMMOGameInstance::OnRecv\lSkillTreeData" alt="" coords="269,71,469,112"/>
-</map>

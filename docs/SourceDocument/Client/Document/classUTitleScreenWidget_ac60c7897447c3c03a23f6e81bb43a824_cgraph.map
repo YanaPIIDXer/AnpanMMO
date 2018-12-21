@@ -1,7 +1,0 @@
-<map id="UTitleScreenWidget::StartScriptDownload" name="UTitleScreenWidget::StartScriptDownload">
-<area shape="rect" id="node2" href="$classUTitleScreenWidget.html#a22908b20b6effc134eff387ca678f279" title="UTitleScreenWidget\l::OnScriptDownloaded" alt="" coords="213,5,363,47"/>
-<area shape="rect" id="node3" href="$classVersionDownloader.html#a8561de22623e27d2c61637f4e06ae515" title="VersionDownloader::\lStart" alt="" coords="217,71,359,112"/>
-<area shape="rect" id="node6" href="$classConfig.html#a3aac6e291c2cb2fb2804a48d38c9290a" title="Config::GetScriptDirectory" alt="" coords="201,137,375,163"/>
-<area shape="rect" id="node4" href="$classHttpConnection.html#a0dcc79842dc827d9b9b7ccda59b3115a" title="HttpConnection::StartDownload" alt="" coords="423,78,625,105"/>
-<area shape="rect" id="node5" href="$classHttpConnection.html#a6bea587b0ded1630fc0b97367a10f023" title="HttpConnection::Close" alt="" coords="673,78,825,105"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="UPartyInfoMenuWidget::NativeConstruct" name="UPartyInfoMenuWidget::NativeConstruct">
-<area shape="rect" id="node2" href="$classUPartyInfoMenuWidget.html#a368827a6f5e9528ee212b562133d13da" title="UPartyInfoMenuWidget\l::Init" alt="" coords="208,99,363,141"/>
-<area shape="rect" id="node3" href="$classAActiveGameMode.html#af15b59a5ba87f2f6dae6d25b60203946" title="AActiveGameMode::GetPartyInfo" alt="" coords="411,5,624,32"/>
-<area shape="rect" id="node4" href="$classPartyInformation.html#a11666a992d42153ad67379ca2c46befd" title="PartyInformation::IsLeader" alt="" coords="431,56,604,83"/>
-<area shape="rect" id="node5" href="$classPartyInformation.html#a3382ffc6af71d4d01195b5a4ef857059" title="PartyInformation::GetMemberList" alt="" coords="411,107,624,133"/>
-<area shape="rect" id="node6" href="$classAGameCharacter.html#a9093a7a33d31c8e2df786aabb409ea5a" title="AGameCharacter::GetUuid" alt="" coords="429,157,606,184"/>
-<area shape="rect" id="node7" href="$classUPartyInfoMenuWidget.html#aa463bb598cd40abe7e3aa631b70bd330" title="UPartyInfoMenuWidget\l::OnInit" alt="" coords="440,209,595,250"/>
-</map>

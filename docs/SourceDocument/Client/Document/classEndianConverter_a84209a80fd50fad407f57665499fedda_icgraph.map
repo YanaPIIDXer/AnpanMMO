@@ -1,8 +1,0 @@
-<map id="EndianConverter::IsLittleEndian" name="EndianConverter::IsLittleEndian">
-<area shape="rect" id="node2" href="$classEndianConverter.html#a1753b343c555e29906e12cc6941781f0" title="EndianConverter::Convert" alt="" coords="216,64,383,91"/>
-<area shape="rect" id="node3" href="$classEndianConverter.html#a63e862d7cec6ec67aadf93c53657f74b" title="EndianConverter::Convert" alt="" coords="431,5,597,32"/>
-<area shape="rect" id="node4" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="438,57,590,98"/>
-<area shape="rect" id="node6" href="$classMemoryStreamWriter.html#a8bc2b40d0257751ed12ad2415b74258e" title="MemoryStreamWriter\l::Serialize" alt="" coords="441,122,587,163"/>
-<area shape="rect" id="node5" href="$classMemoryStreamReader.html#a1563459f7ff0683dd54114351d489add" title="MemoryStreamReader\l::Serialize" alt="" coords="645,57,797,98"/>
-<area shape="rect" id="node7" href="$classMemoryStreamWriter.html#ac751c7ba5a1287e23d0a04fbbe307b6c" title="MemoryStreamWriter\l::Serialize" alt="" coords="648,122,795,163"/>
-</map>

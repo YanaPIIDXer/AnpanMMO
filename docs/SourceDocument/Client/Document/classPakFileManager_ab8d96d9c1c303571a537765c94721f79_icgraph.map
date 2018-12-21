@@ -1,8 +1,0 @@
-<map id="PakFileManager::GetInstance" name="PakFileManager::GetInstance">
-<area shape="rect" id="node2" href="$classAActiveGameMode.html#a0d93719855ac59396597701d396c3a92" title="AActiveGameMode::StartLevelLoad" alt="" coords="248,31,475,57"/>
-<area shape="rect" id="node5" href="$classUMMOGameInstance.html#abc81ee500b49699c3cfda1f9af1a3e0f" title="UMMOGameInstance::Init" alt="" coords="275,81,447,108"/>
-<area shape="rect" id="node6" href="$classANPCCharacter.html#a62519ea082b4a6c191e63dbb6a5e5e79" title="ANPCCharacter::Spawn" alt="" coords="281,132,442,159"/>
-<area shape="rect" id="node3" href="$classAActiveGameMode.html#a78bc21f3d2cf5af61f80c435b571ac44" title="AActiveGameMode::BeginPlay" alt="" coords="523,5,723,32"/>
-<area shape="rect" id="node4" href="$classUMainHUD.html#a1e8a3ed8c060154e615aac2c53dc1b73" title="UMainHUD::StartLevelLoad" alt="" coords="533,56,712,83"/>
-<area shape="rect" id="node7" href="$classNPCManager.html#a15e31dcf91098eb0dfe17d59e4555da9" title="NPCManager::OnMapChanegd" alt="" coords="523,132,723,159"/>
-</map>

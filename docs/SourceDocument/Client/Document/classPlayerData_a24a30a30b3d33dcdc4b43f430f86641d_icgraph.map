@@ -1,5 +1,0 @@
-<map id="PlayerData::Serialize" name="PlayerData::Serialize">
-<area shape="rect" id="node2" href="$classPacketSpawnPlayer.html#a25f5697a5bbe444fa28e202a9b929c10" title="シリアライズ " alt="" coords="197,5,344,47"/>
-<area shape="rect" id="node3" href="$classPlayerManager.html#a6ea3844e4d468b4b162e6999fcb93c0c" title="PlayerManager::OnRecvSpawn" alt="" coords="392,13,593,39"/>
-<area shape="rect" id="node4" href="$classAActiveGameMode.html#a9dd196c028a3f4b41a339572c85ebecf" title="AActiveGameMode::AActive\lGameMode" alt="" coords="641,5,827,47"/>
-</map>

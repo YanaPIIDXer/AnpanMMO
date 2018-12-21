@@ -1,5 +1,0 @@
-<map id="UBlueprintFunctions::GetSkillName" name="UBlueprintFunctions::GetSkillName">
-<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="200,5,367,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="192,56,375,83"/>
-<area shape="rect" id="node4" href="$classSkillMaster.html#a9664da6db4693699deddbf2ba10da548" title="SkillMaster::Get" alt="" coords="225,107,341,133"/>
-</map>

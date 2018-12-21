@@ -1,5 +1,0 @@
-<map id="PacketHeader::GetPacketId" name="PacketHeader::GetPacketId">
-<area shape="rect" id="node2" href="$classCacheServerConnection.html#a2be522fed646b5acd3259c0f904990a3" title="CacheServerConnection\l::OnRecvData" alt="" coords="253,5,413,47"/>
-<area shape="rect" id="node3" href="$classClient.html#a4b0db04a1228e3ee23255bcee1ab546e" title="データを受信した。 " alt="" coords="265,71,400,98"/>
-<area shape="rect" id="node4" href="$classWordCheckServerConnection.html#a7963b274f852847c4ea928a7da4040d8" title="WordCheckServerConnection\l::OnRecvData" alt="" coords="237,123,428,164"/>
-</map>

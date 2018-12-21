@@ -1,5 +1,0 @@
-<map id="Anpan::OnDamaged" name="Anpan::OnDamaged">
-<area shape="rect" id="node2" href="$classAnpanAI.html#ada352c7389a8b9d1bf5ce2849d58f38d" title="AnpanAI::OnDamaged" alt="" coords="192,31,343,57"/>
-<area shape="rect" id="node3" href="$classHate.html#a53c74a9c95043b5800ae5094b9c0b888" title="Hate::Add" alt="" coords="457,5,537,32"/>
-<area shape="rect" id="node4" href="$classAnpanAIStateBase.html#a26bd5fb584e5cd3c6cbeb27c94192827" title="AnpanAIStateBase::OnDamaged" alt="" coords="391,56,603,83"/>
-</map>
