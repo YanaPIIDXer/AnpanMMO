@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: PacketID クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="classPacketID-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">PacketID クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>パケットＩＤ定義.  
+ <a href="classPacketID.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="PacketID_8h_source.html">PacketID.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:aaac69b977036b9b9d40419b939c1570a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570a">EID</a> { <br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aae1c1a44503105edeeaa430065424b831">AnpanList</a> = 0x01, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aab033f1d3601792ecbecb4473b8619b3c">SpawnAnpan</a> = 0x02, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa05346fb82a932cbbf0aa006d2186a359">MoveAnpan</a> = 0x03, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aafe68be47f32efadb5a398d55d550ea8f">RotateAnpan</a> = 0x04, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa6770d13f54f5d2b952600b079379c5a1">StopAnpan</a> = 0x05, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf93a5d0a569eba849ba5ad707dd9a453">Damage</a> = 0x06, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf06d4180632f93414398c648de411e2f">Heal</a> = 0x07, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa93a96ac3d227079fdc0026d4fa411f5f">SendChat</a> = 0x08, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaaa8a06a2a999f27237631a93403c7b26">ReceiveChat</a> = 0x09, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aae87960b6bc05252291d01937dd88a050">GameReady</a> = 0x0A, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad10fe4c1ab94d7a20a9c568b3f0c2103">AreaMove</a> = 0x0B, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa719a728d89d3f3bbd437ad6b130b5969">AreaMoveRequest</a> = 0x0C, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa5485f2a811a241830f7c293f38d9a758">AreaMoveResponse</a> = 0x0D, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaa3e5813f01c01be847c25562805ea1a0">AddExp</a> = 0x0E, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa9418f7e1ef872f1ebf3c17b8a2204c64">LevelUp</a> = 0x0F, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaaf47e0277f381f03210df720df611a6e">ChangeGold</a> = 0x10, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa8ca07c30a0ac834c9588619c3fc33258">InstanceAreaTicketPublish</a> = 0x11, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf3ea4def36f148a9b64d05103c543812">InstanceAreaTicketProcess</a> = 0x12, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad99ec797e17e83e4bb4672f843421621">InstanceAreaTicketDiscard</a> = 0x13, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aae56c320bdf5d4fc19da20734331e5799">SpawnInstanceAreaExitPoint</a> = 0x14, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa47298d6a87d302f211d099a222eb3842">ItemList</a> = 0x15, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa67745fbddf2a9e3a1d6effe368dc4462">ItemShortcut</a> = 0x16, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa9d07854851c55840db04613139a7facf">ItemUse</a> = 0x17, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aae41d8d8fb10bfb0bcbcc5311426aa796">ItemAdd</a> = 0x18, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaaf80aa24d6baf1ef4fe7e2724b051733">ItemSubtract</a> = 0x19, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aabc36bbfdf528781de793683c6552fa50">ItemSubtractRequest</a> = 0x1A, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa189fc8ee1a1f61860bdfdde3ede8c3a1">SaveItemShortcutRequest</a> = 0x1B, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa2a399658a356f070fe82e008b9bab978">SaveItemShortcutResult</a> = 0x1C, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa6d3052703a73e55a45c3ef33f975a79a">LogInRequest</a> = 0x1D, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaa9233280741a6e33fb9be3dccdf4a732">LogInResult</a> = 0x1E, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa0577b75e07bbe35fa2fcd6656dee9eb2">CreateCharacterRequest</a> = 0x1F, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa5ac49dbfb9a036736757809e0cfaea25">CreateCharacterResult</a> = 0x20, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad71bb8468369f6e7d230d944462f913e">CharacterStatus</a> = 0x21, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aabafa66ca029574cfba1a78867788a8f1">NoticeList</a> = 0x22, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa1239799f8d1df4c2e3d28b0196f836e2">ReceiveNotice</a> = 0x23, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa30f8a39669378c4936f570e4d029a836">NPCTalk</a> = 0x24, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa779b1d5953e6e478879d3878f651e309">NPCTalkSelection</a> = 0x25, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad07426b7390f0a82bedbc5fdf008791b">PartyCreateRequest</a> = 0x26, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa83b9c70f916530b4882d4beaeb72536e">PartyCreateResult</a> = 0x27, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf992ee6a7c38b14a62b9104fce027191">PartyInviteRequest</a> = 0x28, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaa07325b21bb500cbd5daac41f7ab5a0c">PartyInviteResult</a> = 0x29, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa1c18101d5bc3de535523c8061607f57c">PartyInviteResponse</a> = 0x2A, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa0ba2b1d8357aeb36744c9333680b51fe">PartyJoin</a> = 0x2B, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa85c0cf72d4511ee1da67dd17891615e7">PartyJoinMember</a> = 0x2C, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa34d68b49c8e906e4fc75333cb0b30c2c">PartyExitRequest</a> = 0x2D, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa63dd3ce2b0c15ef9c2b343d93dac6ac8">PartyExitResult</a> = 0x2E, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aabbf30de6ab416f60160fb48f4ff80174">PartyExit</a> = 0x2F, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa44dcc9a91f67ed62452b1efa68467fb9">PartyKickRequest</a> = 0x30, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa13f0061166353c45286cfba153dc4277">PartyKickResult</a> = 0x31, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad7a534458f611f39d4862e452b3c5be6">PartyKick</a> = 0x32, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aae0de4cdab75f245b915fe046561874d3">PartyDissolutionRequest</a> = 0x33, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa978997622868722f225288a28d18dfc2">PartyDissolutionResult</a> = 0x34, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aab627365e4936e7328515b482ee05f74f">PartyDissolution</a> = 0x35, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa3043f49e99a80d6a671133660ad90445">Ping</a> = 0x36, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa7388906f745c4b846c4143a815068588">PlayerList</a> = 0x37, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad48eec913c3a501e464aac42f6f1b9ed">SpawnPlayer</a> = 0x38, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa003b2d981c31d6c372b32d36ae6e9385">MovePlayer</a> = 0x39, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aab31b174ab9dbfc492b02697fa7a72b3f">ExitPlayer</a> = 0x3A, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaa4257744dd2077b9d8be3710fae07eed">RespawnRequest</a> = 0x3B, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa3c0fc7b23c1cf6d37de6a0b67e2abadb">PlayerRespawn</a> = 0x3C, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa24c261b1c8a290901c9860512e242d04">QuestData</a> = 0x3D, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aadb3e7b0de8d1b8ecf60de1d20413d104">QuestAccept</a> = 0x3E, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad7e6190c9f79882b65cbaad8c4e5240d">QuestAnpanKill</a> = 0x3F, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaae8ef7aa15c3ed7fe43f7dd6296298cf">QuestStageChange</a> = 0x40, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aafbb660ca245f721355cfacf9d4d087fb">QuestClear</a> = 0x41, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa79eba58582c371f67b633c7554855ca4">QuestRetireRequest</a> = 0x42, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aabb45c58e1654bad758c8b44030b6d78f">QuestRetireResponse</a> = 0x43, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aacef5cb55be0c3c045bc183efe28b842a">SaveActiveQuest</a> = 0x44, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa6b6a5853a983bed9f12c4d6af49ec472">ScriptFlag</a> = 0x45, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf76aff146a2c7ae415b0d3c4aa6ef8cb">SkillUse</a> = 0x46, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaec1dab5e16608633437d9cb8c4d4f197">SkillUseFailed</a> = 0x47, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aab7d0433c018e16b29bef6aa55518e662">SkillCast</a> = 0x48, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa1a690fc86231efa8a50519029e2e1b41">SkillCastFinish</a> = 0x49, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa479f2b8c3327c1ff25183c13b467dbfd">SkillActivate</a> = 0x4A, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa09464fbb066677d81e633b7fc29ea0df">SkillRecast</a> = 0x4B, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa787b3a345fba5e79c6e351acc02c10a8">SkillList</a> = 0x4C, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa875be42c652ff5386297512e24babd0c">SaveSkillListRequest</a> = 0x4D, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa478dfcb01964ec29dc686e0ac70bcf09">SaveSkillListResponse</a> = 0x4E, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa4c6842d47508fbb0caa869320ce56f7a">SkillTreeData</a> = 0x4F, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf002a344795e5dcdafd092ef8db4792c">SkillTreeOpenRequest</a> = 0x50, 
+<br />
+&#160;&#160;<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad1312f8bbcc3657f2d3ba5199cb2db23">SkillTreeOpenResult</a> = 0x51, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa9e24361d6bf1a73d64b21039c9261a84">Time</a> = 0x52, 
+<a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa82a4db98c9dc4c9ba35b4a1de51a42b0">TimeChange</a> = 0x53
+<br />
+ }</td></tr>
+<tr class="separator:aaac69b977036b9b9d40419b939c1570a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>パケットＩＤ定義. </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="aaac69b977036b9b9d40419b939c1570a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaac69b977036b9b9d40419b939c1570a">&#9670;&nbsp;</a></span>EID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570a">PacketID::EID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aae1c1a44503105edeeaa430065424b831"></a>AnpanList&#160;</td><td class="fielddoc"><p>アンパンリスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aab033f1d3601792ecbecb4473b8619b3c"></a>SpawnAnpan&#160;</td><td class="fielddoc"><p>アンパン生成 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa05346fb82a932cbbf0aa006d2186a359"></a>MoveAnpan&#160;</td><td class="fielddoc"><p>アンパン移動 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aafe68be47f32efadb5a398d55d550ea8f"></a>RotateAnpan&#160;</td><td class="fielddoc"><p>アンパン回転 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa6770d13f54f5d2b952600b079379c5a1"></a>StopAnpan&#160;</td><td class="fielddoc"><p>アンパン停止 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaf93a5d0a569eba849ba5ad707dd9a453"></a>Damage&#160;</td><td class="fielddoc"><p>ダメージ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaf06d4180632f93414398c648de411e2f"></a>Heal&#160;</td><td class="fielddoc"><p>回復 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa93a96ac3d227079fdc0026d4fa411f5f"></a>SendChat&#160;</td><td class="fielddoc"><p>チャット送信 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaaa8a06a2a999f27237631a93403c7b26"></a>ReceiveChat&#160;</td><td class="fielddoc"><p>チャット受信 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aae87960b6bc05252291d01937dd88a050"></a>GameReady&#160;</td><td class="fielddoc"><p>準備完了 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aad10fe4c1ab94d7a20a9c568b3f0c2103"></a>AreaMove&#160;</td><td class="fielddoc"><p>エリア移動 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa719a728d89d3f3bbd437ad6b130b5969"></a>AreaMoveRequest&#160;</td><td class="fielddoc"><p>エリア移動リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa5485f2a811a241830f7c293f38d9a758"></a>AreaMoveResponse&#160;</td><td class="fielddoc"><p>エリア移動レスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaa3e5813f01c01be847c25562805ea1a0"></a>AddExp&#160;</td><td class="fielddoc"><p>経験値追加 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa9418f7e1ef872f1ebf3c17b8a2204c64"></a>LevelUp&#160;</td><td class="fielddoc"><p>レベルアップ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaaf47e0277f381f03210df720df611a6e"></a>ChangeGold&#160;</td><td class="fielddoc"><p>ゴールド変化 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa8ca07c30a0ac834c9588619c3fc33258"></a>InstanceAreaTicketPublish&#160;</td><td class="fielddoc"><p>インスタンスマップチケット発行 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaf3ea4def36f148a9b64d05103c543812"></a>InstanceAreaTicketProcess&#160;</td><td class="fielddoc"><p>インスタンスマップチケット処理 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aad99ec797e17e83e4bb4672f843421621"></a>InstanceAreaTicketDiscard&#160;</td><td class="fielddoc"><p>インスタンスマップチケット破棄 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aae56c320bdf5d4fc19da20734331e5799"></a>SpawnInstanceAreaExitPoint&#160;</td><td class="fielddoc"><p>インスタンスマップ脱出ポイント生成 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa47298d6a87d302f211d099a222eb3842"></a>ItemList&#160;</td><td class="fielddoc"><p>ログイン時アイテムリスト通知 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa67745fbddf2a9e3a1d6effe368dc4462"></a>ItemShortcut&#160;</td><td class="fielddoc"><p>ログイン時アイテムショートカット通知 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa9d07854851c55840db04613139a7facf"></a>ItemUse&#160;</td><td class="fielddoc"><p>アイテム使用 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aae41d8d8fb10bfb0bcbcc5311426aa796"></a>ItemAdd&#160;</td><td class="fielddoc"><p>アイテム追加 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaaf80aa24d6baf1ef4fe7e2724b051733"></a>ItemSubtract&#160;</td><td class="fielddoc"><p>アイテム消費 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aabc36bbfdf528781de793683c6552fa50"></a>ItemSubtractRequest&#160;</td><td class="fielddoc"><p>アイテム破棄リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa189fc8ee1a1f61860bdfdde3ede8c3a1"></a>SaveItemShortcutRequest&#160;</td><td class="fielddoc"><p>アイテムショートカット保存リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa2a399658a356f070fe82e008b9bab978"></a>SaveItemShortcutResult&#160;</td><td class="fielddoc"><p>アイテムショートカット保存結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa6d3052703a73e55a45c3ef33f975a79a"></a>LogInRequest&#160;</td><td class="fielddoc"><p>ログインリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaa9233280741a6e33fb9be3dccdf4a732"></a>LogInResult&#160;</td><td class="fielddoc"><p>ログインリクエスト結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa0577b75e07bbe35fa2fcd6656dee9eb2"></a>CreateCharacterRequest&#160;</td><td class="fielddoc"><p>キャラクタ作成リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa5ac49dbfb9a036736757809e0cfaea25"></a>CreateCharacterResult&#160;</td><td class="fielddoc"><p>キャラクタ作成結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aad71bb8468369f6e7d230d944462f913e"></a>CharacterStatus&#160;</td><td class="fielddoc"><p>キャラクタパラメータ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aabafa66ca029574cfba1a78867788a8f1"></a>NoticeList&#160;</td><td class="fielddoc"><p>通知リスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa1239799f8d1df4c2e3d28b0196f836e2"></a>ReceiveNotice&#160;</td><td class="fielddoc"><p>通知 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa30f8a39669378c4936f570e4d029a836"></a>NPCTalk&#160;</td><td class="fielddoc"><p>会話開始 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa779b1d5953e6e478879d3878f651e309"></a>NPCTalkSelection&#160;</td><td class="fielddoc"><p>選択肢を選択 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aad07426b7390f0a82bedbc5fdf008791b"></a>PartyCreateRequest&#160;</td><td class="fielddoc"><p>パーティ作成リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa83b9c70f916530b4882d4beaeb72536e"></a>PartyCreateResult&#160;</td><td class="fielddoc"><p>パーティ作成結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaf992ee6a7c38b14a62b9104fce027191"></a>PartyInviteRequest&#160;</td><td class="fielddoc"><p>パーティ勧誘リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaa07325b21bb500cbd5daac41f7ab5a0c"></a>PartyInviteResult&#160;</td><td class="fielddoc"><p>パーティ勧誘結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa1c18101d5bc3de535523c8061607f57c"></a>PartyInviteResponse&#160;</td><td class="fielddoc"><p>パーティ勧誘レスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa0ba2b1d8357aeb36744c9333680b51fe"></a>PartyJoin&#160;</td><td class="fielddoc"><p>パーティ加入 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa85c0cf72d4511ee1da67dd17891615e7"></a>PartyJoinMember&#160;</td><td class="fielddoc"><p>パーティメンバ加入 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa34d68b49c8e906e4fc75333cb0b30c2c"></a>PartyExitRequest&#160;</td><td class="fielddoc"><p>パーティ離脱リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa63dd3ce2b0c15ef9c2b343d93dac6ac8"></a>PartyExitResult&#160;</td><td class="fielddoc"><p>パーティ離脱結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aabbf30de6ab416f60160fb48f4ff80174"></a>PartyExit&#160;</td><td class="fielddoc"><p>パーティ離脱 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa44dcc9a91f67ed62452b1efa68467fb9"></a>PartyKickRequest&#160;</td><td class="fielddoc"><p>パーティメンバキックリクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa13f0061166353c45286cfba153dc4277"></a>PartyKickResult&#160;</td><td class="fielddoc"><p>パーティメンバキック結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aad7a534458f611f39d4862e452b3c5be6"></a>PartyKick&#160;</td><td class="fielddoc"><p>パーティメンバキック </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aae0de4cdab75f245b915fe046561874d3"></a>PartyDissolutionRequest&#160;</td><td class="fielddoc"><p>パーティ解散リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa978997622868722f225288a28d18dfc2"></a>PartyDissolutionResult&#160;</td><td class="fielddoc"><p>パーティ解散結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aab627365e4936e7328515b482ee05f74f"></a>PartyDissolution&#160;</td><td class="fielddoc"><p>パーティ解散 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa3043f49e99a80d6a671133660ad90445"></a>Ping&#160;</td><td class="fielddoc"><p>Ping </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa7388906f745c4b846c4143a815068588"></a>PlayerList&#160;</td><td class="fielddoc"><p>プレイヤーリスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aad48eec913c3a501e464aac42f6f1b9ed"></a>SpawnPlayer&#160;</td><td class="fielddoc"><p>プレイヤー生成 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa003b2d981c31d6c372b32d36ae6e9385"></a>MovePlayer&#160;</td><td class="fielddoc"><p>プレイヤー移動 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aab31b174ab9dbfc492b02697fa7a72b3f"></a>ExitPlayer&#160;</td><td class="fielddoc"><p>プレイヤー退出 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaa4257744dd2077b9d8be3710fae07eed"></a>RespawnRequest&#160;</td><td class="fielddoc"><p>プレイヤーリスポン要求 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa3c0fc7b23c1cf6d37de6a0b67e2abadb"></a>PlayerRespawn&#160;</td><td class="fielddoc"><p>プレイヤーリスポン </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa24c261b1c8a290901c9860512e242d04"></a>QuestData&#160;</td><td class="fielddoc"><p>クエストデータリスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aadb3e7b0de8d1b8ecf60de1d20413d104"></a>QuestAccept&#160;</td><td class="fielddoc"><p>クエスト受注 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aad7e6190c9f79882b65cbaad8c4e5240d"></a>QuestAnpanKill&#160;</td><td class="fielddoc"><p>クエストアンパンキル </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaae8ef7aa15c3ed7fe43f7dd6296298cf"></a>QuestStageChange&#160;</td><td class="fielddoc"><p>クエストステージ進行 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aafbb660ca245f721355cfacf9d4d087fb"></a>QuestClear&#160;</td><td class="fielddoc"><p>クエストクリア </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa79eba58582c371f67b633c7554855ca4"></a>QuestRetireRequest&#160;</td><td class="fielddoc"><p>クエスト破棄リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aabb45c58e1654bad758c8b44030b6d78f"></a>QuestRetireResponse&#160;</td><td class="fielddoc"><p>クエスト破棄レスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aacef5cb55be0c3c045bc183efe28b842a"></a>SaveActiveQuest&#160;</td><td class="fielddoc"><p>アクティブクエスト保存 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa6b6a5853a983bed9f12c4d6af49ec472"></a>ScriptFlag&#160;</td><td class="fielddoc"><p>スクリプトフラグ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaf76aff146a2c7ae415b0d3c4aa6ef8cb"></a>SkillUse&#160;</td><td class="fielddoc"><p>スキル使用 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaec1dab5e16608633437d9cb8c4d4f197"></a>SkillUseFailed&#160;</td><td class="fielddoc"><p>スキル使用失敗 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aab7d0433c018e16b29bef6aa55518e662"></a>SkillCast&#160;</td><td class="fielddoc"><p>スキル詠唱開始 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa1a690fc86231efa8a50519029e2e1b41"></a>SkillCastFinish&#160;</td><td class="fielddoc"><p>スキル詠唱完了 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa479f2b8c3327c1ff25183c13b467dbfd"></a>SkillActivate&#160;</td><td class="fielddoc"><p>スキル発動 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa09464fbb066677d81e633b7fc29ea0df"></a>SkillRecast&#160;</td><td class="fielddoc"><p>リキャスト完了 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa787b3a345fba5e79c6e351acc02c10a8"></a>SkillList&#160;</td><td class="fielddoc"><p>スキルリスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa875be42c652ff5386297512e24babd0c"></a>SaveSkillListRequest&#160;</td><td class="fielddoc"><p>スキルリスト保存リクエスト </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa478dfcb01964ec29dc686e0ac70bcf09"></a>SaveSkillListResponse&#160;</td><td class="fielddoc"><p>スキルリスト保存レスポンス </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa4c6842d47508fbb0caa869320ce56f7a"></a>SkillTreeData&#160;</td><td class="fielddoc"><p>スキルツリーデータ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aaf002a344795e5dcdafd092ef8db4792c"></a>SkillTreeOpenRequest&#160;</td><td class="fielddoc"><p>スキルツリー開放要求 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aad1312f8bbcc3657f2d3ba5199cb2db23"></a>SkillTreeOpenResult&#160;</td><td class="fielddoc"><p>スキルツリー開放結果 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa9e24361d6bf1a73d64b21039c9261a84"></a>Time&#160;</td><td class="fielddoc"><p>ログイン時の時間通知 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aaac69b977036b9b9d40419b939c1570aa82a4db98c9dc4c9ba35b4a1de51a42b0"></a>TimeChange&#160;</td><td class="fielddoc"><p>時間変化通知 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="PacketID_8h_source.html">PacketID.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

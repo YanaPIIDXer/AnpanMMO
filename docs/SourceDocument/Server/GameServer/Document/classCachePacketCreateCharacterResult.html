@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: CachePacketCreateCharacterResult クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="classCachePacketCreateCharacterResult-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">CachePacketCreateCharacterResult クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>キャラクタ作成結果  
+ <a href="classCachePacketCreateCharacterResult.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="CachePacketCreateCharacterResult_8h_source.html">CachePacketCreateCharacterResult.h</a>&gt;</code></p>
+<div class="dynheader">
+CachePacketCreateCharacterResult の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCachePacketCreateCharacterResult__inherit__graph.png" border="0" usemap="#CachePacketCreateCharacterResult_inherit__map" alt="Inheritance graph"/></div>
+<map name="CachePacketCreateCharacterResult_inherit__map" id="CachePacketCreateCharacterResult_inherit__map">
+<area shape="rect" id="node2" href="classProcessPacketBase.html" title="ProcessPacketBase" alt="" coords="32,80,173,107"/>
+<area shape="rect" id="node3" href="classPacketBase.html" title="PacketBase" alt="" coords="56,5,149,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+CachePacketCreateCharacterResult 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="classCachePacketCreateCharacterResult__coll__graph.png" border="0" usemap="#CachePacketCreateCharacterResult_coll__map" alt="Collaboration graph"/></div>
+<map name="CachePacketCreateCharacterResult_coll__map" id="CachePacketCreateCharacterResult_coll__map">
+<area shape="rect" id="node2" href="classProcessPacketBase.html" title="ProcessPacketBase" alt="" coords="32,80,173,107"/>
+<area shape="rect" id="node3" href="classPacketBase.html" title="PacketBase" alt="" coords="56,5,149,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:abbc73ff9c455c6a90a9cbfdbec415df0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketCreateCharacterResult.html#abbc73ff9c455c6a90a9cbfdbec415df0">ResultCode</a> { <a class="el" href="classCachePacketCreateCharacterResult.html#abbc73ff9c455c6a90a9cbfdbec415df0a1dec6cd57185344e9b07480d5e3f6618">Success</a> = 成功, 
+<a class="el" href="classCachePacketCreateCharacterResult.html#abbc73ff9c455c6a90a9cbfdbec415df0a2c237ecd8fae2d1cc28ec1f2d1fae81c">Error</a> = エラー
+ }</td></tr>
+<tr class="separator:abbc73ff9c455c6a90a9cbfdbec415df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a4b5ddaf34a90f923398268c889a5e9b2"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketCreateCharacterResult.html#a4b5ddaf34a90f923398268c889a5e9b2">GetPacketID</a> () const</td></tr>
+<tr class="memdesc:a4b5ddaf34a90f923398268c889a5e9b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケットＩＤ取得.  <a href="#a4b5ddaf34a90f923398268c889a5e9b2">[詳解]</a><br /></td></tr>
+<tr class="separator:a4b5ddaf34a90f923398268c889a5e9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a910680691168b9f0fe7c7a41ad5fff4d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketCreateCharacterResult.html#a910680691168b9f0fe7c7a41ad5fff4d">CachePacketCreateCharacterResult</a> ()</td></tr>
+<tr class="memdesc:a910680691168b9f0fe7c7a41ad5fff4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a910680691168b9f0fe7c7a41ad5fff4d">[詳解]</a><br /></td></tr>
+<tr class="separator:a910680691168b9f0fe7c7a41ad5fff4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae4df904b2897cde4a6bc948bf9e136"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketCreateCharacterResult.html#a4ae4df904b2897cde4a6bc948bf9e136">CachePacketCreateCharacterResult</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InClientId, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InResult)</td></tr>
+<tr class="memdesc:a4ae4df904b2897cde4a6bc948bf9e136"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a4ae4df904b2897cde4a6bc948bf9e136">[詳解]</a><br /></td></tr>
+<tr class="separator:a4ae4df904b2897cde4a6bc948bf9e136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e929313644e33ad31ed199808bc5b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketCreateCharacterResult.html#ac8e929313644e33ad31ed199808bc5b1">Serialize</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="memdesc:ac8e929313644e33ad31ed199808bc5b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアライズ  <a href="#ac8e929313644e33ad31ed199808bc5b1">[詳解]</a><br /></td></tr>
+<tr class="separator:ac8e929313644e33ad31ed199808bc5b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classPacketBase.html">PacketBase</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPacketBase.html#a8784f3bc29a63570e38619d940131223">~PacketBase</a> ()</td></tr>
+<tr class="separator:a8784f3bc29a63570e38619d940131223 inherit pub_methods_classPacketBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a9d5cfb3f065da5c53886e002db73b967"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCachePacketCreateCharacterResult.html#a9d5cfb3f065da5c53886e002db73b967">Result</a></td></tr>
+<tr class="separator:a9d5cfb3f065da5c53886e002db73b967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classProcessPacketBase"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classProcessPacketBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classProcessPacketBase.html">ProcessPacketBase</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:ac790a295ae07e447dfc05b4e8e681c8f inherit pub_attribs_classProcessPacketBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProcessPacketBase.html#ac790a295ae07e447dfc05b4e8e681c8f">ClientId</a></td></tr>
+<tr class="separator:ac790a295ae07e447dfc05b4e8e681c8f inherit pub_attribs_classProcessPacketBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>キャラクタ作成結果 </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="abbc73ff9c455c6a90a9cbfdbec415df0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc73ff9c455c6a90a9cbfdbec415df0">&#9670;&nbsp;</a></span>ResultCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classCachePacketCreateCharacterResult.html#abbc73ff9c455c6a90a9cbfdbec415df0">CachePacketCreateCharacterResult::ResultCode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="abbc73ff9c455c6a90a9cbfdbec415df0a1dec6cd57185344e9b07480d5e3f6618"></a>Success&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abbc73ff9c455c6a90a9cbfdbec415df0a2c237ecd8fae2d1cc28ec1f2d1fae81c"></a>Error&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a910680691168b9f0fe7c7a41ad5fff4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a910680691168b9f0fe7c7a41ad5fff4d">&#9670;&nbsp;</a></span>CachePacketCreateCharacterResult() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CachePacketCreateCharacterResult::CachePacketCreateCharacterResult </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a id="a4ae4df904b2897cde4a6bc948bf9e136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ae4df904b2897cde4a6bc948bf9e136">&#9670;&nbsp;</a></span>CachePacketCreateCharacterResult() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CachePacketCreateCharacterResult::CachePacketCreateCharacterResult </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InClientId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>InResult</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a4b5ddaf34a90f923398268c889a5e9b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b5ddaf34a90f923398268c889a5e9b2">&#9670;&nbsp;</a></span>GetPacketID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> CachePacketCreateCharacterResult::GetPacketID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>パケットＩＤ取得. </p>
+<dl class="section return"><dt>戻り値</dt><dd>パケットＩＤ </dd></dl>
+
+<p><a class="el" href="classProcessPacketBase.html#a9754ed248a470abb62b5e0cf1213fa6d">ProcessPacketBase</a>を再実装しています。</p>
+
+</div>
+</div>
+<a id="ac8e929313644e33ad31ed199808bc5b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8e929313644e33ad31ed199808bc5b1">&#9670;&nbsp;</a></span>Serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CachePacketCreateCharacterResult::Serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>シリアライズ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>pStream ストリーム  成功したらtrueを返す。 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classProcessPacketBase.html#a5e9c610ce35b5a0bb034c180a9571bef">ProcessPacketBase</a>を再実装しています。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a9d5cfb3f065da5c53886e002db73b967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d5cfb3f065da5c53886e002db73b967">&#9670;&nbsp;</a></span>Result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> CachePacketCreateCharacterResult::Result</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="CachePacketCreateCharacterResult_8h_source.html">CachePacketCreateCharacterResult.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

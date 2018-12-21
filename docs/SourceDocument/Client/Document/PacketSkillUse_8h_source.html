@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: PacketSkillUse.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_c0aefc36c0c85c1401ae7e6a1c19544c.html">Client</a></li><li class="navelem"><a class="el" href="dir_9ab2dcf5e54e5f17c8eae6eb52035cdc.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_eb5ee35ee71401b9298e9eb984ea73fd.html">Source</a></li><li class="navelem"><a class="el" href="dir_68024ed3f28085d5e932f994151c03d4.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_4c90a2f96e5d05609c8b21f5f6c4b04d.html">Packet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PacketSkillUse.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="PacketSkillUse_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef __PACKETSKILLUSE_H__</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define __PACKETSKILLUSE_H__</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PacketBase_8h.html">PacketBase.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MemoryStreamInterface_8h.html">MemoryStream/MemoryStreamInterface.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PacketID_8h.html">PacketID.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classPacketSkillUse.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPacketSkillUse.html">PacketSkillUse</a>  : <span class="keyword">public</span> <a class="code" href="classPacketBase.html">PacketBase</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classPacketSkillUse.html#a11253ef2f53526707b4c8dc6841fd4a6">   28</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="classPacketSkillUse.html#a11253ef2f53526707b4c8dc6841fd4a6">GetPacketID</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf76aff146a2c7ae415b0d3c4aa6ef8cb">PacketID::SkillUse</a>; }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classPacketSkillUse.html#a7cd896fa91e83c1bbe4ecafd5c8caa95">   33</a></span>&#160;<a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> <a class="code" href="classPacketSkillUse.html#a7cd896fa91e83c1bbe4ecafd5c8caa95">SkillId</a>;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classPacketSkillUse.html#a87d644d92b54ea2ed23e08ce51345b9b">   35</a></span>&#160;<a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="classPacketSkillUse.html#a87d644d92b54ea2ed23e08ce51345b9b">TargetType</a>;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classPacketSkillUse.html#a4c8e73408236649e878d8fb63414a12c">   37</a></span>&#160;<a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> <a class="code" href="classPacketSkillUse.html#a4c8e73408236649e878d8fb63414a12c">TargetUuid</a>;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classPacketSkillUse.html#a2a4471669727c381594c7fa574ecb17e">   43</a></span>&#160;    <a class="code" href="classPacketSkillUse.html#a2a4471669727c381594c7fa574ecb17e">PacketSkillUse</a>()</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classPacketSkillUse.html#a3d579bcde9331e50f07bba074ed639a2">   50</a></span>&#160;    <a class="code" href="classPacketSkillUse.html#a3d579bcde9331e50f07bba074ed639a2">PacketSkillUse</a>(<a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InSkillId, <a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InTargetType, <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InTargetUuid)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classPacketSkillUse.html#a7cd896fa91e83c1bbe4ecafd5c8caa95">SkillId</a> = InSkillId;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classPacketSkillUse.html#a87d644d92b54ea2ed23e08ce51345b9b">TargetType</a> = InTargetType;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classPacketSkillUse.html#a4c8e73408236649e878d8fb63414a12c">TargetUuid</a> = InTargetUuid;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classPacketSkillUse.html#aea51fb33a6bbabcb8568a9e136d18926">   65</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPacketSkillUse.html#aea51fb33a6bbabcb8568a9e136d18926">Serialize</a>(<a class="code" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classPacketSkillUse.html#a7cd896fa91e83c1bbe4ecafd5c8caa95">SkillId</a>);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classPacketSkillUse.html#a87d644d92b54ea2ed23e08ce51345b9b">TargetType</a>);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        pStream-&gt;<a class="code" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">Serialize</a>(&amp;<a class="code" href="classPacketSkillUse.html#a4c8e73408236649e878d8fb63414a12c">TargetUuid</a>);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif      // #ifndef __PACKETSKILLUSE_H__</span></div><div class="ttc" id="TypeDefs_8h_html_aed742c436da53c1080638ce6ef7d13de"><div class="ttname"><a href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></div><div class="ttdeci">unsigned char u8</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:6</div></div>
+<div class="ttc" id="classPacketSkillUse_html_a2a4471669727c381594c7fa574ecb17e"><div class="ttname"><a href="classPacketSkillUse.html#a2a4471669727c381594c7fa574ecb17e">PacketSkillUse::PacketSkillUse</a></div><div class="ttdeci">PacketSkillUse()</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> PacketSkillUse.h:43</div></div>
+<div class="ttc" id="classPacketSkillUse_html_a11253ef2f53526707b4c8dc6841fd4a6"><div class="ttname"><a href="classPacketSkillUse.html#a11253ef2f53526707b4c8dc6841fd4a6">PacketSkillUse::GetPacketID</a></div><div class="ttdeci">virtual u8 GetPacketID() const</div><div class="ttdoc">パケットＩＤ取得. </div><div class="ttdef"><b>Definition:</b> PacketSkillUse.h:28</div></div>
+<div class="ttc" id="classPacketSkillUse_html"><div class="ttname"><a href="classPacketSkillUse.html">PacketSkillUse</a></div><div class="ttdoc">スキル使用 </div><div class="ttdef"><b>Definition:</b> PacketSkillUse.h:18</div></div>
+<div class="ttc" id="classPacketSkillUse_html_aea51fb33a6bbabcb8568a9e136d18926"><div class="ttname"><a href="classPacketSkillUse.html#aea51fb33a6bbabcb8568a9e136d18926">PacketSkillUse::Serialize</a></div><div class="ttdeci">bool Serialize(MemoryStreamInterface *pStream)</div><div class="ttdoc">シリアライズ </div><div class="ttdef"><b>Definition:</b> PacketSkillUse.h:65</div></div>
+<div class="ttc" id="classMemoryStreamInterface_html_a6a4fb8faf2a4f94ea6b56334aba31ebf"><div class="ttname"><a href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf">MemoryStreamInterface::Serialize</a></div><div class="ttdeci">virtual bool Serialize(s32 *pValue)=0</div></div>
+<div class="ttc" id="classPacketSkillUse_html_a4c8e73408236649e878d8fb63414a12c"><div class="ttname"><a href="classPacketSkillUse.html#a4c8e73408236649e878d8fb63414a12c">PacketSkillUse::TargetUuid</a></div><div class="ttdeci">u32 TargetUuid</div><div class="ttdef"><b>Definition:</b> PacketSkillUse.h:37</div></div>
+<div class="ttc" id="PacketBase_8h_html"><div class="ttname"><a href="PacketBase_8h.html">PacketBase.h</a></div></div>
+<div class="ttc" id="classPacketID_html_aaac69b977036b9b9d40419b939c1570aaf76aff146a2c7ae415b0d3c4aa6ef8cb"><div class="ttname"><a href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf76aff146a2c7ae415b0d3c4aa6ef8cb">PacketID::SkillUse</a></div><div class="ttdoc">スキル使用 </div><div class="ttdef"><b>Definition:</b> PacketID.h:159</div></div>
+<div class="ttc" id="TypeDefs_8h_html_a10e94b422ef0c20dcdec20d31a1f5049"><div class="ttname"><a href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a></div><div class="ttdeci">unsigned int u32</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:10</div></div>
+<div class="ttc" id="classPacketSkillUse_html_a3d579bcde9331e50f07bba074ed639a2"><div class="ttname"><a href="classPacketSkillUse.html#a3d579bcde9331e50f07bba074ed639a2">PacketSkillUse::PacketSkillUse</a></div><div class="ttdeci">PacketSkillUse(u32 InSkillId, u8 InTargetType, u32 InTargetUuid)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> PacketSkillUse.h:50</div></div>
+<div class="ttc" id="classPacketSkillUse_html_a7cd896fa91e83c1bbe4ecafd5c8caa95"><div class="ttname"><a href="classPacketSkillUse.html#a7cd896fa91e83c1bbe4ecafd5c8caa95">PacketSkillUse::SkillId</a></div><div class="ttdeci">u32 SkillId</div><div class="ttdef"><b>Definition:</b> PacketSkillUse.h:33</div></div>
+<div class="ttc" id="classPacketBase_html"><div class="ttname"><a href="classPacketBase.html">PacketBase</a></div><div class="ttdef"><b>Definition:</b> PacketBase.h:9</div></div>
+<div class="ttc" id="classPacketSkillUse_html_a87d644d92b54ea2ed23e08ce51345b9b"><div class="ttname"><a href="classPacketSkillUse.html#a87d644d92b54ea2ed23e08ce51345b9b">PacketSkillUse::TargetType</a></div><div class="ttdeci">u8 TargetType</div><div class="ttdef"><b>Definition:</b> PacketSkillUse.h:35</div></div>
+<div class="ttc" id="classMemoryStreamInterface_html"><div class="ttname"><a href="classMemoryStreamInterface.html">MemoryStreamInterface</a></div><div class="ttdef"><b>Definition:</b> MemoryStreamInterface.h:8</div></div>
+<div class="ttc" id="MemoryStreamInterface_8h_html"><div class="ttname"><a href="MemoryStreamInterface_8h.html">MemoryStreamInterface.h</a></div></div>
+<div class="ttc" id="PacketID_8h_html"><div class="ttname"><a href="PacketID_8h.html">PacketID.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

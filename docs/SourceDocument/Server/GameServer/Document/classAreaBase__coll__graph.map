@@ -1,0 +1,4 @@
+<map id="AreaBase" name="AreaBase">
+<area shape="rect" id="node3" href="$classAnpanManager.html" title="AnpanManager" alt="" coords="192,13,301,39"/>
+<area shape="rect" id="node4" href="$classPlayerManager.html" title="PlayerManager" alt="" coords="325,13,435,39"/>
+</map>

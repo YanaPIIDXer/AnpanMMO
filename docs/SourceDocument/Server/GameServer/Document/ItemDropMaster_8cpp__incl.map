@@ -1,0 +1,9 @@
+<map id="ItemDropMaster.cpp" name="ItemDropMaster.cpp">
+<area shape="rect" id="node2" href="$stdafx_8h.html" title="stdafx.h" alt="" coords="650,80,718,107"/>
+<area shape="rect" id="node15" href="$ItemDropMaster_8h.html" title="ItemDropMaster.h" alt="" coords="1385,80,1511,107"/>
+<area shape="rect" id="node18" href="$MySqlConnection_8h.html" title="MySQL/MySqlConnection.h" alt="" coords="1546,80,1729,107"/>
+<area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="604,155,764,181"/>
+<area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="789,155,875,181"/>
+<area shape="rect" id="node20" href="$MySqlQuery_8h.html" title="MySqlQuery.h" alt="" coords="1585,155,1690,181"/>
+<area shape="rect" id="node21" href="$MySqlBinds_8h.html" title="MySqlBinds.h" alt="" coords="1542,237,1645,263"/>
+</map>
