@@ -1,3 +1,8 @@
+/**
+ * @file AreaBase.cpp
+ * @brief エリア基底クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "AreaBase.h"
 #include "WeakPtrDefine.h"

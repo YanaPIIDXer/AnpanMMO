@@ -1,3 +1,8 @@
+/**
+ * @file Area.cpp
+ * @brief エリアクラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "Area.h"
 #include "Master/AreaMaster.h"

@@ -1,3 +1,8 @@
+/**
+ * @file InstanceAreaTicketManager.cpp
+ * @brief インスタンスエリアチケット管理クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "InstanceAreaTicketManager.h"
 #include "InstanceAreaTicket.h"

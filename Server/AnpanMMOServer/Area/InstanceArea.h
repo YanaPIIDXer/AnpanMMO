@@ -1,3 +1,8 @@
+/**
+ * @file InstanceArea.cpp
+ * @brief インスタンスエリアクラス
+ * @author YanaP
+ */
 #ifndef __INSTANCEAREA_H__
 #define __INSTANCEAREA_H__
 
@@ -6,34 +11,58 @@
 struct AreaItem;
 
 /**
- * インスタンスエリア
+ * @brief インスタンスエリア
  */
 class InstanceArea : public AreaBase
 {
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 */
 	InstanceArea(u32 InUuid, const AreaItem *pItem);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~InstanceArea() {}
 
-	// 初期化,
+	/**
+	 * @fn virtual void Initialize()
+	 * @ brief 初期化
+	 */
 	virtual void Initialize();
 
-	// ID取得.
+	/**
+	 * @fn virtual u32 GetId() const
+	 * @brief ＩＤ取得
+	 * @details インスタンスエリアに割り振られたＵＵＩＤを返す。
+	 * @return ID
+	 */
 	virtual u32 GetId() const { return Uuid; }
 
-	// 消去可能か？
+	/**
+	 * @fn virtual bool IsAbleDelete() const
+	 * @brief 消去可能か？
+	 * @details プレイヤーキャラがいなくなったら消去可能になる。
+	 * @return 消去可能ならtrueを返す。
+	 */
 	virtual bool IsAbleDelete() const;
 
-	// インスタンスエリアか？
+	/**
+	 * @fn virtual bool IsInstance() const
+	 * @brief インスタンスエリアか？
+	 * @return インスタンスエリアなのでtrueを返す。
+	 */
 	virtual bool IsInstance() const { return true; }
 
 protected:
 
-	// 更新.
+	/**
+	 * @fn virtual void Update()
+	 * @brief 更新処理
+	 */
 	virtual void Update();
 
 private:

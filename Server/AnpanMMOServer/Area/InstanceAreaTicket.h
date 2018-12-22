@@ -1,3 +1,8 @@
+/**
+ * @file InstanceAreaTicket.cpp
+ * @brief インスタンスエリアチケットクラス
+ * @author YanaP
+ */
 #ifndef __INSTANCEAREATICKET_H__
 #define __INSTANCEAREATICKET_H__
 
@@ -5,35 +10,40 @@
 #include "WeakPtrDefine.h"
 #include "Math/Vector3D.h"
 
-// チケットステート
+/**
+ * @enum ETicketState
+ * @brief チケットステート
+ */
 enum ETicketState
 {
-	// 処理待ち
+	//! 処理待ち
 	TicketStateWait,
 
-	// 進入.
+	//! 進入.
 	TicketStateEnter,
 
-	// 破棄.
+	//! 破棄.
 	TicketStateDiscard,
 };
 
-// チケット情報.
+/**
+ * @brief チケット情報
+ */
 struct InstanceAreaTicketInfo
 {
 
 public:
 
-	// クライアント
+	//! クライアント
 	ClientPtr pClient;
 
-	// ステート
+	//! ステート
 	ETicketState State;
 
 };
 
 /**
- * インスタンスマップチケット
+ * @brief インスタンスマップチケット
  */
 class InstanceAreaTicket
 {
@@ -44,37 +54,79 @@ private:		// 別名定義.
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] InUuid ＵＵＩＤ
+	 * @param[in] InAreaId エリアマスタＩＤ
+	 * @param[in] InStartPosition 開始座標
+	 */
 	InstanceAreaTicket(u32 InUuid, u32 InAreaId, const Vector3D &InStartPosition);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	~InstanceAreaTicket() {}
 
-	// クライアント追加.
+	/**
+	 * @fn void AddClient(ClientPtr pClient)
+	 * @brief クライアント追加
+	 * @param[in] pClient クライアントへのweak_ptr
+	 */
 	void AddClient(ClientPtr pClient);
 
-	// 処理を受信した。
+	/**
+	 * @fn void RecvProcess(u32 Uuid, ETicketState Process)
+	 * @brief 処理を受信した
+	 * @param[in] Uuid クライアントＵＵＩＤ
+	 * @param[in] Process 処理内容
+	 */
 	void RecvProcess(u32 Uuid, ETicketState Process);
 
-	// 準備が完了しているか？
+	/**
+	 * @fn bool IsReady() const
+	 * @brief 準備が完了しているか？
+	 * @return 準備が完了しているならtrueを返す。
+	 */
 	bool IsReady() const;
 
-	// 破棄されているか？
+	/**
+	 * @fn bool IsDiscard() const
+	 * @brief 破棄されているか？
+	 * @return 破棄されているならtrueを返す。
+	 */
 	bool IsDiscard() const;
 
-	// 待機中か？
+	/**
+	 * @fn bool IsWaiting() const
+	 * @brief 待機中か？
+	 * @return 待機中ならtrueを返す。
+	 */
 	bool IsWaiting() const;
 
-	// エリアＩＤを取得.
+	/**
+	 * @fn u32 GetAreaId() const
+	 * @brief エリアＩＤを取得
+	 * @return エリアＩＤ
+	 */
 	u32 GetAreaId() const { return AreaId; }
 
-	// 発行パケットをバラ撒く。
+	/**
+	 * @fn void BroadcastPublishPacket()
+	 * @brief 発行チケットをバラ撒く
+	 */
 	void BroadcastPublishPacket();
 
-	// 破棄パケットをバラ撒く。
+	/**
+	 * @fn void BroadcastDiscardPacket()
+	 * @brief 破棄チケットをバラ撒く
+	 */
 	void BroadcastDiscardPacket();
 
-	// インスタンスエリアに突っ込む。
+	/**
+	 * @fn void EnterToInstanceArea(AreaPtr pArea)
+	 * @brief インスタンスエリアに突っ込む
+	 * @param[in] pArea インスタンスエリアへのweak_ptr
+	 */
 	void EnterToInstanceArea(AreaPtr pArea);
 
 private:

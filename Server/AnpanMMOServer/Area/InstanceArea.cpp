@@ -1,3 +1,8 @@
+/**
+ * @file InstanceArea.cpp
+ * @brief インスタンスエリアクラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "InstanceArea.h"
 #include "Master/AreaMaster.h"

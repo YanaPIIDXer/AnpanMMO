@@ -1,3 +1,8 @@
+/**
+ * @file HeightMap.cpp
+ * @brief ハイトマップクラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "HeightMap.h"
 #include "AreaConfig.h"
