@@ -1,5 +1,5 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$classAnpanAIStateBase.html" title="AnpanAIStateBase" alt="" coords="5,31,137,57"/>
-<area shape="rect" id="node2" href="$classAnpanAIStateActive.html" title="AnpanAIStateActive" alt="" coords="197,5,334,32"/>
-<area shape="rect" id="node3" href="$classAnpanAIStateNonActive.html" title="AnpanAIStateNonActive" alt="" coords="185,56,345,83"/>
+<area shape="rect" id="node1" href="$classAnpanAIStateBase.html" title="アンパンＡＩステート基底クラス " alt="" coords="5,31,137,57"/>
+<area shape="rect" id="node2" href="$classAnpanAIStateActive.html" title="アンパンＡＩステート：アクティブ状態. " alt="" coords="197,5,334,32"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateNonActive.html" title="アンパンＡＩステート：ノンアクティブ状態 " alt="" coords="185,56,345,83"/>
 </map>

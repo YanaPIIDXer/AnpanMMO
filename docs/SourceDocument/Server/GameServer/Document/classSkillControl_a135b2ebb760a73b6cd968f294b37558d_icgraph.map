@@ -1,6 +1,6 @@
 <map id="SkillControl::Use" name="SkillControl::Use">
-<area shape="rect" id="node2" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="Anpan::AttackTo" alt="" coords="195,5,313,32"/>
-<area shape="rect" id="node3" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="CharacterBase::UseSkill" alt="" coords="172,56,336,83"/>
+<area shape="rect" id="node2" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="攻撃 " alt="" coords="195,5,313,32"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="スキル使用 " alt="" coords="172,56,336,83"/>
 <area shape="rect" id="node4" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="182,107,326,133"/>
-<area shape="rect" id="node5" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="PlayerCharacter::UseItem" alt="" coords="384,107,555,133"/>
+<area shape="rect" id="node5" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="384,107,555,133"/>
 </map>

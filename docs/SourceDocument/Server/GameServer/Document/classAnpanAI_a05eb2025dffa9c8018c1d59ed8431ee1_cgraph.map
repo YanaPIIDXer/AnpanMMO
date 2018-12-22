@@ -1,4 +1,4 @@
 <map id="AnpanAI::AnpanAI" name="AnpanAI::AnpanAI">
-<area shape="rect" id="node2" href="$classAnpanAI.html#a15917b0f76fd9c9eb003a99c4c1a0f3e" title="AnpanAI::ChangeState" alt="" coords="181,5,336,32"/>
-<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#a57295f498604290eec50b80f2287519e" title="AnpanAIStateBase::SetAI" alt="" coords="384,5,556,32"/>
+<area shape="rect" id="node2" href="$classAnpanAI.html#a15917b0f76fd9c9eb003a99c4c1a0f3e" title="ステート切り替え " alt="" coords="181,5,336,32"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#a57295f498604290eec50b80f2287519e" title="AIを設定 " alt="" coords="384,5,556,32"/>
 </map>

@@ -27,6 +27,7 @@ enum ETicketState
 };
 
 /**
+ * @struct InstanceAreaTicketInfo
  * @brief チケット情報
  */
 struct InstanceAreaTicketInfo
@@ -43,6 +44,7 @@ public:
 };
 
 /**
+ * @class InstanceAreaTicket
  * @brief インスタンスマップチケット
  */
 class InstanceAreaTicket

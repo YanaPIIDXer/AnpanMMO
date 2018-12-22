@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>キャッシュサーバとの接続.  
+ <a href="classCacheServerConnection.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="CacheServerConnection_8h_source.html">CacheServerConnection.h</a>&gt;</code></p>
 <div class="dynheader">
 CacheServerConnection の継承関係図</div>
@@ -93,12 +96,16 @@ CacheServerConnection 連携図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:ac24b9aafd966cbfe53fe1378c5e460fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheServerConnection.html#ac24b9aafd966cbfe53fe1378c5e460fc">CacheServerConnection</a> (const shared_ptr&lt; tcp::socket &gt; &amp;pInSocket)</td></tr>
+<tr class="memdesc:ac24b9aafd966cbfe53fe1378c5e460fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#ac24b9aafd966cbfe53fe1378c5e460fc">[詳解]</a><br /></td></tr>
 <tr class="separator:ac24b9aafd966cbfe53fe1378c5e460fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad7cb4474a4fad351640528739b0d7a0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheServerConnection.html#aad7cb4474a4fad351640528739b0d7a0">~CacheServerConnection</a> ()</td></tr>
+<tr class="memdesc:aad7cb4474a4fad351640528739b0d7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#aad7cb4474a4fad351640528739b0d7a0">[詳解]</a><br /></td></tr>
 <tr class="separator:aad7cb4474a4fad351640528739b0d7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9bb4ddbc2a992a7287cb43d08ed9f8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheServerConnection.html#ac9bb4ddbc2a992a7287cb43d08ed9f8b">Connect</a> ()</td></tr>
+<tr class="memdesc:ac9bb4ddbc2a992a7287cb43d08ed9f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">接続  <a href="#ac9bb4ddbc2a992a7287cb43d08ed9f8b">[詳解]</a><br /></td></tr>
 <tr class="separator:ac9bb4ddbc2a992a7287cb43d08ed9f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af987babbbeeba1dd923dd262eafed06a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a">SendPacket</a> (<a class="el" href="classPacketBase.html">PacketBase</a> *pPacket)</td></tr>
+<tr class="memdesc:af987babbbeeba1dd923dd262eafed06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケット送信  <a href="#af987babbbeeba1dd923dd262eafed06a">[詳解]</a><br /></td></tr>
 <tr class="separator:af987babbbeeba1dd923dd262eafed06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTCPConnection"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTCPConnection')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classTCPConnection.html">TCPConnection</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:ae1956568836381e3015a1ae4fa9db311 inherit pub_methods_classTCPConnection"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#ae1956568836381e3015a1ae4fa9db311">TCPConnection</a> (const shared_ptr&lt; tcp::socket &gt; &amp;pInSocket)</td></tr>
@@ -110,14 +117,17 @@ CacheServerConnection 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
-<tr class="memitem:a0d18992b1c5b6698fb6488865d1a20ad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classCacheServerConnection.html">CacheServerConnection</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad">GetInstance</a> ()</td></tr>
-<tr class="separator:a0d18992b1c5b6698fb6488865d1a20ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d8911e70895a8827c3a39faa886ac3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classCacheServerConnection.html">CacheServerConnection</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a19d8911e70895a8827c3a39faa886ac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">インスタンス取得  <a href="#a19d8911e70895a8827c3a39faa886ac3">[詳解]</a><br /></td></tr>
+<tr class="separator:a19d8911e70895a8827c3a39faa886ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
 <tr class="memitem:a2be522fed646b5acd3259c0f904990a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheServerConnection.html#a2be522fed646b5acd3259c0f904990a3">OnRecvData</a> (size_t Size)</td></tr>
+<tr class="memdesc:a2be522fed646b5acd3259c0f904990a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">データを受信した  <a href="#a2be522fed646b5acd3259c0f904990a3">[詳解]</a><br /></td></tr>
 <tr class="separator:a2be522fed646b5acd3259c0f904990a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4df9b6ae4280d56bb0a98dd326aa0391"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheServerConnection.html#a4df9b6ae4280d56bb0a98dd326aa0391">OnDisconnected</a> ()</td></tr>
+<tr class="memdesc:a4df9b6ae4280d56bb0a98dd326aa0391"><td class="mdescLeft">&#160;</td><td class="mdescRight">切断された  <a href="#a4df9b6ae4280d56bb0a98dd326aa0391">[詳解]</a><br /></td></tr>
 <tr class="separator:a4df9b6ae4280d56bb0a98dd326aa0391"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classTCPConnection"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classTCPConnection')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classTCPConnection.html">TCPConnection</a> に属する継承限定公開メンバ関数</td></tr>
 <tr class="memitem:a373f4c028cd3f53bb2b1fe82c25464c4 inherit pro_methods_classTCPConnection"><td class="memItemLeft" align="right" valign="top">tcp::socket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPConnection.html#a373f4c028cd3f53bb2b1fe82c25464c4">GetSocket</a> ()</td></tr>
@@ -137,6 +147,7 @@ CacheServerConnection 連携図</div>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>キャッシュサーバとの接続. </p>
+<p>シングルトン（もどき）クラス </p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="ac24b9aafd966cbfe53fe1378c5e460fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac24b9aafd966cbfe53fe1378c5e460fc">&#9670;&nbsp;</a></span>CacheServerConnection()</h2>
@@ -153,6 +164,8 @@ CacheServerConnection 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
 
 </div>
 </div>
@@ -179,6 +192,8 @@ CacheServerConnection 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>デストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -196,6 +211,9 @@ CacheServerConnection 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>接続 </p>
+<dl class="section return"><dt>戻り値</dt><dd>接続に成功したらtrueを返す。 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -208,8 +226,8 @@ CacheServerConnection 連携図</div>
 
 </div>
 </div>
-<a id="a0d18992b1c5b6698fb6488865d1a20ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d18992b1c5b6698fb6488865d1a20ad">&#9670;&nbsp;</a></span>GetInstance()</h2>
+<a id="a19d8911e70895a8827c3a39faa886ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d8911e70895a8827c3a39faa886ac3">&#9670;&nbsp;</a></span>GetInstance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,7 +236,7 @@ CacheServerConnection 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classCacheServerConnection.html">CacheServerConnection</a>* CacheServerConnection::GetInstance </td>
+          <td class="memname">static <a class="el" href="classCacheServerConnection.html">CacheServerConnection</a> * CacheServerConnection::GetInstance </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -230,21 +248,24 @@ CacheServerConnection 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>インスタンス取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>インスタンス </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classCacheServerConnection_a0d18992b1c5b6698fb6488865d1a20ad_icgraph.png" border="0" usemap="#classCacheServerConnection_a0d18992b1c5b6698fb6488865d1a20ad_icgraph" alt=""/></div>
-<map name="classCacheServerConnection_a0d18992b1c5b6698fb6488865d1a20ad_icgraph" id="classCacheServerConnection_a0d18992b1c5b6698fb6488865d1a20ad_icgraph">
-<area shape="rect" id="node2" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="PlayerCharacter::AddGold" alt="" coords="226,5,399,32"/>
-<area shape="rect" id="node3" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="PlayerCharacter::SubtractGold" alt="" coords="213,56,412,83"/>
-<area shape="rect" id="node5" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="PlayerCharacter::AddItem" alt="" coords="227,107,398,133"/>
-<area shape="rect" id="node6" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="PlayerCharacter::SubtractItem" alt="" coords="214,157,411,184"/>
+<div class="center"><img src="classCacheServerConnection_a19d8911e70895a8827c3a39faa886ac3_icgraph.png" border="0" usemap="#classCacheServerConnection_a19d8911e70895a8827c3a39faa886ac3_icgraph" alt=""/></div>
+<map name="classCacheServerConnection_a19d8911e70895a8827c3a39faa886ac3_icgraph" id="classCacheServerConnection_a19d8911e70895a8827c3a39faa886ac3_icgraph">
+<area shape="rect" id="node2" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="ゴールドを増加 " alt="" coords="226,5,399,32"/>
+<area shape="rect" id="node3" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="ゴールドを消費 " alt="" coords="213,56,412,83"/>
+<area shape="rect" id="node5" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="アイテム増加 " alt="" coords="227,107,398,133"/>
+<area shape="rect" id="node6" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="アイテム消費 " alt="" coords="214,157,411,184"/>
 <area shape="rect" id="node7" href="classQuestManager.html#a068baae57cdb284212b62a4855f5f7b1" title="QuestManager::Accept" alt="" coords="235,208,391,235"/>
 <area shape="rect" id="node10" href="classQuestManager.html#aa039a1a7926a271591f2c87cd0b5749b" title="QuestManager::ProgressStage" alt="" coords="461,259,663,285"/>
 <area shape="rect" id="node13" href="classQuestManager.html#a41100b1c045a59a69eb08e1fe1172ee7" title="QuestManager::OnKilledAnpan" alt="" coords="712,309,913,336"/>
 <area shape="rect" id="node15" href="classQuestManager.html#adf5b23ef2c836e314413c225ffb271c1" title="QuestManager::Retire" alt="" coords="238,360,387,387"/>
 <area shape="rect" id="node17" href="classScriptExecuter.html#a54ca2111fc1fa73e0110fa744755d51b" title="ScriptExecuter::OnFinished" alt="" coords="221,411,404,437"/>
-<area shape="rect" id="node4" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="PlayerCharacter::OpenSkillTree" alt="" coords="460,56,664,83"/>
+<area shape="rect" id="node4" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="460,56,664,83"/>
 <area shape="rect" id="node8" href="classClient.html#a10ec14a0e83b57a1450103d60ddd10a5" title="クエスト受注. " alt="" coords="493,208,631,235"/>
 <area shape="rect" id="node9" href="classScriptExecuter.html#a19372f6de313efc8773b5163f3f9ce90" title="ScriptExecuter::AcceptQuest" alt="" coords="717,208,909,235"/>
 <area shape="rect" id="node11" href="classClient.html#ac32fa4a2c15cf3401b051912bc60c0d8" title="クエスト進行. " alt="" coords="737,259,888,285"/>
@@ -279,6 +300,8 @@ CacheServerConnection 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>切断された </p>
+
 <p><a class="el" href="classTCPConnection.html#af80854d5f4dc2e262751d146cb2582ab">TCPConnection</a>を再実装しています。</p>
 
 </div>
@@ -306,6 +329,14 @@ CacheServerConnection 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>データを受信した </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Size</td><td>データサイズ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><a class="el" href="classTCPConnection.html#af03f8dd8314b0e72d3f6e21d6c6bf3cc">TCPConnection</a>を再実装しています。</p>
 <div class="dynheader">
@@ -343,6 +374,14 @@ CacheServerConnection 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>パケット送信 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pPacket</td><td>パケット </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -359,16 +398,16 @@ CacheServerConnection 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classCacheServerConnection_af987babbbeeba1dd923dd262eafed06a_icgraph.png" border="0" usemap="#classCacheServerConnection_af987babbbeeba1dd923dd262eafed06a_icgraph" alt=""/></div>
 <map name="classCacheServerConnection_af987babbbeeba1dd923dd262eafed06a_icgraph" id="classCacheServerConnection_af987babbbeeba1dd923dd262eafed06a_icgraph">
-<area shape="rect" id="node2" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="PlayerCharacter::AddGold" alt="" coords="226,5,399,32"/>
-<area shape="rect" id="node3" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="PlayerCharacter::SubtractGold" alt="" coords="213,56,412,83"/>
-<area shape="rect" id="node5" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="PlayerCharacter::AddItem" alt="" coords="227,107,398,133"/>
-<area shape="rect" id="node6" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="PlayerCharacter::SubtractItem" alt="" coords="214,157,411,184"/>
+<area shape="rect" id="node2" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="ゴールドを増加 " alt="" coords="226,5,399,32"/>
+<area shape="rect" id="node3" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="ゴールドを消費 " alt="" coords="213,56,412,83"/>
+<area shape="rect" id="node5" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="アイテム増加 " alt="" coords="227,107,398,133"/>
+<area shape="rect" id="node6" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="アイテム消費 " alt="" coords="214,157,411,184"/>
 <area shape="rect" id="node7" href="classQuestManager.html#a068baae57cdb284212b62a4855f5f7b1" title="QuestManager::Accept" alt="" coords="235,208,391,235"/>
 <area shape="rect" id="node10" href="classQuestManager.html#aa039a1a7926a271591f2c87cd0b5749b" title="QuestManager::ProgressStage" alt="" coords="461,259,663,285"/>
 <area shape="rect" id="node13" href="classQuestManager.html#a41100b1c045a59a69eb08e1fe1172ee7" title="QuestManager::OnKilledAnpan" alt="" coords="712,309,913,336"/>
 <area shape="rect" id="node15" href="classQuestManager.html#adf5b23ef2c836e314413c225ffb271c1" title="QuestManager::Retire" alt="" coords="238,360,387,387"/>
 <area shape="rect" id="node17" href="classScriptExecuter.html#a54ca2111fc1fa73e0110fa744755d51b" title="ScriptExecuter::OnFinished" alt="" coords="221,411,404,437"/>
-<area shape="rect" id="node4" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="PlayerCharacter::OpenSkillTree" alt="" coords="460,56,664,83"/>
+<area shape="rect" id="node4" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="460,56,664,83"/>
 <area shape="rect" id="node8" href="classClient.html#a10ec14a0e83b57a1450103d60ddd10a5" title="クエスト受注. " alt="" coords="493,208,631,235"/>
 <area shape="rect" id="node9" href="classScriptExecuter.html#a19372f6de313efc8773b5163f3f9ce90" title="ScriptExecuter::AcceptQuest" alt="" coords="717,208,909,235"/>
 <area shape="rect" id="node11" href="classClient.html#ac32fa4a2c15cf3401b051912bc60c0d8" title="クエスト進行. " alt="" coords="737,259,888,285"/>

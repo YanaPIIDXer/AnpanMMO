@@ -20,6 +20,7 @@ class PlayerCharacter;
 class MemoryStreamInterface;
 
 /**
+ * @class Client
  * @brief クライアントクラス
  */
 class Client : public TCPConnection

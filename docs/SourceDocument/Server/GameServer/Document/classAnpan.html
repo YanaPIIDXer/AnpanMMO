@@ -70,13 +70,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>アンパンクラス  
+ <a href="classAnpan.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="Anpan_8h_source.html">Anpan.h</a>&gt;</code></p>
 <div class="dynheader">
 Anpan の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpan__inherit__graph.png" border="0" usemap="#Anpan_inherit__map" alt="Inheritance graph"/></div>
 <map name="Anpan_inherit__map" id="Anpan_inherit__map">
-<area shape="rect" id="node2" href="classCharacterBase.html" title="CharacterBase" alt="" coords="47,95,155,121"/>
+<area shape="rect" id="node2" href="classCharacterBase.html" title="キャラクタ基底クラス " alt="" coords="47,95,155,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <div class="dynheader">
@@ -84,7 +87,7 @@ Anpan 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpan__coll__graph.png" border="0" usemap="#Anpan_coll__map" alt="Collaboration graph"/></div>
 <map name="Anpan_coll__map" id="Anpan_coll__map">
-<area shape="rect" id="node2" href="classCharacterBase.html" title="CharacterBase" alt="" coords="297,122,405,149"/>
+<area shape="rect" id="node2" href="classCharacterBase.html" title="キャラクタ基底クラス " alt="" coords="297,122,405,149"/>
 <area shape="rect" id="node4" href="classSkillRecastManager.html" title="SkillRecastManager" alt="" coords="32,71,171,98"/>
 <area shape="rect" id="node5" href="classRotation.html" title="Rotation" alt="" coords="66,122,137,149"/>
 <area shape="rect" id="node6" href="classSkillControl.html" title="SkillControl" alt="" coords="57,173,145,199"/>
@@ -95,95 +98,136 @@ Anpan 連携図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:af1834fc86bd0ed77e6c5f0c68564960c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#af1834fc86bd0ed77e6c5f0c68564960c">Anpan</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;InPosition, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InDropId)</td></tr>
+<tr class="memdesc:af1834fc86bd0ed77e6c5f0c68564960c"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#af1834fc86bd0ed77e6c5f0c68564960c">[詳解]</a><br /></td></tr>
 <tr class="separator:af1834fc86bd0ed77e6c5f0c68564960c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c25b673a8558c64a745d727ea63626a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a2c25b673a8558c64a745d727ea63626a">~Anpan</a> ()</td></tr>
+<tr class="memdesc:a2c25b673a8558c64a745d727ea63626a"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a2c25b673a8558c64a745d727ea63626a">[詳解]</a><br /></td></tr>
 <tr class="separator:a2c25b673a8558c64a745d727ea63626a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e0f36ab70c1d54f3c0f8ed9e907310"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#ac4e0f36ab70c1d54f3c0f8ed9e907310">GetCharacterType</a> () const</td></tr>
-<tr class="separator:ac4e0f36ab70c1d54f3c0f8ed9e907310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395c1fa202ee975936f56449af5134df"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a395c1fa202ee975936f56449af5134df">GetCharacterType</a> () const</td></tr>
+<tr class="memdesc:a395c1fa202ee975936f56449af5134df"><td class="mdescLeft">&#160;</td><td class="mdescRight">キャラクタタイプを取得  <a href="#a395c1fa202ee975936f56449af5134df">[詳解]</a><br /></td></tr>
+<tr class="separator:a395c1fa202ee975936f56449af5134df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa93f7148141285e77ad93583714c7b5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#aa93f7148141285e77ad93583714c7b5f">AttackTo</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pTarget, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId)</td></tr>
+<tr class="memdesc:aa93f7148141285e77ad93583714c7b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">攻撃  <a href="#aa93f7148141285e77ad93583714c7b5f">[詳解]</a><br /></td></tr>
 <tr class="separator:aa93f7148141285e77ad93583714c7b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7a4642b35efc44cb118a4c159519190"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#ad7a4642b35efc44cb118a4c159519190">GetExp</a> () const</td></tr>
-<tr class="separator:ad7a4642b35efc44cb118a4c159519190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9846753fdebf7dd2d15a0aa623deb4"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a0c9846753fdebf7dd2d15a0aa623deb4">GetExp</a> () const</td></tr>
+<tr class="memdesc:a0c9846753fdebf7dd2d15a0aa623deb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">倒した時の経験値を取得  <a href="#a0c9846753fdebf7dd2d15a0aa623deb4">[詳解]</a><br /></td></tr>
+<tr class="separator:a0c9846753fdebf7dd2d15a0aa623deb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a327254e3013146d4688b51e60af0ceb1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a327254e3013146d4688b51e60af0ceb1">GetRadius</a> () const</td></tr>
+<tr class="memdesc:a327254e3013146d4688b51e60af0ceb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">半径を取得  <a href="#a327254e3013146d4688b51e60af0ceb1">[詳解]</a><br /></td></tr>
 <tr class="separator:a327254e3013146d4688b51e60af0ceb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a237a837a0f3a67977888fa5c1726f098"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a237a837a0f3a67977888fa5c1726f098">GetMasterId</a> () const</td></tr>
+<tr class="memdesc:a237a837a0f3a67977888fa5c1726f098"><td class="mdescLeft">&#160;</td><td class="mdescRight">マスタＩＤを取得  <a href="#a237a837a0f3a67977888fa5c1726f098">[詳解]</a><br /></td></tr>
 <tr class="separator:a237a837a0f3a67977888fa5c1726f098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3ab7b1c68f9ebf893e281642f5676f1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#ac3ab7b1c68f9ebf893e281642f5676f1">GetDropId</a> () const</td></tr>
-<tr class="separator:ac3ab7b1c68f9ebf893e281642f5676f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ee0d75cb0c57c0af36a3bf06c2d932"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a54ee0d75cb0c57c0af36a3bf06c2d932">GetDropId</a> () const</td></tr>
+<tr class="memdesc:a54ee0d75cb0c57c0af36a3bf06c2d932"><td class="mdescLeft">&#160;</td><td class="mdescRight">ドロップＩＤを取得  <a href="#a54ee0d75cb0c57c0af36a3bf06c2d932">[詳解]</a><br /></td></tr>
+<tr class="separator:a54ee0d75cb0c57c0af36a3bf06c2d932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCharacterBase.html">CharacterBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">CharacterBase</a> ()</td></tr>
+<tr class="memdesc:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">[詳解]</a><br /></td></tr>
 <tr class="separator:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af750ca6cbe1346a3768b65f61934360c inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af750ca6cbe1346a3768b65f61934360c">~CharacterBase</a> ()</td></tr>
+<tr class="memdesc:af750ca6cbe1346a3768b65f61934360c inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="classCharacterBase.html#af750ca6cbe1346a3768b65f61934360c">[詳解]</a><br /></td></tr>
 <tr class="separator:af750ca6cbe1346a3768b65f61934360c inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73ca6b09f2a6e31f0add39128ff1b5d9 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a73ca6b09f2a6e31f0add39128ff1b5d9">Poll</a> (<a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> DeltaTime)</td></tr>
+<tr class="memdesc:a73ca6b09f2a6e31f0add39128ff1b5d9 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="classCharacterBase.html#a73ca6b09f2a6e31f0add39128ff1b5d9">[詳解]</a><br /></td></tr>
 <tr class="separator:a73ca6b09f2a6e31f0add39128ff1b5d9 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ababe79e449b8f9aa4c2078c021156241 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structCharacterParameter.html">CharacterParameter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ababe79e449b8f9aa4c2078c021156241">GetParameter</a> () const</td></tr>
-<tr class="separator:ababe79e449b8f9aa4c2078c021156241 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b8bc61747d53958e11029bbf7b2ecb inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structCharacterParameter.html">CharacterParameter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ab0b8bc61747d53958e11029bbf7b2ecb">GetParameter</a> () const</td></tr>
+<tr class="memdesc:ab0b8bc61747d53958e11029bbf7b2ecb inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">パラメータ取得  <a href="classCharacterBase.html#ab0b8bc61747d53958e11029bbf7b2ecb">[詳解]</a><br /></td></tr>
+<tr class="separator:ab0b8bc61747d53958e11029bbf7b2ecb inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3989fc3d743766bc9554060e98b5e6a0 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0">SetPosition</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;MoveTarget)</td></tr>
+<tr class="memdesc:a3989fc3d743766bc9554060e98b5e6a0 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標を設定  <a href="classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0">[詳解]</a><br /></td></tr>
 <tr class="separator:a3989fc3d743766bc9554060e98b5e6a0 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d7d36bb07aecc589d8c8a351748ff8b inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b">SetRotate</a> (const <a class="el" href="classRotation.html">Rotation</a> &amp;TargetRotation)</td></tr>
+<tr class="memdesc:a0d7d36bb07aecc589d8c8a351748ff8b inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転を設定  <a href="classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b">[詳解]</a><br /></td></tr>
 <tr class="separator:a0d7d36bb07aecc589d8c8a351748ff8b inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8057da8a29413efc04b642ad7949b2 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classVector3D.html">Vector3D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2">GetPosition</a> () const</td></tr>
-<tr class="separator:aaf8057da8a29413efc04b642ad7949b2 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af419d46a1cf16394b89ebfa29550b6da inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classRotation.html">Rotation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af419d46a1cf16394b89ebfa29550b6da">GetRotation</a> () const</td></tr>
-<tr class="separator:af419d46a1cf16394b89ebfa29550b6da inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a6d6ce1d34c4c7eaa3c3610552c04f3 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classVector3D.html">Vector3D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3">GetPosition</a> () const</td></tr>
+<tr class="memdesc:a9a6d6ce1d34c4c7eaa3c3610552c04f3 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標を取得  <a href="classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3">[詳解]</a><br /></td></tr>
+<tr class="separator:a9a6d6ce1d34c4c7eaa3c3610552c04f3 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a91ce5bec73c7a3ebd0465f744ab33 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classRotation.html">Rotation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a82a91ce5bec73c7a3ebd0465f744ab33">GetRotation</a> () const</td></tr>
+<tr class="memdesc:a82a91ce5bec73c7a3ebd0465f744ab33 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転を取得  <a href="classCharacterBase.html#a82a91ce5bec73c7a3ebd0465f744ab33">[詳解]</a><br /></td></tr>
+<tr class="separator:a82a91ce5bec73c7a3ebd0465f744ab33 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4654af77eeea1dd5297b2805fa1c5c93 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a4654af77eeea1dd5297b2805fa1c5c93">IsDead</a> () const</td></tr>
+<tr class="memdesc:a4654af77eeea1dd5297b2805fa1c5c93 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">死んでいる？  <a href="classCharacterBase.html#a4654af77eeea1dd5297b2805fa1c5c93">[詳解]</a><br /></td></tr>
 <tr class="separator:a4654af77eeea1dd5297b2805fa1c5c93 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2cbfd441a0e0bc45ff3f1ca1925939a inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ab2cbfd441a0e0bc45ff3f1ca1925939a">ApplyDamage</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pAttacker, int Value)</td></tr>
+<tr class="memdesc:ab2cbfd441a0e0bc45ff3f1ca1925939a inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダメージを与える  <a href="classCharacterBase.html#ab2cbfd441a0e0bc45ff3f1ca1925939a">[詳解]</a><br /></td></tr>
 <tr class="separator:ab2cbfd441a0e0bc45ff3f1ca1925939a inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8606f23b177a9a0f4d9196b45ee50990 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a8606f23b177a9a0f4d9196b45ee50990">Heal</a> (int Value)</td></tr>
+<tr class="memdesc:a8606f23b177a9a0f4d9196b45ee50990 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回復  <a href="classCharacterBase.html#a8606f23b177a9a0f4d9196b45ee50990">[詳解]</a><br /></td></tr>
 <tr class="separator:a8606f23b177a9a0f4d9196b45ee50990 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b3f3257cc9cbc93928a4d1bff2a3d5b inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVector3D.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b">GetCenterVec</a> () const</td></tr>
+<tr class="memdesc:a2b3f3257cc9cbc93928a4d1bff2a3d5b inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">正面ベクトルを取得  <a href="classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b">[詳解]</a><br /></td></tr>
 <tr class="separator:a2b3f3257cc9cbc93928a4d1bff2a3d5b inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1f38e44ca8669dd32e5defc280fe82 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a6e1f38e44ca8669dd32e5defc280fe82">SetUuid</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InUuid)</td></tr>
+<tr class="memdesc:a6e1f38e44ca8669dd32e5defc280fe82 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">UUIDをセット  <a href="classCharacterBase.html#a6e1f38e44ca8669dd32e5defc280fe82">[詳解]</a><br /></td></tr>
 <tr class="separator:a6e1f38e44ca8669dd32e5defc280fe82 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7550f7499249cbef53aad08ee81e986e inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e">GetUuid</a> () const</td></tr>
+<tr class="memdesc:a7550f7499249cbef53aad08ee81e986e inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">UUIDを取得  <a href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e">[詳解]</a><br /></td></tr>
 <tr class="separator:a7550f7499249cbef53aad08ee81e986e inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37869b47274edd63a93c6c8c5f1530e1 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a37869b47274edd63a93c6c8c5f1530e1">GetLevel</a> () const</td></tr>
+<tr class="memdesc:a37869b47274edd63a93c6c8c5f1530e1 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">レベルを取得  <a href="classCharacterBase.html#a37869b47274edd63a93c6c8c5f1530e1">[詳解]</a><br /></td></tr>
 <tr class="separator:a37869b47274edd63a93c6c8c5f1530e1 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ceea9f6cd8145814f8dcc3641322a8e inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a6ceea9f6cd8145814f8dcc3641322a8e">Move</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;MoveValue)</td></tr>
+<tr class="memdesc:a6ceea9f6cd8145814f8dcc3641322a8e inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動  <a href="classCharacterBase.html#a6ceea9f6cd8145814f8dcc3641322a8e">[詳解]</a><br /></td></tr>
 <tr class="separator:a6ceea9f6cd8145814f8dcc3641322a8e inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c74a47c7fbdbb2f3187c5be4589fa77 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a2c74a47c7fbdbb2f3187c5be4589fa77">Rotate</a> (float RotateValue)</td></tr>
+<tr class="memdesc:a2c74a47c7fbdbb2f3187c5be4589fa77 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転  <a href="classCharacterBase.html#a2c74a47c7fbdbb2f3187c5be4589fa77">[詳解]</a><br /></td></tr>
 <tr class="separator:a2c74a47c7fbdbb2f3187c5be4589fa77 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8133cdd94e9ce926382103e7ef9caf77 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a8133cdd94e9ce926382103e7ef9caf77">Respawn</a> ()</td></tr>
+<tr class="memdesc:a8133cdd94e9ce926382103e7ef9caf77 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">リスポン  <a href="classCharacterBase.html#a8133cdd94e9ce926382103e7ef9caf77">[詳解]</a><br /></td></tr>
 <tr class="separator:a8133cdd94e9ce926382103e7ef9caf77 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af35378ed4601e66d8415bd721addc0d2 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af35378ed4601e66d8415bd721addc0d2">SetArea</a> (const <a class="el" href="WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> &amp;pInArea)</td></tr>
+<tr class="memdesc:af35378ed4601e66d8415bd721addc0d2 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">エリアを設定  <a href="classCharacterBase.html#af35378ed4601e66d8415bd721addc0d2">[詳解]</a><br /></td></tr>
 <tr class="separator:af35378ed4601e66d8415bd721addc0d2 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9648779454b629071237b7c2cf910b87 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87">GetArea</a> () const</td></tr>
+<tr class="memdesc:a9648779454b629071237b7c2cf910b87 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">エリアを取得  <a href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87">[詳解]</a><br /></td></tr>
 <tr class="separator:a9648779454b629071237b7c2cf910b87 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eb905131a5519c3c374e5333e1bf018 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018">UseSkill</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId, <a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pTarget)</td></tr>
+<tr class="memdesc:a7eb905131a5519c3c374e5333e1bf018 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキル使用  <a href="classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018">[詳解]</a><br /></td></tr>
 <tr class="separator:a7eb905131a5519c3c374e5333e1bf018 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad7624448e24270e773875fce180b0e7 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aad7624448e24270e773875fce180b0e7">StartRecast</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId)</td></tr>
+<tr class="memdesc:aad7624448e24270e773875fce180b0e7 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">リキャスト開始  <a href="classCharacterBase.html#aad7624448e24270e773875fce180b0e7">[詳解]</a><br /></td></tr>
 <tr class="separator:aad7624448e24270e773875fce180b0e7 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf5a7ea43f44fda956abba9366b55b4f inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f">IsSkillActive</a> () const</td></tr>
+<tr class="memdesc:abf5a7ea43f44fda956abba9366b55b4f inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキル使用中か？  <a href="classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f">[詳解]</a><br /></td></tr>
 <tr class="separator:abf5a7ea43f44fda956abba9366b55b4f inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f">IsSkillCasting</a> () const</td></tr>
+<tr class="memdesc:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルキャスト中か？  <a href="classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f">[詳解]</a><br /></td></tr>
 <tr class="separator:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80">IsRecasting</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId) const</td></tr>
+<tr class="memdesc:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">リキャスト中か？  <a href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80">[詳解]</a><br /></td></tr>
 <tr class="separator:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
 <tr class="memitem:a647dd781c00dbaff8e933735aecd508a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a">Update</a> (int DeltaTime)</td></tr>
+<tr class="memdesc:a647dd781c00dbaff8e933735aecd508a"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="#a647dd781c00dbaff8e933735aecd508a">[詳解]</a><br /></td></tr>
 <tr class="separator:a647dd781c00dbaff8e933735aecd508a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79f0eb1d276ef2b73700650c85484ba1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a79f0eb1d276ef2b73700650c85484ba1">OnDamaged</a> (weak_ptr&lt; <a class="el" href="classCharacterBase.html">CharacterBase</a> &gt; pAttacker, int DamageValue)</td></tr>
-<tr class="separator:a79f0eb1d276ef2b73700650c85484ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbb407fc7f60055e75ef203a984397df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#afbb407fc7f60055e75ef203a984397df">OnDamaged</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pAttacker, int DamageValue)</td></tr>
+<tr class="memdesc:afbb407fc7f60055e75ef203a984397df"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダメージを受けた  <a href="#afbb407fc7f60055e75ef203a984397df">[詳解]</a><br /></td></tr>
+<tr class="separator:afbb407fc7f60055e75ef203a984397df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCharacterBase.html">CharacterBase</a> に属する継承限定公開メンバ関数</td></tr>
 <tr class="memitem:a0fec6ef6399f366ff55fa9478f8b2862 inherit pro_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862">SetParameter</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, int Hp, int MaxHp, int Atk, int Def)</td></tr>
+<tr class="memdesc:a0fec6ef6399f366ff55fa9478f8b2862 inherit pro_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">パラメータを設定  <a href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862">[詳解]</a><br /></td></tr>
 <tr class="separator:a0fec6ef6399f366ff55fa9478f8b2862 inherit pro_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4896eb258099c538ca2a1b9920dda67 inherit pro_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aa4896eb258099c538ca2a1b9920dda67">LevelUp</a> (int MaxHp, int Atk, int Def)</td></tr>
+<tr class="memdesc:aa4896eb258099c538ca2a1b9920dda67 inherit pro_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">レベルアップ  <a href="classCharacterBase.html#aa4896eb258099c538ca2a1b9920dda67">[詳解]</a><br /></td></tr>
 <tr class="separator:aa4896eb258099c538ca2a1b9920dda67 inherit pro_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>
 <tr class="inherit_header pro_attribs_classCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCharacterBase.html">CharacterBase</a> に属する継承限定公開変数類</td></tr>
 <tr class="memitem:a7bb9a1746383089944b5d8d5a76d7194 inherit pro_attribs_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVector3D.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7bb9a1746383089944b5d8d5a76d7194">Position</a></td></tr>
+<tr class="memdesc:a7bb9a1746383089944b5d8d5a76d7194 inherit pro_attribs_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標.  <a href="classCharacterBase.html#a7bb9a1746383089944b5d8d5a76d7194">[詳解]</a><br /></td></tr>
 <tr class="separator:a7bb9a1746383089944b5d8d5a76d7194 inherit pro_attribs_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b65a8ef35645be1c517db387c3db935 inherit pro_attribs_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRotation.html">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3b65a8ef35645be1c517db387c3db935">Rot</a></td></tr>
+<tr class="memdesc:a3b65a8ef35645be1c517db387c3db935 inherit pro_attribs_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転.  <a href="classCharacterBase.html#a3b65a8ef35645be1c517db387c3db935">[詳解]</a><br /></td></tr>
 <tr class="separator:a3b65a8ef35645be1c517db387c3db935 inherit pro_attribs_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acaaef243db27cf8505b8e78f33355d51 inherit pro_attribs_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSkillControl.html">SkillControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#acaaef243db27cf8505b8e78f33355d51">Skill</a></td></tr>
+<tr class="memdesc:acaaef243db27cf8505b8e78f33355d51 inherit pro_attribs_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキル制御.  <a href="classCharacterBase.html#acaaef243db27cf8505b8e78f33355d51">[詳解]</a><br /></td></tr>
 <tr class="separator:acaaef243db27cf8505b8e78f33355d51 inherit pro_attribs_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e707d934d0642c4bed52392286d39d3 inherit pro_attribs_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSkillRecastManager.html">SkillRecastManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3e707d934d0642c4bed52392286d39d3">Recast</a></td></tr>
+<tr class="memdesc:a3e707d934d0642c4bed52392286d39d3 inherit pro_attribs_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルリキャスト管理.  <a href="classCharacterBase.html#a3e707d934d0642c4bed52392286d39d3">[詳解]</a><br /></td></tr>
 <tr class="separator:a3e707d934d0642c4bed52392286d39d3 inherit pro_attribs_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -250,14 +294,29 @@ Anpan 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">InPosition</td><td>座標 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InMasterId</td><td>マスタＩＤ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Hp</td><td>ＨＰ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Atk</td><td>攻撃力 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Def</td><td>防御力 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InExp</td><td>倒した時の経験値 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InScaleRate</td><td>スケールレート </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InDropId</td><td>ドロップＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpan_af1834fc86bd0ed77e6c5f0c68564960c_cgraph.png" border="0" usemap="#classAnpan_af1834fc86bd0ed77e6c5f0c68564960c_cgraph" alt=""/></div>
 <map name="classAnpan_af1834fc86bd0ed77e6c5f0c68564960c_cgraph" id="classAnpan_af1834fc86bd0ed77e6c5f0c68564960c_cgraph">
-<area shape="rect" id="node2" href="classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0" title="CharacterBase::SetPosition" alt="" coords="164,5,347,32"/>
-<area shape="rect" id="node3" href="classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b" title="CharacterBase::SetRotate" alt="" coords="168,56,343,83"/>
-<area shape="rect" id="node4" href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862" title="CharacterBase::SetParameter" alt="" coords="157,107,353,133"/>
+<area shape="rect" id="node2" href="classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0" title="座標を設定 " alt="" coords="164,5,347,32"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b" title="回転を設定 " alt="" coords="168,56,343,83"/>
+<area shape="rect" id="node4" href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862" title="パラメータを設定 " alt="" coords="157,107,353,133"/>
 </map>
 </div>
 
@@ -285,6 +344,8 @@ Anpan 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>デストラクタ </p>
 
 </div>
 </div>
@@ -314,13 +375,22 @@ Anpan 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>攻撃 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pTarget</td><td>攻撃対象へのweak_ptr </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">SkillId</td><td>スキルＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpan_aa93f7148141285e77ad93583714c7b5f_cgraph.png" border="0" usemap="#classAnpan_aa93f7148141285e77ad93583714c7b5f_cgraph" alt=""/></div>
 <map name="classAnpan_aa93f7148141285e77ad93583714c7b5f_cgraph" id="classAnpan_aa93f7148141285e77ad93583714c7b5f_cgraph">
 <area shape="rect" id="node2" href="classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="172,38,291,65"/>
-<area shape="rect" id="node3" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="CharacterBase::IsRecasting" alt="" coords="339,13,523,39"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="リキャスト中か？ " alt="" coords="339,13,523,39"/>
 <area shape="rect" id="node5" href="classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="363,63,499,90"/>
 <area shape="rect" id="node4" href="classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="571,5,709,47"/>
 </map>
@@ -328,8 +398,8 @@ Anpan 連携図</div>
 
 </div>
 </div>
-<a id="ac4e0f36ab70c1d54f3c0f8ed9e907310"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4e0f36ab70c1d54f3c0f8ed9e907310">&#9670;&nbsp;</a></span>GetCharacterType()</h2>
+<a id="a395c1fa202ee975936f56449af5134df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395c1fa202ee975936f56449af5134df">&#9670;&nbsp;</a></span>GetCharacterType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -338,7 +408,7 @@ Anpan 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Anpan::GetCharacterType </td>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Anpan::GetCharacterType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -351,12 +421,15 @@ Anpan 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classCharacterBase.html#a1b21d5dc74631551b33e097cb9a07227">CharacterBase</a>を実装しています。</p>
+<p>キャラクタタイプを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>キャラクタタイプ </dd></dl>
+
+<p><a class="el" href="classCharacterBase.html#aae4de3ac831bde03b410551d5f9617b1">CharacterBase</a>を実装しています。</p>
 
 </div>
 </div>
-<a id="ac3ab7b1c68f9ebf893e281642f5676f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3ab7b1c68f9ebf893e281642f5676f1">&#9670;&nbsp;</a></span>GetDropId()</h2>
+<a id="a54ee0d75cb0c57c0af36a3bf06c2d932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54ee0d75cb0c57c0af36a3bf06c2d932">&#9670;&nbsp;</a></span>GetDropId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,7 +438,7 @@ Anpan 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Anpan::GetDropId </td>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Anpan::GetDropId </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -378,12 +451,15 @@ Anpan 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classCharacterBase.html#a8159dda925c3aa7cf090210862c1f559">CharacterBase</a>を再実装しています。</p>
+<p>ドロップＩＤを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>ドロップＩＤ </dd></dl>
+
+<p><a class="el" href="classCharacterBase.html#ae1846a50ced77c1ada3a2667aec6a183">CharacterBase</a>を再実装しています。</p>
 
 </div>
 </div>
-<a id="ad7a4642b35efc44cb118a4c159519190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7a4642b35efc44cb118a4c159519190">&#9670;&nbsp;</a></span>GetExp()</h2>
+<a id="a0c9846753fdebf7dd2d15a0aa623deb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9846753fdebf7dd2d15a0aa623deb4">&#9670;&nbsp;</a></span>GetExp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -392,7 +468,7 @@ Anpan 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual int Anpan::GetExp </td>
+          <td class="memname">int Anpan::GetExp </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -405,7 +481,10 @@ Anpan 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classCharacterBase.html#aabf6a1938d1e3f5f7919b3206c8ba765">CharacterBase</a>を再実装しています。</p>
+<p>倒した時の経験値を取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>倒した時の経験値 </dd></dl>
+
+<p><a class="el" href="classCharacterBase.html#a6e3771422238e28d224dce30661d582d">CharacterBase</a>を再実装しています。</p>
 
 </div>
 </div>
@@ -432,6 +511,9 @@ Anpan 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>マスタＩＤを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>マスタＩＤ </dd></dl>
+
 </div>
 </div>
 <a id="a327254e3013146d4688b51e60af0ceb1"></a>
@@ -457,10 +539,13 @@ Anpan 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>半径を取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>半径 </dd></dl>
+
 </div>
 </div>
-<a id="a79f0eb1d276ef2b73700650c85484ba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79f0eb1d276ef2b73700650c85484ba1">&#9670;&nbsp;</a></span>OnDamaged()</h2>
+<a id="afbb407fc7f60055e75ef203a984397df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbb407fc7f60055e75ef203a984397df">&#9670;&nbsp;</a></span>OnDamaged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -471,7 +556,7 @@ Anpan 連携図</div>
         <tr>
           <td class="memname">void Anpan::OnDamaged </td>
           <td>(</td>
-          <td class="paramtype">weak_ptr&lt; <a class="el" href="classCharacterBase.html">CharacterBase</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a>&#160;</td>
           <td class="paramname"><em>pAttacker</em>, </td>
         </tr>
         <tr>
@@ -493,15 +578,24 @@ Anpan 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classCharacterBase.html#a82a6e428e70e442ab27623f6c9ae5a81">CharacterBase</a>を再実装しています。</p>
+<p>ダメージを受けた </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pAttacker</td><td>ダメージを与えたキャラへのweak_ptr </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">int</td><td>DamageValue ダメージ量 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classCharacterBase.html#a7cc3802bf635805f38f9e08110efc264">CharacterBase</a>を再実装しています。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classAnpan_a79f0eb1d276ef2b73700650c85484ba1_cgraph.png" border="0" usemap="#classAnpan_a79f0eb1d276ef2b73700650c85484ba1_cgraph" alt=""/></div>
-<map name="classAnpan_a79f0eb1d276ef2b73700650c85484ba1_cgraph" id="classAnpan_a79f0eb1d276ef2b73700650c85484ba1_cgraph">
-<area shape="rect" id="node2" href="classAnpanAI.html#ada352c7389a8b9d1bf5ce2849d58f38d" title="AnpanAI::OnDamaged" alt="" coords="192,31,343,57"/>
-<area shape="rect" id="node3" href="classHate.html#a53c74a9c95043b5800ae5094b9c0b888" title="Hate::Add" alt="" coords="457,5,537,32"/>
-<area shape="rect" id="node4" href="classAnpanAIStateBase.html#a26bd5fb584e5cd3c6cbeb27c94192827" title="AnpanAIStateBase::OnDamaged" alt="" coords="391,56,603,83"/>
+<div class="center"><img src="classAnpan_afbb407fc7f60055e75ef203a984397df_cgraph.png" border="0" usemap="#classAnpan_afbb407fc7f60055e75ef203a984397df_cgraph" alt=""/></div>
+<map name="classAnpan_afbb407fc7f60055e75ef203a984397df_cgraph" id="classAnpan_afbb407fc7f60055e75ef203a984397df_cgraph">
+<area shape="rect" id="node2" href="classAnpanAI.html#af69841c74db3689157c8277104565942" title="ダメージを受けた " alt="" coords="192,31,343,57"/>
+<area shape="rect" id="node3" href="classHate.html#af95ba2a070814635dc94a88c19813f74" title="増加 " alt="" coords="457,5,537,32"/>
+<area shape="rect" id="node4" href="classAnpanAIStateBase.html#ac606410c281d299a13dd6325202a878b" title="ダメージを受けた " alt="" coords="391,56,603,83"/>
 </map>
 </div>
 
@@ -531,23 +625,31 @@ Anpan 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classCharacterBase.html#acff3a32f5b5cd5232fbdda611e722430">CharacterBase</a>を再実装しています。</p>
+<p>毎フレームの処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">前フレームからの経過時間</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classCharacterBase.html#a4ebe407a17a16ff0707cf705b303f8a8">CharacterBase</a>を再実装しています。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpan_a647dd781c00dbaff8e933735aecd508a_cgraph.png" border="0" usemap="#classAnpan_a647dd781c00dbaff8e933735aecd508a_cgraph" alt=""/></div>
 <map name="classAnpan_a647dd781c00dbaff8e933735aecd508a_cgraph" id="classAnpan_a647dd781c00dbaff8e933735aecd508a_cgraph">
-<area shape="rect" id="node2" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="AnpanAI::Poll" alt="" coords="231,31,333,57"/>
-<area shape="rect" id="node6" href="classAnpanAI.html#a7a79f6ede1e964379122402b24ae68f2" title="AnpanAI::SweepMovePacketData" alt="" coords="174,81,390,108"/>
-<area shape="rect" id="node7" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="CharacterBase::GetArea" alt="" coords="200,132,364,159"/>
-<area shape="rect" id="node8" href="classAnpanAI.html#ad37ac45b0e38fb2c739a5e2f37c1e82e" title="AnpanAI::SweepRotatePacketData" alt="" coords="170,183,394,209"/>
-<area shape="rect" id="node9" href="classAnpanAI.html#a6545a1116b5cd78ea6d3319ff628b287" title="AnpanAI::SweepSendStopPacketFlag" alt="" coords="161,233,403,260"/>
-<area shape="rect" id="node10" href="classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2" title="CharacterBase::GetPosition" alt="" coords="190,284,374,311"/>
-<area shape="rect" id="node11" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="201,335,363,361"/>
-<area shape="rect" id="node12" href="classCharacterBase.html#af419d46a1cf16394b89ebfa29550b6da" title="CharacterBase::GetRotation" alt="" coords="189,385,375,412"/>
-<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="AnpanAIStateBase::Poll" alt="" coords="451,5,613,32"/>
-<area shape="rect" id="node5" href="classHate.html#a7c025a5a6c42bf5ec02c998ce8fbe1df" title="Hate::Poll" alt="" coords="493,56,571,83"/>
-<area shape="rect" id="node4" href="classAnpanAIStateBase.html#a13dd0c108470b7e8bf296f1c201ce526" title="AnpanAIStateBase::Update" alt="" coords="661,5,843,32"/>
+<area shape="rect" id="node2" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="毎フレームの処理 " alt="" coords="231,31,333,57"/>
+<area shape="rect" id="node6" href="classAnpanAI.html#a7a79f6ede1e964379122402b24ae68f2" title="移動パケットデータの取得 " alt="" coords="174,81,390,108"/>
+<area shape="rect" id="node7" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="200,132,364,159"/>
+<area shape="rect" id="node8" href="classAnpanAI.html#ad37ac45b0e38fb2c739a5e2f37c1e82e" title="回転パケットデータの取得 " alt="" coords="170,183,394,209"/>
+<area shape="rect" id="node9" href="classAnpanAI.html#a6545a1116b5cd78ea6d3319ff628b287" title="停止パケットの送信を取得 " alt="" coords="161,233,403,260"/>
+<area shape="rect" id="node10" href="classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3" title="座標を取得 " alt="" coords="190,284,374,311"/>
+<area shape="rect" id="node11" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="201,335,363,361"/>
+<area shape="rect" id="node12" href="classCharacterBase.html#a82a91ce5bec73c7a3ebd0465f744ab33" title="回転を取得 " alt="" coords="189,385,375,412"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="毎フレームの処理 " alt="" coords="451,5,613,32"/>
+<area shape="rect" id="node5" href="classHate.html#a7c025a5a6c42bf5ec02c998ce8fbe1df" title="毎フレームの処理 " alt="" coords="493,56,571,83"/>
+<area shape="rect" id="node4" href="classAnpanAIStateBase.html#ab79a2df1668e3d6c2cc183521b759b02" title="更新処理 " alt="" coords="661,5,843,32"/>
 </map>
 </div>
 

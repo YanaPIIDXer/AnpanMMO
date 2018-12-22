@@ -1,4 +1,4 @@
 <map id="ItemList::Add" name="ItemList::Add">
-<area shape="rect" id="node2" href="$classPlayerCharacter.html#a43476b33dcbae9011170e8a5198c1528" title="PlayerCharacter::OnRecvItemList" alt="" coords="152,5,367,32"/>
-<area shape="rect" id="node3" href="$classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="PlayerCharacter::AddItem" alt="" coords="174,56,345,83"/>
+<area shape="rect" id="node2" href="$classPlayerCharacter.html#a43476b33dcbae9011170e8a5198c1528" title="アイテムリストを受信した " alt="" coords="152,5,367,32"/>
+<area shape="rect" id="node3" href="$classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="アイテム増加 " alt="" coords="174,56,345,83"/>
 </map>

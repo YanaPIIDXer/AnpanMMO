@@ -1,3 +1,8 @@
+/**
+ * @file AnpanAIStateActive.h
+ * @brief アンパンＡＩステート：アクティブ状態
+ * @author YanaP
+ */
 #ifndef __ANPANAISTATEACTIVE_H__
 #define __ANPANAISTATEACTIVE_H__
 
@@ -6,22 +11,32 @@
 class CharacterBase;
 
 /**
- * アンパンＡＩステート：アクティブ状態.
+ * @class AnpanAIStateActive
+ * @brief アンパンＡＩステート：アクティブ状態.
  */
 class AnpanAIStateActive : public AnpanAIStateBase
 {
 	
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] pInParent アンパン
+	 */
 	AnpanAIStateActive(Anpan *pInParent);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~AnpanAIStateActive() {}
 
 protected:
 
-	// 更新.
+	/**
+	 * @fn virtual void Update(int DeltaTime)
+	 * @brief 毎フレームの処理
+	 * @param[in] DeltaTime 前フレームからの経過時間
+	 */
 	virtual void Update(int DeltaTime);
 
 private:

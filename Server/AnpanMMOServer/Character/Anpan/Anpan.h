@@ -1,49 +1,102 @@
+/**
+ * @file Anpan.h
+ * @brief アンパンクラス
+ * @author YanaP
+ */
 #ifndef __ANPAN_H__
 #define __ANPAN_H__
 
 #include "Character/CharacterBase.h"
 #include "AI/AnpanAI.h"
+#include "WeakPtrDefine.h"
 #include "Packet/CharacterType.h"
 
 /**
- * アンパンクラス
+ * @class Anpan
+ * @brief アンパンクラス
  */
 class Anpan : public CharacterBase
 {
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] InPosition 座標
+	 * @param[in] InMasterId マスタＩＤ
+	 * @param[in] Hp ＨＰ
+	 * @param[in] Atk 攻撃力
+	 * @param[in] Def 防御力
+	 * @param[in] InExp 倒した時の経験値
+	 * @param[in] InScaleRate スケールレート
+	 * @param[in] InDropId ドロップＩＤ
+	 */
 	Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate, u32 InDropId);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~Anpan() {}
 
-	// キャラクタタイプを取得.
+	/**
+	 * @fn virtual u8 GetCharacterType() const
+	 * @brief キャラクタタイプを取得
+	 * @return キャラクタタイプ
+	 */
 	virtual u8 GetCharacterType() const { return CharacterType::Enemy; }
 
-	// 攻撃.
+	/**
+	 * @fn void AttackTo(CharacterPtr pTarget, u32 SkillId)
+	 * @brief 攻撃
+	 * @param[in] pTarget 攻撃対象へのweak_ptr
+	 * @param[in] SkillId スキルＩＤ
+	 */
 	void AttackTo(CharacterPtr pTarget, u32 SkillId);
 
-	// 倒したときに獲得できる経験値を取得.
+	/**
+	 * @fn virtual int GetExp() const
+	 * @brief 倒した時の経験値を取得
+	 * @return 倒した時の経験値
+	 */
 	virtual int GetExp() const { return Exp; }
 	
-	// 半径を取得.
+	/**
+	 * @fn float GetRadius() const
+	 * @brief 半径を取得
+	 * @return 半径
+	 */
 	float GetRadius() const { return (BaseRadius * ScaleRate); }
 
-	// マスタＩＤを取得.
+	/**
+	 * @fn u32 GetMasterId()
+	 * @brief マスタＩＤを取得
+	 * @return マスタＩＤ
+	 */
 	u32 GetMasterId() const { return MasterId; }
 
-	// ドロップＩＤを取得.
+	/**
+	 * @fn virtual u32 GetDropId() const
+	 * @brief ドロップＩＤを取得
+	 * @return ドロップＩＤ
+	 */
 	virtual u32 GetDropId() const { return DropId; }
 	
 protected:
 
-	// 毎フレームの処理.
+	/**
+	 * @fn virtual void Update(int DeltaTime)s
+	 * @brief 毎フレームの処理
+	 * @param[in] 前フレームからの経過時間
+	 */
 	virtual void Update(int DeltaTime);
 
-	// ダメージを受けた。
-	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue);
+	/**
+	 * @fn virtual void OnDamaged(CharacterPtr pAttacker, int DamageValue)
+	 * @brief ダメージを受けた
+	 * @param[in] pAttacker ダメージを与えたキャラへのweak_ptr
+	 * @param[in] int DamageValue ダメージ量
+	 */
+	virtual void OnDamaged(CharacterPtr pAttacker, int DamageValue);
 
 private:
 

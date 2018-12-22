@@ -4,8 +4,8 @@
 <area shape="rect" id="node3" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="202,155,306,181"/>
 <area shape="rect" id="node4" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="331,155,455,181"/>
 <area shape="rect" id="node5" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="479,155,637,181"/>
-<area shape="rect" id="node6" href="$CacheServerConnection_8cpp.html" title="CacheServerConnection.cpp" alt="" coords="5,229,191,256"/>
-<area shape="rect" id="node7" href="$PlayerCharacter_8cpp.html" title="PlayerCharacter.cpp" alt="" coords="1057,155,1197,181"/>
+<area shape="rect" id="node6" href="$CacheServerConnection_8cpp.html" title="キャッシュサーバとの接続クラス " alt="" coords="5,229,191,256"/>
+<area shape="rect" id="node7" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="1057,155,1197,181"/>
 <area shape="rect" id="node8" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="1222,155,1302,181"/>
 <area shape="rect" id="node9" href="$ClientManager_8h.html" title="ClientManager.h" alt="" coords="764,155,880,181"/>
 <area shape="rect" id="node12" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="215,229,362,256"/>

@@ -13,7 +13,9 @@ class Client;
 class MemoryStreamInterface;
 
 /**
+ * @class AreaManager
  * @brief エリア管理
+ * @details シングルトンクラス
  */
 class AreaManager : public noncopyable
 {

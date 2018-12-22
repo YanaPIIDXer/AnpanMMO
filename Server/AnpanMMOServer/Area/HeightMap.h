@@ -11,6 +11,7 @@
 class Vector3D;
 
 /**
+ * @class HeightMap
  * @brief ハイトマップ
  */
 class HeightMap

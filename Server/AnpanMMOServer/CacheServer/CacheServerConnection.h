@@ -1,3 +1,8 @@
+/**
+ * @file CacheServerConnection.h
+ * @brief キャッシュサーバとの接続クラス
+ * @author YanaP
+ */
 #ifndef __CACHESERVERCONNECTION_H__
 #define __CACHESERVERCONNECTION_H__
 
@@ -6,31 +11,52 @@
 class PacketBase;
 
 /**
- * キャッシュサーバとの接続.
+ * @class CacheServerConnection
+ * @brief キャッシュサーバとの接続.
+ * @details シングルトン（もどき）クラス
  */
 class CacheServerConnection : public TCPConnection, public noncopyable
 {
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 */
 	CacheServerConnection(const shared_ptr<tcp::socket> &pInSocket);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~CacheServerConnection() {}
 
-	// 接続.
+	/**
+	 * @fn bool Connect()
+	 * @brief 接続
+	 * @return 接続に成功したらtrueを返す。
+	 */
 	bool Connect();
 
-	// パケット送信.
+	/**
+	 * @fn void SendPacket(PacketBase *pPacket)
+	 * @brief パケット送信
+	 * @param[in] pPacket パケット
+	 */
 	void SendPacket(PacketBase *pPacket);
 
 protected:
 
-	// データを受信した。
+	/**
+	 * @fn virtual void OnRecvData(size_t Size)
+	 * @brief データを受信した
+	 * @param[in] Size データサイズ
+	 */
 	virtual void OnRecvData(size_t Size);
 
-	// 切断された。
+	/**
+	 * @fn virtual void OnDisconnected()
+	 * @brief 切断された
+	 */
 	virtual void OnDisconnected();
 
 private:
@@ -39,6 +65,11 @@ private:
 
 public:
 
+	/**
+	 * @fn static CacheServerConnection *GetInstance()
+	 * @brief インスタンス取得
+	 * @return インスタンス
+	 */
 	static CacheServerConnection *GetInstance() { return pInstance; }
 
 private:

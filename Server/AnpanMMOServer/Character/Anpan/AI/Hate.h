@@ -1,20 +1,29 @@
+/**
+ * @file Hate.h
+ * @brief ヘイト管理クラス
+ * @author YanaP
+ */
 #ifndef __HATE_H__
 #define __HATE_H__
 
 #include <vector>
+#include "WeakPtrDefine.h"
 
 class CharacterBase;
 
-// ヘイト
+/**
+ * @struct HateUnit
+ * @brief ヘイト
+ */
 struct HateUnit
 {
 
 public:
 
-	// キャラクタ
-	weak_ptr<CharacterBase> pCharacter;
+	//! キャラクタ
+	CharacterPtr pCharacter;
 
-	// ヘイト値.
+	//! ヘイト値.
 	int HateValue;
 
 };
@@ -24,27 +33,44 @@ bool operator >(const HateUnit &Left, const HateUnit &Right);
 bool operator <(const HateUnit &Left, const HateUnit &Right);
 
 /**
- * ヘイト管理クラス
+ * @class Hate
+ * @brief ヘイト管理クラス
  */
 class Hate
 {
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 */
 	Hate();
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	~Hate() {}
 
-	// 毎フレームの処理.
+	/**
+	 * @fn void Poll()
+	 * @brief 毎フレームの処理
+	 */
 	void Poll();
 
-	// 増加.
-	void Add(weak_ptr<CharacterBase> pCharacter, int Value);
+	/**
+	 * @fn void Add(CharacterPtr pCharacter, int Value)
+	 * @brief 増加
+	 * @param[in] pCharacter キャラクタへのweak_ptr
+	 * @param[in] Value 増加量
+	 */
+	void Add(CharacterPtr pCharacter, int Value);
 
-	// 一番上にいるキャラを取得.
-	weak_ptr<CharacterBase> GetTop() const;
+	/**
+	 * @fn CharacterPtr GetTop() const
+	 * @brief 一番上にいるキャラを取得
+	 * @return 一番上にいるキャラ
+	 */
+	CharacterPtr GetTop() const;
 
 private:
 

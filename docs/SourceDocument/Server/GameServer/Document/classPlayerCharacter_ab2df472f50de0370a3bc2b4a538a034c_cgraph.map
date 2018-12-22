@@ -1,4 +1,4 @@
 <map id="PlayerCharacter::OnMoved" name="PlayerCharacter::OnMoved">
-<area shape="rect" id="node2" href="$classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="CharacterBase::GetArea" alt="" coords="241,5,405,32"/>
-<area shape="rect" id="node3" href="$classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2" title="CharacterBase::GetPosition" alt="" coords="231,56,415,83"/>
+<area shape="rect" id="node2" href="$classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="241,5,405,32"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3" title="座標を取得 " alt="" coords="231,56,415,83"/>
 </map>

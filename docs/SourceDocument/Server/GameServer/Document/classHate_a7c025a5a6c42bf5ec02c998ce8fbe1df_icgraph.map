@@ -1,4 +1,4 @@
 <map id="Hate::Poll" name="Hate::Poll">
-<area shape="rect" id="node2" href="$classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="AnpanAI::Poll" alt="" coords="132,5,233,32"/>
-<area shape="rect" id="node3" href="$classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="281,5,389,32"/>
+<area shape="rect" id="node2" href="$classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="毎フレームの処理 " alt="" coords="132,5,233,32"/>
+<area shape="rect" id="node3" href="$classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="毎フレームの処理 " alt="" coords="281,5,389,32"/>
 </map>

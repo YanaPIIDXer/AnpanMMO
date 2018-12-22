@@ -1,3 +1,8 @@
+/**
+ * @file AnpanAIStateNonActive.cpp
+ * @brief アンパンＡＩステート基底クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "AnpanAIStateBase.h"
 #include "Character/Anpan/Anpan.h"

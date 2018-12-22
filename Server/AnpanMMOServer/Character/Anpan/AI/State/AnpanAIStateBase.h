@@ -1,3 +1,8 @@
+/**
+ * @file AnpanAIStateNonActive.h
+ * @brief アンパンＡＩステート基底クラス
+ * @author YanaP
+ */
 #ifndef __ANPANAISTATEBASE_H__
 #define __ANPANAISTATEBASE_H__
 
@@ -8,52 +13,102 @@ class Anpan;
 class AnpanAI;
 
 /**
- * アンパンＡＩステート基底クラス
+ * @class AnpanAIStateBase
+ * @brief アンパンＡＩステート基底クラス
  */
 class AnpanAIStateBase
 {
 
 public:
 
-	// コンストラクタ
+	/** 
+	 * @brief コンストラクタ
+	 * @param[in] pInParent アンパン
+	 */
 	AnpanAIStateBase(Anpan *pInParent);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~AnpanAIStateBase() = 0;
 
-	// 毎フレームの処理.
+	/**
+	 * @fn void Poll(int DeltaTime)
+	 * @brief 毎フレームの処理
+	 * @param[in] DeltaTime 前フレームからの経過時間
+	 */
 	void Poll(int DeltaTime);
 
-	// AIを設定.
+	/**
+	 * @fn void SetAI(AnpanAI *pInAI)
+	 * @brief AIを設定
+	 * @param[in] pInAI AI
+	 */
 	void SetAI(AnpanAI *pInAI) { pAI = pInAI; }
 
-	// ダメージを受けた。
+	/**
+	 * @fn virtual void OnDamaged()
+	 * @brief ダメージを受けた
+	 */
 	virtual void OnDamaged() {}
 
 protected:
 
-	// 更新処理.
+	/**
+	 * @fn virtual void Update(int DeltaTime)
+	 * @brief 更新処理
+	 * @param[in] DeltaTime 前フレームからの経過時間
+	 */
 	virtual void Update(int DeltaTime) {}
 
-	// 親を取得.
+	/**
+	 * @fn Anpan *GetParent()
+	 * @brief 親を取得
+	 * @return アンパン
+	 */
 	Anpan *GetParent() { return pParent; }
 
-	// AIを取得.
+	/**
+	 * @fn AnpanAI *GetAI()
+	 * @brief AIを取得
+	 * @return AI
+	 */
 	AnpanAI *GetAI() { return pAI; }
 
-	// 移動を設定.
+	/**
+	 * @fn void SetMove(const Vector3D &InMoveTarget, int Time)
+	 * @brief 移動を設定
+	 * @param[in] InMoveTarget 移動先
+	 * @param[in] Time 移動時間
+	 */
 	void SetMove(const Vector3D &InMoveTarget, int Time);
 
-	// 回転を設定.
+	/**
+	 * @fn void SetRotate(const Rotation &InRotateTarget, int Time)
+	 * @brief 回転を設定
+	 * @param[in] InRotateTarget 回転
+	 * @param[in] Time 回転時間
+	 */
 	void SetRotate(const Rotation &InRotateTarget, int Time);
 
-	// 停止.
+	/**
+	 * @fn void Stop()
+	 * @brief 停止
+	 */
 	void Stop();
 
-	// 移動中？
+	/**
+	 * @fn bool IsMoving() const
+	 * @brief 移動中？
+	 * @return 移動中ならtrueを返す。
+	 */
 	bool IsMoving() const { return (MoveTime > 0); }
 
-	// 回転中？
+	/**
+	 * @fn bool IsRotating() const
+	 * @brief 回転中？
+	 * @return 回転中ならtrueを返す。
+	 */
 	bool IsRotating() const { return (RotateTime > 0); }
 
 private:

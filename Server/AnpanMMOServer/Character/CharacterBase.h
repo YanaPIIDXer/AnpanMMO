@@ -1,3 +1,8 @@
+/**
+ * @file CharacterBase.h
+ * @brief キャラクタ基底クラス
+ * @author YanaP
+ */
 #ifndef __CHARACTERBASE_H__
 #define __CHARACTERBASE_H__
 
@@ -10,113 +15,232 @@
 #include "Skill/SkillRecastManager.h"
 
 /**
- * キャラクタ基底クラス
+ * @class CharacterBase
+ * @brief キャラクタ基底クラス
  */
 class CharacterBase : public enable_shared_from_this<CharacterBase>
 {
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 */
 	CharacterBase();
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~CharacterBase() {}
 
-	// 毎フレームの処理.
+	/**
+	 * @fn void Poll(s32 DeltaTime)
+	 * @brief 毎フレームの処理
+	 * @param[in] DeltaTime 前フレームからの経過時間
+	 */
 	void Poll(s32 DeltaTime);
 
-	// パラメータ取得.
+	/**
+	 * @fn const CharacterParameter &GetParameter() const
+	 * @brief パラメータ取得
+	 * @return パラメータ
+	 */
 	const CharacterParameter &GetParameter() const { return Parameter; }
 
-	// 座標を設定.
+	/**
+	 * @fn void SetPosition(const Vector3D &MoveTarget)
+	 * @brief 座標を設定
+	 * @param[in] MoveTarget 移動先座標
+	 */
 	void SetPosition(const Vector3D &MoveTarget);
 
-	// 回転を設定.
+	/**
+	 * @fn void SetRotate(const Rotation &TargetRotation)
+	 * @brief 回転を設定
+	 * @param[in] TargetRotation 回転
+	 */
 	void SetRotate(const Rotation &TargetRotation);
 
-	// 座標取得.
+	/**
+	 * @fn const Vector3D &GetPosition() const
+	 * @brief 座標を取得
+	 * @return 座標
+	 */
 	const Vector3D &GetPosition() const { return Position; }
 
-	// 回転取得.
+	/**
+	 * @fn const Rotation &GetRotation() const
+	 * @brief 回転を取得
+	 * @return 回転
+	 */
 	const Rotation &GetRotation() const { return Rot; }
 
-	// 死んでいる？
+	/**
+	 * @fn bool IsDead() const
+	 * @brief 死んでいる？
+	 * @return 死んでいるならtrue
+	 */
 	bool IsDead() const { return (Parameter.Hp <= 0); }
 
-	// ダメージ
+	/**
+	 * @fn void ApplyDamage(CharacterPtr pAttacker, int Value)
+	 * @brief ダメージを与える
+	 * @param[in] pAttacker ダメージを与えたキャラクタのweak_ptr
+	 * @param[in] Value ダメージ量
+	 */
 	void ApplyDamage(CharacterPtr pAttacker, int Value);
 
-	// 回復.
+	/**
+	 * @fn void Heal(int Value)
+	 * @brief 回復
+	 * @param[in] Value 回復量
+	 */
 	void Heal(int Value);
 
-	// 正面ベクトルを取得.
+	/**
+	 * @fn Vector3D GetCenterVec() const
+	 * @brief 正面ベクトルを取得
+	 * @return 正面ベクトル
+	 */
 	Vector3D GetCenterVec() const;
 
-	// UUIDをセット。
+	/**
+	 * @fn void SetUuid(u32 InUuid)
+	 * @brief UUIDをセット
+	 * @param[in] InUuid UUID
+	 */
 	void SetUuid(u32 InUuid) { Uuid = InUuid; }
 
-	// UUIDを取得.
+	/**
+	 * @fn u32 GetUuid() const
+	 * @brief UUIDを取得
+	 * @return UUID
+	 */
 	u32 GetUuid() const { return Uuid; }
 
-	// レベルを取得.
+	/**
+	 * @fn u32 GetLevel() const
+	 * @brief レベルを取得
+	 * @return レベル
+	 */
 	u32 GetLevel() const { return Parameter.Level; }
 
-	// キャラクタタイプを取得.
+	/**
+	 * @fn virtual u8 GetCharacterType() const
+	 * @brief キャラクタタイプを取得
+	 * @return キャラクタタイプ
+	 */
 	virtual u8 GetCharacterType() const = 0;
 
-	// 移動.
+	/**
+	 * @fn void Move(const vector3D &MoveValue)
+	 * @brief 移動
+	 * @param[in] MoveValue 移動量
+	 */
 	void Move(const Vector3D &MoveValue);
 
-	// 回転.
+	/**
+	 * @fn void Rotate(float RotateValue)
+	 * @brief 回転
+	 * @param[in] RotateValue 回転量
+	 */
 	void Rotate(float RotateValue);
 
-	// リスポン
+	/**
+	 * @fn void Respawn()
+	 * @brief リスポン
+	 */
 	void Respawn();
 
-	// エリアをセット。
+	/**
+	 * @fn void SetArea(const AreaPtr &pInArea)
+	 * @brief エリアを設定
+	 * @param[in] pInArea エリアへのweak_ptr
+	 */
 	void SetArea(const AreaPtr &pInArea) { pArea = pInArea; }
 
-	// エリアを取得.
+	/**
+	 * @fn AreaPtr GetArea() const
+	 * @brief エリアを取得
+	 * @return エリアへのwaek_ptr
+	 */
 	AreaPtr GetArea() const { return pArea; }
 
-	// スキル使用.
+	/**
+	 * @fn void UseSkill(u32 SkillId, CharacterPtr pTarget)
+	 * @brief スキル使用
+	 * @param[in] SkillId スキルＩＤ
+	 * @param[in] pTarget ターゲットキャラへのweak_ptr
+	 */
 	void UseSkill(u32 SkillId, CharacterPtr pTarget);
 
-	// リキャスト開始.
+	/**
+	 * @fn void StartRecast(u32 SkillId)
+	 * @brief リキャスト開始
+	 * @param[in] SkillId スキルＩＤ
+	 */
 	void StartRecast(u32 SkillId);
 
-	// スキル使用中か？
+	/**
+	 * @fn bool IsSkillActive() const
+	 * @brief スキル使用中か？
+	 * @return スキル使用中ならtrueを返す
+	 */
 	bool IsSkillActive() const { return Skill.IsActive(); }
 
-	// スキルキャスト中か？
+	/**
+	 * @fn bool IsSkillCasting() const
+	 * @brief スキルキャスト中か？
+	 * @return キャスト中ならtrueを返す。
+	 */
 	bool IsSkillCasting() const { return Skill.IsCasting(); }
 
-	// リキャスト中か？
+	/**
+	 * @fn bool IsRecasting(u32 SkillId) const
+	 * @brief リキャスト中か？
+	 * @param[in] SkillId スキルＩＤ
+	 * @return リキャスト中ならtrueを返す
+	 */
 	bool IsRecasting(u32 SkillId) const { return Recast.IsRecast(SkillId); }
 
-	// 倒した時の経験値取得.
+	/**
+	 * @fn virtual int GetExp() const
+	 * @brief 倒した時の経験値取得
+	 * @return 倒した時の経験値
+	 */
 	virtual int GetExp() const { return 0; }
 
-	// ドロップＩＤ取得.
+	/**
+	 * @fn virtual u32 GetDropId() const
+	 * @brief ドロップＩＤを取得
+	 * @return ドロップＩＤ
+	 */
 	virtual u32 GetDropId() const { return 0; }
 
 protected:
 
-	// 座標.
+	//! 座標.
 	Vector3D Position;
 
-	// 回転.
+	//! 回転.
 	Rotation Rot;
 
-	// スキル制御.
+	//! スキル制御.
 	SkillControl Skill;
 
-	// スキルリキャスト管理.
+	//! スキルリキャスト管理.
 	SkillRecastManager Recast;
 
 
-	// パラメータ設定.
+	/**
+	 * @fn void SetParameter(u32 Level, int Hp, int MaxHp, int Atk, int Def)
+	 * @brief パラメータを設定
+	 * @param[in] Level レベル
+	 * @param[in] Hp ＨＰ
+	 * @param[in] MaxHp 最大ＨＰ
+	 * @param[in] Atk 攻撃力
+	 * @param[in] Def 防御力
+	 */
 	void SetParameter(u32 Level, int Hp, int MaxHp, int Atk, int Def)
 	{
 		Parameter.Level = Level;
@@ -126,7 +250,13 @@ protected:
 		Parameter.Def = Def;
 	}
 
-	// レベルアップ
+	/**
+	 * @fn void LevelUp(int MaxHp, int Atk, int Def)
+	 * @brief レベルアップ
+	 * @param[in] MaxHp 最大ＨＰ
+	 * @param[in] Atk 攻撃力
+	 * @param[in] Def 防御力
+	 */
 	void LevelUp(int MaxHp, int Atk, int Def)
 	{
 		Parameter.Level++;
@@ -135,10 +265,19 @@ protected:
 		Parameter.Def += Def;
 	}
 
-	// ダメージを受けた。
+	/**
+	 * @fn virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
+	 * @brief ダメージを受けた
+	 * @param[in] pAttacker 攻撃者へのweak_ptr
+	 * @param[in] DamageValue ダメージ量
+	 */
 	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue) {}
 
-	// 毎フレームの処理.
+	/**
+	 * @fn virtual void Update(s32 DeltaTime)
+	 * @brief 毎フレームの処理
+	 * @param[in] DeltaTime 前フレームからの経過時間
+	 */
 	virtual void Update(s32 DeltaTime) {}
 
 private:

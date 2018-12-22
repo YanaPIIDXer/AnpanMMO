@@ -1,3 +1,8 @@
+/**
+ * @file CacheServerConnection.cpp
+ * @brief キャッシュサーバとの接続クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "CacheServerConnection.h"
 #include "ServerHost.h"

@@ -1,0 +1,5 @@
+<map id="Anpan::OnDamaged" name="Anpan::OnDamaged">
+<area shape="rect" id="node2" href="$classAnpanAI.html#af69841c74db3689157c8277104565942" title="ダメージを受けた " alt="" coords="192,31,343,57"/>
+<area shape="rect" id="node3" href="$classHate.html#af95ba2a070814635dc94a88c19813f74" title="増加 " alt="" coords="457,5,537,32"/>
+<area shape="rect" id="node4" href="$classAnpanAIStateBase.html#ac606410c281d299a13dd6325202a878b" title="ダメージを受けた " alt="" coords="391,56,603,83"/>
+</map>

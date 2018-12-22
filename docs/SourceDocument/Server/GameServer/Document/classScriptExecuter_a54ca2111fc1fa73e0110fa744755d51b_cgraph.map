@@ -3,8 +3,8 @@
 <area shape="rect" id="node3" href="$classScriptFlagManager.html#a2c68da2a3085d9cdf135c73c20e4abb6" title="ScriptFlagManager::\lToBitField" alt="" coords="263,57,402,98"/>
 <area shape="rect" id="node5" href="$classClient.html#a2fab4ff0f437d04f49917829c8e6a6aa" title="UUIDを取得. " alt="" coords="277,123,388,149"/>
 <area shape="rect" id="node6" href="$classClient.html#a0cda75c99767496a10a7a4e559a8f877" title="キャラクタを取得. " alt="" coords="263,173,403,200"/>
-<area shape="rect" id="node7" href="$classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad" title="CacheServerConnection\l::GetInstance" alt="" coords="253,225,413,266"/>
-<area shape="rect" id="node8" href="$classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="CacheServerConnection\l::SendPacket" alt="" coords="253,290,413,331"/>
+<area shape="rect" id="node7" href="$classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="253,225,413,266"/>
+<area shape="rect" id="node8" href="$classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="253,290,413,331"/>
 <area shape="rect" id="node4" href="$classScriptFlagManager.html#aa7731ac562bf0eaa1028e634662eaf58" title="ScriptFlagManager::Get" alt="" coords="495,64,655,91"/>
 <area shape="rect" id="node9" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="499,209,650,236"/>
 <area shape="rect" id="node10" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="477,261,672,302"/>

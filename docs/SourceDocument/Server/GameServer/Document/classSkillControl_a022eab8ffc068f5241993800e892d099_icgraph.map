@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="197,56,316,83"/>
 <area shape="rect" id="node5" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="382,107,526,133"/>
 <area shape="rect" id="node7" href="$classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="189,158,324,199"/>
-<area shape="rect" id="node3" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="Anpan::AttackTo" alt="" coords="395,5,513,32"/>
-<area shape="rect" id="node4" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="CharacterBase::UseSkill" alt="" coords="372,56,536,83"/>
-<area shape="rect" id="node6" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="PlayerCharacter::UseItem" alt="" coords="584,107,755,133"/>
+<area shape="rect" id="node3" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="攻撃 " alt="" coords="395,5,513,32"/>
+<area shape="rect" id="node4" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="スキル使用 " alt="" coords="372,56,536,83"/>
+<area shape="rect" id="node6" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="584,107,755,133"/>
 </map>

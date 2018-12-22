@@ -1,3 +1,8 @@
+/**
+ * @file AnpanAIStateActive.cpp
+ * @brief アンパンＡＩステート：アクティブ状態
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "AnpanAIStateActive.h"
 #include "Character/Anpan/AI/AnpanAI.h"

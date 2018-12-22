@@ -12,7 +12,9 @@ class InstanceAreaTicket;
 class Vector3D;
 
 /**
+ * @class InstanceAreaTicketManager
  * @brief インスタンスエリアチケット管理
+ * @details シングルトンクラス
  */
 class InstanceAreaTicketManager : public noncopyable
 {

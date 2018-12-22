@@ -1,8 +1,8 @@
 <map id="SkillRecastManager::IsRecast" name="SkillRecastManager::IsRecast">
-<area shape="rect" id="node2" href="$classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="CharacterBase::IsRecasting" alt="" coords="192,56,376,83"/>
+<area shape="rect" id="node2" href="$classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="リキャスト中か？ " alt="" coords="192,56,376,83"/>
 <area shape="rect" id="node3" href="$classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="424,56,543,83"/>
-<area shape="rect" id="node4" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="Anpan::AttackTo" alt="" coords="613,5,732,32"/>
-<area shape="rect" id="node5" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="CharacterBase::UseSkill" alt="" coords="591,56,755,83"/>
+<area shape="rect" id="node4" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="攻撃 " alt="" coords="613,5,732,32"/>
+<area shape="rect" id="node5" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="スキル使用 " alt="" coords="591,56,755,83"/>
 <area shape="rect" id="node6" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="601,107,745,133"/>
-<area shape="rect" id="node7" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="PlayerCharacter::UseItem" alt="" coords="803,107,973,133"/>
+<area shape="rect" id="node7" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="803,107,973,133"/>
 </map>

@@ -1,3 +1,8 @@
+/**
+ * @file CharacterBase.cpp
+ * @brief キャラクタ基底クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "CharacterBase.h"
 #include "Math/MathUtil.h"

@@ -1,4 +1,4 @@
 <map id="MasterData::GetSkillTreeMaster" name="MasterData::GetSkillTreeMaster">
-<area shape="rect" id="node2" href="$classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="PlayerCharacter::OpenSkillTree" alt="" coords="221,5,425,32"/>
+<area shape="rect" id="node2" href="$classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="221,5,425,32"/>
 <area shape="rect" id="node3" href="$classSkillTree.html#ae95021f7ff6903e2c6dded4b654e556a" title="SkillTree::SkillTree" alt="" coords="258,56,389,83"/>
 </map>

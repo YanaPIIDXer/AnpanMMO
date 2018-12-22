@@ -1,3 +1,8 @@
+/**
+ * @file Hate.cpp
+ * @brief ヘイト管理クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "Hate.h"
 #include "Character/CharacterBase.h"

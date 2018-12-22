@@ -69,13 +69,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>プレイヤーキャラクタ  
+ <a href="classPlayerCharacter.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="PlayerCharacter_8h_source.html">PlayerCharacter.h</a>&gt;</code></p>
 <div class="dynheader">
 PlayerCharacter の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter__inherit__graph.png" border="0" usemap="#PlayerCharacter_inherit__map" alt="Inheritance graph"/></div>
 <map name="PlayerCharacter_inherit__map" id="PlayerCharacter_inherit__map">
-<area shape="rect" id="node2" href="classCharacterBase.html" title="CharacterBase" alt="" coords="47,95,155,121"/>
+<area shape="rect" id="node2" href="classCharacterBase.html" title="キャラクタ基底クラス " alt="" coords="47,95,155,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <div class="dynheader">
@@ -83,7 +86,7 @@ PlayerCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter__coll__graph.png" border="0" usemap="#PlayerCharacter_coll__map" alt="Collaboration graph"/></div>
 <map name="PlayerCharacter_coll__map" id="PlayerCharacter_coll__map">
-<area shape="rect" id="node2" href="classCharacterBase.html" title="CharacterBase" alt="" coords="297,122,405,149"/>
+<area shape="rect" id="node2" href="classCharacterBase.html" title="キャラクタ基底クラス " alt="" coords="297,122,405,149"/>
 <area shape="rect" id="node4" href="classSkillRecastManager.html" title="SkillRecastManager" alt="" coords="32,71,171,98"/>
 <area shape="rect" id="node5" href="classRotation.html" title="Rotation" alt="" coords="66,122,137,149"/>
 <area shape="rect" id="node6" href="classSkillControl.html" title="SkillControl" alt="" coords="57,173,145,199"/>
@@ -94,128 +97,187 @@ PlayerCharacter 連携図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:abddeba0759ba2f6b15bf7e8aae8c0929"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#abddeba0759ba2f6b15bf7e8aae8c0929">PlayerCharacter</a> (<a class="el" href="classClient.html">Client</a> *pInClient, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InCharacterId, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InJob, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, int MaxHp, int Atk, int Def, int InExp, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InGold)</td></tr>
+<tr class="memdesc:abddeba0759ba2f6b15bf7e8aae8c0929"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#abddeba0759ba2f6b15bf7e8aae8c0929">[詳解]</a><br /></td></tr>
 <tr class="separator:abddeba0759ba2f6b15bf7e8aae8c0929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4915330a9f743156b6860a97e6d68e28"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a4915330a9f743156b6860a97e6d68e28">~PlayerCharacter</a> ()</td></tr>
+<tr class="memdesc:a4915330a9f743156b6860a97e6d68e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a4915330a9f743156b6860a97e6d68e28">[詳解]</a><br /></td></tr>
 <tr class="separator:a4915330a9f743156b6860a97e6d68e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a373268ab232cddb7b1b3d2099da9ec19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a373268ab232cddb7b1b3d2099da9ec19">GetClient</a> () const</td></tr>
-<tr class="separator:a373268ab232cddb7b1b3d2099da9ec19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae3a26ff3c5b69202b1e2c736ade1170"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#aae3a26ff3c5b69202b1e2c736ade1170">GetClient</a> () const</td></tr>
+<tr class="memdesc:aae3a26ff3c5b69202b1e2c736ade1170"><td class="mdescLeft">&#160;</td><td class="mdescRight">クライアント取得  <a href="#aae3a26ff3c5b69202b1e2c736ade1170">[詳解]</a><br /></td></tr>
+<tr class="separator:aae3a26ff3c5b69202b1e2c736ade1170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af674ca1a9358d11e18e38eca81072f63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#af674ca1a9358d11e18e38eca81072f63">AddExp</a> (int Value)</td></tr>
+<tr class="memdesc:af674ca1a9358d11e18e38eca81072f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">経験値増加  <a href="#af674ca1a9358d11e18e38eca81072f63">[詳解]</a><br /></td></tr>
 <tr class="separator:af674ca1a9358d11e18e38eca81072f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cba0b86d81aa4325a9df3ef784421af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a7cba0b86d81aa4325a9df3ef784421af">GetExp</a> () const</td></tr>
+<tr class="memdesc:a7cba0b86d81aa4325a9df3ef784421af"><td class="mdescLeft">&#160;</td><td class="mdescRight">経験値取得  <a href="#a7cba0b86d81aa4325a9df3ef784421af">[詳解]</a><br /></td></tr>
 <tr class="separator:a7cba0b86d81aa4325a9df3ef784421af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad92d9ce8eae2a34ce35f49c14dfc421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#aad92d9ce8eae2a34ce35f49c14dfc421">SetName</a> (const std::string &amp;InName)</td></tr>
+<tr class="memdesc:aad92d9ce8eae2a34ce35f49c14dfc421"><td class="mdescLeft">&#160;</td><td class="mdescRight">名前を設定  <a href="#aad92d9ce8eae2a34ce35f49c14dfc421">[詳解]</a><br /></td></tr>
 <tr class="separator:aad92d9ce8eae2a34ce35f49c14dfc421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbeaf5c977a21841edff5adcc80c5bfb"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#afbeaf5c977a21841edff5adcc80c5bfb">GetName</a> () const</td></tr>
+<tr class="memdesc:afbeaf5c977a21841edff5adcc80c5bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">名前を取得  <a href="#afbeaf5c977a21841edff5adcc80c5bfb">[詳解]</a><br /></td></tr>
+<tr class="separator:afbeaf5c977a21841edff5adcc80c5bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabc14771927e4187822cfcd2207cd509"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#aabc14771927e4187822cfcd2207cd509">GetCharacterId</a> () const</td></tr>
+<tr class="memdesc:aabc14771927e4187822cfcd2207cd509"><td class="mdescLeft">&#160;</td><td class="mdescRight">キャラクタＩＤ取得  <a href="#aabc14771927e4187822cfcd2207cd509">[詳解]</a><br /></td></tr>
 <tr class="separator:aabc14771927e4187822cfcd2207cd509"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00cbaa3c73b4a0b1a9a2e9609f0d0ac0"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a00cbaa3c73b4a0b1a9a2e9609f0d0ac0">GetName</a> () const</td></tr>
-<tr class="separator:a00cbaa3c73b4a0b1a9a2e9609f0d0ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6757b24af6cad4891794163c2ff9aeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#ac6757b24af6cad4891794163c2ff9aeb">GetJob</a> () const</td></tr>
+<tr class="memdesc:ac6757b24af6cad4891794163c2ff9aeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ジョブを取得  <a href="#ac6757b24af6cad4891794163c2ff9aeb">[詳解]</a><br /></td></tr>
 <tr class="separator:ac6757b24af6cad4891794163c2ff9aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0576c190494fa2225202a8f314ebdd4b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a0576c190494fa2225202a8f314ebdd4b">GetCharacterType</a> () const</td></tr>
-<tr class="separator:a0576c190494fa2225202a8f314ebdd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9cc03228b7878e4d79880467c1fbac0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#aa9cc03228b7878e4d79880467c1fbac0">GetCharacterType</a> () const</td></tr>
+<tr class="memdesc:aa9cc03228b7878e4d79880467c1fbac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">キャラクタタイプを取得  <a href="#aa9cc03228b7878e4d79880467c1fbac0">[詳解]</a><br /></td></tr>
+<tr class="separator:aa9cc03228b7878e4d79880467c1fbac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9fa2ec8a4dd2ed940df3a1fb9378202"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#aa9fa2ec8a4dd2ed940df3a1fb9378202">SetParty</a> (const <a class="el" href="WeakPtrDefine_8h.html#afe8b26ad69973c376159982f5ad31a1a">PartyPtr</a> &amp;pInParty)</td></tr>
+<tr class="memdesc:aa9fa2ec8a4dd2ed940df3a1fb9378202"><td class="mdescLeft">&#160;</td><td class="mdescRight">パーティを設定  <a href="#aa9fa2ec8a4dd2ed940df3a1fb9378202">[詳解]</a><br /></td></tr>
 <tr class="separator:aa9fa2ec8a4dd2ed940df3a1fb9378202"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a467ab1f4008a55213d3353e613e0aa50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="WeakPtrDefine_8h.html#afe8b26ad69973c376159982f5ad31a1a">PartyPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a467ab1f4008a55213d3353e613e0aa50">GetParty</a> () const</td></tr>
+<tr class="memdesc:a467ab1f4008a55213d3353e613e0aa50"><td class="mdescLeft">&#160;</td><td class="mdescRight">パーティを取得  <a href="#a467ab1f4008a55213d3353e613e0aa50">[詳解]</a><br /></td></tr>
 <tr class="separator:a467ab1f4008a55213d3353e613e0aa50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2df472f50de0370a3bc2b4a538a034c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#ab2df472f50de0370a3bc2b4a538a034c">OnMoved</a> ()</td></tr>
+<tr class="memdesc:ab2df472f50de0370a3bc2b4a538a034c"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動した  <a href="#ab2df472f50de0370a3bc2b4a538a034c">[詳解]</a><br /></td></tr>
 <tr class="separator:ab2df472f50de0370a3bc2b4a538a034c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1afee0a074986b5d0d03f086c9748a0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a1afee0a074986b5d0d03f086c9748a0b">OnAreaChange</a> ()</td></tr>
+<tr class="memdesc:a1afee0a074986b5d0d03f086c9748a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">エリアが切り替わった  <a href="#a1afee0a074986b5d0d03f086c9748a0b">[詳解]</a><br /></td></tr>
 <tr class="separator:a1afee0a074986b5d0d03f086c9748a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13afa9101cc4d239ebafcfb1163cb0c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a13afa9101cc4d239ebafcfb1163cb0c5">GetGold</a> () const</td></tr>
-<tr class="separator:a13afa9101cc4d239ebafcfb1163cb0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36440e5229b719cca880325c7f8231ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a36440e5229b719cca880325c7f8231ba">GetGold</a> () const</td></tr>
+<tr class="memdesc:a36440e5229b719cca880325c7f8231ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゴールドを取得  <a href="#a36440e5229b719cca880325c7f8231ba">[詳解]</a><br /></td></tr>
+<tr class="separator:a36440e5229b719cca880325c7f8231ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1b630aa03e011b4fef2f1fcb3b94272"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272">AddGold</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Value)</td></tr>
+<tr class="memdesc:ae1b630aa03e011b4fef2f1fcb3b94272"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゴールドを増加  <a href="#ae1b630aa03e011b4fef2f1fcb3b94272">[詳解]</a><br /></td></tr>
 <tr class="separator:ae1b630aa03e011b4fef2f1fcb3b94272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c21ce7b27230b60a45581ea8c3ce83c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c">SubtractGold</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Value)</td></tr>
+<tr class="memdesc:a0c21ce7b27230b60a45581ea8c3ce83c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゴールドを消費  <a href="#a0c21ce7b27230b60a45581ea8c3ce83c">[詳解]</a><br /></td></tr>
 <tr class="separator:a0c21ce7b27230b60a45581ea8c3ce83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95be16abe4f8944a8c3b8e5b88afe9f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a95be16abe4f8944a8c3b8e5b88afe9f6">InitializeSkillTree</a> (const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> &gt; &amp;OpenedNodes)</td></tr>
+<tr class="memdesc:a95be16abe4f8944a8c3b8e5b88afe9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルツリー初期化  <a href="#a95be16abe4f8944a8c3b8e5b88afe9f6">[詳解]</a><br /></td></tr>
 <tr class="separator:a95be16abe4f8944a8c3b8e5b88afe9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadaf3ecb729d8771ae49882d9674ed13"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classSkillTree.html">SkillTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#aadaf3ecb729d8771ae49882d9674ed13">GetSkillTree</a> () const</td></tr>
-<tr class="separator:aadaf3ecb729d8771ae49882d9674ed13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62bd4afb218302b62e78afcaac619771"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classSkillTree.html">SkillTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a62bd4afb218302b62e78afcaac619771">GetSkillTree</a> () const</td></tr>
+<tr class="memdesc:a62bd4afb218302b62e78afcaac619771"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルツリー取得  <a href="#a62bd4afb218302b62e78afcaac619771">[詳解]</a><br /></td></tr>
+<tr class="separator:a62bd4afb218302b62e78afcaac619771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9260d0016217c771747041a4d04cc95e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e">OpenSkillTree</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> NodeId)</td></tr>
+<tr class="memdesc:a9260d0016217c771747041a4d04cc95e"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルツリーのノードを開く  <a href="#a9260d0016217c771747041a4d04cc95e">[詳解]</a><br /></td></tr>
 <tr class="separator:a9260d0016217c771747041a4d04cc95e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43476b33dcbae9011170e8a5198c1528"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a43476b33dcbae9011170e8a5198c1528">OnRecvItemList</a> (const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="classItemData.html">ItemData</a> &gt; &amp;List)</td></tr>
+<tr class="memdesc:a43476b33dcbae9011170e8a5198c1528"><td class="mdescLeft">&#160;</td><td class="mdescRight">アイテムリストを受信した  <a href="#a43476b33dcbae9011170e8a5198c1528">[詳解]</a><br /></td></tr>
 <tr class="separator:a43476b33dcbae9011170e8a5198c1528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec80d70936ddc9f4f323d2e22cb6719d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d">UseItem</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ItemId, <a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pTarget)</td></tr>
+<tr class="memdesc:aec80d70936ddc9f4f323d2e22cb6719d"><td class="mdescLeft">&#160;</td><td class="mdescRight">アイテム使用  <a href="#aec80d70936ddc9f4f323d2e22cb6719d">[詳解]</a><br /></td></tr>
 <tr class="separator:aec80d70936ddc9f4f323d2e22cb6719d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae79a3832ea9ef55c161871c3e91d0922"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922">AddItem</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ItemId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Count)</td></tr>
+<tr class="memdesc:ae79a3832ea9ef55c161871c3e91d0922"><td class="mdescLeft">&#160;</td><td class="mdescRight">アイテム増加  <a href="#ae79a3832ea9ef55c161871c3e91d0922">[詳解]</a><br /></td></tr>
 <tr class="separator:ae79a3832ea9ef55c161871c3e91d0922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae413ac1063c46e7574a3d5103c714070"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070">SubtractItem</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ItemId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Count)</td></tr>
+<tr class="memdesc:ae413ac1063c46e7574a3d5103c714070"><td class="mdescLeft">&#160;</td><td class="mdescRight">アイテム消費  <a href="#ae413ac1063c46e7574a3d5103c714070">[詳解]</a><br /></td></tr>
 <tr class="separator:ae413ac1063c46e7574a3d5103c714070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b5d2a7983e775bc10d50ea2f6554e69"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classItemList.html">ItemList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a2b5d2a7983e775bc10d50ea2f6554e69">GetItemList</a> () const</td></tr>
-<tr class="separator:a2b5d2a7983e775bc10d50ea2f6554e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe8336ae65cd736386b469f65ab9f85e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classItemList.html">ItemList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#abe8336ae65cd736386b469f65ab9f85e">GetItemList</a> () const</td></tr>
+<tr class="memdesc:abe8336ae65cd736386b469f65ab9f85e"><td class="mdescLeft">&#160;</td><td class="mdescRight">アイテムリスト取得  <a href="#abe8336ae65cd736386b469f65ab9f85e">[詳解]</a><br /></td></tr>
+<tr class="separator:abe8336ae65cd736386b469f65ab9f85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCharacterBase.html">CharacterBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">CharacterBase</a> ()</td></tr>
+<tr class="memdesc:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">[詳解]</a><br /></td></tr>
 <tr class="separator:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af750ca6cbe1346a3768b65f61934360c inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af750ca6cbe1346a3768b65f61934360c">~CharacterBase</a> ()</td></tr>
+<tr class="memdesc:af750ca6cbe1346a3768b65f61934360c inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="classCharacterBase.html#af750ca6cbe1346a3768b65f61934360c">[詳解]</a><br /></td></tr>
 <tr class="separator:af750ca6cbe1346a3768b65f61934360c inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73ca6b09f2a6e31f0add39128ff1b5d9 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a73ca6b09f2a6e31f0add39128ff1b5d9">Poll</a> (<a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> DeltaTime)</td></tr>
+<tr class="memdesc:a73ca6b09f2a6e31f0add39128ff1b5d9 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="classCharacterBase.html#a73ca6b09f2a6e31f0add39128ff1b5d9">[詳解]</a><br /></td></tr>
 <tr class="separator:a73ca6b09f2a6e31f0add39128ff1b5d9 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ababe79e449b8f9aa4c2078c021156241 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structCharacterParameter.html">CharacterParameter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ababe79e449b8f9aa4c2078c021156241">GetParameter</a> () const</td></tr>
-<tr class="separator:ababe79e449b8f9aa4c2078c021156241 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b8bc61747d53958e11029bbf7b2ecb inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structCharacterParameter.html">CharacterParameter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ab0b8bc61747d53958e11029bbf7b2ecb">GetParameter</a> () const</td></tr>
+<tr class="memdesc:ab0b8bc61747d53958e11029bbf7b2ecb inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">パラメータ取得  <a href="classCharacterBase.html#ab0b8bc61747d53958e11029bbf7b2ecb">[詳解]</a><br /></td></tr>
+<tr class="separator:ab0b8bc61747d53958e11029bbf7b2ecb inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3989fc3d743766bc9554060e98b5e6a0 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0">SetPosition</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;MoveTarget)</td></tr>
+<tr class="memdesc:a3989fc3d743766bc9554060e98b5e6a0 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標を設定  <a href="classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0">[詳解]</a><br /></td></tr>
 <tr class="separator:a3989fc3d743766bc9554060e98b5e6a0 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d7d36bb07aecc589d8c8a351748ff8b inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b">SetRotate</a> (const <a class="el" href="classRotation.html">Rotation</a> &amp;TargetRotation)</td></tr>
+<tr class="memdesc:a0d7d36bb07aecc589d8c8a351748ff8b inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転を設定  <a href="classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b">[詳解]</a><br /></td></tr>
 <tr class="separator:a0d7d36bb07aecc589d8c8a351748ff8b inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8057da8a29413efc04b642ad7949b2 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classVector3D.html">Vector3D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2">GetPosition</a> () const</td></tr>
-<tr class="separator:aaf8057da8a29413efc04b642ad7949b2 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af419d46a1cf16394b89ebfa29550b6da inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classRotation.html">Rotation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af419d46a1cf16394b89ebfa29550b6da">GetRotation</a> () const</td></tr>
-<tr class="separator:af419d46a1cf16394b89ebfa29550b6da inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a6d6ce1d34c4c7eaa3c3610552c04f3 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classVector3D.html">Vector3D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3">GetPosition</a> () const</td></tr>
+<tr class="memdesc:a9a6d6ce1d34c4c7eaa3c3610552c04f3 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標を取得  <a href="classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3">[詳解]</a><br /></td></tr>
+<tr class="separator:a9a6d6ce1d34c4c7eaa3c3610552c04f3 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a91ce5bec73c7a3ebd0465f744ab33 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classRotation.html">Rotation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a82a91ce5bec73c7a3ebd0465f744ab33">GetRotation</a> () const</td></tr>
+<tr class="memdesc:a82a91ce5bec73c7a3ebd0465f744ab33 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転を取得  <a href="classCharacterBase.html#a82a91ce5bec73c7a3ebd0465f744ab33">[詳解]</a><br /></td></tr>
+<tr class="separator:a82a91ce5bec73c7a3ebd0465f744ab33 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4654af77eeea1dd5297b2805fa1c5c93 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a4654af77eeea1dd5297b2805fa1c5c93">IsDead</a> () const</td></tr>
+<tr class="memdesc:a4654af77eeea1dd5297b2805fa1c5c93 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">死んでいる？  <a href="classCharacterBase.html#a4654af77eeea1dd5297b2805fa1c5c93">[詳解]</a><br /></td></tr>
 <tr class="separator:a4654af77eeea1dd5297b2805fa1c5c93 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2cbfd441a0e0bc45ff3f1ca1925939a inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ab2cbfd441a0e0bc45ff3f1ca1925939a">ApplyDamage</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pAttacker, int Value)</td></tr>
+<tr class="memdesc:ab2cbfd441a0e0bc45ff3f1ca1925939a inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダメージを与える  <a href="classCharacterBase.html#ab2cbfd441a0e0bc45ff3f1ca1925939a">[詳解]</a><br /></td></tr>
 <tr class="separator:ab2cbfd441a0e0bc45ff3f1ca1925939a inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8606f23b177a9a0f4d9196b45ee50990 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a8606f23b177a9a0f4d9196b45ee50990">Heal</a> (int Value)</td></tr>
+<tr class="memdesc:a8606f23b177a9a0f4d9196b45ee50990 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回復  <a href="classCharacterBase.html#a8606f23b177a9a0f4d9196b45ee50990">[詳解]</a><br /></td></tr>
 <tr class="separator:a8606f23b177a9a0f4d9196b45ee50990 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b3f3257cc9cbc93928a4d1bff2a3d5b inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVector3D.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b">GetCenterVec</a> () const</td></tr>
+<tr class="memdesc:a2b3f3257cc9cbc93928a4d1bff2a3d5b inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">正面ベクトルを取得  <a href="classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b">[詳解]</a><br /></td></tr>
 <tr class="separator:a2b3f3257cc9cbc93928a4d1bff2a3d5b inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1f38e44ca8669dd32e5defc280fe82 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a6e1f38e44ca8669dd32e5defc280fe82">SetUuid</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InUuid)</td></tr>
+<tr class="memdesc:a6e1f38e44ca8669dd32e5defc280fe82 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">UUIDをセット  <a href="classCharacterBase.html#a6e1f38e44ca8669dd32e5defc280fe82">[詳解]</a><br /></td></tr>
 <tr class="separator:a6e1f38e44ca8669dd32e5defc280fe82 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7550f7499249cbef53aad08ee81e986e inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e">GetUuid</a> () const</td></tr>
+<tr class="memdesc:a7550f7499249cbef53aad08ee81e986e inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">UUIDを取得  <a href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e">[詳解]</a><br /></td></tr>
 <tr class="separator:a7550f7499249cbef53aad08ee81e986e inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37869b47274edd63a93c6c8c5f1530e1 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a37869b47274edd63a93c6c8c5f1530e1">GetLevel</a> () const</td></tr>
+<tr class="memdesc:a37869b47274edd63a93c6c8c5f1530e1 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">レベルを取得  <a href="classCharacterBase.html#a37869b47274edd63a93c6c8c5f1530e1">[詳解]</a><br /></td></tr>
 <tr class="separator:a37869b47274edd63a93c6c8c5f1530e1 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ceea9f6cd8145814f8dcc3641322a8e inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a6ceea9f6cd8145814f8dcc3641322a8e">Move</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;MoveValue)</td></tr>
+<tr class="memdesc:a6ceea9f6cd8145814f8dcc3641322a8e inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動  <a href="classCharacterBase.html#a6ceea9f6cd8145814f8dcc3641322a8e">[詳解]</a><br /></td></tr>
 <tr class="separator:a6ceea9f6cd8145814f8dcc3641322a8e inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c74a47c7fbdbb2f3187c5be4589fa77 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a2c74a47c7fbdbb2f3187c5be4589fa77">Rotate</a> (float RotateValue)</td></tr>
+<tr class="memdesc:a2c74a47c7fbdbb2f3187c5be4589fa77 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転  <a href="classCharacterBase.html#a2c74a47c7fbdbb2f3187c5be4589fa77">[詳解]</a><br /></td></tr>
 <tr class="separator:a2c74a47c7fbdbb2f3187c5be4589fa77 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8133cdd94e9ce926382103e7ef9caf77 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a8133cdd94e9ce926382103e7ef9caf77">Respawn</a> ()</td></tr>
+<tr class="memdesc:a8133cdd94e9ce926382103e7ef9caf77 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">リスポン  <a href="classCharacterBase.html#a8133cdd94e9ce926382103e7ef9caf77">[詳解]</a><br /></td></tr>
 <tr class="separator:a8133cdd94e9ce926382103e7ef9caf77 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af35378ed4601e66d8415bd721addc0d2 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af35378ed4601e66d8415bd721addc0d2">SetArea</a> (const <a class="el" href="WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a> &amp;pInArea)</td></tr>
+<tr class="memdesc:af35378ed4601e66d8415bd721addc0d2 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">エリアを設定  <a href="classCharacterBase.html#af35378ed4601e66d8415bd721addc0d2">[詳解]</a><br /></td></tr>
 <tr class="separator:af35378ed4601e66d8415bd721addc0d2 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9648779454b629071237b7c2cf910b87 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a">AreaPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87">GetArea</a> () const</td></tr>
+<tr class="memdesc:a9648779454b629071237b7c2cf910b87 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">エリアを取得  <a href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87">[詳解]</a><br /></td></tr>
 <tr class="separator:a9648779454b629071237b7c2cf910b87 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7eb905131a5519c3c374e5333e1bf018 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018">UseSkill</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId, <a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pTarget)</td></tr>
+<tr class="memdesc:a7eb905131a5519c3c374e5333e1bf018 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキル使用  <a href="classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018">[詳解]</a><br /></td></tr>
 <tr class="separator:a7eb905131a5519c3c374e5333e1bf018 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad7624448e24270e773875fce180b0e7 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aad7624448e24270e773875fce180b0e7">StartRecast</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId)</td></tr>
+<tr class="memdesc:aad7624448e24270e773875fce180b0e7 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">リキャスト開始  <a href="classCharacterBase.html#aad7624448e24270e773875fce180b0e7">[詳解]</a><br /></td></tr>
 <tr class="separator:aad7624448e24270e773875fce180b0e7 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf5a7ea43f44fda956abba9366b55b4f inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f">IsSkillActive</a> () const</td></tr>
+<tr class="memdesc:abf5a7ea43f44fda956abba9366b55b4f inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキル使用中か？  <a href="classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f">[詳解]</a><br /></td></tr>
 <tr class="separator:abf5a7ea43f44fda956abba9366b55b4f inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f">IsSkillCasting</a> () const</td></tr>
+<tr class="memdesc:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルキャスト中か？  <a href="classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f">[詳解]</a><br /></td></tr>
 <tr class="separator:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80">IsRecasting</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId) const</td></tr>
+<tr class="memdesc:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">リキャスト中か？  <a href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80">[詳解]</a><br /></td></tr>
 <tr class="separator:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8159dda925c3aa7cf090210862c1f559 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a8159dda925c3aa7cf090210862c1f559">GetDropId</a> () const</td></tr>
-<tr class="separator:a8159dda925c3aa7cf090210862c1f559 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1846a50ced77c1ada3a2667aec6a183 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ae1846a50ced77c1ada3a2667aec6a183">GetDropId</a> () const</td></tr>
+<tr class="memdesc:ae1846a50ced77c1ada3a2667aec6a183 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">ドロップＩＤを取得  <a href="classCharacterBase.html#ae1846a50ced77c1ada3a2667aec6a183">[詳解]</a><br /></td></tr>
+<tr class="separator:ae1846a50ced77c1ada3a2667aec6a183 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>
 <tr class="inherit_header pro_methods_classCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCharacterBase.html">CharacterBase</a> に属する継承限定公開メンバ関数</td></tr>
 <tr class="memitem:a0fec6ef6399f366ff55fa9478f8b2862 inherit pro_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862">SetParameter</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, int Hp, int MaxHp, int Atk, int Def)</td></tr>
+<tr class="memdesc:a0fec6ef6399f366ff55fa9478f8b2862 inherit pro_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">パラメータを設定  <a href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862">[詳解]</a><br /></td></tr>
 <tr class="separator:a0fec6ef6399f366ff55fa9478f8b2862 inherit pro_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4896eb258099c538ca2a1b9920dda67 inherit pro_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#aa4896eb258099c538ca2a1b9920dda67">LevelUp</a> (int MaxHp, int Atk, int Def)</td></tr>
+<tr class="memdesc:aa4896eb258099c538ca2a1b9920dda67 inherit pro_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">レベルアップ  <a href="classCharacterBase.html#aa4896eb258099c538ca2a1b9920dda67">[詳解]</a><br /></td></tr>
 <tr class="separator:aa4896eb258099c538ca2a1b9920dda67 inherit pro_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82a6e428e70e442ab27623f6c9ae5a81 inherit pro_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a82a6e428e70e442ab27623f6c9ae5a81">OnDamaged</a> (weak_ptr&lt; <a class="el" href="classCharacterBase.html">CharacterBase</a> &gt; pAttacker, int DamageValue)</td></tr>
-<tr class="separator:a82a6e428e70e442ab27623f6c9ae5a81 inherit pro_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acff3a32f5b5cd5232fbdda611e722430 inherit pro_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#acff3a32f5b5cd5232fbdda611e722430">Update</a> (<a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> DeltaTime)</td></tr>
-<tr class="separator:acff3a32f5b5cd5232fbdda611e722430 inherit pro_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc3802bf635805f38f9e08110efc264 inherit pro_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7cc3802bf635805f38f9e08110efc264">OnDamaged</a> (weak_ptr&lt; <a class="el" href="classCharacterBase.html">CharacterBase</a> &gt; pAttacker, int DamageValue)</td></tr>
+<tr class="memdesc:a7cc3802bf635805f38f9e08110efc264 inherit pro_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダメージを受けた  <a href="classCharacterBase.html#a7cc3802bf635805f38f9e08110efc264">[詳解]</a><br /></td></tr>
+<tr class="separator:a7cc3802bf635805f38f9e08110efc264 inherit pro_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ebe407a17a16ff0707cf705b303f8a8 inherit pro_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a4ebe407a17a16ff0707cf705b303f8a8">Update</a> (<a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> DeltaTime)</td></tr>
+<tr class="memdesc:a4ebe407a17a16ff0707cf705b303f8a8 inherit pro_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="classCharacterBase.html#a4ebe407a17a16ff0707cf705b303f8a8">[詳解]</a><br /></td></tr>
+<tr class="separator:a4ebe407a17a16ff0707cf705b303f8a8 inherit pro_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCharacterBase.html">CharacterBase</a> に属する継承限定公開変数類</td></tr>
 <tr class="memitem:a7bb9a1746383089944b5d8d5a76d7194 inherit pro_attribs_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVector3D.html">Vector3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a7bb9a1746383089944b5d8d5a76d7194">Position</a></td></tr>
+<tr class="memdesc:a7bb9a1746383089944b5d8d5a76d7194 inherit pro_attribs_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標.  <a href="classCharacterBase.html#a7bb9a1746383089944b5d8d5a76d7194">[詳解]</a><br /></td></tr>
 <tr class="separator:a7bb9a1746383089944b5d8d5a76d7194 inherit pro_attribs_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b65a8ef35645be1c517db387c3db935 inherit pro_attribs_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRotation.html">Rotation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3b65a8ef35645be1c517db387c3db935">Rot</a></td></tr>
+<tr class="memdesc:a3b65a8ef35645be1c517db387c3db935 inherit pro_attribs_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転.  <a href="classCharacterBase.html#a3b65a8ef35645be1c517db387c3db935">[詳解]</a><br /></td></tr>
 <tr class="separator:a3b65a8ef35645be1c517db387c3db935 inherit pro_attribs_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acaaef243db27cf8505b8e78f33355d51 inherit pro_attribs_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSkillControl.html">SkillControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#acaaef243db27cf8505b8e78f33355d51">Skill</a></td></tr>
+<tr class="memdesc:acaaef243db27cf8505b8e78f33355d51 inherit pro_attribs_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキル制御.  <a href="classCharacterBase.html#acaaef243db27cf8505b8e78f33355d51">[詳解]</a><br /></td></tr>
 <tr class="separator:acaaef243db27cf8505b8e78f33355d51 inherit pro_attribs_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e707d934d0642c4bed52392286d39d3 inherit pro_attribs_classCharacterBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSkillRecastManager.html">SkillRecastManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3e707d934d0642c4bed52392286d39d3">Recast</a></td></tr>
+<tr class="memdesc:a3e707d934d0642c4bed52392286d39d3 inherit pro_attribs_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルリキャスト管理.  <a href="classCharacterBase.html#a3e707d934d0642c4bed52392286d39d3">[詳解]</a><br /></td></tr>
 <tr class="separator:a3e707d934d0642c4bed52392286d39d3 inherit pro_attribs_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -288,13 +350,29 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pInClient</td><td>クライアント </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InCharacterId</td><td>キャラクタＩＤ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InJob</td><td>ジョブ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Level</td><td>レベル </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">MaxHp</td><td>最大ＨＰ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Atk</td><td>攻撃力 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Def</td><td>防御力 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InExp</td><td>経験値 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InGold</td><td>ゴールド </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_abddeba0759ba2f6b15bf7e8aae8c0929_cgraph.png" border="0" usemap="#classPlayerCharacter_abddeba0759ba2f6b15bf7e8aae8c0929_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_abddeba0759ba2f6b15bf7e8aae8c0929_cgraph" id="classPlayerCharacter_abddeba0759ba2f6b15bf7e8aae8c0929_cgraph">
-<area shape="rect" id="node2" href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862" title="CharacterBase::SetParameter" alt="" coords="274,5,470,32"/>
-<area shape="rect" id="node3" href="classPlayerExp.html#a1e1899ec4b4e925619d29f5e60658fa8" title="PlayerExp::SetLevelUpCallback" alt="" coords="269,56,475,83"/>
+<area shape="rect" id="node2" href="classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862" title="パラメータを設定 " alt="" coords="274,5,470,32"/>
+<area shape="rect" id="node3" href="classPlayerExp.html#a1e1899ec4b4e925619d29f5e60658fa8" title="レベルアップコールバックを設定 " alt="" coords="269,56,475,83"/>
 <area shape="rect" id="node4" href="classSkillControl.html#a7caa5edb63e6a3ebe1db95d680fb8558" title="SkillControl::SetOnCancel\lFunction" alt="" coords="285,107,459,149"/>
 <area shape="rect" id="node5" href="classSkillControl.html#add675a712b9da15c9a96baa34014015a" title="SkillControl::SetOnUsedItem\lFunction" alt="" coords="278,173,466,214"/>
 <area shape="rect" id="node6" href="classSkillControl.html#a7aab1473c4d465a6e20921eaa0c9aa90" title="SkillControl::SetOnKilled\lFunction" alt="" coords="289,238,455,279"/>
@@ -327,6 +405,8 @@ PlayerCharacter 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>デストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -353,12 +433,20 @@ PlayerCharacter 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>経験値増加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Value</td><td>増加量 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_af674ca1a9358d11e18e38eca81072f63_cgraph.png" border="0" usemap="#classPlayerCharacter_af674ca1a9358d11e18e38eca81072f63_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_af674ca1a9358d11e18e38eca81072f63_cgraph" id="classPlayerCharacter_af674ca1a9358d11e18e38eca81072f63_cgraph">
-<area shape="rect" id="node2" href="classPlayerExp.html#a9adba40107ecf26b23b4221f10fa4c6c" title="PlayerExp::Add" alt="" coords="223,5,336,32"/>
+<area shape="rect" id="node2" href="classPlayerExp.html#a9adba40107ecf26b23b4221f10fa4c6c" title="増加 " alt="" coords="223,5,336,32"/>
 </map>
 </div>
 
@@ -379,15 +467,23 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>ゴールドを増加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Value</td><td>増加量 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_ae1b630aa03e011b4fef2f1fcb3b94272_cgraph.png" border="0" usemap="#classPlayerCharacter_ae1b630aa03e011b4fef2f1fcb3b94272_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_ae1b630aa03e011b4fef2f1fcb3b94272_cgraph" id="classPlayerCharacter_ae1b630aa03e011b4fef2f1fcb3b94272_cgraph">
-<area shape="rect" id="node2" href="classPlayerCharacter.html#a373268ab232cddb7b1b3d2099da9ec19" title="PlayerCharacter::GetClient" alt="" coords="227,5,404,32"/>
-<area shape="rect" id="node3" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="234,56,397,83"/>
-<area shape="rect" id="node4" href="classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad" title="CacheServerConnection\l::GetInstance" alt="" coords="235,107,395,149"/>
-<area shape="rect" id="node5" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="CacheServerConnection\l::SendPacket" alt="" coords="235,225,395,266"/>
+<area shape="rect" id="node2" href="classPlayerCharacter.html#aae3a26ff3c5b69202b1e2c736ade1170" title="クライアント取得 " alt="" coords="227,5,404,32"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="234,56,397,83"/>
+<area shape="rect" id="node4" href="classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="235,107,395,149"/>
+<area shape="rect" id="node5" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="235,225,395,266"/>
 <area shape="rect" id="node10" href="classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="248,173,383,200"/>
 <area shape="rect" id="node6" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="474,228,625,255"/>
 <area shape="rect" id="node7" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="452,279,647,321"/>
@@ -423,18 +519,26 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>アイテム増加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ItemId</td><td>アイテムＩＤ param[in] Count 個数 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_ae79a3832ea9ef55c161871c3e91d0922_cgraph.png" border="0" usemap="#classPlayerCharacter_ae79a3832ea9ef55c161871c3e91d0922_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_ae79a3832ea9ef55c161871c3e91d0922_cgraph" id="classPlayerCharacter_ae79a3832ea9ef55c161871c3e91d0922_cgraph">
 <area shape="rect" id="node2" href="classItemList.html#ad988a51cb7fd94a620ad933032ecfa32" title="ItemList::Add" alt="" coords="263,5,362,32"/>
-<area shape="rect" id="node3" href="classPlayerCharacter.html#a373268ab232cddb7b1b3d2099da9ec19" title="PlayerCharacter::GetClient" alt="" coords="224,56,401,83"/>
+<area shape="rect" id="node3" href="classPlayerCharacter.html#aae3a26ff3c5b69202b1e2c736ade1170" title="クライアント取得 " alt="" coords="224,56,401,83"/>
 <area shape="rect" id="node4" href="classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="245,173,380,200"/>
 <area shape="rect" id="node9" href="classItemList.html#a9189fd7b0e36642796b29f50b023140d" title="ItemList::GetCount" alt="" coords="247,224,378,251"/>
-<area shape="rect" id="node10" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="231,275,394,301"/>
-<area shape="rect" id="node11" href="classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad" title="CacheServerConnection\l::GetInstance" alt="" coords="233,326,393,367"/>
-<area shape="rect" id="node12" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="CacheServerConnection\l::SendPacket" alt="" coords="233,107,393,149"/>
+<area shape="rect" id="node10" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="231,275,394,301"/>
+<area shape="rect" id="node11" href="classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="233,326,393,367"/>
+<area shape="rect" id="node12" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="233,107,393,149"/>
 <area shape="rect" id="node5" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="471,169,622,196"/>
 <area shape="rect" id="node6" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="449,221,644,262"/>
 <area shape="rect" id="node7" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="459,68,634,95"/>
@@ -467,10 +571,13 @@ PlayerCharacter 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>キャラクタＩＤ取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>キャラクタＩＤ </dd></dl>
+
 </div>
 </div>
-<a id="a0576c190494fa2225202a8f314ebdd4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0576c190494fa2225202a8f314ebdd4b">&#9670;&nbsp;</a></span>GetCharacterType()</h2>
+<a id="aa9cc03228b7878e4d79880467c1fbac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9cc03228b7878e4d79880467c1fbac0">&#9670;&nbsp;</a></span>GetCharacterType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -479,7 +586,7 @@ PlayerCharacter 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PlayerCharacter::GetCharacterType </td>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> PlayerCharacter::GetCharacterType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -492,12 +599,15 @@ PlayerCharacter 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classCharacterBase.html#a1b21d5dc74631551b33e097cb9a07227">CharacterBase</a>を実装しています。</p>
+<p>キャラクタタイプを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>キャラクタタイプ </dd></dl>
+
+<p><a class="el" href="classCharacterBase.html#aae4de3ac831bde03b410551d5f9617b1">CharacterBase</a>を実装しています。</p>
 
 </div>
 </div>
-<a id="a373268ab232cddb7b1b3d2099da9ec19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a373268ab232cddb7b1b3d2099da9ec19">&#9670;&nbsp;</a></span>GetClient()</h2>
+<a id="aae3a26ff3c5b69202b1e2c736ade1170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae3a26ff3c5b69202b1e2c736ade1170">&#9670;&nbsp;</a></span>GetClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,7 +616,7 @@ PlayerCharacter 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classClient.html">Client</a>* PlayerCharacter::GetClient </td>
+          <td class="memname"><a class="el" href="classClient.html">Client</a> * PlayerCharacter::GetClient </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -518,16 +628,19 @@ PlayerCharacter 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>クライアント取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>クライアント </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classPlayerCharacter_a373268ab232cddb7b1b3d2099da9ec19_icgraph.png" border="0" usemap="#classPlayerCharacter_a373268ab232cddb7b1b3d2099da9ec19_icgraph" alt=""/></div>
-<map name="classPlayerCharacter_a373268ab232cddb7b1b3d2099da9ec19_icgraph" id="classPlayerCharacter_a373268ab232cddb7b1b3d2099da9ec19_icgraph">
-<area shape="rect" id="node2" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="PlayerCharacter::AddGold" alt="" coords="243,5,417,32"/>
-<area shape="rect" id="node3" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="PlayerCharacter::SubtractGold" alt="" coords="231,56,429,83"/>
-<area shape="rect" id="node5" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="PlayerCharacter::AddItem" alt="" coords="245,107,415,133"/>
-<area shape="rect" id="node6" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="PlayerCharacter::SubtractItem" alt="" coords="231,157,429,184"/>
-<area shape="rect" id="node4" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="PlayerCharacter::OpenSkillTree" alt="" coords="477,56,681,83"/>
+<div class="center"><img src="classPlayerCharacter_aae3a26ff3c5b69202b1e2c736ade1170_icgraph.png" border="0" usemap="#classPlayerCharacter_aae3a26ff3c5b69202b1e2c736ade1170_icgraph" alt=""/></div>
+<map name="classPlayerCharacter_aae3a26ff3c5b69202b1e2c736ade1170_icgraph" id="classPlayerCharacter_aae3a26ff3c5b69202b1e2c736ade1170_icgraph">
+<area shape="rect" id="node2" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="ゴールドを増加 " alt="" coords="243,5,417,32"/>
+<area shape="rect" id="node3" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="ゴールドを消費 " alt="" coords="231,56,429,83"/>
+<area shape="rect" id="node5" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="アイテム増加 " alt="" coords="245,107,415,133"/>
+<area shape="rect" id="node6" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="アイテム消費 " alt="" coords="231,157,429,184"/>
+<area shape="rect" id="node4" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="477,56,681,83"/>
 </map>
 </div>
 
@@ -556,20 +669,23 @@ PlayerCharacter 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classCharacterBase.html#aabf6a1938d1e3f5f7919b3206c8ba765">CharacterBase</a>を再実装しています。</p>
+<p>経験値取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>経験値 </dd></dl>
+
+<p><a class="el" href="classCharacterBase.html#a6e3771422238e28d224dce30661d582d">CharacterBase</a>を再実装しています。</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_a7cba0b86d81aa4325a9df3ef784421af_cgraph.png" border="0" usemap="#classPlayerCharacter_a7cba0b86d81aa4325a9df3ef784421af_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_a7cba0b86d81aa4325a9df3ef784421af_cgraph" id="classPlayerCharacter_a7cba0b86d81aa4325a9df3ef784421af_cgraph">
-<area shape="rect" id="node2" href="classPlayerExp.html#a343507b3f9687b0b4d0b9c63a7c3800a" title="PlayerExp::Get" alt="" coords="220,5,331,32"/>
+<area shape="rect" id="node2" href="classPlayerExp.html#a343507b3f9687b0b4d0b9c63a7c3800a" title="取得 " alt="" coords="220,5,331,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a13afa9101cc4d239ebafcfb1163cb0c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13afa9101cc4d239ebafcfb1163cb0c5">&#9670;&nbsp;</a></span>GetGold()</h2>
+<a id="a36440e5229b719cca880325c7f8231ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36440e5229b719cca880325c7f8231ba">&#9670;&nbsp;</a></span>GetGold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -578,7 +694,7 @@ PlayerCharacter 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> PlayerCharacter::GetGold </td>
+          <td class="memname">PlayerCharacter::GetGold </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -591,10 +707,13 @@ PlayerCharacter 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>ゴールドを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>ゴールド </dd></dl>
+
 </div>
 </div>
-<a id="a2b5d2a7983e775bc10d50ea2f6554e69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b5d2a7983e775bc10d50ea2f6554e69">&#9670;&nbsp;</a></span>GetItemList()</h2>
+<a id="abe8336ae65cd736386b469f65ab9f85e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe8336ae65cd736386b469f65ab9f85e">&#9670;&nbsp;</a></span>GetItemList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -603,7 +722,7 @@ PlayerCharacter 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classItemList.html">ItemList</a>&amp; PlayerCharacter::GetItemList </td>
+          <td class="memname">const <a class="el" href="classItemList.html">ItemList</a> &amp; PlayerCharacter::GetItemList </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -615,6 +734,9 @@ PlayerCharacter 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>アイテムリスト取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>アイテムリスト </dd></dl>
 
 </div>
 </div>
@@ -641,10 +763,13 @@ PlayerCharacter 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>ジョブを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>ジョブ </dd></dl>
+
 </div>
 </div>
-<a id="a00cbaa3c73b4a0b1a9a2e9609f0d0ac0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00cbaa3c73b4a0b1a9a2e9609f0d0ac0">&#9670;&nbsp;</a></span>GetName()</h2>
+<a id="afbeaf5c977a21841edff5adcc80c5bfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbeaf5c977a21841edff5adcc80c5bfb">&#9670;&nbsp;</a></span>GetName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -653,7 +778,7 @@ PlayerCharacter 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string&amp; PlayerCharacter::GetName </td>
+          <td class="memname">const std::string &amp; PlayerCharacter::GetName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -665,6 +790,9 @@ PlayerCharacter 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>名前を取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>名前 </dd></dl>
 
 </div>
 </div>
@@ -691,10 +819,13 @@ PlayerCharacter 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>パーティを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>パーティへのweak_ptr </dd></dl>
+
 </div>
 </div>
-<a id="aadaf3ecb729d8771ae49882d9674ed13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadaf3ecb729d8771ae49882d9674ed13">&#9670;&nbsp;</a></span>GetSkillTree()</h2>
+<a id="a62bd4afb218302b62e78afcaac619771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62bd4afb218302b62e78afcaac619771">&#9670;&nbsp;</a></span>GetSkillTree()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -703,7 +834,7 @@ PlayerCharacter 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classSkillTree.html">SkillTree</a>&amp; PlayerCharacter::GetSkillTree </td>
+          <td class="memname">const <a class="el" href="classSkillTree.html">SkillTree</a> &amp; PlayerCharacter::GetSkillTree </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -715,6 +846,9 @@ PlayerCharacter 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>スキルツリー取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>スキルツリー </dd></dl>
 
 </div>
 </div>
@@ -733,6 +867,14 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>スキルツリー初期化 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">OpenedNodes</td><td>開いているノード </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -759,12 +901,14 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>エリアが切り替わった </p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_a1afee0a074986b5d0d03f086c9748a0b_cgraph.png" border="0" usemap="#classPlayerCharacter_a1afee0a074986b5d0d03f086c9748a0b_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_a1afee0a074986b5d0d03f086c9748a0b_cgraph" id="classPlayerCharacter_a1afee0a074986b5d0d03f086c9748a0b_cgraph">
-<area shape="rect" id="node2" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="CharacterBase::GetArea" alt="" coords="264,5,428,32"/>
+<area shape="rect" id="node2" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="264,5,428,32"/>
 </map>
 </div>
 
@@ -784,13 +928,15 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>移動した </p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_ab2df472f50de0370a3bc2b4a538a034c_cgraph.png" border="0" usemap="#classPlayerCharacter_ab2df472f50de0370a3bc2b4a538a034c_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_ab2df472f50de0370a3bc2b4a538a034c_cgraph" id="classPlayerCharacter_ab2df472f50de0370a3bc2b4a538a034c_cgraph">
-<area shape="rect" id="node2" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="CharacterBase::GetArea" alt="" coords="241,5,405,32"/>
-<area shape="rect" id="node3" href="classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2" title="CharacterBase::GetPosition" alt="" coords="231,56,415,83"/>
+<area shape="rect" id="node2" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="241,5,405,32"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3" title="座標を取得 " alt="" coords="231,56,415,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -820,6 +966,14 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>アイテムリストを受信した </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">List</td><td>アイテムリスト </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -847,6 +1001,15 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>スキルツリーのノードを開く </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">NodeId</td><td>ノードＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>リザルトコード </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -856,13 +1019,13 @@ PlayerCharacter 連携図</div>
 <area shape="rect" id="node3" href="classMasterData.html#af4ca808baa9f20a9b29253536822a23c" title="MasterData::GetSkillTree\lMaster" alt="" coords="273,57,441,98"/>
 <area shape="rect" id="node4" href="classSkillTreeMaster.html#a3e1c6716c0e0b6a50b0843b29a822069" title="SkillTreeMaster::GetItem" alt="" coords="273,123,440,149"/>
 <area shape="rect" id="node5" href="classSkillTree.html#a6bbb082d26a14ef94892c341f9390345" title="SkillTree::IsOpened" alt="" coords="289,173,424,200"/>
-<area shape="rect" id="node6" href="classCharacterBase.html#ababe79e449b8f9aa4c2078c021156241" title="CharacterBase::GetParameter" alt="" coords="258,224,455,251"/>
+<area shape="rect" id="node6" href="classCharacterBase.html#ab0b8bc61747d53958e11029bbf7b2ecb" title="パラメータ取得 " alt="" coords="258,224,455,251"/>
 <area shape="rect" id="node7" href="classSkillTree.html#a6c626678df5c5b806e2a4f735cfcb065" title="SkillTree::Open" alt="" coords="301,275,412,301"/>
-<area shape="rect" id="node8" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="PlayerCharacter::SubtractGold" alt="" coords="257,325,456,352"/>
-<area shape="rect" id="node9" href="classPlayerCharacter.html#a373268ab232cddb7b1b3d2099da9ec19" title="PlayerCharacter::GetClient" alt="" coords="504,216,681,243"/>
-<area shape="rect" id="node10" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="511,267,674,293"/>
-<area shape="rect" id="node11" href="classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad" title="CacheServerConnection\l::GetInstance" alt="" coords="513,318,673,359"/>
-<area shape="rect" id="node12" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="CacheServerConnection\l::SendPacket" alt="" coords="513,435,673,477"/>
+<area shape="rect" id="node8" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="ゴールドを消費 " alt="" coords="257,325,456,352"/>
+<area shape="rect" id="node9" href="classPlayerCharacter.html#aae3a26ff3c5b69202b1e2c736ade1170" title="クライアント取得 " alt="" coords="504,216,681,243"/>
+<area shape="rect" id="node10" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="511,267,674,293"/>
+<area shape="rect" id="node11" href="classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="513,318,673,359"/>
+<area shape="rect" id="node12" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="513,435,673,477"/>
 <area shape="rect" id="node17" href="classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="525,384,660,411"/>
 <area shape="rect" id="node13" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="751,439,902,465"/>
 <area shape="rect" id="node14" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="729,490,924,531"/>
@@ -896,6 +1059,14 @@ PlayerCharacter 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>名前を設定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">InName</td><td>名前 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -931,6 +1102,14 @@ PlayerCharacter 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>パーティを設定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pInParty</td><td>パーティへのweak_ptr </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0c21ce7b27230b60a45581ea8c3ce83c"></a>
@@ -948,15 +1127,23 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>ゴールドを消費 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Value</td><td>消費量 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_a0c21ce7b27230b60a45581ea8c3ce83c_cgraph.png" border="0" usemap="#classPlayerCharacter_a0c21ce7b27230b60a45581ea8c3ce83c_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_a0c21ce7b27230b60a45581ea8c3ce83c_cgraph" id="classPlayerCharacter_a0c21ce7b27230b60a45581ea8c3ce83c_cgraph">
-<area shape="rect" id="node2" href="classPlayerCharacter.html#a373268ab232cddb7b1b3d2099da9ec19" title="PlayerCharacter::GetClient" alt="" coords="252,5,429,32"/>
-<area shape="rect" id="node3" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="259,56,422,83"/>
-<area shape="rect" id="node4" href="classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad" title="CacheServerConnection\l::GetInstance" alt="" coords="261,107,421,149"/>
-<area shape="rect" id="node5" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="CacheServerConnection\l::SendPacket" alt="" coords="261,225,421,266"/>
+<area shape="rect" id="node2" href="classPlayerCharacter.html#aae3a26ff3c5b69202b1e2c736ade1170" title="クライアント取得 " alt="" coords="252,5,429,32"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="259,56,422,83"/>
+<area shape="rect" id="node4" href="classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="261,107,421,149"/>
+<area shape="rect" id="node5" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="261,225,421,266"/>
 <area shape="rect" id="node10" href="classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="273,173,408,200"/>
 <area shape="rect" id="node6" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="499,228,650,255"/>
 <area shape="rect" id="node7" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="477,279,672,321"/>
@@ -969,7 +1156,7 @@ PlayerCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_a0c21ce7b27230b60a45581ea8c3ce83c_icgraph.png" border="0" usemap="#classPlayerCharacter_a0c21ce7b27230b60a45581ea8c3ce83c_icgraph" alt=""/></div>
 <map name="classPlayerCharacter_a0c21ce7b27230b60a45581ea8c3ce83c_icgraph" id="classPlayerCharacter_a0c21ce7b27230b60a45581ea8c3ce83c_icgraph">
-<area shape="rect" id="node2" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="PlayerCharacter::OpenSkillTree" alt="" coords="252,5,456,32"/>
+<area shape="rect" id="node2" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="252,5,456,32"/>
 </map>
 </div>
 
@@ -1000,18 +1187,27 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>アイテム消費 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ItemId</td><td>アイテムＩＤ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Count</td><td>個数 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_ae413ac1063c46e7574a3d5103c714070_cgraph.png" border="0" usemap="#classPlayerCharacter_ae413ac1063c46e7574a3d5103c714070_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_ae413ac1063c46e7574a3d5103c714070_cgraph" id="classPlayerCharacter_ae413ac1063c46e7574a3d5103c714070_cgraph">
 <area shape="rect" id="node2" href="classItemList.html#ae0d61bbc78ebba224acaa5d3543ea15b" title="ItemList::Subtract" alt="" coords="277,5,402,32"/>
-<area shape="rect" id="node3" href="classPlayerCharacter.html#a373268ab232cddb7b1b3d2099da9ec19" title="PlayerCharacter::GetClient" alt="" coords="251,56,428,83"/>
+<area shape="rect" id="node3" href="classPlayerCharacter.html#aae3a26ff3c5b69202b1e2c736ade1170" title="クライアント取得 " alt="" coords="251,56,428,83"/>
 <area shape="rect" id="node4" href="classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="272,173,407,200"/>
 <area shape="rect" id="node9" href="classItemList.html#a9189fd7b0e36642796b29f50b023140d" title="ItemList::GetCount" alt="" coords="274,224,405,251"/>
-<area shape="rect" id="node10" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="258,275,421,301"/>
-<area shape="rect" id="node11" href="classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad" title="CacheServerConnection\l::GetInstance" alt="" coords="259,326,419,367"/>
-<area shape="rect" id="node12" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="CacheServerConnection\l::SendPacket" alt="" coords="259,107,419,149"/>
+<area shape="rect" id="node10" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="258,275,421,301"/>
+<area shape="rect" id="node11" href="classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="259,326,419,367"/>
+<area shape="rect" id="node12" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="259,107,419,149"/>
 <area shape="rect" id="node5" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="498,169,649,196"/>
 <area shape="rect" id="node6" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="476,221,671,262"/>
 <area shape="rect" id="node7" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="486,68,661,95"/>
@@ -1046,6 +1242,15 @@ PlayerCharacter 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>アイテム使用 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ItemId</td><td>アイテムＩＤ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pTarget</td><td>ターゲットへのweak_ptr </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1058,7 +1263,7 @@ PlayerCharacter 連携図</div>
 <area shape="rect" id="node6" href="classItemMaster.html#a4a4693538b4831f4f76a59cadf538139" title="ItemMaster::GetItem" alt="" coords="437,107,578,133"/>
 <area shape="rect" id="node7" href="classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="671,157,807,184"/>
 <area shape="rect" id="node8" href="classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="448,208,567,235"/>
-<area shape="rect" id="node9" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="CharacterBase::IsRecasting" alt="" coords="647,208,831,235"/>
+<area shape="rect" id="node9" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="リキャスト中か？ " alt="" coords="647,208,831,235"/>
 <area shape="rect" id="node10" href="classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="879,201,1017,242"/>
 </map>
 </div>

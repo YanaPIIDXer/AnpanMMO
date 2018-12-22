@@ -17,6 +17,7 @@ class PacketBase;
 class CharacterBase;
 
 /**
+ * @class AreaBase
  * @brief エリア基底クラス
  */
 class AreaBase : public enable_shared_from_this<AreaBase>

@@ -1,6 +1,6 @@
 <map id="PlayerCharacter::PlayerCharacter" name="PlayerCharacter::PlayerCharacter">
-<area shape="rect" id="node2" href="$classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862" title="CharacterBase::SetParameter" alt="" coords="274,5,470,32"/>
-<area shape="rect" id="node3" href="$classPlayerExp.html#a1e1899ec4b4e925619d29f5e60658fa8" title="PlayerExp::SetLevelUpCallback" alt="" coords="269,56,475,83"/>
+<area shape="rect" id="node2" href="$classCharacterBase.html#a0fec6ef6399f366ff55fa9478f8b2862" title="パラメータを設定 " alt="" coords="274,5,470,32"/>
+<area shape="rect" id="node3" href="$classPlayerExp.html#a1e1899ec4b4e925619d29f5e60658fa8" title="レベルアップコールバックを設定 " alt="" coords="269,56,475,83"/>
 <area shape="rect" id="node4" href="$classSkillControl.html#a7caa5edb63e6a3ebe1db95d680fb8558" title="SkillControl::SetOnCancel\lFunction" alt="" coords="285,107,459,149"/>
 <area shape="rect" id="node5" href="$classSkillControl.html#add675a712b9da15c9a96baa34014015a" title="SkillControl::SetOnUsedItem\lFunction" alt="" coords="278,173,466,214"/>
 <area shape="rect" id="node6" href="$classSkillControl.html#a7aab1473c4d465a6e20921eaa0c9aa90" title="SkillControl::SetOnKilled\lFunction" alt="" coords="289,238,455,279"/>

@@ -1,4 +1,4 @@
 <map id="AnpanAI::SetSendStopPacket" name="AnpanAI::SetSendStopPacket">
-<area shape="rect" id="node2" href="$classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd" title="AnpanAIStateBase::Stop" alt="" coords="251,13,417,39"/>
-<area shape="rect" id="node3" href="$classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="AnpanAIStateNonActive\l::OnDamaged" alt="" coords="465,5,625,47"/>
+<area shape="rect" id="node2" href="$classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd" title="停止 " alt="" coords="251,13,417,39"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="465,5,625,47"/>
 </map>
