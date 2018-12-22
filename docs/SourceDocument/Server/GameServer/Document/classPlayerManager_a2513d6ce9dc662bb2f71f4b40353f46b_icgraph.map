@@ -1,4 +1,4 @@
 <map id="PlayerManager::GetCount" name="PlayerManager::GetCount">
-<area shape="rect" id="node2" href="$classInstanceArea.html#ac3b08e286ec19a28506f4e910257f88c" title="InstanceArea::IsAbleDelete" alt="" coords="225,5,404,32"/>
-<area shape="rect" id="node3" href="$classInstanceArea.html#a9ab2117e62f63d3eb74f8463f919d481" title="InstanceArea::Update" alt="" coords="241,56,388,83"/>
+<area shape="rect" id="node2" href="$classInstanceArea.html#ac3b08e286ec19a28506f4e910257f88c" title="消去可能か？ " alt="" coords="225,5,404,32"/>
+<area shape="rect" id="node3" href="$classInstanceArea.html#a9ab2117e62f63d3eb74f8463f919d481" title="更新処理 " alt="" coords="241,56,388,83"/>
 </map>

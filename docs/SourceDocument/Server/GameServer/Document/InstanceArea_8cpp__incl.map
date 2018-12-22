@@ -6,10 +6,10 @@
 <area shape="rect" id="node46" href="$PacketSpawnInstanceAreaExitPoint_8h.html" title="インスタンスマップ脱出ポイント生成 " alt="" coords="1891,80,2087,121"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="716,177,876,203"/>
 <area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="1899,266,1986,293"/>
-<area shape="rect" id="node16" href="$AreaBase_8h.html" title="AreaBase.h" alt="" coords="1593,177,1684,203"/>
+<area shape="rect" id="node16" href="$AreaBase_8h.html" title="エリア基底クラス " alt="" coords="1593,177,1684,203"/>
 <area shape="rect" id="node17" href="$PlayerManager_8h.html" title="PlayerManager.h" alt="" coords="1492,266,1612,293"/>
 <area shape="rect" id="node23" href="$AnpanManager_8h.html" title="AnpanManager.h" alt="" coords="1636,266,1756,293"/>
-<area shape="rect" id="node25" href="$HeightMap_8h.html" title="HeightMap.h" alt="" coords="1781,266,1875,293"/>
+<area shape="rect" id="node25" href="$HeightMap_8h.html" title="ハイトマップクラス " alt="" coords="1781,266,1875,293"/>
 <area shape="rect" id="node19" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="1295,348,1415,375"/>
 <area shape="rect" id="node22" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="1636,348,1756,375"/>
 <area shape="rect" id="node26" href="$Bitmap_8h.html" title="Bitmap.h" alt="" coords="1932,348,2007,375"/>

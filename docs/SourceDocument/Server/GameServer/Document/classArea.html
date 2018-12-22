@@ -69,13 +69,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>エリアクラス  
+ <a href="classArea.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="Area_8h_source.html">Area.h</a>&gt;</code></p>
 <div class="dynheader">
 Area の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classArea__inherit__graph.png" border="0" usemap="#Area_inherit__map" alt="Inheritance graph"/></div>
 <map name="Area_inherit__map" id="Area_inherit__map">
-<area shape="rect" id="node2" href="classAreaBase.html" title="AreaBase" alt="" coords="47,95,126,121"/>
+<area shape="rect" id="node2" href="classAreaBase.html" title="エリア基底クラス " alt="" coords="47,95,126,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <div class="dynheader">
@@ -83,7 +86,7 @@ Area 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classArea__coll__graph.png" border="0" usemap="#Area_coll__map" alt="Collaboration graph"/></div>
 <map name="Area_coll__map" id="Area_coll__map">
-<area shape="rect" id="node2" href="classAreaBase.html" title="AreaBase" alt="" coords="207,109,286,136"/>
+<area shape="rect" id="node2" href="classAreaBase.html" title="エリア基底クラス " alt="" coords="207,109,286,136"/>
 <area shape="rect" id="node4" href="classAnpanManager.html" title="AnpanManager" alt="" coords="192,13,301,39"/>
 <area shape="rect" id="node5" href="classPlayerManager.html" title="PlayerManager" alt="" coords="325,13,435,39"/>
 </map>
@@ -92,61 +95,82 @@ Area 連携図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:ae31b7dd110328103951c2a01182914d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArea.html#ae31b7dd110328103951c2a01182914d0">Area</a> (const <a class="el" href="structAreaItem.html">AreaItem</a> *pItem)</td></tr>
+<tr class="memdesc:ae31b7dd110328103951c2a01182914d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#ae31b7dd110328103951c2a01182914d0">[詳解]</a><br /></td></tr>
 <tr class="separator:ae31b7dd110328103951c2a01182914d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ed5a9705b2715f347b764894c5015f0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArea.html#a5ed5a9705b2715f347b764894c5015f0">~Area</a> ()</td></tr>
+<tr class="memdesc:a5ed5a9705b2715f347b764894c5015f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a5ed5a9705b2715f347b764894c5015f0">[詳解]</a><br /></td></tr>
 <tr class="separator:a5ed5a9705b2715f347b764894c5015f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a691140a45c93e5853928bfb2e4a2426d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArea.html#a691140a45c93e5853928bfb2e4a2426d">GetId</a> () const</td></tr>
-<tr class="separator:a691140a45c93e5853928bfb2e4a2426d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03e4a3272235427054cbce9545bd8ea6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArea.html#a03e4a3272235427054cbce9545bd8ea6">IsAbleDelete</a> () const</td></tr>
-<tr class="separator:a03e4a3272235427054cbce9545bd8ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f7d562d4b70b0c644f687ed6e5a3dfd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArea.html#a7f7d562d4b70b0c644f687ed6e5a3dfd">GetId</a> () const</td></tr>
+<tr class="memdesc:a7f7d562d4b70b0c644f687ed6e5a3dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID取得.  <a href="#a7f7d562d4b70b0c644f687ed6e5a3dfd">[詳解]</a><br /></td></tr>
+<tr class="separator:a7f7d562d4b70b0c644f687ed6e5a3dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca42c103bb0f57b463eba8a5937be77c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classArea.html#aca42c103bb0f57b463eba8a5937be77c">IsAbleDelete</a> () const</td></tr>
+<tr class="memdesc:aca42c103bb0f57b463eba8a5937be77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">消去可能か？  <a href="#aca42c103bb0f57b463eba8a5937be77c">[詳解]</a><br /></td></tr>
+<tr class="separator:aca42c103bb0f57b463eba8a5937be77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classAreaBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classAreaBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classAreaBase.html">AreaBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:a38c050576a6dfc4d9f4394f52643d78b inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a38c050576a6dfc4d9f4394f52643d78b">AreaBase</a> (const <a class="el" href="structAreaItem.html">AreaItem</a> *pItem)</td></tr>
+<tr class="memdesc:a38c050576a6dfc4d9f4394f52643d78b inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="classAreaBase.html#a38c050576a6dfc4d9f4394f52643d78b">[詳解]</a><br /></td></tr>
 <tr class="separator:a38c050576a6dfc4d9f4394f52643d78b inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b0caecc33e966914464a007430a092d inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a5b0caecc33e966914464a007430a092d">~AreaBase</a> ()</td></tr>
+<tr class="memdesc:a5b0caecc33e966914464a007430a092d inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="classAreaBase.html#a5b0caecc33e966914464a007430a092d">[詳解]</a><br /></td></tr>
 <tr class="separator:a5b0caecc33e966914464a007430a092d inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f88dbdf542e61513ea196893a3e741c inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a8f88dbdf542e61513ea196893a3e741c">Initialize</a> ()</td></tr>
-<tr class="separator:a8f88dbdf542e61513ea196893a3e741c inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae74987dcc73ea4aaab94ba432cc608ea inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#ae74987dcc73ea4aaab94ba432cc608ea">Initialize</a> ()</td></tr>
+<tr class="memdesc:ae74987dcc73ea4aaab94ba432cc608ea inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化  <a href="classAreaBase.html#ae74987dcc73ea4aaab94ba432cc608ea">[詳解]</a><br /></td></tr>
+<tr class="separator:ae74987dcc73ea4aaab94ba432cc608ea inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa35e9e9e396d9da4f5d6738079e7833b inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#aa35e9e9e396d9da4f5d6738079e7833b">Poll</a> (int DeltaTime)</td></tr>
+<tr class="memdesc:aa35e9e9e396d9da4f5d6738079e7833b inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="classAreaBase.html#aa35e9e9e396d9da4f5d6738079e7833b">[詳解]</a><br /></td></tr>
 <tr class="separator:aa35e9e9e396d9da4f5d6738079e7833b inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dcdfbb9eff48e5402b87e990bdf1aab inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a8dcdfbb9eff48e5402b87e990bdf1aab">AddPlayerCharacter</a> (const <a class="el" href="WeakPtrDefine_8h.html#a521917366f163f43d1d84fffbc5f0756">PlayerCharacterPtr</a> &amp;pPlayer)</td></tr>
+<tr class="memdesc:a8dcdfbb9eff48e5402b87e990bdf1aab inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーキャラ追加  <a href="classAreaBase.html#a8dcdfbb9eff48e5402b87e990bdf1aab">[詳解]</a><br /></td></tr>
 <tr class="separator:a8dcdfbb9eff48e5402b87e990bdf1aab inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a692dbb7c1dbab7077d8726eb983d915a inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a692dbb7c1dbab7077d8726eb983d915a">RemovePlayerCharacter</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid)</td></tr>
+<tr class="memdesc:a692dbb7c1dbab7077d8726eb983d915a inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤーキャラ削除  <a href="classAreaBase.html#a692dbb7c1dbab7077d8726eb983d915a">[詳解]</a><br /></td></tr>
 <tr class="separator:a692dbb7c1dbab7077d8726eb983d915a inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab0cce8571e45011d93fa00426ab3c22 inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22">OnRecvMove</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid, float X, float Y, float Z, float <a class="el" href="classRotation.html">Rotation</a>)</td></tr>
+<tr class="memdesc:aab0cce8571e45011d93fa00426ab3c22 inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動を受信した  <a href="classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22">[詳解]</a><br /></td></tr>
 <tr class="separator:aab0cce8571e45011d93fa00426ab3c22 inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b1199e74b590f790efdb82966032d29 inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a5b1199e74b590f790efdb82966032d29">OnRecvSkillUse</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> TargetType, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> TargetUuid)</td></tr>
+<tr class="memdesc:a5b1199e74b590f790efdb82966032d29 inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキル使用を受信した。  <a href="classAreaBase.html#a5b1199e74b590f790efdb82966032d29">[詳解]</a><br /></td></tr>
 <tr class="separator:a5b1199e74b590f790efdb82966032d29 inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85c275fad404278d74490814da9605a6 inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a85c275fad404278d74490814da9605a6">OnRecvItemUse</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ItemId, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> TargetType, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> TargetUuid)</td></tr>
 <tr class="separator:a85c275fad404278d74490814da9605a6 inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a946d6eb75590a7d0c2702c7f7aa4d16c inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a946d6eb75590a7d0c2702c7f7aa4d16c">BroadcastPacket</a> (<a class="el" href="classPacketBase.html">PacketBase</a> *pPacket, <a class="el" href="classClient.html">Client</a> *pIgnoreClient=NULL)</td></tr>
+<tr class="memdesc:a946d6eb75590a7d0c2702c7f7aa4d16c inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケットのブロードキャスト  <a href="classAreaBase.html#a946d6eb75590a7d0c2702c7f7aa4d16c">[詳解]</a><br /></td></tr>
 <tr class="separator:a946d6eb75590a7d0c2702c7f7aa4d16c inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b8562f04de35c129dcb65beebbdc5cd inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd">BroadcastPacketWithRange</a> (<a class="el" href="classPacketBase.html">PacketBase</a> *pPacket, const <a class="el" href="classVector3D.html">Vector3D</a> &amp;Center, float Range, <a class="el" href="classClient.html">Client</a> *pIgnoreClient=NULL)</td></tr>
+<tr class="memdesc:a9b8562f04de35c129dcb65beebbdc5cd inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">範囲を指定したパケットのブロードキャスト  <a href="classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd">[詳解]</a><br /></td></tr>
 <tr class="separator:a9b8562f04de35c129dcb65beebbdc5cd inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a775cd05bb21d22ff4ab4e95712b9b3 inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a4a775cd05bb21d22ff4ab4e95712b9b3">GetHeight</a> (float X, float Y) const</td></tr>
+<tr class="memdesc:a4a775cd05bb21d22ff4ab4e95712b9b3 inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">高さを取得  <a href="classAreaBase.html#a4a775cd05bb21d22ff4ab4e95712b9b3">[詳解]</a><br /></td></tr>
 <tr class="separator:a4a775cd05bb21d22ff4ab4e95712b9b3 inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb6f3f4dd2909326ece195fadae96980 inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#acb6f3f4dd2909326ece195fadae96980">CheckMovable</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;Start, const <a class="el" href="classVector3D.html">Vector3D</a> &amp;End, float ClimbableHeight, <a class="el" href="classVector3D.html">Vector3D</a> &amp;OutHit) const</td></tr>
+<tr class="memdesc:acb6f3f4dd2909326ece195fadae96980 inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動できるかどうかをチェック  <a href="classAreaBase.html#acb6f3f4dd2909326ece195fadae96980">[詳解]</a><br /></td></tr>
 <tr class="separator:acb6f3f4dd2909326ece195fadae96980 inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcc736976c30847840c69bd2e80863c4 inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#adcc736976c30847840c69bd2e80863c4">GetMasterId</a> () const</td></tr>
+<tr class="memdesc:adcc736976c30847840c69bd2e80863c4 inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">マスタＩＤを取得  <a href="classAreaBase.html#adcc736976c30847840c69bd2e80863c4">[詳解]</a><br /></td></tr>
 <tr class="separator:adcc736976c30847840c69bd2e80863c4 inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75635c522c3b8d5475812692df916dd0 inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a75635c522c3b8d5475812692df916dd0">IsInstance</a> () const</td></tr>
-<tr class="separator:a75635c522c3b8d5475812692df916dd0 inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cac1996f927ca3c9f2927d9e15638d9 inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a7cac1996f927ca3c9f2927d9e15638d9">IsInstance</a> () const</td></tr>
+<tr class="memdesc:a7cac1996f927ca3c9f2927d9e15638d9 inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">インスタンスエリアか？  <a href="classAreaBase.html#a7cac1996f927ca3c9f2927d9e15638d9">[詳解]</a><br /></td></tr>
+<tr class="separator:a7cac1996f927ca3c9f2927d9e15638d9 inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae141c33845bdbf3291630c1eb28cfafe inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#ae141c33845bdbf3291630c1eb28cfafe">CollectCircle</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;Center, float Radius, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> TargetType, std::vector&lt; <a class="el" href="classCharacterBase.html">CharacterBase</a> *&gt; &amp;OutTargets)</td></tr>
+<tr class="memdesc:ae141c33845bdbf3291630c1eb28cfafe inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">円形でターゲットを取得  <a href="classAreaBase.html#ae141c33845bdbf3291630c1eb28cfafe">[詳解]</a><br /></td></tr>
 <tr class="separator:ae141c33845bdbf3291630c1eb28cfafe inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0535b2fecd614ad1af1f90464280581e inherit pub_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a0535b2fecd614ad1af1f90464280581e">CollectBox</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;Center, float Width, float Height, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> TargetType, std::vector&lt; <a class="el" href="classCharacterBase.html">CharacterBase</a> *&gt; &amp;OutTargets)</td></tr>
+<tr class="memdesc:a0535b2fecd614ad1af1f90464280581e inherit pub_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩形でターゲットを取得  <a href="classAreaBase.html#a0535b2fecd614ad1af1f90464280581e">[詳解]</a><br /></td></tr>
 <tr class="separator:a0535b2fecd614ad1af1f90464280581e inherit pub_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>
 <tr class="inherit_header pro_methods_classAreaBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classAreaBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classAreaBase.html">AreaBase</a> に属する継承限定公開メンバ関数</td></tr>
-<tr class="memitem:aef1d5ff74b55370f2d865ac8e06775ad inherit pro_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#aef1d5ff74b55370f2d865ac8e06775ad">Update</a> ()</td></tr>
-<tr class="separator:aef1d5ff74b55370f2d865ac8e06775ad inherit pro_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69c26ba4bd55a2bd0e33214949634af inherit pro_methods_classAreaBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#ae69c26ba4bd55a2bd0e33214949634af">Update</a> ()</td></tr>
+<tr class="memdesc:ae69c26ba4bd55a2bd0e33214949634af inherit pro_methods_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理  <a href="classAreaBase.html#ae69c26ba4bd55a2bd0e33214949634af">[詳解]</a><br /></td></tr>
+<tr class="separator:ae69c26ba4bd55a2bd0e33214949634af inherit pro_methods_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classAreaBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classAreaBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classAreaBase.html">AreaBase</a> に属する継承限定公開変数類</td></tr>
 <tr class="memitem:a2ba7d4287152153d70239a6921406981 inherit pro_attribs_classAreaBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPlayerManager.html">PlayerManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a2ba7d4287152153d70239a6921406981">PlayerMgr</a></td></tr>
+<tr class="memdesc:a2ba7d4287152153d70239a6921406981 inherit pro_attribs_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">プレイヤー管理.  <a href="classAreaBase.html#a2ba7d4287152153d70239a6921406981">[詳解]</a><br /></td></tr>
 <tr class="separator:a2ba7d4287152153d70239a6921406981 inherit pro_attribs_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52678cb8eb5e27058fa5ff21145e8d49 inherit pro_attribs_classAreaBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAnpanManager.html">AnpanManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#a52678cb8eb5e27058fa5ff21145e8d49">AnpanMgr</a></td></tr>
+<tr class="memdesc:a52678cb8eb5e27058fa5ff21145e8d49 inherit pro_attribs_classAreaBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">アンパン管理.  <a href="classAreaBase.html#a52678cb8eb5e27058fa5ff21145e8d49">[詳解]</a><br /></td></tr>
 <tr class="separator:a52678cb8eb5e27058fa5ff21145e8d49 inherit pro_attribs_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8eb9cb8eabf5e953ac4ea86ea2b98c5 inherit pro_attribs_classAreaBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAreaBase.html#ae8eb9cb8eabf5e953ac4ea86ea2b98c5">MasterId</a></td></tr>
-<tr class="separator:ae8eb9cb8eabf5e953ac4ea86ea2b98c5 inherit pro_attribs_classAreaBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>エリアクラス </p>
@@ -166,6 +190,14 @@ Area 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pItem</td><td>エリアマスタアイテム </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -192,11 +224,13 @@ Area 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>デストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a691140a45c93e5853928bfb2e4a2426d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a691140a45c93e5853928bfb2e4a2426d">&#9670;&nbsp;</a></span>GetId()</h2>
+<a id="a7f7d562d4b70b0c644f687ed6e5a3dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f7d562d4b70b0c644f687ed6e5a3dfd">&#9670;&nbsp;</a></span>GetId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,7 +239,7 @@ Area 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Area::GetId </td>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Area::GetId </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -218,12 +252,16 @@ Area 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classAreaBase.html#a9d4a714d85bf71137845643548d5856c">AreaBase</a>を実装しています。</p>
+<p>ID取得. </p>
+<dl class="section return"><dt>戻り値</dt><dd>ID</dd></dl>
+<p>エリアマスタのＩＤと同一。 </p>
+
+<p><a class="el" href="classAreaBase.html#a9e60aeab60f02f82ff576e30160707c9">AreaBase</a>を実装しています。</p>
 
 </div>
 </div>
-<a id="a03e4a3272235427054cbce9545bd8ea6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03e4a3272235427054cbce9545bd8ea6">&#9670;&nbsp;</a></span>IsAbleDelete()</h2>
+<a id="aca42c103bb0f57b463eba8a5937be77c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca42c103bb0f57b463eba8a5937be77c">&#9670;&nbsp;</a></span>IsAbleDelete()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,7 +270,7 @@ Area 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool Area::IsAbleDelete </td>
+          <td class="memname">bool Area::IsAbleDelete </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -245,7 +283,10 @@ Area 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classAreaBase.html#a6740169f3d35c1194e7101e60157a00f">AreaBase</a>を実装しています。</p>
+<p>消去可能か？ </p>
+<dl class="section return"><dt>戻り値</dt><dd>消去してはいけないので常にfalseを返す。 </dd></dl>
+
+<p><a class="el" href="classAreaBase.html#a4159663110510c6630790adf4ee2a422">AreaBase</a>を実装しています。</p>
 
 </div>
 </div>

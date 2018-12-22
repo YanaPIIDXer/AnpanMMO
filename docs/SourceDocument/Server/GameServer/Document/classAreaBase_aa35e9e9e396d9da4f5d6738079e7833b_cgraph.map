@@ -1,7 +1,7 @@
 <map id="AreaBase::Poll" name="AreaBase::Poll">
 <area shape="rect" id="node2" href="$classPlayerManager.html#ab3d5dab70eeefe6ae0f45d3acd3f185d" title="PlayerManager::Poll" alt="" coords="163,93,301,120"/>
 <area shape="rect" id="node9" href="$classAnpanManager.html#a21c992f2edfd72ffa77cafa8a206eeba" title="AnpanManager::Poll" alt="" coords="163,144,301,171"/>
-<area shape="rect" id="node10" href="$classAreaBase.html#aef1d5ff74b55370f2d865ac8e06775ad" title="AreaBase::Update" alt="" coords="168,195,296,221"/>
+<area shape="rect" id="node10" href="$classAreaBase.html#ae69c26ba4bd55a2bd0e33214949634af" title="更新処理 " alt="" coords="168,195,296,221"/>
 <area shape="rect" id="node3" href="$classPlayerManager.html#ae856745bf6d69cc9ff54df6861049f37" title="PlayerManager::Broadcast\lPacket" alt="" coords="349,86,525,127"/>
 <area shape="rect" id="node4" href="$classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="573,93,708,120"/>
 <area shape="rect" id="node5" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="778,5,929,32"/>

@@ -21,15 +21,15 @@
 <area shape="rect" id="node20" href="$classClientStateActive.html#a04b0193d8d026a520e099bce02b2c9c0" title="ClientStateActive::\lBeginState" alt="" coords="501,563,631,605"/>
 <area shape="rect" id="node21" href="$classPlayerManager.html#ae856745bf6d69cc9ff54df6861049f37" title="PlayerManager::Broadcast\lPacket" alt="" coords="478,643,654,685"/>
 <area shape="rect" id="node32" href="$classPlayerManager.html#a412aaba35447720310431e86be6e6d71" title="PlayerManager::Broadcast\lPacketWithRange" alt="" coords="478,755,654,797"/>
-<area shape="rect" id="node22" href="$classAreaBase.html#a946d6eb75590a7d0c2702c7f7aa4d16c" title="AreaBase::BroadcastPacket" alt="" coords="722,563,909,589"/>
+<area shape="rect" id="node22" href="$classAreaBase.html#a946d6eb75590a7d0c2702c7f7aa4d16c" title="パケットのブロードキャスト " alt="" coords="722,563,909,589"/>
 <area shape="rect" id="node24" href="$classPlayerManager.html#ab3d5dab70eeefe6ae0f45d3acd3f185d" title="PlayerManager::Poll" alt="" coords="746,613,885,640"/>
 <area shape="rect" id="node26" href="$classPlayerManager.html#afc50bf84136657b917d052ac7a34f46b" title="PlayerManager::Add" alt="" coords="745,664,885,691"/>
 <area shape="rect" id="node28" href="$classPlayerManager.html#a4cf4bcfb7974a219b6ab73417a157e79" title="PlayerManager::Remove" alt="" coords="734,715,897,741"/>
 <area shape="rect" id="node30" href="$classPlayerManager.html#aaa2707c2d315cf1fe3fe44a0e1d09798" title="PlayerManager::OnRecvMove" alt="" coords="719,765,911,792"/>
-<area shape="rect" id="node23" href="$classInstanceArea.html#a9ab2117e62f63d3eb74f8463f919d481" title="InstanceArea::Update" alt="" coords="1005,563,1152,589"/>
-<area shape="rect" id="node25" href="$classAreaBase.html#aa35e9e9e396d9da4f5d6738079e7833b" title="AreaBase::Poll" alt="" coords="1024,613,1133,640"/>
-<area shape="rect" id="node27" href="$classAreaBase.html#a8dcdfbb9eff48e5402b87e990bdf1aab" title="AreaBase::AddPlayerCharacter" alt="" coords="977,664,1180,691"/>
-<area shape="rect" id="node29" href="$classAreaBase.html#a692dbb7c1dbab7077d8726eb983d915a" title="AreaBase::RemovePlayerCharacter" alt="" coords="965,715,1192,741"/>
-<area shape="rect" id="node31" href="$classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22" title="AreaBase::OnRecvMove" alt="" coords="997,765,1160,792"/>
-<area shape="rect" id="node33" href="$classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd" title="AreaBase::BroadcastPacket\lWithRange" alt="" coords="722,817,909,858"/>
+<area shape="rect" id="node23" href="$classInstanceArea.html#a9ab2117e62f63d3eb74f8463f919d481" title="更新処理 " alt="" coords="1005,563,1152,589"/>
+<area shape="rect" id="node25" href="$classAreaBase.html#aa35e9e9e396d9da4f5d6738079e7833b" title="毎フレームの処理 " alt="" coords="1024,613,1133,640"/>
+<area shape="rect" id="node27" href="$classAreaBase.html#a8dcdfbb9eff48e5402b87e990bdf1aab" title="プレイヤーキャラ追加 " alt="" coords="977,664,1180,691"/>
+<area shape="rect" id="node29" href="$classAreaBase.html#a692dbb7c1dbab7077d8726eb983d915a" title="プレイヤーキャラ削除 " alt="" coords="965,715,1192,741"/>
+<area shape="rect" id="node31" href="$classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22" title="移動を受信した " alt="" coords="997,765,1160,792"/>
+<area shape="rect" id="node33" href="$classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd" title="範囲を指定したパケットのブロードキャスト " alt="" coords="722,817,909,858"/>
 </map>

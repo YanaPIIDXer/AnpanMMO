@@ -1,9 +1,9 @@
 <map id="ItemList.h" name="ItemList.h">
 <area shape="rect" id="node2" href="$PlayerCharacter_8h.html" title="PlayerCharacter.h" alt="" coords="1023,80,1150,107"/>
 <area shape="rect" id="node17" href="$ItemList_8cpp.html" title="ItemList.cpp" alt="" coords="1175,80,1268,107"/>
-<area shape="rect" id="node3" href="$AreaBase_8cpp.html" title="AreaBase.cpp" alt="" coords="5,155,109,181"/>
-<area shape="rect" id="node4" href="$AreaManager_8cpp.html" title="AreaManager.cpp" alt="" coords="134,155,258,181"/>
-<area shape="rect" id="node5" href="$InstanceAreaTicket_8cpp.html" title="InstanceAreaTicket.cpp" alt="" coords="282,155,441,181"/>
+<area shape="rect" id="node3" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="5,155,109,181"/>
+<area shape="rect" id="node4" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="134,155,258,181"/>
+<area shape="rect" id="node5" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="282,155,441,181"/>
 <area shape="rect" id="node6" href="$PlayerCharacter_8cpp.html" title="PlayerCharacter.cpp" alt="" coords="465,155,605,181"/>
 <area shape="rect" id="node7" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="629,155,709,181"/>
 <area shape="rect" id="node8" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="733,155,880,181"/>

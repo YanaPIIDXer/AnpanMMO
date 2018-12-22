@@ -7,12 +7,12 @@
 <area shape="rect" id="node18" href="$CharacterParameter_8h.html" title="CharacterParameter.h" alt="" coords="1675,155,1824,181"/>
 <area shape="rect" id="node19" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="1588,319,1708,345"/>
 <area shape="rect" id="node22" href="$Rotation_8h.html" title="Math/Rotation.h" alt="" coords="1339,155,1453,181"/>
-<area shape="rect" id="node23" href="$AreaBase_8h.html" title="Area/AreaBase.h" alt="" coords="1478,155,1599,181"/>
+<area shape="rect" id="node23" href="$AreaBase_8h.html" title="エリア基底クラス " alt="" coords="1478,155,1599,181"/>
 <area shape="rect" id="node33" href="$SkillControl_8h.html" title="Skill/SkillControl.h" alt="" coords="1963,237,2091,263"/>
 <area shape="rect" id="node34" href="$SkillRecastManager_8h.html" title="Skill/SkillRecastManager.h" alt="" coords="2115,237,2293,263"/>
 <area shape="rect" id="node24" href="$PlayerManager_8h.html" title="PlayerManager.h" alt="" coords="1675,237,1795,263"/>
 <area shape="rect" id="node27" href="$AnpanManager_8h.html" title="AnpanManager.h" alt="" coords="1819,237,1939,263"/>
-<area shape="rect" id="node29" href="$HeightMap_8h.html" title="HeightMap.h" alt="" coords="1491,237,1586,263"/>
+<area shape="rect" id="node29" href="$HeightMap_8h.html" title="ハイトマップクラス " alt="" coords="1491,237,1586,263"/>
 <area shape="rect" id="node26" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="1732,319,1852,345"/>
 <area shape="rect" id="node30" href="$Bitmap_8h.html" title="Bitmap.h" alt="" coords="1489,319,1564,345"/>
 <area shape="rect" id="node32" href="$EndianConverter_8h.html" title="EndianConverter.h" alt="" coords="1465,393,1591,420"/>

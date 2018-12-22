@@ -1,6 +1,6 @@
 <map id="CharacterBase.h" name="CharacterBase.h">
 <area shape="rect" id="node2" href="$Anpan_8h.html" title="Anpan.h" alt="" coords="2377,80,2447,107"/>
-<area shape="rect" id="node5" href="$AreaBase_8cpp.html" title="AreaBase.cpp" alt="" coords="1871,155,1975,181"/>
+<area shape="rect" id="node5" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="1871,155,1975,181"/>
 <area shape="rect" id="node7" href="$AnpanAIStateActive_8cpp.html" title="AnpanAIStateActive.cpp" alt="" coords="3075,155,3237,181"/>
 <area shape="rect" id="node11" href="$SkillControl_8cpp.html" title="SkillControl.cpp" alt="" coords="1999,155,2113,181"/>
 <area shape="rect" id="node12" href="$Hate_8cpp.html" title="Hate.cpp" alt="" coords="2523,80,2597,107"/>
@@ -14,8 +14,8 @@
 <area shape="rect" id="node8" href="$AnpanAIStateBase_8cpp.html" title="AnpanAIStateBase.cpp" alt="" coords="2137,155,2295,181"/>
 <area shape="rect" id="node9" href="$AnpanAIStateNonActive_8cpp.html" title="AnpanAIStateNonActive.cpp" alt="" coords="2319,155,2505,181"/>
 <area shape="rect" id="node10" href="$Anpan_8cpp.html" title="Anpan.cpp" alt="" coords="2529,155,2613,181"/>
-<area shape="rect" id="node15" href="$AreaManager_8cpp.html" title="AreaManager.cpp" alt="" coords="163,155,287,181"/>
-<area shape="rect" id="node16" href="$InstanceAreaTicket_8cpp.html" title="InstanceAreaTicket.cpp" alt="" coords="311,155,470,181"/>
+<area shape="rect" id="node15" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="163,155,287,181"/>
+<area shape="rect" id="node16" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="311,155,470,181"/>
 <area shape="rect" id="node17" href="$PlayerCharacter_8cpp.html" title="PlayerCharacter.cpp" alt="" coords="494,155,634,181"/>
 <area shape="rect" id="node18" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="659,155,739,181"/>
 <area shape="rect" id="node19" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="763,155,909,181"/>
