@@ -39,7 +39,10 @@ void AMMOGameModeBase::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 	auto It = PacketFunctions.find(ID);
 	if (It != PacketFunctions.end())
 	{
-		It->second(pStream);
+		if (!It->second(pStream))
+		{
+			UE_LOG(LogTemp, Error, TEXT("PacketID:%X Serialize Failed..."), (int32)ID);
+		}
 	}
 
 	if (pCurrentMenu != nullptr)

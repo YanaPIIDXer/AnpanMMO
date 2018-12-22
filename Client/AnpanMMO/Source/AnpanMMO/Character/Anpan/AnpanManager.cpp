@@ -36,10 +36,10 @@ AAnpan *AnpanManager::Get(uint32 Uuid) const
 }
 
 // リストを受信した.
-void AnpanManager::OnRecvList(MemoryStreamInterface *pStream)
+bool AnpanManager::OnRecvList(MemoryStreamInterface *pStream)
 {
 	PacketAnpanList Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	const auto &List = Packet.List;
 	for (int32 i = 0; i < List.GetCurrentSize(); i++)
@@ -47,45 +47,55 @@ void AnpanManager::OnRecvList(MemoryStreamInterface *pStream)
 		const AnpanData &Data = List[i];
 		SpawnAnpan(Data);
 	}
+	
+	return true;
 }
 
 // 生成を受信した.
-void AnpanManager::OnRecvSpawn(MemoryStreamInterface *pStream)
+bool AnpanManager::OnRecvSpawn(MemoryStreamInterface *pStream)
 {
 	PacketSpawnAnpan Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	SpawnAnpan(Packet.Data);
+
+	return true;
 }
 
 // 移動を受信した。
-void AnpanManager::OnRecvMove(MemoryStreamInterface *pStream)
+bool AnpanManager::OnRecvMove(MemoryStreamInterface *pStream)
 {
 	PacketMoveAnpan Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
-	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
+	if (!AnpanMap.Contains(Packet.Uuid)) { return true; }
 	AnpanMap[Packet.Uuid]->Move(Packet.X, Packet.Y, Packet.Z, Packet.MoveMilliSec);
+
+	return true;
 }
 
 // 回転を受信した。
-void AnpanManager::OnRecvRotate(MemoryStreamInterface *pStream)
+bool AnpanManager::OnRecvRotate(MemoryStreamInterface *pStream)
 {
 	PacketRotateAnpan Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
-	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
+	if (!AnpanMap.Contains(Packet.Uuid)) { return true; }
 	AnpanMap[Packet.Uuid]->Rotate(Packet.Rotation, Packet.RotateMilliSec);
+
+	return true;
 }
 
 // 停止を受信した。
-void AnpanManager::OnRecvStop(MemoryStreamInterface *pStream)
+bool AnpanManager::OnRecvStop(MemoryStreamInterface *pStream)
 {
 	PacketStopAnpan Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
-	if (!AnpanMap.Contains(Packet.Uuid)) { return; }
+	if (!AnpanMap.Contains(Packet.Uuid)) { return true; }
 	AnpanMap[Packet.Uuid]->Stop(Packet.X, Packet.Y, Packet.Z, Packet.Rotation);
+
+	return true;
 }
 
 // 前方のターゲットを取得.

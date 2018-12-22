@@ -44,10 +44,11 @@ void PingManager::Poll(float DeltaTime)
 }
 
 // Ping‚ğóM‚µ‚½B
-void PingManager::OnRecvPing(MemoryStreamInterface *pStream)
+bool PingManager::OnRecvPing(MemoryStreamInterface *pStream)
 {
 	PacketPing Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	bRecvPing = true;
+	return true;
 }

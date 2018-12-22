@@ -1,4 +1,4 @@
 <map id="PacketReceiveNotice::Serialize" name="PacketReceiveNotice::Serialize">
-<area shape="rect" id="node2" href="$classNoticeManager.html#aaf4757cd84b8fa5c1c5bec98d6ae5ef1" title="NoticeManager::OnRecvNotice" alt="" coords="199,13,397,39"/>
+<area shape="rect" id="node2" href="$classNoticeManager.html#a7996333fc5de743616479d5261dab683" title="NoticeManager::OnRecvNotice" alt="" coords="199,13,397,39"/>
 <area shape="rect" id="node3" href="$classAActiveGameMode.html#a9dd196c028a3f4b41a339572c85ebecf" title="AActiveGameMode::AActive\lGameMode" alt="" coords="445,5,631,47"/>
 </map>

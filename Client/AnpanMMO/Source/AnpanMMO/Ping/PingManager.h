@@ -26,7 +26,7 @@ public:
 	void SetGameMode(AActiveGameMode *pInGameMode) { pGameMode = pInGameMode; }
 
 	// Ping‚ğóM‚µ‚½B
-	void OnRecvPing(MemoryStreamInterface *pStream);
+	bool OnRecvPing(MemoryStreamInterface *pStream);
 
 private:
 

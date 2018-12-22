@@ -17,19 +17,24 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 void PacketReceiver::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
 	if (PacketFuncs.find(ID) == PacketFuncs.end()) { return; }
-	PacketFuncs[ID](pStream);
+	if (!PacketFuncs[ID](pStream))
+	{
+		std::cout << "PacketID:" << (int)ID << " Serialize Failed..." << std::endl;
+	}
 }
 
 
 // チャットのワードチェック要求を受信した。
-void PacketReceiver::OnRecvChatWordCheckRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvChatWordCheckRequest(MemoryStreamInterface *pStream)
 {
 	WordCheckPacketChatRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	std::string ResultMessage = WordChecker::GetInstance().ChatWordCheck(Packet.Message);
 	WordCheckPacketChatResult ResultPacket(Packet.ClientId, Packet.Type, ResultMessage);
 	pParent->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 

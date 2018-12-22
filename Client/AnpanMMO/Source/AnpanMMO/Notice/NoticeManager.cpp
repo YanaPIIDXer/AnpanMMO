@@ -12,24 +12,28 @@ NoticeManager::NoticeManager()
 }
 
 // 通知リストを受信した。
-void NoticeManager::OnRecvNoticeList(MemoryStreamInterface *pStream)
+bool NoticeManager::OnRecvNoticeList(MemoryStreamInterface *pStream)
 {
 	PacketNoticeList Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	for (int32 i = 0; i < Packet.Notices.GetCurrentSize(); i++)
 	{
 		AddNotice(Packet.Notices[i]);
 	}
+
+	return true;
 }
 
 // 通知を受信した。
-void NoticeManager::OnRecvNotice(MemoryStreamInterface *pStream)
+bool NoticeManager::OnRecvNotice(MemoryStreamInterface *pStream)
 {
 	PacketReceiveNotice Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	AddNotice(Packet.Notice);
+
+	return true;
 }
 
 // 通知リストを取得.

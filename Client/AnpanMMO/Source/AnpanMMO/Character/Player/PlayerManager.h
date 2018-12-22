@@ -36,16 +36,16 @@ public:
 	APlayerCharacterBase *Get(uint32 Uuid) const;
 
 	// 生成を受信.
-	void OnRecvSpawn(MemoryStreamInterface *pStream);
+	bool OnRecvSpawn(MemoryStreamInterface *pStream);
 
 	// リストを受信.
-	void OnRecvList(MemoryStreamInterface *pStream);
+	bool OnRecvList(MemoryStreamInterface *pStream);
 
 	// 移動を受信.
-	void OnRecvMove(MemoryStreamInterface *pStream);
+	bool OnRecvMove(MemoryStreamInterface *pStream);
 
 	// 退出を受信.
-	void OnRecvExit(MemoryStreamInterface *pStream);
+	bool OnRecvExit(MemoryStreamInterface *pStream);
 
 	// リセット.
 	void Reset();

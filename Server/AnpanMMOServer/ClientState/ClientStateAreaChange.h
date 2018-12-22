@@ -28,10 +28,10 @@ private:
 
 
 	// Pingを受信した。
-	void OnRecvPing(MemoryStreamInterface *pStream);
+	bool OnRecvPing(MemoryStreamInterface *pStream);
 
 	// ゲーム準備完了を受信した。
-	void OnRecvGameReady(MemoryStreamInterface *pStream);
+	bool OnRecvGameReady(MemoryStreamInterface *pStream);
 
 };
 

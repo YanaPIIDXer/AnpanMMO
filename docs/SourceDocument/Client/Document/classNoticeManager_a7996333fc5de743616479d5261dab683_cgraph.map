@@ -1,0 +1,5 @@
+<map id="NoticeManager::OnRecvNotice" name="NoticeManager::OnRecvNotice">
+<area shape="rect" id="node2" href="$classPacketReceiveNotice.html#a7f8c8fdd05e43e77f4c02548022d72fb" title="シリアライズ " alt="" coords="252,5,397,47"/>
+<area shape="rect" id="node3" href="$classNoticeData.html#a807e22e0098ac69b4c5e0cf387e45188" title="NoticeData::Serialize" alt="" coords="445,13,589,39"/>
+<area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="637,5,797,47"/>
+</map>

@@ -59,44 +59,48 @@ ClientStateTitle::ClientStateTitle(Client *pInParent)
 
 
 // ログインリクエストを受信した。
-void ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 {
 	PacketLogInRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	CachePacketLogInRequest CachePacket(GetParent()->GetUuid(), Packet.UserCode);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+
+	return true;
 }
 
 // キャラクタ作成リクエストを受信した。
-void ClientStateTitle::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream)
 {
 	PacketCreateCharacterRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.CharacterName.size() == 0)
 	{
 		PacketCreateCharacterResult ResultPacket(PacketCreateCharacterResult::EmptyName);
 		GetParent()->SendPacket(&ResultPacket);
-		return;
+		return true;
 	}
 
 	if (Util::CalcStringLength(Packet.CharacterName) > Config::CharacterNameMaxLength)
 	{
 		PacketCreateCharacterResult ResultPacket(PacketCreateCharacterResult::TooLongName);
 		GetParent()->SendPacket(&ResultPacket);
-		return;
+		return true;
 	}
 
 	CachePacketCreateCharacterRequest CacheRequestPacket(GetParent()->GetUuid(), GetParent()->GetCustomerId(), Packet.CharacterName, Packet.Job);
 	CacheServerConnection::GetInstance()->SendPacket(&CacheRequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからログイン結果を受信した。
-void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 {
 	CachePacketLogInResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	PacketLogInResult::ResultCode ResultCode = PacketLogInResult::Success;
 	switch (Packet.Result)
@@ -128,22 +132,24 @@ void ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid(), Packet.LastAreaId);
 	pClient->SendPacket(&ResultPacket);
 
-	if (ResultCode != PacketLogInResult::Success && ResultCode != PacketLogInResult::NoCharacter) { return; }
+	if (ResultCode != PacketLogInResult::Success && ResultCode != PacketLogInResult::NoCharacter) { return true; }
 
 	// キャラクタが存在しなかった場合でもカスタマＩＤは登録しておく。
 	pClient->SetCustomerId(Packet.CustomerId);
 
-	if (ResultCode != PacketLogInResult::Success) { return; }
+	if (ResultCode != PacketLogInResult::Success) { return true; }
 
 	CachePacketCharacterDataRequest CharaRequestPacket(pClient->GetUuid(), Packet.CustomerId);
 	CacheServerConnection::GetInstance()->SendPacket(&CharaRequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからキャラクタ作成結果を受信した。
-void ClientStateTitle::OnRecvCacheCreateCharacterResult(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheCreateCharacterResult(MemoryStreamInterface *pStream)
 {
 	CachePacketCreateCharacterResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 ResultCode = PacketCreateCharacterResult::Success;
 	if (Packet.Result == CachePacketCreateCharacterResult::Error)
@@ -153,18 +159,20 @@ void ClientStateTitle::OnRecvCacheCreateCharacterResult(MemoryStreamInterface *p
 
 	PacketCreateCharacterResult ResultPacket(ResultCode);
 	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // キャッシュサーバからキャラクタデータを受信した。
-void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream)
 {
 	CachePacketCharacterDataResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != CachePacketCharacterDataResult::Success)
 	{
 		std::cout << "CharacterData Load Failed..." << std::endl;
-		return;
+		return true;
 	}
 
 	Client *pClient = GetParent();
@@ -178,18 +186,20 @@ void ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	// スキルリストを要求.
 	CachePacketSkillListRequest RequestPacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからスキルリストを受信した。
-void ClientStateTitle::OnRecvCacheSkillListResponse(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheSkillListResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketSkillListResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != CachePacketSkillListResponse::Success)
 	{
 		std::cout << "SkillList Load Failed..." << std::endl;
-		return;
+		return true;
 	}
 
 	PacketSkillList SkillListPacket(Packet.NormalAttackId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
@@ -198,18 +208,20 @@ void ClientStateTitle::OnRecvCacheSkillListResponse(MemoryStreamInterface *pStre
 	// スキルツリー情報を要求.
 	CachePacketSkillTreeRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからスキルツリー情報を取得した。
-void ClientStateTitle::OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketSkillTreeResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != CachePacketSkillTreeResponse::Success)
 	{
 		std::cout << "SkillTree Load Failed..." << std::endl;
-		return;
+		return true;
 	}
 
 	GetParent()->GetCharacter().lock()->InitializeSkillTree(Packet.OpenedList);
@@ -220,18 +232,20 @@ void ClientStateTitle::OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStre
 	// アイテムリストを要求.
 	CachePacketItemListRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからアイテムリストを受信した。
-void ClientStateTitle::OnRecvCacheItemListResponse(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheItemListResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketItemListResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != CachePacketItemListResponse::Success)
 	{
 		std::cout << "Item List Load Failed..." << std::endl;
-		return;
+		return true;
 	}
 
 	GetParent()->GetCharacter().lock()->OnRecvItemList(Packet.Items);
@@ -247,18 +261,20 @@ void ClientStateTitle::OnRecvCacheItemListResponse(MemoryStreamInterface *pStrea
 	// アイテムショートカットを要求.
 	CachePacketItemShortcutRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからアイテムショートカットを受信した。
-void ClientStateTitle::OnRecvCacheItemShortcutResponse(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheItemShortcutResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketItemShortcutResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != CachePacketItemShortcutResponse::Success)
 	{
 		std::cout << "Item Shortcut Load Failed..." << std::endl;
-		return;
+		return true;
 	}
 
 	// アイテムショートカットはクライアントに通知するだけ。
@@ -269,13 +285,15 @@ void ClientStateTitle::OnRecvCacheItemShortcutResponse(MemoryStreamInterface *pS
 	// スクリプトフラグを要求.
 	CachePacketScriptFlagRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからスクリプトフラグを受信した。
-void ClientStateTitle::OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketScriptFlagResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result == CachePacketScriptFlagResponse::Success)
 	{
@@ -287,23 +305,26 @@ void ClientStateTitle::OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStr
 	else
 	{
 		std::cout << "CachePacketScriptFlagResponse Error..." << std::endl;
+		return true;
 	}
 
 	// クエストデータ要求.
 	CachePacketQuestDataRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからクエストデータを受信した。
-void ClientStateTitle::OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStream)
+bool ClientStateTitle::OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketQuestDataResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != CachePacketQuestDataResponse::Success)
 	{
 		std::cout << "CachePacketQuestDataResponse Error..." << std::endl;
-		return;
+		return true;
 	}
 
 	// クライアントに投げ付ける。
@@ -320,4 +341,6 @@ void ClientStateTitle::OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStre
 	// マップ切り替えStateへ。
 	ClientStateAreaChange *pNextState = new ClientStateAreaChange(GetParent(), LastAreaId, LastPosition);
 	GetParent()->ChangeState(pNextState);
+
+	return true;
 }

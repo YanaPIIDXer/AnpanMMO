@@ -59,10 +59,10 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 }
 
 // ログインリクエストを受信した。
-void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketLogInRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 ResultCode = CachePacketLogInResult::Success;
 	char *pUserCode = const_cast<char *>(Packet.UserCode.c_str());
@@ -104,13 +104,15 @@ void PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	}
 	CachePacketLogInResult ResultPacket(Packet.ClientId, ResultCode, Id, LastAreaId);
 	pParent->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // キャラクタ作成リクエストを受信した。
-void PacketReceiver::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketCreateCharacterRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 ResultCode = CachePacketCreateCharacterResult::Success;
 	char *pCharaName = const_cast<char *>(Packet.CharacterName.c_str());
@@ -121,13 +123,15 @@ void PacketReceiver::OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream
 
 	CachePacketCreateCharacterResult ResultPacket(Packet.ClientId, ResultCode);
 	pParent->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // キャラクタ情報リクエストを受信した。
-void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketCharacterDataRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	std::string Name;
 	u32 CharacterId;
@@ -155,25 +159,29 @@ void PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 
 	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // キャラクタ保存リクエストを受信した。
-void PacketReceiver::OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketCharacterDataSave Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CharacterId, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY, Packet.LastZ))
 	{
 		std::cout << "Character Data Save Failed..." << std::endl;
 	}
+
+	return true;
 }
 
 // スキルリスト要求を受信した。
-void PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketSkillListRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = CachePacketSkillListResponse::Success;
 	u32 NormalAttackId = 0;
@@ -188,13 +196,15 @@ void PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
 
 	CachePacketSkillListResponse ResponsePacket(Packet.ClientId, Result, NormalAttackId, Skill1, Skill2, Skill3, Skill4);
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // スキルリスト保存要求を受信した。
-void PacketReceiver::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketSaveSkillListRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = CachePacketSaveSkillListResponse::Success;
 	if (!DBConnection::GetInstance().SaveSkillList(Packet.CharacterId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4))
@@ -204,13 +214,15 @@ void PacketReceiver::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
 
 	CachePacketSaveSkillListResponse ResponsePacket(Packet.ClientId, Result, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // スキルツリーリクエストを受信した。
-void PacketReceiver::OnRecvSkillTreeRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSkillTreeRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketSkillTreeRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = CachePacketSkillTreeResponse::Success;
 	CachePacketSkillTreeResponse ResponsePacket;
@@ -222,25 +234,29 @@ void PacketReceiver::OnRecvSkillTreeRequest(MemoryStreamInterface *pStream)
 	ResponsePacket.ClientId = Packet.ClientId;
 	ResponsePacket.Result = Result;
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // スキルツリー保存要求を受信した。
-void PacketReceiver::OnRecvSkillTreeSaveRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSkillTreeSaveRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketOpenSkillTree Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (!DBConnection::GetInstance().SaveSkillTree(Packet.CharacterId, Packet.NodeId))
 	{
 		std::cout << "SkillTree Save Failed..." << std::endl;
 	}
+
+	return true;
 }
 
 // スクリプトフラグ読み込みリクエストを受信した。
-void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketScriptFlagRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u32 BitField1, BitField2, BitField3;
 	u8 Result = CachePacketScriptFlagResponse::Success;
@@ -251,22 +267,29 @@ void PacketReceiver::OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream)
 
 	CachePacketScriptFlagResponse ResponsePacket(Packet.ClientId, Result, BitField1, BitField2, BitField3);
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // スクリプトフラグ保存リクエストを受信した。
-void PacketReceiver::OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketScriptFlagSaveRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
-	DBConnection::GetInstance().SaveScriptFlags(Packet.CharacterId, Packet.BitField1, Packet.BitField2, Packet.BitField3);
+	if (!DBConnection::GetInstance().SaveScriptFlags(Packet.CharacterId, Packet.BitField1, Packet.BitField2, Packet.BitField3))
+	{
+		std::cout << "ScriptFlags Save Failed..." << std::endl;
+	}
+
+	return true;
 }
 
 // アイテムリストリクエストを受信した。
-void PacketReceiver::OnRecvItemListRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvItemListRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketItemListRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	CachePacketItemListResponse ResponsePacket;
 	ResponsePacket.ClientId = Packet.ClientId;
@@ -277,25 +300,29 @@ void PacketReceiver::OnRecvItemListRequest(MemoryStreamInterface *pStream)
 	}
 
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // アイテム数変動を受信した。
-void PacketReceiver::OnRecvItemCountChange(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvItemCountChange(MemoryStreamInterface *pStream)
 {
 	CachePacketItemCountChangeRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (!DBConnection::GetInstance().ChangeItemCount(Packet.CharacterId, Packet.ItemId, Packet.Count))
 	{
 		std::cout << "Item Count Change Failed..." << std::endl;
 	}
+
+	return true;
 }
 
 // アイテムショートカット読み込みリクエストを受信した。
-void PacketReceiver::OnRecvItemShortcutRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvItemShortcutRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketItemShortcutRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = CachePacketItemShortcutResponse::Success;
 	u32 ItemId1 = 0, ItemId2 = 0;
@@ -306,13 +333,15 @@ void PacketReceiver::OnRecvItemShortcutRequest(MemoryStreamInterface *pStream)
 
 	CachePacketItemShortcutResponse ResponsePacket(Packet.ClientId, Result, ItemId1, ItemId2);
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // アイテムショートカット書き込みリクエストを受信した。
-void PacketReceiver::OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketSaveItemShortcutRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = CachePacketSaveItemShortcutResponse::Success;
 	if (!DBConnection::GetInstance().SaveItemShortcut(Packet.CharacterId, Packet.ItemId1, Packet.ItemId2))
@@ -322,22 +351,29 @@ void PacketReceiver::OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStrea
 
 	CachePacketSaveItemShortcutResponse ResponsePacket(Packet.ClientId, Result, Packet.ItemId1, Packet.ItemId2);
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // ゴールド保存リクエストを受信した。
-void PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSaveGold(MemoryStreamInterface *pStream)
 {
 	CachePacketGoldSave Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
-	DBConnection::GetInstance().SaveGold(Packet.CharacterId, Packet.Gold);
+	if (!DBConnection::GetInstance().SaveGold(Packet.CharacterId, Packet.Gold))
+	{
+		std::cout << "Save Gold Failed..." << std::endl;
+	}
+
+	return true;
 }
 
 // クエストデータリクエストを受信した。
-void PacketReceiver::OnRecvQuestDataRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvQuestDataRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketQuestDataRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	CachePacketQuestDataResponse ResponsePacket;
 	ResponsePacket.ClientId = Packet.ClientId;
@@ -348,42 +384,50 @@ void PacketReceiver::OnRecvQuestDataRequest(MemoryStreamInterface *pStream)
 	}
 
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // クエストデータ保存リクエストを受信した。
-void PacketReceiver::OnRecvSaveQuestDataRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSaveQuestDataRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketSaveQuestDataRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (!DBConnection::GetInstance().SaveQuestData(Packet.CharacterId, Packet.Data.QuestId, Packet.Data.StageNo, Packet.Data.KillCount, Packet.Data.State))
 	{
 		std::cout << "QuestData Save Failed..." << std::endl;
 	}
+
+	return true;
 }
 
 // クエスト破棄リクエストを受信した。
-void PacketReceiver::OnRecvRetireQuestDataRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvRetireQuestDataRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketQuestRetireRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (!DBConnection::GetInstance().EraseQuestData(Packet.CharacterId, Packet.QuestId))
 	{
 		std::cout << "Erase QuestData Failed..." << std::endl;
 	}
+
+	return true;
 }
 
 // アクティブクエスト保存リクエストを受信した。
-void PacketReceiver::OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream)
+bool PacketReceiver::OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream)
 {
 	CachePacketSaveActiveQuestRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (!DBConnection::GetInstance().SaveActiveQuest(Packet.CharacterId, Packet.QuestId))
 	{
 		std::cout << "Save Active Quest Failed..." << std::endl;
 	}
+
+	return true;
 }
 
 
@@ -391,7 +435,10 @@ void PacketReceiver::OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream
 void PacketReceiver::RecvPacket(u8 ID, MemoryStreamInterface *pStream)
 {
 	if (PacketFuncs.find(ID) == PacketFuncs.end()) { return; }
-	PacketFuncs[ID](pStream);
+	if (!PacketFuncs[ID](pStream))
+	{
+		std::cout << "PacketID:" << (int)ID << " Serialize Failed..." << std::endl;
+	}
 }
 
 

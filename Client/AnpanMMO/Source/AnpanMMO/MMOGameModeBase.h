@@ -24,7 +24,7 @@ class ANPANMMO_API AMMOGameModeBase : public AGameModeBase
 
 private:		// •Ê–¼’è‹`.
 
-	typedef std::function<void(MemoryStreamInterface *)> PacketFunc;
+	typedef std::function<bool(MemoryStreamInterface *)> PacketFunc;
 	typedef std::map<uint8, PacketFunc> FunctionMap;
 
 public:

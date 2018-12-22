@@ -1,0 +1,4 @@
+<map id="AnpanManager::OnRecvMove" name="AnpanManager::OnRecvMove">
+<area shape="rect" id="node2" href="$classPacketMoveAnpan.html#a8c49f37b302da302d16f66e8a1f1ab27" title="シリアライズ " alt="" coords="245,13,433,39"/>
+<area shape="rect" id="node3" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="481,5,641,47"/>
+</map>

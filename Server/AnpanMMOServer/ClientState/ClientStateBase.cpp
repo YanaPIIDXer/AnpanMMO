@@ -7,6 +7,9 @@ void ClientStateBase::AnalyzePacket(u8 ID, MemoryStreamInterface *pStream)
 	FunctionMap::iterator It = PacketFunctions.find(ID);
 	if(It != PacketFunctions.end())
 	{
-		It->second(pParent, pStream);
+		if (!It->second(pParent, pStream))
+		{
+			std::cout << "PacketID:" << (int)ID << " Serialize Error!" << std::endl;
+		}
 	}
 }

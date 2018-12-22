@@ -23,79 +23,79 @@ public:
 private:
 
 	// Pingを受信した。
-	void OnRecvPing(MemoryStreamInterface *pStream);
+	bool OnRecvPing(MemoryStreamInterface *pStream);
 
 	// 移動を受信した。
-	void OnRecvMove(MemoryStreamInterface *pStream);
+	bool OnRecvMove(MemoryStreamInterface *pStream);
 
 	// チャットを受信した。
-	void OnRecvChat(MemoryStreamInterface *pStream);
+	bool OnRecvChat(MemoryStreamInterface *pStream);
 
 	// チャットのワードチェック結果を受信した。
-	void OnRecvChatWordCheckResult(MemoryStreamInterface *pStream);
+	bool OnRecvChatWordCheckResult(MemoryStreamInterface *pStream);
 
 	// エリア移動要求を受信した。
-	void OnRecvAreaMoveRequest(MemoryStreamInterface *pStream);
+	bool OnRecvAreaMoveRequest(MemoryStreamInterface *pStream);
 
 	// リスポン要求を受信した。
-	void OnRecvRespawnRequest(MemoryStreamInterface *pStream);
+	bool OnRecvRespawnRequest(MemoryStreamInterface *pStream);
 
 	// スキル使用を受信した。
-	void OnRecvSkillUse(MemoryStreamInterface *pStream);
+	bool OnRecvSkillUse(MemoryStreamInterface *pStream);
 
 	// パーティ作成要求を受信した。
-	void OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream);
+	bool OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream);
 
 	// パーティ離脱要求を受信した。
-	void OnRecvPartyDissolutionRequest(MemoryStreamInterface *pStream);
+	bool OnRecvPartyDissolutionRequest(MemoryStreamInterface *pStream);
 
 	// パーティ離脱要求を受信した。
-	void OnRecvPartyExitRequest(MemoryStreamInterface *pStream);
+	bool OnRecvPartyExitRequest(MemoryStreamInterface *pStream);
 
 	// パーティキック要求を受信した。
-	void OnRecvPartyKickRequest(MemoryStreamInterface *pStream);
+	bool OnRecvPartyKickRequest(MemoryStreamInterface *pStream);
 
 	// パーティ勧誘要求を受信した。
-	void OnRecvPartyInviteRequest(MemoryStreamInterface *pStream);
+	bool OnRecvPartyInviteRequest(MemoryStreamInterface *pStream);
 	
 	// パーティ勧誘レスポンスを受信した。
-	void OnRecvPartyInviteResponse(MemoryStreamInterface *pStream);
+	bool OnRecvPartyInviteResponse(MemoryStreamInterface *pStream);
 
 	// インスタンスマップチケットの処理を受信した。
-	void OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *pStream);
+	bool OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *pStream);
 
 	// NPCとの会話を受信した。
-	void OnRecvNPCTalk(MemoryStreamInterface *pStream);
+	bool OnRecvNPCTalk(MemoryStreamInterface *pStream);
 
 	// NPCとの会話での選択肢を受信した。
-	void OnRecvNPCTalkSelection(MemoryStreamInterface *pStream);
+	bool OnRecvNPCTalkSelection(MemoryStreamInterface *pStream);
 
 	// スキルリスト保存リクエストを受信した。
-	void OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからスキルリスト保存レスポンスを受信した。
-	void OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *pStream);
+	bool OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *pStream);
 
 	// スキルツリー開放要求を受信した。
-	void OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStream);
 
 	// アイテム使用を受信した。
-	void OnRecvItemUse(MemoryStreamInterface *pStream);
+	bool OnRecvItemUse(MemoryStreamInterface *pStream);
 
 	// アイテム破棄リクエストを受信した。
-	void OnRecvItemSubtractRequest(MemoryStreamInterface *pStream);
+	bool OnRecvItemSubtractRequest(MemoryStreamInterface *pStream);
 
 	// アイテムショートカット保存リクエストを受信した。
-	void OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからアイテムショートカット保存結果を受信した。
-	void OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterface *pStream);
+	bool OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterface *pStream);
 
 	// クエスト破棄要求を受信した。
-	void OnRecvQuestRetireRequest(MemoryStreamInterface *pStream);
+	bool OnRecvQuestRetireRequest(MemoryStreamInterface *pStream);
 
 	// アクティブクエスト保存を受信した。
-	void OnRecvSaveActiveQuest(MemoryStreamInterface *pStream);
+	bool OnRecvSaveActiveQuest(MemoryStreamInterface *pStream);
 
 };
 

@@ -15,7 +15,7 @@ class PacketReceiver
 
 private:		// 別名定義.
 
-	typedef function<void(MemoryStreamInterface *)> PacketFunc;
+	typedef function<bool(MemoryStreamInterface *)> PacketFunc;
 	typedef unordered_map<u8, PacketFunc> PacketFuncMap;
 
 public:
@@ -42,7 +42,7 @@ private:
 	void AddPacketFunc(u8 ID, const PacketFunc &Func);
 
 	// チャットのワードチェック要求を受信した。
-	void OnRecvChatWordCheckRequest(MemoryStreamInterface *pStream);
+	bool OnRecvChatWordCheckRequest(MemoryStreamInterface *pStream);
 
 };
 

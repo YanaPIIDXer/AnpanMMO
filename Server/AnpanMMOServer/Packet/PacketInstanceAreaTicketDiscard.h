@@ -48,7 +48,7 @@ public:
 	 * @fn bool Serialize(MemoryStreamInterface *pStream)
 	 * @brief シリアライズ
 	 * @param[in] pStream ストリーム
-	 * @retrn 成功したらtrueを返す。
+	 * @return 成功したらtrueを返す。
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{

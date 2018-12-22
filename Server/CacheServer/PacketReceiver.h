@@ -15,7 +15,7 @@ class PacketReceiver
 
 private:		// 別名定義.
 
-	typedef function<void(MemoryStreamInterface *)> PacketFunc;
+	typedef function<bool(MemoryStreamInterface *)> PacketFunc;
 	typedef unordered_map<u8, PacketFunc> PacketFuncMap;
 
 public:
@@ -42,61 +42,61 @@ private:
 	void AddPacketFunc(u8 ID, const PacketFunc &Func);
 
 	// ログインリクエストを受信した。
-	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
+	bool OnRecvLogInRequest(MemoryStreamInterface *pStream);
 
 	// キャラクタ作成リクエストを受信した。
-	void OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream);
+	bool OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream);
 
 	// キャラクタ情報リクエストを受信した。
-	void OnRecvCharacterDataRequest(MemoryStreamInterface *pStream);
+	bool OnRecvCharacterDataRequest(MemoryStreamInterface *pStream);
 
 	// キャラクタ保存リクエストを受信した。
-	void OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStream);
+	bool OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStream);
 
 	// スキルリスト要求を受信した。
-	void OnRecvSkillListRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSkillListRequest(MemoryStreamInterface *pStream);
 
 	// スキルリスト保存要求を受信した。
-	void OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream);
 
 	// スキルツリーリクエストを受信した。
-	void OnRecvSkillTreeRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSkillTreeRequest(MemoryStreamInterface *pStream);
 
 	// スキルツリー保存要求を受信した
-	void OnRecvSkillTreeSaveRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSkillTreeSaveRequest(MemoryStreamInterface *pStream);
 
 	// スクリプトフラグ読み込みリクエストを受信した。
-	void OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream);
+	bool OnRecvLoadScriptFlagRequest(MemoryStreamInterface *pStream);
 
 	// スクリプトフラグ保存リクエストを受信した。
-	void OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSaveScriptFlagRequest(MemoryStreamInterface *pStream);
 
 	// アイテムリストリクエストを受信した。
-	void OnRecvItemListRequest(MemoryStreamInterface *pStream);
+	bool OnRecvItemListRequest(MemoryStreamInterface *pStream);
 
 	// アイテム数変動を受信した。
-	void OnRecvItemCountChange(MemoryStreamInterface *pStream);
+	bool OnRecvItemCountChange(MemoryStreamInterface *pStream);
 
 	// アイテムショートカット読み込みリクエストを受信した。
-	void OnRecvItemShortcutRequest(MemoryStreamInterface *pStream);
+	bool OnRecvItemShortcutRequest(MemoryStreamInterface *pStream);
 
 	// アイテムショートカット書き込みリクエストを受信した。
-	void OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream);
 
 	// ゴールド保存リクエストを受信した。
-	void OnRecvSaveGold(MemoryStreamInterface *pStream);
+	bool OnRecvSaveGold(MemoryStreamInterface *pStream);
 
 	// クエストデータリクエストを受信した。
-	void OnRecvQuestDataRequest(MemoryStreamInterface *pStream);
+	bool OnRecvQuestDataRequest(MemoryStreamInterface *pStream);
 
 	// クエストデータ保存リクエストを受信した。
-	void OnRecvSaveQuestDataRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSaveQuestDataRequest(MemoryStreamInterface *pStream);
 
 	// クエスト破棄リクエストを受信した。
-	void OnRecvRetireQuestDataRequest(MemoryStreamInterface *pStream);
+	bool OnRecvRetireQuestDataRequest(MemoryStreamInterface *pStream);
 
 	// アクティブクエスト保存リクエストを受信した。
-	void OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream);
+	bool OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream);
 
 };
 

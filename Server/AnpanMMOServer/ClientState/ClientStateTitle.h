@@ -28,37 +28,37 @@ private:
 
 
 	// ログインリクエストを受信した。
-	void OnRecvLogInRequest(MemoryStreamInterface *pStream);
+	bool OnRecvLogInRequest(MemoryStreamInterface *pStream);
 
 	// キャラクタ作成リクエストを受信した。
-	void OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream);
+	bool OnRecvCreateCharacterRequest(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからログイン結果を受信した。
-	void OnRecvCacheLogInResult(MemoryStreamInterface *pStream);
+	bool OnRecvCacheLogInResult(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからキャラクタ作成結果を受信した。
-	void OnRecvCacheCreateCharacterResult(MemoryStreamInterface *pStream);
+	bool OnRecvCacheCreateCharacterResult(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからキャラクタデータを受信した。
-	void OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream);
+	bool OnRecvCacheCharacterDataResult(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからスキルリストを受信した。
-	void OnRecvCacheSkillListResponse(MemoryStreamInterface *pStream);
+	bool OnRecvCacheSkillListResponse(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからスキルツリー情報を受信した。
-	void OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStream);
+	bool OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからアイテムリストを受信した。
-	void OnRecvCacheItemListResponse(MemoryStreamInterface *pStream);
+	bool OnRecvCacheItemListResponse(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからアイテムショートカットを受信した。
-	void OnRecvCacheItemShortcutResponse(MemoryStreamInterface *pStream);
+	bool OnRecvCacheItemShortcutResponse(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからスクリプトフラグを受信した。
-	void OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream);
+	bool OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStream);
 
 	// キャッシュサーバからクエストデータを受信した。
-	void OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStream);
+	bool OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStream);
 
 };
 

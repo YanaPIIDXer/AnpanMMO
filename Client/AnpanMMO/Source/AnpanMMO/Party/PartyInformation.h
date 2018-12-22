@@ -35,28 +35,28 @@ public:
 	TArray<PartyMemberData> GetMemberList() const;
 
 	// 作成結果を受信した。
-	void OnRecvCreateResult(MemoryStreamInterface *pStream);
+	bool OnRecvCreateResult(MemoryStreamInterface *pStream);
 
 	// 解散結果を受信した。
-	void OnRecvDissolutionResult(MemoryStreamInterface *pStream);
+	bool OnRecvDissolutionResult(MemoryStreamInterface *pStream);
 
 	// 離脱結果を受信した。
-	void OnRecvExitResult(MemoryStreamInterface *pStream);
+	bool OnRecvExitResult(MemoryStreamInterface *pStream);
 
 	// 参加を受信した。
-	void OnRecvJoin(MemoryStreamInterface *pStream);
+	bool OnRecvJoin(MemoryStreamInterface *pStream);
 
 	// メンバ加入を受信した。
-	void OnRecvJoinMember(MemoryStreamInterface *pStream);
+	bool OnRecvJoinMember(MemoryStreamInterface *pStream);
 
 	// メンバ離脱を受信した。
-	void OnRecvExitMember(MemoryStreamInterface *pStream);
+	bool OnRecvExitMember(MemoryStreamInterface *pStream);
 
 	// メンバキックを受信した。
-	void OnRecvKickMember(MemoryStreamInterface *pStream);
+	bool OnRecvKickMember(MemoryStreamInterface *pStream);
 
 	// 解散を受信した。
-	void OnRecvDissolution(MemoryStreamInterface *pStream);
+	bool OnRecvDissolution(MemoryStreamInterface *pStream);
 
 private:
 

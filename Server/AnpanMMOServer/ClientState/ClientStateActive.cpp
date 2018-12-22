@@ -104,44 +104,49 @@ void ClientStateActive::BeginState()
 
 
 // Pingを受信した。
-void ClientStateActive::OnRecvPing(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvPing(MemoryStreamInterface *pStream)
 {
 	PacketPing Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	// そのまま投げ返す。
 	GetParent()->SendPacket(&Packet);
+
+	return true;
 }
 
 // 移動を受信した。
-void ClientStateActive::OnRecvMove(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvMove(MemoryStreamInterface *pStream)
 {
 	PacketMovePlayer Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	AreaPtr pArea = GetParent()->GetCharacter().lock()->GetArea();
 	pArea.lock()->OnRecvMove(GetParent()->GetUuid(), Packet.X, Packet.Y, Packet.Z, Packet.Rotation);
+	return true;
 }
 
 // チャットを受信した。
-void ClientStateActive::OnRecvChat(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvChat(MemoryStreamInterface *pStream)
 {
 	PacketSendChat Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	// メッセージが空の時は何もしない。
-	if (Packet.Message == "") { return; }
+	if (Packet.Message == "") { return true; }
 
 	// ワードチェックサーバに投げる。
 	WordCheckPacketChatRequest WordCheckPacket(GetParent()->GetUuid(), Packet.Type, Packet.Message);
 	WordCheckServerConnection::GetInstance()->SendPacket(&WordCheckPacket);
+
+	return true;
 }
 
 // チャットのワードチェック結果を受信した。
-void ClientStateActive::OnRecvChatWordCheckResult(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvChatWordCheckResult(MemoryStreamInterface *pStream)
 {
 	WordCheckPacketChatResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	PlayerCharacterPtr pCharacter = GetParent()->GetCharacter();
 	PacketReceiveChat RecvPacket(GetParent()->GetUuid(), pCharacter.lock()->GetName(), Packet.Message);
@@ -159,13 +164,15 @@ void ClientStateActive::OnRecvChatWordCheckResult(MemoryStreamInterface *pStream
 			break;
 
 	}
+
+	return true;
 }
 
 // エリア移動要求を受信した。
-void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 {
 	PacketAreaMoveRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	const WarpDataItem *pItem = MasterData::GetInstance().GetWarpDataMaster().GetItem(Packet.AreaMoveId);
 	const AreaItem *pAreaItem = MasterData::GetInstance().GetAreaMaster().GetItem(pItem->AreaId);
@@ -209,13 +216,15 @@ void ClientStateActive::OnRecvAreaMoveRequest(MemoryStreamInterface *pStream)
 		// 発行チケットをバラ撒く。
 		pTicket->BroadcastPublishPacket();
 	}
+
+	return true;
 }
 
 // リスポン要求を受信した。
-void ClientStateActive::OnRecvRespawnRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvRespawnRequest(MemoryStreamInterface *pStream)
 {
 	PacketRespawnRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	PlayerCharacterPtr pChara = GetParent()->GetCharacter();
 	pChara.lock()->Respawn();
@@ -232,23 +241,27 @@ void ClientStateActive::OnRecvRespawnRequest(MemoryStreamInterface *pStream)
 
 	ClientStateAreaChange *pNewState = new ClientStateAreaChange(GetParent(), 1, Vector3D(-1000.0f, 0.0f, 0.0f));
 	GetParent()->ChangeState(pNewState);
+
+	return true;
 }
 
 // スキル使用を受信した。
-void ClientStateActive::OnRecvSkillUse(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvSkillUse(MemoryStreamInterface *pStream)
 {
 	PacketSkillUse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	AreaPtr pArea = GetParent()->GetCharacter().lock()->GetArea();
 	pArea.lock()->OnRecvSkillUse(GetParent()->GetUuid(), Packet.SkillId, Packet.TargetType, Packet.TargetUuid);
+
+	return true;
 }
 
 // パーティ作成要求を受信した。
-void ClientStateActive::OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream)
 {
 	PacketPartyCreateRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = PacketPartyCreateResult::Success;
 	if (PartyManager::GetInstance().IsAlreadyJoined(GetParent()->GetUuid()))
@@ -266,13 +279,15 @@ void ClientStateActive::OnRecvPartyCraeteRequest(MemoryStreamInterface *pStream)
 	}
 	PacketPartyCreateResult ResultPacket(Result, PartyId);
 	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // パーティ離脱要求を受信した。
-void ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pStream)
 {
 	PacketPartyDissolutionRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = PacketPartyDissolutionResult::Success;
 	if (!PartyManager::GetInstance().Dissolution(GetParent()->GetUuid()))
@@ -282,13 +297,15 @@ void ClientStateActive::OnRecvPartyDissolutionRequest(MemoryStreamInterface *pSt
 	
 	PacketPartyDissolutionResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // パーティ離脱要求を受信した。
-void ClientStateActive::OnRecvPartyExitRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvPartyExitRequest(MemoryStreamInterface *pStream)
 {
 	PacketPartyExitRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = PacketPartyExitResult::Success;
 	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
@@ -307,13 +324,15 @@ void ClientStateActive::OnRecvPartyExitRequest(MemoryStreamInterface *pStream)
 
 	PacketPartyExitResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // パーティキック要求を受信した。
-void ClientStateActive::OnRecvPartyKickRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvPartyKickRequest(MemoryStreamInterface *pStream)
 {
 	PacketPartyKickRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = PacketPartyKickResult::Success;
 	PartyPtr pParty = GetParent()->GetCharacter().lock()->GetParty();
@@ -332,13 +351,15 @@ void ClientStateActive::OnRecvPartyKickRequest(MemoryStreamInterface *pStream)
 
 	PacketPartyKickResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // パーティ勧誘要求を受信した。
-void ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
 {
 	PacketPartyInviteRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = PacketPartyInviteResult::Success;
 	ClientPtr pTargetClient = ClientManager::GetInstance().Get(Packet.TargetUuid);
@@ -362,47 +383,51 @@ void ClientStateActive::OnRecvPartyInviteRequest(MemoryStreamInterface *pStream)
 
 	PacketPartyInviteResult ResultPacket(Result);
 	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // パーティ勧誘レスポンスを受けた。
-void ClientStateActive::OnRecvPartyInviteResponse(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvPartyInviteResponse(MemoryStreamInterface *pStream)
 {
 	PacketPartyInviteResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	ClientPtr pTargetClient = ClientManager::GetInstance().GetFromCustomerId(Packet.CustomerId);
 
 	// レスポンス待ちの間に落ちた等のケース
 	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
-	if (pTargetClient.expired()) { return; }
+	if (pTargetClient.expired()) { return true; }
 
 	if (Packet.Response == PacketPartyInviteResponse::Refuse)
 	{
 		// @TODO:pTargetClientに対して通知を投げる。
-		return;
+		return true;
 	}
 
 	PartyPtr pParty = pTargetClient.lock()->GetCharacter().lock()->GetParty();
 
 	// レスポンス待ちの間にパーティを解散した等のケース
 	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
-	if (pParty.expired()) { return; }
+	if (pParty.expired()) { return true; }
 
 	// レスポンス待ちの間にメンバーが最大になった場合。
 	// @TODO:レスポンス投げたクライアントには何も通知しなくていいの？
-	if (pParty.lock()->IsMaximumMember()) { return; }
+	if (pParty.lock()->IsMaximumMember()) { return true; }
 
 	pParty.lock()->Join(GetParent()->GetCharacter());
+
+	return true;
 }
 
 // インスタンスマップチケットの処理を受信した。
-void ClientStateActive::OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *pStream)
 {
 	PacketInstanceAreaTicketProcess Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	InstanceAreaTicket *pTicket = InstanceAreaTicketManager::GetInstance().Get(Packet.TicketId);
-	if (pTicket == NULL) { return; }
+	if (pTicket == NULL) { return true; }
 	ETicketState State;
 	switch (Packet.Process)
 	{
@@ -433,42 +458,50 @@ void ClientStateActive::OnRecvInstanceAreaTicketProcess(MemoryStreamInterface *p
 		pTicket->BroadcastDiscardPacket();
 		InstanceAreaTicketManager::GetInstance().Remove(Packet.TicketId);
 	}
+
+	return true;
 }
 
 // NPCとの会話を受信した。
-void ClientStateActive::OnRecvNPCTalk(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvNPCTalk(MemoryStreamInterface *pStream)
 {
 	PacketNPCTalk Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	const NPCItem *pItem = MasterData::GetInstance().GetNPCMaster().GetItem(Packet.MasterId);
 	GetParent()->GetScript()->LoadAndRun(pItem->ScriptName);
+
+	return true;
 }
 
 // NPCとの会話での選択肢を受信した。
-void ClientStateActive::OnRecvNPCTalkSelection(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvNPCTalkSelection(MemoryStreamInterface *pStream)
 {
 	PacketNPCTalkSelection Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	GetParent()->GetScript()->OnSelectedSelection(Packet.Index);
+
+	return true;
 }
 
 // スキルリスト保存リクエストを受信した。
-void ClientStateActive::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvSaveSkillListRequest(MemoryStreamInterface *pStream)
 {
 	PacketSaveSkillListRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	CachePacketSaveSkillListRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+
+	return true;
 }
 
 // キャッシュサーバからスキルリスト保存レスポンスを受信した。
-void ClientStateActive::OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketSaveSkillListResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = PacketSaveSkillListResponse::Success;
 	if (Packet.Result != CachePacketSaveSkillListResponse::Success)
@@ -478,13 +511,15 @@ void ClientStateActive::OnRecvCacheSaveSkillListResponse(MemoryStreamInterface *
 
 	PacketSaveSkillListResponse ResponsePacket(Result, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	GetParent()->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // スキルツリー開放要求を受信した。
-void ClientStateActive::OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStream)
 {
 	PacketSkillTreeOpenRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = GetParent()->GetCharacter().lock()->OpenSkillTree(Packet.NodeId);
 
@@ -496,41 +531,49 @@ void ClientStateActive::OnRecvSkillTreeOpenRequest(MemoryStreamInterface *pStrea
 		CachePacketOpenSkillTree CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.NodeId);
 		CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 	}
+
+	return true;
 }
 
 // アイテム使用を受信した。
-void ClientStateActive::OnRecvItemUse(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvItemUse(MemoryStreamInterface *pStream)
 {
 	PacketItemUse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	GetParent()->GetCharacter().lock()->GetArea().lock()->OnRecvItemUse(GetParent()->GetUuid(), Packet.ItemId, Packet.TargetType, Packet.TargetUuid);
+
+	return true;
 }
 
 // アイテム破棄リクエストを受信した。
-void ClientStateActive::OnRecvItemSubtractRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvItemSubtractRequest(MemoryStreamInterface *pStream)
 {
 	PacketItemSubtractRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	GetParent()->GetCharacter().lock()->SubtractItem(Packet.ItemId, Packet.Count);
+
+	return true;
 }
 
 // アイテムショートカット保存リクエストを受信した。
-void ClientStateActive::OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvSaveItemShortcutRequest(MemoryStreamInterface *pStream)
 {
 	PacketSaveItemShortcutRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	CachePacketSaveItemShortcutRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.ItemId1, Packet.ItemId2);
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
 }
 
 // キャッシュサーバからアイテムショートカット保存結果を受信した。
-void ClientStateActive::OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterface *pStream)
 {
 	CachePacketSaveItemShortcutResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = PacketSaveItemShortcutResult::Success;
 	if (Packet.Result != CachePacketSaveItemShortcutResponse::Success)
@@ -540,26 +583,32 @@ void ClientStateActive::OnRecvCacheSaveItemShortcutResponse(MemoryStreamInterfac
 
 	PacketSaveItemShortcutResult ResultPacket(Result, Packet.ItemId1, Packet.ItemId2);
 	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
 }
 
 // クエスト破棄要求を受信した。
-void ClientStateActive::OnRecvQuestRetireRequest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvQuestRetireRequest(MemoryStreamInterface *pStream)
 {
 	PacketQuestRetireRequest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = GetParent()->RetireQuest(Packet.QuestId);
 
 	PacketQuestRetireResponse ResponsePacket(Packet.QuestId, Result);
 	GetParent()->SendPacket(&ResponsePacket);
+
+	return true;
 }
 
 // アクティブクエスト保存を受信した。
-void ClientStateActive::OnRecvSaveActiveQuest(MemoryStreamInterface *pStream)
+bool ClientStateActive::OnRecvSaveActiveQuest(MemoryStreamInterface *pStream)
 {
 	PacketSaveActiveQuest Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	CachePacketSaveActiveQuestRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.QuestId);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+
+	return true;
 }

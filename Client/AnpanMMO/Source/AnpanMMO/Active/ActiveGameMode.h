@@ -137,90 +137,90 @@ private:
 	ACharacterBase *GetCharacterFromType(uint8 CharacterType, uint32 Uuid);
 
 	// エリア移動を受信した。
-	void OnRecvAreaMove(MemoryStreamInterface *pStream);
+	bool OnRecvAreaMove(MemoryStreamInterface *pStream);
 
 	// ダメージを受信した。
-	void OnRecvDamage(MemoryStreamInterface *pStream);
+	bool OnRecvDamage(MemoryStreamInterface *pStream);
 
 	// 回復を受信した。
-	void OnRecvHeal(MemoryStreamInterface *pStream);
+	bool OnRecvHeal(MemoryStreamInterface *pStream);
 
 	// 経験値を受信した。
-	void OnRecvAddExp(MemoryStreamInterface *pStream);
+	bool OnRecvAddExp(MemoryStreamInterface *pStream);
 
 	// レベルアップを受信した。
-	void OnRecvLevelUp(MemoryStreamInterface *pStream);
+	bool OnRecvLevelUp(MemoryStreamInterface *pStream);
 
 	// エリア移動結果を受信した。
-	void OnRecvAreaMoveResponse(MemoryStreamInterface *pStream);
+	bool OnRecvAreaMoveResponse(MemoryStreamInterface *pStream);
 
 	// リスポンを受信した。
-	void OnRecvRespawn(MemoryStreamInterface *pStream);
+	bool OnRecvRespawn(MemoryStreamInterface *pStream);
 
 	// スキルキャストを受信した。
-	void OnRecvSkillCast(MemoryStreamInterface *pStream);
+	bool OnRecvSkillCast(MemoryStreamInterface *pStream);
 
 	// スキルキャスト完了を受信した。
-	void OnRecvSkillCastFinish(MemoryStreamInterface *pStream);
+	bool OnRecvSkillCastFinish(MemoryStreamInterface *pStream);
 
 	// スキル発動を受信した。
-	void OnRecvSkillActivate(MemoryStreamInterface *pStream);
+	bool OnRecvSkillActivate(MemoryStreamInterface *pStream);
 
 	// スキル発動失敗を受信した。
-	void OnRecvSkillUseFailed(MemoryStreamInterface *pStream);
+	bool OnRecvSkillUseFailed(MemoryStreamInterface *pStream);
 
 	// スキルのリキャスト完了を受信した。
-	void OnRecvSkillRecast(MemoryStreamInterface *pStream);
+	bool OnRecvSkillRecast(MemoryStreamInterface *pStream);
 
 	// チャットを受信した。
-	void OnRecvChat(MemoryStreamInterface *pStream);
+	bool OnRecvChat(MemoryStreamInterface *pStream);
 
 	// キック結果を受信した。
-	void OnRecvPartyKickResult(MemoryStreamInterface *pStream);
+	bool OnRecvPartyKickResult(MemoryStreamInterface *pStream);
 
 	// パーティ勧誘結果を受信した。
-	void OnRecvPartyInviteResult(MemoryStreamInterface *pStream);
+	bool OnRecvPartyInviteResult(MemoryStreamInterface *pStream);
 
 	// インスタンスマップチケット発行を受信した。
-	void OnRecvInstanceAreaTicketPublish(MemoryStreamInterface *pStream);
+	bool OnRecvInstanceAreaTicketPublish(MemoryStreamInterface *pStream);
 
 	// インスタンスマップチケット破棄を受信した。
-	void OnRecvInstanceAreaTicketDiscard(MemoryStreamInterface *pStream);
+	bool OnRecvInstanceAreaTicketDiscard(MemoryStreamInterface *pStream);
 
 	// インスタンスエリア脱出ポイント生成を受信した。
-	void OnRecvSpawnInstanceAreaExitPoint(MemoryStreamInterface *pStream);
+	bool OnRecvSpawnInstanceAreaExitPoint(MemoryStreamInterface *pStream);
 
 	// ゴールド変化を受信した。
-	void OnRecvChangeGold(MemoryStreamInterface *pStream);
+	bool OnRecvChangeGold(MemoryStreamInterface *pStream);
 
 	// スキルツリー開放結果を受信した。
-	void OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream);
+	bool OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream);
 
 	// スキルリスト保存レスポンスを受信した。
-	void OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream);
+	bool OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream);
 
 	// アイテム追加を受信した。
-	void OnRecvAddItem(MemoryStreamInterface *pStream);
+	bool OnRecvAddItem(MemoryStreamInterface *pStream);
 
 	// アイテム消滅を受信した。
-	void OnRecvSubtractItem(MemoryStreamInterface *pStream);
+	bool OnRecvSubtractItem(MemoryStreamInterface *pStream);
 
 	// アイテムショートカット保存結果を受信した。
-	void OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStream);
+	bool OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStream);
 
 	// クエスト受注を受信した。
-	void OnRecvAcceptQuest(MemoryStreamInterface *pStream);
+	bool OnRecvAcceptQuest(MemoryStreamInterface *pStream);
 
 	// クエスト進行を受信した。
-	void OnRecvProgressQuest(MemoryStreamInterface *pStream);
+	bool OnRecvProgressQuest(MemoryStreamInterface *pStream);
 
 	// クエストでのアンパン殺害を受信した。
-	void OnRecvQuestKilledAnpan(MemoryStreamInterface *pStream);
+	bool OnRecvQuestKilledAnpan(MemoryStreamInterface *pStream);
 
 	// クエストクリアを受信した。
-	void OnRecvClearQuest(MemoryStreamInterface *pStream);
+	bool OnRecvClearQuest(MemoryStreamInterface *pStream);
 
 	// クエスト破棄レスポンスを受信した。
-	void OnRecvRetireQuestResponse(MemoryStreamInterface *pStream);
+	bool OnRecvRetireQuestResponse(MemoryStreamInterface *pStream);
 
 };

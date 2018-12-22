@@ -21,20 +21,22 @@ ClientStateAreaChange::ClientStateAreaChange(Client *pInParent, u32 InAreaId, co
 
 
 // Pingを受信.
-void ClientStateAreaChange::OnRecvPing(MemoryStreamInterface *pStream)
+bool ClientStateAreaChange::OnRecvPing(MemoryStreamInterface *pStream)
 {
 	PacketPing Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	// そのまま投げ返す。
 	GetParent()->SendPacket(&Packet);
+
+	return true;
 }
 
 // ゲーム準備完了を受信.
-void ClientStateAreaChange::OnRecvGameReady(MemoryStreamInterface *pStream)
+bool ClientStateAreaChange::OnRecvGameReady(MemoryStreamInterface *pStream)
 {
 	PacketGameReady Packet;
-	Packet.Serialize(pStream);		// ぶっちゃけいらないんじゃね？
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	PlayerCharacterPtr pPlayerChara = GetParent()->GetCharacter();
 	pPlayerChara.lock()->SetPosition(Position);
@@ -49,4 +51,6 @@ void ClientStateAreaChange::OnRecvGameReady(MemoryStreamInterface *pStream)
 	// アクティブ状態へ。
 	ClientStateActive *pNewState = new ClientStateActive(GetParent());
 	GetParent()->ChangeState(pNewState);
+
+	return true;
 }
