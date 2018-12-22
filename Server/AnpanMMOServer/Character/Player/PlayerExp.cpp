@@ -1,3 +1,8 @@
+/**
+ * @file PlayerExp.cpp
+ * @brief プレイヤー経験値クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "PlayerExp.h"
 

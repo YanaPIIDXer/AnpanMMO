@@ -1,3 +1,8 @@
+/**
+ * @file AnpanAIStateNonActive.cpp
+ * @brief アンパンＡＩステート：ノンアクティブ状態
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "AnpanAIStateNonActive.h"
 #include "Math/Random.h"

@@ -1,3 +1,8 @@
+/**
+ * @file AnpanAI.cpp
+ * @brief アンパンＡＩクラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "AnpanAI.h"
 #include "Character/Anpan/Anpan.h"

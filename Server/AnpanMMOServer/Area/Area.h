@@ -11,6 +11,7 @@
 struct AreaItem;
 
 /**
+ * @class Area
  * @brief エリアクラス
  */
 class Area : public AreaBase

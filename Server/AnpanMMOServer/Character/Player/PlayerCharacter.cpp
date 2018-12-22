@@ -1,3 +1,8 @@
+/**
+ * @file PlayerCharacter.cpp
+ * @brief プレイヤーキャラクタクラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "PlayerCharacter.h"
 #include "Client.h"

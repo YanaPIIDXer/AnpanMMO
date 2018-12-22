@@ -1,3 +1,8 @@
+/**
+ * @file Anpan.cpp
+ * @brief アンパンクラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "Anpan.h"
 #include "Math/DamageCalcUnit.h"

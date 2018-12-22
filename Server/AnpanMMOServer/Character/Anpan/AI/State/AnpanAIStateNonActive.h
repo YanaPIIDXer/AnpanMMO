@@ -1,28 +1,46 @@
+/**
+ * @file AnpanAIStateNonActive.h
+ * @brief アンパンＡＩステート：ノンアクティブ状態
+ * @author YanaP
+ */
 #ifndef __ANPANAISTATENONACTIVE_H__
 #define __ANPANAISTATENONACTIVE_H__
 
 #include "AnpanAIStateBase.h"
 
 /**
- * アンパンＡＩステート：ノンアクティブ状態.
+ * @class AnpanAIStateNonActive
+ * @brief アンパンＡＩステート：ノンアクティブ状態
  */
 class AnpanAIStateNonActive : public AnpanAIStateBase
 {
 
 public:
 	
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] pInParent アンパン
+	 */
 	AnpanAIStateNonActive(Anpan *pInParent);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~AnpanAIStateNonActive() {}
 
-	// ダメージを受けた。
+	/**
+	 * @fn virtual void OnDamaged()
+	 * @brief ダメージを受けた
+	 */
 	virtual void OnDamaged();
 
 protected:
 
-	// 更新処理.
+	/**
+	 * @fn virtual void Update(int DeltaTime)
+	 * @brief 毎フレームの処理
+	 * @param[in] DeltaTime 前フレームからの経過時間
+	 */
 	virtual void Update(int DeltaTime);
 
 private:

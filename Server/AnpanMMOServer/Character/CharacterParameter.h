@@ -1,25 +1,31 @@
+/**
+ * @file CharacterParameter.h
+ * @brief キャラクタパラメータ
+ * @author YanaP
+ */
 #ifndef __CHARACTERPARAMETER_H__
 #define __CHARACTERPARAMETER_H__
 
 /**
- * キャラクタパラメータ
+ * @struct CharacterParameter
+ * @brief キャラクタパラメータ
  */
 struct CharacterParameter
 {
 
-	// レベル
+	//! レベル
 	u32 Level;
 
-	// HP
+	//! HP
 	int Hp;
 
-	// 最大HP
+	//! 最大HP
 	int MaxHp;
 
-	// 攻撃力.
+	//! 攻撃力.
 	int Atk;
 
-	// 防御力.
+	//! 防御力.
 	int Def;
 
 };

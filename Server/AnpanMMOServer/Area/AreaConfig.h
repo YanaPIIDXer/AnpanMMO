@@ -7,7 +7,9 @@
 #define __AREACONFIG_H__
 
 /**
+ * @class AreaConfig
  * @brief ƒGƒŠƒAİ’è
+ * @details ’è”’è‹`
  */
 class AreaConfig
 {
