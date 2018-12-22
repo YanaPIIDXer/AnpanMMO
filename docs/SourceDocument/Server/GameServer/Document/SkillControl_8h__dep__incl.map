@@ -4,7 +4,7 @@
 <area shape="rect" id="node28" href="$SkillStateAutoMove_8cpp.html" title="SkillStateAutoMove.cpp" alt="" coords="2509,155,2669,181"/>
 <area shape="rect" id="node29" href="$SkillStateCast_8cpp.html" title="SkillStateCast.cpp" alt="" coords="2693,155,2823,181"/>
 <area shape="rect" id="node3" href="$Anpan_8h.html" title="Anpan.h" alt="" coords="2363,155,2433,181"/>
-<area shape="rect" id="node6" href="$AreaBase_8cpp.html" title="AreaBase.cpp" alt="" coords="2009,229,2113,256"/>
+<area shape="rect" id="node6" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="2009,229,2113,256"/>
 <area shape="rect" id="node8" href="$AnpanAIStateActive_8cpp.html" title="AnpanAIStateActive.cpp" alt="" coords="3074,229,3237,256"/>
 <area shape="rect" id="node13" href="$Hate_8cpp.html" title="Hate.cpp" alt="" coords="2005,155,2079,181"/>
 <area shape="rect" id="node14" href="$CharacterBase_8cpp.html" title="CharacterBase.cpp" alt="" coords="2103,155,2237,181"/>
@@ -15,8 +15,8 @@
 <area shape="rect" id="node9" href="$AnpanAIStateBase_8cpp.html" title="AnpanAIStateBase.cpp" alt="" coords="2137,229,2294,256"/>
 <area shape="rect" id="node10" href="$AnpanAIStateNonActive_8cpp.html" title="AnpanAIStateNonActive.cpp" alt="" coords="2319,229,2504,256"/>
 <area shape="rect" id="node11" href="$Anpan_8cpp.html" title="Anpan.cpp" alt="" coords="2528,229,2612,256"/>
-<area shape="rect" id="node16" href="$AreaManager_8cpp.html" title="AreaManager.cpp" alt="" coords="5,229,129,256"/>
-<area shape="rect" id="node17" href="$InstanceAreaTicket_8cpp.html" title="InstanceAreaTicket.cpp" alt="" coords="153,229,312,256"/>
+<area shape="rect" id="node16" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="5,229,129,256"/>
+<area shape="rect" id="node17" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="153,229,312,256"/>
 <area shape="rect" id="node18" href="$PlayerCharacter_8cpp.html" title="PlayerCharacter.cpp" alt="" coords="336,229,476,256"/>
 <area shape="rect" id="node19" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="501,229,581,256"/>
 <area shape="rect" id="node20" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="605,229,751,256"/>

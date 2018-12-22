@@ -1,6 +1,6 @@
 <map id="AreaBase.cpp" name="AreaBase.cpp">
 <area shape="rect" id="node2" href="$stdafx_8h.html" title="stdafx.h" alt="" coords="1223,155,1291,181"/>
-<area shape="rect" id="node15" href="$AreaBase_8h.html" title="AreaBase.h" alt="" coords="1722,229,1813,256"/>
+<area shape="rect" id="node15" href="$AreaBase_8h.html" title="エリア基底クラス " alt="" coords="1722,229,1813,256"/>
 <area shape="rect" id="node20" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="1575,393,1695,420"/>
 <area shape="rect" id="node23" href="$Client_8h.html" title="クライアントクラス " alt="" coords="2657,229,2723,256"/>
 <area shape="rect" id="node29" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="1923,155,2102,181"/>
@@ -15,7 +15,7 @@
 <area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="3335,393,3421,420"/>
 <area shape="rect" id="node16" href="$PlayerManager_8h.html" title="PlayerManager.h" alt="" coords="1865,311,1985,338"/>
 <area shape="rect" id="node21" href="$AnpanManager_8h.html" title="AnpanManager.h" alt="" coords="2009,311,2129,338"/>
-<area shape="rect" id="node22" href="$HeightMap_8h.html" title="HeightMap.h" alt="" coords="1695,311,1789,338"/>
+<area shape="rect" id="node22" href="$HeightMap_8h.html" title="ハイトマップクラス " alt="" coords="1695,311,1789,338"/>
 <area shape="rect" id="node18" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="1865,393,1985,420"/>
 <area shape="rect" id="node24" href="$TCPConnection_8h.html" title="TCPConnection.h" alt="" coords="2974,311,3097,338"/>
 <area shape="rect" id="node25" href="$PacketID_8h.html" title="Packet/PacketID.h" alt="" coords="3121,311,3251,338"/>

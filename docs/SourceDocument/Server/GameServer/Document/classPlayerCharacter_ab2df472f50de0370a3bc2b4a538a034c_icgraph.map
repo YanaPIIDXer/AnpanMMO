@@ -1,4 +1,4 @@
 <map id="PlayerCharacter::OnMoved" name="PlayerCharacter::OnMoved">
 <area shape="rect" id="node2" href="$classPlayerManager.html#aaa2707c2d315cf1fe3fe44a0e1d09798" title="PlayerManager::OnRecvMove" alt="" coords="231,5,423,32"/>
-<area shape="rect" id="node3" href="$classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22" title="AreaBase::OnRecvMove" alt="" coords="471,5,633,32"/>
+<area shape="rect" id="node3" href="$classAreaBase.html#aab0cce8571e45011d93fa00426ab3c22" title="移動を受信した " alt="" coords="471,5,633,32"/>
 </map>

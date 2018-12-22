@@ -10,9 +10,9 @@
 <area shape="rect" id="node7" href="$Main_8cpp.html" title="Main.cpp" alt="" coords="89,229,164,256"/>
 <area shape="rect" id="node8" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="354,155,486,181"/>
 <area shape="rect" id="node9" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="510,155,644,181"/>
-<area shape="rect" id="node11" href="$AreaBase_8cpp.html" title="AreaBase.cpp" alt="" coords="1177,155,1281,181"/>
-<area shape="rect" id="node12" href="$AreaManager_8cpp.html" title="AreaManager.cpp" alt="" coords="1306,155,1430,181"/>
-<area shape="rect" id="node13" href="$InstanceAreaTicket_8cpp.html" title="InstanceAreaTicket.cpp" alt="" coords="1454,155,1612,181"/>
+<area shape="rect" id="node11" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="1177,155,1281,181"/>
+<area shape="rect" id="node12" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="1306,155,1430,181"/>
+<area shape="rect" id="node13" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="1454,155,1612,181"/>
 <area shape="rect" id="node14" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="1637,155,1717,181"/>
 <area shape="rect" id="node15" href="$ClientManager_8h.html" title="ClientManager.h" alt="" coords="986,155,1102,181"/>
 <area shape="rect" id="node18" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="1904,229,2032,256"/>

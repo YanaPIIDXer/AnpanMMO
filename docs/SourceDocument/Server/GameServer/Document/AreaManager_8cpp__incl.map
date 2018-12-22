@@ -5,11 +5,11 @@
 <area shape="rect" id="node20" href="$Client_8h.html" title="クライアントクラス " alt="" coords="2567,80,2633,107"/>
 <area shape="rect" id="node27" href="$PlayerCharacter_8h.html" title="Character/Player/PlayerCharacter.h" alt="" coords="1647,80,1873,107"/>
 <area shape="rect" id="node33" href="$MasterData_8h.html" title="Master/MasterData.h" alt="" coords="4152,80,4296,107"/>
-<area shape="rect" id="node49" href="$Area_8h.html" title="Area/Area.h" alt="" coords="1383,80,1473,107"/>
+<area shape="rect" id="node49" href="$Area_8h.html" title="エリアクラス " alt="" coords="1383,80,1473,107"/>
 <area shape="rect" id="node50" href="$InstanceArea_8h.html" title="Area/InstanceArea.h" alt="" coords="1089,80,1229,107"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="672,155,832,181"/>
 <area shape="rect" id="node13" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="857,155,943,181"/>
-<area shape="rect" id="node16" href="$AreaBase_8h.html" title="AreaBase.h" alt="" coords="1215,237,1305,263"/>
+<area shape="rect" id="node16" href="$AreaBase_8h.html" title="エリア基底クラス " alt="" coords="1215,237,1305,263"/>
 <area shape="rect" id="node21" href="$TCPConnection_8h.html" title="TCPConnection.h" alt="" coords="2935,155,3057,181"/>
 <area shape="rect" id="node22" href="$PacketID_8h.html" title="Packet/PacketID.h" alt="" coords="2359,237,2489,263"/>
 <area shape="rect" id="node23" href="$ScriptExecuter_8h.html" title="Script/ScriptExecuter.h" alt="" coords="2703,155,2860,181"/>

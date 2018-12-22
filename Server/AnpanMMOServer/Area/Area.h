@@ -1,3 +1,8 @@
+/**
+ * @file Area.h
+ * @brief エリアクラス
+ * @author YanaP
+ */
 #ifndef __AREA_H__
 #define __AREA_H__
 
@@ -6,23 +11,37 @@
 struct AreaItem;
 
 /**
- * エリアクラス
+ * @brief エリアクラス
  */
 class Area : public AreaBase
 {
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] pItem エリアマスタアイテム
+	 */
 	Area(const AreaItem *pItem);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~Area() {}
 
-	// ID取得.
+	/**
+	 * @fn virtual u32 GetId() const
+	 * @brief ID取得.
+	 * @return ID
+	 * @details エリアマスタのＩＤと同一。
+	 */
 	virtual u32 GetId() const { return Id; }
 
-	// 消去可能か？
+	/**
+	 * @fn virtual bool IsAbleDelete() const
+	 * @brief 消去可能か？
+	 * @return 消去してはいけないので常にfalseを返す。
+	 */
 	virtual bool IsAbleDelete() const { return false; }
 
 private:

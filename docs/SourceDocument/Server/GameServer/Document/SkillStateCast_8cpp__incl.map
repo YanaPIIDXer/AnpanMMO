@@ -27,7 +27,7 @@
 <area shape="rect" id="node39" href="$CharacterParameter_8h.html" title="CharacterParameter.h" alt="" coords="1889,162,2039,189"/>
 <area shape="rect" id="node40" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="1743,333,1863,360"/>
 <area shape="rect" id="node43" href="$Rotation_8h.html" title="Math/Rotation.h" alt="" coords="2063,162,2177,189"/>
-<area shape="rect" id="node44" href="$AreaBase_8h.html" title="Area/AreaBase.h" alt="" coords="1642,162,1763,189"/>
+<area shape="rect" id="node44" href="$AreaBase_8h.html" title="エリア基底クラス " alt="" coords="1642,162,1763,189"/>
 <area shape="rect" id="node46" href="$SkillRecastManager_8h.html" title="Skill/SkillRecastManager.h" alt="" coords="1388,162,1567,189"/>
 <area shape="rect" id="node45" href="$PlayerManager_8h.html" title="PlayerManager.h" alt="" coords="1695,251,1815,278"/>
 <area shape="rect" id="node48" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="2201,162,2305,189"/>

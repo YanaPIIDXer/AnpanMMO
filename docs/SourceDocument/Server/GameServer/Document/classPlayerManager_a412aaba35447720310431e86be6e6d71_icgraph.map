@@ -1,3 +1,3 @@
 <map id="PlayerManager::BroadcastPacketWithRange" name="PlayerManager::BroadcastPacketWithRange">
-<area shape="rect" id="node2" href="$classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd" title="AreaBase::BroadcastPacket\lWithRange" alt="" coords="229,5,416,47"/>
+<area shape="rect" id="node2" href="$classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd" title="範囲を指定したパケットのブロードキャスト " alt="" coords="229,5,416,47"/>
 </map>

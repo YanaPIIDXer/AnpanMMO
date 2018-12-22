@@ -1,7 +1,7 @@
 <map id="PlayerCharacter.h" name="PlayerCharacter.h">
-<area shape="rect" id="node2" href="$AreaBase_8cpp.html" title="AreaBase.cpp" alt="" coords="5,80,109,107"/>
-<area shape="rect" id="node3" href="$AreaManager_8cpp.html" title="AreaManager.cpp" alt="" coords="134,80,258,107"/>
-<area shape="rect" id="node4" href="$InstanceAreaTicket_8cpp.html" title="InstanceAreaTicket.cpp" alt="" coords="282,80,441,107"/>
+<area shape="rect" id="node2" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="5,80,109,107"/>
+<area shape="rect" id="node3" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="134,80,258,107"/>
+<area shape="rect" id="node4" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="282,80,441,107"/>
 <area shape="rect" id="node5" href="$PlayerCharacter_8cpp.html" title="PlayerCharacter.cpp" alt="" coords="465,80,605,107"/>
 <area shape="rect" id="node6" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="629,80,709,107"/>
 <area shape="rect" id="node7" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="733,80,880,107"/>

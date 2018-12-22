@@ -1,5 +1,5 @@
 <map id="HeightMap::GetHeight" name="HeightMap::GetHeight">
-<area shape="rect" id="node2" href="$classAreaBase.html#a4a775cd05bb21d22ff4ab4e95712b9b3" title="AreaBase::GetHeight" alt="" coords="219,5,365,32"/>
-<area shape="rect" id="node3" href="$classHeightMap.html#a77d78dfffe20bd019d656aeba274a335" title="HeightMap::CheckMovable" alt="" coords="204,56,380,83"/>
-<area shape="rect" id="node4" href="$classAreaBase.html#acb6f3f4dd2909326ece195fadae96980" title="AreaBase::CheckMovable" alt="" coords="428,56,599,83"/>
+<area shape="rect" id="node2" href="$classAreaBase.html#a4a775cd05bb21d22ff4ab4e95712b9b3" title="高さを取得 " alt="" coords="219,5,365,32"/>
+<area shape="rect" id="node3" href="$classHeightMap.html#a77d78dfffe20bd019d656aeba274a335" title="移動できるかどうかをチェック " alt="" coords="204,56,380,83"/>
+<area shape="rect" id="node4" href="$classAreaBase.html#acb6f3f4dd2909326ece195fadae96980" title="移動できるかどうかをチェック " alt="" coords="428,56,599,83"/>
 </map>

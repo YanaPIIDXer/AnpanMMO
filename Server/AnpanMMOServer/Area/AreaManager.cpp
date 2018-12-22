@@ -1,3 +1,8 @@
+/**
+ * @file AreaManager.cpp
+ * @brief エリア管理クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "AreaManager.h"
 #include "TickManager.h"

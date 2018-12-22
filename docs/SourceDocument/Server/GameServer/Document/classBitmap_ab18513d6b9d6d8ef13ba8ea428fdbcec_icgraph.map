@@ -1,6 +1,6 @@
 <map id="Bitmap::GetPixel" name="Bitmap::GetPixel">
-<area shape="rect" id="node2" href="$classHeightMap.html#a82efe82fdc788a9707f728592030d310" title="HeightMap::GetHeight" alt="" coords="175,31,325,57"/>
-<area shape="rect" id="node3" href="$classAreaBase.html#a4a775cd05bb21d22ff4ab4e95712b9b3" title="AreaBase::GetHeight" alt="" coords="389,5,534,32"/>
-<area shape="rect" id="node4" href="$classHeightMap.html#a77d78dfffe20bd019d656aeba274a335" title="HeightMap::CheckMovable" alt="" coords="373,56,549,83"/>
-<area shape="rect" id="node5" href="$classAreaBase.html#acb6f3f4dd2909326ece195fadae96980" title="AreaBase::CheckMovable" alt="" coords="597,56,768,83"/>
+<area shape="rect" id="node2" href="$classHeightMap.html#a82efe82fdc788a9707f728592030d310" title="高さを取得 " alt="" coords="175,31,325,57"/>
+<area shape="rect" id="node3" href="$classAreaBase.html#a4a775cd05bb21d22ff4ab4e95712b9b3" title="高さを取得 " alt="" coords="389,5,534,32"/>
+<area shape="rect" id="node4" href="$classHeightMap.html#a77d78dfffe20bd019d656aeba274a335" title="移動できるかどうかをチェック " alt="" coords="373,56,549,83"/>
+<area shape="rect" id="node5" href="$classAreaBase.html#acb6f3f4dd2909326ece195fadae96980" title="移動できるかどうかをチェック " alt="" coords="597,56,768,83"/>
 </map>

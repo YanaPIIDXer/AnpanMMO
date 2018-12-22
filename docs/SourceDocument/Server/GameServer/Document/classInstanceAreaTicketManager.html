@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>インスタンスエリアチケット管理  
+ <a href="classInstanceAreaTicketManager.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="InstanceAreaTicketManager_8h_source.html">InstanceAreaTicketManager.h</a>&gt;</code></p>
 <div class="dynheader">
 InstanceAreaTicketManager の継承関係図</div>
@@ -85,12 +88,16 @@ InstanceAreaTicketManager 連携図</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a9e7fee754ab8f05fb399d88243ecc15e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceAreaTicketManager.html#a9e7fee754ab8f05fb399d88243ecc15e">~InstanceAreaTicketManager</a> ()</td></tr>
+<tr class="memdesc:a9e7fee754ab8f05fb399d88243ecc15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a9e7fee754ab8f05fb399d88243ecc15e">[詳解]</a><br /></td></tr>
 <tr class="separator:a9e7fee754ab8f05fb399d88243ecc15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35d13aab883f768dbb7d902902575773"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstanceAreaTicket.html">InstanceAreaTicket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceAreaTicketManager.html#a35d13aab883f768dbb7d902902575773">Publish</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> AreaId, const <a class="el" href="classVector3D.html">Vector3D</a> &amp;StartPosition)</td></tr>
+<tr class="memdesc:a35d13aab883f768dbb7d902902575773"><td class="mdescLeft">&#160;</td><td class="mdescRight">発行  <a href="#a35d13aab883f768dbb7d902902575773">[詳解]</a><br /></td></tr>
 <tr class="separator:a35d13aab883f768dbb7d902902575773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa790e2786d909fe1ae689de592676c9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstanceAreaTicket.html">InstanceAreaTicket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceAreaTicketManager.html#aa790e2786d909fe1ae689de592676c9b">Get</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid)</td></tr>
+<tr class="memdesc:aa790e2786d909fe1ae689de592676c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">取得  <a href="#aa790e2786d909fe1ae689de592676c9b">[詳解]</a><br /></td></tr>
 <tr class="separator:aa790e2786d909fe1ae689de592676c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fd0eec91bfb0b7c5814ba9993012f36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstanceAreaTicketManager.html#a9fd0eec91bfb0b7c5814ba9993012f36">Remove</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Uuid)</td></tr>
+<tr class="memdesc:a9fd0eec91bfb0b7c5814ba9993012f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">消去  <a href="#a9fd0eec91bfb0b7c5814ba9993012f36">[詳解]</a><br /></td></tr>
 <tr class="separator:a9fd0eec91bfb0b7c5814ba9993012f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -99,7 +106,7 @@ InstanceAreaTicketManager 連携図</div>
 <tr class="separator:a0cc04208f1f0c5e942e1ef28fc890625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>インスタンスエリアチケットマネージャ </p>
+<div class="textblock"><p>インスタンスエリアチケット管理 </p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="a9e7fee754ab8f05fb399d88243ecc15e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e7fee754ab8f05fb399d88243ecc15e">&#9670;&nbsp;</a></span>~InstanceAreaTicketManager()</h2>
@@ -124,6 +131,8 @@ InstanceAreaTicketManager 連携図</div>
 </table>
 </div><div class="memdoc">
 
+<p>デストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -142,6 +151,15 @@ InstanceAreaTicketManager 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>取得 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Uuid</td><td>チケットのＵＵＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>インスタンスエリアチケット </dd></dl>
 
 </div>
 </div>
@@ -196,6 +214,16 @@ InstanceAreaTicketManager 連携図</div>
       </table>
 </div><div class="memdoc">
 
+<p>発行 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">AreaId</td><td>エリアマスタＩＤ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">StartPosition</td><td>開始座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>インスタンスエリアチケット </dd></dl>
+
 </div>
 </div>
 <a id="a9fd0eec91bfb0b7c5814ba9993012f36"></a>
@@ -213,6 +241,14 @@ InstanceAreaTicketManager 連携図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>消去 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Uuid</td><td>チケットのＵＵＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

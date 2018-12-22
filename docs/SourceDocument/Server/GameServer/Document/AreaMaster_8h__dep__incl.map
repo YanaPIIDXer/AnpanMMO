@@ -1,12 +1,12 @@
 <map id="AreaMaster.h" name="AreaMaster.h">
 <area shape="rect" id="node2" href="$MasterData_8h.html" title="MasterData.h" alt="" coords="999,80,1099,107"/>
-<area shape="rect" id="node6" href="$InstanceArea_8cpp.html" title="InstanceArea.cpp" alt="" coords="5,155,128,181"/>
-<area shape="rect" id="node18" href="$Area_8cpp.html" title="Area.cpp" alt="" coords="1124,80,1199,107"/>
-<area shape="rect" id="node19" href="$AreaBase_8cpp.html" title="AreaBase.cpp" alt="" coords="1223,80,1327,107"/>
+<area shape="rect" id="node6" href="$InstanceArea_8cpp.html" title="インスタンスエリアクラス " alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node18" href="$Area_8cpp.html" title="エリアクラス " alt="" coords="1124,80,1199,107"/>
+<area shape="rect" id="node19" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="1223,80,1327,107"/>
 <area shape="rect" id="node20" href="$AreaMaster_8cpp.html" title="AreaMaster.cpp" alt="" coords="1351,80,1465,107"/>
 <area shape="rect" id="node3" href="$AnpanManager_8cpp.html" title="AnpanManager.cpp" alt="" coords="153,155,287,181"/>
 <area shape="rect" id="node4" href="$AnpanPopArea_8cpp.html" title="AnpanPopArea.cpp" alt="" coords="311,155,446,181"/>
-<area shape="rect" id="node5" href="$AreaManager_8cpp.html" title="AreaManager.cpp" alt="" coords="470,155,594,181"/>
+<area shape="rect" id="node5" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="470,155,594,181"/>
 <area shape="rect" id="node7" href="$PlayerCharacter_8cpp.html" title="PlayerCharacter.cpp" alt="" coords="618,155,758,181"/>
 <area shape="rect" id="node8" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="783,155,929,181"/>
 <area shape="rect" id="node9" href="$Main_8cpp.html" title="Main.cpp" alt="" coords="953,155,1028,181"/>

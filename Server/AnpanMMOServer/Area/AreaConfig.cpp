@@ -1,3 +1,8 @@
+/**
+ * @file AreaConfig.cpp
+ * @brief エリア設定クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "AreaConfig.h"
 

@@ -1,9 +1,9 @@
 <map id="ScriptExecuter.h" name="ScriptExecuter.h">
 <area shape="rect" id="node2" href="$Client_8h.html" title="クライアントクラス " alt="" coords="1441,80,1507,107"/>
 <area shape="rect" id="node22" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="2467,155,2601,181"/>
-<area shape="rect" id="node3" href="$AreaBase_8cpp.html" title="AreaBase.cpp" alt="" coords="2007,155,2111,181"/>
-<area shape="rect" id="node4" href="$AreaManager_8cpp.html" title="AreaManager.cpp" alt="" coords="2136,155,2260,181"/>
-<area shape="rect" id="node5" href="$InstanceAreaTicket_8cpp.html" title="InstanceAreaTicket.cpp" alt="" coords="2284,155,2443,181"/>
+<area shape="rect" id="node3" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="2007,155,2111,181"/>
+<area shape="rect" id="node4" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="2136,155,2260,181"/>
+<area shape="rect" id="node5" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="2284,155,2443,181"/>
 <area shape="rect" id="node6" href="$CacheServerConnection_8cpp.html" title="CacheServerConnection.cpp" alt="" coords="5,229,191,256"/>
 <area shape="rect" id="node7" href="$PlayerCharacter_8cpp.html" title="PlayerCharacter.cpp" alt="" coords="1113,155,1253,181"/>
 <area shape="rect" id="node8" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="1278,155,1358,181"/>

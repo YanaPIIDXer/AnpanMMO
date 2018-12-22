@@ -69,19 +69,27 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>ハイトマップ  
+ <a href="classHeightMap.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="HeightMap_8h_source.html">HeightMap.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a867f68ca74cfb892069e5ef118ad22e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightMap.html#a867f68ca74cfb892069e5ef118ad22e1">HeightMap</a> ()</td></tr>
+<tr class="memdesc:a867f68ca74cfb892069e5ef118ad22e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a867f68ca74cfb892069e5ef118ad22e1">[詳解]</a><br /></td></tr>
 <tr class="separator:a867f68ca74cfb892069e5ef118ad22e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55d53e1558e0216a81c78ac152694f19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightMap.html#a55d53e1558e0216a81c78ac152694f19">~HeightMap</a> ()</td></tr>
+<tr class="memdesc:a55d53e1558e0216a81c78ac152694f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a55d53e1558e0216a81c78ac152694f19">[詳解]</a><br /></td></tr>
 <tr class="separator:a55d53e1558e0216a81c78ac152694f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0020fba23e4d725bb425d77c87c279c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightMap.html#a0020fba23e4d725bb425d77c87c279c2">Load</a> (const std::string &amp;FilePath)</td></tr>
+<tr class="memdesc:a0020fba23e4d725bb425d77c87c279c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">読み込み  <a href="#a0020fba23e4d725bb425d77c87c279c2">[詳解]</a><br /></td></tr>
 <tr class="separator:a0020fba23e4d725bb425d77c87c279c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82efe82fdc788a9707f728592030d310"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightMap.html#a82efe82fdc788a9707f728592030d310">GetHeight</a> (float X, float Z) const</td></tr>
+<tr class="memdesc:a82efe82fdc788a9707f728592030d310"><td class="mdescLeft">&#160;</td><td class="mdescRight">高さを取得  <a href="#a82efe82fdc788a9707f728592030d310">[詳解]</a><br /></td></tr>
 <tr class="separator:a82efe82fdc788a9707f728592030d310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77d78dfffe20bd019d656aeba274a335"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightMap.html#a77d78dfffe20bd019d656aeba274a335">CheckMovable</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;Start, const <a class="el" href="classVector3D.html">Vector3D</a> &amp;End, float ClimbableHeight, <a class="el" href="classVector3D.html">Vector3D</a> &amp;OutHit) const</td></tr>
+<tr class="memdesc:a77d78dfffe20bd019d656aeba274a335"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動できるかどうかをチェック  <a href="#a77d78dfffe20bd019d656aeba274a335">[詳解]</a><br /></td></tr>
 <tr class="separator:a77d78dfffe20bd019d656aeba274a335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -101,6 +109,8 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
 
 </div>
 </div>
@@ -126,6 +136,8 @@ $(function() {
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>デストラクタ </p>
 
 </div>
 </div>
@@ -167,12 +179,24 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>移動できるかどうかをチェック </p>
+<p>レイキャストによるチェック </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Start</td><td>チェック開始地点 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">End</td><td>チェック終了地点 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">float</td><td>ClimbableHeight 登ることができる高さ </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">OutHit</td><td>レイが当たった地点 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>移動可能ならtrueを返す </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHeightMap_a77d78dfffe20bd019d656aeba274a335_cgraph.png" border="0" usemap="#classHeightMap_a77d78dfffe20bd019d656aeba274a335_cgraph" alt=""/></div>
 <map name="classHeightMap_a77d78dfffe20bd019d656aeba274a335_cgraph" id="classHeightMap_a77d78dfffe20bd019d656aeba274a335_cgraph">
-<area shape="rect" id="node2" href="classHeightMap.html#a82efe82fdc788a9707f728592030d310" title="HeightMap::GetHeight" alt="" coords="229,56,380,83"/>
+<area shape="rect" id="node2" href="classHeightMap.html#a82efe82fdc788a9707f728592030d310" title="高さを取得 " alt="" coords="229,56,380,83"/>
 <area shape="rect" id="node3" href="classBitmap.html#a0a051f683ff80cfa67c8ab1f3f28dae5" title="Bitmap::GetWidth" alt="" coords="429,5,556,32"/>
 <area shape="rect" id="node4" href="classBitmap.html#a008fecd08bbde0e9aab650f51a040277" title="Bitmap::GetHeight" alt="" coords="428,56,557,83"/>
 <area shape="rect" id="node5" href="classBitmap.html#ab18513d6b9d6d8ef13ba8ea428fdbcec" title="Bitmap::GetPixel" alt="" coords="432,107,553,133"/>
@@ -183,7 +207,7 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classHeightMap_a77d78dfffe20bd019d656aeba274a335_icgraph.png" border="0" usemap="#classHeightMap_a77d78dfffe20bd019d656aeba274a335_icgraph" alt=""/></div>
 <map name="classHeightMap_a77d78dfffe20bd019d656aeba274a335_icgraph" id="classHeightMap_a77d78dfffe20bd019d656aeba274a335_icgraph">
-<area shape="rect" id="node2" href="classAreaBase.html#acb6f3f4dd2909326ece195fadae96980" title="AreaBase::CheckMovable" alt="" coords="229,5,400,32"/>
+<area shape="rect" id="node2" href="classAreaBase.html#acb6f3f4dd2909326ece195fadae96980" title="移動できるかどうかをチェック " alt="" coords="229,5,400,32"/>
 </map>
 </div>
 
@@ -214,6 +238,16 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>高さを取得 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>Ｘ座標 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Z</td><td>Ｚ座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>高さ </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -229,9 +263,9 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classHeightMap_a82efe82fdc788a9707f728592030d310_icgraph.png" border="0" usemap="#classHeightMap_a82efe82fdc788a9707f728592030d310_icgraph" alt=""/></div>
 <map name="classHeightMap_a82efe82fdc788a9707f728592030d310_icgraph" id="classHeightMap_a82efe82fdc788a9707f728592030d310_icgraph">
-<area shape="rect" id="node2" href="classAreaBase.html#a4a775cd05bb21d22ff4ab4e95712b9b3" title="AreaBase::GetHeight" alt="" coords="219,5,365,32"/>
-<area shape="rect" id="node3" href="classHeightMap.html#a77d78dfffe20bd019d656aeba274a335" title="HeightMap::CheckMovable" alt="" coords="204,56,380,83"/>
-<area shape="rect" id="node4" href="classAreaBase.html#acb6f3f4dd2909326ece195fadae96980" title="AreaBase::CheckMovable" alt="" coords="428,56,599,83"/>
+<area shape="rect" id="node2" href="classAreaBase.html#a4a775cd05bb21d22ff4ab4e95712b9b3" title="高さを取得 " alt="" coords="219,5,365,32"/>
+<area shape="rect" id="node3" href="classHeightMap.html#a77d78dfffe20bd019d656aeba274a335" title="移動できるかどうかをチェック " alt="" coords="204,56,380,83"/>
+<area shape="rect" id="node4" href="classAreaBase.html#acb6f3f4dd2909326ece195fadae96980" title="移動できるかどうかをチェック " alt="" coords="428,56,599,83"/>
 </map>
 </div>
 
@@ -252,6 +286,15 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>読み込み </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">FilePath</td><td>ファイルパス </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>成功したらtrueを返す </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -267,7 +310,7 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classHeightMap_a0020fba23e4d725bb425d77c87c279c2_icgraph.png" border="0" usemap="#classHeightMap_a0020fba23e4d725bb425d77c87c279c2_icgraph" alt=""/></div>
 <map name="classHeightMap_a0020fba23e4d725bb425d77c87c279c2_icgraph" id="classHeightMap_a0020fba23e4d725bb425d77c87c279c2_icgraph">
-<area shape="rect" id="node2" href="classAreaBase.html#a38c050576a6dfc4d9f4394f52643d78b" title="AreaBase::AreaBase" alt="" coords="173,5,317,32"/>
+<area shape="rect" id="node2" href="classAreaBase.html#a38c050576a6dfc4d9f4394f52643d78b" title="コンストラクタ " alt="" coords="173,5,317,32"/>
 </map>
 </div>
 

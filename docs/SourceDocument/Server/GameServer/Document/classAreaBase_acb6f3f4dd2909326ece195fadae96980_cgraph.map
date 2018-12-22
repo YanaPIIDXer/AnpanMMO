@@ -1,6 +1,6 @@
 <map id="AreaBase::CheckMovable" name="AreaBase::CheckMovable">
-<area shape="rect" id="node2" href="$classHeightMap.html#a77d78dfffe20bd019d656aeba274a335" title="HeightMap::CheckMovable" alt="" coords="224,56,400,83"/>
-<area shape="rect" id="node3" href="$classHeightMap.html#a82efe82fdc788a9707f728592030d310" title="HeightMap::GetHeight" alt="" coords="448,56,599,83"/>
+<area shape="rect" id="node2" href="$classHeightMap.html#a77d78dfffe20bd019d656aeba274a335" title="移動できるかどうかをチェック " alt="" coords="224,56,400,83"/>
+<area shape="rect" id="node3" href="$classHeightMap.html#a82efe82fdc788a9707f728592030d310" title="高さを取得 " alt="" coords="448,56,599,83"/>
 <area shape="rect" id="node4" href="$classBitmap.html#a0a051f683ff80cfa67c8ab1f3f28dae5" title="Bitmap::GetWidth" alt="" coords="648,5,775,32"/>
 <area shape="rect" id="node5" href="$classBitmap.html#a008fecd08bbde0e9aab650f51a040277" title="Bitmap::GetHeight" alt="" coords="647,56,776,83"/>
 <area shape="rect" id="node6" href="$classBitmap.html#ab18513d6b9d6d8ef13ba8ea428fdbcec" title="Bitmap::GetPixel" alt="" coords="651,107,772,133"/>
