@@ -16,7 +16,7 @@ class ClientStateBase
 
 private:		// •Ê–¼’è‹`.
 
-	typedef boost::function<void(Client *, MemoryStreamInterface *)> PacketFunc;
+	typedef boost::function<bool(Client *, MemoryStreamInterface *)> PacketFunc;
 	typedef std::map<u8, PacketFunc> FunctionMap;
 
 public:
