@@ -55,31 +55,31 @@ private:
 	void OnConnectResult(bool bConnected);
 
 	// ログイン結果を受信した。
-	void OnRecvLogInResult(MemoryStreamInterface *pStream);
+	bool OnRecvLogInResult(MemoryStreamInterface *pStream);
 
 	// キャラクタ作成結果を受信した。
-	void OnRecvCreateCharacterResult(MemoryStreamInterface *pStream);
+	bool OnRecvCreateCharacterResult(MemoryStreamInterface *pStream);
 
 	// キャラクタステータスを受信した。
-	void OnRecvCharacterStatus(MemoryStreamInterface *pStream);
+	bool OnRecvCharacterStatus(MemoryStreamInterface *pStream);
 
 	// スキルリストを受信した。
-	void OnRecvSkillList(MemoryStreamInterface *pStream);
+	bool OnRecvSkillList(MemoryStreamInterface *pStream);
 
 	// スキルツリーデータを受信した。
-	void OnRecvSkillTreeData(MemoryStreamInterface *pStream);
+	bool OnRecvSkillTreeData(MemoryStreamInterface *pStream);
 
 	// アイテムリストを受信した。
-	void OnRecvItemList(MemoryStreamInterface *pStream);
+	bool OnRecvItemList(MemoryStreamInterface *pStream);
 
 	// アイテムショートカットを受信した。
-	void OnRecvItemShortcut(MemoryStreamInterface *pStream);
+	bool OnRecvItemShortcut(MemoryStreamInterface *pStream);
 
 	// スクリプトフラグを受信した。
-	void OnRecvScriptFlag(MemoryStreamInterface *pStream);
+	bool OnRecvScriptFlag(MemoryStreamInterface *pStream);
 
 	// クエストデータを受信した。
-	void OnRecvQuestData(MemoryStreamInterface *pStream);
+	bool OnRecvQuestData(MemoryStreamInterface *pStream);
 
 	// ゲーム画面に進む準備が出来た。
 	void OnReadyToGame();

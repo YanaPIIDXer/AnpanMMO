@@ -38,10 +38,10 @@ public:
 	~NoticeManager() {}
 
 	// 通知リストを受信した。
-	void OnRecvNoticeList(MemoryStreamInterface *pStream);
+	bool OnRecvNoticeList(MemoryStreamInterface *pStream);
 
 	// 通知を受信した。
-	void OnRecvNotice(MemoryStreamInterface *pStream);
+	bool OnRecvNotice(MemoryStreamInterface *pStream);
 
 	// 通知リストを取得.
 	TArray<NoticeInformation> GetNoticeList() const;

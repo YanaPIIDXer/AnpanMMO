@@ -36,19 +36,19 @@ public:
 	AAnpan *Get(uint32 Uuid) const;
 
 	// リストを受信した.
-	void OnRecvList(MemoryStreamInterface *pStream);
+	bool OnRecvList(MemoryStreamInterface *pStream);
 
 	// 生成を受信した.
-	void OnRecvSpawn(MemoryStreamInterface *pStream);
+	bool OnRecvSpawn(MemoryStreamInterface *pStream);
 
 	// 移動を受信した。
-	void OnRecvMove(MemoryStreamInterface *pStream);
+	bool OnRecvMove(MemoryStreamInterface *pStream);
 
 	// 回転を受信した。
-	void OnRecvRotate(MemoryStreamInterface *pStream);
+	bool OnRecvRotate(MemoryStreamInterface *pStream);
 
 	// 停止を受信した。
-	void OnRecvStop(MemoryStreamInterface *pStream);
+	bool OnRecvStop(MemoryStreamInterface *pStream);
 
 	// 前方のターゲットを取得.
 	AAnpan *FindCenterTarget(float Distance);

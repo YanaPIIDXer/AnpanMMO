@@ -21,27 +21,31 @@ void TimeManager::SetSkyControl(ASkyControl *pInSky)
 }
 
 // 開始時の時間を受け取った。
-void TimeManager::OnRecvTime(MemoryStreamInterface *pStream)
+bool TimeManager::OnRecvTime(MemoryStreamInterface *pStream)
 {
 	PacketTime Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	CurrentMasterId = Packet.MasterId;
 	if (pSky != nullptr)
 	{
 		pSky->SetTime(Packet.MasterId);
 	}
+
+	return true;
 }
 
 // 時間変動を受け取った。
-void TimeManager::OnRecvTimeChange(MemoryStreamInterface *pStream)
+bool TimeManager::OnRecvTimeChange(MemoryStreamInterface *pStream)
 {
 	PacketTimeChange Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	CurrentMasterId = Packet.MasterId;
 	if (pSky != nullptr)
 	{
 		pSky->TimeChange(Packet.MasterId);
 	}
+
+	return true;
 }

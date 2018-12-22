@@ -278,10 +278,10 @@ ACharacterBase *AActiveGameMode::GetCharacterFromType(uint8 CharacterType, uint3
 }
 
 // エリア移動を受信した。
-void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 {
 	PacketAreaMove Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
@@ -300,46 +300,54 @@ void AActiveGameMode::OnRecvAreaMove(MemoryStreamInterface *pStream)
 	pController->SetEnableMove(true);
 
 	pMainHUD->OnRecvMapChangeFinished();
+
+	return true;
 }
 
 // ダメージを受信した。
-void AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvDamage(MemoryStreamInterface *pStream)
 {
 	PacketDamage Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	ACharacterBase *pCharacter = GetCharacterFromType(Packet.TargetType, Packet.TargetUuid);
 	check(pCharacter != nullptr);
 	pCharacter->ApplyDamage(Packet.DamageValue);
+
+	return true;
 }
 
 // 回復を受信した。
-void AActiveGameMode::OnRecvHeal(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvHeal(MemoryStreamInterface *pStream)
 {
 	PacketHeal Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	ACharacterBase *pCharacter = GetCharacterFromType(Packet.TargetType, Packet.TargetUuid);
 	check(pCharacter != nullptr);
 	pCharacter->Heal(Packet.HealValue);
+
+	return true;
 }
 
 // 経験値を受信した。
-void AActiveGameMode::OnRecvAddExp(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvAddExp(MemoryStreamInterface *pStream)
 {
 	PacketAddExp Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 	pCharacter->OnRecvExp(Packet.Exp);
+
+	return true;
 }
 
 // レベルアップを受信した。
-void AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 {
 	PacketLevelUp Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
@@ -353,18 +361,20 @@ void AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 
 	FString SystemMsg = FString::Printf(TEXT("Level Up! %d -> %d"), Prev, Packet.Level);
 	pMainHUD->ShowSystemMessage(SystemMsg);
+
+	return true;
 }
 
 // エリア移動結果を受信した。
-void AActiveGameMode::OnRecvAreaMoveResponse(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvAreaMoveResponse(MemoryStreamInterface *pStream)
 {
 	PacketAreaMoveResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != PacketAreaMoveResponse::Success)
 	{
 		UE_LOG(LogTemp, Log, TEXT("Area Move Failed... ResultCode:%d"), Packet.Result);
-		return;
+		return true;
 	}
 
 	// 各種マネージャの初期化.
@@ -374,48 +384,56 @@ void AActiveGameMode::OnRecvAreaMoveResponse(MemoryStreamInterface *pStream)
 	NPCMgr.Reset();
 
 	pMainHUD->OnStartMapChange();
+
+	return true;
 }
 
 // リスポンを受信した。
-void AActiveGameMode::OnRecvRespawn(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvRespawn(MemoryStreamInterface *pStream)
 {
 	PacketPlayerRespawn Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 	pCharacter->Respawn();
+
+	return true;
 }
 
 // スキルキャストを受信した。
-void AActiveGameMode::OnRecvSkillCast(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSkillCast(MemoryStreamInterface *pStream)
 {
 	PacketSkillCast Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
 	check(pCharacter != nullptr);
 
 	pCharacter->OnSkillCast(Packet.SkillId);
+
+	return true;
 }
 
 // スキルキャスト完了を受信した。
-void AActiveGameMode::OnRecvSkillCastFinish(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSkillCastFinish(MemoryStreamInterface *pStream)
 {
 	PacketSkillCastFinish Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
 	check(pCharacter != nullptr);
 
 	pCharacter->OnSkillCastFinished();
+
+	return true;
 }
 
 // スキル発動を受信した。
-void AActiveGameMode::OnRecvSkillActivate(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSkillActivate(MemoryStreamInterface *pStream)
 {
 	PacketSkillActivate Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	ACharacterBase *pCharacter = GetCharacterFromType(Packet.CharacterType, Packet.CharacterUuid);
 	check(pCharacter != nullptr);
@@ -426,33 +444,39 @@ void AActiveGameMode::OnRecvSkillActivate(MemoryStreamInterface *pStream)
 	{
 		pMainHUD->OnStartRecast(Packet.SkillId);
 	}
+
+	return true;
 }
 
 // スキル発動失敗を受信した。
-void AActiveGameMode::OnRecvSkillUseFailed(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSkillUseFailed(MemoryStreamInterface *pStream)
 {
 	PacketSkillUseFailed Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 	pCharacter->OnSkillCancel();
+
+	return true;
 }
 
 // スキルのリキャスト完了を受信した。
-void AActiveGameMode::OnRecvSkillRecast(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSkillRecast(MemoryStreamInterface *pStream)
 {
 	PacketSkillRecast Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	pMainHUD->OnRecvSkillRecastFinished(Packet.SkillId);
+
+	return true;
 }
 
 // チャットを受信した。
-void AActiveGameMode::OnRecvChat(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvChat(MemoryStreamInterface *pStream)
 {
 	PacketReceiveChat Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	FString Name = UTF8_TO_TCHAR(Packet.Name.c_str());
 	FString Message = UTF8_TO_TCHAR(Packet.Message.c_str());
@@ -462,13 +486,15 @@ void AActiveGameMode::OnRecvChat(MemoryStreamInterface *pStream)
 	bool bIsSelf = (Packet.Uuid == pCharacter->GetStatus().GetUuid());
 
 	pMainHUD->OnRecvChat(Name, Message, bIsSelf);
+
+	return true;
 }
 
 // パーティキック結果を受信した。
-void AActiveGameMode::OnRecvPartyKickResult(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvPartyKickResult(MemoryStreamInterface *pStream)
 {
 	PacketPartyKickResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	FString DisplayText = "Kick Success.";
 	switch (Packet.Result)
@@ -480,13 +506,15 @@ void AActiveGameMode::OnRecvPartyKickResult(MemoryStreamInterface *pStream)
 	}
 
 	USimpleDialog::Show(this, DisplayText);
+
+	return true;
 }
 
 // パーティ勧誘結果を受信した。
-void AActiveGameMode::OnRecvPartyInviteResult(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvPartyInviteResult(MemoryStreamInterface *pStream)
 {
 	PacketPartyInviteResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	FString DisplayMessage = "Party Invite Success!";
 	switch (Packet.Result)
@@ -504,40 +532,48 @@ void AActiveGameMode::OnRecvPartyInviteResult(MemoryStreamInterface *pStream)
 	}
 
 	USimpleDialog::Show(this, DisplayMessage);
+
+	return true;
 }
 
 // インスタンスマップチケット発行を受信した。
-void AActiveGameMode::OnRecvInstanceAreaTicketPublish(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvInstanceAreaTicketPublish(MemoryStreamInterface *pStream)
 {
 	PacketInstanceAreaTicketPublish Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	UInstanceAreaTicketMenuWidget::ShowWidget(this, Packet.TicketId);
+
+	return true;
 }
 
 // インスタンスマップチケット破棄を受信した。
-void AActiveGameMode::OnRecvInstanceAreaTicketDiscard(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvInstanceAreaTicketDiscard(MemoryStreamInterface *pStream)
 {
 	PacketInstanceAreaTicketDiscard Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	USimpleDialog::Show(this, "Instance Area Ticket Discard...");
+
+	return true;
 }
 
 // インスタンスエリア脱出ポイント生成を受信した。
-void AActiveGameMode::OnRecvSpawnInstanceAreaExitPoint(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSpawnInstanceAreaExitPoint(MemoryStreamInterface *pStream)
 {
 	PacketSpawnInstanceAreaExitPoint Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	WarpPointMgr.SpawnFromWarpPointId(Packet.WarpPointId);
+
+	return true;
 }
 
 // ゴールド変化を受信した。
-void AActiveGameMode::OnRecvChangeGold(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvChangeGold(MemoryStreamInterface *pStream)
 {
 	PacketChangeGold Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
@@ -550,10 +586,12 @@ void AActiveGameMode::OnRecvChangeGold(MemoryStreamInterface *pStream)
 	}
 
 	pCharacter->SetGold(Packet.Gold);
+
+	return true;
 }
 
 // スキルツリー開放結果を受信した。
-void AActiveGameMode::OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream)
 {
 	PacketSkillTreeOpenResult Packet;
 	Packet.Serialize(pStream);
@@ -585,7 +623,7 @@ void AActiveGameMode::OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream)
 	if (Packet.Result != PacketSkillTreeOpenResult::Success)
 	{
 		USimpleDialog::Show(this, ErrorMsg, 100);
-		return;
+		return true;
 	}
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
@@ -594,18 +632,20 @@ void AActiveGameMode::OnRecvSkillTreeOpenResult(MemoryStreamInterface *pStream)
 	pCharacter->OpenSkillTreeNode(Packet.NodeId);
 
 	USimpleDialog::Show(this, "Node Open!", 100);
+
+	return true;
 }
 
 // スキルリスト保存レスポンスを受信した。
-void AActiveGameMode::OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream)
 {
 	PacketSaveSkillListResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != PacketSaveSkillListResponse::Success)
 	{
 		USimpleDialog::Show(this, "Error...", 100);
-		return;
+		return true;
 	}
 
 	USimpleDialog::Show(this, "Saved!", 100);
@@ -616,13 +656,15 @@ void AActiveGameMode::OnRecvSaveSkillListResponse(MemoryStreamInterface *pStream
 	pCharacter->OnRecvSkillList(Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 
 	pMainHUD->OnRecvSkillList(pCharacter->GetStatus().GetSkillList()[0], Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
+
+	return true;
 }
 
 // アイテム追加を受信した。
-void AActiveGameMode::OnRecvAddItem(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvAddItem(MemoryStreamInterface *pStream)
 {
 	PacketItemAdd Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
@@ -632,30 +674,34 @@ void AActiveGameMode::OnRecvAddItem(MemoryStreamInterface *pStream)
 	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(Packet.ItemId);
 	FString SystemMsg = FString::Printf(TEXT("Add Item:%s * %d"), *pItem->Name, Packet.Count);
 	pMainHUD->ShowSystemMessage(SystemMsg);
+
+	return true;
 }
 
 // アイテム消滅を受信した。
-void AActiveGameMode::OnRecvSubtractItem(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSubtractItem(MemoryStreamInterface *pStream)
 {
 	PacketItemSubtract Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 	check(pCharacter != nullptr);
 
 	pCharacter->SubtractItem(Packet.ItemId, Packet.Count);
+
+	return true;
 }
 
 // アイテムショートカット保存結果を受信した。
-void AActiveGameMode::OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStream)
 {
 	PacketSaveItemShortcutResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != PacketSaveItemShortcutResult::Success)
 	{
 		USimpleDialog::Show(this, "Item Shortcut Save Failed...", 100);
-		return;
+		return true;
 	}
 
 	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
@@ -664,62 +710,72 @@ void AActiveGameMode::OnRecvSaveItemShortcutResult(MemoryStreamInterface *pStrea
 	pCharacter->UpdateItemShortcut(Packet.ItemId1, Packet.ItemId2);
 
 	USimpleDialog::Show(this, "Item Shortcut Saved!", 100);
+
+	return true;
 }
 
 // クエスト受注を受信した。
-void AActiveGameMode::OnRecvAcceptQuest(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvAcceptQuest(MemoryStreamInterface *pStream)
 {
 	PacketQuestAccept Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	QuestData Data(Packet.QuestId, 0, 0, QuestData::Active);
 	pInst->AddQuestData(Data);
+
+	return true;
 }
 
 // クエスト進行を受信した。
-void AActiveGameMode::OnRecvProgressQuest(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvProgressQuest(MemoryStreamInterface *pStream)
 {
 	PacketQuestStageChange Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	pInst->ProgressQuest(Packet.QuestId, Packet.StageNo);
+
+	return true;
 }
 
 // クエストでのアンパン殺害を受信した。
-void AActiveGameMode::OnRecvQuestKilledAnpan(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvQuestKilledAnpan(MemoryStreamInterface *pStream)
 {
 	PacketQuestAnpanKill Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	pInst->QuestKillAnpan(Packet.QuestId);
+
+	return true;
 }
 
 // クエストクリアを受信した。
-void AActiveGameMode::OnRecvClearQuest(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvClearQuest(MemoryStreamInterface *pStream)
 {
 	PacketQuestClear Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	pInst->ClearQuest(Packet.QuestId);
+
+	return true;
 }
 
 // クエスト破棄レスポンスを受信した。
-void AActiveGameMode::OnRecvRetireQuestResponse(MemoryStreamInterface *pStream)
+bool AActiveGameMode::OnRecvRetireQuestResponse(MemoryStreamInterface *pStream)
 {
 	PacketQuestRetireResponse Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result != PacketQuestRetireResponse::Success)
 	{
@@ -733,7 +789,7 @@ void AActiveGameMode::OnRecvRetireQuestResponse(MemoryStreamInterface *pStream)
 		}
 
 		USimpleDialog::Show(this, ErrorMsg, 100);
-		return;
+		return true;
 	}
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
@@ -742,4 +798,6 @@ void AActiveGameMode::OnRecvRetireQuestResponse(MemoryStreamInterface *pStream)
 	pInst->RetireQuest(Packet.QuestId);
 
 	USimpleDialog::Show(this, "Quest Retire.", 100);
+
+	return true;
 }

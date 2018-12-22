@@ -45,10 +45,10 @@ TArray<PartyMemberData> PartyInformation::GetMemberList() const
 }
 
 // 作成結果を受信した。
-void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
+bool PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 {
 	PacketPartyCreateResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	switch (Packet.Result)
 	{
@@ -63,7 +63,7 @@ void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 			break;
 	}
 
-	if (Packet.Result != PacketPartyCreateResult::Success) { return; }
+	if (Packet.Result != PacketPartyCreateResult::Success) { return true; }
 	PartyId = Packet.PartyId;
 
 	// 自分自身を登録.
@@ -76,47 +76,53 @@ void PartyInformation::OnRecvCreateResult(MemoryStreamInterface *pStream)
 	bIsLeader = true;
 
 	USimpleDialog::Show(pGameMode.Get(), "Party Create Success!!");
+
+	return true;
 }
 
 // 解散結果を受信した。
-void PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
+bool PartyInformation::OnRecvDissolutionResult(MemoryStreamInterface *pStream)
 {
 	PacketPartyDissolutionResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result == PacketPartyDissolutionResult::Error)
 	{
 		USimpleDialog::Show(pGameMode.Get(), "Dissolution Error...");
-		return;
+		return true;
 	}
 
 	MemberList.Empty();
 	PartyId = 0;
 	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
+
+	return true;
 }
 
 // 離脱結果を受信した。
-void PartyInformation::OnRecvExitResult(MemoryStreamInterface *pStream)
+bool PartyInformation::OnRecvExitResult(MemoryStreamInterface *pStream)
 {
 	PacketPartyExitResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result == PacketPartyExitResult::Error)
 	{
 		USimpleDialog::Show(pGameMode.Get(), "Exit Error...");
-		return;
+		return true;
 	}
 
 	MemberList.Empty();
 	PartyId = 0;
 	USimpleDialog::Show(pGameMode.Get(), "Party Exit.");
+
+	return true;
 }
 
 // 参加を受信した。
-void PartyInformation::OnRecvJoin(MemoryStreamInterface *pStream)
+bool PartyInformation::OnRecvJoin(MemoryStreamInterface *pStream)
 {
 	PacketPartyJoin Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	PartyId = Packet.Uuid;
 	for (int i = 0; i < Packet.MemberList.GetCurrentSize(); i++)
@@ -125,34 +131,40 @@ void PartyInformation::OnRecvJoin(MemoryStreamInterface *pStream)
 	}
 
 	bIsLeader = false;
+
+	return true;
 }
 
 // メンバ加入を受信した。
-void PartyInformation::OnRecvJoinMember(MemoryStreamInterface *pStream)
+bool PartyInformation::OnRecvJoinMember(MemoryStreamInterface *pStream)
 {
 	PacketPartyJoinMember Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	MemberList.Add(Packet.MemberData.Uuid, Packet.MemberData);
+	
+	return true;
 }
 
 // メンバ離脱を受信した。
-void PartyInformation::OnRecvExitMember(MemoryStreamInterface *pStream)
+bool PartyInformation::OnRecvExitMember(MemoryStreamInterface *pStream)
 {
 	PacketPartyExit Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
-	if (!MemberList.Contains(Packet.Uuid)) { return; }
+	if (!MemberList.Contains(Packet.Uuid)) { return true; }
 	MemberList.Remove(Packet.Uuid);
+
+	return true;
 }
 
 // メンバキックを受信した。
-void PartyInformation::OnRecvKickMember(MemoryStreamInterface *pStream)
+bool PartyInformation::OnRecvKickMember(MemoryStreamInterface *pStream)
 {
 	PacketPartyKick Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
-	if (!MemberList.Contains(Packet.Uuid)) { return; }
+	if (!MemberList.Contains(Packet.Uuid)) { return true; }
 	MemberList.Remove(Packet.Uuid);
 
 	AGameCharacter *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(pGameMode.Get(), 0));
@@ -162,15 +174,19 @@ void PartyInformation::OnRecvKickMember(MemoryStreamInterface *pStream)
 	{
 		USimpleDialog::Show(pGameMode.Get(), "Party Kicked...");
 	}
+
+	return true;
 }
 
 // 解散を受信した。
-void PartyInformation::OnRecvDissolution(MemoryStreamInterface *pStream)
+bool PartyInformation::OnRecvDissolution(MemoryStreamInterface *pStream)
 {
 	PacketPartyDissolution Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	MemberList.Empty();
 	PartyId = 0;
 	USimpleDialog::Show(pGameMode.Get(), "Party Dissoluted,");
+
+	return true;
 }

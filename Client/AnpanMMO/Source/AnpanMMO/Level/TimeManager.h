@@ -25,10 +25,10 @@ public:
 	void SetSkyControl(ASkyControl *pInSky);
 
 	// 開始時の時間を受け取った。
-	void OnRecvTime(MemoryStreamInterface *pStream);
+	bool OnRecvTime(MemoryStreamInterface *pStream);
 
 	// 時間変動を受け取った。
-	void OnRecvTimeChange(MemoryStreamInterface *pStream);
+	bool OnRecvTimeChange(MemoryStreamInterface *pStream);
 
 private:
 

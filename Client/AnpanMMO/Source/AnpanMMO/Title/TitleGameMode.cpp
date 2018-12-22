@@ -78,15 +78,15 @@ void ATitleGameMode::OnConnectResult(bool bConnected)
 }
 
 // ログイン結果を受信した。
-void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 {
 	PacketLogInResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	if (Packet.Result == PacketLogInResult::NoCharacter)
 	{
 		pNameInputWidget = UCharacterNameInputWidget::Show(this, 1);
-		return;
+		return true;
 	}
 
 	bool bResult = (Packet.Result == PacketLogInResult::Success);
@@ -106,13 +106,15 @@ void ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	pInst->SetAreaIdCache(Packet.LastAreaId);
+
+	return true;
 }
 
 // キャラクタ作成結果を受信した。
-void ATitleGameMode::OnRecvCreateCharacterResult(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvCreateCharacterResult(MemoryStreamInterface *pStream)
 {
 	PacketCreateCharacterResult Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	switch (Packet.Result)
 	{
@@ -141,86 +143,100 @@ void ATitleGameMode::OnRecvCreateCharacterResult(MemoryStreamInterface *pStream)
 			USimpleDialog::Show(this, TEXT("Fatal Error..."), 2);
 			break;
 	}
+
+	return true;
 }
 
 // キャラクタステータスを受信した。
-void ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
 {
 	PacketCharacterStatus Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	FString NameStr = UTF8_TO_TCHAR(Packet.Name.c_str());
 	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
+
+	return true;
 }
 
 // スキルリストを受信した。
-void ATitleGameMode::OnRecvSkillList(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvSkillList(MemoryStreamInterface *pStream)
 {
 	PacketSkillList Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	pInst->OnRecvSkillList(Packet.NormalAttack, Packet.Skill1, Packet.Skill2, Packet.Skill3, Packet.Skill4);
+
+	return true;
 }
 
 // スキルツリーデータを受信した。
-void ATitleGameMode::OnRecvSkillTreeData(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvSkillTreeData(MemoryStreamInterface *pStream)
 {
 	PacketSkillTreeData Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	pInst->OnRecvSkillTreeData(Packet.Nodes);
+
+	return true;
 }
 
 // アイテムリストを受信した。
-void ATitleGameMode::OnRecvItemList(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvItemList(MemoryStreamInterface *pStream)
 {
 	PacketItemList Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	pInst->OnRecvItemList(Packet.Items);
+
+	return true;
 }
 
 // アイテムショートカットを受信した。
-void ATitleGameMode::OnRecvItemShortcut(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvItemShortcut(MemoryStreamInterface *pStream)
 {
 	PacketItemShortcut Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	pInst->OnRecvItemShortcht(Packet.ItemId1, Packet.ItemId2);
+
+	return true;
 }
 
 // スクリプトフラグを受信した。
-void ATitleGameMode::OnRecvScriptFlag(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvScriptFlag(MemoryStreamInterface *pStream)
 {
 	PacketScriptFlag Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 
 	pInst->GetScript()->ConvertFlagFromBitFields(Packet.BitField1, Packet.BitField2, Packet.BitField3);
+
+	return true;
 }
 
 // クエストデータを受信した。
-void ATitleGameMode::OnRecvQuestData(MemoryStreamInterface *pStream)
+bool ATitleGameMode::OnRecvQuestData(MemoryStreamInterface *pStream)
 {
 	PacketQuestData Packet;
-	Packet.Serialize(pStream);
+	if (!Packet.Serialize(pStream)) { return false; }
 
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
@@ -233,6 +249,8 @@ void ATitleGameMode::OnRecvQuestData(MemoryStreamInterface *pStream)
 	}
 
 	pInst->SetActiveQuest(Packet.ActiveQuestId, false);
+
+	return true;
 }
 
 // ゲーム画面に進む準備が出来た。
