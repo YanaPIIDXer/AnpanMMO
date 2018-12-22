@@ -1,0 +1,4 @@
+<map id="PartyInformation::OnRecvDissolution" name="PartyInformation::OnRecvDissolution">
+<area shape="rect" id="node2" href="$classPacketPartyDissolution.html#afeff6cc8ca7a47f65d007b6d3b2eddf3" title="コンストラクタ " alt="" coords="223,5,381,47"/>
+<area shape="rect" id="node3" href="$classUSimpleDialog.html#a1948ea604bd8cba89dd58fdfda4dd0c3" title="USimpleDialog::Show" alt="" coords="229,71,375,98"/>
+</map>

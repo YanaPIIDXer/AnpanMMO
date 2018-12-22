@@ -79,10 +79,10 @@ $(function() {
 <tr class="separator:a579b1b9e3d323dcc030c100992f7ed8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a82f752d8083ca61bc26ef52a72404"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeManager.html#a05a82f752d8083ca61bc26ef52a72404">SetSkyControl</a> (<a class="el" href="classASkyControl.html">ASkyControl</a> *pInSky)</td></tr>
 <tr class="separator:a05a82f752d8083ca61bc26ef52a72404"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c46c00de73c1de0f2ef914a01ecdd54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeManager.html#a9c46c00de73c1de0f2ef914a01ecdd54">OnRecvTime</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
-<tr class="separator:a9c46c00de73c1de0f2ef914a01ecdd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add7b0119ce63b660c4de7bcdda0ebf5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeManager.html#add7b0119ce63b660c4de7bcdda0ebf5b">OnRecvTimeChange</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
-<tr class="separator:add7b0119ce63b660c4de7bcdda0ebf5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35af02d7628331b092d5b3d1f29e424"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeManager.html#ab35af02d7628331b092d5b3d1f29e424">OnRecvTime</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="separator:ab35af02d7628331b092d5b3d1f29e424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4260562d311f764e9650d7adcf06ddc9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeManager.html#a4260562d311f764e9650d7adcf06ddc9">OnRecvTimeChange</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="separator:a4260562d311f764e9650d7adcf06ddc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>時間管理. </p>
@@ -130,14 +130,14 @@ $(function() {
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a9c46c00de73c1de0f2ef914a01ecdd54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c46c00de73c1de0f2ef914a01ecdd54">&#9670;&nbsp;</a></span>OnRecvTime()</h2>
+<a id="ab35af02d7628331b092d5b3d1f29e424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35af02d7628331b092d5b3d1f29e424">&#9670;&nbsp;</a></span>OnRecvTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void TimeManager::OnRecvTime </td>
+          <td class="memname">bool TimeManager::OnRecvTime </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
           <td class="paramname"><em>pStream</em></td><td>)</td>
@@ -148,8 +148,8 @@ $(function() {
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classTimeManager_a9c46c00de73c1de0f2ef914a01ecdd54_cgraph.png" border="0" usemap="#classTimeManager_a9c46c00de73c1de0f2ef914a01ecdd54_cgraph" alt=""/></div>
-<map name="classTimeManager_a9c46c00de73c1de0f2ef914a01ecdd54_cgraph" id="classTimeManager_a9c46c00de73c1de0f2ef914a01ecdd54_cgraph">
+<div class="center"><img src="classTimeManager_ab35af02d7628331b092d5b3d1f29e424_cgraph.png" border="0" usemap="#classTimeManager_ab35af02d7628331b092d5b3d1f29e424_cgraph" alt=""/></div>
+<map name="classTimeManager_ab35af02d7628331b092d5b3d1f29e424_cgraph" id="classTimeManager_ab35af02d7628331b092d5b3d1f29e424_cgraph">
 <area shape="rect" id="node2" href="classPacketTime.html#a5dbe6f3f6d7c61ad622f3580015459d0" title="シリアライズ " alt="" coords="235,13,384,39"/>
 <area shape="rect" id="node3" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="432,5,592,47"/>
 </map>
@@ -157,22 +157,22 @@ $(function() {
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classTimeManager_a9c46c00de73c1de0f2ef914a01ecdd54_icgraph.png" border="0" usemap="#classTimeManager_a9c46c00de73c1de0f2ef914a01ecdd54_icgraph" alt=""/></div>
-<map name="classTimeManager_a9c46c00de73c1de0f2ef914a01ecdd54_icgraph" id="classTimeManager_a9c46c00de73c1de0f2ef914a01ecdd54_icgraph">
+<div class="center"><img src="classTimeManager_ab35af02d7628331b092d5b3d1f29e424_icgraph.png" border="0" usemap="#classTimeManager_ab35af02d7628331b092d5b3d1f29e424_icgraph" alt=""/></div>
+<map name="classTimeManager_ab35af02d7628331b092d5b3d1f29e424_icgraph" id="classTimeManager_ab35af02d7628331b092d5b3d1f29e424_icgraph">
 <area shape="rect" id="node2" href="classAActiveGameMode.html#a9dd196c028a3f4b41a339572c85ebecf" title="AActiveGameMode::AActive\lGameMode" alt="" coords="235,5,420,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="add7b0119ce63b660c4de7bcdda0ebf5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add7b0119ce63b660c4de7bcdda0ebf5b">&#9670;&nbsp;</a></span>OnRecvTimeChange()</h2>
+<a id="a4260562d311f764e9650d7adcf06ddc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4260562d311f764e9650d7adcf06ddc9">&#9670;&nbsp;</a></span>OnRecvTimeChange()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void TimeManager::OnRecvTimeChange </td>
+          <td class="memname">bool TimeManager::OnRecvTimeChange </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
           <td class="paramname"><em>pStream</em></td><td>)</td>
@@ -183,8 +183,8 @@ $(function() {
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classTimeManager_add7b0119ce63b660c4de7bcdda0ebf5b_cgraph.png" border="0" usemap="#classTimeManager_add7b0119ce63b660c4de7bcdda0ebf5b_cgraph" alt=""/></div>
-<map name="classTimeManager_add7b0119ce63b660c4de7bcdda0ebf5b_cgraph" id="classTimeManager_add7b0119ce63b660c4de7bcdda0ebf5b_cgraph">
+<div class="center"><img src="classTimeManager_a4260562d311f764e9650d7adcf06ddc9_cgraph.png" border="0" usemap="#classTimeManager_a4260562d311f764e9650d7adcf06ddc9_cgraph" alt=""/></div>
+<map name="classTimeManager_a4260562d311f764e9650d7adcf06ddc9_cgraph" id="classTimeManager_a4260562d311f764e9650d7adcf06ddc9_cgraph">
 <area shape="rect" id="node2" href="classPacketTimeChange.html#a70611df6bdf8d5b1c0a98fdcb033b150" title="シリアライズ " alt="" coords="279,13,472,39"/>
 <area shape="rect" id="node3" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="520,5,680,47"/>
 </map>
@@ -192,8 +192,8 @@ $(function() {
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classTimeManager_add7b0119ce63b660c4de7bcdda0ebf5b_icgraph.png" border="0" usemap="#classTimeManager_add7b0119ce63b660c4de7bcdda0ebf5b_icgraph" alt=""/></div>
-<map name="classTimeManager_add7b0119ce63b660c4de7bcdda0ebf5b_icgraph" id="classTimeManager_add7b0119ce63b660c4de7bcdda0ebf5b_icgraph">
+<div class="center"><img src="classTimeManager_a4260562d311f764e9650d7adcf06ddc9_icgraph.png" border="0" usemap="#classTimeManager_a4260562d311f764e9650d7adcf06ddc9_icgraph" alt=""/></div>
+<map name="classTimeManager_a4260562d311f764e9650d7adcf06ddc9_icgraph" id="classTimeManager_a4260562d311f764e9650d7adcf06ddc9_icgraph">
 <area shape="rect" id="node2" href="classAActiveGameMode.html#a9dd196c028a3f4b41a339572c85ebecf" title="AActiveGameMode::AActive\lGameMode" alt="" coords="279,5,464,47"/>
 </map>
 </div>
