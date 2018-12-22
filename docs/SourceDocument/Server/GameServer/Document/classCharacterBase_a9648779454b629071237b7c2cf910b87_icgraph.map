@@ -1,8 +1,8 @@
 <map id="CharacterBase::GetArea" name="CharacterBase::GetArea">
-<area shape="rect" id="node2" href="$classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="269,5,377,32"/>
-<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#a1069177954ab1377aa2ea360ae130f37" title="AnpanAIStateBase::SetMove" alt="" coords="227,56,418,83"/>
-<area shape="rect" id="node4" href="$classPlayerCharacter.html#ab2df472f50de0370a3bc2b4a538a034c" title="PlayerCharacter::OnMoved" alt="" coords="234,107,411,133"/>
-<area shape="rect" id="node7" href="$classPlayerCharacter.html#a1afee0a074986b5d0d03f086c9748a0b" title="PlayerCharacter::OnAreaChange" alt="" coords="217,157,428,184"/>
+<area shape="rect" id="node2" href="$classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="毎フレームの処理 " alt="" coords="269,5,377,32"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#a1069177954ab1377aa2ea360ae130f37" title="移動を設定 " alt="" coords="227,56,418,83"/>
+<area shape="rect" id="node4" href="$classPlayerCharacter.html#ab2df472f50de0370a3bc2b4a538a034c" title="移動した " alt="" coords="234,107,411,133"/>
+<area shape="rect" id="node7" href="$classPlayerCharacter.html#a1afee0a074986b5d0d03f086c9748a0b" title="エリアが切り替わった " alt="" coords="217,157,428,184"/>
 <area shape="rect" id="node8" href="$classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="486,208,658,235"/>
 <area shape="rect" id="node10" href="$classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="251,259,394,285"/>
 <area shape="rect" id="node12" href="$classSkillStateCast.html#a7a7f19ee6eae4e3b12f5a573f46c0e96" title="SkillStateCast::BeginState" alt="" coords="234,309,411,336"/>

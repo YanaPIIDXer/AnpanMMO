@@ -7,8 +7,8 @@
 <area shape="rect" id="node11" href="$classQuestManager.html#a068baae57cdb284212b62a4855f5f7b1" title="QuestManager::Accept" alt="" coords="473,169,629,196"/>
 <area shape="rect" id="node13" href="$classClient.html#a2fab4ff0f437d04f49917829c8e6a6aa" title="UUIDを取得. " alt="" coords="722,220,833,247"/>
 <area shape="rect" id="node14" href="$classClient.html#a0cda75c99767496a10a7a4e559a8f877" title="キャラクタを取得. " alt="" coords="707,271,847,297"/>
-<area shape="rect" id="node15" href="$classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad" title="CacheServerConnection\l::GetInstance" alt="" coords="697,322,857,363"/>
-<area shape="rect" id="node16" href="$classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="CacheServerConnection\l::SendPacket" alt="" coords="697,103,857,145"/>
+<area shape="rect" id="node15" href="$classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="697,322,857,363"/>
+<area shape="rect" id="node16" href="$classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="697,103,857,145"/>
 <area shape="rect" id="node17" href="$classMasterData.html#a06a077d5d05b2852570ea1ac23353037" title="MasterData::GetQuestReward\lMaster" alt="" coords="453,525,649,566"/>
 <area shape="rect" id="node18" href="$classQuestRewardMaster.html#a88c4dc5b8bfeb608bf19b1dba584bab7" title="QuestRewardMaster::\lGetItem" alt="" coords="477,590,625,631"/>
 <area shape="rect" id="node4" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="927,107,1078,133"/>

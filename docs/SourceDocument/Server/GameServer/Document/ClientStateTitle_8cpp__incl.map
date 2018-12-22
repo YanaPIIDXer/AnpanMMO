@@ -4,11 +4,11 @@
 <area shape="rect" id="node11" href="$Client_8h.html" title="クライアントクラス " alt="" coords="6908,177,6975,203"/>
 <area shape="rect" id="node15" href="$ClientStateAreaChange_8h.html" title="ClientStateAreaChange.h" alt="" coords="6733,87,6901,114"/>
 <area shape="rect" id="node16" href="$ClientManager_8h.html" title="ClientManager.h" alt="" coords="6977,87,7093,114"/>
-<area shape="rect" id="node17" href="$CacheServerConnection_8h.html" title="CacheServer/CacheServerConnection.h" alt="" coords="7004,177,7252,203"/>
+<area shape="rect" id="node17" href="$CacheServerConnection_8h.html" title="キャッシュサーバとの接続クラス " alt="" coords="7004,177,7252,203"/>
 <area shape="rect" id="node18" href="$Config_8h.html" title="Config.h" alt="" coords="7168,87,7237,114"/>
 <area shape="rect" id="node19" href="$Util_8h.html" title="Util.h" alt="" coords="7262,87,7314,114"/>
 <area shape="rect" id="node20" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3093,169,3297,211"/>
-<area shape="rect" id="node21" href="$PlayerCharacter_8h.html" title="Character/Player/PlayerCharacter.h" alt="" coords="7339,87,7565,114"/>
+<area shape="rect" id="node21" href="$PlayerCharacter_8h.html" title="プレイヤーキャラクタクラス " alt="" coords="7339,87,7565,114"/>
 <area shape="rect" id="node22" href="$PacketLogInRequest_8h.html" title="ログインリクエスト " alt="" coords="162,87,361,114"/>
 <area shape="rect" id="node23" href="$PacketLogInResult_8h.html" title="ログインリクエスト結果 " alt="" coords="385,87,572,114"/>
 <area shape="rect" id="node24" href="$PacketCreateCharacterRequest_8h.html" title="キャラクタ作成リクエスト " alt="" coords="596,80,799,121"/>

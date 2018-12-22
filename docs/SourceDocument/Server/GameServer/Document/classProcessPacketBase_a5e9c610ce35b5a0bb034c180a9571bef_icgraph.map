@@ -29,7 +29,7 @@
 <area shape="rect" id="node29" href="$classCachePacketSkillListResponse.html#a71f23cc0dbb1da7aec3748b866b972c5" title="シリアライズ " alt="" coords="217,1769,421,1811"/>
 <area shape="rect" id="node30" href="$classCachePacketSkillTreeRequest.html#a77cf21a6b1e576e5d13ad77e82f5c008" title="シリアライズ " alt="" coords="219,1835,418,1876"/>
 <area shape="rect" id="node31" href="$classCachePacketSkillTreeResponse.html#ac3f239f2c03d17fde754dfe843086ede" title="シリアライズ " alt="" coords="215,1900,423,1941"/>
-<area shape="rect" id="node32" href="$classCacheServerConnection.html#a2be522fed646b5acd3259c0f904990a3" title="CacheServerConnection\l::OnRecvData" alt="" coords="239,1965,399,2007"/>
+<area shape="rect" id="node32" href="$classCacheServerConnection.html#a2be522fed646b5acd3259c0f904990a3" title="データを受信した " alt="" coords="239,1965,399,2007"/>
 <area shape="rect" id="node33" href="$classWordCheckPacketChatRequest.html#a83c80c53c02181a46fb084e66313335f" title="シリアライズ " alt="" coords="215,2031,422,2072"/>
 <area shape="rect" id="node34" href="$classWordCheckPacketChatResult.html#a4c2669db53a0454dbb9bc4310987250f" title="シリアライズ " alt="" coords="221,2096,416,2137"/>
 <area shape="rect" id="node35" href="$classWordCheckServerConnection.html#a7963b274f852847c4ea928a7da4040d8" title="WordCheckServerConnection\l::OnRecvData" alt="" coords="223,2161,414,2203"/>

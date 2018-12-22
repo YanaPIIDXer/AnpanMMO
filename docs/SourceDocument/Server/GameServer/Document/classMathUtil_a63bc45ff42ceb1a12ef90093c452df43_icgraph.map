@@ -1,6 +1,6 @@
 <map id="MathUtil::DegToRad" name="MathUtil::DegToRad">
 <area shape="rect" id="node2" href="$classMathUtil.html#ab34f00845bc0a5917f4becf9202e1916" title="MathUtil::RotateVector" alt="" coords="192,35,347,61"/>
-<area shape="rect" id="node3" href="$classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b" title="CharacterBase::GetCenterVec" alt="" coords="395,35,593,61"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b" title="正面ベクトルを取得 " alt="" coords="395,35,593,61"/>
 <area shape="rect" id="node4" href="$classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="641,35,784,61"/>
 <area shape="rect" id="node5" href="$classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="832,5,1004,32"/>
 <area shape="rect" id="node7" href="$classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="851,57,985,98"/>

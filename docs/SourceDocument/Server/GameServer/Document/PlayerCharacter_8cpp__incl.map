@@ -1,12 +1,12 @@
 <map id="PlayerCharacter.cpp" name="PlayerCharacter.cpp">
 <area shape="rect" id="node2" href="$stdafx_8h.html" title="stdafx.h" alt="" coords="187,87,255,114"/>
-<area shape="rect" id="node7" href="$PlayerCharacter_8h.html" title="PlayerCharacter.h" alt="" coords="1473,87,1599,114"/>
+<area shape="rect" id="node7" href="$PlayerCharacter_8h.html" title="プレイヤーキャラクタクラス " alt="" coords="1473,87,1599,114"/>
 <area shape="rect" id="node14" href="$CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="2157,177,2320,203"/>
 <area shape="rect" id="node17" href="$Client_8h.html" title="クライアントクラス " alt="" coords="1109,87,1176,114"/>
 <area shape="rect" id="node22" href="$Random_8h.html" title="Math/Random.h" alt="" coords="3739,87,3853,114"/>
 <area shape="rect" id="node25" href="$AreaManager_8h.html" title="Area/AreaManager.h" alt="" coords="437,177,579,203"/>
 <area shape="rect" id="node26" href="$MasterData_8h.html" title="Master/MasterData.h" alt="" coords="3877,87,4021,114"/>
-<area shape="rect" id="node37" href="$CacheServerConnection_8h.html" title="CacheServer/CacheServerConnection.h" alt="" coords="1200,87,1448,114"/>
+<area shape="rect" id="node37" href="$CacheServerConnection_8h.html" title="キャッシュサーバとの接続クラス " alt="" coords="1200,87,1448,114"/>
 <area shape="rect" id="node38" href="$CachePacketCharacterDataSave_8h.html" title="キャラクタ保存リクエスト " alt="" coords="4046,80,4247,121"/>
 <area shape="rect" id="node39" href="$CachePacketGoldSave_8h.html" title="ゴールド保存リクエスト " alt="" coords="4272,87,4483,114"/>
 <area shape="rect" id="node40" href="$PacketLevelUp_8h.html" title="レベルアップ " alt="" coords="1675,87,1839,114"/>
@@ -22,8 +22,8 @@
 <area shape="rect" id="node50" href="$CachePacketItemCountChangeRequest_8h.html" title="アイテム数変化リクエスト " alt="" coords="4507,80,4711,121"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="141,177,301,203"/>
 <area shape="rect" id="node6" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="326,177,413,203"/>
-<area shape="rect" id="node8" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="1512,177,1691,203"/>
-<area shape="rect" id="node10" href="$PlayerExp_8h.html" title="PlayerExp.h" alt="" coords="1848,177,1941,203"/>
+<area shape="rect" id="node8" href="$CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="1512,177,1691,203"/>
+<area shape="rect" id="node10" href="$PlayerExp_8h.html" title="プレイヤー経験値クラス " alt="" coords="1848,177,1941,203"/>
 <area shape="rect" id="node11" href="$SkillTree_8h.html" title="Skill/SkillTree/SkillTree.h" alt="" coords="1966,177,2133,203"/>
 <area shape="rect" id="node13" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="1368,177,1488,203"/>
 <area shape="rect" id="node16" href="$ItemList_8h.html" title="Item/ItemList.h" alt="" coords="1715,177,1823,203"/>

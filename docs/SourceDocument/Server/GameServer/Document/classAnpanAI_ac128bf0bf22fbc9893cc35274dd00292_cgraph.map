@@ -1,5 +1,5 @@
 <map id="AnpanAI::Poll" name="AnpanAI::Poll">
-<area shape="rect" id="node2" href="$classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="AnpanAIStateBase::Poll" alt="" coords="155,5,317,32"/>
-<area shape="rect" id="node4" href="$classHate.html#a7c025a5a6c42bf5ec02c998ce8fbe1df" title="Hate::Poll" alt="" coords="197,56,275,83"/>
-<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#a13dd0c108470b7e8bf296f1c201ce526" title="AnpanAIStateBase::Update" alt="" coords="365,5,547,32"/>
+<area shape="rect" id="node2" href="$classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="毎フレームの処理 " alt="" coords="155,5,317,32"/>
+<area shape="rect" id="node4" href="$classHate.html#a7c025a5a6c42bf5ec02c998ce8fbe1df" title="毎フレームの処理 " alt="" coords="197,56,275,83"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#ab79a2df1668e3d6c2cc183521b759b02" title="更新処理 " alt="" coords="365,5,547,32"/>
 </map>

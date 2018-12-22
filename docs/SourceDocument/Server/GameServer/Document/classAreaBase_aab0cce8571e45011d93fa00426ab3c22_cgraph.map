@@ -1,11 +1,11 @@
 <map id="AreaBase::OnRecvMove" name="AreaBase::OnRecvMove">
 <area shape="rect" id="node2" href="$classPlayerManager.html#aaa2707c2d315cf1fe3fe44a0e1d09798" title="PlayerManager::OnRecvMove" alt="" coords="216,81,408,108"/>
-<area shape="rect" id="node3" href="$classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0" title="CharacterBase::SetPosition" alt="" coords="456,5,639,32"/>
-<area shape="rect" id="node4" href="$classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b" title="CharacterBase::SetRotate" alt="" coords="460,56,635,83"/>
-<area shape="rect" id="node5" href="$classPlayerCharacter.html#ab2df472f50de0370a3bc2b4a538a034c" title="PlayerCharacter::OnMoved" alt="" coords="459,107,636,133"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0" title="座標を設定 " alt="" coords="456,5,639,32"/>
+<area shape="rect" id="node4" href="$classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b" title="回転を設定 " alt="" coords="460,56,635,83"/>
+<area shape="rect" id="node5" href="$classPlayerCharacter.html#ab2df472f50de0370a3bc2b4a538a034c" title="移動した " alt="" coords="459,107,636,133"/>
 <area shape="rect" id="node8" href="$classPlayerManager.html#ae856745bf6d69cc9ff54df6861049f37" title="PlayerManager::Broadcast\lPacket" alt="" coords="459,158,635,199"/>
-<area shape="rect" id="node6" href="$classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="CharacterBase::GetArea" alt="" coords="697,60,861,87"/>
-<area shape="rect" id="node7" href="$classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2" title="CharacterBase::GetPosition" alt="" coords="687,111,871,137"/>
+<area shape="rect" id="node6" href="$classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="697,60,861,87"/>
+<area shape="rect" id="node7" href="$classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3" title="座標を取得 " alt="" coords="687,111,871,137"/>
 <area shape="rect" id="node9" href="$classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="711,165,846,192"/>
 <area shape="rect" id="node10" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="941,77,1091,104"/>
 <area shape="rect" id="node11" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="919,129,1113,170"/>

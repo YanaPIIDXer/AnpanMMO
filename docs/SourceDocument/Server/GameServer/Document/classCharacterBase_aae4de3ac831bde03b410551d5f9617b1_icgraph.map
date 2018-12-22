@@ -1,0 +1,9 @@
+<map id="CharacterBase::GetCharacterType" name="CharacterBase::GetCharacterType">
+<area shape="rect" id="node2" href="$classCharacterBase.html#ab2cbfd441a0e0bc45ff3f1ca1925939a" title="ダメージを与える " alt="" coords="275,5,472,32"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#a8606f23b177a9a0f4d9196b45ee50990" title="回復 " alt="" coords="302,56,445,83"/>
+<area shape="rect" id="node4" href="$classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="520,107,692,133"/>
+<area shape="rect" id="node6" href="$classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="302,157,445,184"/>
+<area shape="rect" id="node8" href="$classSkillStateCast.html#a7a7f19ee6eae4e3b12f5a573f46c0e96" title="SkillStateCast::BeginState" alt="" coords="285,208,462,235"/>
+<area shape="rect" id="node5" href="$classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="740,107,875,133"/>
+<area shape="rect" id="node7" href="$classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="539,158,673,199"/>
+</map>

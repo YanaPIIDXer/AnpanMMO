@@ -1,12 +1,13 @@
 <map id="AnpanAI.h" name="AnpanAI.h">
-<area shape="rect" id="node2" href="$AnpanAIPacketData_8h.html" title="AnpanAIPacketData.h" alt="" coords="344,80,495,107"/>
-<area shape="rect" id="node14" href="$Hate_8h.html" title="Hate.h" alt="" coords="617,80,677,107"/>
-<area shape="rect" id="node3" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="7,155,127,181"/>
-<area shape="rect" id="node6" href="$Rotation_8h.html" title="Math/Rotation.h" alt="" coords="362,155,477,181"/>
-<area shape="rect" id="node7" href="$PacketMoveAnpan_8h.html" title="アンパン移動 " alt="" coords="151,155,338,181"/>
-<area shape="rect" id="node13" href="$PacketRotateAnpan_8h.html" title="アンパン回転 " alt="" coords="501,155,695,181"/>
-<area shape="rect" id="node8" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="529,237,633,263"/>
-<area shape="rect" id="node10" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="189,229,393,271"/>
-<area shape="rect" id="node12" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="417,237,504,263"/>
-<area shape="rect" id="node9" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="440,319,527,345"/>
+<area shape="rect" id="node2" href="$AnpanAIPacketData_8h.html" title="アンパンＡＩのパケットデータ " alt="" coords="484,80,635,107"/>
+<area shape="rect" id="node14" href="$Hate_8h.html" title="ヘイト管理クラス " alt="" coords="791,80,851,107"/>
+<area shape="rect" id="node16" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="862,155,982,181"/>
+<area shape="rect" id="node3" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="499,155,619,181"/>
+<area shape="rect" id="node6" href="$Rotation_8h.html" title="Math/Rotation.h" alt="" coords="643,155,758,181"/>
+<area shape="rect" id="node7" href="$PacketMoveAnpan_8h.html" title="アンパン移動 " alt="" coords="70,155,257,181"/>
+<area shape="rect" id="node13" href="$PacketRotateAnpan_8h.html" title="アンパン回転 " alt="" coords="281,155,475,181"/>
+<area shape="rect" id="node8" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="345,237,449,263"/>
+<area shape="rect" id="node10" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="116,229,320,271"/>
+<area shape="rect" id="node12" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="5,237,92,263"/>
+<area shape="rect" id="node9" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="311,319,397,345"/>
 </map>

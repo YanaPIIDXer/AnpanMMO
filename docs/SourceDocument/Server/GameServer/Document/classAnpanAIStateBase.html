@@ -70,47 +70,63 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>アンパンＡＩステート基底クラス  
+ <a href="classAnpanAIStateBase.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="AnpanAIStateBase_8h_source.html">AnpanAIStateBase.h</a>&gt;</code></p>
 <div class="dynheader">
 AnpanAIStateBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase__inherit__graph.png" border="0" usemap="#AnpanAIStateBase_inherit__map" alt="Inheritance graph"/></div>
 <map name="AnpanAIStateBase_inherit__map" id="AnpanAIStateBase_inherit__map">
-<area shape="rect" id="node2" href="classAnpanAIStateActive.html" title="AnpanAIStateActive" alt="" coords="5,80,143,107"/>
-<area shape="rect" id="node3" href="classAnpanAIStateNonActive.html" title="AnpanAIStateNonActive" alt="" coords="167,80,327,107"/>
+<area shape="rect" id="node2" href="classAnpanAIStateActive.html" title="アンパンＡＩステート：アクティブ状態. " alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node3" href="classAnpanAIStateNonActive.html" title="アンパンＡＩステート：ノンアクティブ状態 " alt="" coords="167,80,327,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a054d5d1ecad4d81820a70249c8088f99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a054d5d1ecad4d81820a70249c8088f99">AnpanAIStateBase</a> (<a class="el" href="classAnpan.html">Anpan</a> *pInParent)</td></tr>
+<tr class="memdesc:a054d5d1ecad4d81820a70249c8088f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a054d5d1ecad4d81820a70249c8088f99">[詳解]</a><br /></td></tr>
 <tr class="separator:a054d5d1ecad4d81820a70249c8088f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5140f3bc00b24b7ed0d95d7ae8cac51a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a5140f3bc00b24b7ed0d95d7ae8cac51a">~AnpanAIStateBase</a> ()=0</td></tr>
+<tr class="memdesc:a5140f3bc00b24b7ed0d95d7ae8cac51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a5140f3bc00b24b7ed0d95d7ae8cac51a">[詳解]</a><br /></td></tr>
 <tr class="separator:a5140f3bc00b24b7ed0d95d7ae8cac51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f98f0955c9a9e07c6d25334acf5d3c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8">Poll</a> (int DeltaTime)</td></tr>
+<tr class="memdesc:a0f98f0955c9a9e07c6d25334acf5d3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="#a0f98f0955c9a9e07c6d25334acf5d3c8">[詳解]</a><br /></td></tr>
 <tr class="separator:a0f98f0955c9a9e07c6d25334acf5d3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57295f498604290eec50b80f2287519e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a57295f498604290eec50b80f2287519e">SetAI</a> (<a class="el" href="classAnpanAI.html">AnpanAI</a> *pInAI)</td></tr>
+<tr class="memdesc:a57295f498604290eec50b80f2287519e"><td class="mdescLeft">&#160;</td><td class="mdescRight">AIを設定  <a href="#a57295f498604290eec50b80f2287519e">[詳解]</a><br /></td></tr>
 <tr class="separator:a57295f498604290eec50b80f2287519e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26bd5fb584e5cd3c6cbeb27c94192827"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a26bd5fb584e5cd3c6cbeb27c94192827">OnDamaged</a> ()</td></tr>
-<tr class="separator:a26bd5fb584e5cd3c6cbeb27c94192827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac606410c281d299a13dd6325202a878b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#ac606410c281d299a13dd6325202a878b">OnDamaged</a> ()</td></tr>
+<tr class="memdesc:ac606410c281d299a13dd6325202a878b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダメージを受けた  <a href="#ac606410c281d299a13dd6325202a878b">[詳解]</a><br /></td></tr>
+<tr class="separator:ac606410c281d299a13dd6325202a878b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
-<tr class="memitem:a13dd0c108470b7e8bf296f1c201ce526"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a13dd0c108470b7e8bf296f1c201ce526">Update</a> (int DeltaTime)</td></tr>
-<tr class="separator:a13dd0c108470b7e8bf296f1c201ce526"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20ec186db5b112a4b36b5046c8919bc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAnpan.html">Anpan</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a20ec186db5b112a4b36b5046c8919bc8">GetParent</a> ()</td></tr>
-<tr class="separator:a20ec186db5b112a4b36b5046c8919bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96cc63479b78c4b459ef49339d666d0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAnpanAI.html">AnpanAI</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a96cc63479b78c4b459ef49339d666d0f">GetAI</a> ()</td></tr>
-<tr class="separator:a96cc63479b78c4b459ef49339d666d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab79a2df1668e3d6c2cc183521b759b02"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#ab79a2df1668e3d6c2cc183521b759b02">Update</a> (int DeltaTime)</td></tr>
+<tr class="memdesc:ab79a2df1668e3d6c2cc183521b759b02"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理  <a href="#ab79a2df1668e3d6c2cc183521b759b02">[詳解]</a><br /></td></tr>
+<tr class="separator:ab79a2df1668e3d6c2cc183521b759b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f248d5b054766a81acc4b29ae73d2d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAnpan.html">Anpan</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a6f248d5b054766a81acc4b29ae73d2d1">GetParent</a> ()</td></tr>
+<tr class="memdesc:a6f248d5b054766a81acc4b29ae73d2d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">親を取得  <a href="#a6f248d5b054766a81acc4b29ae73d2d1">[詳解]</a><br /></td></tr>
+<tr class="separator:a6f248d5b054766a81acc4b29ae73d2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae4f995422411374c33a703297cd29e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAnpanAI.html">AnpanAI</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#aaae4f995422411374c33a703297cd29e">GetAI</a> ()</td></tr>
+<tr class="memdesc:aaae4f995422411374c33a703297cd29e"><td class="mdescLeft">&#160;</td><td class="mdescRight">AIを取得  <a href="#aaae4f995422411374c33a703297cd29e">[詳解]</a><br /></td></tr>
+<tr class="separator:aaae4f995422411374c33a703297cd29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1069177954ab1377aa2ea360ae130f37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a1069177954ab1377aa2ea360ae130f37">SetMove</a> (const <a class="el" href="classVector3D.html">Vector3D</a> &amp;InMoveTarget, int Time)</td></tr>
+<tr class="memdesc:a1069177954ab1377aa2ea360ae130f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動を設定  <a href="#a1069177954ab1377aa2ea360ae130f37">[詳解]</a><br /></td></tr>
 <tr class="separator:a1069177954ab1377aa2ea360ae130f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23739dce596e326a445fa3e66cbd0f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a23739dce596e326a445fa3e66cbd0f58">SetRotate</a> (const <a class="el" href="classRotation.html">Rotation</a> &amp;InRotateTarget, int Time)</td></tr>
+<tr class="memdesc:a23739dce596e326a445fa3e66cbd0f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転を設定  <a href="#a23739dce596e326a445fa3e66cbd0f58">[詳解]</a><br /></td></tr>
 <tr class="separator:a23739dce596e326a445fa3e66cbd0f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa43e3a197f192eefa7c72bf76943fefd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd">Stop</a> ()</td></tr>
+<tr class="memdesc:aa43e3a197f192eefa7c72bf76943fefd"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止  <a href="#aa43e3a197f192eefa7c72bf76943fefd">[詳解]</a><br /></td></tr>
 <tr class="separator:aa43e3a197f192eefa7c72bf76943fefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa57e3d48dbbbfe6f1c930bd1f59e82fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#aa57e3d48dbbbfe6f1c930bd1f59e82fd">IsMoving</a> () const</td></tr>
+<tr class="memdesc:aa57e3d48dbbbfe6f1c930bd1f59e82fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動中？  <a href="#aa57e3d48dbbbfe6f1c930bd1f59e82fd">[詳解]</a><br /></td></tr>
 <tr class="separator:aa57e3d48dbbbfe6f1c930bd1f59e82fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a3b216a420f532d7957c91ac95c89c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9">IsRotating</a> () const</td></tr>
+<tr class="memdesc:a1a3b216a420f532d7957c91ac95c89c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転中？  <a href="#a1a3b216a420f532d7957c91ac95c89c9">[詳解]</a><br /></td></tr>
 <tr class="separator:a1a3b216a420f532d7957c91ac95c89c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -131,6 +147,14 @@ AnpanAIStateBase の継承関係図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pInParent</td><td>アンパン </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -157,11 +181,13 @@ AnpanAIStateBase の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
+<p>デストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a96cc63479b78c4b459ef49339d666d0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96cc63479b78c4b459ef49339d666d0f">&#9670;&nbsp;</a></span>GetAI()</h2>
+<a id="aaae4f995422411374c33a703297cd29e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae4f995422411374c33a703297cd29e">&#9670;&nbsp;</a></span>GetAI()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,7 +196,7 @@ AnpanAIStateBase の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classAnpanAI.html">AnpanAI</a>* AnpanAIStateBase::GetAI </td>
+          <td class="memname"><a class="el" href="classAnpanAI.html">AnpanAI</a> * AnpanAIStateBase::GetAI </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -182,20 +208,23 @@ AnpanAIStateBase の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>AIを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>AI </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classAnpanAIStateBase_a96cc63479b78c4b459ef49339d666d0f_icgraph.png" border="0" usemap="#classAnpanAIStateBase_a96cc63479b78c4b459ef49339d666d0f_icgraph" alt=""/></div>
-<map name="classAnpanAIStateBase_a96cc63479b78c4b459ef49339d666d0f_icgraph" id="classAnpanAIStateBase_a96cc63479b78c4b459ef49339d666d0f_icgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="AnpanAIStateActive\l::Update" alt="" coords="238,5,375,47"/>
-<area shape="rect" id="node3" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="AnpanAIStateNonActive\l::OnDamaged" alt="" coords="227,71,387,112"/>
+<div class="center"><img src="classAnpanAIStateBase_aaae4f995422411374c33a703297cd29e_icgraph.png" border="0" usemap="#classAnpanAIStateBase_aaae4f995422411374c33a703297cd29e_icgraph" alt=""/></div>
+<map name="classAnpanAIStateBase_aaae4f995422411374c33a703297cd29e_icgraph" id="classAnpanAIStateBase_aaae4f995422411374c33a703297cd29e_icgraph">
+<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="238,5,375,47"/>
+<area shape="rect" id="node3" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="227,71,387,112"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a20ec186db5b112a4b36b5046c8919bc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20ec186db5b112a4b36b5046c8919bc8">&#9670;&nbsp;</a></span>GetParent()</h2>
+<a id="a6f248d5b054766a81acc4b29ae73d2d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f248d5b054766a81acc4b29ae73d2d1">&#9670;&nbsp;</a></span>GetParent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +233,7 @@ AnpanAIStateBase の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classAnpan.html">Anpan</a>* AnpanAIStateBase::GetParent </td>
+          <td class="memname"><a class="el" href="classAnpan.html">Anpan</a> * AnpanAIStateBase::GetParent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -216,14 +245,17 @@ AnpanAIStateBase の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>親を取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>アンパン </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classAnpanAIStateBase_a20ec186db5b112a4b36b5046c8919bc8_icgraph.png" border="0" usemap="#classAnpanAIStateBase_a20ec186db5b112a4b36b5046c8919bc8_icgraph" alt=""/></div>
-<map name="classAnpanAIStateBase_a20ec186db5b112a4b36b5046c8919bc8_icgraph" id="classAnpanAIStateBase_a20ec186db5b112a4b36b5046c8919bc8_icgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="AnpanAIStateActive\l::Update" alt="" coords="279,5,416,47"/>
-<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a1069177954ab1377aa2ea360ae130f37" title="AnpanAIStateBase::SetMove" alt="" coords="252,71,443,98"/>
-<area shape="rect" id="node4" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="AnpanAIStateNonActive\l::OnDamaged" alt="" coords="267,123,427,164"/>
+<div class="center"><img src="classAnpanAIStateBase_a6f248d5b054766a81acc4b29ae73d2d1_icgraph.png" border="0" usemap="#classAnpanAIStateBase_a6f248d5b054766a81acc4b29ae73d2d1_icgraph" alt=""/></div>
+<map name="classAnpanAIStateBase_a6f248d5b054766a81acc4b29ae73d2d1_icgraph" id="classAnpanAIStateBase_a6f248d5b054766a81acc4b29ae73d2d1_icgraph">
+<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="279,5,416,47"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a1069177954ab1377aa2ea360ae130f37" title="移動を設定 " alt="" coords="252,71,443,98"/>
+<area shape="rect" id="node4" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="267,123,427,164"/>
 </map>
 </div>
 
@@ -252,6 +284,9 @@ AnpanAIStateBase の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
+<p>移動中？ </p>
+<dl class="section return"><dt>戻り値</dt><dd>移動中ならtrueを返す。 </dd></dl>
+
 </div>
 </div>
 <a id="a1a3b216a420f532d7957c91ac95c89c9"></a>
@@ -277,10 +312,13 @@ AnpanAIStateBase の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
+<p>回転中？ </p>
+<dl class="section return"><dt>戻り値</dt><dd>回転中ならtrueを返す。 </dd></dl>
+
 </div>
 </div>
-<a id="a26bd5fb584e5cd3c6cbeb27c94192827"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26bd5fb584e5cd3c6cbeb27c94192827">&#9670;&nbsp;</a></span>OnDamaged()</h2>
+<a id="ac606410c281d299a13dd6325202a878b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac606410c281d299a13dd6325202a878b">&#9670;&nbsp;</a></span>OnDamaged()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +327,7 @@ AnpanAIStateBase の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void AnpanAIStateBase::OnDamaged </td>
+          <td class="memname">void AnpanAIStateBase::OnDamaged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -302,14 +340,16 @@ AnpanAIStateBase の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
+<p>ダメージを受けた </p>
+
 <p><a class="el" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9">AnpanAIStateNonActive</a>で再実装されています。</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classAnpanAIStateBase_a26bd5fb584e5cd3c6cbeb27c94192827_icgraph.png" border="0" usemap="#classAnpanAIStateBase_a26bd5fb584e5cd3c6cbeb27c94192827_icgraph" alt=""/></div>
-<map name="classAnpanAIStateBase_a26bd5fb584e5cd3c6cbeb27c94192827_icgraph" id="classAnpanAIStateBase_a26bd5fb584e5cd3c6cbeb27c94192827_icgraph">
-<area shape="rect" id="node2" href="classAnpanAI.html#ada352c7389a8b9d1bf5ce2849d58f38d" title="AnpanAI::OnDamaged" alt="" coords="265,5,416,32"/>
-<area shape="rect" id="node3" href="classAnpan.html#a79f0eb1d276ef2b73700650c85484ba1" title="Anpan::OnDamaged" alt="" coords="464,5,603,32"/>
+<div class="center"><img src="classAnpanAIStateBase_ac606410c281d299a13dd6325202a878b_icgraph.png" border="0" usemap="#classAnpanAIStateBase_ac606410c281d299a13dd6325202a878b_icgraph" alt=""/></div>
+<map name="classAnpanAIStateBase_ac606410c281d299a13dd6325202a878b_icgraph" id="classAnpanAIStateBase_ac606410c281d299a13dd6325202a878b_icgraph">
+<area shape="rect" id="node2" href="classAnpanAI.html#af69841c74db3689157c8277104565942" title="ダメージを受けた " alt="" coords="265,5,416,32"/>
+<area shape="rect" id="node3" href="classAnpan.html#afbb407fc7f60055e75ef203a984397df" title="ダメージを受けた " alt="" coords="464,5,603,32"/>
 </map>
 </div>
 
@@ -330,12 +370,20 @@ AnpanAIStateBase の継承関係図</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>毎フレームの処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">DeltaTime</td><td>前フレームからの経過時間 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_a0f98f0955c9a9e07c6d25334acf5d3c8_cgraph.png" border="0" usemap="#classAnpanAIStateBase_a0f98f0955c9a9e07c6d25334acf5d3c8_cgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_a0f98f0955c9a9e07c6d25334acf5d3c8_cgraph" id="classAnpanAIStateBase_a0f98f0955c9a9e07c6d25334acf5d3c8_cgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateBase.html#a13dd0c108470b7e8bf296f1c201ce526" title="AnpanAIStateBase::Update" alt="" coords="216,5,397,32"/>
+<area shape="rect" id="node2" href="classAnpanAIStateBase.html#ab79a2df1668e3d6c2cc183521b759b02" title="更新処理 " alt="" coords="216,5,397,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -343,8 +391,8 @@ AnpanAIStateBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_a0f98f0955c9a9e07c6d25334acf5d3c8_icgraph.png" border="0" usemap="#classAnpanAIStateBase_a0f98f0955c9a9e07c6d25334acf5d3c8_icgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_a0f98f0955c9a9e07c6d25334acf5d3c8_icgraph" id="classAnpanAIStateBase_a0f98f0955c9a9e07c6d25334acf5d3c8_icgraph">
-<area shape="rect" id="node2" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="AnpanAI::Poll" alt="" coords="216,5,317,32"/>
-<area shape="rect" id="node3" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="365,5,473,32"/>
+<area shape="rect" id="node2" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="毎フレームの処理 " alt="" coords="216,5,317,32"/>
+<area shape="rect" id="node3" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="毎フレームの処理 " alt="" coords="365,5,473,32"/>
 </map>
 </div>
 
@@ -373,15 +421,23 @@ AnpanAIStateBase の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>AIを設定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pInAI</td><td>AI </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_a57295f498604290eec50b80f2287519e_icgraph.png" border="0" usemap="#classAnpanAIStateBase_a57295f498604290eec50b80f2287519e_icgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_a57295f498604290eec50b80f2287519e_icgraph" id="classAnpanAIStateBase_a57295f498604290eec50b80f2287519e_icgraph">
-<area shape="rect" id="node2" href="classAnpanAI.html#a15917b0f76fd9c9eb003a99c4c1a0f3e" title="AnpanAI::ChangeState" alt="" coords="225,64,380,91"/>
-<area shape="rect" id="node3" href="classAnpanAI.html#a05eb2025dffa9c8018c1d59ed8431ee1" title="AnpanAI::AnpanAI" alt="" coords="444,5,572,32"/>
-<area shape="rect" id="node4" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="AnpanAIStateActive\l::Update" alt="" coords="439,57,577,98"/>
-<area shape="rect" id="node5" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="AnpanAIStateNonActive\l::OnDamaged" alt="" coords="428,122,588,163"/>
+<area shape="rect" id="node2" href="classAnpanAI.html#a15917b0f76fd9c9eb003a99c4c1a0f3e" title="ステート切り替え " alt="" coords="225,64,380,91"/>
+<area shape="rect" id="node3" href="classAnpanAI.html#a05eb2025dffa9c8018c1d59ed8431ee1" title="コンストラクタ " alt="" coords="444,5,572,32"/>
+<area shape="rect" id="node4" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="439,57,577,98"/>
+<area shape="rect" id="node5" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="428,122,588,163"/>
 </map>
 </div>
 
@@ -420,16 +476,25 @@ AnpanAIStateBase の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>移動を設定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">InMoveTarget</td><td>移動先 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Time</td><td>移動時間 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_a1069177954ab1377aa2ea360ae130f37_cgraph.png" border="0" usemap="#classAnpanAIStateBase_a1069177954ab1377aa2ea360ae130f37_cgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_a1069177954ab1377aa2ea360ae130f37_cgraph" id="classAnpanAIStateBase_a1069177954ab1377aa2ea360ae130f37_cgraph">
-<area shape="rect" id="node2" href="classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2" title="CharacterBase::GetPosition" alt="" coords="259,5,443,32"/>
-<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a20ec186db5b112a4b36b5046c8919bc8" title="AnpanAIStateBase::GetParent" alt="" coords="252,56,451,83"/>
-<area shape="rect" id="node4" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="CharacterBase::GetArea" alt="" coords="269,107,433,133"/>
-<area shape="rect" id="node5" href="classAnpanAI.html#a895eace53f8e19d4121f499d4f5ddbb2" title="AnpanAI::CreateMovePacketData" alt="" coords="244,157,459,184"/>
-<area shape="rect" id="node6" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="507,157,669,184"/>
+<area shape="rect" id="node2" href="classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3" title="座標を取得 " alt="" coords="259,5,443,32"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a6f248d5b054766a81acc4b29ae73d2d1" title="親を取得 " alt="" coords="252,56,451,83"/>
+<area shape="rect" id="node4" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="269,107,433,133"/>
+<area shape="rect" id="node5" href="classAnpanAI.html#a895eace53f8e19d4121f499d4f5ddbb2" title="移動パケットデータの生成 " alt="" coords="244,157,459,184"/>
+<area shape="rect" id="node6" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="507,157,669,184"/>
 </map>
 </div>
 
@@ -468,15 +533,24 @@ AnpanAIStateBase の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>回転を設定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">InRotateTarget</td><td>回転 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Time</td><td>回転時間 </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_a23739dce596e326a445fa3e66cbd0f58_cgraph.png" border="0" usemap="#classAnpanAIStateBase_a23739dce596e326a445fa3e66cbd0f58_cgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_a23739dce596e326a445fa3e66cbd0f58_cgraph" id="classAnpanAIStateBase_a23739dce596e326a445fa3e66cbd0f58_cgraph">
-<area shape="rect" id="node2" href="classCharacterBase.html#af419d46a1cf16394b89ebfa29550b6da" title="CharacterBase::GetRotation" alt="" coords="271,5,456,32"/>
+<area shape="rect" id="node2" href="classCharacterBase.html#a82a91ce5bec73c7a3ebd0465f744ab33" title="回転を取得 " alt="" coords="271,5,456,32"/>
 <area shape="rect" id="node3" href="classRotation.html#ad5aebbfc6c26285b0579ad1e1b11d812" title="Rotation::Get" alt="" coords="314,56,413,83"/>
-<area shape="rect" id="node4" href="classAnpanAI.html#abfb1658e9b23f52a085ed248ab056a32" title="AnpanAI::CreateRotatePacketData" alt="" coords="252,107,475,133"/>
-<area shape="rect" id="node5" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="523,107,685,133"/>
+<area shape="rect" id="node4" href="classAnpanAI.html#abfb1658e9b23f52a085ed248ab056a32" title="回転パケットデータの生成 " alt="" coords="252,107,475,133"/>
+<area shape="rect" id="node5" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="523,107,685,133"/>
 </map>
 </div>
 
@@ -504,12 +578,14 @@ AnpanAIStateBase の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>停止 </p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_cgraph.png" border="0" usemap="#classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_cgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_cgraph" id="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_cgraph">
-<area shape="rect" id="node2" href="classAnpanAI.html#ab7352bf6ac5cc9899a6ec8ab4aacde87" title="AnpanAI::SetSendStopPacket" alt="" coords="220,5,417,32"/>
+<area shape="rect" id="node2" href="classAnpanAI.html#ab7352bf6ac5cc9899a6ec8ab4aacde87" title="停止パケットデータの設定. " alt="" coords="220,5,417,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -517,14 +593,14 @@ AnpanAIStateBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph.png" border="0" usemap="#classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph" id="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="AnpanAIStateNonActive\l::OnDamaged" alt="" coords="220,5,380,47"/>
+<area shape="rect" id="node2" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="220,5,380,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a13dd0c108470b7e8bf296f1c201ce526"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13dd0c108470b7e8bf296f1c201ce526">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="ab79a2df1668e3d6c2cc183521b759b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab79a2df1668e3d6c2cc183521b759b02">&#9670;&nbsp;</a></span>Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -533,7 +609,7 @@ AnpanAIStateBase の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void AnpanAIStateBase::Update </td>
+          <td class="memname">void AnpanAIStateBase::Update </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>DeltaTime</em></td><td>)</td>
@@ -547,15 +623,23 @@ AnpanAIStateBase の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
+<p>更新処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">DeltaTime</td><td>前フレームからの経過時間 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p><a class="el" href="classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8">AnpanAIStateNonActive</a>, <a class="el" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88">AnpanAIStateActive</a>で再実装されています。</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classAnpanAIStateBase_a13dd0c108470b7e8bf296f1c201ce526_icgraph.png" border="0" usemap="#classAnpanAIStateBase_a13dd0c108470b7e8bf296f1c201ce526_icgraph" alt=""/></div>
-<map name="classAnpanAIStateBase_a13dd0c108470b7e8bf296f1c201ce526_icgraph" id="classAnpanAIStateBase_a13dd0c108470b7e8bf296f1c201ce526_icgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="AnpanAIStateBase::Poll" alt="" coords="235,5,397,32"/>
-<area shape="rect" id="node3" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="AnpanAI::Poll" alt="" coords="445,5,547,32"/>
-<area shape="rect" id="node4" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="Anpan::Update" alt="" coords="595,5,703,32"/>
+<div class="center"><img src="classAnpanAIStateBase_ab79a2df1668e3d6c2cc183521b759b02_icgraph.png" border="0" usemap="#classAnpanAIStateBase_ab79a2df1668e3d6c2cc183521b759b02_icgraph" alt=""/></div>
+<map name="classAnpanAIStateBase_ab79a2df1668e3d6c2cc183521b759b02_icgraph" id="classAnpanAIStateBase_ab79a2df1668e3d6c2cc183521b759b02_icgraph">
+<area shape="rect" id="node2" href="classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="毎フレームの処理 " alt="" coords="235,5,397,32"/>
+<area shape="rect" id="node3" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="毎フレームの処理 " alt="" coords="445,5,547,32"/>
+<area shape="rect" id="node4" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="毎フレームの処理 " alt="" coords="595,5,703,32"/>
 </map>
 </div>
 

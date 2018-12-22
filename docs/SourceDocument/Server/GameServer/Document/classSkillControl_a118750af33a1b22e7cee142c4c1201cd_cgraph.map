@@ -1,15 +1,15 @@
 <map id="SkillControl::Activate" name="SkillControl::Activate">
-<area shape="rect" id="node2" href="$classCharacterBase.html#a1b21d5dc74631551b33e097cb9a07227" title="CharacterBase::GetCharacterType" alt="" coords="196,5,417,32"/>
-<area shape="rect" id="node3" href="$classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="CharacterBase::GetUuid" alt="" coords="225,56,388,83"/>
-<area shape="rect" id="node4" href="$classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="CharacterBase::GetArea" alt="" coords="225,107,389,133"/>
+<area shape="rect" id="node2" href="$classCharacterBase.html#aae4de3ac831bde03b410551d5f9617b1" title="キャラクタタイプを取得 " alt="" coords="196,5,417,32"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="225,56,388,83"/>
+<area shape="rect" id="node4" href="$classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="225,107,389,133"/>
 <area shape="rect" id="node5" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="691,171,857,197"/>
 <area shape="rect" id="node6" href="$classMasterData.html#ae5d4b7d43fbffbb2373ff7bf206ad775" title="MasterData::GetSkillMaster" alt="" coords="683,247,865,273"/>
 <area shape="rect" id="node7" href="$classSkillMaster.html#a643a201efa176b21e6fbb0bdc7d4bafd" title="SkillMaster::GetItem" alt="" coords="703,309,845,336"/>
-<area shape="rect" id="node8" href="$classCharacterBase.html#aaf8057da8a29413efc04b642ad7949b2" title="CharacterBase::GetPosition" alt="" coords="215,360,399,387"/>
-<area shape="rect" id="node9" href="$classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b" title="CharacterBase::GetCenterVec" alt="" coords="207,411,406,437"/>
-<area shape="rect" id="node13" href="$classCharacterBase.html#ababe79e449b8f9aa4c2078c021156241" title="CharacterBase::GetParameter" alt="" coords="208,461,405,488"/>
+<area shape="rect" id="node8" href="$classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3" title="座標を取得 " alt="" coords="215,360,399,387"/>
+<area shape="rect" id="node9" href="$classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b" title="正面ベクトルを取得 " alt="" coords="207,411,406,437"/>
+<area shape="rect" id="node13" href="$classCharacterBase.html#ab0b8bc61747d53958e11029bbf7b2ecb" title="パラメータ取得 " alt="" coords="208,461,405,488"/>
 <area shape="rect" id="node14" href="$classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4" title="DamageCalcUnit::Calc" alt="" coords="230,512,383,539"/>
-<area shape="rect" id="node15" href="$classCharacterBase.html#aad7624448e24270e773875fce180b0e7" title="CharacterBase::StartRecast" alt="" coords="214,208,399,235"/>
+<area shape="rect" id="node15" href="$classCharacterBase.html#aad7624448e24270e773875fce180b0e7" title="リキャスト開始 " alt="" coords="214,208,399,235"/>
 <area shape="rect" id="node10" href="$classMathUtil.html#ab34f00845bc0a5917f4becf9202e1916" title="MathUtil::RotateVector" alt="" coords="473,385,627,412"/>
 <area shape="rect" id="node12" href="$classRotation.html#ad5aebbfc6c26285b0579ad1e1b11d812" title="Rotation::Get" alt="" coords="501,436,599,463"/>
 <area shape="rect" id="node11" href="$classMathUtil.html#a63bc45ff42ceb1a12ef90093c452df43" title="MathUtil::DegToRad" alt="" coords="705,385,843,412"/>

@@ -4,8 +4,8 @@
 <area shape="rect" id="node8" href="$classQuestManager.html#aa039a1a7926a271591f2c87cd0b5749b" title="QuestManager::ProgressStage" alt="" coords="452,311,653,337"/>
 <area shape="rect" id="node14" href="$classClient.html#a2fab4ff0f437d04f49917829c8e6a6aa" title="UUIDを取得. " alt="" coords="970,597,1081,624"/>
 <area shape="rect" id="node15" href="$classClient.html#a0cda75c99767496a10a7a4e559a8f877" title="キャラクタを取得. " alt="" coords="955,5,1095,32"/>
-<area shape="rect" id="node16" href="$classCacheServerConnection.html#a0d18992b1c5b6698fb6488865d1a20ad" title="CacheServerConnection\l::GetInstance" alt="" coords="945,531,1105,573"/>
-<area shape="rect" id="node17" href="$classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="CacheServerConnection\l::SendPacket" alt="" coords="945,154,1105,195"/>
+<area shape="rect" id="node16" href="$classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="945,531,1105,573"/>
+<area shape="rect" id="node17" href="$classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="945,154,1105,195"/>
 <area shape="rect" id="node4" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="1175,157,1326,184"/>
 <area shape="rect" id="node5" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="1153,209,1348,250"/>
 <area shape="rect" id="node6" href="$classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="1163,56,1338,83"/>

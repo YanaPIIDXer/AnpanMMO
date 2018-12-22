@@ -1,3 +1,3 @@
 <map id="SkillControl::IsActive" name="SkillControl::IsActive">
-<area shape="rect" id="node2" href="$classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f" title="CharacterBase::IsSkillActive" alt="" coords="195,5,381,32"/>
+<area shape="rect" id="node2" href="$classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f" title="スキル使用中か？ " alt="" coords="195,5,381,32"/>
 </map>

@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$stdafx_8h.html" title="stdafx.h" alt="" coords="678,162,746,189"/>
 <area shape="rect" id="node15" href="$InstanceAreaTicket_8h.html" title="InstanceAreaTicket.h" alt="" coords="2356,162,2500,189"/>
 <area shape="rect" id="node21" href="$Client_8h.html" title="クライアントクラス " alt="" coords="3183,80,3249,107"/>
-<area shape="rect" id="node32" href="$PlayerCharacter_8h.html" title="Character/Player/PlayerCharacter.h" alt="" coords="2516,80,2743,107"/>
+<area shape="rect" id="node32" href="$PlayerCharacter_8h.html" title="プレイヤーキャラクタクラス " alt="" coords="2516,80,2743,107"/>
 <area shape="rect" id="node45" href="$ClientStateAreaChange_8h.html" title="ClientState/ClientStateArea\lChange.h" alt="" coords="1660,155,1841,196"/>
 <area shape="rect" id="node48" href="$PacketInstanceAreaTicketPublish_8h.html" title="インスタンスマップチケット発行 " alt="" coords="3819,244,4003,285"/>
 <area shape="rect" id="node49" href="$PacketInstanceAreaTicketDiscard_8h.html" title="インスタンスマップチケット破棄 " alt="" coords="4027,244,4211,285"/>
@@ -21,12 +21,12 @@
 <area shape="rect" id="node29" href="$QuestData_8h.html" title="Packet/QuestData.h" alt="" coords="3294,251,3434,278"/>
 <area shape="rect" id="node30" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="3815,341,3919,367"/>
 <area shape="rect" id="node31" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3542,333,3746,375"/>
-<area shape="rect" id="node33" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="2027,162,2205,189"/>
-<area shape="rect" id="node40" href="$PlayerExp_8h.html" title="PlayerExp.h" alt="" coords="1880,162,1973,189"/>
+<area shape="rect" id="node33" href="$CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="2027,162,2205,189"/>
+<area shape="rect" id="node40" href="$PlayerExp_8h.html" title="プレイヤー経験値クラス " alt="" coords="1880,162,1973,189"/>
 <area shape="rect" id="node41" href="$SkillTree_8h.html" title="Skill/SkillTree/SkillTree.h" alt="" coords="2759,162,2926,189"/>
 <area shape="rect" id="node43" href="$CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="3459,251,3621,278"/>
 <area shape="rect" id="node44" href="$ItemList_8h.html" title="Item/ItemList.h" alt="" coords="2575,162,2683,189"/>
-<area shape="rect" id="node34" href="$CharacterParameter_8h.html" title="CharacterParameter.h" alt="" coords="2383,251,2532,278"/>
+<area shape="rect" id="node34" href="$CharacterParameter_8h.html" title="キャラクタパラメータ " alt="" coords="2383,251,2532,278"/>
 <area shape="rect" id="node35" href="$Rotation_8h.html" title="Math/Rotation.h" alt="" coords="2244,251,2359,278"/>
 <area shape="rect" id="node36" href="$AreaBase_8h.html" title="エリア基底クラス " alt="" coords="1542,251,1663,278"/>
 <area shape="rect" id="node37" href="$SkillControl_8h.html" title="Skill/SkillControl.h" alt="" coords="1889,251,2017,278"/>

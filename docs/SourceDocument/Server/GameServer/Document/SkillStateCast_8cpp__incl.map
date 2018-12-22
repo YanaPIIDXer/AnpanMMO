@@ -3,7 +3,7 @@
 <area shape="rect" id="node15" href="$SkillStateCast_8h.html" title="SkillStateCast.h" alt="" coords="2517,80,2633,107"/>
 <area shape="rect" id="node17" href="$MasterData_8h.html" title="Master/MasterData.h" alt="" coords="3748,80,3892,107"/>
 <area shape="rect" id="node35" href="$SkillControl_8h.html" title="Skill/SkillControl.h" alt="" coords="1236,162,1364,189"/>
-<area shape="rect" id="node38" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="1688,80,1867,107"/>
+<area shape="rect" id="node38" href="$CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="1688,80,1867,107"/>
 <area shape="rect" id="node47" href="$PacketSkillCast_8h.html" title="スキル詠唱開始 " alt="" coords="2244,80,2415,107"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="691,162,851,189"/>
 <area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="2210,251,2297,278"/>
@@ -24,7 +24,7 @@
 <area shape="rect" id="node33" href="$QuestStageMaster_8h.html" title="QuestStageMaster.h" alt="" coords="3217,162,3359,189"/>
 <area shape="rect" id="node34" href="$QuestRewardMaster_8h.html" title="QuestRewardMaster.h" alt="" coords="3383,162,3534,189"/>
 <area shape="rect" id="node37" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="1463,333,1583,360"/>
-<area shape="rect" id="node39" href="$CharacterParameter_8h.html" title="CharacterParameter.h" alt="" coords="1889,162,2039,189"/>
+<area shape="rect" id="node39" href="$CharacterParameter_8h.html" title="キャラクタパラメータ " alt="" coords="1889,162,2039,189"/>
 <area shape="rect" id="node40" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="1743,333,1863,360"/>
 <area shape="rect" id="node43" href="$Rotation_8h.html" title="Math/Rotation.h" alt="" coords="2063,162,2177,189"/>
 <area shape="rect" id="node44" href="$AreaBase_8h.html" title="エリア基底クラス " alt="" coords="1642,162,1763,189"/>
