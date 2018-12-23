@@ -1,3 +1,8 @@
+/**
+ * @file ExecuterPool.h
+ * @brief スクリプト実行オブジェクトプール
+ * @author YanaP
+ */
 #ifndef __EXECUTERPOOL_H__
 #define __EXECUTERPOOL_H__
 
@@ -6,27 +11,45 @@
 class ScriptExecuterBase;
 
 /**
- * スクリプト実行オブジェクトプール
- * クラスのメンバ関数がバインド出来ない関係で作られた。
- * IDとスクリプト実行オブジェクトを紐付け、
- * スクリプトからC++側の関数を呼び出す際は引数にIDを渡すようにする。
- * （ポインタのようなもの）
+ * @class ExecuterPool
+ * @brief スクリプト実行オブジェクトプール
+ * @details クラスのメンバ関数がバインド出来ない関係で作られた。
+ *			IDとスクリプト実行オブジェクトを紐付け、
+ *			スクリプトからC++側の関数を呼び出す際は引数にIDを渡すようにする。
+ *			（ポインタのようなもの）
+ *			シングルトンクラス
  */
 class ExecuterPool
 {
 
 public:
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	~ExecuterPool() {}
 
-	// 登録.
+	/**
+	 * @fn long Register(ScriptExecuterBase *pExecuter)
+	 * @brief 登録
+	 * @param[in] スクリプト実行クラスへのポインタ
+	 * @return ＩＤ
+	 */
 	long Register(ScriptExecuterBase *pExecuter);
 
-	// 取得.
+	/*
+	 * @fn ScriptExecuterBase *Get(long Id)
+	 * @brief 取得
+	 * @param[in] Id ID
+	 * @return スクリプト実行クラスへのポインタ
+	 */
 	ScriptExecuterBase *Get(long Id);
 
-	// 消去.
+	/**
+	 * @fn void Remove(long Id)
+	 * @brief 消去
+	 * @param[in] Id ID
+	 */
 	void Remove(long Id);
 
 private:
@@ -40,6 +63,11 @@ private:
 	// ========== Singleton ============
 public:
 
+	/**
+	 * @fn static ExecuterPool &GetInstance()
+	 * @brief シングルトンインスタンスを取得
+	 * @return インスタンス
+	 */
 	static ExecuterPool &GetInstance() { return Instance; }
 
 private:

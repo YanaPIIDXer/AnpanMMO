@@ -1,4 +1,4 @@
 <map id="ScriptExecuterBase::~ScriptExecuterBase" name="ScriptExecuterBase::~ScriptExecuterBase">
-<area shape="rect" id="node2" href="$classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="208,5,387,32"/>
-<area shape="rect" id="node3" href="$classExecuterPool.html#a196671fa52a19936478f41d8d68dbe9c" title="ExecuterPool::Remove" alt="" coords="220,56,375,83"/>
+<area shape="rect" id="node2" href="$classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="208,5,387,32"/>
+<area shape="rect" id="node3" href="$classExecuterPool.html#a196671fa52a19936478f41d8d68dbe9c" title="消去 " alt="" coords="220,56,375,83"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="ScriptExecuterBase::OnSelectedSelection" name="ScriptExecuterBase::OnSelectedSelection">
-<area shape="rect" id="node2" href="$classScriptExecuterBase.html#abdcd42abb73d97defc33559893eace03" title="ScriptExecuterBase\l::Resume" alt="" coords="205,39,344,80"/>
+<area shape="rect" id="node2" href="$classScriptExecuterBase.html#abdcd42abb73d97defc33559893eace03" title="スクリプトの実行を再開 " alt="" coords="205,39,344,80"/>
 <area shape="rect" id="node3" href="$classScriptExecuterBase.html#a2f229d9f75d1399bfd27d3f48d1feea2" title="ScriptExecuterBase\l::OnExecuteError" alt="" coords="392,5,531,47"/>
-<area shape="rect" id="node4" href="$classScriptExecuterBase.html#a2c2df7a037d011962fd3efc8a0ec5508" title="ScriptExecuterBase\l::OnFinished" alt="" coords="392,71,531,112"/>
+<area shape="rect" id="node4" href="$classScriptExecuterBase.html#a685d08050d61fd1e5c85be0b740a30a6" title="終了コールバック " alt="" coords="392,71,531,112"/>
 </map>

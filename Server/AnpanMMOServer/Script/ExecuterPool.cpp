@@ -1,3 +1,8 @@
+/**
+ * @file ExecuterPool.cpp
+ * @brief スクリプト実行オブジェクトプール
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "ExecuterPool.h"
 #include "ScriptExecuterBase.h"

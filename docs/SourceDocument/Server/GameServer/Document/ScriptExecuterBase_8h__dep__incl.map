@@ -1,7 +1,7 @@
 <map id="ScriptExecuterBase.h" name="ScriptExecuterBase.h">
 <area shape="rect" id="node2" href="$ScriptExecuter_8h.html" title="ScriptExecuter.h" alt="" coords="1697,80,1816,107"/>
-<area shape="rect" id="node24" href="$ExecuterPool_8cpp.html" title="ExecuterPool.cpp" alt="" coords="1841,80,1966,107"/>
-<area shape="rect" id="node25" href="$ScriptBinds_8cpp.html" title="ScriptBinds.cpp" alt="" coords="1990,80,2105,107"/>
+<area shape="rect" id="node24" href="$ExecuterPool_8cpp.html" title="スクリプト実行オブジェクトプール " alt="" coords="1841,80,1966,107"/>
+<area shape="rect" id="node25" href="$ScriptBinds_8cpp.html" title="Luaにバインドする関数群定義。 " alt="" coords="1990,80,2105,107"/>
 <area shape="rect" id="node26" href="$ScriptExecuterBase_8cpp.html" title="ScriptExecuterBase.cpp" alt="" coords="2129,80,2291,107"/>
 <area shape="rect" id="node3" href="$Client_8h.html" title="クライアントクラス " alt="" coords="1441,155,1507,181"/>
 <area shape="rect" id="node23" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="2467,229,2601,256"/>

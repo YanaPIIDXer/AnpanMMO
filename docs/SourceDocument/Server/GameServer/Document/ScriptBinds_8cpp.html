@@ -71,6 +71,9 @@ $(function() {
 <div class="title">ScriptBinds.cpp ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Luaにバインドする関数群定義。  
+<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="stdafx_8h_source.html">stdafx.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ScriptBinds_8h_source.html">ScriptBinds.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ScriptExecuterBase_8h_source.html">ScriptExecuterBase.h</a>&quot;</code><br />
@@ -84,9 +87,9 @@ ScriptBinds.cpp の依存先関係図:</div>
 <div class="center"><img src="ScriptBinds_8cpp__incl.png" border="0" usemap="#ScriptBinds_8cpp" alt=""/></div>
 <map name="ScriptBinds_8cpp" id="ScriptBinds_8cpp">
 <area shape="rect" id="node2" href="stdafx_8h.html" title="stdafx.h" alt="" coords="514,80,582,107"/>
-<area shape="rect" id="node15" href="ScriptBinds_8h.html" title="ScriptBinds.h" alt="" coords="642,80,742,107"/>
+<area shape="rect" id="node15" href="ScriptBinds_8h.html" title="Luaにバインドする関数群定義。 " alt="" coords="642,80,742,107"/>
 <area shape="rect" id="node16" href="ScriptExecuterBase_8h.html" title="ScriptExecuterBase.h" alt="" coords="817,80,967,107"/>
-<area shape="rect" id="node21" href="ExecuterPool_8h.html" title="ExecuterPool.h" alt="" coords="1093,80,1203,107"/>
+<area shape="rect" id="node21" href="ExecuterPool_8h.html" title="スクリプト実行オブジェクトプール " alt="" coords="1093,80,1203,107"/>
 <area shape="rect" id="node5" href="basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="585,155,745,181"/>
 <area shape="rect" id="node14" href="TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="338,155,425,181"/>
 </map>
@@ -95,31 +98,46 @@ ScriptBinds.cpp の依存先関係図:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
 <tr class="memitem:ad04e7f790a695f09a6e4516366011284"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#ad04e7f790a695f09a6e4516366011284">ShowMessage_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:ad04e7f790a695f09a6e4516366011284"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッセージ表示  <a href="#ad04e7f790a695f09a6e4516366011284">[詳解]</a><br /></td></tr>
 <tr class="separator:ad04e7f790a695f09a6e4516366011284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc4069ecedbe278bffcb2ccc7553d9a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#adc4069ecedbe278bffcb2ccc7553d9a7">PushSelection_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:adc4069ecedbe278bffcb2ccc7553d9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">選択肢をプッシュ  <a href="#adc4069ecedbe278bffcb2ccc7553d9a7">[詳解]</a><br /></td></tr>
 <tr class="separator:adc4069ecedbe278bffcb2ccc7553d9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9da4476967136ab4c8ffbc0e4142414"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#aa9da4476967136ab4c8ffbc0e4142414">ShowSelection_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:aa9da4476967136ab4c8ffbc0e4142414"><td class="mdescLeft">&#160;</td><td class="mdescRight">選択肢表示  <a href="#aa9da4476967136ab4c8ffbc0e4142414">[詳解]</a><br /></td></tr>
 <tr class="separator:aa9da4476967136ab4c8ffbc0e4142414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5808a55be2101d9d629dbd85c6349c4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a5808a55be2101d9d629dbd85c6349c4d">SetFlag_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:a5808a55be2101d9d629dbd85c6349c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラグをセット  <a href="#a5808a55be2101d9d629dbd85c6349c4d">[詳解]</a><br /></td></tr>
 <tr class="separator:a5808a55be2101d9d629dbd85c6349c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ed5bd558b46deb8f58309b8d5fc7b64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a7ed5bd558b46deb8f58309b8d5fc7b64">GetFlag_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:a7ed5bd558b46deb8f58309b8d5fc7b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラグを取得  <a href="#a7ed5bd558b46deb8f58309b8d5fc7b64">[詳解]</a><br /></td></tr>
 <tr class="separator:a7ed5bd558b46deb8f58309b8d5fc7b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe818a5dd78d2632e4a00b7edc1a6579"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#afe818a5dd78d2632e4a00b7edc1a6579">IsQuestActive_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:afe818a5dd78d2632e4a00b7edc1a6579"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストが進行中か？  <a href="#afe818a5dd78d2632e4a00b7edc1a6579">[詳解]</a><br /></td></tr>
 <tr class="separator:afe818a5dd78d2632e4a00b7edc1a6579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02ffaa5f2d461b97aa730d641f153e9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a02ffaa5f2d461b97aa730d641f153e9c">ProgressQuest_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:a02ffaa5f2d461b97aa730d641f153e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストを進行  <a href="#a02ffaa5f2d461b97aa730d641f153e9c">[詳解]</a><br /></td></tr>
 <tr class="separator:a02ffaa5f2d461b97aa730d641f153e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a439cdd8835fac278ee5a18be6e2a57c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a439cdd8835fac278ee5a18be6e2a57c1">GetQuestStageNo_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:a439cdd8835fac278ee5a18be6e2a57c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストのステージ番号を取得  <a href="#a439cdd8835fac278ee5a18be6e2a57c1">[詳解]</a><br /></td></tr>
 <tr class="separator:a439cdd8835fac278ee5a18be6e2a57c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aab5414b38c603354c7b0f7cfbd286d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a6aab5414b38c603354c7b0f7cfbd286d">GetItemCount_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:a6aab5414b38c603354c7b0f7cfbd286d"><td class="mdescLeft">&#160;</td><td class="mdescRight">アイテムの個数を取得  <a href="#a6aab5414b38c603354c7b0f7cfbd286d">[詳解]</a><br /></td></tr>
 <tr class="separator:a6aab5414b38c603354c7b0f7cfbd286d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a908ed1c475cb39fe93247dc16ab0cf12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#a908ed1c475cb39fe93247dc16ab0cf12">ConsumeItem_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:a908ed1c475cb39fe93247dc16ab0cf12"><td class="mdescLeft">&#160;</td><td class="mdescRight">アイテムを消費  <a href="#a908ed1c475cb39fe93247dc16ab0cf12">[詳解]</a><br /></td></tr>
 <tr class="separator:a908ed1c475cb39fe93247dc16ab0cf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9505d8111e0672e33b46003c624f1ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#af9505d8111e0672e33b46003c624f1ab">AcceptQuest_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:af9505d8111e0672e33b46003c624f1ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストを受注  <a href="#af9505d8111e0672e33b46003c624f1ab">[詳解]</a><br /></td></tr>
 <tr class="separator:af9505d8111e0672e33b46003c624f1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3c2ca074e8c0e11c58380502945dbf1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#ab3c2ca074e8c0e11c58380502945dbf1">IsQuestClear_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:ab3c2ca074e8c0e11c58380502945dbf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストをクリアしているか？  <a href="#ab3c2ca074e8c0e11c58380502945dbf1">[詳解]</a><br /></td></tr>
 <tr class="separator:ab3c2ca074e8c0e11c58380502945dbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">関数詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Luaにバインドする関数群定義。 </p>
+<p>クラスのメンバ関数がバインドできない為の処置。 ※ここに定義された関数はC++側からは呼び出さない事。 </p><dl class="section author"><dt>著者</dt><dd>YanaP </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
 <a id="af9505d8111e0672e33b46003c624f1ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9505d8111e0672e33b46003c624f1ab">&#9670;&nbsp;</a></span>AcceptQuest_Call()</h2>
 
@@ -135,14 +153,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>クエストを受注 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_af9505d8111e0672e33b46003c624f1ab_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_af9505d8111e0672e33b46003c624f1ab_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_af9505d8111e0672e33b46003c624f1ab_cgraph" id="ScriptBinds_8cpp_af9505d8111e0672e33b46003c624f1ab_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="180,5,359,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="180,5,359,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="205,56,334,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#a9cfa5596b302c04df341a35266a42998" title="ScriptExecuterBase\l::AcceptQuest" alt="" coords="200,107,339,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#af9c3ca91f048bb6abb7d51a20bb2bc67" title="クエスト受注 " alt="" coords="200,107,339,149"/>
 </map>
 </div>
 
@@ -163,14 +190,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>アイテムを消費 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_a908ed1c475cb39fe93247dc16ab0cf12_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_a908ed1c475cb39fe93247dc16ab0cf12_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_a908ed1c475cb39fe93247dc16ab0cf12_cgraph" id="ScriptBinds_8cpp_a908ed1c475cb39fe93247dc16ab0cf12_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="184,5,363,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="184,5,363,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="209,56,338,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#a7b363076b93ded45903d2fc62612f98e" title="ScriptExecuterBase\l::ConsumeItem" alt="" coords="204,107,343,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#ad62d685d3f4faa79d1530f966e80aa1c" title="アイテムを消費 " alt="" coords="204,107,343,149"/>
 </map>
 </div>
 
@@ -191,14 +227,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>フラグを取得 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_a7ed5bd558b46deb8f58309b8d5fc7b64_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_a7ed5bd558b46deb8f58309b8d5fc7b64_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_a7ed5bd558b46deb8f58309b8d5fc7b64_cgraph" id="ScriptBinds_8cpp_a7ed5bd558b46deb8f58309b8d5fc7b64_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="151,5,329,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="151,5,329,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="175,56,305,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#aa69de27e3313f75f5edb2a915075fc1e" title="ScriptExecuterBase\l::GetFlag" alt="" coords="171,107,309,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a4b4c035fa0e4340cff7de5bc5c73426d" title="フラグを取得 " alt="" coords="171,107,309,149"/>
 </map>
 </div>
 
@@ -219,14 +264,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>アイテムの個数を取得 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_a6aab5414b38c603354c7b0f7cfbd286d_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_a6aab5414b38c603354c7b0f7cfbd286d_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_a6aab5414b38c603354c7b0f7cfbd286d_cgraph" id="ScriptBinds_8cpp_a6aab5414b38c603354c7b0f7cfbd286d_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="184,5,363,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="184,5,363,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="209,56,338,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#aa9235ecfcabec47de8bfcb9f0efe17a4" title="ScriptExecuterBase\l::GetItemCount" alt="" coords="204,107,343,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a7aa811998027b8890b0d58a844a93757" title="アイテム数を取得 " alt="" coords="204,107,343,149"/>
 </map>
 </div>
 
@@ -247,14 +301,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>クエストのステージ番号を取得 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_a439cdd8835fac278ee5a18be6e2a57c1_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_a439cdd8835fac278ee5a18be6e2a57c1_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_a439cdd8835fac278ee5a18be6e2a57c1_cgraph" id="ScriptBinds_8cpp_a439cdd8835fac278ee5a18be6e2a57c1_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="211,5,389,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="211,5,389,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="235,56,365,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#a3eb1d7d4359c62076b9cf85491388a6f" title="ScriptExecuterBase\l::GetQuestStageNo" alt="" coords="231,107,369,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a0dc117619656407219747a63e8937531" title="クエストのステージ番号を取得 " alt="" coords="231,107,369,149"/>
 </map>
 </div>
 
@@ -275,14 +338,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>クエストが進行中か？ </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_afe818a5dd78d2632e4a00b7edc1a6579_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_afe818a5dd78d2632e4a00b7edc1a6579_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_afe818a5dd78d2632e4a00b7edc1a6579_cgraph" id="ScriptBinds_8cpp_afe818a5dd78d2632e4a00b7edc1a6579_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="184,5,363,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="184,5,363,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="209,56,338,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#af7e7b9c10c7d681933c8b32ea4c84c72" title="ScriptExecuterBase\l::IsQuestActive" alt="" coords="204,107,343,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a15073ffdea9f2519ae2e05228986426a" title="クエストが進行中か？ " alt="" coords="204,107,343,149"/>
 </map>
 </div>
 
@@ -303,14 +375,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>クエストをクリアしているか？ </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_ab3c2ca074e8c0e11c58380502945dbf1_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_ab3c2ca074e8c0e11c58380502945dbf1_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_ab3c2ca074e8c0e11c58380502945dbf1_cgraph" id="ScriptBinds_8cpp_ab3c2ca074e8c0e11c58380502945dbf1_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="180,5,359,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="180,5,359,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="205,56,334,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#a6f88565d7ef21b2823d02396c349c44b" title="ScriptExecuterBase\l::IsQuestClear" alt="" coords="200,107,339,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a69eabf99e4e9a5d7b9680dc5fac9c640" title="クエストをクリアしているか？ " alt="" coords="200,107,339,149"/>
 </map>
 </div>
 
@@ -331,14 +412,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>クエストを進行 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_a02ffaa5f2d461b97aa730d641f153e9c_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_a02ffaa5f2d461b97aa730d641f153e9c_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_a02ffaa5f2d461b97aa730d641f153e9c_cgraph" id="ScriptBinds_8cpp_a02ffaa5f2d461b97aa730d641f153e9c_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="192,5,371,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="192,5,371,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="217,56,346,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#aa6ce324266e4cd7902fd388714bb8482" title="ScriptExecuterBase\l::ProgressQuest" alt="" coords="212,107,351,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a87bcf254d186ae6005003e3c4f20f2f2" title="クエスト進行 " alt="" coords="212,107,351,149"/>
 </map>
 </div>
 
@@ -359,14 +449,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>選択肢をプッシュ </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_adc4069ecedbe278bffcb2ccc7553d9a7_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_adc4069ecedbe278bffcb2ccc7553d9a7_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_adc4069ecedbe278bffcb2ccc7553d9a7_cgraph" id="ScriptBinds_8cpp_adc4069ecedbe278bffcb2ccc7553d9a7_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="188,5,367,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="188,5,367,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="213,56,342,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#adc494a288aa30ce77df103d77bf3d6e9" title="ScriptExecuterBase\l::PushSelection_Impl" alt="" coords="205,107,350,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#ab27528047f040e148b011ca3df313c45" title="選択肢をプッシュ " alt="" coords="205,107,350,149"/>
 </map>
 </div>
 
@@ -387,14 +486,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>フラグをセット </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_a5808a55be2101d9d629dbd85c6349c4d_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_a5808a55be2101d9d629dbd85c6349c4d_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_a5808a55be2101d9d629dbd85c6349c4d_cgraph" id="ScriptBinds_8cpp_a5808a55be2101d9d629dbd85c6349c4d_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="149,5,328,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="149,5,328,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="174,56,303,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#aa480306075704b8c4201ee0577a4fcfa" title="ScriptExecuterBase\l::SetFlag" alt="" coords="169,107,308,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a5732c741fc48931eb0587f69441c26ea" title="フラグをセット " alt="" coords="169,107,308,149"/>
 </map>
 </div>
 
@@ -415,14 +523,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>メッセージ表示 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_ad04e7f790a695f09a6e4516366011284_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_ad04e7f790a695f09a6e4516366011284_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_ad04e7f790a695f09a6e4516366011284_cgraph" id="ScriptBinds_8cpp_ad04e7f790a695f09a6e4516366011284_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="189,5,368,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="189,5,368,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="214,56,343,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#a2c59828d465e91eee3ae63718aa964e3" title="ScriptExecuterBase\l::ShowMessage_Impl" alt="" coords="205,107,352,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a2c59828d465e91eee3ae63718aa964e3" title="メッセージを表示 " alt="" coords="205,107,352,149"/>
 </map>
 </div>
 
@@ -443,14 +560,23 @@ ScriptBinds.cpp の依存先関係図:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>選択肢表示 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="ScriptBinds_8cpp_aa9da4476967136ab4c8ffbc0e4142414_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_aa9da4476967136ab4c8ffbc0e4142414_cgraph" alt=""/></div>
 <map name="ScriptBinds_8cpp_aa9da4476967136ab4c8ffbc0e4142414_cgraph" id="ScriptBinds_8cpp_aa9da4476967136ab4c8ffbc0e4142414_cgraph">
-<area shape="rect" id="node2" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="191,5,369,32"/>
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="191,5,369,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="215,56,345,83"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#afeeb6ef0add20efeea695f551a683816" title="ScriptExecuterBase\l::ShowSelection_Impl" alt="" coords="207,107,353,149"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a2dbea0176eea2caf05a89e7cb84f5cc4" title="選択肢を表示 " alt="" coords="207,107,353,149"/>
 </map>
 </div>
 
