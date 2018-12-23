@@ -1,5 +1,5 @@
 <map id="IsQuestClear_Call" name="IsQuestClear_Call">
-<area shape="rect" id="node2" href="$classExecuterPool.html#a54563199197d8388445f3973a8ed359b" title="ExecuterPool::GetInstance" alt="" coords="180,5,359,32"/>
+<area shape="rect" id="node2" href="$classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="180,5,359,32"/>
 <area shape="rect" id="node3" href="$classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="205,56,334,83"/>
-<area shape="rect" id="node4" href="$classScriptExecuterBase.html#a6f88565d7ef21b2823d02396c349c44b" title="ScriptExecuterBase\l::IsQuestClear" alt="" coords="200,107,339,149"/>
+<area shape="rect" id="node4" href="$classScriptExecuterBase.html#a69eabf99e4e9a5d7b9680dc5fac9c640" title="クエストをクリアしているか？ " alt="" coords="200,107,339,149"/>
 </map>
