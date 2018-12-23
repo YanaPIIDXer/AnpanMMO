@@ -1,4 +1,4 @@
-*
+/**
  * @file ScriptterBase.cpp
  * @brief スクリプト実行基底クラス
  * @author YanaP

@@ -26,7 +26,7 @@ namespace SourceDeploy
 				File.Copy(Source, ClientPath + FileName, true);
 				if (Path.GetExtension(Source) == ".cpp")
 				{
-					// cppファイルだった場合は先頭の#include "stdafx"を除去。
+					// cppファイルだった場合は先頭の#include "stdafx.h"を除去。
 					string Code = "";
 					using (StreamReader Reader = new StreamReader(ClientPath + FileName, Encoding.GetEncoding("Shift-Jis")))
 					{
@@ -34,7 +34,6 @@ namespace SourceDeploy
 					}
 
 					Code = Code.Replace("#include \"stdafx.h\"", "");
-					Code = Code.Substring(2);
 
 					using (StreamWriter Writer = new StreamWriter(ClientPath + FileName, false, Encoding.GetEncoding("Shift-Jis")))
 					{

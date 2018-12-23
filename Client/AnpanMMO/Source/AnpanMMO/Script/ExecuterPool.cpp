@@ -1,4 +1,4 @@
-*
+/**
  * @file ExecuterPool.cpp
  * @brief スクリプト実行オブジェクトプール
  * @author YanaP
