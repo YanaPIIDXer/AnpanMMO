@@ -1,4 +1,4 @@
-*
+/**
  * @file ScriptBinds.cpp
  * @brief Luaにバインドする関数群定義。
  * @details クラスのメンバ関数がバインドできない為の処置。
