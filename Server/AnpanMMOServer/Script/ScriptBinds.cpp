@@ -1,3 +1,10 @@
+/**
+ * @file ScriptBinds.cpp
+ * @brief Luaにバインドする関数群定義。
+ * @details クラスのメンバ関数がバインドできない為の処置。
+ *			※ここに定義された関数はC++側からは呼び出さない事。
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "ScriptBinds.h"
 #include "ScriptExecuterBase.h"

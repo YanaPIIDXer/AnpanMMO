@@ -1,3 +1,8 @@
+/**
+ * @file ScriptterBase.cpp
+ * @brief スクリプト実行基底クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "ScriptExecuterBase.h"
 #include <iostream>

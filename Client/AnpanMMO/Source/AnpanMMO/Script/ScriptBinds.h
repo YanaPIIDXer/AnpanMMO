@@ -1,48 +1,122 @@
+/**
+ * @file ScriptBinds.h
+ * @brief Luaにバインドする関数群定義。
+ * @details クラスのメンバ関数がバインドできない為の処置。
+ *			※ここに定義された関数はC++側からは呼び出さない事。
+ * @author YanaP
+ */
 #ifndef __SCRIPTBINDS_H__
 #define __SCRIPTBINDS_H__
 
-/**
- * Luaにバインドする関数群定義。
- * クラスのメンバ関数がバインドできない為の処置。
- * ※ここに定義された関数はC++側からは呼び出さない事。
- */
-
 struct lua_State;
 
-// メッセージ表示.
+/**
+ * @fn int ShowMessage_Call(lua_State *pState)
+ * @brief メッセージ表示
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int ShowMessage_Call(lua_State *pState);
 
-// 選択肢プッシュ
+/**
+ * @fn int PushSelection_Call(lua_State *pState)
+ * @brief 選択肢をプッシュ
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int PushSelection_Call(lua_State *pState);
 
-// 選択肢を表示.
+
+/**
+ * @fn int ShowSelection_Call(lua_State *pState)
+ * @brief 選択肢表示
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int ShowSelection_Call(lua_State *pState);
 
-// フラグをセット。
+/**
+ * @fn int SetFlag_Call(lua_State *pState)
+ * @brief フラグをセット
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int SetFlag_Call(lua_State *pState);
 
-// フラグを取得.
+/**
+ * @fn int GetFlag_Call(lua_State *pState)
+ * @brief フラグを取得
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int GetFlag_Call(lua_State *pState);
 
-// クエストが進行中か？
+/**
+ * @fn int IsQuestActive_Call(lua_State *pState)
+ * @brief クエストが進行中か？
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int IsQuestActive_Call(lua_State *pState);
 
-// クエスト進行.
+/**
+ * @fn int ProgressQuest_Call(lua_State *pState)
+ * @brief クエストを進行
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int ProgressQuest_Call(lua_State *pState);
 
-// クエストのステージ番号を取得.
+/**
+ * @fn int GetQuestStageNo_Call(lua_State *pState)
+ * @brief クエストのステージ番号を取得
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int GetQuestStageNo_Call(lua_State *pState);
 
-// アイテムの個数を取得.
+/**
+ * @fn int GetItemCount_Call(lua_State *pState)
+ * @brief アイテムの個数を取得
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int GetItemCount_Call(lua_State *pState);
 
-// アイテムを消費.
+/**
+ * @fn int ConsumeItem_Call(lua_State *pState)
+ * @brief アイテムを消費
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int ConsumeItem_Call(lua_State *pState);
 
-// クエスト受注.
+/**
+ * @fn int AcceptQuest_Call(lua_State *pState)
+ * @brief クエストを受注
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int AcceptQuest_Call(lua_State *pState);
 
-// クエストをクリアしているか？
+/**
+ * @fn int IsQuestClear_Call(lua_State *pState)
+ * @brief クエストをクリアしているか？
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
 int IsQuestClear_Call(lua_State *pState);
 
 #endif		// #ifndef __SCRIPTBINDS_H__
