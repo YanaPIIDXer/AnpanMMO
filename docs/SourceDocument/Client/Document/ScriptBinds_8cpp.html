@@ -71,6 +71,9 @@ $(function() {
 <div class="title">ScriptBinds.cpp ファイル</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Luaにバインドする関数群定義。  
+<a href="#details">[詳解]</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ScriptBinds_8h_source.html">ScriptBinds.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ScriptExecuterBase_8h_source.html">ScriptExecuterBase.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ExecuterPool_8h_source.html">ExecuterPool.h</a>&quot;</code><br />
@@ -90,7 +93,7 @@ ScriptBinds.cpp の依存先関係図:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 関数</h2></td></tr>
-<tr class="memitem:ad04e7f790a695f09a6e4516366011284"><td class="memItemLeft" align="right" valign="top">**file ScriptBinds cpp *brief Luaにバインドする関数群定義。 *details クラスのメンバ関数がバインドできない為の処置。 *※ここに定義された関数はC 側からは呼び出さない事。 *author YanaP *int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#ad04e7f790a695f09a6e4516366011284">ShowMessage_Call</a> (lua_State *pState)</td></tr>
+<tr class="memitem:ad04e7f790a695f09a6e4516366011284"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#ad04e7f790a695f09a6e4516366011284">ShowMessage_Call</a> (lua_State *pState)</td></tr>
 <tr class="memdesc:ad04e7f790a695f09a6e4516366011284"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッセージ表示  <a href="#ad04e7f790a695f09a6e4516366011284">[詳解]</a><br /></td></tr>
 <tr class="separator:ad04e7f790a695f09a6e4516366011284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc4069ecedbe278bffcb2ccc7553d9a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#adc4069ecedbe278bffcb2ccc7553d9a7">PushSelection_Call</a> (lua_State *pState)</td></tr>
@@ -127,7 +130,10 @@ ScriptBinds.cpp の依存先関係図:</div>
 <tr class="memdesc:ab3c2ca074e8c0e11c58380502945dbf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストをクリアしているか？  <a href="#ab3c2ca074e8c0e11c58380502945dbf1">[詳解]</a><br /></td></tr>
 <tr class="separator:ab3c2ca074e8c0e11c58380502945dbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">関数詳解</h2>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Luaにバインドする関数群定義。 </p>
+<p>クラスのメンバ関数がバインドできない為の処置。 ※ここに定義された関数はC++側からは呼び出さない事。 </p><dl class="section author"><dt>著者</dt><dd>YanaP </dd></dl>
+</div><h2 class="groupheader">関数詳解</h2>
 <a id="af9505d8111e0672e33b46003c624f1ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9505d8111e0672e33b46003c624f1ab">&#9670;&nbsp;</a></span>AcceptQuest_Call()</h2>
 
