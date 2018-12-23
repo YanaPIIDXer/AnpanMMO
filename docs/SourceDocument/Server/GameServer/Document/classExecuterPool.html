@@ -70,26 +70,34 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>スクリプト実行オブジェクトプール  
+ <a href="classExecuterPool.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="ExecuterPool_8h_source.html">ExecuterPool.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:ad155187d4f4501683fe2ca8225df9042"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExecuterPool.html#ad155187d4f4501683fe2ca8225df9042">~ExecuterPool</a> ()</td></tr>
+<tr class="memdesc:ad155187d4f4501683fe2ca8225df9042"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#ad155187d4f4501683fe2ca8225df9042">[詳解]</a><br /></td></tr>
 <tr class="separator:ad155187d4f4501683fe2ca8225df9042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a5025291ad0f7963ad87da698764987"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExecuterPool.html#a5a5025291ad0f7963ad87da698764987">Register</a> (<a class="el" href="classScriptExecuterBase.html">ScriptExecuterBase</a> *pExecuter)</td></tr>
+<tr class="memdesc:a5a5025291ad0f7963ad87da698764987"><td class="mdescLeft">&#160;</td><td class="mdescRight">登録  <a href="#a5a5025291ad0f7963ad87da698764987">[詳解]</a><br /></td></tr>
 <tr class="separator:a5a5025291ad0f7963ad87da698764987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b66d5226749969cac44535c27a4aca5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScriptExecuterBase.html">ScriptExecuterBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5">Get</a> (long Id)</td></tr>
 <tr class="separator:a9b66d5226749969cac44535c27a4aca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a196671fa52a19936478f41d8d68dbe9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExecuterPool.html#a196671fa52a19936478f41d8d68dbe9c">Remove</a> (long Id)</td></tr>
+<tr class="memdesc:a196671fa52a19936478f41d8d68dbe9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">消去  <a href="#a196671fa52a19936478f41d8d68dbe9c">[詳解]</a><br /></td></tr>
 <tr class="separator:a196671fa52a19936478f41d8d68dbe9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
-<tr class="memitem:a54563199197d8388445f3973a8ed359b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classExecuterPool.html">ExecuterPool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExecuterPool.html#a54563199197d8388445f3973a8ed359b">GetInstance</a> ()</td></tr>
-<tr class="separator:a54563199197d8388445f3973a8ed359b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6486fd1488679f79d98a381d38dc90e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classExecuterPool.html">ExecuterPool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a6486fd1488679f79d98a381d38dc90e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">シングルトンインスタンスを取得  <a href="#a6486fd1488679f79d98a381d38dc90e3">[詳解]</a><br /></td></tr>
+<tr class="separator:a6486fd1488679f79d98a381d38dc90e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>スクリプト実行オブジェクトプール クラスのメンバ関数がバインド出来ない関係で作られた。 IDとスクリプト実行オブジェクトを紐付け、 スクリプトからC++側の関数を呼び出す際は引数にIDを渡すようにする。 （ポインタのようなもの） </p>
+<div class="textblock"><p>スクリプト実行オブジェクトプール </p>
+<p>クラスのメンバ関数がバインド出来ない関係で作られた。 IDとスクリプト実行オブジェクトを紐付け、 スクリプトからC++側の関数を呼び出す際は引数にIDを渡すようにする。 （ポインタのようなもの） シングルトンクラス </p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="ad155187d4f4501683fe2ca8225df9042"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad155187d4f4501683fe2ca8225df9042">&#9670;&nbsp;</a></span>~ExecuterPool()</h2>
@@ -114,6 +122,8 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
+<p>デストラクタ </p>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -137,25 +147,25 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classExecuterPool_a9b66d5226749969cac44535c27a4aca5_icgraph.png" border="0" usemap="#classExecuterPool_a9b66d5226749969cac44535c27a4aca5_icgraph" alt=""/></div>
 <map name="classExecuterPool_a9b66d5226749969cac44535c27a4aca5_icgraph" id="classExecuterPool_a9b66d5226749969cac44535c27a4aca5_icgraph">
-<area shape="rect" id="node2" href="ScriptBinds_8h.html#ad04e7f790a695f09a6e4516366011284" title="ShowMessage_Call" alt="" coords="193,5,329,32"/>
-<area shape="rect" id="node3" href="ScriptBinds_8h.html#adc4069ecedbe278bffcb2ccc7553d9a7" title="PushSelection_Call" alt="" coords="194,56,329,83"/>
-<area shape="rect" id="node4" href="ScriptBinds_8h.html#aa9da4476967136ab4c8ffbc0e4142414" title="ShowSelection_Call" alt="" coords="193,107,330,133"/>
-<area shape="rect" id="node5" href="ScriptBinds_8h.html#a5808a55be2101d9d629dbd85c6349c4d" title="SetFlag_Call" alt="" coords="213,157,309,184"/>
-<area shape="rect" id="node6" href="ScriptBinds_8h.html#a7ed5bd558b46deb8f58309b8d5fc7b64" title="GetFlag_Call" alt="" coords="213,208,310,235"/>
-<area shape="rect" id="node7" href="ScriptBinds_8h.html#afe818a5dd78d2632e4a00b7edc1a6579" title="IsQuestActive_Call" alt="" coords="196,259,327,285"/>
-<area shape="rect" id="node8" href="ScriptBinds_8h.html#a02ffaa5f2d461b97aa730d641f153e9c" title="ProgressQuest_Call" alt="" coords="192,309,331,336"/>
-<area shape="rect" id="node9" href="ScriptBinds_8h.html#a439cdd8835fac278ee5a18be6e2a57c1" title="GetQuestStageNo_Call" alt="" coords="183,360,340,387"/>
-<area shape="rect" id="node10" href="ScriptBinds_8h.html#a6aab5414b38c603354c7b0f7cfbd286d" title="GetItemCount_Call" alt="" coords="196,411,327,437"/>
-<area shape="rect" id="node11" href="ScriptBinds_8h.html#a908ed1c475cb39fe93247dc16ab0cf12" title="ConsumeItem_Call" alt="" coords="196,461,327,488"/>
-<area shape="rect" id="node12" href="ScriptBinds_8h.html#af9505d8111e0672e33b46003c624f1ab" title="AcceptQuest_Call" alt="" coords="198,512,325,539"/>
-<area shape="rect" id="node13" href="ScriptBinds_8h.html#ab3c2ca074e8c0e11c58380502945dbf1" title="IsQuestClear_Call" alt="" coords="198,563,325,589"/>
+<area shape="rect" id="node2" href="ScriptBinds_8h.html#ad04e7f790a695f09a6e4516366011284" title="メッセージ表示 " alt="" coords="193,5,329,32"/>
+<area shape="rect" id="node3" href="ScriptBinds_8h.html#adc4069ecedbe278bffcb2ccc7553d9a7" title="選択肢をプッシュ " alt="" coords="194,56,329,83"/>
+<area shape="rect" id="node4" href="ScriptBinds_8h.html#aa9da4476967136ab4c8ffbc0e4142414" title="選択肢表示 " alt="" coords="193,107,330,133"/>
+<area shape="rect" id="node5" href="ScriptBinds_8h.html#a5808a55be2101d9d629dbd85c6349c4d" title="フラグをセット " alt="" coords="213,157,309,184"/>
+<area shape="rect" id="node6" href="ScriptBinds_8h.html#a7ed5bd558b46deb8f58309b8d5fc7b64" title="フラグを取得 " alt="" coords="213,208,310,235"/>
+<area shape="rect" id="node7" href="ScriptBinds_8h.html#afe818a5dd78d2632e4a00b7edc1a6579" title="クエストが進行中か？ " alt="" coords="196,259,327,285"/>
+<area shape="rect" id="node8" href="ScriptBinds_8h.html#a02ffaa5f2d461b97aa730d641f153e9c" title="クエストを進行 " alt="" coords="192,309,331,336"/>
+<area shape="rect" id="node9" href="ScriptBinds_8h.html#a439cdd8835fac278ee5a18be6e2a57c1" title="クエストのステージ番号を取得 " alt="" coords="183,360,340,387"/>
+<area shape="rect" id="node10" href="ScriptBinds_8h.html#a6aab5414b38c603354c7b0f7cfbd286d" title="アイテムの個数を取得 " alt="" coords="196,411,327,437"/>
+<area shape="rect" id="node11" href="ScriptBinds_8h.html#a908ed1c475cb39fe93247dc16ab0cf12" title="アイテムを消費 " alt="" coords="196,461,327,488"/>
+<area shape="rect" id="node12" href="ScriptBinds_8h.html#af9505d8111e0672e33b46003c624f1ab" title="クエストを受注 " alt="" coords="198,512,325,539"/>
+<area shape="rect" id="node13" href="ScriptBinds_8h.html#ab3c2ca074e8c0e11c58380502945dbf1" title="クエストをクリアしているか？ " alt="" coords="198,563,325,589"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a54563199197d8388445f3973a8ed359b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54563199197d8388445f3973a8ed359b">&#9670;&nbsp;</a></span>GetInstance()</h2>
+<a id="a6486fd1488679f79d98a381d38dc90e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6486fd1488679f79d98a381d38dc90e3">&#9670;&nbsp;</a></span>GetInstance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,7 +174,7 @@ $(function() {
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classExecuterPool.html">ExecuterPool</a>&amp; ExecuterPool::GetInstance </td>
+          <td class="memname">static <a class="el" href="classExecuterPool.html">ExecuterPool</a> &amp; ExecuterPool::GetInstance </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -176,25 +186,28 @@ $(function() {
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>シングルトンインスタンスを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>インスタンス </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classExecuterPool_a54563199197d8388445f3973a8ed359b_icgraph.png" border="0" usemap="#classExecuterPool_a54563199197d8388445f3973a8ed359b_icgraph" alt=""/></div>
-<map name="classExecuterPool_a54563199197d8388445f3973a8ed359b_icgraph" id="classExecuterPool_a54563199197d8388445f3973a8ed359b_icgraph">
-<area shape="rect" id="node2" href="ScriptBinds_8h.html#ad04e7f790a695f09a6e4516366011284" title="ShowMessage_Call" alt="" coords="243,5,379,32"/>
-<area shape="rect" id="node3" href="ScriptBinds_8h.html#adc4069ecedbe278bffcb2ccc7553d9a7" title="PushSelection_Call" alt="" coords="243,56,378,83"/>
-<area shape="rect" id="node4" href="ScriptBinds_8h.html#aa9da4476967136ab4c8ffbc0e4142414" title="ShowSelection_Call" alt="" coords="242,107,379,133"/>
-<area shape="rect" id="node5" href="ScriptBinds_8h.html#a5808a55be2101d9d629dbd85c6349c4d" title="SetFlag_Call" alt="" coords="263,157,359,184"/>
-<area shape="rect" id="node6" href="ScriptBinds_8h.html#a7ed5bd558b46deb8f58309b8d5fc7b64" title="GetFlag_Call" alt="" coords="262,208,359,235"/>
-<area shape="rect" id="node7" href="ScriptBinds_8h.html#afe818a5dd78d2632e4a00b7edc1a6579" title="IsQuestActive_Call" alt="" coords="245,259,376,285"/>
-<area shape="rect" id="node8" href="ScriptBinds_8h.html#a02ffaa5f2d461b97aa730d641f153e9c" title="ProgressQuest_Call" alt="" coords="241,309,380,336"/>
-<area shape="rect" id="node9" href="ScriptBinds_8h.html#a439cdd8835fac278ee5a18be6e2a57c1" title="GetQuestStageNo_Call" alt="" coords="232,360,389,387"/>
-<area shape="rect" id="node10" href="ScriptBinds_8h.html#a6aab5414b38c603354c7b0f7cfbd286d" title="GetItemCount_Call" alt="" coords="245,411,376,437"/>
-<area shape="rect" id="node11" href="ScriptBinds_8h.html#a908ed1c475cb39fe93247dc16ab0cf12" title="ConsumeItem_Call" alt="" coords="245,461,376,488"/>
-<area shape="rect" id="node12" href="ScriptBinds_8h.html#af9505d8111e0672e33b46003c624f1ab" title="AcceptQuest_Call" alt="" coords="247,512,374,539"/>
-<area shape="rect" id="node13" href="ScriptBinds_8h.html#ab3c2ca074e8c0e11c58380502945dbf1" title="IsQuestClear_Call" alt="" coords="247,563,374,589"/>
-<area shape="rect" id="node14" href="classScriptExecuterBase.html#ad75cb1a9903d4593e59c4f2626b5a373" title="ScriptExecuterBase\l::~ScriptExecuterBase" alt="" coords="233,614,388,655"/>
-<area shape="rect" id="node15" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="ScriptExecuterBase\l::ExecuteScript" alt="" coords="241,679,380,721"/>
+<div class="center"><img src="classExecuterPool_a6486fd1488679f79d98a381d38dc90e3_icgraph.png" border="0" usemap="#classExecuterPool_a6486fd1488679f79d98a381d38dc90e3_icgraph" alt=""/></div>
+<map name="classExecuterPool_a6486fd1488679f79d98a381d38dc90e3_icgraph" id="classExecuterPool_a6486fd1488679f79d98a381d38dc90e3_icgraph">
+<area shape="rect" id="node2" href="ScriptBinds_8h.html#ad04e7f790a695f09a6e4516366011284" title="メッセージ表示 " alt="" coords="243,5,379,32"/>
+<area shape="rect" id="node3" href="ScriptBinds_8h.html#adc4069ecedbe278bffcb2ccc7553d9a7" title="選択肢をプッシュ " alt="" coords="243,56,378,83"/>
+<area shape="rect" id="node4" href="ScriptBinds_8h.html#aa9da4476967136ab4c8ffbc0e4142414" title="選択肢表示 " alt="" coords="242,107,379,133"/>
+<area shape="rect" id="node5" href="ScriptBinds_8h.html#a5808a55be2101d9d629dbd85c6349c4d" title="フラグをセット " alt="" coords="263,157,359,184"/>
+<area shape="rect" id="node6" href="ScriptBinds_8h.html#a7ed5bd558b46deb8f58309b8d5fc7b64" title="フラグを取得 " alt="" coords="262,208,359,235"/>
+<area shape="rect" id="node7" href="ScriptBinds_8h.html#afe818a5dd78d2632e4a00b7edc1a6579" title="クエストが進行中か？ " alt="" coords="245,259,376,285"/>
+<area shape="rect" id="node8" href="ScriptBinds_8h.html#a02ffaa5f2d461b97aa730d641f153e9c" title="クエストを進行 " alt="" coords="241,309,380,336"/>
+<area shape="rect" id="node9" href="ScriptBinds_8h.html#a439cdd8835fac278ee5a18be6e2a57c1" title="クエストのステージ番号を取得 " alt="" coords="232,360,389,387"/>
+<area shape="rect" id="node10" href="ScriptBinds_8h.html#a6aab5414b38c603354c7b0f7cfbd286d" title="アイテムの個数を取得 " alt="" coords="245,411,376,437"/>
+<area shape="rect" id="node11" href="ScriptBinds_8h.html#a908ed1c475cb39fe93247dc16ab0cf12" title="アイテムを消費 " alt="" coords="245,461,376,488"/>
+<area shape="rect" id="node12" href="ScriptBinds_8h.html#af9505d8111e0672e33b46003c624f1ab" title="クエストを受注 " alt="" coords="247,512,374,539"/>
+<area shape="rect" id="node13" href="ScriptBinds_8h.html#ab3c2ca074e8c0e11c58380502945dbf1" title="クエストをクリアしているか？ " alt="" coords="247,563,374,589"/>
+<area shape="rect" id="node14" href="classScriptExecuterBase.html#ad75cb1a9903d4593e59c4f2626b5a373" title="デストラクタ " alt="" coords="233,614,388,655"/>
+<area shape="rect" id="node15" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="241,679,380,721"/>
 <area shape="rect" id="node16" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="437,687,628,713"/>
 </map>
 </div>
@@ -216,12 +229,21 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>登録 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">スクリプト実行クラスへのポインタ</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>ＩＤ </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classExecuterPool_a5a5025291ad0f7963ad87da698764987_icgraph.png" border="0" usemap="#classExecuterPool_a5a5025291ad0f7963ad87da698764987_icgraph" alt=""/></div>
 <map name="classExecuterPool_a5a5025291ad0f7963ad87da698764987_icgraph" id="classExecuterPool_a5a5025291ad0f7963ad87da698764987_icgraph">
-<area shape="rect" id="node2" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="ScriptExecuterBase\l::ExecuteScript" alt="" coords="209,5,348,47"/>
+<area shape="rect" id="node2" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="209,5,348,47"/>
 <area shape="rect" id="node3" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="396,13,587,39"/>
 </map>
 </div>
@@ -243,12 +265,20 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>消去 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Id</td><td>ID </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classExecuterPool_a196671fa52a19936478f41d8d68dbe9c_icgraph.png" border="0" usemap="#classExecuterPool_a196671fa52a19936478f41d8d68dbe9c_icgraph" alt=""/></div>
 <map name="classExecuterPool_a196671fa52a19936478f41d8d68dbe9c_icgraph" id="classExecuterPool_a196671fa52a19936478f41d8d68dbe9c_icgraph">
-<area shape="rect" id="node2" href="classScriptExecuterBase.html#ad75cb1a9903d4593e59c4f2626b5a373" title="ScriptExecuterBase\l::~ScriptExecuterBase" alt="" coords="208,5,363,47"/>
+<area shape="rect" id="node2" href="classScriptExecuterBase.html#ad75cb1a9903d4593e59c4f2626b5a373" title="デストラクタ " alt="" coords="208,5,363,47"/>
 </map>
 </div>
 
