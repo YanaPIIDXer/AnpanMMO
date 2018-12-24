@@ -9,6 +9,7 @@
 #include "Active/ActiveGameMode.h"
 #include "Kismet/GameplayStatics.h"
 #include "MMOGameInstance.h"
+#include "Config.h"
 #include "Packet/PacketNPCTalk.h"
 
 // Spawn
@@ -27,10 +28,12 @@ ANPCCharacter *ANPCCharacter::Spawn(UWorld *pWorld, const NPCItem *pItem)
 	const NPCResourceItem *pResourceItem = MasterData::GetInstance().GetNPCReseourceMaster().Get(pItem->ResourceId);
 	check(pResourceItem != nullptr);
 
-	FString DLCPath = "/" + pResourceItem->DLCName + "/Assets.Assets";
+	FString DLCPath = Config::GetDLCDirectory() + "\\" + pResourceItem->DLCName + ".pak";
 	PakFileManager::GetInstance().Mount(DLCPath);
 
-	UNPCDataAsset *pDataAsset = LoadObject<UNPCDataAsset>(pChara, *DLCPath, *DLCPath);
+	FString AssetPath = "/" + pResourceItem->DLCName + "/Assets.Assets";
+
+	UNPCDataAsset *pDataAsset = LoadObject<UNPCDataAsset>(pChara, *AssetPath, *AssetPath);
 	check(pDataAsset != nullptr);
 
 	USkeletalMesh *pMesh = pDataAsset->Get(pResourceItem->Index);
