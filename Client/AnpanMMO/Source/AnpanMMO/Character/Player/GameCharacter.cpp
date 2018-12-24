@@ -37,10 +37,13 @@ void AGameCharacter::BeginPlay()
 	check(pGameMode != nullptr);
 	pGameMode->AddPlayerCharacter(Status.GetUuid(), this);
 
+	// «Standalone”Å‚¾‚Æ‚±‚Ì“_‚Å‚ÍMainHUD‚Í¶¬‚³‚ê‚Ä‚¢‚È‚¢B
+	/*
 	const TArray<uint32> &SkillList = Status.GetSkillList();
 	pGameMode->GetMainHUD()->OnRecvSkillList(SkillList[0], SkillList[1], SkillList[2], SkillList[3], SkillList[4]);
 
 	pGameMode->GetMainHUD()->UpdateItemShortcut();
+	*/
 
 	Move.Initialize(this, pInst);
 
@@ -51,6 +54,11 @@ void AGameCharacter::BeginPlay()
 void AGameCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	if (!bInitializedMainHUD)
+	{
+		InitializeMainHUD();
+	}
 
 	Move.Poll(DeltaTime);
 	Skill.Poll();
@@ -281,4 +289,21 @@ ACharacterBase *AGameCharacter::GetSkillTarget(uint32 SkillId)
 	}
 
 	return pTarget;
+}
+
+// MainHUD‚Ì‰Šú‰».
+void AGameCharacter::InitializeMainHUD()
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+
+	UMainHUD *pMainHUD = pGameMode->GetMainHUD();
+	if (pMainHUD == nullptr) { return; }
+
+	const TArray<uint32> &SkillList = Status.GetSkillList();
+	pMainHUD->OnRecvSkillList(SkillList[0], SkillList[1], SkillList[2], SkillList[3], SkillList[4]);
+
+	pMainHUD->UpdateItemShortcut();
+
+	bInitializedMainHUD = true;
 }

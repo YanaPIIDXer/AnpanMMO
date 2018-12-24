@@ -142,8 +142,14 @@ private:
 	// スキル制御.
 	SkillControl Skill;
 
+	// MainHUDを初期化したか？
+	bool bInitializedMainHUD;
+
 
 	// スキルターゲット取得.
 	ACharacterBase *GetSkillTarget(uint32 SkillId);
+
+	// MainHUDの初期化.
+	void InitializeMainHUD();
 
 };

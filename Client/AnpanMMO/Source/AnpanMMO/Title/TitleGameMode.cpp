@@ -44,7 +44,7 @@ void ATitleGameMode::BeginPlay()
 	Super::BeginPlay();
 
 	auto *pController = UGameplayStatics::GetPlayerController(this, 0);
-	pController->ConsoleCommand("r.SetRes 640x480w");
+	pController->ConsoleCommand("r.SetRes 1280x720w");
 	pController->SetVirtualJoystickVisibility(false);
 
 	pScreenWidget = UTitleScreenWidget::Show(this);
