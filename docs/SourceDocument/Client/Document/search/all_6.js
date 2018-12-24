@@ -31,6 +31,7 @@ var searchData=
   ['getcurrenttarget',['GetCurrentTarget',['../classAGameController.html#a71b97545e91a41e26a4116f0df22c291',1,'AGameController']]],
   ['getdef',['GetDef',['../classPlayerStatus.html#a9fbef17513ec71c1b5162f3887fef027',1,'PlayerStatus']]],
   ['getdlcdirectory',['GetDLCDirectory',['../classConfig.html#ac29f1b50174a5369b36f34a8c1e5318e',1,'Config']]],
+  ['getdlcurl',['GetDLCURL',['../classConfig.html#adfc6ac6d492bcd21dc3d25827e1d8db7',1,'Config']]],
   ['getexp',['GetExp',['../classPlayerStatus.html#a6b6de7c354b36a1d3b9367e7dcda6831',1,'PlayerStatus']]],
   ['getflag',['GetFlag',['../classScriptExecuter.html#a8b0e789679570c42f73da526516e4564',1,'ScriptExecuter::GetFlag()'],['../classScriptExecuterBase.html#a4b4c035fa0e4340cff7de5bc5c73426d',1,'ScriptExecuterBase::GetFlag()']]],
   ['getflag_5fcall',['GetFlag_Call',['../ScriptBinds_8cpp.html#a7ed5bd558b46deb8f58309b8d5fc7b64',1,'GetFlag_Call(lua_State *pState):&#160;ScriptBinds.cpp'],['../ScriptBinds_8h.html#a7ed5bd558b46deb8f58309b8d5fc7b64',1,'GetFlag_Call(lua_State *pState):&#160;ScriptBinds.cpp']]],

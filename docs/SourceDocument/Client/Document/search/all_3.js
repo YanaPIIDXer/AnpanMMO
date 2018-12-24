@@ -17,7 +17,6 @@ var searchData=
   ['displaytext',['DisplayText',['../classUSimpleDialog.html#a5578b9e11ea27d79f93e3b4076559ee0',1,'USimpleDialog::DisplayText()'],['../classUYesNoDialog.html#a6ebbb974cffff517460f8372756397e8',1,'UYesNoDialog::DisplayText()']]],
   ['distance',['Distance',['../structSkillItem.html#a2b3513c87115c385d1aa10cfbdb734dc',1,'SkillItem']]],
   ['dlcname',['DLCName',['../structNPCResourceItem.html#a08cd27bded294c53941531dfbed9041c',1,'NPCResourceItem']]],
-  ['dlcurl',['DLCURL',['../classConfig.html#aebac57ebb9f0df416ccaaec1e35104a5',1,'Config']]],
   ['doublelogin',['DoubleLogIn',['../classPacketLogInResult.html#a314bab1854b475e4203d1cc8ec23cacca3c6274d63778c48ae7b8a8e0f4829eed',1,'PacketLogInResult']]],
   ['downloadfinished',['DownloadFinished',['../classHttpConnection.html#a0735a3648a3ba4de00a9760e0b12be35',1,'HttpConnection']]],
   ['downloadresult',['DownloadResult',['../classVersionDownloader.html#adc4ff470bd227e9f3effbce537a0512d',1,'VersionDownloader']]],
