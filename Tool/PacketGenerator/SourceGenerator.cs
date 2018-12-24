@@ -84,13 +84,24 @@ namespace NativePacketGenerator
 			var OutputPath = TargetPath + "\\" + Class.ClassName + ".h";
 			try
 			{
-				StreamWriter Writer = new StreamWriter(OutputPath, false, Encoding.GetEncoding("Shift-JIS"));
-
+				string LoadedSrc = "";
+				if(File.Exists(OutputPath))
+				{
+					using (StreamReader Reader = new StreamReader(OutputPath, Encoding.GetEncoding("Shift-JIS")))
+					{
+						LoadedSrc = Reader.ReadToEnd();
+					}
+				}
+				
 				// ファイル名はここで置換.
 				Result = Result.Replace("$FILE_NAME$", Path.GetFileName(OutputPath));
 
-				Writer.Write(Result);
-				Writer.Close();
+				if(LoadedSrc == Result) { return true; }
+
+				using (StreamWriter Writer = new StreamWriter(OutputPath, false, Encoding.GetEncoding("Shift-JIS")))
+				{
+					Writer.Write(Result);
+				}
 			}
 			catch(Exception e)
 			{
