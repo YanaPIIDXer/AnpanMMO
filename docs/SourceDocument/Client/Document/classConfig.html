@@ -80,6 +80,8 @@ $(function() {
 <tr class="separator:a2984265d03df3c14d0a02595484d8d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aac6e291c2cb2fb2804a48d38c9290a"><td class="memItemLeft" align="right" valign="top">static FString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a3aac6e291c2cb2fb2804a48d38c9290a">GetScriptDirectory</a> ()</td></tr>
 <tr class="separator:a3aac6e291c2cb2fb2804a48d38c9290a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc6ac6d492bcd21dc3d25827e1d8db7"><td class="memItemLeft" align="right" valign="top">static FString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#adfc6ac6d492bcd21dc3d25827e1d8db7">GetDLCURL</a> ()</td></tr>
+<tr class="separator:adfc6ac6d492bcd21dc3d25827e1d8db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac29f1b50174a5369b36f34a8c1e5318e"><td class="memItemLeft" align="right" valign="top">static FString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#ac29f1b50174a5369b36f34a8c1e5318e">GetDLCDirectory</a> ()</td></tr>
 <tr class="separator:ac29f1b50174a5369b36f34a8c1e5318e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -93,8 +95,6 @@ $(function() {
 <tr class="separator:a0db38b223c067a7f4542efe9f1c18a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f306cfa8e5e8fc925cf5b457bf0374d"><td class="memItemLeft" align="right" valign="top">static const FString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a3f306cfa8e5e8fc925cf5b457bf0374d">ScriptURL</a> = &quot;http://218.220.121.112/~Master/anpanmmoscript/&quot;</td></tr>
 <tr class="separator:a3f306cfa8e5e8fc925cf5b457bf0374d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebac57ebb9f0df416ccaaec1e35104a5"><td class="memItemLeft" align="right" valign="top">static const FString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#aebac57ebb9f0df416ccaaec1e35104a5">DLCURL</a> = &quot;http://218.220.121.112/~Master/anpanmmo/dlc/&quot;</td></tr>
-<tr class="separator:aebac57ebb9f0df416ccaaec1e35104a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>定数定義. </p>
@@ -126,10 +126,45 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classConfig_ac29f1b50174a5369b36f34a8c1e5318e_icgraph.png" border="0" usemap="#classConfig_ac29f1b50174a5369b36f34a8c1e5318e_icgraph" alt=""/></div>
 <map name="classConfig_ac29f1b50174a5369b36f34a8c1e5318e_icgraph" id="classConfig_ac29f1b50174a5369b36f34a8c1e5318e_icgraph">
-<area shape="rect" id="node2" href="classAActiveGameMode.html#a0d93719855ac59396597701d396c3a92" title="AActiveGameMode::StartLevelLoad" alt="" coords="217,31,444,57"/>
-<area shape="rect" id="node5" href="classUTitleScreenWidget.html#afdbc1ecdae725bbd1460eaa7a7883d7e" title="UTitleScreenWidget\l::StartDLCDownload" alt="" coords="261,82,400,123"/>
+<area shape="rect" id="node2" href="classAActiveGameMode.html#a0d93719855ac59396597701d396c3a92" title="AActiveGameMode::StartLevelLoad" alt="" coords="217,56,444,83"/>
+<area shape="rect" id="node5" href="classANPCCharacter.html#a62519ea082b4a6c191e63dbb6a5e5e79" title="ANPCCharacter::Spawn" alt="" coords="250,107,411,133"/>
+<area shape="rect" id="node7" href="classUTitleScreenWidget.html#afdbc1ecdae725bbd1460eaa7a7883d7e" title="UTitleScreenWidget\l::StartDLCDownload" alt="" coords="261,158,400,199"/>
 <area shape="rect" id="node3" href="classAActiveGameMode.html#a78bc21f3d2cf5af61f80c435b571ac44" title="AActiveGameMode::BeginPlay" alt="" coords="492,5,692,32"/>
 <area shape="rect" id="node4" href="classUMainHUD.html#a1e8a3ed8c060154e615aac2c53dc1b73" title="UMainHUD::StartLevelLoad" alt="" coords="503,56,681,83"/>
+<area shape="rect" id="node6" href="classNPCManager.html#a15e31dcf91098eb0dfe17d59e4555da9" title="NPCManager::OnMapChanegd" alt="" coords="492,107,692,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adfc6ac6d492bcd21dc3d25827e1d8db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc6ac6d492bcd21dc3d25827e1d8db7">&#9670;&nbsp;</a></span>GetDLCURL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FString Config::GetDLCURL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classConfig_adfc6ac6d492bcd21dc3d25827e1d8db7_icgraph.png" border="0" usemap="#classConfig_adfc6ac6d492bcd21dc3d25827e1d8db7_icgraph" alt=""/></div>
+<map name="classConfig_adfc6ac6d492bcd21dc3d25827e1d8db7_icgraph" id="classConfig_adfc6ac6d492bcd21dc3d25827e1d8db7_icgraph">
+<area shape="rect" id="node2" href="classUTitleScreenWidget.html#afdbc1ecdae725bbd1460eaa7a7883d7e" title="UTitleScreenWidget\l::StartDLCDownload" alt="" coords="191,5,329,47"/>
 </map>
 </div>
 
@@ -253,28 +288,6 @@ $(function() {
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
-<a id="aebac57ebb9f0df416ccaaec1e35104a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebac57ebb9f0df416ccaaec1e35104a5">&#9670;&nbsp;</a></span>DLCURL</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const FString Config::DLCURL = &quot;http://218.220.121.112/~Master/anpanmmo/dlc/&quot;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a0db38b223c067a7f4542efe9f1c18a8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0db38b223c067a7f4542efe9f1c18a8d">&#9670;&nbsp;</a></span>MasterURL</h2>
 
