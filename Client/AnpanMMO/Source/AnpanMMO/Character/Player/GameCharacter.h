@@ -9,7 +9,6 @@
 #include "Skill/SkillControl.h"
 #include "GameCharacter.generated.h"
 
-class UFloatingPawnMovement;
 class USkeletalMeshComponent;
 
 /**

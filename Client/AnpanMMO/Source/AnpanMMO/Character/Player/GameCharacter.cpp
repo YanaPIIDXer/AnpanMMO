@@ -1,7 +1,7 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "GameCharacter.h"
-#include "GameFramework/FloatingPawnMovement.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Engine/World.h"
 #include "Character/Anpan/Anpan.h"
 #include "MMOGameInstance.h"
@@ -20,6 +20,9 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	auto *pMovement = GetCharacterMovement();
+	pMovement->SetWalkableFloorAngle(45.0f);
 }
 
 // 開始時の処理.
@@ -81,7 +84,7 @@ void AGameCharacter::OnRecvLevelUp(uint32 Level, int32 MaxHp, int32 Atk, int32 D
 // 移動ベクトルの取得.
 FVector AGameCharacter::GetMoveVector() const
 {
-	return GetMovementComponent()->GetLastInputVector();
+	return GetCharacterMovement()->GetLastInputVector();
 }
 
 // スキルが使用可能か？
