@@ -7,8 +7,8 @@
 <area shape="rect" id="node26" href="$TCPConnection_8cpp.html" title="TCPConnection.cpp" alt="" coords="1194,155,1331,181"/>
 <area shape="rect" id="node4" href="$CacheServerConnection_8cpp.html" title="キャッシュサーバとの接続クラス " alt="" coords="692,304,878,331"/>
 <area shape="rect" id="node5" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="668,229,808,256"/>
-<area shape="rect" id="node6" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="198,304,345,331"/>
-<area shape="rect" id="node7" href="$ClientStateTitle_8cpp.html" title="ClientStateTitle.cpp" alt="" coords="1363,304,1498,331"/>
+<area shape="rect" id="node6" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="198,304,345,331"/>
+<area shape="rect" id="node7" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="1363,304,1498,331"/>
 <area shape="rect" id="node8" href="$Main_8cpp.html" title="Main.cpp" alt="" coords="89,304,164,331"/>
 <area shape="rect" id="node9" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="354,229,486,256"/>
 <area shape="rect" id="node10" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="510,229,644,256"/>
@@ -19,7 +19,7 @@
 <area shape="rect" id="node16" href="$ClientManager_8h.html" title="ClientManager.h" alt="" coords="986,229,1102,256"/>
 <area shape="rect" id="node19" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="1904,304,2032,331"/>
 <area shape="rect" id="node21" href="$WordCheckServerConnection_8cpp.html" title="WordCheckServerConnection.cpp" alt="" coords="452,304,668,331"/>
-<area shape="rect" id="node22" href="$ClientStateAreaChange_8cpp.html" title="ClientStateAreaChange.cpp" alt="" coords="1742,229,1924,256"/>
+<area shape="rect" id="node22" href="$ClientStateAreaChange_8cpp.html" title="クライアントステート：エリア切り替え " alt="" coords="1742,229,1924,256"/>
 <area shape="rect" id="node23" href="$Party_8cpp.html" title="Party.cpp" alt="" coords="1948,229,2027,256"/>
 <area shape="rect" id="node24" href="$PlayerManager_8cpp.html" title="PlayerManager.cpp" alt="" coords="2051,229,2186,256"/>
 <area shape="rect" id="node17" href="$ClientAcceptor_8cpp.html" title="ClientAcceptor.cpp" alt="" coords="1207,304,1339,331"/>

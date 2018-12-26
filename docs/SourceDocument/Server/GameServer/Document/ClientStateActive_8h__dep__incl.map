@@ -1,4 +1,4 @@
 <map id="ClientStateActive.h" name="ClientStateActive.h">
-<area shape="rect" id="node2" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="5,80,152,107"/>
-<area shape="rect" id="node3" href="$ClientStateAreaChange_8cpp.html" title="ClientStateAreaChange.cpp" alt="" coords="177,80,359,107"/>
+<area shape="rect" id="node2" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node3" href="$ClientStateAreaChange_8cpp.html" title="クライアントステート：エリア切り替え " alt="" coords="177,80,359,107"/>
 </map>

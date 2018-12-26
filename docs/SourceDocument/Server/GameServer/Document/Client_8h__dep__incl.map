@@ -6,11 +6,11 @@
 <area shape="rect" id="node6" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="1057,80,1197,107"/>
 <area shape="rect" id="node7" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="1222,80,1302,107"/>
 <area shape="rect" id="node8" href="$ClientManager_8h.html" title="ClientManager.h" alt="" coords="764,80,880,107"/>
-<area shape="rect" id="node11" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="215,155,362,181"/>
-<area shape="rect" id="node12" href="$ClientStateTitle_8cpp.html" title="ClientStateTitle.cpp" alt="" coords="947,155,1081,181"/>
+<area shape="rect" id="node11" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="215,155,362,181"/>
+<area shape="rect" id="node12" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="947,155,1081,181"/>
 <area shape="rect" id="node14" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="1106,155,1234,181"/>
 <area shape="rect" id="node16" href="$WordCheckServerConnection_8cpp.html" title="WordCheckServerConnection.cpp" alt="" coords="1258,155,1474,181"/>
-<area shape="rect" id="node17" href="$ClientStateAreaChange_8cpp.html" title="ClientStateAreaChange.cpp" alt="" coords="1327,80,1509,107"/>
+<area shape="rect" id="node17" href="$ClientStateAreaChange_8cpp.html" title="クライアントステート：エリア切り替え " alt="" coords="1327,80,1509,107"/>
 <area shape="rect" id="node18" href="$Party_8cpp.html" title="Party.cpp" alt="" coords="1533,80,1612,107"/>
 <area shape="rect" id="node19" href="$PlayerManager_8cpp.html" title="PlayerManager.cpp" alt="" coords="1636,80,1771,107"/>
 <area shape="rect" id="node20" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="1795,80,1927,107"/>

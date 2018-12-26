@@ -4,9 +4,9 @@
 <area shape="rect" id="node4" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="282,80,441,107"/>
 <area shape="rect" id="node5" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="465,80,605,107"/>
 <area shape="rect" id="node6" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="629,80,709,107"/>
-<area shape="rect" id="node7" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="733,80,880,107"/>
-<area shape="rect" id="node8" href="$ClientStateAreaChange_8cpp.html" title="ClientStateAreaChange.cpp" alt="" coords="905,80,1087,107"/>
-<area shape="rect" id="node9" href="$ClientStateTitle_8cpp.html" title="ClientStateTitle.cpp" alt="" coords="1111,80,1246,107"/>
+<area shape="rect" id="node7" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="733,80,880,107"/>
+<area shape="rect" id="node8" href="$ClientStateAreaChange_8cpp.html" title="クライアントステート：エリア切り替え " alt="" coords="905,80,1087,107"/>
+<area shape="rect" id="node9" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="1111,80,1246,107"/>
 <area shape="rect" id="node10" href="$Party_8cpp.html" title="Party.cpp" alt="" coords="1270,80,1349,107"/>
 <area shape="rect" id="node11" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="1373,80,1501,107"/>
 <area shape="rect" id="node12" href="$PlayerManager_8cpp.html" title="PlayerManager.cpp" alt="" coords="1526,80,1661,107"/>

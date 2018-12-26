@@ -1,5 +1,5 @@
 <map id="Client::SendPacket" name="Client::SendPacket">
-<area shape="rect" id="node2" href="$classClientStateActive.html#a04b0193d8d026a520e099bce02b2c9c0" title="ClientStateActive::\lBeginState" alt="" coords="223,5,352,47"/>
+<area shape="rect" id="node2" href="$classClientStateActive.html#a04b0193d8d026a520e099bce02b2c9c0" title="State開始時の処理 " alt="" coords="223,5,352,47"/>
 <area shape="rect" id="node3" href="$classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="ゴールドを増加 " alt="" coords="201,71,374,98"/>
 <area shape="rect" id="node4" href="$classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="ゴールドを消費 " alt="" coords="188,122,387,149"/>
 <area shape="rect" id="node6" href="$classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="アイテム増加 " alt="" coords="202,173,373,199"/>
