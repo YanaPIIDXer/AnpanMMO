@@ -1,3 +1,8 @@
+/**
+ * @file ClientStateAreaChange.h
+ * @brief クライアントステート：エリア切り替え
+ * @author YanaP
+ */
 #ifndef __CLIENTSTATEAREACHANGE_H__
 #define __CLIENTSTATEAREACHANGE_H__
 
@@ -12,10 +17,15 @@ class ClientStateAreaChange : public ClientStateBase
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] pInParent クライアント
+	 */
 	ClientStateAreaChange(Client *pInParent, u32 InAreaId, const Vector3D &InPosition);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~ClientStateAreaChange() {}
 
 private:

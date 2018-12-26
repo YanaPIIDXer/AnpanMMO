@@ -1,3 +1,8 @@
+/**
+ * @file ClientStateActive.cpp
+ * @brief クライアントステート：ゲーム中
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include  "ClientStateActive.h"
 #include "MemoryStream/MemoryStreamInterface.h"

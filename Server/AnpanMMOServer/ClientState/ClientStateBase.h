@@ -1,3 +1,8 @@
+/**
+ * @file ClientStateBase.h
+ * @brief クライアントステート基底クラス
+ * @author YanaP
+ */
 #ifndef __CLIENTSTATEBASE_H__
 #define __CLIENTSTATEBASE_H__
 
@@ -9,7 +14,8 @@ class Client;
 class MemoryStreamInterface;
 
 /**
- * クライアントステート基底クラス
+ * @class ClientStateBase
+ * @brief クライアントステート基底クラス
  */
 class ClientStateBase
 {
@@ -21,25 +27,47 @@ private:		// 別名定義.
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] pInParent クライアント
+	 */
 	ClientStateBase(Client *pInParent)
 		: pParent(pInParent) {}
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~ClientStateBase() {}
 
-	// 開始時の処理.
+	/**
+	 * @fn virtual void BeginState()
+	 * @brief State開始時の処理
+	 */
 	virtual void BeginState() {}
 
-	// パケット解析.
+	/**
+	 * @fn void AnalyzePacket(u8 ID, MemoryStreamInterface *pStream)
+	 * @brief パケット解析
+	 * @param[in] ID パケットＩＤ
+	 * @param[in] pStream ストリーム
+	 */
 	void AnalyzePacket(u8 ID, MemoryStreamInterface *pStream);
 	
 protected:
 
-	// 親を取得.
+	/**
+	 * @fn Client *GetParent() const
+	 * @brief 親クライアントを取得
+	 * @return 親クライアント
+	 */
 	Client *GetParent() const { return pParent; }
 
-	// パケット解析関数を追加.
+	/*
+	 * @fn void AddPacketFunction(u8 ID, const PacketFunc &Func)
+	 * @brief パケット解析関数を追加
+	 * @param[in] ID パケットＩＤ
+	 * @param[in] Func 解析関数
+	 */
 	void AddPacketFunction(u8 ID, const PacketFunc &Func)
 	{
 		PacketFunctions[ID] = Func;
