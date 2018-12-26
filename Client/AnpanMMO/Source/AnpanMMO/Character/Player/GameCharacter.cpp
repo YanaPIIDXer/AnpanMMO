@@ -1,8 +1,11 @@
 // Copyright 2018 YanaPIIDXer All Rights Reserved.
 
 #include "GameCharacter.h"
-#include "GameFramework/FloatingPawnMovement.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Engine/World.h"
+#include "Engine.h"
+#include "EngineUtils.h"
+#include "GameFramework/PlayerStart.h"
 #include "Character/Anpan/Anpan.h"
 #include "MMOGameInstance.h"
 #include "Active/ActiveGameMode.h"
@@ -20,6 +23,9 @@ AGameCharacter::AGameCharacter(const FObjectInitializer &ObjectInitializer)
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	auto *pMovement = GetCharacterMovement();
+	pMovement->SetWalkableFloorAngle(45.0f);
 }
 
 // 開始時の処理.
@@ -62,6 +68,8 @@ void AGameCharacter::Tick(float DeltaTime)
 
 	Move.Poll(DeltaTime);
 	Skill.Poll();
+
+	RescueOnFall();
 }
 
 // 経験値を受信した。
@@ -81,7 +89,7 @@ void AGameCharacter::OnRecvLevelUp(uint32 Level, int32 MaxHp, int32 Atk, int32 D
 // 移動ベクトルの取得.
 FVector AGameCharacter::GetMoveVector() const
 {
-	return GetMovementComponent()->GetLastInputVector();
+	return GetCharacterMovement()->GetLastInputVector();
 }
 
 // スキルが使用可能か？
@@ -306,4 +314,24 @@ void AGameCharacter::InitializeMainHUD()
 	pMainHUD->UpdateItemShortcut();
 
 	bInitializedMainHUD = true;
+}
+
+
+// 落下時の救済措置.
+void AGameCharacter::RescueOnFall()
+{
+	FVector Pos = GetActorLocation();
+	if (Pos.Z < -5000.0f)
+	{
+		auto *pWorld = GEngine->GameViewport->GetWorld();
+		for (TActorIterator<APlayerStart> It(pWorld); It; ++It)
+		{
+			SetActorLocation(It->GetActorLocation());
+			return;
+		}
+
+		// StartPointが無かった場合はとりあえず真上に飛ばす
+		Pos.Z = 1000.0f;
+		SetActorLocation(Pos);
+	}
 }

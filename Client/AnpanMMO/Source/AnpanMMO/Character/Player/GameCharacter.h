@@ -9,7 +9,6 @@
 #include "Skill/SkillControl.h"
 #include "GameCharacter.generated.h"
 
-class UFloatingPawnMovement;
 class USkeletalMeshComponent;
 
 /**
@@ -151,5 +150,8 @@ private:
 
 	// MainHUD‚Ì‰Šú‰».
 	void InitializeMainHUD();
+
+	// —‰º‚Ì‹~Ï‘[’u.
+	void RescueOnFall();
 
 };
