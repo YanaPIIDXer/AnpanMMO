@@ -151,4 +151,7 @@ private:
 	// MainHUD‚Ì‰Šú‰».
 	void InitializeMainHUD();
 
+	// —‰º‚Ì‹~Ï‘[’u.
+	void RescueOnFall();
+
 };

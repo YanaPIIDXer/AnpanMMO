@@ -3,6 +3,9 @@
 #include "GameCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Engine/World.h"
+#include "Engine.h"
+#include "EngineUtils.h"
+#include "GameFramework/PlayerStart.h"
 #include "Character/Anpan/Anpan.h"
 #include "MMOGameInstance.h"
 #include "Active/ActiveGameMode.h"
@@ -65,6 +68,8 @@ void AGameCharacter::Tick(float DeltaTime)
 
 	Move.Poll(DeltaTime);
 	Skill.Poll();
+
+	RescueOnFall();
 }
 
 // 経験値を受信した。
@@ -309,4 +314,24 @@ void AGameCharacter::InitializeMainHUD()
 	pMainHUD->UpdateItemShortcut();
 
 	bInitializedMainHUD = true;
+}
+
+
+// 落下時の救済措置.
+void AGameCharacter::RescueOnFall()
+{
+	FVector Pos = GetActorLocation();
+	if (Pos.Z < -5000.0f)
+	{
+		auto *pWorld = GEngine->GameViewport->GetWorld();
+		for (TActorIterator<APlayerStart> It(pWorld); It; ++It)
+		{
+			SetActorLocation(It->GetActorLocation());
+			return;
+		}
+
+		// StartPointが無かった場合はとりあえず真上に飛ばす
+		Pos.Z = 1000.0f;
+		SetActorLocation(Pos);
+	}
 }
