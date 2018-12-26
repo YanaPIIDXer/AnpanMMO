@@ -76,6 +76,28 @@ FString Config::GetScriptDirectory()
 
 const FString Config::DLCURL = "http://218.220.121.112/~Master/anpanmmo/dlc/";
 
+// DLCのURLを取得
+FString Config::GetDLCURL()
+{
+	FString URL = DLCURL;
+
+#if PLATFORM_WINDOWS
+
+	URL += "windows/";
+
+#elif PLATFORM_ANDROID
+
+	URL += "android/";
+
+#elif PLATFORM_IOS
+
+	URL += "ios/";
+
+#endif
+
+	return URL;
+}
+
 // DLCディレクトリを取得.
 FString Config::GetDLCDirectory()
 {

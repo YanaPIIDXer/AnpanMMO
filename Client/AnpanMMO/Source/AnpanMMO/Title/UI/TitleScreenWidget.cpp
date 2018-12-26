@@ -51,7 +51,7 @@ void UTitleScreenWidget::StartDLCDownload()
 {
 #if !WITH_EDITOR
 	VersionDownload.DownloadResult.BindUObject<UTitleScreenWidget>(this, &UTitleScreenWidget::OnDLCDownloaded);
-	if (!VersionDownload.Start(Config::DLCURL, Config::GetDLCDirectory()))
+	if (!VersionDownload.Start(Config::GetDLCURL(), Config::GetDLCDirectory()))
 	{
 		OnDLCDownloaded(false);
 	}

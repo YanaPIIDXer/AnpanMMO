@@ -84,13 +84,26 @@ namespace NativePacketGenerator
 			try
 			{
 				string FullPath = Path.GetFullPath(TargetPath);
-				StreamWriter Writer = new StreamWriter(FullPath, false, Encoding.GetEncoding("Shift-JIS"));
+				string LoadedSrc = "";
+				if(File.Exists(FullPath))
+				{
+					using (StreamReader Reader = new StreamReader(FullPath, Encoding.GetEncoding("Shift-JIS")))
+					{
+						LoadedSrc = Reader.ReadToEnd();
+					}
+				}
 
 				// インクルードガードはここで置換する。
 				Result = Result.Replace("$INCLUDE_GUARD$", "__" + Path.GetFileNameWithoutExtension(TargetPath).ToUpper() + "_H__");
 
-				Writer.Write(Result);
-				Writer.Close();
+				// 更新不要.
+				if(LoadedSrc == Result) { return true; }
+
+				using (StreamWriter Writer = new StreamWriter(FullPath, false, Encoding.GetEncoding("Shift-JIS")))
+				{
+					Writer.Write(Result);
+				}
+
 			}
 			catch(Exception e)
 			{

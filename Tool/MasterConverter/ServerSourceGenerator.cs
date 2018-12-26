@@ -81,7 +81,7 @@ namespace MasterConverter
 		private void GenerateHeader()
 		{
 			string Source = "";
-			using (StreamReader Reader = new StreamReader(HeaderTemplatePath, Encoding.GetEncoding("shift-jis")))
+			using (StreamReader Reader = new StreamReader(HeaderTemplatePath, Encoding.GetEncoding("Shift-JIS")))
 			{
 				Source = Reader.ReadToEnd();
 			}
@@ -93,7 +93,19 @@ namespace MasterConverter
 			{
 				Directory.CreateDirectory(TargetDirectory);
 			}
-			using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.GetEncoding("shift-jis")))
+
+			string LoadedSrc = "";
+			if(File.Exists(FilePath))
+			{
+				using(StreamReader Reader = new StreamReader(FilePath, Encoding.GetEncoding("Shift-JIS")))
+				{
+					LoadedSrc = Reader.ReadToEnd();
+				}
+			}
+
+			if(LoadedSrc == Source) { return; }
+
+			using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.GetEncoding("Shift-JIS")))
 			{
 				Writer.Write(Source);
 			}
@@ -105,14 +117,28 @@ namespace MasterConverter
 		private void GenerateSource()
 		{
 			string Source = "";
-			using (StreamReader Reader = new StreamReader(SourceTemplatePath, Encoding.GetEncoding("shift-jis")))
+			using (StreamReader Reader = new StreamReader(SourceTemplatePath, Encoding.GetEncoding("Shift-JIS")))
 			{
 				Source = Reader.ReadToEnd();
 			}
 
 			Source = ReplaceTags(Source);
 
-			using (StreamWriter Writer = new StreamWriter(TargetDirectory + "\\" + Master.Name + "Master.cpp", false, Encoding.GetEncoding("shift-jis")))
+			string FilePath = TargetDirectory + "\\" + Master.Name + "Master.cpp";
+
+			string LoadedSrc = "";
+			if (File.Exists(FilePath))
+			{
+				using (StreamReader Reader = new StreamReader(FilePath, Encoding.GetEncoding("Shift-JIS")))
+				{
+					LoadedSrc = Reader.ReadToEnd();
+				}
+			}
+
+			// 更新不要.
+			if (LoadedSrc == Source) { return; }
+
+			using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.GetEncoding("Shift-JIS")))
 			{
 				Writer.Write(Source);
 			}

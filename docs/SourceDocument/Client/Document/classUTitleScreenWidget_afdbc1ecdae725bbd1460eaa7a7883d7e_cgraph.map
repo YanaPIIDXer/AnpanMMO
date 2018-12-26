@@ -1,7 +1,8 @@
 <map id="UTitleScreenWidget::StartDLCDownload" name="UTitleScreenWidget::StartDLCDownload">
 <area shape="rect" id="node2" href="$classUTitleScreenWidget.html#acc5aa10aae1b9316df7724e027dc7e4c" title="UTitleScreenWidget\l::OnDLCDownloaded" alt="" coords="203,5,345,47"/>
 <area shape="rect" id="node3" href="$classVersionDownloader.html#a8561de22623e27d2c61637f4e06ae515" title="VersionDownloader::\lStart" alt="" coords="203,71,345,112"/>
-<area shape="rect" id="node6" href="$classConfig.html#ac29f1b50174a5369b36f34a8c1e5318e" title="Config::GetDLCDirectory" alt="" coords="192,137,356,163"/>
+<area shape="rect" id="node6" href="$classConfig.html#adfc6ac6d492bcd21dc3d25827e1d8db7" title="Config::GetDLCURL" alt="" coords="205,137,343,163"/>
+<area shape="rect" id="node7" href="$classConfig.html#ac29f1b50174a5369b36f34a8c1e5318e" title="Config::GetDLCDirectory" alt="" coords="192,187,356,214"/>
 <area shape="rect" id="node4" href="$classHttpConnection.html#a0dcc79842dc827d9b9b7ccda59b3115a" title="HttpConnection::StartDownload" alt="" coords="404,78,607,105"/>
 <area shape="rect" id="node5" href="$classHttpConnection.html#a6bea587b0ded1630fc0b97367a10f023" title="HttpConnection::Close" alt="" coords="655,78,807,105"/>
 </map>

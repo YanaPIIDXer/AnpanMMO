@@ -16,20 +16,35 @@ namespace DLCGenerator
 	{
 
 		/// <summary>
+		/// 生成先ディレクトリ
+		/// </summary>
+		private string TargetDirectory;
+
+		/// <summary>
 		/// ファイルリスト
 		/// </summary>
 		private string[] FileList;
 
-		public VersionGenerator(string[] InFileList)
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="InTargetDirectory">生成先ディレクトリ</param>
+		/// <param name="InFileList">ファイルリスト</param>
+		public VersionGenerator(string InTargetDirectory, string[] InFileList)
 		{
+			TargetDirectory = InTargetDirectory;
 			FileList = InFileList;
 		}
 
+		/// <summary>
+		/// 生成
+		/// </summary>
+		/// <returns>成功したらtrueを返す</returns>
 		public bool Generate()
 		{
 			try
 			{
-				string FilePath = Config.PakPath + "\\" + "Version.csv";
+				string FilePath = TargetDirectory + "\\" + "Version.csv";
 				using (StreamWriter Writer = new StreamWriter(FilePath))
 				{
 					foreach(var TargetFilePath in FileList)

@@ -36,6 +36,8 @@
 			this.TransportTargetList = new System.Windows.Forms.ListBox();
 			this.AddTransportTargetButton = new System.Windows.Forms.Button();
 			this.TransportButton = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.TargetPlatformComboBox = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -67,7 +69,7 @@
 			// 
 			// ExecuteButton
 			// 
-			this.ExecuteButton.Location = new System.Drawing.Point(239, 279);
+			this.ExecuteButton.Location = new System.Drawing.Point(299, 279);
 			this.ExecuteButton.Name = "ExecuteButton";
 			this.ExecuteButton.Size = new System.Drawing.Size(132, 43);
 			this.ExecuteButton.TabIndex = 3;
@@ -78,7 +80,7 @@
 			// DLCListBox
 			// 
 			this.DLCListBox.FormattingEnabled = true;
-			this.DLCListBox.Location = new System.Drawing.Point(73, 100);
+			this.DLCListBox.Location = new System.Drawing.Point(224, 100);
 			this.DLCListBox.Name = "DLCListBox";
 			this.DLCListBox.Size = new System.Drawing.Size(225, 157);
 			this.DLCListBox.TabIndex = 4;
@@ -112,11 +114,36 @@
 			this.TransportButton.UseVisualStyleBackColor = true;
 			this.TransportButton.Click += new System.EventHandler(this.TransportButton_Click);
 			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(22, 86);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(106, 15);
+			this.label2.TabIndex = 8;
+			this.label2.Text = "Target Platform";
+			// 
+			// TargetPlatformComboBox
+			// 
+			this.TargetPlatformComboBox.FormattingEnabled = true;
+			this.TargetPlatformComboBox.Items.AddRange(new object[] {
+            "Windows",
+            "Android",
+            "iOS"});
+			this.TargetPlatformComboBox.Location = new System.Drawing.Point(25, 122);
+			this.TargetPlatformComboBox.Name = "TargetPlatformComboBox";
+			this.TargetPlatformComboBox.Size = new System.Drawing.Size(121, 23);
+			this.TargetPlatformComboBox.TabIndex = 9;
+			this.TargetPlatformComboBox.Text = "Windows";
+			this.TargetPlatformComboBox.SelectedIndexChanged += new System.EventHandler(this.TargetPlatformComboBox_SelectedIndexChanged);
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(865, 346);
+			this.Controls.Add(this.TargetPlatformComboBox);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.TransportButton);
 			this.Controls.Add(this.AddTransportTargetButton);
 			this.Controls.Add(this.TransportTargetList);
@@ -142,6 +169,8 @@
 		private System.Windows.Forms.ListBox TransportTargetList;
 		private System.Windows.Forms.Button AddTransportTargetButton;
 		private System.Windows.Forms.Button TransportButton;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ComboBox TargetPlatformComboBox;
 	}
 }
 
