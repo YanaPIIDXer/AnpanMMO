@@ -33,9 +33,9 @@
 <area shape="rect" id="node38" href="$WordCheckPacketChatRequest_8h.html" title="ワードチェック要求 " alt="" coords="6337,87,6555,114"/>
 <area shape="rect" id="node39" href="$WordCheckPacketChatResult_8h.html" title="ワードチェック結果 " alt="" coords="6579,87,6785,114"/>
 <area shape="rect" id="node40" href="$WordCheckServerConnection_8cpp.html" title="WordCheckServerConnection.cpp" alt="" coords="7487,87,7703,114"/>
-<area shape="rect" id="node4" href="$ClientStateTitle_8cpp.html" title="ClientStateTitle.cpp" alt="" coords="2817,169,2952,196"/>
+<area shape="rect" id="node4" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="2817,169,2952,196"/>
 <area shape="rect" id="node7" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="435,169,575,196"/>
-<area shape="rect" id="node19" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="5847,169,5994,196"/>
+<area shape="rect" id="node19" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="5847,169,5994,196"/>
 <area shape="rect" id="node23" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="6973,169,7105,196"/>
 <area shape="rect" id="node33" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="7303,169,7437,196"/>
 </map>

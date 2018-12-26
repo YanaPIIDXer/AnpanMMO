@@ -1,23 +1,37 @@
+/**
+ * @file ClientStateActive.h
+ * @brief クライアントステート：ゲーム中
+ * @author YanaP
+ */
 #ifndef __CLIENTSTATEACTIVE_H__
 #define __CLIENTSTATEACTIVE_H__
 
 #include "ClientStateBase.h"
 
 /**
- * ゲーム中State
+ * @class ClientStateActive
+ * @brief ゲーム中State
  */
 class ClientStateActive : public ClientStateBase
 {
 		
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] pInParent クライアント
+	 */
 	ClientStateActive(Client *pInParent);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~ClientStateActive() {}
 
-	// State開始時の処理.
+	/**
+	 * @fn virtual void BeginState()
+	 * @brief State開始時の処理
+	 */
 	virtual void BeginState();
 
 private:

@@ -1,3 +1,8 @@
+/**
+ * @file ClientStateTitle.h
+ * @brief クライアントステート：タイトル画面
+ * @author YanaP
+ */
 #ifndef __CLIENTSTATETITLE_H__
 #define __CLIENTSTATETITLE_H__
 
@@ -5,17 +10,23 @@
 #include "Math/Vector3D.h"
 
 /**
- * タイトル画面State
+ * @class ClientStateTitle
+ * @brief タイトル画面State
  */
 class ClientStateTitle : public ClientStateBase
 {
 
 public:
 
-	// コンストラクタ
+	/**
+	 * @brief コンストラクタ
+	 * @param[in] pInParent クライアント
+	 */
 	ClientStateTitle(Client *pInParent);
 
-	// デストラクタ
+	/**
+	 * @brief デストラクタ
+	 */
 	virtual ~ClientStateTitle() {}
 
 private:

@@ -1,3 +1,8 @@
+/**
+ * @file ClientStateAreaChange.cpp
+ * @brief クライアントステート：エリア切り替え
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "ClientStateAreaChange.h"
 #include "Client.h"

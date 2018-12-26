@@ -70,33 +70,41 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>クライアントステート基底クラス  
+ <a href="classClientStateBase.html#details">[詳解]</a></p>
+
 <p><code>#include &lt;<a class="el" href="ClientStateBase_8h_source.html">ClientStateBase.h</a>&gt;</code></p>
 <div class="dynheader">
 ClientStateBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classClientStateBase__inherit__graph.png" border="0" usemap="#ClientStateBase_inherit__map" alt="Inheritance graph"/></div>
 <map name="ClientStateBase_inherit__map" id="ClientStateBase_inherit__map">
-<area shape="rect" id="node2" href="classClientStateActive.html" title="ClientStateActive" alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node2" href="classClientStateActive.html" title="ゲーム中State " alt="" coords="5,80,127,107"/>
 <area shape="rect" id="node3" href="classClientStateAreaChange.html" title="ClientStateAreaChange" alt="" coords="151,80,309,107"/>
-<area shape="rect" id="node4" href="classClientStateTitle.html" title="ClientStateTitle" alt="" coords="333,80,444,107"/>
+<area shape="rect" id="node4" href="classClientStateTitle.html" title="タイトル画面State " alt="" coords="333,80,444,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a6b43145b24d2bbb5ed375f7c1037871e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientStateBase.html#a6b43145b24d2bbb5ed375f7c1037871e">ClientStateBase</a> (<a class="el" href="classClient.html">Client</a> *pInParent)</td></tr>
+<tr class="memdesc:a6b43145b24d2bbb5ed375f7c1037871e"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a6b43145b24d2bbb5ed375f7c1037871e">[詳解]</a><br /></td></tr>
 <tr class="separator:a6b43145b24d2bbb5ed375f7c1037871e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12d23111749bfb5b53c0d8f8de8cc4ab"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientStateBase.html#a12d23111749bfb5b53c0d8f8de8cc4ab">~ClientStateBase</a> ()</td></tr>
+<tr class="memdesc:a12d23111749bfb5b53c0d8f8de8cc4ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a12d23111749bfb5b53c0d8f8de8cc4ab">[詳解]</a><br /></td></tr>
 <tr class="separator:a12d23111749bfb5b53c0d8f8de8cc4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5d9d43d0f7201a9ced26d3efe824f47"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientStateBase.html#ad5d9d43d0f7201a9ced26d3efe824f47">BeginState</a> ()</td></tr>
-<tr class="separator:ad5d9d43d0f7201a9ced26d3efe824f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb12872a9d8eb0e74fdcf32d60da185"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientStateBase.html#adfb12872a9d8eb0e74fdcf32d60da185">BeginState</a> ()</td></tr>
+<tr class="memdesc:adfb12872a9d8eb0e74fdcf32d60da185"><td class="mdescLeft">&#160;</td><td class="mdescRight">State開始時の処理  <a href="#adfb12872a9d8eb0e74fdcf32d60da185">[詳解]</a><br /></td></tr>
+<tr class="separator:adfb12872a9d8eb0e74fdcf32d60da185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b16d1e07a6a5b487e3524295567e835"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientStateBase.html#a0b16d1e07a6a5b487e3524295567e835">AnalyzePacket</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> ID, <a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="memdesc:a0b16d1e07a6a5b487e3524295567e835"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケット解析  <a href="#a0b16d1e07a6a5b487e3524295567e835">[詳解]</a><br /></td></tr>
 <tr class="separator:a0b16d1e07a6a5b487e3524295567e835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
-<tr class="memitem:aa3d564e4ddd1edaf9663743564e2775e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientStateBase.html#aa3d564e4ddd1edaf9663743564e2775e">GetParent</a> () const</td></tr>
-<tr class="separator:aa3d564e4ddd1edaf9663743564e2775e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca64b1f52c9cb81515a12ec522cfe64e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientStateBase.html#aca64b1f52c9cb81515a12ec522cfe64e">GetParent</a> () const</td></tr>
+<tr class="memdesc:aca64b1f52c9cb81515a12ec522cfe64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">親クライアントを取得  <a href="#aca64b1f52c9cb81515a12ec522cfe64e">[詳解]</a><br /></td></tr>
+<tr class="separator:aca64b1f52c9cb81515a12ec522cfe64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9f13af8f3575f16240f055a65e8568b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientStateBase.html#ad9f13af8f3575f16240f055a65e8568b">AddPacketFunction</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> ID, const PacketFunc &amp;Func)</td></tr>
 <tr class="separator:ad9f13af8f3575f16240f055a65e8568b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -127,6 +135,14 @@ ClientStateBase の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pInParent</td><td>クライアント </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a12d23111749bfb5b53c0d8f8de8cc4ab"></a>
@@ -151,6 +167,8 @@ ClientStateBase の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>デストラクタ </p>
 
 </div>
 </div>
@@ -193,9 +211,9 @@ ClientStateBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classClientStateBase_ad9f13af8f3575f16240f055a65e8568b_icgraph.png" border="0" usemap="#classClientStateBase_ad9f13af8f3575f16240f055a65e8568b_icgraph" alt=""/></div>
 <map name="classClientStateBase_ad9f13af8f3575f16240f055a65e8568b_icgraph" id="classClientStateBase_ad9f13af8f3575f16240f055a65e8568b_icgraph">
-<area shape="rect" id="node2" href="classClientStateActive.html#afb31374b7cf36b23d147f48dece177d6" title="ClientStateActive::\lClientStateActive" alt="" coords="259,5,389,47"/>
-<area shape="rect" id="node3" href="classClientStateAreaChange.html#a53b8996a88850afa11794ed7b70ea20a" title="ClientStateAreaChange\l::ClientStateAreaChange" alt="" coords="241,71,407,112"/>
-<area shape="rect" id="node4" href="classClientStateTitle.html#a00331f7840d268fba7e14c3efe127a8f" title="ClientStateTitle::Client\lStateTitle" alt="" coords="249,136,399,177"/>
+<area shape="rect" id="node2" href="classClientStateActive.html#afb31374b7cf36b23d147f48dece177d6" title="コンストラクタ " alt="" coords="259,5,389,47"/>
+<area shape="rect" id="node3" href="classClientStateAreaChange.html#a53b8996a88850afa11794ed7b70ea20a" title="コンストラクタ " alt="" coords="241,71,407,112"/>
+<area shape="rect" id="node4" href="classClientStateTitle.html#a00331f7840d268fba7e14c3efe127a8f" title="コンストラクタ " alt="" coords="249,136,399,177"/>
 </map>
 </div>
 
@@ -227,10 +245,19 @@ ClientStateBase の継承関係図</div>
       </table>
 </div><div class="memdoc">
 
+<p>パケット解析 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ID</td><td>パケットＩＤ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pStream</td><td>ストリーム </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ad5d9d43d0f7201a9ced26d3efe824f47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5d9d43d0f7201a9ced26d3efe824f47">&#9670;&nbsp;</a></span>BeginState()</h2>
+<a id="adfb12872a9d8eb0e74fdcf32d60da185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb12872a9d8eb0e74fdcf32d60da185">&#9670;&nbsp;</a></span>BeginState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,7 +266,7 @@ ClientStateBase の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ClientStateBase::BeginState </td>
+          <td class="memname">void ClientStateBase::BeginState </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -252,12 +279,14 @@ ClientStateBase の継承関係図</div>
 </table>
 </div><div class="memdoc">
 
+<p>State開始時の処理 </p>
+
 <p><a class="el" href="classClientStateActive.html#a04b0193d8d026a520e099bce02b2c9c0">ClientStateActive</a>で再実装されています。</p>
 
 </div>
 </div>
-<a id="aa3d564e4ddd1edaf9663743564e2775e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3d564e4ddd1edaf9663743564e2775e">&#9670;&nbsp;</a></span>GetParent()</h2>
+<a id="aca64b1f52c9cb81515a12ec522cfe64e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca64b1f52c9cb81515a12ec522cfe64e">&#9670;&nbsp;</a></span>GetParent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +295,7 @@ ClientStateBase の継承関係図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classClient.html">Client</a>* ClientStateBase::GetParent </td>
+          <td class="memname"><a class="el" href="classClient.html">Client</a> * ClientStateBase::GetParent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -278,12 +307,15 @@ ClientStateBase の継承関係図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>親クライアントを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>親クライアント </dd></dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classClientStateBase_aa3d564e4ddd1edaf9663743564e2775e_icgraph.png" border="0" usemap="#classClientStateBase_aa3d564e4ddd1edaf9663743564e2775e_icgraph" alt=""/></div>
-<map name="classClientStateBase_aa3d564e4ddd1edaf9663743564e2775e_icgraph" id="classClientStateBase_aa3d564e4ddd1edaf9663743564e2775e_icgraph">
-<area shape="rect" id="node2" href="classClientStateActive.html#a04b0193d8d026a520e099bce02b2c9c0" title="ClientStateActive::\lBeginState" alt="" coords="236,5,365,47"/>
+<div class="center"><img src="classClientStateBase_aca64b1f52c9cb81515a12ec522cfe64e_icgraph.png" border="0" usemap="#classClientStateBase_aca64b1f52c9cb81515a12ec522cfe64e_icgraph" alt=""/></div>
+<map name="classClientStateBase_aca64b1f52c9cb81515a12ec522cfe64e_icgraph" id="classClientStateBase_aca64b1f52c9cb81515a12ec522cfe64e_icgraph">
+<area shape="rect" id="node2" href="classClientStateActive.html#a04b0193d8d026a520e099bce02b2c9c0" title="State開始時の処理 " alt="" coords="236,5,365,47"/>
 </map>
 </div>
 

@@ -1,3 +1,8 @@
+/**
+ * @file ClientStateTitle.cpp
+ * @brief クライアントステート：タイトル画面
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "ClientStateTitle.h"
 #include "Client.h"

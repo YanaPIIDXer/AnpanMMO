@@ -1,5 +1,5 @@
 <map id="ClientStateBase::AddPacketFunction" name="ClientStateBase::AddPacketFunction">
-<area shape="rect" id="node2" href="$classClientStateActive.html#afb31374b7cf36b23d147f48dece177d6" title="ClientStateActive::\lClientStateActive" alt="" coords="259,5,389,47"/>
-<area shape="rect" id="node3" href="$classClientStateAreaChange.html#a53b8996a88850afa11794ed7b70ea20a" title="ClientStateAreaChange\l::ClientStateAreaChange" alt="" coords="241,71,407,112"/>
-<area shape="rect" id="node4" href="$classClientStateTitle.html#a00331f7840d268fba7e14c3efe127a8f" title="ClientStateTitle::Client\lStateTitle" alt="" coords="249,136,399,177"/>
+<area shape="rect" id="node2" href="$classClientStateActive.html#afb31374b7cf36b23d147f48dece177d6" title="コンストラクタ " alt="" coords="259,5,389,47"/>
+<area shape="rect" id="node3" href="$classClientStateAreaChange.html#a53b8996a88850afa11794ed7b70ea20a" title="コンストラクタ " alt="" coords="241,71,407,112"/>
+<area shape="rect" id="node4" href="$classClientStateTitle.html#a00331f7840d268fba7e14c3efe127a8f" title="コンストラクタ " alt="" coords="249,136,399,177"/>
 </map>

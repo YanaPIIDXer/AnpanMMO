@@ -1,5 +1,5 @@
 <map id="NoticeData.h" name="NoticeData.h">
 <area shape="rect" id="node2" href="$PacketNoticeList_8h.html" title="通知リスト " alt="" coords="5,80,137,107"/>
 <area shape="rect" id="node3" href="$PacketReceiveNotice_8h.html" title="通知 " alt="" coords="161,80,317,107"/>
-<area shape="rect" id="node4" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="166,155,313,181"/>
+<area shape="rect" id="node4" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="166,155,313,181"/>
 </map>

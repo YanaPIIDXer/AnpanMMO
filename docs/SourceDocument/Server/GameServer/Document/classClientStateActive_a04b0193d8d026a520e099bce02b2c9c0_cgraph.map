@@ -1,7 +1,7 @@
 <map id="ClientStateActive::BeginState" name="ClientStateActive::BeginState">
 <area shape="rect" id="node2" href="$classTimeManager.html#a3ea7d94ec3ea7dc3733e9e25e8b671c9" title="TimeManager::GetInstance" alt="" coords="185,5,363,32"/>
 <area shape="rect" id="node3" href="$classTimeManager.html#a4827203d6eb1401845343733fed269ae" title="TimeManager::GetMasterId" alt="" coords="185,56,363,83"/>
-<area shape="rect" id="node4" href="$classClientStateBase.html#aa3d564e4ddd1edaf9663743564e2775e" title="ClientStateBase::GetParent" alt="" coords="183,107,365,133"/>
+<area shape="rect" id="node4" href="$classClientStateBase.html#aca64b1f52c9cb81515a12ec522cfe64e" title="親クライアントを取得 " alt="" coords="183,107,365,133"/>
 <area shape="rect" id="node5" href="$classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="207,157,341,184"/>
 <area shape="rect" id="node6" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="435,69,586,96"/>
 <area shape="rect" id="node7" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="413,121,608,162"/>

@@ -1,3 +1,8 @@
+/**
+ * @file ClientStateBase.cpp
+ * @brief クライアントステート基底クラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "ClientStateBase.h"
 

@@ -12,8 +12,8 @@
 <area shape="rect" id="node5" href="$Area_8cpp.html" title="エリアクラス " alt="" coords="5,304,80,331"/>
 <area shape="rect" id="node6" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="46,379,170,405"/>
 <area shape="rect" id="node9" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="294,379,434,405"/>
-<area shape="rect" id="node10" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="459,379,605,405"/>
-<area shape="rect" id="node11" href="$ClientStateAreaChange_8cpp.html" title="ClientStateAreaChange.cpp" alt="" coords="630,379,813,405"/>
+<area shape="rect" id="node10" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="459,379,605,405"/>
+<area shape="rect" id="node11" href="$ClientStateAreaChange_8cpp.html" title="クライアントステート：エリア切り替え " alt="" coords="630,379,813,405"/>
 <area shape="rect" id="node12" href="$Main_8cpp.html" title="Main.cpp" alt="" coords="195,379,269,405"/>
 <area shape="rect" id="node14" href="$InstanceArea_8cpp.html" title="インスタンスエリアクラス " alt="" coords="280,304,403,331"/>
 <area shape="rect" id="node17" href="$Anpan_8h.html" title="アンパンクラス " alt="" coords="2681,304,2751,331"/>
@@ -31,7 +31,7 @@
 <area shape="rect" id="node23" href="$Anpan_8cpp.html" title="アンパンクラス " alt="" coords="2767,379,2851,405"/>
 <area shape="rect" id="node28" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="837,379,995,405"/>
 <area shape="rect" id="node29" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="1020,379,1100,405"/>
-<area shape="rect" id="node30" href="$ClientStateTitle_8cpp.html" title="ClientStateTitle.cpp" alt="" coords="1125,379,1259,405"/>
+<area shape="rect" id="node30" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="1125,379,1259,405"/>
 <area shape="rect" id="node31" href="$Party_8cpp.html" title="Party.cpp" alt="" coords="1283,379,1362,405"/>
 <area shape="rect" id="node32" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="1387,379,1515,405"/>
 <area shape="rect" id="node33" href="$PlayerManager_8cpp.html" title="PlayerManager.cpp" alt="" coords="1539,379,1674,405"/>

@@ -1,11 +1,11 @@
 <map id="ClientStateBase.h" name="ClientStateBase.h">
 <area shape="rect" id="node2" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="5,155,85,181"/>
-<area shape="rect" id="node3" href="$ClientStateTitle_8h.html" title="ClientStateTitle.h" alt="" coords="117,80,238,107"/>
-<area shape="rect" id="node5" href="$ClientStateActive_8h.html" title="ClientStateActive.h" alt="" coords="471,80,603,107"/>
-<area shape="rect" id="node8" href="$ClientStateAreaChange_8h.html" title="ClientStateAreaChange.h" alt="" coords="269,80,437,107"/>
-<area shape="rect" id="node10" href="$ClientStateBase_8cpp.html" title="ClientStateBase.cpp" alt="" coords="628,80,769,107"/>
-<area shape="rect" id="node4" href="$ClientStateTitle_8cpp.html" title="ClientStateTitle.cpp" alt="" coords="110,155,245,181"/>
-<area shape="rect" id="node6" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="659,155,805,181"/>
-<area shape="rect" id="node7" href="$ClientStateAreaChange_8cpp.html" title="ClientStateAreaChange.cpp" alt="" coords="451,155,634,181"/>
+<area shape="rect" id="node3" href="$ClientStateTitle_8h.html" title="クライアントステート：タイトル画面 " alt="" coords="117,80,238,107"/>
+<area shape="rect" id="node5" href="$ClientStateActive_8h.html" title="クライアントステート：ゲーム中 " alt="" coords="471,80,603,107"/>
+<area shape="rect" id="node8" href="$ClientStateAreaChange_8h.html" title="クライアントステート：エリア切り替え " alt="" coords="269,80,437,107"/>
+<area shape="rect" id="node10" href="$ClientStateBase_8cpp.html" title="クライアントステート基底クラス " alt="" coords="628,80,769,107"/>
+<area shape="rect" id="node4" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="110,155,245,181"/>
+<area shape="rect" id="node6" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="659,155,805,181"/>
+<area shape="rect" id="node7" href="$ClientStateAreaChange_8cpp.html" title="クライアントステート：エリア切り替え " alt="" coords="451,155,634,181"/>
 <area shape="rect" id="node9" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="269,155,427,181"/>
 </map>

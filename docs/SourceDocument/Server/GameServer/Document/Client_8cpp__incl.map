@@ -6,8 +6,8 @@
 <area shape="rect" id="node30" href="$MemoryStreamWriter_8h.html" title="MemoryStream/MemoryStream\lWriter.h" alt="" coords="1546,80,1750,121"/>
 <area shape="rect" id="node31" href="$MemoryStreamReader_8h.html" title="MemoryStream/MemoryStream\lReader.h" alt="" coords="1047,80,1251,121"/>
 <area shape="rect" id="node32" href="$PacketHeader_8h.html" title="Packet/PacketHeader.h" alt="" coords="1933,87,2093,114"/>
-<area shape="rect" id="node33" href="$ClientStateBase_8h.html" title="ClientState/ClientStateBase.h" alt="" coords="2353,244,2548,271"/>
-<area shape="rect" id="node36" href="$ClientStateTitle_8h.html" title="ClientState/ClientStateTitle.h" alt="" coords="2484,169,2673,196"/>
+<area shape="rect" id="node33" href="$ClientStateBase_8h.html" title="クライアントステート基底クラス " alt="" coords="2353,244,2548,271"/>
+<area shape="rect" id="node36" href="$ClientStateTitle_8h.html" title="クライアントステート：タイトル画面 " alt="" coords="2484,169,2673,196"/>
 <area shape="rect" id="node40" href="$PlayerCharacter_8h.html" title="プレイヤーキャラクタクラス " alt="" coords="2800,87,3027,114"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="711,244,871,271"/>
 <area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="1454,408,1541,435"/>

@@ -29,9 +29,9 @@
 <area shape="rect" id="node34" href="$CachePacketSkillListResponse_8h.html" title="スキルリストレスポンス " alt="" coords="4121,87,4336,114"/>
 <area shape="rect" id="node35" href="$CachePacketSkillTreeRequest_8h.html" title="スキルツリーリクエスト " alt="" coords="4360,87,4569,114"/>
 <area shape="rect" id="node36" href="$CachePacketSkillTreeResponse_8h.html" title="スキルツリーレスポンス " alt="" coords="4594,87,4813,114"/>
-<area shape="rect" id="node3" href="$ClientStateTitle_8cpp.html" title="ClientStateTitle.cpp" alt="" coords="2608,169,2743,196"/>
+<area shape="rect" id="node3" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="2608,169,2743,196"/>
 <area shape="rect" id="node6" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="225,169,365,196"/>
-<area shape="rect" id="node18" href="$ClientStateActive_8cpp.html" title="ClientStateActive.cpp" alt="" coords="5418,169,5565,196"/>
+<area shape="rect" id="node18" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="5418,169,5565,196"/>
 <area shape="rect" id="node22" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="6292,169,6424,196"/>
 <area shape="rect" id="node32" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="6622,169,6755,196"/>
 </map>
