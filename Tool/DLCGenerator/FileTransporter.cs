@@ -54,7 +54,7 @@ namespace DLCGenerator
 			TransportTargetHost = InTransportTargetHost;
 			UserName = InUserName;
 			Password = InPassword;
-			TargetDirectory = InTargetDirectory;
+			TargetDirectory = InTargetDirectory.Replace("//", "/");
 
 		}
 

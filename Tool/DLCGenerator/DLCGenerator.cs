@@ -19,16 +19,23 @@ namespace DLCGenerator
 		/// DLC名.
 		/// </summary>
 		private string DLCName;
-		
+
+		/// <summary>
+		/// ターゲットプラットフォーム
+		/// </summary>
+		private EPlatformTarget TargetPlatform;
+
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="InAutomationToolPath">AutomationToolのパス</param>
 		/// <param name="InDLCName">DLC名</param>
-		public DLCGenerator(string InAutomationToolPath, string InDLCName)
+		/// <param name="InTargetPlatform">ターゲットプラットフォーム</param>
+		public DLCGenerator(string InAutomationToolPath, string InDLCName, EPlatformTarget InTargetPlatform)
 			: base(InAutomationToolPath)
 		{
 			DLCName = InDLCName;
+			TargetPlatform = InTargetPlatform;
 		}
 
 		/// <summary>
@@ -46,8 +53,27 @@ namespace DLCGenerator
 			Argument += "-installed ";
 			Argument += "-ue4exe=UE4Editor-Cmd.exe ";
 			Argument += "-utf8output ";
-			Argument += "-platform=Win64 ";
-			Argument += "-targetplatform=Win64 ";
+			string Target = "Win64";
+			switch (TargetPlatform)
+			{
+				case EPlatformTarget.Windows:
+
+					Target = "Win64";
+					break;
+
+				case EPlatformTarget.Android:
+
+					Target = "Android";
+					break;
+
+				case EPlatformTarget.iOS:
+
+					Target = "iOS";
+					break;
+			}
+
+			Argument += "-platform=" + Target + " ";
+			Argument += "-targetplatform=" + Target + " ";
 			Argument += "-build ";
 			Argument += "-cook ";
 			Argument += "-map= ";

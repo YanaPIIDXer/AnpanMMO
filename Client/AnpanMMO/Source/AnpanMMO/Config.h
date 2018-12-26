@@ -33,8 +33,15 @@ public:
 	// スクリプトディレクトリを取得.
 	static FString GetScriptDirectory();
 
+private:
+
 	// DLCのURL
 	static const FString DLCURL;
+
+public:
+
+	// DLCのURLを取得
+	static FString GetDLCURL();
 
 	// DLCディレクトリを取得.
 	static FString GetDLCDirectory();

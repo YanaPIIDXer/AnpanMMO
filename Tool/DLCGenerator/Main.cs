@@ -24,6 +24,11 @@ namespace DLCGenerator
 		/// </summary>
 		private string AutomationToolPath = "";
 
+		/// <summary>
+		/// ターゲットプラットフォーム
+		/// </summary>
+		private EPlatformTarget TargetPlatform = EPlatformTarget.Windows;
+
 		public Main()
 		{
 			InitializeComponent();
@@ -77,7 +82,7 @@ namespace DLCGenerator
 		// 実行ボタンが押された
 		private void ExecuteButton_Click(object sender, EventArgs e)
 		{
-			ReleaseGenerator ReleaseGen = new ReleaseGenerator(AutomationToolPath);
+			ReleaseGenerator ReleaseGen = new ReleaseGenerator(AutomationToolPath, TargetPlatform);
 			if(!ReleaseGen.Execute())
 			{
 				MessageBox.Show("リリースの生成に失敗しました。");
@@ -96,7 +101,7 @@ namespace DLCGenerator
 			foreach(var DLC in DLCList)
 			{
 				string DLCName = DLC.ToString();
-				DLCGenerator DLCGen = new DLCGenerator(AutomationToolPath, DLCName);
+				DLCGenerator DLCGen = new DLCGenerator(AutomationToolPath, DLCName, TargetPlatform);
 				if(!DLCGen.Execute())
 				{
 					MessageBox.Show(DLCName + "のＤＬＣ生成に失敗しました。");
@@ -115,9 +120,27 @@ namespace DLCGenerator
 		/// </summary>
 		private void MoveDLCs()
 		{
-			if(!Directory.Exists(Config.PakPath))
+			string DLCPath = Config.PakPath;
+			switch(TargetPlatform)
 			{
-				Directory.CreateDirectory(Config.PakPath);
+				case EPlatformTarget.Windows:
+
+					DLCPath += "\\Windows";
+					break;
+
+				case EPlatformTarget.Android:
+
+					DLCPath += "\\Android";
+					break;
+
+				case EPlatformTarget.iOS:
+
+					DLCPath += "\\iOS";
+					break;
+			}
+			if(!Directory.Exists(DLCPath))
+			{
+				Directory.CreateDirectory(DLCPath);
 			}
 
 			var DLCs = Directory.EnumerateFiles(Config.GetDLCDirectory(), "*.pak", SearchOption.AllDirectories);
@@ -126,7 +149,7 @@ namespace DLCGenerator
 				int Index = DLC.IndexOf("Plugins\\");
 				var DLCName = DLC.Replace(DLC.Substring(0, Index + "Plugins\\".Length), "");
 				DLCName = DLCName.Substring(0, DLCName.IndexOf("\\"));
-				string TargetPath = Config.PakPath + "\\" + DLCName + ".pak";
+				string TargetPath = DLCPath + "\\" + DLCName + ".pak";
 				if(File.Exists(TargetPath))
 				{
 					File.Delete(TargetPath);
@@ -174,7 +197,29 @@ namespace DLCGenerator
 				return;
 			}
 
-			VersionGenerator VersionGen = new VersionGenerator(Directory.GetFiles(Config.PakPath, "*.pak"));
+			string DLCPath = Config.PakPath;
+			switch (TargetPlatform)
+			{
+				case EPlatformTarget.Windows:
+
+					DLCPath += "\\Windows";
+					TargetDirectory += "/windows";
+					break;
+
+				case EPlatformTarget.Android:
+
+					DLCPath += "\\Android";
+					TargetDirectory += "/android";
+					break;
+
+				case EPlatformTarget.iOS:
+
+					DLCPath += "\\iOS";
+					TargetDirectory += "/ios";
+					break;
+			}
+
+			VersionGenerator VersionGen = new VersionGenerator(DLCPath, Directory.GetFiles(DLCPath, "*.pak"));
 			if (!VersionGen.Generate())
 			{
 				MessageBox.Show("バージョンファイルの生成に失敗しました。");
@@ -183,7 +228,13 @@ namespace DLCGenerator
 
 			Console.WriteLine("バージョンファイルを生成しました。");
 
-			string[] Files = Directory.GetFiles(Config.PakPath);
+			if(!Directory.Exists(DLCPath))
+			{
+				MessageBox.Show("DLCが生成されていません。");
+				return;
+			}
+
+			string[] Files = Directory.GetFiles(DLCPath);
 			foreach(var FilePath in Files)
 			{
 				string FileName = Path.GetFileName(FilePath);
@@ -217,5 +268,10 @@ namespace DLCGenerator
 			}
 		}
 
+		// ターゲットプラットフォームのコンボボックスのアイテムが選択された。
+		private void TargetPlatformComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			TargetPlatform = (EPlatformTarget)TargetPlatformComboBox.SelectedIndex;
+		}
 	}
 }
