@@ -139,7 +139,7 @@ bool ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 	// ¦”X‘—‚Á‚Ä‚é“r’†‚ÅŽ¸”s‚·‚é‰Â”\«‚ª‚ ‚é‚Ì‚ÅB
 	if (ResultCode != PacketLogInResult::Success)
 	{
-		PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid(), Packet.LastAreaId);
+		PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid(), 0);
 		pClient->SendPacket(&ResultPacket);
 	}
 
@@ -183,7 +183,7 @@ bool ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	if (Packet.Result != CachePacketCharacterDataResult::Success)
 	{
 		std::cout << "CharacterData Load Failed..." << std::endl;
-		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), LastAreaId);
+		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), 0);
 		GetParent()->SendPacket(&LogInResultPacket);
 		return true;
 	}
@@ -212,7 +212,7 @@ bool ClientStateTitle::OnRecvCacheSkillListResponse(MemoryStreamInterface *pStre
 	if (Packet.Result != CachePacketSkillListResponse::Success)
 	{
 		std::cout << "SkillList Load Failed..." << std::endl;
-		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), LastAreaId);
+		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), 0);
 		GetParent()->SendPacket(&LogInResultPacket);
 		return true;
 	}
@@ -236,7 +236,7 @@ bool ClientStateTitle::OnRecvCacheSkillTreeResponse(MemoryStreamInterface *pStre
 	if (Packet.Result != CachePacketSkillTreeResponse::Success)
 	{
 		std::cout << "SkillTree Load Failed..." << std::endl;
-		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), LastAreaId);
+		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), 0);
 		GetParent()->SendPacket(&LogInResultPacket);
 		return true;
 	}
@@ -262,7 +262,7 @@ bool ClientStateTitle::OnRecvCacheItemListResponse(MemoryStreamInterface *pStrea
 	if (Packet.Result != CachePacketItemListResponse::Success)
 	{
 		std::cout << "Item List Load Failed..." << std::endl;
-		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), LastAreaId);
+		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), 0);
 		GetParent()->SendPacket(&LogInResultPacket);
 		return true;
 	}
@@ -293,7 +293,7 @@ bool ClientStateTitle::OnRecvCacheItemShortcutResponse(MemoryStreamInterface *pS
 	if (Packet.Result != CachePacketItemShortcutResponse::Success)
 	{
 		std::cout << "Item Shortcut Load Failed..." << std::endl;
-		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), LastAreaId);
+		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), 0);
 		GetParent()->SendPacket(&LogInResultPacket);
 		return true;
 	}
@@ -326,7 +326,7 @@ bool ClientStateTitle::OnRecvCacheScriptFlagResponse(MemoryStreamInterface *pStr
 	else
 	{
 		std::cout << "CachePacketScriptFlagResponse Error..." << std::endl;
-		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), LastAreaId);
+		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), 0);
 		GetParent()->SendPacket(&LogInResultPacket);
 		return true;
 	}
@@ -347,7 +347,7 @@ bool ClientStateTitle::OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStre
 	if (Packet.Result != CachePacketQuestDataResponse::Success)
 	{
 		std::cout << "CachePacketQuestDataResponse Error..." << std::endl;
-		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), LastAreaId);
+		PacketLogInResult LogInResultPacket(PacketLogInResult::Error, GetParent()->GetUuid(), 0);
 		GetParent()->SendPacket(&LogInResultPacket);
 		return true;
 	}

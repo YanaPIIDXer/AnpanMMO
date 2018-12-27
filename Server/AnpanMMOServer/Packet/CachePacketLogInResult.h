@@ -42,8 +42,6 @@ public:
 	u8 Result;
 	//! カスタマID
 	s32 CustomerId;
-	//! 最終ログアウトエリアID
-	u32 LastAreaId;
 	
 
 	/**
@@ -56,12 +54,11 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InCustomerId, u32 InLastAreaId)
+	CachePacketLogInResult(u32 InClientId, u8 InResult, s32 InCustomerId)
 	{
 		ClientId = InClientId;
 		Result = InResult;
 		CustomerId = InCustomerId;
-		LastAreaId = InLastAreaId;
 		
 	}
 
@@ -77,7 +74,6 @@ public:
 		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
 		pStream->Serialize(&CustomerId);
-		pStream->Serialize(&LastAreaId);
 		
 		return true;
 	}

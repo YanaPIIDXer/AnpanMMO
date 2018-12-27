@@ -100,7 +100,6 @@ bool ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 		pScreenWidget->OnFailedLogIn();
 	}
 
-	// @TODO:b’èˆ—.
 	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
 	check(pInst != nullptr);
 	pInst->SetAreaIdCache(Packet.LastAreaId);

@@ -83,26 +83,15 @@ bool PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketLogInResult::NoCharacter;
 	}
 
-	u32 LastAreaId = 0;
 	if (ResultCode == CachePacketLogInResult::Success)
 	{
 		u32 CharacterId = 0;
-		if (DBConnection::GetInstance().GetCharacterId(Id, CharacterId))
-		{
-			float LastX = 0.0f;
-			float LastY = 0.0f;
-			float LastZ = 0.0f;
-			if (!DBConnection::GetInstance().ReadLastLogoutPosition(CharacterId, LastAreaId, LastX, LastY, LastZ))
-			{
-				ResultCode = CachePacketLogInResult::Error;
-			}
-		}
-		else
+		if (!DBConnection::GetInstance().GetCharacterId(Id, CharacterId))
 		{
 			ResultCode = CachePacketLogInResult::Error;
 		}
 	}
-	CachePacketLogInResult ResultPacket(Packet.ClientId, ResultCode, Id, LastAreaId);
+	CachePacketLogInResult ResultPacket(Packet.ClientId, ResultCode, Id);
 	pParent->SendPacket(&ResultPacket);
 
 	return true;
