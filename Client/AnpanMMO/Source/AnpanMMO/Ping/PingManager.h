@@ -42,4 +42,7 @@ private:
 	// Ping‚ğóM‚µ‚½‚©H
 	bool bRecvPing;
 
+	// “®‚¢‚Ä‚¢‚é‚©H
+	bool bIsActive;
+
 };

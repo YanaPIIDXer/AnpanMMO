@@ -15,12 +15,15 @@ PingManager::PingManager()
 	: Timer(Interval)
 	, pGameMode(nullptr)
 	, bRecvPing(true)
+	, bIsActive(true)
 {
 }
 
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 void PingManager::Poll(float DeltaTime)
 {
+	if (!bIsActive) { return; }
+
 	Timer -= DeltaTime;
 	if (Timer <= 0.0f)
 	{
@@ -38,6 +41,7 @@ void PingManager::Poll(float DeltaTime)
 		{
 			USimpleDialog *pDialog = USimpleDialog::Show(pGameMode.Get(), "Connection Timeout...");
 			pDialog->OnDialogOK.AddDynamic(pGameMode->GetMainHUD(), &UMainHUD::OnLogOut);
+			bIsActive = false;
 		}
 		Timer += Interval;
 	}

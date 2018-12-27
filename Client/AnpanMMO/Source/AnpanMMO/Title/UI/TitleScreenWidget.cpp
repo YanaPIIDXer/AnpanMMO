@@ -3,6 +3,7 @@
 #include "TitleScreenWidget.h"
 #include "Config.h"
 #include "MMOGameInstance.h"
+#include "Master/MasterData.h"
 #include "Title/TitleGameMode.h"
 #include "Util.h"
 #include "Kismet/GameplayStatics.h"
@@ -39,6 +40,9 @@ void UTitleScreenWidget::StartMasterDownload()
 // スクリプトダウンロード開始.
 void UTitleScreenWidget::StartScriptDownload()
 {
+	// マスタはここで展開.
+	MasterData::GetInstance().Load();
+
 	VersionDownload.DownloadResult.BindUObject<UTitleScreenWidget>(this, &UTitleScreenWidget::OnScriptDownloaded);
 	if (!VersionDownload.Start(Config::ScriptURL, Config::GetScriptDirectory()))
 	{
