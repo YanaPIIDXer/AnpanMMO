@@ -20,7 +20,7 @@ public:
 	{
 		if (IsLittleEndian())
 		{
-			Value = ((Value << 8) & 0xFF00 | (Value >> 8) & 0x00FF);
+			Value = (((Value << 8) & 0xFF00) | ((Value >> 8) & 0x00FF));
 		}
 		return Value;
 
@@ -31,7 +31,7 @@ public:
 	{
 		if (IsLittleEndian())
 		{
-			Value = ((Value << 8) & 0xFF00 | (Value >> 8) & 0x00FF);
+			Value = (((Value << 8) & 0xFF00) | ((Value >> 8) & 0x00FF));
 		}
 		return Value;
 
