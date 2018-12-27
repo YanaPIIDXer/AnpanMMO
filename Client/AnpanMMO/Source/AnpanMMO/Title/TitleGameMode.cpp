@@ -9,7 +9,6 @@
 #include "MMOGameInstance.h"
 #include "Kismet/GameplayStatics.h"
 #include "UI/SimpleDialog.h"
-#include "Master/MasterData.h"
 #include "MemoryStream/MemoryStreamInterface.h"
 #include "Packet/PacketLogInResult.h"
 #include "Packet/PacketCreateCharacterResult.h"
@@ -94,7 +93,6 @@ bool ATitleGameMode::OnRecvLogInResult(MemoryStreamInterface *pStream)
 
 	if (bResult)
 	{
-		MasterData::GetInstance().Load();
 		pScreenWidget->StartFade();
 	}
 	else
