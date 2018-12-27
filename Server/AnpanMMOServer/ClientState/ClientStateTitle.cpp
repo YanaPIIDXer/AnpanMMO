@@ -134,8 +134,14 @@ bool ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 	}
 
 	Client *pClient = GetParent();
-	PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid(), Packet.LastAreaId);
-	pClient->SendPacket(&ResultPacket);
+
+	// リザルトコードがSuccessだった場合は諸々送った後に送る。
+	// ※諸々送ってる途中で失敗する可能性があるので。
+	if (ResultCode != PacketLogInResult::Success)
+	{
+		PacketLogInResult ResultPacket(ResultCode, pClient->GetUuid(), Packet.LastAreaId);
+		pClient->SendPacket(&ResultPacket);
+	}
 
 	if (ResultCode != PacketLogInResult::Success && ResultCode != PacketLogInResult::NoCharacter) { return true; }
 
@@ -342,6 +348,10 @@ bool ClientStateTitle::OnRecvCacheQuestDataResponse(MemoryStreamInterface *pStre
 	}
 	DataPacket.ActiveQuestId = Packet.ActiveQuestId;
 	GetParent()->SendPacket(&DataPacket);
+
+	// ログイン成功パケット
+	PacketLogInResult LogInResultPacket(PacketLogInResult::Success, GetParent()->GetUuid(), LastAreaId);
+	GetParent()->SendPacket(&LogInResultPacket);
 
 	// マップ切り替えStateへ。
 	ClientStateAreaChange *pNextState = new ClientStateAreaChange(GetParent(), LastAreaId, LastPosition);
