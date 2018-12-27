@@ -74,6 +74,10 @@ namespace DLCGenerator
 
 			Argument += "-platform=" + Target + " ";
 			Argument += "-targetplatform=" + Target + " ";
+			if (TargetPlatform == EPlatformTarget.Android)
+			{
+				Argument += "-cookflavor=ETC1 ";
+			}
 			Argument += "-build ";
 			Argument += "-cook ";
 			Argument += "-map= ";
