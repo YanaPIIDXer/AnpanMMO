@@ -1,4 +1,5 @@
 <map id="AreaItem::Serialize" name="AreaItem::Serialize">
-<area shape="rect" id="node2" href="$classAreaMaster.html#aa180d2f006a57a55b12b4e3500ad88c2" title="AreaMaster::Load" alt="" coords="185,5,311,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="359,5,484,32"/>
+<area shape="rect" id="node2" href="$classAreaMaster.html#aa180d2f006a57a55b12b4e3500ad88c2" title="AreaMaster::Load" alt="" coords="185,13,311,39"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="359,13,484,39"/>
+<area shape="rect" id="node4" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="532,5,680,47"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="TimeInfoMaster::Load" name="TimeInfoMaster::Load">
-<area shape="rect" id="node2" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="200,5,325,32"/>
+<area shape="rect" id="node2" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="200,13,325,39"/>
+<area shape="rect" id="node3" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="373,5,521,47"/>
 </map>
