@@ -50,7 +50,7 @@ FString Config::GetMasterDirectory()
 	Path = "/storage/emulated/0/AnapnMMO/Master";
 #elif PLATFORM_IOS
 	// iOSŒü‚¯
-	Path = "";
+	Path = NSHomeDirectory() + "/Library/Application Support/AnpanMMO/Master";
 #endif
 	return Path;
 }
@@ -69,7 +69,7 @@ FString Config::GetScriptDirectory()
 	Path = "/storage/emulated/0/AnapnMMO/Script";
 #elif PLATFORM_IOS
 	// iOSŒü‚¯
-	Path = "";
+	Path = NSHomeDirectory() + "/Library/Application Support/AnpanMMO/Script";
 #endif
 	return Path;
 }
@@ -109,7 +109,7 @@ FString Config::GetDLCDirectory()
 	Path = "/storage/emulated/0/AnapnMMO/DLC";
 #elif PLATFORM_IOS
 	// iOSŒü‚¯
-	Path = "";
+	Path = NSHomeDirectory() + "/Library/Application Support/AnpanMMO/DLC";
 #endif
 	return Path;
 }
