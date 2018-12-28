@@ -52,7 +52,9 @@ public class AnpanMMO : ModuleRules
 		}
 		else
 		{
-			PublicLibraryPaths.Add(LibrariesPath);
+			PublicLibraryPaths.Add(Path.Combine(LibrariesPath, "arm64-v8a"));
+			PublicLibraryPaths.Add(Path.Combine(LibrariesPath, "armeabi"));
+			PublicLibraryPaths.Add(Path.Combine(LibrariesPath, "armeabi-v7a"));
 			PublicAdditionalLibraries.Add("lua53");
 		}
 
