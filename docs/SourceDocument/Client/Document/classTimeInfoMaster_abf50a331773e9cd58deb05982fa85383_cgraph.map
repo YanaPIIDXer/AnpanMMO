@@ -1,5 +1,5 @@
 <map id="TimeInfoMaster::Load" name="TimeInfoMaster::Load">
-<area shape="rect" id="node2" href="$classConfig.html#a2984265d03df3c14d0a02595484d8d0b" title="Config::GetMasterDirectory" alt="" coords="200,5,379,32"/>
+<area shape="rect" id="node2" href="$classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="200,5,379,32"/>
 <area shape="rect" id="node3" href="$structTimeInfoItem.html#a71c9eca415fc7a2eccb89bb16d25d95e" title="TimeInfoItem::Serialize" alt="" coords="213,56,366,83"/>
 <area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="427,49,587,90"/>
 </map>
