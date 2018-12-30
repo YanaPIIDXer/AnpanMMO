@@ -42,7 +42,7 @@ void VersionDownloader::OnDownloadVersionFile(bool bSuccess, const TArray<uint8>
 
 	if (!File.DirectoryExists(*SavePath))
 	{
-		File.CreateDirectory(*SavePath);
+		File.CreateDirectoryTree(*SavePath);
 	}
 
 	VersionFile DownloadedVersionFile(Content);
