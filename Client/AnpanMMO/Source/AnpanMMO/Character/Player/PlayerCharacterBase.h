@@ -45,12 +45,13 @@ protected:
 	// リスポンした
 	virtual void OnRespawn() {}
 
+	// AnimBPのクラス
+	UPROPERTY(EditAnywhere, Category = "Animation")
+	UAnimBlueprintGeneratedClass *pAnimClass;
+
 private:
 
 	// メッシュパス
 	static const TCHAR *MeshPath;
-
-	// AnimInstanceのクラスパス
-	static const TCHAR *AnimInstanceClassPath;
 
 };

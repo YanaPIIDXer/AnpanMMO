@@ -5,11 +5,11 @@
 #include "Engine/SkeletalMesh.h"
 
 const TCHAR *APlayerCharacterBase::MeshPath = TEXT("/Game/Resources/Meshes/Player/Character/Mesh/SK_Mannequin.SK_Mannequin");
-const TCHAR *APlayerCharacterBase::AnimInstanceClassPath = TEXT("/Game/Resources/Meshes/Player/Animations/GameCharacterAnimBP.GameCharacterAnimBP_C");
 
 // コンストラクタ
 APlayerCharacterBase::APlayerCharacterBase(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
+	, pAnimClass(nullptr)
 {
 	auto *pMeshComponent = GetMesh();
 
@@ -34,9 +34,10 @@ void APlayerCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UClass *pAnimClass = LoadObject<UClass>(this, AnimInstanceClassPath, AnimInstanceClassPath);
-	check(pAnimClass != nullptr);
-	GetMesh()->SetAnimInstanceClass(pAnimClass);
+	if (pAnimClass != nullptr)
+	{
+		GetMesh()->SetAnimInstanceClass(Cast<UClass>(pAnimClass));
+	}
 }
 
 // リスポン
