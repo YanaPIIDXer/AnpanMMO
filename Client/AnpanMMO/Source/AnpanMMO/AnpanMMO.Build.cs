@@ -27,8 +27,7 @@ public class AnpanMMO : ModuleRules
 		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
 		LoadLua(Target);
 	}
-
-
+	
 	private bool LoadLua(ReadOnlyTargetRules Target)
 	{
 		string PlatformString = ".a";
@@ -47,7 +46,17 @@ public class AnpanMMO : ModuleRules
 
 		string LibrariesPath = Path.Combine(ThirdPartyPath, "Lua", "libraries");
 
-		PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, "Lua53" + PlatformString));
+		if(Target.Platform != UnrealTargetPlatform.Android)
+		{
+			PublicAdditionalLibraries.Add(Path.Combine(LibrariesPath, "lua53" + PlatformString));
+		}
+		else
+		{
+			PublicLibraryPaths.Add(Path.Combine(LibrariesPath, "arm64-v8a"));
+			PublicLibraryPaths.Add(Path.Combine(LibrariesPath, "armeabi"));
+			PublicLibraryPaths.Add(Path.Combine(LibrariesPath, "armeabi-v7a"));
+			PublicAdditionalLibraries.Add("lua53");
+		}
 
 		PublicIncludePaths.Add(Path.Combine(ThirdPartyPath, "Lua", "includes"));
 

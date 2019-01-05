@@ -74,6 +74,10 @@ namespace DLCGenerator
 
 			Argument += "-platform=" + Target + " ";
 			Argument += "-targetplatform=" + Target + " ";
+			if (TargetPlatform == EPlatformTarget.Android)
+			{
+				Argument += "-cookflavor=ETC1 ";
+			}
 			Argument += "-build ";
 			Argument += "-cook ";
 			Argument += "-map= ";
@@ -86,7 +90,6 @@ namespace DLCGenerator
 			Argument += "-stage ";
 			Argument += "-package ";
 			Argument += "-archive ";
-			Argument += "-archivedirectory=" + Config.GetDLCDirectory() + " ";
 			Argument += "-cmdline=\"-Messaging\"";
 
 			Process AutomationToolProcess = CreateProcess(Argument);
@@ -109,9 +112,45 @@ namespace DLCGenerator
 			AutomationToolProcess.CancelOutputRead();
 			AutomationToolProcess.CancelErrorRead();
 			AutomationToolProcess.Close();
+			
+			if(ExitCode == 0)
+			{
+				string PakPath = Config.PakPath;
+				switch (TargetPlatform)
+				{
+					case EPlatformTarget.Windows:
 
-			string SavedDir = Path.GetDirectoryName(ProjectPath) + "\\Plugins\\" + DLCName + "\\Saved";
-			Directory.Delete(SavedDir, true);
+						PakPath += "\\Windows";
+						break;
+
+					case EPlatformTarget.Android:
+
+						PakPath += "\\Android";
+						break;
+
+					case EPlatformTarget.iOS:
+
+						PakPath += "\\iOS";
+						break;
+				}
+				if (!Directory.Exists(PakPath))
+				{
+					Directory.CreateDirectory(PakPath);
+				}
+
+				string DLCPath = Path.Combine(Config.PluginPath, DLCName);
+				var Paks = Directory.EnumerateFiles(DLCPath, "*.pak", SearchOption.AllDirectories);
+				foreach(var Pak in Paks)
+				{
+					File.Copy(Pak, Path.Combine(PakPath, DLCName + ".pak"), true);
+				}
+			}
+
+			string SavedDir = Path.Combine(Config.PluginPath, DLCName, "Saved");
+			if(Directory.Exists(SavedDir))
+			{
+				Directory.Delete(SavedDir, true);
+			}
 
 			return (ExitCode == 0);
 		}

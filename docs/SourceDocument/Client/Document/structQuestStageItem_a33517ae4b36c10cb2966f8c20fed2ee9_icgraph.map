@@ -1,4 +1,5 @@
 <map id="QuestStageItem::Serialize" name="QuestStageItem::Serialize">
-<area shape="rect" id="node2" href="$classQuestStageMaster.html#a3a88cb6e766f705a8cfd0ab438ea0f27" title="QuestStageMaster::Load" alt="" coords="228,5,395,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="443,5,568,32"/>
+<area shape="rect" id="node2" href="$classQuestStageMaster.html#a3a88cb6e766f705a8cfd0ab438ea0f27" title="QuestStageMaster::Load" alt="" coords="228,13,395,39"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="443,13,568,39"/>
+<area shape="rect" id="node4" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="616,5,764,47"/>
 </map>

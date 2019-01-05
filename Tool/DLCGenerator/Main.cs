@@ -90,13 +90,7 @@ namespace DLCGenerator
 			}
 
 			Console.WriteLine("リリースを生成しました。\n\n");
-
-			string DLCPath = Config.GetDLCDirectory();
-			if(!Directory.Exists(DLCPath))
-			{
-				Directory.CreateDirectory(DLCPath);
-			}
-
+			
 			var DLCList = DLCListBox.CheckedItems;
 			foreach(var DLC in DLCList)
 			{
@@ -109,55 +103,10 @@ namespace DLCGenerator
 				}
 				Console.WriteLine(DLCName + "のＤＬＣを生成しました。\n\n");
 			}
-
-			MoveDLCs();
-
+			
 			MessageBox.Show("完了しました。");
 		}
-
-		/// <summary>
-		/// DLCを移動.
-		/// </summary>
-		private void MoveDLCs()
-		{
-			string DLCPath = Config.PakPath;
-			switch(TargetPlatform)
-			{
-				case EPlatformTarget.Windows:
-
-					DLCPath += "\\Windows";
-					break;
-
-				case EPlatformTarget.Android:
-
-					DLCPath += "\\Android";
-					break;
-
-				case EPlatformTarget.iOS:
-
-					DLCPath += "\\iOS";
-					break;
-			}
-			if(!Directory.Exists(DLCPath))
-			{
-				Directory.CreateDirectory(DLCPath);
-			}
-
-			var DLCs = Directory.EnumerateFiles(Config.GetDLCDirectory(), "*.pak", SearchOption.AllDirectories);
-			foreach(var DLC in DLCs)
-			{
-				int Index = DLC.IndexOf("Plugins\\");
-				var DLCName = DLC.Replace(DLC.Substring(0, Index + "Plugins\\".Length), "");
-				DLCName = DLCName.Substring(0, DLCName.IndexOf("\\"));
-				string TargetPath = DLCPath + "\\" + DLCName + ".pak";
-				if(File.Exists(TargetPath))
-				{
-					File.Delete(TargetPath);
-				}
-				File.Copy(DLC, TargetPath);
-			}
-		}
-
+		
 		// 転送先を追加ボタンが押された。
 		private void AddTransportTargetButton_Click(object sender, EventArgs e)
 		{

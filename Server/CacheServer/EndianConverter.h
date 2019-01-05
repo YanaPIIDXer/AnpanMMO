@@ -1,13 +1,25 @@
+/**
+ * @file EndianConverter.h
+ * @brief エンディアン変換
+ * @author YanaP
+ */
 #ifndef __ENDIANCONVERTER_H__
 #define __ENDIANCONVERTER_H__
 
-//エンディアン変換
+/**
+ * @class EndianConverter
+ * @brief エンディアン変換
+ */
 class EndianConverter
 {
 
 public:
 
-	// リトルエンディアン？
+	/**
+	 * @fn static bool IsLittleEndian()
+	 * @brief リトルエンディアン？
+	 * @return リトルエンディアンならtrueを返す。
+	 */
 	static bool IsLittleEndian()
 	{
 		int x = 1;
@@ -15,57 +27,87 @@ public:
 		return (ch != 0);
 	}
 
-	//符号付き１６ビット変換
-	static s16 Convert(s16 Value)
+	/**
+	 * @fn static s16 Convert(s16 Value, bool bForce = false)
+	 * @brief 符号付き１６ビット変換
+	 * @param[in] Value 変換前の値
+	 * @param[in] bForce エンディアン関係なく強制的に変換するか？
+	 * @return 変換後の値
+	 */
+	static s16 Convert(s16 Value, bool bForce = false)
 	{
-		if (IsLittleEndian())
+		if (IsLittleEndian() || bForce)
 		{
-			Value = ((Value << 8) & 0xFF00 | (Value >> 8) & 0x00FF);
-		}
-		return Value;
-
-	}
-	
-	//符号無し１６ビット変換
-	static u16 Convert(u16 Value)
-	{
-		if (IsLittleEndian())
-		{
-			Value = ((Value << 8) & 0xFF00 | (Value >> 8) & 0x00FF);
+			Value = (((Value << 8) & 0xFF00) | ((Value >> 8) & 0x00FF));
 		}
 		return Value;
 
 	}
 
-	//符号付き３２ビット変換
-	static s32 Convert(s32 Value)
+	/**
+	 * @fn static u16 Convert(u16 Value, bool bForce = false)
+	 * @brief 符号なし１６ビット変換
+	 * @param[in] Value 変換前の値
+	 * @param[in] bForce エンディアン関係なく強制的に変換するか？
+	 * @return 変換後の値
+	 */
+	static u16 Convert(u16 Value, bool bForce = false)
 	{
-		if (IsLittleEndian())
+		if (IsLittleEndian() || bForce)
+		{
+			Value = (((Value << 8) & 0xFF00) | ((Value >> 8) & 0x00FF));
+		}
+		return Value;
+
+	}
+
+	/**
+	 * @fn static s32 Convert(s32 Value, bool bForce = false)
+	 * @brief 符号付き３２ビット変換
+	 * @param[in] Value 変換前の値
+	 * @param[in] bForce エンディアン関係なく強制的に変換するか？
+	 * @return 変換後の値
+	 */
+	static s32 Convert(s32 Value, bool bForce = false)
+	{
+		if (IsLittleEndian() || bForce)
 		{
 			s16 Low, High;
 			High = (Value & 0xFFFF0000) >> 16;
 			Low = Value & 0x0000FFFF;
-			Value = (Convert(Low) << 16) | Convert(High);
+			Value = (Convert(Low, bForce) << 16) | Convert(High, bForce);
 		}
 		return Value;
 
 	}
-	
-	//符号無し３２ビット変換
-	static u32 Convert(u32 Value)
+
+	/**
+	 * @fn static u32 Convert(u32 Value, bool bForce = false)
+	 * @brief 符号なし３２ビット変換
+	 * @param[in] Value 変換前の値
+	 * @param[in] bForce エンディアン関係なく強制的に変換するか？
+	 * @return 変換後の値
+	 */
+	static u32 Convert(u32 Value, bool bForce = false)
 	{
-		if (IsLittleEndian())
+		if (IsLittleEndian() || bForce)
 		{
 			u16 Low, High;
 			High = (Value & 0xFFFF0000) >> 16;
 			Low = Value & 0x0000FFFF;
-			Value = (Convert(Low) << 16) | Convert(High);
+			Value = (Convert(Low, bForce) << 16) | Convert(High, bForce);
 		}
 		return Value;
 	}
 
-	// float変換
-	static float Convert(float Value)
+	/**
+	 * @fn static float Convert(float Value, bool bForce = false)
+	 * @brief float変換
+	 * @param[in] Value 変換前の値
+	 * @param[in] bForce エンディアン関係なく強制的に変換するか？
+	 * @return 変換後の値
+	 */
+	static float Convert(float Value, bool bForce = false)
 	{
 		union FloatConv
 		{
@@ -76,7 +118,7 @@ public:
 		FloatConv Conv;
 
 		Conv.f = Value;
-		Conv.u = Convert(Conv.u);
+		Conv.u = Convert(Conv.u, bForce);
 
 		return Conv.f;
 	}

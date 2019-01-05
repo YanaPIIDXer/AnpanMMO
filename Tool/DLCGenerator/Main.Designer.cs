@@ -117,7 +117,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(22, 86);
+			this.label2.Location = new System.Drawing.Point(22, 146);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(106, 15);
 			this.label2.TabIndex = 8;
@@ -130,7 +130,7 @@
             "Windows",
             "Android",
             "iOS"});
-			this.TargetPlatformComboBox.Location = new System.Drawing.Point(25, 122);
+			this.TargetPlatformComboBox.Location = new System.Drawing.Point(25, 164);
 			this.TargetPlatformComboBox.Name = "TargetPlatformComboBox";
 			this.TargetPlatformComboBox.Size = new System.Drawing.Size(121, 23);
 			this.TargetPlatformComboBox.TabIndex = 9;

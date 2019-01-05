@@ -1,4 +1,4 @@
 <map id="MemoryStreamReader::Serialize" name="MemoryStreamReader::Serialize">
-<area shape="rect" id="node2" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="EndianConverter::Convert" alt="" coords="205,13,372,39"/>
-<area shape="rect" id="node3" href="$classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="EndianConverter::IsLittle\lEndian" alt="" coords="420,5,583,47"/>
+<area shape="rect" id="node2" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="205,13,372,39"/>
+<area shape="rect" id="node3" href="$classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="420,5,583,47"/>
 </map>

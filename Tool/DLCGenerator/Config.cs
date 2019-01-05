@@ -30,20 +30,10 @@ namespace DLCGenerator
 		}
 
 		/// <summary>
-		/// DLCをブチ込むパス
+		/// プラグインのパス
 		/// </summary>
-		private static readonly string DLCPath = "DLCs";
-
-		/// <summary>
-		/// DLCをブチ込むパスを絶対パスで取得.
-		/// </summary>
-		/// <returns>DLCをブチ込むパスの絶対パス</returns>
-		public static string GetDLCDirectory()
-		{
-			string Dir = Path.GetFullPath(DLCPath);
-			return Dir;
-		}
-
+		public static readonly string PluginPath = "../Client/AnpanMMO/Plugins/";
+		
 		/// <summary>
 		/// Pakファイルをブチ込むパス
 		/// </summary>

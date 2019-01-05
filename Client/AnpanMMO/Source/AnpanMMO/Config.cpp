@@ -24,10 +24,10 @@ FString Config::GetIdFilePath()
 	Path = FPaths::ProjectSavedDir();
 #elif PLATFORM_ANDROID
 	// AndroidŒü‚¯
-	Path = "/storage/emulated/0/AnapnMMO";
+	Path = "/storage/emulated/legacy/AnpanMMO/";
 #elif PLATFORM_IOS
 	// iOSŒü‚¯
-	Path = "";
+	Path = NSHomeDirectory() + "/Library/Application Support/AnpanMMO/;
 #endif
 	return Path;
 }
@@ -47,10 +47,10 @@ FString Config::GetMasterDirectory()
 	Path = FPaths::ProjectSavedDir() + "Master";
 #elif PLATFORM_ANDROID
 	// AndroidŒü‚¯
-	Path = "/storage/emulated/0/AnapnMMO/Master";
+	Path = "/storage/emulated/legacy/AnpanMMO/Master";
 #elif PLATFORM_IOS
 	// iOSŒü‚¯
-	Path = "";
+	Path = NSHomeDirectory() + "/Library/Application Support/AnpanMMO/Master";
 #endif
 	return Path;
 }
@@ -66,10 +66,10 @@ FString Config::GetScriptDirectory()
 	Path = FPaths::ProjectSavedDir() + "Script";
 #elif PLATFORM_ANDROID
 	// AndroidŒü‚¯
-	Path = "/storage/emulated/0/AnapnMMO/Script";
+	Path = "/storage/emulated/legacy/AnpanMMO/Script";
 #elif PLATFORM_IOS
 	// iOSŒü‚¯
-	Path = "";
+	Path = NSHomeDirectory() + "/Library/Application Support/AnpanMMO/Script";
 #endif
 	return Path;
 }
@@ -106,10 +106,10 @@ FString Config::GetDLCDirectory()
 	Path = FPaths::ProjectSavedDir() + "DLC";
 #elif PLATFORM_ANDROID
 	// AndroidŒü‚¯
-	Path = "/storage/emulated/0/AnapnMMO/DLC";
+	Path = "/storage/emulated/legacy/AnpanMMO/DLC";
 #elif PLATFORM_IOS
 	// iOSŒü‚¯
-	Path = "";
+	Path = NSHomeDirectory() + "/Library/Application Support/AnpanMMO/DLC";
 #endif
 	return Path;
 }
