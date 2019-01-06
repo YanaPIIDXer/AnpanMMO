@@ -1,0 +1,20 @@
+・各種パラメータ
+　└STR：物理攻撃力に影響を与える。
+　└DEF：防御力に影響を与える。
+　└INT：魔法攻撃力に影響を与える。
+　└MND：魔法回復力に影響を与える。
+　└VIT：最大ＨＰに影響を与える。
+
+・物理ダメージ計算式
+　└(Attacker.STR * 1.5f) - (Defender.DEF + Defender.VIT) + ブレ
+
+・魔法ダメージ計算式
+　└(Attacker.INT * 1.5f) - (Defender.MND + Defender.VIT) + ブレ
+
+・回復計算式
+　└Attacker.INT + Attacker.MND + ブレ
+
+・最大ＨＰ
+　└通常ＨＰ + (VIT * 1.5f)
+
+※ダメージ、回復の計算結果が０以下になった場合は１になるものとする。
