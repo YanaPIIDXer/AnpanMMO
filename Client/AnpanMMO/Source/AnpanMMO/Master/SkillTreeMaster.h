@@ -49,6 +49,7 @@ class SkillTreeMaster
 private:
 
 	typedef TMap<u32, SkillTreeItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -56,13 +57,13 @@ public:
 
 	TArray<SkillTreeItem> GetAll() const;
 
-	const SkillTreeItem *Get(u32 Key) const;
+	const SkillTreeItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

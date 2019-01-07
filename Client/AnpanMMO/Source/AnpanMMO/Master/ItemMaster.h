@@ -45,6 +45,7 @@ class ItemMaster
 private:
 
 	typedef TMap<u32, ItemItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -52,13 +53,13 @@ public:
 
 	TArray<ItemItem> GetAll() const;
 
-	const ItemItem *Get(u32 Key) const;
+	const ItemItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

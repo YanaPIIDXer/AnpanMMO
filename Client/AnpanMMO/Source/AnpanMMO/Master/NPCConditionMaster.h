@@ -32,6 +32,7 @@ class NPCConditionMaster
 private:
 
 	typedef TMap<u32, NPCConditionItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -39,13 +40,13 @@ public:
 
 	TArray<NPCConditionItem> GetAll() const;
 
-	const NPCConditionItem *Get(u32 Key) const;
+	const NPCConditionItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

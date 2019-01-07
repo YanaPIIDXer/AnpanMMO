@@ -21,11 +21,20 @@ void NPCConditionMaster::Load()
 
 	MemoryStreamReader Reader(pData, DataSize);
 	Items.Empty();
-	while (true)
+	int32 SheetCount = 0;
+	int32 DataCount = 0;
+	Reader.Serialize(&SheetCount);
+	Reader.Serialize(&DataCount);
+	for (int32 i = 0; i < SheetCount; i++)
 	{
-		NPCConditionItem Item;
-		if (!Item.Serialize(&Reader)) { break; }
-		Items.Add(Item.ID, Item);
+		ItemMap ItemDic;
+		for (int32 j = 0; j < DataCount; j++)
+		{
+			NPCConditionItem Item;
+			if (!Item.Serialize(&Reader)) { break; }
+			ItemDic.Add(Item.ID, Item);
+		}
+		Items.Add(i, ItemDic);
 	}
 
 	delete[] pData;
@@ -36,7 +45,10 @@ TArray<NPCConditionItem> NPCConditionMaster::GetAll() const
 	TArray<NPCConditionItem> ItemArray;
 	for (auto KeyValue : Items)
 	{
-		ItemArray.Add(KeyValue.Value);
+		for (auto KeyValue2 : KeyValue.Value)
+		{
+			ItemArray.Add(KeyValue2.Value);
+		}
 	}
 	ItemArray.Sort([](const NPCConditionItem &A, const NPCConditionItem &B)
 	{
@@ -45,8 +57,9 @@ TArray<NPCConditionItem> NPCConditionMaster::GetAll() const
 	return ItemArray;
 }
 
-const NPCConditionItem *NPCConditionMaster::Get(u32 Key) const
+const NPCConditionItem *NPCConditionMaster::Get(u32 Key, int32 SheetIndex) const
 {
-	if (!Items.Contains(Key)) { return nullptr; }
-	return &Items[Key];
+	if (!Items.Contains(SheetIndex)) { return nullptr; }
+	if(!Items[SheetIndex].Contains(Key)) { return nullptr; }
+	return &Items[SheetIndex][Key];
 }

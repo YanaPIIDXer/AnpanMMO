@@ -154,7 +154,7 @@ namespace MasterConverter
 			var ColumnList = Master.GetColumns(0);
 
 			// 取得関数宣言.
-			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *GetItem($KEY_TYPE$ Key) const;";
+			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *GetItem($KEY_TYPE$ Key, s32 SheetIndex = 0) const;";
 			if(Master.IsAutoKey)
 			{
 				if(ColumnList.Count <= 2)
@@ -163,7 +163,7 @@ namespace MasterConverter
 				}
 				else
 				{
-					GetItemFunctionDecrare = "std::vector<const $ITEM_STRUCT_NAME$ *> CollectItems($KEY_TYPE$ Key) const;";
+					GetItemFunctionDecrare = "std::vector<const $ITEM_STRUCT_NAME$ *> CollectItems($KEY_TYPE$ Key, s32 SheetIndex = 0) const;";
 				}
 			}
 			Source = Source.Replace("$GET_ITEN_FUNCTION_DECRARE$", GetItemFunctionDecrare);
@@ -244,6 +244,10 @@ namespace MasterConverter
 
 			// アイテムバインド
 			string ItemBind = "";
+			if(Master.IsMultipleSheet)
+			{
+				ItemBind += "\tQuery.BindInt(&Sheet);\n";
+			}
 			foreach(Column Col in ColumnList)
 			{
 				ItemBind += "\t";
@@ -319,7 +323,7 @@ namespace MasterConverter
 			Source = Source.Replace("$ITEM_FETCH$", ItemFetch);
 
 			// マップへの追加.
-			string AppendToMap = "Items[Item." + ColumnList[0].Name + "] = Item;";
+			string AppendToMap = "Items[Sheet][Item." + ColumnList[0].Name + "] = Item;\n";
 			Source = Source.Replace("$APPEND_TO_MAP$", AppendToMap);
 
 			return Source;

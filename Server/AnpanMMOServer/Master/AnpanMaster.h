@@ -33,18 +33,19 @@ class AnpanMaster
 private:
 
 	typedef std::map<u32, AnpanItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const AnpanItem *GetItem(u32 Key) const;
+	const AnpanItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<AnpanItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

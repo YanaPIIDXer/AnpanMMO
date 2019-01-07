@@ -42,6 +42,7 @@ class QuestStageMaster
 private:
 
 	typedef TMap<u32, QuestStageItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -49,13 +50,13 @@ public:
 
 	TArray<QuestStageItem> GetAll() const;
 
-	const QuestStageItem *Get(u32 Key) const;
+	const QuestStageItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

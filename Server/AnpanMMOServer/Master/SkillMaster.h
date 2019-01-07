@@ -48,18 +48,19 @@ class SkillMaster
 private:
 
 	typedef std::map<u32, SkillItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const SkillItem *GetItem(u32 Key) const;
+	const SkillItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<SkillItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

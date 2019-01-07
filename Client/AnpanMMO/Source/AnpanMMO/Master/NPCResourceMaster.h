@@ -34,6 +34,7 @@ class NPCResourceMaster
 private:
 
 	typedef TMap<u32, NPCResourceItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -41,13 +42,13 @@ public:
 
 	TArray<NPCResourceItem> GetAll() const;
 
-	const NPCResourceItem *Get(u32 Key) const;
+	const NPCResourceItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

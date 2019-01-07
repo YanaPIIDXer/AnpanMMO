@@ -36,18 +36,19 @@ class AreaMaster
 private:
 
 	typedef std::map<u32, AreaItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const AreaItem *GetItem(u32 Key) const;
+	const AreaItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<AreaItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

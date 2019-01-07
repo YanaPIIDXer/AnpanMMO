@@ -53,6 +53,10 @@ namespace MasterConverter
 			var Writer = File.CreateText(FilePath);
 			Writer.WriteLine("DROP TABLE IF EXISTS `" + TableName + "`;");
 			Writer.WriteLine("CREATE TABLE `" + TableName + "` (");
+			if(Master.IsMultipleSheet)
+			{
+				Writer.WriteLine("SheetIndex int,");
+			}
 			var Columns = Master.GetColumns(0);
 			foreach(Column Col in Columns)
 			{
@@ -147,6 +151,10 @@ namespace MasterConverter
 						{
 							bFinished = true;
 							break;
+						}
+						if(Master.IsMultipleSheet)
+						{
+							Line += Sheet + ",";
 						}
 						string Data = Col.DataList[i].ToString();
 						int EnumValue = 0;

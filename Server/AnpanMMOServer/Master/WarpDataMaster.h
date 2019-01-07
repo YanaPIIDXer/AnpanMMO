@@ -32,18 +32,19 @@ class WarpDataMaster
 private:
 
 	typedef std::map<u32, WarpDataItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const WarpDataItem *GetItem(u32 Key) const;
+	const WarpDataItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<WarpDataItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

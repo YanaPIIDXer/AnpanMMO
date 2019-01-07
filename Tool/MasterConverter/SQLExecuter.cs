@@ -85,7 +85,7 @@ namespace MasterConverter
 							return false;
 						}
 
-						Console.WriteLine("成功。");
+						Console.WriteLine("完了。");
 					}
 
 					// 後片付け

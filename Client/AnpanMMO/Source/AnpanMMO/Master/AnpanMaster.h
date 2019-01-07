@@ -40,6 +40,7 @@ class AnpanMaster
 private:
 
 	typedef TMap<u32, AnpanItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -47,13 +48,13 @@ public:
 
 	TArray<AnpanItem> GetAll() const;
 
-	const AnpanItem *Get(u32 Key) const;
+	const AnpanItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 
