@@ -1,5 +1,5 @@
 <map id="PartyMemberData.h" name="PartyMemberData.h">
-<area shape="rect" id="node2" href="$PacketPartyJoin_8h.html" title="パーティ加入 " alt="" coords="5,80,133,107"/>
-<area shape="rect" id="node4" href="$PacketPartyJoinMember_8h.html" title="パーティメンバ加入 " alt="" coords="158,80,333,107"/>
+<area shape="rect" id="node2" href="$PacketPartyJoin_8h.html" title="パーティ加入パケット " alt="" coords="5,80,133,107"/>
+<area shape="rect" id="node4" href="$PacketPartyJoinMember_8h.html" title="パーティメンバ加入パケット " alt="" coords="158,80,333,107"/>
 <area shape="rect" id="node3" href="$Party_8cpp.html" title="Party.cpp" alt="" coords="118,155,197,181"/>
 </map>

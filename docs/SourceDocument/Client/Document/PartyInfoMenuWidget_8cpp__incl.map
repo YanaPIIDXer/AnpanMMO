@@ -4,8 +4,8 @@
 <area shape="rect" id="node27" href="$ActiveGameMode_8h.html" title="Active/ActiveGameMode.h" alt="" coords="2444,80,2619,107"/>
 <area shape="rect" id="node44" href="$GameCharacter_8h.html" title="Character/Player/GameCharacter.h" alt="" coords="852,80,1077,107"/>
 <area shape="rect" id="node48" href="$Util_8h.html" title="Util.h" alt="" coords="676,80,728,107"/>
-<area shape="rect" id="node49" href="$PacketPartyDissolutionRequest_8h.html" title="パーティ解散リクエスト " alt="" coords="4274,229,4477,271"/>
-<area shape="rect" id="node50" href="$PacketPartyExitRequest_8h.html" title="パーティ離脱リクエスト " alt="" coords="4501,237,4722,263"/>
+<area shape="rect" id="node49" href="$PacketPartyDissolutionRequest_8h.html" title="パーティ解散リクエストパケット " alt="" coords="4274,229,4477,271"/>
+<area shape="rect" id="node50" href="$PacketPartyExitRequest_8h.html" title="パーティ離脱リクエストパケット " alt="" coords="4501,237,4722,263"/>
 <area shape="rect" id="node4" href="$LayeredMenuWidgetBase_8h.html" title="UI/Menu/LayeredMenuWidget\lBase.h" alt="" coords="99,229,292,271"/>
 <area shape="rect" id="node11" href="$GameServerConnection_8h.html" title="Connection/GameServerConnection.h" alt="" coords="3496,155,3735,181"/>
 <area shape="rect" id="node16" href="$PlayerStatus_8h.html" title="Character/Player/PlayerStatus.h" alt="" coords="1003,155,1212,181"/>

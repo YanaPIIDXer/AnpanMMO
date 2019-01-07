@@ -1,3 +1,6 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$classMySqlConnection.html" title="MySqlConnection" alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node1" href="$classMemoryStreamInterface.html" title="MemoryStreamInterface" alt="" coords="5,56,165,83"/>
+<area shape="rect" id="node2" href="$classMemorySizeCaliculateStream.html" title="MemorySizeCaliculateStream" alt="" coords="213,5,408,32"/>
+<area shape="rect" id="node3" href="$classMemoryStreamReader.html" title="MemoryStreamReader" alt="" coords="235,56,387,83"/>
+<area shape="rect" id="node4" href="$classMemoryStreamWriter.html" title="MemoryStreamWriter" alt="" coords="237,107,384,133"/>
 </map>

@@ -1,5 +1,8 @@
 <map id="QuestStageMaster::Load" name="QuestStageMaster::Load">
 <area shape="rect" id="node2" href="$classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="220,5,399,32"/>
-<area shape="rect" id="node3" href="$structQuestStageItem.html#a33517ae4b36c10cb2966f8c20fed2ee9" title="QuestStageItem::Serialize" alt="" coords="222,56,397,83"/>
-<area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="447,49,607,90"/>
+<area shape="rect" id="node3" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="233,57,385,98"/>
+<area shape="rect" id="node6" href="$structQuestStageItem.html#a33517ae4b36c10cb2966f8c20fed2ee9" title="QuestStageItem::Serialize" alt="" coords="222,123,397,149"/>
+<area shape="rect" id="node4" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="447,64,613,91"/>
+<area shape="rect" id="node5" href="$classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="661,57,824,98"/>
+<area shape="rect" id="node7" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="450,115,610,157"/>
 </map>

@@ -1,5 +1,8 @@
 <map id="NPCMaster::Load" name="NPCMaster::Load">
 <area shape="rect" id="node2" href="$classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="179,5,357,32"/>
-<area shape="rect" id="node3" href="$structNPCItem.html#a4c65ff669c0c3bb4563ddd14143b75e5" title="NPCItem::Serialize" alt="" coords="202,56,334,83"/>
-<area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="405,49,565,90"/>
+<area shape="rect" id="node3" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="192,57,344,98"/>
+<area shape="rect" id="node6" href="$structNPCItem.html#a4c65ff669c0c3bb4563ddd14143b75e5" title="NPCItem::Serialize" alt="" coords="202,123,334,149"/>
+<area shape="rect" id="node4" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="405,64,572,91"/>
+<area shape="rect" id="node5" href="$classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="620,57,783,98"/>
+<area shape="rect" id="node7" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="409,115,569,157"/>
 </map>

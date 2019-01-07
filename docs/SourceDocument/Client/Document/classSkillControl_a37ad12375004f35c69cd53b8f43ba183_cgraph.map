@@ -1,5 +1,5 @@
 <map id="SkillControl::UseSkill" name="SkillControl::UseSkill">
 <area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="205,5,372,32"/>
 <area shape="rect" id="node3" href="$classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="197,56,380,83"/>
-<area shape="rect" id="node4" href="$classSkillMaster.html#a9664da6db4693699deddbf2ba10da548" title="SkillMaster::Get" alt="" coords="231,107,347,133"/>
+<area shape="rect" id="node4" href="$classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="231,107,347,133"/>
 </map>

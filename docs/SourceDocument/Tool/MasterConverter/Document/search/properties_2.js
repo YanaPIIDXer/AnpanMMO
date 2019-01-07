@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['enumlist',['EnumList',['../classMasterConverter_1_1EnumData.html#a1abf41d1df0f7f97d5584abea40a9d15',1,'MasterConverter.EnumData.EnumList()'],['../classMasterConverter_1_1MasterData.html#a57896099810ffb67c488ce68bbe8fdb7',1,'MasterConverter.MasterData.EnumList()']]]
+  ['datalist',['DataList',['../classMasterConverter_1_1Column.html#a97e8fe5f793ebd18a9709109fb7c6e30',1,'MasterConverter::Column']]],
+  ['datatype',['DataType',['../classMasterConverter_1_1Column.html#a34d603db04435e7b3830578ce2343830',1,'MasterConverter::Column']]]
 ];

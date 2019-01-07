@@ -8,9 +8,9 @@
 <area shape="rect" id="node39" href="$CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="3293,155,3456,181"/>
 <area shape="rect" id="node42" href="$Anpan_8h.html" title="アンパンクラス " alt="" coords="3048,80,3219,107"/>
 <area shape="rect" id="node44" href="$AreaMaster_8h.html" title="Master/AreaMaster.h" alt="" coords="3432,80,3576,107"/>
-<area shape="rect" id="node47" href="$PacketSpawnAnpan_8h.html" title="アンパン生成 " alt="" coords="3885,155,4080,181"/>
-<area shape="rect" id="node49" href="$PacketAnpanList_8h.html" title="アンパンリスト " alt="" coords="3683,155,3861,181"/>
-<area shape="rect" id="node50" href="$PacketAddExp_8h.html" title="経験値追加 " alt="" coords="3539,229,3704,256"/>
+<area shape="rect" id="node47" href="$PacketSpawnAnpan_8h.html" title="アンパン生成パケット " alt="" coords="3885,155,4080,181"/>
+<area shape="rect" id="node49" href="$PacketAnpanList_8h.html" title="アンパンリストパケット " alt="" coords="3683,155,3861,181"/>
+<area shape="rect" id="node50" href="$PacketAddExp_8h.html" title="経験値追加パケット " alt="" coords="3539,229,3704,256"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="737,229,897,256"/>
 <area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="3382,393,3469,420"/>
 <area shape="rect" id="node16" href="$PlayerManager_8h.html" title="PlayerManager.h" alt="" coords="1712,311,1832,338"/>

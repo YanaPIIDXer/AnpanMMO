@@ -7,8 +7,8 @@
 <area shape="rect" id="node39" href="$GameController_8h.html" title="GameController.h" alt="" coords="2591,87,2714,114"/>
 <area shape="rect" id="node43" href="$MasterData_8h.html" title="Master/MasterData.h" alt="" coords="3151,87,3295,114"/>
 <area shape="rect" id="node48" href="$CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="3319,87,3482,114"/>
-<area shape="rect" id="node49" href="$PacketSkillUse_8h.html" title="スキル使用 " alt="" coords="3506,87,3673,114"/>
-<area shape="rect" id="node50" href="$PacketItemUse_8h.html" title="アイテム使用 " alt="" coords="3697,87,3864,114"/>
+<area shape="rect" id="node49" href="$PacketSkillUse_8h.html" title="スキル使用パケット " alt="" coords="3506,87,3673,114"/>
+<area shape="rect" id="node50" href="$PacketItemUse_8h.html" title="アイテム使用パケット " alt="" coords="3697,87,3864,114"/>
 <area shape="rect" id="node4" href="$PlayerCharacterBase_8h.html" title="PlayerCharacterBase.h" alt="" coords="976,319,1132,345"/>
 <area shape="rect" id="node6" href="$PlayerStatus_8h.html" title="PlayerStatus.h" alt="" coords="2441,393,2549,420"/>
 <area shape="rect" id="node7" href="$PlayerMove_8h.html" title="PlayerMove.h" alt="" coords="2613,319,2713,345"/>

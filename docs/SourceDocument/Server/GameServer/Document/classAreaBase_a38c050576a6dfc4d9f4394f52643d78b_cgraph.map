@@ -4,7 +4,7 @@
 <area shape="rect" id="node8" href="$classHeightMap.html#a0020fba23e4d725bb425d77c87c279c2" title="読み込み " alt="" coords="251,236,371,263"/>
 <area shape="rect" id="node3" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="502,5,669,32"/>
 <area shape="rect" id="node4" href="$classMasterData.html#a200a18e787293f14a3459bca56491858" title="MasterData::GetAnpanPopArea\lMaster" alt="" coords="483,57,688,98"/>
-<area shape="rect" id="node5" href="$classAnpanPopAreaMaster.html#abff3fc6836597e5ecc37fa42d12ba247" title="AnpanPopAreaMaster\l::CollectItems" alt="" coords="511,122,660,163"/>
+<area shape="rect" id="node5" href="$classAnpanPopAreaMaster.html#a01fecbf4f0eec8e04743f38a64f6e327" title="AnpanPopAreaMaster\l::CollectItems" alt="" coords="511,122,660,163"/>
 <area shape="rect" id="node6" href="$classAnpanPopArea.html#a6b3190280cd6b1b231168ab22be983df" title="AnpanPopArea::SetSpawnFunction" alt="" coords="472,188,699,215"/>
 <area shape="rect" id="node9" href="$classBitmap.html#a006b201033ec5473f93128f118f4ee0b" title="Bitmap::Load" alt="" coords="536,239,635,265"/>
 <area shape="rect" id="node10" href="$structBitmapFileHeader.html#a85f07f14aff164c550c08bc906c9c17c" title="BitmapFileHeader::Read" alt="" coords="747,213,909,240"/>

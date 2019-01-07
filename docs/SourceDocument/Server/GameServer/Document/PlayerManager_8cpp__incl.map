@@ -3,10 +3,10 @@
 <area shape="rect" id="node15" href="$PlayerManager_8h.html" title="PlayerManager.h" alt="" coords="1376,311,1496,338"/>
 <area shape="rect" id="node21" href="$Client_8h.html" title="クライアントクラス " alt="" coords="3213,80,3280,107"/>
 <area shape="rect" id="node33" href="$PlayerCharacter_8h.html" title="プレイヤーキャラクタクラス " alt="" coords="2384,80,2611,107"/>
-<area shape="rect" id="node46" href="$PacketSpawnPlayer_8h.html" title="プレイヤー生成 " alt="" coords="3777,155,3972,181"/>
-<area shape="rect" id="node48" href="$PacketPlayerList_8h.html" title="プレイヤーリスト " alt="" coords="3997,155,4174,181"/>
-<area shape="rect" id="node49" href="$PacketMovePlayer_8h.html" title="プレイヤー移動 " alt="" coords="3572,229,3759,256"/>
-<area shape="rect" id="node50" href="$PacketExitPlayer_8h.html" title="プレイヤー退出 " alt="" coords="3783,229,3961,256"/>
+<area shape="rect" id="node46" href="$PacketSpawnPlayer_8h.html" title="プレイヤー生成パケット " alt="" coords="3777,155,3972,181"/>
+<area shape="rect" id="node48" href="$PacketPlayerList_8h.html" title="プレイヤーリストパケット " alt="" coords="3997,155,4174,181"/>
+<area shape="rect" id="node49" href="$PacketMovePlayer_8h.html" title="プレイヤー移動パケット " alt="" coords="3572,229,3759,256"/>
+<area shape="rect" id="node50" href="$PacketExitPlayer_8h.html" title="プレイヤー退出パケット " alt="" coords="3783,229,3961,256"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="760,229,920,256"/>
 <area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="3087,393,3174,420"/>
 <area shape="rect" id="node17" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="1327,393,1447,420"/>

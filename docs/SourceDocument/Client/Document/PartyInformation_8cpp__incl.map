@@ -4,14 +4,14 @@
 <area shape="rect" id="node10" href="$ActiveGameMode_8h.html" title="Active/ActiveGameMode.h" alt="" coords="2319,80,2494,107"/>
 <area shape="rect" id="node30" href="$GameCharacter_8h.html" title="Character/Player/GameCharacter.h" alt="" coords="417,80,642,107"/>
 <area shape="rect" id="node39" href="$SimpleDialog_8h.html" title="UI/SimpleDialog.h" alt="" coords="3516,80,3641,107"/>
-<area shape="rect" id="node42" href="$PacketPartyCreateResult_8h.html" title="パーティ作成結果 " alt="" coords="4522,229,4699,271"/>
-<area shape="rect" id="node43" href="$PacketPartyDissolutionResult_8h.html" title="パーティ解散結果 " alt="" coords="4724,229,4927,271"/>
-<area shape="rect" id="node44" href="$PacketPartyExitResult_8h.html" title="パーティ離脱結果 " alt="" coords="4951,237,5161,263"/>
-<area shape="rect" id="node45" href="$PacketPartyJoin_8h.html" title="パーティ加入 " alt="" coords="3681,155,3855,181"/>
-<area shape="rect" id="node47" href="$PacketPartyJoinMember_8h.html" title="パーティメンバ加入 " alt="" coords="4031,155,4251,181"/>
-<area shape="rect" id="node48" href="$PacketPartyDissolution_8h.html" title="パーティ解散 " alt="" coords="3834,237,4049,263"/>
-<area shape="rect" id="node49" href="$PacketPartyExit_8h.html" title="パーティ離脱 " alt="" coords="4073,237,4247,263"/>
-<area shape="rect" id="node50" href="$PacketPartyKick_8h.html" title="パーティメンバキック " alt="" coords="4271,237,4447,263"/>
+<area shape="rect" id="node42" href="$PacketPartyCreateResult_8h.html" title="パーティ作成結果パケット " alt="" coords="4522,229,4699,271"/>
+<area shape="rect" id="node43" href="$PacketPartyDissolutionResult_8h.html" title="パーティ解散結果パケット " alt="" coords="4724,229,4927,271"/>
+<area shape="rect" id="node44" href="$PacketPartyExitResult_8h.html" title="パーティ離脱結果パケット " alt="" coords="4951,237,5161,263"/>
+<area shape="rect" id="node45" href="$PacketPartyJoin_8h.html" title="パーティ加入パケット " alt="" coords="3681,155,3855,181"/>
+<area shape="rect" id="node47" href="$PacketPartyJoinMember_8h.html" title="パーティメンバ加入パケット " alt="" coords="4031,155,4251,181"/>
+<area shape="rect" id="node48" href="$PacketPartyDissolution_8h.html" title="パーティ解散パケット " alt="" coords="3834,237,4049,263"/>
+<area shape="rect" id="node49" href="$PacketPartyExit_8h.html" title="パーティ離脱パケット " alt="" coords="4073,237,4247,263"/>
+<area shape="rect" id="node50" href="$PacketPartyKick_8h.html" title="パーティメンバキックパケット " alt="" coords="4271,237,4447,263"/>
 <area shape="rect" id="node4" href="$PartyMemberData_8h.html" title="Packet/PartyMemberData.h" alt="" coords="3627,237,3810,263"/>
 <area shape="rect" id="node5" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="4307,326,4411,353"/>
 <area shape="rect" id="node9" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="4117,326,4203,353"/>

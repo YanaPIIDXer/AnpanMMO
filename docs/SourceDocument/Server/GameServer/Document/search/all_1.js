@@ -93,7 +93,7 @@ var searchData=
   ['areaptr',['AreaPtr',['../WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a',1,'WeakPtrDefine.h']]],
   ['asyncrecv',['AsyncRecv',['../classTCPConnection.html#afdc370c27676080e6a90743b4a6ea3e2',1,'TCPConnection']]],
   ['asyncsend',['AsyncSend',['../classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd',1,'TCPConnection']]],
-  ['atk',['Atk',['../structCharacterParameter.html#a5cea335d431ec44ae6be1474724fa542',1,'CharacterParameter::Atk()'],['../structAnpanItem.html#ae40dfb7176612f7dcfed427b31f3828c',1,'AnpanItem::Atk()'],['../classCachePacketCharacterDataResult.html#a1b2f7ce76f39a55e773b843571816757',1,'CachePacketCharacterDataResult::Atk()'],['../classCachePacketCharacterDataSave.html#ab989895fc7b709e0af216a4897ff3add',1,'CachePacketCharacterDataSave::Atk()'],['../classPacketCharacterStatus.html#a8c178cb4699ea6ebffed8528e0ed0dd9',1,'PacketCharacterStatus::Atk()'],['../classPacketLevelUp.html#a603309a6e179fe1c87a396fcfdcd597f',1,'PacketLevelUp::Atk()']]],
+  ['atk',['Atk',['../structAnpanItem.html#ae40dfb7176612f7dcfed427b31f3828c',1,'AnpanItem::Atk()'],['../classPacketCharacterStatus.html#a8c178cb4699ea6ebffed8528e0ed0dd9',1,'PacketCharacterStatus::Atk()'],['../classPacketLevelUp.html#a603309a6e179fe1c87a396fcfdcd597f',1,'PacketLevelUp::Atk()']]],
   ['attack',['ATTACK',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a63452507f8c07b55c794840596f413b6',1,'SkillItem']]],
   ['attackto',['AttackTo',['../classAnpan.html#aa93f7148141285e77ad93583714c7b5f',1,'Anpan']]],
   ['autokey',['AutoKey',['../structAnpanPopAreaItem.html#a2296318209c7135a7071db6f165f0f26',1,'AnpanPopAreaItem::AutoKey()'],['../structAnpanPopDataItem.html#a022e99cb79a0aab041f122a2e51e3219',1,'AnpanPopDataItem::AutoKey()']]],

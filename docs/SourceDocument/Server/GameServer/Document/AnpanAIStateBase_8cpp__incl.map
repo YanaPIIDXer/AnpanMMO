@@ -22,8 +22,8 @@
 <area shape="rect" id="node32" href="$EndianConverter_8h.html" title="エンディアン変換 " alt="" coords="1315,483,1442,509"/>
 <area shape="rect" id="node36" href="$AnpanAIPacketData_8h.html" title="アンパンＡＩのパケットデータ " alt="" coords="2838,229,2989,256"/>
 <area shape="rect" id="node43" href="$Hate_8h.html" title="ヘイト管理クラス " alt="" coords="3013,229,3073,256"/>
-<area shape="rect" id="node37" href="$PacketMoveAnpan_8h.html" title="アンパン移動 " alt="" coords="2888,311,3075,338"/>
-<area shape="rect" id="node42" href="$PacketRotateAnpan_8h.html" title="アンパン回転 " alt="" coords="3099,311,3293,338"/>
+<area shape="rect" id="node37" href="$PacketMoveAnpan_8h.html" title="アンパン移動パケット " alt="" coords="2888,311,3075,338"/>
+<area shape="rect" id="node42" href="$PacketRotateAnpan_8h.html" title="アンパン回転パケット " alt="" coords="3099,311,3293,338"/>
 <area shape="rect" id="node38" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="3096,401,3200,427"/>
 <area shape="rect" id="node39" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3225,393,3429,435"/>
 <area shape="rect" id="node41" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="2985,401,3071,427"/>

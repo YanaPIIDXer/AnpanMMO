@@ -5,6 +5,6 @@
 <area shape="rect" id="node9" href="$classSkillControl.html#a37ad12375004f35c69cd53b8f43ba183" title="SkillControl::UseSkill" alt="" coords="263,56,407,83"/>
 <area shape="rect" id="node3" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="517,5,684,32"/>
 <area shape="rect" id="node4" href="$classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="509,56,692,83"/>
-<area shape="rect" id="node5" href="$classSkillMaster.html#a9664da6db4693699deddbf2ba10da548" title="SkillMaster::Get" alt="" coords="543,107,659,133"/>
+<area shape="rect" id="node5" href="$classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="543,107,659,133"/>
 <area shape="rect" id="node6" href="$classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="505,158,697,199"/>
 </map>
