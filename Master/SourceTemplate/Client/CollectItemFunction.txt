@@ -1,7 +1,9 @@
-TArray<const $ITEM_STRUCT_NAME$ *> $CLASS_NAME$::CollectItems($SECONDARY_KEY_TYPE$ Key) const
+TArray<const $ITEM_STRUCT_NAME$ *> $CLASS_NAME$::CollectItems($SECONDARY_KEY_TYPE$ Key, int32 SheetIndex) const
 {
 	TArray<const $ITEM_STRUCT_NAME$ *> Result;
-	for(const auto &KeyValue : Items)
+	if(!Items.Contains(SheetIndex)) { return Result; }
+
+	for(const auto &KeyValue : Items[SheetIndex])
 	{
 		if(KeyValue.Value.$SECONDARY_KEY_NAME$ == Key)
 		{

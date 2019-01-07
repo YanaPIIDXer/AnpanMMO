@@ -45,7 +45,7 @@ namespace MasterConverter
 			Master = new MasterData(Path.GetFileNameWithoutExtension(InFilePath));
 		}
 
-		/// <summary> 0
+		/// <summary>
 		/// ロード
 		/// </summary>
 		/// <returns>成功したらtrueを返す</returns>

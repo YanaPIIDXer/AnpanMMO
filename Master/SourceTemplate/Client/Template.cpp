@@ -21,11 +21,20 @@ void $CLASS_NAME$::Load()
 
 	MemoryStreamReader Reader(pData, DataSize);
 	Items.Empty();
-	while (true)
+	int32 SheetCount = 0;
+	int32 DataCount = 0;
+	Reader.Serialize(SheetCount);
+	Reader.Serialize(DataCount);
+	for (int32 i = 0; i < SheetCount; i++)
 	{
-		$ITEM_STRUCT_NAME$ Item;
-		if (!Item.Serialize(&Reader)) { break; }
-		Items.Add(Item.$KEY_NAME$, Item);
+		ItemMap ItemDic;
+		if(int32 j = 0;j < DataCount; j++)
+		{
+			$ITEM_STRUCT_NAME$ Item;
+			if (!Item.Serialize(&Reader)) { break; }
+			ItemDic.Add(Item.$KEY_NAME$, Item);
+		}
+		Items.Add(i, ItemDic);
 	}
 
 	delete[] pData;

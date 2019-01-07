@@ -47,12 +47,29 @@ namespace MasterConverter
 				FileStream WriteStream = new FileStream(FilePath, FileMode.Create);
 				using (BinaryWriter BinWriter = new BinaryWriter(WriteStream))
 				{
+					// シート数.
+					{
+						byte[] Bytes = BitConverter.GetBytes(Master.SheetCount);
+						if(BitConverter.IsLittleEndian)
+						{
+							Bytes = Bytes.Reverse().ToArray();
+							BinWriter.Write(Bytes);
+						}
+					}
 					for (int Sheet = 0; Sheet < Master.SheetCount; Sheet++)
 					{
-						for (int i = 0; ; i++)
+						var Columns = Master.GetColumns(Sheet);
+						// カラム数.
 						{
-							var Columns = Master.GetColumns(Sheet);
-							if (i >= Columns[0].DataList.Count) { break; }
+							byte[] Bytes = BitConverter.GetBytes(Columns[0].DataList.Count);
+							if (BitConverter.IsLittleEndian)
+							{
+								Bytes = Bytes.Reverse().ToArray();
+								BinWriter.Write(Bytes);
+							}
+						}
+						for (int i = 0; i < Columns[0].DataList.Count; i++)
+						{
 							for (int j = 0; j < Columns.Count; j++)
 							{
 								byte[] Bytes = null;

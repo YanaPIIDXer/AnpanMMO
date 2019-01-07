@@ -161,10 +161,10 @@ namespace MasterConverter
 			Source = Source.Replace("$INCLUDE_GUARD$", IncludeGuard);
 
 			// 取得関数定義.
-			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *Get($KEY_TYPE$ Key) const;";
+			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *Get($KEY_TYPE$ Key, int32 SheetIndex = 0) const;";
 			if (Master.IsAutoKey)
 			{
-				GetItemFunctionDecrare = "TArray<const $ITEM_STRUCT_NAME$ *> CollectItems($SECONDARY_KEY_TYPE$ Key) const;";
+				GetItemFunctionDecrare = "TArray<const $ITEM_STRUCT_NAME$ *> CollectItems($SECONDARY_KEY_TYPE$ Key, int SheetIndex = 0) const;";
 			}
 			Source = Source.Replace("$GET_ITEM_FUNCTION_DECRARE$", GetItemFunctionDecrare);
 

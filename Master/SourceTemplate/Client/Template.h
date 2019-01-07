@@ -26,6 +26,7 @@ class $CLASS_NAME$
 private:
 
 	typedef TMap<$KEY_TYPE$, $ITEM_STRUCT_NAME$> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -39,7 +40,7 @@ private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 
