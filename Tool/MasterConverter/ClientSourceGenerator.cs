@@ -196,7 +196,7 @@ namespace MasterConverter
 			string ItemStructName = Master.Name + "Item";
 			Source = Source.Replace("$ITEM_STRUCT_NAME$", ItemStructName);
 
-			var ColumnList = Master.GetColumns();
+			var ColumnList = Master.GetColumns(0);
 
 			// キーの型名.
 			string KeyType = Util.ToTypeNameString(ColumnList[0].DataType);

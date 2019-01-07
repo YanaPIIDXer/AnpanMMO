@@ -56,19 +56,25 @@ namespace MasterConverter
 				using (var Excel = new ExcelPackage(new FileInfo(FilePath)))
 				{
 					var WorkSheet = Excel.Workbook.Worksheets[1];
-					CheckTags(WorkSheet);
+					CheckTags(WorkSheet, Excel.Workbook.Worksheets.Count);
 
-					int TagIndex = FindItemTag(WorkSheet);
-					if (TagIndex == -1) { return false; }
-
-					CollectColumns(WorkSheet, TagIndex - 2);
-					if (!Master.IsAutoKey && Master.GetColumn(0).DataType == Type.String)
+					if (Master.IsMultipleSheet)
 					{
-						Console.WriteLine("最初の行を文字列型にすることは出来ません。");
-						return false;
-					}
+						for (int i = 1; i <= Excel.Workbook.Worksheets.Count; i++)
+						{
+							if (!ParseWorkSheet(Excel.Workbook.Worksheets[i], i - 1)) { return false; }
+						}
 
-					CollectDatas(WorkSheet, TagIndex);
+						if (!Master.CheckMultipleSheetIntegrity())
+						{
+							Console.WriteLine("複数シートの不整合");
+							return false;
+						}
+					}
+					else
+					{
+						if (!ParseWorkSheet(WorkSheet, 0)) { return false; }
+					}
 				}
 			}
 			catch(Exception e)
@@ -81,10 +87,36 @@ namespace MasterConverter
 		}
 
 		/// <summary>
+		/// ワークシートの解析.
+		/// </summary>
+		/// <param name="WorkSheet">ワークシート</param>
+		/// <param name="WorkSheetIndex">ワークシートのインデックス</param>
+		/// <returns>成功したらtrueを返す</returns>
+		private bool ParseWorkSheet(ExcelWorksheet WorkSheet, int WorkSheetIndex)
+		{
+			Master.CurrentSheetIndex = WorkSheetIndex;
+
+			int TagIndex = FindItemTag(WorkSheet);
+			if (TagIndex == -1) { return false; }
+
+			CollectColumns(WorkSheet, TagIndex - 2);
+			if (!Master.IsAutoKey && Master.GetColumn(0, 0).DataType == Type.String)
+			{
+				Console.WriteLine("最初の行を文字列型にすることは出来ません。");
+				return false;
+			}
+
+			CollectDatas(WorkSheet, WorkSheetIndex, TagIndex);
+
+			return true;
+		}
+
+		/// <summary>
 		/// タグのチェック
 		/// </summary>
 		/// <param name="WorkSheet">ワークシート</param>
-		private void CheckTags(ExcelWorksheet WorkSheet)
+		/// <param name="WorkSheetCount">ワークシート数</param>
+		private void CheckTags(ExcelWorksheet WorkSheet, int WorkSheetCount)
 		{
 			for(int i = 1; i < 1 + CheckDepth; i++)
 			{
@@ -116,6 +148,7 @@ namespace MasterConverter
 						Master.SetForWordCheckServer();
 					}
 
+					// enum
 					if(CellValue == "$ENUM")
 					{
 						int EnumValue = 0;
@@ -129,6 +162,12 @@ namespace MasterConverter
 							EnumValue++;
 						}
 						Master.AddEnum(Data);
+					}
+
+					// 複数シート使用。
+					if(CellValue == "$USE_MULTIPLE_SHEET")
+					{
+						Master.SetMultipleSheet(WorkSheetCount);
 					}
 				}
 				catch {}
@@ -219,12 +258,13 @@ namespace MasterConverter
 		/// データを収集.
 		/// </summary>
 		/// <param name="WorkSheet">ワークシート</param>
+		/// <param name="WorkSheetIndex">ワークシートのインデックス</param>
 		/// <param name="StartRow">開始行</param>
-		private void CollectDatas(ExcelWorksheet WorkSheet, int StartRow)
+		private void CollectDatas(ExcelWorksheet WorkSheet, int WorkSheetIndex, int StartRow)
 		{
 			for(int i = StartRow; ; i++)
 			{
-				for(int j = 1; j <= Master.GetColumnCount(); j++)
+				for(int j = 1; j <= Master.GetColumnCount(WorkSheetIndex); j++)
 				{
 					object Data = WorkSheet.Cells[i, j + 1].Value;
 					if(j == 1 && Data == null) { return; }

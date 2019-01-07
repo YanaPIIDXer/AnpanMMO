@@ -47,86 +47,90 @@ namespace MasterConverter
 				FileStream WriteStream = new FileStream(FilePath, FileMode.Create);
 				using (BinaryWriter BinWriter = new BinaryWriter(WriteStream))
 				{
-					for (int i = 0; ; i++)
+					for (int Sheet = 0; Sheet < Master.SheetCount; Sheet++)
 					{
-						var Columns = Master.GetColumns();
-						if (i >= Columns[0].DataList.Count) { break; }
-						for (int j = 0; j < Columns.Count; j++)
+						for (int i = 0; ; i++)
 						{
-							byte[] Bytes = null;
-							double Data = 0.0;
-							if (Columns[j].DataType != Type.String)
+							var Columns = Master.GetColumns(Sheet);
+							if (i >= Columns[0].DataList.Count) { break; }
+							for (int j = 0; j < Columns.Count; j++)
 							{
-								int EnumValue = 0;
-								if(Master.TryFindEnumValue(Columns[j].DataList[i].ToString(), out EnumValue))
+								byte[] Bytes = null;
+								double Data = 0.0;
+								if (Columns[j].DataType != Type.String)
 								{
-									Data = EnumValue;
-								}
-								else
-								{
-									Data = (double)Columns[j].DataList[i];
-								}
-							}
-							switch (Columns[j].DataType)
-							{
-								case Type.s8:
-
-									// @HACK:負数ブチ込んだ時に問題起きる気がする・・・
-									Bytes = new byte[1];
-									Bytes[0] = (byte)Data;
-									break;
-
-								case Type.u8:
-
-									Bytes = new byte[1];
-									Bytes[0] = (byte)Data;
-									break;
-
-								case Type.s16:
-
-									Bytes = BitConverter.GetBytes((short)Data);
-									break;
-
-								case Type.u16:
-
-									Bytes = BitConverter.GetBytes((ushort)Data);
-									break;
-
-								case Type.s32:
-
-									Bytes = BitConverter.GetBytes((int)Data);
-									break;
-
-								case Type.u32:
-
-									Bytes = BitConverter.GetBytes((uint)Data);
-									break;
-
-								case Type.Float:
-
-									Bytes = BitConverter.GetBytes((float)Data);
-									break;
-
-								case Type.String:
-
-									string Str = (string)Columns[j].DataList[i];
-									int StrSize = Encoding.UTF8.GetByteCount(Str);
-									byte[] SizeBytes = BitConverter.GetBytes(StrSize);
-									if (BitConverter.IsLittleEndian)
+									int EnumValue = 0;
+									if (Master.TryFindEnumValue(Columns[j].DataList[i].ToString(), out EnumValue))
 									{
-										SizeBytes = SizeBytes.Reverse().ToArray();
+										Data = EnumValue;
 									}
-									BinWriter.Write(SizeBytes);
-									Bytes = Encoding.UTF8.GetBytes(Str).Reverse().ToArray();
-									break;
-							}
-							if (BitConverter.IsLittleEndian)
-							{
-								Bytes = Bytes.Reverse().ToArray();
-							}
+									else
+									{
+										Data = (double)Columns[j].DataList[i];
+									}
+								}
+								switch (Columns[j].DataType)
+								{
+									case Type.s8:
 
-							BinWriter.Write(Bytes);
+										// @HACK:負数ブチ込んだ時に問題起きる気がする・・・
+										Bytes = new byte[1];
+										Bytes[0] = (byte)Data;
+										break;
+
+									case Type.u8:
+
+										Bytes = new byte[1];
+										Bytes[0] = (byte)Data;
+										break;
+
+									case Type.s16:
+
+										Bytes = BitConverter.GetBytes((short)Data);
+										break;
+
+									case Type.u16:
+
+										Bytes = BitConverter.GetBytes((ushort)Data);
+										break;
+
+									case Type.s32:
+
+										Bytes = BitConverter.GetBytes((int)Data);
+										break;
+
+									case Type.u32:
+
+										Bytes = BitConverter.GetBytes((uint)Data);
+										break;
+
+									case Type.Float:
+
+										Bytes = BitConverter.GetBytes((float)Data);
+										break;
+
+									case Type.String:
+
+										string Str = (string)Columns[j].DataList[i];
+										int StrSize = Encoding.UTF8.GetByteCount(Str);
+										byte[] SizeBytes = BitConverter.GetBytes(StrSize);
+										if (BitConverter.IsLittleEndian)
+										{
+											SizeBytes = SizeBytes.Reverse().ToArray();
+										}
+										BinWriter.Write(SizeBytes);
+										Bytes = Encoding.UTF8.GetBytes(Str).Reverse().ToArray();
+										break;
+								}
+								if (BitConverter.IsLittleEndian)
+								{
+									Bytes = Bytes.Reverse().ToArray();
+								}
+
+								BinWriter.Write(Bytes);
+							}
 						}
+
 					}
 				}
 			}

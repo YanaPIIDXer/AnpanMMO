@@ -86,17 +86,12 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す。</returns>
 		private bool Execute()
 		{
-			Console.Write("SQLの展開中...");
-
 			SQLExecuter Executer = new SQLExecuter(Host, UserName, Password);
 			if (!Executer.Execute())
 			{
 				MessageBox.Show("SQLの展開に失敗しました。");
-				Console.WriteLine("失敗。");
 				return false;
 			}
-
-			Console.WriteLine("完了。");
 
 			return true;
 		}

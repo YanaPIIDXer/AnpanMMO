@@ -151,7 +151,7 @@ namespace MasterConverter
 		/// <returns>変換後のソース</returns>
 		private string ReplaceTags(string Source)
 		{
-			var ColumnList = Master.GetColumns();
+			var ColumnList = Master.GetColumns(0);
 
 			// 取得関数宣言.
 			string GetItemFunctionDecrare = "const $ITEM_STRUCT_NAME$ *GetItem($KEY_TYPE$ Key) const;";

@@ -53,7 +53,7 @@ namespace MasterConverter
 			var Writer = File.CreateText(FilePath);
 			Writer.WriteLine("DROP TABLE IF EXISTS `" + TableName + "`;");
 			Writer.WriteLine("CREATE TABLE `" + TableName + "` (");
-			var Columns = Master.GetColumns();
+			var Columns = Master.GetColumns(0);
 			foreach(Column Col in Columns)
 			{
 				string Line = " `" + Col.Name + "` ";
@@ -134,38 +134,40 @@ namespace MasterConverter
 		/// <param name="TableName">テーブル名</param>
 		private void WriteInsert(StreamWriter Writer, string TableName)
 		{
-			for(int i = 0; ; i++)
+			for(int Sheet = 0; Sheet < Master.SheetCount; Sheet++)
 			{
-				string Line = "INSERT INTO `" + TableName + "` VALUES (";
-				bool bFinished = false;
-				var Columns = Master.GetColumns();
-				foreach (Column Col in Columns)
+				for (int i = 0; ; i++)
 				{
-					if(i >= Col.DataList.Count)
+					string Line = "INSERT INTO `" + TableName + "` VALUES (";
+					bool bFinished = false;
+					var Columns = Master.GetColumns(Sheet);
+					foreach (Column Col in Columns)
 					{
-						bFinished = true;
-						break;
-					}
-					string Data = Col.DataList[i].ToString();
-					int EnumValue = 0;
-					if(Col.DataType == Type.String)
-					{
-						Data = "'" + Data + "'";
-					}
-					else if(Master.TryFindEnumValue(Data, out EnumValue))
-					{
-						Data = EnumValue.ToString();
-					}
+						if (i >= Col.DataList.Count)
+						{
+							bFinished = true;
+							break;
+						}
+						string Data = Col.DataList[i].ToString();
+						int EnumValue = 0;
+						if (Col.DataType == Type.String)
+						{
+							Data = "'" + Data + "'";
+						}
+						else if (Master.TryFindEnumValue(Data, out EnumValue))
+						{
+							Data = EnumValue.ToString();
+						}
 
-					Line += Data;
-					Line += ",";
+						Line += Data;
+						Line += ",";
+					}
+					if (bFinished) { break; }
+					Line = Line.Substring(0, Line.Length - 1);
+					Line += ");";
+					Writer.WriteLine(Line);
 				}
-				if (bFinished) { break; }
-				Line = Line.Substring(0, Line.Length - 1);
-				Line += ");";
-				Writer.WriteLine(Line);
 			}
 		}
-
 	}
 }
