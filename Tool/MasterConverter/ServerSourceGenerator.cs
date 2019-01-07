@@ -246,7 +246,7 @@ namespace MasterConverter
 			string ItemBind = "";
 			if(Master.IsMultipleSheet)
 			{
-				ItemBind += "\tQuery.BindInt(&Sheet);\n";
+				ItemBind += "\tQuery.BindResultInt(&Sheet);\n";
 			}
 			foreach(Column Col in ColumnList)
 			{
