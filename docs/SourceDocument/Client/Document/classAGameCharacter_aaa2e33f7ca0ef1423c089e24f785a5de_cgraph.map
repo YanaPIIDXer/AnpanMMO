@@ -1,0 +1,5 @@
+<map id="AGameCharacter::OnRecvLevelUp" name="AGameCharacter::OnRecvLevelUp">
+<area shape="rect" id="node2" href="$classPlayerStatus.html#aa5e37379a3bf680bb8a813ffc6e259bf" title="PlayerStatus::Set" alt="" coords="314,5,439,32"/>
+<area shape="rect" id="node3" href="$classACharacterBase.html#a1131fec4368441d80a899e0a632bdc5c" title="ACharacterBase::UpdateMaxHp" alt="" coords="273,56,480,83"/>
+<area shape="rect" id="node4" href="$classAGameCharacter.html#af156c2a2529aebbfc371872a06c80928" title="AGameCharacter::OnLevelUp" alt="" coords="281,107,473,133"/>
+</map>
