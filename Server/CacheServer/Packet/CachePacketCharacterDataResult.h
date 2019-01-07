@@ -46,12 +46,6 @@ public:
 	u8 Job;
 	//! ƒŒƒxƒ‹
 	u32 Level;
-	//! Å‘å‚g‚o
-	s32 MaxHp;
-	//! UŒ‚—Í
-	s32 Atk;
-	//! –hŒä—Í
-	s32 Def;
 	//! ŒoŒ±’l
 	s32 Exp;
 	//! ƒS[ƒ‹ƒh
@@ -76,7 +70,7 @@ public:
 	/**
 	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
-	CachePacketCharacterDataResult(u32 InClientId, u32 InCharacterId, u8 InResult, std::string InName, u8 InJob, u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InGold, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
+	CachePacketCharacterDataResult(u32 InClientId, u32 InCharacterId, u8 InResult, std::string InName, u8 InJob, u32 InLevel, s32 InExp, u32 InGold, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
 		CharacterId = InCharacterId;
@@ -84,9 +78,6 @@ public:
 		Name = InName;
 		Job = InJob;
 		Level = InLevel;
-		MaxHp = InMaxHp;
-		Atk = InAtk;
-		Def = InDef;
 		Exp = InExp;
 		Gold = InGold;
 		LastAreaId = InLastAreaId;
@@ -111,9 +102,6 @@ public:
 		pStream->Serialize(&Name);
 		pStream->Serialize(&Job);
 		pStream->Serialize(&Level);
-		pStream->Serialize(&MaxHp);
-		pStream->Serialize(&Atk);
-		pStream->Serialize(&Def);
 		pStream->Serialize(&Exp);
 		pStream->Serialize(&Gold);
 		pStream->Serialize(&LastAreaId);

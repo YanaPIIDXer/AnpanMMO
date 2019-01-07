@@ -233,36 +233,27 @@ protected:
 
 
 	/**
-	 * @fn void SetParameter(u32 Level, int Hp, int MaxHp, int Atk, int Def)
+	 * @fn void SetParameter(u32 Level, u32 Hp, u32 MaxHp, u32 Str, u32 Def, u32 Int, u32 Mnd, u32 Vit)
 	 * @brief ƒpƒ‰ƒ[ƒ^‚ğİ’è
 	 * @param[in] Level ƒŒƒxƒ‹
 	 * @param[in] Hp ‚g‚o
 	 * @param[in] MaxHp Å‘å‚g‚o
-	 * @param[in] Atk UŒ‚—Í
-	 * @param[in] Def –hŒä—Í
+	 * @param[in] Str STR
+	 * @param[in] Def DEF
+	 * @param[in] Int INT
+	 * @param[in] Mnd MND
+	 * @param[in] Vit VIT
 	 */
-	void SetParameter(u32 Level, int Hp, int MaxHp, int Atk, int Def)
+	void SetParameter(u32 Level, u32 Hp, u32 MaxHp, u32 Str, u32 Def, u32 Int, u32 Mnd, u32 Vit)
 	{
 		Parameter.Level = Level;
 		Parameter.Hp = Hp;
 		Parameter.MaxHp = MaxHp;
-		Parameter.Atk = Atk;
+		Parameter.Str = Str;
 		Parameter.Def = Def;
-	}
-
-	/**
-	 * @fn void LevelUp(int MaxHp, int Atk, int Def)
-	 * @brief ƒŒƒxƒ‹ƒAƒbƒv
-	 * @param[in] MaxHp Å‘å‚g‚o
-	 * @param[in] Atk UŒ‚—Í
-	 * @param[in] Def –hŒä—Í
-	 */
-	void LevelUp(int MaxHp, int Atk, int Def)
-	{
-		Parameter.Level++;
-		Parameter.MaxHp += MaxHp;
-		Parameter.Atk += Atk;
-		Parameter.Def += Def;
+		Parameter.Int = Int;
+		Parameter.Mnd = Mnd;
+		Parameter.Vit = Vit;
 	}
 
 	/**

@@ -82,7 +82,7 @@ bool DBConnection::GetCharacterId(int Id, u32 &OutCharacterId)
 // キャラクタデータ登録.
 bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 {
-	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData(CustomerId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastArea, LastX, LastY, LastZ) values(?, ?, ?, 1, 50, 10, 10, 0, 0, 1, -1300.0, 4050.0, 42.0);");
+	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData(CustomerId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastArea, LastX, LastY, LastZ) values(?, ?, ?, 1, 0, 0, 1, -1300.0, 4050.0, 42.0);");
 	Query.BindInt(&Id);
 	Query.BindString(pCharacterName);
 	Query.BindChar(&Job);
@@ -133,9 +133,9 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 }
 
 // キャラクタパラメータ読み込み
-bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, int &OutMaxHp, int &OutAtk, int &OutDef, int &OutExp, u32 &OutGold)
+bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, u32 &OutExp, u32 &OutGold)
 {
-	MySqlQuery Query = Connection.CreateQuery("select CharacterId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select CharacterId, Name, Job, Level, Exp, Gold from CharacterData where CustomerId = ?");
 	Query.BindInt(&Id);
 
 	char NameStr[256];
@@ -144,9 +144,6 @@ bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::stri
 	Query.BindResultString(NameStr);
 	Query.BindResultChar(&OutJob);
 	Query.BindResultInt(&OutLevel);
-	Query.BindResultInt(&OutMaxHp);
-	Query.BindResultInt(&OutAtk);
-	Query.BindResultInt(&OutDef);
 	Query.BindResultInt(&OutExp);
 	Query.BindResultInt(&OutGold);
 
@@ -158,14 +155,11 @@ bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::stri
 }
 
 // キャラクタパラメータ書き込み
-bool DBConnection::SaveCharacterParameter(u32 CharacterId, u32 Level, int MaxHp, int Atk, int Def, int Exp, int AreaId, float X, float Y, float Z)
+bool DBConnection::SaveCharacterParameter(u32 CharacterId, u32 Level, u32 Exp, int AreaId, float X, float Y, float Z)
 {
-	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Level = ?, MaxHp = ?, Atk = ?, Def = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ?, LastZ = ? where CharacterId = ?");
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set Level = ?, Exp = ?, LastArea = ?, LastX = ?, LastY = ?, LastZ = ? where CharacterId = ?");
 
 	Query.BindInt(&Level);
-	Query.BindInt(&MaxHp);
-	Query.BindInt(&Atk);
-	Query.BindInt(&Def);
 	Query.BindInt(&Exp);
 	Query.BindInt(&AreaId);
 	Query.BindFloat(&X);

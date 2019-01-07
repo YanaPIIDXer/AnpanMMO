@@ -17,16 +17,25 @@ struct CharacterParameter
 	u32 Level;
 
 	//! HP
-	int Hp;
+	u32 Hp;
 
 	//! Å‘åHP
-	int MaxHp;
+	u32 MaxHp;
 
-	//! UŒ‚—Í.
-	int Atk;
+	//! STR
+	u32 Str;
 
-	//! –hŒä—Í.
-	int Def;
+	//! DEF
+	u32 Def;
+
+	//! INT
+	u32 Int;
+
+	//! MND
+	u32 Mnd;
+
+	//! VIT
+	u32 Vit;
 
 };
 

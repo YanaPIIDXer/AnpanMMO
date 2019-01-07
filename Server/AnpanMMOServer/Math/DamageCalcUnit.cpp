@@ -15,7 +15,7 @@ DamageCalcUnit::DamageCalcUnit(const CharacterParameter &InAttackerParam, const 
 // ŒvŽZ.
 int DamageCalcUnit::Calc() const
 {
-	int Atk = AttackerParam.Atk + Random::Range<int>(0, CorrectionMaxValue);
+	int Atk = AttackerParam.Str + Random::Range<int>(0, CorrectionMaxValue);
 	int Def = DefencerParam.Def + Random::Range<int>(0, CorrectionMaxValue);
 	
 	if (Random::Range<int>(0, 100) <= CriticalRate)
