@@ -55,16 +55,21 @@ namespace MasterConverter
 			Writer.WriteLine("CREATE TABLE `" + TableName + "` (");
 			if(Master.IsMultipleSheet)
 			{
-				Writer.WriteLine("SheetIndex int,");
+				Writer.WriteLine(" `SheetIndex` INT UNSIGNED,");
 			}
 			var Columns = Master.GetColumns(0);
-			foreach(Column Col in Columns)
+			for(int i = 0; i < Columns.Count; i++)
 			{
+				Column Col = Columns[i];
 				string Line = " `" + Col.Name + "` ";
-				Line += GetSQLTypeName(Col.DataType) + ",";
+				Line += GetSQLTypeName(Col.DataType);
+				if (i < Columns.Count - 1)
+				{
+					Line += ",";
+				}
 				Writer.WriteLine(Line);
 			}
-			Writer.WriteLine("PRIMARY KEY(`" + Columns[0].Name + "`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+			Writer.WriteLine(") DEFAULT CHARSET=utf8;");
 
 			Writer.WriteLine("LOCK TABLES `" + TableName + "` WRITE;");
 
@@ -144,6 +149,10 @@ namespace MasterConverter
 				{
 					string Line = "INSERT INTO `" + TableName + "` VALUES (";
 					bool bFinished = false;
+					if (Master.IsMultipleSheet)
+					{
+						Line += Sheet + ",";
+					}
 					var Columns = Master.GetColumns(Sheet);
 					foreach (Column Col in Columns)
 					{
@@ -151,10 +160,6 @@ namespace MasterConverter
 						{
 							bFinished = true;
 							break;
-						}
-						if(Master.IsMultipleSheet)
-						{
-							Line += Sheet + ",";
 						}
 						string Data = Col.DataList[i].ToString();
 						int EnumValue = 0;

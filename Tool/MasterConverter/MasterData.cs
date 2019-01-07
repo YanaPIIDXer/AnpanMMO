@@ -212,6 +212,10 @@ namespace MasterConverter
 		{
 			IsMultipleSheet = true;
 			SheetCount = InSheetCount;
+			for (int i = 1; i < SheetCount; i++)
+			{
+				Columns.Add(new List<Column>());
+			}
 		}
 
 		/// <summary>
