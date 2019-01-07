@@ -1,6 +1,6 @@
 /**
  * @file PacketInstanceAreaTicketProcess.h
- * @brief インスタンスマップチケット処理
+ * @brief インスタンスマップチケット処理パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief インスタンスマップチケット処理
+ * @brief インスタンスマップチケット処理パケット
  */
 class PacketInstanceAreaTicketProcess  : public PacketBase
 {

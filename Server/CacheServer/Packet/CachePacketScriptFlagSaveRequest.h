@@ -1,6 +1,6 @@
 /**
  * @file CachePacketScriptFlagSaveRequest.h
- * @brief スクリプトフラグ保存リクエスト
+ * @brief スクリプトフラグ保存リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief スクリプトフラグ保存リクエスト
+ * @brief スクリプトフラグ保存リクエストパケット
  */
 class CachePacketScriptFlagSaveRequest  : public ProcessPacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketPlayerRespawn.h
- * @brief プレイヤーリスポン
+ * @brief プレイヤーリスポンパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief プレイヤーリスポン
+ * @brief プレイヤーリスポンパケット
  */
 class PacketPlayerRespawn  : public PacketBase
 {

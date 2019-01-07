@@ -1,6 +1,6 @@
 /**
  * @file PacketAddExp.h
- * @brief 経験値追加
+ * @brief 経験値追加パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief 経験値追加
+ * @brief 経験値追加パケット
  */
 class PacketAddExp  : public PacketBase
 {

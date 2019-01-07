@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillUseFailed.h
- * @brief スキル使用失敗
+ * @brief スキル使用失敗パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキル使用失敗
+ * @brief スキル使用失敗パケット
  */
 class PacketSkillUseFailed  : public PacketBase
 {

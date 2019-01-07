@@ -1,6 +1,6 @@
 /**
  * @file CachePacketSkillTreeRequest.h
- * @brief スキルツリーリクエスト
+ * @brief スキルツリーリクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief スキルツリーリクエスト
+ * @brief スキルツリーリクエストパケット
  */
 class CachePacketSkillTreeRequest  : public ProcessPacketBase
 {

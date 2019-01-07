@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyKick.h
- * @brief パーティメンバキック
+ * @brief パーティメンバキックパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティメンバキック
+ * @brief パーティメンバキックパケット
  */
 class PacketPartyKick  : public PacketBase
 {

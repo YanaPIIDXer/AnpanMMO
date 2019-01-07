@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillUse.h
- * @brief スキル使用
+ * @brief スキル使用パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキル使用
+ * @brief スキル使用パケット
  */
 class PacketSkillUse  : public PacketBase
 {

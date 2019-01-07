@@ -1,6 +1,6 @@
 /**
  * @file PacketRotateAnpan.h
- * @brief アンパン回転
+ * @brief アンパン回転パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アンパン回転
+ * @brief アンパン回転パケット
  */
 class PacketRotateAnpan  : public PacketBase
 {

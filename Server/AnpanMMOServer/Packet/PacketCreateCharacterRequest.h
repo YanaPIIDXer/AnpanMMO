@@ -1,6 +1,6 @@
 /**
  * @file PacketCreateCharacterRequest.h
- * @brief キャラクタ作成リクエスト
+ * @brief キャラクタ作成リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief キャラクタ作成リクエスト
+ * @brief キャラクタ作成リクエストパケット
  */
 class PacketCreateCharacterRequest  : public PacketBase
 {

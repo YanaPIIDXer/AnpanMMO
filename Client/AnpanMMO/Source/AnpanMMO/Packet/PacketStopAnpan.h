@@ -1,6 +1,6 @@
 /**
  * @file PacketStopAnpan.h
- * @brief アンパン停止
+ * @brief アンパン停止パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アンパン停止
+ * @brief アンパン停止パケット
  */
 class PacketStopAnpan  : public PacketBase
 {

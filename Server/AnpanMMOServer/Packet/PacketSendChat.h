@@ -1,6 +1,6 @@
 /**
  * @file PacketSendChat.h
- * @brief チャット送信
+ * @brief チャット送信パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief チャット送信
+ * @brief チャット送信パケット
  */
 class PacketSendChat  : public PacketBase
 {

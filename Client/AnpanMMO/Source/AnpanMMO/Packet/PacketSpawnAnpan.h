@@ -1,6 +1,6 @@
 /**
  * @file PacketSpawnAnpan.h
- * @brief アンパン生成
+ * @brief アンパン生成パケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief アンパン生成
+ * @brief アンパン生成パケット
  */
 class PacketSpawnAnpan  : public PacketBase
 {

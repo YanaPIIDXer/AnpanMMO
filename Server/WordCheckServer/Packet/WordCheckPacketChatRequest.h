@@ -1,6 +1,6 @@
 /**
  * @file WordCheckPacketChatRequest.h
- * @brief ワードチェック要求
+ * @brief ワードチェック要求パケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief ワードチェック要求
+ * @brief ワードチェック要求パケット
  */
 class WordCheckPacketChatRequest  : public ProcessPacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file CachePacketCharacterDataSave.h
- * @brief キャラクタ保存リクエスト
+ * @brief キャラクタ保存リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief キャラクタ保存リクエスト
+ * @brief キャラクタ保存リクエストパケット
  */
 class CachePacketCharacterDataSave  : public ProcessPacketBase
 {

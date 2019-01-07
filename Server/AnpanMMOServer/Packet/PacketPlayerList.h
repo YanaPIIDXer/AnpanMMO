@@ -1,6 +1,6 @@
 /**
  * @file PacketPlayerList.h
- * @brief プレイヤーリスト
+ * @brief プレイヤーリストパケット
  * @author NativePacketGenerator
  */
 
@@ -15,7 +15,7 @@
 
 
 /**
- * @brief プレイヤーリスト
+ * @brief プレイヤーリストパケット
  */
 class PacketPlayerList  : public PacketBase
 {

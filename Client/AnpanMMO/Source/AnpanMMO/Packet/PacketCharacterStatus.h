@@ -1,6 +1,6 @@
 /**
  * @file PacketCharacterStatus.h
- * @brief キャラクタパラメータ
+ * @brief キャラクタパラメータパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief キャラクタパラメータ
+ * @brief キャラクタパラメータパケット
  */
 class PacketCharacterStatus  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketNPCTalk.h
- * @brief 会話開始
+ * @brief 会話開始パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief 会話開始
+ * @brief 会話開始パケット
  */
 class PacketNPCTalk  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file CachePacketSkillTreeResponse.h
- * @brief スキルツリーレスポンス
+ * @brief スキルツリーレスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief スキルツリーレスポンス
+ * @brief スキルツリーレスポンスパケット
  */
 class CachePacketSkillTreeResponse  : public ProcessPacketBase
 {

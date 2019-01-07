@@ -1,6 +1,6 @@
 /**
  * @file PacketTimeChange.h
- * @brief 時間変化通知
+ * @brief 時間変化通知パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief 時間変化通知
+ * @brief 時間変化通知パケット
  */
 class PacketTimeChange  : public PacketBase
 {

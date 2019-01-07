@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillCastFinish.h
- * @brief スキル詠唱完了
+ * @brief スキル詠唱完了パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキル詠唱完了
+ * @brief スキル詠唱完了パケット
  */
 class PacketSkillCastFinish  : public PacketBase
 {

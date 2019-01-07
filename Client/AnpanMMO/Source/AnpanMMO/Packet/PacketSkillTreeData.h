@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillTreeData.h
- * @brief スキルツリーデータ
+ * @brief スキルツリーデータパケット
  * @author NativePacketGenerator
  */
 
@@ -15,7 +15,7 @@
 
 
 /**
- * @brief スキルツリーデータ
+ * @brief スキルツリーデータパケット
  */
 class PacketSkillTreeData  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketLevelUp.h
- * @brief レベルアップ
+ * @brief レベルアップパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief レベルアップ
+ * @brief レベルアップパケット
  */
 class PacketLevelUp  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketItemAdd.h
- * @brief アイテム追加
+ * @brief アイテム追加パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アイテム追加
+ * @brief アイテム追加パケット
  */
 class PacketItemAdd  : public PacketBase
 {

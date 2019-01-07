@@ -1,6 +1,6 @@
 /**
  * @file CachePacketQuestRetireRequest.h
- * @brief クエスト破棄リクエスト
+ * @brief クエスト破棄リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief クエスト破棄リクエスト
+ * @brief クエスト破棄リクエストパケット
  */
 class CachePacketQuestRetireRequest  : public ProcessPacketBase
 {

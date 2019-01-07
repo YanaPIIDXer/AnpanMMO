@@ -1,6 +1,6 @@
 /**
  * @file PacketSpawnPlayer.h
- * @brief プレイヤー生成
+ * @brief プレイヤー生成パケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief プレイヤー生成
+ * @brief プレイヤー生成パケット
  */
 class PacketSpawnPlayer  : public PacketBase
 {

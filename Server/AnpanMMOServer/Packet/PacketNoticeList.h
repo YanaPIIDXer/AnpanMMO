@@ -1,6 +1,6 @@
 /**
  * @file PacketNoticeList.h
- * @brief 通知リスト
+ * @brief 通知リストパケット
  * @author NativePacketGenerator
  */
 
@@ -15,7 +15,7 @@
 
 
 /**
- * @brief 通知リスト
+ * @brief 通知リストパケット
  */
 class PacketNoticeList  : public PacketBase
 {

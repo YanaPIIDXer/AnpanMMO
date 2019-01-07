@@ -1,6 +1,6 @@
 /**
  * @file PacketMoveAnpan.h
- * @brief アンパン移動
+ * @brief アンパン移動パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アンパン移動
+ * @brief アンパン移動パケット
  */
 class PacketMoveAnpan  : public PacketBase
 {

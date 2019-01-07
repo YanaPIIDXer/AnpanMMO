@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyDissolutionRequest.h
- * @brief パーティ解散リクエスト
+ * @brief パーティ解散リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティ解散リクエスト
+ * @brief パーティ解散リクエストパケット
  */
 class PacketPartyDissolutionRequest  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketItemShortcut.h
- * @brief ログイン時アイテムショートカット通知
+ * @brief ログイン時アイテムショートカット通知パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief ログイン時アイテムショートカット通知
+ * @brief ログイン時アイテムショートカット通知パケット
  */
 class PacketItemShortcut  : public PacketBase
 {

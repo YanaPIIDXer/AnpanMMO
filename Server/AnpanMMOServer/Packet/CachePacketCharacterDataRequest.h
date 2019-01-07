@@ -1,6 +1,6 @@
 /**
  * @file CachePacketCharacterDataRequest.h
- * @brief キャラクタ情報リクエスト
+ * @brief キャラクタ情報リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief キャラクタ情報リクエスト
+ * @brief キャラクタ情報リクエストパケット
  */
 class CachePacketCharacterDataRequest  : public ProcessPacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketInstanceAreaTicketDiscard.h
- * @brief インスタンスマップチケット破棄
+ * @brief インスタンスマップチケット破棄パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief インスタンスマップチケット破棄
+ * @brief インスタンスマップチケット破棄パケット
  */
 class PacketInstanceAreaTicketDiscard  : public PacketBase
 {

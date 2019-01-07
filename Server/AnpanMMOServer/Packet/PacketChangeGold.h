@@ -1,6 +1,6 @@
 /**
  * @file PacketChangeGold.h
- * @brief ゴールド変化
+ * @brief ゴールド変化パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief ゴールド変化
+ * @brief ゴールド変化パケット
  */
 class PacketChangeGold  : public PacketBase
 {

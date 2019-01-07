@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyExit.h
- * @brief パーティ離脱
+ * @brief パーティ離脱パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティ離脱
+ * @brief パーティ離脱パケット
  */
 class PacketPartyExit  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketPing.h
- * @brief Ping
+ * @brief Pingパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief Ping
+ * @brief Pingパケット
  */
 class PacketPing  : public PacketBase
 {

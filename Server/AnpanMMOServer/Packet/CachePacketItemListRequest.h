@@ -1,6 +1,6 @@
 /**
  * @file CachePacketItemListRequest.h
- * @brief アイテムリストリクエスト
+ * @brief アイテムリストリクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief アイテムリストリクエスト
+ * @brief アイテムリストリクエストパケット
  */
 class CachePacketItemListRequest  : public ProcessPacketBase
 {

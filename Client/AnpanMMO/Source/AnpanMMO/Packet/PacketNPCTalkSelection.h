@@ -1,6 +1,6 @@
 /**
  * @file PacketNPCTalkSelection.h
- * @brief 選択肢を選択
+ * @brief 選択肢を選択パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief 選択肢を選択
+ * @brief 選択肢を選択パケット
  */
 class PacketNPCTalkSelection  : public PacketBase
 {

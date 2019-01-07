@@ -1,6 +1,6 @@
 /**
  * @file PacketGameReady.h
- * @brief 準備完了
+ * @brief 準備完了パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief 準備完了
+ * @brief 準備完了パケット
  */
 class PacketGameReady  : public PacketBase
 {

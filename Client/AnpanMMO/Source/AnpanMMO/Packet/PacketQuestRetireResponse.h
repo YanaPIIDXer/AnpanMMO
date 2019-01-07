@@ -1,6 +1,6 @@
 /**
  * @file PacketQuestRetireResponse.h
- * @brief クエスト破棄レスポンス
+ * @brief クエスト破棄レスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief クエスト破棄レスポンス
+ * @brief クエスト破棄レスポンスパケット
  */
 class PacketQuestRetireResponse  : public PacketBase
 {

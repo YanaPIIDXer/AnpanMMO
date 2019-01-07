@@ -1,6 +1,6 @@
 /**
  * @file CachePacketItemCountChangeRequest.h
- * @brief アイテム数変化リクエスト
+ * @brief アイテム数変化リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief アイテム数変化リクエスト
+ * @brief アイテム数変化リクエストパケット
  */
 class CachePacketItemCountChangeRequest  : public ProcessPacketBase
 {

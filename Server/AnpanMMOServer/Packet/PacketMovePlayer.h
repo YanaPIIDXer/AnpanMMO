@@ -1,6 +1,6 @@
 /**
  * @file PacketMovePlayer.h
- * @brief プレイヤー移動
+ * @brief プレイヤー移動パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief プレイヤー移動
+ * @brief プレイヤー移動パケット
  */
 class PacketMovePlayer  : public PacketBase
 {

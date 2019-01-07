@@ -1,6 +1,6 @@
 /**
  * @file CachePacketSaveItemShortcutResponse.h
- * @brief アイテムショートカット保存レスポンス
+ * @brief アイテムショートカット保存レスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief アイテムショートカット保存レスポンス
+ * @brief アイテムショートカット保存レスポンスパケット
  */
 class CachePacketSaveItemShortcutResponse  : public ProcessPacketBase
 {

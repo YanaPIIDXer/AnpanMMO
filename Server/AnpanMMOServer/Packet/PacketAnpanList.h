@@ -1,6 +1,6 @@
 /**
  * @file PacketAnpanList.h
- * @brief アンパンリスト
+ * @brief アンパンリストパケット
  * @author NativePacketGenerator
  */
 
@@ -15,7 +15,7 @@
 
 
 /**
- * @brief アンパンリスト
+ * @brief アンパンリストパケット
  */
 class PacketAnpanList  : public PacketBase
 {

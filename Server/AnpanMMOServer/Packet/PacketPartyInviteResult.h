@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyInviteResult.h
- * @brief パーティ勧誘結果
+ * @brief パーティ勧誘結果パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティ勧誘結果
+ * @brief パーティ勧誘結果パケット
  */
 class PacketPartyInviteResult  : public PacketBase
 {

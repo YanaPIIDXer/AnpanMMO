@@ -1,6 +1,6 @@
 /**
  * @file CachePacketGoldSave.h
- * @brief ゴールド保存リクエスト
+ * @brief ゴールド保存リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief ゴールド保存リクエスト
+ * @brief ゴールド保存リクエストパケット
  */
 class CachePacketGoldSave  : public ProcessPacketBase
 {

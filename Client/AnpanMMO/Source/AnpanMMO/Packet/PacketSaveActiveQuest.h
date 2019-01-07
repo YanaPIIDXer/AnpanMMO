@@ -1,6 +1,6 @@
 /**
  * @file PacketSaveActiveQuest.h
- * @brief アクティブクエスト保存
+ * @brief アクティブクエスト保存パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アクティブクエスト保存
+ * @brief アクティブクエスト保存パケット
  */
 class PacketSaveActiveQuest  : public PacketBase
 {

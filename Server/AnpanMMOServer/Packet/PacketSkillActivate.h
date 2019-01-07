@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillActivate.h
- * @brief スキル発動
+ * @brief スキル発動パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキル発動
+ * @brief スキル発動パケット
  */
 class PacketSkillActivate  : public PacketBase
 {

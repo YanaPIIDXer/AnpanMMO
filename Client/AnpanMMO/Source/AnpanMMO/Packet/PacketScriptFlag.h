@@ -1,6 +1,6 @@
 /**
  * @file PacketScriptFlag.h
- * @brief スクリプトフラグ
+ * @brief スクリプトフラグパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スクリプトフラグ
+ * @brief スクリプトフラグパケット
  */
 class PacketScriptFlag  : public PacketBase
 {

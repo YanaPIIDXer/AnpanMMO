@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillCast.h
- * @brief スキル詠唱開始
+ * @brief スキル詠唱開始パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキル詠唱開始
+ * @brief スキル詠唱開始パケット
  */
 class PacketSkillCast  : public PacketBase
 {

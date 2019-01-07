@@ -1,6 +1,6 @@
 /**
  * @file PacketReceiveChat.h
- * @brief チャット受信
+ * @brief チャット受信パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief チャット受信
+ * @brief チャット受信パケット
  */
 class PacketReceiveChat  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file CachePacketCharacterDataResult.h
- * @brief キャラクタ情報レスポンス
+ * @brief キャラクタ情報レスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief キャラクタ情報レスポンス
+ * @brief キャラクタ情報レスポンスパケット
  */
 class CachePacketCharacterDataResult  : public ProcessPacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file CachePacketLogInRequest.h
- * @brief ログインリクエスト
+ * @brief ログインリクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief ログインリクエスト
+ * @brief ログインリクエストパケット
  */
 class CachePacketLogInRequest  : public ProcessPacketBase
 {

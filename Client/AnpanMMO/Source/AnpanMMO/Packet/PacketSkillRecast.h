@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillRecast.h
- * @brief リキャスト完了
+ * @brief リキャスト完了パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief リキャスト完了
+ * @brief リキャスト完了パケット
  */
 class PacketSkillRecast  : public PacketBase
 {
