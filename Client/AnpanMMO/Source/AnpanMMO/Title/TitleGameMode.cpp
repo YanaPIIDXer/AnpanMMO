@@ -154,7 +154,7 @@ bool ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
 	check(pInst != nullptr);
 
 	FString NameStr = UTF8_TO_TCHAR(Packet.Name.c_str());
-	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.Gold);
+	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Str, Packet.Def, Packet.Int, Packet.Mnd, Packet.Vit, Packet.Exp, Packet.Gold);
 
 	return true;
 }
