@@ -121,5 +121,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!Level.Load(Connection))
+	{
+		std::cout << "Level Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }
