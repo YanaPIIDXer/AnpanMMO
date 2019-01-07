@@ -1,7 +1,7 @@
 <map id="ANPCCharacter::Talk" name="ANPCCharacter::Talk">
 <area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="230,5,397,32"/>
 <area shape="rect" id="node3" href="$classMasterData.html#a0709f718c7bb1ad5c2210a9b4631ea19" title="MasterData::GetNPCMaster" alt="" coords="221,56,406,83"/>
-<area shape="rect" id="node4" href="$classNPCMaster.html#a9e47f35480317f64edc48b66ccbbfcbd" title="NPCMaster::Get" alt="" coords="254,107,373,133"/>
+<area shape="rect" id="node4" href="$classNPCMaster.html#af3ae9c6d9d517bbfb10ec5bc537cc809" title="NPCMaster::Get" alt="" coords="254,107,373,133"/>
 <area shape="rect" id="node5" href="$classUMMOGameInstance.html#a742ddc60c20a96634bed311deda3e902" title="UMMOGameInstance::SendPacket" alt="" coords="200,157,427,184"/>
 <area shape="rect" id="node11" href="$classAActiveGameMode.html#a517681b49130e73a2cadba7c8d95b38e" title="AActiveGameMode::StartScript" alt="" coords="212,220,415,247"/>
 <area shape="rect" id="node6" href="$classGameServerConnection.html#ac751385003e92982476bef66acfb4519" title="GameServerConnection\l::SendPacket" alt="" coords="485,137,644,178"/>

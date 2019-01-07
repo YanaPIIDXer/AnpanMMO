@@ -1,6 +1,6 @@
 <map id="CharacterNameInputWidget.cpp" name="CharacterNameInputWidget.cpp">
 <area shape="rect" id="node2" href="$CharacterNameInputWidget_8h.html" title="CharacterNameInputWidget.h" alt="" coords="1369,80,1561,107"/>
-<area shape="rect" id="node6" href="$PacketCreateCharacterRequest_8h.html" title="キャラクタ作成リクエスト " alt="" coords="1489,229,1691,271"/>
+<area shape="rect" id="node6" href="$PacketCreateCharacterRequest_8h.html" title="キャラクタ作成リクエストパケット " alt="" coords="1489,229,1691,271"/>
 <area shape="rect" id="node13" href="$MMOGameInstance_8h.html" title="MMOGameInstance.h" alt="" coords="878,80,1027,107"/>
 <area shape="rect" id="node31" href="$Util_8h.html" title="Util.h" alt="" coords="380,80,432,107"/>
 <area shape="rect" id="node7" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="1538,326,1642,353"/>

@@ -67,6 +67,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
 <a href="#properties">プロパティ</a> &#124;
 <a href="classMasterConverter_1_1Column-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle">
@@ -85,6 +86,22 @@ $(function() {
 <tr class="memitem:a600c99c4ebec636dd244af77ad2090f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterConverter_1_1Column.html#a600c99c4ebec636dd244af77ad2090f8">AddData</a> (object Data)</td></tr>
 <tr class="memdesc:a600c99c4ebec636dd244af77ad2090f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">データ追加.  <a href="#a600c99c4ebec636dd244af77ad2090f8">[詳解]</a><br /></td></tr>
 <tr class="separator:a600c99c4ebec636dd244af77ad2090f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bfc1c4b08810679a0e486d9dadd51e2"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterConverter_1_1Column.html#a2bfc1c4b08810679a0e486d9dadd51e2">Equals</a> (object obj)</td></tr>
+<tr class="memdesc:a2bfc1c4b08810679a0e486d9dadd51e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">同じものか？  <a href="#a2bfc1c4b08810679a0e486d9dadd51e2">[詳解]</a><br /></td></tr>
+<tr class="separator:a2bfc1c4b08810679a0e486d9dadd51e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a2977ff1dadcc3736363a330c65a657"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterConverter_1_1Column.html#a4a2977ff1dadcc3736363a330c65a657">GetHashCode</a> ()</td></tr>
+<tr class="memdesc:a4a2977ff1dadcc3736363a330c65a657"><td class="mdescLeft">&#160;</td><td class="mdescRight">ハッシュコードを取得  <a href="#a4a2977ff1dadcc3736363a330c65a657">[詳解]</a><br /></td></tr>
+<tr class="separator:a4a2977ff1dadcc3736363a330c65a657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa84cc6ce3931915059119681bb810fca"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterConverter_1_1Column.html#aa84cc6ce3931915059119681bb810fca">operator==</a> (<a class="el" href="classMasterConverter_1_1Column.html">Column</a> A, <a class="el" href="classMasterConverter_1_1Column.html">Column</a> B)</td></tr>
+<tr class="memdesc:aa84cc6ce3931915059119681bb810fca"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h1></h1>
+ <a href="#aa84cc6ce3931915059119681bb810fca">[詳解]</a><br /></td></tr>
+<tr class="separator:aa84cc6ce3931915059119681bb810fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502f8cea90c2511f79c9429219077b3c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterConverter_1_1Column.html#a502f8cea90c2511f79c9429219077b3c">operator!=</a> (<a class="el" href="classMasterConverter_1_1Column.html">Column</a> A, <a class="el" href="classMasterConverter_1_1Column.html">Column</a> B)</td></tr>
+<tr class="memdesc:a502f8cea90c2511f79c9429219077b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">!=  <a href="#a502f8cea90c2511f79c9429219077b3c">[詳解]</a><br /></td></tr>
+<tr class="separator:a502f8cea90c2511f79c9429219077b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 プロパティ</h2></td></tr>
@@ -162,6 +179,146 @@ $(function() {
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a2bfc1c4b08810679a0e486d9dadd51e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bfc1c4b08810679a0e486d9dadd51e2">&#9670;&nbsp;</a></span>Equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool MasterConverter.Column.Equals </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>同じものか？ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>オブジェクト</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>同じものならtrueを返す</dd></dl>
+
+</div>
+</div>
+<a id="a4a2977ff1dadcc3736363a330c65a657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2977ff1dadcc3736363a330c65a657">&#9670;&nbsp;</a></span>GetHashCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override int MasterConverter.Column.GetHashCode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ハッシュコードを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>ハッシュコード</dd></dl>
+
+</div>
+</div>
+<a id="a502f8cea90c2511f79c9429219077b3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502f8cea90c2511f79c9429219077b3c">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool MasterConverter.Column.operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMasterConverter_1_1Column.html">Column</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMasterConverter_1_1Column.html">Column</a>&#160;</td>
+          <td class="paramname"><em>B</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>!= </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>A</td></tr>
+    <tr><td class="paramname">B</td><td>B</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>別物ならtrue</dd></dl>
+
+</div>
+</div>
+<a id="aa84cc6ce3931915059119681bb810fca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa84cc6ce3931915059119681bb810fca">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool MasterConverter.Column.operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMasterConverter_1_1Column.html">Column</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMasterConverter_1_1Column.html">Column</a>&#160;</td>
+          <td class="paramname"><em>B</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><h1></h1>
+</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>A</td></tr>
+    <tr><td class="paramname">B</td><td>B</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>同じものならtrue</dd></dl>
 
 </div>
 </div>

@@ -4,7 +4,7 @@
 <area shape="rect" id="node13" href="$Util_8h.html" title="Util.h" alt="" coords="1133,80,1185,107"/>
 <area shape="rect" id="node15" href="$ActiveGameMode_8h.html" title="Active/ActiveGameMode.h" alt="" coords="1863,80,2038,107"/>
 <area shape="rect" id="node35" href="$MMOGameInstance_8h.html" title="MMOGameInstance.h" alt="" coords="3009,162,3159,189"/>
-<area shape="rect" id="node50" href="$PacketPartyInviteRequest_8h.html" title="パーティ勧誘リクエスト " alt="" coords="3991,333,4159,375"/>
+<area shape="rect" id="node50" href="$PacketPartyInviteRequest_8h.html" title="パーティ勧誘リクエストパケット " alt="" coords="3991,333,4159,375"/>
 <area shape="rect" id="node7" href="$PlayerCharacterBase_8h.html" title="Character/Player/PlayerCharacter\lBase.h" alt="" coords="1208,244,1424,285"/>
 <area shape="rect" id="node8" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="1565,341,1744,367"/>
 <area shape="rect" id="node16" href="$MMOGameModeBase_8h.html" title="MMOGameModeBase.h" alt="" coords="304,341,467,367"/>

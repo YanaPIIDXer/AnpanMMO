@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$stdafx_8h.html" title="stdafx.h" alt="" coords="729,155,797,181"/>
 <area shape="rect" id="node15" href="$Anpan_8h.html" title="アンパンクラス " alt="" coords="2333,80,2403,107"/>
 <area shape="rect" id="node45" href="$DamageCalcUnit_8h.html" title="Math/DamageCalcUnit.h" alt="" coords="1809,80,1972,107"/>
-<area shape="rect" id="node46" href="$PacketStopAnpan_8h.html" title="アンパン停止 " alt="" coords="3393,311,3575,338"/>
+<area shape="rect" id="node46" href="$PacketStopAnpan_8h.html" title="アンパン停止パケット " alt="" coords="3393,311,3575,338"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="683,229,843,256"/>
 <area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="2895,483,2982,509"/>
 <area shape="rect" id="node16" href="$CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="1751,155,1929,181"/>
@@ -22,8 +22,8 @@
 <area shape="rect" id="node31" href="$EndianConverter_8h.html" title="エンディアン変換 " alt="" coords="1259,483,1386,509"/>
 <area shape="rect" id="node35" href="$AnpanAIPacketData_8h.html" title="アンパンＡＩのパケットデータ " alt="" coords="2777,229,2927,256"/>
 <area shape="rect" id="node42" href="$Hate_8h.html" title="ヘイト管理クラス " alt="" coords="2454,229,2514,256"/>
-<area shape="rect" id="node36" href="$PacketMoveAnpan_8h.html" title="アンパン移動 " alt="" coords="2776,311,2963,338"/>
-<area shape="rect" id="node41" href="$PacketRotateAnpan_8h.html" title="アンパン回転 " alt="" coords="2987,311,3181,338"/>
+<area shape="rect" id="node36" href="$PacketMoveAnpan_8h.html" title="アンパン移動パケット " alt="" coords="2776,311,2963,338"/>
+<area shape="rect" id="node41" href="$PacketRotateAnpan_8h.html" title="アンパン回転パケット " alt="" coords="2987,311,3181,338"/>
 <area shape="rect" id="node37" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="2887,401,2991,427"/>
 <area shape="rect" id="node38" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3015,393,3219,435"/>
 <area shape="rect" id="node40" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="3243,401,3330,427"/>

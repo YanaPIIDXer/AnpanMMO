@@ -1,6 +1,6 @@
 <map id="AnpanManager::Initialize" name="AnpanManager::Initialize">
 <area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="247,5,414,32"/>
 <area shape="rect" id="node3" href="$classMasterData.html#a200a18e787293f14a3459bca56491858" title="MasterData::GetAnpanPopArea\lMaster" alt="" coords="228,57,433,98"/>
-<area shape="rect" id="node4" href="$classAnpanPopAreaMaster.html#abff3fc6836597e5ecc37fa42d12ba247" title="AnpanPopAreaMaster\l::CollectItems" alt="" coords="256,122,405,163"/>
+<area shape="rect" id="node4" href="$classAnpanPopAreaMaster.html#a01fecbf4f0eec8e04743f38a64f6e327" title="AnpanPopAreaMaster\l::CollectItems" alt="" coords="256,122,405,163"/>
 <area shape="rect" id="node5" href="$classAnpanPopArea.html#a6b3190280cd6b1b231168ab22be983df" title="AnpanPopArea::SetSpawnFunction" alt="" coords="217,188,444,215"/>
 </map>
