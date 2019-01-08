@@ -9,7 +9,7 @@
 <area shape="rect" id="node9" href="$classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3" title="座標を取得 " alt="" coords="435,397,619,423"/>
 <area shape="rect" id="node10" href="$classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b" title="正面ベクトルを取得 " alt="" coords="427,194,626,221"/>
 <area shape="rect" id="node14" href="$classCharacterBase.html#ab0b8bc61747d53958e11029bbf7b2ecb" title="パラメータ取得 " alt="" coords="428,498,625,525"/>
-<area shape="rect" id="node15" href="$classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4" title="DamageCalcUnit::Calc" alt="" coords="450,245,603,271"/>
+<area shape="rect" id="node15" href="$classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4" title="計算 " alt="" coords="450,245,603,271"/>
 <area shape="rect" id="node16" href="$classCharacterBase.html#aad7624448e24270e773875fce180b0e7" title="リキャスト開始 " alt="" coords="434,346,619,373"/>
 <area shape="rect" id="node11" href="$classMathUtil.html#ab34f00845bc0a5917f4becf9202e1916" title="MathUtil::RotateVector" alt="" coords="693,169,847,195"/>
 <area shape="rect" id="node13" href="$classRotation.html#ad5aebbfc6c26285b0579ad1e1b11d812" title="Rotation::Get" alt="" coords="721,219,819,246"/>

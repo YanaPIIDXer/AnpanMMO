@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['calctype',['CalcType',['../structSkillItem.html#a6be0131a0f8cf9b4cd8457f96fc7c89a',1,'SkillItem']]],
   ['cancel',['Cancel',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a8f4e90f57decf1616e01c471b7d31e39',1,'PacketSkillUseFailed']]],
   ['cast',['Cast',['../SkillStateBase_8h.html#a1c04a4ee3c5d7bd26f9b7e7262f18b96a4cd9f3996d60790cd11c04f842ebc43c',1,'SkillStateBase.h']]],
   ['casttime',['CastTime',['../structSkillItem.html#aaa39205e8c9b916d0917af2e9a4c0cc3',1,'SkillItem']]],

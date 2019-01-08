@@ -100,6 +100,7 @@ var searchData=
   ['calc',['Calc',['../classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4',1,'DamageCalcUnit']]],
   ['calccharbyte',['CalcCharByte',['../classUtil.html#a2098a3c7704e9486c61afcee057b68cd',1,'Util']]],
   ['calcstringlength',['CalcStringLength',['../classUtil.html#ab98a1bbec2f7cc3e8878313ec016a3c5',1,'Util']]],
+  ['calctype',['CalcType',['../structSkillItem.html#a6be0131a0f8cf9b4cd8457f96fc7c89a',1,'SkillItem']]],
   ['cancel',['Cancel',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a8f4e90f57decf1616e01c471b7d31e39',1,'PacketSkillUseFailed::Cancel()'],['../classSkillControl.html#a022eab8ffc068f5241993800e892d099',1,'SkillControl::Cancel()'],['../classboost_1_1asio_1_1basic__repeating__timer.html#a935a3e868d78ee17e093773215a9e4b5',1,'boost::asio::basic_repeating_timer::cancel()']]],
   ['cast',['Cast',['../SkillStateBase_8h.html#a08d7cae8136f6d6fcd4b5c73aee3f1a6a8c35c148932ab52d8b2650cbf7d5b58f',1,'SkillStateBase.h']]],
   ['castfinished',['CastFinished',['../classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52',1,'SkillControl']]],

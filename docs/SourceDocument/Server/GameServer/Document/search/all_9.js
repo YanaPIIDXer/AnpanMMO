@@ -59,6 +59,7 @@ var searchData=
   ['isskillcasting',['IsSkillCasting',['../classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f',1,'CharacterBase']]],
   ['iswaiting',['IsWaiting',['../classInstanceAreaTicket.html#a7ca59816fd46a7ab22722016557eea53',1,'InstanceAreaTicket']]],
   ['item',['ITEM',['../structItemDropItem.html#a014d424ee289423c08b15d8e9752123fa1b6767737d577123af045cf04756c1d2',1,'ItemDropItem::ITEM()'],['../structQuestRewardItem.html#aeb71f624c2312b9a823286f49d4abc26a1ea6976b9f3961f17d1af98ae46a960b',1,'QuestRewardItem::ITEM()']]],
+  ['item_5fheal',['ITEM_HEAL',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8afe9349a2e6bb1ec3e80862e9b236bab1',1,'SkillItem']]],
   ['itemadd',['ItemAdd',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aae41d8d8fb10bfb0bcbcc5311426aa796',1,'PacketID']]],
   ['itemdata',['ItemData',['../classItemData.html',1,'ItemData'],['../classItemData.html#a3a1b6240b016a82fa65b450f98a35f6c',1,'ItemData::ItemData()'],['../classItemData.html#aa51b1cee55620bcd0b5fbde312f9135e',1,'ItemData::ItemData(u32 InItemId, u32 InCount)']]],
   ['itemdata_2eh',['ItemData.h',['../ItemData_8h.html',1,'']]],

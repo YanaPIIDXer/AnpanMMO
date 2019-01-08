@@ -203,6 +203,7 @@ var searchData=
   ['partyptr',['PartyPtr',['../WeakPtrDefine_8h.html#afe8b26ad69973c376159982f5ad31a1a',1,'WeakPtrDefine.h']]],
   ['pcharacter',['pCharacter',['../structHateUnit.html#a9c418d498b793c7400963eba28faf9be',1,'HateUnit']]],
   ['pclient',['pClient',['../structInstanceAreaTicketInfo.html#ab3e32812f8bc1e03164435a31eaad671',1,'InstanceAreaTicketInfo']]],
+  ['physical',['PHYSICAL',['../structSkillItem.html#af16a4269928b1fc7cff4e5479eef6cd1ac92b84fab41da3ac5e1501daf263c44c',1,'SkillItem']]],
   ['ping',['Ping',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa3043f49e99a80d6a671133660ad90445',1,'PacketID']]],
   ['planes',['Planes',['../structBitmapInfoData.html#a53bf4da637b3de573e8fd9a013e0a1cd',1,'BitmapInfoData']]],
   ['player',['Player',['../classCharacterType.html#a44253929affb003781a00d30d81e8fbca2a43b075b8c89b4fae1f7bc9075cecac',1,'CharacterType']]],
