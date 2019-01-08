@@ -40,6 +40,7 @@ public:
 	s32 CastTime;
 	s32 RecastTime;
 	u32 BonusStr;
+	u32 BonusInt;
 	u32 BonusMnd;
 	u32 BonusVit;
 
@@ -59,6 +60,7 @@ public:
 		if(!pStream->Serialize(&CastTime)) { return false; }
 		if(!pStream->Serialize(&RecastTime)) { return false; }
 		if(!pStream->Serialize(&BonusStr)) { return false; }
+		if(!pStream->Serialize(&BonusInt)) { return false; }
 		if(!pStream->Serialize(&BonusMnd)) { return false; }
 		if(!pStream->Serialize(&BonusVit)) { return false; }
 

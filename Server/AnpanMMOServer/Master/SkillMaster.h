@@ -43,6 +43,7 @@ public:
 	s32 CastTime;
 	s32 RecastTime;
 	u32 BonusStr;
+	u32 BonusInt;
 	u32 BonusMnd;
 	u32 BonusVit;
 

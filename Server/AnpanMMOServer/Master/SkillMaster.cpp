@@ -20,6 +20,7 @@ bool SkillMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.CastTime);
 	Query.BindResultInt(&BindItem.RecastTime);
 	Query.BindResultInt(&BindItem.BonusStr);
+	Query.BindResultInt(&BindItem.BonusInt);
 	Query.BindResultInt(&BindItem.BonusMnd);
 	Query.BindResultInt(&BindItem.BonusVit);
 
@@ -39,6 +40,7 @@ bool SkillMaster::Load(const MySqlConnection &Connection)
 		Item.CastTime = BindItem.CastTime;
 		Item.RecastTime = BindItem.RecastTime;
 		Item.BonusStr = BindItem.BonusStr;
+		Item.BonusInt = BindItem.BonusInt;
 		Item.BonusMnd = BindItem.BonusMnd;
 		Item.BonusVit = BindItem.BonusVit;
 
