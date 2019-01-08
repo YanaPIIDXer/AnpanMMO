@@ -29,18 +29,25 @@ public:
 	~PlayerExp() {}
 
 	/**
-	 * @fn void Add(int Value)
+	 * @fn void Add(u32 Value)
 	 * @brief 増加
 	 * @param[in] Value 増加量
 	 */
-	void Add(int Value);
+	void Add(u32 Value);
 
 	/**
-	 * @fn int Get() const
+	 * @fn u32 Get() const
 	 * @brief 取得
 	 * @return 経験値
 	 */
-	int Get() const { return Exp; }
+	u32 Get() const { return Exp; }
+
+	/**
+	 * @fn void SetLevelUpExp(u32 InLevelUpExp)
+	 * @brief レベルアップに必要な経験値を設定。
+	 * @param[in] InLevelUpExp レベルアップに必要な経験値
+	 */
+	void SetLevelUpExp(u32 InLevelUpExp) { LevelUpExp = InLevelUpExp; }
 
 	/**
 	 * @fn void SetLevelUpCallback(const function<void()> &InLevelUpCallback)
@@ -51,11 +58,11 @@ public:
 
 private:
 
-	// レベルアップに必要な経験値.
-	static const int LevelUpExp;
-
 	// 経験値
-	int Exp;
+	u32 Exp;
+
+	// レベルアップに必要な経験値.
+	u32 LevelUpExp;
 
 	// レベルアップコールバック
 	function<void()> LevelUpCallback;

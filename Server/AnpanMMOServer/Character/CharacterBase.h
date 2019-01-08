@@ -83,19 +83,19 @@ public:
 	bool IsDead() const { return (Parameter.Hp <= 0); }
 
 	/**
-	 * @fn void ApplyDamage(CharacterPtr pAttacker, int Value)
+	 * @fn void ApplyDamage(CharacterPtr pAttacker, u32 Value)
 	 * @brief ダメージを与える
 	 * @param[in] pAttacker ダメージを与えたキャラクタのweak_ptr
 	 * @param[in] Value ダメージ量
 	 */
-	void ApplyDamage(CharacterPtr pAttacker, int Value);
+	void ApplyDamage(CharacterPtr pAttacker, u32 Value);
 
 	/**
-	 * @fn void Heal(int Value)
+	 * @fn void Heal(u32 Value)
 	 * @brief 回復
 	 * @param[in] Value 回復量
 	 */
-	void Heal(int Value);
+	void Heal(u32 Value);
 
 	/**
 	 * @fn Vector3D GetCenterVec() const
