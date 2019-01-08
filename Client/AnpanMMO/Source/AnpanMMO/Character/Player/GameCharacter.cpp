@@ -117,6 +117,7 @@ bool AGameCharacter::IsSkillUsable(int32 SkillId) const
 
 		case SkillItem::HEAL:
 		case SkillItem::BUFF:
+		case SkillItem::ITEM_HEAL:
 
 			bUsable = ((pTarget->GetCharacterType() == ECharacterType::Player) || (pTarget->GetCharacterType() == ECharacterType::Other));
 			break;
@@ -289,6 +290,7 @@ ACharacterBase *AGameCharacter::GetSkillTarget(uint32 SkillId)
 
 			case SkillItem::HEAL:
 			case SkillItem::BUFF:
+			case SkillItem::ITEM_HEAL:
 
 				// 回復・バフスキルだった場合は自分をターゲットに指定。
 				pTarget = this;

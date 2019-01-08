@@ -139,6 +139,7 @@ void SkillControl::Activate()
 
 			case SkillItem::HEAL:
 			case SkillItem::BUFF:
+			case SkillItem::ITEM_HEAL:
 
 				TargetType = pOwner->GetCharacterType();
 				break;
@@ -178,7 +179,7 @@ void SkillControl::Activate()
 				break;
 
 			case SkillItem::HEAL:
-
+			case SkillItem::ITEM_HEAL:
 				{
 					// @HACK:とりあえずダメージ計算ユニットを使用。
 					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());

@@ -18,6 +18,9 @@ bool SkillMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.RangeY);
 	Query.BindResultInt(&BindItem.CastTime);
 	Query.BindResultInt(&BindItem.RecastTime);
+	Query.BindResultInt(&BindItem.BonusStr);
+	Query.BindResultInt(&BindItem.BonusMnd);
+	Query.BindResultInt(&BindItem.BonusVit);
 
 	if (!Query.ExecuteQuery()) { return false; }
 
@@ -33,6 +36,9 @@ bool SkillMaster::Load(const MySqlConnection &Connection)
 		Item.RangeY = BindItem.RangeY;
 		Item.CastTime = BindItem.CastTime;
 		Item.RecastTime = BindItem.RecastTime;
+		Item.BonusStr = BindItem.BonusStr;
+		Item.BonusMnd = BindItem.BonusMnd;
+		Item.BonusVit = BindItem.BonusVit;
 
 		Items[Sheet][Item.ID] = Item;
 

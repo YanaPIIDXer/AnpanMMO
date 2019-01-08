@@ -14,6 +14,7 @@ public:
 		HEAL = 1,
 		BUFF = 2,
 		DEBUFF = 3,
+		ITEM_HEAL = 4,
 	};
 	enum
 	{
@@ -32,6 +33,9 @@ public:
 	s32 RangeY;
 	s32 CastTime;
 	s32 RecastTime;
+	u32 BonusStr;
+	u32 BonusMnd;
+	u32 BonusVit;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
@@ -47,6 +51,9 @@ public:
 		if(!pStream->Serialize(&RangeY)) { return false; }
 		if(!pStream->Serialize(&CastTime)) { return false; }
 		if(!pStream->Serialize(&RecastTime)) { return false; }
+		if(!pStream->Serialize(&BonusStr)) { return false; }
+		if(!pStream->Serialize(&BonusMnd)) { return false; }
+		if(!pStream->Serialize(&BonusVit)) { return false; }
 
 		return true;
 	}

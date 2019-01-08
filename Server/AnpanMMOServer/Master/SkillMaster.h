@@ -17,6 +17,7 @@ public:
 		HEAL = 1,
 		BUFF = 2,
 		DEBUFF = 3,
+		ITEM_HEAL = 4,
 	};
 	enum
 	{
@@ -35,6 +36,9 @@ public:
 	s32 RangeY;
 	s32 CastTime;
 	s32 RecastTime;
+	u32 BonusStr;
+	u32 BonusMnd;
+	u32 BonusVit;
 
 
 };
