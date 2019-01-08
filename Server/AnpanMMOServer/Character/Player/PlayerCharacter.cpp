@@ -210,7 +210,7 @@ void PlayerCharacter::OnLevelUp()
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Lv, Job);
 	SetParameter(Lv, Param.Hp, pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
 	
-	PacketLevelUp Packet(Param.Level, Param.MaxHp, Param.Str, Param.Def, Exp.Get());
+	PacketLevelUp Packet(Param.Level, Param.MaxHp, Param.Str, Param.Def, Param.Int, Param.Mnd, Param.Vit, Exp.Get());
 	GetClient()->SendPacket(&Packet);
 
 	SaveParameter();
