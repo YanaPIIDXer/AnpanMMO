@@ -168,7 +168,7 @@ void SkillControl::Activate()
 			case SkillItem::ATTACK:
 
 				{
-					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());
+					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter(), pItem);
 					s32 Value = Calc.Calc();
 					Targets[i]->ApplyDamage(pOwner->shared_from_this(), Value);
 					if (Targets[i]->IsDead() && OnKilledFunc)
@@ -182,7 +182,7 @@ void SkillControl::Activate()
 			case SkillItem::ITEM_HEAL:
 				{
 					// @HACK:とりあえずダメージ計算ユニットを使用。
-					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());
+					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter(), pItem);
 					s32 Value = Calc.Calc();
 					Targets[i]->Heal(Value);
 				}
