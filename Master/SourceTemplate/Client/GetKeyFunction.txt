@@ -1,5 +1,6 @@
-const $ITEM_STRUCT_NAME$ *$CLASS_NAME$::Get($KEY_TYPE$ Key) const
+const $ITEM_STRUCT_NAME$ *$CLASS_NAME$::Get($KEY_TYPE$ Key, int32 SheetIndex) const
 {
-	if (!Items.Contains(Key)) { return nullptr; }
-	return &Items[Key];
+	if (!Items.Contains(SheetIndex)) { return nullptr; }
+	if(!Items[SheetIndex].Contains(Key)) { return nullptr; }
+	return &Items[SheetIndex][Key];
 }

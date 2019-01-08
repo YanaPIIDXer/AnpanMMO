@@ -7,6 +7,7 @@ bool NPCMaster::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from NPC;");
 
 	NPCItem BindItem;
+	s32 Sheet = 0;
 	char NameBind[128];	char ScriptNameBind[128];
 	Query.BindResultInt(&BindItem.ID);
 	Query.BindResultString(NameBind);
@@ -21,6 +22,7 @@ bool NPCMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.ResourceId);
 
 	if (!Query.ExecuteQuery()) { return false; }
+
 	while (Query.Fetch())
 	{
 		NPCItem Item;
@@ -36,25 +38,31 @@ bool NPCMaster::Load(const MySqlConnection &Connection)
 		Item.EraseConditionId = BindItem.EraseConditionId;
 		Item.ResourceId = BindItem.ResourceId;
 
-		Items[Item.ID] = Item;
+		Items[Sheet][Item.ID] = Item;
+
 	}
 
 	return true;
 }
 
-const NPCItem *NPCMaster::GetItem(u32 Key) const
+const NPCItem *NPCMaster::GetItem(u32 Key, s32 SheetIndex) const
 {
-	ItemMap::const_iterator It = Items.find(Key);
+	SheetMap::const_iterator It = Items.find(SheetIndex);
 	if (It == Items.end()) { return NULL; }
-	return &It->second;
+	ItemMap::const_iterator It2 = It->second.find(Key);
+	if(It2 == It->second.end()) { return NULL; }
+	return &It2->second;
 }
 
 std::vector<NPCItem> NPCMaster::GetAll() const
 {
 	std::vector<NPCItem> AllItem;
-	for (ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
+	for (SheetMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
 	{
-		AllItem.push_back(It->second);
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
 	}
 	
 	std::sort(AllItem.begin(), AllItem.end());

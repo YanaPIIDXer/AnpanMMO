@@ -1,6 +1,6 @@
 /**
  * @file CachePacketItemShortcutRequest.h
- * @brief アイテムショートカットリクエスト
+ * @brief アイテムショートカットリクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief アイテムショートカットリクエスト
+ * @brief アイテムショートカットリクエストパケット
  */
 class CachePacketItemShortcutRequest  : public ProcessPacketBase
 {

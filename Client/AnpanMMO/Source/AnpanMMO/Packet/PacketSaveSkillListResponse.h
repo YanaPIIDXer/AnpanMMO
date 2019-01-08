@@ -1,6 +1,6 @@
 /**
  * @file PacketSaveSkillListResponse.h
- * @brief スキルリスト保存レスポンス
+ * @brief スキルリスト保存レスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキルリスト保存レスポンス
+ * @brief スキルリスト保存レスポンスパケット
  */
 class PacketSaveSkillListResponse  : public PacketBase
 {

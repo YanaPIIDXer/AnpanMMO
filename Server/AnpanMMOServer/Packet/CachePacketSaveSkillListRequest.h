@@ -1,6 +1,6 @@
 /**
  * @file CachePacketSaveSkillListRequest.h
- * @brief スキルリスト保存リクエスト
+ * @brief スキルリスト保存リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief スキルリスト保存リクエスト
+ * @brief スキルリスト保存リクエストパケット
  */
 class CachePacketSaveSkillListRequest  : public ProcessPacketBase
 {

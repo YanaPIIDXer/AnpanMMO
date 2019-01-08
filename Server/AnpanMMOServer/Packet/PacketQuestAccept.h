@@ -1,6 +1,6 @@
 /**
  * @file PacketQuestAccept.h
- * @brief クエスト受注
+ * @brief クエスト受注パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief クエスト受注
+ * @brief クエスト受注パケット
  */
 class PacketQuestAccept  : public PacketBase
 {

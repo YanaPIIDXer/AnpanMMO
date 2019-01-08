@@ -21,9 +21,9 @@ public:
 	 */
 	enum EID
 	{
-		//! ワードチェック要求
+		//! ワードチェック要求パケット
 		WordCheckChatRequest = 0x80,
-		//! ワードチェック結果
+		//! ワードチェック結果パケット
 		WordCheckChatResult = 0x81,
 		
 	};

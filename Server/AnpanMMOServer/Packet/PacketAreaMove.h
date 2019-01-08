@@ -1,6 +1,6 @@
 /**
  * @file PacketAreaMove.h
- * @brief エリア移動
+ * @brief エリア移動パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief エリア移動
+ * @brief エリア移動パケット
  */
 class PacketAreaMove  : public PacketBase
 {

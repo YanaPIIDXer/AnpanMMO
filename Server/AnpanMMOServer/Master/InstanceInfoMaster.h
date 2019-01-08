@@ -32,18 +32,19 @@ class InstanceInfoMaster
 private:
 
 	typedef std::map<u32, InstanceInfoItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const InstanceInfoItem *GetItem(u32 Key) const;
+	const InstanceInfoItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<InstanceInfoItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

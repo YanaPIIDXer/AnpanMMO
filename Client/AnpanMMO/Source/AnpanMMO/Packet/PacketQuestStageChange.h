@@ -1,6 +1,6 @@
 /**
  * @file PacketQuestStageChange.h
- * @brief クエストステージ進行
+ * @brief クエストステージ進行パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief クエストステージ進行
+ * @brief クエストステージ進行パケット
  */
 class PacketQuestStageChange  : public PacketBase
 {

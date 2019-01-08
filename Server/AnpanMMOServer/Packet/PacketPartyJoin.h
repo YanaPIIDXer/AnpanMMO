@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyJoin.h
- * @brief パーティ加入
+ * @brief パーティ加入パケット
  * @author NativePacketGenerator
  */
 
@@ -15,7 +15,7 @@
 
 
 /**
- * @brief パーティ加入
+ * @brief パーティ加入パケット
  */
 class PacketPartyJoin  : public PacketBase
 {

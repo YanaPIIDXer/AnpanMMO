@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyCreateRequest.h
- * @brief パーティ作成リクエスト
+ * @brief パーティ作成リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティ作成リクエスト
+ * @brief パーティ作成リクエストパケット
  */
 class PacketPartyCreateRequest  : public PacketBase
 {

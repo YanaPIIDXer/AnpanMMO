@@ -39,12 +39,15 @@ void CharacterBase::SetRotate(const Rotation &TargetRotation)
 }
 
 // É_ÉÅÅ[ÉW
-void CharacterBase::ApplyDamage(CharacterPtr pAttacker, int Value)
+void CharacterBase::ApplyDamage(CharacterPtr pAttacker, u32 Value)
 {
-	Parameter.Hp -= Value;
-	if (Parameter.Hp <= 0)
+	if (Parameter.Hp < Value)
 	{
 		Parameter.Hp = 0;
+	}
+	else
+	{
+		Parameter.Hp -= Value;
 	}
 
 	PacketDamage Packet(GetCharacterType(), Uuid, Value, Parameter.Hp);
@@ -54,7 +57,7 @@ void CharacterBase::ApplyDamage(CharacterPtr pAttacker, int Value)
 }
 
 // âÒïú.
-void CharacterBase::Heal(int Value)
+void CharacterBase::Heal(u32 Value)
 {
 	Parameter.Hp += Value;
 	if (Parameter.Hp > Parameter.MaxHp)

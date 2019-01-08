@@ -163,6 +163,7 @@
     <ClInclude Include="Master\InstanceInfoMaster.h" />
     <ClInclude Include="Master\ItemDropMaster.h" />
     <ClInclude Include="Master\ItemMaster.h" />
+    <ClInclude Include="Master\LevelMaster.h" />
     <ClInclude Include="Master\NPCMaster.h" />
     <ClInclude Include="Master\QuestMaster.h" />
     <ClInclude Include="Master\QuestRewardMaster.h" />
@@ -273,6 +274,7 @@
     <ClCompile Include="Master\InstanceInfoMaster.cpp" />
     <ClCompile Include="Master\ItemDropMaster.cpp" />
     <ClCompile Include="Master\ItemMaster.cpp" />
+    <ClCompile Include="Master\LevelMaster.cpp" />
     <ClCompile Include="Master\NPCMaster.cpp" />
     <ClCompile Include="Master\QuestMaster.cpp" />
     <ClCompile Include="Master\QuestRewardMaster.cpp" />

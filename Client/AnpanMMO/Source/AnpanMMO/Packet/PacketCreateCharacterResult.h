@@ -1,6 +1,6 @@
 /**
  * @file PacketCreateCharacterResult.h
- * @brief キャラクタ作成結果
+ * @brief キャラクタ作成結果パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief キャラクタ作成結果
+ * @brief キャラクタ作成結果パケット
  */
 class PacketCreateCharacterResult  : public PacketBase
 {

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['password',['Password',['../classMasterConverter_1_1TransportTargetReader.html#ae0e192fe7142ada735e33ab45ceee864',1,'MasterConverter::TransportTargetReader']]]
+  ['name',['Name',['../classMasterConverter_1_1Column.html#ad41f3408e824f761621ae63635b4d614',1,'MasterConverter.Column.Name()'],['../classMasterConverter_1_1MasterData.html#ab039a69a392c149d9c6b38ec02d726e7',1,'MasterConverter.MasterData.Name()']]]
 ];

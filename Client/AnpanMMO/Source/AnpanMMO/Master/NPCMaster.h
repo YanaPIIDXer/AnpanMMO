@@ -52,6 +52,7 @@ class NPCMaster
 private:
 
 	typedef TMap<u32, NPCItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -59,13 +60,13 @@ public:
 
 	TArray<NPCItem> GetAll() const;
 
-	const NPCItem *Get(u32 Key) const;
+	const NPCItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

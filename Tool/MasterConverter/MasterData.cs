@@ -21,7 +21,7 @@ namespace MasterConverter
 		/// <summary>
 		/// カラムリスト
 		/// </summary>
-		private List<Column> Columns = new List<Column>();
+		private List<List<Column>> Columns = new List<List<Column>>();
 
 		/// <summary>
 		/// Enumリスト
@@ -47,7 +47,22 @@ namespace MasterConverter
 		/// ワードチェックサーバ向けに出力するか？
 		/// </summary>
 		public bool IsForWordCheckServer { get; private set; }
-		
+
+		/// <summary>
+		/// 複数シートを使用するか？
+		/// </summary>
+		public bool IsMultipleSheet { get; private set; }
+
+		/// <summary>
+		/// 現在のシートインデックス
+		/// </summary>
+		public int CurrentSheetIndex { get; set; }
+
+		/// <summary>
+		/// シート数.
+		/// </summary>
+		public int SheetCount { get; private set; }
+
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
@@ -59,17 +74,22 @@ namespace MasterConverter
 			IsServerOnly = false;
 			IsClientOnly = false;
 			IsForWordCheckServer = false;
+			IsMultipleSheet = false;
 			EnumList = new List<EnumData>();
+			Columns.Add(new List<Column>());
+			CurrentSheetIndex = 0;
+			SheetCount = 1;
 		}
 
 		/// <summary>
 		/// カラムリスト取得.
 		/// </summary>
+		/// <param name="SheetIndex">シートインデックス</param>
 		/// <returns>カラムリスト</returns>
-		public List<Column> GetColumns()
+		public List<Column> GetColumns(int SheetIndex)
 		{
 			List<Column> Return = new List<Column>();
-			foreach(var Col in Columns)
+			foreach(var Col in Columns[SheetIndex])
 			{
 				Return.Add(Col);
 			}
@@ -79,10 +99,11 @@ namespace MasterConverter
 		/// <summary>
 		/// カラム数を取得.
 		/// </summary>
+		/// <param name="SheetIndex">シートのインデックス</param>
 		/// <returns>カラム数</returns>
-		public int GetColumnCount()
+		public int GetColumnCount(int SheetIndex)
 		{
-			return Columns.Count;
+			return Columns[SheetIndex].Count;
 		}
 
 		/// <summary>
@@ -91,17 +112,18 @@ namespace MasterConverter
 		/// <param name="NewColumn">新しいカラム</param>
 		public void AddColumn(Column NewColumn)
 		{
-			Columns.Add(NewColumn);
+			Columns[CurrentSheetIndex].Add(NewColumn);
 		}
 
 		/// <summary>
 		/// カラムを取得.
 		/// </summary>
+		/// <param name="SheetIndex">シートインデックス</param>
 		/// <param name="Index">インデックス</param>
 		/// <returns>カラム</returns>
-		public Column GetColumn(int Index)
+		public Column GetColumn(int SheetIndex, int Index)
 		{
-			return Columns[Index];
+			return Columns[SheetIndex][Index];
 		}
 
 		/// <summary>
@@ -111,7 +133,7 @@ namespace MasterConverter
 		/// <param name="Data">データ</param>
 		public void AddDataToColumn(int ColumnIndex, object Data)
 		{
-			Columns[ColumnIndex].DataList.Add(Data);
+			Columns[CurrentSheetIndex][ColumnIndex].DataList.Add(Data);
 		}
 
 		/// <summary>
@@ -183,19 +205,57 @@ namespace MasterConverter
 		}
 
 		/// <summary>
+		/// 複数シートを使用するようにする。
+		/// <param name="InSheetCount">シート数</param>
+		/// </summary>
+		public void SetMultipleSheet(int InSheetCount)
+		{
+			IsMultipleSheet = true;
+			SheetCount = InSheetCount;
+			for (int i = 1; i < SheetCount; i++)
+			{
+				Columns.Add(new List<Column>());
+			}
+		}
+
+		/// <summary>
+		/// 複数シートの整合性チェック
+		/// </summary>
+		/// <returns>問題なければtrueを返す</returns>
+		public bool CheckMultipleSheetIntegrity()
+		{
+			if (!IsMultipleSheet) { return true; }
+
+			for (int i = 1; i < SheetCount; i++)
+			{
+				if(Columns[0].Count != Columns[i].Count) { return false; }
+				for(int j = 0;j < Columns[0].Count; j++)
+				{
+					if(Columns[0][j] != Columns[i][j]) { return false; }
+				}
+			}
+
+			return true;
+		}
+
+		/// <summary>
 		/// オートキーの生成.
 		/// </summary>
 		public void GenerateAutoKey()
 		{
 			if (!IsAutoKey) { return; }
-			Column AutoKeyColumn = new Column("AutoKey", Type.s32);
-			int Index = 1;
-			if(Columns.Count == 1) { Index = 0; }
-			for(int i = 0;i < Columns[Index].DataList.Count; i++)
+			
+			for(int i = 0; i< SheetCount; i++)
 			{
-				AutoKeyColumn.DataList.Add((double)(i + 1));
+				int Index = 1;
+				if (Columns[i].Count == 1) { Index = 0; }
+				Column AutoKeyColumn = new Column("AutoKey", Type.s32);
+				for (int j = 0; j < Columns[i][Index].DataList.Count; j++)
+				{
+					AutoKeyColumn.DataList.Add((double)(j + 1));
+				}
+				Columns[i].Insert(0, AutoKeyColumn);
 			}
-			Columns.Insert(0, AutoKeyColumn);
 		}
 		
 	}

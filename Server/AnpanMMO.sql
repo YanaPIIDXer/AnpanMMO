@@ -28,9 +28,6 @@ CREATE TABLE `CharacterData` (
   `Name` varchar(128) DEFAULT NULL,
   `Job` int(11) DEFAULT NULL,
   `Level` int(10) unsigned DEFAULT NULL,
-  `MaxHp` int(11) DEFAULT NULL,
-  `Atk` int(11) DEFAULT NULL,
-  `Def` int(11) DEFAULT NULL,
   `Exp` int(11) DEFAULT NULL,
   `Gold` int(10) unsigned DEFAULT NULL,
   `LastArea` int(10) unsigned DEFAULT NULL,
@@ -38,7 +35,7 @@ CREATE TABLE `CharacterData` (
   `LastY` float DEFAULT NULL,
   `LastZ` float DEFAULT NULL,
   PRIMARY KEY (`CharacterId`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +142,7 @@ CREATE TABLE `UserData` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserCode` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -157,4 +154,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-19 19:51:32
+-- Dump completed on 2019-01-07 18:53:45

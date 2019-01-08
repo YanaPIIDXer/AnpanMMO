@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillTreeOpenResult.h
- * @brief スキルツリー開放結果
+ * @brief スキルツリー開放結果パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキルツリー開放結果
+ * @brief スキルツリー開放結果パケット
  */
 class PacketSkillTreeOpenResult  : public PacketBase
 {

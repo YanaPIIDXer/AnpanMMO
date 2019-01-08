@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyKickResult.h
- * @brief パーティメンバキック結果
+ * @brief パーティメンバキック結果パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティメンバキック結果
+ * @brief パーティメンバキック結果パケット
  */
 class PacketPartyKickResult  : public PacketBase
 {

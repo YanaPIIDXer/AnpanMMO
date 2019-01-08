@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyCreateResult.h
- * @brief パーティ作成結果
+ * @brief パーティ作成結果パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティ作成結果
+ * @brief パーティ作成結果パケット
  */
 class PacketPartyCreateResult  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketHeal.h
- * @brief 回復
+ * @brief 回復パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief 回復
+ * @brief 回復パケット
  */
 class PacketHeal  : public PacketBase
 {

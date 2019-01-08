@@ -31,13 +31,10 @@ public:
 	 * @param[in] InCharacterId キャラクタＩＤ
 	 * @param[in] InJob ジョブ
 	 * @param[in] Level レベル
-	 * @param[in] MaxHp 最大ＨＰ
-	 * @param[in] Atk 攻撃力
-	 * @param[in] Def 防御力
 	 * @param[in] InExp 経験値
 	 * @param[in] InGold ゴールド
 	 */
-	PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, int MaxHp, int Atk, int Def, int InExp, u32 InGold);
+	PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold);
 
 	/**
 	 * @brief デストラクタ

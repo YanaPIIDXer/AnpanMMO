@@ -1,6 +1,6 @@
 /**
  * @file PacketLogInRequest.h
- * @brief ログインリクエスト
+ * @brief ログインリクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief ログインリクエスト
+ * @brief ログインリクエストパケット
  */
 class PacketLogInRequest  : public PacketBase
 {

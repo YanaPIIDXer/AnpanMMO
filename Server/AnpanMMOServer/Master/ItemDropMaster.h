@@ -42,18 +42,19 @@ class ItemDropMaster
 private:
 
 	typedef std::map<u32, ItemDropItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const ItemDropItem *GetItem(u32 Key) const;
+	const ItemDropItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<ItemDropItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

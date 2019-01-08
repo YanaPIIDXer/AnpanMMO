@@ -1,6 +1,6 @@
 /**
  * @file PacketQuestAnpanKill.h
- * @brief クエストアンパンキル
+ * @brief クエストアンパンキルパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief クエストアンパンキル
+ * @brief クエストアンパンキルパケット
  */
 class PacketQuestAnpanKill  : public PacketBase
 {

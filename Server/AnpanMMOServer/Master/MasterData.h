@@ -16,6 +16,7 @@
 #include "QuestMaster.h"
 #include "QuestStageMaster.h"
 #include "QuestRewardMaster.h"
+#include "LevelMaster.h"
 
 /**
  * マスタデータクラス
@@ -73,6 +74,9 @@ public:
 	// クエスト報酬マスタ取得.
 	const QuestRewardMaster &GetQuestRewardMaster() { return QuestReward; }
 
+	// レベルマスタ取得.
+	const LevelMaster &GetLevelMaster() { return Level; }
+
 private:
 
 	// DBホスト
@@ -128,6 +132,9 @@ private:
 
 	// クエスト報酬マスタ
 	QuestRewardMaster QuestReward;
+
+	// レベルマスタ
+	LevelMaster Level;
 
 	// ======= Singleton ==========
 public:

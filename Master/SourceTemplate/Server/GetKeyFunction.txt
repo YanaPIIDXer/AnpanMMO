@@ -1,6 +1,8 @@
-const $ITEM_STRUCT_NAME$ *$CLASS_NAME$::GetItem($KEY_TYPE$ Key) const
+const $ITEM_STRUCT_NAME$ *$CLASS_NAME$::GetItem($KEY_TYPE$ Key, s32 SheetIndex) const
 {
-	ItemMap::const_iterator It = Items.find(Key);
+	SheetMap::const_iterator It = Items.find(SheetIndex);
 	if (It == Items.end()) { return NULL; }
-	return &It->second;
+	ItemMap::const_iterator It2 = It->second.find(Key);
+	if(It2 == It->second.end()) { return NULL; }
+	return &It2->second;
 }

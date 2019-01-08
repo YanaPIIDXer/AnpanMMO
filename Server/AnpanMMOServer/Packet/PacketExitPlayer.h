@@ -1,6 +1,6 @@
 /**
  * @file PacketExitPlayer.h
- * @brief プレイヤー退出
+ * @brief プレイヤー退出パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief プレイヤー退出
+ * @brief プレイヤー退出パケット
  */
 class PacketExitPlayer  : public PacketBase
 {

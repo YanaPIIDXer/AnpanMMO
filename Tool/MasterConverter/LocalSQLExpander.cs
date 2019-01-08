@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace MasterConverter
 {
@@ -43,19 +44,21 @@ namespace MasterConverter
 		/// <returns>成功したらtrueを返す。</returns>
 		public bool Expand(string[] FileList)
 		{
-			Console.WriteLine("SQLファイルの展開中...");
-
 			// 一旦全部吹っ飛ばす。
 			RemoveAllMaster();
 
 			foreach(var FilePath in FileList)
 			{
+				Console.Write(Path.GetFileNameWithoutExtension(FilePath) + "の展開中...");
+
 				if(!ExpandFile(FilePath))
 				{
 					MessageBox.Show("SQLファイルの展開に失敗しました。");
 					Console.WriteLine("失敗。");
 					return false;
 				}
+
+				Console.WriteLine("完了。");
 			}
 			return true;
 		}

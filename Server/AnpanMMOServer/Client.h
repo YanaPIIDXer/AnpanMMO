@@ -91,19 +91,16 @@ public:
 	PlayerCharacterPtr GetCharacter() const { return pCharacter; }
 
 	/**
-	 * @fn void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, int MaxHp, int Atk, int Def, int Exp, u32 Gold)
+	 * @fn void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold)
 	 * @brief キャラクタを作成.
 	 * @param[in] CharacterId キャラクタＩＤ
 	 * @param[in] Name キャラクタ名.
 	 * @param[in] Job ジョブ
 	 * @param[in] Level レベル
-	 * @param[in] MaxHp 最大ＨＰ
-	 * @param[in] Atk 攻撃力.
-	 * @param[in] Def 防御力.
 	 * @param[in] Exp 経験値.
 	 * @param[in] Gold ゴールド
 	 */
-	void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, int MaxHp, int Atk, int Def, int Exp, u32 Gold);
+	void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold);
 
 	/**
 	 * @fn void RecvPacket(u8 ID, MemoryStreamInterface *pStream)

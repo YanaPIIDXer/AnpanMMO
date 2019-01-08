@@ -45,6 +45,7 @@ class TimeInfoMaster
 private:
 
 	typedef TMap<u32, TimeInfoItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -52,13 +53,13 @@ public:
 
 	TArray<TimeInfoItem> GetAll() const;
 
-	const TimeInfoItem *Get(u32 Key) const;
+	const TimeInfoItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

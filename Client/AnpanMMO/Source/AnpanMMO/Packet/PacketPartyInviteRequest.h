@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyInviteRequest.h
- * @brief パーティ勧誘リクエスト
+ * @brief パーティ勧誘リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティ勧誘リクエスト
+ * @brief パーティ勧誘リクエストパケット
  */
 class PacketPartyInviteRequest  : public PacketBase
 {

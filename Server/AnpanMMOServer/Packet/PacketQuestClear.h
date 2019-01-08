@@ -1,6 +1,6 @@
 /**
  * @file PacketQuestClear.h
- * @brief クエストクリア
+ * @brief クエストクリアパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief クエストクリア
+ * @brief クエストクリアパケット
  */
 class PacketQuestClear  : public PacketBase
 {

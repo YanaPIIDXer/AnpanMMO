@@ -28,6 +28,7 @@ class NGWordMaster
 private:
 
 	typedef std::map<s32, NGWordItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
@@ -39,7 +40,7 @@ public:
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

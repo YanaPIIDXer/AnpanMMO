@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillList.h
- * @brief スキルリスト
+ * @brief スキルリストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキルリスト
+ * @brief スキルリストパケット
  */
 class PacketSkillList  : public PacketBase
 {

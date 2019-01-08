@@ -1,6 +1,6 @@
 /**
  * @file PacketItemUse.h
- * @brief アイテム使用
+ * @brief アイテム使用パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アイテム使用
+ * @brief アイテム使用パケット
  */
 class PacketItemUse  : public PacketBase
 {

@@ -38,6 +38,7 @@ class WarpPointMaster
 private:
 
 	typedef TMap<u32, WarpPointItem> ItemMap;
+	typedef TMap<int32, ItemMap> SheetMap;
 
 public:
 
@@ -45,13 +46,13 @@ public:
 
 	TArray<WarpPointItem> GetAll() const;
 
-	const WarpPointItem *Get(u32 Key) const;
+	const WarpPointItem *Get(u32 Key, int32 SheetIndex = 0) const;
 
 private:
 
 	static const FString FileName;
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

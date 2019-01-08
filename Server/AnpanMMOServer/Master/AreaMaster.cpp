@@ -7,6 +7,7 @@ bool AreaMaster::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from Area;");
 
 	AreaItem BindItem;
+	s32 Sheet = 0;
 	char NameBind[128];	char LevelNameBind[128];
 	Query.BindResultInt(&BindItem.ID);
 	Query.BindResultString(NameBind);
@@ -15,6 +16,7 @@ bool AreaMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.InstanceInfoId);
 
 	if (!Query.ExecuteQuery()) { return false; }
+
 	while (Query.Fetch())
 	{
 		AreaItem Item;
@@ -24,25 +26,31 @@ bool AreaMaster::Load(const MySqlConnection &Connection)
 		Item.Type = BindItem.Type;
 		Item.InstanceInfoId = BindItem.InstanceInfoId;
 
-		Items[Item.ID] = Item;
+		Items[Sheet][Item.ID] = Item;
+
 	}
 
 	return true;
 }
 
-const AreaItem *AreaMaster::GetItem(u32 Key) const
+const AreaItem *AreaMaster::GetItem(u32 Key, s32 SheetIndex) const
 {
-	ItemMap::const_iterator It = Items.find(Key);
+	SheetMap::const_iterator It = Items.find(SheetIndex);
 	if (It == Items.end()) { return NULL; }
-	return &It->second;
+	ItemMap::const_iterator It2 = It->second.find(Key);
+	if(It2 == It->second.end()) { return NULL; }
+	return &It2->second;
 }
 
 std::vector<AreaItem> AreaMaster::GetAll() const
 {
 	std::vector<AreaItem> AllItem;
-	for (ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
+	for (SheetMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
 	{
-		AllItem.push_back(It->second);
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
 	}
 	
 	std::sort(AllItem.begin(), AllItem.end());

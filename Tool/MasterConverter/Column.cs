@@ -49,5 +49,46 @@ namespace MasterConverter
 			DataList.Add(Data);
 		}
 
+		/// <summary>
+		/// 同じものか？
+		/// </summary>
+		/// <param name="obj">オブジェクト</param>
+		/// <returns>同じものならtrueを返す</returns>
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
+
+		/// <summary>
+		/// ハッシュコードを取得
+		/// </summary>
+		/// <returns>ハッシュコード</returns>
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
+
+		/// <summary>
+		/// ==
+		/// </summary>
+		/// <param name="A">A</param>
+		/// <param name="B">B</param>
+		/// <returns>同じものならtrue</returns>
+		public static bool operator ==(Column A, Column B)
+		{
+			return ((A.Name == B.Name) && (A.DataType == B.DataType));
+		}
+
+		/// <summary>
+		/// !=
+		/// </summary>
+		/// <param name="A">A</param>
+		/// <param name="B">B</param>
+		/// <returns>別物ならtrue</returns>
+		public static bool operator !=(Column A, Column B)
+		{
+			return ((A.Name != B.Name) || (A.DataType != B.DataType));
+		}
+
 	}
 }

@@ -1,6 +1,6 @@
 /**
  * @file PacketItemList.h
- * @brief ログイン時アイテムリスト通知
+ * @brief ログイン時アイテムリスト通知パケット
  * @author NativePacketGenerator
  */
 
@@ -15,7 +15,7 @@
 
 
 /**
- * @brief ログイン時アイテムリスト通知
+ * @brief ログイン時アイテムリスト通知パケット
  */
 class PacketItemList  : public PacketBase
 {

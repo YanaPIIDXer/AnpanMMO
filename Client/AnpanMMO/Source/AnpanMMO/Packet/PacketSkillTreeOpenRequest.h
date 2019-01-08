@@ -1,6 +1,6 @@
 /**
  * @file PacketSkillTreeOpenRequest.h
- * @brief スキルツリー開放要求
+ * @brief スキルツリー開放要求パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief スキルツリー開放要求
+ * @brief スキルツリー開放要求パケット
  */
 class PacketSkillTreeOpenRequest  : public PacketBase
 {

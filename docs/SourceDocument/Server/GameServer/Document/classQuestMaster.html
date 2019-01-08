@@ -75,8 +75,8 @@ $(function() {
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:aff63873bf3a3bc4ba52da88ea8e793f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5">Load</a> (const <a class="el" href="classMySqlConnection.html">MySqlConnection</a> &amp;Connection)</td></tr>
 <tr class="separator:aff63873bf3a3bc4ba52da88ea8e793f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69eac98d02de5e91c48c66a1b7c27675"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structQuestItem.html">QuestItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuestMaster.html#a69eac98d02de5e91c48c66a1b7c27675">GetItem</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Key) const</td></tr>
-<tr class="separator:a69eac98d02de5e91c48c66a1b7c27675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa17cfbdae4294444252f64aeef106f84"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structQuestItem.html">QuestItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuestMaster.html#aa17cfbdae4294444252f64aeef106f84">GetItem</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Key, <a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> SheetIndex=0) const</td></tr>
+<tr class="separator:aa17cfbdae4294444252f64aeef106f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af98d4c5f619e54644f5a26779dc2b2a8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structQuestItem.html">QuestItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQuestMaster.html#af98d4c5f619e54644f5a26779dc2b2a8">GetAll</a> () const</td></tr>
 <tr class="separator:af98d4c5f619e54644f5a26779dc2b2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -98,8 +98,8 @@ $(function() {
 
 </div>
 </div>
-<a id="a69eac98d02de5e91c48c66a1b7c27675"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69eac98d02de5e91c48c66a1b7c27675">&#9670;&nbsp;</a></span>GetItem()</h2>
+<a id="aa17cfbdae4294444252f64aeef106f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa17cfbdae4294444252f64aeef106f84">&#9670;&nbsp;</a></span>GetItem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -108,16 +108,26 @@ $(function() {
           <td class="memname">const <a class="el" href="structQuestItem.html">QuestItem</a> * QuestMaster::GetItem </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
-          <td class="paramname"><em>Key</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"><em>Key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a>&#160;</td>
+          <td class="paramname"><em>SheetIndex</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classQuestMaster_a69eac98d02de5e91c48c66a1b7c27675_icgraph.png" border="0" usemap="#classQuestMaster_a69eac98d02de5e91c48c66a1b7c27675_icgraph" alt=""/></div>
-<map name="classQuestMaster_a69eac98d02de5e91c48c66a1b7c27675_icgraph" id="classQuestMaster_a69eac98d02de5e91c48c66a1b7c27675_icgraph">
+<div class="center"><img src="classQuestMaster_aa17cfbdae4294444252f64aeef106f84_icgraph.png" border="0" usemap="#classQuestMaster_aa17cfbdae4294444252f64aeef106f84_icgraph" alt=""/></div>
+<map name="classQuestMaster_aa17cfbdae4294444252f64aeef106f84_icgraph" id="classQuestMaster_aa17cfbdae4294444252f64aeef106f84_icgraph">
 <area shape="rect" id="node2" href="classQuestManager.html#adf5b23ef2c836e314413c225ffb271c1" title="QuestManager::Retire" alt="" coords="230,5,379,32"/>
 <area shape="rect" id="node4" href="classQuestManager.html#aa039a1a7926a271591f2c87cd0b5749b" title="QuestManager::ProgressStage" alt="" coords="204,56,405,83"/>
 <area shape="rect" id="node3" href="classClient.html#a070655e087f5434c692cd69e017500a7" title="クエスト破棄. " alt="" coords="488,5,620,32"/>

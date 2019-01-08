@@ -1,6 +1,6 @@
 /**
  * @file CachePacketQuestDataRequest.h
- * @brief クエストデータリクエスト
+ * @brief クエストデータリクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief クエストデータリクエスト
+ * @brief クエストデータリクエストパケット
  */
 class CachePacketQuestDataRequest  : public ProcessPacketBase
 {

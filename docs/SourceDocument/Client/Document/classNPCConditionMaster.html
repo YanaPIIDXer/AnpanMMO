@@ -77,12 +77,12 @@ $(function() {
 <tr class="separator:a6e8cfb5fd685e9c4846d4d8c19d11e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dcac73d32ad9a0c193c8251f08f6821"><td class="memItemLeft" align="right" valign="top">TArray&lt; <a class="el" href="structNPCConditionItem.html">NPCConditionItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCConditionMaster.html#a2dcac73d32ad9a0c193c8251f08f6821">GetAll</a> () const</td></tr>
 <tr class="separator:a2dcac73d32ad9a0c193c8251f08f6821"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0470124003b6722250ba9e9b6404fe63"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structNPCConditionItem.html">NPCConditionItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCConditionMaster.html#a0470124003b6722250ba9e9b6404fe63">Get</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Key) const</td></tr>
-<tr class="separator:a0470124003b6722250ba9e9b6404fe63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16b3bf44e802390f913eff8be1dc492b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structNPCConditionItem.html">NPCConditionItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNPCConditionMaster.html#a16b3bf44e802390f913eff8be1dc492b">Get</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Key, int32 SheetIndex=0) const</td></tr>
+<tr class="separator:a16b3bf44e802390f913eff8be1dc492b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a0470124003b6722250ba9e9b6404fe63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0470124003b6722250ba9e9b6404fe63">&#9670;&nbsp;</a></span>Get()</h2>
+<a id="a16b3bf44e802390f913eff8be1dc492b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16b3bf44e802390f913eff8be1dc492b">&#9670;&nbsp;</a></span>Get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -91,8 +91,18 @@ $(function() {
           <td class="memname">const <a class="el" href="structNPCConditionItem.html">NPCConditionItem</a> * NPCConditionMaster::Get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
-          <td class="paramname"><em>Key</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"><em>Key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>SheetIndex</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -136,8 +146,11 @@ $(function() {
 <div class="center"><img src="classNPCConditionMaster_a6e8cfb5fd685e9c4846d4d8c19d11e0e_cgraph.png" border="0" usemap="#classNPCConditionMaster_a6e8cfb5fd685e9c4846d4d8c19d11e0e_cgraph" alt=""/></div>
 <map name="classNPCConditionMaster_a6e8cfb5fd685e9c4846d4d8c19d11e0e_cgraph" id="classNPCConditionMaster_a6e8cfb5fd685e9c4846d4d8c19d11e0e_cgraph">
 <area shape="rect" id="node2" href="classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="200,5,379,32"/>
-<area shape="rect" id="node3" href="structNPCConditionItem.html#a25db0912af622746d775368efb6cddc9" title="NPCConditionItem::Serialize" alt="" coords="196,56,383,83"/>
-<area shape="rect" id="node4" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="431,49,591,90"/>
+<area shape="rect" id="node3" href="classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="213,57,365,98"/>
+<area shape="rect" id="node6" href="structNPCConditionItem.html#a25db0912af622746d775368efb6cddc9" title="NPCConditionItem::Serialize" alt="" coords="196,123,383,149"/>
+<area shape="rect" id="node4" href="classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="431,64,597,91"/>
+<area shape="rect" id="node5" href="classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="645,57,808,98"/>
+<area shape="rect" id="node7" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="434,115,594,157"/>
 </map>
 </div>
 <div class="dynheader">

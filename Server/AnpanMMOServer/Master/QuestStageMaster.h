@@ -37,18 +37,19 @@ class QuestStageMaster
 private:
 
 	typedef std::map<u32, QuestStageItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const QuestStageItem *GetItem(u32 Key) const;
+	const QuestStageItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<QuestStageItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

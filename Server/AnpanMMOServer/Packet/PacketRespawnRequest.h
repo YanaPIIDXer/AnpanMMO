@@ -1,6 +1,6 @@
 /**
  * @file PacketRespawnRequest.h
- * @brief プレイヤーリスポン要求
+ * @brief プレイヤーリスポン要求パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief プレイヤーリスポン要求
+ * @brief プレイヤーリスポン要求パケット
  */
 class PacketRespawnRequest  : public PacketBase
 {

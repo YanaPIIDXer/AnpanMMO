@@ -7,6 +7,7 @@ bool QuestStageMaster::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from QuestStage;");
 
 	QuestStageItem BindItem;
+	s32 Sheet = 0;
 
 	Query.BindResultInt(&BindItem.Id);
 	Query.BindResultChar(&BindItem.Condition);
@@ -15,6 +16,7 @@ bool QuestStageMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.NextStageId);
 
 	if (!Query.ExecuteQuery()) { return false; }
+
 	while (Query.Fetch())
 	{
 		QuestStageItem Item;
@@ -24,25 +26,31 @@ bool QuestStageMaster::Load(const MySqlConnection &Connection)
 		Item.Count = BindItem.Count;
 		Item.NextStageId = BindItem.NextStageId;
 
-		Items[Item.Id] = Item;
+		Items[Sheet][Item.Id] = Item;
+
 	}
 
 	return true;
 }
 
-const QuestStageItem *QuestStageMaster::GetItem(u32 Key) const
+const QuestStageItem *QuestStageMaster::GetItem(u32 Key, s32 SheetIndex) const
 {
-	ItemMap::const_iterator It = Items.find(Key);
+	SheetMap::const_iterator It = Items.find(SheetIndex);
 	if (It == Items.end()) { return NULL; }
-	return &It->second;
+	ItemMap::const_iterator It2 = It->second.find(Key);
+	if(It2 == It->second.end()) { return NULL; }
+	return &It2->second;
 }
 
 std::vector<QuestStageItem> QuestStageMaster::GetAll() const
 {
 	std::vector<QuestStageItem> AllItem;
-	for (ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
+	for (SheetMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
 	{
-		AllItem.push_back(It->second);
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
 	}
 	
 	std::sort(AllItem.begin(), AllItem.end());

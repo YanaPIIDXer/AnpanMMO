@@ -38,18 +38,19 @@ class QuestMaster
 private:
 
 	typedef std::map<u32, QuestItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const QuestItem *GetItem(u32 Key) const;
+	const QuestItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<QuestItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

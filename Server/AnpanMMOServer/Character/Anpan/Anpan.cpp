@@ -5,22 +5,24 @@
  */
 #include "stdafx.h"
 #include "Anpan.h"
+#include "Master/MasterData.h"
 #include "Math/DamageCalcUnit.h"
 #include "Packet/PacketStopAnpan.h"
 
 const float Anpan::BaseRadius = 80.0f;
 
 // コンストラクタ
-Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate, u32 InDropId)
+Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId)
 	: AI(this)
 	, MasterId(InMasterId)
-	, Exp(InExp)
-	, ScaleRate(InScaleRate)
-	, DropId(InDropId)
 {
 	SetPosition(InPosition);
 	SetRotate(Rotation(180.0f));
-	SetParameter(1, Hp, Hp, Atk, Def);
+	const AnpanItem *pItem = MasterData::GetInstance().GetAnpanMaster().GetItem(InMasterId);
+	SetParameter(1, pItem->Hp, pItem->Hp, pItem->Str, pItem->Def, pItem->Int, pItem->Mnd, pItem->Vit);
+	Exp = pItem->Exp;
+	ScaleRate = pItem->Scale;
+	DropId = pItem->DropId;
 }
 
 // 攻撃.

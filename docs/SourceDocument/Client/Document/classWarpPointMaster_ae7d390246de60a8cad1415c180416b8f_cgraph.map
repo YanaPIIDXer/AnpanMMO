@@ -1,5 +1,8 @@
 <map id="WarpPointMaster::Load" name="WarpPointMaster::Load">
 <area shape="rect" id="node2" href="$classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="212,5,391,32"/>
-<area shape="rect" id="node3" href="$structWarpPointItem.html#ab8dfca126ea346b3a08d34f3241386f5" title="WarpPointItem::Serialize" alt="" coords="218,56,385,83"/>
-<area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="439,49,599,90"/>
+<area shape="rect" id="node3" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="225,57,377,98"/>
+<area shape="rect" id="node6" href="$structWarpPointItem.html#ab8dfca126ea346b3a08d34f3241386f5" title="WarpPointItem::Serialize" alt="" coords="218,123,385,149"/>
+<area shape="rect" id="node4" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="439,64,605,91"/>
+<area shape="rect" id="node5" href="$classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="653,57,816,98"/>
+<area shape="rect" id="node7" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="442,115,602,157"/>
 </map>

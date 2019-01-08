@@ -1,6 +1,6 @@
 /**
  * @file CachePacketItemListResponse.h
- * @brief アイテムリストレスポンス
+ * @brief アイテムリストレスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -16,7 +16,7 @@
 
 
 /**
- * @brief アイテムリストレスポンス
+ * @brief アイテムリストレスポンスパケット
  */
 class CachePacketItemListResponse  : public ProcessPacketBase
 {

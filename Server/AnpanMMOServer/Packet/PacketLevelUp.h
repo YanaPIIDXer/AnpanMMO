@@ -1,6 +1,6 @@
 /**
  * @file PacketLevelUp.h
- * @brief レベルアップ
+ * @brief レベルアップパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief レベルアップ
+ * @brief レベルアップパケット
  */
 class PacketLevelUp  : public PacketBase
 {
@@ -32,11 +32,17 @@ public:
 	//! レベル
 	u32 Level;
 	//! 最大ＨＰ
-	s32 MaxHp;
-	//! 攻撃力
-	s32 Atk;
-	//! 防御力
-	s32 Def;
+	u32 MaxHp;
+	//! STR
+	u32 Str;
+	//! DEF
+	u32 Def;
+	//! INT
+	u32 Int;
+	//! MND
+	u32 Mnd;
+	//! VIT
+	u32 Vit;
 	//! 経験値
 	s32 ResultExp;
 	
@@ -51,12 +57,15 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	PacketLevelUp(u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InResultExp)
+	PacketLevelUp(u32 InLevel, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, s32 InResultExp)
 	{
 		Level = InLevel;
 		MaxHp = InMaxHp;
-		Atk = InAtk;
+		Str = InStr;
 		Def = InDef;
+		Int = InInt;
+		Mnd = InMnd;
+		Vit = InVit;
 		ResultExp = InResultExp;
 		
 	}
@@ -72,8 +81,11 @@ public:
 	{
 		pStream->Serialize(&Level);
 		pStream->Serialize(&MaxHp);
-		pStream->Serialize(&Atk);
+		pStream->Serialize(&Str);
 		pStream->Serialize(&Def);
+		pStream->Serialize(&Int);
+		pStream->Serialize(&Mnd);
+		pStream->Serialize(&Vit);
 		pStream->Serialize(&ResultExp);
 		
 		return true;

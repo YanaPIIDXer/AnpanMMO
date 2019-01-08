@@ -1,6 +1,6 @@
 /**
  * @file CachePacketOpenSkillTree.h
- * @brief スキルツリー開放
+ * @brief スキルツリー開放パケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief スキルツリー開放
+ * @brief スキルツリー開放パケット
  */
 class CachePacketOpenSkillTree  : public ProcessPacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketItemSubtractRequest.h
- * @brief アイテム破棄リクエスト
+ * @brief アイテム破棄リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アイテム破棄リクエスト
+ * @brief アイテム破棄リクエストパケット
  */
 class PacketItemSubtractRequest  : public PacketBase
 {

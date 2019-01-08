@@ -26,6 +26,7 @@ class $CLASS_NAME$
 private:
 
 	typedef std::map<$KEY_TYPE$, $ITEM_STRUCT_NAME$> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
@@ -37,7 +38,7 @@ public:
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

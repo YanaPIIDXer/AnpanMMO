@@ -81,7 +81,7 @@ namespace NativePacketGenerator
 						case "$CLASS_NAME$":
 
 							Class = new ClassData((string)WorkSheet.Cells[i, 2].Value);
-							Class.Comment = WorkSheet.Name;
+							Class.Comment = WorkSheet.Name + "パケット";
 							Classes.Add(Class);
 							break;
 							

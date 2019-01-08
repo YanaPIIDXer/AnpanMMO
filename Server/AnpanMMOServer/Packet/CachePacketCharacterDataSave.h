@@ -1,6 +1,6 @@
 /**
  * @file CachePacketCharacterDataSave.h
- * @brief キャラクタ保存リクエスト
+ * @brief キャラクタ保存リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief キャラクタ保存リクエスト
+ * @brief キャラクタ保存リクエストパケット
  */
 class CachePacketCharacterDataSave  : public ProcessPacketBase
 {
@@ -34,12 +34,6 @@ public:
 	u32 CharacterId;
 	//! レベル
 	u32 Level;
-	//! 最大ＨＰ
-	s32 MaxHp;
-	//! 攻撃力
-	s32 Atk;
-	//! 防御力
-	s32 Def;
 	//! 経験値
 	s32 Exp;
 	//! 最終ログアウトエリアＩＤ
@@ -62,14 +56,11 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	CachePacketCharacterDataSave(u32 InClientId, u32 InCharacterId, u32 InLevel, s32 InMaxHp, s32 InAtk, s32 InDef, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
+	CachePacketCharacterDataSave(u32 InClientId, u32 InCharacterId, u32 InLevel, s32 InExp, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
 		CharacterId = InCharacterId;
 		Level = InLevel;
-		MaxHp = InMaxHp;
-		Atk = InAtk;
-		Def = InDef;
 		Exp = InExp;
 		LastAreaId = InLastAreaId;
 		LastX = InLastX;
@@ -90,9 +81,6 @@ public:
 		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&CharacterId);
 		pStream->Serialize(&Level);
-		pStream->Serialize(&MaxHp);
-		pStream->Serialize(&Atk);
-		pStream->Serialize(&Def);
 		pStream->Serialize(&Exp);
 		pStream->Serialize(&LastAreaId);
 		pStream->Serialize(&LastX);

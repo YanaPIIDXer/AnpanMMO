@@ -21,11 +21,20 @@ void AnpanMaster::Load()
 
 	MemoryStreamReader Reader(pData, DataSize);
 	Items.Empty();
-	while (true)
+	int32 SheetCount = 0;
+	int32 DataCount = 0;
+	Reader.Serialize(&SheetCount);
+	Reader.Serialize(&DataCount);
+	for (int32 i = 0; i < SheetCount; i++)
 	{
-		AnpanItem Item;
-		if (!Item.Serialize(&Reader)) { break; }
-		Items.Add(Item.ID, Item);
+		ItemMap ItemDic;
+		for (int32 j = 0; j < DataCount; j++)
+		{
+			AnpanItem Item;
+			if (!Item.Serialize(&Reader)) { break; }
+			ItemDic.Add(Item.ID, Item);
+		}
+		Items.Add(i, ItemDic);
 	}
 
 	delete[] pData;
@@ -36,7 +45,10 @@ TArray<AnpanItem> AnpanMaster::GetAll() const
 	TArray<AnpanItem> ItemArray;
 	for (auto KeyValue : Items)
 	{
-		ItemArray.Add(KeyValue.Value);
+		for (auto KeyValue2 : KeyValue.Value)
+		{
+			ItemArray.Add(KeyValue2.Value);
+		}
 	}
 	ItemArray.Sort([](const AnpanItem &A, const AnpanItem &B)
 	{
@@ -45,8 +57,9 @@ TArray<AnpanItem> AnpanMaster::GetAll() const
 	return ItemArray;
 }
 
-const AnpanItem *AnpanMaster::Get(u32 Key) const
+const AnpanItem *AnpanMaster::Get(u32 Key, int32 SheetIndex) const
 {
-	if (!Items.Contains(Key)) { return nullptr; }
-	return &Items[Key];
+	if (!Items.Contains(SheetIndex)) { return nullptr; }
+	if(!Items[SheetIndex].Contains(Key)) { return nullptr; }
+	return &Items[SheetIndex][Key];
 }

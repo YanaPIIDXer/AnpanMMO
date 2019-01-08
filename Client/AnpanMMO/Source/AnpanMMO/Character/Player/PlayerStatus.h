@@ -24,12 +24,15 @@ public:
 	void SetUuid(uint32 InUuid) { Uuid = InUuid; }
 
 	// セット
-	void Set(uint32 InLevel, int32 InMaxHp, int32 InAtk, int32 InDef)
+	void Set(uint32 InLevel, int32 InMaxHp, int32 InStr, int32 InDef, int32 InInt, int32 InMnd, int32 InVit)
 	{
 		Level = InLevel;
 		MaxHp = InMaxHp;
-		Atk = InAtk;
+		Str = InStr;
 		Def = InDef;
+		Int = InInt;
+		Mnd = InMnd;
+		Vit = InVit;
 	}
 
 	// 経験値セット
@@ -66,11 +69,20 @@ public:
 	// 最大HP取得.
 	int32 GetMaxHp() const { return MaxHp; }
 
-	// 攻撃力取得.
-	int32 GetAtk() const { return Atk; }
+	// STR取得.
+	int32 GetStr() const { return Str; }
 
-	// 防御力取得.
+	// DEF取得.
 	int32 GetDef() const { return Def; }
+
+	// INT取得.
+	int32 GetInt() const { return Int; }
+
+	// MND取得.
+	int32 GetMnd() const { return Mnd; }
+
+	// VIT取得.
+	int32 GetVit() const { return Vit; }
 
 	// 経験値取得.
 	int32 GetExp() const { return Exp; }
@@ -119,11 +131,20 @@ private:
 	// 最大HP
 	int32 MaxHp;
 
-	// 攻撃力.
-	int32 Atk;
+	// STR
+	int32 Str;
 
-	// 防御力.
+	// DEF
 	int32 Def;
+
+	// INT
+	int32 Int;
+
+	// MND
+	int32 Mnd;
+
+	// VIT
+	int32 Vit;
 
 	// 経験値.
 	int32 Exp;

@@ -1,6 +1,6 @@
 /**
  * @file CachePacketSaveActiveQuestRequest.h
- * @brief アクティブクエスト保存リクエスト
+ * @brief アクティブクエスト保存リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief アクティブクエスト保存リクエスト
+ * @brief アクティブクエスト保存リクエストパケット
  */
 class CachePacketSaveActiveQuestRequest  : public ProcessPacketBase
 {

@@ -7,6 +7,7 @@ bool SkillTreeMaster::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from SkillTree;");
 
 	SkillTreeItem BindItem;
+	s32 Sheet = 0;
 
 	Query.BindResultInt(&BindItem.ID);
 	Query.BindResultChar(&BindItem.Job);
@@ -18,6 +19,7 @@ bool SkillTreeMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.ParentNode);
 
 	if (!Query.ExecuteQuery()) { return false; }
+
 	while (Query.Fetch())
 	{
 		SkillTreeItem Item;
@@ -30,25 +32,31 @@ bool SkillTreeMaster::Load(const MySqlConnection &Connection)
 		Item.NodeY = BindItem.NodeY;
 		Item.ParentNode = BindItem.ParentNode;
 
-		Items[Item.ID] = Item;
+		Items[Sheet][Item.ID] = Item;
+
 	}
 
 	return true;
 }
 
-const SkillTreeItem *SkillTreeMaster::GetItem(u32 Key) const
+const SkillTreeItem *SkillTreeMaster::GetItem(u32 Key, s32 SheetIndex) const
 {
-	ItemMap::const_iterator It = Items.find(Key);
+	SheetMap::const_iterator It = Items.find(SheetIndex);
 	if (It == Items.end()) { return NULL; }
-	return &It->second;
+	ItemMap::const_iterator It2 = It->second.find(Key);
+	if(It2 == It->second.end()) { return NULL; }
+	return &It2->second;
 }
 
 std::vector<SkillTreeItem> SkillTreeMaster::GetAll() const
 {
 	std::vector<SkillTreeItem> AllItem;
-	for (ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
+	for (SheetMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
 	{
-		AllItem.push_back(It->second);
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
 	}
 	
 	std::sort(AllItem.begin(), AllItem.end());

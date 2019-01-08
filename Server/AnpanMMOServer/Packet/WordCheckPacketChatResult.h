@@ -1,6 +1,6 @@
 /**
  * @file WordCheckPacketChatResult.h
- * @brief ワードチェック結果
+ * @brief ワードチェック結果パケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief ワードチェック結果
+ * @brief ワードチェック結果パケット
  */
 class WordCheckPacketChatResult  : public ProcessPacketBase
 {

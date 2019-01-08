@@ -1,6 +1,6 @@
 /**
  * @file PacketPartyKickRequest.h
- * @brief パーティメンバキックリクエスト
+ * @brief パーティメンバキックリクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief パーティメンバキックリクエスト
+ * @brief パーティメンバキックリクエストパケット
  */
 class PacketPartyKickRequest  : public PacketBase
 {

@@ -1,6 +1,6 @@
 /**
  * @file PacketAreaMoveResponse.h
- * @brief エリア移動レスポンス
+ * @brief エリア移動レスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief エリア移動レスポンス
+ * @brief エリア移動レスポンスパケット
  */
 class PacketAreaMoveResponse  : public PacketBase
 {

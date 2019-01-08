@@ -35,18 +35,19 @@ class AnpanPopAreaMaster
 private:
 
 	typedef std::map<u32, AnpanPopAreaItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	std::vector<const AnpanPopAreaItem *> CollectItems(u32 Key) const;
+	std::vector<const AnpanPopAreaItem *> CollectItems(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<AnpanPopAreaItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

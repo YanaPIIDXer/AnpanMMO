@@ -1,6 +1,6 @@
 /**
  * @file PacketSaveItemShortcutRequest.h
- * @brief アイテムショートカット保存リクエスト
+ * @brief アイテムショートカット保存リクエストパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アイテムショートカット保存リクエスト
+ * @brief アイテムショートカット保存リクエストパケット
  */
 class PacketSaveItemShortcutRequest  : public PacketBase
 {

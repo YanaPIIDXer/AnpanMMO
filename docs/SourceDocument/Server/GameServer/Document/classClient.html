@@ -121,9 +121,9 @@ Client 連携図</div>
 <tr class="memitem:a0cda75c99767496a10a7a4e559a8f877"><td class="memItemLeft" align="right" valign="top"><a class="el" href="WeakPtrDefine_8h.html#a521917366f163f43d1d84fffbc5f0756">PlayerCharacterPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a0cda75c99767496a10a7a4e559a8f877">GetCharacter</a> () const</td></tr>
 <tr class="memdesc:a0cda75c99767496a10a7a4e559a8f877"><td class="mdescLeft">&#160;</td><td class="mdescRight">キャラクタを取得.  <a href="#a0cda75c99767496a10a7a4e559a8f877">[詳解]</a><br /></td></tr>
 <tr class="separator:a0cda75c99767496a10a7a4e559a8f877"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1b96dafe39fc573b41ee855874b59b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ae1b96dafe39fc573b41ee855874b59b6">CreateCharacter</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CharacterId, const std::string &amp;Name, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Job, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, int MaxHp, int Atk, int Def, int Exp, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Gold)</td></tr>
-<tr class="memdesc:ae1b96dafe39fc573b41ee855874b59b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">キャラクタを作成.  <a href="#ae1b96dafe39fc573b41ee855874b59b6">[詳解]</a><br /></td></tr>
-<tr class="separator:ae1b96dafe39fc573b41ee855874b59b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76634e2b23270e1fca2be15ad0199d5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a76634e2b23270e1fca2be15ad0199d5f">CreateCharacter</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> CharacterId, const std::string &amp;Name, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Job, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Exp, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Gold)</td></tr>
+<tr class="memdesc:a76634e2b23270e1fca2be15ad0199d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">キャラクタを作成.  <a href="#a76634e2b23270e1fca2be15ad0199d5f">[詳解]</a><br /></td></tr>
+<tr class="separator:a76634e2b23270e1fca2be15ad0199d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2902312e2a2803020a157d057da362e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a2902312e2a2803020a157d057da362e0">RecvPacket</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> ID, <a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
 <tr class="memdesc:a2902312e2a2803020a157d057da362e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">パケット受信.  <a href="#a2902312e2a2803020a157d057da362e0">[詳解]</a><br /></td></tr>
 <tr class="separator:a2902312e2a2803020a157d057da362e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -420,8 +420,8 @@ Client 連携図</div>
 
 </div>
 </div>
-<a id="ae1b96dafe39fc573b41ee855874b59b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1b96dafe39fc573b41ee855874b59b6">&#9670;&nbsp;</a></span>CreateCharacter()</h2>
+<a id="a76634e2b23270e1fca2be15ad0199d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76634e2b23270e1fca2be15ad0199d5f">&#9670;&nbsp;</a></span>CreateCharacter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -453,25 +453,7 @@ Client 連携図</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>MaxHp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>Atk</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>Def</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
           <td class="paramname"><em>Exp</em>, </td>
         </tr>
         <tr>
@@ -495,9 +477,6 @@ Client 連携図</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">Name</td><td>キャラクタ名. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Job</td><td>ジョブ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Level</td><td>レベル </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">MaxHp</td><td>最大ＨＰ </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Atk</td><td>攻撃力. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Def</td><td>防御力. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Exp</td><td>経験値. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Gold</td><td>ゴールド </td></tr>
   </table>
@@ -506,8 +485,8 @@ Client 連携図</div>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classClient_ae1b96dafe39fc573b41ee855874b59b6_cgraph.png" border="0" usemap="#classClient_ae1b96dafe39fc573b41ee855874b59b6_cgraph" alt=""/></div>
-<map name="classClient_ae1b96dafe39fc573b41ee855874b59b6_cgraph" id="classClient_ae1b96dafe39fc573b41ee855874b59b6_cgraph">
+<div class="center"><img src="classClient_a76634e2b23270e1fca2be15ad0199d5f_cgraph.png" border="0" usemap="#classClient_a76634e2b23270e1fca2be15ad0199d5f_cgraph" alt=""/></div>
+<map name="classClient_a76634e2b23270e1fca2be15ad0199d5f_cgraph" id="classClient_a76634e2b23270e1fca2be15ad0199d5f_cgraph">
 <area shape="rect" id="node2" href="classCharacterBase.html#a6e1f38e44ca8669dd32e5defc280fe82" title="UUIDをセット " alt="" coords="218,5,381,32"/>
 <area shape="rect" id="node3" href="classPlayerCharacter.html#aad92d9ce8eae2a34ce35f49c14dfc421" title="名前を設定 " alt="" coords="211,56,388,83"/>
 </map>
@@ -781,10 +760,10 @@ Client 連携図</div>
 <area shape="rect" id="node7" href="classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd" title="TCPConnection::AsyncSend" alt="" coords="1157,107,1344,133"/>
 <area shape="rect" id="node9" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="716,391,883,417"/>
 <area shape="rect" id="node10" href="classMasterData.html#ab431aba99ba187018dd71971310db14f" title="MasterData::GetQuestMaster" alt="" coords="703,441,896,468"/>
-<area shape="rect" id="node11" href="classQuestMaster.html#a69eac98d02de5e91c48c66a1b7c27675" title="QuestMaster::GetItem" alt="" coords="724,492,875,519"/>
+<area shape="rect" id="node11" href="classQuestMaster.html#aa17cfbdae4294444252f64aeef106f84" title="QuestMaster::GetItem" alt="" coords="724,492,875,519"/>
 <area shape="rect" id="node12" href="classQuestManager.html#a068baae57cdb284212b62a4855f5f7b1" title="QuestManager::Accept" alt="" coords="721,340,877,367"/>
 <area shape="rect" id="node18" href="classMasterData.html#a06a077d5d05b2852570ea1ac23353037" title="MasterData::GetQuestReward\lMaster" alt="" coords="701,209,897,250"/>
-<area shape="rect" id="node19" href="classQuestRewardMaster.html#a88c4dc5b8bfeb608bf19b1dba584bab7" title="QuestRewardMaster::\lGetItem" alt="" coords="725,274,873,315"/>
+<area shape="rect" id="node19" href="classQuestRewardMaster.html#a7134369f1784e0496046ebe5c328e5f0" title="QuestRewardMaster::\lGetItem" alt="" coords="725,274,873,315"/>
 <area shape="rect" id="node13" href="classQuestManager.html#add9cb020fe2b4bf1e4268d4c089f160d" title="QuestManager::Add" alt="" coords="956,340,1095,367"/>
 </map>
 </div>
@@ -873,14 +852,14 @@ Client 連携図</div>
 <area shape="rect" id="node3" href="classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="710,52,845,79"/>
 <area shape="rect" id="node8" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="468,372,635,399"/>
 <area shape="rect" id="node9" href="classMasterData.html#ab431aba99ba187018dd71971310db14f" title="MasterData::GetQuestMaster" alt="" coords="455,423,648,449"/>
-<area shape="rect" id="node10" href="classQuestMaster.html#a69eac98d02de5e91c48c66a1b7c27675" title="QuestMaster::GetItem" alt="" coords="476,473,627,500"/>
+<area shape="rect" id="node10" href="classQuestMaster.html#aa17cfbdae4294444252f64aeef106f84" title="QuestMaster::GetItem" alt="" coords="476,473,627,500"/>
 <area shape="rect" id="node11" href="classQuestManager.html#a068baae57cdb284212b62a4855f5f7b1" title="QuestManager::Accept" alt="" coords="473,169,629,196"/>
 <area shape="rect" id="node13" href="classClient.html#a2fab4ff0f437d04f49917829c8e6a6aa" title="UUIDを取得. " alt="" coords="722,220,833,247"/>
 <area shape="rect" id="node14" href="classClient.html#a0cda75c99767496a10a7a4e559a8f877" title="キャラクタを取得. " alt="" coords="707,271,847,297"/>
 <area shape="rect" id="node15" href="classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="697,322,857,363"/>
 <area shape="rect" id="node16" href="classCacheServerConnection.html#af987babbbeeba1dd923dd262eafed06a" title="パケット送信 " alt="" coords="697,103,857,145"/>
 <area shape="rect" id="node17" href="classMasterData.html#a06a077d5d05b2852570ea1ac23353037" title="MasterData::GetQuestReward\lMaster" alt="" coords="453,525,649,566"/>
-<area shape="rect" id="node18" href="classQuestRewardMaster.html#a88c4dc5b8bfeb608bf19b1dba584bab7" title="QuestRewardMaster::\lGetItem" alt="" coords="477,590,625,631"/>
+<area shape="rect" id="node18" href="classQuestRewardMaster.html#a7134369f1784e0496046ebe5c328e5f0" title="QuestRewardMaster::\lGetItem" alt="" coords="477,590,625,631"/>
 <area shape="rect" id="node4" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="927,107,1078,133"/>
 <area shape="rect" id="node5" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="905,158,1100,199"/>
 <area shape="rect" id="node6" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="915,5,1090,32"/>
@@ -976,7 +955,7 @@ Client 連携図</div>
 <area shape="rect" id="node2" href="classQuestManager.html#adf5b23ef2c836e314413c225ffb271c1" title="QuestManager::Retire" alt="" coords="185,157,335,184"/>
 <area shape="rect" id="node3" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="396,5,563,32"/>
 <area shape="rect" id="node4" href="classMasterData.html#ab431aba99ba187018dd71971310db14f" title="MasterData::GetQuestMaster" alt="" coords="383,56,576,83"/>
-<area shape="rect" id="node5" href="classQuestMaster.html#a69eac98d02de5e91c48c66a1b7c27675" title="QuestMaster::GetItem" alt="" coords="404,107,555,133"/>
+<area shape="rect" id="node5" href="classQuestMaster.html#aa17cfbdae4294444252f64aeef106f84" title="QuestMaster::GetItem" alt="" coords="404,107,555,133"/>
 <area shape="rect" id="node6" href="classClient.html#a2fab4ff0f437d04f49917829c8e6a6aa" title="UUIDを取得. " alt="" coords="424,157,535,184"/>
 <area shape="rect" id="node7" href="classClient.html#a0cda75c99767496a10a7a4e559a8f877" title="キャラクタを取得. " alt="" coords="409,208,549,235"/>
 <area shape="rect" id="node8" href="classCacheServerConnection.html#a19d8911e70895a8827c3a39faa886ac3" title="インスタンス取得 " alt="" coords="399,259,559,301"/>

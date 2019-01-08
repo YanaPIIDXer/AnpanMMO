@@ -1,6 +1,6 @@
 /**
  * @file PacketSpawnInstanceAreaExitPoint.h
- * @brief インスタンスマップ脱出ポイント生成
+ * @brief インスタンスマップ脱出ポイント生成パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief インスタンスマップ脱出ポイント生成
+ * @brief インスタンスマップ脱出ポイント生成パケット
  */
 class PacketSpawnInstanceAreaExitPoint  : public PacketBase
 {

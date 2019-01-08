@@ -1,6 +1,6 @@
 /**
  * @file PacketItemSubtract.h
- * @brief アイテム消費
+ * @brief アイテム消費パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief アイテム消費
+ * @brief アイテム消費パケット
  */
 class PacketItemSubtract  : public PacketBase
 {

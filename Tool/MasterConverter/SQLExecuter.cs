@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Renci.SshNet;
+using System.IO;
 
 namespace MasterConverter
 {
@@ -76,11 +77,15 @@ namespace MasterConverter
 					{
 						if (String.IsNullOrEmpty(SQLFile)) { continue; }
 						var FilePath = Config.HostSQLPath + "/" + SQLFile;
+						Console.Write(Path.GetFileNameWithoutExtension(FilePath) + "の展開中...");
 						if(!ExecuteCommand(Client, GenerateMySQLCommand("-D " + Config.MasterDataBaseName + " < " + FilePath), out Result, out Error))
 						{
+							Console.WriteLine("失敗。");
 							Console.WriteLine(Error);
 							return false;
 						}
+
+						Console.WriteLine("完了。");
 					}
 
 					// 後片付け

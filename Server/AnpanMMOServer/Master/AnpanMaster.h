@@ -14,10 +14,13 @@ public:
 
 
 	u32 ID;
-	s32 Hp;
-	s32 Atk;
-	s32 Def;
-	s32 Exp;
+	u32 Hp;
+	u32 Str;
+	u32 Def;
+	u32 Int;
+	u32 Mnd;
+	u32 Vit;
+	u32 Exp;
 	float Scale;
 	u32 DropId;
 
@@ -33,18 +36,19 @@ class AnpanMaster
 private:
 
 	typedef std::map<u32, AnpanItem> ItemMap;
+	typedef std::map<int, ItemMap> SheetMap;
 
 public:
 
 	bool Load(const MySqlConnection &Connection);
 
-	const AnpanItem *GetItem(u32 Key) const;
+	const AnpanItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
 	std::vector<AnpanItem> GetAll() const;
 
 private:
 
-	ItemMap Items;
+	SheetMap Items;
 
 };
 

@@ -1,6 +1,6 @@
 /**
  * @file PacketQuestData.h
- * @brief クエストデータリスト
+ * @brief クエストデータリストパケット
  * @author NativePacketGenerator
  */
 
@@ -15,7 +15,7 @@
 
 
 /**
- * @brief クエストデータリスト
+ * @brief クエストデータリストパケット
  */
 class PacketQuestData  : public PacketBase
 {

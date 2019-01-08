@@ -1,5 +1,8 @@
 <map id="TimeInfoMaster::Load" name="TimeInfoMaster::Load">
 <area shape="rect" id="node2" href="$classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="200,5,379,32"/>
-<area shape="rect" id="node3" href="$structTimeInfoItem.html#a71c9eca415fc7a2eccb89bb16d25d95e" title="TimeInfoItem::Serialize" alt="" coords="213,56,366,83"/>
-<area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="427,49,587,90"/>
+<area shape="rect" id="node3" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="213,57,365,98"/>
+<area shape="rect" id="node6" href="$structTimeInfoItem.html#a71c9eca415fc7a2eccb89bb16d25d95e" title="TimeInfoItem::Serialize" alt="" coords="213,123,366,149"/>
+<area shape="rect" id="node4" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="427,64,593,91"/>
+<area shape="rect" id="node5" href="$classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="641,57,804,98"/>
+<area shape="rect" id="node7" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="430,115,590,157"/>
 </map>

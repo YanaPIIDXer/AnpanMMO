@@ -11,8 +11,8 @@
 <area shape="rect" id="node29" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="2259,401,2379,427"/>
 <area shape="rect" id="node17" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="3201,401,3321,427"/>
 <area shape="rect" id="node20" href="$Rotation_8h.html" title="Math/Rotation.h" alt="" coords="3203,311,3318,338"/>
-<area shape="rect" id="node21" href="$PacketMoveAnpan_8h.html" title="アンパン移動 " alt="" coords="1641,311,1827,338"/>
-<area shape="rect" id="node26" href="$PacketRotateAnpan_8h.html" title="アンパン回転 " alt="" coords="1851,311,2046,338"/>
+<area shape="rect" id="node21" href="$PacketMoveAnpan_8h.html" title="アンパン移動パケット " alt="" coords="1641,311,1827,338"/>
+<area shape="rect" id="node26" href="$PacketRotateAnpan_8h.html" title="アンパン回転パケット " alt="" coords="1851,311,2046,338"/>
 <area shape="rect" id="node22" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="1602,401,1706,427"/>
 <area shape="rect" id="node23" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="1731,393,1935,435"/>
 <area shape="rect" id="node25" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="1491,401,1577,427"/>

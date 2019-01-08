@@ -1,6 +1,6 @@
 /**
  * @file PacketDamage.h
- * @brief ダメージ
+ * @brief ダメージパケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief ダメージ
+ * @brief ダメージパケット
  */
 class PacketDamage  : public PacketBase
 {

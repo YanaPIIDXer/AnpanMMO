@@ -53,14 +53,23 @@ namespace MasterConverter
 			var Writer = File.CreateText(FilePath);
 			Writer.WriteLine("DROP TABLE IF EXISTS `" + TableName + "`;");
 			Writer.WriteLine("CREATE TABLE `" + TableName + "` (");
-			var Columns = Master.GetColumns();
-			foreach(Column Col in Columns)
+			if(Master.IsMultipleSheet)
 			{
+				Writer.WriteLine(" `SheetIndex` INT UNSIGNED,");
+			}
+			var Columns = Master.GetColumns(0);
+			for(int i = 0; i < Columns.Count; i++)
+			{
+				Column Col = Columns[i];
 				string Line = " `" + Col.Name + "` ";
-				Line += GetSQLTypeName(Col.DataType) + ",";
+				Line += GetSQLTypeName(Col.DataType);
+				if (i < Columns.Count - 1)
+				{
+					Line += ",";
+				}
 				Writer.WriteLine(Line);
 			}
-			Writer.WriteLine("PRIMARY KEY(`" + Columns[0].Name + "`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+			Writer.WriteLine(") DEFAULT CHARSET=utf8;");
 
 			Writer.WriteLine("LOCK TABLES `" + TableName + "` WRITE;");
 
@@ -134,38 +143,44 @@ namespace MasterConverter
 		/// <param name="TableName">テーブル名</param>
 		private void WriteInsert(StreamWriter Writer, string TableName)
 		{
-			for(int i = 0; ; i++)
+			for(int Sheet = 0; Sheet < Master.SheetCount; Sheet++)
 			{
-				string Line = "INSERT INTO `" + TableName + "` VALUES (";
-				bool bFinished = false;
-				var Columns = Master.GetColumns();
-				foreach (Column Col in Columns)
+				for (int i = 0; ; i++)
 				{
-					if(i >= Col.DataList.Count)
+					string Line = "INSERT INTO `" + TableName + "` VALUES (";
+					bool bFinished = false;
+					if (Master.IsMultipleSheet)
 					{
-						bFinished = true;
-						break;
+						Line += Sheet + ",";
 					}
-					string Data = Col.DataList[i].ToString();
-					int EnumValue = 0;
-					if(Col.DataType == Type.String)
+					var Columns = Master.GetColumns(Sheet);
+					foreach (Column Col in Columns)
 					{
-						Data = "'" + Data + "'";
-					}
-					else if(Master.TryFindEnumValue(Data, out EnumValue))
-					{
-						Data = EnumValue.ToString();
-					}
+						if (i >= Col.DataList.Count)
+						{
+							bFinished = true;
+							break;
+						}
+						string Data = Col.DataList[i].ToString();
+						int EnumValue = 0;
+						if (Col.DataType == Type.String)
+						{
+							Data = "'" + Data + "'";
+						}
+						else if (Master.TryFindEnumValue(Data, out EnumValue))
+						{
+							Data = EnumValue.ToString();
+						}
 
-					Line += Data;
-					Line += ",";
+						Line += Data;
+						Line += ",";
+					}
+					if (bFinished) { break; }
+					Line = Line.Substring(0, Line.Length - 1);
+					Line += ");";
+					Writer.WriteLine(Line);
 				}
-				if (bFinished) { break; }
-				Line = Line.Substring(0, Line.Length - 1);
-				Line += ");";
-				Writer.WriteLine(Line);
 			}
 		}
-
 	}
 }

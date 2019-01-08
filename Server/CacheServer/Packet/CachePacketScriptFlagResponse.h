@@ -1,6 +1,6 @@
 /**
  * @file CachePacketScriptFlagResponse.h
- * @brief スクリプトフラグレスポンス
+ * @brief スクリプトフラグレスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief スクリプトフラグレスポンス
+ * @brief スクリプトフラグレスポンスパケット
  */
 class CachePacketScriptFlagResponse  : public ProcessPacketBase
 {

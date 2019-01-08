@@ -1,6 +1,6 @@
 /**
  * @file CachePacketSaveSkillListResponse.h
- * @brief スキルリスト保存レスポンス
+ * @brief スキルリスト保存レスポンスパケット
  * @author NativePacketGenerator
  */
 
@@ -14,7 +14,7 @@
 
 
 /**
- * @brief スキルリスト保存レスポンス
+ * @brief スキルリスト保存レスポンスパケット
  */
 class CachePacketSaveSkillListResponse  : public ProcessPacketBase
 {

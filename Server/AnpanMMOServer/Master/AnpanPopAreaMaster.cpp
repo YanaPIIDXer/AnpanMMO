@@ -7,6 +7,7 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from AnpanPopArea;");
 
 	AnpanPopAreaItem BindItem;
+	s32 Sheet = 0;
 
 	Query.BindResultInt(&BindItem.AutoKey);
 	Query.BindResultInt(&BindItem.AreaId);
@@ -19,6 +20,7 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.PopId);
 
 	if (!Query.ExecuteQuery()) { return false; }
+
 	while (Query.Fetch())
 	{
 		AnpanPopAreaItem Item;
@@ -32,20 +34,24 @@ bool AnpanPopAreaMaster::Load(const MySqlConnection &Connection)
 		Item.MaxCount = BindItem.MaxCount;
 		Item.PopId = BindItem.PopId;
 
-		Items[Item.AutoKey] = Item;
+		Items[Sheet][Item.AutoKey] = Item;
+
 	}
 
 	return true;
 }
 
-std::vector<const AnpanPopAreaItem *> AnpanPopAreaMaster::CollectItems(u32 Key) const
+std::vector<const AnpanPopAreaItem *> AnpanPopAreaMaster::CollectItems(u32 Key, s32 SheetIndex) const
 {
 	std::vector<const AnpanPopAreaItem *> Result;
-	for(ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
+	for(SheetMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
 	{
-		if(It->second.AreaId == Key)
+		for(ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
 		{
-			Result.push_back(&It->second);
+			if(It2->second.AreaId == Key)
+			{
+				Result.push_back(&It2->second);
+			}
 		}
 	}
 	return Result;
@@ -54,9 +60,12 @@ std::vector<const AnpanPopAreaItem *> AnpanPopAreaMaster::CollectItems(u32 Key) 
 std::vector<AnpanPopAreaItem> AnpanPopAreaMaster::GetAll() const
 {
 	std::vector<AnpanPopAreaItem> AllItem;
-	for (ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
+	for (SheetMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
 	{
-		AllItem.push_back(It->second);
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
 	}
 	
 	std::sort(AllItem.begin(), AllItem.end());

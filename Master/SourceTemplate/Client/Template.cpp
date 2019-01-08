@@ -21,11 +21,20 @@ void $CLASS_NAME$::Load()
 
 	MemoryStreamReader Reader(pData, DataSize);
 	Items.Empty();
-	while (true)
+	int32 SheetCount = 0;
+	int32 DataCount = 0;
+	Reader.Serialize(&SheetCount);
+	Reader.Serialize(&DataCount);
+	for (int32 i = 0; i < SheetCount; i++)
 	{
-		$ITEM_STRUCT_NAME$ Item;
-		if (!Item.Serialize(&Reader)) { break; }
-		Items.Add(Item.$KEY_NAME$, Item);
+		ItemMap ItemDic;
+		for (int32 j = 0; j < DataCount; j++)
+		{
+			$ITEM_STRUCT_NAME$ Item;
+			if (!Item.Serialize(&Reader)) { break; }
+			ItemDic.Add(Item.$KEY_NAME$, Item);
+		}
+		Items.Add(i, ItemDic);
 	}
 
 	delete[] pData;
@@ -36,7 +45,10 @@ TArray<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAll() const
 	TArray<$ITEM_STRUCT_NAME$> ItemArray;
 	for (auto KeyValue : Items)
 	{
-		ItemArray.Add(KeyValue.Value);
+		for (auto KeyValue2 : KeyValue.Value)
+		{
+			ItemArray.Add(KeyValue2.Value);
+		}
 	}
 	ItemArray.Sort([](const $ITEM_STRUCT_NAME$ &A, const $ITEM_STRUCT_NAME$ &B)
 	{

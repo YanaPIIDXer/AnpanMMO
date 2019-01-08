@@ -7,9 +7,11 @@ bool $CLASS_NAME$::Load(const MySqlConnection &Connection)
 	MySqlQuery Query = Connection.CreateQuery("select * from $MASTER_NAME$;");
 
 	$ITEM_STRUCT_NAME$ BindItem;
+	s32 Sheet = 0;
 $STRING_BIND$
 $ITEM_BIND$
 	if (!Query.ExecuteQuery()) { return false; }
+
 	while (Query.Fetch())
 	{
 		$ITEM_STRUCT_NAME$ Item;
@@ -25,9 +27,12 @@ $GET_KEY_FUNCTION$
 std::vector<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAll() const
 {
 	std::vector<$ITEM_STRUCT_NAME$> AllItem;
-	for (ItemMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
+	for (SheetMap::const_iterator It = Items.begin(); It != Items.end(); ++It)
 	{
-		AllItem.push_back(It->second);
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
 	}
 	
 	std::sort(AllItem.begin(), AllItem.end());

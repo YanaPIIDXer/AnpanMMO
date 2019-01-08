@@ -1,6 +1,6 @@
 /**
  * @file PacketTime.h
- * @brief ログイン時の時間通知
+ * @brief ログイン時の時間通知パケット
  * @author NativePacketGenerator
  */
 
@@ -13,7 +13,7 @@
 
 
 /**
- * @brief ログイン時の時間通知
+ * @brief ログイン時の時間通知パケット
  */
 class PacketTime  : public PacketBase
 {

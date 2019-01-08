@@ -1,26 +1,29 @@
 <map id="MasterData::Load" name="MasterData::Load">
-<area shape="rect" id="node2" href="$classAreaMaster.html#aa180d2f006a57a55b12b4e3500ad88c2" title="AreaMaster::Load" alt="" coords="206,175,331,201"/>
-<area shape="rect" id="node6" href="$classWarpPointMaster.html#ae7d390246de60a8cad1415c180416b8f" title="WarpPointMaster::Load" alt="" coords="189,225,348,252"/>
-<area shape="rect" id="node8" href="$classWarpDataMaster.html#a8da41eb2e54c847141b0ca5619ada80f" title="WarpDataMaster::Load" alt="" coords="191,276,347,303"/>
-<area shape="rect" id="node10" href="$classTimeInfoMaster.html#abf50a331773e9cd58deb05982fa85383" title="TimeInfoMaster::Load" alt="" coords="195,327,342,353"/>
-<area shape="rect" id="node12" href="$classNPCResourceMaster.html#a459b145c6891e6990c04ebb1ff434dd4" title="NPCResourceMaster::Load" alt="" coords="179,377,359,404"/>
-<area shape="rect" id="node14" href="$classNPCConditionMaster.html#a6e8cfb5fd685e9c4846d4d8c19d11e0e" title="NPCConditionMaster\l::Load" alt="" coords="197,429,340,470"/>
-<area shape="rect" id="node16" href="$classSkillMaster.html#a7848129c25a1126b97ada1f8ec4d31c7" title="SkillMaster::Load" alt="" coords="207,495,330,521"/>
-<area shape="rect" id="node18" href="$classItemMaster.html#a8cd62c66afb184871469e62adb243b2a" title="ItemMaster::Load" alt="" coords="207,545,330,572"/>
-<area shape="rect" id="node20" href="$classQuestMaster.html#a0ca0cf6ff8d9c19bb5046b61e010b803" title="QuestMaster::Load" alt="" coords="202,23,335,49"/>
-<area shape="rect" id="node22" href="$classQuestStageMaster.html#a3a88cb6e766f705a8cfd0ab438ea0f27" title="QuestStageMaster::Load" alt="" coords="185,73,352,100"/>
-<area shape="rect" id="node24" href="$classQuestRewardMaster.html#a0c2972af8833fe8f2dfe430daa53ee36" title="QuestRewardMaster::Load" alt="" coords="181,124,357,151"/>
-<area shape="rect" id="node3" href="$classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="411,259,589,285"/>
-<area shape="rect" id="node4" href="$structAreaItem.html#a779dbf1c315b9ed0697700323fb76a4f" title="AreaItem::Serialize" alt="" coords="434,157,566,184"/>
-<area shape="rect" id="node5" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="641,302,801,343"/>
-<area shape="rect" id="node7" href="$structWarpPointItem.html#ab8dfca126ea346b3a08d34f3241386f5" title="WarpPointItem::Serialize" alt="" coords="417,208,583,235"/>
-<area shape="rect" id="node9" href="$structWarpDataItem.html#a0722033c7864d5c7cbba633f6a64db15" title="WarpDataItem::Serialize" alt="" coords="419,309,581,336"/>
-<area shape="rect" id="node11" href="$structTimeInfoItem.html#a71c9eca415fc7a2eccb89bb16d25d95e" title="TimeInfoItem::Serialize" alt="" coords="423,360,577,387"/>
-<area shape="rect" id="node13" href="$structNPCResourceItem.html#afb20f307263c23b7d15c08217be1472a" title="NPCResourceItem::Serialize" alt="" coords="407,411,593,437"/>
-<area shape="rect" id="node15" href="$structNPCConditionItem.html#a25db0912af622746d775368efb6cddc9" title="NPCConditionItem::Serialize" alt="" coords="407,461,593,488"/>
-<area shape="rect" id="node17" href="$structSkillItem.html#a9e8f36595d60da488475eda2cd503651" title="SkillItem::Serialize" alt="" coords="435,512,565,539"/>
-<area shape="rect" id="node19" href="$structItemItem.html#a128edfb0dd0954f8b1a1972570408d15" title="ItemItem::Serialize" alt="" coords="435,563,565,589"/>
-<area shape="rect" id="node21" href="$structQuestItem.html#aa24632923020f84d8a251cac87dbbacd" title="QuestItem::Serialize" alt="" coords="430,5,570,32"/>
-<area shape="rect" id="node23" href="$structQuestStageItem.html#a33517ae4b36c10cb2966f8c20fed2ee9" title="QuestStageItem::Serialize" alt="" coords="413,56,587,83"/>
-<area shape="rect" id="node25" href="$structQuestRewardItem.html#a567b5a22a26ee15e2a53b2c3e7873c5b" title="QuestRewardItem::Serialize" alt="" coords="409,107,591,133"/>
+<area shape="rect" id="node2" href="$classAreaMaster.html#aa180d2f006a57a55b12b4e3500ad88c2" title="AreaMaster::Load" alt="" coords="206,528,331,555"/>
+<area shape="rect" id="node9" href="$classWarpPointMaster.html#ae7d390246de60a8cad1415c180416b8f" title="WarpPointMaster::Load" alt="" coords="189,224,348,251"/>
+<area shape="rect" id="node11" href="$classWarpDataMaster.html#a8da41eb2e54c847141b0ca5619ada80f" title="WarpDataMaster::Load" alt="" coords="191,376,347,403"/>
+<area shape="rect" id="node13" href="$classTimeInfoMaster.html#abf50a331773e9cd58deb05982fa85383" title="TimeInfoMaster::Load" alt="" coords="195,325,342,352"/>
+<area shape="rect" id="node15" href="$classNPCResourceMaster.html#a459b145c6891e6990c04ebb1ff434dd4" title="NPCResourceMaster::Load" alt="" coords="179,427,359,453"/>
+<area shape="rect" id="node17" href="$classNPCConditionMaster.html#a6e8cfb5fd685e9c4846d4d8c19d11e0e" title="NPCConditionMaster\l::Load" alt="" coords="197,57,340,98"/>
+<area shape="rect" id="node19" href="$classSkillMaster.html#a7848129c25a1126b97ada1f8ec4d31c7" title="SkillMaster::Load" alt="" coords="207,477,330,504"/>
+<area shape="rect" id="node21" href="$classItemMaster.html#a8cd62c66afb184871469e62adb243b2a" title="ItemMaster::Load" alt="" coords="207,123,330,149"/>
+<area shape="rect" id="node23" href="$classQuestMaster.html#a0ca0cf6ff8d9c19bb5046b61e010b803" title="QuestMaster::Load" alt="" coords="202,579,335,605"/>
+<area shape="rect" id="node25" href="$classQuestStageMaster.html#a3a88cb6e766f705a8cfd0ab438ea0f27" title="QuestStageMaster::Load" alt="" coords="185,173,352,200"/>
+<area shape="rect" id="node27" href="$classQuestRewardMaster.html#a0c2972af8833fe8f2dfe430daa53ee36" title="QuestRewardMaster::Load" alt="" coords="181,275,357,301"/>
+<area shape="rect" id="node3" href="$classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="411,376,589,403"/>
+<area shape="rect" id="node4" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="424,259,576,301"/>
+<area shape="rect" id="node7" href="$structAreaItem.html#a779dbf1c315b9ed0697700323fb76a4f" title="AreaItem::Serialize" alt="" coords="434,579,566,605"/>
+<area shape="rect" id="node5" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="641,267,808,293"/>
+<area shape="rect" id="node6" href="$classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="856,259,1019,301"/>
+<area shape="rect" id="node8" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="645,318,805,359"/>
+<area shape="rect" id="node10" href="$structWarpPointItem.html#ab8dfca126ea346b3a08d34f3241386f5" title="WarpPointItem::Serialize" alt="" coords="417,157,583,184"/>
+<area shape="rect" id="node12" href="$structWarpDataItem.html#a0722033c7864d5c7cbba633f6a64db15" title="WarpDataItem::Serialize" alt="" coords="419,427,581,453"/>
+<area shape="rect" id="node14" href="$structTimeInfoItem.html#a71c9eca415fc7a2eccb89bb16d25d95e" title="TimeInfoItem::Serialize" alt="" coords="423,325,577,352"/>
+<area shape="rect" id="node16" href="$structNPCResourceItem.html#afb20f307263c23b7d15c08217be1472a" title="NPCResourceItem::Serialize" alt="" coords="407,477,593,504"/>
+<area shape="rect" id="node18" href="$structNPCConditionItem.html#a25db0912af622746d775368efb6cddc9" title="NPCConditionItem::Serialize" alt="" coords="407,5,593,32"/>
+<area shape="rect" id="node20" href="$structSkillItem.html#a9e8f36595d60da488475eda2cd503651" title="SkillItem::Serialize" alt="" coords="435,528,565,555"/>
+<area shape="rect" id="node22" href="$structItemItem.html#a128edfb0dd0954f8b1a1972570408d15" title="ItemItem::Serialize" alt="" coords="435,56,565,83"/>
+<area shape="rect" id="node24" href="$structQuestItem.html#aa24632923020f84d8a251cac87dbbacd" title="QuestItem::Serialize" alt="" coords="430,629,570,656"/>
+<area shape="rect" id="node26" href="$structQuestStageItem.html#a33517ae4b36c10cb2966f8c20fed2ee9" title="QuestStageItem::Serialize" alt="" coords="413,107,587,133"/>
+<area shape="rect" id="node28" href="$structQuestRewardItem.html#a567b5a22a26ee15e2a53b2c3e7873c5b" title="QuestRewardItem::Serialize" alt="" coords="409,208,591,235"/>
 </map>

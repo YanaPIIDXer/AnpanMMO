@@ -126,13 +126,10 @@ bool PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	u32 CharacterId;
 	u8 Job = 0;
 	u32 Level = 0;
-	s32 MaxHp = 0;
-	s32 Atk = 0;
-	s32 Def = 0;
-	s32 Exp = 0;
+	u32 Exp = 0;
 	u32 Gold = 0;
 	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, CharacterId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, CharacterId, Name, Job, Level, Exp, Gold))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
@@ -146,7 +143,7 @@ bool PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 
 	return true;
@@ -158,7 +155,7 @@ bool PacketReceiver::OnRecvCharacterDataSaveRequest(MemoryStreamInterface *pStre
 	CachePacketCharacterDataSave Packet;
 	if (!Packet.Serialize(pStream)) { return false; }
 
-	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CharacterId, Packet.Level, Packet.MaxHp, Packet.Atk, Packet.Def, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY, Packet.LastZ))
+	if (!DBConnection::GetInstance().SaveCharacterParameter(Packet.CharacterId, Packet.Level, Packet.Exp, Packet.LastAreaId, Packet.LastX, Packet.LastY, Packet.LastZ))
 	{
 		std::cout << "Character Data Save Failed..." << std::endl;
 	}

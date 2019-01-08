@@ -4,9 +4,9 @@
 <area shape="rect" id="node21" href="$Client_8h.html" title="クライアントクラス " alt="" coords="3183,80,3249,107"/>
 <area shape="rect" id="node32" href="$PlayerCharacter_8h.html" title="プレイヤーキャラクタクラス " alt="" coords="2516,80,2743,107"/>
 <area shape="rect" id="node45" href="$ClientStateAreaChange_8h.html" title="クライアントステート：エリア切り替え " alt="" coords="1660,155,1841,196"/>
-<area shape="rect" id="node48" href="$PacketInstanceAreaTicketPublish_8h.html" title="インスタンスマップチケット発行 " alt="" coords="3819,244,4003,285"/>
-<area shape="rect" id="node49" href="$PacketInstanceAreaTicketDiscard_8h.html" title="インスタンスマップチケット破棄 " alt="" coords="4027,244,4211,285"/>
-<area shape="rect" id="node50" href="$PacketAreaMoveResponse_8h.html" title="エリア移動レスポンス " alt="" coords="4235,251,4469,278"/>
+<area shape="rect" id="node48" href="$PacketInstanceAreaTicketPublish_8h.html" title="インスタンスマップチケット発行パケット " alt="" coords="3819,244,4003,285"/>
+<area shape="rect" id="node49" href="$PacketInstanceAreaTicketDiscard_8h.html" title="インスタンスマップチケット破棄パケット " alt="" coords="4027,244,4211,285"/>
+<area shape="rect" id="node50" href="$PacketAreaMoveResponse_8h.html" title="エリア移動レスポンスパケット " alt="" coords="4235,251,4469,278"/>
 <area shape="rect" id="node5" href="$basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="632,251,792,278"/>
 <area shape="rect" id="node14" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="3453,423,3539,449"/>
 <area shape="rect" id="node17" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="2560,341,2680,367"/>

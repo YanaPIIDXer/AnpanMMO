@@ -4,7 +4,7 @@
 <area shape="rect" id="node9" href="$YesNoDialog_8h.html" title="UI/YesNoDialog.h" alt="" coords="985,80,1109,107"/>
 <area shape="rect" id="node13" href="$MMOGameInstance_8h.html" title="MMOGameInstance.h" alt="" coords="1924,80,2073,107"/>
 <area shape="rect" id="node35" href="$MasterData_8h.html" title="Master/MasterData.h" alt="" coords="3676,162,3820,189"/>
-<area shape="rect" id="node50" href="$PacketRespawnRequest_8h.html" title="プレイヤーリスポン要求 " alt="" coords="2546,244,2766,271"/>
+<area shape="rect" id="node50" href="$PacketRespawnRequest_8h.html" title="プレイヤーリスポン要求パケット " alt="" coords="2546,244,2766,271"/>
 <area shape="rect" id="node15" href="$GameServerConnection_8h.html" title="Connection/GameServerConnection.h" alt="" coords="1630,162,1869,189"/>
 <area shape="rect" id="node20" href="$PlayerStatus_8h.html" title="Character/Player/PlayerStatus.h" alt="" coords="1307,162,1517,189"/>
 <area shape="rect" id="node23" href="$ScriptExecuter_8h.html" title="Script/ScriptExecuter.h" alt="" coords="2048,244,2205,271"/>
