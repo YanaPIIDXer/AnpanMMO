@@ -1,4 +1,4 @@
 <map id="PlayerStatus::SetExp" name="PlayerStatus::SetExp">
 <area shape="rect" id="node2" href="$classAGameCharacter.html#ab9fad50521842621b66c742549937177" title="AGameCharacter::OnRecvExp" alt="" coords="202,5,401,32"/>
-<area shape="rect" id="node3" href="$classUMMOGameInstance.html#a2ffea87310c953d0105b7b399d6dd816" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="201,57,401,98"/>
+<area shape="rect" id="node3" href="$classUMMOGameInstance.html#a263bb2eabce5c549d0bff1e6f3b5ad3d" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="201,57,401,98"/>
 </map>

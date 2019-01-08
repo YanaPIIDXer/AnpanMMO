@@ -100,8 +100,8 @@ UMMOGameInstance 連携図</div>
 <tr class="separator:a9413f3171f486cb2c6cf2cd7c8584624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a742ddc60c20a96634bed311deda3e902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a742ddc60c20a96634bed311deda3e902">SendPacket</a> (<a class="el" href="classPacketBase.html">PacketBase</a> *pPacket)</td></tr>
 <tr class="separator:a742ddc60c20a96634bed311deda3e902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ffea87310c953d0105b7b399d6dd816"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a2ffea87310c953d0105b7b399d6dd816">OnRecvStatus</a> (uint32 Uuid, const FString &amp;Name, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Job, uint32 Level, int32 MaxHp, int32 Atk, int32 Def, int32 Exp, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Gold)</td></tr>
-<tr class="separator:a2ffea87310c953d0105b7b399d6dd816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263bb2eabce5c549d0bff1e6f3b5ad3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a263bb2eabce5c549d0bff1e6f3b5ad3d">OnRecvStatus</a> (uint32 Uuid, const FString &amp;Name, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Job, uint32 Level, int32 MaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit, int32 Exp, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Gold)</td></tr>
+<tr class="separator:a263bb2eabce5c549d0bff1e6f3b5ad3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab34395cf7c78172b877b3b26e26c84ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#ab34395cf7c78172b877b3b26e26c84ae">OnRecvSkillList</a> (uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4)</td></tr>
 <tr class="separator:ab34395cf7c78172b877b3b26e26c84ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affe15a66b21e82d86dd9e67bec2268ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#affe15a66b21e82d86dd9e67bec2268ef">OnRecvSkillTreeData</a> (const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="classSkillTreeNode.html">SkillTreeNode</a> &gt; &amp;Nodes)</td></tr>
@@ -741,8 +741,8 @@ UMMOGameInstance 連携図</div>
 
 </div>
 </div>
-<a id="a2ffea87310c953d0105b7b399d6dd816"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ffea87310c953d0105b7b399d6dd816">&#9670;&nbsp;</a></span>OnRecvStatus()</h2>
+<a id="a263bb2eabce5c549d0bff1e6f3b5ad3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a263bb2eabce5c549d0bff1e6f3b5ad3d">&#9670;&nbsp;</a></span>OnRecvStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -781,13 +781,31 @@ UMMOGameInstance 連携図</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int32&#160;</td>
-          <td class="paramname"><em>Atk</em>, </td>
+          <td class="paramname"><em>Str</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int32&#160;</td>
           <td class="paramname"><em>Def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>Int</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>Mnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>Vit</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -811,10 +829,10 @@ UMMOGameInstance 連携図</div>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classUMMOGameInstance_a2ffea87310c953d0105b7b399d6dd816_cgraph.png" border="0" usemap="#classUMMOGameInstance_a2ffea87310c953d0105b7b399d6dd816_cgraph" alt=""/></div>
-<map name="classUMMOGameInstance_a2ffea87310c953d0105b7b399d6dd816_cgraph" id="classUMMOGameInstance_a2ffea87310c953d0105b7b399d6dd816_cgraph">
+<div class="center"><img src="classUMMOGameInstance_a263bb2eabce5c549d0bff1e6f3b5ad3d_cgraph.png" border="0" usemap="#classUMMOGameInstance_a263bb2eabce5c549d0bff1e6f3b5ad3d_cgraph" alt=""/></div>
+<map name="classUMMOGameInstance_a263bb2eabce5c549d0bff1e6f3b5ad3d_cgraph" id="classUMMOGameInstance_a263bb2eabce5c549d0bff1e6f3b5ad3d_cgraph">
 <area shape="rect" id="node2" href="classPlayerStatus.html#a1f72782998f740f8bdcb158f9b08a0a0" title="PlayerStatus::SetUuid" alt="" coords="257,5,408,32"/>
-<area shape="rect" id="node3" href="classPlayerStatus.html#a84bbecd32a01df5aa712d08fa29d05bd" title="PlayerStatus::Set" alt="" coords="270,56,395,83"/>
+<area shape="rect" id="node3" href="classPlayerStatus.html#aa5e37379a3bf680bb8a813ffc6e259bf" title="PlayerStatus::Set" alt="" coords="270,56,395,83"/>
 <area shape="rect" id="node4" href="classPlayerStatus.html#acaf3e8499c093d1d0f0ea699a25eb930" title="PlayerStatus::SetName" alt="" coords="253,107,412,133"/>
 <area shape="rect" id="node5" href="classPlayerStatus.html#a0205213e0b878b2ae74a079fd2078951" title="PlayerStatus::SetJob" alt="" coords="260,157,405,184"/>
 <area shape="rect" id="node6" href="classPlayerStatus.html#acb7d2ec51bfe1688ca10a410e88f4a1c" title="PlayerStatus::SetExp" alt="" coords="259,208,407,235"/>
