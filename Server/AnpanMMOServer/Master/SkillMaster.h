@@ -25,12 +25,18 @@ public:
 		RANGE_CIRCLE = 1,
 		RANGE_BOX = 2,
 	};
+	enum
+	{
+		PHYSICAL = 0,
+		MAGIC = 1,
+	};
 
 
 	u32 ID;
 	std::string Name;
 	u8 SkillType;
 	u8 RangeType;
+	u8 CalcType;
 	s32 Distance;
 	s32 RangeX;
 	s32 RangeY;

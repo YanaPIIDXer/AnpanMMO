@@ -22,12 +22,18 @@ public:
 		RANGE_CIRCLE = 1,
 		RANGE_BOX = 2,
 	};
+	enum
+	{
+		PHYSICAL = 0,
+		MAGIC = 1,
+	};
 
 
 	u32 ID;
 	FString Name;
 	u8 SkillType;
 	u8 RangeType;
+	u8 CalcType;
 	s32 Distance;
 	s32 RangeX;
 	s32 RangeY;
@@ -46,6 +52,7 @@ public:
 		Name = UTF8_TO_TCHAR(StrName.c_str());
 		if(!pStream->Serialize(&SkillType)) { return false; }
 		if(!pStream->Serialize(&RangeType)) { return false; }
+		if(!pStream->Serialize(&CalcType)) { return false; }
 		if(!pStream->Serialize(&Distance)) { return false; }
 		if(!pStream->Serialize(&RangeX)) { return false; }
 		if(!pStream->Serialize(&RangeY)) { return false; }
