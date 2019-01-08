@@ -42,9 +42,8 @@ void AnpanPopArea::SpawnAnpan()
 	if (Items.size() == 0) { return; }
 	s32 PopDataIndex = Random::Range<s32>(0, Items.size() - 1);
 	const AnpanPopDataItem *pPopData = Items[PopDataIndex];
-	const AnpanItem *pAnpanItem = MasterData::GetInstance().GetAnpanMaster().GetItem(pPopData->AnpanId);
-
-	Anpan *pNewAnpan = new Anpan(Vector3D(X, Y, Z), pAnpanItem->ID, pAnpanItem->Hp, pAnpanItem->Atk, pAnpanItem->Def, pAnpanItem->Exp, pAnpanItem->Scale, pAnpanItem->DropId);
+	
+	Anpan *pNewAnpan = new Anpan(Vector3D(X, Y, Z), pPopData->AnpanId);
 	shared_ptr<Anpan> pAnpan = shared_ptr<Anpan>(pNewAnpan);
 	AnpanList.push_back(pAnpan);
 	if (SpawnFunction)

@@ -11,8 +11,11 @@ bool AnpanMaster::Load(const MySqlConnection &Connection)
 
 	Query.BindResultInt(&BindItem.ID);
 	Query.BindResultInt(&BindItem.Hp);
-	Query.BindResultInt(&BindItem.Atk);
+	Query.BindResultInt(&BindItem.Str);
 	Query.BindResultInt(&BindItem.Def);
+	Query.BindResultInt(&BindItem.Int);
+	Query.BindResultInt(&BindItem.Mnd);
+	Query.BindResultInt(&BindItem.Vit);
 	Query.BindResultInt(&BindItem.Exp);
 	Query.BindResultFloat(&BindItem.Scale);
 	Query.BindResultInt(&BindItem.DropId);
@@ -24,8 +27,11 @@ bool AnpanMaster::Load(const MySqlConnection &Connection)
 		AnpanItem Item;
 		Item.ID = BindItem.ID;
 		Item.Hp = BindItem.Hp;
-		Item.Atk = BindItem.Atk;
+		Item.Str = BindItem.Str;
 		Item.Def = BindItem.Def;
+		Item.Int = BindItem.Int;
+		Item.Mnd = BindItem.Mnd;
+		Item.Vit = BindItem.Vit;
 		Item.Exp = BindItem.Exp;
 		Item.Scale = BindItem.Scale;
 		Item.DropId = BindItem.DropId;

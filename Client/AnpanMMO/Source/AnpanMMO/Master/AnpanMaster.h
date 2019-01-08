@@ -11,10 +11,13 @@ public:
 
 
 	u32 ID;
-	s32 Hp;
-	s32 Atk;
-	s32 Def;
-	s32 Exp;
+	u32 Hp;
+	u32 Str;
+	u32 Def;
+	u32 Int;
+	u32 Mnd;
+	u32 Vit;
+	u32 Exp;
 	float Scale;
 	u32 DropId;
 
@@ -23,8 +26,11 @@ public:
 	{
 		if(!pStream->Serialize(&ID)) { return false; }
 		if(!pStream->Serialize(&Hp)) { return false; }
-		if(!pStream->Serialize(&Atk)) { return false; }
+		if(!pStream->Serialize(&Str)) { return false; }
 		if(!pStream->Serialize(&Def)) { return false; }
+		if(!pStream->Serialize(&Int)) { return false; }
+		if(!pStream->Serialize(&Mnd)) { return false; }
+		if(!pStream->Serialize(&Vit)) { return false; }
 		if(!pStream->Serialize(&Exp)) { return false; }
 		if(!pStream->Serialize(&Scale)) { return false; }
 		if(!pStream->Serialize(&DropId)) { return false; }

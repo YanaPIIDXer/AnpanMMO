@@ -69,8 +69,7 @@ void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 // ŠO•”‚©‚çSpawn‚³‚¹‚éB
 void AnpanManager::Spawn(u32 MasterId, const Vector3D &Position)
 {
-	const AnpanItem *pItem = MasterData::GetInstance().GetAnpanMaster().GetItem(MasterId);
-	Anpan *pAnpan = new Anpan(Position, pItem->ID, pItem->Hp, pItem->Atk, pItem->Def, pItem->Exp, pItem->Scale, pItem->DropId);
+	Anpan *pAnpan = new Anpan(Position, MasterId);
 	AnpanSharedPtr pSharedPtr = AnpanSharedPtr(pAnpan);
 	SpawnAnpan(pSharedPtr);
 }

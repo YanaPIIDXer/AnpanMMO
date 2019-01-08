@@ -24,14 +24,8 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] InPosition 座標
 	 * @param[in] InMasterId マスタＩＤ
-	 * @param[in] Hp ＨＰ
-	 * @param[in] Atk 攻撃力
-	 * @param[in] Def 防御力
-	 * @param[in] InExp 倒した時の経験値
-	 * @param[in] InScaleRate スケールレート
-	 * @param[in] InDropId ドロップＩＤ
 	 */
-	Anpan(const Vector3D &InPosition, u32 InMasterId, int Hp, int Atk, int Def, int InExp, float InScaleRate, u32 InDropId);
+	Anpan(const Vector3D &InPosition, u32 InMasterId);
 
 	/**
 	 * @brief デストラクタ
