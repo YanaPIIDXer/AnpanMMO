@@ -171,6 +171,7 @@
     <ClInclude Include="Master\SkillMaster.h" />
     <ClInclude Include="Master\SkillTreeMaster.h" />
     <ClInclude Include="Master\TimeInfoMaster.h" />
+    <ClInclude Include="Math\HealCalcUnit.h" />
     <ClInclude Include="Party\Party.h" />
     <ClInclude Include="Party\PartyManager.h" />
     <ClInclude Include="Quest\QuestManager.h" />
@@ -282,6 +283,7 @@
     <ClCompile Include="Master\SkillMaster.cpp" />
     <ClCompile Include="Master\SkillTreeMaster.cpp" />
     <ClCompile Include="Master\TimeInfoMaster.cpp" />
+    <ClCompile Include="Math\HealCalcUnit.cpp" />
     <ClCompile Include="Math\Vector3D.cpp" />
     <ClCompile Include="Party\Party.cpp" />
     <ClCompile Include="Party\PartyManager.cpp" />
