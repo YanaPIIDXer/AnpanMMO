@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['calctype',['CalcType',['../structSkillItem.html#a6be0131a0f8cf9b4cd8457f96fc7c89a',1,'SkillItem']]],
   ['casttime',['CastTime',['../structSkillItem.html#aaa39205e8c9b916d0917af2e9a4c0cc3',1,'SkillItem']]],
   ['charactername',['CharacterName',['../classUNoticeBase.html#abd05cd9c14f369d30f840cb00bba5085',1,'UNoticeBase::CharacterName()'],['../classUOtherPlayerMenu.html#a45535de32825ec7c6a01530c5f665a17',1,'UOtherPlayerMenu::CharacterName()'],['../classNoticeData.html#aa14b73520c1a889f58876a61f394f09c',1,'NoticeData::CharacterName()'],['../classPacketCreateCharacterRequest.html#ad365524dc4de282a633237adca345e0b',1,'PacketCreateCharacterRequest::CharacterName()'],['../classPartyMemberData.html#ab133ad42eb2aab5c83372b1597730373',1,'PartyMemberData::CharacterName()']]],
   ['charactertype',['CharacterType',['../classPacketSkillActivate.html#ada98d0626dab072b24a059d1b9d77601',1,'PacketSkillActivate::CharacterType()'],['../classPacketSkillCast.html#a17f9e3b81d22818d85e5d0e67e8395b3',1,'PacketSkillCast::CharacterType()'],['../classPacketSkillCastFinish.html#a1507a18fbe1b44dbfc874dfa02c4e686',1,'PacketSkillCastFinish::CharacterType()']]],

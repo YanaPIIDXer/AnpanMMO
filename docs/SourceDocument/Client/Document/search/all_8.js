@@ -43,6 +43,7 @@ var searchData=
   ['isskillusable',['IsSkillUsable',['../classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7',1,'AGameCharacter']]],
   ['isvaliditem',['IsValidItem',['../classUBlueprintFunctions.html#a7d83ca34a131842ae9e91e91b7176d53',1,'UBlueprintFunctions']]],
   ['item',['ITEM',['../structQuestRewardItem.html#a91e36424619a204b9ae2d0152a0fb0d8a1ea6976b9f3961f17d1af98ae46a960b',1,'QuestRewardItem']]],
+  ['item_5fheal',['ITEM_HEAL',['../structSkillItem.html#a2b24a6d88b96a1cd592f151f361c87cbafe9349a2e6bb1ec3e80862e9b236bab1',1,'SkillItem']]],
   ['itemadd',['ItemAdd',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aae41d8d8fb10bfb0bcbcc5311426aa796',1,'PacketID']]],
   ['itemdata',['ItemData',['../classItemData.html',1,'ItemData'],['../classItemData.html#a3a1b6240b016a82fa65b450f98a35f6c',1,'ItemData::ItemData()'],['../classItemData.html#aa51b1cee55620bcd0b5fbde312f9135e',1,'ItemData::ItemData(u32 InItemId, u32 InCount)']]],
   ['itemdata_2eh',['ItemData.h',['../ItemData_8h.html',1,'']]],
