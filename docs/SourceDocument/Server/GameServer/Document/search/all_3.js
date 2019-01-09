@@ -97,7 +97,7 @@ var searchData=
   ['cacheskilllistresponse',['CacheSkillListResponse',['../classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa797358705aa4d1ecc905c533b6aaa0b5',1,'CachePacketID']]],
   ['cacheskilltreerequest',['CacheSkillTreeRequest',['../classCachePacketID.html#a99a915636ffa57eb2db2da468975421aaf2945edb6a26ac1cd02a61ab4df1cb90',1,'CachePacketID']]],
   ['cacheskilltreeresponse',['CacheSkillTreeResponse',['../classCachePacketID.html#a99a915636ffa57eb2db2da468975421aa9fe9c5c86aad2e8bef1e7cc3b9c1e327',1,'CachePacketID']]],
-  ['calc',['Calc',['../classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4',1,'DamageCalcUnit']]],
+  ['calc',['Calc',['../classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4',1,'DamageCalcUnit::Calc()'],['../classHealCalcUnit.html#ae05d595115a2f6415ed7a2b770905b2d',1,'HealCalcUnit::Calc()']]],
   ['calccharbyte',['CalcCharByte',['../classUtil.html#a2098a3c7704e9486c61afcee057b68cd',1,'Util']]],
   ['calcstringlength',['CalcStringLength',['../classUtil.html#ab98a1bbec2f7cc3e8878313ec016a3c5',1,'Util']]],
   ['calctype',['CalcType',['../structSkillItem.html#a6be0131a0f8cf9b4cd8457f96fc7c89a',1,'SkillItem']]],
