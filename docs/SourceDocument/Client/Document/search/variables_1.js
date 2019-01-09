@@ -9,5 +9,9 @@ var searchData=
   ['bitfield1',['BitField1',['../classPacketScriptFlag.html#ae95c84bf10b516680f56ca99c4088165',1,'PacketScriptFlag']]],
   ['bitfield2',['BitField2',['../classPacketScriptFlag.html#a2ab586e0f9c57fde699af325088b7682',1,'PacketScriptFlag']]],
   ['bitfield3',['BitField3',['../classPacketScriptFlag.html#a62cefd8062164e46b2102f060508022b',1,'PacketScriptFlag']]],
+  ['bonusint',['BonusInt',['../structSkillItem.html#a605b23d27d6ca68ba332c7a22de97e2b',1,'SkillItem']]],
+  ['bonusmnd',['BonusMnd',['../structSkillItem.html#aac31dd83107d9203d8ed70ce84a2d5f1',1,'SkillItem']]],
+  ['bonusstr',['BonusStr',['../structSkillItem.html#a1a8671ce460998472526d7283c9356ff',1,'SkillItem']]],
+  ['bonusvit',['BonusVit',['../structSkillItem.html#a60003c6750905cc57c41a9b09f82bfbe',1,'SkillItem']]],
   ['buygold',['BuyGold',['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem']]]
 ];

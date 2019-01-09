@@ -31,7 +31,7 @@ var searchData=
   ['cachepacketskilltreerequest',['CachePacketSkillTreeRequest',['../classCachePacketSkillTreeRequest.html#a2982cf9568966382a51e3583aad76231',1,'CachePacketSkillTreeRequest::CachePacketSkillTreeRequest()'],['../classCachePacketSkillTreeRequest.html#a13660acb11901ce4f8b80c90cda986a5',1,'CachePacketSkillTreeRequest::CachePacketSkillTreeRequest(u32 InClientId, u32 InCharacterId)']]],
   ['cachepacketskilltreeresponse',['CachePacketSkillTreeResponse',['../classCachePacketSkillTreeResponse.html#a9e353e68f77b19cac7bcf5dc697b5c11',1,'CachePacketSkillTreeResponse::CachePacketSkillTreeResponse()'],['../classCachePacketSkillTreeResponse.html#ac409af5441a989a516be78cdb0b3cec4',1,'CachePacketSkillTreeResponse::CachePacketSkillTreeResponse(u32 InClientId, u8 InResult, FlexArray&lt; u32 &gt; InOpenedList)']]],
   ['cacheserverconnection',['CacheServerConnection',['../classCacheServerConnection.html#ac24b9aafd966cbfe53fe1378c5e460fc',1,'CacheServerConnection']]],
-  ['calc',['Calc',['../classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4',1,'DamageCalcUnit']]],
+  ['calc',['Calc',['../classDamageCalcUnit.html#aa7d7908cf2e97d2215f51e58ab16bcc4',1,'DamageCalcUnit::Calc()'],['../classHealCalcUnit.html#ae05d595115a2f6415ed7a2b770905b2d',1,'HealCalcUnit::Calc()']]],
   ['calccharbyte',['CalcCharByte',['../classUtil.html#a2098a3c7704e9486c61afcee057b68cd',1,'Util']]],
   ['calcstringlength',['CalcStringLength',['../classUtil.html#ab98a1bbec2f7cc3e8878313ec016a3c5',1,'Util']]],
   ['cancel',['Cancel',['../classSkillControl.html#a022eab8ffc068f5241993800e892d099',1,'SkillControl::Cancel()'],['../classboost_1_1asio_1_1basic__repeating__timer.html#a935a3e868d78ee17e093773215a9e4b5',1,'boost::asio::basic_repeating_timer::cancel()']]],

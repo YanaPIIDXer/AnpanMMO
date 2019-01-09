@@ -82,7 +82,7 @@ bool DBConnection::GetCharacterId(int Id, u32 &OutCharacterId)
 // キャラクタデータ登録.
 bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 {
-	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData(CustomerId, Name, Job, Level, MaxHp, Atk, Def, Exp, Gold, LastArea, LastX, LastY, LastZ) values(?, ?, ?, 1, 0, 0, 1, -1300.0, 4050.0, 42.0);");
+	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData(CustomerId, Name, Job, Level, Exp, Gold, LastArea, LastX, LastY, LastZ) values(?, ?, ?, 1, 0, 0, 1, -1300.0, 4050.0, 42.0);");
 	Query.BindInt(&Id);
 	Query.BindString(pCharacterName);
 	Query.BindChar(&Job);

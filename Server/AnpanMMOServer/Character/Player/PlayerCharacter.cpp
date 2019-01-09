@@ -37,8 +37,8 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	, SavePosition(Vector3D::Zero)
 {
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Level, Job);
-
-	SetParameter(Level, pItem->MaxHP, pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	u32 MaxHp = static_cast<u32>(pItem->MaxHP + (pItem->VIT * 1.5f));
+	SetParameter(Level, pItem->MaxHP, MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
 	Exp.SetLevelUpExp(pItem->NextExp);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
 	Skill.SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
@@ -209,7 +209,8 @@ void PlayerCharacter::OnLevelUp()
 	const CharacterParameter &Param = GetParameter();
 	u32 Lv = Param.Level + 1;
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Lv, Job);
-	SetParameter(Lv, Param.Hp, pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	u32 MaxHp = static_cast<u32>(pItem->MaxHP + (pItem->VIT * 1.5f));
+	SetParameter(Lv, Param.Hp, MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
 
 	Exp.SetLevelUpExp(pItem->NextExp);
 	

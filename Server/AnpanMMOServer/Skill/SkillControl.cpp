@@ -5,6 +5,7 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "Character/Anpan/Anpan.h"
 #include "Math/DamageCalcUnit.h"
+#include "Math/HealCalcUnit.h"
 #include "Math/Random.h"
 #include "State/SkillStateNutral.h"
 #include "State/SkillStateCast.h"
@@ -139,6 +140,7 @@ void SkillControl::Activate()
 
 			case SkillItem::HEAL:
 			case SkillItem::BUFF:
+			case SkillItem::ITEM_HEAL:
 
 				TargetType = pOwner->GetCharacterType();
 				break;
@@ -167,7 +169,7 @@ void SkillControl::Activate()
 			case SkillItem::ATTACK:
 
 				{
-					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());
+					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter(), pItem);
 					s32 Value = Calc.Calc();
 					Targets[i]->ApplyDamage(pOwner->shared_from_this(), Value);
 					if (Targets[i]->IsDead() && OnKilledFunc)
@@ -178,10 +180,9 @@ void SkillControl::Activate()
 				break;
 
 			case SkillItem::HEAL:
-
+			case SkillItem::ITEM_HEAL:
 				{
-					// @HACK:とりあえずダメージ計算ユニットを使用。
-					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter());
+					HealCalcUnit Calc(pOwner->GetParameter(), pItem);
 					s32 Value = Calc.Calc();
 					Targets[i]->Heal(Value);
 				}

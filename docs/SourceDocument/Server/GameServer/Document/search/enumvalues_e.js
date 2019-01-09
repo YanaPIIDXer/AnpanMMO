@@ -17,6 +17,7 @@ var searchData=
   ['partykick',['PartyKick',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad7a534458f611f39d4862e452b3c5be6',1,'PacketID']]],
   ['partykickrequest',['PartyKickRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa44dcc9a91f67ed62452b1efa68467fb9',1,'PacketID']]],
   ['partykickresult',['PartyKickResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa13f0061166353c45286cfba153dc4277',1,'PacketID']]],
+  ['physical',['PHYSICAL',['../structSkillItem.html#af16a4269928b1fc7cff4e5479eef6cd1ac92b84fab41da3ac5e1501daf263c44c',1,'SkillItem']]],
   ['ping',['Ping',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa3043f49e99a80d6a671133660ad90445',1,'PacketID']]],
   ['player',['Player',['../classCharacterType.html#a44253929affb003781a00d30d81e8fbca2a43b075b8c89b4fae1f7bc9075cecac',1,'CharacterType']]],
   ['playerlist',['PlayerList',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa7388906f745c4b846c4143a815068588',1,'PacketID']]],

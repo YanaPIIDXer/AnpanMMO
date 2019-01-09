@@ -1,7 +1,7 @@
 var searchData=
 [
   ['damage',['Damage',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf93a5d0a569eba849ba5ad707dd9a453',1,'PacketID']]],
-  ['damagecalcunit',['DamageCalcUnit',['../classDamageCalcUnit.html',1,'DamageCalcUnit'],['../classDamageCalcUnit.html#ad12529bfb7edff2df371826786baee8b',1,'DamageCalcUnit::DamageCalcUnit()']]],
+  ['damagecalcunit',['DamageCalcUnit',['../classDamageCalcUnit.html',1,'DamageCalcUnit'],['../classDamageCalcUnit.html#a6082c19b917487f067c3e441a8738b45',1,'DamageCalcUnit::DamageCalcUnit()']]],
   ['damagecalcunit_2ecpp',['DamageCalcUnit.cpp',['../DamageCalcUnit_8cpp.html',1,'']]],
   ['damagecalcunit_2eh',['DamageCalcUnit.h',['../DamageCalcUnit_8h.html',1,'']]],
   ['damagevalue',['DamageValue',['../classPacketDamage.html#a05650b44c14401ca55b787a22ca123c1',1,'PacketDamage']]],
