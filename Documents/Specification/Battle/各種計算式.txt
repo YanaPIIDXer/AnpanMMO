@@ -11,6 +11,10 @@
 ・魔法ダメージ計算式
 　└(Attacker.INT * 1.5f) - (Defender.MND + Defender.VIT) + ブレ
 
+・クリティカルヒット
+　└一律１０％の確立で発生。
+　　発生時は防御側のステータスを無視する。
+
 ・回復計算式
 　└Attacker.INT + Attacker.MND + ブレ
 　　※アイテムの場合はキャラクタのパラメータは無視する。
