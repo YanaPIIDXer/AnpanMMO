@@ -536,6 +536,21 @@ bool DBConnection::EraseQuestData(u32 CharacterId, u32 QuestId)
 	return true;
 }
 
+// 装備データ保存.
+bool DBConnection::SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip)
+{
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set RightEquip = ?, LeftEquip = ? where CharacterId = ?");
+
+	Query.BindInt(&RightEquip);
+	Query.BindInt(&LeftEquip);
+	Query.BindInt(&CharacterId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
+
+
 // ユーザデータ登録.
 bool DBConnection::RegisterUserData(char *pUserCode)
 {

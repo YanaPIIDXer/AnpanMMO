@@ -111,6 +111,12 @@ private:
 	// アクティブクエスト保存を受信した。
 	bool OnRecvSaveActiveQuest(MemoryStreamInterface *pStream);
 
+	// 装備変更リクエストを受信した。
+	bool OnRecvChangeEquipRequest(MemoryStreamInterface *pStream);
+
+	// キャッシュサーバから装備保存レスポンスを受信した。
+	bool OnRecvCacheSaveEquipResponse(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

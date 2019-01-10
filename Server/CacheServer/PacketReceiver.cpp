@@ -32,6 +32,8 @@
 #include "Packet/CachePacketSaveQuestDataRequest.h"
 #include "Packet/CachePacketQuestRetireRequest.h"
 #include "Packet/CachePacketSaveActiveQuestRequest.h"
+#include "Packet/CachePacketSaveEquipRequest.h"
+#include "Packet/CachePacketSaveEquipResponse.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -56,6 +58,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CachePacketID::CacheSaveQuestDataRequest, bind(&PacketReceiver::OnRecvSaveQuestDataRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheQuestRetireRequest, bind(&PacketReceiver::OnRecvRetireQuestDataRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheSaveActiveQuestRequest, bind(&PacketReceiver::OnRecvSaveActiveQuestRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheSaveEquipRequest, bind(&PacketReceiver::OnRecvSaveEquipRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -414,6 +417,24 @@ bool PacketReceiver::OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream
 	{
 		std::cout << "Save Active Quest Failed..." << std::endl;
 	}
+
+	return true;
+}
+
+// 装備データ保存リクエストを受信した。
+bool PacketReceiver::OnRecvSaveEquipRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveEquipRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	u8 Result = CachePacketSaveEquipResponse::Success;
+	if (!DBConnection::GetInstance().SaveEquipData(Packet.CharacterId, Packet.RightEquip, Packet.LeftEquip))
+	{
+		Result = CachePacketSaveEquipResponse::Error;
+	}
+
+	CachePacketSaveEquipResponse ResponsePacket(Packet.ClientId, Result, Packet.RightEquip, Packet.LeftEquip);
+	pParent->SendPacket(&ResponsePacket);
 
 	return true;
 }

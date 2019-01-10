@@ -84,6 +84,9 @@ public:
 	// クエストデータ破棄.
 	bool EraseQuestData(u32 CharacterId, u32 QuestId);
 
+	// 装備データ保存.
+	bool SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip);
+
 private:
 
 	// ユーザ情報を格納したファイル名.
