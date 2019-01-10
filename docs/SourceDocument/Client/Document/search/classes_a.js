@@ -6,6 +6,8 @@ var searchData=
   ['packetareamoverequest',['PacketAreaMoveRequest',['../classPacketAreaMoveRequest.html',1,'']]],
   ['packetareamoveresponse',['PacketAreaMoveResponse',['../classPacketAreaMoveResponse.html',1,'']]],
   ['packetbase',['PacketBase',['../classPacketBase.html',1,'']]],
+  ['packetchangeequiprequest',['PacketChangeEquipRequest',['../classPacketChangeEquipRequest.html',1,'']]],
+  ['packetchangeequipresult',['PacketChangeEquipResult',['../classPacketChangeEquipResult.html',1,'']]],
   ['packetchangegold',['PacketChangeGold',['../classPacketChangeGold.html',1,'']]],
   ['packetcharacterstatus',['PacketCharacterStatus',['../classPacketCharacterStatus.html',1,'']]],
   ['packetcreatecharacterrequest',['PacketCreateCharacterRequest',['../classPacketCreateCharacterRequest.html',1,'']]],

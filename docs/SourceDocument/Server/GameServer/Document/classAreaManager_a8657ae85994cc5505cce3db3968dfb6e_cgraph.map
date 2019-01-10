@@ -2,8 +2,8 @@
 <area shape="rect" id="node2" href="$classTickManager.html#a44630fd94539427412fe786f4433a43c" title="TickManager::GetInstance" alt="" coords="213,5,388,32"/>
 <area shape="rect" id="node3" href="$classTickManager.html#a57d2db48c1b5b4d2275907cc2cf6d93a" title="TickManager::Add" alt="" coords="237,56,364,83"/>
 <area shape="rect" id="node4" href="$classAreaManager.html#ac0828bd808dc51d9671037b08f7ac968" title="毎フレームの処理 " alt="" coords="236,107,365,133"/>
-<area shape="rect" id="node5" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="217,157,384,184"/>
-<area shape="rect" id="node6" href="$classMasterData.html#a9037642db7f7d98ab6c5f4c10ac7da54" title="MasterData::GetAreaMaster" alt="" coords="208,208,393,235"/>
+<area shape="rect" id="node5" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="217,157,384,184"/>
+<area shape="rect" id="node6" href="$classMasterData.html#a0656b3ccba1f0154c9bd947e1eda8f76" title="エリアマスタ取得 " alt="" coords="208,208,393,235"/>
 <area shape="rect" id="node7" href="$classAreaMaster.html#a1ea25f3c62579991f17e40c71f258466" title="AreaMaster::GetAll" alt="" coords="234,259,367,285"/>
 <area shape="rect" id="node8" href="$classAreaMaster.html#a175e017dfad239b491c04445c6b6e161" title="AreaMaster::GetItem" alt="" coords="229,309,372,336"/>
 <area shape="rect" id="node9" href="$classAreaBase.html#ae74987dcc73ea4aaab94ba432cc608ea" title="初期化 " alt="" coords="233,360,368,387"/>

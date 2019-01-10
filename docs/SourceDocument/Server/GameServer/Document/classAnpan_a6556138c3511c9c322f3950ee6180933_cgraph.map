@@ -1,8 +1,8 @@
 <map id="Anpan::Anpan" name="Anpan::Anpan">
 <area shape="rect" id="node2" href="$classCharacterBase.html#a3989fc3d743766bc9554060e98b5e6a0" title="座標を設定 " alt="" coords="164,5,347,32"/>
 <area shape="rect" id="node3" href="$classCharacterBase.html#a0d7d36bb07aecc589d8c8a351748ff8b" title="回転を設定 " alt="" coords="168,56,343,83"/>
-<area shape="rect" id="node4" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="172,107,339,133"/>
-<area shape="rect" id="node5" href="$classMasterData.html#ac1370cf9c1b3e99c881c1fc4d478673b" title="MasterData::GetAnpanMaster" alt="" coords="158,157,353,184"/>
+<area shape="rect" id="node4" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="172,107,339,133"/>
+<area shape="rect" id="node5" href="$classMasterData.html#a02373623e3a616f9cd7151b73b33c1b9" title="アンパンマスタ取得 " alt="" coords="158,157,353,184"/>
 <area shape="rect" id="node6" href="$classAnpanMaster.html#a4773a0d4382d818067d757923b708c5e" title="AnpanMaster::GetItem" alt="" coords="179,208,332,235"/>
 <area shape="rect" id="node7" href="$classCharacterBase.html#a8c8072099a88a09a479980dce1fbd394" title="パラメータを設定 " alt="" coords="157,259,353,285"/>
 </map>

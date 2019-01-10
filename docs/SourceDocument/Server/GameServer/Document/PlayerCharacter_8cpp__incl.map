@@ -5,7 +5,7 @@
 <area shape="rect" id="node17" href="$Client_8h.html" title="クライアントクラス " alt="" coords="1109,87,1176,114"/>
 <area shape="rect" id="node22" href="$Random_8h.html" title="Math/Random.h" alt="" coords="3739,87,3853,114"/>
 <area shape="rect" id="node25" href="$AreaManager_8h.html" title="Area/AreaManager.h" alt="" coords="437,177,579,203"/>
-<area shape="rect" id="node26" href="$MasterData_8h.html" title="Master/MasterData.h" alt="" coords="3877,87,4021,114"/>
+<area shape="rect" id="node26" href="$MasterData_8h.html" title="マスタデータクラス " alt="" coords="3877,87,4021,114"/>
 <area shape="rect" id="node37" href="$CacheServerConnection_8h.html" title="キャッシュサーバとの接続クラス " alt="" coords="1200,87,1448,114"/>
 <area shape="rect" id="node38" href="$CachePacketCharacterDataSave_8h.html" title="キャラクタ保存リクエストパケット " alt="" coords="4046,80,4247,121"/>
 <area shape="rect" id="node39" href="$CachePacketGoldSave_8h.html" title="ゴールド保存リクエストパケット " alt="" coords="4272,87,4483,114"/>

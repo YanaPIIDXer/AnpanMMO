@@ -1,6 +1,6 @@
 <map id="QuestManager::Retire" name="QuestManager::Retire">
-<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="216,5,383,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#ab431aba99ba187018dd71971310db14f" title="MasterData::GetQuestMaster" alt="" coords="203,56,396,83"/>
+<area shape="rect" id="node2" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="216,5,383,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a85202214827a5746c84fc59a9a281b2f" title="クエストマスタ取得 " alt="" coords="203,56,396,83"/>
 <area shape="rect" id="node4" href="$classQuestMaster.html#aa17cfbdae4294444252f64aeef106f84" title="QuestMaster::GetItem" alt="" coords="224,107,375,133"/>
 <area shape="rect" id="node5" href="$classClient.html#a2fab4ff0f437d04f49917829c8e6a6aa" title="UUIDを取得. " alt="" coords="244,157,355,184"/>
 <area shape="rect" id="node6" href="$classClient.html#a0cda75c99767496a10a7a4e559a8f877" title="キャラクタを取得. " alt="" coords="229,208,369,235"/>

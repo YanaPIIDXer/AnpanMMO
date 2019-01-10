@@ -1,7 +1,10 @@
 var searchData=
 [
   ['cancel',['Cancel',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a8f4e90f57decf1616e01c471b7d31e39',1,'PacketSkillUseFailed']]],
+  ['cannotremoverightequip',['CanNotRemoveRightEquip',['../classPacketChangeEquipResult.html#a25f7bc4e626fe16cf83726fed8e7ddcba636410133a715dc913fec77ac815d09a',1,'PacketChangeEquipResult']]],
   ['cast',['Cast',['../SkillStateBase_8h.html#a1c04a4ee3c5d7bd26f9b7e7262f18b96a4cd9f3996d60790cd11c04f842ebc43c',1,'SkillStateBase.h']]],
+  ['changeequiprequest',['ChangeEquipRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa2fe100e18316d59f9588eb09fd672b9f',1,'PacketID']]],
+  ['changeequipresult',['ChangeEquipResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aae981205ed166f2381c725ffd171c5a14',1,'PacketID']]],
   ['changegold',['ChangeGold',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaaf47e0277f381f03210df720df611a6e',1,'PacketID']]],
   ['characterstatus',['CharacterStatus',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad71bb8468369f6e7d230d944462f913e',1,'PacketID']]],
   ['cleared',['Cleared',['../classQuestData.html#a9ed9c55d4742f2f55539926963f74394a2d9d115198e012397f73deb3c6e44fb6',1,'QuestData']]],

@@ -6,6 +6,8 @@ var searchData=
   ['packetareamoverequest_2eh',['PacketAreaMoveRequest.h',['../PacketAreaMoveRequest_8h.html',1,'']]],
   ['packetareamoveresponse_2eh',['PacketAreaMoveResponse.h',['../PacketAreaMoveResponse_8h.html',1,'']]],
   ['packetbase_2eh',['PacketBase.h',['../PacketBase_8h.html',1,'']]],
+  ['packetchangeequiprequest_2eh',['PacketChangeEquipRequest.h',['../PacketChangeEquipRequest_8h.html',1,'']]],
+  ['packetchangeequipresult_2eh',['PacketChangeEquipResult.h',['../PacketChangeEquipResult_8h.html',1,'']]],
   ['packetchangegold_2eh',['PacketChangeGold.h',['../PacketChangeGold_8h.html',1,'']]],
   ['packetcharacterstatus_2eh',['PacketCharacterStatus.h',['../PacketCharacterStatus_8h.html',1,'']]],
   ['packetcreatecharacterrequest_2eh',['PacketCreateCharacterRequest.h',['../PacketCreateCharacterRequest_8h.html',1,'']]],
