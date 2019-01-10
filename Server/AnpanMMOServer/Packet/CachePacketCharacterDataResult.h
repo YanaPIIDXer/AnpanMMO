@@ -50,6 +50,10 @@ public:
 	s32 Exp;
 	//! ゴールド
 	u32 Gold;
+	//! 右手装備
+	u32 RightEquip;
+	//! 左手装備
+	u32 LeftEquip;
 	//! 最終ログアウトエリアＩＤ
 	u32 LastAreaId;
 	//! 最終ログアウトＸ座標
@@ -70,7 +74,7 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	CachePacketCharacterDataResult(u32 InClientId, u32 InCharacterId, u8 InResult, std::string InName, u8 InJob, u32 InLevel, s32 InExp, u32 InGold, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
+	CachePacketCharacterDataResult(u32 InClientId, u32 InCharacterId, u8 InResult, std::string InName, u8 InJob, u32 InLevel, s32 InExp, u32 InGold, u32 InRightEquip, u32 InLeftEquip, u32 InLastAreaId, float InLastX, float InLastY, float InLastZ)
 	{
 		ClientId = InClientId;
 		CharacterId = InCharacterId;
@@ -80,6 +84,8 @@ public:
 		Level = InLevel;
 		Exp = InExp;
 		Gold = InGold;
+		RightEquip = InRightEquip;
+		LeftEquip = InLeftEquip;
 		LastAreaId = InLastAreaId;
 		LastX = InLastX;
 		LastY = InLastY;
@@ -104,6 +110,8 @@ public:
 		pStream->Serialize(&Level);
 		pStream->Serialize(&Exp);
 		pStream->Serialize(&Gold);
+		pStream->Serialize(&RightEquip);
+		pStream->Serialize(&LeftEquip);
 		pStream->Serialize(&LastAreaId);
 		pStream->Serialize(&LastX);
 		pStream->Serialize(&LastY);

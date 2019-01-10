@@ -31,7 +31,7 @@ public:
 	bool RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job);
 
 	// キャラクタパラメータ読み込み
-	bool LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, u32 &OutExp, u32 &OutGold);
+	bool LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, u32 &OutExp, u32 &OutGold, u32 &OutRightEquip, u32 &OutLeftEquip);
 
 	// キャラクタパラメータ書き込み
 	bool SaveCharacterParameter(u32 CharacterId, u32 Level, u32 Exp, int AreaId, float X, float Y, float Z);

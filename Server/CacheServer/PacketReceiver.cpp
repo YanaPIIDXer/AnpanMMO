@@ -128,8 +128,10 @@ bool PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	u32 Level = 0;
 	u32 Exp = 0;
 	u32 Gold = 0;
+	u32 RightEquip = 0;
+	u32 LeftEquip = 0;
 	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, CharacterId, Name, Job, Level, Exp, Gold))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, CharacterId, Name, Job, Level, Exp, Gold, RightEquip, LeftEquip))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
@@ -143,7 +145,7 @@ bool PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, Exp, Gold, RightEquip, LeftEquip, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 
 	return true;
