@@ -30,12 +30,14 @@ CREATE TABLE `CharacterData` (
   `Level` int(10) unsigned DEFAULT NULL,
   `Exp` int(11) DEFAULT NULL,
   `Gold` int(10) unsigned DEFAULT NULL,
+  `RightEquip` int(10) unsigned DEFAULT NULL,
+  `LeftEquip` int(10) unsigned DEFAULT NULL,
   `LastArea` int(10) unsigned DEFAULT NULL,
   `LastX` float DEFAULT NULL,
   `LastY` float DEFAULT NULL,
   `LastZ` float DEFAULT NULL,
   PRIMARY KEY (`CharacterId`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +144,7 @@ CREATE TABLE `UserData` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserCode` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -154,4 +156,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-07 18:53:45
+-- Dump completed on 2019-01-10 15:45:33
