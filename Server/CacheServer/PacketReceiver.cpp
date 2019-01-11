@@ -175,17 +175,16 @@ bool PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
 	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = CachePacketSkillListResponse::Success;
-	u32 NormalAttackId = 0;
 	u32 Skill1 = 0;
 	u32 Skill2 = 0;
 	u32 Skill3 = 0;
 	u32 Skill4 = 0;
-	if (!DBConnection::GetInstance().LoadSkillList(Packet.CharacterId, NormalAttackId, Skill1, Skill2, Skill3, Skill4))
+	if (!DBConnection::GetInstance().LoadSkillList(Packet.CharacterId, Skill1, Skill2, Skill3, Skill4))
 	{
 		Result = CachePacketSkillListResponse::Error;
 	}
 
-	CachePacketSkillListResponse ResponsePacket(Packet.ClientId, Result, NormalAttackId, Skill1, Skill2, Skill3, Skill4);
+	CachePacketSkillListResponse ResponsePacket(Packet.ClientId, Result, Skill1, Skill2, Skill3, Skill4);
 	pParent->SendPacket(&ResponsePacket);
 
 	return true;

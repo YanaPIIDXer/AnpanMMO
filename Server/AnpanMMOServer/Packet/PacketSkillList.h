@@ -29,8 +29,6 @@ public:
 
 	
 
-	//! ’ÊíUŒ‚‚h‚c
-	u32 NormalAttack;
 	//! ƒXƒLƒ‹‚h‚c‚P
 	u32 Skill1;
 	//! ƒXƒLƒ‹‚h‚c‚Q
@@ -51,9 +49,8 @@ public:
 	/**
 	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
-	PacketSkillList(u32 InNormalAttack, u32 InSkill1, u32 InSkill2, u32 InSkill3, u32 InSkill4)
+	PacketSkillList(u32 InSkill1, u32 InSkill2, u32 InSkill3, u32 InSkill4)
 	{
-		NormalAttack = InNormalAttack;
 		Skill1 = InSkill1;
 		Skill2 = InSkill2;
 		Skill3 = InSkill3;
@@ -70,7 +67,6 @@ public:
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&NormalAttack);
 		pStream->Serialize(&Skill1);
 		pStream->Serialize(&Skill2);
 		pStream->Serialize(&Skill3);

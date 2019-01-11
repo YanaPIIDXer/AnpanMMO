@@ -218,7 +218,7 @@ bool ClientStateTitle::OnRecvCacheSkillListResponse(MemoryStreamInterface *pStre
 		return true;
 	}
 
-	PacketSkillList SkillListPacket(Packet.NormalAttackId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
+	PacketSkillList SkillListPacket(Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	GetParent()->SendPacket(&SkillListPacket);
 
 	// スキルツリー情報を要求.

@@ -83,34 +83,30 @@ bool DBConnection::GetCharacterId(int Id, u32 &OutCharacterId)
 bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 {
 	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData(CustomerId, Name, Job, Level, Exp, Gold, RightEquip, LeftEquip, LastArea, LastX, LastY, LastZ) values(?, ?, ?, 1, 0, 0, ?, ?, 1, -1300.0, 4050.0, 42.0);");
-	// テーブル生成.
-	u32 NormalAttackId = 0;
+
+	// 初期装備.
 	u32 RightEquip = 0;
 	u32 LeftEquip = 0;
 	switch (Job)
 	{
 		case CharacterJob::Fighter:
 
-			NormalAttackId = 1;
 			RightEquip = 10001;
 			LeftEquip = 10002;
 			break;
 
 		case CharacterJob::Sorcerer:
 
-			NormalAttackId = 6;
 			RightEquip = 10003;
 			break;
 
 		case CharacterJob::Healer:
 
-			NormalAttackId = 10;
 			RightEquip = 10004;
 			break;
 
 		case CharacterJob::Lancer:
 
-			NormalAttackId = 14;
 			RightEquip = 10005;
 			break;
 	}
@@ -133,9 +129,8 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 	if (!Query.Fetch()) { return false; }
 	Query.Close();
 
-	Query = Connection.CreateQuery("insert into SkillData Values(?, ?, 0, 0, 0, 0);");
+	Query = Connection.CreateQuery("insert into SkillData Values(?, 0, 0, 0, 0);");
 	Query.BindInt(&CharacterId);
-	Query.BindInt(&NormalAttackId);
 	if (!Query.ExecuteQuery()) { return false; }
 	
 	return true;
@@ -184,11 +179,10 @@ bool DBConnection::SaveCharacterParameter(u32 CharacterId, u32 Level, u32 Exp, i
 }
 
 // スキルリスト読み込み
-bool DBConnection::LoadSkillList(u32 CharacterId, u32 &OutNormalAttackId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4)
+bool DBConnection::LoadSkillList(u32 CharacterId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4)
 {
-	MySqlQuery Query = Connection.CreateQuery("select NormalAttackId, Skill1, Skill2, Skill3, Skill4 from SkillData where CharacterId = ?;");
+	MySqlQuery Query = Connection.CreateQuery("select Skill1, Skill2, Skill3, Skill4 from SkillData where CharacterId = ?;");
 	Query.BindInt(&CharacterId);
-	Query.BindResultInt(&OutNormalAttackId);
 	Query.BindResultInt(&OutSkill1);
 	Query.BindResultInt(&OutSkill2);
 	Query.BindResultInt(&OutSkill3);

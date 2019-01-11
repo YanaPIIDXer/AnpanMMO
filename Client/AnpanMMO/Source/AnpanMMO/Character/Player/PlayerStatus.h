@@ -35,6 +35,9 @@ public:
 		Vit = InVit;
 	}
 
+	// 装備をセット
+	void SetEquip(uint32 InRightEquipId, uint32 InLeftEquipId);
+
 	// 経験値セット
 	void SetExp(int32 InExp) { Exp = InExp; }
 
@@ -87,8 +90,14 @@ public:
 	// 経験値取得.
 	int32 GetExp() const { return Exp; }
 
+	// 右手装備ＩＤを取得.
+	uint32 GetRightEquipId() const { return RightEquipId; }
+
+	// 左手装備ＩＤを取得.
+	uint32 GetLeftEquipId() const { return LeftEquipId; }
+
 	// スキルリストをセット。
-	void SetSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
+	void SetSkillList(uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
 
 	// スキルリストを取得.
 	const TArray<uint32> &GetSkillList() const { return SkillList; }
@@ -151,6 +160,12 @@ private:
 
 	// ゴールド
 	uint32 Gold;
+
+	// 右手装備ＩＤ
+	uint32 RightEquipId;
+
+	// 右手装備ＩＤ
+	uint32 LeftEquipId;
 
 	// スキルリスト
 	TArray<uint32> SkillList;

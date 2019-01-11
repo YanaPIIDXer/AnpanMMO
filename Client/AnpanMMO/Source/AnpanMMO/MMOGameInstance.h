@@ -50,10 +50,10 @@ public:
 	void SendPacket(PacketBase *pPacket);
 
 	// ステータスを受信した。
-	void OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, uint32 Level, int32 MaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit, int32 Exp, u32 Gold);
+	void OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, uint32 Level, int32 MaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit, int32 Exp, uint32 Gold, uint32 RightEquipId, uint32 LeftEquipId);
 
 	// スキルリストを受信した。
-	void OnRecvSkillList(uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
+	void OnRecvSkillList(uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4);
 
 	// スキルツリーデータを受信した。
 	void OnRecvSkillTreeData(const FlexArray<SkillTreeNode> &Nodes);
