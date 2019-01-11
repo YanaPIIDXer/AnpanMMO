@@ -261,6 +261,7 @@
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateNonActive.cpp" />
     <ClCompile Include="Character\Anpan\Anpan.cpp" />
     <ClCompile Include="Character\CharacterBase.cpp" />
+    <ClCompile Include="Character\CharacterParameter.cpp" />
     <ClCompile Include="Character\Player\PlayerCharacter.cpp" />
     <ClCompile Include="Character\Player\PlayerExp.cpp" />
     <ClCompile Include="Client.cpp" />

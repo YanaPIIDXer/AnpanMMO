@@ -23,7 +23,7 @@ int HealCalcUnit::Calc() const
 	int Value = pSkillParam->BonusInt + pSkillParam->BonusMnd;
 	if (pSkillParam->CalcType != SkillItem::ITEM_HEAL)
 	{
-		Value += CharaParam.Int + CharaParam.Mnd;
+		Value += CharaParam.GetInt() + CharaParam.GetMnd();
 	}
 
 	Value += Random::Range<int>(0, CorrectionMaxValue);

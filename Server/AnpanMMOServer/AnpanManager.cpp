@@ -61,7 +61,7 @@ void AnpanManager::MakeListPacket(PacketAnpanList &Packet)
 		AnpanSharedPtr pAnpan = It->second;
 		const CharacterParameter &Param = pAnpan->GetParameter();
 		const Vector3D Position = pAnpan->GetPosition();
-		AnpanData Data(It->first,pAnpan->GetMasterId(),  Position.X, Position.Y, Position.Z, pAnpan->GetRotation().Get(),Param.Hp, Param.MaxHp);
+		AnpanData Data(It->first,pAnpan->GetMasterId(),  Position.X, Position.Y, Position.Z, pAnpan->GetRotation().Get(),Param.GetHp(), Param.GetMaxHp());
 		Packet.List.PushBack(Data);
 	}
 }

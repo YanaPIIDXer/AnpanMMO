@@ -40,7 +40,7 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	LeftEquip.Set(LeftEquipId);
 
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Level, Job);
-	u32 MaxHp = static_cast<u32>(pItem->MaxHP + (pItem->VIT * 1.5f));
+	u32 MaxHp = static_cast<u32>(pItem->MaxHP + ((pItem->VIT + RightEquip.GetVit() + LeftEquip.GetVit()) * 1.5f));
 	SetParameter(Level, pItem->MaxHP, MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
 	Exp.SetLevelUpExp(pItem->NextExp);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
@@ -139,7 +139,7 @@ u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 	}
 
 	// レベルチェック
-	if (GetParameter().Level < pItem->NeedLevel)
+	if (GetParameter().GetLevel() < pItem->NeedLevel)
 	{
 		return PacketSkillTreeOpenResult::NotEnoughLevel;
 	}
@@ -232,14 +232,14 @@ void PlayerCharacter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
 void PlayerCharacter::OnLevelUp()
 {
 	const CharacterParameter &Param = GetParameter();
-	u32 Lv = Param.Level + 1;
+	u32 Lv = Param.GetLevel() + 1;
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Lv, Job);
-	u32 MaxHp = static_cast<u32>(pItem->MaxHP + (pItem->VIT * 1.5f));
-	SetParameter(Lv, Param.Hp, MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	u32 MaxHp = static_cast<u32>(pItem->MaxHP + ((pItem->VIT + RightEquip.GetVit() + LeftEquip.GetVit()) * 1.5f));
+	SetParameter(Lv, Param.GetHp(), MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
 
 	Exp.SetLevelUpExp(pItem->NextExp);
 	
-	PacketLevelUp Packet(Param.Level, Param.MaxHp, Param.Str, Param.Def, Param.Int, Param.Mnd, Param.Vit, Exp.Get());
+	PacketLevelUp Packet(Param.GetLevel(), Param.GetMaxHp(), Param.GetNaturalStr(), Param.GetNaturalDef(), Param.GetNaturalInt(), Param.GetNaturalMnd(), Param.GetNaturalVit(), Exp.Get());
 	GetClient()->SendPacket(&Packet);
 
 	SaveParameter();
@@ -251,7 +251,7 @@ void PlayerCharacter::SaveParameter()
 	const CharacterParameter &Param = GetParameter();
 	if (SaveAreaId == 0) { return; }		// まだエリアに属していない。
 	Client *pClient = GetClient();
-	CachePacketCharacterDataSave Packet(pClient->GetUuid(), CharacterId, Param.Level, Exp.Get(), SaveAreaId, SavePosition.X, SavePosition.Y, SavePosition.Z);
+	CachePacketCharacterDataSave Packet(pClient->GetUuid(), CharacterId, Param.GetLevel(), Exp.Get(), SaveAreaId, SavePosition.X, SavePosition.Y, SavePosition.Z);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }
 

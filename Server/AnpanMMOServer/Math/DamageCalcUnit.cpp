@@ -22,8 +22,8 @@ DamageCalcUnit::DamageCalcUnit(const CharacterParameter &InAttackerParam, const 
 // ŒvŽZ.
 int DamageCalcUnit::Calc() const
 {
-	int Atk = static_cast<int>(((pSkillParam->CalcType == SkillItem::PHYSICAL) ? AttackerParam.Str + pSkillParam->BonusStr : AttackerParam.Int + pSkillParam->BonusInt) * 1.5f);
-	int Def = ((pSkillParam->CalcType == SkillItem::PHYSICAL) ? DefencerParam.Def : DefencerParam.Mnd) + DefencerParam.Vit;
+	int Atk = static_cast<int>(((pSkillParam->CalcType == SkillItem::PHYSICAL) ? AttackerParam.GetStr() + pSkillParam->BonusStr : AttackerParam.GetInt() + pSkillParam->BonusInt) * 1.5f);
+	int Def = ((pSkillParam->CalcType == SkillItem::PHYSICAL) ? DefencerParam.GetDef() : DefencerParam.GetMnd()) + DefencerParam.GetVit();
 	
 	if (Random::Range<int>(0, 100) <= CriticalRate)
 	{
