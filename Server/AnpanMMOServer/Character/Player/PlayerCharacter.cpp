@@ -37,7 +37,7 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	, SavePosition(Vector3D::Zero)
 {
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Level, Job);
-	SetParameter(Level, pItem->MaxHP, pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	SetParameter(Level, pItem->MaxHP, pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT, true);
 	ChangeEquipData(RightEquipId, LeftEquipId);
 	Exp.SetLevelUpExp(pItem->NextExp);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
@@ -238,7 +238,7 @@ void PlayerCharacter::OnLevelUp()
 	const CharacterParameter &Param = GetParameter();
 	u32 Lv = Param.GetLevel() + 1;
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Lv, Job);
-	SetParameter(Lv, Param.GetHp(), pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	SetParameter(Lv, Param.GetHp(), pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT, true);
 
 	Exp.SetLevelUpExp(pItem->NextExp);
 	

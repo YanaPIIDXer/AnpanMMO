@@ -19,7 +19,7 @@ Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId)
 	SetPosition(InPosition);
 	SetRotate(Rotation(180.0f));
 	const AnpanItem *pItem = MasterData::GetInstance().GetAnpanMaster().GetItem(InMasterId);
-	SetParameter(1, pItem->Hp, pItem->Hp, pItem->Str, pItem->Def, pItem->Int, pItem->Mnd, pItem->Vit);
+	SetParameter(1, pItem->Hp, pItem->Hp, pItem->Str, pItem->Def, pItem->Int, pItem->Mnd, pItem->Vit, false);
 	Exp = pItem->Exp;
 	ScaleRate = pItem->Scale;
 	DropId = pItem->DropId;

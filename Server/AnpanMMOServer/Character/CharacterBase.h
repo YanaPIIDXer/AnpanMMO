@@ -243,10 +243,11 @@ protected:
 	 * @param[in] Int INT
 	 * @param[in] Mnd MND
 	 * @param[in] Vit VIT
+	 * @param[in] bIsVitAffectMaxHp VITÇ™ç≈ëÂÇgÇoÇ…âeãøÇ∑ÇÈÇ©ÅH
 	 */
-	void SetParameter(u32 Level, u32 Hp, u32 MaxHp, u32 Str, u32 Def, u32 Int, u32 Mnd, u32 Vit)
+	void SetParameter(u32 Level, u32 Hp, u32 MaxHp, u32 Str, u32 Def, u32 Int, u32 Mnd, u32 Vit, bool bIsVitAffectMaxHp)
 	{
-		Parameter.Set(Level, Hp, MaxHp, Str, Def, Int, Mnd, Vit);
+		Parameter.Set(Level, Hp, MaxHp, Str, Def, Int, Mnd, Vit, bIsVitAffectMaxHp);
 	}
 
 	/**

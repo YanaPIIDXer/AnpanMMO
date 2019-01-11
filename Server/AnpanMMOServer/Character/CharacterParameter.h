@@ -38,8 +38,9 @@ public:
 	 * @param[in] InInt INT
 	 * @param[in] InMnd MND
 	 * @param[in] InVit VIT
+	 * @param[in] bIsVitAffectMaxHp VIT‚ªÅ‘å‚g‚o‚É‰e‹¿‚·‚é‚©H
 	 */
-	void Set(u32 InLevel, u32 InHp, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit);
+	void Set(u32 InLevel, u32 InHp, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, bool bIsVitAffectMaxHp);
 
 	/**1
 	 * @fn u32 GetLevel() const
@@ -67,35 +68,35 @@ public:
 	 * @brief STRæ“¾
 	 * @return STR
 	 */
-	u32 GetStr() const { return Str; }
+	u32 GetStr() const { return (Str + RightEquip.GetStr() + LeftEquip.GetStr()); }
 
 	/**
 	 * @fn u32 GetNaturalDef() const
 	 * @brief DEFæ“¾
 	 * @return DEF
 	 */
-	u32 GetDef() const { return Def; }
+	u32 GetDef() const { return (Def + RightEquip.GetDef() + LeftEquip.GetDef()); }
 
 	/**
 	 * @fn u32 GetNaturalInt() const
 	 * @brief INTæ“¾
 	 * @return INT
 	 */
-	u32 GetInt() const { return Int; }
+	u32 GetInt() const { return (Int + RightEquip.GetInt() + LeftEquip.GetInt()); }
 
 	/**
 	 * @fn u32 GetNaturalMnd() const
 	 * @brief MNDæ“¾
 	 * @return MND
 	 */
-	u32 GetMnd() const { return Mnd; }
+	u32 GetMnd() const { return (Mnd + RightEquip.GetMnd() + LeftEquip.GetMnd()); }
 
 	/**
 	 * @fn u32 GetNaturalVit() const
 	 * @brief VITæ“¾
 	 * @return VIT
 	 */
-	u32 GetVit() const { return Vit; }
+	u32 GetVit() const { return (Vit + RightEquip.GetVit() + LeftEquip.GetVit()); }
 
 	/**
 	 * @fn u32 GetNaturalStr() const
@@ -193,6 +194,9 @@ private:
 	// Å‘åHP
 	u32 MaxHp;
 
+	// Šî–{Å‘å‚g‚o
+	u32 BaseMaxHp;
+
 	// STR
 	u32 Str;
 
@@ -213,6 +217,11 @@ private:
 
 	// ¶è‘•”õ.
 	EquipData LeftEquip;
+
+
+	// Å‘å‚g‚o‚ÌÄŒvZ.
+	// ¦VIT‚ğl—¶‚·‚éB
+	void RecalcMaxHp();
 
 };
 

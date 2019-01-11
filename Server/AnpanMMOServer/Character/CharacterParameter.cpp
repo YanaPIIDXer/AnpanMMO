@@ -6,6 +6,7 @@ CharacterParameter::CharacterParameter()
 	: Level(1)
 	, Hp(1)
 	, MaxHp(1)
+	, BaseMaxHp(1)
 	, Str(0)
 	, Def(0)
 	, Int(0)
@@ -15,16 +16,22 @@ CharacterParameter::CharacterParameter()
 }
 
 // ÉpÉâÉÅÅ[É^ÇÉZÉbÉg
-void CharacterParameter::Set(u32 InLevel, u32 InHp, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit)
+void CharacterParameter::Set(u32 InLevel, u32 InHp, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, bool bIsVitAffectMaxHp)
 {
 	Level = InLevel;
 	Hp = InHp;
 	MaxHp = InMaxHp;
+	BaseMaxHp = InMaxHp;
 	Str = InStr;
 	Def = InDef;
 	Int = InInt;
 	Mnd = InMnd;
 	Vit = InVit;
+
+	if (bIsVitAffectMaxHp)
+	{
+		RecalcMaxHp();
+	}
 }
 
 // ÇgÇoëùâ¡
@@ -55,4 +62,13 @@ void CharacterParameter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
 {
 	RightEquip.Set(RightEquipId);
 	LeftEquip.Set(LeftEquipId);
+
+	RecalcMaxHp();
+}
+
+
+// ç≈ëÂÇgÇoÇÃçƒåvéZ.
+void CharacterParameter::RecalcMaxHp()
+{
+	MaxHp = BaseMaxHp + static_cast<u32>(GetVit() * 1.5f);
 }
