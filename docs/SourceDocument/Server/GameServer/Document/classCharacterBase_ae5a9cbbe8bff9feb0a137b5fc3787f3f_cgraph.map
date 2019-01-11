@@ -1,4 +1,6 @@
 <map id="CharacterBase::ApplyDamage" name="CharacterBase::ApplyDamage">
-<area shape="rect" id="node2" href="$classCharacterBase.html#aae4de3ac831bde03b410551d5f9617b1" title="キャラクタタイプを取得 " alt="" coords="251,5,472,32"/>
-<area shape="rect" id="node3" href="$classCharacterBase.html#a7cc3802bf635805f38f9e08110efc264" title="ダメージを受けた " alt="" coords="267,56,455,83"/>
+<area shape="rect" id="node2" href="$classCharacterParameter.html#aa62827e5551c4306bf449f81716c86a2" title="ＨＰ減算 " alt="" coords="292,5,431,47"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#aae4de3ac831bde03b410551d5f9617b1" title="キャラクタタイプを取得 " alt="" coords="251,71,472,98"/>
+<area shape="rect" id="node4" href="$classCharacterParameter.html#a5f3196e32e1cdf4ca94d2e839067e0e1" title="現在ＨＰ取得 " alt="" coords="292,123,431,164"/>
+<area shape="rect" id="node5" href="$classCharacterBase.html#a7cc3802bf635805f38f9e08110efc264" title="ダメージを受けた " alt="" coords="267,189,455,215"/>
 </map>

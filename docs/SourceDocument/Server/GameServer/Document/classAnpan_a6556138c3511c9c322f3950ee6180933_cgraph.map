@@ -4,5 +4,6 @@
 <area shape="rect" id="node4" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="172,107,339,133"/>
 <area shape="rect" id="node5" href="$classMasterData.html#a02373623e3a616f9cd7151b73b33c1b9" title="アンパンマスタ取得 " alt="" coords="158,157,353,184"/>
 <area shape="rect" id="node6" href="$classAnpanMaster.html#a4773a0d4382d818067d757923b708c5e" title="AnpanMaster::GetItem" alt="" coords="179,208,332,235"/>
-<area shape="rect" id="node7" href="$classCharacterBase.html#a8c8072099a88a09a479980dce1fbd394" title="パラメータを設定 " alt="" coords="157,259,353,285"/>
+<area shape="rect" id="node7" href="$classCharacterBase.html#a37a64aabcc122f7587056677fae8cddc" title="パラメータを設定 " alt="" coords="157,259,353,285"/>
+<area shape="rect" id="node8" href="$classCharacterParameter.html#a44106401f62ae2a3694c24b4755b4884" title="パラメータをセット " alt="" coords="401,259,568,285"/>
 </map>

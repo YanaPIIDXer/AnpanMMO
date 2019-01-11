@@ -81,6 +81,8 @@ $(function() {
 <tr class="separator:a1f72782998f740f8bdcb158f9b08a0a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5e37379a3bf680bb8a813ffc6e259bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#aa5e37379a3bf680bb8a813ffc6e259bf">Set</a> (uint32 InLevel, int32 InMaxHp, int32 InStr, int32 InDef, int32 InInt, int32 InMnd, int32 InVit)</td></tr>
 <tr class="separator:aa5e37379a3bf680bb8a813ffc6e259bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8cb82bdf9c727af0a188a753f2351ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#ae8cb82bdf9c727af0a188a753f2351ee">SetEquip</a> (uint32 InRightEquipId, uint32 InLeftEquipId)</td></tr>
+<tr class="separator:ae8cb82bdf9c727af0a188a753f2351ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb7d2ec51bfe1688ca10a410e88f4a1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#acb7d2ec51bfe1688ca10a410e88f4a1c">SetExp</a> (int32 InExp)</td></tr>
 <tr class="separator:acb7d2ec51bfe1688ca10a410e88f4a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acaf3e8499c093d1d0f0ea699a25eb930"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#acaf3e8499c093d1d0f0ea699a25eb930">SetName</a> (const FString &amp;InName)</td></tr>
@@ -113,8 +115,12 @@ $(function() {
 <tr class="separator:af490d65b3b9ec574f68bbbb42fc18839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b6de7c354b36a1d3b9367e7dcda6831"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#a6b6de7c354b36a1d3b9367e7dcda6831">GetExp</a> () const</td></tr>
 <tr class="separator:a6b6de7c354b36a1d3b9367e7dcda6831"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6a59599065bf2ef2c4bcb181714dab9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#ab6a59599065bf2ef2c4bcb181714dab9">SetSkillList</a> (uint32 NormalAttack, uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4)</td></tr>
-<tr class="separator:ab6a59599065bf2ef2c4bcb181714dab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891a642428474bb64ef9d4fe40ab24d9"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#a891a642428474bb64ef9d4fe40ab24d9">GetRightEquipId</a> () const</td></tr>
+<tr class="separator:a891a642428474bb64ef9d4fe40ab24d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62508f582caa721b916607a8fe7f1ea8"><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#a62508f582caa721b916607a8fe7f1ea8">GetLeftEquipId</a> () const</td></tr>
+<tr class="separator:a62508f582caa721b916607a8fe7f1ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f01153e9a03d9c35913337bc4a1f8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#a18f01153e9a03d9c35913337bc4a1f8b">SetSkillList</a> (uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4)</td></tr>
+<tr class="separator:a18f01153e9a03d9c35913337bc4a1f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a010bdb5c134639bcd8403a039814af72"><td class="memItemLeft" align="right" valign="top">const TArray&lt; uint32 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#a010bdb5c134639bcd8403a039814af72">GetSkillList</a> () const</td></tr>
 <tr class="separator:a010bdb5c134639bcd8403a039814af72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad91030072833a617192904d4b3081e2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerStatus.html#ad91030072833a617192904d4b3081e2e">OpenSkillTreeNode</a> (uint32 NodeId)</td></tr>
@@ -382,6 +388,31 @@ $(function() {
 
 </div>
 </div>
+<a id="a62508f582caa721b916607a8fe7f1ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62508f582caa721b916607a8fe7f1ea8">&#9670;&nbsp;</a></span>GetLeftEquipId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 PlayerStatus::GetLeftEquipId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0dd6a409633825655358fef3cb639233"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0dd6a409633825655358fef3cb639233">&#9670;&nbsp;</a></span>GetLevel()</h2>
 
@@ -491,6 +522,31 @@ $(function() {
 
 </div>
 </div>
+<a id="a891a642428474bb64ef9d4fe40ab24d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a891a642428474bb64ef9d4fe40ab24d9">&#9670;&nbsp;</a></span>GetRightEquipId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 PlayerStatus::GetRightEquipId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a010bdb5c134639bcd8403a039814af72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a010bdb5c134639bcd8403a039814af72">&#9670;&nbsp;</a></span>GetSkillList()</h2>
 
@@ -518,9 +574,8 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classPlayerStatus_a010bdb5c134639bcd8403a039814af72_icgraph.png" border="0" usemap="#classPlayerStatus_a010bdb5c134639bcd8403a039814af72_icgraph" alt=""/></div>
 <map name="classPlayerStatus_a010bdb5c134639bcd8403a039814af72_icgraph" id="classPlayerStatus_a010bdb5c134639bcd8403a039814af72_icgraph">
-<area shape="rect" id="node2" href="classAGameCharacter.html#a1456594a9a8782496ae8be3054567bd8" title="AGameCharacter::UseNormal\lAttackSkill" alt="" coords="239,5,433,47"/>
-<area shape="rect" id="node3" href="classAGameCharacter.html#a78768138a67f8c68a7877003fc06d4ec" title="AGameCharacter::OnRecvSkillList" alt="" coords="225,71,447,98"/>
-<area shape="rect" id="node4" href="classUSkillListWidget.html#ad9ecfbac60879726f37fe93e892de3a7" title="USkillListWidget::Init" alt="" coords="265,122,407,149"/>
+<area shape="rect" id="node2" href="classAGameCharacter.html#a1456594a9a8782496ae8be3054567bd8" title="AGameCharacter::UseNormal\lAttackSkill" alt="" coords="225,5,420,47"/>
+<area shape="rect" id="node3" href="classUSkillListWidget.html#ad9ecfbac60879726f37fe93e892de3a7" title="USkillListWidget::Init" alt="" coords="251,71,394,98"/>
 </map>
 </div>
 
@@ -780,7 +835,53 @@ $(function() {
 <div class="center"><img src="classPlayerStatus_aa5e37379a3bf680bb8a813ffc6e259bf_icgraph.png" border="0" usemap="#classPlayerStatus_aa5e37379a3bf680bb8a813ffc6e259bf_icgraph" alt=""/></div>
 <map name="classPlayerStatus_aa5e37379a3bf680bb8a813ffc6e259bf_icgraph" id="classPlayerStatus_aa5e37379a3bf680bb8a813ffc6e259bf_icgraph">
 <area shape="rect" id="node2" href="classAGameCharacter.html#aaa2e33f7ca0ef1423c089e24f785a5de" title="AGameCharacter::OnRecvLevelUp" alt="" coords="179,5,399,32"/>
-<area shape="rect" id="node3" href="classUMMOGameInstance.html#a263bb2eabce5c549d0bff1e6f3b5ad3d" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="189,57,389,98"/>
+<area shape="rect" id="node3" href="classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="189,57,389,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae8cb82bdf9c727af0a188a753f2351ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8cb82bdf9c727af0a188a753f2351ee">&#9670;&nbsp;</a></span>SetEquip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerStatus::SetEquip </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>InRightEquipId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>InLeftEquipId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlayerStatus_ae8cb82bdf9c727af0a188a753f2351ee_cgraph.png" border="0" usemap="#classPlayerStatus_ae8cb82bdf9c727af0a188a753f2351ee_cgraph" alt=""/></div>
+<map name="classPlayerStatus_ae8cb82bdf9c727af0a188a753f2351ee_cgraph" id="classPlayerStatus_ae8cb82bdf9c727af0a188a753f2351ee_cgraph">
+<area shape="rect" id="node2" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="224,5,391,32"/>
+<area shape="rect" id="node3" href="classMasterData.html#ab041e8310948666fdc41b458ef93684f" title="MasterData::GetEquipMaster" alt="" coords="212,56,403,83"/>
+<area shape="rect" id="node4" href="classEquipMaster.html#a522f97f9167da3b47e469b864d59fc46" title="EquipMaster::Get" alt="" coords="245,107,369,133"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlayerStatus_ae8cb82bdf9c727af0a188a753f2351ee_icgraph.png" border="0" usemap="#classPlayerStatus_ae8cb82bdf9c727af0a188a753f2351ee_icgraph" alt=""/></div>
+<map name="classPlayerStatus_ae8cb82bdf9c727af0a188a753f2351ee_icgraph" id="classPlayerStatus_ae8cb82bdf9c727af0a188a753f2351ee_icgraph">
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="212,5,412,47"/>
 </map>
 </div>
 
@@ -815,7 +916,7 @@ $(function() {
 <div class="center"><img src="classPlayerStatus_acb7d2ec51bfe1688ca10a410e88f4a1c_icgraph.png" border="0" usemap="#classPlayerStatus_acb7d2ec51bfe1688ca10a410e88f4a1c_icgraph" alt=""/></div>
 <map name="classPlayerStatus_acb7d2ec51bfe1688ca10a410e88f4a1c_icgraph" id="classPlayerStatus_acb7d2ec51bfe1688ca10a410e88f4a1c_icgraph">
 <area shape="rect" id="node2" href="classAGameCharacter.html#ab9fad50521842621b66c742549937177" title="AGameCharacter::OnRecvExp" alt="" coords="202,5,401,32"/>
-<area shape="rect" id="node3" href="classUMMOGameInstance.html#a263bb2eabce5c549d0bff1e6f3b5ad3d" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="201,57,401,98"/>
+<area shape="rect" id="node3" href="classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="201,57,401,98"/>
 </map>
 </div>
 
@@ -849,7 +950,7 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classPlayerStatus_ae7a8bfe26b6ede12d4121cd9d4e03b82_icgraph.png" border="0" usemap="#classPlayerStatus_ae7a8bfe26b6ede12d4121cd9d4e03b82_icgraph" alt=""/></div>
 <map name="classPlayerStatus_ae7a8bfe26b6ede12d4121cd9d4e03b82_icgraph" id="classPlayerStatus_ae7a8bfe26b6ede12d4121cd9d4e03b82_icgraph">
-<area shape="rect" id="node2" href="classUMMOGameInstance.html#a263bb2eabce5c549d0bff1e6f3b5ad3d" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="205,5,405,47"/>
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="205,5,405,47"/>
 </map>
 </div>
 
@@ -883,7 +984,7 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classPlayerStatus_a0205213e0b878b2ae74a079fd2078951_icgraph.png" border="0" usemap="#classPlayerStatus_a0205213e0b878b2ae74a079fd2078951_icgraph" alt=""/></div>
 <map name="classPlayerStatus_a0205213e0b878b2ae74a079fd2078951_icgraph" id="classPlayerStatus_a0205213e0b878b2ae74a079fd2078951_icgraph">
-<area shape="rect" id="node2" href="classUMMOGameInstance.html#a263bb2eabce5c549d0bff1e6f3b5ad3d" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="199,5,399,47"/>
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="199,5,399,47"/>
 </map>
 </div>
 
@@ -917,14 +1018,14 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classPlayerStatus_acaf3e8499c093d1d0f0ea699a25eb930_icgraph.png" border="0" usemap="#classPlayerStatus_acaf3e8499c093d1d0f0ea699a25eb930_icgraph" alt=""/></div>
 <map name="classPlayerStatus_acaf3e8499c093d1d0f0ea699a25eb930_icgraph" id="classPlayerStatus_acaf3e8499c093d1d0f0ea699a25eb930_icgraph">
-<area shape="rect" id="node2" href="classUMMOGameInstance.html#a263bb2eabce5c549d0bff1e6f3b5ad3d" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="212,5,412,47"/>
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="212,5,412,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ab6a59599065bf2ef2c4bcb181714dab9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6a59599065bf2ef2c4bcb181714dab9">&#9670;&nbsp;</a></span>SetSkillList()</h2>
+<a id="a18f01153e9a03d9c35913337bc4a1f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f01153e9a03d9c35913337bc4a1f8b">&#9670;&nbsp;</a></span>SetSkillList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -932,12 +1033,6 @@ $(function() {
         <tr>
           <td class="memname">void PlayerStatus::SetSkillList </td>
           <td>(</td>
-          <td class="paramtype">uint32&#160;</td>
-          <td class="paramname"><em>NormalAttack</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>Skill1</em>, </td>
         </tr>
@@ -969,10 +1064,10 @@ $(function() {
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classPlayerStatus_ab6a59599065bf2ef2c4bcb181714dab9_icgraph.png" border="0" usemap="#classPlayerStatus_ab6a59599065bf2ef2c4bcb181714dab9_icgraph" alt=""/></div>
-<map name="classPlayerStatus_ab6a59599065bf2ef2c4bcb181714dab9_icgraph" id="classPlayerStatus_ab6a59599065bf2ef2c4bcb181714dab9_icgraph">
+<div class="center"><img src="classPlayerStatus_a18f01153e9a03d9c35913337bc4a1f8b_icgraph.png" border="0" usemap="#classPlayerStatus_a18f01153e9a03d9c35913337bc4a1f8b_icgraph" alt=""/></div>
+<map name="classPlayerStatus_a18f01153e9a03d9c35913337bc4a1f8b_icgraph" id="classPlayerStatus_a18f01153e9a03d9c35913337bc4a1f8b_icgraph">
 <area shape="rect" id="node2" href="classAGameCharacter.html#a78768138a67f8c68a7877003fc06d4ec" title="AGameCharacter::OnRecvSkillList" alt="" coords="224,5,445,32"/>
-<area shape="rect" id="node3" href="classUMMOGameInstance.html#ab34395cf7c78172b877b3b26e26c84ae" title="UMMOGameInstance::OnRecv\lSkillList" alt="" coords="235,57,435,98"/>
+<area shape="rect" id="node3" href="classUMMOGameInstance.html#aef1c277209192ed1f92de2aa1e5383ef" title="UMMOGameInstance::OnRecv\lSkillList" alt="" coords="235,57,435,98"/>
 </map>
 </div>
 
@@ -1006,7 +1101,7 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classPlayerStatus_a1f72782998f740f8bdcb158f9b08a0a0_icgraph.png" border="0" usemap="#classPlayerStatus_a1f72782998f740f8bdcb158f9b08a0a0_icgraph" alt=""/></div>
 <map name="classPlayerStatus_a1f72782998f740f8bdcb158f9b08a0a0_icgraph" id="classPlayerStatus_a1f72782998f740f8bdcb158f9b08a0a0_icgraph">
-<area shape="rect" id="node2" href="classUMMOGameInstance.html#a263bb2eabce5c549d0bff1e6f3b5ad3d" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="204,5,404,47"/>
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="204,5,404,47"/>
 </map>
 </div>
 

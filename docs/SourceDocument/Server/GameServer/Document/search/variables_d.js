@@ -9,8 +9,7 @@ var searchData=
   ['nodes',['Nodes',['../classPacketSkillTreeData.html#ad4d84a1474b06030cab97435dddd2c28',1,'PacketSkillTreeData']]],
   ['nodex',['NodeX',['../structSkillTreeItem.html#a05a5bd40f3e06c03f4b05da330a0768f',1,'SkillTreeItem']]],
   ['nodey',['NodeY',['../structSkillTreeItem.html#ab0b1ee2d0f350bdab863f39f6ddae2be',1,'SkillTreeItem']]],
-  ['normalattack',['NormalAttack',['../classPacketSkillList.html#a0ec996adb72b34a7bd81cb26b89a8861',1,'PacketSkillList']]],
-  ['normalattackid',['NormalAttackId',['../structEquipItem.html#a24f94345e209a72be198c49cb223a610',1,'EquipItem::NormalAttackId()'],['../classCachePacketSkillListResponse.html#ab632c06e1d9f14a20b33d5962f9c839d',1,'CachePacketSkillListResponse::NormalAttackId()']]],
+  ['normalattackid',['NormalAttackId',['../structEquipItem.html#a24f94345e209a72be198c49cb223a610',1,'EquipItem']]],
   ['notice',['Notice',['../classPacketReceiveNotice.html#a208b86e55ca7dcc99a225d911bcfacf9',1,'PacketReceiveNotice']]],
   ['notices',['Notices',['../classPacketNoticeList.html#a226e59bdd901282b9305af196cd96291',1,'PacketNoticeList']]]
 ];

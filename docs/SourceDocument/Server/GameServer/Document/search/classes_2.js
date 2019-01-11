@@ -36,7 +36,7 @@ var searchData=
   ['cacheserverconnection',['CacheServerConnection',['../classCacheServerConnection.html',1,'']]],
   ['characterbase',['CharacterBase',['../classCharacterBase.html',1,'']]],
   ['characterjob',['CharacterJob',['../classCharacterJob.html',1,'']]],
-  ['characterparameter',['CharacterParameter',['../structCharacterParameter.html',1,'']]],
+  ['characterparameter',['CharacterParameter',['../classCharacterParameter.html',1,'']]],
   ['charactertype',['CharacterType',['../classCharacterType.html',1,'']]],
   ['client',['Client',['../classClient.html',1,'']]],
   ['clientacceptor',['ClientAcceptor',['../classClientAcceptor.html',1,'']]],
