@@ -1,0 +1,5 @@
+<map id="EquipItem::Serialize" name="EquipItem::Serialize">
+<area shape="rect" id="node2" href="$classEquipMaster.html#a25c6554e13b2009086bf29ba25f048ac" title="EquipMaster::Load" alt="" coords="192,13,323,39"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="371,13,496,39"/>
+<area shape="rect" id="node4" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="544,5,692,47"/>
+</map>

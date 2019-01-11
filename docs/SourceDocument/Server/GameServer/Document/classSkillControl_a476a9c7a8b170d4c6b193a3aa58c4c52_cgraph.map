@@ -2,8 +2,8 @@
 <area shape="rect" id="node2" href="$classCharacterBase.html#aae4de3ac831bde03b410551d5f9617b1" title="キャラクタタイプを取得 " alt="" coords="416,38,637,65"/>
 <area shape="rect" id="node3" href="$classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e" title="UUIDを取得 " alt="" coords="445,89,608,116"/>
 <area shape="rect" id="node4" href="$classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="445,140,609,166"/>
-<area shape="rect" id="node5" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="911,241,1077,268"/>
-<area shape="rect" id="node6" href="$classMasterData.html#ae5d4b7d43fbffbb2373ff7bf206ad775" title="MasterData::GetSkillMaster" alt="" coords="903,494,1085,521"/>
+<area shape="rect" id="node5" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="911,241,1077,268"/>
+<area shape="rect" id="node6" href="$classMasterData.html#a213b969cdb1c13284888a50329d47817" title="スキルマスタ取得 " alt="" coords="903,494,1085,521"/>
 <area shape="rect" id="node7" href="$classSkillMaster.html#a334ecf5a777ef70179f7888cff26e053" title="SkillMaster::GetItem" alt="" coords="923,596,1065,622"/>
 <area shape="rect" id="node8" href="$classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="225,292,368,318"/>
 <area shape="rect" id="node9" href="$classCharacterBase.html#a9a6d6ce1d34c4c7eaa3c3610552c04f3" title="座標を取得 " alt="" coords="435,292,619,318"/>

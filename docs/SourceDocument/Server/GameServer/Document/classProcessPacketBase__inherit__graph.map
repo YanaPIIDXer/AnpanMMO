@@ -17,19 +17,21 @@
 <area shape="rect" id="node18" href="$classCachePacketQuestDataResponse.html" title="クエストデータレスポンスパケット " alt="" coords="342,842,562,869"/>
 <area shape="rect" id="node19" href="$classCachePacketQuestRetireRequest.html" title="クエスト破棄リクエストパケット " alt="" coords="343,893,561,919"/>
 <area shape="rect" id="node20" href="$classCachePacketSaveActiveQuestRequest.html" title="アクティブクエスト保存リクエストパケット " alt="" coords="353,944,551,985"/>
-<area shape="rect" id="node21" href="$classCachePacketSaveItemShortcutRequest.html" title="アイテムショートカット保存リクエストパケット " alt="" coords="351,1009,553,1051"/>
-<area shape="rect" id="node22" href="$classCachePacketSaveItemShortcutResponse.html" title="アイテムショートカット保存レスポンスパケット " alt="" coords="351,1075,553,1116"/>
-<area shape="rect" id="node23" href="$classCachePacketSaveQuestDataRequest.html" title="クエストデータ保存リクエストパケット " alt="" coords="357,1140,547,1181"/>
-<area shape="rect" id="node24" href="$classCachePacketSaveSkillListRequest.html" title="スキルリスト保存リクエストパケット " alt="" coords="365,1205,539,1247"/>
-<area shape="rect" id="node25" href="$classCachePacketSaveSkillListResponse.html" title="スキルリスト保存レスポンスパケット " alt="" coords="365,1271,539,1312"/>
-<area shape="rect" id="node26" href="$classCachePacketScriptFlagRequest.html" title="スクリプトフラグリクエストパケット " alt="" coords="349,1337,555,1363"/>
-<area shape="rect" id="node27" href="$classCachePacketScriptFlagResponse.html" title="スクリプトフラグレスポンスパケット " alt="" coords="343,1387,561,1414"/>
-<area shape="rect" id="node28" href="$classCachePacketScriptFlagSaveRequest.html" title="スクリプトフラグ保存リクエストパケット " alt="" coords="359,1439,545,1480"/>
-<area shape="rect" id="node29" href="$classCachePacketSkillListRequest.html" title="スキルリストリクエストパケット " alt="" coords="355,1505,549,1531"/>
-<area shape="rect" id="node30" href="$classCachePacketSkillListResponse.html" title="スキルリストレスポンスパケット " alt="" coords="350,1555,554,1582"/>
-<area shape="rect" id="node31" href="$classCachePacketSkillTreeRequest.html" title="スキルツリーリクエストパケット " alt="" coords="353,1606,551,1633"/>
-<area shape="rect" id="node32" href="$classCachePacketSkillTreeResponse.html" title="スキルツリーレスポンスパケット " alt="" coords="348,1657,556,1683"/>
-<area shape="rect" id="node33" href="$classWordCheckPacketChatRequest.html" title="ワードチェック要求パケット " alt="" coords="349,1707,555,1734"/>
-<area shape="rect" id="node34" href="$classWordCheckPacketChatResult.html" title="ワードチェック結果パケット " alt="" coords="355,1758,549,1785"/>
-<area shape="rect" id="node2" href="$classPacketBase.html" title="PacketBase" alt="" coords="5,867,99,894"/>
+<area shape="rect" id="node21" href="$classCachePacketSaveEquipRequest.html" title="装備保存リクエストパケット " alt="" coords="347,1010,557,1037"/>
+<area shape="rect" id="node22" href="$classCachePacketSaveEquipResponse.html" title="装備保存レスポンスパケット " alt="" coords="343,1061,561,1087"/>
+<area shape="rect" id="node23" href="$classCachePacketSaveItemShortcutRequest.html" title="アイテムショートカット保存リクエストパケット " alt="" coords="351,1112,553,1153"/>
+<area shape="rect" id="node24" href="$classCachePacketSaveItemShortcutResponse.html" title="アイテムショートカット保存レスポンスパケット " alt="" coords="351,1177,553,1219"/>
+<area shape="rect" id="node25" href="$classCachePacketSaveQuestDataRequest.html" title="クエストデータ保存リクエストパケット " alt="" coords="357,1243,547,1284"/>
+<area shape="rect" id="node26" href="$classCachePacketSaveSkillListRequest.html" title="スキルリスト保存リクエストパケット " alt="" coords="365,1308,539,1349"/>
+<area shape="rect" id="node27" href="$classCachePacketSaveSkillListResponse.html" title="スキルリスト保存レスポンスパケット " alt="" coords="365,1373,539,1415"/>
+<area shape="rect" id="node28" href="$classCachePacketScriptFlagRequest.html" title="スクリプトフラグリクエストパケット " alt="" coords="349,1439,555,1466"/>
+<area shape="rect" id="node29" href="$classCachePacketScriptFlagResponse.html" title="スクリプトフラグレスポンスパケット " alt="" coords="343,1490,561,1517"/>
+<area shape="rect" id="node30" href="$classCachePacketScriptFlagSaveRequest.html" title="スクリプトフラグ保存リクエストパケット " alt="" coords="359,1541,545,1583"/>
+<area shape="rect" id="node31" href="$classCachePacketSkillListRequest.html" title="スキルリストリクエストパケット " alt="" coords="355,1607,549,1634"/>
+<area shape="rect" id="node32" href="$classCachePacketSkillListResponse.html" title="スキルリストレスポンスパケット " alt="" coords="350,1658,554,1685"/>
+<area shape="rect" id="node33" href="$classCachePacketSkillTreeRequest.html" title="スキルツリーリクエストパケット " alt="" coords="353,1709,551,1735"/>
+<area shape="rect" id="node34" href="$classCachePacketSkillTreeResponse.html" title="スキルツリーレスポンスパケット " alt="" coords="348,1759,556,1786"/>
+<area shape="rect" id="node35" href="$classWordCheckPacketChatRequest.html" title="ワードチェック要求パケット " alt="" coords="349,1810,555,1837"/>
+<area shape="rect" id="node36" href="$classWordCheckPacketChatResult.html" title="ワードチェック結果パケット " alt="" coords="355,1861,549,1887"/>
+<area shape="rect" id="node2" href="$classPacketBase.html" title="PacketBase" alt="" coords="5,922,99,949"/>
 </map>

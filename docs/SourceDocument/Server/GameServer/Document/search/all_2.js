@@ -42,5 +42,5 @@ var searchData=
   ['broadcastpacketwithrange',['BroadcastPacketWithRange',['../classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd',1,'AreaBase::BroadcastPacketWithRange()'],['../classPlayerManager.html#a412aaba35447720310431e86be6e6d71',1,'PlayerManager::BroadcastPacketWithRange()']]],
   ['broadcastpublishpacket',['BroadcastPublishPacket',['../classInstanceAreaTicket.html#a0f45150525636b152c1e742871651ae1',1,'InstanceAreaTicket']]],
   ['buff',['BUFF',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a44e0350819ac71d7233ea746b08bab44',1,'SkillItem']]],
-  ['buygold',['BuyGold',['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem']]]
+  ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]]
 ];

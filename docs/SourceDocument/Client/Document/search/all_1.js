@@ -22,5 +22,5 @@ var searchData=
   ['buffer',['Buffer',['../classBuffer.html',1,'Buffer'],['../classBuffer.html#ae7ef2cd201190fde551dcb902627112b',1,'Buffer::Buffer()']]],
   ['buffer_2ecpp',['Buffer.cpp',['../Buffer_8cpp.html',1,'']]],
   ['buffer_2eh',['Buffer.h',['../Buffer_8h.html',1,'']]],
-  ['buygold',['BuyGold',['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem']]]
+  ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]]
 ];

@@ -19,6 +19,8 @@ var searchData=
   ['cachepacketquestdataresponse',['CachePacketQuestDataResponse',['../classCachePacketQuestDataResponse.html',1,'']]],
   ['cachepacketquestretirerequest',['CachePacketQuestRetireRequest',['../classCachePacketQuestRetireRequest.html',1,'']]],
   ['cachepacketsaveactivequestrequest',['CachePacketSaveActiveQuestRequest',['../classCachePacketSaveActiveQuestRequest.html',1,'']]],
+  ['cachepacketsaveequiprequest',['CachePacketSaveEquipRequest',['../classCachePacketSaveEquipRequest.html',1,'']]],
+  ['cachepacketsaveequipresponse',['CachePacketSaveEquipResponse',['../classCachePacketSaveEquipResponse.html',1,'']]],
   ['cachepacketsaveitemshortcutrequest',['CachePacketSaveItemShortcutRequest',['../classCachePacketSaveItemShortcutRequest.html',1,'']]],
   ['cachepacketsaveitemshortcutresponse',['CachePacketSaveItemShortcutResponse',['../classCachePacketSaveItemShortcutResponse.html',1,'']]],
   ['cachepacketsavequestdatarequest',['CachePacketSaveQuestDataRequest',['../classCachePacketSaveQuestDataRequest.html',1,'']]],

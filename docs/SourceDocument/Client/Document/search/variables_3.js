@@ -2,7 +2,7 @@ var searchData=
 [
   ['damagevalue',['DamageValue',['../classPacketDamage.html#a05650b44c14401ca55b787a22ca123c1',1,'PacketDamage']]],
   ['data',['Data',['../classUPartyMemberInfoMenuWidget.html#afae92fa2010eeb3e26bdd256951da0a2',1,'UPartyMemberInfoMenuWidget::Data()'],['../structNoticeInformation.html#a15ebe3d2c12af17b51e01f5a6456eed1',1,'NoticeInformation::Data()'],['../classPacketSpawnAnpan.html#acbf123d399b0d245056825c2f00e53b7',1,'PacketSpawnAnpan::Data()'],['../classPacketSpawnPlayer.html#a0e6ccb4cb7fb47806c8edd063c6b752e',1,'PacketSpawnPlayer::Data()']]],
-  ['def',['Def',['../structAnpanItem.html#a3e68d87705a8adf02e4366e3bd581535',1,'AnpanItem::Def()'],['../classPacketCharacterStatus.html#a5d5b9e79d67eef16be3b11aff07886bf',1,'PacketCharacterStatus::Def()'],['../classPacketLevelUp.html#ab7d5d0261f807d3dcec99fb1b3a43f29',1,'PacketLevelUp::Def()']]],
+  ['def',['Def',['../structAnpanItem.html#a3e68d87705a8adf02e4366e3bd581535',1,'AnpanItem::Def()'],['../structEquipItem.html#aec745a34b6faee0417f7b0ad1a2be103',1,'EquipItem::Def()'],['../classPacketCharacterStatus.html#a5d5b9e79d67eef16be3b11aff07886bf',1,'PacketCharacterStatus::Def()'],['../classPacketLevelUp.html#ab7d5d0261f807d3dcec99fb1b3a43f29',1,'PacketLevelUp::Def()']]],
   ['displayposition',['DisplayPosition',['../classUAttachableWidget.html#af74795532ba58733d28236fd627d8b67',1,'UAttachableWidget']]],
   ['displaytext',['DisplayText',['../classUSimpleDialog.html#a5578b9e11ea27d79f93e3b4076559ee0',1,'USimpleDialog::DisplayText()'],['../classUYesNoDialog.html#a6ebbb974cffff517460f8372756397e8',1,'UYesNoDialog::DisplayText()']]],
   ['distance',['Distance',['../structSkillItem.html#a2b3513c87115c385d1aa10cfbdb734dc',1,'SkillItem']]],
