@@ -210,22 +210,22 @@ void PlayerCharacter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
 	u32 RemoveId = Param.GetRightEquip().GetEquipId();
 	if (RemoveId != 0)
 	{
-		Items.Add(RemoveId, 1);
+		AddItem(RemoveId, 1);
 	}
 	if (RightEquipId != 0)
 	{
-		Items.Subtract(RightEquipId, 1);
+		SubtractItem(RightEquipId, 1);
 	}
 
 	// ç∂éËëïîı
 	RemoveId = Param.GetLeftEquip().GetEquipId();
 	if (RemoveId != 0)
 	{
-		Items.Add(RemoveId, 1);
+		AddItem(RemoveId, 1);
 	}
 	if (LeftEquipId != 0)
 	{
-		Items.Subtract(LeftEquipId, 1);
+		SubtractItem(LeftEquipId, 1);
 	}
 
 	ChangeEquipData(RightEquipId, LeftEquipId);
