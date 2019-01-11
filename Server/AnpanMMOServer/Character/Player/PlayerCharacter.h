@@ -12,7 +12,6 @@
 #include "WeakPtrDefine.h"
 #include "Packet/CharacterType.h"
 #include "Item/ItemList.h"
-#include "Equip/EquipData.h"
 
 class Client;
 class ItemData;
@@ -213,7 +212,7 @@ public:
 	 * @param[in] RightEquipId 右手装備ＩＤ
 	 * @param[in] LeftEquipId 左手装備ＩＤ
 	 */
-	void ChangeEquip(u32 RightEquipId, u32 LeftEquipId);
+	void ChangeEquip(u32 RightEqiupId, u32 LeftEquipId);
 
 private:
 
@@ -243,12 +242,6 @@ private:
 
 	// アイテムリスト
 	ItemList Items;
-
-	// 右手装備.
-	EquipData RightEquip;
-
-	// 左手装備.
-	EquipData LeftEquip;
 
 	// セーブするエリアＩＤ
 	u32 SaveAreaId;

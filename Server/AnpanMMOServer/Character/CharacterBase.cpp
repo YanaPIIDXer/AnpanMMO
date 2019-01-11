@@ -96,3 +96,10 @@ void CharacterBase::StartRecast(u32 SkillId)
 {
 	Recast.Add(SkillId);
 }
+
+
+// ‘•”õØ‚è‘Ö‚¦
+void CharacterBase::ChangeEquipData(u32 RightEquipId, u32 LeftEquipId)
+{
+	Parameter.ChangeEquip(RightEquipId, LeftEquipId);
+}

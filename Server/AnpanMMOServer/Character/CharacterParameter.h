@@ -6,6 +6,8 @@
 #ifndef __CHARACTERPARAMETER_H__
 #define __CHARACTERPARAMETER_H__
 
+#include "Equip/EquipData.h"
+
 /**
  * @class CharacterParameter
  * @brief キャラクタパラメータ
@@ -158,6 +160,28 @@ public:
 		}
 	}
 
+	/**
+	 * @fn void ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
+	 * @brief 装備切り替え
+	 * @param[in] RightEquipId 右手装備ＩＤ
+	 * @param[in] LeftEquipId 左手装備ＩＤ
+	 */
+	void ChangeEquip(u32 RightEquipId, u32 LeftEquipId);
+
+	/**
+	 * @fn const EquipData &GetRightEquip() const
+	 * @brief 右手装備情報を取得
+	 * @return 右手装備情報
+	 */
+	const EquipData &GetRightEquip() const { return RightEquip; }
+
+	/**
+	 * @fn const EquipData &GetLeftEquip() const
+	 * @brief 左手装備情報を取得
+	 * @return 左手装備情報
+	 */
+	const EquipData &GetLeftEquip() const { return LeftEquip; }
+
 private:
 
 	// レベル
@@ -183,6 +207,12 @@ private:
 
 	// VIT
 	u32 Vit;
+
+	// 右手装備.
+	EquipData RightEquip;
+
+	// 左手装備.
+	EquipData LeftEquip;
 
 };
 

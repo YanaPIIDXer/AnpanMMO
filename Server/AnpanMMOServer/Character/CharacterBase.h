@@ -264,6 +264,14 @@ protected:
 	 */
 	virtual void Update(s32 DeltaTime) {}
 
+	/**
+	 * @fn void ChangeEquipData(u32 RightEquipId, u32 LeftEquipId)
+	 * @brief ‘•”õØ‚è‘Ö‚¦
+	 * @param[in] RightEquipId ‰Eè‘•”õ‚h‚c
+	 * @param[in] LeftEquipId ¶è‘•”õ‚h‚c
+	 */
+	void ChangeEquipData(u32 RightEquipId, u32 LeftEquipId);
+
 private:
 
 	// ƒpƒ‰ƒ[ƒ^

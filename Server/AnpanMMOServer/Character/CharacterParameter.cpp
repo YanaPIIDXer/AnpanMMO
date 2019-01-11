@@ -49,3 +49,10 @@ void CharacterParameter::SubtractHp(u32 Value)
 		Hp = 0;
 	}
 }
+
+// ‘•”õØ‚è‘Ö‚¦
+void CharacterParameter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
+{
+	RightEquip.Set(RightEquipId);
+	LeftEquip.Set(LeftEquipId);
+}

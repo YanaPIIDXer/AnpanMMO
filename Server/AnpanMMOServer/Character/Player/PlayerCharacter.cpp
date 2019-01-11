@@ -36,12 +36,9 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	, SaveAreaId(0)
 	, SavePosition(Vector3D::Zero)
 {
-	RightEquip.Set(RightEquipId);
-	LeftEquip.Set(LeftEquipId);
-
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Level, Job);
-	u32 MaxHp = static_cast<u32>(pItem->MaxHP + ((pItem->VIT + RightEquip.GetVit() + LeftEquip.GetVit()) * 1.5f));
-	SetParameter(Level, pItem->MaxHP, MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	SetParameter(Level, pItem->MaxHP, pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	ChangeEquipData(RightEquipId, LeftEquipId);
 	Exp.SetLevelUpExp(pItem->NextExp);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
 	Skill.SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
@@ -208,23 +205,30 @@ void PlayerCharacter::SubtractItem(u32 ItemId, u32 Count)
 // ëïîıêÿÇËë÷Ç¶
 void PlayerCharacter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
 {
-	// âEéË.
-	u32 RemoveEquipId = RightEquip.GetEquipId();
-	if (RemoveEquipId != 0)
+	// âEéËëïîı
+	const CharacterParameter &Param = GetParameter();
+	u32 RemoveId = Param.GetRightEquip().GetEquipId();
+	if (RemoveId != 0)
 	{
-		Items.Add(RemoveEquipId, 1);
+		Items.Add(RemoveId, 1);
 	}
-	RightEquip.Set(RightEquipId);
-	Items.Subtract(RightEquipId, 1);
+	if (RightEquipId != 0)
+	{
+		Items.Subtract(RightEquipId, 1);
+	}
 
-	// ç∂éË.
-	RemoveEquipId = LeftEquip.GetEquipId();
-	if (RemoveEquipId != 0)
+	// ç∂éËëïîı
+	RemoveId = Param.GetLeftEquip().GetEquipId();
+	if (RemoveId != 0)
 	{
-		Items.Add(RemoveEquipId, 1);
+		Items.Add(RemoveId, 1);
 	}
-	LeftEquip.Set(LeftEquipId);
-	Items.Subtract(LeftEquipId, 1);
+	if (LeftEquipId != 0)
+	{
+		Items.Subtract(LeftEquipId, 1);
+	}
+
+	ChangeEquipData(RightEquipId, LeftEquipId);
 }
 
 
@@ -234,8 +238,7 @@ void PlayerCharacter::OnLevelUp()
 	const CharacterParameter &Param = GetParameter();
 	u32 Lv = Param.GetLevel() + 1;
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Lv, Job);
-	u32 MaxHp = static_cast<u32>(pItem->MaxHP + ((pItem->VIT + RightEquip.GetVit() + LeftEquip.GetVit()) * 1.5f));
-	SetParameter(Lv, Param.GetHp(), MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	SetParameter(Lv, Param.GetHp(), pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
 
 	Exp.SetLevelUpExp(pItem->NextExp);
 	
