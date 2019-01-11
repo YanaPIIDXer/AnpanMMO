@@ -26,7 +26,7 @@
 #include "Packet/CachePacketItemCountChangeRequest.h"
 
 // コンストラクタ
-PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold)
+PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold, u32 RightEquipId, u32 LeftEquipId)
 	: pClient(pInClient)
 	, Exp(InExp)
 	, CharacterId(InCharacterId)
@@ -36,6 +36,9 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	, SaveAreaId(0)
 	, SavePosition(Vector3D::Zero)
 {
+	RightEquip.Set(RightEquipId);
+	LeftEquip.Set(LeftEquipId);
+
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Level, Job);
 	u32 MaxHp = static_cast<u32>(pItem->MaxHP + (pItem->VIT * 1.5f));
 	SetParameter(Level, pItem->MaxHP, MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
@@ -200,6 +203,28 @@ void PlayerCharacter::SubtractItem(u32 ItemId, u32 Count)
 	u32 ItemCount = Items.GetCount(ItemId);
 	CachePacketItemCountChangeRequest CachePacket(GetClient()->GetUuid(), CharacterId, ItemId, ItemCount);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+}
+
+// 装備切り替え
+void PlayerCharacter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
+{
+	// 右手.
+	u32 RemoveEquipId = RightEquip.GetEquipId();
+	if (RemoveEquipId != 0)
+	{
+		Items.Add(RemoveEquipId, 1);
+	}
+	RightEquip.Set(RightEquipId);
+	Items.Subtract(RightEquipId, 1);
+
+	// 左手.
+	RemoveEquipId = LeftEquip.GetEquipId();
+	if (RemoveEquipId != 0)
+	{
+		Items.Add(RemoveEquipId, 1);
+	}
+	LeftEquip.Set(LeftEquipId);
+	Items.Subtract(LeftEquipId, 1);
 }
 
 

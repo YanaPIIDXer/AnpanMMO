@@ -677,7 +677,7 @@ bool ClientStateActive::OnRecvCacheSaveEquipResponse(MemoryStreamInterface *pStr
 
 	if (Result == PacketChangeEquipResult::Success)
 	{
-		// @TODO:‘•”õ•ÏXˆ—.
+		GetParent()->GetCharacter().lock()->ChangeEquip(Packet.RightEquip, Packet.LeftEquip);
 	}
 
 	PacketChangeEquipResult ResultPacket(Result, Packet.RightEquip, Packet.LeftEquip);
