@@ -12,7 +12,7 @@ struct SkillItem;
 
 /**
  * @class HealCalcUnit
- * @brief ダメージ計算クラス.
+ * @brief 回復計算クラス.
  */
 class HealCalcUnit
 {

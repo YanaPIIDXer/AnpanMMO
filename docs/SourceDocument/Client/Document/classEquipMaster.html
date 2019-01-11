@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: EquipMaster クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classEquipMaster-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">EquipMaster クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="EquipMaster_8h_source.html">EquipMaster.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a25c6554e13b2009086bf29ba25f048ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquipMaster.html#a25c6554e13b2009086bf29ba25f048ac">Load</a> ()</td></tr>
+<tr class="separator:a25c6554e13b2009086bf29ba25f048ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212516d72207c591ec64be01eefb13e0"><td class="memItemLeft" align="right" valign="top">TArray&lt; <a class="el" href="structEquipItem.html">EquipItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquipMaster.html#a212516d72207c591ec64be01eefb13e0">GetAll</a> () const</td></tr>
+<tr class="separator:a212516d72207c591ec64be01eefb13e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522f97f9167da3b47e469b864d59fc46"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structEquipItem.html">EquipItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquipMaster.html#a522f97f9167da3b47e469b864d59fc46">Get</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Key, int32 SheetIndex=0) const</td></tr>
+<tr class="separator:a522f97f9167da3b47e469b864d59fc46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a522f97f9167da3b47e469b864d59fc46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a522f97f9167da3b47e469b864d59fc46">&#9670;&nbsp;</a></span>Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structEquipItem.html">EquipItem</a> * EquipMaster::Get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>SheetIndex</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEquipMaster_a522f97f9167da3b47e469b864d59fc46_icgraph.png" border="0" usemap="#classEquipMaster_a522f97f9167da3b47e469b864d59fc46_icgraph" alt=""/></div>
+<map name="classEquipMaster_a522f97f9167da3b47e469b864d59fc46_icgraph" id="classEquipMaster_a522f97f9167da3b47e469b864d59fc46_icgraph">
+<area shape="rect" id="node2" href="classPlayerStatus.html#ae8cb82bdf9c727af0a188a753f2351ee" title="PlayerStatus::SetEquip" alt="" coords="177,13,336,39"/>
+<area shape="rect" id="node3" href="classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="384,5,584,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a212516d72207c591ec64be01eefb13e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a212516d72207c591ec64be01eefb13e0">&#9670;&nbsp;</a></span>GetAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TArray&lt; <a class="el" href="structEquipItem.html">EquipItem</a> &gt; EquipMaster::GetAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25c6554e13b2009086bf29ba25f048ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c6554e13b2009086bf29ba25f048ac">&#9670;&nbsp;</a></span>Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EquipMaster::Load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEquipMaster_a25c6554e13b2009086bf29ba25f048ac_cgraph.png" border="0" usemap="#classEquipMaster_a25c6554e13b2009086bf29ba25f048ac_cgraph" alt=""/></div>
+<map name="classEquipMaster_a25c6554e13b2009086bf29ba25f048ac_cgraph" id="classEquipMaster_a25c6554e13b2009086bf29ba25f048ac_cgraph">
+<area shape="rect" id="node2" href="classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="184,5,363,32"/>
+<area shape="rect" id="node3" href="classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="197,57,349,98"/>
+<area shape="rect" id="node6" href="structEquipItem.html#a47c046816e290c8f682ffd3804530f65" title="EquipItem::Serialize" alt="" coords="204,123,343,149"/>
+<area shape="rect" id="node4" href="classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="411,64,577,91"/>
+<area shape="rect" id="node5" href="classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="625,57,788,98"/>
+<area shape="rect" id="node7" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="414,115,574,157"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classEquipMaster_a25c6554e13b2009086bf29ba25f048ac_icgraph.png" border="0" usemap="#classEquipMaster_a25c6554e13b2009086bf29ba25f048ac_icgraph" alt=""/></div>
+<map name="classEquipMaster_a25c6554e13b2009086bf29ba25f048ac_icgraph" id="classEquipMaster_a25c6554e13b2009086bf29ba25f048ac_icgraph">
+<area shape="rect" id="node2" href="classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="184,13,309,39"/>
+<area shape="rect" id="node3" href="classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="357,5,505,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="EquipMaster_8h_source.html">EquipMaster.h</a></li>
+<li><a class="el" href="EquipMaster_8cpp.html">EquipMaster.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

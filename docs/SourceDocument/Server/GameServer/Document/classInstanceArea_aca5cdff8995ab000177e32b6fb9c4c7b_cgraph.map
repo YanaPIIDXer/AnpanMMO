@@ -1,6 +1,6 @@
 <map id="InstanceArea::Initialize" name="InstanceArea::Initialize">
-<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="217,5,383,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#a0903d896cfcfdb24b6b1411c0221fc69" title="MasterData::GetInstanceInfo\lMaster" alt="" coords="207,57,393,98"/>
+<area shape="rect" id="node2" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="217,5,383,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a38a4a4ab5a7b2f8e5f678eacb5e11f70" title="インスタンスエリア情報マスタ取得 " alt="" coords="207,57,393,98"/>
 <area shape="rect" id="node4" href="$classInstanceInfoMaster.html#aa8a8bf4224b3b7f7dd39547dc023010f" title="InstanceInfoMaster\l::GetItem" alt="" coords="235,122,365,163"/>
 <area shape="rect" id="node5" href="$classAnpanManager.html#ae5116e9f3450c38abe39b8f48767a920" title="AnpanManager::Spawn" alt="" coords="222,188,378,215"/>
 </map>

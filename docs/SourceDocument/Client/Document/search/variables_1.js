@@ -13,5 +13,5 @@ var searchData=
   ['bonusmnd',['BonusMnd',['../structSkillItem.html#aac31dd83107d9203d8ed70ce84a2d5f1',1,'SkillItem']]],
   ['bonusstr',['BonusStr',['../structSkillItem.html#a1a8671ce460998472526d7283c9356ff',1,'SkillItem']]],
   ['bonusvit',['BonusVit',['../structSkillItem.html#a60003c6750905cc57c41a9b09f82bfbe',1,'SkillItem']]],
-  ['buygold',['BuyGold',['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem']]]
+  ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]]
 ];

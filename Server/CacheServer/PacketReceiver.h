@@ -98,6 +98,9 @@ private:
 	// アクティブクエスト保存リクエストを受信した。
 	bool OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream);
 
+	// 装備データ保存リクエストを受信した。
+	bool OnRecvSaveEquipRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__

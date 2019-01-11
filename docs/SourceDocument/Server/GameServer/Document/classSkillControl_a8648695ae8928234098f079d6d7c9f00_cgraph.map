@@ -1,6 +1,6 @@
 <map id="SkillControl::UseItem" name="SkillControl::UseItem">
-<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="205,5,372,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#ab9dff43b366c34b616c0b06d714ef73d" title="MasterData::GetItemMaster" alt="" coords="197,56,380,83"/>
+<area shape="rect" id="node2" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="205,5,372,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#ae34f5d571f732528a83f5ae1773fa6d3" title="アイテムマスタ取得 " alt="" coords="197,56,380,83"/>
 <area shape="rect" id="node4" href="$classItemMaster.html#a2275f10051a2fb0ea39a44a4b17fe725" title="ItemMaster::GetItem" alt="" coords="218,107,359,133"/>
 <area shape="rect" id="node5" href="$classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="452,157,588,184"/>
 <area shape="rect" id="node6" href="$classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="229,208,348,235"/>

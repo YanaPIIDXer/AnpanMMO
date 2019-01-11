@@ -41,16 +41,9 @@ void CharacterBase::SetRotate(const Rotation &TargetRotation)
 // ダメージ
 void CharacterBase::ApplyDamage(CharacterPtr pAttacker, u32 Value)
 {
-	if (Parameter.Hp < Value)
-	{
-		Parameter.Hp = 0;
-	}
-	else
-	{
-		Parameter.Hp -= Value;
-	}
+	Parameter.SubtractHp(Value);
 
-	PacketDamage Packet(GetCharacterType(), Uuid, Value, Parameter.Hp);
+	PacketDamage Packet(GetCharacterType(), Uuid, Value, Parameter.GetHp());
 	pArea.lock()->BroadcastPacket(&Packet);
 
 	OnDamaged(pAttacker, Value);
@@ -59,13 +52,9 @@ void CharacterBase::ApplyDamage(CharacterPtr pAttacker, u32 Value)
 // 回復.
 void CharacterBase::Heal(u32 Value)
 {
-	Parameter.Hp += Value;
-	if (Parameter.Hp > Parameter.MaxHp)
-	{
-		Parameter.Hp = Parameter.MaxHp;
-	}
+	Parameter.AddHp(Value);
 
-	PacketHeal Packet(GetCharacterType(), Uuid, Value, Parameter.Hp);
+	PacketHeal Packet(GetCharacterType(), Uuid, Value, Parameter.GetHp());
 	pArea.lock()->BroadcastPacket(&Packet);
 }
 
@@ -92,7 +81,7 @@ void CharacterBase::Rotate(float RotateValue)
 // リスポン
 void CharacterBase::Respawn()
 {
-	Parameter.Hp = Parameter.MaxHp;
+	Parameter.SetHp(Parameter.GetMaxHp());
 	Position = Vector3D(0.0f, 0.0f, 0.0f);
 }
 
@@ -106,4 +95,11 @@ void CharacterBase::UseSkill(u32 SkillId, CharacterPtr pTarget)
 void CharacterBase::StartRecast(u32 SkillId)
 {
 	Recast.Add(SkillId);
+}
+
+
+// 装備切り替え
+void CharacterBase::ChangeEquipData(u32 RightEquipId, u32 LeftEquipId)
+{
+	Parameter.ChangeEquip(RightEquipId, LeftEquipId);
 }

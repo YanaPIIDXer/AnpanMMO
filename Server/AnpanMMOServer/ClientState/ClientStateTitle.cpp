@@ -189,9 +189,9 @@ bool ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	}
 
 	Client *pClient = GetParent();
-	pClient->CreateCharacter(Packet.CharacterId, Packet.Name, Packet.Job, Packet.Level, Packet.Exp, Packet.Gold);
+	pClient->CreateCharacter(Packet.CharacterId, Packet.Name, Packet.Job, Packet.Level, Packet.Exp, Packet.Gold, Packet.RightEquip, Packet.LeftEquip);
 	const CharacterParameter &Param = pClient->GetCharacter().lock()->GetParameter();
-	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.Level, Param.MaxHp, Param.MaxHp, Param.Str, Param.Def, Param.Int, Param.Mnd, Param.Vit, Packet.Exp, Packet.Gold);
+	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.Level, Param.GetMaxHp(), Param.GetMaxHp(), Param.GetNaturalStr(), Param.GetNaturalDef(), Param.GetNaturalInt(), Param.GetNaturalMnd(), Param.GetNaturalVit(), Packet.Exp, Packet.Gold, Packet.RightEquip, Packet.LeftEquip);
 	pClient->SendPacket(&StatusPacket);
 
 	LastAreaId = Packet.LastAreaId;
@@ -218,7 +218,7 @@ bool ClientStateTitle::OnRecvCacheSkillListResponse(MemoryStreamInterface *pStre
 		return true;
 	}
 
-	PacketSkillList SkillListPacket(Packet.NormalAttackId, Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
+	PacketSkillList SkillListPacket(Packet.SkillId1, Packet.SkillId2, Packet.SkillId3, Packet.SkillId4);
 	GetParent()->SendPacket(&SkillListPacket);
 
 	// スキルツリー情報を要求.

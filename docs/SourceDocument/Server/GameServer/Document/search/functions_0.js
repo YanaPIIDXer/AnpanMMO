@@ -10,6 +10,7 @@ var searchData=
   ['addexp',['AddExp',['../classPlayerCharacter.html#af674ca1a9358d11e18e38eca81072f63',1,'PlayerCharacter']]],
   ['addfloat',['AddFloat',['../classMySqlBinds.html#a837369350388e4b99f3161312d96a07d',1,'MySqlBinds']]],
   ['addgold',['AddGold',['../classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272',1,'PlayerCharacter']]],
+  ['addhp',['AddHp',['../classCharacterParameter.html#a292af530eb4ad8c5951641917087ad3a',1,'CharacterParameter']]],
   ['addint',['AddInt',['../classMySqlBinds.html#a46b9423237690f11f08027a781186522',1,'MySqlBinds::AddInt(int *pPtr)'],['../classMySqlBinds.html#a213e660b102c9eb428abc531e25c27ec',1,'MySqlBinds::AddInt(unsigned int *pPtr)']]],
   ['additem',['AddItem',['../classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922',1,'PlayerCharacter']]],
   ['addpacketfunction',['AddPacketFunction',['../classClientStateBase.html#ad9f13af8f3575f16240f055a65e8568b',1,'ClientStateBase']]],

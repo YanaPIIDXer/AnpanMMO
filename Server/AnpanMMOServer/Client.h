@@ -91,20 +91,22 @@ public:
 	PlayerCharacterPtr GetCharacter() const { return pCharacter; }
 
 	/**
-	 * @fn void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold)
-	 * @brief キャラクタを作成.
+	 * @fn void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold, u32 RightEquipId, u32 LeftEquipId)
+	 * @brief キャラクタを作成
 	 * @param[in] CharacterId キャラクタＩＤ
-	 * @param[in] Name キャラクタ名.
+	 * @param[in] Name キャラクタ名
 	 * @param[in] Job ジョブ
 	 * @param[in] Level レベル
-	 * @param[in] Exp 経験値.
+	 * @param[in] Exp 経験値
 	 * @param[in] Gold ゴールド
+	 * @param[in] RightEquipId 右手装備ＩＤ
+	 * @param[in] LeftEquipId 左手装備ＩＤ
 	 */
-	void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold);
+	void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold, u32 RightEquipId, u32 LeftEquipId);
 
 	/**
 	 * @fn void RecvPacket(u8 ID, MemoryStreamInterface *pStream)
-	 * @brief パケット受信.
+	 * @brief パケット受信
 	 * @details 主に他サーバからのレスポンス受信時に使用する。
 	 * @param[in] ID パケットＩＤ
 	 * @param[in] pStream ストリーム
@@ -113,7 +115,7 @@ public:
 
 	/**
 	 * @fn ScriptExecuter *GetScript()
-	 * @brief スクリプト制御オブジェクト取得.
+	 * @brief スクリプト制御オブジェクト取得
 	 * @return ScriptExecuter * スクリプト管理オブジェクトへのポインタ
 	 */
 	ScriptExecuter *GetScript() { return &Script; }

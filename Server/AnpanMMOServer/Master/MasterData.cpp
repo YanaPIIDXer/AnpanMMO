@@ -1,3 +1,8 @@
+/**
+ * @file MasterData.cpp
+ * @brief マスタデータクラス
+ * @author YanaP
+ */
 #include "stdafx.h"
 #include "MasterData.h"
 #include <fstream>
@@ -124,6 +129,12 @@ bool MasterData::Read()
 	if (!Level.Load(Connection))
 	{
 		std::cout << "Level Master Load Failed..." << std::endl;
+		return false;
+	}
+
+	if (!Equip.Load(Connection))
+	{
+		std::cout << "Equip Master Load Failed..." << std::endl;
 		return false;
 	}
 

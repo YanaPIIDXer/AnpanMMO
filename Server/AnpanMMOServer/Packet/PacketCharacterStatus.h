@@ -55,6 +55,10 @@ public:
 	u32 Exp;
 	//! ゴールド
 	u32 Gold;
+	//! 右手装備
+	u32 RightEquip;
+	//! 左手装備
+	u32 LeftEquip;
 	
 
 	/**
@@ -67,7 +71,7 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	PacketCharacterStatus(u32 InUuid, std::string InName, u8 InJob, u32 InLevel, u32 InHp, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, u32 InExp, u32 InGold)
+	PacketCharacterStatus(u32 InUuid, std::string InName, u8 InJob, u32 InLevel, u32 InHp, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, u32 InExp, u32 InGold, u32 InRightEquip, u32 InLeftEquip)
 	{
 		Uuid = InUuid;
 		Name = InName;
@@ -82,6 +86,8 @@ public:
 		Vit = InVit;
 		Exp = InExp;
 		Gold = InGold;
+		RightEquip = InRightEquip;
+		LeftEquip = InLeftEquip;
 		
 	}
 
@@ -107,6 +113,8 @@ public:
 		pStream->Serialize(&Vit);
 		pStream->Serialize(&Exp);
 		pStream->Serialize(&Gold);
+		pStream->Serialize(&RightEquip);
+		pStream->Serialize(&LeftEquip);
 		
 		return true;
 	}

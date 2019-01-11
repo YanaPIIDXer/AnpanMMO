@@ -15,5 +15,5 @@ var searchData=
   ['bossx',['BossX',['../structInstanceInfoItem.html#a36cc518a565341812d9ce25d4373837b',1,'InstanceInfoItem']]],
   ['bossy',['BossY',['../structInstanceInfoItem.html#abfc1d61c9f383eb60f216b685b91535f',1,'InstanceInfoItem']]],
   ['bossz',['BossZ',['../structInstanceInfoItem.html#a2eeec69e299a3751545d1e677aa5aa2c',1,'InstanceInfoItem']]],
-  ['buygold',['BuyGold',['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem']]]
+  ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]]
 ];

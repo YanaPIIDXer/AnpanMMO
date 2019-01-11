@@ -1,3 +1,13 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$classTimeInfoMaster.html" title="TimeInfoMaster" alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node2" href="$classAreaManager.html" title="エリア管理 " alt="" coords="211,259,310,285"/>
+<area shape="rect" id="node3" href="$classCacheServerConnection.html" title="キャッシュサーバとの接続. " alt="" coords="181,56,341,83"/>
+<area shape="rect" id="node4" href="$classClientManager.html" title="ClientManager" alt="" coords="208,309,313,336"/>
+<area shape="rect" id="node5" href="$classInstanceAreaTicketManager.html" title="インスタンスエリアチケット管理 " alt="" coords="169,360,352,387"/>
+<area shape="rect" id="node6" href="$classMasterData.html" title="マスタデータクラス &#160;シングルトンクラス " alt="" coords="216,411,305,437"/>
+<area shape="rect" id="node7" href="$classPartyManager.html" title="PartyManager" alt="" coords="209,461,312,488"/>
+<area shape="rect" id="node8" href="$classRandom.html" title="Random" alt="" coords="225,157,296,184"/>
+<area shape="rect" id="node9" href="$classTimeManager.html" title="TimeManager" alt="" coords="211,208,311,235"/>
+<area shape="rect" id="node10" href="$classWordCheckServerConnection.html" title="WordCheckServerConnection" alt="" coords="165,107,356,133"/>
+<area shape="rect" id="node11" href="$classTCPConnection.html" title="TCPConnection" alt="" coords="5,56,117,83"/>
+<area shape="rect" id="node12" href="$classClient.html" title="クライアントクラス " alt="" coords="233,5,288,32"/>
 </map>

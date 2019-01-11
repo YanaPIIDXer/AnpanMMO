@@ -81,6 +81,10 @@ public:
 		CacheQuestRetireRequest = 0x5C,
 		//! アクティブクエスト保存リクエストパケット
 		CacheSaveActiveQuestRequest = 0x5D,
+		//! 装備保存リクエストパケット
+		CacheSaveEquipRequest = 0x5E,
+		//! 装備保存レスポンスパケット
+		CacheSaveEquipResponse = 0x5F,
 		
 	};
 };

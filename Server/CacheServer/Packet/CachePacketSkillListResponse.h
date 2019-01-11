@@ -38,8 +38,6 @@ public:
 
 	//! Œ‹‰Ê
 	u8 Result;
-	//! ’ÊíUŒ‚‚h‚c
-	u32 NormalAttackId;
 	//! ƒXƒLƒ‹‚h‚c‚P
 	u32 SkillId1;
 	//! ƒXƒLƒ‹‚h‚c‚Q
@@ -60,11 +58,10 @@ public:
 	/**
 	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
-	CachePacketSkillListResponse(u32 InClientId, u8 InResult, u32 InNormalAttackId, u32 InSkillId1, u32 InSkillId2, u32 InSkillId3, u32 InSkillId4)
+	CachePacketSkillListResponse(u32 InClientId, u8 InResult, u32 InSkillId1, u32 InSkillId2, u32 InSkillId3, u32 InSkillId4)
 	{
 		ClientId = InClientId;
 		Result = InResult;
-		NormalAttackId = InNormalAttackId;
 		SkillId1 = InSkillId1;
 		SkillId2 = InSkillId2;
 		SkillId3 = InSkillId3;
@@ -83,7 +80,6 @@ public:
 	{
 		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Result);
-		pStream->Serialize(&NormalAttackId);
 		pStream->Serialize(&SkillId1);
 		pStream->Serialize(&SkillId2);
 		pStream->Serialize(&SkillId3);

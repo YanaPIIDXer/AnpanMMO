@@ -17,6 +17,7 @@
 #include "QuestMaster.h"
 #include "QuestStageMaster.h"
 #include "QuestRewardMaster.h"
+#include "EquipMaster.h"
 
 /**
  * マスタデータ
@@ -74,6 +75,9 @@ public:
 	// クエスト報酬マスタ取得.
 	const QuestRewardMaster &GetQuestRewardMaster() const { return QuestReward; }
 
+	// 装備マスタ取得.
+	const EquipMaster &GetEquipMaster() const { return Equip; }
+
 private:
 
 	// エリアマスタ
@@ -117,6 +121,9 @@ private:
 
 	// クエスト報酬マスタ
 	QuestRewardMaster QuestReward;
+
+	// 装備マスタ
+	EquipMaster Equip;
 
 	// =========== Singleton ============
 public:

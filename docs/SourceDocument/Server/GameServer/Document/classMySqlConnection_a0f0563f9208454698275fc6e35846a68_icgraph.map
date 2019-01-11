@@ -1,5 +1,5 @@
 <map id="MySqlConnection::Close" name="MySqlConnection::Close">
 <area shape="rect" id="node2" href="$classMySqlConnection.html#a190fd5271c80e81ca8e9b9a838ac8d6a" title="MySqlConnection::~MySqlConnection" alt="" coords="219,5,461,32"/>
 <area shape="rect" id="node3" href="$classMySqlConnection.html#ab2d0fe84b8261b61b910e03072fcdf7d" title="MySqlConnection::Connect" alt="" coords="250,56,430,83"/>
-<area shape="rect" id="node4" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="MasterData::Read" alt="" coords="509,56,636,83"/>
+<area shape="rect" id="node4" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="509,56,636,83"/>
 </map>

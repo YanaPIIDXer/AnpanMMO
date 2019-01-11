@@ -82,10 +82,40 @@ bool DBConnection::GetCharacterId(int Id, u32 &OutCharacterId)
 // キャラクタデータ登録.
 bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 {
-	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData(CustomerId, Name, Job, Level, Exp, Gold, LastArea, LastX, LastY, LastZ) values(?, ?, ?, 1, 0, 0, 1, -1300.0, 4050.0, 42.0);");
+	MySqlQuery Query = Connection.CreateQuery("insert into CharacterData(CustomerId, Name, Job, Level, Exp, Gold, RightEquip, LeftEquip, LastArea, LastX, LastY, LastZ) values(?, ?, ?, 1, 0, 0, ?, ?, 1, -1300.0, 4050.0, 42.0);");
+
+	// 初期装備.
+	u32 RightEquip = 0;
+	u32 LeftEquip = 0;
+	switch (Job)
+	{
+		case CharacterJob::Fighter:
+
+			RightEquip = 10001;
+			LeftEquip = 10002;
+			break;
+
+		case CharacterJob::Sorcerer:
+
+			RightEquip = 10003;
+			break;
+
+		case CharacterJob::Healer:
+
+			RightEquip = 10004;
+			break;
+
+		case CharacterJob::Lancer:
+
+			RightEquip = 10005;
+			break;
+	}
+
 	Query.BindInt(&Id);
 	Query.BindString(pCharacterName);
 	Query.BindChar(&Job);
+	Query.BindInt(&RightEquip);
+	Query.BindInt(&LeftEquip);
 	if (!Query.ExecuteQuery()) { return false; }
 	Query.Close();
 
@@ -99,43 +129,17 @@ bool DBConnection::RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job)
 	if (!Query.Fetch()) { return false; }
 	Query.Close();
 
-	// テーブル生成.
-	u32 NormalAttackId = 0;
-	switch (Job)
-	{
-		case CharacterJob::Fighter:
-
-			NormalAttackId = 1;
-			break;
-
-		case CharacterJob::Sorcerer:
-
-			NormalAttackId = 6;
-			break;
-
-		case CharacterJob::Healer:
-
-			NormalAttackId = 10;
-			break;
-
-		case CharacterJob::Lancer:
-
-			NormalAttackId = 14;
-			break;
-	}
-
-	Query = Connection.CreateQuery("insert into SkillData Values(?, ?, 0, 0, 0, 0);");
+	Query = Connection.CreateQuery("insert into SkillData Values(?, 0, 0, 0, 0);");
 	Query.BindInt(&CharacterId);
-	Query.BindInt(&NormalAttackId);
 	if (!Query.ExecuteQuery()) { return false; }
 	
 	return true;
 }
 
 // キャラクタパラメータ読み込み
-bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, u32 &OutExp, u32 &OutGold)
+bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, u32 &OutExp, u32 &OutGold, u32 &OutRightEquip, u32 &OutLeftEquip)
 {
-	MySqlQuery Query = Connection.CreateQuery("select CharacterId, Name, Job, Level, Exp, Gold from CharacterData where CustomerId = ?");
+	MySqlQuery Query = Connection.CreateQuery("select CharacterId, Name, Job, Level, Exp, Gold, RightEquip, LeftEquip from CharacterData where CustomerId = ?");
 	Query.BindInt(&Id);
 
 	char NameStr[256];
@@ -146,6 +150,8 @@ bool DBConnection::LoadCharacterParameter(int Id, u32 &OutCharacterId, std::stri
 	Query.BindResultInt(&OutLevel);
 	Query.BindResultInt(&OutExp);
 	Query.BindResultInt(&OutGold);
+	Query.BindResultInt(&OutRightEquip);
+	Query.BindResultInt(&OutLeftEquip);
 
 	if (!Query.ExecuteQuery()) { return false; }
 	if (!Query.Fetch()) { return false; }
@@ -173,11 +179,10 @@ bool DBConnection::SaveCharacterParameter(u32 CharacterId, u32 Level, u32 Exp, i
 }
 
 // スキルリスト読み込み
-bool DBConnection::LoadSkillList(u32 CharacterId, u32 &OutNormalAttackId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4)
+bool DBConnection::LoadSkillList(u32 CharacterId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4)
 {
-	MySqlQuery Query = Connection.CreateQuery("select NormalAttackId, Skill1, Skill2, Skill3, Skill4 from SkillData where CharacterId = ?;");
+	MySqlQuery Query = Connection.CreateQuery("select Skill1, Skill2, Skill3, Skill4 from SkillData where CharacterId = ?;");
 	Query.BindInt(&CharacterId);
-	Query.BindResultInt(&OutNormalAttackId);
 	Query.BindResultInt(&OutSkill1);
 	Query.BindResultInt(&OutSkill2);
 	Query.BindResultInt(&OutSkill3);
@@ -524,6 +529,21 @@ bool DBConnection::EraseQuestData(u32 CharacterId, u32 QuestId)
 
 	return true;
 }
+
+// 装備データ保存.
+bool DBConnection::SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip)
+{
+	MySqlQuery Query = Connection.CreateQuery("update CharacterData set RightEquip = ?, LeftEquip = ? where CharacterId = ?");
+
+	Query.BindInt(&RightEquip);
+	Query.BindInt(&LeftEquip);
+	Query.BindInt(&CharacterId);
+
+	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
+
 
 // ユーザデータ登録.
 bool DBConnection::RegisterUserData(char *pUserCode)

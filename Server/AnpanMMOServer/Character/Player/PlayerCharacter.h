@@ -33,8 +33,10 @@ public:
 	 * @param[in] Level レベル
 	 * @param[in] InExp 経験値
 	 * @param[in] InGold ゴールド
+	 * @oaran[in] RightEquipId 右手装備ＩＤ
+	 * @param[in] LeftEquipId 左手装備ＩＤ
 	 */
-	PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold);
+	PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold, u32 RightEquipId, u32 LeftEquipId);
 
 	/**
 	 * @brief デストラクタ
@@ -203,6 +205,14 @@ public:
 	 * @return アイテムリスト
 	 */
 	const ItemList &GetItemList() const { return Items; }
+
+	/**
+	 * @fn void ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
+	 * @brief 装備切り替え
+	 * @param[in] RightEquipId 右手装備ＩＤ
+	 * @param[in] LeftEquipId 左手装備ＩＤ
+	 */
+	void ChangeEquip(u32 RightEqiupId, u32 LeftEquipId);
 
 private:
 

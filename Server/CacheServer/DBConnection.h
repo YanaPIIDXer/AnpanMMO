@@ -31,13 +31,13 @@ public:
 	bool RegisterCharacterData(u32 Id, char *pCharacterName, u8 Job);
 
 	// キャラクタパラメータ読み込み
-	bool LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, u32 &OutExp, u32 &OutGold);
+	bool LoadCharacterParameter(int Id, u32 &OutCharacterId, std::string &OutName, u8 &OutJob, u32 &OutLevel, u32 &OutExp, u32 &OutGold, u32 &OutRightEquip, u32 &OutLeftEquip);
 
 	// キャラクタパラメータ書き込み
 	bool SaveCharacterParameter(u32 CharacterId, u32 Level, u32 Exp, int AreaId, float X, float Y, float Z);
 
 	// スキルリスト読み込み
-	bool LoadSkillList(u32 CharacterId, u32 &OutNormalAttackId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4);
+	bool LoadSkillList(u32 CharacterId, u32 &OutSkill1, u32 &OutSkill2, u32 &OutSkill3, u32 &OutSkill4);
 
 	// スキルリスト保存.
 	bool SaveSkillList(u32 CharacterId, u32 Skill1, u32 Skill2, u32 Skill3, u32 Skill4);
@@ -83,6 +83,9 @@ public:
 
 	// クエストデータ破棄.
 	bool EraseQuestData(u32 CharacterId, u32 QuestId);
+
+	// 装備データ保存.
+	bool SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip);
 
 private:
 

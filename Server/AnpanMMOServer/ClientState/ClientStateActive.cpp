@@ -66,6 +66,10 @@
 #include "Packet/PacketQuestRetireResponse.h"
 #include "Packet/PacketSaveActiveQuest.h"
 #include "Packet/CachePacketSaveActiveQuestRequest.h"
+#include "Packet/PacketChangeEquipRequest.h"
+#include "Packet/PacketChangeEquipResult.h"
+#include "Packet/CachePacketSaveEquipRequest.h"
+#include "Packet/CachePacketSaveEquipResponse.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -96,6 +100,8 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(CachePacketID::CacheSaveItemShortcutResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveItemShortcutResponse, this, _2));
 	AddPacketFunction(PacketID::QuestRetireRequest, boost::bind(&ClientStateActive::OnRecvQuestRetireRequest, this, _2));
 	AddPacketFunction(PacketID::SaveActiveQuest, boost::bind(&ClientStateActive::OnRecvSaveActiveQuest, this, _2));
+	AddPacketFunction(PacketID::ChangeEquipRequest, boost::bind(&ClientStateActive::OnRecvChangeEquipRequest, this, _2));
+	AddPacketFunction(CachePacketID::CacheSaveEquipResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveEquipResponse, this, _2));
 }
 
 // State開始時の処理.
@@ -614,6 +620,68 @@ bool ClientStateActive::OnRecvSaveActiveQuest(MemoryStreamInterface *pStream)
 
 	CachePacketSaveActiveQuestRequest CachePacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetCharacterId(), Packet.QuestId);
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
+
+	return true;
+}
+
+// 装備変更リクエストを受信した。
+bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
+{
+	PacketChangeEquipRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	// 右手装備チェック
+	if (Packet.RightEquip == 0)
+	{
+		// 右手装備は外せない。
+		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::CanNotRemoveRightEquip, 0, 0);
+		GetParent()->SendPacket(&ResultPacket);
+		return true;
+	}
+	PlayerCharacter *pChara = GetParent()->GetCharacter().lock().get();
+	if (pChara->GetItemList().GetCount(Packet.RightEquip) == 0)
+	{
+		// そもそも持ってない。
+		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0);
+		GetParent()->SendPacket(&ResultPacket);
+		return true;
+	}
+
+	// 左手装備チェック
+	if (Packet.LeftEquip != 0 && pChara->GetItemList().GetCount(Packet.LeftEquip) == 0)
+	{
+		// そもそも持ってない。
+		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0);
+		GetParent()->SendPacket(&ResultPacket);
+		return true;
+	}
+
+	// 保存リクエスト送信.
+	CachePacketSaveEquipRequest RequestPacket(GetParent()->GetUuid(), pChara->GetCharacterId(), Packet.RightEquip, Packet.LeftEquip);
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
+}
+
+// キャッシュサーバから装備保存レスポンスを受信した。
+bool ClientStateActive::OnRecvCacheSaveEquipResponse(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveEquipResponse Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	u8 Result = PacketChangeEquipResult::Success;
+	if (Packet.Result != CachePacketSaveEquipResponse::Success)
+	{
+		Result = PacketChangeEquipResult::Error;
+	}
+
+	if (Result == PacketChangeEquipResult::Success)
+	{
+		GetParent()->GetCharacter().lock()->ChangeEquip(Packet.RightEquip, Packet.LeftEquip);
+	}
+
+	PacketChangeEquipResult ResultPacket(Result, Packet.RightEquip, Packet.LeftEquip);
+	GetParent()->SendPacket(&ResultPacket);
 
 	return true;
 }

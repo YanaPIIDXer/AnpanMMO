@@ -1,0 +1,4 @@
+<map id="CharacterBase::Respawn" name="CharacterBase::Respawn">
+<area shape="rect" id="node2" href="$classCharacterParameter.html#af0f6d18d01b0fd0f6e76d22f4ca80bd3" title="ＨＰをセット " alt="" coords="223,5,361,47"/>
+<area shape="rect" id="node3" href="$classCharacterParameter.html#ad62bcf4d8a0e254a6ba81ff9174e5705" title="最大ＨＰ取得 " alt="" coords="223,71,361,112"/>
+</map>

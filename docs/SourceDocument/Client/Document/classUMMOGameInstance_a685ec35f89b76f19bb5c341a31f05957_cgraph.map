@@ -1,0 +1,12 @@
+<map id="UMMOGameInstance::OnRecvStatus" name="UMMOGameInstance::OnRecvStatus">
+<area shape="rect" id="node2" href="$classPlayerStatus.html#a1f72782998f740f8bdcb158f9b08a0a0" title="PlayerStatus::SetUuid" alt="" coords="257,5,408,32"/>
+<area shape="rect" id="node3" href="$classPlayerStatus.html#aa5e37379a3bf680bb8a813ffc6e259bf" title="PlayerStatus::Set" alt="" coords="270,56,395,83"/>
+<area shape="rect" id="node4" href="$classPlayerStatus.html#acaf3e8499c093d1d0f0ea699a25eb930" title="PlayerStatus::SetName" alt="" coords="253,107,412,133"/>
+<area shape="rect" id="node5" href="$classPlayerStatus.html#a0205213e0b878b2ae74a079fd2078951" title="PlayerStatus::SetJob" alt="" coords="260,157,405,184"/>
+<area shape="rect" id="node6" href="$classPlayerStatus.html#acb7d2ec51bfe1688ca10a410e88f4a1c" title="PlayerStatus::SetExp" alt="" coords="259,208,407,235"/>
+<area shape="rect" id="node7" href="$classPlayerStatus.html#ae7a8bfe26b6ede12d4121cd9d4e03b82" title="PlayerStatus::SetGold" alt="" coords="257,259,409,285"/>
+<area shape="rect" id="node8" href="$classPlayerStatus.html#ae8cb82bdf9c727af0a188a753f2351ee" title="PlayerStatus::SetEquip" alt="" coords="253,309,412,336"/>
+<area shape="rect" id="node9" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="472,259,639,285"/>
+<area shape="rect" id="node10" href="$classMasterData.html#ab041e8310948666fdc41b458ef93684f" title="MasterData::GetEquipMaster" alt="" coords="460,309,651,336"/>
+<area shape="rect" id="node11" href="$classEquipMaster.html#a522f97f9167da3b47e469b864d59fc46" title="EquipMaster::Get" alt="" coords="493,360,617,387"/>
+</map>

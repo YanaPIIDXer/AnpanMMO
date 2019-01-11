@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name',['Name',['../structAreaItem.html#adbb25d626df18f13968c3b13c1af21db',1,'AreaItem::Name()'],['../structItemItem.html#add065e222a4ced02915a97ba8166a8e1',1,'ItemItem::Name()'],['../structNPCItem.html#a6b54939911d535ac69b9f0cd9c2e3819',1,'NPCItem::Name()'],['../structQuestItem.html#af226bf69a9b736c40ad4a91dad4d7fb0',1,'QuestItem::Name()'],['../structSkillItem.html#a37dad8dbb7a002343ad83ddafc2738fd',1,'SkillItem::Name()'],['../classCachePacketCharacterDataResult.html#a38e647e2ddfdb623cf145d1f2ebb409e',1,'CachePacketCharacterDataResult::Name()'],['../classPacketCharacterStatus.html#a72b40818fadbf416b50d510dae55e324',1,'PacketCharacterStatus::Name()'],['../classPacketReceiveChat.html#a346425efac777d9a2a74d10ea30a1cfb',1,'PacketReceiveChat::Name()'],['../classPlayerData.html#a66274410262970d048a6e3c7b3edef6a',1,'PlayerData::Name()']]],
+  ['name',['Name',['../structAreaItem.html#adbb25d626df18f13968c3b13c1af21db',1,'AreaItem::Name()'],['../structEquipItem.html#a3c3dc72f8b2e9bf5e2deb27a08d3d2ef',1,'EquipItem::Name()'],['../structItemItem.html#add065e222a4ced02915a97ba8166a8e1',1,'ItemItem::Name()'],['../structNPCItem.html#a6b54939911d535ac69b9f0cd9c2e3819',1,'NPCItem::Name()'],['../structQuestItem.html#af226bf69a9b736c40ad4a91dad4d7fb0',1,'QuestItem::Name()'],['../structSkillItem.html#a37dad8dbb7a002343ad83ddafc2738fd',1,'SkillItem::Name()'],['../classCachePacketCharacterDataResult.html#a38e647e2ddfdb623cf145d1f2ebb409e',1,'CachePacketCharacterDataResult::Name()'],['../classPacketCharacterStatus.html#a72b40818fadbf416b50d510dae55e324',1,'PacketCharacterStatus::Name()'],['../classPacketReceiveChat.html#a346425efac777d9a2a74d10ea30a1cfb',1,'PacketReceiveChat::Name()'],['../classPlayerData.html#a66274410262970d048a6e3c7b3edef6a',1,'PlayerData::Name()']]],
   ['needlevel',['NeedLevel',['../structSkillTreeItem.html#a3e06d0359f90c947afa64219f63cb1e8',1,'SkillTreeItem']]],
   ['nextexp',['NextExp',['../structLevelItem.html#a7bad1ba81a27078bb6edf2177d3b0bcb',1,'LevelItem']]],
   ['nextquestid',['NextQuestId',['../structQuestItem.html#a9b51c486b68f627c90c85c8822e01ec3',1,'QuestItem']]],
@@ -15,8 +15,7 @@ var searchData=
   ['none',['NONE',['../structItemDropItem.html#a014d424ee289423c08b15d8e9752123fa30e90e5c49e94d8dbd4e0a987bb14b8f',1,'ItemDropItem::NONE()'],['../structQuestRewardItem.html#aeb71f624c2312b9a823286f49d4abc26a71b382d8946b3dc2eb453d86a21e8753',1,'QuestRewardItem::NONE()']]],
   ['normal',['NORMAL',['../structSkillItem.html#a0c92dd0ba436dd33f9552f483ae2e04aabcbefc2d7361ed8aecec493056aa6802',1,'SkillItem']]],
   ['normal_5farea',['NORMAL_AREA',['../structAreaItem.html#abf7a26d92a276782f08a9b78bdc36fe0ae3c9fc7b6ee58dbaee3e321e2781fe81',1,'AreaItem']]],
-  ['normalattack',['NormalAttack',['../classPacketSkillList.html#a0ec996adb72b34a7bd81cb26b89a8861',1,'PacketSkillList']]],
-  ['normalattackid',['NormalAttackId',['../classCachePacketSkillListResponse.html#ab632c06e1d9f14a20b33d5962f9c839d',1,'CachePacketSkillListResponse']]],
+  ['normalattackid',['NormalAttackId',['../structEquipItem.html#a24f94345e209a72be198c49cb223a610',1,'EquipItem']]],
   ['normalize',['Normalize',['../classVector3D.html#aa326dab60b65f4306acbca7c7275eba7',1,'Vector3D']]],
   ['notenoughcost',['NotEnoughCost',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98aa28c9d30e9f53c998c6b9813f5ded592',1,'PacketSkillTreeOpenResult']]],
   ['notenoughlevel',['NotEnoughLevel',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98a40046699a2aa88dcc74d9062d7a4d68c',1,'PacketSkillTreeOpenResult']]],
@@ -27,6 +26,7 @@ var searchData=
   ['notices',['Notices',['../classPacketNoticeList.html#a226e59bdd901282b9305af196cd96291',1,'PacketNoticeList']]],
   ['noticetype',['NoticeType',['../classNoticeData.html#a769a8c112fcdb6aad3f942d18536919d',1,'NoticeData']]],
   ['notopenedparent',['NotOpenedParent',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98af87b1759bf1a639e3e7d4214f59d9612',1,'PacketSkillTreeOpenResult']]],
+  ['notpossession',['NotPossession',['../classPacketChangeEquipResult.html#a25f7bc4e626fe16cf83726fed8e7ddcbab50bd5282001c2e47b32cf957b0bbd99',1,'PacketChangeEquipResult']]],
   ['npc',['NPC',['../structQuestStageItem.html#a9a181c326e35e8f05e585eec5adc9542a843a439338e96be3d8c4460b3c281570',1,'QuestStageItem']]],
   ['npcitem',['NPCItem',['../structNPCItem.html',1,'']]],
   ['npcmaster',['NPCMaster',['../classNPCMaster.html',1,'']]],

@@ -1,3 +1,4 @@
 <map id="ItemList::Subtract" name="ItemList::Subtract">
 <area shape="rect" id="node2" href="$classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="アイテム消費 " alt="" coords="179,5,376,32"/>
+<area shape="rect" id="node3" href="$classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="424,5,624,32"/>
 </map>

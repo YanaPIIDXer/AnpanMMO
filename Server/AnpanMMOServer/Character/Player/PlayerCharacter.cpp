@@ -26,7 +26,7 @@
 #include "Packet/CachePacketItemCountChangeRequest.h"
 
 // コンストラクタ
-PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold)
+PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold, u32 RightEquipId, u32 LeftEquipId)
 	: pClient(pInClient)
 	, Exp(InExp)
 	, CharacterId(InCharacterId)
@@ -37,8 +37,8 @@ PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob,
 	, SavePosition(Vector3D::Zero)
 {
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Level, Job);
-	u32 MaxHp = static_cast<u32>(pItem->MaxHP + (pItem->VIT * 1.5f));
-	SetParameter(Level, pItem->MaxHP, MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	SetParameter(Level, pItem->MaxHP, pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT, true);
+	ChangeEquipData(RightEquipId, LeftEquipId);
 	Exp.SetLevelUpExp(pItem->NextExp);
 	Exp.SetLevelUpCallback(bind(&PlayerCharacter::OnLevelUp, this));
 	Skill.SetOnCancelFunction(boost::bind(&PlayerCharacter::OnSkillCanceled, this, _1));
@@ -136,7 +136,7 @@ u8 PlayerCharacter::OpenSkillTree(u32 NodeId)
 	}
 
 	// レベルチェック
-	if (GetParameter().Level < pItem->NeedLevel)
+	if (GetParameter().GetLevel() < pItem->NeedLevel)
 	{
 		return PacketSkillTreeOpenResult::NotEnoughLevel;
 	}
@@ -202,19 +202,47 @@ void PlayerCharacter::SubtractItem(u32 ItemId, u32 Count)
 	CacheServerConnection::GetInstance()->SendPacket(&CachePacket);
 }
 
+// 装備切り替え
+void PlayerCharacter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
+{
+	// 右手装備
+	const CharacterParameter &Param = GetParameter();
+	u32 RemoveId = Param.GetRightEquip().GetEquipId();
+	if (RemoveId != 0)
+	{
+		AddItem(RemoveId, 1);
+	}
+	if (RightEquipId != 0)
+	{
+		SubtractItem(RightEquipId, 1);
+	}
+
+	// 左手装備
+	RemoveId = Param.GetLeftEquip().GetEquipId();
+	if (RemoveId != 0)
+	{
+		AddItem(RemoveId, 1);
+	}
+	if (LeftEquipId != 0)
+	{
+		SubtractItem(LeftEquipId, 1);
+	}
+
+	ChangeEquipData(RightEquipId, LeftEquipId);
+}
+
 
 // レベルアップコールバック
 void PlayerCharacter::OnLevelUp()
 {
 	const CharacterParameter &Param = GetParameter();
-	u32 Lv = Param.Level + 1;
+	u32 Lv = Param.GetLevel() + 1;
 	const LevelItem *pItem = MasterData::GetInstance().GetLevelMaster().GetItem(Lv, Job);
-	u32 MaxHp = static_cast<u32>(pItem->MaxHP + (pItem->VIT * 1.5f));
-	SetParameter(Lv, Param.Hp, MaxHp, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT);
+	SetParameter(Lv, Param.GetHp(), pItem->MaxHP, pItem->STR, pItem->DEF, pItem->INT, pItem->MND, pItem->VIT, true);
 
 	Exp.SetLevelUpExp(pItem->NextExp);
 	
-	PacketLevelUp Packet(Param.Level, Param.MaxHp, Param.Str, Param.Def, Param.Int, Param.Mnd, Param.Vit, Exp.Get());
+	PacketLevelUp Packet(Param.GetLevel(), Param.GetMaxHp(), Param.GetNaturalStr(), Param.GetNaturalDef(), Param.GetNaturalInt(), Param.GetNaturalMnd(), Param.GetNaturalVit(), Exp.Get());
 	GetClient()->SendPacket(&Packet);
 
 	SaveParameter();
@@ -226,7 +254,7 @@ void PlayerCharacter::SaveParameter()
 	const CharacterParameter &Param = GetParameter();
 	if (SaveAreaId == 0) { return; }		// まだエリアに属していない。
 	Client *pClient = GetClient();
-	CachePacketCharacterDataSave Packet(pClient->GetUuid(), CharacterId, Param.Level, Exp.Get(), SaveAreaId, SavePosition.X, SavePosition.Y, SavePosition.Z);
+	CachePacketCharacterDataSave Packet(pClient->GetUuid(), CharacterId, Param.GetLevel(), Exp.Get(), SaveAreaId, SavePosition.X, SavePosition.Y, SavePosition.Z);
 	CacheServerConnection::GetInstance()->SendPacket(&Packet);
 }
 

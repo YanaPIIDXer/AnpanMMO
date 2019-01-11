@@ -80,7 +80,7 @@ public:
 	 * @brief €‚ñ‚Å‚¢‚éH
 	 * @return €‚ñ‚Å‚¢‚é‚È‚çtrue
 	 */
-	bool IsDead() const { return (Parameter.Hp <= 0); }
+	bool IsDead() const { return (Parameter.GetHp() <= 0); }
 
 	/**
 	 * @fn void ApplyDamage(CharacterPtr pAttacker, u32 Value)
@@ -123,7 +123,7 @@ public:
 	 * @brief ƒŒƒxƒ‹‚ğæ“¾
 	 * @return ƒŒƒxƒ‹
 	 */
-	u32 GetLevel() const { return Parameter.Level; }
+	u32 GetLevel() const { return Parameter.GetLevel(); }
 
 	/**
 	 * @fn virtual u8 GetCharacterType() const
@@ -243,17 +243,11 @@ protected:
 	 * @param[in] Int INT
 	 * @param[in] Mnd MND
 	 * @param[in] Vit VIT
+	 * @param[in] bIsVitAffectMaxHp VIT‚ªÅ‘å‚g‚o‚É‰e‹¿‚·‚é‚©H
 	 */
-	void SetParameter(u32 Level, u32 Hp, u32 MaxHp, u32 Str, u32 Def, u32 Int, u32 Mnd, u32 Vit)
+	void SetParameter(u32 Level, u32 Hp, u32 MaxHp, u32 Str, u32 Def, u32 Int, u32 Mnd, u32 Vit, bool bIsVitAffectMaxHp)
 	{
-		Parameter.Level = Level;
-		Parameter.Hp = Hp;
-		Parameter.MaxHp = MaxHp;
-		Parameter.Str = Str;
-		Parameter.Def = Def;
-		Parameter.Int = Int;
-		Parameter.Mnd = Mnd;
-		Parameter.Vit = Vit;
+		Parameter.Set(Level, Hp, MaxHp, Str, Def, Int, Mnd, Vit, bIsVitAffectMaxHp);
 	}
 
 	/**
@@ -270,6 +264,14 @@ protected:
 	 * @param[in] DeltaTime ‘OƒtƒŒ[ƒ€‚©‚ç‚ÌŒo‰ßŠÔ
 	 */
 	virtual void Update(s32 DeltaTime) {}
+
+	/**
+	 * @fn void ChangeEquipData(u32 RightEquipId, u32 LeftEquipId)
+	 * @brief ‘•”õØ‚è‘Ö‚¦
+	 * @param[in] RightEquipId ‰Eè‘•”õ‚h‚c
+	 * @param[in] LeftEquipId ¶è‘•”õ‚h‚c
+	 */
+	void ChangeEquipData(u32 RightEquipId, u32 LeftEquipId);
 
 private:
 

@@ -1,3 +1,5 @@
 <map id="CharacterBase::Heal" name="CharacterBase::Heal">
-<area shape="rect" id="node2" href="$classCharacterBase.html#aae4de3ac831bde03b410551d5f9617b1" title="キャラクタタイプを取得 " alt="" coords="196,5,417,32"/>
+<area shape="rect" id="node2" href="$classCharacterParameter.html#a292af530eb4ad8c5951641917087ad3a" title="ＨＰ増加 " alt="" coords="237,5,376,47"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#aae4de3ac831bde03b410551d5f9617b1" title="キャラクタタイプを取得 " alt="" coords="196,71,417,98"/>
+<area shape="rect" id="node4" href="$classCharacterParameter.html#a5f3196e32e1cdf4ca94d2e839067e0e1" title="現在ＨＰ取得 " alt="" coords="237,123,376,164"/>
 </map>

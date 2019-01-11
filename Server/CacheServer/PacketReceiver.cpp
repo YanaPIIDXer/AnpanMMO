@@ -32,6 +32,8 @@
 #include "Packet/CachePacketSaveQuestDataRequest.h"
 #include "Packet/CachePacketQuestRetireRequest.h"
 #include "Packet/CachePacketSaveActiveQuestRequest.h"
+#include "Packet/CachePacketSaveEquipRequest.h"
+#include "Packet/CachePacketSaveEquipResponse.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -56,6 +58,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CachePacketID::CacheSaveQuestDataRequest, bind(&PacketReceiver::OnRecvSaveQuestDataRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheQuestRetireRequest, bind(&PacketReceiver::OnRecvRetireQuestDataRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheSaveActiveQuestRequest, bind(&PacketReceiver::OnRecvSaveActiveQuestRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheSaveEquipRequest, bind(&PacketReceiver::OnRecvSaveEquipRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -128,8 +131,10 @@ bool PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 	u32 Level = 0;
 	u32 Exp = 0;
 	u32 Gold = 0;
+	u32 RightEquip = 0;
+	u32 LeftEquip = 0;
 	CachePacketCharacterDataResult::ResultCode ResultCode = CachePacketCharacterDataResult::Success;
-	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, CharacterId, Name, Job, Level, Exp, Gold))
+	if (!DBConnection::GetInstance().LoadCharacterParameter(Packet.CustomerId, CharacterId, Name, Job, Level, Exp, Gold, RightEquip, LeftEquip))
 	{
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
@@ -143,7 +148,7 @@ bool PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, Exp, Gold, LastAreaId, LastX, LastY, LastZ);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, Exp, Gold, RightEquip, LeftEquip, LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 
 	return true;
@@ -170,17 +175,16 @@ bool PacketReceiver::OnRecvSkillListRequest(MemoryStreamInterface *pStream)
 	if (!Packet.Serialize(pStream)) { return false; }
 
 	u8 Result = CachePacketSkillListResponse::Success;
-	u32 NormalAttackId = 0;
 	u32 Skill1 = 0;
 	u32 Skill2 = 0;
 	u32 Skill3 = 0;
 	u32 Skill4 = 0;
-	if (!DBConnection::GetInstance().LoadSkillList(Packet.CharacterId, NormalAttackId, Skill1, Skill2, Skill3, Skill4))
+	if (!DBConnection::GetInstance().LoadSkillList(Packet.CharacterId, Skill1, Skill2, Skill3, Skill4))
 	{
 		Result = CachePacketSkillListResponse::Error;
 	}
 
-	CachePacketSkillListResponse ResponsePacket(Packet.ClientId, Result, NormalAttackId, Skill1, Skill2, Skill3, Skill4);
+	CachePacketSkillListResponse ResponsePacket(Packet.ClientId, Result, Skill1, Skill2, Skill3, Skill4);
 	pParent->SendPacket(&ResponsePacket);
 
 	return true;
@@ -412,6 +416,24 @@ bool PacketReceiver::OnRecvSaveActiveQuestRequest(MemoryStreamInterface *pStream
 	{
 		std::cout << "Save Active Quest Failed..." << std::endl;
 	}
+
+	return true;
+}
+
+// 装備データ保存リクエストを受信した。
+bool PacketReceiver::OnRecvSaveEquipRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketSaveEquipRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	u8 Result = CachePacketSaveEquipResponse::Success;
+	if (!DBConnection::GetInstance().SaveEquipData(Packet.CharacterId, Packet.RightEquip, Packet.LeftEquip))
+	{
+		Result = CachePacketSaveEquipResponse::Error;
+	}
+
+	CachePacketSaveEquipResponse ResponsePacket(Packet.ClientId, Result, Packet.RightEquip, Packet.LeftEquip);
+	pParent->SendPacket(&ResponsePacket);
 
 	return true;
 }
