@@ -24,19 +24,17 @@ public:
 	void SetUuid(uint32 InUuid) { Uuid = InUuid; }
 
 	// セット
-	void Set(uint32 InLevel, int32 InMaxHp, int32 InStr, int32 InDef, int32 InInt, int32 InMnd, int32 InVit)
+	void Set(uint32 InLevel, int32 InMaxHp, int32 InBaseMaxHp, int32 InStr, int32 InDef, int32 InInt, int32 InMnd, int32 InVit)
 	{
 		Level = InLevel;
 		MaxHp = InMaxHp;
+		BaseMaxHp = InBaseMaxHp;
 		Str = InStr;
 		Def = InDef;
 		Int = InInt;
 		Mnd = InMnd;
 		Vit = InVit;
 	}
-
-	// 基礎最大ＨＰをセット
-	void SetBaseMaxHp(int32 InBaseMaxHp) { BaseMaxHp = InBaseMaxHp; }
 
 	// 装備をセット
 	void SetEquip(uint32 InRightEquipId, uint32 InLeftEquipId);

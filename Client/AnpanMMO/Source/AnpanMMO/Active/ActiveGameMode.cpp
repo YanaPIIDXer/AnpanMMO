@@ -354,7 +354,7 @@ bool AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 
 	uint32 Prev = pCharacter->GetLevel();
 
-	pCharacter->OnRecvLevelUp(Packet.Level, Packet.MaxHp, Packet.Str, Packet.Def, Packet.Int, Packet.Mnd, Packet.Vit);
+	pCharacter->OnRecvLevelUp(Packet.Level, Packet.MaxHp, Packet.BaseMaxHp, Packet.Str, Packet.Def, Packet.Int, Packet.Mnd, Packet.Vit);
 	pCharacter->OnRecvExp(Packet.ResultExp);
 
 	pMainHUD->OnLevelUp();
