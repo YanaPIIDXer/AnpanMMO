@@ -35,6 +35,9 @@ public:
 		Vit = InVit;
 	}
 
+	// Šî‘bÅ‘å‚g‚o‚ğƒZƒbƒg
+	void SetBaseMaxHp(int32 InBaseMaxHp) { BaseMaxHp = InBaseMaxHp; }
+
 	// ‘•”õ‚ğƒZƒbƒg
 	void SetEquip(uint32 InRightEquipId, uint32 InLeftEquipId);
 
@@ -71,6 +74,9 @@ public:
 
 	// Å‘åHPæ“¾.
 	int32 GetMaxHp() const { return MaxHp; }
+
+	// Šî‘bÅ‘å‚g‚o‚ğæ“¾
+	int32 GetBaseMaxHp() const { return BaseMaxHp; }
 
 	// STRæ“¾.
 	int32 GetStr() const { return Str; }
@@ -139,6 +145,9 @@ private:
 
 	// Å‘åHP
 	int32 MaxHp;
+
+	// Šî‘bÅ‘å‚g‚o
+	int32 BaseMaxHp;
 
 	// STR
 	int32 Str;
