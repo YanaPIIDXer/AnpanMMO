@@ -33,12 +33,12 @@ namespace CopyrightConverter
 			foreach(var FilePath in Files)
 			{
 				string Source = "";
-				using (StreamReader Reader = new StreamReader(FilePath))
+				using (StreamReader Reader = new StreamReader(FilePath, Encoding.GetEncoding("Shift-JIS")))
 				{
 					Source = Reader.ReadToEnd();
 				}
 				Source = Source.Replace(OldCopyRight, NewCopyRight);
-				using (StreamWriter Writer = new StreamWriter(FilePath, false))
+				using (StreamWriter Writer = new StreamWriter(FilePath, false, Encoding.GetEncoding("Shift-JIS")))
 				{
 					Writer.Write(Source);
 				}

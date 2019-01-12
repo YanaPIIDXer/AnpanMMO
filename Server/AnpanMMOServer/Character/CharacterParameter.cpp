@@ -71,4 +71,8 @@ void CharacterParameter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
 void CharacterParameter::RecalcMaxHp()
 {
 	MaxHp = BaseMaxHp + static_cast<u32>(GetVit() * 1.5f);
+	if (Hp > MaxHp)
+	{
+		Hp = MaxHp;
+	}
 }

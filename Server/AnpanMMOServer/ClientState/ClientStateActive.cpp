@@ -634,7 +634,7 @@ bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
 	if (Packet.RightEquip == 0)
 	{
 		// 右手装備は外せない。
-		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::CanNotRemoveRightEquip, 0, 0);
+		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::CanNotRemoveRightEquip, 0, 0, 0);
 		GetParent()->SendPacket(&ResultPacket);
 		return true;
 	}
@@ -642,7 +642,7 @@ bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
 	if (pChara->GetItemList().GetCount(Packet.RightEquip) == 0)
 	{
 		// そもそも持ってない。
-		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0);
+		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
 		GetParent()->SendPacket(&ResultPacket);
 		return true;
 	}
@@ -651,7 +651,7 @@ bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
 	if (Packet.LeftEquip != 0 && pChara->GetItemList().GetCount(Packet.LeftEquip) == 0)
 	{
 		// そもそも持ってない。
-		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0);
+		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
 		GetParent()->SendPacket(&ResultPacket);
 		return true;
 	}
@@ -680,7 +680,7 @@ bool ClientStateActive::OnRecvCacheSaveEquipResponse(MemoryStreamInterface *pStr
 		GetParent()->GetCharacter().lock()->ChangeEquip(Packet.RightEquip, Packet.LeftEquip);
 	}
 
-	PacketChangeEquipResult ResultPacket(Result, Packet.RightEquip, Packet.LeftEquip);
+	PacketChangeEquipResult ResultPacket(Result, Packet.RightEquip, Packet.LeftEquip, GetParent()->GetCharacter().lock()->GetParameter().GetMaxHp());
 	GetParent()->SendPacket(&ResultPacket);
 
 	return true;
