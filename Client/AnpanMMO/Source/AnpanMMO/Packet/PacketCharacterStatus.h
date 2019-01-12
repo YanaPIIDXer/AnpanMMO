@@ -41,6 +41,8 @@ public:
 	u32 Hp;
 	//! Å‘åHP
 	u32 MaxHp;
+	//! Šî‘bÅ‘å‚g‚o
+	u32 BaseMaxHp;
 	//! STR
 	u32 Str;
 	//! DEF
@@ -71,7 +73,7 @@ public:
 	/**
 	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
-	PacketCharacterStatus(u32 InUuid, std::string InName, u8 InJob, u32 InLevel, u32 InHp, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, u32 InExp, u32 InGold, u32 InRightEquip, u32 InLeftEquip)
+	PacketCharacterStatus(u32 InUuid, std::string InName, u8 InJob, u32 InLevel, u32 InHp, u32 InMaxHp, u32 InBaseMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, u32 InExp, u32 InGold, u32 InRightEquip, u32 InLeftEquip)
 	{
 		Uuid = InUuid;
 		Name = InName;
@@ -79,6 +81,7 @@ public:
 		Level = InLevel;
 		Hp = InHp;
 		MaxHp = InMaxHp;
+		BaseMaxHp = InBaseMaxHp;
 		Str = InStr;
 		Def = InDef;
 		Int = InInt;
@@ -106,6 +109,7 @@ public:
 		pStream->Serialize(&Level);
 		pStream->Serialize(&Hp);
 		pStream->Serialize(&MaxHp);
+		pStream->Serialize(&BaseMaxHp);
 		pStream->Serialize(&Str);
 		pStream->Serialize(&Def);
 		pStream->Serialize(&Int);

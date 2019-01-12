@@ -64,6 +64,13 @@ public:
 	u32 GetMaxHp() const { return MaxHp; }
 
 	/**
+	 * @fn u32 GetBaseMaxHp() const
+	 * @brief Šî‘bÅ‘å‚g‚o‚ğæ“¾
+	 * @return Šî‘bÅ‘å‚g‚o
+	 */
+	u32 GetBaseMaxHp() const { return BaseMaxHp; }
+
+	/**
 	 * @fn u32 GetNaturalStr() const
 	 * @brief STRæ“¾
 	 * @return STR
