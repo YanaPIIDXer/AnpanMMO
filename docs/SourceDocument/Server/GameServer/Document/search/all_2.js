@@ -2,6 +2,7 @@ var searchData=
 [
   ['asio',['asio',['../namespaceboost_1_1asio.html',1,'boost']]],
   ['b',['B',['../structColor24.html#ac72cfd7e85c5020d92ded3f6dc0d6818',1,'Color24']]],
+  ['basemaxhp',['BaseMaxHp',['../classPacketCharacterStatus.html#abb46d4862f6bd65634d991ccce25bcf7',1,'PacketCharacterStatus::BaseMaxHp()'],['../classPacketLevelUp.html#a911c0102bab73ff76077d762b960a89e',1,'PacketLevelUp::BaseMaxHp()']]],
   ['basic_5frepeating_5ftimer',['basic_repeating_timer',['../classboost_1_1asio_1_1basic__repeating__timer.html',1,'boost::asio::basic_repeating_timer&lt; Time, TimeTraits, TimerService &gt;'],['../classboost_1_1asio_1_1basic__repeating__timer.html#a808f9fdc3126e145ee42b92653ee269b',1,'boost::asio::basic_repeating_timer::basic_repeating_timer()']]],
   ['basic_5frepeating_5ftimer_2eh',['basic_repeating_timer.h',['../basic__repeating__timer_8h.html',1,'']]],
   ['beginstate',['BeginState',['../classClientStateActive.html#a04b0193d8d026a520e099bce02b2c9c0',1,'ClientStateActive::BeginState()'],['../classClientStateBase.html#adfb12872a9d8eb0e74fdcf32d60da185',1,'ClientStateBase::BeginState()'],['../classSkillStateBase.html#aa39b4dce006b8c02a70ecf266c994780',1,'SkillStateBase::BeginState()'],['../classSkillStateCast.html#a7a7f19ee6eae4e3b12f5a573f46c0e96',1,'SkillStateCast::BeginState()']]],

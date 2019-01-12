@@ -1,6 +1,7 @@
 var searchData=
 [
   ['b',['B',['../structColor24.html#ac72cfd7e85c5020d92ded3f6dc0d6818',1,'Color24']]],
+  ['basemaxhp',['BaseMaxHp',['../classPacketCharacterStatus.html#abb46d4862f6bd65634d991ccce25bcf7',1,'PacketCharacterStatus::BaseMaxHp()'],['../classPacketLevelUp.html#a911c0102bab73ff76077d762b960a89e',1,'PacketLevelUp::BaseMaxHp()']]],
   ['bisconnected',['bIsConnected',['../classTCPConnection.html#a9285aa2ebd3a615d5c433faa8718b3c5',1,'TCPConnection']]],
   ['bitcount',['BitCount',['../structBitmapInfoData.html#a6123c9fd8adc33596e908e1709853442',1,'BitmapInfoData']]],
   ['bitfield1',['BitField1',['../classCachePacketScriptFlagResponse.html#ab0df47310de6727771cc55a39c408396',1,'CachePacketScriptFlagResponse::BitField1()'],['../classCachePacketScriptFlagSaveRequest.html#a503fe1654c357eeb13958fa351fae81b',1,'CachePacketScriptFlagSaveRequest::BitField1()'],['../classPacketScriptFlag.html#ae95c84bf10b516680f56ca99c4088165',1,'PacketScriptFlag::BitField1()']]],
