@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "SkillTree.h"
 #include "Master/MasterData.h"
