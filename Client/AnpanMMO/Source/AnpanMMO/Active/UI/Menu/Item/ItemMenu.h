@@ -26,6 +26,10 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	int32 Count;
 
+	// 使用可能か？
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsUsable;
+
 };
 
 /**
