@@ -1,4 +1,3 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$classScriptExecuterBase.html" title="ScriptExecuterBase" alt="" coords="5,5,144,32"/>
-<area shape="rect" id="node2" href="$classScriptExecuter.html" title="ScriptExecuter" alt="" coords="192,5,300,32"/>
+<area shape="rect" id="node1" href="$classQuestStageMaster.html" title="QuestStageMaster" alt="" coords="5,5,136,32"/>
 </map>

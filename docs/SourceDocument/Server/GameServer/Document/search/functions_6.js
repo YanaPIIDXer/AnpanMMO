@@ -11,6 +11,7 @@ var searchData=
   ['getarea',['GetArea',['../classCharacterBase.html#a9648779454b629071237b7c2cf910b87',1,'CharacterBase']]],
   ['getareaid',['GetAreaId',['../classInstanceAreaTicket.html#adb27b69218e7ddd790a47473438d90f1',1,'InstanceAreaTicket']]],
   ['getareamaster',['GetAreaMaster',['../classMasterData.html#a0656b3ccba1f0154c9bd947e1eda8f76',1,'MasterData']]],
+  ['getbasemaxhp',['GetBaseMaxHp',['../classCharacterParameter.html#add951c6321352d0ff07bfcbea07906bc',1,'CharacterParameter']]],
   ['getcentervec',['GetCenterVec',['../classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b',1,'CharacterBase']]],
   ['getcharacter',['GetCharacter',['../classClient.html#a0cda75c99767496a10a7a4e559a8f877',1,'Client']]],
   ['getcharacterid',['GetCharacterId',['../classPlayerCharacter.html#aabc14771927e4187822cfcd2207cd509',1,'PlayerCharacter']]],

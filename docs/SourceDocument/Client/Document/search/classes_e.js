@@ -4,6 +4,7 @@ var searchData=
   ['ublueprintfunctions',['UBlueprintFunctions',['../classUBlueprintFunctions.html',1,'']]],
   ['ucharacternameinputwidget',['UCharacterNameInputWidget',['../classUCharacterNameInputWidget.html',1,'']]],
   ['uchatwindowwidget',['UChatWindowWidget',['../classUChatWindowWidget.html',1,'']]],
+  ['uequipmenu',['UEquipMenu',['../classUEquipMenu.html',1,'']]],
   ['ufadescreen',['UFadeScreen',['../classUFadeScreen.html',1,'']]],
   ['ugamecharacteraniminstance',['UGameCharacterAnimInstance',['../classUGameCharacterAnimInstance.html',1,'']]],
   ['ugamemenuwidget',['UGameMenuWidget',['../classUGameMenuWidget.html',1,'']]],
