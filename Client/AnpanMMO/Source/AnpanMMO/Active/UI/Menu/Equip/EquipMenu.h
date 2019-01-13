@@ -17,6 +17,10 @@ public:
 	// 装備ＩＤ
 	uint32 EquipId;
 
+	// 有効か？
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsValid;
+
 	// STR
 	UPROPERTY(BlueprintReadOnly)
 	int32 Str;
@@ -36,6 +40,17 @@ public:
 	// VIT
 	UPROPERTY(BlueprintReadOnly)
 	int32 Vit;
+
+
+	// コンストラクタ
+	FEquipData()
+		: EquipId(0)
+		, bIsValid(false)
+		, Str(0)
+		, Def(0)
+		, Int(0)
+		, Mnd(0)
+		, Vit(0) {}
 
 };
 
@@ -99,11 +114,6 @@ protected:
 	UFUNCTION(BlueprintPure, Category = "Equip")
 	const FEquipData &GetLeftEquipData() const { return LeftEquipData; }
 	
-	// ダミー装備データを生成.
-	// ※装備を外した時等に使用。
-	UFUNCTION(BlueprintPure, Category = "Equip")
-	FEquipData CreateDummyEquipData() const { return CreateEquipData(0); }
-
 private:
 
 	// 基礎最大ＨＰ
@@ -132,6 +142,6 @@ private:
 	
 
 	// 装備データを生成.
-	FEquipData CreateEquipData(uint32 EquipId) const;
+	FEquipData CreateEquipData(uint32 EquipId);
 
 };

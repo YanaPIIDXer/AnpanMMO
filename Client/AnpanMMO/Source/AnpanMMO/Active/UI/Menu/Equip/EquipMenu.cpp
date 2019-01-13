@@ -55,12 +55,13 @@ void UEquipMenu::Init()
 
 
 // ‘•”õƒf[ƒ^‚ð¶¬.
-FEquipData UEquipMenu::CreateEquipData(uint32 EquipId) const
+FEquipData UEquipMenu::CreateEquipData(uint32 EquipId)
 {
 	FEquipData Data;
 	Data.EquipId = EquipId;
 	const EquipItem *pItem = MasterData::GetInstance().GetEquipMaster().Get(EquipId);
-	if (pItem != nullptr)
+	Data.bIsValid = (pItem != nullptr);
+	if (Data.bIsValid)
 	{
 		Data.Str = pItem->Str;
 		Data.Def = pItem->Def;
