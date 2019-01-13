@@ -87,6 +87,7 @@ FEquipData UEquipMenu::CreateEquipData(uint32 EquipId)
 	Data.bIsValid = (pItem != nullptr);
 	if (Data.bIsValid)
 	{
+		Data.Name = pItem->Name;
 		Data.Str = pItem->Str;
 		Data.Def = pItem->Def;
 		Data.Int = pItem->Int;

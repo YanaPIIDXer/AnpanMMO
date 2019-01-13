@@ -22,6 +22,10 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	bool bIsValid;
 
+	// –¼‘O.
+	UPROPERTY(BlueprintReadOnly)
+	FString Name;
+
 	// STR
 	UPROPERTY(BlueprintReadOnly)
 	int32 Str;
@@ -47,6 +51,7 @@ public:
 	FEquipData()
 		: EquipId(0)
 		, bIsValid(false)
+		, Name("")
 		, Str(0)
 		, Def(0)
 		, Int(0)
