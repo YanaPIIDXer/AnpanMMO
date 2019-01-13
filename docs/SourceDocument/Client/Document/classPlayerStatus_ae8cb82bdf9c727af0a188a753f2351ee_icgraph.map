@@ -1,3 +1,4 @@
 <map id="PlayerStatus::SetEquip" name="PlayerStatus::SetEquip">
-<area shape="rect" id="node2" href="$classUMMOGameInstance.html#aea4fda1ec36cda362415bd15edcda9aa" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="212,5,412,47"/>
+<area shape="rect" id="node2" href="$classAGameCharacter.html#a10f5e7b3d7f9700b8dec6a2321e3a73c" title="AGameCharacter::ChangeEquip" alt="" coords="212,5,419,32"/>
+<area shape="rect" id="node3" href="$classUMMOGameInstance.html#aea4fda1ec36cda362415bd15edcda9aa" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="215,57,415,98"/>
 </map>
