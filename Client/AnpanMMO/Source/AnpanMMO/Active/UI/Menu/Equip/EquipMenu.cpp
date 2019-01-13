@@ -24,7 +24,7 @@ void UEquipMenu::OnRecvPacket(uint8 ID)
 {
 	switch (ID)
 	{
-		case PacketID::ChangeEquipRequest:
+		case PacketID::ChangeEquipResult:
 
 			Init();
 			break;
