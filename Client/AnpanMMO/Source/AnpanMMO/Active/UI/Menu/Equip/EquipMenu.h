@@ -10,6 +10,7 @@
 USTRUCT(BlueprintType, Category = "Equip")
 struct FEquipData
 {
+
 	GENERATED_USTRUCT_BODY()
 
 public:
@@ -71,6 +72,9 @@ public:
 	// デストラクタ
 	virtual ~UEquipMenu() {}
 
+	// パケットを受信した。
+	virtual void OnRecvPacket(uint8 ID) override;
+
 protected:
 
 	// 初期化.
@@ -117,6 +121,13 @@ protected:
 	// 装備変更パケットを送信.
 	UFUNCTION(BlueprintCallable, Category = "Equip")
 	void SendChangeEquip(const FEquipData &RightEquip, const FEquipData &LeftEquip);
+
+	// 装備が変更されているか？
+	UFUNCTION(BlueprintPure, Category = "Equip")
+	bool IsEquipChanged(const FEquipData &RightEquip, const FEquipData &LeftEquip) const
+	{
+		return (RightEquip.EquipId != RightEquipData.EquipId || LeftEquip.EquipId != LeftEquipData.EquipId);
+	}
 	
 private:
 

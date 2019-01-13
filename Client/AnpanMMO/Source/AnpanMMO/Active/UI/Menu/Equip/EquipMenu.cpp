@@ -19,6 +19,18 @@ UEquipMenu::UEquipMenu(const FObjectInitializer &ObjectInitializer)
 {
 }
 
+// パケットを受信した。
+void UEquipMenu::OnRecvPacket(uint8 ID)
+{
+	switch (ID)
+	{
+		case PacketID::ChangeEquipRequest:
+
+			Init();
+			break;
+	}
+}
+
 
 // 初期化.
 void UEquipMenu::Init()
