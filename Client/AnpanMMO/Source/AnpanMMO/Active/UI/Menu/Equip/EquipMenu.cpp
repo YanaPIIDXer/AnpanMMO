@@ -4,6 +4,8 @@
 #include "Kismet/GameplayStatics.h"
 #include "Character/Player/GameCharacter.h"
 #include "Master/MasterData.h"
+#include "MMOGameInstance.h"
+#include "Packet/PacketChangeEquipRequest.h"
 
 // コンストラクタ
 UEquipMenu::UEquipMenu(const FObjectInitializer &ObjectInitializer)
@@ -51,6 +53,16 @@ void UEquipMenu::Init()
 	}
 
 	InitEvent(Datas);
+}
+
+// 装備変更パケットを送信.
+void UEquipMenu::SendChangeEquip(const FEquipData &RightEquip, const FEquipData &LeftEquip)
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(GetWorld()));
+	check(pInst != nullptr);
+
+	PacketChangeEquipRequest Packet(RightEquip.EquipId, LeftEquip.EquipId);
+	pInst->SendPacket(&Packet);
 }
 
 

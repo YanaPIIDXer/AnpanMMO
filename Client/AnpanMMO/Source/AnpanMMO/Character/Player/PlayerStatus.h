@@ -39,6 +39,9 @@ public:
 	// 装備をセット
 	void SetEquip(uint32 InRightEquipId, uint32 InLeftEquipId);
 
+	// 最大ＨＰをセット
+	void SetMaxHp(int32 InMaxHp) { MaxHp = InMaxHp; }
+
 	// 経験値セット
 	void SetExp(int32 InExp) { Exp = InExp; }
 

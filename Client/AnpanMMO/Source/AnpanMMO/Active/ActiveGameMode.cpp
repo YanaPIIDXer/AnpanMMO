@@ -48,6 +48,7 @@
 #include "Packet/PacketQuestStageChange.h"
 #include "Packet/PacketQuestClear.h"
 #include "Packet/PacketQuestRetireResponse.h"
+#include "Packet/PacketChangeEquipResult.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -108,6 +109,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::QuestStageChange, std::bind(&AActiveGameMode::OnRecvProgressQuest, this, _1));
 	AddPacketFunction(PacketID::QuestClear, std::bind(&AActiveGameMode::OnRecvClearQuest, this, _1));
 	AddPacketFunction(PacketID::QuestRetireResponse, std::bind(&AActiveGameMode::OnRecvRetireQuestResponse, this, _1));
+	AddPacketFunction(PacketID::ChangeEquipResult, std::bind(&AActiveGameMode::OnRecvEquipChangeResult, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -798,6 +800,43 @@ bool AActiveGameMode::OnRecvRetireQuestResponse(MemoryStreamInterface *pStream)
 	pInst->RetireQuest(Packet.QuestId);
 
 	USimpleDialog::Show(this, "Quest Retire.", 100);
+
+	return true;
+}
+
+// 装備変更結果を受信した。
+bool AActiveGameMode::OnRecvEquipChangeResult(MemoryStreamInterface *pStream)
+{
+	PacketChangeEquipResult Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	uint8 Result = Packet.Result;
+	if (Result != PacketChangeEquipResult::Success)
+	{
+		FString ErrorMsg = "Error...";
+		switch (Result)
+		{
+			case PacketChangeEquipResult::CanNotRemoveRightEquip:
+
+				ErrorMsg = "Can Not Remove Right Equip...";
+				break;
+
+			case PacketChangeEquipResult::NotPossession:
+
+				ErrorMsg = "Not Possession...";
+				break;
+		}
+
+		USimpleDialog::Show(this, ErrorMsg, 100);
+		return true;
+	}
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->ChangeEquip(Packet.RightEquip, Packet.LeftEquip, Packet.MaxHp);
+
+	USimpleDialog::Show(this, "Equip Changed!", 100);
 
 	return true;
 }

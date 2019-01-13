@@ -250,6 +250,21 @@ TArray<int32> AGameCharacter::GetItemShortcutForBlurprint()
 	return ItemShortcut;
 }
 
+// 装備変更.
+void AGameCharacter::ChangeEquip(uint32 RightEquipId, uint32 LeftEquipId, int32 MaxHp)
+{
+	Status.SetEquip(RightEquipId, LeftEquipId);
+	Status.SetMaxHp(MaxHp);
+	int32 InHp = GetHp();
+	if (InHp > MaxHp)
+	{
+		InHp = MaxHp;
+	}
+	
+	// 再初期化.
+	Initialize(InHp, MaxHp);
+}
+
 
 // リスポンした。
 void AGameCharacter::OnRespawn()

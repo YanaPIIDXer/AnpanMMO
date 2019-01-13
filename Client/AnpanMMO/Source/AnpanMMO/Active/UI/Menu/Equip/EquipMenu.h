@@ -113,6 +113,10 @@ protected:
 	// 左手装備データを取得.
 	UFUNCTION(BlueprintPure, Category = "Equip")
 	const FEquipData &GetLeftEquipData() const { return LeftEquipData; }
+
+	// 装備変更パケットを送信.
+	UFUNCTION(BlueprintCallable, Category = "Equip")
+	void SendChangeEquip(const FEquipData &RightEquip, const FEquipData &LeftEquip);
 	
 private:
 

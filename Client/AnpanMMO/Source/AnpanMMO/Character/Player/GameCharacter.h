@@ -120,6 +120,9 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Item")
 	int32 GetItemCount(int32 ItemId) const { return Status.GetItemList().GetCount(ItemId); }
 
+	// 装備変更.
+	void ChangeEquip(uint32 RightEquipId, uint32 LeftEquipId, int32 MaxHp);
+
 protected:
 
 	// レベルアップした
