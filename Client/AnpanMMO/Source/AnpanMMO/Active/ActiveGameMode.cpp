@@ -673,8 +673,20 @@ bool AActiveGameMode::OnRecvAddItem(MemoryStreamInterface *pStream)
 
 	pCharacter->AddItem(Packet.ItemId, Packet.Count);
 	
-	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(Packet.ItemId);
-	FString SystemMsg = FString::Printf(TEXT("Add Item:%s * %d"), *pItem->Name, Packet.Count);
+	FString ItemName = "";
+	if (Packet.ItemId < 10000)
+	{
+		const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(Packet.ItemId);
+		check(pItem != nullptr);
+		ItemName = pItem->Name;
+	}
+	else
+	{
+		const EquipItem *pItem = MasterData::GetInstance().GetEquipMaster().Get(Packet.ItemId);
+		check(pItem != nullptr);
+		ItemName = pItem->Name;
+	}
+	FString SystemMsg = FString::Printf(TEXT("Add Item:%s * %d"), *ItemName, Packet.Count);
 	pMainHUD->ShowSystemMessage(SystemMsg);
 
 	return true;
