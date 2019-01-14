@@ -639,10 +639,12 @@ bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
 		return true;
 	}
 	PlayerCharacter *pChara = GetParent()->GetCharacter().lock().get();
+	const CharacterParameter &Param = pChara->GetParameter();
 
-	// @TODO:このチェック方法だと同じ装備をコピーするチートに対応できない。
-	//		 別のチェック方法を考える必要がある。
-	if (!pChara->IsEquiped(Packet.RightEquip) && pChara->GetItemList().GetCount(Packet.RightEquip) == 0)
+	s32 Count = pChara->GetItemList().GetCount(Packet.RightEquip);
+	if (Param.GetRightEquip().GetEquipId() == Packet.RightEquip) { Count++; }
+	if (Param.GetLeftEquip().GetEquipId() == Packet.RightEquip) { Count++; }
+	if (Count <= 0)
 	{
 		// そもそも持ってない。
 		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
@@ -651,12 +653,27 @@ bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
 	}
 
 	// 左手装備チェック
-	if ((Packet.LeftEquip != 0 && !pChara->IsEquiped(Packet.LeftEquip)) && pChara->GetItemList().GetCount(Packet.LeftEquip) == 0)
+	if (Packet.LeftEquip != 0)
 	{
-		// そもそも持ってない。
-		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
-		GetParent()->SendPacket(&ResultPacket);
-		return true;
+		if (Packet.LeftEquip != Packet.RightEquip)
+		{
+			// カウントしなおし。
+			Count = pChara->GetItemList().GetCount(Packet.LeftEquip);
+			if (Param.GetRightEquip().GetEquipId() == Packet.LeftEquip) { Count++; }
+			if (Param.GetLeftEquip().GetEquipId() == Packet.LeftEquip) { Count++; }
+		}
+		else
+		{
+			// 右手に装備する分減算する。
+			Count--;
+		}
+		if (Count <= 0)
+		{
+			// そもそも持ってない。
+			PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
+			GetParent()->SendPacket(&ResultPacket);
+			return true;
+		}
 	}
 
 	// 保存リクエスト送信.
