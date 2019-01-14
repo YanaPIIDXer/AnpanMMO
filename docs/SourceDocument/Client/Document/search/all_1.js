@@ -11,6 +11,7 @@ var searchData=
   ['bisparentopened',['bIsParentOpened',['../structFSkillTreeNode.html#a186409928079b201461d25dce008c3e3',1,'FSkillTreeNode']]],
   ['bisself',['bIsSelf',['../structFPartyMemberData.html#ab28db56f96716a233ee1d311ca1b8e49',1,'FPartyMemberData']]],
   ['bisusable',['bIsUsable',['../structFItemData.html#a9d4b05e41be2dad038479316319c3ebf',1,'FItemData']]],
+  ['bisvalid',['bIsValid',['../structFEquipData.html#a4c8993238d836c50364ea96deb5519f4',1,'FEquipData']]],
   ['bitfield1',['BitField1',['../classPacketScriptFlag.html#ae95c84bf10b516680f56ca99c4088165',1,'PacketScriptFlag']]],
   ['bitfield2',['BitField2',['../classPacketScriptFlag.html#a2ab586e0f9c57fde699af325088b7682',1,'PacketScriptFlag']]],
   ['bitfield3',['BitField3',['../classPacketScriptFlag.html#a62cefd8062164e46b2102f060508022b',1,'PacketScriptFlag']]],
