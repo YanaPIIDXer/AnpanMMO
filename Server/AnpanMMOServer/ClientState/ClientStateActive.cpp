@@ -639,7 +639,10 @@ bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
 		return true;
 	}
 	PlayerCharacter *pChara = GetParent()->GetCharacter().lock().get();
-	if (pChara->GetItemList().GetCount(Packet.RightEquip) == 0)
+
+	// @TODO:このチェック方法だと同じ装備をコピーするチートに対応できない。
+	//		 別のチェック方法を考える必要がある。
+	if (!pChara->IsEquiped(Packet.RightEquip) && pChara->GetItemList().GetCount(Packet.RightEquip) == 0)
 	{
 		// そもそも持ってない。
 		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
@@ -648,7 +651,7 @@ bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
 	}
 
 	// 左手装備チェック
-	if (Packet.LeftEquip != 0 && pChara->GetItemList().GetCount(Packet.LeftEquip) == 0)
+	if ((Packet.LeftEquip != 0 && !pChara->IsEquiped(Packet.LeftEquip)) && pChara->GetItemList().GetCount(Packet.LeftEquip) == 0)
 	{
 		// そもそも持ってない。
 		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
