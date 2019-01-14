@@ -217,6 +217,13 @@ public:
 	 */
 	virtual u32 GetDropId() const { return 0; }
 
+	/**
+	 * @fn bool IsEquiped(u32 EquipId) const
+	 * @brief ‘•”õ‚µ‚Ä‚¢‚é‚©H
+	 * @return ‘•”õ‚µ‚Ä‚¢‚ê‚Îtrue‚ğ•Ô‚·B
+	 */
+	bool IsEquiped(u32 EquipId) const;
+
 protected:
 
 	//! À•W.

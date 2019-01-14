@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "ActiveGameMode.h"
 #include "MMOGameInstance.h"
@@ -48,6 +48,7 @@
 #include "Packet/PacketQuestStageChange.h"
 #include "Packet/PacketQuestClear.h"
 #include "Packet/PacketQuestRetireResponse.h"
+#include "Packet/PacketChangeEquipResult.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -108,6 +109,7 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::QuestStageChange, std::bind(&AActiveGameMode::OnRecvProgressQuest, this, _1));
 	AddPacketFunction(PacketID::QuestClear, std::bind(&AActiveGameMode::OnRecvClearQuest, this, _1));
 	AddPacketFunction(PacketID::QuestRetireResponse, std::bind(&AActiveGameMode::OnRecvRetireQuestResponse, this, _1));
+	AddPacketFunction(PacketID::ChangeEquipResult, std::bind(&AActiveGameMode::OnRecvEquipChangeResult, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -354,7 +356,7 @@ bool AActiveGameMode::OnRecvLevelUp(MemoryStreamInterface *pStream)
 
 	uint32 Prev = pCharacter->GetLevel();
 
-	pCharacter->OnRecvLevelUp(Packet.Level, Packet.MaxHp, Packet.Str, Packet.Def, Packet.Int, Packet.Mnd, Packet.Vit);
+	pCharacter->OnRecvLevelUp(Packet.Level, Packet.MaxHp, Packet.BaseMaxHp, Packet.Str, Packet.Def, Packet.Int, Packet.Mnd, Packet.Vit);
 	pCharacter->OnRecvExp(Packet.ResultExp);
 
 	pMainHUD->OnLevelUp();
@@ -671,8 +673,20 @@ bool AActiveGameMode::OnRecvAddItem(MemoryStreamInterface *pStream)
 
 	pCharacter->AddItem(Packet.ItemId, Packet.Count);
 	
-	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(Packet.ItemId);
-	FString SystemMsg = FString::Printf(TEXT("Add Item:%s * %d"), *pItem->Name, Packet.Count);
+	FString ItemName = "";
+	if (Packet.ItemId < 10000)
+	{
+		const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(Packet.ItemId);
+		check(pItem != nullptr);
+		ItemName = pItem->Name;
+	}
+	else
+	{
+		const EquipItem *pItem = MasterData::GetInstance().GetEquipMaster().Get(Packet.ItemId);
+		check(pItem != nullptr);
+		ItemName = pItem->Name;
+	}
+	FString SystemMsg = FString::Printf(TEXT("Add Item:%s * %d"), *ItemName, Packet.Count);
 	pMainHUD->ShowSystemMessage(SystemMsg);
 
 	return true;
@@ -798,6 +812,43 @@ bool AActiveGameMode::OnRecvRetireQuestResponse(MemoryStreamInterface *pStream)
 	pInst->RetireQuest(Packet.QuestId);
 
 	USimpleDialog::Show(this, "Quest Retire.", 100);
+
+	return true;
+}
+
+// 装備変更結果を受信した。
+bool AActiveGameMode::OnRecvEquipChangeResult(MemoryStreamInterface *pStream)
+{
+	PacketChangeEquipResult Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	uint8 Result = Packet.Result;
+	if (Result != PacketChangeEquipResult::Success)
+	{
+		FString ErrorMsg = "Error...";
+		switch (Result)
+		{
+			case PacketChangeEquipResult::CanNotRemoveRightEquip:
+
+				ErrorMsg = "Can Not Remove Right Equip...";
+				break;
+
+			case PacketChangeEquipResult::NotPossession:
+
+				ErrorMsg = "Not Possession...";
+				break;
+		}
+
+		USimpleDialog::Show(this, ErrorMsg, 100);
+		return true;
+	}
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->ChangeEquip(Packet.RightEquip, Packet.LeftEquip, Packet.MaxHp);
+
+	USimpleDialog::Show(this, "Equip Changed!", 100);
 
 	return true;
 }

@@ -97,6 +97,12 @@ void CharacterBase::StartRecast(u32 SkillId)
 	Recast.Add(SkillId);
 }
 
+// ‘•”õ‚µ‚Ä‚¢‚é‚©H
+bool CharacterBase::IsEquiped(u32 EquipId) const
+{
+	return ((Parameter.GetRightEquip().GetEquipId() == EquipId) || (Parameter.GetLeftEquip().GetEquipId() == EquipId));
+}
+
 
 // ‘•”õØ‚è‘Ö‚¦
 void CharacterBase::ChangeEquipData(u32 RightEquipId, u32 LeftEquipId)

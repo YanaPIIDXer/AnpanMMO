@@ -634,26 +634,46 @@ bool ClientStateActive::OnRecvChangeEquipRequest(MemoryStreamInterface *pStream)
 	if (Packet.RightEquip == 0)
 	{
 		// 右手装備は外せない。
-		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::CanNotRemoveRightEquip, 0, 0);
+		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::CanNotRemoveRightEquip, 0, 0, 0);
 		GetParent()->SendPacket(&ResultPacket);
 		return true;
 	}
 	PlayerCharacter *pChara = GetParent()->GetCharacter().lock().get();
-	if (pChara->GetItemList().GetCount(Packet.RightEquip) == 0)
+	const CharacterParameter &Param = pChara->GetParameter();
+
+	s32 Count = pChara->GetItemList().GetCount(Packet.RightEquip);
+	if (Param.GetRightEquip().GetEquipId() == Packet.RightEquip) { Count++; }
+	if (Param.GetLeftEquip().GetEquipId() == Packet.RightEquip) { Count++; }
+	if (Count <= 0)
 	{
 		// そもそも持ってない。
-		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0);
+		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
 		GetParent()->SendPacket(&ResultPacket);
 		return true;
 	}
 
 	// 左手装備チェック
-	if (Packet.LeftEquip != 0 && pChara->GetItemList().GetCount(Packet.LeftEquip) == 0)
+	if (Packet.LeftEquip != 0)
 	{
-		// そもそも持ってない。
-		PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0);
-		GetParent()->SendPacket(&ResultPacket);
-		return true;
+		if (Packet.LeftEquip != Packet.RightEquip)
+		{
+			// カウントしなおし。
+			Count = pChara->GetItemList().GetCount(Packet.LeftEquip);
+			if (Param.GetRightEquip().GetEquipId() == Packet.LeftEquip) { Count++; }
+			if (Param.GetLeftEquip().GetEquipId() == Packet.LeftEquip) { Count++; }
+		}
+		else
+		{
+			// 右手に装備する分減算する。
+			Count--;
+		}
+		if (Count <= 0)
+		{
+			// そもそも持ってない。
+			PacketChangeEquipResult ResultPacket(PacketChangeEquipResult::NotPossession, 0, 0, 0);
+			GetParent()->SendPacket(&ResultPacket);
+			return true;
+		}
 	}
 
 	// 保存リクエスト送信.
@@ -680,7 +700,7 @@ bool ClientStateActive::OnRecvCacheSaveEquipResponse(MemoryStreamInterface *pStr
 		GetParent()->GetCharacter().lock()->ChangeEquip(Packet.RightEquip, Packet.LeftEquip);
 	}
 
-	PacketChangeEquipResult ResultPacket(Result, Packet.RightEquip, Packet.LeftEquip);
+	PacketChangeEquipResult ResultPacket(Result, Packet.RightEquip, Packet.LeftEquip, GetParent()->GetCharacter().lock()->GetParameter().GetMaxHp());
 	GetParent()->SendPacket(&ResultPacket);
 
 	return true;

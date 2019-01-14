@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #pragma once
 
@@ -222,5 +222,8 @@ private:
 
 	// クエスト破棄レスポンスを受信した。
 	bool OnRecvRetireQuestResponse(MemoryStreamInterface *pStream);
+
+	// 装備変更結果を受信した。
+	bool OnRecvEquipChangeResult(MemoryStreamInterface *pStream);
 
 };

@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "PlayerStatus.h"
 #include "Master/MasterData.h"
@@ -9,6 +9,7 @@ PlayerStatus::PlayerStatus()
 	, Name("")
 	, Level(1)
 	, MaxHp(1)
+	, BaseMaxHp(1)
 	, Str(10)
 	, Def(10)
 	, Int(10)

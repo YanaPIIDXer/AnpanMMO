@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #pragma once
 
@@ -24,10 +24,11 @@ public:
 	void SetUuid(uint32 InUuid) { Uuid = InUuid; }
 
 	// セット
-	void Set(uint32 InLevel, int32 InMaxHp, int32 InStr, int32 InDef, int32 InInt, int32 InMnd, int32 InVit)
+	void Set(uint32 InLevel, int32 InMaxHp, int32 InBaseMaxHp, int32 InStr, int32 InDef, int32 InInt, int32 InMnd, int32 InVit)
 	{
 		Level = InLevel;
 		MaxHp = InMaxHp;
+		BaseMaxHp = InBaseMaxHp;
 		Str = InStr;
 		Def = InDef;
 		Int = InInt;
@@ -37,6 +38,9 @@ public:
 
 	// 装備をセット
 	void SetEquip(uint32 InRightEquipId, uint32 InLeftEquipId);
+
+	// 最大ＨＰをセット
+	void SetMaxHp(int32 InMaxHp) { MaxHp = InMaxHp; }
 
 	// 経験値セット
 	void SetExp(int32 InExp) { Exp = InExp; }
@@ -71,6 +75,9 @@ public:
 
 	// 最大HP取得.
 	int32 GetMaxHp() const { return MaxHp; }
+
+	// 基礎最大ＨＰを取得
+	int32 GetBaseMaxHp() const { return BaseMaxHp; }
 
 	// STR取得.
 	int32 GetStr() const { return Str; }
@@ -139,6 +146,9 @@ private:
 
 	// 最大HP
 	int32 MaxHp;
+
+	// 基礎最大ＨＰ
+	int32 BaseMaxHp;
 
 	// STR
 	int32 Str;

@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "BlueprintFunctions.h"
 #include "UI/SimpleDialog.h"
@@ -95,9 +95,20 @@ int32 UBlueprintFunctions::GetSkillIdFromItemId(int32 ItemId)
 // アイテム名取得.
 FString UBlueprintFunctions::GetItemName(int32 ItemId)
 {
-	const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemId);
-	if (pItem == nullptr) { return ""; }
-	return pItem->Name;
+	FString Name = "";
+	if (ItemId < 10000)
+	{
+		const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemId);
+		if (pItem == nullptr) { return ""; }
+		Name = pItem->Name;
+	}
+	else
+	{
+		const EquipItem *pItem = MasterData::GetInstance().GetEquipMaster().Get(ItemId);
+		if (pItem == nullptr) { return ""; }
+		Name = pItem->Name;
+	}
+	return Name;
 }
 
 // 有効なアイテムか？

@@ -1,4 +1,8 @@
 <map id="MasterData::GetEquipMaster" name="MasterData::GetEquipMaster">
-<area shape="rect" id="node2" href="$classPlayerStatus.html#ae8cb82bdf9c727af0a188a753f2351ee" title="PlayerStatus::SetEquip" alt="" coords="244,13,403,39"/>
-<area shape="rect" id="node3" href="$classUMMOGameInstance.html#a685ec35f89b76f19bb5c341a31f05957" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="451,5,651,47"/>
+<area shape="rect" id="node2" href="$classUBlueprintFunctions.html#a3e3c403a96f9ae3de514589c6516b25d" title="UBlueprintFunctions\l::GetItemName" alt="" coords="254,5,393,47"/>
+<area shape="rect" id="node3" href="$classUItemMenu.html#a3b1773ff1360ebffe3f9177b567803bb" title="UItemMenu::Init" alt="" coords="267,71,380,98"/>
+<area shape="rect" id="node5" href="$classPlayerStatus.html#ae8cb82bdf9c727af0a188a753f2351ee" title="PlayerStatus::SetEquip" alt="" coords="244,122,403,149"/>
+<area shape="rect" id="node4" href="$classUItemMenu.html#a1920cf2150927f0e5db5ad11b8707ddd" title="UItemMenu::OnRecvPacket" alt="" coords="463,71,645,98"/>
+<area shape="rect" id="node6" href="$classAGameCharacter.html#a10f5e7b3d7f9700b8dec6a2321e3a73c" title="AGameCharacter::ChangeEquip" alt="" coords="451,122,657,149"/>
+<area shape="rect" id="node7" href="$classUMMOGameInstance.html#aea4fda1ec36cda362415bd15edcda9aa" title="UMMOGameInstance::OnRecv\lStatus" alt="" coords="454,173,654,215"/>
 </map>

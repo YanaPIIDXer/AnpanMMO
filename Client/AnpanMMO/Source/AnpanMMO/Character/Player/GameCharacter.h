@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #pragma once
 
@@ -41,7 +41,7 @@ public:
 	void OnRecvExp(int32 Exp);
 
 	// レベルアップを受信した。
-	void OnRecvLevelUp(uint32 Level, int32 MaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit);
+	void OnRecvLevelUp(uint32 Level, int32 MaxHp, int32 BaseMaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit);
 
 	// 移動ベクトルの取得.
 	virtual FVector GetMoveVector() const override;
@@ -119,6 +119,9 @@ public:
 	// アイテム数を取得.
 	UFUNCTION(BlueprintPure, Category = "Item")
 	int32 GetItemCount(int32 ItemId) const { return Status.GetItemList().GetCount(ItemId); }
+
+	// 装備変更.
+	void ChangeEquip(uint32 RightEquipId, uint32 LeftEquipId, int32 MaxHp);
 
 protected:
 

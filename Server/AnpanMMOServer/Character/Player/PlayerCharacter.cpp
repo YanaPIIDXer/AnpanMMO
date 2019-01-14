@@ -242,7 +242,7 @@ void PlayerCharacter::OnLevelUp()
 
 	Exp.SetLevelUpExp(pItem->NextExp);
 	
-	PacketLevelUp Packet(Param.GetLevel(), Param.GetMaxHp(), Param.GetNaturalStr(), Param.GetNaturalDef(), Param.GetNaturalInt(), Param.GetNaturalMnd(), Param.GetNaturalVit(), Exp.Get());
+	PacketLevelUp Packet(Param.GetLevel(), Param.GetMaxHp(), Param.GetBaseMaxHp(), Param.GetNaturalStr(), Param.GetNaturalDef(), Param.GetNaturalInt(), Param.GetNaturalMnd(), Param.GetNaturalVit(), Exp.Get());
 	GetClient()->SendPacket(&Packet);
 
 	SaveParameter();

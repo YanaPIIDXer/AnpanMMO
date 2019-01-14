@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "GameCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -79,9 +79,9 @@ void AGameCharacter::OnRecvExp(int32 Exp)
 }
 
 // レベルアップを受信した。
-void AGameCharacter::OnRecvLevelUp(uint32 Level, int32 MaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit)
+void AGameCharacter::OnRecvLevelUp(uint32 Level, int32 MaxHp, int32 BaseMaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit)
 {
-	Status.Set(Level, MaxHp, Str, Def, Int, Mnd, Vit);
+	Status.Set(Level, MaxHp, BaseMaxHp, Str, Def, Int, Mnd, Vit);
 	UpdateMaxHp(MaxHp);
 	OnLevelUp();
 }
@@ -248,6 +248,21 @@ TArray<int32> AGameCharacter::GetItemShortcutForBlurprint()
 	}
 	
 	return ItemShortcut;
+}
+
+// 装備変更.
+void AGameCharacter::ChangeEquip(uint32 RightEquipId, uint32 LeftEquipId, int32 MaxHp)
+{
+	Status.SetEquip(RightEquipId, LeftEquipId);
+	Status.SetMaxHp(MaxHp);
+	int32 InHp = GetHp();
+	if (InHp > MaxHp)
+	{
+		InHp = MaxHp;
+	}
+	
+	// 再初期化.
+	Initialize(InHp, MaxHp);
 }
 
 

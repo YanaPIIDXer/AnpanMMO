@@ -1,3 +1,4 @@
 <map id="CharacterParameter::GetLeftEquip" name="CharacterParameter::GetLeftEquip">
-<area shape="rect" id="node2" href="$classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="192,13,392,39"/>
+<area shape="rect" id="node2" href="$classCharacterBase.html#a3014c408fbcf2a64e8243f4f34aa1b2e" title="装備しているか？ " alt="" coords="205,5,379,32"/>
+<area shape="rect" id="node3" href="$classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="192,56,392,83"/>
 </map>

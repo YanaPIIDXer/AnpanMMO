@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #pragma once
 
@@ -25,6 +25,10 @@ public:
 	// 個数.
 	UPROPERTY(BlueprintReadOnly)
 	int32 Count;
+
+	// 使用可能か？
+	UPROPERTY(BlueprintReadOnly)
+	bool bIsUsable;
 
 };
 

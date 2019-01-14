@@ -104,8 +104,8 @@ AGameCharacter 連携図</div>
 <tr class="separator:a9f16189ed5a069ce10c86104c51466f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9fad50521842621b66c742549937177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#ab9fad50521842621b66c742549937177">OnRecvExp</a> (int32 Exp)</td></tr>
 <tr class="separator:ab9fad50521842621b66c742549937177"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa2e33f7ca0ef1423c089e24f785a5de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#aaa2e33f7ca0ef1423c089e24f785a5de">OnRecvLevelUp</a> (uint32 Level, int32 MaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit)</td></tr>
-<tr class="separator:aaa2e33f7ca0ef1423c089e24f785a5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd3d924afb9ea2d3cf25d31531ba783"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#adfd3d924afb9ea2d3cf25d31531ba783">OnRecvLevelUp</a> (uint32 Level, int32 MaxHp, int32 BaseMaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit)</td></tr>
+<tr class="separator:adfd3d924afb9ea2d3cf25d31531ba783"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f3f4def6db710526a0c7b8157a45a08"><td class="memItemLeft" align="right" valign="top">virtual FVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#a5f3f4def6db710526a0c7b8157a45a08">GetMoveVector</a> () const override</td></tr>
 <tr class="separator:a5f3f4def6db710526a0c7b8157a45a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9093a7a33d31c8e2df786aabb409ea5a"><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#a9093a7a33d31c8e2df786aabb409ea5a">GetUuid</a> () const override</td></tr>
@@ -152,6 +152,8 @@ AGameCharacter 連携図</div>
 <tr class="separator:a6924eb2937f3fa8d6265502dc0b0a254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e13328b08f5c17f4af7d2f727abd39c"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#a3e13328b08f5c17f4af7d2f727abd39c">GetItemCount</a> (int32 ItemId) const</td></tr>
 <tr class="separator:a3e13328b08f5c17f4af7d2f727abd39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10f5e7b3d7f9700b8dec6a2321e3a73c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#a10f5e7b3d7f9700b8dec6a2321e3a73c">ChangeEquip</a> (uint32 RightEquipId, uint32 LeftEquipId, int32 MaxHp)</td></tr>
+<tr class="separator:a10f5e7b3d7f9700b8dec6a2321e3a73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classAPlayerCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classAPlayerCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classAPlayerCharacterBase.html">APlayerCharacterBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:a31c54c87504e1d00259661385781d494 inherit pub_methods_classAPlayerCharacterBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAPlayerCharacterBase.html#a31c54c87504e1d00259661385781d494">APlayerCharacterBase</a> (const FObjectInitializer &amp;ObjectInitializer)</td></tr>
 <tr class="separator:a31c54c87504e1d00259661385781d494 inherit pub_methods_classAPlayerCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -341,6 +343,54 @@ AGameCharacter 連携図</div>
 <area shape="rect" id="node8" href="classPlayerMove.html#ab482335f5bb7afbe31d0979f726fcaea" title="PlayerMove::Initialize" alt="" coords="271,275,415,301"/>
 <area shape="rect" id="node9" href="classSkillControl.html#a7dcd133c1353df256442ab17a2f9085b" title="SkillControl::SetOwner" alt="" coords="267,325,420,352"/>
 <area shape="rect" id="node6" href="classPlayerManager.html#ad65d7640778fe9fc5ae019a3cc9d44c4" title="PlayerManager::Add" alt="" coords="492,165,632,192"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a10f5e7b3d7f9700b8dec6a2321e3a73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f5e7b3d7f9700b8dec6a2321e3a73c">&#9670;&nbsp;</a></span>ChangeEquip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AGameCharacter::ChangeEquip </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>RightEquipId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>LeftEquipId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>MaxHp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAGameCharacter_a10f5e7b3d7f9700b8dec6a2321e3a73c_cgraph.png" border="0" usemap="#classAGameCharacter_a10f5e7b3d7f9700b8dec6a2321e3a73c_cgraph" alt=""/></div>
+<map name="classAGameCharacter_a10f5e7b3d7f9700b8dec6a2321e3a73c_cgraph" id="classAGameCharacter_a10f5e7b3d7f9700b8dec6a2321e3a73c_cgraph">
+<area shape="rect" id="node2" href="classPlayerStatus.html#ae8cb82bdf9c727af0a188a753f2351ee" title="PlayerStatus::SetEquip" alt="" coords="267,56,425,83"/>
+<area shape="rect" id="node6" href="classPlayerStatus.html#a00a02af7d79a5752a9346e34d138cd69" title="PlayerStatus::SetMaxHp" alt="" coords="263,107,429,133"/>
+<area shape="rect" id="node7" href="classACharacterBase.html#a4c0cf46573d2d73ea1e67af9f7156558" title="ACharacterBase::GetHp" alt="" coords="265,157,427,184"/>
+<area shape="rect" id="node8" href="classACharacterBase.html#a78583d70312aa528063c53a6cd4bfab7" title="ACharacterBase::Initialize" alt="" coords="260,208,432,235"/>
+<area shape="rect" id="node3" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="492,5,659,32"/>
+<area shape="rect" id="node4" href="classMasterData.html#ab041e8310948666fdc41b458ef93684f" title="MasterData::GetEquipMaster" alt="" coords="480,56,671,83"/>
+<area shape="rect" id="node5" href="classEquipMaster.html#a522f97f9167da3b47e469b864d59fc46" title="EquipMaster::Get" alt="" coords="513,107,637,133"/>
 </map>
 </div>
 
@@ -598,8 +648,10 @@ AGameCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAGameCharacter_a9f16189ed5a069ce10c86104c51466f0_icgraph.png" border="0" usemap="#classAGameCharacter_a9f16189ed5a069ce10c86104c51466f0_icgraph" alt=""/></div>
 <map name="classAGameCharacter_a9f16189ed5a069ce10c86104c51466f0_icgraph" id="classAGameCharacter_a9f16189ed5a069ce10c86104c51466f0_icgraph">
-<area shape="rect" id="node2" href="classUSkillListWidget.html#ad9ecfbac60879726f37fe93e892de3a7" title="USkillListWidget::Init" alt="" coords="245,5,387,32"/>
-<area shape="rect" id="node3" href="classUSkillTreeWidget.html#a044690d90fa6cc69d06566f07bf3e609" title="USkillTreeWidget::Init" alt="" coords="243,56,389,83"/>
+<area shape="rect" id="node2" href="classUEquipMenu.html#a4892ec477bd68e86f52d8a1441538b43" title="UEquipMenu::Init" alt="" coords="255,5,377,32"/>
+<area shape="rect" id="node4" href="classUSkillListWidget.html#ad9ecfbac60879726f37fe93e892de3a7" title="USkillListWidget::Init" alt="" coords="245,56,387,83"/>
+<area shape="rect" id="node5" href="classUSkillTreeWidget.html#a044690d90fa6cc69d06566f07bf3e609" title="USkillTreeWidget::Init" alt="" coords="243,107,389,133"/>
+<area shape="rect" id="node3" href="classUEquipMenu.html#aee9be9411f500636f4ea98bc56aafdbf" title="UEquipMenu::OnRecvPacket" alt="" coords="437,5,628,32"/>
 </map>
 </div>
 
@@ -755,7 +807,7 @@ AGameCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAGameCharacter_af156c2a2529aebbfc371872a06c80928_icgraph.png" border="0" usemap="#classAGameCharacter_af156c2a2529aebbfc371872a06c80928_icgraph" alt=""/></div>
 <map name="classAGameCharacter_af156c2a2529aebbfc371872a06c80928_icgraph" id="classAGameCharacter_af156c2a2529aebbfc371872a06c80928_icgraph">
-<area shape="rect" id="node2" href="classAGameCharacter.html#aaa2e33f7ca0ef1423c089e24f785a5de" title="AGameCharacter::OnRecvLevelUp" alt="" coords="245,5,465,32"/>
+<area shape="rect" id="node2" href="classAGameCharacter.html#adfd3d924afb9ea2d3cf25d31531ba783" title="AGameCharacter::OnRecvLevelUp" alt="" coords="245,5,465,32"/>
 </map>
 </div>
 
@@ -812,8 +864,8 @@ AGameCharacter 連携図</div>
 
 </div>
 </div>
-<a id="aaa2e33f7ca0ef1423c089e24f785a5de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa2e33f7ca0ef1423c089e24f785a5de">&#9670;&nbsp;</a></span>OnRecvLevelUp()</h2>
+<a id="adfd3d924afb9ea2d3cf25d31531ba783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfd3d924afb9ea2d3cf25d31531ba783">&#9670;&nbsp;</a></span>OnRecvLevelUp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -829,6 +881,12 @@ AGameCharacter 連携図</div>
           <td></td>
           <td class="paramtype">int32&#160;</td>
           <td class="paramname"><em>MaxHp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>BaseMaxHp</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -870,9 +928,9 @@ AGameCharacter 連携図</div>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classAGameCharacter_aaa2e33f7ca0ef1423c089e24f785a5de_cgraph.png" border="0" usemap="#classAGameCharacter_aaa2e33f7ca0ef1423c089e24f785a5de_cgraph" alt=""/></div>
-<map name="classAGameCharacter_aaa2e33f7ca0ef1423c089e24f785a5de_cgraph" id="classAGameCharacter_aaa2e33f7ca0ef1423c089e24f785a5de_cgraph">
-<area shape="rect" id="node2" href="classPlayerStatus.html#aa5e37379a3bf680bb8a813ffc6e259bf" title="PlayerStatus::Set" alt="" coords="314,5,439,32"/>
+<div class="center"><img src="classAGameCharacter_adfd3d924afb9ea2d3cf25d31531ba783_cgraph.png" border="0" usemap="#classAGameCharacter_adfd3d924afb9ea2d3cf25d31531ba783_cgraph" alt=""/></div>
+<map name="classAGameCharacter_adfd3d924afb9ea2d3cf25d31531ba783_cgraph" id="classAGameCharacter_adfd3d924afb9ea2d3cf25d31531ba783_cgraph">
+<area shape="rect" id="node2" href="classPlayerStatus.html#a249de2466c317405392e16a7d7b9ea95" title="PlayerStatus::Set" alt="" coords="314,5,439,32"/>
 <area shape="rect" id="node3" href="classACharacterBase.html#a1131fec4368441d80a899e0a632bdc5c" title="ACharacterBase::UpdateMaxHp" alt="" coords="273,56,480,83"/>
 <area shape="rect" id="node4" href="classAGameCharacter.html#af156c2a2529aebbfc371872a06c80928" title="AGameCharacter::OnLevelUp" alt="" coords="281,107,473,133"/>
 </map>

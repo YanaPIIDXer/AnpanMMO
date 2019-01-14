@@ -4,7 +4,7 @@ var searchData=
   ['maxcount',['MaxCount',['../structAnpanPopAreaItem.html#a7f79af9d52393da1350f37affdaae17c',1,'AnpanPopAreaItem']]],
   ['maxdepth',['MaxDepth',['../classAreaConfig.html#a0f78458d54a847540d4cd1af4e9f1074',1,'AreaConfig']]],
   ['maxheight',['MaxHeight',['../classAreaConfig.html#af38711d350c52a936ea245adb5f26c4e',1,'AreaConfig']]],
-  ['maxhp',['MaxHp',['../classAnpanData.html#acaf98112d8702a260ca4feacc99167f0',1,'AnpanData::MaxHp()'],['../classPacketCharacterStatus.html#a37a5e79fd35e5193e0d39de839c9bcce',1,'PacketCharacterStatus::MaxHp()'],['../classPacketLevelUp.html#a12921b7052f8f74e51ad13368ec9a222',1,'PacketLevelUp::MaxHp()'],['../classPlayerData.html#a07b6eeb9827e68261b058582e1cbe704',1,'PlayerData::MaxHp()'],['../structLevelItem.html#a73141a2f69011b67e00b57f0923f02d9',1,'LevelItem::MaxHP()']]],
+  ['maxhp',['MaxHp',['../classAnpanData.html#acaf98112d8702a260ca4feacc99167f0',1,'AnpanData::MaxHp()'],['../classPacketChangeEquipResult.html#a9151fd5a7561601d92a075a5d4b9e38a',1,'PacketChangeEquipResult::MaxHp()'],['../classPacketCharacterStatus.html#a37a5e79fd35e5193e0d39de839c9bcce',1,'PacketCharacterStatus::MaxHp()'],['../classPacketLevelUp.html#a12921b7052f8f74e51ad13368ec9a222',1,'PacketLevelUp::MaxHp()'],['../classPlayerData.html#a07b6eeb9827e68261b058582e1cbe704',1,'PlayerData::MaxHp()'],['../structLevelItem.html#a73141a2f69011b67e00b57f0923f02d9',1,'LevelItem::MaxHP()']]],
   ['maxwidth',['MaxWidth',['../classAreaConfig.html#acbefd93e6bf09d0d280bc9c28ec8bc2c',1,'AreaConfig']]],
   ['memberdata',['MemberData',['../classPacketPartyJoinMember.html#af1b491eb4be38f8c40f2ba28dbd4d690',1,'PacketPartyJoinMember']]],
   ['memberlist',['MemberList',['../classPacketPartyJoin.html#a1eec77c8c4cd01e203febcddfd81591e',1,'PacketPartyJoin']]],

@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "OtherPlayerMenu.h"
 #include "Character/Player/Other/OtherPlayerCharacter.h"

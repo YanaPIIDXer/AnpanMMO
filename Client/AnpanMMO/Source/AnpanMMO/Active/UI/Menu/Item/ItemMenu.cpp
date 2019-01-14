@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "ItemMenu.h"
 #include "Character/Player/GameCharacter.h"
@@ -29,9 +29,20 @@ void UItemMenu::Init()
 	{
 		FItemData ItemData;
 		ItemData.ItemId = ItemIds[i];
-		const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemData.ItemId);
-		check(pItem != nullptr);
-		ItemData.Name = pItem->Name;
+		if (ItemData.ItemId < 10000)
+		{
+			const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(ItemData.ItemId);
+			check(pItem != nullptr);
+			ItemData.Name = pItem->Name;
+			ItemData.bIsUsable = (pItem->Type == ItemItem::CONSUME);
+		}
+		else
+		{
+			const EquipItem *pItem = MasterData::GetInstance().GetEquipMaster().Get(ItemData.ItemId);
+			check(pItem != nullptr);
+			ItemData.Name = pItem->Name;
+			ItemData.bIsUsable = false;
+		}
 		ItemData.Count = pCharacter->GetStatus().GetItemList().GetCount(ItemData.ItemId);
 		Items.Add(ItemData);
 	}

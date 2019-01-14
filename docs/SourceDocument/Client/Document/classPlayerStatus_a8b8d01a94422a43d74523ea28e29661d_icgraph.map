@@ -1,0 +1,4 @@
+<map id="PlayerStatus::GetBaseMaxHp" name="PlayerStatus::GetBaseMaxHp">
+<area shape="rect" id="node2" href="$classUEquipMenu.html#a4892ec477bd68e86f52d8a1441538b43" title="UEquipMenu::Init" alt="" coords="251,5,372,32"/>
+<area shape="rect" id="node3" href="$classUEquipMenu.html#aee9be9411f500636f4ea98bc56aafdbf" title="UEquipMenu::OnRecvPacket" alt="" coords="420,5,611,32"/>
+</map>

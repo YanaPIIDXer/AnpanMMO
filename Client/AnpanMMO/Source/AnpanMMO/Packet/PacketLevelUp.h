@@ -33,6 +33,8 @@ public:
 	u32 Level;
 	//! Å‘å‚g‚o
 	u32 MaxHp;
+	//! Šî‘bÅ‘å‚g‚o
+	u32 BaseMaxHp;
 	//! STR
 	u32 Str;
 	//! DEF
@@ -57,10 +59,11 @@ public:
 	/**
 	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
-	PacketLevelUp(u32 InLevel, u32 InMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, s32 InResultExp)
+	PacketLevelUp(u32 InLevel, u32 InMaxHp, u32 InBaseMaxHp, u32 InStr, u32 InDef, u32 InInt, u32 InMnd, u32 InVit, s32 InResultExp)
 	{
 		Level = InLevel;
 		MaxHp = InMaxHp;
+		BaseMaxHp = InBaseMaxHp;
 		Str = InStr;
 		Def = InDef;
 		Int = InInt;
@@ -81,6 +84,7 @@ public:
 	{
 		pStream->Serialize(&Level);
 		pStream->Serialize(&MaxHp);
+		pStream->Serialize(&BaseMaxHp);
 		pStream->Serialize(&Str);
 		pStream->Serialize(&Def);
 		pStream->Serialize(&Int);

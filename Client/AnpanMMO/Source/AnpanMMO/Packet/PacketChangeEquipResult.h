@@ -45,6 +45,8 @@ public:
 	u32 RightEquip;
 	//! 左手装備
 	u32 LeftEquip;
+	//! 変化後の最大ＨＰ
+	u32 MaxHp;
 	
 
 	/**
@@ -57,11 +59,12 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	PacketChangeEquipResult(u8 InResult, u32 InRightEquip, u32 InLeftEquip)
+	PacketChangeEquipResult(u8 InResult, u32 InRightEquip, u32 InLeftEquip, u32 InMaxHp)
 	{
 		Result = InResult;
 		RightEquip = InRightEquip;
 		LeftEquip = InLeftEquip;
+		MaxHp = InMaxHp;
 		
 	}
 
@@ -77,6 +80,7 @@ public:
 		pStream->Serialize(&Result);
 		pStream->Serialize(&RightEquip);
 		pStream->Serialize(&LeftEquip);
+		pStream->Serialize(&MaxHp);
 		
 		return true;
 	}

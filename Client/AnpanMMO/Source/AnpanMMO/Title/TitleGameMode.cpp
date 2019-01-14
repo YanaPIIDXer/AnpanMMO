@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "TitleGameMode.h"
 #include "Config.h"
@@ -154,7 +154,7 @@ bool ATitleGameMode::OnRecvCharacterStatus(MemoryStreamInterface *pStream)
 	check(pInst != nullptr);
 
 	FString NameStr = UTF8_TO_TCHAR(Packet.Name.c_str());
-	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.Job, Packet.Level, Packet.MaxHp, Packet.Str, Packet.Def, Packet.Int, Packet.Mnd, Packet.Vit, Packet.Exp, Packet.Gold, Packet.RightEquip, Packet.LeftEquip);
+	pInst->OnRecvStatus(Packet.Uuid, NameStr, Packet.Job, Packet.Level, Packet.MaxHp, Packet.BaseMaxHp, Packet.Str, Packet.Def, Packet.Int, Packet.Mnd, Packet.Vit, Packet.Exp, Packet.Gold, Packet.RightEquip, Packet.LeftEquip);
 
 	return true;
 }

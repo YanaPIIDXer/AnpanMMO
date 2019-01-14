@@ -1,4 +1,4 @@
-// Copyright 2018 YanaPIIDXer All Rights Reserved.
+// Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
 #include "MMOGameInstance.h"
 #include "DLC/PakFileManager.h"
@@ -67,10 +67,10 @@ void UMMOGameInstance::SendPacket(PacketBase *pPacket)
 }
 
 // ステータスを受信した。
-void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, uint32 Level, int32 MaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit, int32 Exp, u32 Gold, uint32 RightEquipId, uint32 LeftEquipId)
+void UMMOGameInstance::OnRecvStatus(uint32 Uuid, const FString &Name, u8 Job, uint32 Level, int32 MaxHp, int32 BaseMaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit, int32 Exp, u32 Gold, uint32 RightEquipId, uint32 LeftEquipId)
 {
 	StatusCache.SetUuid(Uuid);
-	StatusCache.Set(Level, MaxHp, Str, Def, Int, Mnd, Vit);
+	StatusCache.Set(Level, MaxHp, BaseMaxHp, Str, Def, Int, Mnd, Vit);
 	StatusCache.SetName(Name);
 	StatusCache.SetJob(Job);
 	StatusCache.SetExp(Exp);
