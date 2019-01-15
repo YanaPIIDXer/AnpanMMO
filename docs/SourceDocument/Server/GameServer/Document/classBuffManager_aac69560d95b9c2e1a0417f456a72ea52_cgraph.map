@@ -1,0 +1,6 @@
+<map id="BuffManager::AddBuff" name="BuffManager::AddBuff">
+<area shape="rect" id="node2" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="213,5,379,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a5d350fdd4908a79326f155cccf26e58a" title="バフマスタ取得 " alt="" coords="206,56,386,83"/>
+<area shape="rect" id="node4" href="$classBuffMaster.html#a42e7b8d1325d76174a81e4e99e4d6bc1" title="BuffMaster::GetItem" alt="" coords="227,107,365,133"/>
+<area shape="rect" id="node5" href="$classCharacterBase.html#a503107e1d9c074c4a45dc0fbe2775beb" title="バフが追加された。 " alt="" coords="200,157,392,184"/>
+</map>

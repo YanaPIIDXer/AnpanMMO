@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: BuffManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_9e2cbad5a6e5c81fbb100a50a28caa5c.html">Buff</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">BuffManager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="BuffManager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __BUFFMANAGER_H__</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define __BUFFMANAGER_H__</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;boost/unordered_map.hpp&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classBuffBase.html">BuffBase</a>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="classCharacterBase.html">CharacterBase</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classBuffManager.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBuffManager.html">BuffManager</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:        <span class="comment">// 別名定義.</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">typedef</span> boost::unordered_map&lt;u8, BuffBase *&gt; BuffMap;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classBuffManager.html#a860511f926894ba37efc7bb96cc65ec0">BuffManager</a>(<a class="code" href="classCharacterBase.html">CharacterBase</a> *pInOwner);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classBuffManager.html#a2f9a58a994b10dced9b6c35733875168">~BuffManager</a>();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBuffManager.html#a7dd4da4439321ec255922132eafc00cb">Poll</a>(<a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> DeltaTime);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52">AddBuff</a>(<a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> BuffId);</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// バフリスト</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    BuffMap Buffs;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// 所有者.</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classCharacterBase.html">CharacterBase</a> *pOwner;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif      // #ifndef __BUFFMANAGER_H__</span></div><div class="ttc" id="classBuffManager_html_a7dd4da4439321ec255922132eafc00cb"><div class="ttname"><a href="classBuffManager.html#a7dd4da4439321ec255922132eafc00cb">BuffManager::Poll</a></div><div class="ttdeci">void Poll(u32 DeltaTime)</div><div class="ttdoc">毎フレームの処理 </div><div class="ttdef"><b>Definition:</b> BuffManager.cpp:32</div></div>
+<div class="ttc" id="classBuffManager_html_a860511f926894ba37efc7bb96cc65ec0"><div class="ttname"><a href="classBuffManager.html#a860511f926894ba37efc7bb96cc65ec0">BuffManager::BuffManager</a></div><div class="ttdeci">BuffManager(CharacterBase *pInOwner)</div><div class="ttdoc">コンストラクタ </div><div class="ttdef"><b>Definition:</b> BuffManager.cpp:17</div></div>
+<div class="ttc" id="classBuffManager_html"><div class="ttname"><a href="classBuffManager.html">BuffManager</a></div><div class="ttdoc">バフ管理 </div><div class="ttdef"><b>Definition:</b> BuffManager.h:18</div></div>
+<div class="ttc" id="classCharacterBase_html"><div class="ttname"><a href="classCharacterBase.html">CharacterBase</a></div><div class="ttdoc">キャラクタ基底クラス </div><div class="ttdef"><b>Definition:</b> CharacterBase.h:22</div></div>
+<div class="ttc" id="classBuffBase_html"><div class="ttname"><a href="classBuffBase.html">BuffBase</a></div><div class="ttdoc">バフ基底クラス </div><div class="ttdef"><b>Definition:</b> BuffBase.h:15</div></div>
+<div class="ttc" id="TypeDefs_8h_html_a10e94b422ef0c20dcdec20d31a1f5049"><div class="ttname"><a href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a></div><div class="ttdeci">unsigned int u32</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:10</div></div>
+<div class="ttc" id="classBuffManager_html_a2f9a58a994b10dced9b6c35733875168"><div class="ttname"><a href="classBuffManager.html#a2f9a58a994b10dced9b6c35733875168">BuffManager::~BuffManager</a></div><div class="ttdeci">~BuffManager()</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> BuffManager.cpp:23</div></div>
+<div class="ttc" id="classBuffManager_html_aac69560d95b9c2e1a0417f456a72ea52"><div class="ttname"><a href="classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52">BuffManager::AddBuff</a></div><div class="ttdeci">void AddBuff(u32 BuffId)</div><div class="ttdoc">バフ追加。 </div><div class="ttdef"><b>Definition:</b> BuffManager.cpp:52</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

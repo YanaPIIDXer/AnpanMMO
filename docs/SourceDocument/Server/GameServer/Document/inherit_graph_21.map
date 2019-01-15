@@ -1,3 +1,7 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$classCachePacketID.html" title="パケットＩＤ定義. " alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node1" href="$classBuffBase.html" title="バフ基底クラス " alt="" coords="5,81,80,108"/>
+<area shape="rect" id="node2" href="$classBuffAutoHeal.html" title="自動回復バフ " alt="" coords="135,5,233,32"/>
+<area shape="rect" id="node3" href="$classBuffSpeedUp.html" title="スピードアップバフ " alt="" coords="135,56,233,83"/>
+<area shape="rect" id="node4" href="$classDebuffParalysis.html" title="麻痺デバフ " alt="" coords="128,107,240,133"/>
+<area shape="rect" id="node5" href="$classDebuffPoison.html" title="毒デバフ " alt="" coords="135,157,233,184"/>
 </map>

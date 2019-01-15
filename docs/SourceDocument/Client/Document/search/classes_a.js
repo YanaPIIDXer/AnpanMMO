@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['packetaddbuff',['PacketAddBuff',['../classPacketAddBuff.html',1,'']]],
   ['packetaddexp',['PacketAddExp',['../classPacketAddExp.html',1,'']]],
   ['packetanpanlist',['PacketAnpanList',['../classPacketAnpanList.html',1,'']]],
   ['packetareamove',['PacketAreaMove',['../classPacketAreaMove.html',1,'']]],
@@ -63,6 +64,7 @@ var searchData=
   ['packetqueststagechange',['PacketQuestStageChange',['../classPacketQuestStageChange.html',1,'']]],
   ['packetreceivechat',['PacketReceiveChat',['../classPacketReceiveChat.html',1,'']]],
   ['packetreceivenotice',['PacketReceiveNotice',['../classPacketReceiveNotice.html',1,'']]],
+  ['packetremovebuff',['PacketRemoveBuff',['../classPacketRemoveBuff.html',1,'']]],
   ['packetrespawnrequest',['PacketRespawnRequest',['../classPacketRespawnRequest.html',1,'']]],
   ['packetrotateanpan',['PacketRotateAnpan',['../classPacketRotateAnpan.html',1,'']]],
   ['packetsaveactivequest',['PacketSaveActiveQuest',['../classPacketSaveActiveQuest.html',1,'']]],

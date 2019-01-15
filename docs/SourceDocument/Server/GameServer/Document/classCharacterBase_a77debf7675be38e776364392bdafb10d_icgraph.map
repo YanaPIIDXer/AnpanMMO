@@ -1,0 +1,4 @@
+<map id="CharacterBase::OnBuffRemoved" name="CharacterBase::OnBuffRemoved">
+<area shape="rect" id="node2" href="$classBuffManager.html#a7dd4da4439321ec255922132eafc00cb" title="毎フレームの処理 " alt="" coords="261,5,385,32"/>
+<area shape="rect" id="node3" href="$classCharacterBase.html#a73ca6b09f2a6e31f0add39128ff1b5d9" title="毎フレームの処理 " alt="" coords="433,5,572,32"/>
+</map>

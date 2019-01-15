@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: BuffBase クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="classBuffBase-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">BuffBase クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>バフ基底クラス  
+ <a href="classBuffBase.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="BuffBase_8h_source.html">BuffBase.h</a>&gt;</code></p>
+<div class="dynheader">
+BuffBase の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffBase__inherit__graph.png" border="0" usemap="#BuffBase_inherit__map" alt="Inheritance graph"/></div>
+<map name="BuffBase_inherit__map" id="BuffBase_inherit__map">
+<area shape="rect" id="node2" href="classBuffAutoHeal.html" title="自動回復バフ " alt="" coords="5,80,103,107"/>
+<area shape="rect" id="node3" href="classBuffSpeedUp.html" title="スピードアップバフ " alt="" coords="127,80,224,107"/>
+<area shape="rect" id="node4" href="classDebuffParalysis.html" title="麻痺デバフ " alt="" coords="249,80,361,107"/>
+<area shape="rect" id="node5" href="classDebuffPoison.html" title="毒デバフ " alt="" coords="385,80,483,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a02841bfbfa0306d45499cb1aa3dda968"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffBase.html#a02841bfbfa0306d45499cb1aa3dda968">BuffBase</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Time, <a class="el" href="classCharacterBase.html">CharacterBase</a> *pInCharacter)</td></tr>
+<tr class="memdesc:a02841bfbfa0306d45499cb1aa3dda968"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a02841bfbfa0306d45499cb1aa3dda968">[詳解]</a><br /></td></tr>
+<tr class="separator:a02841bfbfa0306d45499cb1aa3dda968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f08927d880f91babdff42fb0398e224"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffBase.html#a5f08927d880f91babdff42fb0398e224">~BuffBase</a> ()</td></tr>
+<tr class="memdesc:a5f08927d880f91babdff42fb0398e224"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a5f08927d880f91babdff42fb0398e224">[詳解]</a><br /></td></tr>
+<tr class="separator:a5f08927d880f91babdff42fb0398e224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bef39671c09e28ceacc925e6fd68be8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffBase.html#a2bef39671c09e28ceacc925e6fd68be8">Poll</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> DeltaTime)</td></tr>
+<tr class="memdesc:a2bef39671c09e28ceacc925e6fd68be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="#a2bef39671c09e28ceacc925e6fd68be8">[詳解]</a><br /></td></tr>
+<tr class="separator:a2bef39671c09e28ceacc925e6fd68be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a608c2c28000006ba27b23fa470c15835"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffBase.html#a608c2c28000006ba27b23fa470c15835">IsFinished</a> () const</td></tr>
+<tr class="memdesc:a608c2c28000006ba27b23fa470c15835"><td class="mdescLeft">&#160;</td><td class="mdescRight">終了しているか？  <a href="#a608c2c28000006ba27b23fa470c15835">[詳解]</a><br /></td></tr>
+<tr class="separator:a608c2c28000006ba27b23fa470c15835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3970c7dc976f8748a9a72d439970d16"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffBase.html#ad3970c7dc976f8748a9a72d439970d16">GetType</a> () const =0</td></tr>
+<tr class="memdesc:ad3970c7dc976f8748a9a72d439970d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">タイプを取得  <a href="#ad3970c7dc976f8748a9a72d439970d16">[詳解]</a><br /></td></tr>
+<tr class="separator:ad3970c7dc976f8748a9a72d439970d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0f84ca9e5d3852ac081edd906d02928a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffBase.html#a0f84ca9e5d3852ac081edd906d02928a">Update</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> DeltaTime)</td></tr>
+<tr class="memdesc:a0f84ca9e5d3852ac081edd906d02928a"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="#a0f84ca9e5d3852ac081edd906d02928a">[詳解]</a><br /></td></tr>
+<tr class="separator:a0f84ca9e5d3852ac081edd906d02928a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49738e80fbe873090189d79741e61f30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCharacterBase.html">CharacterBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffBase.html#a49738e80fbe873090189d79741e61f30">GetCharacter</a> ()</td></tr>
+<tr class="memdesc:a49738e80fbe873090189d79741e61f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">キャラクタ取得  <a href="#a49738e80fbe873090189d79741e61f30">[詳解]</a><br /></td></tr>
+<tr class="separator:a49738e80fbe873090189d79741e61f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>バフ基底クラス </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a02841bfbfa0306d45499cb1aa3dda968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02841bfbfa0306d45499cb1aa3dda968">&#9670;&nbsp;</a></span>BuffBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BuffBase::BuffBase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classCharacterBase.html">CharacterBase</a> *&#160;</td>
+          <td class="paramname"><em>pInCharacter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Time</td><td>継続時間 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pInCharacter</td><td>キャラクタ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f08927d880f91babdff42fb0398e224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f08927d880f91babdff42fb0398e224">&#9670;&nbsp;</a></span>~BuffBase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual BuffBase::~BuffBase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a49738e80fbe873090189d79741e61f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49738e80fbe873090189d79741e61f30">&#9670;&nbsp;</a></span>GetCharacter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCharacterBase.html">CharacterBase</a> * BuffBase::GetCharacter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>キャラクタ取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>キャラクタ </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffBase_a49738e80fbe873090189d79741e61f30_icgraph.png" border="0" usemap="#classBuffBase_a49738e80fbe873090189d79741e61f30_icgraph" alt=""/></div>
+<map name="classBuffBase_a49738e80fbe873090189d79741e61f30_icgraph" id="classBuffBase_a49738e80fbe873090189d79741e61f30_icgraph">
+<area shape="rect" id="node2" href="classBuffAutoHeal.html#a1d2aeed2e69afc1526ff94a8560805b4" title="毎フレームの処理 " alt="" coords="212,5,359,32"/>
+<area shape="rect" id="node3" href="classDebuffPoison.html#ad4cf1c9ef8fe39172d513f79c555ba0c" title="毎フレームの処理 " alt="" coords="212,56,359,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad3970c7dc976f8748a9a72d439970d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3970c7dc976f8748a9a72d439970d16">&#9670;&nbsp;</a></span>GetType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> BuffBase::GetType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>タイプを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>タイプ </dd></dl>
+
+<p><a class="el" href="classBuffAutoHeal.html#a5745b11fd1a5e678a7b3d810e3f0bddd">BuffAutoHeal</a>, <a class="el" href="classBuffSpeedUp.html#aa6e6e3536128fbfc6a466fe1c343db7b">BuffSpeedUp</a>, <a class="el" href="classDebuffPoison.html#a7d02882a528fb8b53973e56f3e2152ee">DebuffPoison</a>, <a class="el" href="classDebuffParalysis.html#a16183e481552135c4fa32cbf4024b828">DebuffParalysis</a>で実装されています。</p>
+
+</div>
+</div>
+<a id="a608c2c28000006ba27b23fa470c15835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a608c2c28000006ba27b23fa470c15835">&#9670;&nbsp;</a></span>IsFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BuffBase::IsFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>終了しているか？ </p>
+<dl class="section return"><dt>戻り値</dt><dd>終了していればtrueを返す </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffBase_a608c2c28000006ba27b23fa470c15835_icgraph.png" border="0" usemap="#classBuffBase_a608c2c28000006ba27b23fa470c15835_icgraph" alt=""/></div>
+<map name="classBuffBase_a608c2c28000006ba27b23fa470c15835_icgraph" id="classBuffBase_a608c2c28000006ba27b23fa470c15835_icgraph">
+<area shape="rect" id="node2" href="classBuffBase.html#a2bef39671c09e28ceacc925e6fd68be8" title="毎フレームの処理 " alt="" coords="195,5,299,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2bef39671c09e28ceacc925e6fd68be8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bef39671c09e28ceacc925e6fd68be8">&#9670;&nbsp;</a></span>Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BuffBase::Poll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>毎フレームの処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">DeltaTime</td><td>前フレームからの経過時間 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffBase_a2bef39671c09e28ceacc925e6fd68be8_cgraph.png" border="0" usemap="#classBuffBase_a2bef39671c09e28ceacc925e6fd68be8_cgraph" alt=""/></div>
+<map name="classBuffBase_a2bef39671c09e28ceacc925e6fd68be8_cgraph" id="classBuffBase_a2bef39671c09e28ceacc925e6fd68be8_cgraph">
+<area shape="rect" id="node2" href="classBuffBase.html#a608c2c28000006ba27b23fa470c15835" title="終了しているか？ " alt="" coords="157,5,299,32"/>
+<area shape="rect" id="node3" href="classBuffBase.html#a0f84ca9e5d3852ac081edd906d02928a" title="毎フレームの処理 " alt="" coords="167,56,289,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0f84ca9e5d3852ac081edd906d02928a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f84ca9e5d3852ac081edd906d02928a">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BuffBase::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>毎フレームの処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">DeltaTime</td><td>前フレームからの経過時間 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classBuffAutoHeal.html#a1d2aeed2e69afc1526ff94a8560805b4">BuffAutoHeal</a>, <a class="el" href="classDebuffPoison.html#ad4cf1c9ef8fe39172d513f79c555ba0c">DebuffPoison</a>で再実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffBase_a0f84ca9e5d3852ac081edd906d02928a_icgraph.png" border="0" usemap="#classBuffBase_a0f84ca9e5d3852ac081edd906d02928a_icgraph" alt=""/></div>
+<map name="classBuffBase_a0f84ca9e5d3852ac081edd906d02928a_icgraph" id="classBuffBase_a0f84ca9e5d3852ac081edd906d02928a_icgraph">
+<area shape="rect" id="node2" href="classBuffBase.html#a2bef39671c09e28ceacc925e6fd68be8" title="毎フレームの処理 " alt="" coords="176,5,280,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="BuffBase_8h_source.html">BuffBase.h</a></li>
+<li><a class="el" href="BuffBase_8cpp.html">BuffBase.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

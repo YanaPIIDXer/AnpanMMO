@@ -21,9 +21,15 @@ var searchData=
   ['bonusmnd',['BonusMnd',['../structSkillItem.html#aac31dd83107d9203d8ed70ce84a2d5f1',1,'SkillItem']]],
   ['bonusstr',['BonusStr',['../structSkillItem.html#a1a8671ce460998472526d7283c9356ff',1,'SkillItem']]],
   ['bonusvit',['BonusVit',['../structSkillItem.html#a60003c6750905cc57c41a9b09f82bfbe',1,'SkillItem']]],
-  ['buff',['BUFF',['../structSkillItem.html#a2b24a6d88b96a1cd592f151f361c87cba44e0350819ac71d7233ea746b08bab44',1,'SkillItem']]],
+  ['buff',['BUFF',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a44e0350819ac71d7233ea746b08bab44',1,'SkillItem']]],
   ['buffer',['Buffer',['../classBuffer.html',1,'Buffer'],['../classBuffer.html#ae7ef2cd201190fde551dcb902627112b',1,'Buffer::Buffer()']]],
   ['buffer_2ecpp',['Buffer.cpp',['../Buffer_8cpp.html',1,'']]],
   ['buffer_2eh',['Buffer.h',['../Buffer_8h.html',1,'']]],
+  ['buffid',['BuffId',['../classPacketAddBuff.html#a307e3d009a836c9668ded670790e9d25',1,'PacketAddBuff']]],
+  ['buffitem',['BuffItem',['../structBuffItem.html',1,'']]],
+  ['buffmaster',['BuffMaster',['../classBuffMaster.html',1,'']]],
+  ['buffmaster_2ecpp',['BuffMaster.cpp',['../BuffMaster_8cpp.html',1,'']]],
+  ['buffmaster_2eh',['BuffMaster.h',['../BuffMaster_8h.html',1,'']]],
+  ['bufftype',['BuffType',['../classPacketRemoveBuff.html#abe9440ae22483efe758154a175dbe78f',1,'PacketRemoveBuff']]],
   ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]]
 ];

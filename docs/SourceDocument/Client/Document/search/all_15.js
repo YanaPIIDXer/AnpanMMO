@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['value',['Value',['../structBuffItem.html#ac022917becd475e61f2e513f1c846626',1,'BuffItem']]],
   ['versiondownloader',['VersionDownloader',['../classVersionDownloader.html',1,'VersionDownloader'],['../classVersionDownloader.html#a871f451adbdd82ec1985b08b7ea999f1',1,'VersionDownloader::VersionDownloader()']]],
   ['versiondownloader_2ecpp',['VersionDownloader.cpp',['../VersionDownloader_8cpp.html',1,'']]],
   ['versiondownloader_2eh',['VersionDownloader.h',['../VersionDownloader_8h.html',1,'']]],

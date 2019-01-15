@@ -174,6 +174,12 @@ PlayerCharacter 連携図</div>
 <tr class="memitem:a77714ad28f705aed148dd5525b8a3596"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596">ChangeEquip</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> RightEqiupId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> LeftEquipId)</td></tr>
 <tr class="memdesc:a77714ad28f705aed148dd5525b8a3596"><td class="mdescLeft">&#160;</td><td class="mdescRight">装備切り替え  <a href="#a77714ad28f705aed148dd5525b8a3596">[詳解]</a><br /></td></tr>
 <tr class="separator:a77714ad28f705aed148dd5525b8a3596"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a971e8851cf804f80cd1fff280d9ba914"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a971e8851cf804f80cd1fff280d9ba914">OnBuffAdded</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> BuffId)</td></tr>
+<tr class="memdesc:a971e8851cf804f80cd1fff280d9ba914"><td class="mdescLeft">&#160;</td><td class="mdescRight">バフが追加された。  <a href="#a971e8851cf804f80cd1fff280d9ba914">[詳解]</a><br /></td></tr>
+<tr class="separator:a971e8851cf804f80cd1fff280d9ba914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0885154ba74b393138de2c66062ce88b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a0885154ba74b393138de2c66062ce88b">OnBuffRemoved</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> BuffType)</td></tr>
+<tr class="memdesc:a0885154ba74b393138de2c66062ce88b"><td class="mdescLeft">&#160;</td><td class="mdescRight">バフが消滅した。  <a href="#a0885154ba74b393138de2c66062ce88b">[詳解]</a><br /></td></tr>
+<tr class="separator:a0885154ba74b393138de2c66062ce88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCharacterBase.html">CharacterBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">CharacterBase</a> ()</td></tr>
 <tr class="memdesc:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">[詳解]</a><br /></td></tr>
@@ -722,12 +728,14 @@ PlayerCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_aae3a26ff3c5b69202b1e2c736ade1170_icgraph.png" border="0" usemap="#classPlayerCharacter_aae3a26ff3c5b69202b1e2c736ade1170_icgraph" alt=""/></div>
 <map name="classPlayerCharacter_aae3a26ff3c5b69202b1e2c736ade1170_icgraph" id="classPlayerCharacter_aae3a26ff3c5b69202b1e2c736ade1170_icgraph">
-<area shape="rect" id="node2" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="ゴールドを増加 " alt="" coords="243,5,417,32"/>
-<area shape="rect" id="node3" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="ゴールドを消費 " alt="" coords="231,56,429,83"/>
-<area shape="rect" id="node5" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="アイテム増加 " alt="" coords="245,107,415,133"/>
-<area shape="rect" id="node7" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="アイテム消費 " alt="" coords="231,157,429,184"/>
-<area shape="rect" id="node4" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="477,56,681,83"/>
-<area shape="rect" id="node6" href="classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="479,132,679,159"/>
+<area shape="rect" id="node2" href="classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272" title="ゴールドを増加 " alt="" coords="251,5,425,32"/>
+<area shape="rect" id="node3" href="classPlayerCharacter.html#a0c21ce7b27230b60a45581ea8c3ce83c" title="ゴールドを消費 " alt="" coords="239,56,437,83"/>
+<area shape="rect" id="node5" href="classPlayerCharacter.html#ae79a3832ea9ef55c161871c3e91d0922" title="アイテム増加 " alt="" coords="253,107,423,133"/>
+<area shape="rect" id="node7" href="classPlayerCharacter.html#ae413ac1063c46e7574a3d5103c714070" title="アイテム消費 " alt="" coords="239,157,437,184"/>
+<area shape="rect" id="node8" href="classPlayerCharacter.html#a971e8851cf804f80cd1fff280d9ba914" title="バフが追加された。 " alt="" coords="239,208,437,235"/>
+<area shape="rect" id="node9" href="classPlayerCharacter.html#a0885154ba74b393138de2c66062ce88b" title="バフが消滅した。 " alt="" coords="231,259,445,285"/>
+<area shape="rect" id="node4" href="classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="493,56,697,83"/>
+<area shape="rect" id="node6" href="classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="495,132,695,159"/>
 </map>
 </div>
 
@@ -996,6 +1004,104 @@ PlayerCharacter 連携図</div>
 <div class="center"><img src="classPlayerCharacter_a1afee0a074986b5d0d03f086c9748a0b_cgraph.png" border="0" usemap="#classPlayerCharacter_a1afee0a074986b5d0d03f086c9748a0b_cgraph" alt=""/></div>
 <map name="classPlayerCharacter_a1afee0a074986b5d0d03f086c9748a0b_cgraph" id="classPlayerCharacter_a1afee0a074986b5d0d03f086c9748a0b_cgraph">
 <area shape="rect" id="node2" href="classCharacterBase.html#a9648779454b629071237b7c2cf910b87" title="エリアを取得 " alt="" coords="264,5,428,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a971e8851cf804f80cd1fff280d9ba914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a971e8851cf804f80cd1fff280d9ba914">&#9670;&nbsp;</a></span>OnBuffAdded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerCharacter::OnBuffAdded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>BuffId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>バフが追加された。 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">BuffId</td><td>バフＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classCharacterBase.html#a503107e1d9c074c4a45dc0fbe2775beb">CharacterBase</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlayerCharacter_a971e8851cf804f80cd1fff280d9ba914_cgraph.png" border="0" usemap="#classPlayerCharacter_a971e8851cf804f80cd1fff280d9ba914_cgraph" alt=""/></div>
+<map name="classPlayerCharacter_a971e8851cf804f80cd1fff280d9ba914_cgraph" id="classPlayerCharacter_a971e8851cf804f80cd1fff280d9ba914_cgraph">
+<area shape="rect" id="node2" href="classPlayerCharacter.html#aae3a26ff3c5b69202b1e2c736ade1170" title="クライアント取得 " alt="" coords="252,43,429,69"/>
+<area shape="rect" id="node3" href="classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="273,93,408,120"/>
+<area shape="rect" id="node4" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="499,5,650,32"/>
+<area shape="rect" id="node5" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="477,57,672,98"/>
+<area shape="rect" id="node6" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="487,123,662,149"/>
+<area shape="rect" id="node7" href="classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd" title="TCPConnection::AsyncSend" alt="" coords="481,173,668,200"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0885154ba74b393138de2c66062ce88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0885154ba74b393138de2c66062ce88b">&#9670;&nbsp;</a></span>OnBuffRemoved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerCharacter::OnBuffRemoved </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>BuffType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>バフが消滅した。 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">BuffType</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classCharacterBase.html#a77debf7675be38e776364392bdafb10d">CharacterBase</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPlayerCharacter_a0885154ba74b393138de2c66062ce88b_cgraph.png" border="0" usemap="#classPlayerCharacter_a0885154ba74b393138de2c66062ce88b_cgraph" alt=""/></div>
+<map name="classPlayerCharacter_a0885154ba74b393138de2c66062ce88b_cgraph" id="classPlayerCharacter_a0885154ba74b393138de2c66062ce88b_cgraph">
+<area shape="rect" id="node2" href="classPlayerCharacter.html#aae3a26ff3c5b69202b1e2c736ade1170" title="クライアント取得 " alt="" coords="268,43,445,69"/>
+<area shape="rect" id="node3" href="classClient.html#a3ca29424a4344d09fa1cfb7e1fec3a75" title="パケット送信. " alt="" coords="289,93,424,120"/>
+<area shape="rect" id="node4" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="515,5,666,32"/>
+<area shape="rect" id="node5" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="493,57,688,98"/>
+<area shape="rect" id="node6" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="503,123,678,149"/>
+<area shape="rect" id="node7" href="classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd" title="TCPConnection::AsyncSend" alt="" coords="497,173,684,200"/>
 </map>
 </div>
 

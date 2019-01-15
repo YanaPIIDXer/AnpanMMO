@@ -1,25 +1,26 @@
 <map id="EndianConverter::IsLittleEndian" name="EndianConverter::IsLittleEndian">
-<area shape="rect" id="node2" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="216,441,383,468"/>
-<area shape="rect" id="node3" href="$classEndianConverter.html#ad78c6bd7c38e4e1f2eec4ce490f171e9" title="符号付き３２ビット変換 " alt="" coords="431,383,597,409"/>
-<area shape="rect" id="node4" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="438,434,590,475"/>
-<area shape="rect" id="node23" href="$classMemoryStreamWriter.html#a8bc2b40d0257751ed12ad2415b74258e" title="MemoryStreamWriter\l::Serialize" alt="" coords="441,673,587,714"/>
+<area shape="rect" id="node2" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="216,467,383,493"/>
+<area shape="rect" id="node3" href="$classEndianConverter.html#ad78c6bd7c38e4e1f2eec4ce490f171e9" title="符号付き３２ビット変換 " alt="" coords="431,408,597,435"/>
+<area shape="rect" id="node4" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="438,459,590,501"/>
+<area shape="rect" id="node24" href="$classMemoryStreamWriter.html#a8bc2b40d0257751ed12ad2415b74258e" title="MemoryStreamWriter\l::Serialize" alt="" coords="441,698,587,739"/>
 <area shape="rect" id="node5" href="$classAnpanMaster.html#a3a903d824019dd28aad876abdb3ce8dd" title="AnpanMaster::Load" alt="" coords="668,5,803,32"/>
 <area shape="rect" id="node6" href="$classAreaMaster.html#aa180d2f006a57a55b12b4e3500ad88c2" title="AreaMaster::Load" alt="" coords="673,56,798,83"/>
-<area shape="rect" id="node9" href="$classEquipMaster.html#a25c6554e13b2009086bf29ba25f048ac" title="EquipMaster::Load" alt="" coords="670,107,801,133"/>
-<area shape="rect" id="node10" href="$classItemMaster.html#a8cd62c66afb184871469e62adb243b2a" title="ItemMaster::Load" alt="" coords="674,157,797,184"/>
-<area shape="rect" id="node11" href="$classMemoryStreamReader.html#a1563459f7ff0683dd54114351d489add" title="MemoryStreamReader\l::Serialize" alt="" coords="659,209,811,250"/>
-<area shape="rect" id="node12" href="$classNPCConditionMaster.html#a6e8cfb5fd685e9c4846d4d8c19d11e0e" title="NPCConditionMaster\l::Load" alt="" coords="664,274,807,315"/>
-<area shape="rect" id="node13" href="$classNPCMaster.html#a8d4a0baf5d6fbb2c2efed7ed1847f0f6" title="NPCMaster::Load" alt="" coords="673,340,798,367"/>
-<area shape="rect" id="node14" href="$classNPCResourceMaster.html#a459b145c6891e6990c04ebb1ff434dd4" title="NPCResourceMaster::Load" alt="" coords="645,391,825,417"/>
-<area shape="rect" id="node15" href="$classQuestMaster.html#a0ca0cf6ff8d9c19bb5046b61e010b803" title="QuestMaster::Load" alt="" coords="669,441,802,468"/>
-<area shape="rect" id="node16" href="$classQuestRewardMaster.html#a0c2972af8833fe8f2dfe430daa53ee36" title="QuestRewardMaster::Load" alt="" coords="647,492,823,519"/>
-<area shape="rect" id="node17" href="$classQuestStageMaster.html#a3a88cb6e766f705a8cfd0ab438ea0f27" title="QuestStageMaster::Load" alt="" coords="652,543,819,569"/>
-<area shape="rect" id="node18" href="$classSkillMaster.html#a7848129c25a1126b97ada1f8ec4d31c7" title="SkillMaster::Load" alt="" coords="674,593,797,620"/>
-<area shape="rect" id="node19" href="$classSkillTreeMaster.html#a73ade1d9a632b3c14be6f635656035cd" title="SkillTreeMaster::Load" alt="" coords="661,644,809,671"/>
-<area shape="rect" id="node20" href="$classTimeInfoMaster.html#abf50a331773e9cd58deb05982fa85383" title="TimeInfoMaster::Load" alt="" coords="662,695,809,721"/>
-<area shape="rect" id="node21" href="$classWarpDataMaster.html#a8da41eb2e54c847141b0ca5619ada80f" title="WarpDataMaster::Load" alt="" coords="657,745,813,772"/>
-<area shape="rect" id="node22" href="$classWarpPointMaster.html#ae7d390246de60a8cad1415c180416b8f" title="WarpPointMaster::Load" alt="" coords="656,796,815,823"/>
-<area shape="rect" id="node7" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="873,467,999,493"/>
-<area shape="rect" id="node8" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="1047,459,1195,501"/>
-<area shape="rect" id="node24" href="$classMemoryStreamWriter.html#ac751c7ba5a1287e23d0a04fbbe307b6c" title="MemoryStreamWriter\l::Serialize" alt="" coords="662,847,809,889"/>
+<area shape="rect" id="node9" href="$classBuffMaster.html#a070f3cabecfa1129f5df8234a9118088" title="BuffMaster::Load" alt="" coords="675,107,795,133"/>
+<area shape="rect" id="node10" href="$classEquipMaster.html#a25c6554e13b2009086bf29ba25f048ac" title="EquipMaster::Load" alt="" coords="670,157,801,184"/>
+<area shape="rect" id="node11" href="$classItemMaster.html#a8cd62c66afb184871469e62adb243b2a" title="ItemMaster::Load" alt="" coords="674,208,797,235"/>
+<area shape="rect" id="node12" href="$classMemoryStreamReader.html#a1563459f7ff0683dd54114351d489add" title="MemoryStreamReader\l::Serialize" alt="" coords="659,259,811,301"/>
+<area shape="rect" id="node13" href="$classNPCConditionMaster.html#a6e8cfb5fd685e9c4846d4d8c19d11e0e" title="NPCConditionMaster\l::Load" alt="" coords="664,325,807,366"/>
+<area shape="rect" id="node14" href="$classNPCMaster.html#a8d4a0baf5d6fbb2c2efed7ed1847f0f6" title="NPCMaster::Load" alt="" coords="673,391,798,417"/>
+<area shape="rect" id="node15" href="$classNPCResourceMaster.html#a459b145c6891e6990c04ebb1ff434dd4" title="NPCResourceMaster::Load" alt="" coords="645,441,825,468"/>
+<area shape="rect" id="node16" href="$classQuestMaster.html#a0ca0cf6ff8d9c19bb5046b61e010b803" title="QuestMaster::Load" alt="" coords="669,492,802,519"/>
+<area shape="rect" id="node17" href="$classQuestRewardMaster.html#a0c2972af8833fe8f2dfe430daa53ee36" title="QuestRewardMaster::Load" alt="" coords="647,543,823,569"/>
+<area shape="rect" id="node18" href="$classQuestStageMaster.html#a3a88cb6e766f705a8cfd0ab438ea0f27" title="QuestStageMaster::Load" alt="" coords="652,593,819,620"/>
+<area shape="rect" id="node19" href="$classSkillMaster.html#a7848129c25a1126b97ada1f8ec4d31c7" title="SkillMaster::Load" alt="" coords="674,644,797,671"/>
+<area shape="rect" id="node20" href="$classSkillTreeMaster.html#a73ade1d9a632b3c14be6f635656035cd" title="SkillTreeMaster::Load" alt="" coords="661,695,809,721"/>
+<area shape="rect" id="node21" href="$classTimeInfoMaster.html#abf50a331773e9cd58deb05982fa85383" title="TimeInfoMaster::Load" alt="" coords="662,745,809,772"/>
+<area shape="rect" id="node22" href="$classWarpDataMaster.html#a8da41eb2e54c847141b0ca5619ada80f" title="WarpDataMaster::Load" alt="" coords="657,796,813,823"/>
+<area shape="rect" id="node23" href="$classWarpPointMaster.html#ae7d390246de60a8cad1415c180416b8f" title="WarpPointMaster::Load" alt="" coords="656,847,815,873"/>
+<area shape="rect" id="node7" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="873,492,999,519"/>
+<area shape="rect" id="node8" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="1047,485,1195,526"/>
+<area shape="rect" id="node25" href="$classMemoryStreamWriter.html#ac751c7ba5a1287e23d0a04fbbe307b6c" title="MemoryStreamWriter\l::Serialize" alt="" coords="662,898,809,939"/>
 </map>

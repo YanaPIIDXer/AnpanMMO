@@ -1,0 +1,4 @@
+<map id="BuffBase::GetCharacter" name="BuffBase::GetCharacter">
+<area shape="rect" id="node2" href="$classBuffAutoHeal.html#a1d2aeed2e69afc1526ff94a8560805b4" title="毎フレームの処理 " alt="" coords="212,5,359,32"/>
+<area shape="rect" id="node3" href="$classDebuffPoison.html#ad4cf1c9ef8fe39172d513f79c555ba0c" title="毎フレームの処理 " alt="" coords="212,56,359,83"/>
+</map>

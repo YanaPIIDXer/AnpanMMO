@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['paralysis',['PARALYSIS',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cad3b81e8a6c52ea88586487ed6a5547d9',1,'BuffItem']]],
   ['partycreaterequest',['PartyCreateRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad07426b7390f0a82bedbc5fdf008791b',1,'PacketID']]],
   ['partycreateresult',['PartyCreateResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa83b9c70f916530b4882d4beaeb72536e',1,'PacketID']]],
   ['partydissolution',['PartyDissolution',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aab627365e4936e7328515b482ee05f74f',1,'PacketID']]],
@@ -18,9 +19,10 @@ var searchData=
   ['partykick',['PartyKick',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad7a534458f611f39d4862e452b3c5be6',1,'PacketID']]],
   ['partykickrequest',['PartyKickRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa44dcc9a91f67ed62452b1efa68467fb9',1,'PacketID']]],
   ['partykickresult',['PartyKickResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa13f0061166353c45286cfba153dc4277',1,'PacketID']]],
-  ['physical',['PHYSICAL',['../structSkillItem.html#a0c92dd0ba436dd33f9552f483ae2e04aac92b84fab41da3ac5e1501daf263c44c',1,'SkillItem']]],
+  ['physical',['PHYSICAL',['../structSkillItem.html#af16a4269928b1fc7cff4e5479eef6cd1ac92b84fab41da3ac5e1501daf263c44c',1,'SkillItem']]],
   ['ping',['Ping',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa3043f49e99a80d6a671133660ad90445',1,'PacketID']]],
   ['player',['Player',['../classCharacterType.html#a44253929affb003781a00d30d81e8fbca2a43b075b8c89b4fae1f7bc9075cecac',1,'CharacterType::Player()'],['../CharacterBase_8h.html#ad34afea9f542b01a1f4e6d48fdfe1be3a636da1d35e805b00eae0fcd8333f9234',1,'Player():&#160;CharacterBase.h']]],
   ['playerlist',['PlayerList',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa7388906f745c4b846c4143a815068588',1,'PacketID']]],
-  ['playerrespawn',['PlayerRespawn',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa3c0fc7b23c1cf6d37de6a0b67e2abadb',1,'PacketID']]]
+  ['playerrespawn',['PlayerRespawn',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa3c0fc7b23c1cf6d37de6a0b67e2abadb',1,'PacketID']]],
+  ['poison',['POISON',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3ca3ae3147ac74e7568ddbdaf610ce245cf',1,'BuffItem']]]
 ];

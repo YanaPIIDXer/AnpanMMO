@@ -1,9 +1,10 @@
 <map id="MySqlQuery::BindResultString" name="MySqlQuery::BindResultString">
 <area shape="rect" id="node2" href="$classAreaMaster.html#a7706c1bfc83c8a74fa7ec427cee0674d" title="AreaMaster::Load" alt="" coords="256,5,381,32"/>
-<area shape="rect" id="node3" href="$classEquipMaster.html#a280ec3dc375deddfa9721c051f623612" title="EquipMaster::Load" alt="" coords="253,56,384,83"/>
-<area shape="rect" id="node5" href="$classItemMaster.html#a8abdcb220ce80f002d472ff5699853a4" title="ItemMaster::Load" alt="" coords="257,107,380,133"/>
-<area shape="rect" id="node6" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="256,157,381,184"/>
-<area shape="rect" id="node7" href="$classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5" title="QuestMaster::Load" alt="" coords="252,208,385,235"/>
-<area shape="rect" id="node8" href="$classSkillMaster.html#a6f7833604c2201645fd893995930394a" title="SkillMaster::Load" alt="" coords="257,259,380,285"/>
-<area shape="rect" id="node4" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="433,157,560,184"/>
+<area shape="rect" id="node3" href="$classBuffMaster.html#ab014fc0a2257d8e58f849e8646f2ee2d" title="BuffMaster::Load" alt="" coords="259,56,379,83"/>
+<area shape="rect" id="node5" href="$classEquipMaster.html#a280ec3dc375deddfa9721c051f623612" title="EquipMaster::Load" alt="" coords="253,107,384,133"/>
+<area shape="rect" id="node6" href="$classItemMaster.html#a8abdcb220ce80f002d472ff5699853a4" title="ItemMaster::Load" alt="" coords="257,157,380,184"/>
+<area shape="rect" id="node7" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="256,208,381,235"/>
+<area shape="rect" id="node8" href="$classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5" title="QuestMaster::Load" alt="" coords="252,259,385,285"/>
+<area shape="rect" id="node9" href="$classSkillMaster.html#a6f7833604c2201645fd893995930394a" title="SkillMaster::Load" alt="" coords="257,309,380,336"/>
+<area shape="rect" id="node4" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="433,183,560,209"/>
 </map>

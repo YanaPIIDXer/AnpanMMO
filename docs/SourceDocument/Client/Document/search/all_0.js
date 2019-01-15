@@ -13,6 +13,7 @@ var searchData=
   ['activegamemode_2eh',['ActiveGameMode.h',['../ActiveGameMode_8h.html',1,'']]],
   ['activequestid',['ActiveQuestId',['../classPacketQuestData.html#ad5b509172438c4a6d8b2fda71d006239',1,'PacketQuestData']]],
   ['add',['Add',['../classPlayerManager.html#ad65d7640778fe9fc5ae019a3cc9d44c4',1,'PlayerManager::Add()'],['../classItemList.html#a80a0feea2562b67319aa6f6c74982a0d',1,'ItemList::Add()'],['../classQuestManager.html#add9cb020fe2b4bf1e4268d4c089f160d',1,'QuestManager::Add()']]],
+  ['addbuff',['AddBuff',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa2687bb35aa108c84a5041adb388e8097',1,'PacketID']]],
   ['addexp',['AddExp',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaa3e5813f01c01be847c25562805ea1a0',1,'PacketID']]],
   ['additem',['AddItem',['../classUWarpAreaList.html#a49d3905ff255facf0cc1b32091bd36d7',1,'UWarpAreaList::AddItem()'],['../classAGameCharacter.html#a3fb8ef5ca374f5644926b3357d443d9b',1,'AGameCharacter::AddItem()'],['../classPlayerStatus.html#a9489711490f9e6c8e5a2d375d82b7daf',1,'PlayerStatus::AddItem()']]],
   ['additem_5fimplementation',['AddItem_Implementation',['../classUWarpAreaList.html#a2603293d463ffd1f3eeb3b8cd8edd745',1,'UWarpAreaList']]],
@@ -21,7 +22,7 @@ var searchData=
   ['addquestdata',['AddQuestData',['../classUMMOGameInstance.html#aab2210e02d29d11be9d84838b34535ab',1,'UMMOGameInstance']]],
   ['addscriptselection',['AddScriptSelection',['../classAActiveGameMode.html#ab0bbd4aa21a909c402bd1b26f39f802f',1,'AActiveGameMode']]],
   ['addselection',['AddSelection',['../classUScriptSelectionWidget.html#ae97a854ec26c207b81ffc22f5f8d437c',1,'UScriptSelectionWidget::AddSelection()'],['../classUScriptWidgetRoot.html#afb80f8090610159a3ba803cb10838eb2',1,'UScriptWidgetRoot::AddSelection()']]],
-  ['afternoon',['AFTERNOON',['../structTimeInfoItem.html#a34d7f0ea0e0253cd415c1e12116008b2a82df60d6387b17fbde31db1d9d58589d',1,'TimeInfoItem']]],
+  ['afternoon',['AFTERNOON',['../structTimeInfoItem.html#a4f35dd307846020f9b92c59add8e6c68a82df60d6387b17fbde31db1d9d58589d',1,'TimeInfoItem']]],
   ['agamecamera',['AGameCamera',['../classAGameCamera.html',1,'AGameCamera'],['../classAGameCamera.html#aa625e1c590e905642db041fc2b5090fa',1,'AGameCamera::AGameCamera()']]],
   ['agamecharacter',['AGameCharacter',['../classAGameCharacter.html',1,'AGameCharacter'],['../classAGameCharacter.html#aac6861113aff1d22fd621d1500040067',1,'AGameCharacter::AGameCharacter()']]],
   ['agamecontroller',['AGameController',['../classAGameController.html',1,'AGameController'],['../classAGameController.html#a6d2f5bbdc9f40deefb83b659c60b8936',1,'AGameController::AGameController()']]],
@@ -71,7 +72,8 @@ var searchData=
   ['atitlegamemode',['ATitleGameMode',['../classATitleGameMode.html',1,'ATitleGameMode'],['../classATitleGameMode.html#aabecae9678042029dbdfa37e510cf6ca',1,'ATitleGameMode::ATitleGameMode()']]],
   ['attachablewidget_2ecpp',['AttachableWidget.cpp',['../AttachableWidget_8cpp.html',1,'']]],
   ['attachablewidget_2eh',['AttachableWidget.h',['../AttachableWidget_8h.html',1,'']]],
-  ['attack',['ATTACK',['../structSkillItem.html#a2b24a6d88b96a1cd592f151f361c87cba63452507f8c07b55c794840596f413b6',1,'SkillItem']]],
+  ['attack',['ATTACK',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a63452507f8c07b55c794840596f413b6',1,'SkillItem']]],
+  ['auto_5fheal',['AUTO_HEAL',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cadfe1ad3f1298e4bb7cdedb96f5203e6b',1,'BuffItem']]],
   ['automode',['AutoMode',['../SkillStateBase_8h.html#a1c04a4ee3c5d7bd26f9b7e7262f18b96a38d868553c84b0db74263422354e899b',1,'SkillStateBase.h']]],
   ['awarppoint',['AWarpPoint',['../classAWarpPoint.html',1,'AWarpPoint'],['../classAWarpPoint.html#a88236ca16752fe836a1e66bbe9c66e57',1,'AWarpPoint::AWarpPoint()']]]
 ];

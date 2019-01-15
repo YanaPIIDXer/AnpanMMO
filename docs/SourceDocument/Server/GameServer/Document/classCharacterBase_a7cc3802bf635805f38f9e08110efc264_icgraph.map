@@ -1,3 +1,4 @@
 <map id="CharacterBase::OnDamaged" name="CharacterBase::OnDamaged">
 <area shape="rect" id="node2" href="$classCharacterBase.html#ae5a9cbbe8bff9feb0a137b5fc3787f3f" title="ダメージを与える " alt="" coords="241,5,439,32"/>
+<area shape="rect" id="node3" href="$classDebuffPoison.html#ad4cf1c9ef8fe39172d513f79c555ba0c" title="毎フレームの処理 " alt="" coords="487,5,633,32"/>
 </map>

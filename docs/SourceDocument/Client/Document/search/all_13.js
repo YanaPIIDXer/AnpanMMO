@@ -19,12 +19,13 @@ var searchData=
   ['timemanager',['TimeManager',['../classTimeManager.html',1,'TimeManager'],['../classTimeManager.html#ab1c3cbb48ad68d928bb8b9a4ef210ed6',1,'TimeManager::TimeManager()']]],
   ['timemanager_2ecpp',['TimeManager.cpp',['../TimeManager_8cpp.html',1,'']]],
   ['timemanager_2eh',['TimeManager.h',['../TimeManager_8h.html',1,'']]],
+  ['timemillisec',['TimeMilliSec',['../structBuffItem.html#ace56b5928692f0ed7378bed81d4f2d7c',1,'BuffItem']]],
   ['timetype',['TimeType',['../structTimeInfoItem.html#ad1a8816074c57228b5ba704faf38d3df',1,'TimeInfoItem']]],
   ['titlegamemode_2ecpp',['TitleGameMode.cpp',['../TitleGameMode_8cpp.html',1,'']]],
   ['titlegamemode_2eh',['TitleGameMode.h',['../TitleGameMode_8h.html',1,'']]],
   ['titlescreenwidget_2ecpp',['TitleScreenWidget.cpp',['../TitleScreenWidget_8cpp.html',1,'']]],
   ['titlescreenwidget_2eh',['TitleScreenWidget.h',['../TitleScreenWidget_8h.html',1,'']]],
   ['toolongname',['TooLongName',['../classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276af92b2c761e38af62fdfd3d6b4acbeedc',1,'PacketCreateCharacterResult']]],
-  ['type',['Type',['../classCharacterJob.html#afec42e9a3800cc43cff6f86d6cf7e91d',1,'CharacterJob::Type()'],['../classCharacterType.html#a44253929affb003781a00d30d81e8fbc',1,'CharacterType::Type()'],['../structAreaItem.html#a1d0e77ff7efab1d7528edbfe4b671371',1,'AreaItem::Type()'],['../structItemItem.html#af65017cc324a9ed0e8c3c31f1391494d',1,'ItemItem::Type()'],['../structQuestItem.html#a6b67335a6baeb2d22883d3213bb809b0',1,'QuestItem::Type()'],['../structQuestRewardItem.html#ac7dfad9f08c53ee42cd965f20549a461',1,'QuestRewardItem::Type()'],['../classNoticeData.html#a1c0f78d9f0f9f0e26891df4bfc5e4d44',1,'NoticeData::Type()'],['../classPacketSendChat.html#a9d0194a0eb654c7d602effb72ee8eab9',1,'PacketSendChat::Type()']]],
+  ['type',['Type',['../classCharacterJob.html#afec42e9a3800cc43cff6f86d6cf7e91d',1,'CharacterJob::Type()'],['../classCharacterType.html#a44253929affb003781a00d30d81e8fbc',1,'CharacterType::Type()'],['../structAreaItem.html#a1d0e77ff7efab1d7528edbfe4b671371',1,'AreaItem::Type()'],['../structBuffItem.html#a6a16e5ab0d8c17251a2792d8e134182e',1,'BuffItem::Type()'],['../structItemItem.html#af65017cc324a9ed0e8c3c31f1391494d',1,'ItemItem::Type()'],['../structQuestItem.html#a6b67335a6baeb2d22883d3213bb809b0',1,'QuestItem::Type()'],['../structQuestRewardItem.html#ac7dfad9f08c53ee42cd965f20549a461',1,'QuestRewardItem::Type()'],['../classNoticeData.html#a1c0f78d9f0f9f0e26891df4bfc5e4d44',1,'NoticeData::Type()'],['../classPacketSendChat.html#a9d0194a0eb654c7d602effb72ee8eab9',1,'PacketSendChat::Type()']]],
   ['typedefs_2eh',['TypeDefs.h',['../TypeDefs_8h.html',1,'']]]
 ];
