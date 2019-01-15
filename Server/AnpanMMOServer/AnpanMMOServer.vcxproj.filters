@@ -378,6 +378,9 @@
     <ClInclude Include="Buff\DebuffPoison.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Buff\DebuffParalysis.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MemoryBuffer.cpp">
@@ -666,6 +669,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Buff\DebuffPoison.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Buff\DebuffParalysis.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

@@ -11,6 +11,7 @@
 #include "BuffSpeedUp.h"
 #include "BuffAutoHeal.h"
 #include "DebuffPoison.h"
+#include "DebuffParalysis.h"
 
 // コンストラクタ
 BuffManager::BuffManager(CharacterBase *pInOwner)
@@ -57,7 +58,6 @@ void BuffManager::AddBuff(u32 BuffId)
 		return;
 	}
 
-	// @TODO:各種バフを追加する処理。
 	BuffBase *pBuff = NULL;
 	switch (pItem->Type)
 	{
@@ -82,6 +82,7 @@ void BuffManager::AddBuff(u32 BuffId)
 		case BuffItem::PARALYSIS:
 
 			// 麻痺.
+			pBuff = new DebuffParalysis(pItem->TimeMilliSec, pOwner);
 			break;
 	}
 
