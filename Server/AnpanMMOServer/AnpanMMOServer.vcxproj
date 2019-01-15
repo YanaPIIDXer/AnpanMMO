@@ -161,6 +161,7 @@
     <ClInclude Include="Item\ItemList.h" />
     <ClInclude Include="Master\AnpanMaster.h" />
     <ClInclude Include="Master\AnpanPopDataMaster.h" />
+    <ClInclude Include="Master\BuffMaster.h" />
     <ClInclude Include="Master\EquipMaster.h" />
     <ClInclude Include="Master\InstanceInfoMaster.h" />
     <ClInclude Include="Master\ItemDropMaster.h" />
@@ -276,6 +277,7 @@
     <ClCompile Include="Item\ItemList.cpp" />
     <ClCompile Include="Master\AnpanMaster.cpp" />
     <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
+    <ClCompile Include="Master\BuffMaster.cpp" />
     <ClCompile Include="Master\EquipMaster.cpp" />
     <ClCompile Include="Master\InstanceInfoMaster.cpp" />
     <ClCompile Include="Master\ItemDropMaster.cpp" />

@@ -23,6 +23,7 @@
 #include "QuestRewardMaster.h"
 #include "LevelMaster.h"
 #include "EquipMaster.h"
+#include "BuffMaster.h"
 
 /**
  * @class MasterData
@@ -160,6 +161,13 @@ public:
 	 */
 	const EquipMaster &GetEquipMaster() { return Equip; }
 
+	/**
+	 * @fn const BuffMaster &GetBuffMaster()
+	 * @brief バフマスタ取得
+	 * @return バフマスタ
+	 */
+	const BuffMaster &GetBuffMaster() { return Buff; }
+
 private:
 
 	// DBホスト
@@ -221,6 +229,9 @@ private:
 
 	// 装備マスタ
 	EquipMaster Equip;
+
+	// バフマスタ
+	BuffMaster Buff;
 
 	// ======= Singleton ==========
 public:

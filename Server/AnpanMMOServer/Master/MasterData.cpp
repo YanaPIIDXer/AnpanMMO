@@ -138,5 +138,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!Buff.Load(Connection))
+	{
+		std::cout << "Buff Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }
