@@ -239,9 +239,6 @@ protected:
 	//! スキルリキャスト管理.
 	SkillRecastManager Recast;
 
-	//! バフ管理.
-	BuffManager BuffMgr;
-
 
 	/**
 	 * @fn void SetParameter(u32 Level, u32 Hp, u32 MaxHp, u32 Str, u32 Def, u32 Int, u32 Mnd, u32 Vit)
@@ -295,6 +292,8 @@ private:
 	// エリア
 	AreaPtr pArea;
 
+	// バフ管理.
+	BuffManager BuffMgr;
 };
 
 #endif		// #ifndef __CHARACTERBASE_H__

@@ -13,8 +13,8 @@
 CharacterBase::CharacterBase()
 	: Skill(this)
 	, Recast(this)
-	, BuffMgr(this)
 	, Uuid(0)
+	, BuffMgr(this)
 {
 }
 
