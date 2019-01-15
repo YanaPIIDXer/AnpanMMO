@@ -41,6 +41,13 @@ public:
 	 */
 	void Poll(u32 DeltaTime);
 
+	/**
+	 * @fn void AddBuff(u32 BuffId)
+	 * @brief バフ追加。
+	 * @param[in] バフＩＤ
+	 */
+	void AddBuff(u32 BuffId);
+
 private:
 
 	// バフリスト

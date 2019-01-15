@@ -225,6 +225,20 @@ public:
 	 */
 	bool IsEquiped(u32 EquipId) const;
 
+	/**
+	 * @fn virtual void OnBuffAdded(u32 BuffId)
+	 * @brief バフが追加された。
+	 * @param[in] BuffId バフＩＤ
+	 */
+	virtual void OnBuffAdded(u32 BuffId) {}
+
+	/**
+	 * @fn virtual void OnBuffRemoved(u8 BuffType)
+	 * @brief バフが消滅した。
+	 * @param[in] BuffType
+	 */
+	virtual void OnBuffRemoved(u8 BuffType) {}
+
 protected:
 
 	//! 座標.

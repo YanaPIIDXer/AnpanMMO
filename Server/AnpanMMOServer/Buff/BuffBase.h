@@ -43,6 +43,13 @@ public:
 	 */
 	bool IsFinished() const { return (LastTime <= 0); }
 
+	/**
+	 * @fn virtual u8 GetType() const
+	 * @brief タイプを取得
+	 * @return タイプ
+	 */
+	virtual u8 GetType() const = 0;
+
 protected:
 
 	/**
@@ -50,7 +57,7 @@ protected:
 	 * @brief 毎フレームの処理
 	 * @param[in] DeltaTime 前フレームからの経過時間
 	 */
-	virtual void Update(u32 DeltaTime) = 0;
+	virtual void Update(u32 DeltaTime) {}
 
 	/**
 	 * @fn CharacterBase *GetCharacter()
