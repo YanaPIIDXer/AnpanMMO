@@ -8,6 +8,7 @@
 #include "BuffBase.h"
 #include "Character/CharacterBase.h"
 #include "Master/MasterData.h"
+#include "BuffSpeedUp.h"
 
 // コンストラクタ
 BuffManager::BuffManager(CharacterBase *pInOwner)
@@ -61,6 +62,7 @@ void BuffManager::AddBuff(u32 BuffId)
 		case BuffItem::SPEEDUP:
 
 			// スピードアップ
+			pBuff = new BuffSpeedUp(pItem->TimeMilliSec, pOwner, pItem->Value);
 			break;
 
 		case BuffItem::AUTO_HEAL:
