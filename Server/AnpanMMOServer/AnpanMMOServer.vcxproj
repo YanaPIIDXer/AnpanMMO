@@ -140,6 +140,7 @@
     <ClInclude Include="Buff\BuffAutoHeal.h" />
     <ClInclude Include="Buff\BuffBase.h" />
     <ClInclude Include="Buff\BuffManager.h" />
+    <ClInclude Include="Buff\DebuffPoison.h" />
     <ClInclude Include="Buff\BuffSpeedUp.h" />
     <ClInclude Include="CacheServer\CacheServerConnection.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
@@ -262,6 +263,7 @@
     <ClCompile Include="Buff\BuffBase.cpp" />
     <ClCompile Include="Buff\BuffManager.cpp" />
     <ClCompile Include="Buff\BuffSpeedUp.cpp" />
+    <ClCompile Include="Buff\DebuffPoison.cpp" />
     <ClCompile Include="CacheServer\CacheServerConnection.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />

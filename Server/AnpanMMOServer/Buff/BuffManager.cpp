@@ -10,6 +10,7 @@
 #include "Master/MasterData.h"
 #include "BuffSpeedUp.h"
 #include "BuffAutoHeal.h"
+#include "DebuffPoison.h"
 
 // コンストラクタ
 BuffManager::BuffManager(CharacterBase *pInOwner)
@@ -75,6 +76,7 @@ void BuffManager::AddBuff(u32 BuffId)
 		case BuffItem::POISON:
 
 			// 毒.
+			pBuff = new DebuffPoison(pItem->TimeMilliSec, pOwner, pItem->Value);
 			break;
 
 		case BuffItem::PARALYSIS:
