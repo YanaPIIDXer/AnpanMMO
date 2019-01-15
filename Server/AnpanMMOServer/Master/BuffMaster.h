@@ -14,7 +14,7 @@ public:
 	enum
 	{
 		SPEEDUP = 0,
-		REGENE = 1,
+		AUTO_HEAL = 1,
 		POISON = 2,
 		PARALYSIS = 3,
 	};
