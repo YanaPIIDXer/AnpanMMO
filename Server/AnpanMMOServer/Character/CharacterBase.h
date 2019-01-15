@@ -13,6 +13,7 @@
 #include "Area/AreaBase.h"
 #include "Skill/SkillControl.h"
 #include "Skill/SkillRecastManager.h"
+#include "Buff/BuffManager.h"
 
 /**
  * @class CharacterBase
@@ -237,6 +238,9 @@ protected:
 
 	//! スキルリキャスト管理.
 	SkillRecastManager Recast;
+
+	//! バフ管理.
+	BuffManager BuffMgr;
 
 
 	/**

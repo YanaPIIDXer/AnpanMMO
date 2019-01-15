@@ -137,6 +137,8 @@
     <ClInclude Include="Area\InstanceAreaTicketManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Bitmap.h" />
+    <ClInclude Include="Buff\BuffBase.h" />
+    <ClInclude Include="Buff\BuffManager.h" />
     <ClInclude Include="CacheServer\CacheServerConnection.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
@@ -254,6 +256,8 @@
     <ClCompile Include="Area\InstanceAreaTicket.cpp" />
     <ClCompile Include="Area\InstanceAreaTicketManager.cpp" />
     <ClCompile Include="Bitmap.cpp" />
+    <ClCompile Include="Buff\BuffBase.cpp" />
+    <ClCompile Include="Buff\BuffManager.cpp" />
     <ClCompile Include="CacheServer\CacheServerConnection.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />

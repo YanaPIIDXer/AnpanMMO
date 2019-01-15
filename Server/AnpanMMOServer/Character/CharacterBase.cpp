@@ -13,6 +13,7 @@
 CharacterBase::CharacterBase()
 	: Skill(this)
 	, Recast(this)
+	, BuffMgr(this)
 	, Uuid(0)
 {
 }
@@ -22,6 +23,7 @@ void CharacterBase::Poll(s32 DeltaTime)
 {
 	Skill.Poll(DeltaTime);
 	Recast.Poll(DeltaTime);
+	BuffMgr.Poll(DeltaTime);
 	
 	Update(DeltaTime);
 }
