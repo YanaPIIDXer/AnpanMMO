@@ -137,6 +137,7 @@
     <ClInclude Include="Area\InstanceAreaTicketManager.h" />
     <ClInclude Include="basic_repeating_timer.h" />
     <ClInclude Include="Bitmap.h" />
+    <ClInclude Include="Buff\BuffAutoHeal.h" />
     <ClInclude Include="Buff\BuffBase.h" />
     <ClInclude Include="Buff\BuffManager.h" />
     <ClInclude Include="Buff\BuffSpeedUp.h" />
@@ -257,6 +258,7 @@
     <ClCompile Include="Area\InstanceAreaTicket.cpp" />
     <ClCompile Include="Area\InstanceAreaTicketManager.cpp" />
     <ClCompile Include="Bitmap.cpp" />
+    <ClCompile Include="Buff\BuffAutoHeal.cpp" />
     <ClCompile Include="Buff\BuffBase.cpp" />
     <ClCompile Include="Buff\BuffManager.cpp" />
     <ClCompile Include="Buff\BuffSpeedUp.cpp" />

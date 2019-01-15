@@ -372,6 +372,9 @@
     <ClInclude Include="Buff\BuffSpeedUp.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Buff\BuffAutoHeal.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MemoryBuffer.cpp">
@@ -654,6 +657,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Buff\BuffSpeedUp.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Buff\BuffAutoHeal.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

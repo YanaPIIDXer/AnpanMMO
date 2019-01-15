@@ -9,6 +9,7 @@
 #include "Character/CharacterBase.h"
 #include "Master/MasterData.h"
 #include "BuffSpeedUp.h"
+#include "BuffAutoHeal.h"
 
 // コンストラクタ
 BuffManager::BuffManager(CharacterBase *pInOwner)
@@ -68,6 +69,7 @@ void BuffManager::AddBuff(u32 BuffId)
 		case BuffItem::AUTO_HEAL:
 
 			// 自動回復.
+			pBuff = new BuffAutoHeal(pItem->TimeMilliSec, pOwner, pItem->Value);
 			break;
 
 		case BuffItem::POISON:
