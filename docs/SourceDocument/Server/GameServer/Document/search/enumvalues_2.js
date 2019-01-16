@@ -41,8 +41,8 @@ var searchData=
   ['characterstatus',['CharacterStatus',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad71bb8468369f6e7d230d944462f913e',1,'PacketID']]],
   ['cleared',['Cleared',['../classQuestData.html#a9ed9c55d4742f2f55539926963f74394a2d9d115198e012397f73deb3c6e44fb6',1,'QuestData']]],
   ['closed',['Closed',['../classSkillTreeNode.html#a6bb1fbea2de3bcba26e497ef11242b74ac60196704a3586e281074b5a248a2b20',1,'SkillTreeNode']]],
-  ['collect_5fitem',['COLLECT_ITEM',['../structQuestStageItem.html#a9a181c326e35e8f05e585eec5adc9542aec737e62d9103eb14d5f3d4ba983612c',1,'QuestStageItem']]],
-  ['consume',['CONSUME',['../structItemItem.html#a7df7ef5d0604b5d87fb7729fdae571b2ad4dc891dc9bcca6f31f6270fecc1c57c',1,'ItemItem']]],
+  ['collect_5fitem',['COLLECT_ITEM',['../structQuestStageItem.html#ac34f8a22901bc3bf566a261018e56539aec737e62d9103eb14d5f3d4ba983612c',1,'QuestStageItem']]],
+  ['consume',['CONSUME',['../structItemItem.html#abe40b579363e0cc8e9aaf5db89389111ad4dc891dc9bcca6f31f6270fecc1c57c',1,'ItemItem']]],
   ['createcharacterrequest',['CreateCharacterRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa0577b75e07bbe35fa2fcd6656dee9eb2',1,'PacketID']]],
   ['createcharacterresult',['CreateCharacterResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa5ac49dbfb9a036736757809e0cfaea25',1,'PacketID']]]
 ];

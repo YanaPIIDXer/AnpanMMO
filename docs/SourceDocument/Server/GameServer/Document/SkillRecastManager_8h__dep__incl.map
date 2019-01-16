@@ -1,31 +1,35 @@
 <map id="SkillRecastManager.h" name="SkillRecastManager.h">
-<area shape="rect" id="node2" href="$CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="2426,80,2545,107"/>
-<area shape="rect" id="node30" href="$SkillRecastManager_8cpp.html" title="SkillRecastManager.cpp" alt="" coords="2569,80,2732,107"/>
+<area shape="rect" id="node2" href="$CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="2659,80,2778,107"/>
+<area shape="rect" id="node34" href="$SkillRecastManager_8cpp.html" title="SkillRecastManager.cpp" alt="" coords="2803,80,2965,107"/>
 <area shape="rect" id="node3" href="$Anpan_8h.html" title="アンパンクラス " alt="" coords="2377,155,2447,181"/>
 <area shape="rect" id="node6" href="$AreaBase_8cpp.html" title="エリア基底クラス " alt="" coords="1871,229,1975,256"/>
 <area shape="rect" id="node8" href="$AnpanAIStateActive_8cpp.html" title="アンパンＡＩステート：アクティブ状態 " alt="" coords="3075,229,3237,256"/>
 <area shape="rect" id="node12" href="$SkillControl_8cpp.html" title="SkillControl.cpp" alt="" coords="1999,229,2113,256"/>
-<area shape="rect" id="node13" href="$Hate_8cpp.html" title="ヘイト管理クラス " alt="" coords="2523,155,2597,181"/>
-<area shape="rect" id="node14" href="$CharacterBase_8cpp.html" title="キャラクタ基底クラス " alt="" coords="2621,155,2755,181"/>
-<area shape="rect" id="node15" href="$PlayerCharacter_8h.html" title="プレイヤーキャラクタクラス " alt="" coords="1145,155,1271,181"/>
-<area shape="rect" id="node28" href="$SkillStateAutoMove_8cpp.html" title="SkillStateAutoMove.cpp" alt="" coords="2779,155,2939,181"/>
-<area shape="rect" id="node29" href="$SkillStateCast_8cpp.html" title="SkillStateCast.cpp" alt="" coords="2963,155,3093,181"/>
+<area shape="rect" id="node13" href="$BuffAutoHeal_8cpp.html" title="自動回復バフクラス " alt="" coords="2523,155,2645,181"/>
+<area shape="rect" id="node14" href="$BuffBase_8cpp.html" title="バフ基底クラス " alt="" coords="2669,155,2768,181"/>
+<area shape="rect" id="node15" href="$BuffManager_8cpp.html" title="バフ管理クラス " alt="" coords="2793,155,2911,181"/>
+<area shape="rect" id="node16" href="$DebuffPoison_8cpp.html" title="毒デバフクラス " alt="" coords="2936,155,3059,181"/>
+<area shape="rect" id="node17" href="$Hate_8cpp.html" title="ヘイト管理クラス " alt="" coords="3083,155,3157,181"/>
+<area shape="rect" id="node18" href="$CharacterBase_8cpp.html" title="キャラクタ基底クラス " alt="" coords="3181,155,3315,181"/>
+<area shape="rect" id="node19" href="$PlayerCharacter_8h.html" title="プレイヤーキャラクタクラス " alt="" coords="1145,155,1271,181"/>
+<area shape="rect" id="node32" href="$SkillStateAutoMove_8cpp.html" title="SkillStateAutoMove.cpp" alt="" coords="3339,155,3499,181"/>
+<area shape="rect" id="node33" href="$SkillStateCast_8cpp.html" title="SkillStateCast.cpp" alt="" coords="3523,155,3653,181"/>
 <area shape="rect" id="node4" href="$AnpanManager_8cpp.html" title="AnpanManager.cpp" alt="" coords="2637,229,2771,256"/>
 <area shape="rect" id="node5" href="$AnpanPopArea_8cpp.html" title="AnpanPopArea.cpp" alt="" coords="2795,229,2930,256"/>
 <area shape="rect" id="node7" href="$AnpanAI_8cpp.html" title="アンパンＡＩクラス " alt="" coords="2955,229,3051,256"/>
 <area shape="rect" id="node9" href="$AnpanAIStateBase_8cpp.html" title="AnpanAIStateBase.cpp" alt="" coords="2137,229,2295,256"/>
 <area shape="rect" id="node10" href="$AnpanAIStateNonActive_8cpp.html" title="アンパンＡＩステート基底クラス " alt="" coords="2319,229,2505,256"/>
 <area shape="rect" id="node11" href="$Anpan_8cpp.html" title="アンパンクラス " alt="" coords="2529,229,2613,256"/>
-<area shape="rect" id="node16" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="163,229,287,256"/>
-<area shape="rect" id="node17" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="311,229,470,256"/>
-<area shape="rect" id="node18" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="494,229,634,256"/>
-<area shape="rect" id="node19" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="659,229,739,256"/>
-<area shape="rect" id="node20" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="763,229,909,256"/>
-<area shape="rect" id="node21" href="$ClientStateAreaChange_8cpp.html" title="クライアントステート：エリア切り替え " alt="" coords="934,229,1117,256"/>
-<area shape="rect" id="node22" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="1141,229,1275,256"/>
-<area shape="rect" id="node23" href="$Party_8cpp.html" title="Party.cpp" alt="" coords="1299,229,1378,256"/>
-<area shape="rect" id="node24" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="1403,229,1531,256"/>
-<area shape="rect" id="node25" href="$PlayerManager_8cpp.html" title="PlayerManager.cpp" alt="" coords="1555,229,1690,256"/>
-<area shape="rect" id="node26" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="1714,229,1846,256"/>
-<area shape="rect" id="node27" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="5,229,139,256"/>
+<area shape="rect" id="node20" href="$AreaManager_8cpp.html" title="エリア管理クラス " alt="" coords="163,229,287,256"/>
+<area shape="rect" id="node21" href="$InstanceAreaTicket_8cpp.html" title="インスタンスエリアチケットクラス " alt="" coords="311,229,470,256"/>
+<area shape="rect" id="node22" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="494,229,634,256"/>
+<area shape="rect" id="node23" href="$Client_8cpp.html" title="Client.cpp" alt="" coords="659,229,739,256"/>
+<area shape="rect" id="node24" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="763,229,909,256"/>
+<area shape="rect" id="node25" href="$ClientStateAreaChange_8cpp.html" title="クライアントステート：エリア切り替え " alt="" coords="934,229,1117,256"/>
+<area shape="rect" id="node26" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="1141,229,1275,256"/>
+<area shape="rect" id="node27" href="$Party_8cpp.html" title="Party.cpp" alt="" coords="1299,229,1378,256"/>
+<area shape="rect" id="node28" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="1403,229,1531,256"/>
+<area shape="rect" id="node29" href="$PlayerManager_8cpp.html" title="PlayerManager.cpp" alt="" coords="1555,229,1690,256"/>
+<area shape="rect" id="node30" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="1714,229,1846,256"/>
+<area shape="rect" id="node31" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="5,229,139,256"/>
 </map>

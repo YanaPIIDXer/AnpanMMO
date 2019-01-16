@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['packetaddbuff_2eh',['PacketAddBuff.h',['../PacketAddBuff_8h.html',1,'']]],
   ['packetaddexp_2eh',['PacketAddExp.h',['../PacketAddExp_8h.html',1,'']]],
   ['packetanpanlist_2eh',['PacketAnpanList.h',['../PacketAnpanList_8h.html',1,'']]],
   ['packetareamove_2eh',['PacketAreaMove.h',['../PacketAreaMove_8h.html',1,'']]],
@@ -64,6 +65,7 @@ var searchData=
   ['packetqueststagechange_2eh',['PacketQuestStageChange.h',['../PacketQuestStageChange_8h.html',1,'']]],
   ['packetreceivechat_2eh',['PacketReceiveChat.h',['../PacketReceiveChat_8h.html',1,'']]],
   ['packetreceivenotice_2eh',['PacketReceiveNotice.h',['../PacketReceiveNotice_8h.html',1,'']]],
+  ['packetremovebuff_2eh',['PacketRemoveBuff.h',['../PacketRemoveBuff_8h.html',1,'']]],
   ['packetrespawnrequest_2eh',['PacketRespawnRequest.h',['../PacketRespawnRequest_8h.html',1,'']]],
   ['packetrotateanpan_2eh',['PacketRotateAnpan.h',['../PacketRotateAnpan_8h.html',1,'']]],
   ['packetsaveactivequest_2eh',['PacketSaveActiveQuest.h',['../PacketSaveActiveQuest_8h.html',1,'']]],

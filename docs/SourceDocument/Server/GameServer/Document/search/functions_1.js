@@ -18,5 +18,9 @@ var searchData=
   ['broadcastdiscardpacket',['BroadcastDiscardPacket',['../classInstanceAreaTicket.html#a99b8d8d99022dc3287b6780d62df1e9b',1,'InstanceAreaTicket']]],
   ['broadcastpacket',['BroadcastPacket',['../classAreaBase.html#a946d6eb75590a7d0c2702c7f7aa4d16c',1,'AreaBase::BroadcastPacket()'],['../classClientManager.html#a11b19092f03d2ea7ff405852d5a43392',1,'ClientManager::BroadcastPacket()'],['../classParty.html#ab2914dc01d89fa2521289e967e0a1314',1,'Party::BroadcastPacket()'],['../classPlayerManager.html#ae856745bf6d69cc9ff54df6861049f37',1,'PlayerManager::BroadcastPacket()']]],
   ['broadcastpacketwithrange',['BroadcastPacketWithRange',['../classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd',1,'AreaBase::BroadcastPacketWithRange()'],['../classPlayerManager.html#a412aaba35447720310431e86be6e6d71',1,'PlayerManager::BroadcastPacketWithRange()']]],
-  ['broadcastpublishpacket',['BroadcastPublishPacket',['../classInstanceAreaTicket.html#a0f45150525636b152c1e742871651ae1',1,'InstanceAreaTicket']]]
+  ['broadcastpublishpacket',['BroadcastPublishPacket',['../classInstanceAreaTicket.html#a0f45150525636b152c1e742871651ae1',1,'InstanceAreaTicket']]],
+  ['buffautoheal',['BuffAutoHeal',['../classBuffAutoHeal.html#ac72bdb569580d6db03b64dff41ff4d8a',1,'BuffAutoHeal']]],
+  ['buffbase',['BuffBase',['../classBuffBase.html#a02841bfbfa0306d45499cb1aa3dda968',1,'BuffBase']]],
+  ['buffmanager',['BuffManager',['../classBuffManager.html#a860511f926894ba37efc7bb96cc65ec0',1,'BuffManager']]],
+  ['buffspeedup',['BuffSpeedUp',['../classBuffSpeedUp.html#a1bb9bb64882ac24563e656b39cdab5df',1,'BuffSpeedUp']]]
 ];

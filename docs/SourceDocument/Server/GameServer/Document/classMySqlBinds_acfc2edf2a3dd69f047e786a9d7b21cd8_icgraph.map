@@ -1,11 +1,12 @@
 <map id="MySqlBinds::AddString" name="MySqlBinds::AddString">
-<area shape="rect" id="node2" href="$classMySqlQuery.html#a2edc85c04ef852faf25b58bfacccef01" title="MySqlQuery::BindString" alt="" coords="229,81,391,108"/>
-<area shape="rect" id="node3" href="$classMySqlQuery.html#a5a0881ce9283513288677f1343c4db3e" title="MySqlQuery::BindResultString" alt="" coords="211,132,409,159"/>
+<area shape="rect" id="node2" href="$classMySqlQuery.html#a2edc85c04ef852faf25b58bfacccef01" title="MySqlQuery::BindString" alt="" coords="229,107,391,133"/>
+<area shape="rect" id="node3" href="$classMySqlQuery.html#a5a0881ce9283513288677f1343c4db3e" title="MySqlQuery::BindResultString" alt="" coords="211,157,409,184"/>
 <area shape="rect" id="node4" href="$classAreaMaster.html#a7706c1bfc83c8a74fa7ec427cee0674d" title="AreaMaster::Load" alt="" coords="461,5,587,32"/>
-<area shape="rect" id="node5" href="$classEquipMaster.html#a280ec3dc375deddfa9721c051f623612" title="EquipMaster::Load" alt="" coords="459,56,589,83"/>
-<area shape="rect" id="node7" href="$classItemMaster.html#a8abdcb220ce80f002d472ff5699853a4" title="ItemMaster::Load" alt="" coords="463,107,585,133"/>
-<area shape="rect" id="node8" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="461,157,587,184"/>
-<area shape="rect" id="node9" href="$classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5" title="QuestMaster::Load" alt="" coords="457,208,591,235"/>
-<area shape="rect" id="node10" href="$classSkillMaster.html#a6f7833604c2201645fd893995930394a" title="SkillMaster::Load" alt="" coords="463,259,585,285"/>
-<area shape="rect" id="node6" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="639,157,765,184"/>
+<area shape="rect" id="node5" href="$classBuffMaster.html#ab014fc0a2257d8e58f849e8646f2ee2d" title="BuffMaster::Load" alt="" coords="464,56,584,83"/>
+<area shape="rect" id="node7" href="$classEquipMaster.html#a280ec3dc375deddfa9721c051f623612" title="EquipMaster::Load" alt="" coords="459,107,589,133"/>
+<area shape="rect" id="node8" href="$classItemMaster.html#a8abdcb220ce80f002d472ff5699853a4" title="ItemMaster::Load" alt="" coords="463,157,585,184"/>
+<area shape="rect" id="node9" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="461,208,587,235"/>
+<area shape="rect" id="node10" href="$classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5" title="QuestMaster::Load" alt="" coords="457,259,591,285"/>
+<area shape="rect" id="node11" href="$classSkillMaster.html#a6f7833604c2201645fd893995930394a" title="SkillMaster::Load" alt="" coords="463,309,585,336"/>
+<area shape="rect" id="node6" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="639,183,765,209"/>
 </map>
