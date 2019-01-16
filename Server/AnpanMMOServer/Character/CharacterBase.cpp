@@ -6,9 +6,10 @@
 #include "stdafx.h"
 #include "CharacterBase.h"
 #include "Math/MathUtil.h"
-#include "Master/BuffMaster.h"
+#include "Master/MasterData.h"
 #include "Packet/PacketDamage.h"
 #include "Packet/PacketHeal.h"
+#include "Packet/PacketSkillUseFailed.h"
 
 // コンストラクタ
 CharacterBase::CharacterBase()
@@ -110,6 +111,12 @@ bool CharacterBase::IsEquiped(u32 EquipId) const
 void CharacterBase::AddBuff(u32 BuffId)
 {
 	BuffMgr.AddBuff(BuffId);
+	const BuffItem *pItem = MasterData::GetInstance().GetBuffMaster().GetItem(BuffId);
+	if (pItem != NULL && pItem->Type == BuffItem::PARALYSIS)
+	{
+		// 麻痺を貰った場合はスキルをキャンセル
+		Skill.Cancel(PacketSkillUseFailed::Paralysis);
+	}
 }
 
 // 麻痺状態か？

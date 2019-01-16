@@ -60,6 +60,12 @@ void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 		return;
 	}
 
+	if (pOwner->IsParalysis())
+	{
+		Cancel(PacketSkillUseFailed::Paralysis);
+		return;
+	}
+
 	SkillId = InSkillId;
 	ItemId = 0;
 	pTarget = pInTarget;
