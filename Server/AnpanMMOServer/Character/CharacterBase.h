@@ -226,6 +226,13 @@ public:
 	bool IsEquiped(u32 EquipId) const;
 
 	/**
+	 * @fn void AddBuff(u32 BuffId)
+	 * @brief バフ追加
+	 * @param[in] BuffId バフＩＤ
+	 */
+	void AddBuff(u32 BuffId);
+
+	/**
 	 * @fn virtual void OnBuffAdded(u32 BuffId)
 	 * @brief バフが追加された。
 	 * @param[in] BuffId バフＩＤ

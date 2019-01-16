@@ -105,6 +105,12 @@ bool CharacterBase::IsEquiped(u32 EquipId) const
 	return ((Parameter.GetRightEquip().GetEquipId() == EquipId) || (Parameter.GetLeftEquip().GetEquipId() == EquipId));
 }
 
+// ƒoƒt’Ç‰Á
+void CharacterBase::AddBuff(u32 BuffId)
+{
+	BuffMgr.AddBuff(BuffId);
+}
+
 
 // ‘•”õØ‚è‘Ö‚¦
 void CharacterBase::ChangeEquipData(u32 RightEquipId, u32 LeftEquipId)
