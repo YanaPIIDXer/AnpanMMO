@@ -123,7 +123,13 @@ protected:
 	// HPを設定.
 	void SetHP(int InHp) { Hp = InHp; }
 
+	// 移動速度レートを設定.
+	void SetMoveSpeedRate(float Rate);
+
 private:
+
+	// 基礎移動速度.
+	static const float BaseMoveSpeed;
 
 	// HP
 	int32 Hp;

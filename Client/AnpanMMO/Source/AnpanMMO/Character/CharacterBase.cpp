@@ -6,6 +6,9 @@
 #include "TargetCircle/TargetCircle.h"
 #include "Master/MasterData.h"
 #include "Skill/SkillRangeDecal.h"
+#include "GameFramework/CharacterMovementComponent.h"
+
+const float ACharacterBase::BaseMoveSpeed = 600.0f;
 
 // コンストラクタ
 ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
@@ -29,6 +32,8 @@ ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel3, ECollisionResponse::ECR_Block);
 	pMeshComponent->SetGenerateOverlapEvents(true);
 	SetActorEnableCollision(true);
+
+	SetMoveSpeedRate(1.0f);
 
 	OnDestroyed.AddDynamic(this, &ACharacterBase::OnDestroy);
 }
@@ -107,6 +112,17 @@ void ACharacterBase::OnSkillCast(uint32 SkillId)
 void ACharacterBase::OnSkillCastFinished()
 {
 	DestroySkillRangeDecal();
+}
+
+// 移動速度レートを設定.
+void ACharacterBase::SetMoveSpeedRate(float Rate)
+{
+	auto *pMovement = GetCharacterMovement();
+	check(pMovement != nullptr);
+	
+	float Speed = BaseMoveSpeed * Rate;
+	pMovement->MaxWalkSpeed = Speed;
+	pMovement->MaxAcceleration = Speed;
 }
 
 
