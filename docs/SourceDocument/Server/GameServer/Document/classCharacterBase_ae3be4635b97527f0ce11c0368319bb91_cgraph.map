@@ -1,0 +1,8 @@
+<map id="CharacterBase::AddBuff" name="CharacterBase::AddBuff">
+<area shape="rect" id="node2" href="$classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52" title="バフ追加。 " alt="" coords="215,107,361,133"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="422,5,589,32"/>
+<area shape="rect" id="node4" href="$classMasterData.html#a5d350fdd4908a79326f155cccf26e58a" title="バフマスタ取得 " alt="" coords="415,56,595,83"/>
+<area shape="rect" id="node5" href="$classBuffMaster.html#a42e7b8d1325d76174a81e4e99e4d6bc1" title="BuffMaster::GetItem" alt="" coords="436,157,575,184"/>
+<area shape="rect" id="node7" href="$classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="220,208,356,235"/>
+<area shape="rect" id="node6" href="$classCharacterBase.html#a503107e1d9c074c4a45dc0fbe2775beb" title="バフが追加された。 " alt="" coords="409,107,601,133"/>
+</map>

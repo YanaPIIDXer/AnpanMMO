@@ -1,34 +1,39 @@
 <map id="MasterData::GetInstance" name="MasterData::GetInstance">
 <area shape="rect" id="node2" href="$classAnpan.html#a6556138c3511c9c322f3950ee6180933" title="コンストラクタ " alt="" coords="270,5,374,32"/>
-<area shape="rect" id="node3" href="$classAnpanManager.html#a10b32c4ce632571ec012ca6b92257016" title="AnpanManager::Initialize" alt="" coords="240,56,404,83"/>
-<area shape="rect" id="node5" href="$classAreaManager.html#a8657ae85994cc5505cce3db3968dfb6e" title="初期化 " alt="" coords="245,107,399,133"/>
-<area shape="rect" id="node6" href="$Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="557,136,608,163"/>
-<area shape="rect" id="node7" href="$classAreaManager.html#ae0ed460d6d1d9c26a0821623b111ca5f" title="インスタンスエリアを生成 " alt="" coords="472,229,693,256"/>
-<area shape="rect" id="node8" href="$classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52" title="バフ追加。 " alt="" coords="249,259,395,285"/>
-<area shape="rect" id="node9" href="$classEquipData.html#ab2787f4b45c9b573455e4efcf5b61574" title="セット " alt="" coords="267,360,377,387"/>
-<area shape="rect" id="node12" href="$classPlayerCharacter.html#a1756fb8cf77600254952d9d42838a65f" title="コンストラクタ " alt="" coords="1009,409,1225,436"/>
-<area shape="rect" id="node14" href="$classInstanceArea.html#aca5cdff8995ab000177e32b6fb9c4c7b" title="InstanceArea::Initialize" alt="" coords="245,309,399,336"/>
-<area shape="rect" id="node15" href="$classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="220,461,424,488"/>
-<area shape="rect" id="node16" href="$classQuestManager.html#adf5b23ef2c836e314413c225ffb271c1" title="QuestManager::Retire" alt="" coords="247,512,397,539"/>
-<area shape="rect" id="node18" href="$classQuestManager.html#aa039a1a7926a271591f2c87cd0b5749b" title="QuestManager::ProgressStage" alt="" coords="221,563,423,589"/>
-<area shape="rect" id="node23" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="250,613,394,640"/>
-<area shape="rect" id="node25" href="$classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="1031,664,1203,691"/>
-<area shape="rect" id="node27" href="$classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="780,719,923,745"/>
-<area shape="rect" id="node29" href="$classSkillRecastManager.html#ab6eab67102b4f0a21aca601919995ac0" title="SkillRecastManager::Add" alt="" coords="237,765,407,792"/>
-<area shape="rect" id="node31" href="$classSkillStateAutoMove.html#aa6d81de3b817efead3aac3681021869b" title="SkillStateAutoMove\l::SkillStateAutoMove" alt="" coords="251,817,393,858"/>
-<area shape="rect" id="node32" href="$classSkillStateCast.html#a6f1953ed352ab53758ba7ee80b9bff61" title="SkillStateCast::SkillStateCast" alt="" coords="224,883,420,909"/>
-<area shape="rect" id="node33" href="$classSkillTree.html#ae95021f7ff6903e2c6dded4b654e556a" title="SkillTree::SkillTree" alt="" coords="257,933,387,960"/>
-<area shape="rect" id="node4" href="$classAreaBase.html#a38c050576a6dfc4d9f4394f52643d78b" title="コンストラクタ " alt="" coords="511,56,655,83"/>
-<area shape="rect" id="node10" href="$classCharacterParameter.html#a2dc63e914e393e56afe4bf96c8c8a881" title="装備切り替え " alt="" coords="513,345,652,386"/>
-<area shape="rect" id="node11" href="$classCharacterBase.html#a0dd1c67ff94ba28b2994f18fe22d70c5" title="装備切り替え " alt="" coords="741,355,961,381"/>
-<area shape="rect" id="node13" href="$classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="1017,355,1217,381"/>
-<area shape="rect" id="node17" href="$classClient.html#a070655e087f5434c692cd69e017500a7" title="クエスト破棄. " alt="" coords="517,461,649,488"/>
-<area shape="rect" id="node19" href="$classClient.html#ac32fa4a2c15cf3401b051912bc60c0d8" title="クエスト進行. " alt="" coords="507,512,658,539"/>
-<area shape="rect" id="node21" href="$classQuestManager.html#a41100b1c045a59a69eb08e1fe1172ee7" title="QuestManager::OnKilledAnpan" alt="" coords="482,563,683,589"/>
-<area shape="rect" id="node20" href="$classScriptExecuter.html#a0aeb0df9813d44b4314642cc6feb3653" title="クエスト進行 " alt="" coords="767,501,935,542"/>
-<area shape="rect" id="node22" href="$classClient.html#a75daac065136a877d159f2db2b37434b" title="アンパン殺害. " alt="" coords="777,567,926,593"/>
-<area shape="rect" id="node24" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="497,613,668,640"/>
-<area shape="rect" id="node26" href="$classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="1273,664,1408,691"/>
-<area shape="rect" id="node28" href="$classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="1050,715,1185,757"/>
-<area shape="rect" id="node30" href="$classCharacterBase.html#aad7624448e24270e773875fce180b0e7" title="リキャスト開始 " alt="" coords="490,765,675,792"/>
+<area shape="rect" id="node3" href="$classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="251,56,393,83"/>
+<area shape="rect" id="node4" href="$classAnpanManager.html#a10b32c4ce632571ec012ca6b92257016" title="AnpanManager::Initialize" alt="" coords="240,107,404,133"/>
+<area shape="rect" id="node6" href="$classAreaManager.html#a8657ae85994cc5505cce3db3968dfb6e" title="初期化 " alt="" coords="245,157,399,184"/>
+<area shape="rect" id="node7" href="$Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="557,196,608,223"/>
+<area shape="rect" id="node8" href="$classAreaManager.html#ae0ed460d6d1d9c26a0821623b111ca5f" title="インスタンスエリアを生成 " alt="" coords="472,272,693,299"/>
+<area shape="rect" id="node9" href="$classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52" title="バフ追加。 " alt="" coords="249,360,395,387"/>
+<area shape="rect" id="node10" href="$classCharacterBase.html#ae3be4635b97527f0ce11c0368319bb91" title="バフ追加 " alt="" coords="502,368,663,395"/>
+<area shape="rect" id="node11" href="$classEquipData.html#ab2787f4b45c9b573455e4efcf5b61574" title="セット " alt="" coords="267,461,377,488"/>
+<area shape="rect" id="node14" href="$classPlayerCharacter.html#a1756fb8cf77600254952d9d42838a65f" title="コンストラクタ " alt="" coords="1009,501,1225,528"/>
+<area shape="rect" id="node16" href="$classInstanceArea.html#aca5cdff8995ab000177e32b6fb9c4c7b" title="InstanceArea::Initialize" alt="" coords="245,309,399,336"/>
+<area shape="rect" id="node17" href="$classPlayerCharacter.html#a9260d0016217c771747041a4d04cc95e" title="スキルツリーのノードを開く " alt="" coords="220,563,424,589"/>
+<area shape="rect" id="node18" href="$classQuestManager.html#adf5b23ef2c836e314413c225ffb271c1" title="QuestManager::Retire" alt="" coords="247,613,397,640"/>
+<area shape="rect" id="node20" href="$classQuestManager.html#aa039a1a7926a271591f2c87cd0b5749b" title="QuestManager::ProgressStage" alt="" coords="221,664,423,691"/>
+<area shape="rect" id="node25" href="$classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="263,748,381,775"/>
+<area shape="rect" id="node28" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="511,807,655,833"/>
+<area shape="rect" id="node30" href="$classSkillControl.html#a476a9c7a8b170d4c6b193a3aa58c4c52" title="SkillControl::CastFinished" alt="" coords="1031,857,1203,884"/>
+<area shape="rect" id="node32" href="$classSkillControl.html#a118750af33a1b22e7cee142c4c1201cd" title="SkillControl::Activate" alt="" coords="780,912,923,939"/>
+<area shape="rect" id="node34" href="$classSkillRecastManager.html#ab6eab67102b4f0a21aca601919995ac0" title="SkillRecastManager::Add" alt="" coords="237,959,407,985"/>
+<area shape="rect" id="node36" href="$classSkillStateAutoMove.html#aa6d81de3b817efead3aac3681021869b" title="SkillStateAutoMove\l::SkillStateAutoMove" alt="" coords="251,1010,393,1051"/>
+<area shape="rect" id="node37" href="$classSkillStateCast.html#a6f1953ed352ab53758ba7ee80b9bff61" title="SkillStateCast::SkillStateCast" alt="" coords="224,1076,420,1103"/>
+<area shape="rect" id="node38" href="$classSkillTree.html#ae95021f7ff6903e2c6dded4b654e556a" title="SkillTree::SkillTree" alt="" coords="257,1127,387,1153"/>
+<area shape="rect" id="node5" href="$classAreaBase.html#a38c050576a6dfc4d9f4394f52643d78b" title="コンストラクタ " alt="" coords="511,107,655,133"/>
+<area shape="rect" id="node12" href="$classCharacterParameter.html#a2dc63e914e393e56afe4bf96c8c8a881" title="装備切り替え " alt="" coords="513,437,652,478"/>
+<area shape="rect" id="node13" href="$classCharacterBase.html#a0dd1c67ff94ba28b2994f18fe22d70c5" title="装備切り替え " alt="" coords="741,447,961,473"/>
+<area shape="rect" id="node15" href="$classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="1017,447,1217,473"/>
+<area shape="rect" id="node19" href="$classClient.html#a070655e087f5434c692cd69e017500a7" title="クエスト破棄. " alt="" coords="517,553,649,580"/>
+<area shape="rect" id="node21" href="$classClient.html#ac32fa4a2c15cf3401b051912bc60c0d8" title="クエスト進行. " alt="" coords="507,604,658,631"/>
+<area shape="rect" id="node23" href="$classQuestManager.html#a41100b1c045a59a69eb08e1fe1172ee7" title="QuestManager::OnKilledAnpan" alt="" coords="482,655,683,681"/>
+<area shape="rect" id="node22" href="$classScriptExecuter.html#a0aeb0df9813d44b4314642cc6feb3653" title="クエスト進行 " alt="" coords="767,593,935,634"/>
+<area shape="rect" id="node24" href="$classClient.html#a75daac065136a877d159f2db2b37434b" title="アンパン殺害. " alt="" coords="777,659,926,685"/>
+<area shape="rect" id="node26" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="攻撃 " alt="" coords="523,705,642,732"/>
+<area shape="rect" id="node27" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="スキル使用 " alt="" coords="501,756,665,783"/>
+<area shape="rect" id="node29" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="766,807,937,833"/>
+<area shape="rect" id="node31" href="$classSkillStateCast.html#a4ddb655eee4c87de13cf4a68d28e2cb7" title="SkillStateCast::Poll" alt="" coords="1273,857,1408,884"/>
+<area shape="rect" id="node33" href="$classSkillStateAutoMove.html#a991da2aca71ac5825d6e372af9e6644f" title="SkillStateAutoMove\l::Poll" alt="" coords="1050,909,1185,950"/>
+<area shape="rect" id="node35" href="$classCharacterBase.html#aad7624448e24270e773875fce180b0e7" title="リキャスト開始 " alt="" coords="490,959,675,985"/>
 </map>

@@ -49,7 +49,7 @@ var searchData=
   ['buffbase',['BuffBase',['../classBuffBase.html',1,'BuffBase'],['../classBuffBase.html#a02841bfbfa0306d45499cb1aa3dda968',1,'BuffBase::BuffBase()']]],
   ['buffbase_2ecpp',['BuffBase.cpp',['../BuffBase_8cpp.html',1,'']]],
   ['buffbase_2eh',['BuffBase.h',['../BuffBase_8h.html',1,'']]],
-  ['buffid',['BuffId',['../classPacketAddBuff.html#a307e3d009a836c9668ded670790e9d25',1,'PacketAddBuff']]],
+  ['buffid',['BuffId',['../structSkillItem.html#ae191f24a974c63fb7dac0768f69851c1',1,'SkillItem::BuffId()'],['../classPacketAddBuff.html#a307e3d009a836c9668ded670790e9d25',1,'PacketAddBuff::BuffId()']]],
   ['buffitem',['BuffItem',['../structBuffItem.html',1,'']]],
   ['buffmanager',['BuffManager',['../classBuffManager.html',1,'BuffManager'],['../classBuffManager.html#a860511f926894ba37efc7bb96cc65ec0',1,'BuffManager::BuffManager()']]],
   ['buffmanager_2ecpp',['BuffManager.cpp',['../BuffManager_8cpp.html',1,'']]],

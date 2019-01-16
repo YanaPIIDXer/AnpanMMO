@@ -23,6 +23,7 @@ var searchData=
   ['instanceareawaitingwidget_2eh',['InstanceAreaWaitingWidget.h',['../InstanceAreaWaitingWidget_8h.html',1,'']]],
   ['instanceinfoid',['InstanceInfoId',['../structAreaItem.html#ac68fcdbec1ba7a7a7c066f8f9e696dcd',1,'AreaItem']]],
   ['int',['Int',['../structFEquipData.html#ac5d5ee7076925e131481ef02e641aaaa',1,'FEquipData::Int()'],['../structAnpanItem.html#ad20da462695d9784cb3be6d6a6a5fddd',1,'AnpanItem::Int()'],['../structEquipItem.html#a5b9e26171520eb3afbf265c20ca2122f',1,'EquipItem::Int()'],['../classPacketCharacterStatus.html#ad6ed4039c1ac02b2339bb53db8d1527e',1,'PacketCharacterStatus::Int()'],['../classPacketLevelUp.html#ace2b171fcf7a735f7332b29a5687e906',1,'PacketLevelUp::Int()']]],
+  ['invalidskill',['InvalidSkill',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a13304221db91be881d6e5b8496026952',1,'PacketSkillUseFailed']]],
   ['isablepartyinvite',['IsAblePartyInvite',['../classUOtherPlayerMenu.html#a27e4517926cad6489575267ce7793bd5',1,'UOtherPlayerMenu']]],
   ['isactive',['IsActive',['../classQuestManager.html#a2395195ece0c5edc4bd836191289fa74',1,'QuestManager::IsActive()'],['../classSkillControl.html#ae4d7b9d305c9a9f8047bbe8cec503f5d',1,'SkillControl::IsActive()']]],
   ['isclear',['IsClear',['../classQuestManager.html#ac3d1521402ae1c8739b3f2ea1026fe3c',1,'QuestManager']]],

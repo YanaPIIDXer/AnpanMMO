@@ -185,12 +185,18 @@ CharacterBase 連携図</div>
 <tr class="memitem:a3014c408fbcf2a64e8243f4f34aa1b2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3014c408fbcf2a64e8243f4f34aa1b2e">IsEquiped</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> EquipId) const</td></tr>
 <tr class="memdesc:a3014c408fbcf2a64e8243f4f34aa1b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">装備しているか？  <a href="#a3014c408fbcf2a64e8243f4f34aa1b2e">[詳解]</a><br /></td></tr>
 <tr class="separator:a3014c408fbcf2a64e8243f4f34aa1b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3be4635b97527f0ce11c0368319bb91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ae3be4635b97527f0ce11c0368319bb91">AddBuff</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> BuffId)</td></tr>
+<tr class="memdesc:ae3be4635b97527f0ce11c0368319bb91"><td class="mdescLeft">&#160;</td><td class="mdescRight">バフ追加  <a href="#ae3be4635b97527f0ce11c0368319bb91">[詳解]</a><br /></td></tr>
+<tr class="separator:ae3be4635b97527f0ce11c0368319bb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a503107e1d9c074c4a45dc0fbe2775beb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a503107e1d9c074c4a45dc0fbe2775beb">OnBuffAdded</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> BuffId)</td></tr>
 <tr class="memdesc:a503107e1d9c074c4a45dc0fbe2775beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">バフが追加された。  <a href="#a503107e1d9c074c4a45dc0fbe2775beb">[詳解]</a><br /></td></tr>
 <tr class="separator:a503107e1d9c074c4a45dc0fbe2775beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77debf7675be38e776364392bdafb10d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a77debf7675be38e776364392bdafb10d">OnBuffRemoved</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> BuffType)</td></tr>
 <tr class="memdesc:a77debf7675be38e776364392bdafb10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">バフが消滅した。  <a href="#a77debf7675be38e776364392bdafb10d">[詳解]</a><br /></td></tr>
 <tr class="separator:a77debf7675be38e776364392bdafb10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519dbb12163afdfbc184824c8bfc5ab1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a519dbb12163afdfbc184824c8bfc5ab1">IsParalysis</a> () const</td></tr>
+<tr class="memdesc:a519dbb12163afdfbc184824c8bfc5ab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">麻痺状態か？  <a href="#a519dbb12163afdfbc184824c8bfc5ab1">[詳解]</a><br /></td></tr>
+<tr class="separator:a519dbb12163afdfbc184824c8bfc5ab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
@@ -272,6 +278,45 @@ CharacterBase 連携図</div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
+<a id="ae3be4635b97527f0ce11c0368319bb91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3be4635b97527f0ce11c0368319bb91">&#9670;&nbsp;</a></span>AddBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CharacterBase::AddBuff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>BuffId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>バフ追加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">BuffId</td><td>バフＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_ae3be4635b97527f0ce11c0368319bb91_cgraph.png" border="0" usemap="#classCharacterBase_ae3be4635b97527f0ce11c0368319bb91_cgraph" alt=""/></div>
+<map name="classCharacterBase_ae3be4635b97527f0ce11c0368319bb91_cgraph" id="classCharacterBase_ae3be4635b97527f0ce11c0368319bb91_cgraph">
+<area shape="rect" id="node2" href="classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52" title="バフ追加。 " alt="" coords="215,107,361,133"/>
+<area shape="rect" id="node3" href="classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="422,5,589,32"/>
+<area shape="rect" id="node4" href="classMasterData.html#a5d350fdd4908a79326f155cccf26e58a" title="バフマスタ取得 " alt="" coords="415,56,595,83"/>
+<area shape="rect" id="node5" href="classBuffMaster.html#a42e7b8d1325d76174a81e4e99e4d6bc1" title="BuffMaster::GetItem" alt="" coords="436,157,575,184"/>
+<area shape="rect" id="node7" href="classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="220,208,356,235"/>
+<area shape="rect" id="node6" href="classCharacterBase.html#a503107e1d9c074c4a45dc0fbe2775beb" title="バフが追加された。 " alt="" coords="409,107,601,133"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ae5a9cbbe8bff9feb0a137b5fc3787f3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5a9cbbe8bff9feb0a137b5fc3787f3f">&#9670;&nbsp;</a></span>ApplyDamage()</h2>
 
@@ -910,6 +955,48 @@ CharacterBase 連携図</div>
 
 </div>
 </div>
+<a id="a519dbb12163afdfbc184824c8bfc5ab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a519dbb12163afdfbc184824c8bfc5ab1">&#9670;&nbsp;</a></span>IsParalysis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CharacterBase::IsParalysis </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>麻痺状態か？ </p>
+<dl class="section return"><dt>戻り値</dt><dd>麻痺状態ならtrueを返す。 </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a519dbb12163afdfbc184824c8bfc5ab1_cgraph.png" border="0" usemap="#classCharacterBase_a519dbb12163afdfbc184824c8bfc5ab1_cgraph" alt=""/></div>
+<map name="classCharacterBase_a519dbb12163afdfbc184824c8bfc5ab1_cgraph" id="classCharacterBase_a519dbb12163afdfbc184824c8bfc5ab1_cgraph">
+<area shape="rect" id="node2" href="classBuffManager.html#a64f369540862fcbdbfacb09b97d1f123" title="指定したバフ（デバフ）がかかっているか？ " alt="" coords="233,5,380,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCharacterBase_a519dbb12163afdfbc184824c8bfc5ab1_icgraph.png" border="0" usemap="#classCharacterBase_a519dbb12163afdfbc184824c8bfc5ab1_icgraph" alt=""/></div>
+<map name="classCharacterBase_a519dbb12163afdfbc184824c8bfc5ab1_icgraph" id="classCharacterBase_a519dbb12163afdfbc184824c8bfc5ab1_icgraph">
+<area shape="rect" id="node2" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="毎フレームの処理 " alt="" coords="242,19,343,45"/>
+<area shape="rect" id="node4" href="classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="233,95,352,121"/>
+<area shape="rect" id="node3" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="毎フレームの処理 " alt="" coords="428,5,536,32"/>
+<area shape="rect" id="node5" href="classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="攻撃 " alt="" coords="423,56,541,83"/>
+<area shape="rect" id="node6" href="classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="スキル使用 " alt="" coords="400,107,564,133"/>
+<area shape="rect" id="node7" href="classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="410,157,554,184"/>
+<area shape="rect" id="node8" href="classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="612,157,783,184"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a3d286187aebe8df0521052c7e5a99d80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d286187aebe8df0521052c7e5a99d80">&#9670;&nbsp;</a></span>IsRecasting()</h2>
 
@@ -1097,13 +1184,14 @@ CharacterBase 連携図</div>
   </dd>
 </dl>
 
-<p><a class="el" href="classPlayerCharacter.html#a971e8851cf804f80cd1fff280d9ba914">PlayerCharacter</a>で再実装されています。</p>
+<p><a class="el" href="classPlayerCharacter.html#a971e8851cf804f80cd1fff280d9ba914">PlayerCharacter</a>, <a class="el" href="classAnpan.html#a63837cba106c32e6da792b7e85587ee3">Anpan</a>で再実装されています。</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCharacterBase_a503107e1d9c074c4a45dc0fbe2775beb_icgraph.png" border="0" usemap="#classCharacterBase_a503107e1d9c074c4a45dc0fbe2775beb_icgraph" alt=""/></div>
 <map name="classCharacterBase_a503107e1d9c074c4a45dc0fbe2775beb_icgraph" id="classCharacterBase_a503107e1d9c074c4a45dc0fbe2775beb_icgraph">
 <area shape="rect" id="node2" href="classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52" title="バフ追加。 " alt="" coords="245,5,392,32"/>
+<area shape="rect" id="node3" href="classCharacterBase.html#ae3be4635b97527f0ce11c0368319bb91" title="バフ追加 " alt="" coords="440,5,601,32"/>
 </map>
 </div>
 
@@ -1702,10 +1790,13 @@ CharacterBase 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classCharacterBase_a7eb905131a5519c3c374e5333e1bf018_cgraph.png" border="0" usemap="#classCharacterBase_a7eb905131a5519c3c374e5333e1bf018_cgraph" alt=""/></div>
 <map name="classCharacterBase_a7eb905131a5519c3c374e5333e1bf018_cgraph" id="classCharacterBase_a7eb905131a5519c3c374e5333e1bf018_cgraph">
-<area shape="rect" id="node2" href="classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="217,38,336,65"/>
+<area shape="rect" id="node2" href="classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="217,89,336,115"/>
 <area shape="rect" id="node3" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="リキャスト中か？ " alt="" coords="384,13,568,39"/>
 <area shape="rect" id="node5" href="classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="408,63,544,90"/>
-<area shape="rect" id="node4" href="classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="616,5,755,47"/>
+<area shape="rect" id="node6" href="classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="393,114,559,141"/>
+<area shape="rect" id="node7" href="classCharacterBase.html#a519dbb12163afdfbc184824c8bfc5ab1" title="麻痺状態か？ " alt="" coords="386,165,566,191"/>
+<area shape="rect" id="node4" href="classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="620,5,759,47"/>
+<area shape="rect" id="node8" href="classBuffManager.html#a64f369540862fcbdbfacb09b97d1f123" title="指定したバフ（デバフ）がかかっているか？ " alt="" coords="616,165,763,191"/>
 </map>
 </div>
 

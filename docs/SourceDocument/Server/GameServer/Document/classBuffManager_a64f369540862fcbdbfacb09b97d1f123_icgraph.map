@@ -1,0 +1,10 @@
+<map id="BuffManager::IsActive" name="BuffManager::IsActive">
+<area shape="rect" id="node2" href="$classCharacterBase.html#a519dbb12163afdfbc184824c8bfc5ab1" title="麻痺状態か？ " alt="" coords="200,57,380,84"/>
+<area shape="rect" id="node3" href="$classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="毎フレームの処理 " alt="" coords="437,19,538,45"/>
+<area shape="rect" id="node5" href="$classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="428,95,547,121"/>
+<area shape="rect" id="node4" href="$classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="毎フレームの処理 " alt="" coords="623,5,731,32"/>
+<area shape="rect" id="node6" href="$classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="攻撃 " alt="" coords="617,56,736,83"/>
+<area shape="rect" id="node7" href="$classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="スキル使用 " alt="" coords="595,107,759,133"/>
+<area shape="rect" id="node8" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="605,157,749,184"/>
+<area shape="rect" id="node9" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="807,157,977,184"/>
+</map>
