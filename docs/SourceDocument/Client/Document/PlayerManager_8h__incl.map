@@ -1,4 +1,8 @@
 <map id="PlayerManager.h" name="PlayerManager.h">
-<area shape="rect" id="node3" href="$PlayerCharacterBase_8h.html" title="PlayerCharacterBase.h" alt="" coords="273,80,429,107"/>
-<area shape="rect" id="node4" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="142,155,321,181"/>
+<area shape="rect" id="node3" href="$PlayerCharacterBase_8h.html" title="PlayerCharacterBase.h" alt="" coords="259,80,415,107"/>
+<area shape="rect" id="node4" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="127,155,306,181"/>
+<area shape="rect" id="node6" href="$BuffManager_8h.html" title="Buff/BuffManager.h" alt="" coords="337,229,467,256"/>
+<area shape="rect" id="node7" href="$BuffMaster_8h.html" title="Master/BuffMaster.h" alt="" coords="491,229,630,256"/>
+<area shape="rect" id="node8" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="459,304,663,345"/>
+<area shape="rect" id="node9" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="469,393,556,420"/>
 </map>

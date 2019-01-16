@@ -188,6 +188,12 @@ AGameCharacter 連携図</div>
 <tr class="separator:ac478ade848f97a78c64e535d532f61f9 inherit pub_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57c1a87257db354c58d4ab286ee0cbc2 inherit pub_methods_classACharacterBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#a57c1a87257db354c58d4ab286ee0cbc2">OnSkillCast</a> (uint32 SkillId)</td></tr>
 <tr class="separator:a57c1a87257db354c58d4ab286ee0cbc2 inherit pub_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a370c7218886690da289be3e97aff35ae inherit pub_methods_classACharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#a370c7218886690da289be3e97aff35ae">AddBuff</a> (uint32 BuffId)</td></tr>
+<tr class="separator:a370c7218886690da289be3e97aff35ae inherit pub_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb4e29eb37f434a1eee0a5eb4543bc37 inherit pub_methods_classACharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#acb4e29eb37f434a1eee0a5eb4543bc37">RemoveBuff</a> (uint8 Type)</td></tr>
+<tr class="separator:acb4e29eb37f434a1eee0a5eb4543bc37 inherit pub_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a689ff315e3f6d616e59dd39eb1b51 inherit pub_methods_classACharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#a39a689ff315e3f6d616e59dd39eb1b51">IsParalysis</a> () const</td></tr>
+<tr class="separator:a39a689ff315e3f6d616e59dd39eb1b51 inherit pub_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
@@ -216,6 +222,8 @@ AGameCharacter 連携図</div>
 <tr class="separator:a3c28eff5367dcb442dcd2bc54dcdab10 inherit pro_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ed738c98e0a3bd00db6c6c9553cb435 inherit pro_methods_classACharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#a7ed738c98e0a3bd00db6c6c9553cb435">SetHP</a> (int InHp)</td></tr>
 <tr class="separator:a7ed738c98e0a3bd00db6c6c9553cb435 inherit pro_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad38e2422d7e734b9db1b09978b26d2b0 inherit pro_methods_classACharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#ad38e2422d7e734b9db1b09978b26d2b0">SetMoveSpeedRate</a> (float Rate)</td></tr>
+<tr class="separator:ad38e2422d7e734b9db1b09978b26d2b0 inherit pro_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 その他の継承メンバ</h2></td></tr>
@@ -718,14 +726,15 @@ AGameCharacter 連携図</div>
 <map name="classAGameCharacter_af8eaf977210da91f8981daa6f91c659b_cgraph" id="classAGameCharacter_af8eaf977210da91f8981daa6f91c659b_cgraph">
 <area shape="rect" id="node2" href="classPlayerStatus.html#a2aaae642c6e9c3b2523912db1220bd1c" title="PlayerStatus::GetItemList" alt="" coords="275,5,447,32"/>
 <area shape="rect" id="node3" href="classItemList.html#a85f13eb24ad602abff9a737ccb960903" title="ItemList::GetCount" alt="" coords="296,56,427,83"/>
-<area shape="rect" id="node4" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="544,132,711,159"/>
+<area shape="rect" id="node4" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="544,107,711,133"/>
 <area shape="rect" id="node5" href="classMasterData.html#a4d5f0af7e2f2ab9762503a44cd948245" title="MasterData::GetItemMaster" alt="" coords="270,157,453,184"/>
 <area shape="rect" id="node6" href="classItemMaster.html#a5c59b10a1d9822c950726dbb2990ee74" title="ItemMaster::Get" alt="" coords="303,208,419,235"/>
 <area shape="rect" id="node7" href="classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="259,259,464,285"/>
-<area shape="rect" id="node8" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="536,195,719,221"/>
-<area shape="rect" id="node9" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="569,245,685,272"/>
-<area shape="rect" id="node10" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="531,297,723,338"/>
-<area shape="rect" id="node11" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="512,363,743,389"/>
+<area shape="rect" id="node8" href="classACharacterBase.html#a39a689ff315e3f6d616e59dd39eb1b51" title="ACharacterBase::IsParalysis" alt="" coords="533,157,722,184"/>
+<area shape="rect" id="node9" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="536,208,719,235"/>
+<area shape="rect" id="node10" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="569,259,685,285"/>
+<area shape="rect" id="node11" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="531,310,723,351"/>
+<area shape="rect" id="node12" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="512,376,743,403"/>
 </map>
 </div>
 <div class="dynheader">
@@ -759,11 +768,12 @@ AGameCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAGameCharacter_a9d57bb0fbea3d433d18e58b7fe590bd7_cgraph.png" border="0" usemap="#classAGameCharacter_a9d57bb0fbea3d433d18e58b7fe590bd7_cgraph" alt=""/></div>
 <map name="classAGameCharacter_a9d57bb0fbea3d433d18e58b7fe590bd7_cgraph" id="classAGameCharacter_a9d57bb0fbea3d433d18e58b7fe590bd7_cgraph">
-<area shape="rect" id="node2" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="291,5,457,32"/>
-<area shape="rect" id="node3" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="283,56,465,83"/>
-<area shape="rect" id="node4" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="316,107,432,133"/>
-<area shape="rect" id="node5" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="278,158,470,199"/>
-<area shape="rect" id="node6" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="259,224,489,251"/>
+<area shape="rect" id="node2" href="classACharacterBase.html#a39a689ff315e3f6d616e59dd39eb1b51" title="ACharacterBase::IsParalysis" alt="" coords="279,5,469,32"/>
+<area shape="rect" id="node3" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="291,56,457,83"/>
+<area shape="rect" id="node4" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="283,107,465,133"/>
+<area shape="rect" id="node5" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="316,157,432,184"/>
+<area shape="rect" id="node6" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="278,209,470,250"/>
+<area shape="rect" id="node7" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="259,275,489,301"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1301,18 +1311,19 @@ AGameCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAGameCharacter_af17b8bc5b6f7e487adebcb350e2fc809_cgraph.png" border="0" usemap="#classAGameCharacter_af17b8bc5b6f7e487adebcb350e2fc809_cgraph" alt=""/></div>
 <map name="classAGameCharacter_af17b8bc5b6f7e487adebcb350e2fc809_cgraph" id="classAGameCharacter_af17b8bc5b6f7e487adebcb350e2fc809_cgraph">
-<area shape="rect" id="node2" href="classAGameCharacter.html#af8eaf977210da91f8981daa6f91c659b" title="AGameCharacter::IsItemUsable" alt="" coords="232,186,437,213"/>
-<area shape="rect" id="node5" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="771,88,937,114"/>
-<area shape="rect" id="node6" href="classMasterData.html#a4d5f0af7e2f2ab9762503a44cd948245" title="MasterData::GetItemMaster" alt="" coords="497,237,679,264"/>
-<area shape="rect" id="node7" href="classItemMaster.html#a5c59b10a1d9822c950726dbb2990ee74" title="ItemMaster::Get" alt="" coords="530,288,646,314"/>
-<area shape="rect" id="node12" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="739,317,969,344"/>
-<area shape="rect" id="node13" href="classACharacterBase.html#aed7e07b4da32750d3e475419fd99dbad" title="ACharacterBase::GetUuid" alt="" coords="249,389,421,416"/>
-<area shape="rect" id="node3" href="classPlayerStatus.html#a2aaae642c6e9c3b2523912db1220bd1c" title="PlayerStatus::GetItemList" alt="" coords="502,34,674,61"/>
-<area shape="rect" id="node4" href="classItemList.html#a85f13eb24ad602abff9a737ccb960903" title="ItemList::GetCount" alt="" coords="523,85,653,112"/>
-<area shape="rect" id="node8" href="classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="485,186,691,213"/>
-<area shape="rect" id="node9" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="763,256,945,282"/>
-<area shape="rect" id="node10" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="796,138,912,165"/>
-<area shape="rect" id="node11" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="758,190,950,231"/>
+<area shape="rect" id="node2" href="classAGameCharacter.html#af8eaf977210da91f8981daa6f91c659b" title="AGameCharacter::IsItemUsable" alt="" coords="232,185,437,212"/>
+<area shape="rect" id="node5" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="771,68,937,94"/>
+<area shape="rect" id="node6" href="classMasterData.html#a4d5f0af7e2f2ab9762503a44cd948245" title="MasterData::GetItemMaster" alt="" coords="497,236,679,262"/>
+<area shape="rect" id="node7" href="classItemMaster.html#a5c59b10a1d9822c950726dbb2990ee74" title="ItemMaster::Get" alt="" coords="530,286,646,313"/>
+<area shape="rect" id="node13" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="739,337,969,364"/>
+<area shape="rect" id="node14" href="classACharacterBase.html#aed7e07b4da32750d3e475419fd99dbad" title="ACharacterBase::GetUuid" alt="" coords="249,388,421,414"/>
+<area shape="rect" id="node3" href="classPlayerStatus.html#a2aaae642c6e9c3b2523912db1220bd1c" title="PlayerStatus::GetItemList" alt="" coords="502,33,674,60"/>
+<area shape="rect" id="node4" href="classItemList.html#a85f13eb24ad602abff9a737ccb960903" title="ItemList::GetCount" alt="" coords="523,84,653,110"/>
+<area shape="rect" id="node8" href="classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="485,185,691,212"/>
+<area shape="rect" id="node9" href="classACharacterBase.html#a39a689ff315e3f6d616e59dd39eb1b51" title="ACharacterBase::IsParalysis" alt="" coords="759,185,949,212"/>
+<area shape="rect" id="node10" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="763,236,945,262"/>
+<area shape="rect" id="node11" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="796,286,912,313"/>
+<area shape="rect" id="node12" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="758,119,950,160"/>
 </map>
 </div>
 
@@ -1337,16 +1348,17 @@ AGameCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAGameCharacter_a1456594a9a8782496ae8be3054567bd8_cgraph.png" border="0" usemap="#classAGameCharacter_a1456594a9a8782496ae8be3054567bd8_cgraph" alt=""/></div>
 <map name="classAGameCharacter_a1456594a9a8782496ae8be3054567bd8_cgraph" id="classAGameCharacter_a1456594a9a8782496ae8be3054567bd8_cgraph">
-<area shape="rect" id="node2" href="classPlayerStatus.html#a010bdb5c134639bcd8403a039814af72" title="PlayerStatus::GetSkillList" alt="" coords="251,81,423,108"/>
-<area shape="rect" id="node3" href="classAGameCharacter.html#a91cb1cfd26b21143670971e237efe410" title="AGameCharacter::UseSkill" alt="" coords="248,132,427,159"/>
-<area shape="rect" id="node4" href="classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="475,107,680,133"/>
-<area shape="rect" id="node9" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="728,224,959,251"/>
-<area shape="rect" id="node10" href="classACharacterBase.html#aed7e07b4da32750d3e475419fd99dbad" title="ACharacterBase::GetUuid" alt="" coords="491,208,663,235"/>
-<area shape="rect" id="node11" href="classSkillControl.html#a37ad12375004f35c69cd53b8f43ba183" title="SkillControl::UseSkill" alt="" coords="505,56,649,83"/>
-<area shape="rect" id="node5" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="760,5,927,32"/>
-<area shape="rect" id="node6" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="752,56,935,83"/>
-<area shape="rect" id="node7" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="785,107,901,133"/>
-<area shape="rect" id="node8" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="747,158,939,199"/>
+<area shape="rect" id="node2" href="classPlayerStatus.html#a010bdb5c134639bcd8403a039814af72" title="PlayerStatus::GetSkillList" alt="" coords="251,120,423,147"/>
+<area shape="rect" id="node3" href="classAGameCharacter.html#a91cb1cfd26b21143670971e237efe410" title="AGameCharacter::UseSkill" alt="" coords="248,171,427,197"/>
+<area shape="rect" id="node4" href="classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="475,145,680,172"/>
+<area shape="rect" id="node10" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="728,275,959,301"/>
+<area shape="rect" id="node11" href="classACharacterBase.html#aed7e07b4da32750d3e475419fd99dbad" title="ACharacterBase::GetUuid" alt="" coords="491,247,663,273"/>
+<area shape="rect" id="node12" href="classSkillControl.html#a37ad12375004f35c69cd53b8f43ba183" title="SkillControl::UseSkill" alt="" coords="505,69,649,96"/>
+<area shape="rect" id="node5" href="classACharacterBase.html#a39a689ff315e3f6d616e59dd39eb1b51" title="ACharacterBase::IsParalysis" alt="" coords="749,157,938,184"/>
+<area shape="rect" id="node6" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="760,5,927,32"/>
+<area shape="rect" id="node7" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="752,56,935,83"/>
+<area shape="rect" id="node8" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="785,107,901,133"/>
+<area shape="rect" id="node9" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="747,209,939,250"/>
 </map>
 </div>
 
@@ -1372,14 +1384,15 @@ AGameCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAGameCharacter_a91cb1cfd26b21143670971e237efe410_cgraph.png" border="0" usemap="#classAGameCharacter_a91cb1cfd26b21143670971e237efe410_cgraph" alt=""/></div>
 <map name="classAGameCharacter_a91cb1cfd26b21143670971e237efe410_cgraph" id="classAGameCharacter_a91cb1cfd26b21143670971e237efe410_cgraph">
-<area shape="rect" id="node2" href="classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="232,107,437,133"/>
-<area shape="rect" id="node7" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="485,224,716,251"/>
-<area shape="rect" id="node8" href="classACharacterBase.html#aed7e07b4da32750d3e475419fd99dbad" title="ACharacterBase::GetUuid" alt="" coords="249,208,421,235"/>
-<area shape="rect" id="node9" href="classSkillControl.html#a37ad12375004f35c69cd53b8f43ba183" title="SkillControl::UseSkill" alt="" coords="263,56,407,83"/>
-<area shape="rect" id="node3" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="517,5,684,32"/>
-<area shape="rect" id="node4" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="509,56,692,83"/>
-<area shape="rect" id="node5" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="543,107,659,133"/>
-<area shape="rect" id="node6" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="505,158,697,199"/>
+<area shape="rect" id="node2" href="classAGameCharacter.html#a9d57bb0fbea3d433d18e58b7fe590bd7" title="AGameCharacter::IsSkillUsable" alt="" coords="232,145,437,172"/>
+<area shape="rect" id="node8" href="classACharacterBase.html#ae87a790ce45e8e5bae4cbf8e1ce928eb" title="ACharacterBase::GetCharacterType" alt="" coords="485,275,716,301"/>
+<area shape="rect" id="node9" href="classACharacterBase.html#aed7e07b4da32750d3e475419fd99dbad" title="ACharacterBase::GetUuid" alt="" coords="249,247,421,273"/>
+<area shape="rect" id="node10" href="classSkillControl.html#a37ad12375004f35c69cd53b8f43ba183" title="SkillControl::UseSkill" alt="" coords="263,69,407,96"/>
+<area shape="rect" id="node3" href="classACharacterBase.html#a39a689ff315e3f6d616e59dd39eb1b51" title="ACharacterBase::IsParalysis" alt="" coords="506,157,695,184"/>
+<area shape="rect" id="node4" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="517,5,684,32"/>
+<area shape="rect" id="node5" href="classMasterData.html#a7119061d13dc694db6cc3663e5f85462" title="MasterData::GetSkillMaster" alt="" coords="509,56,692,83"/>
+<area shape="rect" id="node6" href="classSkillMaster.html#af92bfe44f9f9363863693015b8164342" title="SkillMaster::Get" alt="" coords="543,107,659,133"/>
+<area shape="rect" id="node7" href="classAGameController.html#a71b97545e91a41e26a4116f0df22c291" title="AGameController::GetCurrent\lTarget" alt="" coords="505,209,697,250"/>
 </map>
 </div>
 <div class="dynheader">

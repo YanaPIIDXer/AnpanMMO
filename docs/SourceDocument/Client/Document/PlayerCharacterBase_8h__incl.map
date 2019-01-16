@@ -1,3 +1,7 @@
 <map id="PlayerCharacterBase.h" name="PlayerCharacterBase.h">
-<area shape="rect" id="node3" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="130,80,309,107"/>
+<area shape="rect" id="node3" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="194,80,373,107"/>
+<area shape="rect" id="node5" href="$BuffManager_8h.html" title="Buff/BuffManager.h" alt="" coords="311,155,442,181"/>
+<area shape="rect" id="node6" href="$BuffMaster_8h.html" title="Master/BuffMaster.h" alt="" coords="466,155,605,181"/>
+<area shape="rect" id="node7" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="433,229,637,271"/>
+<area shape="rect" id="node8" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="444,319,531,345"/>
 </map>
