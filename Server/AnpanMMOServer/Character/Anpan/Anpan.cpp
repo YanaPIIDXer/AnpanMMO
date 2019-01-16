@@ -31,6 +31,19 @@ void Anpan::AttackTo(CharacterPtr pTarget, u32 SkillId)
 	Skill.Use(SkillId, pTarget);
 }
 
+// バフが追加された。
+void Anpan::OnBuffAdded(u32 BuffId)
+{
+	const BuffItem *pItem = MasterData::GetInstance().GetBuffMaster().GetItem(BuffId);
+	if (pItem == NULL) { return; }
+
+	if (pItem->Type == BuffItem::PARALYSIS)
+	{
+		// 麻痺を貰ったらＡＩを止める。
+		AI.Stop();
+	}
+}
+
 
 // 毎フレームの処理.
 void Anpan::Update(int DeltaTime)

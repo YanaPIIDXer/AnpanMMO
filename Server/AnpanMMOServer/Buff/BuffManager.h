@@ -48,6 +48,14 @@ public:
 	 */
 	void AddBuff(u32 BuffId);
 
+	/**
+	 * @fn bool IsActive(u8 Type) const
+	 * @brief 指定したバフ（デバフ）がかかっているか？
+	 * @param[in] Type バフ（デバフ）タイプ
+	 * @return かかっていればtrueを返す。
+	 */
+	bool IsActive(u8 Type) const { return (Buffs.find(Type) != Buffs.end()); }
+
 private:
 
 	// バフリスト

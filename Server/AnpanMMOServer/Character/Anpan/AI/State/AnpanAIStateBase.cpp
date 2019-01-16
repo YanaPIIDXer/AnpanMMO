@@ -36,6 +36,14 @@ void AnpanAIStateBase::Poll(int DeltaTime)
 	UpdateRotate(DeltaTime);
 }
 
+// ’âŽ~.
+void AnpanAIStateBase::Stop()
+{
+	MoveTime = 0;
+	RotateTime = 0;
+	pAI->SetSendStopPacket();
+}
+
 
 // ˆÚ“®‚ðÝ’è.
 void AnpanAIStateBase::SetMove(const Vector3D &InMoveTarget, int Time)
@@ -60,14 +68,6 @@ void AnpanAIStateBase::SetRotate(const Rotation &InRotateTarget, int Time)
 	RotateTime = Time;
 	RotateStartTime = Time;
 	pAI->CreateRotatePacketData(RotateTarget, RotateTime);
-}
-
-// ’âŽ~.
-void AnpanAIStateBase::Stop()
-{
-	MoveTime = 0;
-	RotateTime = 0;
-	pAI->SetSendStopPacket();
 }
 
 

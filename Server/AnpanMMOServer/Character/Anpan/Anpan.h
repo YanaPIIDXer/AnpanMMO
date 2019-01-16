@@ -74,7 +74,14 @@ public:
 	 * @return ドロップＩＤ
 	 */
 	virtual u32 GetDropId() const { return DropId; }
-	
+
+	/**
+	 * @fn virtual void OnBuffAdded(u32 BuffId)
+	 * @brief バフが追加された。
+	 * @param[in] BuffId バフＩＤ
+	 */
+	virtual void OnBuffAdded(u32 BuffId);
+
 protected:
 
 	/**

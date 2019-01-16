@@ -246,6 +246,13 @@ public:
 	 */
 	virtual void OnBuffRemoved(u8 BuffType) {}
 
+	/**
+	 * @fn bool IsParalysis() const
+	 * @brief –ƒáƒó‘Ô‚©H
+	 * @return –ƒáƒó‘Ô‚È‚çtrue‚ğ•Ô‚·B
+	 */
+	bool IsParalysis() const;
+
 protected:
 
 	//! À•W.

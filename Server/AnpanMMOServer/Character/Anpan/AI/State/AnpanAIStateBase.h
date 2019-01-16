@@ -52,6 +52,12 @@ public:
 	 */
 	virtual void OnDamaged() {}
 
+	/**
+	 * @fn void Stop()
+	 * @brief ’âŽ~
+	 */
+	void Stop();
+
 protected:
 
 	/**
@@ -90,12 +96,6 @@ protected:
 	 * @param[in] Time ‰ñ“]ŽžŠÔ
 	 */
 	void SetRotate(const Rotation &InRotateTarget, int Time);
-
-	/**
-	 * @fn void Stop()
-	 * @brief ’âŽ~
-	 */
-	void Stop();
 
 	/**
 	 * @fn bool IsMoving() const

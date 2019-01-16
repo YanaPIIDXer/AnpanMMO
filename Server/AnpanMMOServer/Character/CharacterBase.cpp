@@ -6,6 +6,7 @@
 #include "stdafx.h"
 #include "CharacterBase.h"
 #include "Math/MathUtil.h"
+#include "Master/BuffMaster.h"
 #include "Packet/PacketDamage.h"
 #include "Packet/PacketHeal.h"
 
@@ -109,6 +110,12 @@ bool CharacterBase::IsEquiped(u32 EquipId) const
 void CharacterBase::AddBuff(u32 BuffId)
 {
 	BuffMgr.AddBuff(BuffId);
+}
+
+// ñÉ·ÉèÛë‘Ç©ÅH
+bool CharacterBase::IsParalysis() const
+{
+	return BuffMgr.IsActive(BuffItem::PARALYSIS);
 }
 
 
