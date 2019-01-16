@@ -38,6 +38,14 @@ ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
 	OnDestroyed.AddDynamic(this, &ACharacterBase::OnDestroy);
 }
 
+// ŠJn‚Ìˆ—.
+void ACharacterBase::BeginPlay()
+{
+	Super::BeginPlay();
+
+	BuffMgr.SetOwner(this);
+}
+
 // ”jŠü‚³‚ê‚½.
 void ACharacterBase::OnDestroy(AActor *pDestroyedActor)
 {

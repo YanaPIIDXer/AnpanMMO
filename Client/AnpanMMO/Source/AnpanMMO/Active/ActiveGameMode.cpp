@@ -49,6 +49,8 @@
 #include "Packet/PacketQuestClear.h"
 #include "Packet/PacketQuestRetireResponse.h"
 #include "Packet/PacketChangeEquipResult.h"
+#include "Packet/PacketAddBuff.h"
+#include "Packet/PacketRemoveBuff.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -110,6 +112,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::QuestClear, std::bind(&AActiveGameMode::OnRecvClearQuest, this, _1));
 	AddPacketFunction(PacketID::QuestRetireResponse, std::bind(&AActiveGameMode::OnRecvRetireQuestResponse, this, _1));
 	AddPacketFunction(PacketID::ChangeEquipResult, std::bind(&AActiveGameMode::OnRecvEquipChangeResult, this, _1));
+	AddPacketFunction(PacketID::AddBuff, std::bind(&AActiveGameMode::OnRecvAddBuff, this, _1));
+	AddPacketFunction(PacketID::RemoveBuff, std::bind(&AActiveGameMode::OnRecvRemoveBuff, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -850,5 +854,32 @@ bool AActiveGameMode::OnRecvEquipChangeResult(MemoryStreamInterface *pStream)
 
 	USimpleDialog::Show(this, "Equip Changed!", 100);
 
+	return true;
+}
+
+// バフ追加を受信した
+bool AActiveGameMode::OnRecvAddBuff(MemoryStreamInterface *pStream)
+{
+	PacketAddBuff Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->AddBuff(Packet.BuffId);
+
+	return true;
+}
+
+// バフ消去を受信した。
+bool AActiveGameMode::OnRecvRemoveBuff(MemoryStreamInterface *pStream)
+{
+	PacketRemoveBuff Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	auto *pCharacter = Cast<AGameCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	check(pCharacter != nullptr);
+
+	pCharacter->RemoveBuff(Packet.BuffType);
 	return true;
 }

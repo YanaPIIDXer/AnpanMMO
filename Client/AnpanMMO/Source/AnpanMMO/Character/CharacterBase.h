@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Buff/BuffManager.h"
+#include "Master/BuffMaster.h"
 #include "CharacterBase.generated.h"
 
 // キャラクタタイプ
@@ -44,6 +46,9 @@ public:
 
 	// デストラクタ
 	virtual ~ACharacterBase() {}
+
+	// 開始時の処理.
+	virtual void BeginPlay() override;
 
 	// 破棄された.
 	UFUNCTION()
@@ -97,6 +102,16 @@ public:
 	// スキル発動を受信した。
 	virtual void OnSkillActivate() {}
 
+	// バフ追加.
+	void AddBuff(uint32 BuffId) { BuffMgr.Add(BuffId); }
+
+	// バフ消去.
+	void RemoveBuff(uint8 Type) { BuffMgr.Remove(Type); }
+
+	// 麻痺状態か？
+	UFUNCTION(BlueprintPure, Category = "Character")
+	bool IsParalysis() const { return BuffMgr.IsActive(BuffItem::PARALYSIS); }
+
 protected:
 
 	// 初期化.
@@ -144,6 +159,9 @@ private:
 	// スキルの範囲デカール
 	UPROPERTY()
 	ASkillRangeDecal *pSkillRangeDecal;
+
+	// バフ管理.
+	BuffManager BuffMgr;
 	
 
 	// スキルの範囲デカールを破棄.

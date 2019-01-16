@@ -226,4 +226,10 @@ private:
 	// 装備変更結果を受信した。
 	bool OnRecvEquipChangeResult(MemoryStreamInterface *pStream);
 
+	// バフ追加を受信した。
+	bool OnRecvAddBuff(MemoryStreamInterface *pStream);
+
+	// バフ消去を受信した。
+	bool OnRecvRemoveBuff(MemoryStreamInterface *pStream);
+	
 };

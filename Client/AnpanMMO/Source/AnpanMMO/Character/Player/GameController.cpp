@@ -128,6 +128,9 @@ void AGameController::MoveProc()
 
 	if (!bEnableMove) { return; }
 
+	// –ƒáƒó‘ÔB
+	if (pCharacter->IsParalysis()) { return; }
+
 	if (InputVector == FVector::ZeroVector) { return; }
 	InputVector.Normalize();
 	FRotator CameraRot = pCamera->GetActorRotation();

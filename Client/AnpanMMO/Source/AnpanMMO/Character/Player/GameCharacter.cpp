@@ -98,6 +98,9 @@ bool AGameCharacter::IsSkillUsable(int32 SkillId) const
 	AGameController *pController = Cast<AGameController>(Controller);
 	check(pController != nullptr);
 
+	// 麻痺状態なら問答無用で使用不可。
+	if (IsParalysis()) { return false; }
+
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
 	if (pItem == nullptr) { return false; }
 
