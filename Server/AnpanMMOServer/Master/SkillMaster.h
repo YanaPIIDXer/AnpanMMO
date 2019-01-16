@@ -46,6 +46,7 @@ public:
 	u32 BonusInt;
 	u32 BonusMnd;
 	u32 BonusVit;
+	u32 BuffId;
 
 
 };
