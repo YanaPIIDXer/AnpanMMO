@@ -54,6 +54,12 @@ void SkillControl::Use(u32 InSkillId, CharacterPtr pInTarget)
 		return;
 	}
 
+	if (MasterData::GetInstance().GetSkillMaster().GetItem(InSkillId) == NULL)
+	{
+		Cancel(PacketSkillUseFailed::InvalidSkill);
+		return;
+	}
+
 	SkillId = InSkillId;
 	ItemId = 0;
 	pTarget = pInTarget;
@@ -187,16 +193,12 @@ void SkillControl::Activate()
 					Targets[i]->Heal(Value);
 				}
 				break;
+		}
 
-			case SkillItem::BUFF:
-
-				// @TODO:バフ実装時に実装する。
-				break;
-
-			case SkillItem::DEBUFF:
-
-				// @TODO:デバフ実装時に実装する。
-				break;
+		// バフ（デバフ）が設定されていれば発生させる。
+		if (pItem->BuffId != 0)
+		{
+			Targets[i]->AddBuff(pItem->BuffId);
 		}
 	}
 
