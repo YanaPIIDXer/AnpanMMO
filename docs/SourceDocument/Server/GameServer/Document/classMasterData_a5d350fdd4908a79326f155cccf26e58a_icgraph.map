@@ -1,0 +1,5 @@
+<map id="MasterData::GetBuffMaster" name="MasterData::GetBuffMaster">
+<area shape="rect" id="node2" href="$classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="235,5,378,32"/>
+<area shape="rect" id="node3" href="$classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52" title="バフ追加。 " alt="" coords="233,56,380,83"/>
+<area shape="rect" id="node4" href="$classCharacterBase.html#ae3be4635b97527f0ce11c0368319bb91" title="バフ追加 " alt="" coords="428,81,589,108"/>
+</map>

@@ -1,9 +1,11 @@
 <map id="SkillControl::UseItem" name="SkillControl::UseItem">
-<area shape="rect" id="node2" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="205,5,372,32"/>
-<area shape="rect" id="node3" href="$classMasterData.html#ae34f5d571f732528a83f5ae1773fa6d3" title="アイテムマスタ取得 " alt="" coords="197,56,380,83"/>
-<area shape="rect" id="node4" href="$classItemMaster.html#a2275f10051a2fb0ea39a44a4b17fe725" title="ItemMaster::GetItem" alt="" coords="218,107,359,133"/>
-<area shape="rect" id="node5" href="$classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="452,157,588,184"/>
-<area shape="rect" id="node6" href="$classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="229,208,348,235"/>
-<area shape="rect" id="node7" href="$classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="リキャスト中か？ " alt="" coords="428,208,612,235"/>
-<area shape="rect" id="node8" href="$classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="660,201,799,242"/>
+<area shape="rect" id="node2" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="437,5,603,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#ae34f5d571f732528a83f5ae1773fa6d3" title="アイテムマスタ取得 " alt="" coords="197,157,380,184"/>
+<area shape="rect" id="node4" href="$classItemMaster.html#a2275f10051a2fb0ea39a44a4b17fe725" title="ItemMaster::GetItem" alt="" coords="218,208,359,235"/>
+<area shape="rect" id="node5" href="$classSkillControl.html#a022eab8ffc068f5241993800e892d099" title="SkillControl::Cancel" alt="" coords="452,56,588,83"/>
+<area shape="rect" id="node6" href="$classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="229,107,348,133"/>
+<area shape="rect" id="node7" href="$classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80" title="リキャスト中か？ " alt="" coords="428,107,612,133"/>
+<area shape="rect" id="node9" href="$classCharacterBase.html#a519dbb12163afdfbc184824c8bfc5ab1" title="麻痺状態か？ " alt="" coords="430,159,610,185"/>
+<area shape="rect" id="node8" href="$classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="664,97,803,138"/>
+<area shape="rect" id="node10" href="$classBuffManager.html#a64f369540862fcbdbfacb09b97d1f123" title="指定したバフ（デバフ）がかかっているか？ " alt="" coords="660,163,807,189"/>
 </map>

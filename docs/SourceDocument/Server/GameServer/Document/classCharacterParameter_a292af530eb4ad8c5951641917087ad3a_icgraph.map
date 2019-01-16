@@ -1,3 +1,4 @@
 <map id="CharacterParameter::AddHp" name="CharacterParameter::AddHp">
 <area shape="rect" id="node2" href="$classCharacterBase.html#ad6b357a4c7cf3569990df39eabd7be75" title="回復 " alt="" coords="192,13,335,39"/>
+<area shape="rect" id="node3" href="$classBuffAutoHeal.html#a1d2aeed2e69afc1526ff94a8560805b4" title="毎フレームの処理 " alt="" coords="383,13,529,39"/>
 </map>

@@ -37,9 +37,11 @@ void Hate::Poll()
 }
 
 // ‘‰Á.
-void Hate::Add(weak_ptr<CharacterBase> pCharacter, int Value)
+void Hate::Add(CharacterPtr pCharacter, int Value)
 {
-	for (unsigned int i = 0; i < HateList.size(); i++)
+	if (pCharacter.expired()) { return; }
+
+	for (u32 i = 0; i < HateList.size(); i++)
 	{
 		if (HateList[i].pCharacter.lock().get() == pCharacter.lock().get())
 		{
@@ -57,7 +59,7 @@ void Hate::Add(weak_ptr<CharacterBase> pCharacter, int Value)
 }
 
 // ˆê”Ôã‚É‚¢‚éƒLƒƒƒ‰‚ğæ“¾.
-weak_ptr<CharacterBase> Hate::GetTop() const
+CharacterPtr Hate::GetTop() const
 {
 	if (HateList.empty()) { return weak_ptr<CharacterBase>(); }
 	return HateList[0].pCharacter;

@@ -27,4 +27,5 @@ void MasterData::Load()
 	QuestStage.Load();
 	QuestReward.Load();
 	Equip.Load();
+	Buff.Load();
 }

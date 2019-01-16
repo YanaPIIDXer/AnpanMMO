@@ -16,5 +16,7 @@ var searchData=
   ['bossx',['BossX',['../structInstanceInfoItem.html#a36cc518a565341812d9ce25d4373837b',1,'InstanceInfoItem']]],
   ['bossy',['BossY',['../structInstanceInfoItem.html#abfc1d61c9f383eb60f216b685b91535f',1,'InstanceInfoItem']]],
   ['bossz',['BossZ',['../structInstanceInfoItem.html#a2eeec69e299a3751545d1e677aa5aa2c',1,'InstanceInfoItem']]],
+  ['buffid',['BuffId',['../structSkillItem.html#ae191f24a974c63fb7dac0768f69851c1',1,'SkillItem::BuffId()'],['../classPacketAddBuff.html#a307e3d009a836c9668ded670790e9d25',1,'PacketAddBuff::BuffId()']]],
+  ['bufftype',['BuffType',['../classPacketRemoveBuff.html#abe9440ae22483efe758154a175dbe78f',1,'PacketRemoveBuff']]],
   ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]]
 ];

@@ -101,6 +101,9 @@ AnpanAIStateBase の継承関係図</div>
 <tr class="memitem:ac606410c281d299a13dd6325202a878b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#ac606410c281d299a13dd6325202a878b">OnDamaged</a> ()</td></tr>
 <tr class="memdesc:ac606410c281d299a13dd6325202a878b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダメージを受けた  <a href="#ac606410c281d299a13dd6325202a878b">[詳解]</a><br /></td></tr>
 <tr class="separator:ac606410c281d299a13dd6325202a878b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa43e3a197f192eefa7c72bf76943fefd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd">Stop</a> ()</td></tr>
+<tr class="memdesc:aa43e3a197f192eefa7c72bf76943fefd"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止  <a href="#aa43e3a197f192eefa7c72bf76943fefd">[詳解]</a><br /></td></tr>
+<tr class="separator:aa43e3a197f192eefa7c72bf76943fefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
@@ -119,9 +122,6 @@ AnpanAIStateBase の継承関係図</div>
 <tr class="memitem:a23739dce596e326a445fa3e66cbd0f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a23739dce596e326a445fa3e66cbd0f58">SetRotate</a> (const <a class="el" href="classRotation.html">Rotation</a> &amp;InRotateTarget, int Time)</td></tr>
 <tr class="memdesc:a23739dce596e326a445fa3e66cbd0f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転を設定  <a href="#a23739dce596e326a445fa3e66cbd0f58">[詳解]</a><br /></td></tr>
 <tr class="separator:a23739dce596e326a445fa3e66cbd0f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa43e3a197f192eefa7c72bf76943fefd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd">Stop</a> ()</td></tr>
-<tr class="memdesc:aa43e3a197f192eefa7c72bf76943fefd"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止  <a href="#aa43e3a197f192eefa7c72bf76943fefd">[詳解]</a><br /></td></tr>
-<tr class="separator:aa43e3a197f192eefa7c72bf76943fefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa57e3d48dbbbfe6f1c930bd1f59e82fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#aa57e3d48dbbbfe6f1c930bd1f59e82fd">IsMoving</a> () const</td></tr>
 <tr class="memdesc:aa57e3d48dbbbfe6f1c930bd1f59e82fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">移動中？  <a href="#aa57e3d48dbbbfe6f1c930bd1f59e82fd">[詳解]</a><br /></td></tr>
 <tr class="separator:aa57e3d48dbbbfe6f1c930bd1f59e82fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -561,9 +561,6 @@ AnpanAIStateBase の継承関係図</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void AnpanAIStateBase::Stop </td>
@@ -572,11 +569,6 @@ AnpanAIStateBase の継承関係図</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>停止 </p>
@@ -593,7 +585,9 @@ AnpanAIStateBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph.png" border="0" usemap="#classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph" id="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="220,5,380,47"/>
+<area shape="rect" id="node2" href="classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872" title="停止 " alt="" coords="247,5,353,32"/>
+<area shape="rect" id="node4" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="220,57,380,98"/>
+<area shape="rect" id="node3" href="classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="428,5,571,32"/>
 </map>
 </div>
 

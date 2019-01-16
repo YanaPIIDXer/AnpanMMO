@@ -97,6 +97,7 @@ $(function() {
 , <a class="el" href="classAnpanPopAreaMaster.html#a8b34caeab0743aeb6e5c5e990d6f2984">AnpanPopAreaMaster</a>
 , <a class="el" href="classAnpanPopDataMaster.html#ac4bc8523024ded3613b44cd79240946d">AnpanPopDataMaster</a>
 , <a class="el" href="classAreaMaster.html#a1ea25f3c62579991f17e40c71f258466">AreaMaster</a>
+, <a class="el" href="classBuffMaster.html#aa74918468a69263f18c1149be0fdcc6f">BuffMaster</a>
 , <a class="el" href="classEquipMaster.html#ab4601e4cb96d091ed9f4e5b51ae0a9b5">EquipMaster</a>
 , <a class="el" href="classInstanceInfoMaster.html#ad75762f66359474abf2c0e4abda205c0">InstanceInfoMaster</a>
 , <a class="el" href="classItemDropMaster.html#a1314d629ed3d87d2e36d8ec38f70a0f5">ItemDropMaster</a>
@@ -137,11 +138,15 @@ $(function() {
 <li>GetBaseMaxHp()
 : <a class="el" href="classCharacterParameter.html#add951c6321352d0ff07bfcbea07906bc">CharacterParameter</a>
 </li>
+<li>GetBuffMaster()
+: <a class="el" href="classMasterData.html#a5d350fdd4908a79326f155cccf26e58a">MasterData</a>
+</li>
 <li>GetCenterVec()
 : <a class="el" href="classCharacterBase.html#a2b3f3257cc9cbc93928a4d1bff2a3d5b">CharacterBase</a>
 </li>
 <li>GetCharacter()
-: <a class="el" href="classClient.html#a0cda75c99767496a10a7a4e559a8f877">Client</a>
+: <a class="el" href="classBuffBase.html#a49738e80fbe873090189d79741e61f30">BuffBase</a>
+, <a class="el" href="classClient.html#a0cda75c99767496a10a7a4e559a8f877">Client</a>
 </li>
 <li>GetCharacterId()
 : <a class="el" href="classPlayerCharacter.html#aabc14771927e4187822cfcd2207cd509">PlayerCharacter</a>
@@ -235,6 +240,7 @@ $(function() {
 <li>GetItem()
 : <a class="el" href="classAnpanMaster.html#a4773a0d4382d818067d757923b708c5e">AnpanMaster</a>
 , <a class="el" href="classAreaMaster.html#a175e017dfad239b491c04445c6b6e161">AreaMaster</a>
+, <a class="el" href="classBuffMaster.html#a42e7b8d1325d76174a81e4e99e4d6bc1">BuffMaster</a>
 , <a class="el" href="classEquipMaster.html#abff3303a505ce3d15a195045cde8b0e0">EquipMaster</a>
 , <a class="el" href="classInstanceInfoMaster.html#aa8a8bf4224b3b7f7dd39547dc023010f">InstanceInfoMaster</a>
 , <a class="el" href="classItemDropMaster.html#aae665460f823929415af2709caf4251f">ItemDropMaster</a>
@@ -351,6 +357,7 @@ $(function() {
 , <a class="el" href="classCachePacketSkillListResponse.html#a920808e1e27fb4505052dc173423b7f7">CachePacketSkillListResponse</a>
 , <a class="el" href="classCachePacketSkillTreeRequest.html#a8e59dab34482865f562c63b542db9872">CachePacketSkillTreeRequest</a>
 , <a class="el" href="classCachePacketSkillTreeResponse.html#abb610b0861af8737d4f74ef76571d3d1">CachePacketSkillTreeResponse</a>
+, <a class="el" href="classPacketAddBuff.html#a4a0087cbf99d82a0e42aa60e30bebe6e">PacketAddBuff</a>
 , <a class="el" href="classPacketAddExp.html#a3ff31616f1ee830626dc2570cc95905e">PacketAddExp</a>
 , <a class="el" href="classPacketAnpanList.html#a9d7f44da5824329386cb40edcac99252">PacketAnpanList</a>
 , <a class="el" href="classPacketAreaMove.html#a9afc75a66809a0df359aec9bff621936">PacketAreaMove</a>
@@ -417,6 +424,7 @@ $(function() {
 , <a class="el" href="classPacketQuestStageChange.html#aafc86888d2f42532f31ecfc255478a64">PacketQuestStageChange</a>
 , <a class="el" href="classPacketReceiveChat.html#a4a79ca7292d14f3c2223d29df22e05ec">PacketReceiveChat</a>
 , <a class="el" href="classPacketReceiveNotice.html#a2aa7739d69abd7fa49d17a8118bac3fc">PacketReceiveNotice</a>
+, <a class="el" href="classPacketRemoveBuff.html#a8d888b01a85169840ff778522c4fb0b8">PacketRemoveBuff</a>
 , <a class="el" href="classPacketRespawnRequest.html#a758212567448bcaa1f5f638af7ff0e0b">PacketRespawnRequest</a>
 , <a class="el" href="classPacketRotateAnpan.html#a6853192829603dbfe229b6a6bd8820aa">PacketRotateAnpan</a>
 , <a class="el" href="classPacketSaveActiveQuest.html#ae1509e9ed7dffb0792d6b44542b6e7ff">PacketSaveActiveQuest</a>
@@ -547,6 +555,13 @@ $(function() {
 : <a class="el" href="classHate.html#a308f387eb719a1148a3415efc8e37f05">Hate</a>
 , <a class="el" href="classMemoryBuffer.html#ae21db8f79807b9d1749835d569ffeaed">MemoryBuffer</a>
 </li>
+<li>GetType()
+: <a class="el" href="classBuffAutoHeal.html#a5745b11fd1a5e678a7b3d810e3f0bddd">BuffAutoHeal</a>
+, <a class="el" href="classBuffBase.html#ad3970c7dc976f8748a9a72d439970d16">BuffBase</a>
+, <a class="el" href="classBuffSpeedUp.html#aa6e6e3536128fbfc6a466fe1c343db7b">BuffSpeedUp</a>
+, <a class="el" href="classDebuffParalysis.html#a16183e481552135c4fa32cbf4024b828">DebuffParalysis</a>
+, <a class="el" href="classDebuffPoison.html#a7d02882a528fb8b53973e56f3e2152ee">DebuffPoison</a>
+</li>
 <li>GetUuid()
 : <a class="el" href="classCharacterBase.html#a7550f7499249cbef53aad08ee81e986e">CharacterBase</a>
 , <a class="el" href="classClient.html#a2fab4ff0f437d04f49917829c8e6a6aa">Client</a>
@@ -567,14 +582,14 @@ $(function() {
 , <a class="el" href="classCachePacketGoldSave.html#a44024364853df2b3bde047a145a9bd5b">CachePacketGoldSave</a>
 </li>
 <li>GOLD
-: <a class="el" href="structItemDropItem.html#a014d424ee289423c08b15d8e9752123fa68d7d32e9a7f7832c9fc3c5ae28fca2d">ItemDropItem</a>
+: <a class="el" href="structItemDropItem.html#a23315543624a2d60238479570e377921a68d7d32e9a7f7832c9fc3c5ae28fca2d">ItemDropItem</a>
 </li>
 <li>Gold
 : <a class="el" href="classPacketChangeGold.html#abfb376e45dfaf9e1d916082049c09c44">PacketChangeGold</a>
 , <a class="el" href="classPacketCharacterStatus.html#a612fc7913ceb4588cb2cecbf3b99e46d">PacketCharacterStatus</a>
 </li>
 <li>GOLD
-: <a class="el" href="structQuestRewardItem.html#aeb71f624c2312b9a823286f49d4abc26aed887fccbf57491901a6d94449d70f40">QuestRewardItem</a>
+: <a class="el" href="structQuestRewardItem.html#a98fe417d8ff63cd7e4b2f8e4c7b5e416aed887fccbf57491901a6d94449d70f40">QuestRewardItem</a>
 </li>
 </ul>
 </div><!-- contents -->

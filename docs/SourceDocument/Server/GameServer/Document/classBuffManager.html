@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: BuffManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classBuffManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">BuffManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>バフ管理  
+ <a href="classBuffManager.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="BuffManager_8h_source.html">BuffManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a860511f926894ba37efc7bb96cc65ec0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffManager.html#a860511f926894ba37efc7bb96cc65ec0">BuffManager</a> (<a class="el" href="classCharacterBase.html">CharacterBase</a> *pInOwner)</td></tr>
+<tr class="memdesc:a860511f926894ba37efc7bb96cc65ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a860511f926894ba37efc7bb96cc65ec0">[詳解]</a><br /></td></tr>
+<tr class="separator:a860511f926894ba37efc7bb96cc65ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f9a58a994b10dced9b6c35733875168"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffManager.html#a2f9a58a994b10dced9b6c35733875168">~BuffManager</a> ()</td></tr>
+<tr class="memdesc:a2f9a58a994b10dced9b6c35733875168"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a2f9a58a994b10dced9b6c35733875168">[詳解]</a><br /></td></tr>
+<tr class="separator:a2f9a58a994b10dced9b6c35733875168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dd4da4439321ec255922132eafc00cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffManager.html#a7dd4da4439321ec255922132eafc00cb">Poll</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> DeltaTime)</td></tr>
+<tr class="memdesc:a7dd4da4439321ec255922132eafc00cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="#a7dd4da4439321ec255922132eafc00cb">[詳解]</a><br /></td></tr>
+<tr class="separator:a7dd4da4439321ec255922132eafc00cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac69560d95b9c2e1a0417f456a72ea52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52">AddBuff</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> BuffId)</td></tr>
+<tr class="memdesc:aac69560d95b9c2e1a0417f456a72ea52"><td class="mdescLeft">&#160;</td><td class="mdescRight">バフ追加。  <a href="#aac69560d95b9c2e1a0417f456a72ea52">[詳解]</a><br /></td></tr>
+<tr class="separator:aac69560d95b9c2e1a0417f456a72ea52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f369540862fcbdbfacb09b97d1f123"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBuffManager.html#a64f369540862fcbdbfacb09b97d1f123">IsActive</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Type) const</td></tr>
+<tr class="memdesc:a64f369540862fcbdbfacb09b97d1f123"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したバフ（デバフ）がかかっているか？  <a href="#a64f369540862fcbdbfacb09b97d1f123">[詳解]</a><br /></td></tr>
+<tr class="separator:a64f369540862fcbdbfacb09b97d1f123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>バフ管理 </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a860511f926894ba37efc7bb96cc65ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a860511f926894ba37efc7bb96cc65ec0">&#9670;&nbsp;</a></span>BuffManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BuffManager::BuffManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCharacterBase.html">CharacterBase</a> *&#160;</td>
+          <td class="paramname"><em>pInOwner</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a id="a2f9a58a994b10dced9b6c35733875168"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f9a58a994b10dced9b6c35733875168">&#9670;&nbsp;</a></span>~BuffManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BuffManager::~BuffManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aac69560d95b9c2e1a0417f456a72ea52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac69560d95b9c2e1a0417f456a72ea52">&#9670;&nbsp;</a></span>AddBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BuffManager::AddBuff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>BuffId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>バフ追加。 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">バフＩＤ</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffManager_aac69560d95b9c2e1a0417f456a72ea52_cgraph.png" border="0" usemap="#classBuffManager_aac69560d95b9c2e1a0417f456a72ea52_cgraph" alt=""/></div>
+<map name="classBuffManager_aac69560d95b9c2e1a0417f456a72ea52_cgraph" id="classBuffManager_aac69560d95b9c2e1a0417f456a72ea52_cgraph">
+<area shape="rect" id="node2" href="classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="213,5,379,32"/>
+<area shape="rect" id="node3" href="classMasterData.html#a5d350fdd4908a79326f155cccf26e58a" title="バフマスタ取得 " alt="" coords="206,56,386,83"/>
+<area shape="rect" id="node4" href="classBuffMaster.html#a42e7b8d1325d76174a81e4e99e4d6bc1" title="BuffMaster::GetItem" alt="" coords="227,107,365,133"/>
+<area shape="rect" id="node5" href="classCharacterBase.html#a503107e1d9c074c4a45dc0fbe2775beb" title="バフが追加された。 " alt="" coords="200,157,392,184"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffManager_aac69560d95b9c2e1a0417f456a72ea52_icgraph.png" border="0" usemap="#classBuffManager_aac69560d95b9c2e1a0417f456a72ea52_icgraph" alt=""/></div>
+<map name="classBuffManager_aac69560d95b9c2e1a0417f456a72ea52_icgraph" id="classBuffManager_aac69560d95b9c2e1a0417f456a72ea52_icgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#ae3be4635b97527f0ce11c0368319bb91" title="バフ追加 " alt="" coords="200,5,361,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a64f369540862fcbdbfacb09b97d1f123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f369540862fcbdbfacb09b97d1f123">&#9670;&nbsp;</a></span>IsActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BuffManager::IsActive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>Type</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>指定したバフ（デバフ）がかかっているか？ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Type</td><td>バフ（デバフ）タイプ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>かかっていればtrueを返す。 </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffManager_a64f369540862fcbdbfacb09b97d1f123_icgraph.png" border="0" usemap="#classBuffManager_a64f369540862fcbdbfacb09b97d1f123_icgraph" alt=""/></div>
+<map name="classBuffManager_a64f369540862fcbdbfacb09b97d1f123_icgraph" id="classBuffManager_a64f369540862fcbdbfacb09b97d1f123_icgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#a519dbb12163afdfbc184824c8bfc5ab1" title="麻痺状態か？ " alt="" coords="200,57,380,84"/>
+<area shape="rect" id="node3" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="毎フレームの処理 " alt="" coords="437,19,538,45"/>
+<area shape="rect" id="node5" href="classSkillControl.html#a135b2ebb760a73b6cd968f294b37558d" title="SkillControl::Use" alt="" coords="428,95,547,121"/>
+<area shape="rect" id="node4" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="毎フレームの処理 " alt="" coords="623,5,731,32"/>
+<area shape="rect" id="node6" href="classAnpan.html#aa93f7148141285e77ad93583714c7b5f" title="攻撃 " alt="" coords="617,56,736,83"/>
+<area shape="rect" id="node7" href="classCharacterBase.html#a7eb905131a5519c3c374e5333e1bf018" title="スキル使用 " alt="" coords="595,107,759,133"/>
+<area shape="rect" id="node8" href="classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="605,157,749,184"/>
+<area shape="rect" id="node9" href="classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="807,157,977,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7dd4da4439321ec255922132eafc00cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dd4da4439321ec255922132eafc00cb">&#9670;&nbsp;</a></span>Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BuffManager::Poll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>毎フレームの処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">DeltaTime</td><td>前フレームからの経過時間 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffManager_a7dd4da4439321ec255922132eafc00cb_cgraph.png" border="0" usemap="#classBuffManager_a7dd4da4439321ec255922132eafc00cb_cgraph" alt=""/></div>
+<map name="classBuffManager_a7dd4da4439321ec255922132eafc00cb_cgraph" id="classBuffManager_a7dd4da4439321ec255922132eafc00cb_cgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#a77debf7675be38e776364392bdafb10d" title="バフが消滅した。 " alt="" coords="177,5,385,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classBuffManager_a7dd4da4439321ec255922132eafc00cb_icgraph.png" border="0" usemap="#classBuffManager_a7dd4da4439321ec255922132eafc00cb_icgraph" alt=""/></div>
+<map name="classBuffManager_a7dd4da4439321ec255922132eafc00cb_icgraph" id="classBuffManager_a7dd4da4439321ec255922132eafc00cb_icgraph">
+<area shape="rect" id="node2" href="classCharacterBase.html#a73ca6b09f2a6e31f0add39128ff1b5d9" title="毎フレームの処理 " alt="" coords="177,5,316,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="BuffManager_8h_source.html">BuffManager.h</a></li>
+<li><a class="el" href="BuffManager_8cpp.html">BuffManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

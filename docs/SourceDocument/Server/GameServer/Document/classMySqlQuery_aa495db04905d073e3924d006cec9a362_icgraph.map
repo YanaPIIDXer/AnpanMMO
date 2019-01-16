@@ -1,11 +1,12 @@
 <map id="MySqlQuery::BindResultFloat" name="MySqlQuery::BindResultFloat">
 <area shape="rect" id="node2" href="$classAnpanMaster.html#abca4c2e15ad7a1d0086f0b4d8f61ffad" title="AnpanMaster::Load" alt="" coords="260,5,395,32"/>
 <area shape="rect" id="node3" href="$classAnpanPopAreaMaster.html#af6b748dc7ece2675a2cddf31736c7c9b" title="AnpanPopAreaMaster\l::Load" alt="" coords="253,57,402,98"/>
-<area shape="rect" id="node4" href="$classInstanceInfoMaster.html#acac16975900f38680ec7b40aa40bed50" title="InstanceInfoMaster\l::Load" alt="" coords="262,122,393,163"/>
-<area shape="rect" id="node6" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="265,188,390,215"/>
-<area shape="rect" id="node7" href="$classSkillTreeMaster.html#a2a20c94a5adaffca48f1ec7bbc07b0c9" title="SkillTreeMaster::Load" alt="" coords="253,239,401,265"/>
-<area shape="rect" id="node8" href="$classTimeInfoMaster.html#a2594cdd23314d1e4c90170faf112fab0" title="TimeInfoMaster::Load" alt="" coords="254,289,401,316"/>
-<area shape="rect" id="node9" href="$classWarpDataMaster.html#aa40db75165e37d61863586044f6114ca" title="WarpDataMaster::Load" alt="" coords="249,340,405,367"/>
-<area shape="rect" id="node10" href="$classWarpPointMaster.html#a5143ca40ec611d6a25b0b5deef44f6c2" title="WarpPointMaster::Load" alt="" coords="248,391,407,417"/>
-<area shape="rect" id="node5" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="455,239,581,265"/>
+<area shape="rect" id="node4" href="$classBuffMaster.html#ab014fc0a2257d8e58f849e8646f2ee2d" title="BuffMaster::Load" alt="" coords="267,123,387,149"/>
+<area shape="rect" id="node6" href="$classInstanceInfoMaster.html#acac16975900f38680ec7b40aa40bed50" title="InstanceInfoMaster\l::Load" alt="" coords="262,174,393,215"/>
+<area shape="rect" id="node7" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="265,240,390,267"/>
+<area shape="rect" id="node8" href="$classSkillTreeMaster.html#a2a20c94a5adaffca48f1ec7bbc07b0c9" title="SkillTreeMaster::Load" alt="" coords="253,291,401,317"/>
+<area shape="rect" id="node9" href="$classTimeInfoMaster.html#a2594cdd23314d1e4c90170faf112fab0" title="TimeInfoMaster::Load" alt="" coords="254,341,401,368"/>
+<area shape="rect" id="node10" href="$classWarpDataMaster.html#aa40db75165e37d61863586044f6114ca" title="WarpDataMaster::Load" alt="" coords="249,392,405,419"/>
+<area shape="rect" id="node11" href="$classWarpPointMaster.html#a5143ca40ec611d6a25b0b5deef44f6c2" title="WarpPointMaster::Load" alt="" coords="248,443,407,469"/>
+<area shape="rect" id="node5" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="455,240,581,267"/>
 </map>

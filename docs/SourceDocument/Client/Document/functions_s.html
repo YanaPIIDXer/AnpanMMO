@@ -164,6 +164,7 @@ $(function() {
 : <a class="el" href="classAnpanData.html#ad8c2775e752949cc2aa8f82a38040c0f">AnpanData</a>
 , <a class="el" href="structAnpanItem.html#a380779add5a61ae9ddac5c0c3cb0035d">AnpanItem</a>
 , <a class="el" href="structAreaItem.html#a779dbf1c315b9ed0697700323fb76a4f">AreaItem</a>
+, <a class="el" href="structBuffItem.html#ae588d840cd7e25f41de5146ae1b30743">BuffItem</a>
 , <a class="el" href="classCharacterJob.html#a0965c81a827c0644b7368be6f007b34d">CharacterJob</a>
 , <a class="el" href="classCharacterType.html#a5869a6f3ee601ab1ce4964459ae4a359">CharacterType</a>
 , <a class="el" href="structEquipItem.html#a47c046816e290c8f682ffd3804530f65">EquipItem</a>
@@ -171,13 +172,14 @@ $(function() {
 , <a class="el" href="classItemData.html#a3e72664473ed0a8b9ed3c8ddab131778">ItemData</a>
 , <a class="el" href="structItemItem.html#a128edfb0dd0954f8b1a1972570408d15">ItemItem</a>
 , <a class="el" href="classMemorySizeCaliculateStream.html#a3bc1a8af6d4aacf0f7f009a74ec2b8ba">MemorySizeCaliculateStream</a>
-, <a class="el" href="classMemoryStreamInterface.html#a226854c0eb21cb5f375ba7a0d5676010">MemoryStreamInterface</a>
+, <a class="el" href="classMemoryStreamInterface.html#a7c0eba544add1506bafcb165a8a6db1e">MemoryStreamInterface</a>
 , <a class="el" href="classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0">MemoryStreamReader</a>
 , <a class="el" href="classMemoryStreamWriter.html#a8bc2b40d0257751ed12ad2415b74258e">MemoryStreamWriter</a>
 , <a class="el" href="classNoticeData.html#a807e22e0098ac69b4c5e0cf387e45188">NoticeData</a>
 , <a class="el" href="structNPCConditionItem.html#a25db0912af622746d775368efb6cddc9">NPCConditionItem</a>
 , <a class="el" href="structNPCItem.html#a4c65ff669c0c3bb4563ddd14143b75e5">NPCItem</a>
 , <a class="el" href="structNPCResourceItem.html#afb20f307263c23b7d15c08217be1472a">NPCResourceItem</a>
+, <a class="el" href="classPacketAddBuff.html#aa8f659c262727cc2dabb3453ab8a8392">PacketAddBuff</a>
 , <a class="el" href="classPacketAddExp.html#a685691227ab62a7819f7d29042dce8ac">PacketAddExp</a>
 , <a class="el" href="classPacketAnpanList.html#a55b9c081fc3b57f19ffacc150cc42299">PacketAnpanList</a>
 , <a class="el" href="classPacketAreaMove.html#af633a4b924d1959f4cdaba369fc12b74">PacketAreaMove</a>
@@ -240,6 +242,7 @@ $(function() {
 , <a class="el" href="classPacketQuestStageChange.html#a78b6766e872def3fc78f2e21772d9059">PacketQuestStageChange</a>
 , <a class="el" href="classPacketReceiveChat.html#a7e49098a9fd0682022427effbebfd168">PacketReceiveChat</a>
 , <a class="el" href="classPacketReceiveNotice.html#a7f8c8fdd05e43e77f4c02548022d72fb">PacketReceiveNotice</a>
+, <a class="el" href="classPacketRemoveBuff.html#a05f22039b97f6edf0eaf763f1f90aa32">PacketRemoveBuff</a>
 , <a class="el" href="classPacketRespawnRequest.html#a918d918555bee46757bcdf7675b5ebaf">PacketRespawnRequest</a>
 , <a class="el" href="classPacketRotateAnpan.html#a196a11c7d8f45c09c6561559552d208a">PacketRotateAnpan</a>
 , <a class="el" href="classPacketSaveActiveQuest.html#aeaf6a4b5655ee01f70850eb42b9887d2">PacketSaveActiveQuest</a>
@@ -558,7 +561,7 @@ $(function() {
 : <a class="el" href="classCharacterJob.html#afec42e9a3800cc43cff6f86d6cf7e91da2e12227dbd11fa8ea8aaa8dabe3f2431">CharacterJob</a>
 </li>
 <li>SORCERER
-: <a class="el" href="structSkillTreeItem.html#a232cf9395d6ef33da291f52df98e709caef26b40e2ece04beefeb86465641b6a9">SkillTreeItem</a>
+: <a class="el" href="structSkillTreeItem.html#a2d788c190714c3cebb05fd25ec4cf8f8aef26b40e2ece04beefeb86465641b6a9">SkillTreeItem</a>
 </li>
 <li>Spawn()
 : <a class="el" href="classAAnpan.html#aab67aca71ba52dd60d80ac8c33503789">AAnpan</a>
@@ -588,6 +591,9 @@ $(function() {
 </li>
 <li>SpawnTargetCircle()
 : <a class="el" href="classACharacterBase.html#ab907e95da60084597b1929acd5b5a9be">ACharacterBase</a>
+</li>
+<li>SPEEDUP
+: <a class="el" href="structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3ca564ba2477e0a82e64b405f942d572813">BuffItem</a>
 </li>
 <li>StageNo
 : <a class="el" href="structNPCConditionItem.html#a8a95b76f794139665f6a8602d4d0da8a">NPCConditionItem</a>
@@ -651,7 +657,7 @@ $(function() {
 , <a class="el" href="classPacketLevelUp.html#ad7be1418c5faf6b013fd1919cd839937">PacketLevelUp</a>
 </li>
 <li>SUB_QUEST
-: <a class="el" href="structQuestItem.html#adb775f0cbb6fd296b4a415c62fdedc60a747356f63e7d4f7e8a31f49156e7a3d4">QuestItem</a>
+: <a class="el" href="structQuestItem.html#ad57f130ac736573f3b6832deb01a8437a747356f63e7d4f7e8a31f49156e7a3d4">QuestItem</a>
 </li>
 <li>Subtract()
 : <a class="el" href="classItemList.html#a4910530b9f4bcd783dea95f10f7c2a28">ItemList</a>

@@ -7,6 +7,7 @@ var searchData=
   ['active',['Active',['../classQuestData.html#a9ed9c55d4742f2f55539926963f74394a151689438be66d19f43885a1345c1f47',1,'QuestData']]],
   ['activequestid',['ActiveQuestId',['../classCachePacketQuestDataResponse.html#a8b68a632801e1c676018314a9f7e7430',1,'CachePacketQuestDataResponse::ActiveQuestId()'],['../classPacketQuestData.html#ad5b509172438c4a6d8b2fda71d006239',1,'PacketQuestData::ActiveQuestId()']]],
   ['add',['Add',['../classHate.html#af95ba2a070814635dc94a88c19813f74',1,'Hate::Add()'],['../classPlayerExp.html#a2a454828d3c9afcc2677805184de3791',1,'PlayerExp::Add()'],['../classItemList.html#ad988a51cb7fd94a620ad933032ecfa32',1,'ItemList::Add()'],['../classPlayerManager.html#afc50bf84136657b917d052ac7a34f46b',1,'PlayerManager::Add()'],['../classQuestManager.html#add9cb020fe2b4bf1e4268d4c089f160d',1,'QuestManager::Add()'],['../classSkillRecastManager.html#ab6eab67102b4f0a21aca601919995ac0',1,'SkillRecastManager::Add()'],['../classTickManager.html#a57d2db48c1b5b4d2275907cc2cf6d93a',1,'TickManager::Add()']]],
+  ['addbuff',['AddBuff',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa2687bb35aa108c84a5041adb388e8097',1,'PacketID::AddBuff()'],['../classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52',1,'BuffManager::AddBuff()'],['../classCharacterBase.html#ae3be4635b97527f0ce11c0368319bb91',1,'CharacterBase::AddBuff()']]],
   ['addchar',['AddChar',['../classMySqlBinds.html#a2b7e3431271f20244353bd693effc033',1,'MySqlBinds::AddChar(char *pPtr)'],['../classMySqlBinds.html#a31fd1b542193dd9ac220155c2be9cbe5',1,'MySqlBinds::AddChar(unsigned char *pPtr)']]],
   ['addclient',['AddClient',['../classInstanceAreaTicket.html#aa6ca48b21c5da9f19bf486a94c34c472',1,'InstanceAreaTicket']]],
   ['addexp',['AddExp',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaa3e5813f01c01be847c25562805ea1a0',1,'PacketID::AddExp()'],['../classPlayerCharacter.html#af674ca1a9358d11e18e38eca81072f63',1,'PlayerCharacter::AddExp()']]],
@@ -21,7 +22,7 @@ var searchData=
   ['addshort',['AddShort',['../classMySqlBinds.html#abef19952156a534fc9a428ce85180a0a',1,'MySqlBinds::AddShort(short *pPtr)'],['../classMySqlBinds.html#a61a70eb38f236a7f1dfb8cea1817d92e',1,'MySqlBinds::AddShort(unsigned short *pPtr)']]],
   ['addstring',['AddString',['../classMySqlBinds.html#acfc2edf2a3dd69f047e786a9d7b21cd8',1,'MySqlBinds']]],
   ['addwstring',['AddWString',['../classMySqlBinds.html#a3628397b4c2f34f169dbd04f009b6f8a',1,'MySqlBinds']]],
-  ['afternoon',['AFTERNOON',['../structTimeInfoItem.html#a4f35dd307846020f9b92c59add8e6c68a82df60d6387b17fbde31db1d9d58589d',1,'TimeInfoItem']]],
+  ['afternoon',['AFTERNOON',['../structTimeInfoItem.html#a886663f9f6576152bbeb027419e6ed2aa82df60d6387b17fbde31db1d9d58589d',1,'TimeInfoItem']]],
   ['alreadyjoin',['AlreadyJoin',['../classPacketPartyCreateResult.html#a31a6e81ad7f19fcc653646e219525210a2b600f925321c5b7c8dd06f7676bf066',1,'PacketPartyCreateResult']]],
   ['alreadyjoinotherparty',['AlreadyJoinOtherParty',['../classPacketPartyInviteResult.html#a5b4a9090e124477296b63ced0e978f3fa2ec033d26760537dbe715a594f475f52',1,'PacketPartyInviteResult']]],
   ['alreadyopened',['AlreadyOpened',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98a34daabcf008c3bd840b968e0f5adc4c2',1,'PacketSkillTreeOpenResult']]],
@@ -94,8 +95,9 @@ var searchData=
   ['areaptr',['AreaPtr',['../WeakPtrDefine_8h.html#aa4b8635d59f40f19bf22130c6e8b940a',1,'WeakPtrDefine.h']]],
   ['asyncrecv',['AsyncRecv',['../classTCPConnection.html#afdc370c27676080e6a90743b4a6ea3e2',1,'TCPConnection']]],
   ['asyncsend',['AsyncSend',['../classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd',1,'TCPConnection']]],
-  ['attack',['ATTACK',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a63452507f8c07b55c794840596f413b6',1,'SkillItem']]],
+  ['attack',['ATTACK',['../structSkillItem.html#a0c92dd0ba436dd33f9552f483ae2e04aa63452507f8c07b55c794840596f413b6',1,'SkillItem']]],
   ['attackto',['AttackTo',['../classAnpan.html#aa93f7148141285e77ad93583714c7b5f',1,'Anpan']]],
+  ['auto_5fheal',['AUTO_HEAL',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cadfe1ad3f1298e4bb7cdedb96f5203e6b',1,'BuffItem']]],
   ['autokey',['AutoKey',['../structAnpanPopAreaItem.html#a2296318209c7135a7071db6f165f0f26',1,'AnpanPopAreaItem::AutoKey()'],['../structAnpanPopDataItem.html#a022e99cb79a0aab041f122a2e51e3219',1,'AnpanPopDataItem::AutoKey()']]],
   ['automove',['AutoMove',['../SkillStateBase_8h.html#a08d7cae8136f6d6fcd4b5c73aee3f1a6a1873dc947c69ee439753240fbf9b3b07',1,'SkillStateBase.h']]]
 ];

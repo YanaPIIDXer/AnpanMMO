@@ -1,0 +1,5 @@
+<map id="BuffItem::Serialize" name="BuffItem::Serialize">
+<area shape="rect" id="node2" href="$classBuffMaster.html#a070f3cabecfa1129f5df8234a9118088" title="BuffMaster::Load" alt="" coords="180,13,300,39"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a64a8c4f7445a3accf241ca7324cc829b" title="MasterData::Load" alt="" coords="348,13,473,39"/>
+<area shape="rect" id="node4" href="$classUTitleScreenWidget.html#ac60c7897447c3c03a23f6e81bb43a824" title="UTitleScreenWidget\l::StartScriptDownload" alt="" coords="521,5,669,47"/>
+</map>

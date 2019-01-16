@@ -1,5 +1,7 @@
 <map id="AnpanAI::Poll" name="AnpanAI::Poll">
-<area shape="rect" id="node2" href="$classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="毎フレームの処理 " alt="" coords="155,5,317,32"/>
-<area shape="rect" id="node4" href="$classHate.html#a7c025a5a6c42bf5ec02c998ce8fbe1df" title="毎フレームの処理 " alt="" coords="197,56,275,83"/>
-<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#ab79a2df1668e3d6c2cc183521b759b02" title="更新処理 " alt="" coords="365,5,547,32"/>
+<area shape="rect" id="node2" href="$classCharacterBase.html#a519dbb12163afdfbc184824c8bfc5ab1" title="麻痺状態か？ " alt="" coords="155,5,335,32"/>
+<area shape="rect" id="node4" href="$classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="毎フレームの処理 " alt="" coords="163,56,326,83"/>
+<area shape="rect" id="node6" href="$classHate.html#a7c025a5a6c42bf5ec02c998ce8fbe1df" title="毎フレームの処理 " alt="" coords="205,107,284,133"/>
+<area shape="rect" id="node3" href="$classBuffManager.html#a64f369540862fcbdbfacb09b97d1f123" title="指定したバフ（デバフ）がかかっているか？ " alt="" coords="400,5,547,32"/>
+<area shape="rect" id="node5" href="$classAnpanAIStateBase.html#ab79a2df1668e3d6c2cc183521b759b02" title="更新処理 " alt="" coords="383,56,564,83"/>
 </map>

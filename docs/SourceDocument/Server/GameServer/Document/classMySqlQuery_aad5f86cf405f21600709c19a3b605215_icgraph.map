@@ -3,19 +3,20 @@
 <area shape="rect" id="node3" href="$classAnpanPopAreaMaster.html#af6b748dc7ece2675a2cddf31736c7c9b" title="AnpanPopAreaMaster\l::Load" alt="" coords="245,57,395,98"/>
 <area shape="rect" id="node4" href="$classAnpanPopDataMaster.html#ad6c6e1741dfde4eb517f55dfcb335620" title="AnpanPopDataMaster\l::Load" alt="" coords="245,122,395,163"/>
 <area shape="rect" id="node6" href="$classAreaMaster.html#a7706c1bfc83c8a74fa7ec427cee0674d" title="AreaMaster::Load" alt="" coords="257,188,383,215"/>
-<area shape="rect" id="node7" href="$classEquipMaster.html#a280ec3dc375deddfa9721c051f623612" title="EquipMaster::Load" alt="" coords="255,239,385,265"/>
-<area shape="rect" id="node8" href="$classInstanceInfoMaster.html#acac16975900f38680ec7b40aa40bed50" title="InstanceInfoMaster\l::Load" alt="" coords="255,290,385,331"/>
-<area shape="rect" id="node9" href="$classItemDropMaster.html#af5e8fb6699402b0ed05271b0ea94740c" title="ItemDropMaster::Load" alt="" coords="245,356,395,383"/>
-<area shape="rect" id="node10" href="$classItemMaster.html#a8abdcb220ce80f002d472ff5699853a4" title="ItemMaster::Load" alt="" coords="259,407,381,433"/>
-<area shape="rect" id="node11" href="$classLevelMaster.html#ab7478b39bf2311f71240867f45040d93" title="LevelMaster::Load" alt="" coords="257,457,383,484"/>
-<area shape="rect" id="node12" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="257,508,383,535"/>
-<area shape="rect" id="node13" href="$classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5" title="QuestMaster::Load" alt="" coords="253,559,387,585"/>
-<area shape="rect" id="node14" href="$classQuestRewardMaster.html#acc30331854cab398df06e0f671aaf289" title="QuestRewardMaster::Load" alt="" coords="232,609,408,636"/>
-<area shape="rect" id="node15" href="$classQuestStageMaster.html#aaa92c766beba88c48e888035f5058eb0" title="QuestStageMaster::Load" alt="" coords="237,660,403,687"/>
-<area shape="rect" id="node16" href="$classSkillMaster.html#a6f7833604c2201645fd893995930394a" title="SkillMaster::Load" alt="" coords="259,711,381,737"/>
-<area shape="rect" id="node17" href="$classSkillTreeMaster.html#a2a20c94a5adaffca48f1ec7bbc07b0c9" title="SkillTreeMaster::Load" alt="" coords="246,761,394,788"/>
-<area shape="rect" id="node18" href="$classTimeInfoMaster.html#a2594cdd23314d1e4c90170faf112fab0" title="TimeInfoMaster::Load" alt="" coords="247,812,393,839"/>
-<area shape="rect" id="node19" href="$classWarpDataMaster.html#aa40db75165e37d61863586044f6114ca" title="WarpDataMaster::Load" alt="" coords="242,863,398,889"/>
-<area shape="rect" id="node20" href="$classWarpPointMaster.html#a5143ca40ec611d6a25b0b5deef44f6c2" title="WarpPointMaster::Load" alt="" coords="241,913,399,940"/>
-<area shape="rect" id="node5" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="456,508,583,535"/>
+<area shape="rect" id="node7" href="$classBuffMaster.html#ab014fc0a2257d8e58f849e8646f2ee2d" title="BuffMaster::Load" alt="" coords="260,239,380,265"/>
+<area shape="rect" id="node8" href="$classEquipMaster.html#a280ec3dc375deddfa9721c051f623612" title="EquipMaster::Load" alt="" coords="255,289,385,316"/>
+<area shape="rect" id="node9" href="$classInstanceInfoMaster.html#acac16975900f38680ec7b40aa40bed50" title="InstanceInfoMaster\l::Load" alt="" coords="255,341,385,382"/>
+<area shape="rect" id="node10" href="$classItemDropMaster.html#af5e8fb6699402b0ed05271b0ea94740c" title="ItemDropMaster::Load" alt="" coords="245,407,395,433"/>
+<area shape="rect" id="node11" href="$classItemMaster.html#a8abdcb220ce80f002d472ff5699853a4" title="ItemMaster::Load" alt="" coords="259,457,381,484"/>
+<area shape="rect" id="node12" href="$classLevelMaster.html#ab7478b39bf2311f71240867f45040d93" title="LevelMaster::Load" alt="" coords="257,508,383,535"/>
+<area shape="rect" id="node13" href="$classNPCMaster.html#a819d30d97c0f525c810bc879eb22de35" title="NPCMaster::Load" alt="" coords="257,559,383,585"/>
+<area shape="rect" id="node14" href="$classQuestMaster.html#aff63873bf3a3bc4ba52da88ea8e793f5" title="QuestMaster::Load" alt="" coords="253,609,387,636"/>
+<area shape="rect" id="node15" href="$classQuestRewardMaster.html#acc30331854cab398df06e0f671aaf289" title="QuestRewardMaster::Load" alt="" coords="232,660,408,687"/>
+<area shape="rect" id="node16" href="$classQuestStageMaster.html#aaa92c766beba88c48e888035f5058eb0" title="QuestStageMaster::Load" alt="" coords="237,711,403,737"/>
+<area shape="rect" id="node17" href="$classSkillMaster.html#a6f7833604c2201645fd893995930394a" title="SkillMaster::Load" alt="" coords="259,761,381,788"/>
+<area shape="rect" id="node18" href="$classSkillTreeMaster.html#a2a20c94a5adaffca48f1ec7bbc07b0c9" title="SkillTreeMaster::Load" alt="" coords="246,812,394,839"/>
+<area shape="rect" id="node19" href="$classTimeInfoMaster.html#a2594cdd23314d1e4c90170faf112fab0" title="TimeInfoMaster::Load" alt="" coords="247,863,393,889"/>
+<area shape="rect" id="node20" href="$classWarpDataMaster.html#aa40db75165e37d61863586044f6114ca" title="WarpDataMaster::Load" alt="" coords="242,913,398,940"/>
+<area shape="rect" id="node21" href="$classWarpPointMaster.html#a5143ca40ec611d6a25b0b5deef44f6c2" title="WarpPointMaster::Load" alt="" coords="241,964,399,991"/>
+<area shape="rect" id="node5" href="$classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="456,533,583,560"/>
 </map>

@@ -158,6 +158,7 @@ $(function() {
 , <a class="el" href="classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0">MemoryStreamReader</a>
 , <a class="el" href="classMemoryStreamWriter.html#a8bc2b40d0257751ed12ad2415b74258e">MemoryStreamWriter</a>
 , <a class="el" href="classNoticeData.html#a807e22e0098ac69b4c5e0cf387e45188">NoticeData</a>
+, <a class="el" href="classPacketAddBuff.html#aa8f659c262727cc2dabb3453ab8a8392">PacketAddBuff</a>
 , <a class="el" href="classPacketAddExp.html#a685691227ab62a7819f7d29042dce8ac">PacketAddExp</a>
 , <a class="el" href="classPacketAnpanList.html#a55b9c081fc3b57f19ffacc150cc42299">PacketAnpanList</a>
 , <a class="el" href="classPacketAreaMove.html#af633a4b924d1959f4cdaba369fc12b74">PacketAreaMove</a>
@@ -220,6 +221,7 @@ $(function() {
 , <a class="el" href="classPacketQuestStageChange.html#a78b6766e872def3fc78f2e21772d9059">PacketQuestStageChange</a>
 , <a class="el" href="classPacketReceiveChat.html#a7e49098a9fd0682022427effbebfd168">PacketReceiveChat</a>
 , <a class="el" href="classPacketReceiveNotice.html#a7f8c8fdd05e43e77f4c02548022d72fb">PacketReceiveNotice</a>
+, <a class="el" href="classPacketRemoveBuff.html#a05f22039b97f6edf0eaf763f1f90aa32">PacketRemoveBuff</a>
 , <a class="el" href="classPacketRespawnRequest.html#a918d918555bee46757bcdf7675b5ebaf">PacketRespawnRequest</a>
 , <a class="el" href="classPacketRotateAnpan.html#a196a11c7d8f45c09c6561559552d208a">PacketRotateAnpan</a>
 , <a class="el" href="classPacketSaveActiveQuest.html#aeaf6a4b5655ee01f70850eb42b9887d2">PacketSaveActiveQuest</a>
@@ -446,7 +448,7 @@ $(function() {
 : <a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aa4c6842d47508fbb0caa869320ce56f7a">PacketID</a>
 </li>
 <li>SkillTreeNode()
-: <a class="el" href="classSkillTreeNode.html#a9326e4db71311747732d47c7e75bfc0c">SkillTreeNode</a>
+: <a class="el" href="classSkillTreeNode.html#aed2a427575457af1f7c046c9a898109e">SkillTreeNode</a>
 </li>
 <li>SkillTreeOpenRequest
 : <a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf002a344795e5dcdafd092ef8db4792c">PacketID</a>
@@ -467,7 +469,7 @@ $(function() {
 : <a class="el" href="classCharacterJob.html#afec42e9a3800cc43cff6f86d6cf7e91da2e12227dbd11fa8ea8aaa8dabe3f2431">CharacterJob</a>
 </li>
 <li>SORCERER
-: <a class="el" href="structSkillTreeItem.html#a2d788c190714c3cebb05fd25ec4cf8f8aef26b40e2ece04beefeb86465641b6a9">SkillTreeItem</a>
+: <a class="el" href="structSkillTreeItem.html#a57aa631df1fb21919ab4f08a5b4a5779aef26b40e2ece04beefeb86465641b6a9">SkillTreeItem</a>
 </li>
 <li>Spawn()
 : <a class="el" href="classAnpanManager.html#ae5116e9f3450c38abe39b8f48767a920">AnpanManager</a>
@@ -480,6 +482,9 @@ $(function() {
 </li>
 <li>SpawnPlayer
 : <a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aad48eec913c3a501e464aac42f6f1b9ed">PacketID</a>
+</li>
+<li>SPEEDUP
+: <a class="el" href="structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3ca564ba2477e0a82e64b405f942d572813">BuffItem</a>
 </li>
 <li>StageNo
 : <a class="el" href="classPacketQuestStageChange.html#a52028e6ca0904da67c19454ed8bf0360">PacketQuestStageChange</a>
@@ -509,7 +514,8 @@ $(function() {
 : <a class="el" href="classQuestData.html#a9ed9c55d4742f2f55539926963f74394">QuestData</a>
 </li>
 <li>Stop()
-: <a class="el" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd">AnpanAIStateBase</a>
+: <a class="el" href="classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872">AnpanAI</a>
+, <a class="el" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd">AnpanAIStateBase</a>
 </li>
 <li>stop()
 : <a class="el" href="classboost_1_1asio_1_1basic__repeating__timer.html#a8c830589305a50c979d04eb91cd07ccf">boost::asio::basic_repeating_timer&lt; Time, TimeTraits, TimerService &gt;</a>
@@ -529,7 +535,7 @@ $(function() {
 , <a class="el" href="classPacketLevelUp.html#ad7be1418c5faf6b013fd1919cd839937">PacketLevelUp</a>
 </li>
 <li>SUB_QUEST
-: <a class="el" href="structQuestItem.html#ad57f130ac736573f3b6832deb01a8437a747356f63e7d4f7e8a31f49156e7a3d4">QuestItem</a>
+: <a class="el" href="structQuestItem.html#ac7389dabd315921be26017d6309638ffa747356f63e7d4f7e8a31f49156e7a3d4">QuestItem</a>
 </li>
 <li>Subtract()
 : <a class="el" href="classItemList.html#ae0d61bbc78ebba224acaa5d3543ea15b">ItemList</a>

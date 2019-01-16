@@ -13,6 +13,7 @@
 #include "Area/AreaBase.h"
 #include "Skill/SkillControl.h"
 #include "Skill/SkillRecastManager.h"
+#include "Buff/BuffManager.h"
 
 /**
  * @class CharacterBase
@@ -224,6 +225,34 @@ public:
 	 */
 	bool IsEquiped(u32 EquipId) const;
 
+	/**
+	 * @fn void AddBuff(u32 BuffId)
+	 * @brief バフ追加
+	 * @param[in] BuffId バフＩＤ
+	 */
+	void AddBuff(u32 BuffId);
+
+	/**
+	 * @fn virtual void OnBuffAdded(u32 BuffId)
+	 * @brief バフが追加された。
+	 * @param[in] BuffId バフＩＤ
+	 */
+	virtual void OnBuffAdded(u32 BuffId) {}
+
+	/**
+	 * @fn virtual void OnBuffRemoved(u8 BuffType)
+	 * @brief バフが消滅した。
+	 * @param[in] BuffType
+	 */
+	virtual void OnBuffRemoved(u8 BuffType) {}
+
+	/**
+	 * @fn bool IsParalysis() const
+	 * @brief 麻痺状態か？
+	 * @return 麻痺状態ならtrueを返す。
+	 */
+	bool IsParalysis() const;
+
 protected:
 
 	//! 座標.
@@ -291,6 +320,8 @@ private:
 	// エリア
 	AreaPtr pArea;
 
+	// バフ管理.
+	BuffManager BuffMgr;
 };
 
 #endif		// #ifndef __CHARACTERBASE_H__

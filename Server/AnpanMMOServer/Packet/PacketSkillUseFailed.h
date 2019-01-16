@@ -31,6 +31,10 @@ public:
 	{
 		//! リキャスト中
 		RecastTime,
+		//! 無効なスキル
+		InvalidSkill,
+		//! 麻痺
+		Paralysis,
 		//! キャンセル
 		Cancel,
 		//! ターゲット消失

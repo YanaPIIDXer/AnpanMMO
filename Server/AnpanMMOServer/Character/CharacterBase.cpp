@@ -6,14 +6,17 @@
 #include "stdafx.h"
 #include "CharacterBase.h"
 #include "Math/MathUtil.h"
+#include "Master/MasterData.h"
 #include "Packet/PacketDamage.h"
 #include "Packet/PacketHeal.h"
+#include "Packet/PacketSkillUseFailed.h"
 
 // コンストラクタ
 CharacterBase::CharacterBase()
 	: Skill(this)
 	, Recast(this)
 	, Uuid(0)
+	, BuffMgr(this)
 {
 }
 
@@ -22,6 +25,7 @@ void CharacterBase::Poll(s32 DeltaTime)
 {
 	Skill.Poll(DeltaTime);
 	Recast.Poll(DeltaTime);
+	BuffMgr.Poll(DeltaTime);
 	
 	Update(DeltaTime);
 }
@@ -101,6 +105,24 @@ void CharacterBase::StartRecast(u32 SkillId)
 bool CharacterBase::IsEquiped(u32 EquipId) const
 {
 	return ((Parameter.GetRightEquip().GetEquipId() == EquipId) || (Parameter.GetLeftEquip().GetEquipId() == EquipId));
+}
+
+// バフ追加
+void CharacterBase::AddBuff(u32 BuffId)
+{
+	BuffMgr.AddBuff(BuffId);
+	const BuffItem *pItem = MasterData::GetInstance().GetBuffMaster().GetItem(BuffId);
+	if (pItem != NULL && pItem->Type == BuffItem::PARALYSIS)
+	{
+		// 麻痺を貰った場合はスキルをキャンセル
+		Skill.Cancel(PacketSkillUseFailed::Paralysis);
+	}
+}
+
+// 麻痺状態か？
+bool CharacterBase::IsParalysis() const
+{
+	return BuffMgr.IsActive(BuffItem::PARALYSIS);
 }
 
 

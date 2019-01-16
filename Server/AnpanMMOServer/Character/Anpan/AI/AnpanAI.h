@@ -105,6 +105,12 @@ public:
 	 */
 	const Hate &GetHate() const { return HateManager; }
 
+	/**
+	 * @fn void Stop()
+	 * @brief í‚é~
+	 */
+	void Stop();
+
 private:
 
 	// êe.

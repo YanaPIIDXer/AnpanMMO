@@ -42,7 +42,11 @@ void AnpanAI::Poll(int DeltaTime)
 		delete pPrevState;
 		pPrevState = NULL;
 	}
-	pState->Poll(DeltaTime);
+
+	if (!pParent->IsParalysis())
+	{
+		pState->Poll(DeltaTime);
+	}
 	HateManager.Poll();
 }
 
@@ -95,4 +99,10 @@ void AnpanAI::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
 {
 	HateManager.Add(pAttacker, DamageValue);
 	pState->OnDamaged();
+}
+
+// ’âŽ~.
+void AnpanAI::Stop()
+{
+	pState->Stop();
 }

@@ -24,6 +24,8 @@
 #include "Packet/PacketItemAdd.h"
 #include "Packet/PacketItemSubtract.h"
 #include "Packet/CachePacketItemCountChangeRequest.h"
+#include "Packet/PacketAddBuff.h"
+#include "Packet/PacketRemoveBuff.h"
 
 // コンストラクタ
 PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold, u32 RightEquipId, u32 LeftEquipId)
@@ -229,6 +231,20 @@ void PlayerCharacter::ChangeEquip(u32 RightEquipId, u32 LeftEquipId)
 	}
 
 	ChangeEquipData(RightEquipId, LeftEquipId);
+}
+
+// バフが追加された。
+void PlayerCharacter::OnBuffAdded(u32 BuffId)
+{
+	PacketAddBuff Packet(BuffId);
+	GetClient()->SendPacket(&Packet);
+}
+
+// バフが消滅した。
+void PlayerCharacter::OnBuffRemoved(u8 BuffType)
+{
+	PacketRemoveBuff Packet(BuffType);
+	GetClient()->SendPacket(&Packet);
 }
 
 

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['range_5fbox',['RANGE_BOX',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8acefa0c08778e4f4f334b9c9a9ac0fd2d',1,'SkillItem']]],
-  ['range_5fcircle',['RANGE_CIRCLE',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a137e2f96357810721977d73dd9be5054',1,'SkillItem']]],
+  ['range_5fbox',['RANGE_BOX',['../structSkillItem.html#a0c92dd0ba436dd33f9552f483ae2e04aacefa0c08778e4f4f334b9c9a9ac0fd2d',1,'SkillItem']]],
+  ['range_5fcircle',['RANGE_CIRCLE',['../structSkillItem.html#a0c92dd0ba436dd33f9552f483ae2e04aa137e2f96357810721977d73dd9be5054',1,'SkillItem']]],
   ['rangetype',['RangeType',['../structSkillItem.html#a9eb6b4017d90fe8c77cc081d129ad76b',1,'SkillItem']]],
   ['rangex',['RangeX',['../structSkillItem.html#a8af119d4134469813a59cd76589bccec',1,'SkillItem']]],
   ['rangey',['RangeY',['../structSkillItem.html#a33a8ca2a5a53afb940c19ac0ec0f1403',1,'SkillItem']]],
@@ -20,6 +20,7 @@ var searchData=
   ['register',['Register',['../classExecuterPool.html#a5a5025291ad0f7963ad87da698764987',1,'ExecuterPool']]],
   ['registerskycontrol',['RegisterSkyControl',['../classAActiveGameMode.html#ab2b8c69e38557368ef4b3c61ba97b291',1,'AActiveGameMode']]],
   ['remove',['Remove',['../classFlexArray.html#ae9d2dd52552c8ed9bb5d3b549bb2f67b',1,'FlexArray::Remove()'],['../classExecuterPool.html#a196671fa52a19936478f41d8d68dbe9c',1,'ExecuterPool::Remove()']]],
+  ['removebuff',['RemoveBuff',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaec8f2f6511cba58c705aff39636edeea',1,'PacketID']]],
   ['removenotice',['RemoveNotice',['../classAActiveGameMode.html#a774ea3e191f4d0d1f68644f974303dcd',1,'AActiveGameMode::RemoveNotice()'],['../classNoticeManager.html#a682e4b5981d173425a9cfd00889bc8ac',1,'NoticeManager::RemoveNotice()']]],
   ['reset',['Reset',['../classAnpanManager.html#a398f899691cd90ebf4e7ba6e13ffb999',1,'AnpanManager::Reset()'],['../classNPCManager.html#ad00522aa8c668c64e11e10fe02978593',1,'NPCManager::Reset()'],['../classPlayerManager.html#a4f4b15d5b40dd78989c908a2246579c2',1,'PlayerManager::Reset()'],['../classMemorySizeCaliculateStream.html#a8e3043e83c897b6c43ce321812bd6288',1,'MemorySizeCaliculateStream::Reset()'],['../classMemoryStreamInterface.html#a47dea022060948bc6f8f12ed68a7ffc9',1,'MemoryStreamInterface::Reset()'],['../classMemoryStreamReader.html#a6e22e8ce93b806efcef753464bc91b50',1,'MemoryStreamReader::Reset()'],['../classMemoryStreamWriter.html#a2fe8f9a389ada52e0fdbf7ad663b1b9c',1,'MemoryStreamWriter::Reset()'],['../classWarpPointManager.html#a60edbc1db7962a1f7a4bb291f9c859cd',1,'WarpPointManager::Reset()']]],
   ['resourceid',['ResourceId',['../structNPCItem.html#a4739de1fd216ac48e31f7d291cb7071e',1,'NPCItem']]],

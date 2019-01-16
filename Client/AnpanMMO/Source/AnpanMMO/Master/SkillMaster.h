@@ -43,6 +43,7 @@ public:
 	u32 BonusInt;
 	u32 BonusMnd;
 	u32 BonusVit;
+	u32 BuffId;
 
 
 	bool Serialize(MemoryStreamInterface *pStream)
@@ -63,6 +64,7 @@ public:
 		if(!pStream->Serialize(&BonusInt)) { return false; }
 		if(!pStream->Serialize(&BonusMnd)) { return false; }
 		if(!pStream->Serialize(&BonusVit)) { return false; }
+		if(!pStream->Serialize(&BuffId)) { return false; }
 
 		return true;
 	}
