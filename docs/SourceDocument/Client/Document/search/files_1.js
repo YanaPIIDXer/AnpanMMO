@@ -11,5 +11,7 @@ var searchData=
   ['buffmaster_2ecpp',['BuffMaster.cpp',['../BuffMaster_8cpp.html',1,'']]],
   ['buffmaster_2eh',['BuffMaster.h',['../BuffMaster_8h.html',1,'']]],
   ['buffnop_2ecpp',['BuffNop.cpp',['../BuffNop_8cpp.html',1,'']]],
-  ['buffnop_2eh',['BuffNop.h',['../BuffNop_8h.html',1,'']]]
+  ['buffnop_2eh',['BuffNop.h',['../BuffNop_8h.html',1,'']]],
+  ['buffspeedup_2ecpp',['BuffSpeedUp.cpp',['../BuffSpeedUp_8cpp.html',1,'']]],
+  ['buffspeedup_2eh',['BuffSpeedUp.h',['../BuffSpeedUp_8h.html',1,'']]]
 ];

@@ -100,7 +100,7 @@ var searchData=
   ['gettarget',['GetTarget',['../classSkillControl.html#a196c9a7020281a55145968fb7dc734f2',1,'SkillControl']]],
   ['gettimeinfomaster',['GetTimeInfoMaster',['../classMasterData.html#a890be049174f7f2defe0fae51e673bd5',1,'MasterData']]],
   ['gettop',['GetTop',['../classBuffer.html#ac5e096ff0a47fc51dc5ba6f1120a0dfc',1,'Buffer']]],
-  ['gettype',['GetType',['../classBuffBase.html#a051339f54817d96b543130aaea3740a5',1,'BuffBase::GetType()'],['../classBuffNop.html#a229fb85127b78ab4f54babc0479046c3',1,'BuffNop::GetType()']]],
+  ['gettype',['GetType',['../classBuffBase.html#a051339f54817d96b543130aaea3740a5',1,'BuffBase::GetType()'],['../classBuffNop.html#a229fb85127b78ab4f54babc0479046c3',1,'BuffNop::GetType()'],['../classBuffSpeedUp.html#affbf5920e7dba1756c6520fddd8f310a',1,'BuffSpeedUp::GetType()']]],
   ['getuuid',['GetUuid',['../classAAnpan.html#ac885729993cf5f5107b1cdf378b6f072',1,'AAnpan::GetUuid()'],['../classACharacterBase.html#aed7e07b4da32750d3e475419fd99dbad',1,'ACharacterBase::GetUuid()'],['../classAGameCharacter.html#a9093a7a33d31c8e2df786aabb409ea5a',1,'AGameCharacter::GetUuid()'],['../classAOtherPlayerCharacter.html#a4eba331a247242980c8c5b1294798f45',1,'AOtherPlayerCharacter::GetUuid()'],['../classPlayerStatus.html#ac0ed828146310470bdcb6269d14497ec',1,'PlayerStatus::GetUuid()']]],
   ['getvit',['GetVit',['../classPlayerStatus.html#af490d65b3b9ec574f68bbbb42fc18839',1,'PlayerStatus']]],
   ['getwarpdatamaster',['GetWarpDataMaster',['../classMasterData.html#abefe8931c05fc531be56fa27d6a3c464',1,'MasterData']]],

@@ -5,5 +5,6 @@ var searchData=
   ['buffitem',['BuffItem',['../structBuffItem.html',1,'']]],
   ['buffmanager',['BuffManager',['../classBuffManager.html',1,'']]],
   ['buffmaster',['BuffMaster',['../classBuffMaster.html',1,'']]],
-  ['buffnop',['BuffNop',['../classBuffNop.html',1,'']]]
+  ['buffnop',['BuffNop',['../classBuffNop.html',1,'']]],
+  ['buffspeedup',['BuffSpeedUp',['../classBuffSpeedUp.html',1,'']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['paralysis',['Paralysis',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a913ee5fed9d2486ddaaf7cc65dd364e0',1,'PacketSkillUseFailed::Paralysis()'],['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cad3b81e8a6c52ea88586487ed6a5547d9',1,'BuffItem::PARALYSIS()']]],
+  ['paralysis',['PARALYSIS',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cad3b81e8a6c52ea88586487ed6a5547d9',1,'BuffItem::PARALYSIS()'],['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a913ee5fed9d2486ddaaf7cc65dd364e0',1,'PacketSkillUseFailed::Paralysis()']]],
   ['partycreaterequest',['PartyCreateRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad07426b7390f0a82bedbc5fdf008791b',1,'PacketID']]],
   ['partycreateresult',['PartyCreateResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa83b9c70f916530b4882d4beaeb72536e',1,'PacketID']]],
   ['partydissolution',['PartyDissolution',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aab627365e4936e7328515b482ee05f74f',1,'PacketID']]],
