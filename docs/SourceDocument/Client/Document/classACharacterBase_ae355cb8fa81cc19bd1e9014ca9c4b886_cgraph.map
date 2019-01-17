@@ -1,3 +1,4 @@
 <map id="ACharacterBase::ACharacterBase" name="ACharacterBase::ACharacterBase">
-<area shape="rect" id="node2" href="$classACharacterBase.html#acf1ee1b2fcca4782c42a30a402d12911" title="ACharacterBase::OnDestroy" alt="" coords="273,5,460,32"/>
+<area shape="rect" id="node2" href="$classACharacterBase.html#ad38e2422d7e734b9db1b09978b26d2b0" title="ACharacterBase::SetMoveSpeedRate" alt="" coords="273,5,512,32"/>
+<area shape="rect" id="node3" href="$classACharacterBase.html#acf1ee1b2fcca4782c42a30a402d12911" title="ACharacterBase::OnDestroy" alt="" coords="299,56,486,83"/>
 </map>
