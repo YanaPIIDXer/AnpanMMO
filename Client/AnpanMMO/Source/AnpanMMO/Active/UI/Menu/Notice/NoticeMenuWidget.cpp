@@ -112,8 +112,8 @@ void UPartyInviteNotice::OnAction()
 // コンストラクタ
 UNoticeMenuItem::UNoticeMenuItem(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
-	, pParent(nullptr)
 	, pNotice(nullptr)
+	, pParent(nullptr)
 {
 }
 

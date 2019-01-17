@@ -27,8 +27,8 @@ UMainHUD *UMainHUD::Show(UObject *pOuter)
 // コンストラクタ
 UMainHUD::UMainHUD(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
-	, pCharacter(nullptr)
 	, NotReadNoticeCount(0)
+	, pCharacter(nullptr)
 {
 }
 
