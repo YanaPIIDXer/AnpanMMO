@@ -3,6 +3,7 @@
 
 #include "BuffManager.h"
 #include "BuffNop.h"
+#include "BuffSpeedUp.h"
 #include "Master/MasterData.h"
 
 // コンストラクタ
@@ -37,9 +38,8 @@ void BuffManager::Add(uint32 BuffId)
 	{
 		case BuffItem::SPEEDUP:
 
-			// @TODO:スピードアップバフクラスを作成し、そっちに差し替える。
-			//		 ※エラー回避のための措置。
-			pBuff = new BuffNop(pOwner.Get(), pItem->Type);
+			// スピードアップ
+			pBuff = new BuffSpeedUp(pOwner.Get(), pItem->Value);
 			break;
 
 		default:
