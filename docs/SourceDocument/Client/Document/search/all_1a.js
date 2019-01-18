@@ -22,6 +22,7 @@ var searchData=
   ['_7ebuffer',['~Buffer',['../classBuffer.html#a59b8743e4a5f731bdd0c4185c9ef263b',1,'Buffer']]],
   ['_7ebuffmanager',['~BuffManager',['../classBuffManager.html#a2f9a58a994b10dced9b6c35733875168',1,'BuffManager']]],
   ['_7ebuffnop',['~BuffNop',['../classBuffNop.html#a712f4cb68c3c3fa10f2d11aa3c87043a',1,'BuffNop']]],
+  ['_7ebuffspeedup',['~BuffSpeedUp',['../classBuffSpeedUp.html#a1c3bb9f8e2d1fcbafada64e248aec2ed',1,'BuffSpeedUp']]],
   ['_7eexecuterpool',['~ExecuterPool',['../classExecuterPool.html#ad155187d4f4501683fe2ca8225df9042',1,'ExecuterPool']]],
   ['_7eflexarray',['~FlexArray',['../classFlexArray.html#a4028f2682c01e56ce679a86671eed719',1,'FlexArray']]],
   ['_7egameserverconnection',['~GameServerConnection',['../classGameServerConnection.html#a774c2c2e55f2dc5c8bcf9254954b38df',1,'GameServerConnection']]],

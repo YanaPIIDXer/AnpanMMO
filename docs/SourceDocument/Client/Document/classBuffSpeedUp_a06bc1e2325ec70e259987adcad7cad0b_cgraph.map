@@ -1,0 +1,4 @@
+<map id="BuffSpeedUp::Finish" name="BuffSpeedUp::Finish">
+<area shape="rect" id="node2" href="$classBuffBase.html#ac561bd072937ddcbe3ce8a411702dc5b" title="BuffBase::GetCharacter" alt="" coords="233,5,392,32"/>
+<area shape="rect" id="node3" href="$classACharacterBase.html#ad38e2422d7e734b9db1b09978b26d2b0" title="ACharacterBase::SetMoveSpeedRate" alt="" coords="193,56,432,83"/>
+</map>

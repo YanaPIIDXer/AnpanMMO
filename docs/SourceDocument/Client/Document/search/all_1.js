@@ -2,7 +2,7 @@ var searchData=
 [
   ['back',['Back',['../classULayeredMenuWidgetBase.html#a8d29a6889921e7ff04efccf598f9858d',1,'ULayeredMenuWidgetBase']]],
   ['basemaxhp',['BaseMaxHp',['../classPacketCharacterStatus.html#abb46d4862f6bd65634d991ccce25bcf7',1,'PacketCharacterStatus::BaseMaxHp()'],['../classPacketLevelUp.html#a911c0102bab73ff76077d762b960a89e',1,'PacketLevelUp::BaseMaxHp()']]],
-  ['begin',['Begin',['../classBuffBase.html#aeba91ab5a496290185a37c4f8bf1bba5',1,'BuffBase']]],
+  ['begin',['Begin',['../classBuffBase.html#aeba91ab5a496290185a37c4f8bf1bba5',1,'BuffBase::Begin()'],['../classBuffSpeedUp.html#a84abe4fbb41115f48cedba998f8ca25a',1,'BuffSpeedUp::Begin()']]],
   ['beginplay',['BeginPlay',['../classAActiveGameMode.html#a78bc21f3d2cf5af61f80c435b571ac44',1,'AActiveGameMode::BeginPlay()'],['../classAAnpan.html#aa228143073cbbd315fa445d72d1ebddd',1,'AAnpan::BeginPlay()'],['../classACharacterBase.html#a40c133b9bb51b343653ef6a6915a48f3',1,'ACharacterBase::BeginPlay()'],['../classAGameCharacter.html#a86daf7483d1c4e9f33692cdd6590517a',1,'AGameCharacter::BeginPlay()'],['../classAOtherPlayerCharacter.html#a53202e2c3f4a88dc65ab5a0d9dde63ab',1,'AOtherPlayerCharacter::BeginPlay()'],['../classAPlayerCharacterBase.html#a22d7e54ad4027e9ba1b260783cb570cc',1,'APlayerCharacterBase::BeginPlay()'],['../classASkyControl.html#af9944980d813e86fc1404a3deb2edbc6',1,'ASkyControl::BeginPlay()'],['../classAMMOGameModeBase.html#ae84e1dc5b4a2e3f723eb12af46845219',1,'AMMOGameModeBase::BeginPlay()'],['../classATitleGameMode.html#aa6fe7e8c540f73989e934d7a62f06250',1,'ATitleGameMode::BeginPlay()']]],
   ['beginstate',['BeginState',['../classSkillStateAutoMove.html#abd54786c67fa893367ec4d4cd574c642',1,'SkillStateAutoMove::BeginState()'],['../classSkillStateBase.html#aa39b4dce006b8c02a70ecf266c994780',1,'SkillStateBase::BeginState()']]],
   ['bisactive',['bIsActive',['../structFQuestData.html#a24c61a65ea51d6aa0c5127dfa7ac8df9',1,'FQuestData']]],
@@ -40,6 +40,9 @@ var searchData=
   ['buffnop',['BuffNop',['../classBuffNop.html',1,'BuffNop'],['../classBuffNop.html#a37834ed6bb27c6f444e90d2d925860ea',1,'BuffNop::BuffNop()']]],
   ['buffnop_2ecpp',['BuffNop.cpp',['../BuffNop_8cpp.html',1,'']]],
   ['buffnop_2eh',['BuffNop.h',['../BuffNop_8h.html',1,'']]],
+  ['buffspeedup',['BuffSpeedUp',['../classBuffSpeedUp.html',1,'BuffSpeedUp'],['../classBuffSpeedUp.html#a978db2afb15077489b10f179bf11792b',1,'BuffSpeedUp::BuffSpeedUp()']]],
+  ['buffspeedup_2ecpp',['BuffSpeedUp.cpp',['../BuffSpeedUp_8cpp.html',1,'']]],
+  ['buffspeedup_2eh',['BuffSpeedUp.h',['../BuffSpeedUp_8h.html',1,'']]],
   ['bufftype',['BuffType',['../classPacketRemoveBuff.html#abe9440ae22483efe758154a175dbe78f',1,'PacketRemoveBuff']]],
   ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]]
 ];
