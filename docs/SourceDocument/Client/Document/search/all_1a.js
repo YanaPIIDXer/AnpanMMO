@@ -55,6 +55,7 @@ var searchData=
   ['_7eskilltree',['~SkillTree',['../classSkillTree.html#a33a9c5552a46b15ddd664afb73a1ad71',1,'SkillTree']]],
   ['_7etimemanager',['~TimeManager',['../classTimeManager.html#a579b1b9e3d323dcc030c100992f7ed8a',1,'TimeManager']]],
   ['_7euattachablewidget',['~UAttachableWidget',['../classUAttachableWidget.html#a8e220dd182514c9242381eeea7685e0d',1,'UAttachableWidget']]],
+  ['_7eubufficon',['~UBuffIcon',['../classUBuffIcon.html#a69e5da62f330e1ada4c5098b6f96f53d',1,'UBuffIcon']]],
   ['_7eucharacternameinputwidget',['~UCharacterNameInputWidget',['../classUCharacterNameInputWidget.html#a1571c03a15fc7d118dd54adb635de689',1,'UCharacterNameInputWidget']]],
   ['_7euchatwindowwidget',['~UChatWindowWidget',['../classUChatWindowWidget.html#aa1fe56c3ea7e53add5c00376f77f24e2',1,'UChatWindowWidget']]],
   ['_7euequipmenu',['~UEquipMenu',['../classUEquipMenu.html#addd6222478cd65a05f0260f5ddd70d90',1,'UEquipMenu']]],

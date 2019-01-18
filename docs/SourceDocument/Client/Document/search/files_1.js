@@ -6,6 +6,8 @@ var searchData=
   ['buffbase_2eh',['BuffBase.h',['../BuffBase_8h.html',1,'']]],
   ['buffer_2ecpp',['Buffer.cpp',['../Buffer_8cpp.html',1,'']]],
   ['buffer_2eh',['Buffer.h',['../Buffer_8h.html',1,'']]],
+  ['bufficon_2ecpp',['BuffIcon.cpp',['../BuffIcon_8cpp.html',1,'']]],
+  ['bufficon_2eh',['BuffIcon.h',['../BuffIcon_8h.html',1,'']]],
   ['buffmanager_2ecpp',['BuffManager.cpp',['../BuffManager_8cpp.html',1,'']]],
   ['buffmanager_2eh',['BuffManager.h',['../BuffManager_8h.html',1,'']]],
   ['buffmaster_2ecpp',['BuffMaster.cpp',['../BuffMaster_8cpp.html',1,'']]],

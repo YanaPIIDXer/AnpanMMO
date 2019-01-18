@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['paralysis',['PARALYSIS',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cad3b81e8a6c52ea88586487ed6a5547d9',1,'BuffItem::PARALYSIS()'],['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a913ee5fed9d2486ddaaf7cc65dd364e0',1,'PacketSkillUseFailed::Paralysis()']]],
+  ['paralysis',['PARALYSIS',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cad3b81e8a6c52ea88586487ed6a5547d9',1,'BuffItem::PARALYSIS()'],['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a913ee5fed9d2486ddaaf7cc65dd364e0',1,'PacketSkillUseFailed::Paralysis()'],['../BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095ca8244b6f24fdf45c12569d16abb3ffe48',1,'Paralysis():&#160;BuffIcon.h']]],
   ['partycreaterequest',['PartyCreateRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad07426b7390f0a82bedbc5fdf008791b',1,'PacketID']]],
   ['partycreateresult',['PartyCreateResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa83b9c70f916530b4882d4beaeb72536e',1,'PacketID']]],
   ['partydissolution',['PartyDissolution',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aab627365e4936e7328515b482ee05f74f',1,'PacketID']]],
@@ -24,5 +24,6 @@ var searchData=
   ['player',['Player',['../classCharacterType.html#a44253929affb003781a00d30d81e8fbca2a43b075b8c89b4fae1f7bc9075cecac',1,'CharacterType::Player()'],['../CharacterBase_8h.html#ad34afea9f542b01a1f4e6d48fdfe1be3a636da1d35e805b00eae0fcd8333f9234',1,'Player():&#160;CharacterBase.h']]],
   ['playerlist',['PlayerList',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa7388906f745c4b846c4143a815068588',1,'PacketID']]],
   ['playerrespawn',['PlayerRespawn',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa3c0fc7b23c1cf6d37de6a0b67e2abadb',1,'PacketID']]],
+  ['poision',['Poision',['../BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095cadefa83ce3a764680a3bd9c24bc7cd178',1,'BuffIcon.h']]],
   ['poison',['POISON',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3ca3ae3147ac74e7568ddbdaf610ce245cf',1,'BuffItem']]]
 ];

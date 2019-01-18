@@ -29,6 +29,8 @@ var searchData=
   ['buffer',['Buffer',['../classBuffer.html',1,'Buffer'],['../classBuffer.html#ae7ef2cd201190fde551dcb902627112b',1,'Buffer::Buffer()']]],
   ['buffer_2ecpp',['Buffer.cpp',['../Buffer_8cpp.html',1,'']]],
   ['buffer_2eh',['Buffer.h',['../Buffer_8h.html',1,'']]],
+  ['bufficon_2ecpp',['BuffIcon.cpp',['../BuffIcon_8cpp.html',1,'']]],
+  ['bufficon_2eh',['BuffIcon.h',['../BuffIcon_8h.html',1,'']]],
   ['buffid',['BuffId',['../structSkillItem.html#ae191f24a974c63fb7dac0768f69851c1',1,'SkillItem::BuffId()'],['../classPacketAddBuff.html#a307e3d009a836c9668ded670790e9d25',1,'PacketAddBuff::BuffId()']]],
   ['buffitem',['BuffItem',['../structBuffItem.html',1,'']]],
   ['buffmanager',['BuffManager',['../classBuffManager.html',1,'BuffManager'],['../classBuffManager.html#ae9d4f2805373199e02c6215fe1b491a6',1,'BuffManager::BuffManager()']]],

@@ -2,6 +2,7 @@ var searchData=
 [
   ['uattachablewidget',['UAttachableWidget',['../classUAttachableWidget.html',1,'']]],
   ['ublueprintfunctions',['UBlueprintFunctions',['../classUBlueprintFunctions.html',1,'']]],
+  ['ubufficon',['UBuffIcon',['../classUBuffIcon.html',1,'']]],
   ['ucharacternameinputwidget',['UCharacterNameInputWidget',['../classUCharacterNameInputWidget.html',1,'']]],
   ['uchatwindowwidget',['UChatWindowWidget',['../classUChatWindowWidget.html',1,'']]],
   ['uequipmenu',['UEquipMenu',['../classUEquipMenu.html',1,'']]],
