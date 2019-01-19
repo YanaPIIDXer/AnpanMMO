@@ -167,7 +167,7 @@ var searchData=
   ['skillusefailed',['SkillUseFailed',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaec1dab5e16608633437d9cb8c4d4f197',1,'PacketID']]],
   ['skycontrol_2ecpp',['SkyControl.cpp',['../SkyControl_8cpp.html',1,'']]],
   ['skycontrol_2eh',['SkyControl.h',['../SkyControl_8h.html',1,'']]],
-  ['sorcerer',['SORCERER',['../structSkillTreeItem.html#a2d788c190714c3cebb05fd25ec4cf8f8aef26b40e2ece04beefeb86465641b6a9',1,'SkillTreeItem::SORCERER()'],['../classCharacterJob.html#afec42e9a3800cc43cff6f86d6cf7e91da2e12227dbd11fa8ea8aaa8dabe3f2431',1,'CharacterJob::Sorcerer()']]],
+  ['sorcerer',['Sorcerer',['../classCharacterJob.html#afec42e9a3800cc43cff6f86d6cf7e91da2e12227dbd11fa8ea8aaa8dabe3f2431',1,'CharacterJob::Sorcerer()'],['../structSkillTreeItem.html#a2d788c190714c3cebb05fd25ec4cf8f8aef26b40e2ece04beefeb86465641b6a9',1,'SkillTreeItem::SORCERER()']]],
   ['spawn',['Spawn',['../classAAnpan.html#aab67aca71ba52dd60d80ac8c33503789',1,'AAnpan::Spawn()'],['../classANPCCharacter.html#a62519ea082b4a6c191e63dbb6a5e5e79',1,'ANPCCharacter::Spawn()'],['../classAOtherPlayerCharacter.html#a73fc2f430e5dc21ab9570f4b8d2215f7',1,'AOtherPlayerCharacter::Spawn()'],['../classASkillRangeDecal.html#ab50150453634653d7d857a6799113806',1,'ASkillRangeDecal::Spawn()'],['../classAWarpPoint.html#a66e6b534f8dd4d8810165901d828aadc',1,'AWarpPoint::Spawn()'],['../classWarpPointManager.html#a765ded832fd43105e06386b38a00c0b9',1,'WarpPointManager::Spawn()']]],
   ['spawnanpan',['SpawnAnpan',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aab033f1d3601792ecbecb4473b8619b3c',1,'PacketID']]],
   ['spawneffect',['SpawnEffect',['../classUBlueprintFunctions.html#a31ce7d0029c70f9c685400955439e110',1,'UBlueprintFunctions']]],

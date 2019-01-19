@@ -27,6 +27,7 @@ var searchData=
   ['invalidskill',['InvalidSkill',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a13304221db91be881d6e5b8496026952',1,'PacketSkillUseFailed']]],
   ['isablepartyinvite',['IsAblePartyInvite',['../classUOtherPlayerMenu.html#a27e4517926cad6489575267ce7793bd5',1,'UOtherPlayerMenu']]],
   ['isactive',['IsActive',['../classBuffManager.html#a4a6738c8d556a5f5e8433171a3afd5f9',1,'BuffManager::IsActive()'],['../classQuestManager.html#a2395195ece0c5edc4bd836191289fa74',1,'QuestManager::IsActive()'],['../classSkillControl.html#ae4d7b9d305c9a9f8047bbe8cec503f5d',1,'SkillControl::IsActive()']]],
+  ['isbuff',['IsBuff',['../classUBuffIcon.html#a4ae76d0710654ad093109fe6ce99ff5e',1,'UBuffIcon']]],
   ['isclear',['IsClear',['../classQuestManager.html#ac3d1521402ae1c8739b3f2ea1026fe3c',1,'QuestManager']]],
   ['isconnected',['IsConnected',['../classGameServerConnection.html#aa40e2893f49c7e8087eebca733cb5969',1,'GameServerConnection::IsConnected()'],['../classUMMOGameInstance.html#a9413f3171f486cb2c6cf2cd7c8584624',1,'UMMOGameInstance::IsConnected()']]],
   ['isdead',['IsDead',['../classACharacterBase.html#afa7151a5abe24606acb5cf5dcfdac7c8',1,'ACharacterBase']]],
