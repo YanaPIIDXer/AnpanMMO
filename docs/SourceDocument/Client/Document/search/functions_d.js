@@ -84,6 +84,8 @@ var searchData=
   ['onselectedno',['OnSelectedNo',['../classUYesNoDialog.html#a66ea11bb83ac539037c64845cd05d191',1,'UYesNoDialog']]],
   ['onselectedselection',['OnSelectedSelection',['../classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a',1,'ScriptExecuterBase']]],
   ['onselectedyes',['OnSelectedYes',['../classUYesNoDialog.html#af4379c56ef2cb0493ce930b68e3ff011',1,'UYesNoDialog']]],
+  ['onsetup',['OnSetup',['../classUBuffIcon.html#a682fc5f8ebea258b03d53fd54774e4de',1,'UBuffIcon']]],
+  ['onsetup_5fimplementation',['OnSetup_Implementation',['../classUBuffIcon.html#a30fe76886c2f26b5765b4542bc01dc72',1,'UBuffIcon']]],
   ['onskillactivate',['OnSkillActivate',['../classACharacterBase.html#ae4ee36362eee31572b8753be2010a2bb',1,'ACharacterBase::OnSkillActivate()'],['../classAGameCharacter.html#ae1a02afbbcc5d10590aa0a0fc47ccd6e',1,'AGameCharacter::OnSkillActivate()']]],
   ['onskillcancel',['OnSkillCancel',['../classAGameCharacter.html#a2778b2f21f7286a792035c5aca7f50d5',1,'AGameCharacter']]],
   ['onskillcast',['OnSkillCast',['../classACharacterBase.html#a57c1a87257db354c58d4ab286ee0cbc2',1,'ACharacterBase']]],
