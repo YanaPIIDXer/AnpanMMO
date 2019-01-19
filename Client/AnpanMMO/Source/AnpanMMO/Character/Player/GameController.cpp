@@ -29,9 +29,9 @@ AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 }
 
 // PawnÇ™ïRïtÇØÇÁÇÍÇΩÅB
-void AGameController::Possess(APawn *aPawn)
+void AGameController::OnPossess(APawn *aPawn)
 {
-	Super::Possess(aPawn);
+	Super::OnPossess(aPawn);
 	
 	SpawnCamera();
 

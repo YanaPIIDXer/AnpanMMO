@@ -16,9 +16,9 @@ AOtherPlayerController::AOtherPlayerController(const FObjectInitializer &ObjectI
 
 
 // PawnÇ™ïRïtÇØÇÁÇÍÇΩÅB
-void AOtherPlayerController::Possess(APawn *aPawn)
+void AOtherPlayerController::OnPossess(APawn *aPawn)
 {
-	Super::Possess(aPawn);
+	Super::OnPossess(aPawn);
 
 	pCharacter = Cast<AOtherPlayerCharacter>(aPawn);
 	check(pCharacter != nullptr);

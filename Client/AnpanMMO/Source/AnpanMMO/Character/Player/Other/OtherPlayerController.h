@@ -26,7 +26,7 @@ public:
 	virtual ~AOtherPlayerController() {}
 
 	// Pawn‚ª•R•t‚¯‚ç‚ê‚½.
-	virtual void Possess(APawn *aPawn) override;
+	virtual void OnPossess(APawn *aPawn) override;
 
 	// –ˆƒtƒŒ[ƒ€‚Ìˆ—.
 	virtual void Tick(float DeltaTime) override;

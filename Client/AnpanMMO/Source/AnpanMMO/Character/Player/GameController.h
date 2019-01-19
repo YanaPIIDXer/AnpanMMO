@@ -26,7 +26,7 @@ public:
 	virtual ~AGameController() {}
 
 	// Pawnが紐付けられた。
-	virtual void Possess(APawn *aPawn) override;
+	virtual void OnPossess(APawn *aPawn) override;
 
 	// 毎フレームの処理.
 	virtual void Tick(float DeltaTime) override;
