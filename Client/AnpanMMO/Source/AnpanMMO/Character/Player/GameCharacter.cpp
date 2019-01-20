@@ -279,6 +279,22 @@ void AGameCharacter::OnRespawn()
 	pGameMode->GetMainHUD()->OnRespawn();
 }
 
+// バフが追加された。
+void AGameCharacter::OnAddedBuff(uint32 BuffId)
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->GetMainHUD()->AddBuff(BuffId);
+}
+
+// バフが消滅した。
+void AGameCharacter::OnRemovedBuff(uint8 Type)
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->GetMainHUD()->RemoveBuff(Type);
+}
+
 
 // スキルターゲット取得.
 ACharacterBase *AGameCharacter::GetSkillTarget(uint32 SkillId)

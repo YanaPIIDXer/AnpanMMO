@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Buff/BuffIcon.h"
 #include "MainHUD.generated.h"
 
 class AGameCharacter;
@@ -126,6 +127,12 @@ public:
 	void OnLogOut();
 	void OnLogOut_Implementation() {}
 
+	// バフ追加。
+	void AddBuff(uint32 BuffId);
+
+	// バフ消去.
+	void RemoveBuff(uint8 Type);
+
 protected:
 
 	// レベルロード開始.
@@ -162,6 +169,16 @@ protected:
 	UFUNCTION(BlueprintCallable, Category = "Quest")
 	void ShowActiveQuestData();
 
+	// バフ追加。
+	UFUNCTION(BlueprintNativeEvent, Category = "Buff")
+	void OnAddBuff(EBuffType Type, float Time);
+	void OnAddBuff_Implementation(EBuffType Type, float Time) {}
+	
+	// バフ消去.
+	UFUNCTION(BlueprintNativeEvent, Category = "Buff")
+	void OnRemoveBuff(EBuffType Type);
+	void OnRemoveBuff_Implementation(EBuffType Type) {}
+
 private:
 	
 	// Blueprintのアセットパス
@@ -173,5 +190,8 @@ private:
 
 	// アクティブクエストが更新された。
 	void OnActiveQuestUpdated(const QuestData *pQuestData);
+
+	// バフタイプをenumに変換。
+	static EBuffType BuffTypeToEnum(uint8 Type);
 
 };

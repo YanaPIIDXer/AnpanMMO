@@ -133,6 +133,20 @@ void ACharacterBase::SetMoveSpeedRate(float Rate)
 	pMovement->MaxAcceleration = Speed;
 }
 
+// バフ追加。
+void ACharacterBase::AddBuff(uint32 BuffId)
+{
+	BuffMgr.Add(BuffId);
+	OnAddedBuff(BuffId);
+}
+
+// バフ消去.
+void ACharacterBase::RemoveBuff(uint8 Type)
+{
+	BuffMgr.Remove(Type);
+	OnRemovedBuff(Type);
+}
+
 
 // 初期化.
 void ACharacterBase::Initialize(int32 InHp, int32 InMaxHp)

@@ -59,6 +59,24 @@ void UMainHUD::OnRecvNotice(int32 Uuid, const NoticeData &Data)
 	NotReadNoticeCount++;
 }
 
+// バフ追加。
+void UMainHUD::AddBuff(uint32 BuffId)
+{
+	const BuffItem *pItem = MasterData::GetInstance().GetBuffMaster().Get(BuffId);
+	check(pItem != nullptr);
+
+	EBuffType Type = BuffTypeToEnum(pItem->Type);
+	float Time = pItem->TimeMilliSec / 1000.0f;
+	OnAddBuff(Type, Time);
+}
+
+// バフ消去.
+void UMainHUD::RemoveBuff(uint8 Type)
+{
+	EBuffType EType = BuffTypeToEnum(Type);
+	OnRemoveBuff(EType);
+}
+
 
 // レベルロード開始.
 void UMainHUD::StartLevelLoad()
@@ -93,7 +111,6 @@ void UMainHUD::ShowActiveQuestData()
 	check(pInst != nullptr);
 
 	OnActiveQuestUpdated(pInst->GetActiveQuestData());
-
 }
 
 
@@ -136,4 +153,35 @@ void UMainHUD::OnActiveQuestUpdated(const QuestData *pQuestData)
 	}
 
 	OnActiveQuestUpdatedEvent(Type, pStageItem->TargetId, pQuestData->KillCount, pStageItem->Count);
+}
+
+// バフタイプをenumに変換。
+EBuffType UMainHUD::BuffTypeToEnum(uint8 Type)
+{
+	EBuffType Ret = EBuffType::Invalid;
+
+	switch (Type)
+	{
+		case BuffItem::SPEEDUP:
+
+			Ret = EBuffType::SpeedUp;
+			break;
+
+		case BuffItem::AUTO_HEAL:
+
+			Ret = EBuffType::AutoHeal;
+			break;
+
+		case BuffItem::POISON:
+
+			Ret = EBuffType::Poision;
+			break;
+
+		case BuffItem::PARALYSIS:
+
+			Ret = EBuffType::Paralysis;
+			break;
+	}
+
+	return Ret;
 }

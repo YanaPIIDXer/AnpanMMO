@@ -103,10 +103,10 @@ public:
 	virtual void OnSkillActivate() {}
 
 	// バフ追加.
-	void AddBuff(uint32 BuffId) { BuffMgr.Add(BuffId); }
+	void AddBuff(uint32 BuffId);
 
 	// バフ消去.
-	void RemoveBuff(uint8 Type) { BuffMgr.Remove(Type); }
+	void RemoveBuff(uint8 Type);
 
 	// 麻痺状態か？
 	UFUNCTION(BlueprintPure, Category = "Character")
@@ -140,6 +140,12 @@ protected:
 
 	// HPを設定.
 	void SetHP(int InHp) { Hp = InHp; }
+
+	// バフが追加された。
+	virtual void OnAddedBuff(uint32 BuffId) {}
+
+	// バフが消滅した。
+	virtual void OnRemovedBuff(uint8 Type) {}
 
 private:
 

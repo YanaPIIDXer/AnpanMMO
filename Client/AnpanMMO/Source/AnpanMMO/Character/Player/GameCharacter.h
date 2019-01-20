@@ -133,6 +133,12 @@ protected:
 	// リスポンした。
 	virtual void OnRespawn() override;
 
+	// バフが追加された。
+	virtual void OnAddedBuff(uint32 BuffId) override;
+
+	// バフが消滅した。
+	virtual void OnRemovedBuff(uint8 Type) override;
+
 private:
 
 	// ステータス
