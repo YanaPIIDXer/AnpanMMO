@@ -1,5 +1,5 @@
 <map id="MasterData.cpp" name="MasterData.cpp">
-<area shape="rect" id="node2" href="$MasterData_8h.html" title="MasterData.h" alt="" coords="1184,80,1284,107"/>
+<area shape="rect" id="node2" href="$MasterData_8h.html" title="MasterData.h" alt="" coords="1259,80,1359,107"/>
 <area shape="rect" id="node4" href="$AreaMaster_8h.html" title="AreaMaster.h" alt="" coords="135,155,235,181"/>
 <area shape="rect" id="node8" href="$WarpDataMaster_8h.html" title="WarpDataMaster.h" alt="" coords="259,155,390,181"/>
 <area shape="rect" id="node9" href="$WarpPointMaster_8h.html" title="WarpPointMaster.h" alt="" coords="415,155,549,181"/>
@@ -16,6 +16,7 @@
 <area shape="rect" id="node20" href="$QuestRewardMaster_8h.html" title="QuestRewardMaster.h" alt="" coords="2027,155,2177,181"/>
 <area shape="rect" id="node21" href="$EquipMaster_8h.html" title="EquipMaster.h" alt="" coords="2202,155,2309,181"/>
 <area shape="rect" id="node22" href="$BuffMaster_8h.html" title="BuffMaster.h" alt="" coords="2333,155,2428,181"/>
-<area shape="rect" id="node5" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="1207,229,1411,271"/>
-<area shape="rect" id="node6" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="1219,319,1305,345"/>
+<area shape="rect" id="node23" href="$ShopMaster_8h.html" title="ShopMaster.h" alt="" coords="2452,155,2555,181"/>
+<area shape="rect" id="node5" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="1283,229,1487,271"/>
+<area shape="rect" id="node6" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="1295,319,1381,345"/>
 </map>

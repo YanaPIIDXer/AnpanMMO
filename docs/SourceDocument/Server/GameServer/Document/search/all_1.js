@@ -98,6 +98,6 @@ var searchData=
   ['attack',['ATTACK',['../structSkillItem.html#a0c92dd0ba436dd33f9552f483ae2e04aa63452507f8c07b55c794840596f413b6',1,'SkillItem']]],
   ['attackto',['AttackTo',['../classAnpan.html#aa93f7148141285e77ad93583714c7b5f',1,'Anpan']]],
   ['auto_5fheal',['AUTO_HEAL',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cadfe1ad3f1298e4bb7cdedb96f5203e6b',1,'BuffItem']]],
-  ['autokey',['AutoKey',['../structAnpanPopAreaItem.html#a2296318209c7135a7071db6f165f0f26',1,'AnpanPopAreaItem::AutoKey()'],['../structAnpanPopDataItem.html#a022e99cb79a0aab041f122a2e51e3219',1,'AnpanPopDataItem::AutoKey()']]],
+  ['autokey',['AutoKey',['../structAnpanPopAreaItem.html#a2296318209c7135a7071db6f165f0f26',1,'AnpanPopAreaItem::AutoKey()'],['../structAnpanPopDataItem.html#a022e99cb79a0aab041f122a2e51e3219',1,'AnpanPopDataItem::AutoKey()'],['../structShopItem.html#a5941a8eb4b9e9afd1265dc2656647438',1,'ShopItem::AutoKey()']]],
   ['automove',['AutoMove',['../SkillStateBase_8h.html#a08d7cae8136f6d6fcd4b5c73aee3f1a6a1873dc947c69ee439753240fbf9b3b07',1,'SkillStateBase.h']]]
 ];

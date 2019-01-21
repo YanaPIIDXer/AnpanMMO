@@ -152,6 +152,10 @@ UMainHUD 連携図</div>
 <tr class="separator:a5d6335e2ed66157dcb7d5da038b89963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad079ac5bd74c7d2a196a27109321d50e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMainHUD.html#ad079ac5bd74c7d2a196a27109321d50e">OnLogOut_Implementation</a> ()</td></tr>
 <tr class="separator:ad079ac5bd74c7d2a196a27109321d50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33daa0858d7c7d1d284e7c345c48eee9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMainHUD.html#a33daa0858d7c7d1d284e7c345c48eee9">AddBuff</a> (uint32 BuffId)</td></tr>
+<tr class="separator:a33daa0858d7c7d1d284e7c345c48eee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343a3f8787ce50509af7cf8c87c653a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMainHUD.html#a343a3f8787ce50509af7cf8c87c653a4">RemoveBuff</a> (uint8 Type)</td></tr>
+<tr class="separator:a343a3f8787ce50509af7cf8c87c653a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
@@ -178,6 +182,14 @@ UMainHUD 連携図</div>
 <tr class="separator:a998a3b1279310eb704cb4426ec1e4c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44f9a9b0bbfb2b9da6a424a7c5173877"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMainHUD.html#a44f9a9b0bbfb2b9da6a424a7c5173877">ShowActiveQuestData</a> ()</td></tr>
 <tr class="separator:a44f9a9b0bbfb2b9da6a424a7c5173877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998cf5f13d0fb24e0140dbbc5c6715e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMainHUD.html#a998cf5f13d0fb24e0140dbbc5c6715e8">OnAddBuff</a> (<a class="el" href="BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c">EBuffType</a> Type, float Time)</td></tr>
+<tr class="separator:a998cf5f13d0fb24e0140dbbc5c6715e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf64dde3c61c326f2b77d77754452633"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMainHUD.html#aaf64dde3c61c326f2b77d77754452633">OnAddBuff_Implementation</a> (<a class="el" href="BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c">EBuffType</a> Type, float Time)</td></tr>
+<tr class="separator:aaf64dde3c61c326f2b77d77754452633"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f8b11f9bacad098e72224a1c2daf2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMainHUD.html#a45f8b11f9bacad098e72224a1c2daf2b">OnRemoveBuff</a> (<a class="el" href="BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c">EBuffType</a> Type)</td></tr>
+<tr class="separator:a45f8b11f9bacad098e72224a1c2daf2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8fa2bd92b733fb34cc384102191b5d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMainHUD.html#ae8fa2bd92b733fb34cc384102191b5d8">OnRemoveBuff_Implementation</a> (<a class="el" href="BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c">EBuffType</a> Type)</td></tr>
+<tr class="separator:ae8fa2bd92b733fb34cc384102191b5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 限定公開変数類</h2></td></tr>
@@ -231,6 +243,43 @@ UMainHUD 連携図</div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
+<a id="a33daa0858d7c7d1d284e7c345c48eee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33daa0858d7c7d1d284e7c345c48eee9">&#9670;&nbsp;</a></span>AddBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMainHUD::AddBuff </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>BuffId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMainHUD_a33daa0858d7c7d1d284e7c345c48eee9_cgraph.png" border="0" usemap="#classUMainHUD_a33daa0858d7c7d1d284e7c345c48eee9_cgraph" alt=""/></div>
+<map name="classUMainHUD_a33daa0858d7c7d1d284e7c345c48eee9_cgraph" id="classUMainHUD_a33daa0858d7c7d1d284e7c345c48eee9_cgraph">
+<area shape="rect" id="node2" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="199,5,365,32"/>
+<area shape="rect" id="node3" href="classMasterData.html#add70adacadbd762d47db11d96fd7e018" title="MasterData::GetBuffMaster" alt="" coords="192,56,372,83"/>
+<area shape="rect" id="node4" href="classBuffMaster.html#a7e4856211b8fc6e6207c53219b097b86" title="BuffMaster::Get" alt="" coords="225,107,339,133"/>
+<area shape="rect" id="node5" href="classUMainHUD.html#a998cf5f13d0fb24e0140dbbc5c6715e8" title="UMainHUD::OnAddBuff" alt="" coords="204,157,360,184"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMainHUD_a33daa0858d7c7d1d284e7c345c48eee9_icgraph.png" border="0" usemap="#classUMainHUD_a33daa0858d7c7d1d284e7c345c48eee9_icgraph" alt=""/></div>
+<map name="classUMainHUD_a33daa0858d7c7d1d284e7c345c48eee9_icgraph" id="classUMainHUD_a33daa0858d7c7d1d284e7c345c48eee9_icgraph">
+<area shape="rect" id="node2" href="classAGameCharacter.html#a554656ce744b32c72d951bc90f279f9c" title="AGameCharacter::OnAddedBuff" alt="" coords="192,5,399,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a14263b5fca304352a07d8afeadc0e21c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14263b5fca304352a07d8afeadc0e21c">&#9670;&nbsp;</a></span>HasNotReadNotice()</h2>
 
@@ -361,6 +410,87 @@ UMainHUD 連携図</div>
           <td></td>
           <td class="paramtype">int32&#160;</td>
           <td class="paramname"><em>MaxCount</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a998cf5f13d0fb24e0140dbbc5c6715e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998cf5f13d0fb24e0140dbbc5c6715e8">&#9670;&nbsp;</a></span>OnAddBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMainHUD::OnAddBuff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c">EBuffType</a>&#160;</td>
+          <td class="paramname"><em>Type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMainHUD_a998cf5f13d0fb24e0140dbbc5c6715e8_icgraph.png" border="0" usemap="#classUMainHUD_a998cf5f13d0fb24e0140dbbc5c6715e8_icgraph" alt=""/></div>
+<map name="classUMainHUD_a998cf5f13d0fb24e0140dbbc5c6715e8_icgraph" id="classUMainHUD_a998cf5f13d0fb24e0140dbbc5c6715e8_icgraph">
+<area shape="rect" id="node2" href="classUMainHUD.html#a33daa0858d7c7d1d284e7c345c48eee9" title="UMainHUD::AddBuff" alt="" coords="209,5,348,32"/>
+<area shape="rect" id="node3" href="classAGameCharacter.html#a554656ce744b32c72d951bc90f279f9c" title="AGameCharacter::OnAddedBuff" alt="" coords="396,5,603,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf64dde3c61c326f2b77d77754452633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf64dde3c61c326f2b77d77754452633">&#9670;&nbsp;</a></span>OnAddBuff_Implementation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMainHUD::OnAddBuff_Implementation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c">EBuffType</a>&#160;</td>
+          <td class="paramname"><em>Type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Time</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -907,6 +1037,67 @@ UMainHUD 連携図</div>
 
 </div>
 </div>
+<a id="a45f8b11f9bacad098e72224a1c2daf2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f8b11f9bacad098e72224a1c2daf2b">&#9670;&nbsp;</a></span>OnRemoveBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMainHUD::OnRemoveBuff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c">EBuffType</a>&#160;</td>
+          <td class="paramname"><em>Type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMainHUD_a45f8b11f9bacad098e72224a1c2daf2b_icgraph.png" border="0" usemap="#classUMainHUD_a45f8b11f9bacad098e72224a1c2daf2b_icgraph" alt=""/></div>
+<map name="classUMainHUD_a45f8b11f9bacad098e72224a1c2daf2b_icgraph" id="classUMainHUD_a45f8b11f9bacad098e72224a1c2daf2b_icgraph">
+<area shape="rect" id="node2" href="classUMainHUD.html#a343a3f8787ce50509af7cf8c87c653a4" title="UMainHUD::RemoveBuff" alt="" coords="232,5,395,32"/>
+<area shape="rect" id="node3" href="classAGameCharacter.html#a072b43480eaf34c68c1c7ac1b9ed06ea" title="AGameCharacter::OnRemovedBuff" alt="" coords="443,5,665,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae8fa2bd92b733fb34cc384102191b5d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8fa2bd92b733fb34cc384102191b5d8">&#9670;&nbsp;</a></span>OnRemoveBuff_Implementation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMainHUD::OnRemoveBuff_Implementation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c">EBuffType</a>&#160;</td>
+          <td class="paramname"><em>Type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab245fa717a727be7a768486c149615d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab245fa717a727be7a768486c149615d2">&#9670;&nbsp;</a></span>OnRespawn()</h2>
 
@@ -1137,6 +1328,40 @@ UMainHUD 連携図</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a343a3f8787ce50509af7cf8c87c653a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343a3f8787ce50509af7cf8c87c653a4">&#9670;&nbsp;</a></span>RemoveBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMainHUD::RemoveBuff </td>
+          <td>(</td>
+          <td class="paramtype">uint8&#160;</td>
+          <td class="paramname"><em>Type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMainHUD_a343a3f8787ce50509af7cf8c87c653a4_cgraph.png" border="0" usemap="#classUMainHUD_a343a3f8787ce50509af7cf8c87c653a4_cgraph" alt=""/></div>
+<map name="classUMainHUD_a343a3f8787ce50509af7cf8c87c653a4_cgraph" id="classUMainHUD_a343a3f8787ce50509af7cf8c87c653a4_cgraph">
+<area shape="rect" id="node2" href="classUMainHUD.html#a45f8b11f9bacad098e72224a1c2daf2b" title="UMainHUD::OnRemoveBuff" alt="" coords="216,5,395,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMainHUD_a343a3f8787ce50509af7cf8c87c653a4_icgraph.png" border="0" usemap="#classUMainHUD_a343a3f8787ce50509af7cf8c87c653a4_icgraph" alt=""/></div>
+<map name="classUMainHUD_a343a3f8787ce50509af7cf8c87c653a4_icgraph" id="classUMainHUD_a343a3f8787ce50509af7cf8c87c653a4_icgraph">
+<area shape="rect" id="node2" href="classAGameCharacter.html#a072b43480eaf34c68c1c7ac1b9ed06ea" title="AGameCharacter::OnRemovedBuff" alt="" coords="216,5,439,32"/>
+</map>
+</div>
 
 </div>
 </div>

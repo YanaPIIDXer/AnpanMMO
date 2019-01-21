@@ -4,6 +4,7 @@ var searchData=
   ['scale',['Scale',['../structAnpanItem.html#a1d21de83fcf64e3228a8e66416c4b358',1,'AnpanItem']]],
   ['scriptname',['ScriptName',['../structNPCItem.html#a91bf39b905c0e94e0404bad686b975d4',1,'NPCItem']]],
   ['sellgold',['SellGold',['../structEquipItem.html#a532df4896b793e3a834868a75710384f',1,'EquipItem::SellGold()'],['../structItemItem.html#ad5a369db4850ea689c72599095de0d42',1,'ItemItem::SellGold()']]],
+  ['shopid',['ShopId',['../classPacketBuyItemRequest.html#ab505c1e14172be3ce0cd87848febb52a',1,'PacketBuyItemRequest::ShopId()'],['../classPacketSellItemRequest.html#a9fe8c56247db899c166cecd0d96628c6',1,'PacketSellItemRequest::ShopId()']]],
   ['size',['Size',['../structBitmapInfoData.html#a352128bdc3a5f0ce1cccc9eca9f75c31',1,'BitmapInfoData']]],
   ['skill',['Skill',['../classCharacterBase.html#acaaef243db27cf8505b8e78f33355d51',1,'CharacterBase']]],
   ['skill1',['Skill1',['../classPacketSkillList.html#a0222bb299c94f21e0458de96eb6c2223',1,'PacketSkillList']]],

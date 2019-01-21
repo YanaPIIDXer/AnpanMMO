@@ -1,0 +1,5 @@
+<map id="AGameCharacter::OnRemovedBuff" name="AGameCharacter::OnRemovedBuff">
+<area shape="rect" id="node2" href="$classAActiveGameMode.html#ae918e1128e7ca8d06a548631f99efa90" title="AActiveGameMode::GetMainHUD" alt="" coords="276,5,493,32"/>
+<area shape="rect" id="node3" href="$classUMainHUD.html#a343a3f8787ce50509af7cf8c87c653a4" title="UMainHUD::RemoveBuff" alt="" coords="303,56,466,83"/>
+<area shape="rect" id="node4" href="$classUMainHUD.html#a45f8b11f9bacad098e72224a1c2daf2b" title="UMainHUD::OnRemoveBuff" alt="" coords="541,56,720,83"/>
+</map>
