@@ -5,6 +5,7 @@ var searchData=
   ['u8',['u8',['../TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de',1,'TypeDefs.h']]],
   ['uattachablewidget',['UAttachableWidget',['../classUAttachableWidget.html',1,'UAttachableWidget'],['../classUAttachableWidget.html#aa31ea0ae805e027af7d20eb113e39256',1,'UAttachableWidget::UAttachableWidget()']]],
   ['ublueprintfunctions',['UBlueprintFunctions',['../classUBlueprintFunctions.html',1,'']]],
+  ['ubufficon',['UBuffIcon',['../classUBuffIcon.html',1,'UBuffIcon'],['../classUBuffIcon.html#ab62fc2ab4e60f486d3aab8aec011510b',1,'UBuffIcon::UBuffIcon()']]],
   ['ucharacternameinputwidget',['UCharacterNameInputWidget',['../classUCharacterNameInputWidget.html',1,'UCharacterNameInputWidget'],['../classUCharacterNameInputWidget.html#a7342c9229c86ac1a2830c0bb701eb11f',1,'UCharacterNameInputWidget::UCharacterNameInputWidget()']]],
   ['uchatwindowwidget',['UChatWindowWidget',['../classUChatWindowWidget.html',1,'UChatWindowWidget'],['../classUChatWindowWidget.html#af16fa3c30b42c54ab952dc47d5bd8b14',1,'UChatWindowWidget::UChatWindowWidget()']]],
   ['uequipmenu',['UEquipMenu',['../classUEquipMenu.html',1,'UEquipMenu'],['../classUEquipMenu.html#aa7f8c8f98014f23700f7361fafb34157',1,'UEquipMenu::UEquipMenu()']]],

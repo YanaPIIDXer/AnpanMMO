@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['ebufftype',['EBuffType',['../BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095c',1,'BuffIcon.h']]],
   ['echaractertype',['ECharacterType',['../CharacterBase_8h.html#ad34afea9f542b01a1f4e6d48fdfe1be3',1,'CharacterBase.h']]],
   ['echattype',['EChatType',['../ChatWindowWidget_8h.html#a3e92ec978e6b1ef6fc762f5bfd1a8a9d',1,'ChatWindowWidget.h']]],
   ['efademode',['EFadeMode',['../FadeScreen_8h.html#a189894e4d6863b5b9e4ad4882cabd3a8',1,'FadeScreen.h']]],

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['uattachablewidget',['UAttachableWidget',['../classUAttachableWidget.html#aa31ea0ae805e027af7d20eb113e39256',1,'UAttachableWidget']]],
+  ['ubufficon',['UBuffIcon',['../classUBuffIcon.html#ab62fc2ab4e60f486d3aab8aec011510b',1,'UBuffIcon']]],
   ['ucharacternameinputwidget',['UCharacterNameInputWidget',['../classUCharacterNameInputWidget.html#a7342c9229c86ac1a2830c0bb701eb11f',1,'UCharacterNameInputWidget']]],
   ['uchatwindowwidget',['UChatWindowWidget',['../classUChatWindowWidget.html#af16fa3c30b42c54ab952dc47d5bd8b14',1,'UChatWindowWidget']]],
   ['uequipmenu',['UEquipMenu',['../classUEquipMenu.html#aa7f8c8f98014f23700f7361fafb34157',1,'UEquipMenu']]],

@@ -29,9 +29,9 @@ AGameController::AGameController(const FObjectInitializer &ObjectInitializer)
 }
 
 // Pawn‚ª•R•t‚¯‚ç‚ê‚½B
-void AGameController::Possess(APawn *aPawn)
+void AGameController::OnPossess(APawn *aPawn)
 {
-	Super::Possess(aPawn);
+	Super::OnPossess(aPawn);
 	
 	SpawnCamera();
 
@@ -127,6 +127,9 @@ void AGameController::MoveProc()
 	if (pCharacter->GetSkillControl().IsActive()) { return; }
 
 	if (!bEnableMove) { return; }
+
+	// –ƒáƒó‘ÔB
+	if (pCharacter->IsParalysis()) { return; }
 
 	if (InputVector == FVector::ZeroVector) { return; }
 	InputVector.Normalize();

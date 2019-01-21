@@ -6,6 +6,9 @@
 #include "TargetCircle/TargetCircle.h"
 #include "Master/MasterData.h"
 #include "Skill/SkillRangeDecal.h"
+#include "GameFramework/CharacterMovementComponent.h"
+
+const float ACharacterBase::BaseMoveSpeed = 600.0f;
 
 // コンストラクタ
 ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
@@ -30,7 +33,17 @@ ACharacterBase::ACharacterBase(const FObjectInitializer &ObjectInitializer)
 	pMeshComponent->SetGenerateOverlapEvents(true);
 	SetActorEnableCollision(true);
 
+	SetMoveSpeedRate(1.0f);
+
 	OnDestroyed.AddDynamic(this, &ACharacterBase::OnDestroy);
+}
+
+// 開始時の処理.
+void ACharacterBase::BeginPlay()
+{
+	Super::BeginPlay();
+
+	BuffMgr.SetOwner(this);
 }
 
 // 破棄された.
@@ -107,6 +120,31 @@ void ACharacterBase::OnSkillCast(uint32 SkillId)
 void ACharacterBase::OnSkillCastFinished()
 {
 	DestroySkillRangeDecal();
+}
+
+// 移動速度レートを設定.
+void ACharacterBase::SetMoveSpeedRate(float Rate)
+{
+	auto *pMovement = GetCharacterMovement();
+	check(pMovement != nullptr);
+	
+	float Speed = BaseMoveSpeed * Rate;
+	pMovement->MaxWalkSpeed = Speed;
+	pMovement->MaxAcceleration = Speed;
+}
+
+// バフ追加。
+void ACharacterBase::AddBuff(uint32 BuffId)
+{
+	BuffMgr.Add(BuffId);
+	OnAddedBuff(BuffId);
+}
+
+// バフ消去.
+void ACharacterBase::RemoveBuff(uint8 Type)
+{
+	BuffMgr.Remove(Type);
+	OnRemovedBuff(Type);
 }
 
 

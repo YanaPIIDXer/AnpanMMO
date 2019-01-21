@@ -46,9 +46,9 @@ public:		// 内部構造体の定義.
 			, SkillId(InSkillId)
 			, Cost(InCost)
 			, NeedLevel(InNeedLevel)
-			, NodePosition(NodeX, NodeY)
 			, ParentNodeId(InParentNodeId)
-			, bIsOpened(false) {}
+			, bIsOpened(false)
+			, NodePosition(NodeX, NodeY) {}
 
 		// デストラクタ
 		~Node()

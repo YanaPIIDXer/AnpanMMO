@@ -15,5 +15,6 @@ var searchData=
   ['areamoveresponse',['AreaMoveResponse',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa5485f2a811a241830f7c293f38d9a758',1,'PacketID']]],
   ['attack',['ATTACK',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a63452507f8c07b55c794840596f413b6',1,'SkillItem']]],
   ['auto_5fheal',['AUTO_HEAL',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cadfe1ad3f1298e4bb7cdedb96f5203e6b',1,'BuffItem']]],
+  ['autoheal',['AutoHeal',['../BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095ca7170fe5067524b4558e10a7e4379b9d4',1,'BuffIcon.h']]],
   ['automode',['AutoMode',['../SkillStateBase_8h.html#a1c04a4ee3c5d7bd26f9b7e7262f18b96a38d868553c84b0db74263422354e899b',1,'SkillStateBase.h']]]
 ];

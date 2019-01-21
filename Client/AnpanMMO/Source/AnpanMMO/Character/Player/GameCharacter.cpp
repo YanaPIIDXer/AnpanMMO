@@ -98,6 +98,9 @@ bool AGameCharacter::IsSkillUsable(int32 SkillId) const
 	AGameController *pController = Cast<AGameController>(Controller);
 	check(pController != nullptr);
 
+	// 麻痺状態なら問答無用で使用不可。
+	if (IsParalysis()) { return false; }
+
 	const SkillItem *pItem = MasterData::GetInstance().GetSkillMaster().Get(SkillId);
 	if (pItem == nullptr) { return false; }
 
@@ -274,6 +277,22 @@ void AGameCharacter::OnRespawn()
 	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
 	check(pGameMode != nullptr);
 	pGameMode->GetMainHUD()->OnRespawn();
+}
+
+// バフが追加された。
+void AGameCharacter::OnAddedBuff(uint32 BuffId)
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->GetMainHUD()->AddBuff(BuffId);
+}
+
+// バフが消滅した。
+void AGameCharacter::OnRemovedBuff(uint8 Type)
+{
+	AActiveGameMode *pGameMode = Cast<AActiveGameMode>(UGameplayStatics::GetGameMode(this));
+	check(pGameMode != nullptr);
+	pGameMode->GetMainHUD()->RemoveBuff(Type);
 }
 
 

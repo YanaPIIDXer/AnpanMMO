@@ -19,9 +19,9 @@ AAnpanController::AAnpanController(const FObjectInitializer &ObjectInitializer)
 }
 
 // PawnÇ™ïRïtÇØÇÁÇÍÇΩÅB
-void AAnpanController::Possess(APawn *aPawn)
+void AAnpanController::OnPossess(APawn *aPawn)
 {
-	Super::Possess(aPawn);
+	Super::OnPossess(aPawn);
 
 	pAnpan = Cast<AAnpan>(aPawn);
 	check(pAnpan != nullptr);
