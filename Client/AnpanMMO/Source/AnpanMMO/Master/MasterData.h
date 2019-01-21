@@ -18,7 +18,7 @@
 #include "QuestStageMaster.h"
 #include "QuestRewardMaster.h"
 #include "EquipMaster.h"
-#include "BuffMaster.h""
+#include "BuffMaster.h"
 #include "ShopMaster.h"
 
 /**
