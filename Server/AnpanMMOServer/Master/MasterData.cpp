@@ -144,5 +144,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!Shop.Load(Connection))
+	{
+		std::cout << "Shop Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }

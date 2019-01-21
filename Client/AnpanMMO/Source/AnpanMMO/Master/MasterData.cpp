@@ -28,4 +28,5 @@ void MasterData::Load()
 	QuestReward.Load();
 	Equip.Load();
 	Buff.Load();
+	Shop.Load();
 }
