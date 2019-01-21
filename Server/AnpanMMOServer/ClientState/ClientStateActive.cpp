@@ -146,18 +146,6 @@ bool ClientStateActive::OnRecvChat(MemoryStreamInterface *pStream)
 	// メッセージが空の時は何もしない。
 	if (Packet.Message == "") { return true; }
 
-	// ============= デバフテスト用 ====================
-	if (Packet.Message == "poison")
-	{
-		GetParent()->GetCharacter().lock()->AddBuff(3);
-	}
-
-	if (Packet.Message == "paralysis")
-	{
-		GetParent()->GetCharacter().lock()->AddBuff(4);
-	}
-	// ================================================
-
 	// ワードチェックサーバに投げる。
 	WordCheckPacketChatRequest WordCheckPacket(GetParent()->GetUuid(), Packet.Type, Packet.Message);
 	WordCheckServerConnection::GetInstance()->SendPacket(&WordCheckPacket);
