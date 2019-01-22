@@ -1,0 +1,4 @@
+<map id="UMainHUD::OnAddBuff" name="UMainHUD::OnAddBuff">
+<area shape="rect" id="node2" href="$classUMainHUD.html#a33daa0858d7c7d1d284e7c345c48eee9" title="UMainHUD::AddBuff" alt="" coords="209,5,348,32"/>
+<area shape="rect" id="node3" href="$classAGameCharacter.html#a554656ce744b32c72d951bc90f279f9c" title="AGameCharacter::OnAddedBuff" alt="" coords="396,5,603,32"/>
+</map>

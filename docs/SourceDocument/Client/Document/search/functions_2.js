@@ -10,6 +10,7 @@ var searchData=
   ['closechild',['CloseChild',['../classULayeredMenuWidgetBase.html#aaa200e099b2273d2ae5d94c68cf80f8b',1,'ULayeredMenuWidgetBase']]],
   ['closewidget',['CloseWidget',['../classUScriptWidgetRoot.html#ad77cb32704b4b2aa7e971e580607d923',1,'UScriptWidgetRoot']]],
   ['collectitemlist',['CollectItemList',['../classItemList.html#a45c59476ff2ebaa2fa95592e83d43ef2',1,'ItemList']]],
+  ['collectitems',['CollectItems',['../classShopMaster.html#a49b35a55d7ffc95e04d121e41f7e3454',1,'ShopMaster']]],
   ['collectprogressingquests',['CollectProgressingQuests',['../classQuestManager.html#ae92adbbda0c1a87c15a5eb65952248f5',1,'QuestManager']]],
   ['configure',['Configure',['../classVersionFile.html#a5c101afdc553c84c11f2b047835dd825',1,'VersionFile']]],
   ['connect',['Connect',['../classGameServerConnection.html#a9d0972403cc827f7d4af8c3d6ff3aeaa',1,'GameServerConnection::Connect()'],['../classUMMOGameInstance.html#afecf75abd0ed3c7152f2e736f8193e62',1,'UMMOGameInstance::Connect()']]],

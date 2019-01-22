@@ -1,0 +1,8 @@
+<map id="AGameCharacter::OnAddedBuff" name="AGameCharacter::OnAddedBuff">
+<area shape="rect" id="node2" href="$classAActiveGameMode.html#ae918e1128e7ca8d06a548631f99efa90" title="AActiveGameMode::GetMainHUD" alt="" coords="260,31,477,57"/>
+<area shape="rect" id="node3" href="$classUMainHUD.html#a33daa0858d7c7d1d284e7c345c48eee9" title="UMainHUD::AddBuff" alt="" coords="299,81,438,108"/>
+<area shape="rect" id="node4" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="532,5,699,32"/>
+<area shape="rect" id="node5" href="$classMasterData.html#add70adacadbd762d47db11d96fd7e018" title="MasterData::GetBuffMaster" alt="" coords="525,56,705,83"/>
+<area shape="rect" id="node6" href="$classBuffMaster.html#a7e4856211b8fc6e6207c53219b097b86" title="BuffMaster::Get" alt="" coords="559,107,672,133"/>
+<area shape="rect" id="node7" href="$classUMainHUD.html#a998cf5f13d0fb24e0140dbbc5c6715e8" title="UMainHUD::OnAddBuff" alt="" coords="537,157,693,184"/>
+</map>

@@ -7,6 +7,8 @@ var searchData=
   ['normal_5farea',['NORMAL_AREA',['../structAreaItem.html#abf7a26d92a276782f08a9b78bdc36fe0ae3c9fc7b6ee58dbaee3e321e2781fe81',1,'AreaItem']]],
   ['notenoughcost',['NotEnoughCost',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98aa28c9d30e9f53c998c6b9813f5ded592',1,'PacketSkillTreeOpenResult']]],
   ['notenoughlevel',['NotEnoughLevel',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98a40046699a2aa88dcc74d9062d7a4d68c',1,'PacketSkillTreeOpenResult']]],
+  ['notenougthgold',['NotEnougthGold',['../classPacketBuyItemResult.html#a6c9f85363c4310b31d62d0cd68da40f0aab79f1a0475734956a4666e7965940a0',1,'PacketBuyItemResult']]],
+  ['nothaveitem',['NotHaveItem',['../classPacketSellItemResult.html#a07d2f334d50011bcfc17d017f5e653eca7f08fb5df434657dc40b72c37645e6fa',1,'PacketSellItemResult']]],
   ['noticelist',['NoticeList',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aabafa66ca029574cfba1a78867788a8f1',1,'PacketID']]],
   ['notopenedparent',['NotOpenedParent',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98af87b1759bf1a639e3e7d4214f59d9612',1,'PacketSkillTreeOpenResult']]],
   ['notpossession',['NotPossession',['../classPacketChangeEquipResult.html#a25f7bc4e626fe16cf83726fed8e7ddcbab50bd5282001c2e47b32cf957b0bbd99',1,'PacketChangeEquipResult']]],

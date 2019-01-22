@@ -23,6 +23,8 @@ var searchData=
   ['normalattackid',['NormalAttackId',['../structEquipItem.html#a24f94345e209a72be198c49cb223a610',1,'EquipItem']]],
   ['notenoughcost',['NotEnoughCost',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98aa28c9d30e9f53c998c6b9813f5ded592',1,'PacketSkillTreeOpenResult']]],
   ['notenoughlevel',['NotEnoughLevel',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98a40046699a2aa88dcc74d9062d7a4d68c',1,'PacketSkillTreeOpenResult']]],
+  ['notenougthgold',['NotEnougthGold',['../classPacketBuyItemResult.html#a6c9f85363c4310b31d62d0cd68da40f0aab79f1a0475734956a4666e7965940a0',1,'PacketBuyItemResult']]],
+  ['nothaveitem',['NotHaveItem',['../classPacketSellItemResult.html#a07d2f334d50011bcfc17d017f5e653eca7f08fb5df434657dc40b72c37645e6fa',1,'PacketSellItemResult']]],
   ['notice',['Notice',['../classPacketReceiveNotice.html#a208b86e55ca7dcc99a225d911bcfacf9',1,'PacketReceiveNotice']]],
   ['noticedata',['NoticeData',['../classNoticeData.html',1,'NoticeData'],['../classNoticeData.html#a64d5dd2f832ea40ff2248ec9f5fd5961',1,'NoticeData::NoticeData()'],['../classNoticeData.html#a741af68cd237f75342d792ef419b4e42',1,'NoticeData::NoticeData(u8 InType, u32 InCustomerId, std::string InCharacterName)']]],
   ['noticedata_2eh',['NoticeData.h',['../NoticeData_8h.html',1,'']]],

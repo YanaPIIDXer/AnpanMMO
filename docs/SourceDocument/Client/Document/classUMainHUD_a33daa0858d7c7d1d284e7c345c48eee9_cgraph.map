@@ -1,0 +1,6 @@
+<map id="UMainHUD::AddBuff" name="UMainHUD::AddBuff">
+<area shape="rect" id="node2" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="199,5,365,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#add70adacadbd762d47db11d96fd7e018" title="MasterData::GetBuffMaster" alt="" coords="192,56,372,83"/>
+<area shape="rect" id="node4" href="$classBuffMaster.html#a7e4856211b8fc6e6207c53219b097b86" title="BuffMaster::Get" alt="" coords="225,107,339,133"/>
+<area shape="rect" id="node5" href="$classUMainHUD.html#a998cf5f13d0fb24e0140dbbc5c6715e8" title="UMainHUD::OnAddBuff" alt="" coords="204,157,360,184"/>
+</map>

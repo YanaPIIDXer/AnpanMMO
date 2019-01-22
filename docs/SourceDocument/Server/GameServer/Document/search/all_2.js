@@ -61,5 +61,7 @@ var searchData=
   ['buffspeedup_2ecpp',['BuffSpeedUp.cpp',['../BuffSpeedUp_8cpp.html',1,'']]],
   ['buffspeedup_2eh',['BuffSpeedUp.h',['../BuffSpeedUp_8h.html',1,'']]],
   ['bufftype',['BuffType',['../classPacketRemoveBuff.html#abe9440ae22483efe758154a175dbe78f',1,'PacketRemoveBuff']]],
-  ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]]
+  ['buygold',['BuyGold',['../structEquipItem.html#a636687f59db4527a2e1421eb47b11bcd',1,'EquipItem::BuyGold()'],['../structItemItem.html#ad232c815fde31b9285af9985752995fa',1,'ItemItem::BuyGold()']]],
+  ['buyitemrequest',['BuyItemRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf4cac80b3694ffa130d0b29935ac52d2',1,'PacketID']]],
+  ['buyitemresult',['BuyItemResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa83b883904f26973f02ee054622ddc388',1,'PacketID']]]
 ];

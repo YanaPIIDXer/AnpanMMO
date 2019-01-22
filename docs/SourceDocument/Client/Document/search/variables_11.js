@@ -8,6 +8,7 @@ var searchData=
   ['sellgold',['SellGold',['../structEquipItem.html#a532df4896b793e3a834868a75710384f',1,'EquipItem::SellGold()'],['../structItemItem.html#ad5a369db4850ea689c72599095de0d42',1,'ItemItem::SellGold()']]],
   ['serverhost',['ServerHost',['../classConfig.html#a745b2a034f6aac8a3bd92cbef935845b',1,'Config']]],
   ['serverport',['ServerPort',['../classConfig.html#a7ef607b5e70e547c5b620df09f4b5be3',1,'Config']]],
+  ['shopid',['ShopId',['../classPacketBuyItemRequest.html#ab505c1e14172be3ce0cd87848febb52a',1,'PacketBuyItemRequest::ShopId()'],['../classPacketSellItemRequest.html#a9fe8c56247db899c166cecd0d96628c6',1,'PacketSellItemRequest::ShopId()']]],
   ['skill1',['Skill1',['../classPacketSkillList.html#a0222bb299c94f21e0458de96eb6c2223',1,'PacketSkillList']]],
   ['skill2',['Skill2',['../classPacketSkillList.html#a045a571b31742b9044e50198692cc233',1,'PacketSkillList']]],
   ['skill3',['Skill3',['../classPacketSkillList.html#a7c0024badfb2c44239a09cec9123b947',1,'PacketSkillList']]],

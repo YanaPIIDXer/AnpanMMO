@@ -13,7 +13,7 @@ var searchData=
   ['activegamemode_2eh',['ActiveGameMode.h',['../ActiveGameMode_8h.html',1,'']]],
   ['activequestid',['ActiveQuestId',['../classPacketQuestData.html#ad5b509172438c4a6d8b2fda71d006239',1,'PacketQuestData']]],
   ['add',['Add',['../classBuffManager.html#a7c9dbf53816c94a8a48e6e2f4d6c750f',1,'BuffManager::Add()'],['../classPlayerManager.html#ad65d7640778fe9fc5ae019a3cc9d44c4',1,'PlayerManager::Add()'],['../classItemList.html#a80a0feea2562b67319aa6f6c74982a0d',1,'ItemList::Add()'],['../classQuestManager.html#add9cb020fe2b4bf1e4268d4c089f160d',1,'QuestManager::Add()']]],
-  ['addbuff',['AddBuff',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa2687bb35aa108c84a5041adb388e8097',1,'PacketID::AddBuff()'],['../classACharacterBase.html#a370c7218886690da289be3e97aff35ae',1,'ACharacterBase::AddBuff()']]],
+  ['addbuff',['AddBuff',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa2687bb35aa108c84a5041adb388e8097',1,'PacketID::AddBuff()'],['../classUMainHUD.html#a33daa0858d7c7d1d284e7c345c48eee9',1,'UMainHUD::AddBuff()'],['../classACharacterBase.html#a370c7218886690da289be3e97aff35ae',1,'ACharacterBase::AddBuff()']]],
   ['addexp',['AddExp',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaa3e5813f01c01be847c25562805ea1a0',1,'PacketID']]],
   ['additem',['AddItem',['../classUWarpAreaList.html#a49d3905ff255facf0cc1b32091bd36d7',1,'UWarpAreaList::AddItem()'],['../classAGameCharacter.html#a3fb8ef5ca374f5644926b3357d443d9b',1,'AGameCharacter::AddItem()'],['../classPlayerStatus.html#a9489711490f9e6c8e5a2d375d82b7daf',1,'PlayerStatus::AddItem()']]],
   ['additem_5fimplementation',['AddItem_Implementation',['../classUWarpAreaList.html#a2603293d463ffd1f3eeb3b8cd8edd745',1,'UWarpAreaList']]],
@@ -75,6 +75,7 @@ var searchData=
   ['attack',['ATTACK',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8a63452507f8c07b55c794840596f413b6',1,'SkillItem']]],
   ['auto_5fheal',['AUTO_HEAL',['../structBuffItem.html#a12e61e693a7451bf0a79be165a9dda3cadfe1ad3f1298e4bb7cdedb96f5203e6b',1,'BuffItem']]],
   ['autoheal',['AutoHeal',['../BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095ca7170fe5067524b4558e10a7e4379b9d4',1,'BuffIcon.h']]],
+  ['autokey',['AutoKey',['../structShopItem.html#a5941a8eb4b9e9afd1265dc2656647438',1,'ShopItem']]],
   ['automode',['AutoMode',['../SkillStateBase_8h.html#a1c04a4ee3c5d7bd26f9b7e7262f18b96a38d868553c84b0db74263422354e899b',1,'SkillStateBase.h']]],
   ['awarppoint',['AWarpPoint',['../classAWarpPoint.html',1,'AWarpPoint'],['../classAWarpPoint.html#a88236ca16752fe836a1e66bbe9c66e57',1,'AWarpPoint::AWarpPoint()']]]
 ];
