@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: ShopMaster クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classShopMaster-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">ShopMaster クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ShopMaster_8h_source.html">ShopMaster.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3735ef1cb277d3dd971d43de2b5cb702"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShopMaster.html#a3735ef1cb277d3dd971d43de2b5cb702">Load</a> (const <a class="el" href="classMySqlConnection.html">MySqlConnection</a> &amp;Connection)</td></tr>
+<tr class="separator:a3735ef1cb277d3dd971d43de2b5cb702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d994a83391108af12f8f2fd20170769"><td class="memItemLeft" align="right" valign="top">std::vector&lt; const <a class="el" href="structShopItem.html">ShopItem</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShopMaster.html#a7d994a83391108af12f8f2fd20170769">CollectItems</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Key, <a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a> SheetIndex=0) const</td></tr>
+<tr class="separator:a7d994a83391108af12f8f2fd20170769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07830ac51f1fb6992738bb8cbf805c79"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structShopItem.html">ShopItem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShopMaster.html#a07830ac51f1fb6992738bb8cbf805c79">GetAll</a> () const</td></tr>
+<tr class="separator:a07830ac51f1fb6992738bb8cbf805c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a7d994a83391108af12f8f2fd20170769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d994a83391108af12f8f2fd20170769">&#9670;&nbsp;</a></span>CollectItems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; const <a class="el" href="structShopItem.html">ShopItem</a> * &gt; ShopMaster::CollectItems </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>Key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aa62c75d314a0d1f37f79c4b73b2292e2">s32</a>&#160;</td>
+          <td class="paramname"><em>SheetIndex</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07830ac51f1fb6992738bb8cbf805c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07830ac51f1fb6992738bb8cbf805c79">&#9670;&nbsp;</a></span>GetAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structShopItem.html">ShopItem</a> &gt; ShopMaster::GetAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classShopMaster_a07830ac51f1fb6992738bb8cbf805c79_icgraph.png" border="0" usemap="#classShopMaster_a07830ac51f1fb6992738bb8cbf805c79_icgraph" alt=""/></div>
+<map name="classShopMaster_a07830ac51f1fb6992738bb8cbf805c79_icgraph" id="classShopMaster_a07830ac51f1fb6992738bb8cbf805c79_icgraph">
+<area shape="rect" id="node2" href="classShopManager.html#a90f46772a939484aa3ffdeed59ed148d" title="初期化 " alt="" coords="189,5,347,32"/>
+<area shape="rect" id="node3" href="Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="395,5,445,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3735ef1cb277d3dd971d43de2b5cb702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3735ef1cb277d3dd971d43de2b5cb702">&#9670;&nbsp;</a></span>Load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ShopMaster::Load </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMySqlConnection.html">MySqlConnection</a> &amp;&#160;</td>
+          <td class="paramname"><em>Connection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classShopMaster_a3735ef1cb277d3dd971d43de2b5cb702_cgraph.png" border="0" usemap="#classShopMaster_a3735ef1cb277d3dd971d43de2b5cb702_cgraph" alt=""/></div>
+<map name="classShopMaster_a3735ef1cb277d3dd971d43de2b5cb702_cgraph" id="classShopMaster_a3735ef1cb277d3dd971d43de2b5cb702_cgraph">
+<area shape="rect" id="node2" href="classMySqlConnection.html#adbc84aace3d28a910acd38a757034916" title="MySqlConnection::CreateQuery" alt="" coords="181,5,387,32"/>
+<area shape="rect" id="node3" href="classMySqlQuery.html#aad5f86cf405f21600709c19a3b605215" title="MySqlQuery::BindResultInt" alt="" coords="195,56,373,83"/>
+<area shape="rect" id="node5" href="classMySqlQuery.html#a62fe367e2ddf5cad93fa52bc77d0fa49" title="MySqlQuery::ExecuteQuery" alt="" coords="191,107,377,133"/>
+<area shape="rect" id="node7" href="classMySqlQuery.html#a7fc7ae2045620aa9c19e8c59dea7b087" title="MySqlQuery::Fetch" alt="" coords="217,157,351,184"/>
+<area shape="rect" id="node4" href="classMySqlBinds.html#a46b9423237690f11f08027a781186522" title="MySqlBinds::AddInt" alt="" coords="435,56,572,83"/>
+<area shape="rect" id="node6" href="classMySqlBinds.html#aabfe21824abcf75f0a7af0a69ceceb05" title="MySqlBinds::Get" alt="" coords="443,107,564,133"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classShopMaster_a3735ef1cb277d3dd971d43de2b5cb702_icgraph.png" border="0" usemap="#classShopMaster_a3735ef1cb277d3dd971d43de2b5cb702_icgraph" alt=""/></div>
+<map name="classShopMaster_a3735ef1cb277d3dd971d43de2b5cb702_icgraph" id="classShopMaster_a3735ef1cb277d3dd971d43de2b5cb702_icgraph">
+<area shape="rect" id="node2" href="classMasterData.html#a587c8336b9027e845ff28b4fd34fbcde" title="読み込み " alt="" coords="181,5,308,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="ShopMaster_8h_source.html">ShopMaster.h</a></li>
+<li><a class="el" href="ShopMaster_8cpp.html">ShopMaster.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -14,6 +14,10 @@
 #include "ClientState/ClientStateBase.h"
 #include "ClientState/ClientStateTitle.h"
 #include "Character/Player/PlayerCharacter.h"
+#include "Shop/ShopManager.h"
+#include "Master/MasterData.h"
+#include "Packet/PacketBuyItemResult.h"
+#include "Packet/PacketSellItemResult.h"
 
 // コンストラクタ
 Client::Client(const shared_ptr<tcp::socket> &pInSocket)
@@ -117,6 +121,70 @@ void Client::OnKilledAnpan(u32 AreaId)
 u8 Client::RetireQuest(u32 QuestId)
 {
 	return QuestMgr.Retire(QuestId);
+}
+
+// アイテム購入.
+u8 Client::BuyItem(u32 ShopId, u32 ItemId, u32 Count)
+{
+	// 有効なショップか？
+	if (Script.GetCurrentShopId() != ShopId || !ShopManager::GetInstance().IsValidShop(ShopId)) { return PacketBuyItemResult::InvalidShopId; }
+
+	// 売られているか？
+	if (!ShopManager::GetInstance().IsSelling(ShopId, ItemId)) { return PacketBuyItemResult::NotSelling; }
+
+	u32 ItemBuyGold = 0;
+	if (ItemId < 10000)
+	{
+		const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().GetItem(ItemId);
+		if (pItem == NULL) { return PacketBuyItemResult::InvalidItem; }
+		ItemBuyGold = pItem->BuyGold;
+	}
+	else
+	{
+		const EquipItem *pItem = MasterData::GetInstance().GetEquipMaster().GetItem(ItemId);
+		if (pItem == NULL) { return PacketBuyItemResult::InvalidItem; }
+		ItemBuyGold = pItem->BuyGold;
+	}
+
+	// 金が足りるか？
+	u32 BuyGold = ItemBuyGold * Count;
+	if (pCharacter->GetGold() < BuyGold) { return PacketBuyItemResult::NotEnougthGold; }
+
+	// 購入処理.
+	pCharacter->SubtractGold(BuyGold);
+	pCharacter->AddItem(ItemId, Count);
+
+	return PacketBuyItemResult::Success;
+}
+
+// アイテム売却.
+u8 Client::SellItem(u32 ShopId, u32 ItemId, u32 Count)
+{
+	// 有効なショップか？
+	if (Script.GetCurrentShopId() != ShopId) { return PacketSellItemResult::InvalidShopId; }
+
+	// アイテムは所持しているか？
+	if (pCharacter->GetItemList().GetCount(ItemId) < Count) { return PacketSellItemResult::NotHaveItem; }
+
+	u32 ItemSellGold = 0;
+	if (ItemId < 10000)
+	{
+		const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().GetItem(ItemId);
+		if (pItem == NULL) { return PacketSellItemResult::InvalidItem; }
+		ItemSellGold = pItem->SellGold;
+	}
+	else
+	{
+		const EquipItem *pItem = MasterData::GetInstance().GetEquipMaster().GetItem(ItemId);
+		if (pItem == NULL) { return PacketSellItemResult::InvalidItem; }
+		ItemSellGold = pItem->SellGold;
+	}
+
+	// 売却処理.
+	pCharacter->SubtractItem(ItemId, Count);
+	pCharacter->AddGold(ItemSellGold * Count);
+
+	return PacketSellItemResult::Success;
 }
 
 

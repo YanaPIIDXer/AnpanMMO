@@ -167,34 +167,44 @@ public:
 		SaveActiveQuest = 0x48,
 		//! スクリプトフラグパケット
 		ScriptFlag = 0x49,
+		//! アイテム購入要求パケット
+		BuyItemRequest = 0x4A,
+		//! アイテム購入結果パケット
+		BuyItemResult = 0x4B,
+		//! アイテム売却要求パケット
+		SellItemRequest = 0x4C,
+		//! アイテム売却結果パケット
+		SellItemResult = 0x4D,
+		//! ショップ終了パケット
+		ExitShop = 0x4E,
 		//! スキル使用パケット
-		SkillUse = 0x4A,
+		SkillUse = 0x4F,
 		//! スキル使用失敗パケット
-		SkillUseFailed = 0x4B,
+		SkillUseFailed = 0x50,
 		//! スキル詠唱開始パケット
-		SkillCast = 0x4C,
+		SkillCast = 0x51,
 		//! スキル詠唱完了パケット
-		SkillCastFinish = 0x4D,
+		SkillCastFinish = 0x52,
 		//! スキル発動パケット
-		SkillActivate = 0x4E,
+		SkillActivate = 0x53,
 		//! リキャスト完了パケット
-		SkillRecast = 0x4F,
+		SkillRecast = 0x54,
 		//! スキルリストパケット
-		SkillList = 0x50,
+		SkillList = 0x55,
 		//! スキルリスト保存リクエストパケット
-		SaveSkillListRequest = 0x51,
+		SaveSkillListRequest = 0x56,
 		//! スキルリスト保存レスポンスパケット
-		SaveSkillListResponse = 0x52,
+		SaveSkillListResponse = 0x57,
 		//! スキルツリーデータパケット
-		SkillTreeData = 0x53,
+		SkillTreeData = 0x58,
 		//! スキルツリー開放要求パケット
-		SkillTreeOpenRequest = 0x54,
+		SkillTreeOpenRequest = 0x59,
 		//! スキルツリー開放結果パケット
-		SkillTreeOpenResult = 0x55,
+		SkillTreeOpenResult = 0x5A,
 		//! ログイン時の時間通知パケット
-		Time = 0x56,
+		Time = 0x5B,
 		//! 時間変化通知パケット
-		TimeChange = 0x57,
+		TimeChange = 0x5C,
 		
 	};
 };

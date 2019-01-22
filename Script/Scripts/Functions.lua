@@ -64,3 +64,10 @@ function IsQuestClear(QuestId)
 	local bIsClear = IsQuestClear_Impl(this, QuestId)
 	return bIsClear
 end
+
+-- ショップ画面を表示
+function ShowShop(ShopId)
+	ShowShop_Impl(this, ShopId)
+	coroutine.yield(1)
+end
+

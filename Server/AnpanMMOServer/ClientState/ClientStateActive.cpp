@@ -70,6 +70,11 @@
 #include "Packet/PacketChangeEquipResult.h"
 #include "Packet/CachePacketSaveEquipRequest.h"
 #include "Packet/CachePacketSaveEquipResponse.h"
+#include "Packet/PacketBuyItemRequest.h"
+#include "Packet/PacketBuyItemResult.h"
+#include "Packet/PacketSellItemRequest.h"
+#include "Packet/PacketSellItemResult.h"
+#include "Packet/PacketExitShop.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -102,6 +107,9 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::SaveActiveQuest, boost::bind(&ClientStateActive::OnRecvSaveActiveQuest, this, _2));
 	AddPacketFunction(PacketID::ChangeEquipRequest, boost::bind(&ClientStateActive::OnRecvChangeEquipRequest, this, _2));
 	AddPacketFunction(CachePacketID::CacheSaveEquipResponse, boost::bind(&ClientStateActive::OnRecvCacheSaveEquipResponse, this, _2));
+	AddPacketFunction(PacketID::BuyItemRequest, boost::bind(&ClientStateActive::OnRecvBuyItemRequest, this, _2));
+	AddPacketFunction(PacketID::SellItemRequest, boost::bind(&ClientStateActive::OnRecvSellItemRequest, this, _2));
+	AddPacketFunction(PacketID::ExitShop, boost::bind(&ClientStateActive::OnRecvExitShop, this, _2));
 }
 
 // State開始時の処理.
@@ -702,6 +710,43 @@ bool ClientStateActive::OnRecvCacheSaveEquipResponse(MemoryStreamInterface *pStr
 
 	PacketChangeEquipResult ResultPacket(Result, Packet.RightEquip, Packet.LeftEquip, GetParent()->GetCharacter().lock()->GetParameter().GetMaxHp());
 	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
+}
+
+// アイテム購入要求を受信した。
+bool ClientStateActive::OnRecvBuyItemRequest(MemoryStreamInterface *pStream)
+{
+	PacketBuyItemRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	u8 Result = GetParent()->BuyItem(Packet.ShopId, Packet.ItemId, Packet.Count);
+	PacketBuyItemResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
+}
+
+// アイテム売却要求を受信した。
+bool ClientStateActive::OnRecvSellItemRequest(MemoryStreamInterface *pStream)
+{
+	PacketSellItemRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	u8 Result = GetParent()->SellItem(Packet.ShopId, Packet.ItemId, Packet.Count);
+	PacketSellItemResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
+
+	return true;
+}
+
+// ショップ終了を受信した。
+bool ClientStateActive::OnRecvExitShop(MemoryStreamInterface *pStream)
+{
+	PacketExitShop Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	GetParent()->ExitShop();
 
 	return true;
 }

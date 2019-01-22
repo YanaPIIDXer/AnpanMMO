@@ -1,9 +1,9 @@
 <map id="WordCheckServer" name="WordCheckServer">
 <area shape="rect" id="node1" href="dir_d043026432c33c73ac89c9d311d6042d.html" title="WordCheckServer" alt="" coords="27,52,154,100"/>
 <area shape="rect" id="node2" href="dir_58500045402c98f32a20fd6026d67718.html" title="Packet" alt="" coords="19,148,91,196"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000027_000008.html" title="2" alt="" coords="74,127,82,141"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000028_000008.html" title="2" alt="" coords="74,127,82,141"/>
 <area shape="rect" id="node3" href="dir_416025173e9d3c4ed9ac1b0f9d5bd539.html" title="MemoryStream" alt="" coords="35,244,146,292"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000027_000018.html" title="3" alt="" coords="103,220,111,235"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000008_000018.html" title="132" alt="" coords="73,217,94,231"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000028_000018.html" title="3" alt="" coords="103,220,111,235"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000008_000018.html" title="137" alt="" coords="73,217,94,231"/>
 <area shape="rect" id="clust1" href="dir_104671812d6ac98404240912dbee628b.html" title="AnpanMMOServer" alt="" coords="16,16,165,111"/>
 </map>

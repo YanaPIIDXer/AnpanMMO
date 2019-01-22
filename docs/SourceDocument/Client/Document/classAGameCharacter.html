@@ -205,6 +205,10 @@ AGameCharacter 連携図</div>
 <tr class="separator:aeb2f9b1cf34cc7ec98df569c52877b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a0d870eff064b8bab5cfa70d8557376"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#a9a0d870eff064b8bab5cfa70d8557376">OnRespawn</a> () override</td></tr>
 <tr class="separator:a9a0d870eff064b8bab5cfa70d8557376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554656ce744b32c72d951bc90f279f9c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#a554656ce744b32c72d951bc90f279f9c">OnAddedBuff</a> (uint32 BuffId) override</td></tr>
+<tr class="separator:a554656ce744b32c72d951bc90f279f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072b43480eaf34c68c1c7ac1b9ed06ea"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAGameCharacter.html#a072b43480eaf34c68c1c7ac1b9ed06ea">OnRemovedBuff</a> (uint8 Type) override</td></tr>
+<tr class="separator:a072b43480eaf34c68c1c7ac1b9ed06ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classACharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classACharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classACharacterBase.html">ACharacterBase</a> に属する継承限定公開メンバ関数</td></tr>
 <tr class="memitem:a78583d70312aa528063c53a6cd4bfab7 inherit pro_methods_classACharacterBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#a78583d70312aa528063c53a6cd4bfab7">Initialize</a> (int32 InHp, int32 InMaxHp)</td></tr>
 <tr class="separator:a78583d70312aa528063c53a6cd4bfab7 inherit pro_methods_classACharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -790,6 +794,47 @@ AGameCharacter 連携図</div>
 
 </div>
 </div>
+<a id="a554656ce744b32c72d951bc90f279f9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a554656ce744b32c72d951bc90f279f9c">&#9670;&nbsp;</a></span>OnAddedBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AGameCharacter::OnAddedBuff </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>BuffId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classACharacterBase.html#aa0c6f6215cc9a9cb0e2854b742440f9f">ACharacterBase</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAGameCharacter_a554656ce744b32c72d951bc90f279f9c_cgraph.png" border="0" usemap="#classAGameCharacter_a554656ce744b32c72d951bc90f279f9c_cgraph" alt=""/></div>
+<map name="classAGameCharacter_a554656ce744b32c72d951bc90f279f9c_cgraph" id="classAGameCharacter_a554656ce744b32c72d951bc90f279f9c_cgraph">
+<area shape="rect" id="node2" href="classAActiveGameMode.html#ae918e1128e7ca8d06a548631f99efa90" title="AActiveGameMode::GetMainHUD" alt="" coords="260,31,477,57"/>
+<area shape="rect" id="node3" href="classUMainHUD.html#a33daa0858d7c7d1d284e7c345c48eee9" title="UMainHUD::AddBuff" alt="" coords="299,81,438,108"/>
+<area shape="rect" id="node4" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="532,5,699,32"/>
+<area shape="rect" id="node5" href="classMasterData.html#add70adacadbd762d47db11d96fd7e018" title="MasterData::GetBuffMaster" alt="" coords="525,56,705,83"/>
+<area shape="rect" id="node6" href="classBuffMaster.html#a7e4856211b8fc6e6207c53219b097b86" title="BuffMaster::Get" alt="" coords="559,107,672,133"/>
+<area shape="rect" id="node7" href="classUMainHUD.html#a998cf5f13d0fb24e0140dbbc5c6715e8" title="UMainHUD::OnAddBuff" alt="" coords="537,157,693,184"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="af156c2a2529aebbfc371872a06c80928"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af156c2a2529aebbfc371872a06c80928">&#9670;&nbsp;</a></span>OnLevelUp()</h2>
 
@@ -991,6 +1036,44 @@ AGameCharacter 連携図</div>
 <div class="center"><img src="classAGameCharacter_a78768138a67f8c68a7877003fc06d4ec_cgraph.png" border="0" usemap="#classAGameCharacter_a78768138a67f8c68a7877003fc06d4ec_cgraph" alt=""/></div>
 <map name="classAGameCharacter_a78768138a67f8c68a7877003fc06d4ec_cgraph" id="classAGameCharacter_a78768138a67f8c68a7877003fc06d4ec_cgraph">
 <area shape="rect" id="node2" href="classPlayerStatus.html#a18f01153e9a03d9c35913337bc4a1f8b" title="PlayerStatus::SetSkillList" alt="" coords="275,5,445,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a072b43480eaf34c68c1c7ac1b9ed06ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a072b43480eaf34c68c1c7ac1b9ed06ea">&#9670;&nbsp;</a></span>OnRemovedBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AGameCharacter::OnRemovedBuff </td>
+          <td>(</td>
+          <td class="paramtype">uint8&#160;</td>
+          <td class="paramname"><em>Type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classACharacterBase.html#abb963d3a38f7864bee587166b392bf3a">ACharacterBase</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAGameCharacter_a072b43480eaf34c68c1c7ac1b9ed06ea_cgraph.png" border="0" usemap="#classAGameCharacter_a072b43480eaf34c68c1c7ac1b9ed06ea_cgraph" alt=""/></div>
+<map name="classAGameCharacter_a072b43480eaf34c68c1c7ac1b9ed06ea_cgraph" id="classAGameCharacter_a072b43480eaf34c68c1c7ac1b9ed06ea_cgraph">
+<area shape="rect" id="node2" href="classAActiveGameMode.html#ae918e1128e7ca8d06a548631f99efa90" title="AActiveGameMode::GetMainHUD" alt="" coords="276,5,493,32"/>
+<area shape="rect" id="node3" href="classUMainHUD.html#a343a3f8787ce50509af7cf8c87c653a4" title="UMainHUD::RemoveBuff" alt="" coords="303,56,466,83"/>
+<area shape="rect" id="node4" href="classUMainHUD.html#a45f8b11f9bacad098e72224a1c2daf2b" title="UMainHUD::OnRemoveBuff" alt="" coords="541,56,720,83"/>
 </map>
 </div>
 

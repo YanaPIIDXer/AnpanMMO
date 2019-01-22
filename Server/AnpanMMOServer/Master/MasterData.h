@@ -24,6 +24,7 @@
 #include "LevelMaster.h"
 #include "EquipMaster.h"
 #include "BuffMaster.h"
+#include "ShopMaster.h"
 
 /**
  * @class MasterData
@@ -168,6 +169,13 @@ public:
 	 */
 	const BuffMaster &GetBuffMaster() { return Buff; }
 
+	/**
+	 * @fn const ShopMaster &GetShopMaster()
+	 * @brief ショップマスタ取得
+	 * @return ショップマスタ
+	 */
+	const ShopMaster &GetShopMaster() { return Shop; }
+
 private:
 
 	// DBホスト
@@ -232,6 +240,9 @@ private:
 
 	// バフマスタ
 	BuffMaster Buff;
+
+	// ショップマスタ
+	ShopMaster Shop;
 
 	// ======= Singleton ==========
 public:

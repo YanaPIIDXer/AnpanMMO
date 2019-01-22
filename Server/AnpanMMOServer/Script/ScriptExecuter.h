@@ -22,6 +22,8 @@ public:
 	// クライアントをセット。
 	void SetClient(Client *pInClient) { pClient = pInClient; }
 
+	u32 GetCurrentShopId() const { return CurrentShopId; }
+
 	// 読み込んで実行.
 	void LoadAndRun(const std::string &FileName);
 
@@ -61,6 +63,12 @@ public:
 	// クエストをクリアしているか？
 	virtual bool IsQuestClear(u32 QuestId);
 
+	// ショップ画面表示
+	virtual void ShowShop_Impl(u32 ShopId) { CurrentShopId = ShopId; }
+
+	// ショップ終了,
+	void ExitShop();
+
 protected:
 
 	// 実行エラー
@@ -79,6 +87,9 @@ private:
 
 	// クライアント
 	Client *pClient;
+
+	// 現在のショップＩＤ
+	u32 CurrentShopId;
 
 };
 

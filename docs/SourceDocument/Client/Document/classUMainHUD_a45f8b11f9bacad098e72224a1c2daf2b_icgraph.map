@@ -1,0 +1,4 @@
+<map id="UMainHUD::OnRemoveBuff" name="UMainHUD::OnRemoveBuff">
+<area shape="rect" id="node2" href="$classUMainHUD.html#a343a3f8787ce50509af7cf8c87c653a4" title="UMainHUD::RemoveBuff" alt="" coords="232,5,395,32"/>
+<area shape="rect" id="node3" href="$classAGameCharacter.html#a072b43480eaf34c68c1c7ac1b9ed06ea" title="AGameCharacter::OnRemovedBuff" alt="" coords="443,5,665,32"/>
+</map>

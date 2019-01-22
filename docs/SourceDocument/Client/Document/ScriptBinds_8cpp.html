@@ -129,6 +129,9 @@ ScriptBinds.cpp の依存先関係図:</div>
 <tr class="memitem:ab3c2ca074e8c0e11c58380502945dbf1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#ab3c2ca074e8c0e11c58380502945dbf1">IsQuestClear_Call</a> (lua_State *pState)</td></tr>
 <tr class="memdesc:ab3c2ca074e8c0e11c58380502945dbf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストをクリアしているか？  <a href="#ab3c2ca074e8c0e11c58380502945dbf1">[詳解]</a><br /></td></tr>
 <tr class="separator:ab3c2ca074e8c0e11c58380502945dbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a911706df723be6c3db1e68936d421"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ScriptBinds_8cpp.html#af8a911706df723be6c3db1e68936d421">ShowShop_Call</a> (lua_State *pState)</td></tr>
+<tr class="memdesc:af8a911706df723be6c3db1e68936d421"><td class="mdescLeft">&#160;</td><td class="mdescRight">ショップ画面を表示  <a href="#af8a911706df723be6c3db1e68936d421">[詳解]</a><br /></td></tr>
+<tr class="separator:af8a911706df723be6c3db1e68936d421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>Luaにバインドする関数群定義。 </p>
@@ -573,6 +576,43 @@ ScriptBinds.cpp の依存先関係図:</div>
 <area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="191,5,369,32"/>
 <area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="215,56,345,83"/>
 <area shape="rect" id="node4" href="classScriptExecuterBase.html#a2dbea0176eea2caf05a89e7cb84f5cc4" title="選択肢を表示 " alt="" coords="207,107,353,149"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af8a911706df723be6c3db1e68936d421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8a911706df723be6c3db1e68936d421">&#9670;&nbsp;</a></span>ShowShop_Call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ShowShop_Call </td>
+          <td>(</td>
+          <td class="paramtype">lua_State *&#160;</td>
+          <td class="paramname"><em>pState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ショップ画面を表示 </p>
+<p>スクリプトにバインドされて呼び出される。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pState</td><td>Luaステート </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>戻り値の数 </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="ScriptBinds_8cpp_af8a911706df723be6c3db1e68936d421_cgraph.png" border="0" usemap="#ScriptBinds_8cpp_af8a911706df723be6c3db1e68936d421_cgraph" alt=""/></div>
+<map name="ScriptBinds_8cpp_af8a911706df723be6c3db1e68936d421_cgraph" id="ScriptBinds_8cpp_af8a911706df723be6c3db1e68936d421_cgraph">
+<area shape="rect" id="node2" href="classExecuterPool.html#a6486fd1488679f79d98a381d38dc90e3" title="シングルトンインスタンスを取得 " alt="" coords="167,5,345,32"/>
+<area shape="rect" id="node3" href="classExecuterPool.html#a9b66d5226749969cac44535c27a4aca5" title="ExecuterPool::Get" alt="" coords="191,56,321,83"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a19d278ac0fdd9417d86707e7d4fbea37" title="ショップ画面を表示 " alt="" coords="187,107,325,149"/>
 </map>
 </div>
 

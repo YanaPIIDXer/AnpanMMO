@@ -19,6 +19,7 @@
 #include "QuestRewardMaster.h"
 #include "EquipMaster.h"
 #include "BuffMaster.h"
+#include "ShopMaster.h"
 
 /**
  * マスタデータ
@@ -82,6 +83,9 @@ public:
 	// バフマスタ取得.
 	const BuffMaster &GetBuffMaster() const { return Buff; }
 
+	// ショップマスタ取得.
+	const ShopMaster &GetShopMaster() const { return Shop; }
+
 private:
 
 	// エリアマスタ
@@ -131,6 +135,9 @@ private:
 
 	// バフマスタ
 	BuffMaster Buff;
+
+	// ショップマスタ
+	ShopMaster Shop;
 
 	// =========== Singleton ============
 public:

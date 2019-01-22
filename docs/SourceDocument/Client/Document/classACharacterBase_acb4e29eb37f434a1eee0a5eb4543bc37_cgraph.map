@@ -1,0 +1,4 @@
+<map id="ACharacterBase::RemoveBuff" name="ACharacterBase::RemoveBuff">
+<area shape="rect" id="node2" href="$classBuffManager.html#ac0ad2260c53a48a06c39cb22ea6cfc9a" title="BuffManager::Remove" alt="" coords="281,5,429,32"/>
+<area shape="rect" id="node3" href="$classACharacterBase.html#abb963d3a38f7864bee587166b392bf3a" title="ACharacterBase::OnRemovedBuff" alt="" coords="247,56,464,83"/>
+</map>

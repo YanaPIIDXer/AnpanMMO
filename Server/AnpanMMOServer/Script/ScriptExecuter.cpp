@@ -8,6 +8,8 @@
 
 // コンストラクタ
 ScriptExecuter::ScriptExecuter()
+	: pClient(NULL)
+	, CurrentShopId(0)
 {
 }
 
@@ -88,6 +90,13 @@ void ScriptExecuter::AcceptQuest(u32 QuestId)
 bool ScriptExecuter::IsQuestClear(u32 QuestId)
 {
 	return pClient->GetQuestManager().IsClear(QuestId);
+}
+
+// ショップ終了.
+void ScriptExecuter::ExitShop()
+{
+	CurrentShopId = 0;
+	Resume();
 }
 
 

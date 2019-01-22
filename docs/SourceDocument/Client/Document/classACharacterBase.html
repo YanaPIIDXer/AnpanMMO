@@ -156,6 +156,10 @@ ACharacterBase 連携図</div>
 <tr class="separator:a3c28eff5367dcb442dcd2bc54dcdab10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ed738c98e0a3bd00db6c6c9553cb435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#a7ed738c98e0a3bd00db6c6c9553cb435">SetHP</a> (int InHp)</td></tr>
 <tr class="separator:a7ed738c98e0a3bd00db6c6c9553cb435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0c6f6215cc9a9cb0e2854b742440f9f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#aa0c6f6215cc9a9cb0e2854b742440f9f">OnAddedBuff</a> (uint32 BuffId)</td></tr>
+<tr class="separator:aa0c6f6215cc9a9cb0e2854b742440f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb963d3a38f7864bee587166b392bf3a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classACharacterBase.html#abb963d3a38f7864bee587166b392bf3a">OnRemovedBuff</a> (uint8 Type)</td></tr>
+<tr class="separator:abb963d3a38f7864bee587166b392bf3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>キャラクタ基底クラス </p>
@@ -218,9 +222,6 @@ ACharacterBase 連携図</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ACharacterBase::AddBuff </td>
@@ -230,12 +231,21 @@ ACharacterBase 連携図</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classACharacterBase_a370c7218886690da289be3e97aff35ae_cgraph.png" border="0" usemap="#classACharacterBase_a370c7218886690da289be3e97aff35ae_cgraph" alt=""/></div>
+<map name="classACharacterBase_a370c7218886690da289be3e97aff35ae_cgraph" id="classACharacterBase_a370c7218886690da289be3e97aff35ae_cgraph">
+<area shape="rect" id="node2" href="classBuffManager.html#a7c9dbf53816c94a8a48e6e2f4d6c750f" title="BuffManager::Add" alt="" coords="262,107,387,133"/>
+<area shape="rect" id="node8" href="classACharacterBase.html#aa0c6f6215cc9a9cb0e2854b742440f9f" title="ACharacterBase::OnAddedBuff" alt="" coords="224,157,425,184"/>
+<area shape="rect" id="node3" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="480,5,647,32"/>
+<area shape="rect" id="node4" href="classMasterData.html#add70adacadbd762d47db11d96fd7e018" title="MasterData::GetBuffMaster" alt="" coords="473,56,653,83"/>
+<area shape="rect" id="node5" href="classBuffMaster.html#a7e4856211b8fc6e6207c53219b097b86" title="BuffMaster::Get" alt="" coords="507,107,620,133"/>
+<area shape="rect" id="node6" href="classBuffBase.html#a051339f54817d96b543130aaea3740a5" title="BuffBase::GetType" alt="" coords="498,157,629,184"/>
+<area shape="rect" id="node7" href="classBuffBase.html#aeba91ab5a496290185a37c4f8bf1bba5" title="BuffBase::Begin" alt="" coords="506,208,621,235"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -651,6 +661,42 @@ ACharacterBase 連携図</div>
 
 </div>
 </div>
+<a id="aa0c6f6215cc9a9cb0e2854b742440f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0c6f6215cc9a9cb0e2854b742440f9f">&#9670;&nbsp;</a></span>OnAddedBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ACharacterBase::OnAddedBuff </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>BuffId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAGameCharacter.html#a554656ce744b32c72d951bc90f279f9c">AGameCharacter</a>で再実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classACharacterBase_aa0c6f6215cc9a9cb0e2854b742440f9f_icgraph.png" border="0" usemap="#classACharacterBase_aa0c6f6215cc9a9cb0e2854b742440f9f_icgraph" alt=""/></div>
+<map name="classACharacterBase_aa0c6f6215cc9a9cb0e2854b742440f9f_icgraph" id="classACharacterBase_aa0c6f6215cc9a9cb0e2854b742440f9f_icgraph">
+<area shape="rect" id="node2" href="classACharacterBase.html#a370c7218886690da289be3e97aff35ae" title="ACharacterBase::AddBuff" alt="" coords="255,5,425,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ab2b8f5ba7c8e642dfbb1734db1ba7038"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2b8f5ba7c8e642dfbb1734db1ba7038">&#9670;&nbsp;</a></span>OnDamaged()</h2>
 
@@ -919,6 +965,42 @@ ACharacterBase 連携図</div>
 
 </div>
 </div>
+<a id="abb963d3a38f7864bee587166b392bf3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb963d3a38f7864bee587166b392bf3a">&#9670;&nbsp;</a></span>OnRemovedBuff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ACharacterBase::OnRemovedBuff </td>
+          <td>(</td>
+          <td class="paramtype">uint8&#160;</td>
+          <td class="paramname"><em>Type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAGameCharacter.html#a072b43480eaf34c68c1c7ac1b9ed06ea">AGameCharacter</a>で再実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classACharacterBase_abb963d3a38f7864bee587166b392bf3a_icgraph.png" border="0" usemap="#classACharacterBase_abb963d3a38f7864bee587166b392bf3a_icgraph" alt=""/></div>
+<map name="classACharacterBase_abb963d3a38f7864bee587166b392bf3a_icgraph" id="classACharacterBase_abb963d3a38f7864bee587166b392bf3a_icgraph">
+<area shape="rect" id="node2" href="classACharacterBase.html#acb4e29eb37f434a1eee0a5eb4543bc37" title="ACharacterBase::RemoveBuff" alt="" coords="271,5,464,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ae4ee36362eee31572b8753be2010a2bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4ee36362eee31572b8753be2010a2bb">&#9670;&nbsp;</a></span>OnSkillActivate()</h2>
 
@@ -1016,9 +1098,6 @@ ACharacterBase 連携図</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ACharacterBase::RemoveBuff </td>
@@ -1028,12 +1107,16 @@ ACharacterBase 連携図</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classACharacterBase_acb4e29eb37f434a1eee0a5eb4543bc37_cgraph.png" border="0" usemap="#classACharacterBase_acb4e29eb37f434a1eee0a5eb4543bc37_cgraph" alt=""/></div>
+<map name="classACharacterBase_acb4e29eb37f434a1eee0a5eb4543bc37_cgraph" id="classACharacterBase_acb4e29eb37f434a1eee0a5eb4543bc37_cgraph">
+<area shape="rect" id="node2" href="classBuffManager.html#ac0ad2260c53a48a06c39cb22ea6cfc9a" title="BuffManager::Remove" alt="" coords="281,5,429,32"/>
+<area shape="rect" id="node3" href="classACharacterBase.html#abb963d3a38f7864bee587166b392bf3a" title="ACharacterBase::OnRemovedBuff" alt="" coords="247,56,464,83"/>
+</map>
+</div>
 
 </div>
 </div>

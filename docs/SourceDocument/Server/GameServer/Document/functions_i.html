@@ -93,7 +93,8 @@ $(function() {
 : <a class="el" href="structQuestStageItem.html#afe56ec3987576d63543f1a5f028e9e84">QuestStageItem</a>
 </li>
 <li>ID
-: <a class="el" href="structSkillItem.html#a883095aeaa9063e45fc0e0f9c6716cc6">SkillItem</a>
+: <a class="el" href="structShopItem.html#a7f59c08fe2abd90c2c9dbc50d4f3cc23">ShopItem</a>
+, <a class="el" href="structSkillItem.html#a883095aeaa9063e45fc0e0f9c6716cc6">SkillItem</a>
 , <a class="el" href="structSkillTreeItem.html#a6820adb320d0d562929a8209da1b29e4">SkillTreeItem</a>
 </li>
 <li>Id
@@ -128,6 +129,7 @@ $(function() {
 , <a class="el" href="classAreaBase.html#ae74987dcc73ea4aaab94ba432cc608ea">AreaBase</a>
 , <a class="el" href="classAreaManager.html#a8657ae85994cc5505cce3db3968dfb6e">AreaManager</a>
 , <a class="el" href="classInstanceArea.html#aca5cdff8995ab000177e32b6fb9c4c7b">InstanceArea</a>
+, <a class="el" href="classShopManager.html#a90f46772a939484aa3ffdeed59ed148d">ShopManager</a>
 , <a class="el" href="classTimeManager.html#a9b0fb8112689de85ff3b88ce128f01e3">TimeManager</a>
 </li>
 <li>InitializeSkillTree()
@@ -167,6 +169,14 @@ $(function() {
 <li>Int
 : <a class="el" href="classPacketCharacterStatus.html#ad6ed4039c1ac02b2339bb53db8d1527e">PacketCharacterStatus</a>
 , <a class="el" href="classPacketLevelUp.html#ace2b171fcf7a735f7332b29a5687e906">PacketLevelUp</a>
+</li>
+<li>InvalidItem
+: <a class="el" href="classPacketBuyItemResult.html#a6c9f85363c4310b31d62d0cd68da40f0ae53dff2f23d93ac0dd1b8d35b3c7fad3">PacketBuyItemResult</a>
+, <a class="el" href="classPacketSellItemResult.html#a07d2f334d50011bcfc17d017f5e653ecac1c043f94ec8e75bd87cb6b8224f995e">PacketSellItemResult</a>
+</li>
+<li>InvalidShopId
+: <a class="el" href="classPacketBuyItemResult.html#a6c9f85363c4310b31d62d0cd68da40f0a7935bb21743fcc474d8ac115b344b72d">PacketBuyItemResult</a>
+, <a class="el" href="classPacketSellItemResult.html#a07d2f334d50011bcfc17d017f5e653eca977bf6a52301500391a125d4542371ce">PacketSellItemResult</a>
 </li>
 <li>InvalidSkill
 : <a class="el" href="classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a13304221db91be881d6e5b8496026952">PacketSkillUseFailed</a>
@@ -258,6 +268,9 @@ $(function() {
 <li>IsRotating()
 : <a class="el" href="classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9">AnpanAIStateBase</a>
 </li>
+<li>IsSelling()
+: <a class="el" href="classShopManager.html#ad1ab6b40d3ef0620244438057325e02d">ShopManager</a>
+</li>
 <li>IsServer()
 : <a class="el" href="classScriptExecuter.html#a61ceae86cc63c5e43490ddb7266f80e6">ScriptExecuter</a>
 , <a class="el" href="classScriptExecuterBase.html#ae97d2e75f677b3cd7de46c6465ffc101">ScriptExecuterBase</a>
@@ -267,6 +280,9 @@ $(function() {
 </li>
 <li>IsSkillCasting()
 : <a class="el" href="classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f">CharacterBase</a>
+</li>
+<li>IsValidShop()
+: <a class="el" href="classShopManager.html#af1e17fb188e4fa5d5e27133ba68da5b3">ShopManager</a>
 </li>
 <li>IsWaiting()
 : <a class="el" href="classInstanceAreaTicket.html#a7ca59816fd46a7ab22722016557eea53">InstanceAreaTicket</a>
@@ -282,16 +298,19 @@ $(function() {
 : <a class="el" href="classPacketID.html#aaac69b977036b9b9d40419b939c1570aae41d8d8fb10bfb0bcbcc5311426aa796">PacketID</a>
 </li>
 <li>ItemData()
-: <a class="el" href="classItemData.html#a3a1b6240b016a82fa65b450f98a35f6c">ItemData</a>
+: <a class="el" href="classItemData.html#aa51b1cee55620bcd0b5fbde312f9135e">ItemData</a>
 </li>
 <li>ItemId
 : <a class="el" href="classCachePacketItemCountChangeRequest.html#a8bddf8b44fc2ef02f5d7b6f4ac3ba60c">CachePacketItemCountChangeRequest</a>
 , <a class="el" href="classItemData.html#aa2a559bcf77556c987e338010406cb17">ItemData</a>
+, <a class="el" href="classPacketBuyItemRequest.html#a2bcd2c081577389ec8e1def8753b96fb">PacketBuyItemRequest</a>
 , <a class="el" href="classPacketItemAdd.html#aae2ab4223f61bcbf58ba7a4725e3b414">PacketItemAdd</a>
 , <a class="el" href="classPacketItemSubtract.html#a855dfc80ae2268077122ca79ac57599e">PacketItemSubtract</a>
 , <a class="el" href="classPacketItemSubtractRequest.html#a0635f9e5cdc380e33fe866b775f048a2">PacketItemSubtractRequest</a>
 , <a class="el" href="classPacketItemUse.html#a6d9b3fbb79bb8133c83bd09bb680cc2d">PacketItemUse</a>
+, <a class="el" href="classPacketSellItemRequest.html#a22c638c06af6f44558de081962802e64">PacketSellItemRequest</a>
 , <a class="el" href="structQuestRewardItem.html#a9d51a6d3f9313a86af814dd219fa138c">QuestRewardItem</a>
+, <a class="el" href="structShopItem.html#ad38846648b2c4b3e909d63acf3d63c29">ShopItem</a>
 </li>
 <li>ItemId1
 : <a class="el" href="classCachePacketItemShortcutResponse.html#abdf1c9fd2a50966322bd5519e7775ddc">CachePacketItemShortcutResponse</a>

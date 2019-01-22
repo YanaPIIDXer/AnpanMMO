@@ -165,6 +165,14 @@ public:
 	 */
 	virtual bool IsQuestClear(u32 QuestId) = 0;
 
+	/**
+	 * @fn virtual void ShowShop_Impl(u32 ShopId)
+	 * @brief ショップ画面を表示
+	 * @details スクリプトを経由して呼ばれる。
+	 * @param[in] ShopId ショップＩＤ
+	 */
+	virtual void ShowShop_Impl(u32 ShopId) = 0;
+
 protected:
 
 	/**

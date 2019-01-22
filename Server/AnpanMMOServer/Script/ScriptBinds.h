@@ -119,4 +119,13 @@ int AcceptQuest_Call(lua_State *pState);
  */
 int IsQuestClear_Call(lua_State *pState);
 
+/**
+ * @fn int ShowShop_Call(lua_State *pState)
+ * @brief ショップ画面を表示
+ * @details スクリプトにバインドされて呼び出される。
+ * @param[in] pState Luaステート
+ * @return 戻り値の数
+ */
+int ShowShop_Call(lua_State *pState);
+
 #endif		// #ifndef __SCRIPTBINDS_H__
