@@ -192,6 +192,7 @@
     <ClInclude Include="Script\ScriptFlag.h" />
     <ClInclude Include="Script\ScriptFlagManager.h" />
     <ClInclude Include="ServerHost.h" />
+    <ClInclude Include="Shop\ShopManager.h" />
     <ClInclude Include="Skill\SkillControl.h" />
     <ClInclude Include="Skill\SkillRecastManager.h" />
     <ClInclude Include="Skill\SkillTree\SkillTree.h" />
@@ -315,6 +316,7 @@
     <ClCompile Include="Script\ScriptExecuterBase.cpp" />
     <ClCompile Include="Script\ScriptFlagManager.cpp" />
     <ClCompile Include="ServerHost.cpp" />
+    <ClCompile Include="Shop\ShopManager.cpp" />
     <ClCompile Include="Skill\SkillControl.cpp" />
     <ClCompile Include="Skill\SkillRecastManager.cpp" />
     <ClCompile Include="Skill\SkillTree\SkillTree.cpp" />

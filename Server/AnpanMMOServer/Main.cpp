@@ -9,6 +9,7 @@
 #include "ServerHost.h"
 #include "CacheServer/CacheServerConnection.h"
 #include "WordCheckServer/WordCheckServerConnection.h"
+#include "Shop/ShopManager.h"
 
 // エントリポイント
 int main()
@@ -22,6 +23,8 @@ int main()
 		std::cout << "Master Read Failed..." << std::endl;
 		return 1;
 	}
+
+	ShopManager::GetInstance().Initialize();
 
 	asio::io_service IOService;
 
