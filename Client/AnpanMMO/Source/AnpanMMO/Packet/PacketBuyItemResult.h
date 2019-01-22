@@ -35,6 +35,8 @@ public:
 		InvalidShopId,
 		//! 売られていない
 		NotSelling,
+		//! 無効なアイテム
+		InvalidItem,
 		//! ゴールドが足りない
 		NotEnougthGold,
 	};

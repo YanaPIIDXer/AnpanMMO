@@ -33,6 +33,8 @@ public:
 		Success,
 		//! 無効なショップＩＤ
 		InvalidShopId,
+		//! 無効なアイテム
+		InvalidItem,
 		//! アイテムを持っていない
 		NotHaveItem,
 	};
