@@ -1,7 +1,9 @@
 <map id="MasterData::GetEquipMaster" name="MasterData::GetEquipMaster">
-<area shape="rect" id="node2" href="$classEquipData.html#ab2787f4b45c9b573455e4efcf5b61574" title="セット " alt="" coords="244,31,355,57"/>
-<area shape="rect" id="node3" href="$classCharacterParameter.html#a2dc63e914e393e56afe4bf96c8c8a881" title="装備切り替え " alt="" coords="403,23,541,65"/>
-<area shape="rect" id="node4" href="$classCharacterBase.html#a0dd1c67ff94ba28b2994f18fe22d70c5" title="装備切り替え " alt="" coords="589,31,809,57"/>
-<area shape="rect" id="node5" href="$classPlayerCharacter.html#a1756fb8cf77600254952d9d42838a65f" title="コンストラクタ " alt="" coords="857,5,1073,32"/>
-<area shape="rect" id="node6" href="$classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="865,56,1065,83"/>
+<area shape="rect" id="node2" href="$classClient.html#af6c7fa5aa8ee2f743b05662027500e4f" title="アイテム購入 " alt="" coords="244,5,355,32"/>
+<area shape="rect" id="node3" href="$classClient.html#abe345875426354bb915689fbe9f2d6db" title="アイテム売却 " alt="" coords="244,56,355,83"/>
+<area shape="rect" id="node4" href="$classEquipData.html#ab2787f4b45c9b573455e4efcf5b61574" title="セット " alt="" coords="244,107,355,133"/>
+<area shape="rect" id="node5" href="$classCharacterParameter.html#a2dc63e914e393e56afe4bf96c8c8a881" title="装備切り替え " alt="" coords="403,99,541,141"/>
+<area shape="rect" id="node6" href="$classCharacterBase.html#a0dd1c67ff94ba28b2994f18fe22d70c5" title="装備切り替え " alt="" coords="589,107,809,133"/>
+<area shape="rect" id="node7" href="$classPlayerCharacter.html#a1756fb8cf77600254952d9d42838a65f" title="コンストラクタ " alt="" coords="857,81,1073,108"/>
+<area shape="rect" id="node8" href="$classPlayerCharacter.html#a77714ad28f705aed148dd5525b8a3596" title="装備切り替え " alt="" coords="865,132,1065,159"/>
 </map>

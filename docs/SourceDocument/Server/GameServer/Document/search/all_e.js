@@ -29,6 +29,7 @@ var searchData=
   ['noticetype',['NoticeType',['../classNoticeData.html#a769a8c112fcdb6aad3f942d18536919d',1,'NoticeData']]],
   ['notopenedparent',['NotOpenedParent',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98af87b1759bf1a639e3e7d4214f59d9612',1,'PacketSkillTreeOpenResult']]],
   ['notpossession',['NotPossession',['../classPacketChangeEquipResult.html#a25f7bc4e626fe16cf83726fed8e7ddcbab50bd5282001c2e47b32cf957b0bbd99',1,'PacketChangeEquipResult']]],
+  ['notselling',['NotSelling',['../classPacketBuyItemResult.html#a6c9f85363c4310b31d62d0cd68da40f0a6e5f0ac3b89115692b3b3797f3723af1',1,'PacketBuyItemResult']]],
   ['npc',['NPC',['../structQuestStageItem.html#ac34f8a22901bc3bf566a261018e56539a843a439338e96be3d8c4460b3c281570',1,'QuestStageItem']]],
   ['npcitem',['NPCItem',['../structNPCItem.html',1,'']]],
   ['npcmaster',['NPCMaster',['../classNPCMaster.html',1,'']]],

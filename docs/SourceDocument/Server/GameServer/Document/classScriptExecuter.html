@@ -96,6 +96,8 @@ ScriptExecuter 連携図</div>
 <tr class="separator:a34b56248bfeb87d760d466876d1b46b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b0cc7279b1e68085e68b2370fb922c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuter.html#a5b0cc7279b1e68085e68b2370fb922c5">SetClient</a> (<a class="el" href="classClient.html">Client</a> *pInClient)</td></tr>
 <tr class="separator:a5b0cc7279b1e68085e68b2370fb922c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c09dc1dcf0781a14fc87c95780bbbd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuter.html#a0c09dc1dcf0781a14fc87c95780bbbd7">GetCurrentShopId</a> () const</td></tr>
+<tr class="separator:a0c09dc1dcf0781a14fc87c95780bbbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cfdd2a171e65ef1d2e7cede671f7326"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326">LoadAndRun</a> (const std::string &amp;FileName)</td></tr>
 <tr class="separator:a1cfdd2a171e65ef1d2e7cede671f7326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fb255567036528da86b17b6f0d1a36e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuter.html#a9fb255567036528da86b17b6f0d1a36e">ShowMessage_Impl</a> (const std::string &amp;Message)</td></tr>
@@ -134,6 +136,11 @@ ScriptExecuter 連携図</div>
 <tr class="memitem:ab71d3a5c4f5ca8a80d8506f3ea2cef99"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuter.html#ab71d3a5c4f5ca8a80d8506f3ea2cef99">IsQuestClear</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> QuestId)</td></tr>
 <tr class="memdesc:ab71d3a5c4f5ca8a80d8506f3ea2cef99"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストをクリアしているか？  <a href="#ab71d3a5c4f5ca8a80d8506f3ea2cef99">[詳解]</a><br /></td></tr>
 <tr class="separator:ab71d3a5c4f5ca8a80d8506f3ea2cef99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade94c90ee2e417802013ce607068fef6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuter.html#ade94c90ee2e417802013ce607068fef6">ShowShop_Impl</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ShopId)</td></tr>
+<tr class="memdesc:ade94c90ee2e417802013ce607068fef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ショップ画面を表示  <a href="#ade94c90ee2e417802013ce607068fef6">[詳解]</a><br /></td></tr>
+<tr class="separator:ade94c90ee2e417802013ce607068fef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de6ddd5ac73b72db48c0b024f743819"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuter.html#a9de6ddd5ac73b72db48c0b024f743819">ExitShop</a> ()</td></tr>
+<tr class="separator:a9de6ddd5ac73b72db48c0b024f743819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classScriptExecuterBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classScriptExecuterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classScriptExecuterBase.html">ScriptExecuterBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:a7806afa83ccf1d9c0b828317fb4ff3e3 inherit pub_methods_classScriptExecuterBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a7806afa83ccf1d9c0b828317fb4ff3e3">ScriptExecuterBase</a> ()</td></tr>
 <tr class="memdesc:a7806afa83ccf1d9c0b828317fb4ff3e3 inherit pub_methods_classScriptExecuterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="classScriptExecuterBase.html#a7806afa83ccf1d9c0b828317fb4ff3e3">[詳解]</a><br /></td></tr>
@@ -322,6 +329,75 @@ ScriptExecuter 連携図</div>
 <div class="center"><img src="classScriptExecuter_a2578ede8840a091ed68a48ab8e5847b5_cgraph.png" border="0" usemap="#classScriptExecuter_a2578ede8840a091ed68a48ab8e5847b5_cgraph" alt=""/></div>
 <map name="classScriptExecuter_a2578ede8840a091ed68a48ab8e5847b5_cgraph" id="classScriptExecuter_a2578ede8840a091ed68a48ab8e5847b5_cgraph">
 <area shape="rect" id="node2" href="classClient.html#a0cda75c99767496a10a7a4e559a8f877" title="キャラクタを取得. " alt="" coords="249,5,389,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9de6ddd5ac73b72db48c0b024f743819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de6ddd5ac73b72db48c0b024f743819">&#9670;&nbsp;</a></span>ExitShop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScriptExecuter::ExitShop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classScriptExecuter_a9de6ddd5ac73b72db48c0b024f743819_cgraph.png" border="0" usemap="#classScriptExecuter_a9de6ddd5ac73b72db48c0b024f743819_cgraph" alt=""/></div>
+<map name="classScriptExecuter_a9de6ddd5ac73b72db48c0b024f743819_cgraph" id="classScriptExecuter_a9de6ddd5ac73b72db48c0b024f743819_cgraph">
+<area shape="rect" id="node2" href="classScriptExecuterBase.html#abdcd42abb73d97defc33559893eace03" title="スクリプトの実行を再開 " alt="" coords="223,39,361,80"/>
+<area shape="rect" id="node3" href="classScriptExecuterBase.html#a2f229d9f75d1399bfd27d3f48d1feea2" title="ScriptExecuterBase\l::OnExecuteError" alt="" coords="409,5,548,47"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a685d08050d61fd1e5c85be0b740a30a6" title="終了コールバック " alt="" coords="409,71,548,112"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classScriptExecuter_a9de6ddd5ac73b72db48c0b024f743819_icgraph.png" border="0" usemap="#classScriptExecuter_a9de6ddd5ac73b72db48c0b024f743819_icgraph" alt=""/></div>
+<map name="classScriptExecuter_a9de6ddd5ac73b72db48c0b024f743819_icgraph" id="classScriptExecuter_a9de6ddd5ac73b72db48c0b024f743819_icgraph">
+<area shape="rect" id="node2" href="classClient.html#a1ef244d009798074407564a9a3f10fd3" title="ショップ終了 " alt="" coords="223,5,339,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c09dc1dcf0781a14fc87c95780bbbd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c09dc1dcf0781a14fc87c95780bbbd7">&#9670;&nbsp;</a></span>GetCurrentShopId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ScriptExecuter::GetCurrentShopId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classScriptExecuter_a0c09dc1dcf0781a14fc87c95780bbbd7_icgraph.png" border="0" usemap="#classScriptExecuter_a0c09dc1dcf0781a14fc87c95780bbbd7_icgraph" alt=""/></div>
+<map name="classScriptExecuter_a0c09dc1dcf0781a14fc87c95780bbbd7_icgraph" id="classScriptExecuter_a0c09dc1dcf0781a14fc87c95780bbbd7_icgraph">
+<area shape="rect" id="node2" href="classClient.html#af6c7fa5aa8ee2f743b05662027500e4f" title="アイテム購入 " alt="" coords="232,5,343,32"/>
+<area shape="rect" id="node3" href="classClient.html#abe345875426354bb915689fbe9f2d6db" title="アイテム売却 " alt="" coords="232,56,343,83"/>
 </map>
 </div>
 
@@ -973,6 +1049,42 @@ ScriptExecuter 連携図</div>
 <p>スクリプトを経由して呼ばれる。 </p>
 
 <p><a class="el" href="classScriptExecuterBase.html#a2dbea0176eea2caf05a89e7cb84f5cc4">ScriptExecuterBase</a>を実装しています。</p>
+
+</div>
+</div>
+<a id="ade94c90ee2e417802013ce607068fef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade94c90ee2e417802013ce607068fef6">&#9670;&nbsp;</a></span>ShowShop_Impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ScriptExecuter::ShowShop_Impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>ShopId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ショップ画面を表示 </p>
+<p>スクリプトを経由して呼ばれる。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ShopId</td><td>ショップＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classScriptExecuterBase.html#a19d278ac0fdd9417d86707e7d4fbea37">ScriptExecuterBase</a>を実装しています。</p>
 
 </div>
 </div>

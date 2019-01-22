@@ -1,0 +1,5 @@
+<map id="ShopManager::Initialize" name="ShopManager::Initialize">
+<area shape="rect" id="node2" href="$classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="221,5,388,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a40017e20f77c77f8a26e0db6eb78cf81" title="ショップマスタ取得 " alt="" coords="211,56,399,83"/>
+<area shape="rect" id="node4" href="$classShopMaster.html#a07830ac51f1fb6992738bb8cbf805c79" title="ShopMaster::GetAll" alt="" coords="237,107,373,133"/>
+</map>

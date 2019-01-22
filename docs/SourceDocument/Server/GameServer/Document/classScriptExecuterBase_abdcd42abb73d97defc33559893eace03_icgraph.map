@@ -1,5 +1,7 @@
 <map id="ScriptExecuterBase::Resume" name="ScriptExecuterBase::Resume">
-<area shape="rect" id="node2" href="$classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="199,5,337,47"/>
-<area shape="rect" id="node4" href="$classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="192,71,344,112"/>
-<area shape="rect" id="node3" href="$classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="392,13,583,39"/>
+<area shape="rect" id="node2" href="$classScriptExecuter.html#a9de6ddd5ac73b72db48c0b024f743819" title="ScriptExecuter::ExitShop" alt="" coords="192,5,361,32"/>
+<area shape="rect" id="node4" href="$classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="207,57,346,98"/>
+<area shape="rect" id="node6" href="$classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="201,122,353,163"/>
+<area shape="rect" id="node3" href="$classClient.html#a1ef244d009798074407564a9a3f10fd3" title="ショップ終了 " alt="" coords="447,5,563,32"/>
+<area shape="rect" id="node5" href="$classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="409,64,600,91"/>
 </map>

@@ -12,6 +12,7 @@ var searchData=
   ['noticelist',['NoticeList',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aabafa66ca029574cfba1a78867788a8f1',1,'PacketID']]],
   ['notopenedparent',['NotOpenedParent',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98af87b1759bf1a639e3e7d4214f59d9612',1,'PacketSkillTreeOpenResult']]],
   ['notpossession',['NotPossession',['../classPacketChangeEquipResult.html#a25f7bc4e626fe16cf83726fed8e7ddcbab50bd5282001c2e47b32cf957b0bbd99',1,'PacketChangeEquipResult']]],
+  ['notselling',['NotSelling',['../classPacketBuyItemResult.html#a6c9f85363c4310b31d62d0cd68da40f0a6e5f0ac3b89115692b3b3797f3723af1',1,'PacketBuyItemResult']]],
   ['npc',['NPC',['../structQuestStageItem.html#a9a181c326e35e8f05e585eec5adc9542a843a439338e96be3d8c4460b3c281570',1,'QuestStageItem::NPC()'],['../CharacterBase_8h.html#ad34afea9f542b01a1f4e6d48fdfe1be3a2bda99597da06a11feafd8760b68aec6',1,'NPC():&#160;CharacterBase.h']]],
   ['npctalk',['NPCTalk',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa30f8a39669378c4936f570e4d029a836',1,'PacketID']]],
   ['npctalkselection',['NPCTalkSelection',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa779b1d5953e6e478879d3878f651e309',1,'PacketID']]],

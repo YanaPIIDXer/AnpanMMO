@@ -22,5 +22,6 @@ var searchData=
   ['buffautoheal',['BuffAutoHeal',['../classBuffAutoHeal.html#ac72bdb569580d6db03b64dff41ff4d8a',1,'BuffAutoHeal']]],
   ['buffbase',['BuffBase',['../classBuffBase.html#a02841bfbfa0306d45499cb1aa3dda968',1,'BuffBase']]],
   ['buffmanager',['BuffManager',['../classBuffManager.html#a860511f926894ba37efc7bb96cc65ec0',1,'BuffManager']]],
-  ['buffspeedup',['BuffSpeedUp',['../classBuffSpeedUp.html#a1bb9bb64882ac24563e656b39cdab5df',1,'BuffSpeedUp']]]
+  ['buffspeedup',['BuffSpeedUp',['../classBuffSpeedUp.html#a1bb9bb64882ac24563e656b39cdab5df',1,'BuffSpeedUp']]],
+  ['buyitem',['BuyItem',['../classClient.html#af6c7fa5aa8ee2f743b05662027500e4f',1,'Client']]]
 ];

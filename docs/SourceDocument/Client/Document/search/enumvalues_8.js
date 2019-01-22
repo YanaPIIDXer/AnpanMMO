@@ -5,6 +5,7 @@ var searchData=
   ['instanceareaticketprocess',['InstanceAreaTicketProcess',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf3ea4def36f148a9b64d05103c543812',1,'PacketID']]],
   ['instanceareaticketpublish',['InstanceAreaTicketPublish',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa8ca07c30a0ac834c9588619c3fc33258',1,'PacketID']]],
   ['invalid',['Invalid',['../BuffIcon_8h.html#ac5d3f286cdcf7f013ec861fed6ea095ca4bbb8f967da6d1a610596d7257179c2b',1,'BuffIcon.h']]],
+  ['invaliditem',['InvalidItem',['../classPacketBuyItemResult.html#a6c9f85363c4310b31d62d0cd68da40f0ae53dff2f23d93ac0dd1b8d35b3c7fad3',1,'PacketBuyItemResult::InvalidItem()'],['../classPacketSellItemResult.html#a07d2f334d50011bcfc17d017f5e653ecac1c043f94ec8e75bd87cb6b8224f995e',1,'PacketSellItemResult::InvalidItem()']]],
   ['invalidshopid',['InvalidShopId',['../classPacketBuyItemResult.html#a6c9f85363c4310b31d62d0cd68da40f0a7935bb21743fcc474d8ac115b344b72d',1,'PacketBuyItemResult::InvalidShopId()'],['../classPacketSellItemResult.html#a07d2f334d50011bcfc17d017f5e653eca977bf6a52301500391a125d4542371ce',1,'PacketSellItemResult::InvalidShopId()']]],
   ['invalidskill',['InvalidSkill',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a13304221db91be881d6e5b8496026952',1,'PacketSkillUseFailed']]],
   ['item',['ITEM',['../structQuestRewardItem.html#aeb71f624c2312b9a823286f49d4abc26a1ea6976b9f3961f17d1af98ae46a960b',1,'QuestRewardItem']]],

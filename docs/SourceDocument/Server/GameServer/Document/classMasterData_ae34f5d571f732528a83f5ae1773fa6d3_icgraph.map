@@ -1,4 +1,6 @@
 <map id="MasterData::GetItemMaster" name="MasterData::GetItemMaster">
-<area shape="rect" id="node2" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="236,5,380,32"/>
-<area shape="rect" id="node3" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="428,5,599,32"/>
+<area shape="rect" id="node2" href="$classClient.html#af6c7fa5aa8ee2f743b05662027500e4f" title="アイテム購入 " alt="" coords="253,5,363,32"/>
+<area shape="rect" id="node3" href="$classClient.html#abe345875426354bb915689fbe9f2d6db" title="アイテム売却 " alt="" coords="253,56,363,83"/>
+<area shape="rect" id="node4" href="$classSkillControl.html#a8648695ae8928234098f079d6d7c9f00" title="SkillControl::UseItem" alt="" coords="236,107,380,133"/>
+<area shape="rect" id="node5" href="$classPlayerCharacter.html#aec80d70936ddc9f4f323d2e22cb6719d" title="アイテム使用 " alt="" coords="428,107,599,133"/>
 </map>

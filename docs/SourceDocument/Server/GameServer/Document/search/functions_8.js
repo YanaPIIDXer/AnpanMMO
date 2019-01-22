@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['initialize',['Initialize',['../classAnpanManager.html#a10b32c4ce632571ec012ca6b92257016',1,'AnpanManager::Initialize()'],['../classAreaBase.html#ae74987dcc73ea4aaab94ba432cc608ea',1,'AreaBase::Initialize()'],['../classAreaManager.html#a8657ae85994cc5505cce3db3968dfb6e',1,'AreaManager::Initialize()'],['../classInstanceArea.html#aca5cdff8995ab000177e32b6fb9c4c7b',1,'InstanceArea::Initialize()'],['../classTimeManager.html#a9b0fb8112689de85ff3b88ce128f01e3',1,'TimeManager::Initialize()']]],
+  ['initialize',['Initialize',['../classAnpanManager.html#a10b32c4ce632571ec012ca6b92257016',1,'AnpanManager::Initialize()'],['../classAreaBase.html#ae74987dcc73ea4aaab94ba432cc608ea',1,'AreaBase::Initialize()'],['../classAreaManager.html#a8657ae85994cc5505cce3db3968dfb6e',1,'AreaManager::Initialize()'],['../classInstanceArea.html#aca5cdff8995ab000177e32b6fb9c4c7b',1,'InstanceArea::Initialize()'],['../classShopManager.html#a90f46772a939484aa3ffdeed59ed148d',1,'ShopManager::Initialize()'],['../classTimeManager.html#a9b0fb8112689de85ff3b88ce128f01e3',1,'TimeManager::Initialize()']]],
   ['initializeskilltree',['InitializeSkillTree',['../classPlayerCharacter.html#a95be16abe4f8944a8c3b8e5b88afe9f6',1,'PlayerCharacter']]],
   ['insert',['Insert',['../classFlexArray.html#acc642e6b89c4150a91451437ac5f32b1',1,'FlexArray']]],
   ['instancearea',['InstanceArea',['../classInstanceArea.html#a91e03a49e6779fc89f8dd23eac1f7e52',1,'InstanceArea']]],
@@ -31,9 +31,11 @@ var searchData=
   ['isrecast',['IsRecast',['../classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1',1,'SkillRecastManager']]],
   ['isrecasting',['IsRecasting',['../classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80',1,'CharacterBase']]],
   ['isrotating',['IsRotating',['../classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9',1,'AnpanAIStateBase']]],
+  ['isselling',['IsSelling',['../classShopManager.html#ad1ab6b40d3ef0620244438057325e02d',1,'ShopManager']]],
   ['isserver',['IsServer',['../classScriptExecuter.html#a61ceae86cc63c5e43490ddb7266f80e6',1,'ScriptExecuter::IsServer()'],['../classScriptExecuterBase.html#ae97d2e75f677b3cd7de46c6465ffc101',1,'ScriptExecuterBase::IsServer()']]],
   ['isskillactive',['IsSkillActive',['../classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f',1,'CharacterBase']]],
   ['isskillcasting',['IsSkillCasting',['../classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f',1,'CharacterBase']]],
+  ['isvalidshop',['IsValidShop',['../classShopManager.html#af1e17fb188e4fa5d5e27133ba68da5b3',1,'ShopManager']]],
   ['iswaiting',['IsWaiting',['../classInstanceAreaTicket.html#a7ca59816fd46a7ab22722016557eea53',1,'InstanceAreaTicket']]],
   ['itemdata',['ItemData',['../classItemData.html#a3a1b6240b016a82fa65b450f98a35f6c',1,'ItemData::ItemData()'],['../classItemData.html#aa51b1cee55620bcd0b5fbde312f9135e',1,'ItemData::ItemData(u32 InItemId, u32 InCount)']]],
   ['itemlist',['ItemList',['../classItemList.html#a88a2b16f2c17bbb902db5f647298a8b5',1,'ItemList']]]

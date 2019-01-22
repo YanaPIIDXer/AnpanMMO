@@ -142,6 +142,9 @@ ScriptExecuterBase の継承関係図</div>
 <tr class="memitem:a69eabf99e4e9a5d7b9680dc5fac9c640"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a69eabf99e4e9a5d7b9680dc5fac9c640">IsQuestClear</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> QuestId)=0</td></tr>
 <tr class="memdesc:a69eabf99e4e9a5d7b9680dc5fac9c640"><td class="mdescLeft">&#160;</td><td class="mdescRight">クエストをクリアしているか？  <a href="#a69eabf99e4e9a5d7b9680dc5fac9c640">[詳解]</a><br /></td></tr>
 <tr class="separator:a69eabf99e4e9a5d7b9680dc5fac9c640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d278ac0fdd9417d86707e7d4fbea37"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScriptExecuterBase.html#a19d278ac0fdd9417d86707e7d4fbea37">ShowShop_Impl</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> ShopId)=0</td></tr>
+<tr class="memdesc:a19d278ac0fdd9417d86707e7d4fbea37"><td class="mdescLeft">&#160;</td><td class="mdescRight">ショップ画面を表示  <a href="#a19d278ac0fdd9417d86707e7d4fbea37">[詳解]</a><br /></td></tr>
+<tr class="separator:a19d278ac0fdd9417d86707e7d4fbea37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
@@ -684,10 +687,12 @@ ScriptExecuterBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classScriptExecuterBase_a2f229d9f75d1399bfd27d3f48d1feea2_icgraph.png" border="0" usemap="#classScriptExecuterBase_a2f229d9f75d1399bfd27d3f48d1feea2_icgraph" alt=""/></div>
 <map name="classScriptExecuterBase_a2f229d9f75d1399bfd27d3f48d1feea2_icgraph" id="classScriptExecuterBase_a2f229d9f75d1399bfd27d3f48d1feea2_icgraph">
-<area shape="rect" id="node2" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="385,5,524,47"/>
+<area shape="rect" id="node2" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="394,5,533,47"/>
 <area shape="rect" id="node4" href="classScriptExecuterBase.html#abdcd42abb73d97defc33559893eace03" title="スクリプトの実行を再開 " alt="" coords="192,64,331,105"/>
-<area shape="rect" id="node3" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="579,13,769,39"/>
-<area shape="rect" id="node5" href="classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="379,71,531,112"/>
+<area shape="rect" id="node3" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="596,13,787,39"/>
+<area shape="rect" id="node5" href="classScriptExecuter.html#a9de6ddd5ac73b72db48c0b024f743819" title="ScriptExecuter::ExitShop" alt="" coords="379,71,548,98"/>
+<area shape="rect" id="node7" href="classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="387,123,539,164"/>
+<area shape="rect" id="node6" href="classClient.html#a1ef244d009798074407564a9a3f10fd3" title="ショップ終了 " alt="" coords="633,71,749,98"/>
 </map>
 </div>
 
@@ -724,10 +729,12 @@ ScriptExecuterBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classScriptExecuterBase_a685d08050d61fd1e5c85be0b740a30a6_icgraph.png" border="0" usemap="#classScriptExecuterBase_a685d08050d61fd1e5c85be0b740a30a6_icgraph" alt=""/></div>
 <map name="classScriptExecuterBase_a685d08050d61fd1e5c85be0b740a30a6_icgraph" id="classScriptExecuterBase_a685d08050d61fd1e5c85be0b740a30a6_icgraph">
-<area shape="rect" id="node2" href="classScriptExecuterBase.html#abdcd42abb73d97defc33559893eace03" title="スクリプトの実行を再開 " alt="" coords="192,39,331,80"/>
-<area shape="rect" id="node3" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="385,5,524,47"/>
-<area shape="rect" id="node5" href="classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="379,71,531,112"/>
-<area shape="rect" id="node4" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="579,13,769,39"/>
+<area shape="rect" id="node2" href="classScriptExecuterBase.html#abdcd42abb73d97defc33559893eace03" title="スクリプトの実行を再開 " alt="" coords="192,57,331,98"/>
+<area shape="rect" id="node3" href="classScriptExecuter.html#a9de6ddd5ac73b72db48c0b024f743819" title="ScriptExecuter::ExitShop" alt="" coords="379,5,548,32"/>
+<area shape="rect" id="node5" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="394,57,533,98"/>
+<area shape="rect" id="node7" href="classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="387,122,539,163"/>
+<area shape="rect" id="node4" href="classClient.html#a1ef244d009798074407564a9a3f10fd3" title="ショップ終了 " alt="" coords="633,5,749,32"/>
+<area shape="rect" id="node6" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="596,64,787,91"/>
 </map>
 </div>
 
@@ -882,9 +889,11 @@ ScriptExecuterBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classScriptExecuterBase_abdcd42abb73d97defc33559893eace03_icgraph.png" border="0" usemap="#classScriptExecuterBase_abdcd42abb73d97defc33559893eace03_icgraph" alt=""/></div>
 <map name="classScriptExecuterBase_abdcd42abb73d97defc33559893eace03_icgraph" id="classScriptExecuterBase_abdcd42abb73d97defc33559893eace03_icgraph">
-<area shape="rect" id="node2" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="199,5,337,47"/>
-<area shape="rect" id="node4" href="classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="192,71,344,112"/>
-<area shape="rect" id="node3" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="392,13,583,39"/>
+<area shape="rect" id="node2" href="classScriptExecuter.html#a9de6ddd5ac73b72db48c0b024f743819" title="ScriptExecuter::ExitShop" alt="" coords="192,5,361,32"/>
+<area shape="rect" id="node4" href="classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="207,57,346,98"/>
+<area shape="rect" id="node6" href="classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="201,122,353,163"/>
+<area shape="rect" id="node3" href="classClient.html#a1ef244d009798074407564a9a3f10fd3" title="ショップ終了 " alt="" coords="447,5,563,32"/>
+<area shape="rect" id="node5" href="classScriptExecuter.html#a1cfdd2a171e65ef1d2e7cede671f7326" title="ScriptExecuter::LoadAndRun" alt="" coords="409,64,600,91"/>
 </map>
 </div>
 
@@ -1090,6 +1099,50 @@ ScriptExecuterBase の継承関係図</div>
 <div class="center"><img src="classScriptExecuterBase_a2dbea0176eea2caf05a89e7cb84f5cc4_icgraph.png" border="0" usemap="#classScriptExecuterBase_a2dbea0176eea2caf05a89e7cb84f5cc4_icgraph" alt=""/></div>
 <map name="classScriptExecuterBase_a2dbea0176eea2caf05a89e7cb84f5cc4_icgraph" id="classScriptExecuterBase_a2dbea0176eea2caf05a89e7cb84f5cc4_icgraph">
 <area shape="rect" id="node2" href="ScriptBinds_8h.html#aa9da4476967136ab4c8ffbc0e4142414" title="選択肢表示 " alt="" coords="200,13,337,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a19d278ac0fdd9417d86707e7d4fbea37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d278ac0fdd9417d86707e7d4fbea37">&#9670;&nbsp;</a></span>ShowShop_Impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScriptExecuterBase::ShowShop_Impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>ShopId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ショップ画面を表示 </p>
+<p>スクリプトを経由して呼ばれる。 </p><dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ShopId</td><td>ショップＩＤ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><a class="el" href="classScriptExecuter.html#ade94c90ee2e417802013ce607068fef6">ScriptExecuter</a>で実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classScriptExecuterBase_a19d278ac0fdd9417d86707e7d4fbea37_icgraph.png" border="0" usemap="#classScriptExecuterBase_a19d278ac0fdd9417d86707e7d4fbea37_icgraph" alt=""/></div>
+<map name="classScriptExecuterBase_a19d278ac0fdd9417d86707e7d4fbea37_icgraph" id="classScriptExecuterBase_a19d278ac0fdd9417d86707e7d4fbea37_icgraph">
+<area shape="rect" id="node2" href="ScriptBinds_8h.html#af8a911706df723be6c3db1e68936d421" title="ショップ画面を表示 " alt="" coords="192,13,305,39"/>
 </map>
 </div>
 

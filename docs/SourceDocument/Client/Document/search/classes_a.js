@@ -17,6 +17,7 @@ var searchData=
   ['packetcreatecharacterresult',['PacketCreateCharacterResult',['../classPacketCreateCharacterResult.html',1,'']]],
   ['packetdamage',['PacketDamage',['../classPacketDamage.html',1,'']]],
   ['packetexitplayer',['PacketExitPlayer',['../classPacketExitPlayer.html',1,'']]],
+  ['packetexitshop',['PacketExitShop',['../classPacketExitShop.html',1,'']]],
   ['packetgameready',['PacketGameReady',['../classPacketGameReady.html',1,'']]],
   ['packetheader',['PacketHeader',['../classPacketHeader.html',1,'']]],
   ['packetheal',['PacketHeal',['../classPacketHeal.html',1,'']]],
