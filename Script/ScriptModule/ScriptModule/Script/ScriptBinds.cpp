@@ -191,3 +191,16 @@ int IsQuestClear_Call(lua_State *pState)
 
 	return 1;
 }
+
+// ショップ画面を表示
+int ShowShop_Call(lua_State *pState)
+{
+	long Id = (long)luaL_checknumber(pState, -2);
+	u32 ShopId = (u32)luaL_checknumber(pState, -1);
+	ScriptExecuterBase * pExecuter = ExecuterPool::GetInstance().Get(Id);
+	if (pExecuter == NULL) { return 0; }
+
+	pExecuter->ShowShop_Impl(ShopId);
+
+	return 0;
+}

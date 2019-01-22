@@ -66,6 +66,9 @@ public:
 	// クエストをクリアしているか？
 	virtual bool IsQuestClear(u32 QuestId) override;
 
+	// ショップ画面を表示.
+	virtual void ShowShop_Impl(u32 ShopId) override;
+
 	// ビットフィールドからフラグに変換.
 	void ConvertFlagFromBitFields(uint32 BitField1, uint32 BitField2, uint32 BitField3);
 

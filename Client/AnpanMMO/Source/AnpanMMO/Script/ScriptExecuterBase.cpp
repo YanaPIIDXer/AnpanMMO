@@ -141,6 +141,7 @@ void ScriptExecuterBase::BindFunctions()
 	BindFunction(ConsumeItem_Call, "ConsumeItem_Impl");
 	BindFunction(AcceptQuest_Call, "AcceptQuest_Impl");
 	BindFunction(IsQuestClear_Call, "IsQuestClear_Impl");
+	BindFunction(ShowShop_Call, "ShowShop_Impl");
 }
 
 // 関数をバインド。

@@ -8,6 +8,8 @@
 
 // コンストラクタ
 ScriptExecuter::ScriptExecuter()
+	: pClient(NULL)
+	, CurrentShopId(0)
 {
 }
 

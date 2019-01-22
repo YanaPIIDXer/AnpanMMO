@@ -112,6 +112,12 @@ bool ScriptExecuter::IsQuestClear(u32 QuestId)
 	return pInst->GetQuestManager().IsClear(QuestId);
 }
 
+// ショップ画面を表示.
+void ScriptExecuter::ShowShop_Impl(u32 ShopId)
+{
+	// @TODO:ショップ画面を実装。
+}
+
 // ビットフィールドからフラグに変換.
 void ScriptExecuter::ConvertFlagFromBitFields(uint32 BitField1, uint32 BitField2, uint32 BitField3)
 {
