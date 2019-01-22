@@ -175,34 +175,36 @@ public:
 		SellItemRequest = 0x4C,
 		//! アイテム売却結果パケット
 		SellItemResult = 0x4D,
+		//! ショップ終了パケット
+		ExitShop = 0x4E,
 		//! スキル使用パケット
-		SkillUse = 0x4E,
+		SkillUse = 0x4F,
 		//! スキル使用失敗パケット
-		SkillUseFailed = 0x4F,
+		SkillUseFailed = 0x50,
 		//! スキル詠唱開始パケット
-		SkillCast = 0x50,
+		SkillCast = 0x51,
 		//! スキル詠唱完了パケット
-		SkillCastFinish = 0x51,
+		SkillCastFinish = 0x52,
 		//! スキル発動パケット
-		SkillActivate = 0x52,
+		SkillActivate = 0x53,
 		//! リキャスト完了パケット
-		SkillRecast = 0x53,
+		SkillRecast = 0x54,
 		//! スキルリストパケット
-		SkillList = 0x54,
+		SkillList = 0x55,
 		//! スキルリスト保存リクエストパケット
-		SaveSkillListRequest = 0x55,
+		SaveSkillListRequest = 0x56,
 		//! スキルリスト保存レスポンスパケット
-		SaveSkillListResponse = 0x56,
+		SaveSkillListResponse = 0x57,
 		//! スキルツリーデータパケット
-		SkillTreeData = 0x57,
+		SkillTreeData = 0x58,
 		//! スキルツリー開放要求パケット
-		SkillTreeOpenRequest = 0x58,
+		SkillTreeOpenRequest = 0x59,
 		//! スキルツリー開放結果パケット
-		SkillTreeOpenResult = 0x59,
+		SkillTreeOpenResult = 0x5A,
 		//! ログイン時の時間通知パケット
-		Time = 0x5A,
+		Time = 0x5B,
 		//! 時間変化通知パケット
-		TimeChange = 0x5B,
+		TimeChange = 0x5C,
 		
 	};
 };

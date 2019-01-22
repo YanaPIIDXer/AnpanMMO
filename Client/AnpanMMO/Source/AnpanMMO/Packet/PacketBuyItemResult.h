@@ -33,6 +33,8 @@ public:
 		Success,
 		//! 無効なショップＩＤ
 		InvalidShopId,
+		//! 売られていない
+		NotSelling,
 		//! ゴールドが足りない
 		NotEnougthGold,
 	};
