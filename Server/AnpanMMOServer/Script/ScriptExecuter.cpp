@@ -92,6 +92,13 @@ bool ScriptExecuter::IsQuestClear(u32 QuestId)
 	return pClient->GetQuestManager().IsClear(QuestId);
 }
 
+// ショップ終了.
+void ScriptExecuter::ExitShop()
+{
+	CurrentShopId = 0;
+	Resume();
+}
+
 
 // 実行エラー
 void ScriptExecuter::OnExecuteError(const std::string &ErrorMessage)

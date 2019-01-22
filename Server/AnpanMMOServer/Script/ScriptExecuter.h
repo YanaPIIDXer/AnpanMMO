@@ -66,6 +66,9 @@ public:
 	// ショップ画面表示
 	virtual void ShowShop_Impl(u32 ShopId) { CurrentShopId = ShopId; }
 
+	// ショップ終了,
+	void ExitShop();
+
 protected:
 
 	// 実行エラー

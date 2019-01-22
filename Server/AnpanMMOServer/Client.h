@@ -187,6 +187,32 @@ public:
 	 */
 	u8 RetireQuest(u32 QuestId);
 
+	/**
+	 * @fn u8 BuyItem(u32 ShopId, u32 ItemId, u32 Count)
+	 * @brief アイテム購入
+	 * @param[in] ShopId ショップＩＤ
+	 * @param[in] ItemId アイテムＩＤ
+	 * @param[in] Count 個数
+	 * @return リザルトコード
+	 */
+	u8 BuyItem(u32 ShopId, u32 ItemId, u32 Count);
+
+	/**
+	 * @fn u8 SellItem(u32 ShopId, u32 ItemId, u32 Count)
+	 * @brief アイテム売却
+	 * @param[in] ShopId ショップＩＤ
+	 * @param[in] ItemId アイテムＩＤ
+	 * @param[in] Count 個数
+	 * @return リザルトコード
+	 */
+	u8 SellItem(u32 ShopId, u32 ItemId, u32 Count);
+
+	/**
+	 * @fn void ExitShop()
+	 * @brief ショップ終了
+	 */
+	void ExitShop() { Script.ExitShop(); }
+
 protected:
 
 	/**

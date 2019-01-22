@@ -117,6 +117,15 @@ private:
 	// キャッシュサーバから装備保存レスポンスを受信した。
 	bool OnRecvCacheSaveEquipResponse(MemoryStreamInterface *pStream);
 
+	// アイテム購入要求を受信した。
+	bool OnRecvBuyItemRequest(MemoryStreamInterface *pStream);
+
+	// アイテム売却要求を受信した。
+	bool OnRecvSellItemRequest(MemoryStreamInterface *pStream);
+
+	// ショップ終了を受信した。
+	bool OnRecvExitShop(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__
