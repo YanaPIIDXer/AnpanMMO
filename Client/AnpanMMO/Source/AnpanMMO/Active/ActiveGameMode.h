@@ -83,6 +83,9 @@ public:
 	// スクリプトの選択肢を表示.
 	void ShowScriptSelection();
 
+	// ショップを表示.
+	void ShowShop(uint32 ShopId);
+
 	// スクリプト終了.
 	void FinishScript();
 

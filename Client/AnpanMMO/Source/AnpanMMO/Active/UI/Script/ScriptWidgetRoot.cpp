@@ -48,6 +48,12 @@ void UScriptWidgetRoot::ShowSelection()
 	}
 }
 
+// ショップを表示.
+void UScriptWidgetRoot::ShowShop(uint32 ShopId)
+{
+
+}
+
 // Widgetを閉じる。
 void UScriptWidgetRoot::CloseWidget()
 {

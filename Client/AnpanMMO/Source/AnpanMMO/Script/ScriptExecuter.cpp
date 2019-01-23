@@ -115,7 +115,7 @@ bool ScriptExecuter::IsQuestClear(u32 QuestId)
 // ショップ画面を表示.
 void ScriptExecuter::ShowShop_Impl(u32 ShopId)
 {
-	// @TODO:ショップ画面を実装。
+	pGameMode->ShowShop(ShopId);
 }
 
 // ビットフィールドからフラグに変換.

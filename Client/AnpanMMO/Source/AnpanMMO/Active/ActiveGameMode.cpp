@@ -251,6 +251,12 @@ void AActiveGameMode::ShowScriptSelection()
 	pScriptWidget->ShowSelection();
 }
 
+// ショップを表示.
+void AActiveGameMode::ShowShop(uint32 ShopId)
+{
+	pScriptWidget->ShowShop(ShopId);
+}
+
 // スクリプト終了.
 void AActiveGameMode::FinishScript()
 {

@@ -39,6 +39,9 @@ public:
 	// 選択肢を表示.
 	void ShowSelection();
 
+	// ショップを表示.
+	void ShowShop(uint32 ShopId);
+
 	// Widgetを閉じる。
 	void CloseWidget();
 
