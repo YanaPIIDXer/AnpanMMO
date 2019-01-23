@@ -8,6 +8,7 @@
 
 class UScriptMessageWidget;
 class UScriptSelectionWidget;
+class UScriptShopWidget;
 
 /**
  * スクリプトWidgetの親.
@@ -54,6 +55,10 @@ private:
 	// 選択肢Widget
 	UPROPERTY()
 	UScriptSelectionWidget *pSelectionWidget;
+
+	// ショップWidget
+	UPROPERTY()
+	UScriptShopWidget *pShopWidget;
 
 	// 現在表示中のWidget
 	UPROPERTY()

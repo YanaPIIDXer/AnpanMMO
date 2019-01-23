@@ -3,6 +3,7 @@
 #include "ScriptWidgetRoot.h"
 #include "ScriptMessageWidget.h"
 #include "ScriptSelectionWidget.h"
+#include "ScriptShopWidget.h"
 
 // コンストラクタ
 UScriptWidgetRoot::UScriptWidgetRoot(const FObjectInitializer &ObjectInitializer)
@@ -18,6 +19,7 @@ void UScriptWidgetRoot::Init()
 {
 	pMessageWidget = UScriptMessageWidget::Create(this);
 	pSelectionWidget = UScriptSelectionWidget::Create(this);
+	pShopWidget = UScriptShopWidget::Create(this);
 }
 
 // メッセージ表示.
@@ -51,7 +53,7 @@ void UScriptWidgetRoot::ShowSelection()
 // ショップを表示.
 void UScriptWidgetRoot::ShowShop(uint32 ShopId)
 {
-
+	pShopWidget->Init(ShopId);
 }
 
 // Widgetを閉じる。
