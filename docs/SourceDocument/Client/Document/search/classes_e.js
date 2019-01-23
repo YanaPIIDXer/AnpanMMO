@@ -30,6 +30,7 @@ var searchData=
   ['uquestmenu',['UQuestMenu',['../classUQuestMenu.html',1,'']]],
   ['uscriptmessagewidget',['UScriptMessageWidget',['../classUScriptMessageWidget.html',1,'']]],
   ['uscriptselectionwidget',['UScriptSelectionWidget',['../classUScriptSelectionWidget.html',1,'']]],
+  ['uscriptshopwidget',['UScriptShopWidget',['../classUScriptShopWidget.html',1,'']]],
   ['uscriptwidgetroot',['UScriptWidgetRoot',['../classUScriptWidgetRoot.html',1,'']]],
   ['usimpledialog',['USimpleDialog',['../classUSimpleDialog.html',1,'']]],
   ['uskilllistwidget',['USkillListWidget',['../classUSkillListWidget.html',1,'']]],

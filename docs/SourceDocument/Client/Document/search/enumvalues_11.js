@@ -22,7 +22,7 @@ var searchData=
   ['skilltreeopenresult',['SkillTreeOpenResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad1312f8bbcc3657f2d3ba5199cb2db23',1,'PacketID']]],
   ['skilluse',['SkillUse',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf76aff146a2c7ae415b0d3c4aa6ef8cb',1,'PacketID']]],
   ['skillusefailed',['SkillUseFailed',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaec1dab5e16608633437d9cb8c4d4f197',1,'PacketID']]],
-  ['sorcerer',['SORCERER',['../structSkillTreeItem.html#a2d788c190714c3cebb05fd25ec4cf8f8aef26b40e2ece04beefeb86465641b6a9',1,'SkillTreeItem::SORCERER()'],['../classCharacterJob.html#afec42e9a3800cc43cff6f86d6cf7e91da2e12227dbd11fa8ea8aaa8dabe3f2431',1,'CharacterJob::Sorcerer()']]],
+  ['sorcerer',['Sorcerer',['../classCharacterJob.html#afec42e9a3800cc43cff6f86d6cf7e91da2e12227dbd11fa8ea8aaa8dabe3f2431',1,'CharacterJob::Sorcerer()'],['../structSkillTreeItem.html#a2d788c190714c3cebb05fd25ec4cf8f8aef26b40e2ece04beefeb86465641b6a9',1,'SkillTreeItem::SORCERER()']]],
   ['spawnanpan',['SpawnAnpan',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aab033f1d3601792ecbecb4473b8619b3c',1,'PacketID']]],
   ['spawninstanceareaexitpoint',['SpawnInstanceAreaExitPoint',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aae56c320bdf5d4fc19da20734331e5799',1,'PacketID']]],
   ['spawnplayer',['SpawnPlayer',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad48eec913c3a501e464aac42f6f1b9ed',1,'PacketID']]],
