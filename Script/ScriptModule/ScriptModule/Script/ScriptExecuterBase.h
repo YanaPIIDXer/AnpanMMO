@@ -7,6 +7,7 @@
 #define __SCRIPTEXECUTERBASE_H__
 
 #include <string>
+#include "TypeDefs.h"
 #include "lua.hpp"
 #include "lauxlib.h"
 #include "lualib.h"

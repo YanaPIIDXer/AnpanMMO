@@ -4,8 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ScriptExecuterBase.h"
-
-class AActiveGameMode;
+#include "Active/ActiveGameMode.h"
 
 /**
  * スクリプト制御クラス
