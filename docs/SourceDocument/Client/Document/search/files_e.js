@@ -10,6 +10,8 @@ var searchData=
   ['scriptmessagewidget_2eh',['ScriptMessageWidget.h',['../ScriptMessageWidget_8h.html',1,'']]],
   ['scriptselectionwidget_2ecpp',['ScriptSelectionWidget.cpp',['../ScriptSelectionWidget_8cpp.html',1,'']]],
   ['scriptselectionwidget_2eh',['ScriptSelectionWidget.h',['../ScriptSelectionWidget_8h.html',1,'']]],
+  ['scriptshopwidget_2ecpp',['ScriptShopWidget.cpp',['../ScriptShopWidget_8cpp.html',1,'']]],
+  ['scriptshopwidget_2eh',['ScriptShopWidget.h',['../ScriptShopWidget_8h.html',1,'']]],
   ['scriptwidgetroot_2ecpp',['ScriptWidgetRoot.cpp',['../ScriptWidgetRoot_8cpp.html',1,'']]],
   ['scriptwidgetroot_2eh',['ScriptWidgetRoot.h',['../ScriptWidgetRoot_8h.html',1,'']]],
   ['shopmaster_2ecpp',['ShopMaster.cpp',['../ShopMaster_8cpp.html',1,'']]],
