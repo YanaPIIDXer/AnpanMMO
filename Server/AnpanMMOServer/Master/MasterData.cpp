@@ -150,5 +150,11 @@ bool MasterData::Read()
 		return false;
 	}
 
+	if (!AnpanAI.Load(Connection))
+	{
+		std::cout << "AnpanAI Master Load Failed..." << std::endl;
+		return false;
+	}
+
 	return true;
 }

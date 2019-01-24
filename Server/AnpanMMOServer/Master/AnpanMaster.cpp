@@ -18,6 +18,7 @@ bool AnpanMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.Vit);
 	Query.BindResultInt(&BindItem.Exp);
 	Query.BindResultFloat(&BindItem.Scale);
+	Query.BindResultChar(&BindItem.AIId);
 	Query.BindResultInt(&BindItem.DropId);
 
 	if (!Query.ExecuteQuery()) { return false; }
@@ -34,6 +35,7 @@ bool AnpanMaster::Load(const MySqlConnection &Connection)
 		Item.Vit = BindItem.Vit;
 		Item.Exp = BindItem.Exp;
 		Item.Scale = BindItem.Scale;
+		Item.AIId = BindItem.AIId;
 		Item.DropId = BindItem.DropId;
 
 		Items[Sheet][Item.ID] = Item;

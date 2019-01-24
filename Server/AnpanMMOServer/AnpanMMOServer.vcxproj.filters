@@ -387,6 +387,9 @@
     <ClInclude Include="Shop\ShopManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Master\AnpanAIMaster.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MemoryBuffer.cpp">
@@ -684,6 +687,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Shop\ShopManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Master\AnpanAIMaster.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

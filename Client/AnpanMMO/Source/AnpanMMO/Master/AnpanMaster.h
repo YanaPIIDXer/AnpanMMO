@@ -19,6 +19,7 @@ public:
 	u32 Vit;
 	u32 Exp;
 	float Scale;
+	u8 AIId;
 	u32 DropId;
 
 
@@ -33,6 +34,7 @@ public:
 		if(!pStream->Serialize(&Vit)) { return false; }
 		if(!pStream->Serialize(&Exp)) { return false; }
 		if(!pStream->Serialize(&Scale)) { return false; }
+		if(!pStream->Serialize(&AIId)) { return false; }
 		if(!pStream->Serialize(&DropId)) { return false; }
 
 		return true;

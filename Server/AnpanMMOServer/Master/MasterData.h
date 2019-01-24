@@ -25,6 +25,7 @@
 #include "EquipMaster.h"
 #include "BuffMaster.h"
 #include "ShopMaster.h"
+#include "AnpanAIMaster.h"
 
 /**
  * @class MasterData
@@ -176,6 +177,13 @@ public:
 	 */
 	const ShopMaster &GetShopMaster() { return Shop; }
 
+	/**
+	 * @fn const AnpanAIMaster &GetAnpanAIMaster()
+	 * @brief アンパンＡＩマスタ取得
+	 * @return アンパンＡＩマスタ
+	 */
+	const AnpanAIMaster &GetAnpanAIMaster() { return AnpanAI; }
+
 private:
 
 	// DBホスト
@@ -243,6 +251,9 @@ private:
 
 	// ショップマスタ
 	ShopMaster Shop;
+
+	// アンパンＡＩマスタ
+	AnpanAIMaster AnpanAI;
 
 	// ======= Singleton ==========
 public:
