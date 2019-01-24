@@ -53,7 +53,9 @@ void UScriptWidgetRoot::ShowSelection()
 // ショップを表示.
 void UScriptWidgetRoot::ShowShop(uint32 ShopId)
 {
-	pShopWidget->Init(ShopId);
+	pShopWidget->SetShopId(ShopId);
+	pCurrentWidget = pShopWidget;
+	ShowChild(pShopWidget);
 }
 
 // Widgetを閉じる。

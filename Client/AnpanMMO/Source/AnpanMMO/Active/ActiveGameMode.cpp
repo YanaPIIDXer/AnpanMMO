@@ -51,6 +51,8 @@
 #include "Packet/PacketChangeEquipResult.h"
 #include "Packet/PacketAddBuff.h"
 #include "Packet/PacketRemoveBuff.h"
+#include "Packet/PacketBuyItemResult.h"
+#include "Packet/PacketSellItemResult.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -114,6 +116,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::ChangeEquipResult, std::bind(&AActiveGameMode::OnRecvEquipChangeResult, this, _1));
 	AddPacketFunction(PacketID::AddBuff, std::bind(&AActiveGameMode::OnRecvAddBuff, this, _1));
 	AddPacketFunction(PacketID::RemoveBuff, std::bind(&AActiveGameMode::OnRecvRemoveBuff, this, _1));
+	AddPacketFunction(PacketID::BuyItemResult, std::bind(&AActiveGameMode::OnRecvBuyItemResult, this, _1));
+	AddPacketFunction(PacketID::SellItemResult, std::bind(&AActiveGameMode::OnRecvSellItemResult, this, _1));
 
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -887,5 +891,68 @@ bool AActiveGameMode::OnRecvRemoveBuff(MemoryStreamInterface *pStream)
 	check(pCharacter != nullptr);
 
 	pCharacter->RemoveBuff(Packet.BuffType);
+	return true;
+}
+
+// アイテム購入結果を受信した。
+bool AActiveGameMode::OnRecvBuyItemResult(MemoryStreamInterface *pStream)
+{
+	PacketBuyItemResult Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	FString DisplayText = "Buy Item!!";
+	switch (Packet.Result)
+	{
+		case PacketBuyItemResult::InvalidShopId:
+
+			DisplayText = "Invalid Shop ID...";
+			break;
+
+		case PacketBuyItemResult::InvalidItem:
+
+			DisplayText = "Invalid Item...";
+			break;
+
+		case PacketBuyItemResult::NotSelling:
+
+			DisplayText = "Not Selling...";
+			break;
+
+		case PacketBuyItemResult::NotEnougthGold:
+
+			DisplayText = "Not Enougth Gold...";
+			break;
+	}
+
+	USimpleDialog::Show(this, DisplayText, 100);
+	return true;
+}
+
+// アイテム売却結果を受信した。
+bool AActiveGameMode::OnRecvSellItemResult(MemoryStreamInterface *pStream)
+{
+	PacketSellItemResult Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	FString DisplayText = "Sell Item!!";
+	switch (Packet.Result)
+	{
+		case PacketSellItemResult::InvalidShopId:
+
+			DisplayText = "Invalid Shop ID...";
+			break;
+
+		case PacketSellItemResult::InvalidItem:
+
+			DisplayText = "Invalid Item...";
+			break;
+
+		case PacketSellItemResult::NotHaveItem:
+
+			DisplayText = "Not Have Item...";
+			break;
+	}
+
+	USimpleDialog::Show(this, DisplayText, 100);
 	return true;
 }

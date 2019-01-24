@@ -235,4 +235,10 @@ private:
 	// バフ消去を受信した。
 	bool OnRecvRemoveBuff(MemoryStreamInterface *pStream);
 	
+	// アイテム購入結果を受信した。
+	bool OnRecvBuyItemResult(MemoryStreamInterface *pStream);
+
+	// アイテム売却結果を受信した。
+	bool OnRecvSellItemResult(MemoryStreamInterface *pStream);
+
 };
