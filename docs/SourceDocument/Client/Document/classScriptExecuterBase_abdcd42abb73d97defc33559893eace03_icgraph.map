@@ -1,6 +1,7 @@
 <map id="ScriptExecuterBase::Resume" name="ScriptExecuterBase::Resume">
 <area shape="rect" id="node2" href="$classScriptExecuterBase.html#a80542c0f12e8bd5b2f8cbe0ce681c521" title="スクリプトを実行 " alt="" coords="199,5,337,47"/>
 <area shape="rect" id="node4" href="$classScriptExecuterBase.html#ab103683247db1bbb0adaa91672c2583a" title="選択肢が選択された " alt="" coords="192,71,344,112"/>
+<area shape="rect" id="node6" href="$classUScriptShopWidget.html#a91cc89a2d654c602bb5190e9db148479" title="UScriptShopWidget::\lToNext" alt="" coords="196,136,340,177"/>
 <area shape="rect" id="node3" href="$classScriptExecuter.html#a380a39546e474729e1153d9cb940d2f0" title="ScriptExecuter::RunScript" alt="" coords="392,13,565,39"/>
 <area shape="rect" id="node5" href="$classUScriptSelectionWidget.html#ae67713b6fa7d37913e7296f49a10cf9b" title="UScriptSelectionWidget\l::Select" alt="" coords="399,71,559,112"/>
 </map>

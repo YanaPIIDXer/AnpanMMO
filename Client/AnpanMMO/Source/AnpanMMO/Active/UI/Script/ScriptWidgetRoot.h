@@ -8,6 +8,7 @@
 
 class UScriptMessageWidget;
 class UScriptSelectionWidget;
+class UScriptShopWidget;
 
 /**
  * スクリプトWidgetの親.
@@ -39,6 +40,9 @@ public:
 	// 選択肢を表示.
 	void ShowSelection();
 
+	// ショップを表示.
+	void ShowShop(uint32 ShopId);
+
 	// Widgetを閉じる。
 	void CloseWidget();
 
@@ -51,6 +55,10 @@ private:
 	// 選択肢Widget
 	UPROPERTY()
 	UScriptSelectionWidget *pSelectionWidget;
+
+	// ショップWidget
+	UPROPERTY()
+	UScriptShopWidget *pShopWidget;
 
 	// 現在表示中のWidget
 	UPROPERTY()

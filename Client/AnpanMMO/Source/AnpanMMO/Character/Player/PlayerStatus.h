@@ -62,7 +62,7 @@ public:
 	}
 
 	// ジョブを取得.
-	u8 GetJob() const { return Job; }
+	uint8 GetJob() const { return Job; }
 
 	// ゴールドをセット
 	void SetGold(uint32 InGold) { Gold = InGold; }

@@ -83,6 +83,9 @@ public:
 	// スクリプトの選択肢を表示.
 	void ShowScriptSelection();
 
+	// ショップを表示.
+	void ShowShop(uint32 ShopId);
+
 	// スクリプト終了.
 	void FinishScript();
 
@@ -232,4 +235,10 @@ private:
 	// バフ消去を受信した。
 	bool OnRecvRemoveBuff(MemoryStreamInterface *pStream);
 	
+	// アイテム購入結果を受信した。
+	bool OnRecvBuyItemResult(MemoryStreamInterface *pStream);
+
+	// アイテム売却結果を受信した。
+	bool OnRecvSellItemResult(MemoryStreamInterface *pStream);
+
 };

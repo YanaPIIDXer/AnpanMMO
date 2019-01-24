@@ -55,6 +55,7 @@ void ULayeredMenuWidgetBase::CloseChild()
 	if (pChildMenu == nullptr) { return; }
 	
 	pChildMenu->RemoveFromParent();
+	pChildMenu->OnMenuClosed.ExecuteIfBound();
 	pChildMenu = nullptr;
 }
 
@@ -63,6 +64,7 @@ void ULayeredMenuWidgetBase::CloseChild()
 void ULayeredMenuWidgetBase::Back()
 {
 	RemoveFromParent();
+	OnMenuClosed.ExecuteIfBound();
 	if (pParentMenu != nullptr)
 	{
 		pParentMenu->SetVisibility(ESlateVisibility::Visible);
