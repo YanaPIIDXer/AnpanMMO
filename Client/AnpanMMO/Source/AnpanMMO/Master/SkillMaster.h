@@ -43,6 +43,8 @@ public:
 	u32 BonusInt;
 	u32 BonusMnd;
 	u32 BonusVit;
+	u32 VolatileHate;
+	u32 AccumulateHate;
 	u32 BuffId;
 
 
@@ -64,6 +66,8 @@ public:
 		if(!pStream->Serialize(&BonusInt)) { return false; }
 		if(!pStream->Serialize(&BonusMnd)) { return false; }
 		if(!pStream->Serialize(&BonusVit)) { return false; }
+		if(!pStream->Serialize(&VolatileHate)) { return false; }
+		if(!pStream->Serialize(&AccumulateHate)) { return false; }
 		if(!pStream->Serialize(&BuffId)) { return false; }
 
 		return true;
