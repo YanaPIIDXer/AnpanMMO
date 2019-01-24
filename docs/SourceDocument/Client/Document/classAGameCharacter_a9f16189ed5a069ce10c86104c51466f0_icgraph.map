@@ -1,6 +1,8 @@
 <map id="AGameCharacter::GetStatus" name="AGameCharacter::GetStatus">
-<area shape="rect" id="node2" href="$classUEquipMenu.html#a4892ec477bd68e86f52d8a1441538b43" title="UEquipMenu::Init" alt="" coords="255,5,377,32"/>
-<area shape="rect" id="node4" href="$classUSkillListWidget.html#ad9ecfbac60879726f37fe93e892de3a7" title="USkillListWidget::Init" alt="" coords="245,56,387,83"/>
-<area shape="rect" id="node5" href="$classUSkillTreeWidget.html#a044690d90fa6cc69d06566f07bf3e609" title="USkillTreeWidget::Init" alt="" coords="243,107,389,133"/>
-<area shape="rect" id="node3" href="$classUEquipMenu.html#aee9be9411f500636f4ea98bc56aafdbf" title="UEquipMenu::OnRecvPacket" alt="" coords="437,5,628,32"/>
+<area shape="rect" id="node2" href="$classUEquipMenu.html#a4892ec477bd68e86f52d8a1441538b43" title="UEquipMenu::Init" alt="" coords="263,9,384,36"/>
+<area shape="rect" id="node4" href="$classUScriptShopWidget.html#ad1ecb729b4395afff7284ec8b8012dab" title="UScriptShopWidget::Init" alt="" coords="243,61,404,88"/>
+<area shape="rect" id="node6" href="$classUSkillListWidget.html#ad9ecfbac60879726f37fe93e892de3a7" title="USkillListWidget::Init" alt="" coords="252,112,395,139"/>
+<area shape="rect" id="node7" href="$classUSkillTreeWidget.html#a044690d90fa6cc69d06566f07bf3e609" title="USkillTreeWidget::Init" alt="" coords="250,163,397,189"/>
+<area shape="rect" id="node3" href="$classUEquipMenu.html#aee9be9411f500636f4ea98bc56aafdbf" title="UEquipMenu::OnRecvPacket" alt="" coords="452,5,643,32"/>
+<area shape="rect" id="node5" href="$classUScriptShopWidget.html#ab3cc0f815b64a91c5108bf3967e38abc" title="UScriptShopWidget::\lOnRecvPacket" alt="" coords="475,57,619,98"/>
 </map>

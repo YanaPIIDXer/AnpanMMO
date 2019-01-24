@@ -1,4 +1,9 @@
 <map id="AActiveGameMode::ShowShop" name="AActiveGameMode::ShowShop">
-<area shape="rect" id="node2" href="$classUScriptWidgetRoot.html#a1b4f81f3186a8c8eacf693b5de620468" title="UScriptWidgetRoot::\lShowShop" alt="" coords="256,5,397,47"/>
-<area shape="rect" id="node3" href="$classUScriptShopWidget.html#a4d4107383abdea99ad48d6ede253550a" title="UScriptShopWidget::Init" alt="" coords="445,13,607,39"/>
+<area shape="rect" id="node2" href="$classUScriptWidgetRoot.html#a1b4f81f3186a8c8eacf693b5de620468" title="UScriptWidgetRoot::\lShowShop" alt="" coords="256,39,397,80"/>
+<area shape="rect" id="node3" href="$classUScriptShopWidget.html#a839f02d3d58722d33eaf230d799f069e" title="UScriptShopWidget::\lSetShopId" alt="" coords="463,5,607,47"/>
+<area shape="rect" id="node4" href="$classULayeredMenuWidgetBase.html#a1177b0b2aa402f57f4798adbdb897cd1" title="ULayeredMenuWidgetBase\l::ShowChild" alt="" coords="445,71,625,112"/>
+<area shape="rect" id="node5" href="$classULayeredMenuWidgetBase.html#aaa200e099b2273d2ae5d94c68cf80f8b" title="ULayeredMenuWidgetBase\l::CloseChild" alt="" coords="673,37,853,79"/>
+<area shape="rect" id="node6" href="$classULayeredMenuWidgetBase.html#af5e429752404b96df6adda063cc6ab81" title="ULayeredMenuWidgetBase\l::Show" alt="" coords="673,103,853,144"/>
+<area shape="rect" id="node7" href="$classAMMOGameModeBase.html#a1824e65168012abf6d7766162cb46439" title="AMMOGameModeBase::SetCurrentMenu" alt="" coords="901,81,1164,107"/>
+<area shape="rect" id="node8" href="$classAActiveGameMode.html#a0468c5e21d7fdd391d62c0345084de43" title="AActiveGameMode::SetHidden\lMainHUD" alt="" coords="932,132,1133,173"/>
 </map>
