@@ -23,7 +23,7 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	FString Name;
 
-	// 購入 or 売却価格
+	// 購入 or 売却価格.
 	UPROPERTY(BlueprintReadOnly)
 	int32 Gold;
 
@@ -66,8 +66,12 @@ protected:
 
 	// 初期化イベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Shop")
-	void OnInit(const TArray<FShopItem> &ShopItems);
-	void OnInit_Implementation(const TArray<FShopItem> &ShopItems) {}
+	void OnInit(const TArray<FShopItem> &ShopItems, const TArray<FShopItem> &SellItems);
+	void OnInit_Implementation(const TArray<FShopItem> &ShopItems, const TArray<FShopItem> &SellItems) {}
+
+	// アイテム所持数を取得.
+	UFUNCTION(BlueprintPure, Category = "Shop")
+	int32 GetHaveItemCount(const FShopItem &Item) const;
 
 	// 次へ進む。
 	UFUNCTION(BlueprintCallable, Category = "Shop")
@@ -80,6 +84,10 @@ protected:
 	// 購入パケットを送信.
 	UFUNCTION(BlueprintCallable, Category = "Shop")
 	void SendBuy(const FShopItem &Item, int32 Count);
+
+	// 売却パケットを送信.
+	UFUNCTION(BlueprintCallable, Category = "Shop")
+	void SendSell(const FShopItem &Item, int32 Count);
 
 private:
 

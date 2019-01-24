@@ -9,6 +9,7 @@
 #include "MMOGameInstance.h"
 #include "Packet/PacketExitShop.h"
 #include "Packet/PacketBuyItemRequest.h"
+#include "Packet/PacketSellItemRequest.h"
 
 const TCHAR *UScriptShopWidget::AssetPath = TEXT("/Game/Blueprints/UI/Active/Script/ShopWidget.ShopWidget");
 
@@ -29,25 +30,6 @@ UScriptShopWidget::UScriptShopWidget(const FObjectInitializer &ObjectInitializer
 {
 }
 
-// 初期化.
-void UScriptShopWidget::Init()
-{
-	AGameCharacter *pChara = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
-	check(pChara != nullptr);
-	
-	CurrentGold = pChara->GetGold();
-
-	TArray<FShopItem> ShopItems;
-	TArray<const ShopItem *> Items = MasterData::GetInstance().GetShopMaster().CollectItems(ShopId);
-	for (const auto *pShopItem : Items)
-	{
-		FShopItem ShopItem = GenerateShopItem(pShopItem->ItemId, true);
-		ShopItems.Add(ShopItem);
-	}
-
-	OnInit(ShopItems);
-}
-
 // パケットを受信した。
 void UScriptShopWidget::OnRecvPacket(uint8 ID)
 {
@@ -58,10 +40,47 @@ void UScriptShopWidget::OnRecvPacket(uint8 ID)
 			
 			Init();
 			break;
-
 	}
 }
 
+
+// 初期化.
+void UScriptShopWidget::Init()
+{
+	AGameCharacter *pChara = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+	check(pChara != nullptr);
+
+	CurrentGold = pChara->GetGold();
+
+	// ショップで売っているアイテム
+	TArray<FShopItem> ShopItems;
+	TArray<const ShopItem *> Items = MasterData::GetInstance().GetShopMaster().CollectItems(ShopId);
+	for (const auto *pShopItem : Items)
+	{
+		FShopItem ShopItem = GenerateShopItem(pShopItem->ItemId, true);
+		ShopItems.Add(ShopItem);
+	}
+
+	// 所持アイテム
+	TArray<FShopItem> SellItems;
+	TArray<uint32> ItemList = pChara->GetStatus().GetItemList().CollectItemList();
+	for (uint32 ItemId : ItemList)
+	{
+		FShopItem SellItem = GenerateShopItem(ItemId, false);
+		SellItems.Add(SellItem);
+	}
+
+	OnInit(ShopItems, SellItems);
+}
+
+// アイテム所持数を取得.
+int32 UScriptShopWidget::GetHaveItemCount(const FShopItem &Item) const
+{
+	AGameCharacter *pChara = Cast<AGameCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+	check(pChara != nullptr);
+
+	return pChara->GetItemCount(Item.ItemId);
+}
 
 // 次へ進む。
 void UScriptShopWidget::ToNext()
@@ -84,6 +103,16 @@ void UScriptShopWidget::SendBuy(const FShopItem &Item, int32 Count)
 	check(pInst != nullptr);
 
 	PacketBuyItemRequest Packet(ShopId, Item.ItemId, Count);
+	pInst->SendPacket(&Packet);
+}
+
+// 売却パケットを送信。
+void UScriptShopWidget::SendSell(const FShopItem &Item, int32 Count)
+{
+	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
+	check(pInst != nullptr);
+
+	PacketSellItemRequest Packet(ShopId, Item.ItemId, Count);
 	pInst->SendPacket(&Packet);
 }
 
