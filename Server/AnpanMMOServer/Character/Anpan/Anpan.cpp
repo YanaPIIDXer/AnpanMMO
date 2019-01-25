@@ -71,9 +71,3 @@ void Anpan::Update(int DeltaTime)
 		GetArea().lock()->BroadcastPacket(&Packet);
 	}
 }
-
-// ダメージを受けた。
-void Anpan::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
-{
-	AI.OnDamaged(pAttacker, DamageValue);
-}

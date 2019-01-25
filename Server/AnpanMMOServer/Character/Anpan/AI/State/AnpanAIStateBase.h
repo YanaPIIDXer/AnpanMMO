@@ -47,12 +47,6 @@ public:
 	void SetAI(AnpanAI *pInAI) { pAI = pInAI; }
 
 	/**
-	 * @fn virtual void OnDamaged()
-	 * @brief ƒ_ƒ[ƒW‚ğó‚¯‚½
-	 */
-	virtual void OnDamaged() {}
-
-	/**
 	 * @fn void Stop()
 	 * @brief ’â~
 	 */

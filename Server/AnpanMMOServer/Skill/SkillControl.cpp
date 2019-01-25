@@ -183,7 +183,7 @@ void SkillControl::Activate()
 				{
 					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter(), pItem);
 					s32 Value = Calc.Calc();
-					Targets[i]->ApplyDamage(pOwner->shared_from_this(), Value);
+					Targets[i]->ApplyDamage(Value);
 					if (Targets[i]->IsDead() && OnKilledFunc)
 					{						
 						OnKilledFunc(Targets[i]);

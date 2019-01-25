@@ -94,13 +94,6 @@ bool AnpanAI::SweepSendStopPacketFlag()
 	return bSend;
 }
 
-// ダメージを受けた。
-void AnpanAI::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
-{
-	HateManager.Add(pAttacker, DamageValue);
-	pState->OnDamaged();
-}
-
 // 停止.
 void AnpanAI::Stop()
 {

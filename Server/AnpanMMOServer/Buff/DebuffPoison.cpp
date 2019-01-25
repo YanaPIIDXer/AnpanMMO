@@ -25,7 +25,7 @@ void DebuffPoison::Update(u32 DeltaTime)
 	if (DamageTimer <= 0)
 	{
 		u32 Value = static_cast<u32>(GetCharacter()->GetParameter().GetMaxHp() * DamageRate);
-		GetCharacter()->ApplyDamage(CharacterPtr(), Value);
+		GetCharacter()->ApplyDamage(Value);
 		DamageTimer += DamageInterval;
 	}
 }

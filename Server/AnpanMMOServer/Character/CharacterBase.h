@@ -86,10 +86,9 @@ public:
 	/**
 	 * @fn void ApplyDamage(CharacterPtr pAttacker, u32 Value)
 	 * @brief ダメージを与える
-	 * @param[in] pAttacker ダメージを与えたキャラクタのweak_ptr
 	 * @param[in] Value ダメージ量
 	 */
-	void ApplyDamage(CharacterPtr pAttacker, u32 Value);
+	void ApplyDamage(u32 Value);
 
 	/**
 	 * @fn void Heal(u32 Value)
@@ -285,14 +284,6 @@ protected:
 	{
 		Parameter.Set(Level, Hp, MaxHp, Str, Def, Int, Mnd, Vit, bIsVitAffectMaxHp);
 	}
-
-	/**
-	 * @fn virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
-	 * @brief ダメージを受けた
-	 * @param[in] pAttacker 攻撃者へのweak_ptr
-	 * @param[in] DamageValue ダメージ量
-	 */
-	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue) {}
 
 	/**
 	 * @fn virtual void Update(s32 DeltaTime)

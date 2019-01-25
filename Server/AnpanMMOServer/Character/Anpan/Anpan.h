@@ -91,14 +91,6 @@ protected:
 	 */
 	virtual void Update(int DeltaTime);
 
-	/**
-	 * @fn virtual void OnDamaged(CharacterPtr pAttacker, int DamageValue)
-	 * @brief ダメージを受けた
-	 * @param[in] pAttacker ダメージを与えたキャラへのweak_ptr
-	 * @param[in] int DamageValue ダメージ量
-	 */
-	virtual void OnDamaged(CharacterPtr pAttacker, int DamageValue);
-
 private:
 
 	// 半径.

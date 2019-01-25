@@ -91,14 +91,6 @@ public:
 	bool SweepSendStopPacketFlag();
 
 	/**
-	 * @fn void OnDamaged(CharacterPtr pAttacker, int DamageValue)
-	 * @brief ダメージを受けた
-	 * @param[in] pAttacker 攻撃者へのweak_ptr
-	 * @param[in] DamageValue ダメージ量
-	 */
-	void OnDamaged(CharacterPtr pAttacker, int DamageValue);
-
-	/**
 	 * @fn const Hate &GetHate() const
 	 * @brief ヘイト管理を取得
 	 * @return ヘイト管理

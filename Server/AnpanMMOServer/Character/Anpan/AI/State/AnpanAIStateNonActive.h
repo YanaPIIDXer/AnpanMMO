@@ -28,12 +28,6 @@ public:
 	 */
 	virtual ~AnpanAIStateNonActive() {}
 
-	/**
-	 * @fn virtual void OnDamaged()
-	 * @brief ƒ_ƒ[ƒW‚ğó‚¯‚½
-	 */
-	virtual void OnDamaged();
-
 protected:
 
 	/**

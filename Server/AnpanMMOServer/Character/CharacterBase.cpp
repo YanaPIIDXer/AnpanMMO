@@ -43,14 +43,12 @@ void CharacterBase::SetRotate(const Rotation &TargetRotation)
 }
 
 // ƒ_ƒ[ƒW
-void CharacterBase::ApplyDamage(CharacterPtr pAttacker, u32 Value)
+void CharacterBase::ApplyDamage(u32 Value)
 {
 	Parameter.SubtractHp(Value);
 
 	PacketDamage Packet(GetCharacterType(), Uuid, Value, Parameter.GetHp());
 	pArea.lock()->BroadcastPacket(&Packet);
-
-	OnDamaged(pAttacker, Value);
 }
 
 // ‰ñ•œ.
