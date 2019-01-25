@@ -1,3 +1,6 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node1" href="$classConfig.html" title="Config" alt="" coords="5,5,64,32"/>
+<area shape="rect" id="node1" href="$classClientStateBase.html" title="クライアントステート基底クラス " alt="" coords="5,56,121,83"/>
+<area shape="rect" id="node2" href="$classClientStateActive.html" title="ゲーム中State " alt="" coords="187,5,309,32"/>
+<area shape="rect" id="node3" href="$classClientStateAreaChange.html" title="ClientStateAreaChange" alt="" coords="169,56,327,83"/>
+<area shape="rect" id="node4" href="$classClientStateTitle.html" title="タイトル画面State " alt="" coords="193,107,303,133"/>
 </map>

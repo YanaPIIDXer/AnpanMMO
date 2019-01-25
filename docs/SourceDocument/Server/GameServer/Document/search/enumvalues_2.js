@@ -35,14 +35,15 @@ var searchData=
   ['cancel',['Cancel',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a8f4e90f57decf1616e01c471b7d31e39',1,'PacketSkillUseFailed']]],
   ['cannotremoverightequip',['CanNotRemoveRightEquip',['../classPacketChangeEquipResult.html#a25f7bc4e626fe16cf83726fed8e7ddcba636410133a715dc913fec77ac815d09a',1,'PacketChangeEquipResult']]],
   ['cast',['Cast',['../SkillStateBase_8h.html#a08d7cae8136f6d6fcd4b5c73aee3f1a6a8c35c148932ab52d8b2650cbf7d5b58f',1,'SkillStateBase.h']]],
+  ['change_5fstage',['CHANGE_STAGE',['../structAnpanAIItem.html#acc0f6ec39c099287fe0cf11695d4c6eca6de663c3a91297fcf7532509d8da7d89',1,'AnpanAIItem']]],
   ['changeequiprequest',['ChangeEquipRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa2fe100e18316d59f9588eb09fd672b9f',1,'PacketID']]],
   ['changeequipresult',['ChangeEquipResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aae981205ed166f2381c725ffd171c5a14',1,'PacketID']]],
   ['changegold',['ChangeGold',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaaf47e0277f381f03210df720df611a6e',1,'PacketID']]],
   ['characterstatus',['CharacterStatus',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad71bb8468369f6e7d230d944462f913e',1,'PacketID']]],
   ['cleared',['Cleared',['../classQuestData.html#a9ed9c55d4742f2f55539926963f74394a2d9d115198e012397f73deb3c6e44fb6',1,'QuestData']]],
   ['closed',['Closed',['../classSkillTreeNode.html#a6bb1fbea2de3bcba26e497ef11242b74ac60196704a3586e281074b5a248a2b20',1,'SkillTreeNode']]],
-  ['collect_5fitem',['COLLECT_ITEM',['../structQuestStageItem.html#ac34f8a22901bc3bf566a261018e56539aec737e62d9103eb14d5f3d4ba983612c',1,'QuestStageItem']]],
-  ['consume',['CONSUME',['../structItemItem.html#abe40b579363e0cc8e9aaf5db89389111ad4dc891dc9bcca6f31f6270fecc1c57c',1,'ItemItem']]],
+  ['collect_5fitem',['COLLECT_ITEM',['../structQuestStageItem.html#a696750bde98ce05143b3f8897c692ef0aec737e62d9103eb14d5f3d4ba983612c',1,'QuestStageItem']]],
+  ['consume',['CONSUME',['../structItemItem.html#a35366c1e66d2205d031556f1778de179ad4dc891dc9bcca6f31f6270fecc1c57c',1,'ItemItem']]],
   ['createcharacterrequest',['CreateCharacterRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa0577b75e07bbe35fa2fcd6656dee9eb2',1,'PacketID']]],
   ['createcharacterresult',['CreateCharacterResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa5ac49dbfb9a036736757809e0cfaea25',1,'PacketID']]]
 ];

@@ -42,7 +42,7 @@ var searchData=
   ['broadcastpacket',['BroadcastPacket',['../classAreaBase.html#a946d6eb75590a7d0c2702c7f7aa4d16c',1,'AreaBase::BroadcastPacket()'],['../classClientManager.html#a11b19092f03d2ea7ff405852d5a43392',1,'ClientManager::BroadcastPacket()'],['../classParty.html#ab2914dc01d89fa2521289e967e0a1314',1,'Party::BroadcastPacket()'],['../classPlayerManager.html#ae856745bf6d69cc9ff54df6861049f37',1,'PlayerManager::BroadcastPacket()']]],
   ['broadcastpacketwithrange',['BroadcastPacketWithRange',['../classAreaBase.html#a9b8562f04de35c129dcb65beebbdc5cd',1,'AreaBase::BroadcastPacketWithRange()'],['../classPlayerManager.html#a412aaba35447720310431e86be6e6d71',1,'PlayerManager::BroadcastPacketWithRange()']]],
   ['broadcastpublishpacket',['BroadcastPublishPacket',['../classInstanceAreaTicket.html#a0f45150525636b152c1e742871651ae1',1,'InstanceAreaTicket']]],
-  ['buff',['BUFF',['../structSkillItem.html#a0c92dd0ba436dd33f9552f483ae2e04aa44e0350819ac71d7233ea746b08bab44',1,'SkillItem']]],
+  ['buff',['BUFF',['../structSkillItem.html#af16a4269928b1fc7cff4e5479eef6cd1a44e0350819ac71d7233ea746b08bab44',1,'SkillItem']]],
   ['buffautoheal',['BuffAutoHeal',['../classBuffAutoHeal.html',1,'BuffAutoHeal'],['../classBuffAutoHeal.html#ac72bdb569580d6db03b64dff41ff4d8a',1,'BuffAutoHeal::BuffAutoHeal()']]],
   ['buffautoheal_2ecpp',['BuffAutoHeal.cpp',['../BuffAutoHeal_8cpp.html',1,'']]],
   ['buffautoheal_2eh',['BuffAutoHeal.h',['../BuffAutoHeal_8h.html',1,'']]],

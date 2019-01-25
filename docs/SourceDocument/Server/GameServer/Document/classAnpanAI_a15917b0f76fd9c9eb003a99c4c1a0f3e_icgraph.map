@@ -1,5 +1,5 @@
 <map id="AnpanAI::ChangeState" name="AnpanAI::ChangeState">
 <area shape="rect" id="node2" href="$classAnpanAI.html#a05eb2025dffa9c8018c1d59ed8431ee1" title="コンストラクタ " alt="" coords="224,5,352,32"/>
 <area shape="rect" id="node3" href="$classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="219,57,357,98"/>
-<area shape="rect" id="node4" href="$classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="208,122,368,163"/>
+<area shape="rect" id="node4" href="$classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="208,122,368,163"/>
 </map>

@@ -141,6 +141,7 @@ var menudata={children:[
 {text:"r",url:"functions_eval_r.html#index_r"},
 {text:"s",url:"functions_eval_s.html#index_s"},
 {text:"t",url:"functions_eval_t.html#index_t"},
+{text:"u",url:"functions_eval_u.html#index_u"},
 {text:"w",url:"functions_eval_w.html#index_w"}]}]}]},
 {text:"ファイル",url:"files.html",children:[
 {text:"ファイル一覧",url:"files.html"},

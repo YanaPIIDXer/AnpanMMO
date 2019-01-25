@@ -1,5 +1,6 @@
 <map id="AnpanAIStateBase::Stop" name="AnpanAIStateBase::Stop">
-<area shape="rect" id="node2" href="$classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872" title="停止 " alt="" coords="247,5,353,32"/>
-<area shape="rect" id="node4" href="$classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="220,57,380,98"/>
-<area shape="rect" id="node3" href="$classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="428,5,571,32"/>
+<area shape="rect" id="node2" href="$classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872" title="停止 " alt="" coords="220,64,327,91"/>
+<area shape="rect" id="node3" href="$classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="383,5,526,32"/>
+<area shape="rect" id="node4" href="$classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="386,57,523,98"/>
+<area shape="rect" id="node5" href="$classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="375,122,535,163"/>
 </map>

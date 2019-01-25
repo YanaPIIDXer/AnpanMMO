@@ -1,9 +1,3 @@
 <map id="クラス階層図" name="クラス階層図">
-<area shape="rect" id="node2" href="$classAreaBase.html" title="エリア基底クラス " alt="" coords="235,56,313,83"/>
-<area shape="rect" id="node5" href="$classCharacterBase.html" title="キャラクタ基底クラス " alt="" coords="220,107,328,133"/>
-<area shape="rect" id="node8" href="$classParty.html" title="Party" alt="" coords="247,157,301,184"/>
-<area shape="rect" id="node3" href="$classArea.html" title="エリアクラス " alt="" coords="409,5,458,32"/>
-<area shape="rect" id="node4" href="$classInstanceArea.html" title="インスタンスエリア " alt="" coords="384,56,483,83"/>
-<area shape="rect" id="node6" href="$classAnpan.html" title="アンパンクラス " alt="" coords="404,107,463,133"/>
-<area shape="rect" id="node7" href="$classPlayerCharacter.html" title="プレイヤーキャラクタ " alt="" coords="376,157,491,184"/>
+<area shape="rect" id="node1" href="$classAnpanPopDataMaster.html" title="AnpanPopDataMaster" alt="" coords="5,5,155,32"/>
 </map>

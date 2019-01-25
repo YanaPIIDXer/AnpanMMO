@@ -1,3 +1,4 @@
 <map id="AnpanAI::GetHate" name="AnpanAI::GetHate">
-<area shape="rect" id="node2" href="$classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="180,5,317,47"/>
+<area shape="rect" id="node2" href="$classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="191,5,329,47"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="180,71,340,112"/>
 </map>

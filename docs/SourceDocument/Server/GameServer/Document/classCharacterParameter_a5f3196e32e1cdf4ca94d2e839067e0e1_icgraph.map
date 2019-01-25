@@ -1,6 +1,6 @@
 <map id="CharacterParameter::GetHp" name="CharacterParameter::GetHp">
 <area shape="rect" id="node2" href="$classAnpanManager.html#a115c65334829f3cdf192cad3c2b5495a" title="AnpanManager::MakeListPacket" alt="" coords="192,107,403,133"/>
-<area shape="rect" id="node4" href="$classCharacterBase.html#ae5a9cbbe8bff9feb0a137b5fc3787f3f" title="ダメージを与える " alt="" coords="199,5,396,32"/>
+<area shape="rect" id="node4" href="$classCharacterBase.html#a10436e891a19066ad22ddb16c2569414" title="ダメージを与える " alt="" coords="199,5,396,32"/>
 <area shape="rect" id="node6" href="$classCharacterBase.html#ad6b357a4c7cf3569990df39eabd7be75" title="回復 " alt="" coords="226,208,369,235"/>
 <area shape="rect" id="node8" href="$classCharacterBase.html#a4654af77eeea1dd5297b2805fa1c5c93" title="死んでいる？ " alt="" coords="219,157,375,184"/>
 <area shape="rect" id="node9" href="$classPlayerManager.html#afc50bf84136657b917d052ac7a34f46b" title="PlayerManager::Add" alt="" coords="227,56,367,83"/>

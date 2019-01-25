@@ -82,12 +82,12 @@ $(function() {
 <tr class="memitem:af7e5a463f4a78a8dde3e763a1b25a236"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHate.html#af7e5a463f4a78a8dde3e763a1b25a236">~Hate</a> ()</td></tr>
 <tr class="memdesc:af7e5a463f4a78a8dde3e763a1b25a236"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#af7e5a463f4a78a8dde3e763a1b25a236">[詳解]</a><br /></td></tr>
 <tr class="separator:af7e5a463f4a78a8dde3e763a1b25a236"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c025a5a6c42bf5ec02c998ce8fbe1df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHate.html#a7c025a5a6c42bf5ec02c998ce8fbe1df">Poll</a> ()</td></tr>
-<tr class="memdesc:a7c025a5a6c42bf5ec02c998ce8fbe1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="#a7c025a5a6c42bf5ec02c998ce8fbe1df">[詳解]</a><br /></td></tr>
-<tr class="separator:a7c025a5a6c42bf5ec02c998ce8fbe1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af95ba2a070814635dc94a88c19813f74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHate.html#af95ba2a070814635dc94a88c19813f74">Add</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pCharacter, int Value)</td></tr>
-<tr class="memdesc:af95ba2a070814635dc94a88c19813f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">増加  <a href="#af95ba2a070814635dc94a88c19813f74">[詳解]</a><br /></td></tr>
-<tr class="separator:af95ba2a070814635dc94a88c19813f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a3dfd42b94f59e951ea3f3a221c453"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHate.html#a83a3dfd42b94f59e951ea3f3a221c453">Poll</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> DeltaTime)</td></tr>
+<tr class="memdesc:a83a3dfd42b94f59e951ea3f3a221c453"><td class="mdescLeft">&#160;</td><td class="mdescRight">毎フレームの処理  <a href="#a83a3dfd42b94f59e951ea3f3a221c453">[詳解]</a><br /></td></tr>
+<tr class="separator:a83a3dfd42b94f59e951ea3f3a221c453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ef32d60f7da536c675dea17c3ee27c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHate.html#ac9ef32d60f7da536c675dea17c3ee27c">Add</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pCharacter, int VolatileHate, int AccumulateHate)</td></tr>
+<tr class="memdesc:ac9ef32d60f7da536c675dea17c3ee27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">増加  <a href="#ac9ef32d60f7da536c675dea17c3ee27c">[詳解]</a><br /></td></tr>
+<tr class="separator:ac9ef32d60f7da536c675dea17c3ee27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a308f387eb719a1148a3415efc8e37f05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHate.html#a308f387eb719a1148a3415efc8e37f05">GetTop</a> () const</td></tr>
 <tr class="memdesc:a308f387eb719a1148a3415efc8e37f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">一番上にいるキャラを取得  <a href="#a308f387eb719a1148a3415efc8e37f05">[詳解]</a><br /></td></tr>
 <tr class="separator:a308f387eb719a1148a3415efc8e37f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,8 +142,8 @@ $(function() {
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="af95ba2a070814635dc94a88c19813f74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af95ba2a070814635dc94a88c19813f74">&#9670;&nbsp;</a></span>Add()</h2>
+<a id="ac9ef32d60f7da536c675dea17c3ee27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9ef32d60f7da536c675dea17c3ee27c">&#9670;&nbsp;</a></span>Add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +158,13 @@ $(function() {
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>Value</em>&#160;</td>
+          <td class="paramname"><em>VolatileHate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>AccumulateHate</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -172,17 +178,18 @@ $(function() {
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pCharacter</td><td>キャラクタへのweak_ptr </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">Value</td><td>増加量 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">VolatileHate</td><td>揮発ヘイト </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">AccumulateHate</td><td>累積ヘイト </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classHate_af95ba2a070814635dc94a88c19813f74_icgraph.png" border="0" usemap="#classHate_af95ba2a070814635dc94a88c19813f74_icgraph" alt=""/></div>
-<map name="classHate_af95ba2a070814635dc94a88c19813f74_icgraph" id="classHate_af95ba2a070814635dc94a88c19813f74_icgraph">
-<area shape="rect" id="node2" href="classAnpanAI.html#af69841c74db3689157c8277104565942" title="ダメージを受けた " alt="" coords="133,5,284,32"/>
-<area shape="rect" id="node3" href="classAnpan.html#afbb407fc7f60055e75ef203a984397df" title="ダメージを受けた " alt="" coords="332,5,471,32"/>
+<div class="center"><img src="classHate_ac9ef32d60f7da536c675dea17c3ee27c_icgraph.png" border="0" usemap="#classHate_ac9ef32d60f7da536c675dea17c3ee27c_icgraph" alt=""/></div>
+<map name="classHate_ac9ef32d60f7da536c675dea17c3ee27c_icgraph" id="classHate_ac9ef32d60f7da536c675dea17c3ee27c_icgraph">
+<area shape="rect" id="node2" href="classAnpanAI.html#aade3990ca7d3289619f9693946367d53" title="スキルを食らった。 " alt="" coords="133,5,307,32"/>
+<area shape="rect" id="node3" href="classAnpan.html#a10b4f3247e64b58c04da25b45f23c2ba" title="スキルを食らった。 " alt="" coords="355,5,516,32"/>
 </map>
 </div>
 
@@ -210,14 +217,15 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classHate_a308f387eb719a1148a3415efc8e37f05_icgraph.png" border="0" usemap="#classHate_a308f387eb719a1148a3415efc8e37f05_icgraph" alt=""/></div>
 <map name="classHate_a308f387eb719a1148a3415efc8e37f05_icgraph" id="classHate_a308f387eb719a1148a3415efc8e37f05_icgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="152,5,289,47"/>
+<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="163,5,301,47"/>
+<area shape="rect" id="node3" href="classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="152,71,312,112"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a7c025a5a6c42bf5ec02c998ce8fbe1df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c025a5a6c42bf5ec02c998ce8fbe1df">&#9670;&nbsp;</a></span>Poll()</h2>
+<a id="a83a3dfd42b94f59e951ea3f3a221c453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a3dfd42b94f59e951ea3f3a221c453">&#9670;&nbsp;</a></span>Poll()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,18 +233,25 @@ $(function() {
         <tr>
           <td class="memname">void Hate::Poll </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>DeltaTime</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>毎フレームの処理 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">前フレームからの経過時間.</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classHate_a7c025a5a6c42bf5ec02c998ce8fbe1df_icgraph.png" border="0" usemap="#classHate_a7c025a5a6c42bf5ec02c998ce8fbe1df_icgraph" alt=""/></div>
-<map name="classHate_a7c025a5a6c42bf5ec02c998ce8fbe1df_icgraph" id="classHate_a7c025a5a6c42bf5ec02c998ce8fbe1df_icgraph">
+<div class="center"><img src="classHate_a83a3dfd42b94f59e951ea3f3a221c453_icgraph.png" border="0" usemap="#classHate_a83a3dfd42b94f59e951ea3f3a221c453_icgraph" alt=""/></div>
+<map name="classHate_a83a3dfd42b94f59e951ea3f3a221c453_icgraph" id="classHate_a83a3dfd42b94f59e951ea3f3a221c453_icgraph">
 <area shape="rect" id="node2" href="classAnpanAI.html#ac128bf0bf22fbc9893cc35274dd00292" title="毎フレームの処理 " alt="" coords="132,5,233,32"/>
 <area shape="rect" id="node3" href="classAnpan.html#a647dd781c00dbaff8e933735aecd508a" title="毎フレームの処理 " alt="" coords="281,5,389,32"/>
 </map>
