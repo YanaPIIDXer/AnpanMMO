@@ -206,6 +206,8 @@ void SkillControl::Activate()
 		{
 			Targets[i]->AddBuff(pItem->BuffId);
 		}
+
+		Targets[i]->OnSkillReceived(pOwner->shared_from_this(), pItem);
 	}
 
 	pOwner->StartRecast(SkillId);

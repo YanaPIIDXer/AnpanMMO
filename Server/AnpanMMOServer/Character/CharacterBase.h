@@ -15,6 +15,8 @@
 #include "Skill/SkillRecastManager.h"
 #include "Buff/BuffManager.h"
 
+struct SkillItem;
+
 /**
  * @class CharacterBase
  * @brief キャラクタ基底クラス
@@ -251,6 +253,14 @@ public:
 	 * @return 麻痺状態ならtrueを返す。
 	 */
 	bool IsParalysis() const;
+
+	/**
+	 * @fn virtual void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+	 * @brief スキルを食らった。
+	 * @param[in] pCharacter スキル使用者
+	 * @param[in] pSkill 食らったスキル
+	 */
+	virtual void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill) {}
 
 protected:
 
