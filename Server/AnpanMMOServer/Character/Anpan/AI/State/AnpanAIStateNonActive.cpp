@@ -28,6 +28,14 @@ void AnpanAIStateNonActive::Update(int DeltaTime)
 		CurrentState = Stopping;
 	}
 
+	if (!GetAI()->GetHate().GetTop().expired())
+	{
+		// ヘイトリストにキャラが乗ったのでアクティブステートへ。
+		GetAI()->Stop();
+		GetAI()->ChangeState(new AnpanAIStateActive(GetParent()));
+		return;
+	}
+
 	StateTime -= DeltaTime;
 	if (StateTime < 0)
 	{

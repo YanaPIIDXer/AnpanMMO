@@ -31,6 +31,7 @@ void AnpanAIStateActive::Update(int DeltaTime)
 	if (pChara.expired())
 	{
 		// ヘイトリストからキャラがいなくなった。
+		GetAI()->Stop();
 		GetAI()->ChangeState(new AnpanAIStateNonActive(GetParent()));
 		return;
 	}

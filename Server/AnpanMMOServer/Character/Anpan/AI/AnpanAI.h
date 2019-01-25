@@ -12,6 +12,7 @@
 
 class Anpan;
 class AnpanAIStateBase;
+struct SkillItem;
 
 /**
  * @class AnpanAI
@@ -102,6 +103,14 @@ public:
 	 * @brief 停止
 	 */
 	void Stop();
+
+	/**
+	 * @fn void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+	 * @brief スキルを食らった。
+	 * @param[in] pCharacter スキル使用者
+	 * @param[in] pSkill 食らったスキル
+	 */
+	void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill);
 
 private:
 

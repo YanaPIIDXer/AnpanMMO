@@ -44,6 +44,12 @@ void Anpan::OnBuffAdded(u32 BuffId)
 	}
 }
 
+// スキルを食らった。
+void Anpan::OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+{
+	AI.OnSkillReceived(pCharacter, pSkill);
+}
+
 
 // 毎フレームの処理.
 void Anpan::Update(int DeltaTime)

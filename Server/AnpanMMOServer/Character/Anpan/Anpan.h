@@ -82,6 +82,14 @@ public:
 	 */
 	virtual void OnBuffAdded(u32 BuffId);
 
+	/**
+	 * @fn virtual void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+	 * @brief スキルを食らった。
+	 * @param[in] pCharacter スキル使用者
+	 * @param[in] pSkill 食らったスキル
+	 */
+	virtual void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill);
+
 protected:
 
 	/**

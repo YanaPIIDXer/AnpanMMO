@@ -8,6 +8,7 @@
 #include "Character/Anpan/Anpan.h"
 #include "State/AnpanAIStateBase.h"
 #include "State/AnpanAIStateNonActive.h"
+#include "Master/SkillMaster.h"
 
 // コンストラクタ
 AnpanAI::AnpanAI(Anpan *pInParent)
@@ -47,7 +48,7 @@ void AnpanAI::Poll(int DeltaTime)
 	{
 		pState->Poll(DeltaTime);
 	}
-	HateManager.Poll();
+	HateManager.Poll(DeltaTime);
 }
 
 // ステート切り替え.
@@ -98,4 +99,11 @@ bool AnpanAI::SweepSendStopPacketFlag()
 void AnpanAI::Stop()
 {
 	pState->Stop();
+}
+
+// スキルを食らった。
+void AnpanAI::OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+{
+	if (pCharacter.lock().get() == pParent) { return; }
+	HateManager.Add(pCharacter, pSkill->VolatileHate, pSkill->AccumulateHate);
 }
