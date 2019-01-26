@@ -44,6 +44,22 @@ const InstanceInfoItem *InstanceInfoMaster::GetItem(u32 Key, s32 SheetIndex) con
 	return &It2->second;
 }
 
+std::vector<InstanceInfoItem> InstanceInfoMaster::GetAllSheetItem(s32 SheetIndex) const
+{
+	std::vector<InstanceInfoItem> AllItem;
+	SheetMap::const_iterator It = Items.find(SheetIndex);
+	if (It != Items.end())
+	{
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
+	}
+
+	std::sort(AllItem.begin(), AllItem.end());
+	return AllItem;
+}
+
 std::vector<InstanceInfoItem> InstanceInfoMaster::GetAll() const
 {
 	std::vector<InstanceInfoItem> AllItem;

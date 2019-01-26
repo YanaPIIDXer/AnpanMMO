@@ -66,6 +66,22 @@ const SkillItem *SkillMaster::GetItem(u32 Key, s32 SheetIndex) const
 	return &It2->second;
 }
 
+std::vector<SkillItem> SkillMaster::GetAllSheetItem(s32 SheetIndex) const
+{
+	std::vector<SkillItem> AllItem;
+	SheetMap::const_iterator It = Items.find(SheetIndex);
+	if (It != Items.end())
+	{
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
+	}
+
+	std::sort(AllItem.begin(), AllItem.end());
+	return AllItem;
+}
+
 std::vector<SkillItem> SkillMaster::GetAll() const
 {
 	std::vector<SkillItem> AllItem;

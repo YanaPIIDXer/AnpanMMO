@@ -36,6 +36,8 @@ public:
 
 	
 
+	std::vector<NGWordItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<NGWordItem> GetAll() const;
 
 private:

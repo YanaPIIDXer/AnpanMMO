@@ -37,6 +37,8 @@ public:
 
 	std::vector<const ShopItem *> CollectItems(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<ShopItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<ShopItem> GetAll() const;
 
 private:

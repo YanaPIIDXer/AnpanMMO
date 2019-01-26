@@ -24,6 +24,22 @@ $ITEM_FETCH$
 
 $GET_KEY_FUNCTION$
 
+std::vector<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAllSheetItem(s32 SheetIndex) const
+{
+	std::vector<$ITEM_STRUCT_NAME$> AllItem;
+	SheetMap::const_iterator It = Items.find(SheetIndex);
+	if (It != Items.end())
+	{
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
+	}
+
+	std::sort(AllItem.begin(), AllItem.end());
+	return AllItem;
+}
+
 std::vector<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAll() const
 {
 	std::vector<$ITEM_STRUCT_NAME$> AllItem;

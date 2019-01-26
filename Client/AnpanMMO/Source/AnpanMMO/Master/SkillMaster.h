@@ -87,6 +87,8 @@ public:
 
 	void Load();
 
+	TArray<SkillItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<SkillItem> GetAll() const;
 
 	const SkillItem *Get(u32 Key, int32 SheetIndex = 0) const;

@@ -43,6 +43,8 @@ public:
 
 	std::vector<const AnpanPopAreaItem *> CollectItems(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<AnpanPopAreaItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<AnpanPopAreaItem> GetAll() const;
 
 private:

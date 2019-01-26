@@ -44,6 +44,8 @@ public:
 
 	void Load();
 
+	TArray<WarpDataItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<WarpDataItem> GetAll() const;
 
 	const WarpDataItem *Get(u32 Key, int32 SheetIndex = 0) const;

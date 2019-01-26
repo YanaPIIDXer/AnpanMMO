@@ -42,6 +42,8 @@ public:
 
 	const LevelItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<LevelItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<LevelItem> GetAll() const;
 
 private:

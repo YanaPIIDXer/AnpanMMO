@@ -40,6 +40,8 @@ public:
 
 	const WarpPointItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<WarpPointItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<WarpPointItem> GetAll() const;
 
 private:

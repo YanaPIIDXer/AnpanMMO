@@ -40,6 +40,8 @@ public:
 
 	const WarpDataItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<WarpDataItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<WarpDataItem> GetAll() const;
 
 private:

@@ -40,6 +40,23 @@ void NPCConditionMaster::Load()
 	delete[] pData;
 }
 
+TArray<NPCConditionItem> NPCConditionMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<NPCConditionItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const NPCConditionItem &A, const NPCConditionItem &B)
+	{
+		return (A.ID < B.ID);
+	});
+	return ItemArray;
+}
+
 TArray<NPCConditionItem> NPCConditionMaster::GetAll() const
 {
 	TArray<NPCConditionItem> ItemArray;

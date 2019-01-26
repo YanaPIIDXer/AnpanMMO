@@ -46,6 +46,8 @@ public:
 
 	const QuestItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<QuestItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<QuestItem> GetAll() const;
 
 private:

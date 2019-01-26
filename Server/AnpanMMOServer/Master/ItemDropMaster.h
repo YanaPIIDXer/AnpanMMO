@@ -50,6 +50,8 @@ public:
 
 	const ItemDropItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<ItemDropItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<ItemDropItem> GetAll() const;
 
 private:

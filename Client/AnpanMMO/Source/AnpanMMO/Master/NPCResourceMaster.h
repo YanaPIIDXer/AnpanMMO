@@ -40,6 +40,8 @@ public:
 
 	void Load();
 
+	TArray<NPCResourceItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<NPCResourceItem> GetAll() const;
 
 	const NPCResourceItem *Get(u32 Key, int32 SheetIndex = 0) const;

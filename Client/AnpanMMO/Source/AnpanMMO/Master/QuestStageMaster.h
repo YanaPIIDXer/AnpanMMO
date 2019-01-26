@@ -48,6 +48,8 @@ public:
 
 	void Load();
 
+	TArray<QuestStageItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<QuestStageItem> GetAll() const;
 
 	const QuestStageItem *Get(u32 Key, int32 SheetIndex = 0) const;

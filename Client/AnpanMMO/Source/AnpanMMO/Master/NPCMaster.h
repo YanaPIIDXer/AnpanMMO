@@ -58,6 +58,8 @@ public:
 
 	void Load();
 
+	TArray<NPCItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<NPCItem> GetAll() const;
 
 	const NPCItem *Get(u32 Key, int32 SheetIndex = 0) const;

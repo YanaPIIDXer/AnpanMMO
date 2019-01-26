@@ -40,6 +40,23 @@ void QuestMaster::Load()
 	delete[] pData;
 }
 
+TArray<QuestItem> QuestMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<QuestItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const QuestItem &A, const QuestItem &B)
+	{
+		return (A.Id < B.Id);
+	});
+	return ItemArray;
+}
+
 TArray<QuestItem> QuestMaster::GetAll() const
 {
 	TArray<QuestItem> ItemArray;

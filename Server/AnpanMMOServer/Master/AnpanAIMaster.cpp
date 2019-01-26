@@ -48,6 +48,22 @@ std::vector<const AnpanAIItem *> AnpanAIMaster::CollectItems(u8 Key, s32 SheetIn
 	return Result;
 }
 
+std::vector<AnpanAIItem> AnpanAIMaster::GetAllSheetItem(s32 SheetIndex) const
+{
+	std::vector<AnpanAIItem> AllItem;
+	SheetMap::const_iterator It = Items.find(SheetIndex);
+	if (It != Items.end())
+	{
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
+	}
+
+	std::sort(AllItem.begin(), AllItem.end());
+	return AllItem;
+}
+
 std::vector<AnpanAIItem> AnpanAIMaster::GetAll() const
 {
 	std::vector<AnpanAIItem> AllItem;

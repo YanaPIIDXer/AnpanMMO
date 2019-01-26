@@ -70,6 +70,8 @@ public:
 
 	const SkillItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<SkillItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<SkillItem> GetAll() const;
 
 private:

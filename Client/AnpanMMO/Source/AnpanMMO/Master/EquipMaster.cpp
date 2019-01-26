@@ -40,6 +40,23 @@ void EquipMaster::Load()
 	delete[] pData;
 }
 
+TArray<EquipItem> EquipMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<EquipItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const EquipItem &A, const EquipItem &B)
+	{
+		return (A.ID < B.ID);
+	});
+	return ItemArray;
+}
+
 TArray<EquipItem> EquipMaster::GetAll() const
 {
 	TArray<EquipItem> ItemArray;

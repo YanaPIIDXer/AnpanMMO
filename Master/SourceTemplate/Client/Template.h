@@ -32,6 +32,8 @@ public:
 
 	void Load();
 
+	TArray<$ITEM_STRUCT_NAME$> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<$ITEM_STRUCT_NAME$> GetAll() const;
 
 	$GET_ITEM_FUNCTION_DECRARE$

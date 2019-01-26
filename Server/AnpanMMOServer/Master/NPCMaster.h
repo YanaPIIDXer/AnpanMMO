@@ -45,6 +45,8 @@ public:
 
 	const NPCItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<NPCItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<NPCItem> GetAll() const;
 
 private:

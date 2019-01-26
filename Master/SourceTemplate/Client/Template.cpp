@@ -40,6 +40,23 @@ void $CLASS_NAME$::Load()
 	delete[] pData;
 }
 
+TArray<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<$ITEM_STRUCT_NAME$> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const $ITEM_STRUCT_NAME$ &A, const $ITEM_STRUCT_NAME$ &B)
+	{
+		return (A.$KEY_NAME$ < B.$KEY_NAME$);
+	});
+	return ItemArray;
+}
+
 TArray<$ITEM_STRUCT_NAME$> $CLASS_NAME$::GetAll() const
 {
 	TArray<$ITEM_STRUCT_NAME$> ItemArray;

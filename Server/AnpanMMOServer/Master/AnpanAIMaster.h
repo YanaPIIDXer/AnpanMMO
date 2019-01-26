@@ -46,6 +46,8 @@ public:
 
 	std::vector<const AnpanAIItem *> CollectItems(u8 Key, s32 SheetIndex = 0) const;
 
+	std::vector<AnpanAIItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<AnpanAIItem> GetAll() const;
 
 private:

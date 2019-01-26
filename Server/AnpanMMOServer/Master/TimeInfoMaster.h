@@ -47,6 +47,8 @@ public:
 
 	const TimeInfoItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<TimeInfoItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<TimeInfoItem> GetAll() const;
 
 private:

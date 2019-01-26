@@ -54,6 +54,8 @@ public:
 
 	void Load();
 
+	TArray<AnpanItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<AnpanItem> GetAll() const;
 
 	const AnpanItem *Get(u32 Key, int32 SheetIndex = 0) const;

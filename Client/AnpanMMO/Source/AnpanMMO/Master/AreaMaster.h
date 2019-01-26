@@ -51,6 +51,8 @@ public:
 
 	void Load();
 
+	TArray<AreaItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<AreaItem> GetAll() const;
 
 	const AreaItem *Get(u32 Key, int32 SheetIndex = 0) const;

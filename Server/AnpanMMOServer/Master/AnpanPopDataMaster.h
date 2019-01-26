@@ -37,6 +37,8 @@ public:
 
 	std::vector<const AnpanPopDataItem *> CollectItems(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<AnpanPopDataItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<AnpanPopDataItem> GetAll() const;
 
 private:

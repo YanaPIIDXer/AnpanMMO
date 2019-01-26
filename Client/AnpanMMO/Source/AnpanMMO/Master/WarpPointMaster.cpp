@@ -40,6 +40,23 @@ void WarpPointMaster::Load()
 	delete[] pData;
 }
 
+TArray<WarpPointItem> WarpPointMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<WarpPointItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const WarpPointItem &A, const WarpPointItem &B)
+	{
+		return (A.Id < B.Id);
+	});
+	return ItemArray;
+}
+
 TArray<WarpPointItem> WarpPointMaster::GetAll() const
 {
 	TArray<WarpPointItem> ItemArray;

@@ -40,6 +40,23 @@ void ItemMaster::Load()
 	delete[] pData;
 }
 
+TArray<ItemItem> ItemMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<ItemItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const ItemItem &A, const ItemItem &B)
+	{
+		return (A.ID < B.ID);
+	});
+	return ItemArray;
+}
+
 TArray<ItemItem> ItemMaster::GetAll() const
 {
 	TArray<ItemItem> ItemArray;

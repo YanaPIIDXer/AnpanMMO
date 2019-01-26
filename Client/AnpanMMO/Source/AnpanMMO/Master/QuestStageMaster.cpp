@@ -40,6 +40,23 @@ void QuestStageMaster::Load()
 	delete[] pData;
 }
 
+TArray<QuestStageItem> QuestStageMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<QuestStageItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const QuestStageItem &A, const QuestStageItem &B)
+	{
+		return (A.Id < B.Id);
+	});
+	return ItemArray;
+}
+
 TArray<QuestStageItem> QuestStageMaster::GetAll() const
 {
 	TArray<QuestStageItem> ItemArray;
