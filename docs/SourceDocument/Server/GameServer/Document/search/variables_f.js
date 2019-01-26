@@ -6,6 +6,7 @@ var searchData=
   ['pclient',['pClient',['../structInstanceAreaTicketInfo.html#ab3e32812f8bc1e03164435a31eaad671',1,'InstanceAreaTicketInfo']]],
   ['planes',['Planes',['../structBitmapInfoData.html#a53bf4da637b3de573e8fd9a013e0a1cd',1,'BitmapInfoData']]],
   ['playermgr',['PlayerMgr',['../classAreaBase.html#a2ba7d4287152153d70239a6921406981',1,'AreaBase']]],
+  ['pnextaction',['pNextAction',['../structAIAction.html#a992dd185f9bf6c04b0d2f7e5ba426b33',1,'AIAction']]],
   ['popid',['PopId',['../structAnpanPopAreaItem.html#af7b939ff066df9b321fc14d8eb55746e',1,'AnpanPopAreaItem']]],
   ['popinterval',['PopInterval',['../structAnpanPopAreaItem.html#a5f18ce85c4d05924fc2e5c2bcee79210',1,'AnpanPopAreaItem']]],
   ['position',['Position',['../classCharacterBase.html#a7bb9a1746383089944b5d8d5a76d7194',1,'CharacterBase']]],
