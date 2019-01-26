@@ -25,4 +25,7 @@ typedef weak_ptr<Client> ClientPtr;
 class AreaBase;
 typedef weak_ptr<AreaBase> AreaPtr;
 
+struct AIAction;
+typedef weak_ptr<AIAction> AIActionPtr;
+
 #endif		// #ifndef __WEAKPTRDEFINE_H__

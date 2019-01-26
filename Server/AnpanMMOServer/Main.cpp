@@ -10,6 +10,7 @@
 #include "CacheServer/CacheServerConnection.h"
 #include "WordCheckServer/WordCheckServerConnection.h"
 #include "Shop/ShopManager.h"
+#include "Character/Anpan/AI/AIGenerator.h"
 
 // エントリポイント
 int main()
@@ -25,6 +26,7 @@ int main()
 	}
 
 	ShopManager::GetInstance().Initialize();
+	AIGenerator::GetInstance().Initialize();
 
 	asio::io_service IOService;
 

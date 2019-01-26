@@ -144,6 +144,7 @@
     <ClInclude Include="Buff\DebuffPoison.h" />
     <ClInclude Include="Buff\BuffSpeedUp.h" />
     <ClInclude Include="CacheServer\CacheServerConnection.h" />
+    <ClInclude Include="Character\Anpan\AI\AIGenerator.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
     <ClInclude Include="Character\Anpan\AI\Hate.h" />
@@ -270,6 +271,7 @@
     <ClCompile Include="Buff\DebuffParalysis.cpp" />
     <ClCompile Include="Buff\DebuffPoison.cpp" />
     <ClCompile Include="CacheServer\CacheServerConnection.cpp" />
+    <ClCompile Include="Character\Anpan\AI\AIGenerator.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateActive.cpp" />
