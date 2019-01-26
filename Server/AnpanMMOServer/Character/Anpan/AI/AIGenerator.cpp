@@ -22,7 +22,7 @@ void AIGenerator::Initialize()
 		std::vector<AnpanAIItem> Items = MasterData::GetInstance().GetAnpanAIMaster().GetAllSheetItem(i);
 		if (Items.size() == 0) { break; }
 
-		std::vector<AIActionSharedPtr> ActionList;
+		ActionVector ActionList;
 
 		for (std::vector<AnpanAIItem>::iterator It = Items.begin(); It != Items.end(); ++It)
 		{
@@ -38,22 +38,25 @@ void AIGenerator::Initialize()
 	// 行動リンクの構築.
 	for (ActionMap::iterator It = Actions.begin(); It != Actions.end(); ++It)
 	{
-		std::vector<AIActionSharedPtr> &ActionList = It->second;
+		ActionVector &ActionList = It->second;
 		for (u32 i = 0; i < ActionList.size(); i++)
 		{
 			if (ActionList[i].get()->Action != AnpanAIItem::CHANGE_STAGE)
 			{
 				if (i < ActionList.size() - 1)
 				{
+					// 次へ
 					ActionList[i].get()->pNextAction = ActionList[i + 1];
 				}
 				else
 				{
+					// 最初に戻る
 					ActionList[i].get()->pNextAction = ActionList[0];
 				}
 			}
 			else
 			{
+				// ステージ変更.
 				ActionList[i].get()->pNextAction = Actions[ActionList[i].get()->Value][0];
 			}
 		}

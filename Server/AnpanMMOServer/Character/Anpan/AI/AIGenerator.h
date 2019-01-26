@@ -36,7 +36,8 @@ class AIGenerator : public boost::noncopyable
 private:		// •Ê–¼’è‹`.
 
 	typedef shared_ptr<AIAction> AIActionSharedPtr;
-	typedef boost::unordered_map<int, std::vector<AIActionSharedPtr>> ActionMap;
+	typedef std::vector<AIActionSharedPtr> ActionVector;		// Linux‚Å“{‚ç‚ê‚é‚Ì‚Å‘ÎˆB
+	typedef boost::unordered_map<int, ActionVector> ActionMap;
 
 public:
 
