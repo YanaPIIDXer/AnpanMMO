@@ -57,7 +57,7 @@ void AIGenerator::Initialize()
 			else
 			{
 				// ステージ変更.
-				ActionList[i].get()->pNextAction = Actions[ActionList[i].get()->Value][0];
+				ActionList[i].get()->pNextAction = Actions[ActionList[i].get()->Value - 1][0];
 			}
 		}
 	}
