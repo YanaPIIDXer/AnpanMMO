@@ -1,7 +1,7 @@
 var searchData=
 [
   ['accumulatehate',['AccumulateHate',['../structHateUnit.html#aba44b830ef45d991e16d73f53ccd4256',1,'HateUnit::AccumulateHate()'],['../structSkillItem.html#a3b099d826b847089c02ac83125802cb3',1,'SkillItem::AccumulateHate()']]],
-  ['action',['Action',['../structAnpanAIItem.html#a3d5b03bc826a7eb0588717807de55aa1',1,'AnpanAIItem']]],
+  ['action',['Action',['../structAIAction.html#aedf1bc8588b5cd216e9acbb584c9c0f4',1,'AIAction::Action()'],['../structAnpanAIItem.html#a3d5b03bc826a7eb0588717807de55aa1',1,'AnpanAIItem::Action()']]],
   ['activequestid',['ActiveQuestId',['../classCachePacketQuestDataResponse.html#a8b68a632801e1c676018314a9f7e7430',1,'CachePacketQuestDataResponse::ActiveQuestId()'],['../classPacketQuestData.html#ad5b509172438c4a6d8b2fda71d006239',1,'PacketQuestData::ActiveQuestId()']]],
   ['aiid',['AIId',['../structAnpanItem.html#ae406b06e3f63c6d311bc171141de3e6a',1,'AnpanItem']]],
   ['anpanid',['AnpanId',['../structAnpanPopDataItem.html#ae0130c147c1b5bb76c07b155b51059f2',1,'AnpanPopDataItem']]],
