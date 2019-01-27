@@ -7,8 +7,7 @@
 #define __ANPANAISTATEACTIVE_H__
 
 #include "AnpanAIStateBase.h"
-
-class CharacterBase;
+#include "WeakPtrDefine.h"
 
 /**
  * @class AnpanAIStateActive
@@ -41,27 +40,24 @@ protected:
 
 private:
 
-	// 「近づいた」と判定する距離.
-	static const float ApproachDist;
-
-	// 攻撃インターバル
-	static const int AttackInterval;
+	// 現在の行動
+	AIActionPtr pCurrentAction;
 
 	// 現在のターゲット
-	weak_ptr<CharacterBase> pCurrentTarget;
+	CharacterPtr pCurrentTarget;
 
-	// 攻撃タイマー
-	int AttackTimer;
+	// スキルターゲット
+	CharacterPtr pSkillTarget;
 
+	// 待機タイマー
+	int WaitTimer;
 
-	// 回転を更新.
-	void UpdateRotate();
+	// アクションが初期化されているか？
+	bool bInitializedAction;
 
-	// 移動を更新.
-	void UpdateMove();
+	// スキル発動距離.
+	float SkillDistance;
 
-	// 攻撃を更新.
-	void UpdateAttack(int DeltaTime);
 
 	// ターゲットの方向を向く。
 	void RotateToTarget();
@@ -71,6 +67,21 @@ private:
 
 	// 接近しているか？
 	bool IsApproached();
+
+	// ターゲットから距離を取る。
+	void KeepDistanceToTarget();
+
+	// ターゲットから距離を取ったか？
+	bool IsKeepedDistanceToTarget();
+
+	// スキル使用.
+	void UseSkill();
+
+	// 次のアクションに変更.
+	void ChangeToNextAction();
+
+	// アクションの初期化.
+	void InitializeAction();
 
 };
 

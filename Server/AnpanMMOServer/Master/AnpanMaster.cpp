@@ -18,6 +18,7 @@ bool AnpanMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.Vit);
 	Query.BindResultInt(&BindItem.Exp);
 	Query.BindResultFloat(&BindItem.Scale);
+	Query.BindResultChar(&BindItem.AIId);
 	Query.BindResultInt(&BindItem.DropId);
 
 	if (!Query.ExecuteQuery()) { return false; }
@@ -34,6 +35,7 @@ bool AnpanMaster::Load(const MySqlConnection &Connection)
 		Item.Vit = BindItem.Vit;
 		Item.Exp = BindItem.Exp;
 		Item.Scale = BindItem.Scale;
+		Item.AIId = BindItem.AIId;
 		Item.DropId = BindItem.DropId;
 
 		Items[Sheet][Item.ID] = Item;
@@ -50,6 +52,22 @@ const AnpanItem *AnpanMaster::GetItem(u32 Key, s32 SheetIndex) const
 	ItemMap::const_iterator It2 = It->second.find(Key);
 	if(It2 == It->second.end()) { return NULL; }
 	return &It2->second;
+}
+
+std::vector<AnpanItem> AnpanMaster::GetAllSheetItem(s32 SheetIndex) const
+{
+	std::vector<AnpanItem> AllItem;
+	SheetMap::const_iterator It = Items.find(SheetIndex);
+	if (It != Items.end())
+	{
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
+	}
+
+	std::sort(AllItem.begin(), AllItem.end());
+	return AllItem;
 }
 
 std::vector<AnpanItem> AnpanMaster::GetAll() const

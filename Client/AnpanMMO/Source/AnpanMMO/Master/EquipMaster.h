@@ -54,6 +54,8 @@ public:
 
 	void Load();
 
+	TArray<EquipItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<EquipItem> GetAll() const;
 
 	const EquipItem *Get(u32 Key, int32 SheetIndex = 0) const;

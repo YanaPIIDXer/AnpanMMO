@@ -1,0 +1,4 @@
+<map id="CharacterBase::IsSkillAutoMoving" name="CharacterBase::IsSkillAutoMoving">
+<area shape="rect" id="node2" href="$classSkillControl.html#aec995fd666408bb04b5ddf5967089e6b" title="SkillControl::IsAutoMoving" alt="" coords="232,13,405,39"/>
+<area shape="rect" id="node3" href="$classSkillStateBase.html#a65e63e4c3e787df759f29b8cef5427ac" title="SkillStateBase::GetStateType" alt="" coords="453,13,649,39"/>
+</map>

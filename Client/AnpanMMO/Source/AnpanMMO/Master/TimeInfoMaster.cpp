@@ -40,6 +40,23 @@ void TimeInfoMaster::Load()
 	delete[] pData;
 }
 
+TArray<TimeInfoItem> TimeInfoMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<TimeInfoItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const TimeInfoItem &A, const TimeInfoItem &B)
+	{
+		return (A.Id < B.Id);
+	});
+	return ItemArray;
+}
+
 TArray<TimeInfoItem> TimeInfoMaster::GetAll() const
 {
 	TArray<TimeInfoItem> ItemArray;

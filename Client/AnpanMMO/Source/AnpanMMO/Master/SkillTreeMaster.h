@@ -55,6 +55,8 @@ public:
 
 	void Load();
 
+	TArray<SkillTreeItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<SkillTreeItem> GetAll() const;
 
 	const SkillTreeItem *Get(u32 Key, int32 SheetIndex = 0) const;

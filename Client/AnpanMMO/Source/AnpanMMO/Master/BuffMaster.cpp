@@ -40,6 +40,23 @@ void BuffMaster::Load()
 	delete[] pData;
 }
 
+TArray<BuffItem> BuffMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<BuffItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const BuffItem &A, const BuffItem &B)
+	{
+		return (A.ID < B.ID);
+	});
+	return ItemArray;
+}
+
 TArray<BuffItem> BuffMaster::GetAll() const
 {
 	TArray<BuffItem> ItemArray;

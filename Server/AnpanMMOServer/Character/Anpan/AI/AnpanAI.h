@@ -12,6 +12,7 @@
 
 class Anpan;
 class AnpanAIStateBase;
+struct SkillItem;
 
 /**
  * @class AnpanAI
@@ -91,14 +92,6 @@ public:
 	bool SweepSendStopPacketFlag();
 
 	/**
-	 * @fn void OnDamaged(CharacterPtr pAttacker, int DamageValue)
-	 * @brief ダメージを受けた
-	 * @param[in] pAttacker 攻撃者へのweak_ptr
-	 * @param[in] DamageValue ダメージ量
-	 */
-	void OnDamaged(CharacterPtr pAttacker, int DamageValue);
-
-	/**
 	 * @fn const Hate &GetHate() const
 	 * @brief ヘイト管理を取得
 	 * @return ヘイト管理
@@ -110,6 +103,14 @@ public:
 	 * @brief 停止
 	 */
 	void Stop();
+
+	/**
+	 * @fn void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+	 * @brief スキルを食らった。
+	 * @param[in] pCharacter スキル使用者
+	 * @param[in] pSkill 食らったスキル
+	 */
+	void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill);
 
 private:
 

@@ -38,6 +38,8 @@ public:
 
 	void Load();
 
+	TArray<ShopItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<ShopItem> GetAll() const;
 
 	TArray<const ShopItem *> CollectItems(u32 Key, int SheetIndex = 0) const;

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: AIGenerator.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b69518aff0dad0eb76acd965b47282aa.html">Prog</a></li><li class="navelem"><a class="el" href="dir_7a7edda54c38929fb62d6020b0973c94.html">AnpanMMO</a></li><li class="navelem"><a class="el" href="dir_1590255ab2bbf63b7c9708a4207f7133.html">Server</a></li><li class="navelem"><a class="el" href="dir_104671812d6ac98404240912dbee628b.html">AnpanMMOServer</a></li><li class="navelem"><a class="el" href="dir_81c75cdbaa4613d43d0a6e8bffd8bec7.html">Character</a></li><li class="navelem"><a class="el" href="dir_0ac8e25954c54a5d4a8d6c36e5083630.html">Anpan</a></li><li class="navelem"><a class="el" href="dir_f0f77b29e45069046e09e929973b3330.html">AI</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">AIGenerator.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="AIGenerator_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef __AIGENERATOR_H__</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define __AIGENERATOR_H__</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;boost/unordered_map.hpp&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="WeakPtrDefine_8h.html">WeakPtrDefine.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structAIAction.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structAIAction.html">AIAction</a></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structAIAction.html#aedf1bc8588b5cd216e9acbb584c9c0f4">   19</a></span>&#160;    <a class="code" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code" href="structAIAction.html#aedf1bc8588b5cd216e9acbb584c9c0f4">Action</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structAIAction.html#a8b3af7d2da31908aadb8e82ddd505710">   22</a></span>&#160;    <a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> <a class="code" href="structAIAction.html#a8b3af7d2da31908aadb8e82ddd505710">Value</a>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structAIAction.html#a992dd185f9bf6c04b0d2f7e5ba426b33">   25</a></span>&#160;    <a class="code" href="WeakPtrDefine_8h.html#aaafb3eb338e231aaa2d5ee51c55963bf">AIActionPtr</a> <a class="code" href="structAIAction.html#a992dd185f9bf6c04b0d2f7e5ba426b33">pNextAction</a>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classAIGenerator.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAIGenerator.html">AIGenerator</a> : <span class="keyword">public</span> boost::noncopyable</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:        <span class="comment">// 別名定義.</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">typedef</span> shared_ptr&lt;AIAction&gt; AIActionSharedPtr;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;AIActionSharedPtr&gt; ActionVector;        <span class="comment">// Linuxで怒られるので対処。</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">typedef</span> boost::unordered_map&lt;int, ActionVector&gt; ActionMap;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classAIGenerator.html#a2fbd1f85a0f50f9b7a65106e33aa4b8e">   47</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classAIGenerator.html#a2fbd1f85a0f50f9b7a65106e33aa4b8e">~AIGenerator</a>() {}</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAIGenerator.html#af7851d8141822f2d1febe5252a601dc5">Initialize</a>();</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <a class="code" href="WeakPtrDefine_8h.html#aaafb3eb338e231aaa2d5ee51c55963bf">AIActionPtr</a> <a class="code" href="classAIGenerator.html#a6cbaee00a07290d6080ed480455855d8">Get</a>(<a class="code" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Id) <span class="keyword">const</span>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// 行動マップ</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ActionMap Actions;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// ========== Singleton ===============</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classAIGenerator.html#a02f0ec3825f182d6f57e78a254265564">   76</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classAIGenerator.html">AIGenerator</a> &amp;<a class="code" href="classAIGenerator.html#a02f0ec3825f182d6f57e78a254265564">GetInstance</a>() { <span class="keywordflow">return</span> Instance; }</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classAIGenerator.html">AIGenerator</a>();</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">static</span> <a class="code" href="classAIGenerator.html">AIGenerator</a> Instance;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif      // #ifndef __AIGENERATOR_H__</span></div><div class="ttc" id="TypeDefs_8h_html_aed742c436da53c1080638ce6ef7d13de"><div class="ttname"><a href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></div><div class="ttdeci">unsigned char u8</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:6</div></div>
+<div class="ttc" id="structAIAction_html_a8b3af7d2da31908aadb8e82ddd505710"><div class="ttname"><a href="structAIAction.html#a8b3af7d2da31908aadb8e82ddd505710">AIAction::Value</a></div><div class="ttdeci">u32 Value</div><div class="ttdoc">行動の値 </div><div class="ttdef"><b>Definition:</b> AIGenerator.h:22</div></div>
+<div class="ttc" id="structAIAction_html_a992dd185f9bf6c04b0d2f7e5ba426b33"><div class="ttname"><a href="structAIAction.html#a992dd185f9bf6c04b0d2f7e5ba426b33">AIAction::pNextAction</a></div><div class="ttdeci">AIActionPtr pNextAction</div><div class="ttdoc">次の行動 </div><div class="ttdef"><b>Definition:</b> AIGenerator.h:25</div></div>
+<div class="ttc" id="classAIGenerator_html_af7851d8141822f2d1febe5252a601dc5"><div class="ttname"><a href="classAIGenerator.html#af7851d8141822f2d1febe5252a601dc5">AIGenerator::Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdoc">初期化 </div><div class="ttdef"><b>Definition:</b> AIGenerator.cpp:18</div></div>
+<div class="ttc" id="classAIGenerator_html_a02f0ec3825f182d6f57e78a254265564"><div class="ttname"><a href="classAIGenerator.html#a02f0ec3825f182d6f57e78a254265564">AIGenerator::GetInstance</a></div><div class="ttdeci">static AIGenerator &amp; GetInstance()</div><div class="ttdoc">シングルトンインスタンスを取得 </div><div class="ttdef"><b>Definition:</b> AIGenerator.h:76</div></div>
+<div class="ttc" id="WeakPtrDefine_8h_html_aaafb3eb338e231aaa2d5ee51c55963bf"><div class="ttname"><a href="WeakPtrDefine_8h.html#aaafb3eb338e231aaa2d5ee51c55963bf">AIActionPtr</a></div><div class="ttdeci">weak_ptr&lt; AIAction &gt; AIActionPtr</div><div class="ttdef"><b>Definition:</b> WeakPtrDefine.h:28</div></div>
+<div class="ttc" id="structAIAction_html_aedf1bc8588b5cd216e9acbb584c9c0f4"><div class="ttname"><a href="structAIAction.html#aedf1bc8588b5cd216e9acbb584c9c0f4">AIAction::Action</a></div><div class="ttdeci">u8 Action</div><div class="ttdoc">行動 </div><div class="ttdef"><b>Definition:</b> AIGenerator.h:19</div></div>
+<div class="ttc" id="classAIGenerator_html"><div class="ttname"><a href="classAIGenerator.html">AIGenerator</a></div><div class="ttdoc">ＡＩ機構構築  シングルトンクラス </div><div class="ttdef"><b>Definition:</b> AIGenerator.h:33</div></div>
+<div class="ttc" id="TypeDefs_8h_html_a10e94b422ef0c20dcdec20d31a1f5049"><div class="ttname"><a href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a></div><div class="ttdeci">unsigned int u32</div><div class="ttdef"><b>Definition:</b> TypeDefs.h:10</div></div>
+<div class="ttc" id="WeakPtrDefine_8h_html"><div class="ttname"><a href="WeakPtrDefine_8h.html">WeakPtrDefine.h</a></div></div>
+<div class="ttc" id="classAIGenerator_html_a2fbd1f85a0f50f9b7a65106e33aa4b8e"><div class="ttname"><a href="classAIGenerator.html#a2fbd1f85a0f50f9b7a65106e33aa4b8e">AIGenerator::~AIGenerator</a></div><div class="ttdeci">virtual ~AIGenerator()</div><div class="ttdoc">デストラクタ </div><div class="ttdef"><b>Definition:</b> AIGenerator.h:47</div></div>
+<div class="ttc" id="classAIGenerator_html_a6cbaee00a07290d6080ed480455855d8"><div class="ttname"><a href="classAIGenerator.html#a6cbaee00a07290d6080ed480455855d8">AIGenerator::Get</a></div><div class="ttdeci">const AIActionPtr Get(u32 Id) const</div><div class="ttdoc">取得 </div><div class="ttdef"><b>Definition:</b> AIGenerator.cpp:67</div></div>
+<div class="ttc" id="structAIAction_html"><div class="ttname"><a href="structAIAction.html">AIAction</a></div><div class="ttdoc">AIの行動 </div><div class="ttdef"><b>Definition:</b> AIGenerator.h:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

@@ -51,6 +51,8 @@ public:
 
 	void Load();
 
+	TArray<TimeInfoItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<TimeInfoItem> GetAll() const;
 
 	const TimeInfoItem *Get(u32 Key, int32 SheetIndex = 0) const;

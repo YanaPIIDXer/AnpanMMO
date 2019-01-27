@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['initialize',['Initialize',['../classAnpanManager.html#a10b32c4ce632571ec012ca6b92257016',1,'AnpanManager::Initialize()'],['../classAreaBase.html#ae74987dcc73ea4aaab94ba432cc608ea',1,'AreaBase::Initialize()'],['../classAreaManager.html#a8657ae85994cc5505cce3db3968dfb6e',1,'AreaManager::Initialize()'],['../classInstanceArea.html#aca5cdff8995ab000177e32b6fb9c4c7b',1,'InstanceArea::Initialize()'],['../classShopManager.html#a90f46772a939484aa3ffdeed59ed148d',1,'ShopManager::Initialize()'],['../classTimeManager.html#a9b0fb8112689de85ff3b88ce128f01e3',1,'TimeManager::Initialize()']]],
+  ['initialize',['Initialize',['../classAnpanManager.html#a10b32c4ce632571ec012ca6b92257016',1,'AnpanManager::Initialize()'],['../classAreaBase.html#ae74987dcc73ea4aaab94ba432cc608ea',1,'AreaBase::Initialize()'],['../classAreaManager.html#a8657ae85994cc5505cce3db3968dfb6e',1,'AreaManager::Initialize()'],['../classInstanceArea.html#aca5cdff8995ab000177e32b6fb9c4c7b',1,'InstanceArea::Initialize()'],['../classAIGenerator.html#af7851d8141822f2d1febe5252a601dc5',1,'AIGenerator::Initialize()'],['../classShopManager.html#a90f46772a939484aa3ffdeed59ed148d',1,'ShopManager::Initialize()'],['../classTimeManager.html#a9b0fb8112689de85ff3b88ce128f01e3',1,'TimeManager::Initialize()']]],
   ['initializeskilltree',['InitializeSkillTree',['../classPlayerCharacter.html#a95be16abe4f8944a8c3b8e5b88afe9f6',1,'PlayerCharacter']]],
   ['insert',['Insert',['../classFlexArray.html#acc642e6b89c4150a91451437ac5f32b1',1,'FlexArray']]],
   ['instancearea',['InstanceArea',['../classInstanceArea.html#a91e03a49e6779fc89f8dd23eac1f7e52',1,'InstanceArea']]],
@@ -8,6 +8,7 @@ var searchData=
   ['isabledelete',['IsAbleDelete',['../classArea.html#aca42c103bb0f57b463eba8a5937be77c',1,'Area::IsAbleDelete()'],['../classAreaBase.html#a4159663110510c6630790adf4ee2a422',1,'AreaBase::IsAbleDelete()'],['../classInstanceArea.html#ac3b08e286ec19a28506f4e910257f88c',1,'InstanceArea::IsAbleDelete()'],['../classParty.html#a5a22e62d68bf90573b40ddefc83e0d4e',1,'Party::IsAbleDelete()']]],
   ['isactive',['IsActive',['../classBuffManager.html#a64f369540862fcbdbfacb09b97d1f123',1,'BuffManager::IsActive()'],['../classQuestManager.html#a67fc67064c8f438b7a36a9441af899af',1,'QuestManager::IsActive()'],['../classSkillControl.html#ae4d7b9d305c9a9f8047bbe8cec503f5d',1,'SkillControl::IsActive()']]],
   ['isalreadyjoined',['IsAlreadyJoined',['../classPartyManager.html#a4e2aab63584850bac8a9669316ad4f9a',1,'PartyManager']]],
+  ['isautomoving',['IsAutoMoving',['../classSkillControl.html#aec995fd666408bb04b5ddf5967089e6b',1,'SkillControl']]],
   ['iscasting',['IsCasting',['../classSkillControl.html#a1184144783440fed9d833be7fbcc59c1',1,'SkillControl']]],
   ['isclear',['IsClear',['../classQuestManager.html#a97885298fe72ce421c031ea331716eef',1,'QuestManager']]],
   ['isconnected',['IsConnected',['../classTCPConnection.html#a0ea4f4e91745fad91189a7b5fe8b2717',1,'TCPConnection']]],
@@ -34,7 +35,9 @@ var searchData=
   ['isselling',['IsSelling',['../classShopManager.html#ad1ab6b40d3ef0620244438057325e02d',1,'ShopManager']]],
   ['isserver',['IsServer',['../classScriptExecuter.html#a61ceae86cc63c5e43490ddb7266f80e6',1,'ScriptExecuter::IsServer()'],['../classScriptExecuterBase.html#ae97d2e75f677b3cd7de46c6465ffc101',1,'ScriptExecuterBase::IsServer()']]],
   ['isskillactive',['IsSkillActive',['../classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f',1,'CharacterBase']]],
+  ['isskillautomoving',['IsSkillAutoMoving',['../classCharacterBase.html#ac4df2f00b31ccb4682c71b0b553917aa',1,'CharacterBase']]],
   ['isskillcasting',['IsSkillCasting',['../classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f',1,'CharacterBase']]],
+  ['isstopping',['IsStopping',['../classAnpanAIStateBase.html#a1f29576b6f9c27d0f5ca9aa3ef553352',1,'AnpanAIStateBase']]],
   ['isvalidshop',['IsValidShop',['../classShopManager.html#af1e17fb188e4fa5d5e27133ba68da5b3',1,'ShopManager']]],
   ['iswaiting',['IsWaiting',['../classInstanceAreaTicket.html#a7ca59816fd46a7ab22722016557eea53',1,'InstanceAreaTicket']]],
   ['itemdata',['ItemData',['../classItemData.html#a3a1b6240b016a82fa65b450f98a35f6c',1,'ItemData::ItemData()'],['../classItemData.html#aa51b1cee55620bcd0b5fbde312f9135e',1,'ItemData::ItemData(u32 InItemId, u32 InCount)']]],

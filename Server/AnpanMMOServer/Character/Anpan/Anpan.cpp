@@ -23,6 +23,7 @@ Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId)
 	Exp = pItem->Exp;
 	ScaleRate = pItem->Scale;
 	DropId = pItem->DropId;
+	AIId = pItem->AIId;
 }
 
 // 攻撃.
@@ -42,6 +43,12 @@ void Anpan::OnBuffAdded(u32 BuffId)
 		// 麻痺を貰ったらＡＩを止める。
 		AI.Stop();
 	}
+}
+
+// スキルを食らった。
+void Anpan::OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+{
+	AI.OnSkillReceived(pCharacter, pSkill);
 }
 
 
@@ -70,10 +77,4 @@ void Anpan::Update(int DeltaTime)
 		PacketStopAnpan Packet(GetUuid(), Pos.X, Pos.Y, Pos.Z, GetRotation().Get());
 		GetArea().lock()->BroadcastPacket(&Packet);
 	}
-}
-
-// ダメージを受けた。
-void Anpan::OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
-{
-	AI.OnDamaged(pAttacker, DamageValue);
 }

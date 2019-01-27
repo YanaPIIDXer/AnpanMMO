@@ -23,6 +23,8 @@ bool SkillMaster::Load(const MySqlConnection &Connection)
 	Query.BindResultInt(&BindItem.BonusInt);
 	Query.BindResultInt(&BindItem.BonusMnd);
 	Query.BindResultInt(&BindItem.BonusVit);
+	Query.BindResultInt(&BindItem.VolatileHate);
+	Query.BindResultInt(&BindItem.AccumulateHate);
 	Query.BindResultInt(&BindItem.BuffId);
 
 	if (!Query.ExecuteQuery()) { return false; }
@@ -44,6 +46,8 @@ bool SkillMaster::Load(const MySqlConnection &Connection)
 		Item.BonusInt = BindItem.BonusInt;
 		Item.BonusMnd = BindItem.BonusMnd;
 		Item.BonusVit = BindItem.BonusVit;
+		Item.VolatileHate = BindItem.VolatileHate;
+		Item.AccumulateHate = BindItem.AccumulateHate;
 		Item.BuffId = BindItem.BuffId;
 
 		Items[Sheet][Item.ID] = Item;
@@ -60,6 +64,22 @@ const SkillItem *SkillMaster::GetItem(u32 Key, s32 SheetIndex) const
 	ItemMap::const_iterator It2 = It->second.find(Key);
 	if(It2 == It->second.end()) { return NULL; }
 	return &It2->second;
+}
+
+std::vector<SkillItem> SkillMaster::GetAllSheetItem(s32 SheetIndex) const
+{
+	std::vector<SkillItem> AllItem;
+	SheetMap::const_iterator It = Items.find(SheetIndex);
+	if (It != Items.end())
+	{
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
+	}
+
+	std::sort(AllItem.begin(), AllItem.end());
+	return AllItem;
 }
 
 std::vector<SkillItem> SkillMaster::GetAll() const

@@ -23,8 +23,21 @@ public:
 	//! キャラクタ
 	CharacterPtr pCharacter;
 
-	//! ヘイト値.
-	int HateValue;
+	//! 揮発ヘイト
+	int VolatileHate;
+
+	//! 累積ヘイト
+	int AccumulateHate;
+
+	// 揮発ヘイト減衰までの時間.
+	int VolatileHateDecayTimer;
+
+	/**
+	 * @fn int GetTotal() const
+	 * @brief ヘイト合計値を取得
+	 * @return ヘイト合計値
+	 */
+	int GetTotal() const { return (VolatileHate + AccumulateHate); }
 
 };
 
@@ -54,16 +67,18 @@ public:
 	/**
 	 * @fn void Poll()
 	 * @brief 毎フレームの処理
+	 * @param[in] 前フレームからの経過時間.
 	 */
-	void Poll();
+	void Poll(u32 DeltaTime);
 
 	/**
 	 * @fn void Add(CharacterPtr pCharacter, int Value)
 	 * @brief 増加
 	 * @param[in] pCharacter キャラクタへのweak_ptr
-	 * @param[in] Value 増加量
+	 * @param[in] VolatileHate 揮発ヘイト
+	 * @param[in] AccumulateHate 累積ヘイト
 	 */
-	void Add(CharacterPtr pCharacter, int Value);
+	void Add(CharacterPtr pCharacter, int VolatileHate, int AccumulateHate);
 
 	/**
 	 * @fn CharacterPtr GetTop() const
@@ -73,6 +88,9 @@ public:
 	CharacterPtr GetTop() const;
 
 private:
+
+	// 揮発ヘイト減衰時間.
+	static const int VolatileHateDecayTime;
 
 	// ヘイトリスト
 	std::vector<HateUnit> HateList;

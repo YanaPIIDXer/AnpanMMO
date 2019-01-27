@@ -46,6 +46,8 @@ public:
 
 	void Load();
 
+	TArray<QuestRewardItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<QuestRewardItem> GetAll() const;
 
 	const QuestRewardItem *Get(u32 Key, int32 SheetIndex = 0) const;

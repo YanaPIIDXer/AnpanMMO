@@ -17,20 +17,6 @@ AnpanAIStateNonActive::AnpanAIStateNonActive(Anpan *pInParent)
 {
 }
 
-// ダメージを受けた。
-void AnpanAIStateNonActive::OnDamaged()
-{
-	if (StateTime > 0)
-	{
-		// 何かしら行動しているので停止.
-		Stop();
-		StateTime = 0;
-	}
-
-	// アクティブ状態へ。
-	GetAI()->ChangeState(new AnpanAIStateActive(GetParent()));
-}
-
 
 // 更新処理.
 void AnpanAIStateNonActive::Update(int DeltaTime)
@@ -40,6 +26,14 @@ void AnpanAIStateNonActive::Update(int DeltaTime)
 		// 内部ステートの初期化.
 		StateTime = Random::Range<int>(1000, 5000);
 		CurrentState = Stopping;
+	}
+
+	if (!GetAI()->GetHate().GetTop().expired())
+	{
+		// ヘイトリストにキャラが乗ったのでアクティブステートへ。
+		GetAI()->Stop();
+		GetAI()->ChangeState(new AnpanAIStateActive(GetParent()));
+		return;
 	}
 
 	StateTime -= DeltaTime;

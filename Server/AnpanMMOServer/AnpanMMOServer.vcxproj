@@ -144,6 +144,7 @@
     <ClInclude Include="Buff\DebuffPoison.h" />
     <ClInclude Include="Buff\BuffSpeedUp.h" />
     <ClInclude Include="CacheServer\CacheServerConnection.h" />
+    <ClInclude Include="Character\Anpan\AI\AIGenerator.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAI.h" />
     <ClInclude Include="Character\Anpan\AI\AnpanAIPacketData.h" />
     <ClInclude Include="Character\Anpan\AI\Hate.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Area\HeightMap.h" />
     <ClInclude Include="Equip\EquipData.h" />
     <ClInclude Include="Item\ItemList.h" />
+    <ClInclude Include="Master\AnpanAIMaster.h" />
     <ClInclude Include="Master\AnpanMaster.h" />
     <ClInclude Include="Master\AnpanPopDataMaster.h" />
     <ClInclude Include="Master\BuffMaster.h" />
@@ -269,6 +271,7 @@
     <ClCompile Include="Buff\DebuffParalysis.cpp" />
     <ClCompile Include="Buff\DebuffPoison.cpp" />
     <ClCompile Include="CacheServer\CacheServerConnection.cpp" />
+    <ClCompile Include="Character\Anpan\AI\AIGenerator.cpp" />
     <ClCompile Include="Character\Anpan\AI\AnpanAI.cpp" />
     <ClCompile Include="Character\Anpan\AI\Hate.cpp" />
     <ClCompile Include="Character\Anpan\AI\State\AnpanAIStateActive.cpp" />
@@ -289,6 +292,7 @@
     <ClCompile Include="Area\HeightMap.cpp" />
     <ClCompile Include="Equip\EquipData.cpp" />
     <ClCompile Include="Item\ItemList.cpp" />
+    <ClCompile Include="Master\AnpanAIMaster.cpp" />
     <ClCompile Include="Master\AnpanMaster.cpp" />
     <ClCompile Include="Master\AnpanPopDataMaster.cpp" />
     <ClCompile Include="Master\BuffMaster.cpp" />

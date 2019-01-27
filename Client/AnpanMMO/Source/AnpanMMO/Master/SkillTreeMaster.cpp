@@ -40,6 +40,23 @@ void SkillTreeMaster::Load()
 	delete[] pData;
 }
 
+TArray<SkillTreeItem> SkillTreeMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<SkillTreeItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const SkillTreeItem &A, const SkillTreeItem &B)
+	{
+		return (A.ID < B.ID);
+	});
+	return ItemArray;
+}
+
 TArray<SkillTreeItem> SkillTreeMaster::GetAll() const
 {
 	TArray<SkillTreeItem> ItemArray;

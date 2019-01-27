@@ -40,6 +40,23 @@ void ShopMaster::Load()
 	delete[] pData;
 }
 
+TArray<ShopItem> ShopMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<ShopItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const ShopItem &A, const ShopItem &B)
+	{
+		return (A.AutoKey < B.AutoKey);
+	});
+	return ItemArray;
+}
+
 TArray<ShopItem> ShopMaster::GetAll() const
 {
 	TArray<ShopItem> ItemArray;

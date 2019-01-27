@@ -106,15 +106,15 @@ $(function() {
 <tr class="memitem:a6545a1116b5cd78ea6d3319ff628b287"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAI.html#a6545a1116b5cd78ea6d3319ff628b287">SweepSendStopPacketFlag</a> ()</td></tr>
 <tr class="memdesc:a6545a1116b5cd78ea6d3319ff628b287"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止パケットの送信を取得  <a href="#a6545a1116b5cd78ea6d3319ff628b287">[詳解]</a><br /></td></tr>
 <tr class="separator:a6545a1116b5cd78ea6d3319ff628b287"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af69841c74db3689157c8277104565942"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAI.html#af69841c74db3689157c8277104565942">OnDamaged</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pAttacker, int DamageValue)</td></tr>
-<tr class="memdesc:af69841c74db3689157c8277104565942"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダメージを受けた  <a href="#af69841c74db3689157c8277104565942">[詳解]</a><br /></td></tr>
-<tr class="separator:af69841c74db3689157c8277104565942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5ae81c2b9c401e4f5d879252952bae4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classHate.html">Hate</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAI.html#aa5ae81c2b9c401e4f5d879252952bae4">GetHate</a> () const</td></tr>
 <tr class="memdesc:aa5ae81c2b9c401e4f5d879252952bae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">ヘイト管理を取得  <a href="#aa5ae81c2b9c401e4f5d879252952bae4">[詳解]</a><br /></td></tr>
 <tr class="separator:aa5ae81c2b9c401e4f5d879252952bae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3330b2933baa8eeb49bf0673ea292872"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872">Stop</a> ()</td></tr>
 <tr class="memdesc:a3330b2933baa8eeb49bf0673ea292872"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止  <a href="#a3330b2933baa8eeb49bf0673ea292872">[詳解]</a><br /></td></tr>
 <tr class="separator:a3330b2933baa8eeb49bf0673ea292872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aade3990ca7d3289619f9693946367d53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAI.html#aade3990ca7d3289619f9693946367d53">OnSkillReceived</a> (<a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a> pCharacter, const <a class="el" href="structSkillItem.html">SkillItem</a> *pSkill)</td></tr>
+<tr class="memdesc:aade3990ca7d3289619f9693946367d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルを食らった。  <a href="#aade3990ca7d3289619f9693946367d53">[詳解]</a><br /></td></tr>
+<tr class="separator:aade3990ca7d3289619f9693946367d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>アンパンＡＩ </p>
@@ -212,7 +212,7 @@ $(function() {
 <map name="classAnpanAI_a15917b0f76fd9c9eb003a99c4c1a0f3e_icgraph" id="classAnpanAI_a15917b0f76fd9c9eb003a99c4c1a0f3e_icgraph">
 <area shape="rect" id="node2" href="classAnpanAI.html#a05eb2025dffa9c8018c1d59ed8431ee1" title="コンストラクタ " alt="" coords="224,5,352,32"/>
 <area shape="rect" id="node3" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="219,57,357,98"/>
-<area shape="rect" id="node4" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="208,122,368,163"/>
+<area shape="rect" id="node4" href="classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="208,122,368,163"/>
 </map>
 </div>
 
@@ -354,29 +354,30 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAI_aa5ae81c2b9c401e4f5d879252952bae4_icgraph.png" border="0" usemap="#classAnpanAI_aa5ae81c2b9c401e4f5d879252952bae4_icgraph" alt=""/></div>
 <map name="classAnpanAI_aa5ae81c2b9c401e4f5d879252952bae4_icgraph" id="classAnpanAI_aa5ae81c2b9c401e4f5d879252952bae4_icgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="180,5,317,47"/>
+<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="191,5,329,47"/>
+<area shape="rect" id="node3" href="classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="180,71,340,112"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="af69841c74db3689157c8277104565942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af69841c74db3689157c8277104565942">&#9670;&nbsp;</a></span>OnDamaged()</h2>
+<a id="aade3990ca7d3289619f9693946367d53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aade3990ca7d3289619f9693946367d53">&#9670;&nbsp;</a></span>OnSkillReceived()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void AnpanAI::OnDamaged </td>
+          <td class="memname">void AnpanAI::OnSkillReceived </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="WeakPtrDefine_8h.html#a487f6e61dd48a1a71ee25d5073a7aa0a">CharacterPtr</a>&#160;</td>
-          <td class="paramname"><em>pAttacker</em>, </td>
+          <td class="paramname"><em>pCharacter</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>DamageValue</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structSkillItem.html">SkillItem</a> *&#160;</td>
+          <td class="paramname"><em>pSkill</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -386,29 +387,28 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p>ダメージを受けた </p>
+<p>スキルを食らった。 </p>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pAttacker</td><td>攻撃者へのweak_ptr </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">DamageValue</td><td>ダメージ量 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pCharacter</td><td>スキル使用者 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pSkill</td><td>食らったスキル </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classAnpanAI_af69841c74db3689157c8277104565942_cgraph.png" border="0" usemap="#classAnpanAI_af69841c74db3689157c8277104565942_cgraph" alt=""/></div>
-<map name="classAnpanAI_af69841c74db3689157c8277104565942_cgraph" id="classAnpanAI_af69841c74db3689157c8277104565942_cgraph">
-<area shape="rect" id="node2" href="classHate.html#af95ba2a070814635dc94a88c19813f74" title="増加 " alt="" coords="270,5,350,32"/>
-<area shape="rect" id="node3" href="classAnpanAIStateBase.html#ac606410c281d299a13dd6325202a878b" title="ダメージを受けた " alt="" coords="204,56,416,83"/>
+<div class="center"><img src="classAnpanAI_aade3990ca7d3289619f9693946367d53_cgraph.png" border="0" usemap="#classAnpanAI_aade3990ca7d3289619f9693946367d53_cgraph" alt=""/></div>
+<map name="classAnpanAI_aade3990ca7d3289619f9693946367d53_cgraph" id="classAnpanAI_aade3990ca7d3289619f9693946367d53_cgraph">
+<area shape="rect" id="node2" href="classHate.html#ac9ef32d60f7da536c675dea17c3ee27c" title="増加 " alt="" coords="227,5,307,32"/>
 </map>
 </div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classAnpanAI_af69841c74db3689157c8277104565942_icgraph.png" border="0" usemap="#classAnpanAI_af69841c74db3689157c8277104565942_icgraph" alt=""/></div>
-<map name="classAnpanAI_af69841c74db3689157c8277104565942_icgraph" id="classAnpanAI_af69841c74db3689157c8277104565942_icgraph">
-<area shape="rect" id="node2" href="classAnpan.html#afbb407fc7f60055e75ef203a984397df" title="ダメージを受けた " alt="" coords="204,5,343,32"/>
+<div class="center"><img src="classAnpanAI_aade3990ca7d3289619f9693946367d53_icgraph.png" border="0" usemap="#classAnpanAI_aade3990ca7d3289619f9693946367d53_icgraph" alt=""/></div>
+<map name="classAnpanAI_aade3990ca7d3289619f9693946367d53_icgraph" id="classAnpanAI_aade3990ca7d3289619f9693946367d53_icgraph">
+<area shape="rect" id="node2" href="classAnpan.html#a10b4f3247e64b58c04da25b45f23c2ba" title="スキルを食らった。 " alt="" coords="227,5,388,32"/>
 </map>
 </div>
 
@@ -444,7 +444,7 @@ $(function() {
 <map name="classAnpanAI_ac128bf0bf22fbc9893cc35274dd00292_cgraph" id="classAnpanAI_ac128bf0bf22fbc9893cc35274dd00292_cgraph">
 <area shape="rect" id="node2" href="classCharacterBase.html#a519dbb12163afdfbc184824c8bfc5ab1" title="麻痺状態か？ " alt="" coords="155,5,335,32"/>
 <area shape="rect" id="node4" href="classAnpanAIStateBase.html#a0f98f0955c9a9e07c6d25334acf5d3c8" title="毎フレームの処理 " alt="" coords="163,56,326,83"/>
-<area shape="rect" id="node6" href="classHate.html#a7c025a5a6c42bf5ec02c998ce8fbe1df" title="毎フレームの処理 " alt="" coords="205,107,284,133"/>
+<area shape="rect" id="node6" href="classHate.html#a83a3dfd42b94f59e951ea3f3a221c453" title="毎フレームの処理 " alt="" coords="205,107,284,133"/>
 <area shape="rect" id="node3" href="classBuffManager.html#a64f369540862fcbdbfacb09b97d1f123" title="指定したバフ（デバフ）がかかっているか？ " alt="" coords="400,5,547,32"/>
 <area shape="rect" id="node5" href="classAnpanAIStateBase.html#ab79a2df1668e3d6c2cc183521b759b02" title="更新処理 " alt="" coords="383,56,564,83"/>
 </map>
@@ -489,10 +489,11 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAI_ab7352bf6ac5cc9899a6ec8ab4aacde87_icgraph.png" border="0" usemap="#classAnpanAI_ab7352bf6ac5cc9899a6ec8ab4aacde87_icgraph" alt=""/></div>
 <map name="classAnpanAI_ab7352bf6ac5cc9899a6ec8ab4aacde87_icgraph" id="classAnpanAI_ab7352bf6ac5cc9899a6ec8ab4aacde87_icgraph">
-<area shape="rect" id="node2" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd" title="停止 " alt="" coords="251,35,417,61"/>
-<area shape="rect" id="node3" href="classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872" title="停止 " alt="" coords="492,5,599,32"/>
-<area shape="rect" id="node5" href="classAnpanAIStateNonActive.html#a357db3de3809399ffd778ec76bc662d9" title="ダメージを受けた " alt="" coords="465,57,625,98"/>
-<area shape="rect" id="node4" href="classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="673,5,816,32"/>
+<area shape="rect" id="node2" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd" title="停止 " alt="" coords="251,96,417,123"/>
+<area shape="rect" id="node3" href="classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872" title="停止 " alt="" coords="465,68,572,95"/>
+<area shape="rect" id="node5" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="631,122,769,163"/>
+<area shape="rect" id="node4" href="classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="629,5,771,32"/>
+<area shape="rect" id="node6" href="classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="620,57,780,98"/>
 </map>
 </div>
 
@@ -528,7 +529,9 @@ $(function() {
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAI_a3330b2933baa8eeb49bf0673ea292872_icgraph.png" border="0" usemap="#classAnpanAI_a3330b2933baa8eeb49bf0673ea292872_icgraph" alt=""/></div>
 <map name="classAnpanAI_a3330b2933baa8eeb49bf0673ea292872_icgraph" id="classAnpanAI_a3330b2933baa8eeb49bf0673ea292872_icgraph">
-<area shape="rect" id="node2" href="classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="160,5,303,32"/>
+<area shape="rect" id="node2" href="classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="169,5,311,32"/>
+<area shape="rect" id="node3" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="171,57,309,98"/>
+<area shape="rect" id="node4" href="classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="160,122,320,163"/>
 </map>
 </div>
 

@@ -1,0 +1,10 @@
+<map id="UScriptShopWidget::Init" name="UScriptShopWidget::Init">
+<area shape="rect" id="node2" href="$classAGameCharacter.html#a944d1cf625233381b3954005348cddea" title="AGameCharacter::GetGold" alt="" coords="220,5,399,32"/>
+<area shape="rect" id="node3" href="$classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="226,56,393,83"/>
+<area shape="rect" id="node4" href="$classMasterData.html#a9d5603fbdc04b11f79f4f7c28fd6daec" title="MasterData::GetShopMaster" alt="" coords="215,107,403,133"/>
+<area shape="rect" id="node5" href="$classShopMaster.html#a49b35a55d7ffc95e04d121e41f7e3454" title="ShopMaster::CollectItems" alt="" coords="223,157,395,184"/>
+<area shape="rect" id="node6" href="$classAGameCharacter.html#a9f16189ed5a069ce10c86104c51466f0" title="AGameCharacter::GetStatus" alt="" coords="215,208,404,235"/>
+<area shape="rect" id="node7" href="$classPlayerStatus.html#a2aaae642c6e9c3b2523912db1220bd1c" title="PlayerStatus::GetItemList" alt="" coords="223,259,395,285"/>
+<area shape="rect" id="node8" href="$classItemList.html#a45c59476ff2ebaa2fa95592e83d43ef2" title="ItemList::CollectItemList" alt="" coords="228,309,391,336"/>
+<area shape="rect" id="node9" href="$classUScriptShopWidget.html#af3abd4ffecc56f24480d6e3da42c5294" title="UScriptShopWidget::\lOnInit" alt="" coords="237,361,381,402"/>
+</map>

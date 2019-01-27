@@ -112,9 +112,6 @@ AnpanAIStateActive 連携図</div>
 <tr class="memitem:a57295f498604290eec50b80f2287519e inherit pub_methods_classAnpanAIStateBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a57295f498604290eec50b80f2287519e">SetAI</a> (<a class="el" href="classAnpanAI.html">AnpanAI</a> *pInAI)</td></tr>
 <tr class="memdesc:a57295f498604290eec50b80f2287519e inherit pub_methods_classAnpanAIStateBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">AIを設定  <a href="classAnpanAIStateBase.html#a57295f498604290eec50b80f2287519e">[詳解]</a><br /></td></tr>
 <tr class="separator:a57295f498604290eec50b80f2287519e inherit pub_methods_classAnpanAIStateBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac606410c281d299a13dd6325202a878b inherit pub_methods_classAnpanAIStateBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#ac606410c281d299a13dd6325202a878b">OnDamaged</a> ()</td></tr>
-<tr class="memdesc:ac606410c281d299a13dd6325202a878b inherit pub_methods_classAnpanAIStateBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">ダメージを受けた  <a href="classAnpanAIStateBase.html#ac606410c281d299a13dd6325202a878b">[詳解]</a><br /></td></tr>
-<tr class="separator:ac606410c281d299a13dd6325202a878b inherit pub_methods_classAnpanAIStateBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa43e3a197f192eefa7c72bf76943fefd inherit pub_methods_classAnpanAIStateBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd">Stop</a> ()</td></tr>
 <tr class="memdesc:aa43e3a197f192eefa7c72bf76943fefd inherit pub_methods_classAnpanAIStateBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止  <a href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd">[詳解]</a><br /></td></tr>
 <tr class="separator:aa43e3a197f192eefa7c72bf76943fefd inherit pub_methods_classAnpanAIStateBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +140,9 @@ AnpanAIStateActive 連携図</div>
 <tr class="memitem:a1a3b216a420f532d7957c91ac95c89c9 inherit pro_methods_classAnpanAIStateBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9">IsRotating</a> () const</td></tr>
 <tr class="memdesc:a1a3b216a420f532d7957c91ac95c89c9 inherit pro_methods_classAnpanAIStateBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転中？  <a href="classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9">[詳解]</a><br /></td></tr>
 <tr class="separator:a1a3b216a420f532d7957c91ac95c89c9 inherit pro_methods_classAnpanAIStateBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f29576b6f9c27d0f5ca9aa3ef553352 inherit pro_methods_classAnpanAIStateBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a1f29576b6f9c27d0f5ca9aa3ef553352">IsStopping</a> () const</td></tr>
+<tr class="memdesc:a1f29576b6f9c27d0f5ca9aa3ef553352 inherit pro_methods_classAnpanAIStateBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止しているか？  <a href="classAnpanAIStateBase.html#a1f29576b6f9c27d0f5ca9aa3ef553352">[詳解]</a><br /></td></tr>
+<tr class="separator:a1f29576b6f9c27d0f5ca9aa3ef553352 inherit pro_methods_classAnpanAIStateBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>アンパンＡＩステート：アクティブ状態. </p>
@@ -170,6 +170,16 @@ AnpanAIStateActive 連携図</div>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAnpanAIStateActive_a3ca99e9d3ea0a6c63a37d1de4b7a2d63_cgraph.png" border="0" usemap="#classAnpanAIStateActive_a3ca99e9d3ea0a6c63a37d1de4b7a2d63_cgraph" alt=""/></div>
+<map name="classAnpanAIStateActive_a3ca99e9d3ea0a6c63a37d1de4b7a2d63_cgraph" id="classAnpanAIStateActive_a3ca99e9d3ea0a6c63a37d1de4b7a2d63_cgraph">
+<area shape="rect" id="node2" href="classAIGenerator.html#a02f0ec3825f182d6f57e78a254265564" title="シングルトンインスタンスを取得 " alt="" coords="199,5,368,32"/>
+<area shape="rect" id="node3" href="classAIGenerator.html#a6cbaee00a07290d6080ed480455855d8" title="取得 " alt="" coords="223,56,343,83"/>
+<area shape="rect" id="node4" href="classAnpan.html#aceca5eb97aba59957702f5c2f948dae6" title="AIのIDを取得 " alt="" coords="228,107,339,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -242,9 +252,17 @@ AnpanAIStateActive 連携図</div>
 <area shape="rect" id="node2" href="classAnpanAIStateBase.html#aaae4f995422411374c33a703297cd29e" title="AIを取得 " alt="" coords="203,5,377,32"/>
 <area shape="rect" id="node3" href="classAnpanAI.html#aa5ae81c2b9c401e4f5d879252952bae4" title="ヘイト管理を取得 " alt="" coords="227,56,353,83"/>
 <area shape="rect" id="node4" href="classHate.html#a308f387eb719a1148a3415efc8e37f05" title="一番上にいるキャラを取得 " alt="" coords="241,107,339,133"/>
-<area shape="rect" id="node5" href="classAnpanAI.html#a15917b0f76fd9c9eb003a99c4c1a0f3e" title="ステート切り替え " alt="" coords="213,157,367,184"/>
-<area shape="rect" id="node7" href="classAnpanAIStateBase.html#a6f248d5b054766a81acc4b29ae73d2d1" title="親を取得 " alt="" coords="191,208,389,235"/>
-<area shape="rect" id="node6" href="classAnpanAIStateBase.html#a57295f498604290eec50b80f2287519e" title="AIを設定 " alt="" coords="437,157,609,184"/>
+<area shape="rect" id="node5" href="classAnpanAIStateBase.html#a6f248d5b054766a81acc4b29ae73d2d1" title="親を取得 " alt="" coords="191,157,389,184"/>
+<area shape="rect" id="node6" href="classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f" title="スキル使用中か？ " alt="" coords="197,208,383,235"/>
+<area shape="rect" id="node9" href="classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872" title="停止 " alt="" coords="237,259,343,285"/>
+<area shape="rect" id="node10" href="classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd" title="停止 " alt="" coords="440,284,607,311"/>
+<area shape="rect" id="node12" href="classAnpanAI.html#a15917b0f76fd9c9eb003a99c4c1a0f3e" title="ステート切り替え " alt="" coords="213,360,367,387"/>
+<area shape="rect" id="node14" href="classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9" title="回転中？ " alt="" coords="191,411,389,437"/>
+<area shape="rect" id="node15" href="classAnpanAIStateBase.html#aa57e3d48dbbbfe6f1c930bd1f59e82fd" title="移動中？ " alt="" coords="195,461,385,488"/>
+<area shape="rect" id="node7" href="classSkillControl.html#ae4d7b9d305c9a9f8047bbe8cec503f5d" title="SkillControl::IsActive" alt="" coords="453,208,594,235"/>
+<area shape="rect" id="node8" href="classSkillStateBase.html#a65e63e4c3e787df759f29b8cef5427ac" title="SkillStateBase::GetStateType" alt="" coords="658,208,854,235"/>
+<area shape="rect" id="node11" href="classAnpanAI.html#ab7352bf6ac5cc9899a6ec8ab4aacde87" title="停止パケットデータの設定. " alt="" coords="657,284,855,311"/>
+<area shape="rect" id="node13" href="classAnpanAIStateBase.html#a57295f498604290eec50b80f2287519e" title="AIを設定 " alt="" coords="437,360,609,387"/>
 </map>
 </div>
 

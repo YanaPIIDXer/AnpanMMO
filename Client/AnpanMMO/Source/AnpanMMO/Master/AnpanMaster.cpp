@@ -40,6 +40,23 @@ void AnpanMaster::Load()
 	delete[] pData;
 }
 
+TArray<AnpanItem> AnpanMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<AnpanItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const AnpanItem &A, const AnpanItem &B)
+	{
+		return (A.ID < B.ID);
+	});
+	return ItemArray;
+}
+
 TArray<AnpanItem> AnpanMaster::GetAll() const
 {
 	TArray<AnpanItem> ItemArray;

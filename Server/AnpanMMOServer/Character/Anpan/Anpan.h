@@ -76,11 +76,26 @@ public:
 	virtual u32 GetDropId() const { return DropId; }
 
 	/**
+	 * @fn u32 GetAIId() const
+	 * @brief AIのIDを取得
+	 * @return AIのID
+	 */
+	u32 GetAIId() const { return AIId; }
+
+	/**
 	 * @fn virtual void OnBuffAdded(u32 BuffId)
 	 * @brief バフが追加された。
 	 * @param[in] BuffId バフＩＤ
 	 */
 	virtual void OnBuffAdded(u32 BuffId);
+
+	/**
+	 * @fn virtual void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+	 * @brief スキルを食らった。
+	 * @param[in] pCharacter スキル使用者
+	 * @param[in] pSkill 食らったスキル
+	 */
+	virtual void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill);
 
 protected:
 
@@ -90,14 +105,6 @@ protected:
 	 * @param[in] 前フレームからの経過時間
 	 */
 	virtual void Update(int DeltaTime);
-
-	/**
-	 * @fn virtual void OnDamaged(CharacterPtr pAttacker, int DamageValue)
-	 * @brief ダメージを受けた
-	 * @param[in] pAttacker ダメージを与えたキャラへのweak_ptr
-	 * @param[in] int DamageValue ダメージ量
-	 */
-	virtual void OnDamaged(CharacterPtr pAttacker, int DamageValue);
 
 private:
 
@@ -118,6 +125,9 @@ private:
 
 	// ドロップＩＤ
 	u32 DropId;
+
+	// AIのID
+	u32 AIId;
 
 };
 

@@ -34,6 +34,8 @@ public:
 
 	$GET_ITEN_FUNCTION_DECRARE$
 
+	std::vector<$ITEM_STRUCT_NAME$> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<$ITEM_STRUCT_NAME$> GetAll() const;
 
 private:

@@ -47,12 +47,6 @@ public:
 	void SetAI(AnpanAI *pInAI) { pAI = pInAI; }
 
 	/**
-	 * @fn virtual void OnDamaged()
-	 * @brief ダメージを受けた
-	 */
-	virtual void OnDamaged() {}
-
-	/**
 	 * @fn void Stop()
 	 * @brief 停止
 	 */
@@ -110,6 +104,13 @@ protected:
 	 * @return 回転中ならtrueを返す。
 	 */
 	bool IsRotating() const { return (RotateTime > 0); }
+
+	/**
+	 * @fn bool IsStopping() const
+	 * @brief 停止しているか？
+	 * @return 停止しているならtrueを返す。
+	 */
+	bool IsStopping() const { return (!IsMoving() && !IsRotating()); }
 
 private:
 

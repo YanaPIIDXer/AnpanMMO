@@ -38,6 +38,8 @@ public:
 
 	void Load();
 
+	TArray<NPCConditionItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<NPCConditionItem> GetAll() const;
 
 	const NPCConditionItem *Get(u32 Key, int32 SheetIndex = 0) const;

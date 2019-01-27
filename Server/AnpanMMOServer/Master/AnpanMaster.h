@@ -22,6 +22,7 @@ public:
 	u32 Vit;
 	u32 Exp;
 	float Scale;
+	u8 AIId;
 	u32 DropId;
 
 
@@ -43,6 +44,8 @@ public:
 	bool Load(const MySqlConnection &Connection);
 
 	const AnpanItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
+
+	std::vector<AnpanItem> GetAllSheetItem(s32 SheetIndex) const;
 
 	std::vector<AnpanItem> GetAll() const;
 

@@ -40,6 +40,23 @@ void NPCMaster::Load()
 	delete[] pData;
 }
 
+TArray<NPCItem> NPCMaster::GetAllSheetItem(int32 SheetIndex) const
+{
+	TArray<NPCItem> ItemArray;
+	if (!Items.Contains(SheetIndex)) { return ItemArray; }
+
+	for (auto KeyValue : Items[SheetIndex])
+	{
+		ItemArray.Add(KeyValue.Value);
+	}
+
+	ItemArray.Sort([](const NPCItem &A, const NPCItem &B)
+	{
+		return (A.ID < B.ID);
+	});
+	return ItemArray;
+}
+
 TArray<NPCItem> NPCMaster::GetAll() const
 {
 	TArray<NPCItem> ItemArray;

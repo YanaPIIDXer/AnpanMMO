@@ -49,6 +49,8 @@ public:
 
 	const SkillTreeItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<SkillTreeItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<SkillTreeItem> GetAll() const;
 
 private:

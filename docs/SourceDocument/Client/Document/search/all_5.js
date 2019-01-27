@@ -23,5 +23,6 @@ var searchData=
   ['flexarray_3c_20skilltreenode_20_3e',['FlexArray&lt; SkillTreeNode &gt;',['../classFlexArray.html',1,'']]],
   ['fpartymemberdata',['FPartyMemberData',['../structFPartyMemberData.html',1,'']]],
   ['fquestdata',['FQuestData',['../structFQuestData.html',1,'']]],
+  ['fshopitem',['FShopItem',['../structFShopItem.html',1,'']]],
   ['fskilltreenode',['FSkillTreeNode',['../structFSkillTreeNode.html',1,'']]]
 ];

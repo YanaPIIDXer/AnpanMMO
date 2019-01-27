@@ -44,6 +44,8 @@ public:
 
 	const EquipItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<EquipItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<EquipItem> GetAll() const;
 
 private:

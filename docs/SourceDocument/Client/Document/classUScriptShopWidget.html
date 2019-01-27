@@ -95,8 +95,10 @@ UScriptShopWidget 連携図</div>
 <tr class="separator:a84bcdf677ec1f37dfdae517143f5a33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d94e6e0a9bd23b12f0543d56bb2cc7a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#a5d94e6e0a9bd23b12f0543d56bb2cc7a">~UScriptShopWidget</a> ()</td></tr>
 <tr class="separator:a5d94e6e0a9bd23b12f0543d56bb2cc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d4107383abdea99ad48d6ede253550a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#a4d4107383abdea99ad48d6ede253550a">Init</a> (uint32 InShopId)</td></tr>
-<tr class="separator:a4d4107383abdea99ad48d6ede253550a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839f02d3d58722d33eaf230d799f069e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#a839f02d3d58722d33eaf230d799f069e">SetShopId</a> (uint32 InShopId)</td></tr>
+<tr class="separator:a839f02d3d58722d33eaf230d799f069e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3cc0f815b64a91c5108bf3967e38abc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#ab3cc0f815b64a91c5108bf3967e38abc">OnRecvPacket</a> (uint8 ID) override</td></tr>
+<tr class="separator:ab3cc0f815b64a91c5108bf3967e38abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classULayeredMenuWidgetBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classULayeredMenuWidgetBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classULayeredMenuWidgetBase.html">ULayeredMenuWidgetBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:ad3489f84bc81c769f5fbee69915033fb inherit pub_methods_classULayeredMenuWidgetBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classULayeredMenuWidgetBase.html#ad3489f84bc81c769f5fbee69915033fb">ULayeredMenuWidgetBase</a> (const FObjectInitializer &amp;ObjectInitializer)</td></tr>
 <tr class="separator:ad3489f84bc81c769f5fbee69915033fb inherit pub_methods_classULayeredMenuWidgetBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,8 +110,6 @@ UScriptShopWidget 連携図</div>
 <tr class="separator:ac47178b046fdc632be37ff6f457e3fe5 inherit pub_methods_classULayeredMenuWidgetBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa200e099b2273d2ae5d94c68cf80f8b inherit pub_methods_classULayeredMenuWidgetBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classULayeredMenuWidgetBase.html#aaa200e099b2273d2ae5d94c68cf80f8b">CloseChild</a> ()</td></tr>
 <tr class="separator:aaa200e099b2273d2ae5d94c68cf80f8b inherit pub_methods_classULayeredMenuWidgetBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7b8caa72a61fdacb516fdb164251baf inherit pub_methods_classULayeredMenuWidgetBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classULayeredMenuWidgetBase.html#af7b8caa72a61fdacb516fdb164251baf">OnRecvPacket</a> (uint8 ID)</td></tr>
-<tr class="separator:af7b8caa72a61fdacb516fdb164251baf inherit pub_methods_classULayeredMenuWidgetBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
@@ -118,8 +118,22 @@ UScriptShopWidget 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad1ecb729b4395afff7284ec8b8012dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#ad1ecb729b4395afff7284ec8b8012dab">Init</a> ()</td></tr>
+<tr class="separator:ad1ecb729b4395afff7284ec8b8012dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3abd4ffecc56f24480d6e3da42c5294"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#af3abd4ffecc56f24480d6e3da42c5294">OnInit</a> (const TArray&lt; <a class="el" href="structFShopItem.html">FShopItem</a> &gt; &amp;ShopItems, const TArray&lt; <a class="el" href="structFShopItem.html">FShopItem</a> &gt; &amp;SellItems)</td></tr>
+<tr class="separator:af3abd4ffecc56f24480d6e3da42c5294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac47570fa863416f95a4eb1fb2e6bca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#a7ac47570fa863416f95a4eb1fb2e6bca">OnInit_Implementation</a> (const TArray&lt; <a class="el" href="structFShopItem.html">FShopItem</a> &gt; &amp;ShopItems, const TArray&lt; <a class="el" href="structFShopItem.html">FShopItem</a> &gt; &amp;SellItems)</td></tr>
+<tr class="separator:a7ac47570fa863416f95a4eb1fb2e6bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adce9153291dce59bea3b04d514e44cbf"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#adce9153291dce59bea3b04d514e44cbf">GetHaveItemCount</a> (const <a class="el" href="structFShopItem.html">FShopItem</a> &amp;Item) const</td></tr>
+<tr class="separator:adce9153291dce59bea3b04d514e44cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91cc89a2d654c602bb5190e9db148479"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#a91cc89a2d654c602bb5190e9db148479">ToNext</a> ()</td></tr>
 <tr class="separator:a91cc89a2d654c602bb5190e9db148479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c4b794b4ffc99ae5b7b00e4ec49bb4"><td class="memItemLeft" align="right" valign="top">int32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#aa4c4b794b4ffc99ae5b7b00e4ec49bb4">GetCurrentGold</a> () const</td></tr>
+<tr class="separator:aa4c4b794b4ffc99ae5b7b00e4ec49bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbbffbcacf21ed59161eb7b458b166f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#acbbffbcacf21ed59161eb7b458b166f8">SendBuy</a> (const <a class="el" href="structFShopItem.html">FShopItem</a> &amp;Item, int32 Count)</td></tr>
+<tr class="separator:acbbffbcacf21ed59161eb7b458b166f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b9618c3fcb1bf6e7741369fbee16d18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUScriptShopWidget.html#a0b9618c3fcb1bf6e7741369fbee16d18">SendSell</a> (const <a class="el" href="structFShopItem.html">FShopItem</a> &amp;Item, int32 Count)</td></tr>
+<tr class="separator:a0b9618c3fcb1bf6e7741369fbee16d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classULayeredMenuWidgetBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classULayeredMenuWidgetBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classULayeredMenuWidgetBase.html">ULayeredMenuWidgetBase</a> に属する継承限定公開メンバ関数</td></tr>
 <tr class="memitem:a8d29a6889921e7ff04efccf598f9858d inherit pro_methods_classULayeredMenuWidgetBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classULayeredMenuWidgetBase.html#a8d29a6889921e7ff04efccf598f9858d">Back</a> ()</td></tr>
 <tr class="separator:a8d29a6889921e7ff04efccf598f9858d inherit pro_methods_classULayeredMenuWidgetBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,28 +232,366 @@ UScriptShopWidget 連携図</div>
 
 </div>
 </div>
-<a id="a4d4107383abdea99ad48d6ede253550a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d4107383abdea99ad48d6ede253550a">&#9670;&nbsp;</a></span>Init()</h2>
+<a id="aa4c4b794b4ffc99ae5b7b00e4ec49bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c4b794b4ffc99ae5b7b00e4ec49bb4">&#9670;&nbsp;</a></span>GetCurrentGold()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32 UScriptShopWidget::GetCurrentGold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adce9153291dce59bea3b04d514e44cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adce9153291dce59bea3b04d514e44cbf">&#9670;&nbsp;</a></span>GetHaveItemCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32 UScriptShopWidget::GetHaveItemCount </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structFShopItem.html">FShopItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>Item</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUScriptShopWidget_adce9153291dce59bea3b04d514e44cbf_cgraph.png" border="0" usemap="#classUScriptShopWidget_adce9153291dce59bea3b04d514e44cbf_cgraph" alt=""/></div>
+<map name="classUScriptShopWidget_adce9153291dce59bea3b04d514e44cbf_cgraph" id="classUScriptShopWidget_adce9153291dce59bea3b04d514e44cbf_cgraph">
+<area shape="rect" id="node2" href="classAGameCharacter.html#a3e13328b08f5c17f4af7d2f727abd39c" title="AGameCharacter::GetItemCount" alt="" coords="197,13,408,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad1ecb729b4395afff7284ec8b8012dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1ecb729b4395afff7284ec8b8012dab">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void UScriptShopWidget::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUScriptShopWidget_ad1ecb729b4395afff7284ec8b8012dab_cgraph.png" border="0" usemap="#classUScriptShopWidget_ad1ecb729b4395afff7284ec8b8012dab_cgraph" alt=""/></div>
+<map name="classUScriptShopWidget_ad1ecb729b4395afff7284ec8b8012dab_cgraph" id="classUScriptShopWidget_ad1ecb729b4395afff7284ec8b8012dab_cgraph">
+<area shape="rect" id="node2" href="classAGameCharacter.html#a944d1cf625233381b3954005348cddea" title="AGameCharacter::GetGold" alt="" coords="220,5,399,32"/>
+<area shape="rect" id="node3" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="226,56,393,83"/>
+<area shape="rect" id="node4" href="classMasterData.html#a9d5603fbdc04b11f79f4f7c28fd6daec" title="MasterData::GetShopMaster" alt="" coords="215,107,403,133"/>
+<area shape="rect" id="node5" href="classShopMaster.html#a49b35a55d7ffc95e04d121e41f7e3454" title="ShopMaster::CollectItems" alt="" coords="223,157,395,184"/>
+<area shape="rect" id="node6" href="classAGameCharacter.html#a9f16189ed5a069ce10c86104c51466f0" title="AGameCharacter::GetStatus" alt="" coords="215,208,404,235"/>
+<area shape="rect" id="node7" href="classPlayerStatus.html#a2aaae642c6e9c3b2523912db1220bd1c" title="PlayerStatus::GetItemList" alt="" coords="223,259,395,285"/>
+<area shape="rect" id="node8" href="classItemList.html#a45c59476ff2ebaa2fa95592e83d43ef2" title="ItemList::CollectItemList" alt="" coords="228,309,391,336"/>
+<area shape="rect" id="node9" href="classUScriptShopWidget.html#af3abd4ffecc56f24480d6e3da42c5294" title="UScriptShopWidget::\lOnInit" alt="" coords="237,361,381,402"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUScriptShopWidget_ad1ecb729b4395afff7284ec8b8012dab_icgraph.png" border="0" usemap="#classUScriptShopWidget_ad1ecb729b4395afff7284ec8b8012dab_icgraph" alt=""/></div>
+<map name="classUScriptShopWidget_ad1ecb729b4395afff7284ec8b8012dab_icgraph" id="classUScriptShopWidget_ad1ecb729b4395afff7284ec8b8012dab_icgraph">
+<area shape="rect" id="node2" href="classUScriptShopWidget.html#ab3cc0f815b64a91c5108bf3967e38abc" title="UScriptShopWidget::\lOnRecvPacket" alt="" coords="215,5,359,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af3abd4ffecc56f24480d6e3da42c5294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3abd4ffecc56f24480d6e3da42c5294">&#9670;&nbsp;</a></span>OnInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UScriptShopWidget::OnInit </td>
+          <td>(</td>
+          <td class="paramtype">const TArray&lt; <a class="el" href="structFShopItem.html">FShopItem</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ShopItems</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TArray&lt; <a class="el" href="structFShopItem.html">FShopItem</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>SellItems</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUScriptShopWidget_af3abd4ffecc56f24480d6e3da42c5294_icgraph.png" border="0" usemap="#classUScriptShopWidget_af3abd4ffecc56f24480d6e3da42c5294_icgraph" alt=""/></div>
+<map name="classUScriptShopWidget_af3abd4ffecc56f24480d6e3da42c5294_icgraph" id="classUScriptShopWidget_af3abd4ffecc56f24480d6e3da42c5294_icgraph">
+<area shape="rect" id="node2" href="classUScriptShopWidget.html#ad1ecb729b4395afff7284ec8b8012dab" title="UScriptShopWidget::Init" alt="" coords="197,13,359,39"/>
+<area shape="rect" id="node3" href="classUScriptShopWidget.html#ab3cc0f815b64a91c5108bf3967e38abc" title="UScriptShopWidget::\lOnRecvPacket" alt="" coords="407,5,551,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7ac47570fa863416f95a4eb1fb2e6bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac47570fa863416f95a4eb1fb2e6bca">&#9670;&nbsp;</a></span>OnInit_Implementation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UScriptShopWidget::OnInit_Implementation </td>
+          <td>(</td>
+          <td class="paramtype">const TArray&lt; <a class="el" href="structFShopItem.html">FShopItem</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ShopItems</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TArray&lt; <a class="el" href="structFShopItem.html">FShopItem</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>SellItems</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3cc0f815b64a91c5108bf3967e38abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3cc0f815b64a91c5108bf3967e38abc">&#9670;&nbsp;</a></span>OnRecvPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UScriptShopWidget::OnRecvPacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8&#160;</td>
+          <td class="paramname"><em>ID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classULayeredMenuWidgetBase.html#af7b8caa72a61fdacb516fdb164251baf">ULayeredMenuWidgetBase</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUScriptShopWidget_ab3cc0f815b64a91c5108bf3967e38abc_cgraph.png" border="0" usemap="#classUScriptShopWidget_ab3cc0f815b64a91c5108bf3967e38abc_cgraph" alt=""/></div>
+<map name="classUScriptShopWidget_ab3cc0f815b64a91c5108bf3967e38abc_cgraph" id="classUScriptShopWidget_ab3cc0f815b64a91c5108bf3967e38abc_cgraph">
+<area shape="rect" id="node2" href="classUScriptShopWidget.html#ad1ecb729b4395afff7284ec8b8012dab" title="UScriptShopWidget::Init" alt="" coords="197,183,359,209"/>
+<area shape="rect" id="node3" href="classAGameCharacter.html#a944d1cf625233381b3954005348cddea" title="AGameCharacter::GetGold" alt="" coords="412,5,591,32"/>
+<area shape="rect" id="node4" href="classMasterData.html#a03543fc54fed921c842e8d139ffe12ba" title="MasterData::GetInstance" alt="" coords="418,56,585,83"/>
+<area shape="rect" id="node5" href="classMasterData.html#a9d5603fbdc04b11f79f4f7c28fd6daec" title="MasterData::GetShopMaster" alt="" coords="407,107,595,133"/>
+<area shape="rect" id="node6" href="classShopMaster.html#a49b35a55d7ffc95e04d121e41f7e3454" title="ShopMaster::CollectItems" alt="" coords="415,157,587,184"/>
+<area shape="rect" id="node7" href="classAGameCharacter.html#a9f16189ed5a069ce10c86104c51466f0" title="AGameCharacter::GetStatus" alt="" coords="407,208,596,235"/>
+<area shape="rect" id="node8" href="classPlayerStatus.html#a2aaae642c6e9c3b2523912db1220bd1c" title="PlayerStatus::GetItemList" alt="" coords="415,259,587,285"/>
+<area shape="rect" id="node9" href="classItemList.html#a45c59476ff2ebaa2fa95592e83d43ef2" title="ItemList::CollectItemList" alt="" coords="420,309,583,336"/>
+<area shape="rect" id="node10" href="classUScriptShopWidget.html#af3abd4ffecc56f24480d6e3da42c5294" title="UScriptShopWidget::\lOnInit" alt="" coords="429,361,573,402"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acbbffbcacf21ed59161eb7b458b166f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbbffbcacf21ed59161eb7b458b166f8">&#9670;&nbsp;</a></span>SendBuy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UScriptShopWidget::SendBuy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structFShopItem.html">FShopItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>Item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>Count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUScriptShopWidget_acbbffbcacf21ed59161eb7b458b166f8_cgraph.png" border="0" usemap="#classUScriptShopWidget_acbbffbcacf21ed59161eb7b458b166f8_cgraph" alt=""/></div>
+<map name="classUScriptShopWidget_acbbffbcacf21ed59161eb7b458b166f8_cgraph" id="classUScriptShopWidget_acbbffbcacf21ed59161eb7b458b166f8_cgraph">
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#a742ddc60c20a96634bed311deda3e902" title="UMMOGameInstance::SendPacket" alt="" coords="197,93,424,120"/>
+<area shape="rect" id="node3" href="classGameServerConnection.html#ac751385003e92982476bef66acfb4519" title="GameServerConnection\l::SendPacket" alt="" coords="472,86,631,127"/>
+<area shape="rect" id="node4" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="701,5,851,32"/>
+<area shape="rect" id="node5" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="679,57,873,98"/>
+<area shape="rect" id="node6" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="689,123,863,149"/>
+<area shape="rect" id="node7" href="classBuffer.html#ae4ffa3ab2c0fd7745d7498b34f8cda4c" title="Buffer::Push" alt="" coords="729,173,823,200"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0b9618c3fcb1bf6e7741369fbee16d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9618c3fcb1bf6e7741369fbee16d18">&#9670;&nbsp;</a></span>SendSell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UScriptShopWidget::SendSell </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structFShopItem.html">FShopItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>Item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>Count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUScriptShopWidget_a0b9618c3fcb1bf6e7741369fbee16d18_cgraph.png" border="0" usemap="#classUScriptShopWidget_a0b9618c3fcb1bf6e7741369fbee16d18_cgraph" alt=""/></div>
+<map name="classUScriptShopWidget_a0b9618c3fcb1bf6e7741369fbee16d18_cgraph" id="classUScriptShopWidget_a0b9618c3fcb1bf6e7741369fbee16d18_cgraph">
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#a742ddc60c20a96634bed311deda3e902" title="UMMOGameInstance::SendPacket" alt="" coords="197,93,424,120"/>
+<area shape="rect" id="node3" href="classGameServerConnection.html#ac751385003e92982476bef66acfb4519" title="GameServerConnection\l::SendPacket" alt="" coords="472,86,631,127"/>
+<area shape="rect" id="node4" href="classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="701,5,851,32"/>
+<area shape="rect" id="node5" href="classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="679,57,873,98"/>
+<area shape="rect" id="node6" href="classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="689,123,863,149"/>
+<area shape="rect" id="node7" href="classBuffer.html#ae4ffa3ab2c0fd7745d7498b34f8cda4c" title="Buffer::Push" alt="" coords="729,173,823,200"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a839f02d3d58722d33eaf230d799f069e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839f02d3d58722d33eaf230d799f069e">&#9670;&nbsp;</a></span>SetShopId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UScriptShopWidget::SetShopId </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>InShopId</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classUScriptShopWidget_a4d4107383abdea99ad48d6ede253550a_icgraph.png" border="0" usemap="#classUScriptShopWidget_a4d4107383abdea99ad48d6ede253550a_icgraph" alt=""/></div>
-<map name="classUScriptShopWidget_a4d4107383abdea99ad48d6ede253550a_icgraph" id="classUScriptShopWidget_a4d4107383abdea99ad48d6ede253550a_icgraph">
-<area shape="rect" id="node2" href="classUScriptWidgetRoot.html#a1b4f81f3186a8c8eacf693b5de620468" title="UScriptWidgetRoot::\lShowShop" alt="" coords="215,5,356,47"/>
-<area shape="rect" id="node3" href="classAActiveGameMode.html#a6c6b7f4954e91ce00e8241ead3d8d8b4" title="AActiveGameMode::ShowShop" alt="" coords="404,13,607,39"/>
+<div class="center"><img src="classUScriptShopWidget_a839f02d3d58722d33eaf230d799f069e_icgraph.png" border="0" usemap="#classUScriptShopWidget_a839f02d3d58722d33eaf230d799f069e_icgraph" alt=""/></div>
+<map name="classUScriptShopWidget_a839f02d3d58722d33eaf230d799f069e_icgraph" id="classUScriptShopWidget_a839f02d3d58722d33eaf230d799f069e_icgraph">
+<area shape="rect" id="node2" href="classUScriptWidgetRoot.html#a1b4f81f3186a8c8eacf693b5de620468" title="UScriptWidgetRoot::\lShowShop" alt="" coords="197,5,339,47"/>
+<area shape="rect" id="node3" href="classAActiveGameMode.html#a6c6b7f4954e91ce00e8241ead3d8d8b4" title="AActiveGameMode::ShowShop" alt="" coords="387,13,589,39"/>
 </map>
 </div>
 

@@ -57,6 +57,22 @@ std::vector<const AnpanPopAreaItem *> AnpanPopAreaMaster::CollectItems(u32 Key, 
 	return Result;
 }
 
+std::vector<AnpanPopAreaItem> AnpanPopAreaMaster::GetAllSheetItem(s32 SheetIndex) const
+{
+	std::vector<AnpanPopAreaItem> AllItem;
+	SheetMap::const_iterator It = Items.find(SheetIndex);
+	if (It != Items.end())
+	{
+		for (ItemMap::const_iterator It2 = It->second.begin(); It2 != It->second.end(); ++It2)
+		{
+			AllItem.push_back(It2->second);
+		}
+	}
+
+	std::sort(AllItem.begin(), AllItem.end());
+	return AllItem;
+}
+
 std::vector<AnpanPopAreaItem> AnpanPopAreaMaster::GetAll() const
 {
 	std::vector<AnpanPopAreaItem> AllItem;

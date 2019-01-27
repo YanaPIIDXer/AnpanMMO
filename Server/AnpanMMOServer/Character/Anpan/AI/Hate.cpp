@@ -7,19 +7,36 @@
 #include "Hate.h"
 #include "Character/CharacterBase.h"
 
+const int Hate::VolatileHateDecayTime = 3000;
+
 // コンストラクタ
 Hate::Hate()
 {
 }
 
 // 毎フレームの処理.
-void Hate::Poll()
+void Hate::Poll(u32 DeltaTime)
 {
 	std::vector<HateUnit>::iterator It = HateList.begin();
 	bool bNeedSort = false;
 	while (It != HateList.end())
 	{
-		if (It->pCharacter.expired() || It->pCharacter.lock()->IsDead())
+		if (It->VolatileHate > 0)
+		{
+			It->VolatileHateDecayTimer -= DeltaTime;
+			if (It->VolatileHateDecayTimer <= 0)
+			{
+				It->VolatileHate -= 10;
+				if (It->VolatileHate < 0)
+				{
+					It->VolatileHate = 0;
+				}
+				It->VolatileHateDecayTimer += VolatileHateDecayTime;
+				bNeedSort = true;
+			}
+		}
+
+		if (It->pCharacter.expired() || It->pCharacter.lock()->IsDead() || It->GetTotal() <= 0)
 		{
 			It = HateList.erase(It);
 			bNeedSort = true;
@@ -37,7 +54,7 @@ void Hate::Poll()
 }
 
 // 増加.
-void Hate::Add(CharacterPtr pCharacter, int Value)
+void Hate::Add(CharacterPtr pCharacter, int VolatileHate, int AccumulateHate)
 {
 	if (pCharacter.expired()) { return; }
 
@@ -45,7 +62,8 @@ void Hate::Add(CharacterPtr pCharacter, int Value)
 	{
 		if (HateList[i].pCharacter.lock().get() == pCharacter.lock().get())
 		{
-			HateList[i].HateValue += Value;
+			HateList[i].VolatileHate += VolatileHate;
+			HateList[i].AccumulateHate += AccumulateHate;
 			Sort();
 			return;
 		}
@@ -53,7 +71,9 @@ void Hate::Add(CharacterPtr pCharacter, int Value)
 
 	HateUnit Unit;
 	Unit.pCharacter = pCharacter;
-	Unit.HateValue = Value;
+	Unit.VolatileHate = VolatileHate;
+	Unit.AccumulateHate = AccumulateHate;
+	Unit.VolatileHateDecayTimer = VolatileHateDecayTime;
 	HateList.push_back(Unit);
 	Sort();
 }
@@ -77,10 +97,10 @@ void Hate::Sort()
 // ====== ソート用オペレータオーバーロード =====
 bool operator <(const HateUnit &Left, const HateUnit &Right)
 {
-	return (Left.HateValue < Right.HateValue);
+	return (Left.GetTotal() < Right.GetTotal());
 }
 
 bool operator >(const HateUnit &Left, const HateUnit &Right)
 {
-	return (Left.HateValue > Right.HateValue);
+	return (Left.GetTotal() > Right.GetTotal());
 }

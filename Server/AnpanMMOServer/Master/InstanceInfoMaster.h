@@ -40,6 +40,8 @@ public:
 
 	const InstanceInfoItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<InstanceInfoItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<InstanceInfoItem> GetAll() const;
 
 private:

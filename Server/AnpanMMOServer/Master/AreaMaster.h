@@ -44,6 +44,8 @@ public:
 
 	const AreaItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
 
+	std::vector<AreaItem> GetAllSheetItem(s32 SheetIndex) const;
+
 	std::vector<AreaItem> GetAll() const;
 
 private:

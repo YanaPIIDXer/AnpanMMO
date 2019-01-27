@@ -183,7 +183,7 @@ void SkillControl::Activate()
 				{
 					DamageCalcUnit Calc(pOwner->GetParameter(), Targets[i]->GetParameter(), pItem);
 					s32 Value = Calc.Calc();
-					Targets[i]->ApplyDamage(pOwner->shared_from_this(), Value);
+					Targets[i]->ApplyDamage(Value);
 					if (Targets[i]->IsDead() && OnKilledFunc)
 					{						
 						OnKilledFunc(Targets[i]);
@@ -206,6 +206,8 @@ void SkillControl::Activate()
 		{
 			Targets[i]->AddBuff(pItem->BuffId);
 		}
+
+		Targets[i]->OnSkillReceived(pOwner->shared_from_this(), pItem);
 	}
 
 	pOwner->StartRecast(SkillId);
@@ -230,6 +232,12 @@ bool SkillControl::IsActive() const
 bool SkillControl::IsCasting() const
 {
 	return (pState->GetStateType() == Cast);
+}
+
+// オート移動中か？
+bool SkillControl::IsAutoMoving() const
+{
+	return (pState->GetStateType() == AutoMove);
 }
 
 

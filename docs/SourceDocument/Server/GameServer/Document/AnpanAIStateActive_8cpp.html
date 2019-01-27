@@ -78,6 +78,8 @@ $(function() {
 <code>#include &quot;<a class="el" href="AnpanAIStateNonActive_8h_source.html">AnpanAIStateNonActive.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CharacterBase_8h_source.html">Character/CharacterBase.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Anpan_8h_source.html">Character/Anpan/Anpan.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AIGenerator_8h_source.html">Character/Anpan/AI/AIGenerator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MasterData_8h_source.html">Master/MasterData.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="MathUtil_8h_source.html">Math/MathUtil.h</a>&quot;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -85,38 +87,49 @@ AnpanAIStateActive.cpp の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="AnpanAIStateActive_8cpp__incl.png" border="0" usemap="#AnpanAIStateActive_8cpp" alt=""/></div>
 <map name="AnpanAIStateActive_8cpp" id="AnpanAIStateActive_8cpp">
-<area shape="rect" id="node2" href="stdafx_8h.html" title="stdafx.h" alt="" coords="765,162,833,189"/>
-<area shape="rect" id="node15" href="AnpanAIStateActive_8h.html" title="アンパンＡＩステート：アクティブ状態 " alt="" coords="1481,80,1629,107"/>
-<area shape="rect" id="node21" href="AnpanAI_8h.html" title="アンパンＡＩクラス " alt="" coords="2245,155,2379,196"/>
-<area shape="rect" id="node32" href="AnpanAIStateNonActive_8h.html" title="アンパンＡＩステート基底クラス " alt="" coords="1653,80,1824,107"/>
-<area shape="rect" id="node33" href="CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="2709,162,2888,189"/>
-<area shape="rect" id="node48" href="Anpan_8h.html" title="アンパンクラス " alt="" coords="2347,80,2517,107"/>
-<area shape="rect" id="node50" href="MathUtil_8h.html" title="Math/MathUtil.h" alt="" coords="1361,326,1476,353"/>
-<area shape="rect" id="node5" href="basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="719,244,879,271"/>
-<area shape="rect" id="node14" href="TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="2059,497,2146,524"/>
-<area shape="rect" id="node16" href="AnpanAIStateBase_8h.html" title="AnpanAIStateBase.h" alt="" coords="1518,162,1661,189"/>
-<area shape="rect" id="node17" href="Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="1553,415,1673,442"/>
-<area shape="rect" id="node20" href="Rotation_8h.html" title="Math/Rotation.h" alt="" coords="1652,326,1767,353"/>
-<area shape="rect" id="node22" href="AnpanAIPacketData_8h.html" title="アンパンＡＩのパケットデータ " alt="" coords="1859,244,2010,271"/>
-<area shape="rect" id="node29" href="Hate_8h.html" title="ヘイト管理クラス " alt="" coords="2282,244,2342,271"/>
-<area shape="rect" id="node31" href="WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="2724,415,2844,442"/>
-<area shape="rect" id="node23" href="PacketMoveAnpan_8h.html" title="アンパン移動パケット " alt="" coords="1841,326,2028,353"/>
-<area shape="rect" id="node28" href="PacketRotateAnpan_8h.html" title="アンパン回転パケット " alt="" coords="2052,326,2247,353"/>
-<area shape="rect" id="node24" href="PacketBase_8h.html" title="PacketBase.h" alt="" coords="2051,415,2155,442"/>
-<area shape="rect" id="node25" href="MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="2179,408,2383,449"/>
-<area shape="rect" id="node27" href="PacketID_8h.html" title="PacketID.h" alt="" coords="1939,415,2026,442"/>
-<area shape="rect" id="node34" href="CharacterParameter_8h.html" title="キャラクタパラメータ " alt="" coords="3427,244,3576,271"/>
-<area shape="rect" id="node36" href="AreaBase_8h.html" title="エリア基底クラス " alt="" coords="2857,244,2978,271"/>
-<area shape="rect" id="node45" href="SkillControl_8h.html" title="Skill/SkillControl.h" alt="" coords="3265,326,3393,353"/>
-<area shape="rect" id="node46" href="SkillRecastManager_8h.html" title="Skill/SkillRecastManager.h" alt="" coords="3623,326,3801,353"/>
-<area shape="rect" id="node47" href="BuffManager_8h.html" title="バフ管理クラス " alt="" coords="3241,244,3372,271"/>
-<area shape="rect" id="node35" href="EquipData_8h.html" title="装備データ " alt="" coords="3468,326,3599,353"/>
-<area shape="rect" id="node37" href="PlayerManager_8h.html" title="PlayerManager.h" alt="" coords="2857,326,2977,353"/>
-<area shape="rect" id="node39" href="AnpanManager_8h.html" title="AnpanManager.h" alt="" coords="3121,326,3241,353"/>
-<area shape="rect" id="node41" href="HeightMap_8h.html" title="ハイトマップクラス " alt="" coords="3002,326,3097,353"/>
-<area shape="rect" id="node42" href="Bitmap_8h.html" title="Bitmap.h" alt="" coords="3004,415,3079,442"/>
-<area shape="rect" id="node44" href="EndianConverter_8h.html" title="エンディアン変換 " alt="" coords="3038,497,3165,524"/>
-<area shape="rect" id="node49" href="CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="2351,326,2513,353"/>
+<area shape="rect" id="node2" href="stdafx_8h.html" title="stdafx.h" alt="" coords="181,80,249,107"/>
+<area shape="rect" id="node9" href="AnpanAIStateActive_8h.html" title="アンパンＡＩステート：アクティブ状態 " alt="" coords="1109,162,1257,189"/>
+<area shape="rect" id="node15" href="AnpanAI_8h.html" title="アンパンＡＩクラス " alt="" coords="1725,155,1860,196"/>
+<area shape="rect" id="node18" href="AnpanAIStateNonActive_8h.html" title="アンパンＡＩステート基底クラス " alt="" coords="762,80,933,107"/>
+<area shape="rect" id="node19" href="CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="1282,162,1461,189"/>
+<area shape="rect" id="node26" href="Anpan_8h.html" title="アンパンクラス " alt="" coords="1535,80,1706,107"/>
+<area shape="rect" id="node28" href="AIGenerator_8h.html" title="ＡＩ機構構築クラス " alt="" coords="1824,244,1959,285"/>
+<area shape="rect" id="node29" href="MasterData_8h.html" title="マスタデータクラス " alt="" coords="3718,80,3862,107"/>
+<area shape="rect" id="node50" href="MathUtil_8h.html" title="Math/MathUtil.h" alt="" coords="410,251,525,278"/>
+<area shape="rect" id="node5" href="basic__repeating__timer_8h.html" title="basic_repeating_timer.h" alt="" coords="253,162,413,189"/>
+<area shape="rect" id="node8" href="TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="5,162,92,189"/>
+<area shape="rect" id="node10" href="AnpanAIStateBase_8h.html" title="AnpanAIStateBase.h" alt="" coords="600,251,743,278"/>
+<area shape="rect" id="node14" href="WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="2046,341,2166,367"/>
+<area shape="rect" id="node11" href="Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="613,341,733,367"/>
+<area shape="rect" id="node13" href="Rotation_8h.html" title="Math/Rotation.h" alt="" coords="971,341,1086,367"/>
+<area shape="rect" id="node16" href="AnpanAIPacketData_8h.html" title="アンパンＡＩのパケットデータ " alt="" coords="1240,251,1391,278"/>
+<area shape="rect" id="node17" href="Hate_8h.html" title="ヘイト管理クラス " alt="" coords="2136,251,2196,278"/>
+<area shape="rect" id="node20" href="CharacterParameter_8h.html" title="キャラクタパラメータ " alt="" coords="1066,251,1215,278"/>
+<area shape="rect" id="node21" href="AreaBase_8h.html" title="エリア基底クラス " alt="" coords="869,251,991,278"/>
+<area shape="rect" id="node22" href="SkillControl_8h.html" title="Skill/SkillControl.h" alt="" coords="1983,251,2111,278"/>
+<area shape="rect" id="node23" href="SkillRecastManager_8h.html" title="Skill/SkillRecastManager.h" alt="" coords="1415,251,1594,278"/>
+<area shape="rect" id="node25" href="BuffManager_8h.html" title="バフ管理クラス " alt="" coords="1669,251,1799,278"/>
+<area shape="rect" id="node27" href="CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="1538,162,1701,189"/>
+<area shape="rect" id="node30" href="AreaMaster_8h.html" title="AreaMaster.h" alt="" coords="2520,162,2620,189"/>
+<area shape="rect" id="node31" href="WarpDataMaster_8h.html" title="WarpDataMaster.h" alt="" coords="2645,162,2775,189"/>
+<area shape="rect" id="node32" href="AnpanMaster_8h.html" title="AnpanMaster.h" alt="" coords="2800,162,2911,189"/>
+<area shape="rect" id="node33" href="AnpanPopAreaMaster_8h.html" title="AnpanPopAreaMaster.h" alt="" coords="2935,162,3095,189"/>
+<area shape="rect" id="node34" href="AnpanPopDataMaster_8h.html" title="AnpanPopDataMaster.h" alt="" coords="3119,162,3279,189"/>
+<area shape="rect" id="node35" href="InstanceInfoMaster_8h.html" title="InstanceInfoMaster.h" alt="" coords="3304,162,3447,189"/>
+<area shape="rect" id="node36" href="TimeInfoMaster_8h.html" title="TimeInfoMaster.h" alt="" coords="3471,162,3592,189"/>
+<area shape="rect" id="node37" href="NPCMaster_8h.html" title="NPCMaster.h" alt="" coords="3616,162,3716,189"/>
+<area shape="rect" id="node38" href="SkillMaster_8h.html" title="SkillMaster.h" alt="" coords="3741,162,3839,189"/>
+<area shape="rect" id="node39" href="SkillTreeMaster_8h.html" title="SkillTreeMaster.h" alt="" coords="3863,162,3986,189"/>
+<area shape="rect" id="node40" href="ItemMaster_8h.html" title="ItemMaster.h" alt="" coords="4010,162,4109,189"/>
+<area shape="rect" id="node41" href="ItemDropMaster_8h.html" title="ItemDropMaster.h" alt="" coords="4133,162,4258,189"/>
+<area shape="rect" id="node42" href="QuestMaster_8h.html" title="QuestMaster.h" alt="" coords="4283,162,4391,189"/>
+<area shape="rect" id="node43" href="QuestStageMaster_8h.html" title="QuestStageMaster.h" alt="" coords="4415,162,4557,189"/>
+<area shape="rect" id="node44" href="QuestRewardMaster_8h.html" title="QuestRewardMaster.h" alt="" coords="4581,162,4732,189"/>
+<area shape="rect" id="node45" href="LevelMaster_8h.html" title="LevelMaster.h" alt="" coords="4756,162,4859,189"/>
+<area shape="rect" id="node46" href="EquipMaster_8h.html" title="EquipMaster.h" alt="" coords="4883,162,4990,189"/>
+<area shape="rect" id="node47" href="BuffMaster_8h.html" title="BuffMaster.h" alt="" coords="5015,162,5109,189"/>
+<area shape="rect" id="node48" href="ShopMaster_8h.html" title="ShopMaster.h" alt="" coords="5133,162,5236,189"/>
+<area shape="rect" id="node49" href="AnpanAIMaster_8h.html" title="AnpanAIMaster.h" alt="" coords="2373,162,2495,189"/>
 </map>
 </div>
 </div><a name="details" id="details"></a><h2 class="groupheader">詳解</h2>

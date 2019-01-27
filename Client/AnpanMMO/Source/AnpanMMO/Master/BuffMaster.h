@@ -51,6 +51,8 @@ public:
 
 	void Load();
 
+	TArray<BuffItem> GetAllSheetItem(int32 SheetIndex) const;
+
 	TArray<BuffItem> GetAll() const;
 
 	const BuffItem *Get(u32 Key, int32 SheetIndex = 0) const;

@@ -15,6 +15,8 @@
 #include "Skill/SkillRecastManager.h"
 #include "Buff/BuffManager.h"
 
+struct SkillItem;
+
 /**
  * @class CharacterBase
  * @brief キャラクタ基底クラス
@@ -86,10 +88,9 @@ public:
 	/**
 	 * @fn void ApplyDamage(CharacterPtr pAttacker, u32 Value)
 	 * @brief ダメージを与える
-	 * @param[in] pAttacker ダメージを与えたキャラクタのweak_ptr
 	 * @param[in] Value ダメージ量
 	 */
-	void ApplyDamage(CharacterPtr pAttacker, u32 Value);
+	void ApplyDamage(u32 Value);
 
 	/**
 	 * @fn void Heal(u32 Value)
@@ -197,6 +198,13 @@ public:
 	bool IsSkillCasting() const { return Skill.IsCasting(); }
 
 	/**
+	 * @fn bool IsSkillAutoMoving() const
+	 * @brief スキルのオート移動中か？
+	 * @return スキルのオート移動中ならtrueを返す。
+	 */
+	bool IsSkillAutoMoving() const { return Skill.IsAutoMoving(); }
+
+	/**
 	 * @fn bool IsRecasting(u32 SkillId) const
 	 * @brief リキャスト中か？
 	 * @param[in] SkillId スキルＩＤ
@@ -253,6 +261,14 @@ public:
 	 */
 	bool IsParalysis() const;
 
+	/**
+	 * @fn virtual void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill)
+	 * @brief スキルを食らった。
+	 * @param[in] pCharacter スキル使用者
+	 * @param[in] pSkill 食らったスキル
+	 */
+	virtual void OnSkillReceived(CharacterPtr pCharacter, const SkillItem *pSkill) {}
+
 protected:
 
 	//! 座標.
@@ -285,14 +301,6 @@ protected:
 	{
 		Parameter.Set(Level, Hp, MaxHp, Str, Def, Int, Mnd, Vit, bIsVitAffectMaxHp);
 	}
-
-	/**
-	 * @fn virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue)
-	 * @brief ダメージを受けた
-	 * @param[in] pAttacker 攻撃者へのweak_ptr
-	 * @param[in] DamageValue ダメージ量
-	 */
-	virtual void OnDamaged(weak_ptr<CharacterBase> pAttacker, int DamageValue) {}
 
 	/**
 	 * @fn virtual void Update(s32 DeltaTime)

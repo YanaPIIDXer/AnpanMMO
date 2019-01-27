@@ -46,6 +46,8 @@ public:
 	u32 BonusInt;
 	u32 BonusMnd;
 	u32 BonusVit;
+	u32 VolatileHate;
+	u32 AccumulateHate;
 	u32 BuffId;
 
 
@@ -67,6 +69,8 @@ public:
 	bool Load(const MySqlConnection &Connection);
 
 	const SkillItem *GetItem(u32 Key, s32 SheetIndex = 0) const;
+
+	std::vector<SkillItem> GetAllSheetItem(s32 SheetIndex) const;
 
 	std::vector<SkillItem> GetAll() const;
 
