@@ -76,6 +76,13 @@ public:
 	virtual u32 GetDropId() const { return DropId; }
 
 	/**
+	 * @fn u32 GetAIId() const
+	 * @brief AIのIDを取得
+	 * @return AIのID
+	 */
+	u32 GetAIId() const { return AIId; }
+
+	/**
 	 * @fn virtual void OnBuffAdded(u32 BuffId)
 	 * @brief バフが追加された。
 	 * @param[in] BuffId バフＩＤ
@@ -118,6 +125,9 @@ private:
 
 	// ドロップＩＤ
 	u32 DropId;
+
+	// AIのID
+	u32 AIId;
 
 };
 

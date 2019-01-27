@@ -234,6 +234,12 @@ bool SkillControl::IsCasting() const
 	return (pState->GetStateType() == Cast);
 }
 
+// オート移動中か？
+bool SkillControl::IsAutoMoving() const
+{
+	return (pState->GetStateType() == AutoMove);
+}
+
 
 // ステート変更.
 void SkillControl::ChangeState(SkillStateBase *pNewState)

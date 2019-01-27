@@ -198,6 +198,13 @@ public:
 	bool IsSkillCasting() const { return Skill.IsCasting(); }
 
 	/**
+	 * @fn bool IsSkillAutoMoving() const
+	 * @brief スキルのオート移動中か？
+	 * @return スキルのオート移動中ならtrueを返す。
+	 */
+	bool IsSkillAutoMoving() const { return Skill.IsAutoMoving(); }
+
+	/**
 	 * @fn bool IsRecasting(u32 SkillId) const
 	 * @brief リキャスト中か？
 	 * @param[in] SkillId スキルＩＤ

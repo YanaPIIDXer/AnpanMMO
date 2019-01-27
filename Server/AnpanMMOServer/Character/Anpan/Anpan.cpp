@@ -23,6 +23,7 @@ Anpan::Anpan(const Vector3D &InPosition, u32 InMasterId)
 	Exp = pItem->Exp;
 	ScaleRate = pItem->Scale;
 	DropId = pItem->DropId;
+	AIId = pItem->AIId;
 }
 
 // UŒ‚.

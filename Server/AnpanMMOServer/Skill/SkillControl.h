@@ -15,9 +15,7 @@ class SkillControl
 private:		// 別名定義.
 
 	typedef boost::function<void(u8)> OnCancelFunction;
-
 	typedef boost::function<void(u32)> OnUsedItemFunction;
-
 	typedef boost::function<void(CharacterBase *)> OnKilledFunction;
 
 public:
@@ -60,6 +58,9 @@ public:
 
 	// キャスト中か？
 	bool IsCasting() const;
+
+	// オート移動中か？
+	bool IsAutoMoving() const;
 
 	// キャンセル時に実行される関数を設定.
 	void SetOnCancelFunction(const OnCancelFunction &Func) { OnCancelFunc = Func; }

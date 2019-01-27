@@ -105,6 +105,13 @@ protected:
 	 */
 	bool IsRotating() const { return (RotateTime > 0); }
 
+	/**
+	 * @fn bool IsStopping() const
+	 * @brief ’â~‚µ‚Ä‚¢‚é‚©H
+	 * @return ’â~‚µ‚Ä‚¢‚é‚È‚çtrue‚ğ•Ô‚·B
+	 */
+	bool IsStopping() const { return (!IsMoving() && !IsRotating()); }
+
 private:
 
 	// e.
