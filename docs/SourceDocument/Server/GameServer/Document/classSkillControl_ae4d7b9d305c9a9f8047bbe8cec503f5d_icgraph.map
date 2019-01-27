@@ -1,3 +1,4 @@
 <map id="SkillControl::IsActive" name="SkillControl::IsActive">
-<area shape="rect" id="node2" href="$classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f" title="スキル使用中か？ " alt="" coords="195,5,381,32"/>
+<area shape="rect" id="node2" href="$classCharacterBase.html#abf5a7ea43f44fda956abba9366b55b4f" title="スキル使用中か？ " alt="" coords="195,13,381,39"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="429,5,567,47"/>
 </map>

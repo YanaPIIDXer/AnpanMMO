@@ -125,6 +125,9 @@ AnpanAIStateBase の継承関係図</div>
 <tr class="memitem:a1a3b216a420f532d7957c91ac95c89c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9">IsRotating</a> () const</td></tr>
 <tr class="memdesc:a1a3b216a420f532d7957c91ac95c89c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">回転中？  <a href="#a1a3b216a420f532d7957c91ac95c89c9">[詳解]</a><br /></td></tr>
 <tr class="separator:a1a3b216a420f532d7957c91ac95c89c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f29576b6f9c27d0f5ca9aa3ef553352"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpanAIStateBase.html#a1f29576b6f9c27d0f5ca9aa3ef553352">IsStopping</a> () const</td></tr>
+<tr class="memdesc:a1f29576b6f9c27d0f5ca9aa3ef553352"><td class="mdescLeft">&#160;</td><td class="mdescRight">停止しているか？  <a href="#a1f29576b6f9c27d0f5ca9aa3ef553352">[詳解]</a><br /></td></tr>
+<tr class="separator:a1f29576b6f9c27d0f5ca9aa3ef553352"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>アンパンＡＩステート基底クラス </p>
@@ -283,6 +286,15 @@ AnpanAIStateBase の継承関係図</div>
 
 <p>移動中？ </p>
 <dl class="section return"><dt>戻り値</dt><dd>移動中ならtrueを返す。 </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAnpanAIStateBase_aa57e3d48dbbbfe6f1c930bd1f59e82fd_icgraph.png" border="0" usemap="#classAnpanAIStateBase_aa57e3d48dbbbfe6f1c930bd1f59e82fd_icgraph" alt=""/></div>
+<map name="classAnpanAIStateBase_aa57e3d48dbbbfe6f1c930bd1f59e82fd_icgraph" id="classAnpanAIStateBase_aa57e3d48dbbbfe6f1c930bd1f59e82fd_icgraph">
+<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="276,5,413,47"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a1f29576b6f9c27d0f5ca9aa3ef553352" title="停止しているか？ " alt="" coords="244,71,445,98"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -311,6 +323,52 @@ AnpanAIStateBase の継承関係図</div>
 
 <p>回転中？ </p>
 <dl class="section return"><dt>戻り値</dt><dd>回転中ならtrueを返す。 </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAnpanAIStateBase_a1a3b216a420f532d7957c91ac95c89c9_icgraph.png" border="0" usemap="#classAnpanAIStateBase_a1a3b216a420f532d7957c91ac95c89c9_icgraph" alt=""/></div>
+<map name="classAnpanAIStateBase_a1a3b216a420f532d7957c91ac95c89c9_icgraph" id="classAnpanAIStateBase_a1a3b216a420f532d7957c91ac95c89c9_icgraph">
+<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="284,5,421,47"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a1f29576b6f9c27d0f5ca9aa3ef553352" title="停止しているか？ " alt="" coords="252,71,453,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1f29576b6f9c27d0f5ca9aa3ef553352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f29576b6f9c27d0f5ca9aa3ef553352">&#9670;&nbsp;</a></span>IsStopping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnpanAIStateBase::IsStopping </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>停止しているか？ </p>
+<dl class="section return"><dt>戻り値</dt><dd>停止しているならtrueを返す。 </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAnpanAIStateBase_a1f29576b6f9c27d0f5ca9aa3ef553352_cgraph.png" border="0" usemap="#classAnpanAIStateBase_a1f29576b6f9c27d0f5ca9aa3ef553352_cgraph" alt=""/></div>
+<map name="classAnpanAIStateBase_a1f29576b6f9c27d0f5ca9aa3ef553352_cgraph" id="classAnpanAIStateBase_a1f29576b6f9c27d0f5ca9aa3ef553352_cgraph">
+<area shape="rect" id="node2" href="classAnpanAIStateBase.html#aa57e3d48dbbbfe6f1c930bd1f59e82fd" title="移動中？ " alt="" coords="259,5,449,32"/>
+<area shape="rect" id="node3" href="classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9" title="回転中？ " alt="" coords="255,56,453,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -544,10 +602,10 @@ AnpanAIStateBase の継承関係図</div>
 <div class="dyncontent">
 <div class="center"><img src="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph.png" border="0" usemap="#classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph" alt=""/></div>
 <map name="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph" id="classAnpanAIStateBase_aa43e3a197f192eefa7c72bf76943fefd_icgraph">
-<area shape="rect" id="node2" href="classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872" title="停止 " alt="" coords="220,64,327,91"/>
+<area shape="rect" id="node2" href="classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872" title="停止 " alt="" coords="220,68,327,95"/>
+<area shape="rect" id="node4" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="386,122,523,163"/>
 <area shape="rect" id="node3" href="classAnpan.html#a63837cba106c32e6da792b7e85587ee3" title="バフが追加された。 " alt="" coords="383,5,526,32"/>
-<area shape="rect" id="node4" href="classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="386,57,523,98"/>
-<area shape="rect" id="node5" href="classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="375,122,535,163"/>
+<area shape="rect" id="node5" href="classAnpanAIStateNonActive.html#ae6f697da28a93dfeeff4b2740fb4c5a8" title="毎フレームの処理 " alt="" coords="375,57,535,98"/>
 </map>
 </div>
 

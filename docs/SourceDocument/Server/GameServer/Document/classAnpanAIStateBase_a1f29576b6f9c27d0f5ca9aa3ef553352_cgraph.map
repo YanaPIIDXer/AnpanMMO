@@ -1,0 +1,4 @@
+<map id="AnpanAIStateBase::IsStopping" name="AnpanAIStateBase::IsStopping">
+<area shape="rect" id="node2" href="$classAnpanAIStateBase.html#aa57e3d48dbbbfe6f1c930bd1f59e82fd" title="移動中？ " alt="" coords="259,5,449,32"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#a1a3b216a420f532d7957c91ac95c89c9" title="回転中？ " alt="" coords="255,56,453,83"/>
+</map>

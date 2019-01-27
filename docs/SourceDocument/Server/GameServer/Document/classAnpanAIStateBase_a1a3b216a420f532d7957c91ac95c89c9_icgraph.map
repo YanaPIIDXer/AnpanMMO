@@ -1,0 +1,4 @@
+<map id="AnpanAIStateBase::IsRotating" name="AnpanAIStateBase::IsRotating">
+<area shape="rect" id="node2" href="$classAnpanAIStateActive.html#a8e53ab2858d0d8e4740d25f9c22a8c88" title="毎フレームの処理 " alt="" coords="284,5,421,47"/>
+<area shape="rect" id="node3" href="$classAnpanAIStateBase.html#a1f29576b6f9c27d0f5ca9aa3ef553352" title="停止しているか？ " alt="" coords="252,71,453,98"/>
+</map>

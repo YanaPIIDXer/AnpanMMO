@@ -121,6 +121,9 @@ Anpan 連携図</div>
 <tr class="memitem:a54ee0d75cb0c57c0af36a3bf06c2d932"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a54ee0d75cb0c57c0af36a3bf06c2d932">GetDropId</a> () const</td></tr>
 <tr class="memdesc:a54ee0d75cb0c57c0af36a3bf06c2d932"><td class="mdescLeft">&#160;</td><td class="mdescRight">ドロップＩＤを取得  <a href="#a54ee0d75cb0c57c0af36a3bf06c2d932">[詳解]</a><br /></td></tr>
 <tr class="separator:a54ee0d75cb0c57c0af36a3bf06c2d932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceca5eb97aba59957702f5c2f948dae6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#aceca5eb97aba59957702f5c2f948dae6">GetAIId</a> () const</td></tr>
+<tr class="memdesc:aceca5eb97aba59957702f5c2f948dae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">AIのIDを取得  <a href="#aceca5eb97aba59957702f5c2f948dae6">[詳解]</a><br /></td></tr>
+<tr class="separator:aceca5eb97aba59957702f5c2f948dae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63837cba106c32e6da792b7e85587ee3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnpan.html#a63837cba106c32e6da792b7e85587ee3">OnBuffAdded</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> BuffId)</td></tr>
 <tr class="memdesc:a63837cba106c32e6da792b7e85587ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">バフが追加された。  <a href="#a63837cba106c32e6da792b7e85587ee3">[詳解]</a><br /></td></tr>
 <tr class="separator:a63837cba106c32e6da792b7e85587ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,6 +203,9 @@ Anpan 連携図</div>
 <tr class="memitem:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f">IsSkillCasting</a> () const</td></tr>
 <tr class="memdesc:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルキャスト中か？  <a href="classCharacterBase.html#ac26332cd9fe87098d43413835f49a14f">[詳解]</a><br /></td></tr>
 <tr class="separator:ac26332cd9fe87098d43413835f49a14f inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4df2f00b31ccb4682c71b0b553917aa inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#ac4df2f00b31ccb4682c71b0b553917aa">IsSkillAutoMoving</a> () const</td></tr>
+<tr class="memdesc:ac4df2f00b31ccb4682c71b0b553917aa inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">スキルのオート移動中か？  <a href="classCharacterBase.html#ac4df2f00b31ccb4682c71b0b553917aa">[詳解]</a><br /></td></tr>
+<tr class="separator:ac4df2f00b31ccb4682c71b0b553917aa inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80">IsRecasting</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> SkillId) const</td></tr>
 <tr class="memdesc:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">リキャスト中か？  <a href="classCharacterBase.html#a3d286187aebe8df0521052c7e5a99d80">[詳解]</a><br /></td></tr>
 <tr class="separator:a3d286187aebe8df0521052c7e5a99d80 inherit pub_methods_classCharacterBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -373,6 +379,42 @@ Anpan 連携図</div>
 <area shape="rect" id="node7" href="classCharacterBase.html#a519dbb12163afdfbc184824c8bfc5ab1" title="麻痺状態か？ " alt="" coords="341,165,521,191"/>
 <area shape="rect" id="node4" href="classSkillRecastManager.html#a7c36841fd225b698a3158c81518501e1" title="SkillRecastManager\l::IsRecast" alt="" coords="575,5,713,47"/>
 <area shape="rect" id="node8" href="classBuffManager.html#a64f369540862fcbdbfacb09b97d1f123" title="指定したバフ（デバフ）がかかっているか？ " alt="" coords="571,165,717,191"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aceca5eb97aba59957702f5c2f948dae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceca5eb97aba59957702f5c2f948dae6">&#9670;&nbsp;</a></span>GetAIId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Anpan::GetAIId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>AIのIDを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>AIのID </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAnpan_aceca5eb97aba59957702f5c2f948dae6_icgraph.png" border="0" usemap="#classAnpan_aceca5eb97aba59957702f5c2f948dae6_icgraph" alt=""/></div>
+<map name="classAnpan_aceca5eb97aba59957702f5c2f948dae6_icgraph" id="classAnpan_aceca5eb97aba59957702f5c2f948dae6_icgraph">
+<area shape="rect" id="node2" href="classAnpanAIStateActive.html#a3ca99e9d3ea0a6c63a37d1de4b7a2d63" title="コンストラクタ " alt="" coords="164,5,309,47"/>
 </map>
 </div>
 
