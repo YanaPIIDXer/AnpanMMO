@@ -165,6 +165,7 @@
     <ClInclude Include="ClientState\ClientStateTitle.h" />
     <ClInclude Include="Area\HeightMap.h" />
     <ClInclude Include="Equip\EquipData.h" />
+    <ClInclude Include="GMCommand\GMCommandParser.h" />
     <ClInclude Include="Item\ItemList.h" />
     <ClInclude Include="Master\AnpanAIMaster.h" />
     <ClInclude Include="Master\AnpanMaster.h" />
@@ -291,6 +292,7 @@
     <ClCompile Include="ClientState\ClientStateTitle.cpp" />
     <ClCompile Include="Area\HeightMap.cpp" />
     <ClCompile Include="Equip\EquipData.cpp" />
+    <ClCompile Include="GMCommand\GMCommandParser.cpp" />
     <ClCompile Include="Item\ItemList.cpp" />
     <ClCompile Include="Master\AnpanAIMaster.cpp" />
     <ClCompile Include="Master\AnpanMaster.cpp" />

@@ -393,6 +393,9 @@
     <ClInclude Include="Character\Anpan\AI\AIGenerator.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="GMCommand\GMCommandParser.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MemoryBuffer.cpp">
@@ -696,6 +699,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Character\Anpan\AI\AIGenerator.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GMCommand\GMCommandParser.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
