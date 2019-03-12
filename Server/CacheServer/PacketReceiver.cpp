@@ -149,7 +149,7 @@ bool PacketReceiver::OnRecvCharacterDataRequest(MemoryStreamInterface *pStream)
 		ResultCode = CachePacketCharacterDataResult::Error;
 	}
 
-	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, Exp, Gold, (bIsGM ? 1 : 0), RightEquip, LeftEquip, LastAreaId, LastX, LastY, LastZ);
+	CachePacketCharacterDataResult ResultPacket(Packet.ClientId, CharacterId,ResultCode, Name, Job, Level, Exp, Gold, RightEquip, LeftEquip, (bIsGM ? 1 : 0), LastAreaId, LastX, LastY, LastZ);
 	pParent->SendPacket(&ResultPacket);
 
 	return true;
