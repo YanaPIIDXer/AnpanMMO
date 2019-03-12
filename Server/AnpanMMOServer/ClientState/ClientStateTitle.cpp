@@ -189,14 +189,14 @@ bool ClientStateTitle::OnRecvCacheCharacterDataResult(MemoryStreamInterface *pSt
 	}
 
 	Client *pClient = GetParent();
-	pClient->CreateCharacter(Packet.CharacterId, Packet.Name, Packet.Job, Packet.Level, Packet.Exp, Packet.Gold, Packet.RightEquip, Packet.LeftEquip);
+	pClient->CreateCharacter(Packet.CharacterId, Packet.Name, Packet.Job, Packet.Level, Packet.Exp, Packet.Gold, (Packet.IsGM == 1), Packet.RightEquip, Packet.LeftEquip);
 	const CharacterParameter &Param = pClient->GetCharacter().lock()->GetParameter();
 	PacketCharacterStatus StatusPacket(pClient->GetUuid(), Packet.Name, Packet.Job, Packet.Level, Param.GetMaxHp(), Param.GetMaxHp(), Param.GetBaseMaxHp(), Param.GetNaturalStr(), Param.GetNaturalDef(), Param.GetNaturalInt(), Param.GetNaturalMnd(), Param.GetNaturalVit(), Packet.Exp, Packet.Gold, Packet.RightEquip, Packet.LeftEquip);
 	pClient->SendPacket(&StatusPacket);
 
 	LastAreaId = Packet.LastAreaId;
 	LastPosition = Vector3D(Packet.LastX, Packet.LastY, Packet.LastZ);
-
+	
 	// スキルリストを要求.
 	CachePacketSkillListRequest RequestPacket(pClient->GetUuid(), pClient->GetCharacter().lock()->GetCharacterId());
 	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);

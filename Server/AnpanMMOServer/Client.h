@@ -99,10 +99,11 @@ public:
 	 * @param[in] Level ƒŒƒxƒ‹
 	 * @param[in] Exp ŒoŒ±’l
 	 * @param[in] Gold ƒS[ƒ‹ƒh
+	 * @param[in] bIsGM ‚f‚l‚©H
 	 * @param[in] RightEquipId ‰Eè‘•”õ‚h‚c
 	 * @param[in] LeftEquipId ¶è‘•”õ‚h‚c
 	 */
-	void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold, u32 RightEquipId, u32 LeftEquipId);
+	void CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold, bool bIsGM, u32 RightEquipId, u32 LeftEquipId);
 
 	/**
 	 * @fn void RecvPacket(u8 ID, MemoryStreamInterface *pStream)

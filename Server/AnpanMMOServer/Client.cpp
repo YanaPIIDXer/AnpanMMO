@@ -66,9 +66,9 @@ void Client::ChangeState(ClientStateBase *pNextState)
 }
 
 // ƒLƒƒƒ‰ƒNƒ^ì¬.
-void Client::CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold, u32 RightEquipId, u32 LeftEquipId)
+void Client::CreateCharacter(u32 CharacterId, const std::string &Name, u8 Job, u32 Level, u32 Exp, u32 Gold, bool bIsGM, u32 RightEquipId, u32 LeftEquipId)
 {
-	PlayerCharacter *pChara= new PlayerCharacter(this, CharacterId, Job, Level, Exp, Gold, RightEquipId, LeftEquipId);
+	PlayerCharacter *pChara= new PlayerCharacter(this, CharacterId, Job, Level, Exp, Gold, bIsGM, RightEquipId, LeftEquipId);
 	pChara->SetUuid(Uuid);
 	pChara->SetName(Name);
 	pCharacter = shared_ptr<PlayerCharacter>(pChara);

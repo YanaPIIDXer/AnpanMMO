@@ -28,13 +28,14 @@
 #include "Packet/PacketRemoveBuff.h"
 
 // コンストラクタ
-PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold, u32 RightEquipId, u32 LeftEquipId)
+PlayerCharacter::PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold, bool bInIsGM, u32 RightEquipId, u32 LeftEquipId)
 	: pClient(pInClient)
 	, Exp(InExp)
 	, CharacterId(InCharacterId)
 	, Job(InJob)
 	, Gold(InGold)
 	, Tree(InJob)
+	, bIsGM(bInIsGM)
 	, SaveAreaId(0)
 	, SavePosition(Vector3D::Zero)
 {
