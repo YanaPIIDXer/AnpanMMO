@@ -32,7 +32,7 @@ CREATE TABLE `CharacterData` (
   `Gold` int(10) unsigned DEFAULT NULL,
   `RightEquip` int(10) unsigned DEFAULT NULL,
   `LeftEquip` int(10) unsigned DEFAULT NULL,
-  `IsGM` bit(1) DEFAULT NULL,
+  `IsGM` tinyint(1) DEFAULT NULL,
   `LastArea` int(10) unsigned DEFAULT NULL,
   `LastX` float DEFAULT NULL,
   `LastY` float DEFAULT NULL,
@@ -156,4 +156,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-12 12:37:10
+-- Dump completed on 2019-03-12 12:50:29
