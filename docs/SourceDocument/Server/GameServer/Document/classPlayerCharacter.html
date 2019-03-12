@@ -96,9 +96,9 @@ PlayerCharacter 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a1756fb8cf77600254952d9d42838a65f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a1756fb8cf77600254952d9d42838a65f">PlayerCharacter</a> (<a class="el" href="classClient.html">Client</a> *pInClient, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InCharacterId, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InJob, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InExp, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InGold, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> RightEquipId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> LeftEquipId)</td></tr>
-<tr class="memdesc:a1756fb8cf77600254952d9d42838a65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a1756fb8cf77600254952d9d42838a65f">[詳解]</a><br /></td></tr>
-<tr class="separator:a1756fb8cf77600254952d9d42838a65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d60d309921038ccee5c83984ac4e7d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a7d60d309921038ccee5c83984ac4e7d2">PlayerCharacter</a> (<a class="el" href="classClient.html">Client</a> *pInClient, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InCharacterId, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InJob, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> Level, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InExp, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InGold, bool bInIsGM, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> RightEquipId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> LeftEquipId)</td></tr>
+<tr class="memdesc:a7d60d309921038ccee5c83984ac4e7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a7d60d309921038ccee5c83984ac4e7d2">[詳解]</a><br /></td></tr>
+<tr class="separator:a7d60d309921038ccee5c83984ac4e7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4915330a9f743156b6860a97e6d68e28"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a4915330a9f743156b6860a97e6d68e28">~PlayerCharacter</a> ()</td></tr>
 <tr class="memdesc:a4915330a9f743156b6860a97e6d68e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a4915330a9f743156b6860a97e6d68e28">[詳解]</a><br /></td></tr>
 <tr class="separator:a4915330a9f743156b6860a97e6d68e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,6 +180,9 @@ PlayerCharacter 連携図</div>
 <tr class="memitem:a0885154ba74b393138de2c66062ce88b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#a0885154ba74b393138de2c66062ce88b">OnBuffRemoved</a> (<a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> BuffType)</td></tr>
 <tr class="memdesc:a0885154ba74b393138de2c66062ce88b"><td class="mdescLeft">&#160;</td><td class="mdescRight">バフが消滅した。  <a href="#a0885154ba74b393138de2c66062ce88b">[詳解]</a><br /></td></tr>
 <tr class="separator:a0885154ba74b393138de2c66062ce88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa88f0c6ebbbab99da7271d296a869f5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlayerCharacter.html#aa88f0c6ebbbab99da7271d296a869f5d">IsGM</a> () const</td></tr>
+<tr class="memdesc:aa88f0c6ebbbab99da7271d296a869f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ＧＭか？  <a href="#aa88f0c6ebbbab99da7271d296a869f5d">[詳解]</a><br /></td></tr>
+<tr class="separator:aa88f0c6ebbbab99da7271d296a869f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCharacterBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCharacterBase')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="classCharacterBase.html">CharacterBase</a> に属する継承公開メンバ関数</td></tr>
 <tr class="memitem:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">CharacterBase</a> ()</td></tr>
 <tr class="memdesc:af842f374bfb27efe6da4db4e822a3c72 inherit pub_methods_classCharacterBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="classCharacterBase.html#af842f374bfb27efe6da4db4e822a3c72">[詳解]</a><br /></td></tr>
@@ -304,8 +307,8 @@ PlayerCharacter 連携図</div>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>プレイヤーキャラクタ </p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a1756fb8cf77600254952d9d42838a65f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1756fb8cf77600254952d9d42838a65f">&#9670;&nbsp;</a></span>PlayerCharacter()</h2>
+<a id="a7d60d309921038ccee5c83984ac4e7d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d60d309921038ccee5c83984ac4e7d2">&#9670;&nbsp;</a></span>PlayerCharacter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -349,6 +352,12 @@ PlayerCharacter 連携図</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bInIsGM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
           <td class="paramname"><em>RightEquipId</em>, </td>
         </tr>
@@ -374,7 +383,8 @@ PlayerCharacter 連携図</div>
     <tr><td class="paramdir">[in]</td><td class="paramname">InJob</td><td>ジョブ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">Level</td><td>レベル </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">InExp</td><td>経験値 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">InGold</td><td>ゴールド [in] RightEquipId 右手装備ＩＤ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InGold</td><td>ゴールド </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bInIsGM</td><td>ＧＭか？ [in] RightEquipId 右手装備ＩＤ </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">LeftEquipId</td><td>左手装備ＩＤ </td></tr>
   </table>
   </dd>
@@ -382,8 +392,8 @@ PlayerCharacter 連携図</div>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><img src="classPlayerCharacter_a1756fb8cf77600254952d9d42838a65f_cgraph.png" border="0" usemap="#classPlayerCharacter_a1756fb8cf77600254952d9d42838a65f_cgraph" alt=""/></div>
-<map name="classPlayerCharacter_a1756fb8cf77600254952d9d42838a65f_cgraph" id="classPlayerCharacter_a1756fb8cf77600254952d9d42838a65f_cgraph">
+<div class="center"><img src="classPlayerCharacter_a7d60d309921038ccee5c83984ac4e7d2_cgraph.png" border="0" usemap="#classPlayerCharacter_a7d60d309921038ccee5c83984ac4e7d2_cgraph" alt=""/></div>
+<map name="classPlayerCharacter_a7d60d309921038ccee5c83984ac4e7d2_cgraph" id="classPlayerCharacter_a7d60d309921038ccee5c83984ac4e7d2_cgraph">
 <area shape="rect" id="node2" href="classMasterData.html#a6ee88636be8183d2e1c667fd3ca758b3" title="インスタンス取得 " alt="" coords="923,79,1089,106"/>
 <area shape="rect" id="node3" href="classMasterData.html#a80a15e6cc3171df43096c4afebd3903b" title="レベルマスタ取得 " alt="" coords="286,79,473,106"/>
 <area shape="rect" id="node4" href="classLevelMaster.html#ae5d9583c786a6d99232fc4733672d9b1" title="LevelMaster::GetItem" alt="" coords="307,130,452,157"/>
@@ -991,6 +1001,34 @@ PlayerCharacter 連携図</div>
 
 </div>
 </div>
+<a id="aa88f0c6ebbbab99da7271d296a869f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa88f0c6ebbbab99da7271d296a869f5d">&#9670;&nbsp;</a></span>IsGM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PlayerCharacter::IsGM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ＧＭか？ </p>
+<dl class="section return"><dt>戻り値</dt><dd>ＧＭならtrueを返す。 </dd></dl>
+
+</div>
+</div>
 <a id="a1afee0a074986b5d0d03f086c9748a0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1afee0a074986b5d0d03f086c9748a0b">&#9670;&nbsp;</a></span>OnAreaChange()</h2>
 
@@ -1275,7 +1313,7 @@ PlayerCharacter 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlayerCharacter_aad92d9ce8eae2a34ce35f49c14dfc421_icgraph.png" border="0" usemap="#classPlayerCharacter_aad92d9ce8eae2a34ce35f49c14dfc421_icgraph" alt=""/></div>
 <map name="classPlayerCharacter_aad92d9ce8eae2a34ce35f49c14dfc421_icgraph" id="classPlayerCharacter_aad92d9ce8eae2a34ce35f49c14dfc421_icgraph">
-<area shape="rect" id="node2" href="classClient.html#a973d3d0be3124d28b52f0a1b0635694d" title="キャラクタを作成 " alt="" coords="231,5,388,32"/>
+<area shape="rect" id="node2" href="classClient.html#ae4db1f0bdcbfb3c14e36525c44c67df3" title="キャラクタを作成 " alt="" coords="231,5,388,32"/>
 </map>
 </div>
 
