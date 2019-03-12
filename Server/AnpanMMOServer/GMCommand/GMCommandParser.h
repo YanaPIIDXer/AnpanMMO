@@ -3,7 +3,6 @@
  * @brief ＧＭコマンド解析クラス
  * @author YanaP
  */
-
 #ifndef __GMCOMMANDPARSER_H__
 #define __GMCOMMANDPARSER_H__
 
@@ -32,7 +31,14 @@ public:
 	 * @brief コマンドか？
 	 * @return コマンドならtrueを返す。
 	 */
-	bool IsCommand() const { return (Command[0] == '#'); }
+	bool IsCommand() const { return (Command.length() > 1 && Command[0] == '#'); }
+
+	/**
+	 * @fn u8 GetCommandType() const
+	 * @brief コマンドの種類を取得
+	 * @return コマンドの種類
+	 */
+	u8 GetCommandType() const;
 
 private:
 

@@ -166,6 +166,7 @@
     <ClInclude Include="Area\HeightMap.h" />
     <ClInclude Include="Equip\EquipData.h" />
     <ClInclude Include="GMCommand\GMCommandParser.h" />
+    <ClInclude Include="GMCommand\GMCommandType.h" />
     <ClInclude Include="Item\ItemList.h" />
     <ClInclude Include="Master\AnpanAIMaster.h" />
     <ClInclude Include="Master\AnpanMaster.h" />
