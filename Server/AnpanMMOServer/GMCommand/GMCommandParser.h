@@ -40,6 +40,13 @@ public:
 	 */
 	u8 GetCommandType() const;
 
+	/**
+	 * @fn std::vector<std::string> GetArgList() const
+	 * @brief 引数リストを取得
+	 * @return 引数リスト
+	 */
+	std::vector<std::string> GetArgList() const;
+
 private:
 
 	// コマンド
