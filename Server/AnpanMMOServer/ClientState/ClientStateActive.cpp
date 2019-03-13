@@ -19,6 +19,8 @@
 #include "Area/InstanceAreaTicketManager.h"
 #include "Time/TimeManager.h"
 #include "CacheServer/CacheServerConnection.h"
+#include "GMCommand/GMCommandParser.h"
+#include "GMCommand/GMCommandExecuter.h"
 #include "Packet/PacketPing.h"
 #include "Packet/PacketMovePlayer.h"
 #include "Packet/PacketSendChat.h"
@@ -153,6 +155,40 @@ bool ClientStateActive::OnRecvChat(MemoryStreamInterface *pStream)
 
 	// メッセージが空の時は何もしない。
 	if (Packet.Message == "") { return true; }
+
+	// ＧＭコマンド
+	if (GetParent()->GetCharacter().lock()->IsGM())
+	{
+		GMCommandParser Parser(Packet.Message);
+		if (Parser.IsCommand())
+		{
+			std::string ResultMessage = "Invalid GM Command.";
+
+			GMCommandExecuter Executer(GetParent(), Parser);
+			u8 Result = Executer.Execute();
+			switch (Result)
+			{
+				case GMCommandExecuter::Success:
+
+					ResultMessage = "GMCommand Success!";
+					break;
+
+				case GMCommandExecuter::InvalidCommand:
+
+					ResultMessage = "Invalid GM Command.";
+					break;
+
+				case GMCommandExecuter::InvalidArg:
+
+					ResultMessage = "Invalid Arg.";
+					break;
+			}
+
+			PacketReceiveChat ResultPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetName(), ResultMessage);
+			GetParent()->SendPacket(&ResultPacket);
+			return true;
+		}
+	}
 
 	// ワードチェックサーバに投げる。
 	WordCheckPacketChatRequest WordCheckPacket(GetParent()->GetUuid(), Packet.Type, Packet.Message);

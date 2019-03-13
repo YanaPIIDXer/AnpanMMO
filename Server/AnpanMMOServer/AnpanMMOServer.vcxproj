@@ -166,6 +166,7 @@
     <ClInclude Include="Area\HeightMap.h" />
     <ClInclude Include="Equip\EquipData.h" />
     <ClInclude Include="GMCommand\GMCommandArg.h" />
+    <ClInclude Include="GMCommand\GMCommandExecuter.h" />
     <ClInclude Include="GMCommand\GMCommandParser.h" />
     <ClInclude Include="GMCommand\GMCommandType.h" />
     <ClInclude Include="Item\ItemList.h" />
@@ -295,6 +296,7 @@
     <ClCompile Include="Area\HeightMap.cpp" />
     <ClCompile Include="Equip\EquipData.cpp" />
     <ClCompile Include="GMCommand\GMCommandArg.cpp" />
+    <ClCompile Include="GMCommand\GMCommandExecuter.cpp" />
     <ClCompile Include="GMCommand\GMCommandParser.cpp" />
     <ClCompile Include="Item\ItemList.cpp" />
     <ClCompile Include="Master\AnpanAIMaster.cpp" />

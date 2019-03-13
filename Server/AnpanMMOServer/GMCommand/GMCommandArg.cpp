@@ -1,5 +1,5 @@
 /**
- * @file GMCommandArg.h
+ * @file GMCommandArg.cpp
  * @brief ‚f‚lƒRƒ}ƒ“ƒh‚Ìˆø”
  * @author YanaP
  */
