@@ -182,6 +182,11 @@ bool ClientStateActive::OnRecvChat(MemoryStreamInterface *pStream)
 
 					ResultMessage = "Invalid Arg.";
 					break;
+
+				case GMCommandExecuter::InvalidItem:
+
+					ResultMessage = "Invalid Item.";
+					break;
 			}
 
 			PacketReceiveChat ResultPacket(GetParent()->GetUuid(), GetParent()->GetCharacter().lock()->GetName(), ResultMessage);
