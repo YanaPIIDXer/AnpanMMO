@@ -23,15 +23,18 @@ u8 GMCommandParser::GetCommandType() const
 	u8 Type = EGMCommandType::Invalid;
 	std::string Cmd = Command.substr(1);
 	transform(Cmd.begin(), Cmd.end(), Cmd.begin(), toupper);
-	if (Cmd == "additem")
+	std::vector<std::string> List;
+	algorithm::split(List, Cmd, is_any_of(" "));
+	Cmd = List[0];
+	if (Cmd == "ADDITEM")
 	{
 		Type = EGMCommandType::AddItem;
 	}
-	else if (Cmd == "addexp")
+	else if (Cmd == "ADDEXP")
 	{
 		Type = EGMCommandType::AddExp;
 	}
-	else if (Cmd == "gmmessage")
+	else if (Cmd == "GMMESSAGE")
 	{
 		Type = EGMCommandType::GMMessage;
 	}
