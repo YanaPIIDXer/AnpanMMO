@@ -43,168 +43,170 @@ public:
 		SendChat = 0x0A,
 		//! チャット受信パケット
 		ReceiveChat = 0x0B,
+		//! ＧＭメッセージ受信パケット
+		ReceiveGMMessage = 0x0C,
 		//! 装備変更リクエストパケット
-		ChangeEquipRequest = 0x0C,
+		ChangeEquipRequest = 0x0D,
 		//! 装備変更結果パケット
-		ChangeEquipResult = 0x0D,
+		ChangeEquipResult = 0x0E,
 		//! 準備完了パケット
-		GameReady = 0x0E,
+		GameReady = 0x0F,
 		//! エリア移動パケット
-		AreaMove = 0x0F,
+		AreaMove = 0x10,
 		//! エリア移動リクエストパケット
-		AreaMoveRequest = 0x10,
+		AreaMoveRequest = 0x11,
 		//! エリア移動レスポンスパケット
-		AreaMoveResponse = 0x11,
+		AreaMoveResponse = 0x12,
 		//! 経験値追加パケット
-		AddExp = 0x12,
+		AddExp = 0x13,
 		//! レベルアップパケット
-		LevelUp = 0x13,
+		LevelUp = 0x14,
 		//! ゴールド変化パケット
-		ChangeGold = 0x14,
+		ChangeGold = 0x15,
 		//! インスタンスマップチケット発行パケット
-		InstanceAreaTicketPublish = 0x15,
+		InstanceAreaTicketPublish = 0x16,
 		//! インスタンスマップチケット処理パケット
-		InstanceAreaTicketProcess = 0x16,
+		InstanceAreaTicketProcess = 0x17,
 		//! インスタンスマップチケット破棄パケット
-		InstanceAreaTicketDiscard = 0x17,
+		InstanceAreaTicketDiscard = 0x18,
 		//! インスタンスマップ脱出ポイント生成パケット
-		SpawnInstanceAreaExitPoint = 0x18,
+		SpawnInstanceAreaExitPoint = 0x19,
 		//! ログイン時アイテムリスト通知パケット
-		ItemList = 0x19,
+		ItemList = 0x1A,
 		//! ログイン時アイテムショートカット通知パケット
-		ItemShortcut = 0x1A,
+		ItemShortcut = 0x1B,
 		//! アイテム使用パケット
-		ItemUse = 0x1B,
+		ItemUse = 0x1C,
 		//! アイテム追加パケット
-		ItemAdd = 0x1C,
+		ItemAdd = 0x1D,
 		//! アイテム消費パケット
-		ItemSubtract = 0x1D,
+		ItemSubtract = 0x1E,
 		//! アイテム破棄リクエストパケット
-		ItemSubtractRequest = 0x1E,
+		ItemSubtractRequest = 0x1F,
 		//! アイテムショートカット保存リクエストパケット
-		SaveItemShortcutRequest = 0x1F,
+		SaveItemShortcutRequest = 0x20,
 		//! アイテムショートカット保存結果パケット
-		SaveItemShortcutResult = 0x20,
+		SaveItemShortcutResult = 0x21,
 		//! ログインリクエストパケット
-		LogInRequest = 0x21,
+		LogInRequest = 0x22,
 		//! ログインリクエスト結果パケット
-		LogInResult = 0x22,
+		LogInResult = 0x23,
 		//! キャラクタ作成リクエストパケット
-		CreateCharacterRequest = 0x23,
+		CreateCharacterRequest = 0x24,
 		//! キャラクタ作成結果パケット
-		CreateCharacterResult = 0x24,
+		CreateCharacterResult = 0x25,
 		//! キャラクタパラメータパケット
-		CharacterStatus = 0x25,
+		CharacterStatus = 0x26,
 		//! 通知リストパケット
-		NoticeList = 0x26,
+		NoticeList = 0x27,
 		//! 通知パケット
-		ReceiveNotice = 0x27,
+		ReceiveNotice = 0x28,
 		//! 会話開始パケット
-		NPCTalk = 0x28,
+		NPCTalk = 0x29,
 		//! 選択肢を選択パケット
-		NPCTalkSelection = 0x29,
+		NPCTalkSelection = 0x2A,
 		//! パーティ作成リクエストパケット
-		PartyCreateRequest = 0x2A,
+		PartyCreateRequest = 0x2B,
 		//! パーティ作成結果パケット
-		PartyCreateResult = 0x2B,
+		PartyCreateResult = 0x2C,
 		//! パーティ勧誘リクエストパケット
-		PartyInviteRequest = 0x2C,
+		PartyInviteRequest = 0x2D,
 		//! パーティ勧誘結果パケット
-		PartyInviteResult = 0x2D,
+		PartyInviteResult = 0x2E,
 		//! パーティ勧誘レスポンスパケット
-		PartyInviteResponse = 0x2E,
+		PartyInviteResponse = 0x2F,
 		//! パーティ加入パケット
-		PartyJoin = 0x2F,
+		PartyJoin = 0x30,
 		//! パーティメンバ加入パケット
-		PartyJoinMember = 0x30,
+		PartyJoinMember = 0x31,
 		//! パーティ離脱リクエストパケット
-		PartyExitRequest = 0x31,
+		PartyExitRequest = 0x32,
 		//! パーティ離脱結果パケット
-		PartyExitResult = 0x32,
+		PartyExitResult = 0x33,
 		//! パーティ離脱パケット
-		PartyExit = 0x33,
+		PartyExit = 0x34,
 		//! パーティメンバキックリクエストパケット
-		PartyKickRequest = 0x34,
+		PartyKickRequest = 0x35,
 		//! パーティメンバキック結果パケット
-		PartyKickResult = 0x35,
+		PartyKickResult = 0x36,
 		//! パーティメンバキックパケット
-		PartyKick = 0x36,
+		PartyKick = 0x37,
 		//! パーティ解散リクエストパケット
-		PartyDissolutionRequest = 0x37,
+		PartyDissolutionRequest = 0x38,
 		//! パーティ解散結果パケット
-		PartyDissolutionResult = 0x38,
+		PartyDissolutionResult = 0x39,
 		//! パーティ解散パケット
-		PartyDissolution = 0x39,
+		PartyDissolution = 0x3A,
 		//! Pingパケット
-		Ping = 0x3A,
+		Ping = 0x3B,
 		//! プレイヤーリストパケット
-		PlayerList = 0x3B,
+		PlayerList = 0x3C,
 		//! プレイヤー生成パケット
-		SpawnPlayer = 0x3C,
+		SpawnPlayer = 0x3D,
 		//! プレイヤー移動パケット
-		MovePlayer = 0x3D,
+		MovePlayer = 0x3E,
 		//! プレイヤー退出パケット
-		ExitPlayer = 0x3E,
+		ExitPlayer = 0x3F,
 		//! プレイヤーリスポン要求パケット
-		RespawnRequest = 0x3F,
+		RespawnRequest = 0x40,
 		//! プレイヤーリスポンパケット
-		PlayerRespawn = 0x40,
+		PlayerRespawn = 0x41,
 		//! クエストデータリストパケット
-		QuestData = 0x41,
+		QuestData = 0x42,
 		//! クエスト受注パケット
-		QuestAccept = 0x42,
+		QuestAccept = 0x43,
 		//! クエストアンパンキルパケット
-		QuestAnpanKill = 0x43,
+		QuestAnpanKill = 0x44,
 		//! クエストステージ進行パケット
-		QuestStageChange = 0x44,
+		QuestStageChange = 0x45,
 		//! クエストクリアパケット
-		QuestClear = 0x45,
+		QuestClear = 0x46,
 		//! クエスト破棄リクエストパケット
-		QuestRetireRequest = 0x46,
+		QuestRetireRequest = 0x47,
 		//! クエスト破棄レスポンスパケット
-		QuestRetireResponse = 0x47,
+		QuestRetireResponse = 0x48,
 		//! アクティブクエスト保存パケット
-		SaveActiveQuest = 0x48,
+		SaveActiveQuest = 0x49,
 		//! スクリプトフラグパケット
-		ScriptFlag = 0x49,
+		ScriptFlag = 0x4A,
 		//! アイテム購入要求パケット
-		BuyItemRequest = 0x4A,
+		BuyItemRequest = 0x4B,
 		//! アイテム購入結果パケット
-		BuyItemResult = 0x4B,
+		BuyItemResult = 0x4C,
 		//! アイテム売却要求パケット
-		SellItemRequest = 0x4C,
+		SellItemRequest = 0x4D,
 		//! アイテム売却結果パケット
-		SellItemResult = 0x4D,
+		SellItemResult = 0x4E,
 		//! ショップ終了パケット
-		ExitShop = 0x4E,
+		ExitShop = 0x4F,
 		//! スキル使用パケット
-		SkillUse = 0x4F,
+		SkillUse = 0x50,
 		//! スキル使用失敗パケット
-		SkillUseFailed = 0x50,
+		SkillUseFailed = 0x51,
 		//! スキル詠唱開始パケット
-		SkillCast = 0x51,
+		SkillCast = 0x52,
 		//! スキル詠唱完了パケット
-		SkillCastFinish = 0x52,
+		SkillCastFinish = 0x53,
 		//! スキル発動パケット
-		SkillActivate = 0x53,
+		SkillActivate = 0x54,
 		//! リキャスト完了パケット
-		SkillRecast = 0x54,
+		SkillRecast = 0x55,
 		//! スキルリストパケット
-		SkillList = 0x55,
+		SkillList = 0x56,
 		//! スキルリスト保存リクエストパケット
-		SaveSkillListRequest = 0x56,
+		SaveSkillListRequest = 0x57,
 		//! スキルリスト保存レスポンスパケット
-		SaveSkillListResponse = 0x57,
+		SaveSkillListResponse = 0x58,
 		//! スキルツリーデータパケット
-		SkillTreeData = 0x58,
+		SkillTreeData = 0x59,
 		//! スキルツリー開放要求パケット
-		SkillTreeOpenRequest = 0x59,
+		SkillTreeOpenRequest = 0x5A,
 		//! スキルツリー開放結果パケット
-		SkillTreeOpenResult = 0x5A,
+		SkillTreeOpenResult = 0x5B,
 		//! ログイン時の時間通知パケット
-		Time = 0x5B,
+		Time = 0x5C,
 		//! 時間変化通知パケット
-		TimeChange = 0x5C,
+		TimeChange = 0x5D,
 		
 	};
 };
