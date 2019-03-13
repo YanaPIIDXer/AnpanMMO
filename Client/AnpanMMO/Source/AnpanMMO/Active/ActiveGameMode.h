@@ -241,4 +241,7 @@ private:
 	// アイテム売却結果を受信した。
 	bool OnRecvSellItemResult(MemoryStreamInterface *pStream);
 
+	// ＧＭメッセージを受信した。
+	bool OnRecvGMMessage(MemoryStreamInterface *pStream);
+
 };

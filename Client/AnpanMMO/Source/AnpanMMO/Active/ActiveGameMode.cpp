@@ -53,6 +53,7 @@
 #include "Packet/PacketRemoveBuff.h"
 #include "Packet/PacketBuyItemResult.h"
 #include "Packet/PacketSellItemResult.h"
+#include "Packet/PacketReceiveGMMessage.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -118,7 +119,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::RemoveBuff, std::bind(&AActiveGameMode::OnRecvRemoveBuff, this, _1));
 	AddPacketFunction(PacketID::BuyItemResult, std::bind(&AActiveGameMode::OnRecvBuyItemResult, this, _1));
 	AddPacketFunction(PacketID::SellItemResult, std::bind(&AActiveGameMode::OnRecvSellItemResult, this, _1));
-
+	AddPacketFunction(PacketID::ReceiveGMMessage, std::bind(&AActiveGameMode::OnRecvGMMessage, this, _1));
+	
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
 }
@@ -954,5 +956,17 @@ bool AActiveGameMode::OnRecvSellItemResult(MemoryStreamInterface *pStream)
 	}
 
 	USimpleDialog::Show(this, DisplayText, 100);
+	return true;
+}
+
+// ＧＭメッセージを受信した。
+bool AActiveGameMode::OnRecvGMMessage(MemoryStreamInterface *pStream)
+{
+	PacketReceiveGMMessage Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	// とりあえずシステムメッセージとして表示。
+	pMainHUD->ShowSystemMessage(UTF8_TO_TCHAR(Packet.Message.c_str()));
+
 	return true;
 }

@@ -33,10 +33,11 @@ public:
 	 * @param[in] Level レベル
 	 * @param[in] InExp 経験値
 	 * @param[in] InGold ゴールド
+	 * @param[in] bInIsGM ＧＭか？
 	 * @oaran[in] RightEquipId 右手装備ＩＤ
 	 * @param[in] LeftEquipId 左手装備ＩＤ
 	 */
-	PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold, u32 RightEquipId, u32 LeftEquipId);
+	PlayerCharacter(Client *pInClient, u32 InCharacterId, u8 InJob, u32 Level, u32 InExp, u32 InGold, bool bInIsGM, u32 RightEquipId, u32 LeftEquipId);
 
 	/**
 	 * @brief デストラクタ
@@ -228,6 +229,13 @@ public:
 	 */
 	virtual void OnBuffRemoved(u8 BuffType);
 
+	/**
+	 * @fn bool IsGM() const
+	 * @brief ＧＭか？
+	 * @return ＧＭならtrueを返す。
+	 */
+	bool IsGM() const { return bIsGM; }
+
 private:
 
 	// クライアント
@@ -256,6 +264,9 @@ private:
 
 	// アイテムリスト
 	ItemList Items;
+
+	// GMか？
+	bool bIsGM;
 
 	// セーブするエリアＩＤ
 	u32 SaveAreaId;
