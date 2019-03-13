@@ -4,8 +4,9 @@
 <area shape="rect" id="node4" href="$ClientManager_8cpp.html" title="ClientManager.cpp" alt="" coords="371,80,502,107"/>
 <area shape="rect" id="node5" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="526,80,673,107"/>
 <area shape="rect" id="node6" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="697,80,832,107"/>
-<area shape="rect" id="node7" href="$Main_8cpp.html" title="Main.cpp" alt="" coords="857,80,931,107"/>
-<area shape="rect" id="node8" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="955,80,1083,107"/>
-<area shape="rect" id="node9" href="$TimeManager_8cpp.html" title="TimeManager.cpp" alt="" coords="1107,80,1233,107"/>
-<area shape="rect" id="node10" href="$WordCheckServerConnection_8cpp.html" title="WordCheckServerConnection.cpp" alt="" coords="1257,80,1473,107"/>
+<area shape="rect" id="node7" href="$GMCommandExecuter_8cpp.html" title="ＧＭコマンド実行クラス " alt="" coords="857,80,1035,107"/>
+<area shape="rect" id="node8" href="$Main_8cpp.html" title="Main.cpp" alt="" coords="1059,80,1134,107"/>
+<area shape="rect" id="node9" href="$PartyManager_8cpp.html" title="PartyManager.cpp" alt="" coords="1158,80,1286,107"/>
+<area shape="rect" id="node10" href="$TimeManager_8cpp.html" title="TimeManager.cpp" alt="" coords="1310,80,1435,107"/>
+<area shape="rect" id="node11" href="$WordCheckServerConnection_8cpp.html" title="WordCheckServerConnection.cpp" alt="" coords="1459,80,1675,107"/>
 </map>

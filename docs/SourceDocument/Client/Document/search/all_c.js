@@ -24,7 +24,7 @@ var searchData=
   ['memorystreamwriter',['MemoryStreamWriter',['../classMemoryStreamWriter.html',1,'MemoryStreamWriter'],['../classMemoryStreamWriter.html#a4fb8343b23707c7103242bb1781b64ab',1,'MemoryStreamWriter::MemoryStreamWriter()']]],
   ['memorystreamwriter_2ecpp',['MemoryStreamWriter.cpp',['../MemoryStreamWriter_8cpp.html',1,'']]],
   ['memorystreamwriter_2eh',['MemoryStreamWriter.h',['../MemoryStreamWriter_8h.html',1,'']]],
-  ['message',['Message',['../classUScriptMessageWidget.html#a079243a436ea8397b9516b439588365a',1,'UScriptMessageWidget::Message()'],['../classPacketReceiveChat.html#ac75e8c966059d318814df735889e32c0',1,'PacketReceiveChat::Message()'],['../classPacketSendChat.html#af65fb20879fa53c103199b3e13160793',1,'PacketSendChat::Message()']]],
+  ['message',['Message',['../classUScriptMessageWidget.html#a079243a436ea8397b9516b439588365a',1,'UScriptMessageWidget::Message()'],['../classPacketReceiveChat.html#ac75e8c966059d318814df735889e32c0',1,'PacketReceiveChat::Message()'],['../classPacketReceiveGMMessage.html#a9ec0f90e54bba5661188db387fc62412',1,'PacketReceiveGMMessage::Message()'],['../classPacketSendChat.html#af65fb20879fa53c103199b3e13160793',1,'PacketSendChat::Message()']]],
   ['mmogameinstance_2ecpp',['MMOGameInstance.cpp',['../MMOGameInstance_8cpp.html',1,'']]],
   ['mmogameinstance_2eh',['MMOGameInstance.h',['../MMOGameInstance_8h.html',1,'']]],
   ['mmogamemodebase_2ecpp',['MMOGameModeBase.cpp',['../MMOGameModeBase_8cpp.html',1,'']]],
