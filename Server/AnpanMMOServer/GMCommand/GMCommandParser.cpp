@@ -40,13 +40,20 @@ u8 GMCommandParser::GetCommandType() const
 }
 
 // ˆø”ƒŠƒXƒg‚ğæ“¾
-std::vector<std::string> GMCommandParser::GetArgList() const
+std::vector<GMCommandArg> GMCommandParser::GetArgList() const
 {
-	std::vector<std::string> List;
-	if (!IsCommand()) { return List; }
+	std::vector<GMCommandArg> ArgList;
+	if (!IsCommand()) { return ArgList; }
 
+	std::vector<std::string> List;
 	algorithm::split(List, Command, is_any_of(" "));
 	List.erase(List.begin());
 
-	return List;
+	for (u32 i = 0; i < List.size(); i++)
+	{
+		GMCommandArg Arg(List[i]);
+		ArgList.push_back(Arg);
+	}
+
+	return ArgList;
 }

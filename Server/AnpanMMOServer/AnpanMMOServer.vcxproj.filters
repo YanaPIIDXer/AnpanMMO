@@ -399,6 +399,9 @@
     <ClInclude Include="GMCommand\GMCommandType.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="GMCommand\GMCommandArg.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MemoryBuffer.cpp">
@@ -705,6 +708,9 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GMCommand\GMCommandParser.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GMCommand\GMCommandArg.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

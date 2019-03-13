@@ -6,6 +6,8 @@
 #ifndef __GMCOMMANDPARSER_H__
 #define __GMCOMMANDPARSER_H__
 
+#include "GMCommandArg.h"
+
 /**
  * @class GMCommandParser
  * @brief ＧＭコマンド解析
@@ -45,7 +47,7 @@ public:
 	 * @brief 引数リストを取得
 	 * @return 引数リスト
 	 */
-	std::vector<std::string> GetArgList() const;
+	std::vector<GMCommandArg> GetArgList() const;
 
 private:
 
