@@ -10,6 +10,7 @@
 #include "Character/Player/PlayerCharacter.h"
 #include "Master/MasterData.h"
 #include "ClientManager.h"
+#include "Packet/PacketReceiveGMMessage.h"
 
 // コンストラクタ
 GMCommandExecuter::GMCommandExecuter(Client *pInClient, const GMCommandParser &InParser)
@@ -106,10 +107,10 @@ u8 GMCommandExecuter::SendGMMessage(const std::vector<GMCommandArg> &Args)
 	// 引数は１つ。
 	if (Args.size() < 1) { return InvalidArg; }
 
-	std::string Meesage = Args[0].Get();
+	std::string Message = Args[0].Get();
+	PacketReceiveGMMessage Packet(Message);
 
-	// @TODO:送信処理の実装.
-	//		 ※パケット定義.
+	ClientManager::GetInstance().BroadcastPacket(&Packet);
 
 	return Success;
 }
