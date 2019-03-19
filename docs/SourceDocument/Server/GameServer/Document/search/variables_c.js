@@ -8,7 +8,7 @@ var searchData=
   ['maxwidth',['MaxWidth',['../classAreaConfig.html#acbefd93e6bf09d0d280bc9c28ec8bc2c',1,'AreaConfig']]],
   ['memberdata',['MemberData',['../classPacketPartyJoinMember.html#af1b491eb4be38f8c40f2ba28dbd4d690',1,'PacketPartyJoinMember']]],
   ['memberlist',['MemberList',['../classPacketPartyJoin.html#a1eec77c8c4cd01e203febcddfd81591e',1,'PacketPartyJoin']]],
-  ['message',['Message',['../classPacketReceiveChat.html#ac75e8c966059d318814df735889e32c0',1,'PacketReceiveChat::Message()'],['../classPacketSendChat.html#af65fb20879fa53c103199b3e13160793',1,'PacketSendChat::Message()'],['../classWordCheckPacketChatRequest.html#aeb25b0f57559a40e6a1aa824fd3f0b6b',1,'WordCheckPacketChatRequest::Message()'],['../classWordCheckPacketChatResult.html#a39627f375c57e138c63166504cb83f61',1,'WordCheckPacketChatResult::Message()']]],
+  ['message',['Message',['../classPacketReceiveChat.html#ac75e8c966059d318814df735889e32c0',1,'PacketReceiveChat::Message()'],['../classPacketReceiveGMMessage.html#a9ec0f90e54bba5661188db387fc62412',1,'PacketReceiveGMMessage::Message()'],['../classPacketSendChat.html#af65fb20879fa53c103199b3e13160793',1,'PacketSendChat::Message()'],['../classWordCheckPacketChatRequest.html#aeb25b0f57559a40e6a1aa824fd3f0b6b',1,'WordCheckPacketChatRequest::Message()'],['../classWordCheckPacketChatResult.html#a39627f375c57e138c63166504cb83f61',1,'WordCheckPacketChatResult::Message()']]],
   ['mindepth',['MinDepth',['../classAreaConfig.html#ae14184a395675e3a23aacacd2ac32bca',1,'AreaConfig']]],
   ['minheight',['MinHeight',['../classAreaConfig.html#a49aa1437353e1d294327f217271a4021',1,'AreaConfig']]],
   ['minwidth',['MinWidth',['../classAreaConfig.html#a0df61b69d430205995ecdb4fc68b3450',1,'AreaConfig']]],

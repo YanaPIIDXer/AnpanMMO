@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GameServer: GMCommandExecuter クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">GameServer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classGMCommandExecuter-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">GMCommandExecuter クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ＧＭコマンド実行  
+ <a href="classGMCommandExecuter.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="GMCommandExecuter_8h_source.html">GMCommandExecuter.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a21ae353367c8f18e5e703caa37afccfe"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGMCommandExecuter.html#a21ae353367c8f18e5e703caa37afccfe">EResult</a> { <a class="el" href="classGMCommandExecuter.html#a21ae353367c8f18e5e703caa37afccfea606d06d58db5307085a037dd102f43ec">Success</a>, 
+<a class="el" href="classGMCommandExecuter.html#a21ae353367c8f18e5e703caa37afccfeac91bb82a8cdbc7af1ccb2e5e39073de6">InvalidCommand</a>, 
+<a class="el" href="classGMCommandExecuter.html#a21ae353367c8f18e5e703caa37afccfeab888fb734bbf8c7e2df7639fb939b96c">InvalidArg</a>, 
+<a class="el" href="classGMCommandExecuter.html#a21ae353367c8f18e5e703caa37afccfea065f099589a6062a3f7b9f14c4c7600e">InvalidItem</a>
+ }</td></tr>
+<tr class="memdesc:a21ae353367c8f18e5e703caa37afccfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">実行結果  <a href="classGMCommandExecuter.html#a21ae353367c8f18e5e703caa37afccfe">[詳解]</a><br /></td></tr>
+<tr class="separator:a21ae353367c8f18e5e703caa37afccfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a66f202972e8b185ccaace6769e98e7a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGMCommandExecuter.html#a66f202972e8b185ccaace6769e98e7a9">GMCommandExecuter</a> (<a class="el" href="classClient.html">Client</a> *pInClient, const <a class="el" href="classGMCommandParser.html">GMCommandParser</a> &amp;InParser)</td></tr>
+<tr class="memdesc:a66f202972e8b185ccaace6769e98e7a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a66f202972e8b185ccaace6769e98e7a9">[詳解]</a><br /></td></tr>
+<tr class="separator:a66f202972e8b185ccaace6769e98e7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f1aa1efe53ffa627b863d61b8bd4b81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGMCommandExecuter.html#a1f1aa1efe53ffa627b863d61b8bd4b81">~GMCommandExecuter</a> ()</td></tr>
+<tr class="memdesc:a1f1aa1efe53ffa627b863d61b8bd4b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="#a1f1aa1efe53ffa627b863d61b8bd4b81">[詳解]</a><br /></td></tr>
+<tr class="separator:a1f1aa1efe53ffa627b863d61b8bd4b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5d3bd5f04ed839783b3f09b33e93271"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGMCommandExecuter.html#ab5d3bd5f04ed839783b3f09b33e93271">Execute</a> ()</td></tr>
+<tr class="memdesc:ab5d3bd5f04ed839783b3f09b33e93271"><td class="mdescLeft">&#160;</td><td class="mdescRight">実行  <a href="#ab5d3bd5f04ed839783b3f09b33e93271">[詳解]</a><br /></td></tr>
+<tr class="separator:ab5d3bd5f04ed839783b3f09b33e93271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>ＧＭコマンド実行 </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a21ae353367c8f18e5e703caa37afccfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ae353367c8f18e5e703caa37afccfe">&#9670;&nbsp;</a></span>EResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classGMCommandExecuter.html#a21ae353367c8f18e5e703caa37afccfe">GMCommandExecuter::EResult</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>実行結果 </p>
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a21ae353367c8f18e5e703caa37afccfea606d06d58db5307085a037dd102f43ec"></a>Success&#160;</td><td class="fielddoc"><p>成功 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21ae353367c8f18e5e703caa37afccfeac91bb82a8cdbc7af1ccb2e5e39073de6"></a>InvalidCommand&#160;</td><td class="fielddoc"><p>無効なコマンド </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21ae353367c8f18e5e703caa37afccfeab888fb734bbf8c7e2df7639fb939b96c"></a>InvalidArg&#160;</td><td class="fielddoc"><p>無効な引数 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a21ae353367c8f18e5e703caa37afccfea065f099589a6062a3f7b9f14c4c7600e"></a>InvalidItem&#160;</td><td class="fielddoc"><p>無効なアイテム </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a66f202972e8b185ccaace6769e98e7a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66f202972e8b185ccaace6769e98e7a9">&#9670;&nbsp;</a></span>GMCommandExecuter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMCommandExecuter::GMCommandExecuter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classClient.html">Client</a> *&#160;</td>
+          <td class="paramname"><em>pInClient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classGMCommandParser.html">GMCommandParser</a> &amp;&#160;</td>
+          <td class="paramname"><em>InParser</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pInClient</td><td>クライアント </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">InParser</td><td>パーサ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1f1aa1efe53ffa627b863d61b8bd4b81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1aa1efe53ffa627b863d61b8bd4b81">&#9670;&nbsp;</a></span>~GMCommandExecuter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GMCommandExecuter::~GMCommandExecuter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ab5d3bd5f04ed839783b3f09b33e93271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5d3bd5f04ed839783b3f09b33e93271">&#9670;&nbsp;</a></span>Execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> GMCommandExecuter::Execute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>実行 </p>
+<dl class="section return"><dt>戻り値</dt><dd>実行結果 </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGMCommandExecuter_ab5d3bd5f04ed839783b3f09b33e93271_cgraph.png" border="0" usemap="#classGMCommandExecuter_ab5d3bd5f04ed839783b3f09b33e93271_cgraph" alt=""/></div>
+<map name="classGMCommandExecuter_ab5d3bd5f04ed839783b3f09b33e93271_cgraph" id="classGMCommandExecuter_ab5d3bd5f04ed839783b3f09b33e93271_cgraph">
+<area shape="rect" id="node2" href="classGMCommandParser.html#ac2554083eb2c8ea97e15f892376d7488" title="コマンドの種類を取得 " alt="" coords="216,5,472,32"/>
+<area shape="rect" id="node4" href="classGMCommandParser.html#a14f58ff9f9ff98f9df0201fc980273f7" title="引数リストを取得 " alt="" coords="239,56,449,83"/>
+<area shape="rect" id="node3" href="classGMCommandParser.html#a6b9c8c17f3816f839ac8387070a1c9c1" title="コマンドか？ " alt="" coords="520,31,737,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="GMCommandExecuter_8h_source.html">GMCommandExecuter.h</a></li>
+<li><a class="el" href="GMCommandExecuter_8cpp.html">GMCommandExecuter.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

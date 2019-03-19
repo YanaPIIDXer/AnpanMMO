@@ -85,6 +85,12 @@ $(function() {
 <tr class="memitem:a6b9c8c17f3816f839ac8387070a1c9c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGMCommandParser.html#a6b9c8c17f3816f839ac8387070a1c9c1">IsCommand</a> () const</td></tr>
 <tr class="memdesc:a6b9c8c17f3816f839ac8387070a1c9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">コマンドか？  <a href="#a6b9c8c17f3816f839ac8387070a1c9c1">[詳解]</a><br /></td></tr>
 <tr class="separator:a6b9c8c17f3816f839ac8387070a1c9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2554083eb2c8ea97e15f892376d7488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGMCommandParser.html#ac2554083eb2c8ea97e15f892376d7488">GetCommandType</a> () const</td></tr>
+<tr class="memdesc:ac2554083eb2c8ea97e15f892376d7488"><td class="mdescLeft">&#160;</td><td class="mdescRight">コマンドの種類を取得  <a href="#ac2554083eb2c8ea97e15f892376d7488">[詳解]</a><br /></td></tr>
+<tr class="separator:ac2554083eb2c8ea97e15f892376d7488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14f58ff9f9ff98f9df0201fc980273f7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classGMCommandArg.html">GMCommandArg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGMCommandParser.html#a14f58ff9f9ff98f9df0201fc980273f7">GetArgList</a> () const</td></tr>
+<tr class="memdesc:a14f58ff9f9ff98f9df0201fc980273f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">引数リストを取得  <a href="#a14f58ff9f9ff98f9df0201fc980273f7">[詳解]</a><br /></td></tr>
+<tr class="separator:a14f58ff9f9ff98f9df0201fc980273f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>ＧＭコマンド解析 </p>
@@ -143,6 +149,78 @@ $(function() {
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
+<a id="a14f58ff9f9ff98f9df0201fc980273f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14f58ff9f9ff98f9df0201fc980273f7">&#9670;&nbsp;</a></span>GetArgList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; GMCommandParser::GetArgList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>引数リストを取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>引数リスト </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGMCommandParser_a14f58ff9f9ff98f9df0201fc980273f7_cgraph.png" border="0" usemap="#classGMCommandParser_a14f58ff9f9ff98f9df0201fc980273f7_cgraph" alt=""/></div>
+<map name="classGMCommandParser_a14f58ff9f9ff98f9df0201fc980273f7_cgraph" id="classGMCommandParser_a14f58ff9f9ff98f9df0201fc980273f7_cgraph">
+<area shape="rect" id="node2" href="classGMCommandParser.html#a6b9c8c17f3816f839ac8387070a1c9c1" title="コマンドか？ " alt="" coords="264,5,481,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGMCommandParser_a14f58ff9f9ff98f9df0201fc980273f7_icgraph.png" border="0" usemap="#classGMCommandParser_a14f58ff9f9ff98f9df0201fc980273f7_icgraph" alt=""/></div>
+<map name="classGMCommandParser_a14f58ff9f9ff98f9df0201fc980273f7_icgraph" id="classGMCommandParser_a14f58ff9f9ff98f9df0201fc980273f7_icgraph">
+<area shape="rect" id="node2" href="classGMCommandExecuter.html#ab5d3bd5f04ed839783b3f09b33e93271" title="実行 " alt="" coords="264,5,427,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac2554083eb2c8ea97e15f892376d7488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2554083eb2c8ea97e15f892376d7488">&#9670;&nbsp;</a></span>GetCommandType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> GMCommandParser::GetCommandType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コマンドの種類を取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>コマンドの種類 </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGMCommandParser_ac2554083eb2c8ea97e15f892376d7488_cgraph.png" border="0" usemap="#classGMCommandParser_ac2554083eb2c8ea97e15f892376d7488_cgraph" alt=""/></div>
+<map name="classGMCommandParser_ac2554083eb2c8ea97e15f892376d7488_cgraph" id="classGMCommandParser_ac2554083eb2c8ea97e15f892376d7488_cgraph">
+<area shape="rect" id="node2" href="classGMCommandParser.html#a6b9c8c17f3816f839ac8387070a1c9c1" title="コマンドか？ " alt="" coords="309,5,527,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGMCommandParser_ac2554083eb2c8ea97e15f892376d7488_icgraph.png" border="0" usemap="#classGMCommandParser_ac2554083eb2c8ea97e15f892376d7488_icgraph" alt=""/></div>
+<map name="classGMCommandParser_ac2554083eb2c8ea97e15f892376d7488_icgraph" id="classGMCommandParser_ac2554083eb2c8ea97e15f892376d7488_icgraph">
+<area shape="rect" id="node2" href="classGMCommandExecuter.html#ab5d3bd5f04ed839783b3f09b33e93271" title="実行 " alt="" coords="309,5,472,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a6b9c8c17f3816f839ac8387070a1c9c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b9c8c17f3816f839ac8387070a1c9c1">&#9670;&nbsp;</a></span>IsCommand()</h2>
 
@@ -168,6 +246,16 @@ $(function() {
 
 <p>コマンドか？ </p>
 <dl class="section return"><dt>戻り値</dt><dd>コマンドならtrueを返す。 </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGMCommandParser_a6b9c8c17f3816f839ac8387070a1c9c1_icgraph.png" border="0" usemap="#classGMCommandParser_a6b9c8c17f3816f839ac8387070a1c9c1_icgraph" alt=""/></div>
+<map name="classGMCommandParser_a6b9c8c17f3816f839ac8387070a1c9c1_icgraph" id="classGMCommandParser_a6b9c8c17f3816f839ac8387070a1c9c1_icgraph">
+<area shape="rect" id="node2" href="classGMCommandParser.html#ac2554083eb2c8ea97e15f892376d7488" title="コマンドの種類を取得 " alt="" coords="271,5,527,32"/>
+<area shape="rect" id="node4" href="classGMCommandParser.html#a14f58ff9f9ff98f9df0201fc980273f7" title="引数リストを取得 " alt="" coords="293,56,504,83"/>
+<area shape="rect" id="node3" href="classGMCommandExecuter.html#ab5d3bd5f04ed839783b3f09b33e93271" title="実行 " alt="" coords="575,23,737,65"/>
+</map>
+</div>
 
 </div>
 </div>

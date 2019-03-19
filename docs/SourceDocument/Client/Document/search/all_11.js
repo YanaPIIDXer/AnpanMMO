@@ -10,6 +10,7 @@ var searchData=
   ['reasontype',['ReasonType',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263',1,'PacketSkillUseFailed']]],
   ['recasttime',['RecastTime',['../structSkillItem.html#a89d09d42fc440457e78e0eb9810aeff2',1,'SkillItem::RecastTime()'],['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a0ef0feacfdb3d319be0ad139758dd43d',1,'PacketSkillUseFailed::RecastTime()']]],
   ['receivechat',['ReceiveChat',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaaa8a06a2a999f27237631a93403c7b26',1,'PacketID']]],
+  ['receivegmmessage',['ReceiveGMMessage',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa407b2188b0cd348de6a2b113bdfd0ebe',1,'PacketID']]],
   ['receivenotice',['ReceiveNotice',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa1239799f8d1df4c2e3d28b0196f836e2',1,'PacketID']]],
   ['reflesh',['Reflesh',['../classSkillTree.html#a8e174bb7a4b993ea905ea7dc73ba971d',1,'SkillTree']]],
   ['refleshmaterial',['RefleshMaterial',['../classASkyControl.html#af56b9c8be140fed7a65b739d5cd73717',1,'ASkyControl']]],
