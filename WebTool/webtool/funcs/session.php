@@ -12,11 +12,11 @@
 	
 	// ログインしていなければリダイレクトする。
 	// ※リダイレクトした場合はtrueを返す。
-	function RedirectIfNotLogIn()
+	function RedirectIfNotLogIn($From)
 	{
 		if(!IsLogIn())
 		{
-			header('Location: login.php');
+			header('Location: login.php?from=' . $From);
 			return true;
 		}
 		return false;
