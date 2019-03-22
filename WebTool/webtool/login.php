@@ -9,7 +9,7 @@
 	// ログインフォーム
 	print("<form method=\"POST\" action=\"login.php?from=" . $_GET['from'] . "\">\n");
 	print("ＤＢユーザ名：<input type=text name=\"DBUserName\"><br />\n");
-	print("ＤＢパスワード：<input type=text name=\"DBPassword\"><br />\n");
+	print("ＤＢパスワード：<input type=password name=\"DBPassword\"><br />\n");
 	print("<input type=submit name=\"LogIn\" value=ログイン><br />\n");
 	print("</form>");
 
@@ -28,11 +28,20 @@
 			return;
 		}
 		
-		// @TODO:ログインチェック。
+		$UserName = htmlspecialchars($_POST['DBUserName']);
+		$Password = htmlspecialchars($_POST['DBPassword']);
+		
+		require_once('funcs\\database.php');
+		$Conn = DBConnection($UserName, $Password);
+		if(!$Conn)
+		{
+			print("ログインに失敗しました。<br />\n");
+			return;
+		}
 		
 		session_start();
-		$_SESSION['DBUserName'] = htmlspecialchars($_POST['DBUserName']);
-		$_SESSION['DBPassword'] = htmlspecialchars($_POST['DBPassword']);
+		$_SESSION['DBUserName'] = $UserName;
+		$_SESSION['DBPassword'] = $Password;
 		
 		// 元いたページにリダイレクト
 		header('Location: ' . $_GET['from']);
