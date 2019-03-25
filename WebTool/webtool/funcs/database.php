@@ -13,4 +13,11 @@
 		}
 		return $Conn;
 	}
+	
+	// セッションからＤＢ接続オブジェクトを取得.
+	function DBConnectionWithSession()
+	{
+		$Conn = DBConnection($_SESSION['DBUserName'], $_SESSION['DBPassword']);
+		return $Conn;
+	}
 ?>
