@@ -5,9 +5,15 @@
 		if(!isset($_SESSION['DBUserName'])) { return false; }
 		if(!isset($_SESSION['DBPassword'])) { return false; }
 		
+		if(!isset($_SESSION['MasterUserName'])) { return false; }
+		if(!isset($_SESSION['MasterPassword'])) { return false; }
+		
 		// ＤＢ接続チェック
 		require_once('database.php');
 		$Conn = DBConnectionWithSession();
+		if(!$Conn) { return false; }
+		
+		$Conn = MasterConnectionWithSession();
 		if(!$Conn) { return false; }
 		
 		return true;
