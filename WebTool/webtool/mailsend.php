@@ -37,5 +37,16 @@
 		return;
 	}
 	
+	$AttachmentType = $_POST['AttachmentType'];
+	if($AttachmentType != 0)
+	{
+		$AttachmentCount = $_POST['AttachmentCount'];
+		if($AttachmentCount <= 0)
+		{
+			BackToMailForm("数量に０以下を指定する事は出来ません。");
+			return;
+		}
+	}
+	
 	DisplayMessage("送信しました。");
 ?>
