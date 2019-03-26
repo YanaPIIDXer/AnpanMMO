@@ -63,6 +63,14 @@
 		print("</form>\n");
 		print("</th>\n");
 		
+		// メール送信ページへのリンクを構築.
+		print("<th>\n");
+		print("<form method=\"POST\" name=\"MailTo" . $Row['Id'] . "\" action=\"mail.php\">\n");
+		print("	<input type=\"hidden\" name=\"CustomerId\" value=" . $Row['Id'] . ">\n");
+		print("	<a href=\"mail.php\" onclick=\"document.MailTo" . $Row['Id'] . ".submit();return false;\">メール送信</a>\n");
+		print("</form>\n");
+		print("</th>\n");
+		
 		// ＢＡＮ
 		print("<th>\n");
 		if($Row['IsBunned'] == 0)
