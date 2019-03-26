@@ -115,6 +115,11 @@ bool ClientStateTitle::OnRecvCacheLogInResult(MemoryStreamInterface *pStream)
 			ResultCode = PacketLogInResult::NoCharacter;
 			break;
 
+		case CachePacketLogInResult::Bunned:
+
+			ResultCode = PacketLogInResult::Bunned;
+			break;
+
 		case CachePacketLogInResult::Error:
 
 			ResultCode = PacketLogInResult::Error;

@@ -33,9 +33,11 @@ FString Config::GetIdFilePath()
 }
 
 #ifndef USE_LOCAL_SERVER
-const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/main/";
+//const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/main/";
+const FString Config::MasterURL = "http://153.121.36.165/~Master/anpanmmomaster/main/";
 #else
-const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/local/";
+//const FString Config::MasterURL = "http://218.220.121.112/~Master/anpanmmomaster/local/";
+const FString Config::MasterURL = "http://153.121.36.165/~Master/anpanmmomaster/local/";
 #endif
 
 // マスタディレクトリ取得.
@@ -55,7 +57,8 @@ FString Config::GetMasterDirectory()
 	return Path;
 }
 
-const FString Config::ScriptURL = "http://218.220.121.112/~Master/anpanmmoscript/";
+//const FString Config::ScriptURL = "http://218.220.121.112/~Master/anpanmmoscript/";
+const FString Config::ScriptURL = "http://153.121.36.165/~Master/anpanmmoscript/";
 
 // スクリプトディレクトリを取得.
 FString Config::GetScriptDirectory()
@@ -74,7 +77,8 @@ FString Config::GetScriptDirectory()
 	return Path;
 }
 
-const FString Config::DLCURL = "http://218.220.121.112/~Master/anpanmmo/dlc/";
+//const FString Config::DLCURL = "http://218.220.121.112/~Master/anpanmmo/dlc/";
+const FString Config::DLCURL = "http://153.121.36.165/~Master/anpanmmo/dlc/";
 
 // DLCのURLを取得
 FString Config::GetDLCURL()

@@ -30,23 +30,26 @@ bool DBConnection::Open()
 }
 
 // ユーザデータ読み込み
-bool DBConnection::LoadUserData(char *pUserCode, int &OutId)
+bool DBConnection::LoadUserData(char *pUserCode, int &OutId, bool &bOutIsBunned)
 {
-	MySqlQuery Query = Connection.CreateQuery("select Id from UserData where UserCode = ?;");
+	MySqlQuery Query = Connection.CreateQuery("select Id, IsBunned from UserData where UserCode = ?;");
 	Query.BindString(pUserCode);
 
 	int Id = 0;
+	char IsBunnedFlag = 0;
 	Query.BindResultInt(&Id);
+	Query.BindResultChar(&IsBunnedFlag);
 	if (!Query.ExecuteQuery()) { return false; }
 
 	if (!Query.Fetch())
 	{
 		// 登録して検索し直す。
 		if (!RegisterUserData(pUserCode)) { return false; }
-		return LoadUserData(pUserCode, OutId);
+		return LoadUserData(pUserCode, OutId, bOutIsBunned);
 	}
 	
 	OutId = Id;
+	bOutIsBunned = (IsBunnedFlag == 1);
 	return true;
 }
 

@@ -19,7 +19,7 @@ public:
 	bool Open();
 
 	// ユーザデータ読み込み
-	bool LoadUserData(char *pUserCode, int &OutId);
+	bool LoadUserData(char *pUserCode, int &OutId, bool &bOutIsBunned);
 
 	// キャラクタデータが存在するか？
 	bool IsExistCharacter(int Id, bool &OutResult);
