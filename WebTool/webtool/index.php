@@ -14,7 +14,7 @@
 <a href="userdata.php">ユーザデータ</a><br />
 <form method="POST" name="BroadcastMail" action="mail.php">
 	<input type="hidden" name="CustomerId" Value=-1>
-	<a href="mail.php" onclick="document.BroadcastMail.aubmit(); return false;">登録者全員にメール送信</a>
+	<a href="mail.php" onclick="document.BroadcastMail.submit(); return false;">登録者全員にメール送信</a>
 </form>
 </body>
 </html>
