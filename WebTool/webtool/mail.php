@@ -15,6 +15,7 @@
 		if(!isset($_POST['CustomerId']))
 		{
 			print("エラー<br />\n");
+			print("<a href=\"index.php\">トップページへ</a><br />\n");
 			return;
 		}
 		
