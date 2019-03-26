@@ -3,7 +3,7 @@
 	session_start();
 	if(RedirectIfNotLogIn('userdata.php')){ return; }
 	
-	// ‘•”õ–¼‚ğæ“¾.
+	// è£…å‚™åã‚’å–å¾—.
 	function GetEquipName($Id)
 	{
 		$Conn = MasterConnectionWithSession();
@@ -33,10 +33,10 @@
 
 <html>
 <head>
-<title>ƒLƒƒƒ‰ƒNƒ^ƒf[ƒ^</title>
+<title>ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ‡ãƒ¼ã‚¿</title>
 </head>
 <body>
-<h1>ƒLƒƒƒ‰ƒNƒ^ƒf[ƒ^</h1><hr />
+<h1>ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ‡ãƒ¼ã‚¿</h1><hr />
 <?php
 	require_once("funcs\\database.php");
 	
@@ -49,25 +49,25 @@
 	
 	if(!isset($_POST['CustomerId']))
 	{
-		print("ƒGƒ‰[B<a href=\"userdata.php\">ƒ†[ƒUƒf[ƒ^ƒy[ƒW</a>‚©‚ç‚â‚è’¼‚µ‚Ä‚­‚¾‚³‚¢B<br />\n");
+		print("ã‚¨ãƒ©ãƒ¼ã€‚<a href=\"userdata.php\">ãƒ¦ãƒ¼ã‚¶ãƒ‡ãƒ¼ã‚¿ãƒšãƒ¼ã‚¸</a>ã‹ã‚‰ã‚„ã‚Šç›´ã—ã¦ãã ã•ã„ã€‚<br />\n");
 		return;
 	}
 	
 	$CustomerId = $_POST['CustomerId'];
 	
-	// ƒLƒƒƒ‰ƒNƒ^ƒf[ƒ^ƒe[ƒuƒ‹‚Ì\’z.
+	// ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ‡ãƒ¼ã‚¿ãƒ†ãƒ¼ãƒ–ãƒ«ã®æ§‹ç¯‰.
 	$Stmt = $Conn->prepare("select Name, Level, Exp, RightEquip, LeftEquip, IsGM from CharacterData where CustomerId = :CustomerId;");
 	$Stmt->bindValue(':CustomerId', $CustomerId, PDO::PARAM_INT);
 	$Stmt->execute();
 	print("<table border=1>\n");
-	print("<caption>ƒ†[ƒUƒf[ƒ^</caption>\n");
+	print("<caption>ãƒ¦ãƒ¼ã‚¶ãƒ‡ãƒ¼ã‚¿</caption>\n");
 	print("<tr style=\"background:#FF00CC\">\n");
-	print("<th>ƒLƒƒƒ‰ƒNƒ^–¼</th>\n");
-	print("<th>ƒŒƒxƒ‹</th>\n");
-	print("<th>ŒoŒ±’l</th>\n");
-	print("<th>‰Eè‘•”õ</th>\n");
-	print("<th>¶è‘•”õ</th>\n");
-	print("<th>‚f‚lƒtƒ‰ƒO</th>\n");
+	print("<th>ã‚­ãƒ£ãƒ©ã‚¯ã‚¿å</th>\n");
+	print("<th>ãƒ¬ãƒ™ãƒ«</th>\n");
+	print("<th>çµŒé¨“å€¤</th>\n");
+	print("<th>å³æ‰‹è£…å‚™</th>\n");
+	print("<th>å·¦æ‰‹è£…å‚™</th>\n");
+	print("<th>ï¼§ï¼­ãƒ•ãƒ©ã‚°</th>\n");
 	print("</tr>\n");
 	while($Row = $Stmt->fetch(PDO::FETCH_ASSOC))
 	{
@@ -82,7 +82,7 @@
 		$GMFlag = "";
 		if($Row['IsGM'] == '1')
 		{
-			$GMFlag = "›";
+			$GMFlag = "â—‹";
 		}
 		print("<th>" . $GMFlag . "</th>\n");
 		print("</tr>\n");
