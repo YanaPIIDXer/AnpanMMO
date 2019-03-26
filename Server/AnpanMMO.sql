@@ -82,6 +82,7 @@ CREATE TABLE `Mail` (
   `Subject` varchar(64) DEFAULT NULL,
   `Body` varchar(1024) DEFAULT NULL,
   `AttachmentType` tinyint(3) unsigned DEFAULT NULL,
+  `AttachmentId` int(10) unsigned DEFAULT NULL,
   `AttachmentCount` int(10) unsigned DEFAULT NULL,
   `RecvDate` date DEFAULT NULL,
   `IsRead` tinyint(1) NOT NULL
@@ -175,4 +176,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-27  5:14:33
+-- Dump completed on 2019-03-27  5:43:24
