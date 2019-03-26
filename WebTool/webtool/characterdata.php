@@ -89,5 +89,6 @@
 	}
 	print("</table><br />\n");
 ?>
+<a href="userdata.php">ユーザデータページに戻る</a>
 </body>
 </html>
