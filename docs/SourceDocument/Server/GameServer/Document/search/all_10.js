@@ -193,7 +193,7 @@ var searchData=
   ['packettime_2eh',['PacketTime.h',['../PacketTime_8h.html',1,'']]],
   ['packettimechange',['PacketTimeChange',['../classPacketTimeChange.html',1,'PacketTimeChange'],['../classPacketTimeChange.html#ad658c10dda8b111184700a7593c3f91a',1,'PacketTimeChange::PacketTimeChange()'],['../classPacketTimeChange.html#a0be877f43b3423a0e148ea9dcc4d4bb8',1,'PacketTimeChange::PacketTimeChange(u32 InMasterId)']]],
   ['packettimechange_2eh',['PacketTimeChange.h',['../PacketTimeChange_8h.html',1,'']]],
-  ['paralysis',['Paralysis',['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a913ee5fed9d2486ddaaf7cc65dd364e0',1,'PacketSkillUseFailed::Paralysis()'],['../structBuffItem.html#a029fff6c8cc4575ea958f7357278a1eead3b81e8a6c52ea88586487ed6a5547d9',1,'BuffItem::PARALYSIS()']]],
+  ['paralysis',['PARALYSIS',['../structBuffItem.html#a029fff6c8cc4575ea958f7357278a1eead3b81e8a6c52ea88586487ed6a5547d9',1,'BuffItem::PARALYSIS()'],['../classPacketSkillUseFailed.html#addd4c90c93ab4635ff1ece3acc3d3263a913ee5fed9d2486ddaaf7cc65dd364e0',1,'PacketSkillUseFailed::Paralysis()']]],
   ['parentnode',['ParentNode',['../structSkillTreeItem.html#aab6c268e6d5639f8ce8c0e6e664a94d4',1,'SkillTreeItem']]],
   ['party',['Party',['../classParty.html',1,'Party'],['../classParty.html#ac1459b673340ff7ce0f5bfb76669d0c8',1,'Party::Party()']]],
   ['party_2ecpp',['Party.cpp',['../Party_8cpp.html',1,'']]],
