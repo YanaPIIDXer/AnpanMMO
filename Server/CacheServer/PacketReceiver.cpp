@@ -70,7 +70,8 @@ bool PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	u8 ResultCode = CachePacketLogInResult::Success;
 	char *pUserCode = const_cast<char *>(Packet.UserCode.c_str());
 	int Id = 0;
-	if (!DBConnection::GetInstance().LoadUserData(pUserCode, Id))
+	bool bIsBunned = false;
+	if (!DBConnection::GetInstance().LoadUserData(pUserCode, Id, bIsBunned))
 	{
 		ResultCode = CachePacketLogInResult::Error;
 	}
@@ -79,6 +80,11 @@ bool PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 	if (!DBConnection::GetInstance().IsExistCharacter(Id, bCharaExist))
 	{
 		ResultCode = CachePacketLogInResult::Error;
+	}
+
+	if (bIsBunned)
+	{
+		ResultCode = CachePacketLogInResult::Bunned;
 	}
 
 	if (ResultCode == CachePacketLogInResult::Success && !bCharaExist)

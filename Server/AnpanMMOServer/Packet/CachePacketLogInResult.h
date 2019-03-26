@@ -34,6 +34,8 @@ public:
 		Success,
 		//! キャラクタがいない
 		NoCharacter,
+		//! ＢＡＮされている
+		Bunned,
 		//! エラー
 		Error,
 	};
