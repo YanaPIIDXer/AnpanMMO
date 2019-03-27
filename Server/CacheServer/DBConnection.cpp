@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "DBConnection.h"
 #include <fstream>
+#include <time.h>
+#include <boost/format.hpp>
 #include "Packet/CharacterJob.h"
 #include "Packet/ItemData.h"
 #include "Packet/QuestData.h"
@@ -30,23 +32,26 @@ bool DBConnection::Open()
 }
 
 // ユーザデータ読み込み
-bool DBConnection::LoadUserData(char *pUserCode, int &OutId)
+bool DBConnection::LoadUserData(char *pUserCode, int &OutId, bool &bOutIsBunned)
 {
-	MySqlQuery Query = Connection.CreateQuery("select Id from UserData where UserCode = ?;");
+	MySqlQuery Query = Connection.CreateQuery("select Id, IsBunned from UserData where UserCode = ?;");
 	Query.BindString(pUserCode);
 
 	int Id = 0;
+	char IsBunnedFlag = 0;
 	Query.BindResultInt(&Id);
+	Query.BindResultChar(&IsBunnedFlag);
 	if (!Query.ExecuteQuery()) { return false; }
 
 	if (!Query.Fetch())
 	{
 		// 登録して検索し直す。
 		if (!RegisterUserData(pUserCode)) { return false; }
-		return LoadUserData(pUserCode, OutId);
+		return LoadUserData(pUserCode, OutId, bOutIsBunned);
 	}
 	
 	OutId = Id;
+	bOutIsBunned = (IsBunnedFlag == 1);
 	return true;
 }
 
@@ -547,6 +552,31 @@ bool DBConnection::SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip)
 	if (!Query.ExecuteQuery()) { return false; }
 
 	return true;
+}
+
+// 古いメールを削除.
+void DBConnection::RemoveOldMails(u32 CustomerId)
+{
+	// 現在の日付.
+	time_t Now = std::time(NULL);
+	tm NowTime;
+	localtime_s(&NowTime, &Now);
+
+	// ３０日前の日付.
+	tm RemoveDate = { 0, 0, 0, NowTime.tm_mday - 30, NowTime.tm_mon, NowTime.tm_year };
+	time_t RemoveDateTime = std::mktime(&RemoveDate);
+	localtime_s(&RemoveDate, &RemoveDateTime);
+	
+	MYSQL_TIME BindDate;
+	BindDate.year = (RemoveDate.tm_year + 1900);
+	BindDate.month = (RemoveDate.tm_mon + 1);
+	BindDate.day = RemoveDate.tm_mday;
+	
+	MySqlQuery Query = Connection.CreateQuery("delete from Mail where CustomerId = ? and RecvDate <= ?;");
+	Query.BindInt(&CustomerId);
+	Query.BindDate(&BindDate);
+
+	Query.ExecuteQuery();
 }
 
 

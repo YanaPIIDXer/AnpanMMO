@@ -50,6 +50,9 @@ public:
 	// ƒƒCƒh•¶š—ñ’Ç‰Á.
 	void AddWString(wchar_t *pPtr, bool bForResult);
 
+	// “ú•t’Ç‰Á.
+	void AddDate(MYSQL_TIME *pPtr);
+
 	// æ“¾.
 	MYSQL_BIND *Get() { return pBinds; }
 

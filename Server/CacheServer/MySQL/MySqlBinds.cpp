@@ -142,7 +142,6 @@ void MySqlBinds::AddString(char *pPtr, bool bForResult)
 // ÉèÉCÉhï∂éöóÒí«â¡.
 void MySqlBinds::AddWString(wchar_t *pPtr, bool bForResult)
 {
-
 	MYSQL_BIND Bind;
 	memset(&Bind, 0, sizeof(Bind));
 	Bind.buffer_type = MYSQL_TYPE_STRING;
@@ -155,6 +154,20 @@ void MySqlBinds::AddWString(wchar_t *pPtr, bool bForResult)
 	{
 		Bind.buffer_length = StringBufferLength;
 	}
+	Bind.is_null = 0;
+
+	Reallocate();
+	pBinds[Length - 1] = Bind;
+}
+
+// ì˙ïtí«â¡.
+void MySqlBinds::AddDate(MYSQL_TIME *pPtr)
+{
+	MYSQL_BIND Bind;
+	memset(&Bind, 0, sizeof(Bind));
+	Bind.buffer_type = MYSQL_TYPE_DATE;
+	Bind.buffer = pPtr;
+	Bind.buffer_length = sizeof(*pPtr);
 	Bind.is_null = 0;
 
 	Reallocate();

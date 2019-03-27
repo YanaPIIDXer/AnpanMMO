@@ -71,6 +71,25 @@ CREATE TABLE `ItemShortcut` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `Mail`
+--
+
+DROP TABLE IF EXISTS `Mail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Mail` (
+  `CustomerId` int(10) unsigned DEFAULT NULL,
+  `Subject` varchar(64) DEFAULT NULL,
+  `Body` varchar(1024) DEFAULT NULL,
+  `AttachmentType` tinyint(3) unsigned DEFAULT NULL,
+  `AttachmentId` int(10) unsigned DEFAULT NULL,
+  `AttachmentCount` int(10) unsigned DEFAULT NULL,
+  `RecvDate` date DEFAULT NULL,
+  `IsRead` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `QuestData`
 --
 
@@ -143,8 +162,9 @@ DROP TABLE IF EXISTS `UserData`;
 CREATE TABLE `UserData` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `UserCode` varchar(32) DEFAULT NULL,
+  `IsBunned` tinyint(1) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -156,4 +176,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-12 12:50:29
+-- Dump completed on 2019-03-27  5:43:24

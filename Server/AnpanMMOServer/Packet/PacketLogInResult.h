@@ -35,6 +35,8 @@ public:
 		DoubleLogIn,
 		//! キャラクタが存在しない
 		NoCharacter,
+		//! ＢＡＮされている
+		Bunned,
 		//! エラー
 		Error,
 	};

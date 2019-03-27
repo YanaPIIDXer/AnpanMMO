@@ -19,7 +19,7 @@ public:
 	bool Open();
 
 	// ユーザデータ読み込み
-	bool LoadUserData(char *pUserCode, int &OutId);
+	bool LoadUserData(char *pUserCode, int &OutId, bool &bOutIsBunned);
 
 	// キャラクタデータが存在するか？
 	bool IsExistCharacter(int Id, bool &OutResult);
@@ -86,6 +86,9 @@ public:
 
 	// 装備データ保存.
 	bool SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip);
+
+	// 古いメールを削除.
+	void RemoveOldMails(u32 CustomerId);
 
 private:
 

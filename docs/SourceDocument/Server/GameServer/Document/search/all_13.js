@@ -145,7 +145,7 @@ var searchData=
   ['statetype',['StateType',['../classQuestData.html#a9ed9c55d4742f2f55539926963f74394',1,'QuestData']]],
   ['stdafx_2ecpp',['stdafx.cpp',['../stdafx_8cpp.html',1,'']]],
   ['stdafx_2eh',['stdafx.h',['../stdafx_8h.html',1,'']]],
-  ['stop',['Stop',['../classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872',1,'AnpanAI::Stop()'],['../classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd',1,'AnpanAIStateBase::Stop()'],['../classboost_1_1asio_1_1basic__repeating__timer.html#a8c830589305a50c979d04eb91cd07ccf',1,'boost::asio::basic_repeating_timer::stop()']]],
+  ['stop',['stop',['../classboost_1_1asio_1_1basic__repeating__timer.html#a8c830589305a50c979d04eb91cd07ccf',1,'boost::asio::basic_repeating_timer::stop()'],['../classAnpanAI.html#a3330b2933baa8eeb49bf0673ea292872',1,'AnpanAI::Stop()'],['../classAnpanAIStateBase.html#aa43e3a197f192eefa7c72bf76943fefd',1,'AnpanAIStateBase::Stop()']]],
   ['stopanpan',['StopAnpan',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa6770d13f54f5d2b952600b079379c5a1',1,'PacketID']]],
   ['str',['Str',['../structAnpanItem.html#a74247df1af127824e803799d63d2039b',1,'AnpanItem::Str()'],['../structEquipItem.html#a7292b4d132f4f650cf7c171ad496676c',1,'EquipItem::Str()'],['../classPacketCharacterStatus.html#a57179c09184740babd3c17eeb14c1571',1,'PacketCharacterStatus::Str()'],['../classPacketLevelUp.html#ad7be1418c5faf6b013fd1919cd839937',1,'PacketLevelUp::Str()'],['../structLevelItem.html#a5a9a981f1c458380d33b49e756d48963',1,'LevelItem::STR()']]],
   ['sub_5fquest',['SUB_QUEST',['../structQuestItem.html#a449b907332a6ca6fafdc4bb542703989a747356f63e7d4f7e8a31f49156e7a3d4',1,'QuestItem']]],

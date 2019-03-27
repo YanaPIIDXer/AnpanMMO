@@ -69,6 +69,12 @@ void MySqlQuery::BindWString(wchar_t *pPtr)
 	Binds.AddWString(pPtr, false);
 }
 
+// 日付のバインド
+void MySqlQuery::BindDate(MYSQL_TIME *pPtr)
+{
+	Binds.AddDate(pPtr);
+}
+
 // 結果のint型バインド
 void MySqlQuery::BindResultInt(int *pPtr)
 {
@@ -121,6 +127,12 @@ void MySqlQuery::BindResultString(char *pPtr)
 void MySqlQuery::BindResultWString(wchar_t *pPtr)
 {
 	Results.AddWString(pPtr, true);
+}
+
+// 結果の日付バインド
+void MySqlQuery::BindResultDate(MYSQL_TIME *pPtr)
+{
+	Results.AddDate(pPtr);
 }
 
 // クエリ実行.
