@@ -51,6 +51,9 @@ public:
 	// ワイド文字列のバインド
 	void BindWString(wchar_t *pPtr);
 
+	// 日付のバインド
+	void BindDate(MYSQL_TIME *pPtr);
+
 	// 結果のint型バインド
 	void BindResultInt(int *pPtr);
 
@@ -77,6 +80,9 @@ public:
 
 	// 結果のワイド文字列バインド
 	void BindResultWString(wchar_t *pPtr);
+
+	// 結果の日付バインド
+	void BindResultDate(MYSQL_TIME *pPtr);
 
 	// クエリ実行.
 	bool ExecuteQuery();

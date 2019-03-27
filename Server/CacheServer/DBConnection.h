@@ -87,6 +87,9 @@ public:
 	// 装備データ保存.
 	bool SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip);
 
+	// 古いメールを削除.
+	void RemoveOldMails(u32 CustomerId);
+
 private:
 
 	// ユーザ情報を格納したファイル名.

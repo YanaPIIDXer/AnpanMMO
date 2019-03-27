@@ -94,6 +94,9 @@ bool PacketReceiver::OnRecvLogInRequest(MemoryStreamInterface *pStream)
 
 	if (ResultCode == CachePacketLogInResult::Success)
 	{
+		// ‚Â‚¢‚Å‚ÉŒÃ‚¢ƒ[ƒ‹‚ğíœ‚µ‚Ä‚¨‚­B
+		DBConnection::GetInstance().RemoveOldMails(Id);
+
 		u32 CharacterId = 0;
 		if (!DBConnection::GetInstance().GetCharacterId(Id, CharacterId))
 		{

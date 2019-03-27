@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "DBConnection.h"
 #include <fstream>
+#include <time.h>
+#include <boost/format.hpp>
 #include "Packet/CharacterJob.h"
 #include "Packet/ItemData.h"
 #include "Packet/QuestData.h"
@@ -550,6 +552,31 @@ bool DBConnection::SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip)
 	if (!Query.ExecuteQuery()) { return false; }
 
 	return true;
+}
+
+// 古いメールを削除.
+void DBConnection::RemoveOldMails(u32 CustomerId)
+{
+	// 現在の日付.
+	time_t Now = std::time(NULL);
+	tm NowTime;
+	localtime_s(&NowTime, &Now);
+
+	// ３０日前の日付.
+	tm RemoveDate = { 0, 0, 0, NowTime.tm_mday - 30, NowTime.tm_mon, NowTime.tm_year };
+	time_t RemoveDateTime = std::mktime(&RemoveDate);
+	localtime_s(&RemoveDate, &RemoveDateTime);
+	
+	MYSQL_TIME BindDate;
+	BindDate.year = (RemoveDate.tm_year + 1900);
+	BindDate.month = (RemoveDate.tm_mon + 1);
+	BindDate.day = RemoveDate.tm_mday;
+	
+	MySqlQuery Query = Connection.CreateQuery("delete from Mail where CustomerId = ? and RecvDate <= ?;");
+	Query.BindInt(&CustomerId);
+	Query.BindDate(&BindDate);
+
+	Query.ExecuteQuery();
 }
 
 
