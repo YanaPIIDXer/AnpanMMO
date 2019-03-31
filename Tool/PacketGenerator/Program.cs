@@ -46,7 +46,8 @@ namespace NativePacketGenerator
 				}
 				foreach(var Class in Parser.Classes)
 				{
-					if(Class.IsPureClass) { continue; }
+					Classes.Add(Class);
+					if (Class.IsPureClass) { continue; }
 					if(Class.IsForCacheServer)
 					{
 						Class.Includes.Add("CacheServerPacketID.h");
@@ -59,7 +60,6 @@ namespace NativePacketGenerator
 					{
 						Class.Includes.Add("PacketID.h");
 					}
-					Classes.Add(Class);
 				}
 			}
 
@@ -87,22 +87,43 @@ namespace NativePacketGenerator
 			foreach (var Class in Classes)
 			{
 				SourceGenerator Gen = new SourceGenerator(Class);
-				if (!Gen.Generate()) { return; }
-				if (!Gen.Write(ServerPath)) { return; }
+				Console.WriteLine(Class.ClassName + "の出力中・・・");
+				if (!Gen.Generate())
+				{
+					Console.WriteLine("ソースコードの生成に失敗しました。");
+					return;
+				}
+				if (!Gen.Write(ServerPath))
+				{
+					Console.WriteLine("ゲームサーバへのソースコード書き込みに失敗しました。");
+					return;
+				}
 				if (!Class.IsForCacheServer && !Class.IsForWordCheckServer)
 				{
 					// クライアント
-					if (!Gen.Write(ClientPath)) { return; }
+					if (!Gen.Write(ClientPath))
+					{
+						Console.WriteLine("クライアントへのソースコード書き込みに失敗しました。");
+						return;
+					}
 				}
 				else if (Class.IsForCacheServer)
 				{
 					// キャッシュサーバ
-					if (!Gen.Write(CacheServerPath)) { return; }
+					if (!Gen.Write(CacheServerPath))
+					{
+						Console.WriteLine("キャッシュサーバへのソースコード書き込みに失敗しました。");
+						return;
+					}
 				}
 				else
 				{
 					// ワードチェックサーバ
-					if (!Gen.Write(WordCheckServerPath)) { return; }
+					if (!Gen.Write(WordCheckServerPath))
+					{
+						Console.WriteLine("ワードチェックサーバへのソースコード書き込みに失敗しました。");
+						return;
+					}
 				}
 			}
 
