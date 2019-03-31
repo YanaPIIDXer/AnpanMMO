@@ -8,6 +8,7 @@ var searchData=
   ['addbuff',['AddBuff',['../classBuffManager.html#aac69560d95b9c2e1a0417f456a72ea52',1,'BuffManager::AddBuff()'],['../classCharacterBase.html#ae3be4635b97527f0ce11c0368319bb91',1,'CharacterBase::AddBuff()']]],
   ['addchar',['AddChar',['../classMySqlBinds.html#a2b7e3431271f20244353bd693effc033',1,'MySqlBinds::AddChar(char *pPtr)'],['../classMySqlBinds.html#a31fd1b542193dd9ac220155c2be9cbe5',1,'MySqlBinds::AddChar(unsigned char *pPtr)']]],
   ['addclient',['AddClient',['../classInstanceAreaTicket.html#aa6ca48b21c5da9f19bf486a94c34c472',1,'InstanceAreaTicket']]],
+  ['adddate',['AddDate',['../classMySqlBinds.html#ade6e95f03a63e77f4a62771173feb77f',1,'MySqlBinds']]],
   ['addexp',['AddExp',['../classPlayerCharacter.html#af674ca1a9358d11e18e38eca81072f63',1,'PlayerCharacter']]],
   ['addfloat',['AddFloat',['../classMySqlBinds.html#a837369350388e4b99f3161312d96a07d',1,'MySqlBinds']]],
   ['addgold',['AddGold',['../classPlayerCharacter.html#ae1b630aa03e011b4fef2f1fcb3b94272',1,'PlayerCharacter']]],
