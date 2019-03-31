@@ -1,11 +1,11 @@
 /**
- * @file CachePacketChangeMailFlag.h
- * @brief メールフラグ切り替えパケット
+ * @file CachePacketMailAttachmentRecvRequest.h
+ * @brief メール添付物受信要求パケット
  * @author NativePacketGenerator
  */
 
-#ifndef __CACHEPACKETCHANGEMAILFLAG_H__
-#define __CACHEPACKETCHANGEMAILFLAG_H__
+#ifndef __CACHEPACKETMAILATTACHMENTRECVREQUEST_H__
+#define __CACHEPACKETMAILATTACHMENTRECVREQUEST_H__
 
 #include "PacketBase.h"
 #include "MemoryStream/MemoryStreamInterface.h"
@@ -14,9 +14,9 @@
 
 
 /**
- * @brief メールフラグ切り替えパケット
+ * @brief メール添付物受信要求パケット
  */
-class CachePacketChangeMailFlag  : public ProcessPacketBase
+class CachePacketMailAttachmentRecvRequest  : public ProcessPacketBase
 {
 
 public:
@@ -26,31 +26,28 @@ public:
 	 * @brief パケットＩＤ取得.
 	 * @return パケットＩＤ
 	 */
-	virtual u8 GetPacketID() const { return CachePacketID::CacheChangeMailFlag; }
+	virtual u8 GetPacketID() const { return CachePacketID::CacheMailAttachmentRecvRequest; }
 
 	
 
 	//! ＩＤ
 	u32 Id;
-	//! フラグ
-	u8 Flag;
 	
 
 	/**
 	 * @brief コンストラクタ
 	 */
-	CachePacketChangeMailFlag()
+	CachePacketMailAttachmentRecvRequest()
 	{
 	}
 
 	/**
 	 * @brief コンストラクタ
 	 */
-	CachePacketChangeMailFlag(u32 InClientId, u32 InId, u8 InFlag)
+	CachePacketMailAttachmentRecvRequest(u32 InClientId, u32 InId)
 	{
 		ClientId = InClientId;
 		Id = InId;
-		Flag = InFlag;
 		
 	}
 
@@ -65,10 +62,9 @@ public:
 	{
 		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&Id);
-		pStream->Serialize(&Flag);
 		
 		return true;
 	}
 };
 
-#endif		// #ifndef __CACHEPACKETCHANGEMAILFLAG_H__
+#endif		// #ifndef __CACHEPACKETMAILATTACHMENTRECVREQUEST_H__

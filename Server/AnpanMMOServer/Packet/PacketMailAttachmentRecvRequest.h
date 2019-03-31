@@ -1,11 +1,11 @@
 /**
- * @file PacketMailAttachmentRecv.h
- * @brief 添付物受信パケット
+ * @file PacketMailAttachmentRecvRequest.h
+ * @brief 添付物受信リクエストパケット
  * @author NativePacketGenerator
  */
 
-#ifndef __PACKETMAILATTACHMENTRECV_H__
-#define __PACKETMAILATTACHMENTRECV_H__
+#ifndef __PACKETMAILATTACHMENTRECVREQUEST_H__
+#define __PACKETMAILATTACHMENTRECVREQUEST_H__
 
 #include "PacketBase.h"
 #include "MemoryStream/MemoryStreamInterface.h"
@@ -13,9 +13,9 @@
 
 
 /**
- * @brief 添付物受信パケット
+ * @brief 添付物受信リクエストパケット
  */
-class PacketMailAttachmentRecv  : public PacketBase
+class PacketMailAttachmentRecvRequest  : public PacketBase
 {
 
 public:
@@ -25,7 +25,7 @@ public:
 	 * @brief パケットＩＤ取得.
 	 * @return パケットＩＤ
 	 */
-	virtual u8 GetPacketID() const { return PacketID::MailAttachmentRecv; }
+	virtual u8 GetPacketID() const { return PacketID::MailAttachmentRecvRequest; }
 
 	
 
@@ -36,14 +36,14 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	PacketMailAttachmentRecv()
+	PacketMailAttachmentRecvRequest()
 	{
 	}
 
 	/**
 	 * @brief コンストラクタ
 	 */
-	PacketMailAttachmentRecv(u32 InId)
+	PacketMailAttachmentRecvRequest(u32 InId)
 	{
 		Id = InId;
 		
@@ -64,4 +64,4 @@ public:
 	}
 };
 
-#endif		// #ifndef __PACKETMAILATTACHMENTRECV_H__
+#endif		// #ifndef __PACKETMAILATTACHMENTRECVREQUEST_H__
