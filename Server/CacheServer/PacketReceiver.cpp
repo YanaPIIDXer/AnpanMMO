@@ -36,6 +36,7 @@
 #include "Packet/CachePacketSaveEquipResponse.h"
 #include "Packet/CachePacketMailListRequest.h"
 #include "Packet/CachePacketMailListResponse.h"
+#include "Packet/CachePacketMailRead.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -62,6 +63,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CachePacketID::CacheSaveActiveQuestRequest, bind(&PacketReceiver::OnRecvSaveActiveQuestRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheSaveEquipRequest, bind(&PacketReceiver::OnRecvSaveEquipRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheMailListRequest, bind(&PacketReceiver::OnRecvMailListRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheMailRead, bind(&PacketReceiver::OnRecvMailRead, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -460,8 +462,25 @@ bool PacketReceiver::OnRecvMailListRequest(MemoryStreamInterface *pStream)
 	CachePacketMailListResponse ResponsePacket;
 	ResponsePacket.ClientId = Packet.ClientId;
 
-	DBConnection::GetInstance().LoadMailList(Packet.CustomerId, ResponsePacket.List);
+	if (!DBConnection::GetInstance().LoadMailList(Packet.CustomerId, ResponsePacket.List))
+	{
+		std::cout << "LoadMailList Failed... CustomerId:" << Packet.CustomerId << std::endl;
+	}
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
+}
+
+// メール開封を受信した。
+bool PacketReceiver::OnRecvMailRead(MemoryStreamInterface *pStream)
+{
+	CachePacketMailRead Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	if (!DBConnection::GetInstance().ChangeMailFlag(Packet.Id, MailData::Read))
+	{
+		std::cout << "Mail Read Failed... Mail ID:" << Packet.Id << std::endl;
+	}
 
 	return true;
 }

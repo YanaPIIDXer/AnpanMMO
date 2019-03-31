@@ -89,7 +89,10 @@ public:
 	bool SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip);
 
 	// メールリストの読み込み
-	void LoadMailList(u32 CustomerId, FlexArray<MailData> &OutList);
+	bool LoadMailList(u32 CustomerId, FlexArray<MailData> &OutList);
+
+	// メールのフラグ切り替え
+	bool ChangeMailFlag(u32 Id, u8 Flag);
 
 	// 古いメールを削除.
 	void RemoveOldMails(u32 CustomerId);

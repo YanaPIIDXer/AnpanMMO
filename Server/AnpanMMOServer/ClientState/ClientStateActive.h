@@ -132,6 +132,9 @@ private:
 	// キャッシュサーバからメールリストを受信した。
 	bool OnRecvCacheMailList(MemoryStreamInterface *pStream);
 
+	// メール開封を受信した。
+	bool OnRecvMailRead(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

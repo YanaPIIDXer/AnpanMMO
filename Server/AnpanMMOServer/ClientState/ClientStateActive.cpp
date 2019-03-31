@@ -81,6 +81,8 @@
 #include "Packet/CachePacketMailListRequest.h"
 #include "Packet/CachePacketMailListResponse.h"
 #include "Packet/PacketMailList.h"
+#include "Packet/PacketMailRead.h"
+#include "Packet/CachePacketMailRead.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -118,6 +120,7 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::ExitShop, boost::bind(&ClientStateActive::OnRecvExitShop, this, _2));
 	AddPacketFunction(PacketID::MailListRequest, boost::bind(&ClientStateActive::OnRecvMailListRequest, this, _2));
 	AddPacketFunction(CachePacketID::CacheMailListResponse, boost::bind(&ClientStateActive::OnRecvCacheMailList, this, _2));
+	AddPacketFunction(PacketID::MailRead, boost::bind(&ClientStateActive::OnRecvMailRead, this, _2));
 }
 
 // State開始時の処理.
@@ -823,5 +826,17 @@ bool ClientStateActive::OnRecvCacheMailList(MemoryStreamInterface *pStream)
 	}
 
 	GetParent()->SendPacket(&ListPacket);
+	return true;
+}
+
+// メール開封を受信した。
+bool ClientStateActive::OnRecvMailRead(MemoryStreamInterface *pStream)
+{
+	PacketMailRead Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	CachePacketMailRead ReadPacket(GetParent()->GetUuid(), Packet.Id);
+	CacheServerConnection::GetInstance()->SendPacket(&ReadPacket);
+
 	return true;
 }

@@ -556,7 +556,7 @@ bool DBConnection::SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip)
 }
 
 // メールリストの読み込み
-void DBConnection::LoadMailList(u32 CustomerId, FlexArray<MailData> &OutList)
+bool DBConnection::LoadMailList(u32 CustomerId, FlexArray<MailData> &OutList)
 {
 	MySqlQuery Query = Connection.CreateQuery("select Id, Subject, Body, AttachmentType, AttachmentId, AttachmentCount, Flag from Mail where CustomerId = ?;");
 
@@ -573,13 +573,27 @@ void DBConnection::LoadMailList(u32 CustomerId, FlexArray<MailData> &OutList)
 	Query.BindResultInt(&Data.AttachmentCount);
 	Query.BindResultChar(&Data.Flag);
 
-	if (Query.ExecuteQuery()) { return; }
+	if (Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
 	{
 		Data.Subject = Subject;
 		Data.Body = Body;
 		OutList.PushBack(Data);
 	}
+
+	return true;
+}
+
+// メールのフラグ切り替え
+bool DBConnection::ChangeMailFlag(u32 Id, u8 Flag)
+{
+	MySqlQuery Query = Connection.CreateQuery("update Mail set Flag = ? where Id = ?;");
+	Query.BindChar(&Flag);
+	Query.BindInt(&Id);
+
+	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
 }
 
 // 古いメールを削除.
