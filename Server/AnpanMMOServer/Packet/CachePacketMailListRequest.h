@@ -1,20 +1,22 @@
 /**
- * @file NoticeData.h
- * @brief 通知データパケット
+ * @file CachePacketMailListRequest.h
+ * @brief メールリストリクエストパケット
  * @author NativePacketGenerator
  */
 
-#ifndef __NOTICEDATA_H__
-#define __NOTICEDATA_H__
+#ifndef __CACHEPACKETMAILLISTREQUEST_H__
+#define __CACHEPACKETMAILLISTREQUEST_H__
 
 #include "PacketBase.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "ProcessPacketBase.h"
+#include "CacheServerPacketID.h"
 
 
 /**
- * @brief 通知データパケット
+ * @brief メールリストリクエストパケット
  */
-class NoticeData 
+class CachePacketMailListRequest  : public ProcessPacketBase
 {
 
 public:
@@ -24,37 +26,28 @@ public:
 	 * @brief パケットＩＤ取得.
 	 * @return パケットＩＤ
 	 */
+	virtual u8 GetPacketID() const { return CachePacketID::CacheMailListRequest; }
+
 	
 
-	enum NoticeType
-	{
-		//! パーティ勧誘
-		PartyInvide,
-	};
-
-	//! タイプ
-	u8 Type;
 	//! カスタマＩＤ
 	u32 CustomerId;
-	//! キャラクタ名
-	std::string CharacterName;
 	
 
 	/**
 	 * @brief コンストラクタ
 	 */
-	NoticeData()
+	CachePacketMailListRequest()
 	{
 	}
 
 	/**
 	 * @brief コンストラクタ
 	 */
-	NoticeData(u8 InType, u32 InCustomerId, std::string InCharacterName)
+	CachePacketMailListRequest(u32 InClientId, u32 InCustomerId)
 	{
-		Type = InType;
+		ClientId = InClientId;
 		CustomerId = InCustomerId;
-		CharacterName = InCharacterName;
 		
 	}
 
@@ -67,12 +60,11 @@ public:
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&Type);
+		ProcessPacketBase::Serialize(pStream);
 		pStream->Serialize(&CustomerId);
-		pStream->Serialize(&CharacterName);
 		
 		return true;
 	}
 };
 
-#endif		// #ifndef __NOTICEDATA_H__
+#endif		// #ifndef __CACHEPACKETMAILLISTREQUEST_H__

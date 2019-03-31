@@ -1,20 +1,23 @@
 /**
- * @file PartyMemberData.h
- * @brief パーティメンバ情報パケット
+ * @file PacketMailList.h
+ * @brief メールリストパケット
  * @author NativePacketGenerator
  */
 
-#ifndef __PARTYMEMBERDATA_H__
-#define __PARTYMEMBERDATA_H__
+#ifndef __PACKETMAILLIST_H__
+#define __PACKETMAILLIST_H__
 
 #include "PacketBase.h"
 #include "MemoryStream/MemoryStreamInterface.h"
+#include "FlexArray.h"
+#include "MailData.h"
+#include "PacketID.h"
 
 
 /**
- * @brief パーティメンバ情報パケット
+ * @brief メールリストパケット
  */
-class PartyMemberData 
+class PacketMailList  : public PacketBase
 {
 
 public:
@@ -24,30 +27,27 @@ public:
 	 * @brief パケットＩＤ取得.
 	 * @return パケットＩＤ
 	 */
-	
+	virtual u8 GetPacketID() const { return PacketID::MailList; }
 
 	
 
-	//! UUID
-	u32 Uuid;
-	//! キャラクタ名
-	std::string CharacterName;
+	//! メールリスト
+	FlexArray<MailData> List;
 	
 
 	/**
 	 * @brief コンストラクタ
 	 */
-	PartyMemberData()
+	PacketMailList()
 	{
 	}
 
 	/**
 	 * @brief コンストラクタ
 	 */
-	PartyMemberData(u32 InUuid, std::string InCharacterName)
+	PacketMailList(FlexArray<MailData> InList)
 	{
-		Uuid = InUuid;
-		CharacterName = InCharacterName;
+		List = InList;
 		
 	}
 
@@ -60,11 +60,10 @@ public:
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
-		pStream->Serialize(&Uuid);
-		pStream->Serialize(&CharacterName);
+		List.Serialize(pStream);
 		
 		return true;
 	}
 };
 
-#endif		// #ifndef __PARTYMEMBERDATA_H__
+#endif		// #ifndef __PACKETMAILLIST_H__

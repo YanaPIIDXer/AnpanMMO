@@ -85,6 +85,10 @@ public:
 		CacheSaveEquipRequest = 0x5E,
 		//! 装備保存レスポンスパケット
 		CacheSaveEquipResponse = 0x5F,
+		//! メールリストリクエストパケット
+		CacheMailListRequest = 0x60,
+		//! メールリストレスポンスパケット
+		CacheMailListResponse = 0x61,
 		
 	};
 };
