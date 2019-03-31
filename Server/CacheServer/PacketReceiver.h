@@ -107,6 +107,9 @@ private:
 	// メール開封を受信した。
 	bool OnRecvMailRead(MemoryStreamInterface *pStream);
 
+	// メール添付物受信要求を受信した。
+	bool OnRecvMailAttachmentRecvRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__

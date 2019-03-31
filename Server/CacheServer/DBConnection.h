@@ -94,6 +94,9 @@ public:
 	// メールのフラグ切り替え
 	bool ChangeMailFlag(u32 Id, u8 Flag);
 
+	// メールデータの読み込み
+	bool LoadMailData(u32 Id, MailData &OutData);
+
 	// 古いメールを削除.
 	void RemoveOldMails(u32 CustomerId);
 

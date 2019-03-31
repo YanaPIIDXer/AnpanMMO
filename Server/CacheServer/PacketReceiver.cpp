@@ -37,6 +37,8 @@
 #include "Packet/CachePacketMailListRequest.h"
 #include "Packet/CachePacketMailListResponse.h"
 #include "Packet/CachePacketMailRead.h"
+#include "Packet/CachePacketMailAttachmentRecvRequest.h"
+#include "Packet/CachePacketMailAttachmentRecvResult.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -64,6 +66,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CachePacketID::CacheSaveEquipRequest, bind(&PacketReceiver::OnRecvSaveEquipRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheMailListRequest, bind(&PacketReceiver::OnRecvMailListRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheMailRead, bind(&PacketReceiver::OnRecvMailRead, this, _1));
+	AddPacketFunc(CachePacketID::CacheMailAttachmentRecvRequest, bind(&PacketReceiver::OnRecvMailAttachmentRecvRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -481,6 +484,37 @@ bool PacketReceiver::OnRecvMailRead(MemoryStreamInterface *pStream)
 	{
 		std::cout << "Mail Read Failed... Mail ID:" << Packet.Id << std::endl;
 	}
+
+	return true;
+}
+
+// メール添付物受信要求を受信した。
+bool PacketReceiver::OnRecvMailAttachmentRecvRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketMailAttachmentRecvRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	MailData Data;
+	u8 Result = CachePacketMailAttachmentRecvResult::Error;
+	if (DBConnection::GetInstance().LoadMailData(Packet.Id, Data))
+	{
+		Result = CachePacketMailAttachmentRecvResult::Success;
+		if (Data.Flag == MailData::RecvAttachment)
+		{
+			Result = CachePacketMailAttachmentRecvResult::AlreadyRecv;
+		}
+	}
+
+	if (Result == CachePacketMailAttachmentRecvResult::Success)
+	{
+		if (!DBConnection::GetInstance().ChangeMailFlag(Packet.Id, MailData::RecvAttachment))
+		{
+			Result = CachePacketMailAttachmentRecvResult::Error;
+		}
+	}
+
+	CachePacketMailAttachmentRecvResult ResultPacket(Packet.ClientId, Result, Data.AttachmentType, Data.AttachmentId, Data.AttachmentCount);
+	pParent->SendPacket(&ResultPacket);
 
 	return true;
 }

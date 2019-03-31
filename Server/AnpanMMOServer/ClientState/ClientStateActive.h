@@ -135,6 +135,12 @@ private:
 	// メール開封を受信した。
 	bool OnRecvMailRead(MemoryStreamInterface *pStream);
 
+	// メール添付物受信リクエストを受信した。
+	bool OnRecvMailAttachmentRecvRequest(MemoryStreamInterface *pStream);
+
+	// キャッシュサーバからメール添付物受信結果を受信した。
+	bool OnRecvCacheMailAttachmentRecvResult(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__

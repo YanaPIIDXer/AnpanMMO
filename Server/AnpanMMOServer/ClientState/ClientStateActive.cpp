@@ -83,6 +83,10 @@
 #include "Packet/PacketMailList.h"
 #include "Packet/PacketMailRead.h"
 #include "Packet/CachePacketMailRead.h"
+#include "Packet/PacketMailAttachmentRecvRequest.h"
+#include "Packet/PacketMailAttachmentRecvResult.h"
+#include "Packet/CachePacketMailAttachmentRecvRequest.h"
+#include "Packet/CachePacketMailAttachmentRecvResult.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -121,6 +125,8 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::MailListRequest, boost::bind(&ClientStateActive::OnRecvMailListRequest, this, _2));
 	AddPacketFunction(CachePacketID::CacheMailListResponse, boost::bind(&ClientStateActive::OnRecvCacheMailList, this, _2));
 	AddPacketFunction(PacketID::MailRead, boost::bind(&ClientStateActive::OnRecvMailRead, this, _2));
+	AddPacketFunction(PacketID::MailAttachmentRecvRequest, boost::bind(&ClientStateActive::OnRecvMailAttachmentRecvRequest, this, _2));
+	AddPacketFunction(CachePacketID::CacheMailAttachmentRecvResult, boost::bind(&ClientStateActive::OnRecvCacheMailAttachmentRecvResult, this, _2));
 }
 
 // State開始時の処理.
@@ -838,5 +844,64 @@ bool ClientStateActive::OnRecvMailRead(MemoryStreamInterface *pStream)
 	CachePacketMailRead ReadPacket(GetParent()->GetUuid(), Packet.Id);
 	CacheServerConnection::GetInstance()->SendPacket(&ReadPacket);
 
+	return true;
+}
+
+// メール添付物受信リクエストを受信した。
+bool ClientStateActive::OnRecvMailAttachmentRecvRequest(MemoryStreamInterface *pStream)
+{
+	PacketMailAttachmentRecvRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	CachePacketMailAttachmentRecvRequest RequestPacket(GetParent()->GetUuid(), Packet.Id);
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
+}
+
+// キャッシュサーバからメール添付物受信結果を受信した。
+bool ClientStateActive::OnRecvCacheMailAttachmentRecvResult(MemoryStreamInterface *pStream)
+{
+	CachePacketMailAttachmentRecvResult Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	u8 Result = PacketMailAttachmentRecvResult::Success;
+	if (Packet.Result == CachePacketMailAttachmentRecvResult::Success)
+	{
+		// 成功.
+		switch (Packet.Type)
+		{
+			case MailData::Item:
+
+				// アイテム
+				GetParent()->GetCharacter().lock()->AddItem(Packet.Id, Packet.Count);
+				break;
+
+			case MailData::Gold:
+
+				// ゴールド
+				GetParent()->GetCharacter().lock()->AddGold(Packet.Count);
+				break;
+		}
+	}
+	else
+	{
+		// エラー
+		switch (Packet.Result)
+		{
+			case CachePacketMailAttachmentRecvResult::AlreadyRecv:
+
+				Result = PacketMailAttachmentRecvResult::AlreadyRecv;
+				break;
+
+			default:
+
+				Result = PacketMailAttachmentRecvResult::Error;
+				break;
+		}
+	}
+
+	PacketMailAttachmentRecvResult ResultPacket(Result);
+	GetParent()->SendPacket(&ResultPacket);
 	return true;
 }

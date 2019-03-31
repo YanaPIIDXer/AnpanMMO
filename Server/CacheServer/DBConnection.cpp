@@ -573,7 +573,7 @@ bool DBConnection::LoadMailList(u32 CustomerId, FlexArray<MailData> &OutList)
 	Query.BindResultInt(&Data.AttachmentCount);
 	Query.BindResultChar(&Data.Flag);
 
-	if (Query.ExecuteQuery()) { return false; }
+	if (!Query.ExecuteQuery()) { return false; }
 	while (Query.Fetch())
 	{
 		Data.Subject = Subject;
@@ -592,6 +592,32 @@ bool DBConnection::ChangeMailFlag(u32 Id, u8 Flag)
 	Query.BindInt(&Id);
 
 	if (!Query.ExecuteQuery()) { return false; }
+
+	return true;
+}
+
+// メールデータの読み込み
+bool DBConnection::LoadMailData(u32 Id, MailData &OutData)
+{
+	MySqlQuery Query = Connection.CreateQuery("select Id, Subject, Body, AttachmentType, AttachmentId, AttachmentCount, Flag from Mail where Id = ?;");
+
+	Query.BindInt(&Id);
+
+	char Subject[128];
+	char Body[1024];
+	Query.BindResultInt(&OutData.Id);
+	Query.BindResultString(Subject);
+	Query.BindResultString(Body);
+	Query.BindResultChar(&OutData.AttachmentType);
+	Query.BindResultInt(&OutData.AttachmentId);
+	Query.BindResultInt(&OutData.AttachmentCount);
+	Query.BindResultChar(&OutData.Flag);
+
+	if (!Query.ExecuteQuery()) { return false; }
+	if (!Query.Fetch()) { return false; }
+
+	OutData.Subject = Subject;
+	OutData.Body = Body;
 
 	return true;
 }

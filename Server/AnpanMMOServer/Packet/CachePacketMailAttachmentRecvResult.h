@@ -32,6 +32,8 @@ public:
 	{
 		//! ¬Œ÷
 		Success,
+		//! óMÏ‚İ
+		AlreadyRecv,
 		//! ƒGƒ‰[
 		Error,
 	};
