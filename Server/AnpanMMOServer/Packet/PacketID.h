@@ -101,116 +101,120 @@ public:
 		MailListRequest = 0x27,
 		//! メールリストパケット
 		MailList = 0x28,
+		//! メール開封パケット
+		MailRead = 0x29,
+		//! 添付物受信パケット
+		MailAttachmentRecv = 0x2A,
 		//! 通知リストパケット
-		NoticeList = 0x29,
+		NoticeList = 0x2B,
 		//! 通知パケット
-		ReceiveNotice = 0x2A,
+		ReceiveNotice = 0x2C,
 		//! 会話開始パケット
-		NPCTalk = 0x2B,
+		NPCTalk = 0x2D,
 		//! 選択肢を選択パケット
-		NPCTalkSelection = 0x2C,
+		NPCTalkSelection = 0x2E,
 		//! パーティ作成リクエストパケット
-		PartyCreateRequest = 0x2D,
+		PartyCreateRequest = 0x2F,
 		//! パーティ作成結果パケット
-		PartyCreateResult = 0x2E,
+		PartyCreateResult = 0x30,
 		//! パーティ勧誘リクエストパケット
-		PartyInviteRequest = 0x2F,
+		PartyInviteRequest = 0x31,
 		//! パーティ勧誘結果パケット
-		PartyInviteResult = 0x30,
+		PartyInviteResult = 0x32,
 		//! パーティ勧誘レスポンスパケット
-		PartyInviteResponse = 0x31,
+		PartyInviteResponse = 0x33,
 		//! パーティ加入パケット
-		PartyJoin = 0x32,
+		PartyJoin = 0x34,
 		//! パーティメンバ加入パケット
-		PartyJoinMember = 0x33,
+		PartyJoinMember = 0x35,
 		//! パーティ離脱リクエストパケット
-		PartyExitRequest = 0x34,
+		PartyExitRequest = 0x36,
 		//! パーティ離脱結果パケット
-		PartyExitResult = 0x35,
+		PartyExitResult = 0x37,
 		//! パーティ離脱パケット
-		PartyExit = 0x36,
+		PartyExit = 0x38,
 		//! パーティメンバキックリクエストパケット
-		PartyKickRequest = 0x37,
+		PartyKickRequest = 0x39,
 		//! パーティメンバキック結果パケット
-		PartyKickResult = 0x38,
+		PartyKickResult = 0x3A,
 		//! パーティメンバキックパケット
-		PartyKick = 0x39,
+		PartyKick = 0x3B,
 		//! パーティ解散リクエストパケット
-		PartyDissolutionRequest = 0x3A,
+		PartyDissolutionRequest = 0x3C,
 		//! パーティ解散結果パケット
-		PartyDissolutionResult = 0x3B,
+		PartyDissolutionResult = 0x3D,
 		//! パーティ解散パケット
-		PartyDissolution = 0x3C,
+		PartyDissolution = 0x3E,
 		//! Pingパケット
-		Ping = 0x3D,
+		Ping = 0x3F,
 		//! プレイヤーリストパケット
-		PlayerList = 0x3E,
+		PlayerList = 0x40,
 		//! プレイヤー生成パケット
-		SpawnPlayer = 0x3F,
+		SpawnPlayer = 0x41,
 		//! プレイヤー移動パケット
-		MovePlayer = 0x40,
+		MovePlayer = 0x42,
 		//! プレイヤー退出パケット
-		ExitPlayer = 0x41,
+		ExitPlayer = 0x43,
 		//! プレイヤーリスポン要求パケット
-		RespawnRequest = 0x42,
+		RespawnRequest = 0x44,
 		//! プレイヤーリスポンパケット
-		PlayerRespawn = 0x43,
+		PlayerRespawn = 0x45,
 		//! クエストデータリストパケット
-		QuestData = 0x44,
+		QuestData = 0x46,
 		//! クエスト受注パケット
-		QuestAccept = 0x45,
+		QuestAccept = 0x47,
 		//! クエストアンパンキルパケット
-		QuestAnpanKill = 0x46,
+		QuestAnpanKill = 0x48,
 		//! クエストステージ進行パケット
-		QuestStageChange = 0x47,
+		QuestStageChange = 0x49,
 		//! クエストクリアパケット
-		QuestClear = 0x48,
+		QuestClear = 0x4A,
 		//! クエスト破棄リクエストパケット
-		QuestRetireRequest = 0x49,
+		QuestRetireRequest = 0x4B,
 		//! クエスト破棄レスポンスパケット
-		QuestRetireResponse = 0x4A,
+		QuestRetireResponse = 0x4C,
 		//! アクティブクエスト保存パケット
-		SaveActiveQuest = 0x4B,
+		SaveActiveQuest = 0x4D,
 		//! スクリプトフラグパケット
-		ScriptFlag = 0x4C,
+		ScriptFlag = 0x4E,
 		//! アイテム購入要求パケット
-		BuyItemRequest = 0x4D,
+		BuyItemRequest = 0x4F,
 		//! アイテム購入結果パケット
-		BuyItemResult = 0x4E,
+		BuyItemResult = 0x50,
 		//! アイテム売却要求パケット
-		SellItemRequest = 0x4F,
+		SellItemRequest = 0x51,
 		//! アイテム売却結果パケット
-		SellItemResult = 0x50,
+		SellItemResult = 0x52,
 		//! ショップ終了パケット
-		ExitShop = 0x51,
+		ExitShop = 0x53,
 		//! スキル使用パケット
-		SkillUse = 0x52,
+		SkillUse = 0x54,
 		//! スキル使用失敗パケット
-		SkillUseFailed = 0x53,
+		SkillUseFailed = 0x55,
 		//! スキル詠唱開始パケット
-		SkillCast = 0x54,
+		SkillCast = 0x56,
 		//! スキル詠唱完了パケット
-		SkillCastFinish = 0x55,
+		SkillCastFinish = 0x57,
 		//! スキル発動パケット
-		SkillActivate = 0x56,
+		SkillActivate = 0x58,
 		//! リキャスト完了パケット
-		SkillRecast = 0x57,
+		SkillRecast = 0x59,
 		//! スキルリストパケット
-		SkillList = 0x58,
+		SkillList = 0x5A,
 		//! スキルリスト保存リクエストパケット
-		SaveSkillListRequest = 0x59,
+		SaveSkillListRequest = 0x5B,
 		//! スキルリスト保存レスポンスパケット
-		SaveSkillListResponse = 0x5A,
+		SaveSkillListResponse = 0x5C,
 		//! スキルツリーデータパケット
-		SkillTreeData = 0x5B,
+		SkillTreeData = 0x5D,
 		//! スキルツリー開放要求パケット
-		SkillTreeOpenRequest = 0x5C,
+		SkillTreeOpenRequest = 0x5E,
 		//! スキルツリー開放結果パケット
-		SkillTreeOpenResult = 0x5D,
+		SkillTreeOpenResult = 0x5F,
 		//! ログイン時の時間通知パケット
-		Time = 0x5E,
+		Time = 0x60,
 		//! 時間変化通知パケット
-		TimeChange = 0x5F,
+		TimeChange = 0x61,
 		
 	};
 };

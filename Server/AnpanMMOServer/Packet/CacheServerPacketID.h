@@ -89,6 +89,8 @@ public:
 		CacheMailListRequest = 0x60,
 		//! メールリストレスポンスパケット
 		CacheMailListResponse = 0x61,
+		//! メールフラグ切り替えパケット
+		CacheChangeMailFlag = 0x62,
 		
 	};
 };
