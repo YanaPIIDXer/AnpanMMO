@@ -34,6 +34,8 @@
 #include "Packet/CachePacketSaveActiveQuestRequest.h"
 #include "Packet/CachePacketSaveEquipRequest.h"
 #include "Packet/CachePacketSaveEquipResponse.h"
+#include "Packet/CachePacketMailListRequest.h"
+#include "Packet/CachePacketMailListResponse.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -59,6 +61,7 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CachePacketID::CacheQuestRetireRequest, bind(&PacketReceiver::OnRecvRetireQuestDataRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheSaveActiveQuestRequest, bind(&PacketReceiver::OnRecvSaveActiveQuestRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheSaveEquipRequest, bind(&PacketReceiver::OnRecvSaveEquipRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheMailListRequest, bind(&PacketReceiver::OnRecvMailListRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -443,6 +446,21 @@ bool PacketReceiver::OnRecvSaveEquipRequest(MemoryStreamInterface *pStream)
 	}
 
 	CachePacketSaveEquipResponse ResponsePacket(Packet.ClientId, Result, Packet.RightEquip, Packet.LeftEquip);
+	pParent->SendPacket(&ResponsePacket);
+
+	return true;
+}
+
+// メールリストリクエストを受信した。
+bool PacketReceiver::OnRecvMailListRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketMailListRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	CachePacketMailListResponse ResponsePacket;
+	ResponsePacket.ClientId = Packet.ClientId;
+
+	DBConnection::GetInstance().LoadMailList(Packet.CustomerId, ResponsePacket.List);
 	pParent->SendPacket(&ResponsePacket);
 
 	return true;

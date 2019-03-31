@@ -6,6 +6,7 @@
 #include "Packet/CharacterJob.h"
 #include "Packet/ItemData.h"
 #include "Packet/QuestData.h"
+#include "Packet/MailData.h"
 
 const std::string DBConnection::UserDataFileName = "DBUserData.txt";
 const char *DBConnection::DBHost = "127.0.0.1";
@@ -552,6 +553,33 @@ bool DBConnection::SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip)
 	if (!Query.ExecuteQuery()) { return false; }
 
 	return true;
+}
+
+// メールリストの読み込み
+void DBConnection::LoadMailList(u32 CustomerId, FlexArray<MailData> &OutList)
+{
+	MySqlQuery Query = Connection.CreateQuery("select Id, Subject, Body, AttachmentType, AttachmentId, AttachmentCount, Flag from Mail where CustomerId = ?;");
+
+	Query.BindInt(&CustomerId);
+
+	MailData Data;
+	char Subject[128];
+	char Body[1024];
+	Query.BindResultInt(&Data.Id);
+	Query.BindResultString(Subject);
+	Query.BindResultString(Body);
+	Query.BindResultChar(&Data.AttachmentType);
+	Query.BindResultInt(&Data.AttachmentId);
+	Query.BindResultInt(&Data.AttachmentCount);
+	Query.BindResultChar(&Data.Flag);
+
+	if (Query.ExecuteQuery()) { return; }
+	while (Query.Fetch())
+	{
+		Data.Subject = Subject;
+		Data.Body = Body;
+		OutList.PushBack(Data);
+	}
 }
 
 // 古いメールを削除.

@@ -77,6 +77,10 @@
 #include "Packet/PacketSellItemRequest.h"
 #include "Packet/PacketSellItemResult.h"
 #include "Packet/PacketExitShop.h"
+#include "Packet/PacketMailListRequest.h"
+#include "Packet/CachePacketMailListRequest.h"
+#include "Packet/CachePacketMailListResponse.h"
+#include "Packet/PacketMailList.h"
 
 // コンストラクタ
 ClientStateActive::ClientStateActive(Client *pInParent)
@@ -112,6 +116,8 @@ ClientStateActive::ClientStateActive(Client *pInParent)
 	AddPacketFunction(PacketID::BuyItemRequest, boost::bind(&ClientStateActive::OnRecvBuyItemRequest, this, _2));
 	AddPacketFunction(PacketID::SellItemRequest, boost::bind(&ClientStateActive::OnRecvSellItemRequest, this, _2));
 	AddPacketFunction(PacketID::ExitShop, boost::bind(&ClientStateActive::OnRecvExitShop, this, _2));
+	AddPacketFunction(PacketID::MailListRequest, boost::bind(&ClientStateActive::OnRecvMailListRequest, this, _2));
+	AddPacketFunction(CachePacketID::CacheMailListResponse, boost::bind(&ClientStateActive::OnRecvCacheMailList, this, _2));
 }
 
 // State開始時の処理.
@@ -789,5 +795,33 @@ bool ClientStateActive::OnRecvExitShop(MemoryStreamInterface *pStream)
 
 	GetParent()->ExitShop();
 
+	return true;
+}
+
+// メールリストリクエストを受信した。
+bool ClientStateActive::OnRecvMailListRequest(MemoryStreamInterface *pStream)
+{
+	PacketMailListRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	CachePacketMailListRequest RequestPacket(GetParent()->GetUuid(), GetParent()->GetCustomerId());
+	CacheServerConnection::GetInstance()->SendPacket(&RequestPacket);
+
+	return true;
+}
+
+// キャッシュサーバからメールリストを受信した。
+bool ClientStateActive::OnRecvCacheMailList(MemoryStreamInterface *pStream)
+{
+	CachePacketMailListResponse Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	PacketMailList ListPacket;
+	for (int i = 0; i < Packet.List.GetCurrentSize(); i++)
+	{
+		ListPacket.List.PushBack(Packet.List[i]);
+	}
+
+	GetParent()->SendPacket(&ListPacket);
 	return true;
 }

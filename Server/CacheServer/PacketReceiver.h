@@ -101,6 +101,9 @@ private:
 	// 装備データ保存リクエストを受信した。
 	bool OnRecvSaveEquipRequest(MemoryStreamInterface *pStream);
 
+	// メールリストリクエストを受信した。
+	bool OnRecvMailListRequest(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #ifndef __PACKETRECEIVER_H__

@@ -6,6 +6,7 @@
 
 class ItemData;
 class QuestData;
+class MailData;
 
 /**
  * DB接続クラス
@@ -86,6 +87,9 @@ public:
 
 	// 装備データ保存.
 	bool SaveEquipData(u32 CharacterId, u32 RightEquip, u32 LeftEquip);
+
+	// メールリストの読み込み
+	void LoadMailList(u32 CustomerId, FlexArray<MailData> &OutList);
 
 	// 古いメールを削除.
 	void RemoveOldMails(u32 CustomerId);

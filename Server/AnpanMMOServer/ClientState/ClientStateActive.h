@@ -126,6 +126,12 @@ private:
 	// ショップ終了を受信した。
 	bool OnRecvExitShop(MemoryStreamInterface *pStream);
 
+	// メールリストリクエストを受信した。
+	bool OnRecvMailListRequest(MemoryStreamInterface *pStream);
+
+	// キャッシュサーバからメールリストを受信した。
+	bool OnRecvCacheMailList(MemoryStreamInterface *pStream);
+
 };
 
 #endif		// #Ifndef __CLIENTSTATEACTIVE_H__
