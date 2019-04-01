@@ -1,7 +1,6 @@
 <map id="PartyInformation.h" name="PartyInformation.h">
-<area shape="rect" id="node3" href="$PartyMemberData_8h.html" title="Packet/PartyMemberData.h" alt="" coords="145,80,327,107"/>
-<area shape="rect" id="node4" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="5,162,109,189"/>
-<area shape="rect" id="node6" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="134,155,338,196"/>
-<area shape="rect" id="node8" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="362,162,449,189"/>
-<area shape="rect" id="node5" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="55,244,142,271"/>
+<area shape="rect" id="node3" href="$PartyMemberData_8h.html" title="パーティメンバ情報パケット " alt="" coords="135,80,317,107"/>
+<area shape="rect" id="node4" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="85,162,189,189"/>
+<area shape="rect" id="node6" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="213,155,417,196"/>
+<area shape="rect" id="node5" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="135,244,221,271"/>
 </map>

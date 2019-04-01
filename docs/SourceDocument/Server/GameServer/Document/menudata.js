@@ -114,8 +114,10 @@ var menudata={children:[
 {text:"z",url:"functions_vars_z.html#index_z"}]},
 {text:"型定義",url:"functions_type.html"},
 {text:"列挙型",url:"functions_enum.html",children:[
+{text:"a",url:"functions_enum.html#index_a"},
 {text:"c",url:"functions_enum.html#index_c"},
 {text:"e",url:"functions_enum.html#index_e"},
+{text:"m",url:"functions_enum.html#index_m"},
 {text:"n",url:"functions_enum.html#index_n"},
 {text:"p",url:"functions_enum.html#index_p"},
 {text:"r",url:"functions_enum.html#index_r"},

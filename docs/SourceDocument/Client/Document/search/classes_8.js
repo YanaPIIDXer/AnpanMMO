@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['maildata',['MailData',['../classMailData.html',1,'']]],
   ['masterdata',['MasterData',['../classMasterData.html',1,'']]],
   ['memorysizecaliculatestream',['MemorySizeCaliculateStream',['../classMemorySizeCaliculateStream.html',1,'']]],
   ['memorystreaminterface',['MemoryStreamInterface',['../classMemoryStreamInterface.html',1,'']]],

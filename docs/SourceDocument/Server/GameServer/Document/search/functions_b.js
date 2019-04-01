@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['maildata',['MailData',['../classMailData.html#a8e4ef10e1782ddfe113fe1d04001a968',1,'MailData::MailData()'],['../classMailData.html#a7e558e15074f545d2955775fa9cd3fa6',1,'MailData::MailData(u32 InId, std::string InSubject, std::string InBody, u8 InAttachmentType, u32 InAttachmentId, u32 InAttachmentCount, u8 InFlag)']]],
   ['main',['main',['../Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Main.cpp']]],
   ['makelistpacket',['MakeListPacket',['../classAnpanManager.html#a115c65334829f3cdf192cad3c2b5495a',1,'AnpanManager']]],
   ['memorybuffer',['MemoryBuffer',['../classMemoryBuffer.html#a3e9dfe1a38ce4c7d7255b0e7a8336f0a',1,'MemoryBuffer']]],

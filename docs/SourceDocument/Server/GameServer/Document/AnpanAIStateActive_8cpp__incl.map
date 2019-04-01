@@ -21,7 +21,7 @@
 <area shape="rect" id="node22" href="$SkillControl_8h.html" title="Skill/SkillControl.h" alt="" coords="1983,251,2111,278"/>
 <area shape="rect" id="node23" href="$SkillRecastManager_8h.html" title="Skill/SkillRecastManager.h" alt="" coords="1415,251,1594,278"/>
 <area shape="rect" id="node25" href="$BuffManager_8h.html" title="バフ管理クラス " alt="" coords="1669,251,1799,278"/>
-<area shape="rect" id="node27" href="$CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="1538,162,1701,189"/>
+<area shape="rect" id="node27" href="$CharacterType_8h.html" title="キャラクタータイプパケット " alt="" coords="1538,162,1701,189"/>
 <area shape="rect" id="node30" href="$AreaMaster_8h.html" title="AreaMaster.h" alt="" coords="2520,162,2620,189"/>
 <area shape="rect" id="node31" href="$WarpDataMaster_8h.html" title="WarpDataMaster.h" alt="" coords="2645,162,2775,189"/>
 <area shape="rect" id="node32" href="$AnpanMaster_8h.html" title="AnpanMaster.h" alt="" coords="2800,162,2911,189"/>

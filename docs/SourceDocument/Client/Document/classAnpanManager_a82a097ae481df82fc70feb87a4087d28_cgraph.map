@@ -1,5 +1,5 @@
 <map id="AnpanManager::OnRecvSpawn" name="AnpanManager::OnRecvSpawn">
 <area shape="rect" id="node2" href="$classPacketSpawnAnpan.html#a3db625116386b24b8cb272e535035019" title="シリアライズ " alt="" coords="255,13,452,39"/>
-<area shape="rect" id="node3" href="$classAnpanData.html#ad8c2775e752949cc2aa8f82a38040c0f" title="AnpanData::Serialize" alt="" coords="500,13,644,39"/>
+<area shape="rect" id="node3" href="$classAnpanData.html#ad8c2775e752949cc2aa8f82a38040c0f" title="シリアライズ " alt="" coords="500,13,644,39"/>
 <area shape="rect" id="node4" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="692,5,852,47"/>
 </map>

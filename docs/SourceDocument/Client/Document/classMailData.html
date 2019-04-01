@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: MailData クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="classMailData-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">MailData クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>メールデータパケット  
+ <a href="classMailData.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="MailData_8h_source.html">MailData.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:abdbb9e869b9906e43f3ed10c6d4e3a78"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78">AttachmentKind</a> { <a class="el" href="classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78a90a4cb1accbf37ed3004afe65995a84c">None</a>, 
+<a class="el" href="classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78a9d6de86277296e42d994431e7b0185e2">Item</a>, 
+<a class="el" href="classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78ab9850761a169d6daa87be23423b52293">Gold</a>
+ }</td></tr>
+<tr class="separator:abdbb9e869b9906e43f3ed10c6d4e3a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e36baee0c3ffad119f8eff996df7ac3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a4e36baee0c3ffad119f8eff996df7ac3">MailFlag</a> { <a class="el" href="classMailData.html#a4e36baee0c3ffad119f8eff996df7ac3af00ff67e96008c12d469665a5fe482fa">NotRead</a>, 
+<a class="el" href="classMailData.html#a4e36baee0c3ffad119f8eff996df7ac3ac58590bc855214b1814b08f94500c8e3">Read</a>, 
+<a class="el" href="classMailData.html#a4e36baee0c3ffad119f8eff996df7ac3a07f1223862da5a34c65a553100deeb2d">RecvAttachment</a>
+ }</td></tr>
+<tr class="separator:a4e36baee0c3ffad119f8eff996df7ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a8e4ef10e1782ddfe113fe1d04001a968"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a8e4ef10e1782ddfe113fe1d04001a968">MailData</a> ()</td></tr>
+<tr class="memdesc:a8e4ef10e1782ddfe113fe1d04001a968"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a8e4ef10e1782ddfe113fe1d04001a968">[詳解]</a><br /></td></tr>
+<tr class="separator:a8e4ef10e1782ddfe113fe1d04001a968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e558e15074f545d2955775fa9cd3fa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a7e558e15074f545d2955775fa9cd3fa6">MailData</a> (<a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InId, std::string InSubject, std::string InBody, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InAttachmentType, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InAttachmentId, <a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> InAttachmentCount, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> InFlag)</td></tr>
+<tr class="memdesc:a7e558e15074f545d2955775fa9cd3fa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a7e558e15074f545d2955775fa9cd3fa6">[詳解]</a><br /></td></tr>
+<tr class="separator:a7e558e15074f545d2955775fa9cd3fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c9032db23d42b7c2b5c6b01161a26f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a78c9032db23d42b7c2b5c6b01161a26f">Serialize</a> (<a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *pStream)</td></tr>
+<tr class="memdesc:a78c9032db23d42b7c2b5c6b01161a26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">シリアライズ  <a href="#a78c9032db23d42b7c2b5c6b01161a26f">[詳解]</a><br /></td></tr>
+<tr class="separator:a78c9032db23d42b7c2b5c6b01161a26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a5ba78767e3d71247a029f5166dc515d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a5ba78767e3d71247a029f5166dc515d3">Id</a></td></tr>
+<tr class="memdesc:a5ba78767e3d71247a029f5166dc515d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ＩＤ  <a href="#a5ba78767e3d71247a029f5166dc515d3">[詳解]</a><br /></td></tr>
+<tr class="separator:a5ba78767e3d71247a029f5166dc515d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8805800791b29c216f807ce33c861de7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a8805800791b29c216f807ce33c861de7">Subject</a></td></tr>
+<tr class="memdesc:a8805800791b29c216f807ce33c861de7"><td class="mdescLeft">&#160;</td><td class="mdescRight">件名  <a href="#a8805800791b29c216f807ce33c861de7">[詳解]</a><br /></td></tr>
+<tr class="separator:a8805800791b29c216f807ce33c861de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a11d099ab5d8083a3efef3aca8ac9b1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a2a11d099ab5d8083a3efef3aca8ac9b1">Body</a></td></tr>
+<tr class="memdesc:a2a11d099ab5d8083a3efef3aca8ac9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">本文  <a href="#a2a11d099ab5d8083a3efef3aca8ac9b1">[詳解]</a><br /></td></tr>
+<tr class="separator:a2a11d099ab5d8083a3efef3aca8ac9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402d6cec17bd0f7bbd03469c9749879a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a402d6cec17bd0f7bbd03469c9749879a">AttachmentType</a></td></tr>
+<tr class="memdesc:a402d6cec17bd0f7bbd03469c9749879a"><td class="mdescLeft">&#160;</td><td class="mdescRight">添付物タイプ  <a href="#a402d6cec17bd0f7bbd03469c9749879a">[詳解]</a><br /></td></tr>
+<tr class="separator:a402d6cec17bd0f7bbd03469c9749879a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a112eabd19acf8dbf8626c56fb36b7f5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a112eabd19acf8dbf8626c56fb36b7f5d">AttachmentId</a></td></tr>
+<tr class="memdesc:a112eabd19acf8dbf8626c56fb36b7f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">添付物ＩＤ  <a href="#a112eabd19acf8dbf8626c56fb36b7f5d">[詳解]</a><br /></td></tr>
+<tr class="separator:a112eabd19acf8dbf8626c56fb36b7f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ec639905e710fbadd0475371c101aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a08ec639905e710fbadd0475371c101aa">AttachmentCount</a></td></tr>
+<tr class="memdesc:a08ec639905e710fbadd0475371c101aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">添付物数  <a href="#a08ec639905e710fbadd0475371c101aa">[詳解]</a><br /></td></tr>
+<tr class="separator:a08ec639905e710fbadd0475371c101aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8bb57c708791d433efb25faa7879d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailData.html#a5d8bb57c708791d433efb25faa7879d2">Flag</a></td></tr>
+<tr class="memdesc:a5d8bb57c708791d433efb25faa7879d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラグ  <a href="#a5d8bb57c708791d433efb25faa7879d2">[詳解]</a><br /></td></tr>
+<tr class="separator:a5d8bb57c708791d433efb25faa7879d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>メールデータパケット </p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="abdbb9e869b9906e43f3ed10c6d4e3a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdbb9e869b9906e43f3ed10c6d4e3a78">&#9670;&nbsp;</a></span>AttachmentKind</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78">MailData::AttachmentKind</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="abdbb9e869b9906e43f3ed10c6d4e3a78a90a4cb1accbf37ed3004afe65995a84c"></a>None&#160;</td><td class="fielddoc"><p>無し </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abdbb9e869b9906e43f3ed10c6d4e3a78a9d6de86277296e42d994431e7b0185e2"></a>Item&#160;</td><td class="fielddoc"><p>アイテム </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abdbb9e869b9906e43f3ed10c6d4e3a78ab9850761a169d6daa87be23423b52293"></a>Gold&#160;</td><td class="fielddoc"><p>ゴールド </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a4e36baee0c3ffad119f8eff996df7ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e36baee0c3ffad119f8eff996df7ac3">&#9670;&nbsp;</a></span>MailFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classMailData.html#a4e36baee0c3ffad119f8eff996df7ac3">MailData::MailFlag</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a4e36baee0c3ffad119f8eff996df7ac3af00ff67e96008c12d469665a5fe482fa"></a>NotRead&#160;</td><td class="fielddoc"><p>未読 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4e36baee0c3ffad119f8eff996df7ac3ac58590bc855214b1814b08f94500c8e3"></a>Read&#160;</td><td class="fielddoc"><p>既読 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4e36baee0c3ffad119f8eff996df7ac3a07f1223862da5a34c65a553100deeb2d"></a>RecvAttachment&#160;</td><td class="fielddoc"><p>添付物受注済み </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a8e4ef10e1782ddfe113fe1d04001a968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e4ef10e1782ddfe113fe1d04001a968">&#9670;&nbsp;</a></span>MailData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MailData::MailData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<a id="a7e558e15074f545d2955775fa9cd3fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e558e15074f545d2955775fa9cd3fa6">&#9670;&nbsp;</a></span>MailData() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MailData::MailData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>InSubject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>InBody</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>InAttachmentType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InAttachmentId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a>&#160;</td>
+          <td class="paramname"><em>InAttachmentCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramname"><em>InFlag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a78c9032db23d42b7c2b5c6b01161a26f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c9032db23d42b7c2b5c6b01161a26f">&#9670;&nbsp;</a></span>Serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MailData::Serialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMemoryStreamInterface.html">MemoryStreamInterface</a> *&#160;</td>
+          <td class="paramname"><em>pStream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>シリアライズ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pStream</td><td>ストリーム </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>成功したらtrueを返す。 </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMailData_a78c9032db23d42b7c2b5c6b01161a26f_cgraph.png" border="0" usemap="#classMailData_a78c9032db23d42b7c2b5c6b01161a26f_cgraph" alt=""/></div>
+<map name="classMailData_a78c9032db23d42b7c2b5c6b01161a26f_cgraph" id="classMailData_a78c9032db23d42b7c2b5c6b01161a26f_cgraph">
+<area shape="rect" id="node2" href="classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="184,5,344,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a08ec639905e710fbadd0475371c101aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08ec639905e710fbadd0475371c101aa">&#9670;&nbsp;</a></span>AttachmentCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> MailData::AttachmentCount</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添付物数 </p>
+
+</div>
+</div>
+<a id="a112eabd19acf8dbf8626c56fb36b7f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a112eabd19acf8dbf8626c56fb36b7f5d">&#9670;&nbsp;</a></span>AttachmentId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> MailData::AttachmentId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添付物ＩＤ </p>
+
+</div>
+</div>
+<a id="a402d6cec17bd0f7bbd03469c9749879a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402d6cec17bd0f7bbd03469c9749879a">&#9670;&nbsp;</a></span>AttachmentType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> MailData::AttachmentType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>添付物タイプ </p>
+
+</div>
+</div>
+<a id="a2a11d099ab5d8083a3efef3aca8ac9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a11d099ab5d8083a3efef3aca8ac9b1">&#9670;&nbsp;</a></span>Body</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string MailData::Body</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>本文 </p>
+
+</div>
+</div>
+<a id="a5d8bb57c708791d433efb25faa7879d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d8bb57c708791d433efb25faa7879d2">&#9670;&nbsp;</a></span>Flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> MailData::Flag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>フラグ </p>
+
+</div>
+</div>
+<a id="a5ba78767e3d71247a029f5166dc515d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ba78767e3d71247a029f5166dc515d3">&#9670;&nbsp;</a></span>Id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeDefs_8h.html#a10e94b422ef0c20dcdec20d31a1f5049">u32</a> MailData::Id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ＩＤ </p>
+
+</div>
+</div>
+<a id="a8805800791b29c216f807ce33c861de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8805800791b29c216f807ce33c861de7">&#9670;&nbsp;</a></span>Subject</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string MailData::Subject</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>件名 </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="MailData_8h_source.html">MailData.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

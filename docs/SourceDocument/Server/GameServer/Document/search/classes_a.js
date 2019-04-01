@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['maildata',['MailData',['../classMailData.html',1,'']]],
   ['masterdata',['MasterData',['../classMasterData.html',1,'']]],
   ['mathutil',['MathUtil',['../classMathUtil.html',1,'']]],
   ['memorybuffer',['MemoryBuffer',['../classMemoryBuffer.html',1,'']]],

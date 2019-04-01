@@ -8,6 +8,7 @@ var searchData=
   ['bitfield2',['BitField2',['../classCachePacketScriptFlagResponse.html#a1008dff716acca2ad7b57ab157195f9d',1,'CachePacketScriptFlagResponse::BitField2()'],['../classCachePacketScriptFlagSaveRequest.html#a5f1fed91e9bf2368be1532eeaf6456b2',1,'CachePacketScriptFlagSaveRequest::BitField2()'],['../classPacketScriptFlag.html#a2ab586e0f9c57fde699af325088b7682',1,'PacketScriptFlag::BitField2()']]],
   ['bitfield3',['BitField3',['../classCachePacketScriptFlagResponse.html#a0381f846533fe93446a1ea1e9802902b',1,'CachePacketScriptFlagResponse::BitField3()'],['../classCachePacketScriptFlagSaveRequest.html#a6f90ed24265a9cb1d82b3cff65aad134',1,'CachePacketScriptFlagSaveRequest::BitField3()'],['../classPacketScriptFlag.html#a62cefd8062164e46b2102f060508022b',1,'PacketScriptFlag::BitField3()']]],
   ['black',['Black',['../structColor24.html#a7b2d4e24d56d431d9871df5a9c71c32e',1,'Color24']]],
+  ['body',['Body',['../classMailData.html#a2a11d099ab5d8083a3efef3aca8ac9b1',1,'MailData']]],
   ['bonusint',['BonusInt',['../structSkillItem.html#a605b23d27d6ca68ba332c7a22de97e2b',1,'SkillItem']]],
   ['bonusmnd',['BonusMnd',['../structSkillItem.html#aac31dd83107d9203d8ed70ce84a2d5f1',1,'SkillItem']]],
   ['bonusstr',['BonusStr',['../structSkillItem.html#a1a8671ce460998472526d7283c9356ff',1,'SkillItem']]],
