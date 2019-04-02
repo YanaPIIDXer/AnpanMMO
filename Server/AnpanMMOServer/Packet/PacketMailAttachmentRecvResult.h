@@ -37,6 +37,8 @@ public:
 		Error,
 	};
 
+	//! ＩＤ
+	u32 Id;
 	//! リザルトコード
 	u8 Result;
 	
@@ -51,8 +53,9 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	PacketMailAttachmentRecvResult(u8 InResult)
+	PacketMailAttachmentRecvResult(u32 InId, u8 InResult)
 	{
+		Id = InId;
 		Result = InResult;
 		
 	}
@@ -66,6 +69,7 @@ public:
 	 */
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
+		pStream->Serialize(&Id);
 		pStream->Serialize(&Result);
 		
 		return true;

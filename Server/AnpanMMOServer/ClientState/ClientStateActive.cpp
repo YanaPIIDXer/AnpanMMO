@@ -874,7 +874,7 @@ bool ClientStateActive::OnRecvCacheMailAttachmentRecvResult(MemoryStreamInterfac
 			case MailData::Item:
 
 				// ƒAƒCƒeƒ€
-				GetParent()->GetCharacter().lock()->AddItem(Packet.Id, Packet.Count);
+				GetParent()->GetCharacter().lock()->AddItem(Packet.AttachmentId, Packet.Count);
 				break;
 
 			case MailData::Gold:
@@ -901,7 +901,7 @@ bool ClientStateActive::OnRecvCacheMailAttachmentRecvResult(MemoryStreamInterfac
 		}
 	}
 
-	PacketMailAttachmentRecvResult ResultPacket(Result);
+	PacketMailAttachmentRecvResult ResultPacket(Packet.MailId, Result);
 	GetParent()->SendPacket(&ResultPacket);
 	return true;
 }

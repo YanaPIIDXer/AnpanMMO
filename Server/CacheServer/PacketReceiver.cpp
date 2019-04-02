@@ -513,7 +513,7 @@ bool PacketReceiver::OnRecvMailAttachmentRecvRequest(MemoryStreamInterface *pStr
 		}
 	}
 
-	CachePacketMailAttachmentRecvResult ResultPacket(Packet.ClientId, Result, Data.AttachmentType, Data.AttachmentId, Data.AttachmentCount);
+	CachePacketMailAttachmentRecvResult ResultPacket(Packet.ClientId, Packet.Id, Result, Data.AttachmentType, Data.AttachmentId, Data.AttachmentCount);
 	pParent->SendPacket(&ResultPacket);
 
 	return true;

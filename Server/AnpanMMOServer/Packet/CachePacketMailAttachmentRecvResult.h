@@ -38,12 +38,14 @@ public:
 		Error,
 	};
 
+	//! ƒ[ƒ‹‚h‚c
+	u32 MailId;
 	//! Œ‹‰ÊƒR[ƒh
 	u8 Result;
 	//! í—Ş
 	u8 Type;
-	//! ‚h‚c
-	u32 Id;
+	//! “Y•t•¨‚h‚c
+	u32 AttachmentId;
 	//! ”—Ê
 	u32 Count;
 	
@@ -58,12 +60,13 @@ public:
 	/**
 	 * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 	 */
-	CachePacketMailAttachmentRecvResult(u32 InClientId, u8 InResult, u8 InType, u32 InId, u32 InCount)
+	CachePacketMailAttachmentRecvResult(u32 InClientId, u32 InMailId, u8 InResult, u8 InType, u32 InAttachmentId, u32 InCount)
 	{
 		ClientId = InClientId;
+		MailId = InMailId;
 		Result = InResult;
 		Type = InType;
-		Id = InId;
+		AttachmentId = InAttachmentId;
 		Count = InCount;
 		
 	}
@@ -78,9 +81,10 @@ public:
 	bool Serialize(MemoryStreamInterface *pStream)
 	{
 		ProcessPacketBase::Serialize(pStream);
+		pStream->Serialize(&MailId);
 		pStream->Serialize(&Result);
 		pStream->Serialize(&Type);
-		pStream->Serialize(&Id);
+		pStream->Serialize(&AttachmentId);
 		pStream->Serialize(&Count);
 		
 		return true;
