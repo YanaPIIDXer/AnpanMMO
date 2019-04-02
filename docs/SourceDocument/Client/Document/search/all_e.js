@@ -69,6 +69,7 @@ var searchData=
   ['onrecvkickmember',['OnRecvKickMember',['../classPartyInformation.html#a10c01327b3a1aed7035dc91ceb1f395c',1,'PartyInformation']]],
   ['onrecvlevelup',['OnRecvLevelUp',['../classAGameCharacter.html#adfd3d924afb9ea2d3cf25d31531ba783',1,'AGameCharacter']]],
   ['onrecvlist',['OnRecvList',['../classAnpanManager.html#ac5f3b6bc24f8ee8be2d75858c10fe853',1,'AnpanManager::OnRecvList()'],['../classPlayerManager.html#a48e3646769723470ae8780e11916bd4b',1,'PlayerManager::OnRecvList()']]],
+  ['onrecvmaillist',['OnRecvMailList',['../classMailManager.html#a18ec1f33d02af1219d636d945c68ad72',1,'MailManager::OnRecvMailList()'],['../classUMMOGameInstance.html#ae4676b5f599c747bb613081324d40b46',1,'UMMOGameInstance::OnRecvMailList()']]],
   ['onrecvmapchangefinished',['OnRecvMapChangeFinished',['../classUMainHUD.html#a6ed3c5d275497dca4fa31851930bca35',1,'UMainHUD']]],
   ['onrecvmapchangefinished_5fimplementation',['OnRecvMapChangeFinished_Implementation',['../classUMainHUD.html#acab318602b21baabed4a11f713efee55',1,'UMainHUD']]],
   ['onrecvmove',['OnRecvMove',['../classAnpanManager.html#aa9ffdc129adb045ec91509d17cc99914',1,'AnpanManager::OnRecvMove()'],['../classPlayerManager.html#ad32813974c7433a3791a696efcdf85fa',1,'PlayerManager::OnRecvMove()']]],
