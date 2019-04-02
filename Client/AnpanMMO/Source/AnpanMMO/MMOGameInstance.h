@@ -8,6 +8,7 @@
 #include "Character/Player/PlayerStatus.h"
 #include "Script/ScriptExecuter.h"
 #include "Quest/QuestManager.h"
+#include "Mail/MailManager.h"
 #include "FlexArray.h"
 #include "MMOGameInstance.generated.h"
 
@@ -106,6 +107,15 @@ public:
 	// アクティブクエストが更新された時のdelegate取得.
 	FOnActiveQuestUpdated &OnActiveQuestUpdated() { return QuestMgr.OnActiveQuestUpdated; }
 
+	// メール管理取得.
+	const MailManager &GetMailManager() const { return MailMgr; }
+
+	// メールリストを受信した。
+	void OnRecvMailList(const FlexArray<MailData> &List);
+
+	// メールのフラグ変更。
+	void ChangeMailFlag(uint32 Id, uint8 Flag);
+
 
 	// パケット受信delegate
 	FOnRecvPacketDelegate OnRecvPacketDelegate;
@@ -126,6 +136,9 @@ private:
 
 	// クエスト管理.
 	QuestManager QuestMgr;
+
+	// メール管理.
+	MailManager MailMgr;
 
 
 	// パケットを受信した。

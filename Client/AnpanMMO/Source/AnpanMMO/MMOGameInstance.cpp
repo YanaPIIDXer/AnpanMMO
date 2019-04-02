@@ -141,6 +141,18 @@ void UMMOGameInstance::RetireQuest(uint32 QuestId)
 	QuestMgr.Retire(QuestId);
 }
 
+// メールリストを受信した。
+void UMMOGameInstance::OnRecvMailList(const FlexArray<MailData> &List)
+{
+	MailMgr.OnRecvMailList(List);
+}
+
+// メールのフラグ変更。
+void UMMOGameInstance::ChangeMailFlag(uint32 Id, uint8 Flag)
+{
+	MailMgr.ChangeFlag(Id, Flag);
+}
+
 
 // パケットを受信した。
 void UMMOGameInstance::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
