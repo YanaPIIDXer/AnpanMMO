@@ -31,6 +31,7 @@ var searchData=
   ['bitmapfileheader',['BitmapFileHeader',['../structBitmapFileHeader.html',1,'']]],
   ['bitmapinfodata',['BitmapInfoData',['../structBitmapInfoData.html',1,'']]],
   ['black',['Black',['../structColor24.html#a7b2d4e24d56d431d9871df5a9c71c32e',1,'Color24']]],
+  ['body',['Body',['../classMailData.html#a2a11d099ab5d8083a3efef3aca8ac9b1',1,'MailData']]],
   ['bonusint',['BonusInt',['../structSkillItem.html#a605b23d27d6ca68ba332c7a22de97e2b',1,'SkillItem']]],
   ['bonusmnd',['BonusMnd',['../structSkillItem.html#aac31dd83107d9203d8ed70ce84a2d5f1',1,'SkillItem']]],
   ['bonusstr',['BonusStr',['../structSkillItem.html#a1a8671ce460998472526d7283c9356ff',1,'SkillItem']]],

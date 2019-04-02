@@ -1,0 +1,8 @@
+<map id="PacketMailList.h" name="PacketMailList.h">
+<area shape="rect" id="node2" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="5,162,109,189"/>
+<area shape="rect" id="node4" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="134,155,338,196"/>
+<area shape="rect" id="node6" href="$FlexArray_8h.html" title="FlexArray.h" alt="" coords="255,80,345,107"/>
+<area shape="rect" id="node7" href="$MailData_8h.html" title="メールデータパケット " alt="" coords="95,80,179,107"/>
+<area shape="rect" id="node8" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="369,80,455,107"/>
+<area shape="rect" id="node3" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="57,244,143,271"/>
+</map>

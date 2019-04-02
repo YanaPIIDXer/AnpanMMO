@@ -2,7 +2,7 @@
 <area shape="rect" id="node2" href="$CharacterBase_8h.html" title="キャラクタ基底クラス " alt="" coords="675,80,853,107"/>
 <area shape="rect" id="node13" href="$WeakPtrDefine_8h.html" title="WeakPtrDefine.h" alt="" coords="1044,326,1164,353"/>
 <area shape="rect" id="node23" href="$AnpanAI_8h.html" title="アンパンＡＩクラス " alt="" coords="1312,80,1411,107"/>
-<area shape="rect" id="node34" href="$CharacterType_8h.html" title="Packet/CharacterType.h" alt="" coords="2043,237,2205,263"/>
+<area shape="rect" id="node34" href="$CharacterType_8h.html" title="キャラクタータイプパケット " alt="" coords="2043,237,2205,263"/>
 <area shape="rect" id="node4" href="$CharacterParameter_8h.html" title="キャラクタパラメータ " alt="" coords="5,155,155,181"/>
 <area shape="rect" id="node6" href="$Vector3D_8h.html" title="Math/Vector3D.h" alt="" coords="1276,326,1396,353"/>
 <area shape="rect" id="node9" href="$Rotation_8h.html" title="Math/Rotation.h" alt="" coords="1373,237,1488,263"/>
@@ -20,8 +20,8 @@
 <area shape="rect" id="node32" href="$Hate_8h.html" title="ヘイト管理クラス " alt="" coords="1187,155,1247,181"/>
 <area shape="rect" id="node25" href="$PacketMoveAnpan_8h.html" title="アンパン移動パケット " alt="" coords="1832,237,2019,263"/>
 <area shape="rect" id="node31" href="$PacketRotateAnpan_8h.html" title="アンパン回転パケット " alt="" coords="1613,237,1808,263"/>
-<area shape="rect" id="node26" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="1873,326,1977,353"/>
-<area shape="rect" id="node28" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="1645,319,1849,360"/>
-<area shape="rect" id="node30" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="2002,326,2089,353"/>
-<area shape="rect" id="node27" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="1839,408,1926,435"/>
+<area shape="rect" id="node26" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="1849,326,1953,353"/>
+<area shape="rect" id="node28" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="1978,319,2182,360"/>
+<area shape="rect" id="node30" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="1691,326,1778,353"/>
+<area shape="rect" id="node27" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="1899,408,1986,435"/>
 </map>

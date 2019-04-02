@@ -1,6 +1,14 @@
 var searchData=
 [
   ['magic',['MAGIC',['../structSkillItem.html#ac69afe0733a658bd43521ced5535d6f7a2c3d02a3d12435f1f7e844adc93110a2',1,'SkillItem']]],
+  ['mailattachmentrecvrequest',['MailAttachmentRecvRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aac93fd9b26cb180e5b20bee9c079470ba',1,'PacketID']]],
+  ['mailattachmentrecvresult',['MailAttachmentRecvResult',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa98807f2d33cf968458e654808c19addf',1,'PacketID']]],
+  ['maildata',['MailData',['../classMailData.html',1,'MailData'],['../classMailData.html#a8e4ef10e1782ddfe113fe1d04001a968',1,'MailData::MailData()'],['../classMailData.html#a7e558e15074f545d2955775fa9cd3fa6',1,'MailData::MailData(u32 InId, std::string InSubject, std::string InBody, u8 InAttachmentType, u32 InAttachmentId, u32 InAttachmentCount, u8 InFlag)']]],
+  ['maildata_2eh',['MailData.h',['../MailData_8h.html',1,'']]],
+  ['mailflag',['MailFlag',['../classMailData.html#a4e36baee0c3ffad119f8eff996df7ac3',1,'MailData']]],
+  ['maillist',['MailList',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa128dfb60ec0ef24d3f26c5a357ec62af',1,'PacketID']]],
+  ['maillistrequest',['MailListRequest',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa436ee3df638bf4b70d61e3187ae95d05',1,'PacketID']]],
+  ['mailread',['MailRead',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aa12104e54d010094e3cd597795fdd3191',1,'PacketID']]],
   ['main',['main',['../Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Main.cpp']]],
   ['main_2ecpp',['Main.cpp',['../Main_8cpp.html',1,'']]],
   ['main_5fquest',['MAIN_QUEST',['../structQuestItem.html#a449b907332a6ca6fafdc4bb542703989ac94f72d6653ea6c81b562f3bee810e64',1,'QuestItem']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['processtype',['ProcessType',['../classPacketInstanceAreaTicketProcess.html#a81ebcab04e423c924ea98f16c4dd0aa3',1,'PacketInstanceAreaTicketProcess']]]
+  ['mailflag',['MailFlag',['../classMailData.html#a4e36baee0c3ffad119f8eff996df7ac3',1,'MailData']]]
 ];

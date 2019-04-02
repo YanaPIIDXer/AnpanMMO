@@ -1,7 +1,6 @@
 <map id="NoticeManager.h" name="NoticeManager.h">
-<area shape="rect" id="node3" href="$NoticeData_8h.html" title="Packet/NoticeData.h" alt="" coords="165,80,307,107"/>
-<area shape="rect" id="node4" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="5,162,109,189"/>
-<area shape="rect" id="node6" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="134,155,338,196"/>
-<area shape="rect" id="node8" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="362,162,449,189"/>
-<area shape="rect" id="node5" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="55,244,142,271"/>
+<area shape="rect" id="node3" href="$NoticeData_8h.html" title="通知データパケット " alt="" coords="135,80,277,107"/>
+<area shape="rect" id="node4" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="65,162,169,189"/>
+<area shape="rect" id="node6" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="193,155,397,196"/>
+<area shape="rect" id="node5" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="115,244,201,271"/>
 </map>

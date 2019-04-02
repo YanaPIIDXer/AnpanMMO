@@ -3,12 +3,12 @@
 <area shape="rect" id="node13" href="$AnpanController_8h.html" title="AnpanController.h" alt="" coords="1142,80,1267,107"/>
 <area shape="rect" id="node19" href="$Util_8h.html" title="Util.h" alt="" coords="5,155,57,181"/>
 <area shape="rect" id="node20" href="$MasterData_8h.html" title="Master/MasterData.h" alt="" coords="1795,155,1939,181"/>
-<area shape="rect" id="node37" href="$AnpanData_8h.html" title="Packet/AnpanData.h" alt="" coords="3272,229,3415,256"/>
+<area shape="rect" id="node37" href="$AnpanData_8h.html" title="アンパンデータパケット " alt="" coords="3272,229,3415,256"/>
 <area shape="rect" id="node4" href="$CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="365,155,543,181"/>
 <area shape="rect" id="node6" href="$BuffManager_8h.html" title="Buff/BuffManager.h" alt="" coords="477,229,607,256"/>
 <area shape="rect" id="node7" href="$BuffMaster_8h.html" title="Master/BuffMaster.h" alt="" coords="733,229,871,256"/>
 <area shape="rect" id="node8" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="2095,304,2299,345"/>
-<area shape="rect" id="node9" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="2501,393,2588,420"/>
+<area shape="rect" id="node9" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="2532,393,2619,420"/>
 <area shape="rect" id="node21" href="$AreaMaster_8h.html" title="AreaMaster.h" alt="" coords="947,229,1047,256"/>
 <area shape="rect" id="node22" href="$WarpDataMaster_8h.html" title="WarpDataMaster.h" alt="" coords="1071,229,1202,256"/>
 <area shape="rect" id="node23" href="$WarpPointMaster_8h.html" title="WarpPointMaster.h" alt="" coords="1227,229,1361,256"/>
@@ -25,6 +25,5 @@
 <area shape="rect" id="node34" href="$QuestRewardMaster_8h.html" title="QuestRewardMaster.h" alt="" coords="2839,229,2989,256"/>
 <area shape="rect" id="node35" href="$EquipMaster_8h.html" title="EquipMaster.h" alt="" coords="3014,229,3121,256"/>
 <area shape="rect" id="node36" href="$ShopMaster_8h.html" title="ShopMaster.h" alt="" coords="3145,229,3248,256"/>
-<area shape="rect" id="node38" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="2747,311,2851,338"/>
-<area shape="rect" id="node39" href="$PacketID_8h.html" title="PacketID.h" alt="" coords="3300,311,3387,338"/>
+<area shape="rect" id="node38" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="2807,311,2911,338"/>
 </map>

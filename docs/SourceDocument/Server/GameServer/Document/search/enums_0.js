@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['chattype',['ChatType',['../classPacketSendChat.html#ac9e76b61f41b8510868ea71f760f7b8a',1,'PacketSendChat']]]
+  ['attachmentkind',['AttachmentKind',['../classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78',1,'MailData']]]
 ];
