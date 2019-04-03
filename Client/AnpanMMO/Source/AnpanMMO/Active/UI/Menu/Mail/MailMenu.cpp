@@ -1,6 +1,5 @@
 // Copyright 2018 - 2019 YanaPIIDXer All Rights Reserved.
 
-
 #include "MailMenu.h"
 #include "MMOGameInstance.h"
 #include "Kismet/GameplayStatics.h"

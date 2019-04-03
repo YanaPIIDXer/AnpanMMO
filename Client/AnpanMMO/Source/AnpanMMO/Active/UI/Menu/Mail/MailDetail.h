@@ -28,6 +28,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Mail")
 	void Open(const FMailData &InData);
 
+	// パケットを受信した。
+	virtual void OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream) override;
+
 protected:
 
 	// メールを開いた
@@ -38,6 +41,15 @@ protected:
 	// データを取得.
 	UFUNCTION(BlueprintPure, Category = "Mail")
 	const FMailData &GetData() const { return Data; }
+
+	// 添付物受信要求を送信.
+	UFUNCTION(BlueprintCallable, Category = "Mail")
+	void SendRecvAttachmentRequest();
+
+	// 添付物があるか？
+	// ※受注済みの場合でもtrueを返す。
+	UFUNCTION(BlueprintPure, Category = "Mail")
+	bool HasAttachment() const { return (Data.AttachmentType != EMailAttachmentType::None); }
 
 private:
 	
