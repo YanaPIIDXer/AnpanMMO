@@ -78,6 +78,7 @@ DROP TABLE IF EXISTS `Mail`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Mail` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `CustomerId` int(10) unsigned DEFAULT NULL,
   `Subject` varchar(64) DEFAULT NULL,
   `Body` varchar(1024) DEFAULT NULL,
@@ -85,8 +86,9 @@ CREATE TABLE `Mail` (
   `AttachmentId` int(10) unsigned DEFAULT NULL,
   `AttachmentCount` int(10) unsigned DEFAULT NULL,
   `RecvDate` date DEFAULT NULL,
-  `IsRead` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `Flag` tinyint(2) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,4 +178,4 @@ CREATE TABLE `UserData` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-27  5:43:24
+-- Dump completed on 2019-04-01  5:44:03

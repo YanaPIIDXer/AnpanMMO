@@ -10,7 +10,7 @@ USkillMenu::USkillMenu(const FObjectInitializer &ObjectInitializer)
 }
 
 // パケットを受信した。
-void USkillMenu::OnRecvPacket(uint8 ID)
+void USkillMenu::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
 	switch (ID)
 	{

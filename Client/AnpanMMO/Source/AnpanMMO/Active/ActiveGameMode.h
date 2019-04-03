@@ -244,4 +244,10 @@ private:
 	// ＧＭメッセージを受信した。
 	bool OnRecvGMMessage(MemoryStreamInterface *pStream);
 
+	// メールリストを受信した。
+	bool OnRecvMailList(MemoryStreamInterface *pStream);
+
+	// メール添付物受信結果を受信した。
+	bool OnRecvMailAttachmentRecvResult(MemoryStreamInterface *pStream);
+
 };

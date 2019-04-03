@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x',['X',['../structNPCItem.html#a6b1fded9155a22edeea9c8cdb7a0bbef',1,'NPCItem::X()'],['../structWarpDataItem.html#a7922615b187938aa2330017879a1b6df',1,'WarpDataItem::X()'],['../structWarpPointItem.html#abf4afc3c9541f3b24f34daebbf9707a7',1,'WarpPointItem::X()'],['../classAnpanData.html#adec455fedfba2c6f5ed361d711978d18',1,'AnpanData::X()'],['../classPacketAreaMove.html#a63b4df54b506272fed39435fe1796e88',1,'PacketAreaMove::X()'],['../classPacketMoveAnpan.html#ab84e80a505b2b304a0d18a38dd782818',1,'PacketMoveAnpan::X()'],['../classPacketMovePlayer.html#a09f32cadff23688c0c46107bf4c59c51',1,'PacketMovePlayer::X()'],['../classPacketPlayerRespawn.html#a5963be65178063e15f598cd8e2f92252',1,'PacketPlayerRespawn::X()'],['../classPacketStopAnpan.html#a998ec0e0931d18b3a501c7754f878e52',1,'PacketStopAnpan::X()'],['../classPlayerData.html#a069f68e232670459b4dc7badff3f54b0',1,'PlayerData::X()']]]
+  ['warpdataid',['WarpDataId',['../structWarpDataItem.html#ab07d15c6fcb93d2ea119400e7ca04f6f',1,'WarpDataItem::WarpDataId()'],['../structWarpPointItem.html#a35c3f12a2d5a8da80b8afab81e500d14',1,'WarpPointItem::WarpDataId()']]],
+  ['warppointid',['WarpPointId',['../classPacketSpawnInstanceAreaExitPoint.html#a59b50540fb4291b533235a3cbde26b09',1,'PacketSpawnInstanceAreaExitPoint']]]
 ];

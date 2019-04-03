@@ -1,0 +1,4 @@
+<map id="UMailDetail::OnOpen" name="UMailDetail::OnOpen">
+<area shape="rect" id="node2" href="$classUMailDetail.html#ac7436ea6317141c0e58d2046a7a1a222" title="UMailDetail::Open" alt="" coords="225,5,352,32"/>
+<area shape="rect" id="node3" href="$classUMailDetail.html#a67063f8cf76fd332787ffde0b8ec34ff" title="UMailDetail::OnRecvPacket" alt="" coords="197,56,380,83"/>
+</map>

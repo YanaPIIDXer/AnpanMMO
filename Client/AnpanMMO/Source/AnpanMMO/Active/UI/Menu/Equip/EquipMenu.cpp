@@ -20,7 +20,7 @@ UEquipMenu::UEquipMenu(const FObjectInitializer &ObjectInitializer)
 }
 
 // パケットを受信した。
-void UEquipMenu::OnRecvPacket(uint8 ID)
+void UEquipMenu::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
 	switch (ID)
 	{

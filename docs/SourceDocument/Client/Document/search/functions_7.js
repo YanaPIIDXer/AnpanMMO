@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['hasattachment',['HasAttachment',['../classUMailDetail.html#aafa96ae37fdc62cffd256d1873a97541',1,'UMailDetail']]],
   ['hasnotreadnotice',['HasNotReadNotice',['../classUMainHUD.html#a14263b5fca304352a07d8afeadc0e21c',1,'UMainHUD']]],
   ['heal',['Heal',['../classACharacterBase.html#ab27cac6304412e470bb2f031f1194b85',1,'ACharacterBase']]],
   ['healed',['Healed',['../classUPlayerHPGauge.html#ad3fda5f300cc67e8fbea44949cc94beb',1,'UPlayerHPGauge']]],

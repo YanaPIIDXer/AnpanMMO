@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['healvalue',['HealValue',['../classPacketHeal.html#a3a2b1a6f88fdbd9256a70934ce3cc18a',1,'PacketHeal']]],
-  ['hp',['Hp',['../structAnpanItem.html#a89aa8c31a83fea130c820c9de7f9db9e',1,'AnpanItem::Hp()'],['../classAnpanData.html#acf83e1c2e2ba2361ef95fe918f2845ac',1,'AnpanData::Hp()'],['../classPacketCharacterStatus.html#a1b8a80f74c9654f81bd2f12b2ba5b89e',1,'PacketCharacterStatus::Hp()'],['../classPlayerData.html#a000dc194118263b94abc4dc59112a6f7',1,'PlayerData::Hp()']]]
+  ['gold',['Gold',['../structFShopItem.html#aa75b8aa89dd507f196f110d66bbbf8f6',1,'FShopItem::Gold()'],['../classPacketChangeGold.html#abfb376e45dfaf9e1d916082049c09c44',1,'PacketChangeGold::Gold()'],['../classPacketCharacterStatus.html#a612fc7913ceb4588cb2cecbf3b99e46d',1,'PacketCharacterStatus::Gold()']]]
 ];

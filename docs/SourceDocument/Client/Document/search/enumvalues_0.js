@@ -8,6 +8,7 @@ var searchData=
   ['alreadyjoin',['AlreadyJoin',['../classPacketPartyCreateResult.html#a31a6e81ad7f19fcc653646e219525210a2b600f925321c5b7c8dd06f7676bf066',1,'PacketPartyCreateResult']]],
   ['alreadyjoinotherparty',['AlreadyJoinOtherParty',['../classPacketPartyInviteResult.html#a5b4a9090e124477296b63ced0e978f3fa2ec033d26760537dbe715a594f475f52',1,'PacketPartyInviteResult']]],
   ['alreadyopened',['AlreadyOpened',['../classPacketSkillTreeOpenResult.html#aec468b33911f9ba7bc5d5998adba5f98a34daabcf008c3bd840b968e0f5adc4c2',1,'PacketSkillTreeOpenResult']]],
+  ['alreadyrecv',['AlreadyRecv',['../classPacketMailAttachmentRecvResult.html#a1998cb6aad369d85711e01fba6bb1bbcaa6511eacca1567b662f9bbd8e3b314b6',1,'PacketMailAttachmentRecvResult']]],
   ['anpan',['Anpan',['../CharacterBase_8h.html#ad34afea9f542b01a1f4e6d48fdfe1be3abf68752ca6736f0fde00ac6a35f46d74',1,'CharacterBase.h']]],
   ['anpanlist',['AnpanList',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aae1c1a44503105edeeaa430065424b831',1,'PacketID']]],
   ['areamove',['AreaMove',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aad10fe4c1ab94d7a20a9c568b3f0c2103',1,'PacketID']]],

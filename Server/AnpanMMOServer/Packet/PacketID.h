@@ -97,116 +97,126 @@ public:
 		CreateCharacterResult = 0x25,
 		//! キャラクタパラメータパケット
 		CharacterStatus = 0x26,
+		//! メールリスト要求パケット
+		MailListRequest = 0x27,
+		//! メールリストパケット
+		MailList = 0x28,
+		//! メール開封パケット
+		MailRead = 0x29,
+		//! 添付物受信リクエストパケット
+		MailAttachmentRecvRequest = 0x2A,
+		//! 添付物受信結果パケット
+		MailAttachmentRecvResult = 0x2B,
 		//! 通知リストパケット
-		NoticeList = 0x27,
+		NoticeList = 0x2C,
 		//! 通知パケット
-		ReceiveNotice = 0x28,
+		ReceiveNotice = 0x2D,
 		//! 会話開始パケット
-		NPCTalk = 0x29,
+		NPCTalk = 0x2E,
 		//! 選択肢を選択パケット
-		NPCTalkSelection = 0x2A,
+		NPCTalkSelection = 0x2F,
 		//! パーティ作成リクエストパケット
-		PartyCreateRequest = 0x2B,
+		PartyCreateRequest = 0x30,
 		//! パーティ作成結果パケット
-		PartyCreateResult = 0x2C,
+		PartyCreateResult = 0x31,
 		//! パーティ勧誘リクエストパケット
-		PartyInviteRequest = 0x2D,
+		PartyInviteRequest = 0x32,
 		//! パーティ勧誘結果パケット
-		PartyInviteResult = 0x2E,
+		PartyInviteResult = 0x33,
 		//! パーティ勧誘レスポンスパケット
-		PartyInviteResponse = 0x2F,
+		PartyInviteResponse = 0x34,
 		//! パーティ加入パケット
-		PartyJoin = 0x30,
+		PartyJoin = 0x35,
 		//! パーティメンバ加入パケット
-		PartyJoinMember = 0x31,
+		PartyJoinMember = 0x36,
 		//! パーティ離脱リクエストパケット
-		PartyExitRequest = 0x32,
+		PartyExitRequest = 0x37,
 		//! パーティ離脱結果パケット
-		PartyExitResult = 0x33,
+		PartyExitResult = 0x38,
 		//! パーティ離脱パケット
-		PartyExit = 0x34,
+		PartyExit = 0x39,
 		//! パーティメンバキックリクエストパケット
-		PartyKickRequest = 0x35,
+		PartyKickRequest = 0x3A,
 		//! パーティメンバキック結果パケット
-		PartyKickResult = 0x36,
+		PartyKickResult = 0x3B,
 		//! パーティメンバキックパケット
-		PartyKick = 0x37,
+		PartyKick = 0x3C,
 		//! パーティ解散リクエストパケット
-		PartyDissolutionRequest = 0x38,
+		PartyDissolutionRequest = 0x3D,
 		//! パーティ解散結果パケット
-		PartyDissolutionResult = 0x39,
+		PartyDissolutionResult = 0x3E,
 		//! パーティ解散パケット
-		PartyDissolution = 0x3A,
+		PartyDissolution = 0x3F,
 		//! Pingパケット
-		Ping = 0x3B,
+		Ping = 0x40,
 		//! プレイヤーリストパケット
-		PlayerList = 0x3C,
+		PlayerList = 0x41,
 		//! プレイヤー生成パケット
-		SpawnPlayer = 0x3D,
+		SpawnPlayer = 0x42,
 		//! プレイヤー移動パケット
-		MovePlayer = 0x3E,
+		MovePlayer = 0x43,
 		//! プレイヤー退出パケット
-		ExitPlayer = 0x3F,
+		ExitPlayer = 0x44,
 		//! プレイヤーリスポン要求パケット
-		RespawnRequest = 0x40,
+		RespawnRequest = 0x45,
 		//! プレイヤーリスポンパケット
-		PlayerRespawn = 0x41,
+		PlayerRespawn = 0x46,
 		//! クエストデータリストパケット
-		QuestData = 0x42,
+		QuestData = 0x47,
 		//! クエスト受注パケット
-		QuestAccept = 0x43,
+		QuestAccept = 0x48,
 		//! クエストアンパンキルパケット
-		QuestAnpanKill = 0x44,
+		QuestAnpanKill = 0x49,
 		//! クエストステージ進行パケット
-		QuestStageChange = 0x45,
+		QuestStageChange = 0x4A,
 		//! クエストクリアパケット
-		QuestClear = 0x46,
+		QuestClear = 0x4B,
 		//! クエスト破棄リクエストパケット
-		QuestRetireRequest = 0x47,
+		QuestRetireRequest = 0x4C,
 		//! クエスト破棄レスポンスパケット
-		QuestRetireResponse = 0x48,
+		QuestRetireResponse = 0x4D,
 		//! アクティブクエスト保存パケット
-		SaveActiveQuest = 0x49,
+		SaveActiveQuest = 0x4E,
 		//! スクリプトフラグパケット
-		ScriptFlag = 0x4A,
+		ScriptFlag = 0x4F,
 		//! アイテム購入要求パケット
-		BuyItemRequest = 0x4B,
+		BuyItemRequest = 0x50,
 		//! アイテム購入結果パケット
-		BuyItemResult = 0x4C,
+		BuyItemResult = 0x51,
 		//! アイテム売却要求パケット
-		SellItemRequest = 0x4D,
+		SellItemRequest = 0x52,
 		//! アイテム売却結果パケット
-		SellItemResult = 0x4E,
+		SellItemResult = 0x53,
 		//! ショップ終了パケット
-		ExitShop = 0x4F,
+		ExitShop = 0x54,
 		//! スキル使用パケット
-		SkillUse = 0x50,
+		SkillUse = 0x55,
 		//! スキル使用失敗パケット
-		SkillUseFailed = 0x51,
+		SkillUseFailed = 0x56,
 		//! スキル詠唱開始パケット
-		SkillCast = 0x52,
+		SkillCast = 0x57,
 		//! スキル詠唱完了パケット
-		SkillCastFinish = 0x53,
+		SkillCastFinish = 0x58,
 		//! スキル発動パケット
-		SkillActivate = 0x54,
+		SkillActivate = 0x59,
 		//! リキャスト完了パケット
-		SkillRecast = 0x55,
+		SkillRecast = 0x5A,
 		//! スキルリストパケット
-		SkillList = 0x56,
+		SkillList = 0x5B,
 		//! スキルリスト保存リクエストパケット
-		SaveSkillListRequest = 0x57,
+		SaveSkillListRequest = 0x5C,
 		//! スキルリスト保存レスポンスパケット
-		SaveSkillListResponse = 0x58,
+		SaveSkillListResponse = 0x5D,
 		//! スキルツリーデータパケット
-		SkillTreeData = 0x59,
+		SkillTreeData = 0x5E,
 		//! スキルツリー開放要求パケット
-		SkillTreeOpenRequest = 0x5A,
+		SkillTreeOpenRequest = 0x5F,
 		//! スキルツリー開放結果パケット
-		SkillTreeOpenResult = 0x5B,
+		SkillTreeOpenResult = 0x60,
 		//! ログイン時の時間通知パケット
-		Time = 0x5C,
+		Time = 0x61,
 		//! 時間変化通知パケット
-		TimeChange = 0x5D,
+		TimeChange = 0x62,
 		
 	};
 };

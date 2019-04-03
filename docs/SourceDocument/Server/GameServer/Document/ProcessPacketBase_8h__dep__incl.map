@@ -13,31 +13,36 @@
 <area shape="rect" id="node15" href="$CachePacketItemShortcutResponse_8h.html" title="アイテムショートカットレスポンスパケット " alt="" coords="2418,87,2661,114"/>
 <area shape="rect" id="node16" href="$CachePacketLogInRequest_8h.html" title="ログインリクエストパケット " alt="" coords="2685,87,2876,114"/>
 <area shape="rect" id="node17" href="$CachePacketLogInResult_8h.html" title="ログインリクエスト結果パケット " alt="" coords="2901,87,3079,114"/>
-<area shape="rect" id="node18" href="$CachePacketOpenSkillTree_8h.html" title="スキルツリー開放パケット " alt="" coords="5046,87,5238,114"/>
-<area shape="rect" id="node20" href="$CachePacketQuestDataRequest_8h.html" title="クエストデータリクエストパケット " alt="" coords="3103,87,3325,114"/>
-<area shape="rect" id="node21" href="$CachePacketQuestDataResponse_8h.html" title="クエストデータレスポンスパケット " alt="" coords="3349,87,3580,114"/>
-<area shape="rect" id="node22" href="$CachePacketQuestRetireRequest_8h.html" title="クエスト破棄リクエストパケット " alt="" coords="7308,87,7536,114"/>
-<area shape="rect" id="node24" href="$CachePacketSaveActiveQuestRequest_8h.html" title="アクティブクエスト保存リクエストパケット " alt="" coords="5263,80,5461,121"/>
-<area shape="rect" id="node25" href="$CachePacketSaveEquipRequest_8h.html" title="装備保存リクエストパケット " alt="" coords="5485,87,5705,114"/>
-<area shape="rect" id="node26" href="$CachePacketSaveEquipResponse_8h.html" title="装備保存レスポンスパケット " alt="" coords="5729,87,5960,114"/>
-<area shape="rect" id="node27" href="$CachePacketSaveItemShortcutRequest_8h.html" title="アイテムショートカット保存リクエストパケット " alt="" coords="5985,80,6187,121"/>
-<area shape="rect" id="node28" href="$CachePacketSaveItemShortcutResponse_8h.html" title="アイテムショートカット保存レスポンスパケット " alt="" coords="6211,80,6414,121"/>
-<area shape="rect" id="node29" href="$CachePacketSaveQuestDataRequest_8h.html" title="クエストデータ保存リクエストパケット " alt="" coords="7560,80,7751,121"/>
-<area shape="rect" id="node30" href="$CachePacketSaveSkillListRequest_8h.html" title="スキルリスト保存リクエストパケット " alt="" coords="6439,80,6613,121"/>
-<area shape="rect" id="node31" href="$CachePacketSaveSkillListResponse_8h.html" title="スキルリスト保存レスポンスパケット " alt="" coords="6637,80,6812,121"/>
-<area shape="rect" id="node32" href="$CachePacketScriptFlagRequest_8h.html" title="スクリプトフラグリクエストパケット " alt="" coords="3605,87,3823,114"/>
-<area shape="rect" id="node33" href="$CachePacketScriptFlagResponse_8h.html" title="スクリプトフラグレスポンスパケット " alt="" coords="3848,87,4076,114"/>
-<area shape="rect" id="node34" href="$CachePacketScriptFlagSaveRequest_8h.html" title="スクリプトフラグ保存リクエストパケット " alt="" coords="7775,80,7962,121"/>
-<area shape="rect" id="node36" href="$CachePacketSkillListRequest_8h.html" title="スキルリストリクエストパケット " alt="" coords="4101,87,4306,114"/>
-<area shape="rect" id="node37" href="$CachePacketSkillListResponse_8h.html" title="スキルリストレスポンスパケット " alt="" coords="4331,87,4545,114"/>
-<area shape="rect" id="node38" href="$CachePacketSkillTreeRequest_8h.html" title="スキルツリーリクエストパケット " alt="" coords="4569,87,4779,114"/>
-<area shape="rect" id="node39" href="$CachePacketSkillTreeResponse_8h.html" title="スキルツリーレスポンスパケット " alt="" coords="4803,87,5022,114"/>
-<area shape="rect" id="node40" href="$WordCheckPacketChatRequest_8h.html" title="ワードチェック要求パケット " alt="" coords="6836,87,7053,114"/>
-<area shape="rect" id="node41" href="$WordCheckPacketChatResult_8h.html" title="ワードチェック結果パケット " alt="" coords="7077,87,7284,114"/>
-<area shape="rect" id="node42" href="$WordCheckServerConnection_8cpp.html" title="WordCheckServerConnection.cpp" alt="" coords="7986,87,8202,114"/>
+<area shape="rect" id="node18" href="$CachePacketMailAttachmentRecvRequest_8h.html" title="メール添付物受信要求パケット " alt="" coords="5047,80,5237,121"/>
+<area shape="rect" id="node20" href="$CachePacketMailAttachmentRecvResult_8h.html" title="メール添付物受信結果パケット " alt="" coords="5261,80,5452,121"/>
+<area shape="rect" id="node21" href="$CachePacketMailListRequest_8h.html" title="メールリストリクエストパケット " alt="" coords="5476,87,5680,114"/>
+<area shape="rect" id="node22" href="$CachePacketMailListResponse_8h.html" title="メールリストレスポンスパケット " alt="" coords="5704,87,5919,114"/>
+<area shape="rect" id="node23" href="$CachePacketMailRead_8h.html" title="メール開封パケット " alt="" coords="5943,87,6109,114"/>
+<area shape="rect" id="node24" href="$CachePacketOpenSkillTree_8h.html" title="スキルツリー開放パケット " alt="" coords="6133,87,6325,114"/>
+<area shape="rect" id="node25" href="$CachePacketQuestDataRequest_8h.html" title="クエストデータリクエストパケット " alt="" coords="3103,87,3325,114"/>
+<area shape="rect" id="node26" href="$CachePacketQuestDataResponse_8h.html" title="クエストデータレスポンスパケット " alt="" coords="3349,87,3580,114"/>
+<area shape="rect" id="node27" href="$CachePacketQuestRetireRequest_8h.html" title="クエスト破棄リクエストパケット " alt="" coords="8395,87,8623,114"/>
+<area shape="rect" id="node29" href="$CachePacketSaveActiveQuestRequest_8h.html" title="アクティブクエスト保存リクエストパケット " alt="" coords="6349,80,6548,121"/>
+<area shape="rect" id="node30" href="$CachePacketSaveEquipRequest_8h.html" title="装備保存リクエストパケット " alt="" coords="6572,87,6792,114"/>
+<area shape="rect" id="node31" href="$CachePacketSaveEquipResponse_8h.html" title="装備保存レスポンスパケット " alt="" coords="6816,87,7047,114"/>
+<area shape="rect" id="node32" href="$CachePacketSaveItemShortcutRequest_8h.html" title="アイテムショートカット保存リクエストパケット " alt="" coords="7071,80,7274,121"/>
+<area shape="rect" id="node33" href="$CachePacketSaveItemShortcutResponse_8h.html" title="アイテムショートカット保存レスポンスパケット " alt="" coords="7298,80,7501,121"/>
+<area shape="rect" id="node34" href="$CachePacketSaveQuestDataRequest_8h.html" title="クエストデータ保存リクエストパケット " alt="" coords="8647,80,8837,121"/>
+<area shape="rect" id="node35" href="$CachePacketSaveSkillListRequest_8h.html" title="スキルリスト保存リクエストパケット " alt="" coords="7525,80,7700,121"/>
+<area shape="rect" id="node36" href="$CachePacketSaveSkillListResponse_8h.html" title="スキルリスト保存レスポンスパケット " alt="" coords="7724,80,7899,121"/>
+<area shape="rect" id="node37" href="$CachePacketScriptFlagRequest_8h.html" title="スクリプトフラグリクエストパケット " alt="" coords="3605,87,3823,114"/>
+<area shape="rect" id="node38" href="$CachePacketScriptFlagResponse_8h.html" title="スクリプトフラグレスポンスパケット " alt="" coords="3848,87,4076,114"/>
+<area shape="rect" id="node39" href="$CachePacketScriptFlagSaveRequest_8h.html" title="スクリプトフラグ保存リクエストパケット " alt="" coords="8862,80,9049,121"/>
+<area shape="rect" id="node41" href="$CachePacketSkillListRequest_8h.html" title="スキルリストリクエストパケット " alt="" coords="4101,87,4306,114"/>
+<area shape="rect" id="node42" href="$CachePacketSkillListResponse_8h.html" title="スキルリストレスポンスパケット " alt="" coords="4331,87,4545,114"/>
+<area shape="rect" id="node43" href="$CachePacketSkillTreeRequest_8h.html" title="スキルツリーリクエストパケット " alt="" coords="4569,87,4779,114"/>
+<area shape="rect" id="node44" href="$CachePacketSkillTreeResponse_8h.html" title="スキルツリーレスポンスパケット " alt="" coords="4803,87,5022,114"/>
+<area shape="rect" id="node45" href="$WordCheckPacketChatRequest_8h.html" title="ワードチェック要求パケット " alt="" coords="7923,87,8140,114"/>
+<area shape="rect" id="node46" href="$WordCheckPacketChatResult_8h.html" title="ワードチェック結果パケット " alt="" coords="8164,87,8371,114"/>
+<area shape="rect" id="node47" href="$WordCheckServerConnection_8cpp.html" title="WordCheckServerConnection.cpp" alt="" coords="9073,87,9289,114"/>
 <area shape="rect" id="node4" href="$ClientStateTitle_8cpp.html" title="クライアントステート：タイトル画面 " alt="" coords="2817,169,2952,196"/>
 <area shape="rect" id="node7" href="$PlayerCharacter_8cpp.html" title="プレイヤーキャラクタクラス " alt="" coords="435,169,575,196"/>
-<area shape="rect" id="node19" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="6126,169,6273,196"/>
-<area shape="rect" id="node23" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="7472,169,7604,196"/>
-<area shape="rect" id="node35" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="7802,169,7935,196"/>
+<area shape="rect" id="node19" href="$ClientStateActive_8cpp.html" title="クライアントステート：ゲーム中 " alt="" coords="6609,169,6755,196"/>
+<area shape="rect" id="node28" href="$QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="8559,169,8691,196"/>
+<area shape="rect" id="node40" href="$ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="8889,169,9022,196"/>
 </map>

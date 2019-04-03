@@ -34,6 +34,11 @@
 #include "Packet/CachePacketSaveActiveQuestRequest.h"
 #include "Packet/CachePacketSaveEquipRequest.h"
 #include "Packet/CachePacketSaveEquipResponse.h"
+#include "Packet/CachePacketMailListRequest.h"
+#include "Packet/CachePacketMailListResponse.h"
+#include "Packet/CachePacketMailRead.h"
+#include "Packet/CachePacketMailAttachmentRecvRequest.h"
+#include "Packet/CachePacketMailAttachmentRecvResult.h"
 
 // コンストラクタ
 PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
@@ -59,6 +64,9 @@ PacketReceiver::PacketReceiver(GameServerConnection *pInParent)
 	AddPacketFunc(CachePacketID::CacheQuestRetireRequest, bind(&PacketReceiver::OnRecvRetireQuestDataRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheSaveActiveQuestRequest, bind(&PacketReceiver::OnRecvSaveActiveQuestRequest, this, _1));
 	AddPacketFunc(CachePacketID::CacheSaveEquipRequest, bind(&PacketReceiver::OnRecvSaveEquipRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheMailListRequest, bind(&PacketReceiver::OnRecvMailListRequest, this, _1));
+	AddPacketFunc(CachePacketID::CacheMailRead, bind(&PacketReceiver::OnRecvMailRead, this, _1));
+	AddPacketFunc(CachePacketID::CacheMailAttachmentRecvRequest, bind(&PacketReceiver::OnRecvMailAttachmentRecvRequest, this, _1));
 }
 
 // ログインリクエストを受信した。
@@ -444,6 +452,79 @@ bool PacketReceiver::OnRecvSaveEquipRequest(MemoryStreamInterface *pStream)
 
 	CachePacketSaveEquipResponse ResponsePacket(Packet.ClientId, Result, Packet.RightEquip, Packet.LeftEquip);
 	pParent->SendPacket(&ResponsePacket);
+
+	return true;
+}
+
+// メールリストリクエストを受信した。
+bool PacketReceiver::OnRecvMailListRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketMailListRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	CachePacketMailListResponse ResponsePacket;
+	ResponsePacket.ClientId = Packet.ClientId;
+
+	if (!DBConnection::GetInstance().LoadMailList(Packet.CustomerId, ResponsePacket.List))
+	{
+		std::cout << "LoadMailList Failed... CustomerId:" << Packet.CustomerId << std::endl;
+	}
+	pParent->SendPacket(&ResponsePacket);
+
+	return true;
+}
+
+// メール開封を受信した。
+bool PacketReceiver::OnRecvMailRead(MemoryStreamInterface *pStream)
+{
+	CachePacketMailRead Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	MailData Data;
+	if (!DBConnection::GetInstance().LoadMailData(Packet.Id, Data))
+	{
+		std::cout << "Mail Not Found... Id:" << Packet.Id << std::endl;
+		return true;
+	}
+
+	// フラグが未読になっていない場合は何もしない。
+	if (Data.Flag != MailData::NotRead) { return true; }
+
+	if (!DBConnection::GetInstance().ChangeMailFlag(Packet.Id, MailData::Read))
+	{
+		std::cout << "Mail Read Failed... Mail ID:" << Packet.Id << std::endl;
+	}
+
+	return true;
+}
+
+// メール添付物受信要求を受信した。
+bool PacketReceiver::OnRecvMailAttachmentRecvRequest(MemoryStreamInterface *pStream)
+{
+	CachePacketMailAttachmentRecvRequest Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	MailData Data;
+	u8 Result = CachePacketMailAttachmentRecvResult::Error;
+	if (DBConnection::GetInstance().LoadMailData(Packet.Id, Data))
+	{
+		Result = CachePacketMailAttachmentRecvResult::Success;
+		if (Data.Flag == MailData::RecvAttachment)
+		{
+			Result = CachePacketMailAttachmentRecvResult::AlreadyRecv;
+		}
+	}
+
+	if (Result == CachePacketMailAttachmentRecvResult::Success)
+	{
+		if (!DBConnection::GetInstance().ChangeMailFlag(Packet.Id, MailData::RecvAttachment))
+		{
+			Result = CachePacketMailAttachmentRecvResult::Error;
+		}
+	}
+
+	CachePacketMailAttachmentRecvResult ResultPacket(Packet.ClientId, Packet.Id, Result, Data.AttachmentType, Data.AttachmentId, Data.AttachmentCount);
+	pParent->SendPacket(&ResultPacket);
 
 	return true;
 }

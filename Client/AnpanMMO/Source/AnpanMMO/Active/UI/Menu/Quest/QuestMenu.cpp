@@ -13,7 +13,7 @@ UQuestMenu::UQuestMenu(const FObjectInitializer &ObjectInitializer)
 }
 
 // パケットを受信した。
-void UQuestMenu::OnRecvPacket(uint8 ID)
+void UQuestMenu::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
 	switch (ID)
 	{

@@ -18,6 +18,7 @@ var searchData=
   ['bitfield3',['BitField3',['../classPacketScriptFlag.html#a62cefd8062164e46b2102f060508022b',1,'PacketScriptFlag']]],
   ['blueprintfunctions_2ecpp',['BlueprintFunctions.cpp',['../BlueprintFunctions_8cpp.html',1,'']]],
   ['blueprintfunctions_2eh',['BlueprintFunctions.h',['../BlueprintFunctions_8h.html',1,'']]],
+  ['body',['Body',['../structFMailData.html#acf395e127cb24a8e8a8da36b32fd0665',1,'FMailData::Body()'],['../classMailData.html#a2a11d099ab5d8083a3efef3aca8ac9b1',1,'MailData::Body()']]],
   ['bonusint',['BonusInt',['../structSkillItem.html#a605b23d27d6ca68ba332c7a22de97e2b',1,'SkillItem']]],
   ['bonusmnd',['BonusMnd',['../structSkillItem.html#aac31dd83107d9203d8ed70ce84a2d5f1',1,'SkillItem']]],
   ['bonusstr',['BonusStr',['../structSkillItem.html#a1a8671ce460998472526d7283c9356ff',1,'SkillItem']]],

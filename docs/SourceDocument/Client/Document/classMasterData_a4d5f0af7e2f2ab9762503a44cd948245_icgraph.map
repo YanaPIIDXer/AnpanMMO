@@ -6,5 +6,6 @@
 <area shape="rect" id="node6" href="$classAGameCharacter.html#af8eaf977210da91f8981daa6f91c659b" title="AGameCharacter::IsItemUsable" alt="" coords="236,267,441,294"/>
 <area shape="rect" id="node7" href="$classAGameCharacter.html#af17b8bc5b6f7e487adebcb350e2fc809" title="AGameCharacter::UseItem" alt="" coords="491,293,670,319"/>
 <area shape="rect" id="node8" href="$classUItemMenu.html#a3b1773ff1360ebffe3f9177b567803bb" title="UItemMenu::Init" alt="" coords="282,369,395,395"/>
-<area shape="rect" id="node9" href="$classUItemMenu.html#a1920cf2150927f0e5db5ad11b8707ddd" title="UItemMenu::OnRecvPacket" alt="" coords="489,369,672,395"/>
+<area shape="rect" id="node10" href="$structFMailData.html#a448e6f3c5b6e056232a77d97d4b52d96" title="FMailData::FMailData" alt="" coords="265,419,413,446"/>
+<area shape="rect" id="node9" href="$classUItemMenu.html#a8c31e2c9faa2257ab65ce67e3931f80c" title="UItemMenu::OnRecvPacket" alt="" coords="489,369,672,395"/>
 </map>

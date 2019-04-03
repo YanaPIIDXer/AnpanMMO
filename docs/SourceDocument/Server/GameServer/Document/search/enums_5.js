@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['statetype',['StateType',['../classQuestData.html#a9ed9c55d4742f2f55539926963f74394',1,'QuestData']]]
+  ['processtype',['ProcessType',['../classPacketInstanceAreaTicketProcess.html#a81ebcab04e423c924ea98f16c4dd0aa3',1,'PacketInstanceAreaTicketProcess']]]
 ];

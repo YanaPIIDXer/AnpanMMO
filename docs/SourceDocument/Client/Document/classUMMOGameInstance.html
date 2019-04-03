@@ -100,7 +100,7 @@ UMMOGameInstance 連携図</div>
 <tr class="separator:a9413f3171f486cb2c6cf2cd7c8584624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a742ddc60c20a96634bed311deda3e902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a742ddc60c20a96634bed311deda3e902">SendPacket</a> (<a class="el" href="classPacketBase.html">PacketBase</a> *pPacket)</td></tr>
 <tr class="separator:a742ddc60c20a96634bed311deda3e902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea4fda1ec36cda362415bd15edcda9aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#aea4fda1ec36cda362415bd15edcda9aa">OnRecvStatus</a> (uint32 Uuid, const FString &amp;Name, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Job, uint32 Level, int32 MaxHp, int32 BaseMaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit, int32 Exp, uint32 Gold, uint32 RightEquipId, uint32 LeftEquipId)</td></tr>
+<tr class="memitem:aea4fda1ec36cda362415bd15edcda9aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#aea4fda1ec36cda362415bd15edcda9aa">OnRecvStatus</a> (uint32 Uuid, const FString &amp;Name, <a class="el" href="TypeDefs_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> Job, uint32 Level, int32 MaxHp, int32 BaseMaxHp, int32 Str, int32 Def, int32 Int, int32 Mnd, int32 Vit, int32 Exp, uint32 <a class="el" href="MailMenu_8h.html#a44aa1a838f432d814216026020a4bd34a9768feb3fdb1f267b06093bc572952dd">Gold</a>, uint32 RightEquipId, uint32 LeftEquipId)</td></tr>
 <tr class="separator:aea4fda1ec36cda362415bd15edcda9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef1c277209192ed1f92de2aa1e5383ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#aef1c277209192ed1f92de2aa1e5383ef">OnRecvSkillList</a> (uint32 Skill1, uint32 Skill2, uint32 Skill3, uint32 Skill4)</td></tr>
 <tr class="separator:aef1c277209192ed1f92de2aa1e5383ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +138,12 @@ UMMOGameInstance 連携図</div>
 <tr class="separator:af26d480a22ec679fe7a22c306bc68c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a194e4f45d812c899d211e39fc2bd71"><td class="memItemLeft" align="right" valign="top">FOnActiveQuestUpdated &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a6a194e4f45d812c899d211e39fc2bd71">OnActiveQuestUpdated</a> ()</td></tr>
 <tr class="separator:a6a194e4f45d812c899d211e39fc2bd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17cf9782825e05d03b311f20bd2f975c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMailManager.html">MailManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a17cf9782825e05d03b311f20bd2f975c">GetMailManager</a> () const</td></tr>
+<tr class="separator:a17cf9782825e05d03b311f20bd2f975c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4676b5f599c747bb613081324d40b46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#ae4676b5f599c747bb613081324d40b46">OnRecvMailList</a> (const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="classMailData.html">MailData</a> &gt; &amp;List)</td></tr>
+<tr class="separator:ae4676b5f599c747bb613081324d40b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fde3ed660855f5fc1f63eeba2a04479"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a3fde3ed660855f5fc1f63eeba2a04479">ChangeMailFlag</a> (uint32 Id, uint8 Flag)</td></tr>
+<tr class="separator:a3fde3ed660855f5fc1f63eeba2a04479"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 公開変数類</h2></td></tr>
@@ -216,6 +222,50 @@ UMMOGameInstance 連携図</div>
 <area shape="rect" id="node4" href="classMasterData.html#ad5d842c20bc0240b7977c0d352768889" title="MasterData::GetQuestMaster" alt="" coords="486,56,679,83"/>
 <area shape="rect" id="node5" href="classQuestMaster.html#a1fe8ccbcb98de486f735d0dbfe66cee2" title="QuestMaster::Get" alt="" coords="519,107,646,133"/>
 <area shape="rect" id="node6" href="classQuestManager.html#ab76a9f8f1a15a636ba7fa73d30dcf4f4" title="QuestManager::SetActiveQuest" alt="" coords="480,157,685,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3fde3ed660855f5fc1f63eeba2a04479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fde3ed660855f5fc1f63eeba2a04479">&#9670;&nbsp;</a></span>ChangeMailFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMMOGameInstance::ChangeMailFlag </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>Id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8&#160;</td>
+          <td class="paramname"><em>Flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_cgraph.png" border="0" usemap="#classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_cgraph" alt=""/></div>
+<map name="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_cgraph" id="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_cgraph">
+<area shape="rect" id="node2" href="classMailManager.html#a89a2a01f38bfaac1033064e789532a6c" title="MailManager::ChangeFlag" alt="" coords="252,13,425,39"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_icgraph.png" border="0" usemap="#classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_icgraph" alt=""/></div>
+<map name="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_icgraph" id="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_icgraph">
+<area shape="rect" id="node2" href="classUMailDetail.html#ac7436ea6317141c0e58d2046a7a1a222" title="UMailDetail::Open" alt="" coords="252,13,379,39"/>
 </map>
 </div>
 
@@ -350,7 +400,7 @@ UMMOGameInstance 連携図</div>
 <map name="classUMMOGameInstance_af26d480a22ec679fe7a22c306bc68c02_icgraph" id="classUMMOGameInstance_af26d480a22ec679fe7a22c306bc68c02_icgraph">
 <area shape="rect" id="node2" href="classUMainHUD.html#a44f9a9b0bbfb2b9da6a424a7c5173877" title="UMainHUD::ShowActiveQuestData" alt="" coords="264,5,487,32"/>
 <area shape="rect" id="node3" href="classUQuestMenu.html#a4591287f03f41fd3ed6999d29b4cc402" title="UQuestMenu::Init" alt="" coords="314,56,437,83"/>
-<area shape="rect" id="node4" href="classUQuestMenu.html#ade8dde830305652d1271ecca0dd6b93c" title="UQuestMenu::OnRecvPacket" alt="" coords="535,56,727,83"/>
+<area shape="rect" id="node4" href="classUQuestMenu.html#a4df1876071dfa193fe46f59da06e5497" title="UQuestMenu::OnRecvPacket" alt="" coords="535,56,727,83"/>
 </map>
 </div>
 
@@ -389,6 +439,31 @@ UMMOGameInstance 連携図</div>
 
 </div>
 </div>
+<a id="a17cf9782825e05d03b311f20bd2f975c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17cf9782825e05d03b311f20bd2f975c">&#9670;&nbsp;</a></span>GetMailManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classMailManager.html">MailManager</a>&amp; UMMOGameInstance::GetMailManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a520f2b0597a3a836e2fbb7c638da52d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a520f2b0597a3a836e2fbb7c638da52d6">&#9670;&nbsp;</a></span>GetQuestManager()</h2>
 
@@ -420,7 +495,7 @@ UMMOGameInstance 連携図</div>
 <area shape="rect" id="node4" href="classScriptExecuter.html#a4e32c10bf5ca0c64c3ae881a62079991" title="クエストが進行中か？ " alt="" coords="264,56,460,83"/>
 <area shape="rect" id="node5" href="classScriptExecuter.html#a1b201c5232df167472331f10a1fdfcc7" title="クエストのステージ番号を取得 " alt="" coords="276,107,448,149"/>
 <area shape="rect" id="node6" href="classScriptExecuter.html#aa181191d2829923cc2edaf3c612d3eca" title="クエストをクリアしているか？ " alt="" coords="267,173,457,200"/>
-<area shape="rect" id="node3" href="classUQuestMenu.html#ade8dde830305652d1271ecca0dd6b93c" title="UQuestMenu::OnRecvPacket" alt="" coords="508,5,700,32"/>
+<area shape="rect" id="node3" href="classUQuestMenu.html#a4df1876071dfa193fe46f59da06e5497" title="UQuestMenu::OnRecvPacket" alt="" coords="508,5,700,32"/>
 </map>
 </div>
 
@@ -655,6 +730,33 @@ UMMOGameInstance 連携図</div>
 <div class="center"><img src="classUMMOGameInstance_aeaf7e2c3b545df42fc55e7de6dde4f53_cgraph.png" border="0" usemap="#classUMMOGameInstance_aeaf7e2c3b545df42fc55e7de6dde4f53_cgraph" alt=""/></div>
 <map name="classUMMOGameInstance_aeaf7e2c3b545df42fc55e7de6dde4f53_cgraph" id="classUMMOGameInstance_aeaf7e2c3b545df42fc55e7de6dde4f53_cgraph">
 <area shape="rect" id="node2" href="classPlayerStatus.html#a7dde5f9d0eb1c361a004748d267c675e" title="PlayerStatus::UpdateItem\lShortcut" alt="" coords="253,5,424,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae4676b5f599c747bb613081324d40b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4676b5f599c747bb613081324d40b46">&#9670;&nbsp;</a></span>OnRecvMailList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMMOGameInstance::OnRecvMailList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="classMailData.html">MailData</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>List</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMMOGameInstance_ae4676b5f599c747bb613081324d40b46_cgraph.png" border="0" usemap="#classUMMOGameInstance_ae4676b5f599c747bb613081324d40b46_cgraph" alt=""/></div>
+<map name="classUMMOGameInstance_ae4676b5f599c747bb613081324d40b46_cgraph" id="classUMMOGameInstance_ae4676b5f599c747bb613081324d40b46_cgraph">
+<area shape="rect" id="node2" href="classMailManager.html#a18ec1f33d02af1219d636d945c68ad72" title="MailManager::OnRecvMailList" alt="" coords="253,13,448,39"/>
+<area shape="rect" id="node3" href="classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7" title="FlexArray::GetCurrentSize" alt="" coords="496,13,671,39"/>
 </map>
 </div>
 
@@ -979,33 +1081,36 @@ UMMOGameInstance 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="classUMMOGameInstance_a742ddc60c20a96634bed311deda3e902_icgraph.png" border="0" usemap="#classUMMOGameInstance_a742ddc60c20a96634bed311deda3e902_icgraph" alt=""/></div>
 <map name="classUMMOGameInstance_a742ddc60c20a96634bed311deda3e902_icgraph" id="classUMMOGameInstance_a742ddc60c20a96634bed311deda3e902_icgraph">
-<area shape="rect" id="node2" href="classUBlueprintFunctions.html#ac705546a0417b3a77378e6cb7a8a2b7a" title="UBlueprintFunctions\l::SendRespawnRequest" alt="" coords="307,5,468,47"/>
-<area shape="rect" id="node3" href="classUChatWindowWidget.html#a90b9f4a5869fbc6c363f5ad8108e12bd" title="UChatWindowWidget::\lSendChat" alt="" coords="311,71,464,112"/>
-<area shape="rect" id="node4" href="classUEquipMenu.html#a5d312250a86565014077cef56795b590" title="UEquipMenu::SendChangeEquip" alt="" coords="282,137,493,163"/>
-<area shape="rect" id="node5" href="classUInstanceAreaTicketMenuWidget.html#ae87d0a7f6611245b7c64a502c3bb49c1" title="UInstanceAreaTicketMenuWidget\l::SendEnter" alt="" coords="280,188,495,229"/>
-<area shape="rect" id="node6" href="classUInstanceAreaTicketMenuWidget.html#a560445a1748cc6175be236cc42b8688d" title="UInstanceAreaTicketMenuWidget\l::SendDiscard" alt="" coords="280,253,495,295"/>
-<area shape="rect" id="node7" href="classUItemMenu.html#af73770cb0702380277d4bdc79ac76391" title="UItemMenu::Subtract" alt="" coords="315,319,460,346"/>
-<area shape="rect" id="node8" href="classUItemMenu.html#a116fcfdc9059faca27cebe93561ab8b1" title="UItemMenu::SaveShortcut" alt="" coords="301,370,474,397"/>
-<area shape="rect" id="node9" href="classUPartyInviteNotice.html#aaff5334f75daf03d3c631da8816c7d59" title="UPartyInviteNotice\l::OnAction" alt="" coords="323,421,451,463"/>
-<area shape="rect" id="node10" href="classANPCCharacter.html#af6372c0e3a0f32c0079922936ff6fdaf" title="ANPCCharacter::Talk" alt="" coords="314,487,461,514"/>
-<area shape="rect" id="node11" href="classUOtherPlayerMenu.html#ac6f8010c18891ce5ea631fc6e5c0db3b" title="UOtherPlayerMenu::SendParty\lInvite" alt="" coords="287,539,488,580"/>
-<area shape="rect" id="node12" href="classUPartyCreateMenuWidget.html#a16536bddd3bc30333d2b40026c67f574" title="UPartyCreateMenuWidget\l::SendPartyCreateRequest" alt="" coords="299,604,476,645"/>
-<area shape="rect" id="node13" href="classUPartyInfoMenuWidget.html#a3c1a8143b4bbe629000e609da867f9bc" title="UPartyInfoMenuWidget\l::SendDissolutionRequest" alt="" coords="301,669,473,711"/>
-<area shape="rect" id="node14" href="classUPartyInfoMenuWidget.html#a6016c9a85f0d90b7fc89b76fd8708e79" title="UPartyInfoMenuWidget\l::SendExitRequest" alt="" coords="310,735,465,776"/>
-<area shape="rect" id="node15" href="classUPartyMemberInfoMenuWidget.html#a71c57d7fad8063bc3d12c6cfc70ffbfb" title="UPartyMemberInfoMenuWidget\l::Kick" alt="" coords="286,800,489,841"/>
-<area shape="rect" id="node16" href="classPingManager.html#ae35dc58b349997d21ae86fa3dfb1dd7a" title="PingManager::Poll" alt="" coords="323,866,451,893"/>
-<area shape="rect" id="node18" href="classUQuestMenu.html#ae79ff6a1272027f5c367ad2fcca38472" title="UQuestMenu::RetireQuest" alt="" coords="300,917,475,943"/>
-<area shape="rect" id="node19" href="classUScriptSelectionWidget.html#ae67713b6fa7d37913e7296f49a10cf9b" title="UScriptSelectionWidget\l::Select" alt="" coords="307,968,467,1009"/>
-<area shape="rect" id="node20" href="classUScriptShopWidget.html#a91cc89a2d654c602bb5190e9db148479" title="UScriptShopWidget::\lToNext" alt="" coords="315,1033,459,1075"/>
-<area shape="rect" id="node21" href="classUScriptShopWidget.html#acbbffbcacf21ed59161eb7b458b166f8" title="UScriptShopWidget::\lSendBuy" alt="" coords="315,1099,459,1140"/>
-<area shape="rect" id="node22" href="classUScriptShopWidget.html#a0b9618c3fcb1bf6e7741369fbee16d18" title="UScriptShopWidget::\lSendSell" alt="" coords="315,1164,459,1205"/>
-<area shape="rect" id="node23" href="classUSkillListWidget.html#a3769bc0b58101102483608feab913c8e" title="USkillListWidget::SendSave\lSkillListRequest" alt="" coords="295,1229,479,1271"/>
-<area shape="rect" id="node24" href="classSkillStateAutoMove.html#a5677a2cacf70b0cda8081d9038e52020" title="SkillStateAutoMove\l::Poll" alt="" coords="320,1295,455,1336"/>
-<area shape="rect" id="node25" href="classUSkillTreeWidget.html#a4b185a50ce6b16abfeb031d78985bb19" title="USkillTreeWidget::SendOpen\lRequest" alt="" coords="292,1360,483,1401"/>
-<area shape="rect" id="node26" href="classUWarpAreaList.html#a8df7d8ad476be165a30da0d6f91389c5" title="UWarpAreaList::SendAreaMove\lRequest" alt="" coords="285,1425,490,1467"/>
-<area shape="rect" id="node27" href="classAWarpPoint.html#a7bae9d66011f5272afb5700687c9e78e" title="AWarpPoint::OnOverlap" alt="" coords="307,1491,467,1518"/>
-<area shape="rect" id="node17" href="classAActiveGameMode.html#a500d1743599a505499add72770b4dc08" title="AActiveGameMode::Tick" alt="" coords="543,866,708,893"/>
-<area shape="rect" id="node28" href="classAWarpPoint.html#ab45ac53c9386015b32136aabe39a90ba" title="AWarpPoint::Tick" alt="" coords="563,1491,687,1518"/>
+<area shape="rect" id="node2" href="classUBlueprintFunctions.html#ac705546a0417b3a77378e6cb7a8a2b7a" title="UBlueprintFunctions\l::SendRespawnRequest" alt="" coords="310,5,471,47"/>
+<area shape="rect" id="node3" href="classUChatWindowWidget.html#a90b9f4a5869fbc6c363f5ad8108e12bd" title="UChatWindowWidget::\lSendChat" alt="" coords="314,71,467,112"/>
+<area shape="rect" id="node4" href="classUEquipMenu.html#a5d312250a86565014077cef56795b590" title="UEquipMenu::SendChangeEquip" alt="" coords="285,137,496,163"/>
+<area shape="rect" id="node5" href="classUInstanceAreaTicketMenuWidget.html#ae87d0a7f6611245b7c64a502c3bb49c1" title="UInstanceAreaTicketMenuWidget\l::SendEnter" alt="" coords="283,188,498,229"/>
+<area shape="rect" id="node6" href="classUInstanceAreaTicketMenuWidget.html#a560445a1748cc6175be236cc42b8688d" title="UInstanceAreaTicketMenuWidget\l::SendDiscard" alt="" coords="283,253,498,295"/>
+<area shape="rect" id="node7" href="classUItemMenu.html#af73770cb0702380277d4bdc79ac76391" title="UItemMenu::Subtract" alt="" coords="318,319,463,346"/>
+<area shape="rect" id="node8" href="classUItemMenu.html#a116fcfdc9059faca27cebe93561ab8b1" title="UItemMenu::SaveShortcut" alt="" coords="304,370,477,397"/>
+<area shape="rect" id="node9" href="classUMailDetail.html#ac7436ea6317141c0e58d2046a7a1a222" title="UMailDetail::Open" alt="" coords="327,421,454,447"/>
+<area shape="rect" id="node10" href="classUMailDetail.html#a7d836cdfd480ea154ccc1f4601c21461" title="UMailDetail::SendRecvAttachment\lRequest" alt="" coords="280,472,501,513"/>
+<area shape="rect" id="node11" href="classUMailMenu.html#a7cc1b357ec339dc6008f7d157b0ba9de" title="UMailMenu::SendMailListRequest" alt="" coords="281,538,500,565"/>
+<area shape="rect" id="node12" href="classUPartyInviteNotice.html#aaff5334f75daf03d3c631da8816c7d59" title="UPartyInviteNotice\l::OnAction" alt="" coords="327,589,455,631"/>
+<area shape="rect" id="node13" href="classANPCCharacter.html#af6372c0e3a0f32c0079922936ff6fdaf" title="ANPCCharacter::Talk" alt="" coords="317,655,464,682"/>
+<area shape="rect" id="node14" href="classUOtherPlayerMenu.html#ac6f8010c18891ce5ea631fc6e5c0db3b" title="UOtherPlayerMenu::SendParty\lInvite" alt="" coords="290,707,491,748"/>
+<area shape="rect" id="node15" href="classUPartyCreateMenuWidget.html#a16536bddd3bc30333d2b40026c67f574" title="UPartyCreateMenuWidget\l::SendPartyCreateRequest" alt="" coords="302,772,479,813"/>
+<area shape="rect" id="node16" href="classUPartyInfoMenuWidget.html#a3c1a8143b4bbe629000e609da867f9bc" title="UPartyInfoMenuWidget\l::SendDissolutionRequest" alt="" coords="305,837,477,879"/>
+<area shape="rect" id="node17" href="classUPartyInfoMenuWidget.html#a6016c9a85f0d90b7fc89b76fd8708e79" title="UPartyInfoMenuWidget\l::SendExitRequest" alt="" coords="313,903,468,944"/>
+<area shape="rect" id="node18" href="classUPartyMemberInfoMenuWidget.html#a71c57d7fad8063bc3d12c6cfc70ffbfb" title="UPartyMemberInfoMenuWidget\l::Kick" alt="" coords="289,968,492,1009"/>
+<area shape="rect" id="node19" href="classPingManager.html#ae35dc58b349997d21ae86fa3dfb1dd7a" title="PingManager::Poll" alt="" coords="327,1034,455,1061"/>
+<area shape="rect" id="node21" href="classUQuestMenu.html#ae79ff6a1272027f5c367ad2fcca38472" title="UQuestMenu::RetireQuest" alt="" coords="303,1085,478,1111"/>
+<area shape="rect" id="node22" href="classUScriptSelectionWidget.html#ae67713b6fa7d37913e7296f49a10cf9b" title="UScriptSelectionWidget\l::Select" alt="" coords="311,1136,471,1177"/>
+<area shape="rect" id="node23" href="classUScriptShopWidget.html#a91cc89a2d654c602bb5190e9db148479" title="UScriptShopWidget::\lToNext" alt="" coords="319,1201,463,1243"/>
+<area shape="rect" id="node24" href="classUScriptShopWidget.html#acbbffbcacf21ed59161eb7b458b166f8" title="UScriptShopWidget::\lSendBuy" alt="" coords="319,1267,463,1308"/>
+<area shape="rect" id="node25" href="classUScriptShopWidget.html#a0b9618c3fcb1bf6e7741369fbee16d18" title="UScriptShopWidget::\lSendSell" alt="" coords="319,1332,463,1373"/>
+<area shape="rect" id="node26" href="classUSkillListWidget.html#a3769bc0b58101102483608feab913c8e" title="USkillListWidget::SendSave\lSkillListRequest" alt="" coords="299,1397,483,1439"/>
+<area shape="rect" id="node27" href="classSkillStateAutoMove.html#a5677a2cacf70b0cda8081d9038e52020" title="SkillStateAutoMove\l::Poll" alt="" coords="323,1463,458,1504"/>
+<area shape="rect" id="node28" href="classUSkillTreeWidget.html#a4b185a50ce6b16abfeb031d78985bb19" title="USkillTreeWidget::SendOpen\lRequest" alt="" coords="295,1528,486,1569"/>
+<area shape="rect" id="node29" href="classUWarpAreaList.html#a8df7d8ad476be165a30da0d6f91389c5" title="UWarpAreaList::SendAreaMove\lRequest" alt="" coords="288,1593,493,1635"/>
+<area shape="rect" id="node30" href="classAWarpPoint.html#a7bae9d66011f5272afb5700687c9e78e" title="AWarpPoint::OnOverlap" alt="" coords="311,1659,471,1686"/>
+<area shape="rect" id="node20" href="classAActiveGameMode.html#a500d1743599a505499add72770b4dc08" title="AActiveGameMode::Tick" alt="" coords="549,1034,715,1061"/>
+<area shape="rect" id="node31" href="classAWarpPoint.html#ab45ac53c9386015b32136aabe39a90ba" title="AWarpPoint::Tick" alt="" coords="570,1659,694,1686"/>
 </map>
 </div>
 

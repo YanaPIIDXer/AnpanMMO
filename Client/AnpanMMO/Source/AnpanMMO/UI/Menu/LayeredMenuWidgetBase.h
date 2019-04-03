@@ -8,6 +8,8 @@
 
 DECLARE_DELEGATE(FOnMenuClosed);
 
+class MemoryStreamInterface;
+
 /**
  * レイヤに分割されたメニューWidget基底クラス
  */
@@ -37,7 +39,7 @@ public:
 	void CloseChild();
 
 	// パケットを受信した。
-	virtual void OnRecvPacket(uint8 ID) {}
+	virtual void OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream) {}
 
 
 	// メニューが閉じられた。
@@ -52,7 +54,7 @@ protected:
 	// 戻ってきた時のイベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Menu")
 	void OnBackFromChild();
-	void OnBackFromChild_Implementation() {}
+	virtual void OnBackFromChild_Implementation() {}
 
 	// 子を表示.
 	UFUNCTION(BlueprintCallable, Category = "Menu")

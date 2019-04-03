@@ -77,6 +77,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="PlayerStatus_8h_source.html">Character/Player/PlayerStatus.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ScriptExecuter_8h_source.html">Script/ScriptExecuter.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QuestManager_8h_source.html">Quest/QuestManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MailManager_8h_source.html">Mail/MailManager.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="FlexArray_8h_source.html">FlexArray.h</a>&quot;</code><br />
 <code>#include &quot;MMOGameInstance.generated.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -84,36 +85,37 @@ MMOGameInstance.h の依存先関係図:</div>
 <div class="dyncontent">
 <div class="center"><img src="MMOGameInstance_8h__incl.png" border="0" usemap="#MMOGameInstance_8h" alt=""/></div>
 <map name="MMOGameInstance_8h" id="MMOGameInstance_8h">
-<area shape="rect" id="node4" href="GameServerConnection_8h.html" title="Connection/GameServerConnection.h" alt="" coords="219,379,457,405"/>
-<area shape="rect" id="node9" href="PlayerStatus_8h.html" title="Character/Player/PlayerStatus.h" alt="" coords="613,379,823,405"/>
-<area shape="rect" id="node12" href="ScriptExecuter_8h.html" title="Script/ScriptExecuter.h" alt="" coords="2302,80,2459,107"/>
-<area shape="rect" id="node47" href="QuestManager_8h.html" title="Quest/QuestManager.h" alt="" coords="2750,379,2907,405"/>
-<area shape="rect" id="node49" href="FlexArray_8h.html" title="FlexArray.h" alt="" coords="3213,155,3303,181"/>
-<area shape="rect" id="node7" href="Buffer_8h.html" title="Buffer.h" alt="" coords="391,453,458,480"/>
-<area shape="rect" id="node8" href="PacketID_8h.html" title="Packet/PacketID.h" alt="" coords="2681,535,2811,562"/>
-<area shape="rect" id="node10" href="SkillTree_8h.html" title="Skill/SkillTree/SkillTree.h" alt="" coords="584,453,751,480"/>
-<area shape="rect" id="node11" href="ItemList_8h.html" title="Item/ItemList.h" alt="" coords="775,453,883,480"/>
-<area shape="rect" id="node13" href="ScriptExecuterBase_8h.html" title="ScriptExecuterBase.h" alt="" coords="3742,535,3891,562"/>
-<area shape="rect" id="node19" href="ActiveGameMode_8h.html" title="Active/ActiveGameMode.h" alt="" coords="2165,155,2340,181"/>
-<area shape="rect" id="node15" href="TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="2895,617,2981,644"/>
-<area shape="rect" id="node20" href="MMOGameModeBase_8h.html" title="MMOGameModeBase.h" alt="" coords="3263,453,3426,480"/>
-<area shape="rect" id="node25" href="PlayerManager_8h.html" title="Character/Player/PlayerManager.h" alt="" coords="1619,229,1841,256"/>
-<area shape="rect" id="node36" href="AnpanManager_8h.html" title="Character/Anpan/AnpanManager.h" alt="" coords="958,304,1179,331"/>
-<area shape="rect" id="node37" href="WarpPointManager_8h.html" title="WarpPoint/WarpPointManager.h" alt="" coords="1204,304,1413,331"/>
-<area shape="rect" id="node38" href="PartyInformation_8h.html" title="Party/PartyInformation.h" alt="" coords="2563,379,2726,405"/>
-<area shape="rect" id="node41" href="NoticeManager_8h.html" title="Notice/NoticeManager.h" alt="" coords="2377,379,2539,405"/>
-<area shape="rect" id="node43" href="PingManager_8h.html" title="Ping/PingManager.h" alt="" coords="1438,304,1577,331"/>
-<area shape="rect" id="node44" href="TimeManager_8h.html" title="Level/TimeManager.h" alt="" coords="1914,229,2058,256"/>
-<area shape="rect" id="node45" href="NPCManager_8h.html" title="Character/NPC/NPCManager.h" alt="" coords="2083,229,2284,256"/>
-<area shape="rect" id="node26" href="PlayerCharacterBase_8h.html" title="PlayerCharacterBase.h" alt="" coords="1652,304,1808,331"/>
-<area shape="rect" id="node27" href="CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="2005,379,2183,405"/>
-<area shape="rect" id="node29" href="BuffManager_8h.html" title="Buff/BuffManager.h" alt="" coords="1551,453,1682,480"/>
-<area shape="rect" id="node30" href="BuffMaster_8h.html" title="Master/BuffMaster.h" alt="" coords="3050,453,3189,480"/>
-<area shape="rect" id="node31" href="MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="2836,528,3040,569"/>
-<area shape="rect" id="node39" href="PartyMemberData_8h.html" title="Packet/PartyMemberData.h" alt="" coords="2679,453,2861,480"/>
-<area shape="rect" id="node40" href="PacketBase_8h.html" title="PacketBase.h" alt="" coords="2553,535,2657,562"/>
-<area shape="rect" id="node42" href="NoticeData_8h.html" title="Packet/NoticeData.h" alt="" coords="2512,453,2655,480"/>
-<area shape="rect" id="node48" href="QuestData_8h.html" title="Packet/QuestData.h" alt="" coords="2885,453,3025,480"/>
+<area shape="rect" id="node4" href="GameServerConnection_8h.html" title="Connection/GameServerConnection.h" alt="" coords="314,386,553,413"/>
+<area shape="rect" id="node9" href="PlayerStatus_8h.html" title="Character/Player/PlayerStatus.h" alt="" coords="582,386,791,413"/>
+<area shape="rect" id="node12" href="ScriptExecuter_8h.html" title="Script/ScriptExecuter.h" alt="" coords="2856,80,3013,107"/>
+<area shape="rect" id="node45" href="QuestManager_8h.html" title="Quest/QuestManager.h" alt="" coords="3240,229,3397,256"/>
+<area shape="rect" id="node47" href="MailManager_8h.html" title="Mail/MailManager.h" alt="" coords="3422,229,3557,256"/>
+<area shape="rect" id="node49" href="FlexArray_8h.html" title="FlexArray.h" alt="" coords="3550,304,3639,331"/>
+<area shape="rect" id="node7" href="Buffer_8h.html" title="Buffer.h" alt="" coords="93,468,160,495"/>
+<area shape="rect" id="node8" href="PacketID_8h.html" title="Packet/PacketID.h" alt="" coords="996,468,1127,495"/>
+<area shape="rect" id="node10" href="SkillTree_8h.html" title="Skill/SkillTree/SkillTree.h" alt="" coords="703,468,870,495"/>
+<area shape="rect" id="node11" href="ItemList_8h.html" title="Item/ItemList.h" alt="" coords="519,468,627,495"/>
+<area shape="rect" id="node13" href="ScriptExecuterBase_8h.html" title="ScriptExecuterBase.h" alt="" coords="2759,386,2908,413"/>
+<area shape="rect" id="node19" href="ActiveGameMode_8h.html" title="Active/ActiveGameMode.h" alt="" coords="1526,155,1701,181"/>
+<area shape="rect" id="node15" href="TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="2985,468,3071,495"/>
+<area shape="rect" id="node20" href="MMOGameModeBase_8h.html" title="MMOGameModeBase.h" alt="" coords="1252,386,1415,413"/>
+<area shape="rect" id="node25" href="PlayerManager_8h.html" title="Character/Player/PlayerManager.h" alt="" coords="1576,229,1797,256"/>
+<area shape="rect" id="node33" href="AnpanManager_8h.html" title="Character/Anpan/AnpanManager.h" alt="" coords="2005,304,2227,331"/>
+<area shape="rect" id="node34" href="WarpPointManager_8h.html" title="WarpPoint/WarpPointManager.h" alt="" coords="2297,304,2506,331"/>
+<area shape="rect" id="node35" href="PartyInformation_8h.html" title="Party/PartyInformation.h" alt="" coords="2281,229,2444,256"/>
+<area shape="rect" id="node39" href="NoticeManager_8h.html" title="Notice/NoticeManager.h" alt="" coords="2469,229,2630,256"/>
+<area shape="rect" id="node41" href="PingManager_8h.html" title="Ping/PingManager.h" alt="" coords="772,304,911,331"/>
+<area shape="rect" id="node42" href="TimeManager_8h.html" title="Level/TimeManager.h" alt="" coords="860,229,1004,256"/>
+<area shape="rect" id="node43" href="NPCManager_8h.html" title="Character/NPC/NPCManager.h" alt="" coords="1029,229,1230,256"/>
+<area shape="rect" id="node26" href="PlayerCharacterBase_8h.html" title="PlayerCharacterBase.h" alt="" coords="1813,304,1969,331"/>
+<area shape="rect" id="node27" href="CharacterBase_8h.html" title="Character/CharacterBase.h" alt="" coords="2308,386,2487,413"/>
+<area shape="rect" id="node29" href="BuffManager_8h.html" title="Buff/BuffManager.h" alt="" coords="2089,468,2220,495"/>
+<area shape="rect" id="node36" href="PartyMemberData_8h.html" title="パーティメンバ情報パケット " alt="" coords="2706,304,2889,331"/>
+<area shape="rect" id="node37" href="PacketBase_8h.html" title="PacketBase.h" alt="" coords="2932,386,3036,413"/>
+<area shape="rect" id="node38" href="MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3061,379,3265,420"/>
+<area shape="rect" id="node40" href="NoticeData_8h.html" title="通知データパケット " alt="" coords="2913,304,3055,331"/>
+<area shape="rect" id="node46" href="QuestData_8h.html" title="クエストデータパケット " alt="" coords="3079,304,3219,331"/>
+<area shape="rect" id="node48" href="MailData_8h.html" title="メールデータパケット " alt="" coords="3243,304,3373,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -128,32 +130,34 @@ MMOGameInstance.h の依存先関係図:</div>
 <area shape="rect" id="node6" href="GameMenuWidget_8cpp.html" title="GameMenuWidget.cpp" alt="" coords="628,80,783,107"/>
 <area shape="rect" id="node7" href="InstanceAreaTicketMenuWidget_8cpp.html" title="InstanceAreaTicketMenuWidget.cpp" alt="" coords="807,80,1038,107"/>
 <area shape="rect" id="node8" href="ItemMenu_8cpp.html" title="ItemMenu.cpp" alt="" coords="1063,80,1167,107"/>
-<area shape="rect" id="node9" href="NoticeMenuWidget_8cpp.html" title="NoticeMenuWidget.cpp" alt="" coords="1191,80,1348,107"/>
-<area shape="rect" id="node10" href="OtherPlayerMenu_8cpp.html" title="OtherPlayerMenu.cpp" alt="" coords="1373,80,1521,107"/>
-<area shape="rect" id="node11" href="PartyCreateMenuWidget_8cpp.html" title="PartyCreateMenuWidget.cpp" alt="" coords="1545,80,1735,107"/>
-<area shape="rect" id="node12" href="PartyInfoMenuWidget_8cpp.html" title="PartyInfoMenuWidget.cpp" alt="" coords="1759,80,1929,107"/>
-<area shape="rect" id="node13" href="PartyMemberInfoMenuWidget_8cpp.html" title="PartyMemberInfoMenuWidget.cpp" alt="" coords="1953,80,2172,107"/>
-<area shape="rect" id="node14" href="QuestMenu_8cpp.html" title="QuestMenu.cpp" alt="" coords="2196,80,2311,107"/>
-<area shape="rect" id="node15" href="SkillListWidget_8cpp.html" title="SkillListWidget.cpp" alt="" coords="2335,80,2470,107"/>
-<area shape="rect" id="node16" href="SkillTreeWidget_8cpp.html" title="SkillTreeWidget.cpp" alt="" coords="2495,80,2633,107"/>
-<area shape="rect" id="node17" href="ScriptMessageWidget_8cpp.html" title="ScriptMessageWidget.cpp" alt="" coords="2658,80,2833,107"/>
-<area shape="rect" id="node18" href="ScriptSelectionWidget_8cpp.html" title="ScriptSelectionWidget.cpp" alt="" coords="2857,80,3033,107"/>
-<area shape="rect" id="node19" href="ScriptShopWidget_8cpp.html" title="ScriptShopWidget.cpp" alt="" coords="3057,80,3209,107"/>
-<area shape="rect" id="node20" href="WarpAreaList_8cpp.html" title="WarpAreaList.cpp" alt="" coords="3234,80,3361,107"/>
-<area shape="rect" id="node21" href="BlueprintFunctions_8cpp.html" title="BlueprintFunctions.cpp" alt="" coords="3385,80,3540,107"/>
-<area shape="rect" id="node22" href="NPCCharacter_8cpp.html" title="NPCCharacter.cpp" alt="" coords="3564,80,3695,107"/>
-<area shape="rect" id="node23" href="GameCharacter_8cpp.html" title="GameCharacter.cpp" alt="" coords="3719,80,3857,107"/>
-<area shape="rect" id="node24" href="PlayerMove_8cpp.html" title="PlayerMove.cpp" alt="" coords="3881,80,3996,107"/>
-<area shape="rect" id="node25" href="MMOGameInstance_8cpp.html" title="MMOGameInstance.cpp" alt="" coords="4020,80,4183,107"/>
-<area shape="rect" id="node26" href="MMOGameModeBase_8cpp.html" title="MMOGameModeBase.cpp" alt="" coords="4207,80,4383,107"/>
-<area shape="rect" id="node27" href="PingManager_8cpp.html" title="PingManager.cpp" alt="" coords="4407,80,4529,107"/>
-<area shape="rect" id="node28" href="QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="4554,80,4686,107"/>
-<area shape="rect" id="node29" href="ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="4711,80,4844,107"/>
-<area shape="rect" id="node30" href="SkillStateAutoMove_8cpp.html" title="SkillStateAutoMove.cpp" alt="" coords="4868,80,5028,107"/>
-<area shape="rect" id="node31" href="TitleGameMode_8cpp.html" title="TitleGameMode.cpp" alt="" coords="5052,80,5191,107"/>
-<area shape="rect" id="node32" href="CharacterNameInputWidget_8cpp.html" title="CharacterNameInputWidget.cpp" alt="" coords="5215,80,5422,107"/>
-<area shape="rect" id="node33" href="TitleScreenWidget_8cpp.html" title="TitleScreenWidget.cpp" alt="" coords="5446,80,5599,107"/>
-<area shape="rect" id="node34" href="WarpPoint_8cpp.html" title="WarpPoint.cpp" alt="" coords="5623,80,5731,107"/>
+<area shape="rect" id="node9" href="MailDetail_8cpp.html" title="MailDetail.cpp" alt="" coords="1191,80,1295,107"/>
+<area shape="rect" id="node10" href="MailMenu_8cpp.html" title="MailMenu.cpp" alt="" coords="1319,80,1422,107"/>
+<area shape="rect" id="node11" href="NoticeMenuWidget_8cpp.html" title="NoticeMenuWidget.cpp" alt="" coords="1447,80,1604,107"/>
+<area shape="rect" id="node12" href="OtherPlayerMenu_8cpp.html" title="OtherPlayerMenu.cpp" alt="" coords="1629,80,1777,107"/>
+<area shape="rect" id="node13" href="PartyCreateMenuWidget_8cpp.html" title="PartyCreateMenuWidget.cpp" alt="" coords="1801,80,1991,107"/>
+<area shape="rect" id="node14" href="PartyInfoMenuWidget_8cpp.html" title="PartyInfoMenuWidget.cpp" alt="" coords="2015,80,2185,107"/>
+<area shape="rect" id="node15" href="PartyMemberInfoMenuWidget_8cpp.html" title="PartyMemberInfoMenuWidget.cpp" alt="" coords="2209,80,2428,107"/>
+<area shape="rect" id="node16" href="QuestMenu_8cpp.html" title="QuestMenu.cpp" alt="" coords="2452,80,2567,107"/>
+<area shape="rect" id="node17" href="SkillListWidget_8cpp.html" title="SkillListWidget.cpp" alt="" coords="2591,80,2726,107"/>
+<area shape="rect" id="node18" href="SkillTreeWidget_8cpp.html" title="SkillTreeWidget.cpp" alt="" coords="2751,80,2889,107"/>
+<area shape="rect" id="node19" href="ScriptMessageWidget_8cpp.html" title="ScriptMessageWidget.cpp" alt="" coords="2914,80,3089,107"/>
+<area shape="rect" id="node20" href="ScriptSelectionWidget_8cpp.html" title="ScriptSelectionWidget.cpp" alt="" coords="3113,80,3289,107"/>
+<area shape="rect" id="node21" href="ScriptShopWidget_8cpp.html" title="ScriptShopWidget.cpp" alt="" coords="3313,80,3465,107"/>
+<area shape="rect" id="node22" href="WarpAreaList_8cpp.html" title="WarpAreaList.cpp" alt="" coords="3490,80,3617,107"/>
+<area shape="rect" id="node23" href="BlueprintFunctions_8cpp.html" title="BlueprintFunctions.cpp" alt="" coords="3641,80,3796,107"/>
+<area shape="rect" id="node24" href="NPCCharacter_8cpp.html" title="NPCCharacter.cpp" alt="" coords="3820,80,3951,107"/>
+<area shape="rect" id="node25" href="GameCharacter_8cpp.html" title="GameCharacter.cpp" alt="" coords="3975,80,4113,107"/>
+<area shape="rect" id="node26" href="PlayerMove_8cpp.html" title="PlayerMove.cpp" alt="" coords="4137,80,4252,107"/>
+<area shape="rect" id="node27" href="MMOGameInstance_8cpp.html" title="MMOGameInstance.cpp" alt="" coords="4276,80,4439,107"/>
+<area shape="rect" id="node28" href="MMOGameModeBase_8cpp.html" title="MMOGameModeBase.cpp" alt="" coords="4463,80,4639,107"/>
+<area shape="rect" id="node29" href="PingManager_8cpp.html" title="PingManager.cpp" alt="" coords="4663,80,4785,107"/>
+<area shape="rect" id="node30" href="QuestManager_8cpp.html" title="QuestManager.cpp" alt="" coords="4810,80,4942,107"/>
+<area shape="rect" id="node31" href="ScriptExecuter_8cpp.html" title="ScriptExecuter.cpp" alt="" coords="4967,80,5100,107"/>
+<area shape="rect" id="node32" href="SkillStateAutoMove_8cpp.html" title="SkillStateAutoMove.cpp" alt="" coords="5124,80,5284,107"/>
+<area shape="rect" id="node33" href="TitleGameMode_8cpp.html" title="TitleGameMode.cpp" alt="" coords="5308,80,5447,107"/>
+<area shape="rect" id="node34" href="CharacterNameInputWidget_8cpp.html" title="CharacterNameInputWidget.cpp" alt="" coords="5471,80,5678,107"/>
+<area shape="rect" id="node35" href="TitleScreenWidget_8cpp.html" title="TitleScreenWidget.cpp" alt="" coords="5702,80,5855,107"/>
+<area shape="rect" id="node36" href="WarpPoint_8cpp.html" title="WarpPoint.cpp" alt="" coords="5879,80,5987,107"/>
 </map>
 </div>
 </div>

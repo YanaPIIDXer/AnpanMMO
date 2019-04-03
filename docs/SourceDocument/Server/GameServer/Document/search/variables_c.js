@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['mailid',['MailId',['../classCachePacketMailAttachmentRecvResult.html#afb55e6960274f66cc42d1d2a07aa6b3e',1,'CachePacketMailAttachmentRecvResult']]],
   ['masterid',['MasterId',['../classAnpanData.html#aa6d69a202764e037a17f078415d2f857',1,'AnpanData::MasterId()'],['../classPacketNPCTalk.html#a8583d6480793b263875ffb681f01702b',1,'PacketNPCTalk::MasterId()'],['../classPacketTime.html#ade19125d6f982ff2f2b74bc29a7f2b25',1,'PacketTime::MasterId()'],['../classPacketTimeChange.html#a2ce2a73f34cc51d187627dd1028e1dee',1,'PacketTimeChange::MasterId()']]],
   ['maxcount',['MaxCount',['../structAnpanPopAreaItem.html#a7f79af9d52393da1350f37affdaae17c',1,'AnpanPopAreaItem']]],
   ['maxdepth',['MaxDepth',['../classAreaConfig.html#a0f78458d54a847540d4cd1af4e9f1074',1,'AreaConfig']]],

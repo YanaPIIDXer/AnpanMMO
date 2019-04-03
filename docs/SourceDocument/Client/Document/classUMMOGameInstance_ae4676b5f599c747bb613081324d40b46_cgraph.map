@@ -1,0 +1,4 @@
+<map id="UMMOGameInstance::OnRecvMailList" name="UMMOGameInstance::OnRecvMailList">
+<area shape="rect" id="node2" href="$classMailManager.html#a18ec1f33d02af1219d636d945c68ad72" title="MailManager::OnRecvMailList" alt="" coords="253,13,448,39"/>
+<area shape="rect" id="node3" href="$classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7" title="FlexArray::GetCurrentSize" alt="" coords="496,13,671,39"/>
+</map>

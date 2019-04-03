@@ -30,14 +30,14 @@
 			return false;
 		}
 		
-		$Stmt = $Conn->prepare("insert into Mail values(:CustomerId, :Subject, :Body, :AttachmentType, :AttachmentId, :AttachmentCount, :Date, 0);");
+		$Stmt = $Conn->prepare("insert into Mail(CustomerId, Subject,  Body, AttachmentType, AttachmentId, AttachmentCount, RecvDate) values(:CustomerId, :Subject, :Body, :AttachmentType, :AttachmentId, :AttachmentCount, :RecvDate);");
 		$Stmt->bindValue(':CustomerId', $CustomerId, PDO::PARAM_INT);
 		$Stmt->bindValue(':Subject', $Subject, PDO::PARAM_STR);
 		$Stmt->bindValue(':Body', $Body, PDO::PARAM_STR);
 		$Stmt->bindValue(':AttachmentType', $AttachmentType, PDO::PARAM_INT);
 		$Stmt->bindValue(':AttachmentId', $AttachmentId, PDO::PARAM_INT);
 		$Stmt->bindValue(':AttachmentCount', $AttachmentCount, PDO::PARAM_INT);
-		$Stmt->bindValue(':Date', date("Y-m-d"), PDO::PARAM_STR);
+		$Stmt->bindValue(':RecvDate', date("Y-m-d"), PDO::PARAM_STR);
 		
 		if(!$Stmt->execute())
 		{

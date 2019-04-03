@@ -54,6 +54,8 @@
 #include "Packet/PacketBuyItemResult.h"
 #include "Packet/PacketSellItemResult.h"
 #include "Packet/PacketReceiveGMMessage.h"
+#include "Packet/PacketMailList.h"
+#include "Packet/PacketMailAttachmentRecvResult.h"
 
 // コンストラクタ
 AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer) 
@@ -120,6 +122,8 @@ AActiveGameMode::AActiveGameMode(const FObjectInitializer &ObjectInitializer)
 	AddPacketFunction(PacketID::BuyItemResult, std::bind(&AActiveGameMode::OnRecvBuyItemResult, this, _1));
 	AddPacketFunction(PacketID::SellItemResult, std::bind(&AActiveGameMode::OnRecvSellItemResult, this, _1));
 	AddPacketFunction(PacketID::ReceiveGMMessage, std::bind(&AActiveGameMode::OnRecvGMMessage, this, _1));
+	AddPacketFunction(PacketID::MailList, std::bind(&AActiveGameMode::OnRecvMailList, this, _1));
+	AddPacketFunction(PacketID::MailAttachmentRecvResult, std::bind(&AActiveGameMode::OnRecvMailAttachmentRecvResult, this, _1));
 	
 	pLevelManager = CreateDefaultSubobject<ULevelManager>("LevelManager");
 	pScriptWidget = CreateDefaultSubobject<UScriptWidgetRoot>("ScriptWidget");
@@ -967,6 +971,49 @@ bool AActiveGameMode::OnRecvGMMessage(MemoryStreamInterface *pStream)
 
 	// とりあえずシステムメッセージとして表示。
 	pMainHUD->ShowSystemMessage(UTF8_TO_TCHAR(Packet.Message.c_str()));
+
+	return true;
+}
+
+// メールリストを受信した。
+bool AActiveGameMode::OnRecvMailList(MemoryStreamInterface *pStream)
+{
+	PacketMailList Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+
+	pInst->OnRecvMailList(Packet.List);
+
+	return true;
+}
+
+// メール添付物受信結果を受信した。
+bool AActiveGameMode::OnRecvMailAttachmentRecvResult(MemoryStreamInterface *pStream)
+{
+	PacketMailAttachmentRecvResult Packet;
+	if (!Packet.Serialize(pStream)) { return false; }
+
+	if (Packet.Result != PacketMailAttachmentRecvResult::Success)
+	{
+		FString ErrorMsg = "Error";
+		switch (Packet.Result)
+		{
+			case PacketMailAttachmentRecvResult::AlreadyRecv:
+
+				ErrorMsg = "Already Received...";
+				break;
+		}
+
+		USimpleDialog::Show(this, ErrorMsg, 100);
+		return true;
+	}
+
+	auto *pInst = Cast<UMMOGameInstance>(GetGameInstance());
+	check(pInst != nullptr);
+	
+	pInst->ChangeMailFlag(Packet.Id, MailData::RecvAttachment);
 
 	return true;
 }

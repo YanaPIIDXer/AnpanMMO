@@ -14,6 +14,8 @@ var searchData=
   ['uitemmenu',['UItemMenu',['../classUItemMenu.html',1,'']]],
   ['ulayeredmenuwidgetbase',['ULayeredMenuWidgetBase',['../classULayeredMenuWidgetBase.html',1,'']]],
   ['ulevelmanager',['ULevelManager',['../classULevelManager.html',1,'']]],
+  ['umaildetail',['UMailDetail',['../classUMailDetail.html',1,'']]],
+  ['umailmenu',['UMailMenu',['../classUMailMenu.html',1,'']]],
   ['umainhud',['UMainHUD',['../classUMainHUD.html',1,'']]],
   ['ummogameinstance',['UMMOGameInstance',['../classUMMOGameInstance.html',1,'']]],
   ['unoticebase',['UNoticeBase',['../classUNoticeBase.html',1,'']]],

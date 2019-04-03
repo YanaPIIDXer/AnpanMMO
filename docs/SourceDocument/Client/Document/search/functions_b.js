@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['maildata',['MailData',['../classMailData.html#a8e4ef10e1782ddfe113fe1d04001a968',1,'MailData::MailData()'],['../classMailData.html#a7e558e15074f545d2955775fa9cd3fa6',1,'MailData::MailData(u32 InId, std::string InSubject, std::string InBody, u8 InAttachmentType, u32 InAttachmentId, u32 InAttachmentCount, u8 InFlag)']]],
+  ['mailmanager',['MailManager',['../classMailManager.html#a3dedcda970ae699c8d5086d0184093b0',1,'MailManager']]],
   ['memorysizecaliculatestream',['MemorySizeCaliculateStream',['../classMemorySizeCaliculateStream.html#ad91805369f6eda29100eb7a90949379e',1,'MemorySizeCaliculateStream']]],
   ['memorystreamreader',['MemoryStreamReader',['../classMemoryStreamReader.html#a464922f4f4957bd742aa22e30e5b430b',1,'MemoryStreamReader']]],
   ['memorystreamwriter',['MemoryStreamWriter',['../classMemoryStreamWriter.html#a4fb8343b23707c7103242bb1781b64ab',1,'MemoryStreamWriter']]],
