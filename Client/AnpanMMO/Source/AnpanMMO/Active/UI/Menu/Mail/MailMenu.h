@@ -20,6 +20,8 @@ enum class EMailFlag : uint8
 	RecvAttachment,
 };
 
+class MailData;
+
 // メールデータ
 USTRUCT(BlueprintType)
 struct FMailData
@@ -43,6 +45,11 @@ public:
 	// フラグ
 	UPROPERTY(BlueprintReadOnly)
 	EMailFlag Flag;
+
+
+	// コンストラクタ
+	FMailData() {}
+	FMailData(const MailData &Source);
 
 };
 

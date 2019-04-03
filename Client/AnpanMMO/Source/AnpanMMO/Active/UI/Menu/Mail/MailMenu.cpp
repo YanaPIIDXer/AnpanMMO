@@ -53,31 +53,37 @@ void UMailMenu::Init()
 	TArray<FMailData> List;
 	for (const auto &Mail : AllMail)
 	{
-		FMailData Data;
-		
-		Data.Id = Mail.Id;
-		Data.Subject = UTF8_TO_TCHAR(Mail.Subject.c_str());
-		Data.Body = UTF8_TO_TCHAR(Mail.Body.c_str());
-		switch (Mail.Flag)
-		{
-			case MailData::NotRead:
-
-				Data.Flag = EMailFlag::NotRead;
-				break;
-
-			case MailData::Read:
-
-				Data.Flag = EMailFlag::Read;
-				break;
-
-			case MailData::RecvAttachment:
-
-				Data.Flag = EMailFlag::RecvAttachment;
-				break;
-		}
-
+		FMailData Data(Mail);
 		List.Add(Data);
 	}
 
 	OnInit(List);
+}
+
+
+// ================ FMailData ===================
+
+// コンストラクタ
+FMailData::FMailData(const MailData &Source)
+{
+	Id = Source.Id;
+	Subject = UTF8_TO_TCHAR(Source.Subject.c_str());
+	Body = UTF8_TO_TCHAR(Source.Body.c_str());
+	switch (Source.Flag)
+	{
+		case MailData::NotRead:
+
+			Flag = EMailFlag::NotRead;
+			break;
+
+		case MailData::Read:
+
+			Flag = EMailFlag::Read;
+			break;
+
+		case MailData::RecvAttachment:
+
+			Flag = EMailFlag::RecvAttachment;
+			break;
+	}
 }
