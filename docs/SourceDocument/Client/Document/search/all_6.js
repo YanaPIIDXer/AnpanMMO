@@ -39,6 +39,7 @@ var searchData=
   ['getcurrentgold',['GetCurrentGold',['../classUScriptShopWidget.html#aa4c4b794b4ffc99ae5b7b00e4ec49bb4',1,'UScriptShopWidget']]],
   ['getcurrentsize',['GetCurrentSize',['../classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7',1,'FlexArray']]],
   ['getcurrenttarget',['GetCurrentTarget',['../classAGameController.html#a71b97545e91a41e26a4116f0df22c291',1,'AGameController']]],
+  ['getdata',['GetData',['../classUMailDetail.html#adc06895e5300a004c77d9da374530fbf',1,'UMailDetail']]],
   ['getdef',['GetDef',['../classPlayerStatus.html#a9fbef17513ec71c1b5162f3887fef027',1,'PlayerStatus']]],
   ['getdlcdirectory',['GetDLCDirectory',['../classConfig.html#a4fe66daea64e346fa7fa01fa78bd4098',1,'Config']]],
   ['getdlcurl',['GetDLCURL',['../classConfig.html#a52175d36acf47854ba38aedc4bba2463',1,'Config']]],
@@ -125,5 +126,5 @@ var searchData=
   ['getvit',['GetVit',['../classPlayerStatus.html#af490d65b3b9ec574f68bbbb42fc18839',1,'PlayerStatus']]],
   ['getwarpdatamaster',['GetWarpDataMaster',['../classMasterData.html#abefe8931c05fc531be56fa27d6a3c464',1,'MasterData']]],
   ['getwarppointmaster',['GetWarpPointMaster',['../classMasterData.html#ae2f1c1bafa1e3b95fd1fcf06bf7b1538',1,'MasterData']]],
-  ['gold',['GOLD',['../structQuestRewardItem.html#aeb71f624c2312b9a823286f49d4abc26aed887fccbf57491901a6d94449d70f40',1,'QuestRewardItem::GOLD()'],['../structFShopItem.html#aa75b8aa89dd507f196f110d66bbbf8f6',1,'FShopItem::Gold()'],['../classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78ab9850761a169d6daa87be23423b52293',1,'MailData::Gold()'],['../classPacketChangeGold.html#abfb376e45dfaf9e1d916082049c09c44',1,'PacketChangeGold::Gold()'],['../classPacketCharacterStatus.html#a612fc7913ceb4588cb2cecbf3b99e46d',1,'PacketCharacterStatus::Gold()']]]
+  ['gold',['GOLD',['../structQuestRewardItem.html#aeb71f624c2312b9a823286f49d4abc26aed887fccbf57491901a6d94449d70f40',1,'QuestRewardItem::GOLD()'],['../structFShopItem.html#aa75b8aa89dd507f196f110d66bbbf8f6',1,'FShopItem::Gold()'],['../classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78ab9850761a169d6daa87be23423b52293',1,'MailData::Gold()'],['../classPacketChangeGold.html#abfb376e45dfaf9e1d916082049c09c44',1,'PacketChangeGold::Gold()'],['../classPacketCharacterStatus.html#a612fc7913ceb4588cb2cecbf3b99e46d',1,'PacketCharacterStatus::Gold()'],['../MailMenu_8h.html#a44aa1a838f432d814216026020a4bd34a9768feb3fdb1f267b06093bc572952dd',1,'Gold():&#160;MailMenu.h']]]
 ];

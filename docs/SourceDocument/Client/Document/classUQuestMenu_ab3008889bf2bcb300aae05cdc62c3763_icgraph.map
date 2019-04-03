@@ -1,4 +1,4 @@
 <map id="UQuestMenu::InitEvent" name="UQuestMenu::InitEvent">
 <area shape="rect" id="node2" href="$classUQuestMenu.html#a4591287f03f41fd3ed6999d29b4cc402" title="UQuestMenu::Init" alt="" coords="208,5,331,32"/>
-<area shape="rect" id="node3" href="$classUQuestMenu.html#ade8dde830305652d1271ecca0dd6b93c" title="UQuestMenu::OnRecvPacket" alt="" coords="379,5,571,32"/>
+<area shape="rect" id="node3" href="$classUQuestMenu.html#a4df1876071dfa193fe46f59da06e5497" title="UQuestMenu::OnRecvPacket" alt="" coords="379,5,571,32"/>
 </map>

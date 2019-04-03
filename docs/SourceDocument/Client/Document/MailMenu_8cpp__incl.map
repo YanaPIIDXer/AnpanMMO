@@ -1,0 +1,41 @@
+<map id="MailMenu.cpp" name="MailMenu.cpp">
+<area shape="rect" id="node2" href="$MailMenu_8h.html" title="MailMenu.h" alt="" coords="325,155,415,181"/>
+<area shape="rect" id="node8" href="$MMOGameInstance_8h.html" title="MMOGameInstance.h" alt="" coords="1419,80,1569,107"/>
+<area shape="rect" id="node32" href="$MasterData_8h.html" title="Master/MasterData.h" alt="" coords="3502,155,3646,181"/>
+<area shape="rect" id="node50" href="$PacketMailListRequest_8h.html" title="メールリスト要求パケット " alt="" coords="2201,155,2413,181"/>
+<area shape="rect" id="node4" href="$LayeredMenuWidgetBase_8h.html" title="UI/Menu/LayeredMenuWidget\lBase.h" alt="" coords="180,229,373,271"/>
+<area shape="rect" id="node10" href="$GameServerConnection_8h.html" title="Connection/GameServerConnection.h" alt="" coords="1264,155,1503,181"/>
+<area shape="rect" id="node15" href="$PlayerStatus_8h.html" title="Character/Player/PlayerStatus.h" alt="" coords="845,155,1055,181"/>
+<area shape="rect" id="node18" href="$ScriptExecuter_8h.html" title="Script/ScriptExecuter.h" alt="" coords="550,155,707,181"/>
+<area shape="rect" id="node23" href="$QuestManager_8h.html" title="Quest/QuestManager.h" alt="" coords="1527,155,1685,181"/>
+<area shape="rect" id="node27" href="$MailManager_8h.html" title="Mail/MailManager.h" alt="" coords="1944,155,2079,181"/>
+<area shape="rect" id="node29" href="$FlexArray_8h.html" title="FlexArray.h" alt="" coords="2072,237,2161,263"/>
+<area shape="rect" id="node13" href="$Buffer_8h.html" title="Buffer.h" alt="" coords="1175,237,1242,263"/>
+<area shape="rect" id="node14" href="$PacketID_8h.html" title="Packet/PacketID.h" alt="" coords="2186,237,2317,263"/>
+<area shape="rect" id="node16" href="$SkillTree_8h.html" title="Skill/SkillTree/SkillTree.h" alt="" coords="801,237,968,263"/>
+<area shape="rect" id="node17" href="$ItemList_8h.html" title="Item/ItemList.h" alt="" coords="992,237,1100,263"/>
+<area shape="rect" id="node19" href="$ScriptExecuterBase_8h.html" title="ScriptExecuterBase.h" alt="" coords="866,326,1015,353"/>
+<area shape="rect" id="node22" href="$ActiveGameMode_8h.html" title="Active/ActiveGameMode.h" alt="" coords="500,237,675,263"/>
+<area shape="rect" id="node21" href="$TypeDefs_8h.html" title="TypeDefs.h" alt="" coords="1940,408,2027,435"/>
+<area shape="rect" id="node24" href="$QuestData_8h.html" title="クエストデータパケット " alt="" coords="1755,237,1895,263"/>
+<area shape="rect" id="node25" href="$PacketBase_8h.html" title="PacketBase.h" alt="" coords="1931,326,2035,353"/>
+<area shape="rect" id="node26" href="$MemoryStreamInterface_8h.html" title="MemoryStream/MemoryStream\lInterface.h" alt="" coords="3203,319,3407,360"/>
+<area shape="rect" id="node28" href="$MailData_8h.html" title="メールデータパケット " alt="" coords="1919,237,2048,263"/>
+<area shape="rect" id="node33" href="$AreaMaster_8h.html" title="AreaMaster.h" alt="" coords="4543,237,4643,263"/>
+<area shape="rect" id="node34" href="$WarpDataMaster_8h.html" title="WarpDataMaster.h" alt="" coords="4667,237,4798,263"/>
+<area shape="rect" id="node35" href="$WarpPointMaster_8h.html" title="WarpPointMaster.h" alt="" coords="4823,237,4957,263"/>
+<area shape="rect" id="node36" href="$AnpanMaster_8h.html" title="AnpanMaster.h" alt="" coords="2493,237,2604,263"/>
+<area shape="rect" id="node37" href="$TimeInfoMaster_8h.html" title="TimeInfoMaster.h" alt="" coords="2628,237,2749,263"/>
+<area shape="rect" id="node38" href="$NPCMaster_8h.html" title="NPCMaster.h" alt="" coords="2773,237,2873,263"/>
+<area shape="rect" id="node39" href="$NPCResourceMaster_8h.html" title="NPCResourceMaster.h" alt="" coords="2898,237,3053,263"/>
+<area shape="rect" id="node40" href="$NPCConditionMaster_8h.html" title="NPCConditionMaster.h" alt="" coords="3077,237,3231,263"/>
+<area shape="rect" id="node41" href="$SkillMaster_8h.html" title="SkillMaster.h" alt="" coords="3255,237,3354,263"/>
+<area shape="rect" id="node42" href="$SkillTreeMaster_8h.html" title="SkillTreeMaster.h" alt="" coords="3378,237,3501,263"/>
+<area shape="rect" id="node43" href="$ItemMaster_8h.html" title="ItemMaster.h" alt="" coords="3525,237,3623,263"/>
+<area shape="rect" id="node44" href="$QuestMaster_8h.html" title="QuestMaster.h" alt="" coords="3648,237,3756,263"/>
+<area shape="rect" id="node45" href="$QuestStageMaster_8h.html" title="QuestStageMaster.h" alt="" coords="3780,237,3923,263"/>
+<area shape="rect" id="node46" href="$QuestRewardMaster_8h.html" title="QuestRewardMaster.h" alt="" coords="3947,237,4097,263"/>
+<area shape="rect" id="node47" href="$EquipMaster_8h.html" title="EquipMaster.h" alt="" coords="4122,237,4229,263"/>
+<area shape="rect" id="node48" href="$BuffMaster_8h.html" title="Master/BuffMaster.h" alt="" coords="4253,237,4391,263"/>
+<area shape="rect" id="node49" href="$ShopMaster_8h.html" title="ShopMaster.h" alt="" coords="4416,237,4519,263"/>
+</map>

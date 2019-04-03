@@ -1,8 +1,6 @@
 <map id="SkillMaster::Load" name="SkillMaster::Load">
 <area shape="rect" id="node2" href="$classConfig.html#aa0d03ac6bc360e1967e3f0e1545e8727" title="Config::GetMasterDirectory" alt="" coords="176,5,355,32"/>
 <area shape="rect" id="node3" href="$classMemoryStreamReader.html#a84b6890be59be6de3c4816dc963abbc0" title="MemoryStreamReader\l::Serialize" alt="" coords="189,57,341,98"/>
-<area shape="rect" id="node6" href="$structSkillItem.html#a9e8f36595d60da488475eda2cd503651" title="SkillItem::Serialize" alt="" coords="200,123,331,149"/>
 <area shape="rect" id="node4" href="$classEndianConverter.html#a47978965106ecf69f965fbdd554e73a6" title="符号付き１６ビット変換 " alt="" coords="403,64,569,91"/>
 <area shape="rect" id="node5" href="$classEndianConverter.html#a84209a80fd50fad407f57665499fedda" title="リトルエンディアン？ " alt="" coords="617,57,780,98"/>
-<area shape="rect" id="node7" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="406,115,566,157"/>
 </map>

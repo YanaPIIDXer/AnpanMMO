@@ -1,0 +1,5 @@
+<map id="UMailDetail::OnRecvPacket" name="UMailDetail::OnRecvPacket">
+<area shape="rect" id="node2" href="$classPacketMailAttachmentRecvResult.html#ad49d8efcdbeb9b8ba57e9001bbdf35f5" title="シリアライズ " alt="" coords="236,5,419,47"/>
+<area shape="rect" id="node4" href="$classUMailDetail.html#ad4c0861ffad9d036a8d4755f50ebd777" title="UMailDetail::OnOpen" alt="" coords="255,71,399,98"/>
+<area shape="rect" id="node3" href="$classMemoryStreamInterface.html#a6a4fb8faf2a4f94ea6b56334aba31ebf" title="MemoryStreamInterface\l::Serialize" alt="" coords="467,5,627,47"/>
+</map>

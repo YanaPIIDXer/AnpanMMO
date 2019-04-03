@@ -26,6 +26,7 @@ var searchData=
   ['getcurrentgold',['GetCurrentGold',['../classUScriptShopWidget.html#aa4c4b794b4ffc99ae5b7b00e4ec49bb4',1,'UScriptShopWidget']]],
   ['getcurrentsize',['GetCurrentSize',['../classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7',1,'FlexArray']]],
   ['getcurrenttarget',['GetCurrentTarget',['../classAGameController.html#a71b97545e91a41e26a4116f0df22c291',1,'AGameController']]],
+  ['getdata',['GetData',['../classUMailDetail.html#adc06895e5300a004c77d9da374530fbf',1,'UMailDetail']]],
   ['getdef',['GetDef',['../classPlayerStatus.html#a9fbef17513ec71c1b5162f3887fef027',1,'PlayerStatus']]],
   ['getdlcdirectory',['GetDLCDirectory',['../classConfig.html#a4fe66daea64e346fa7fa01fa78bd4098',1,'Config']]],
   ['getdlcurl',['GetDLCURL',['../classConfig.html#a52175d36acf47854ba38aedc4bba2463',1,'Config']]],

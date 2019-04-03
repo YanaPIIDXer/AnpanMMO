@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['hasattachment',['HasAttachment',['../classUMailDetail.html#aafa96ae37fdc62cffd256d1873a97541',1,'UMailDetail']]],
   ['hasnotreadnotice',['HasNotReadNotice',['../classUMainHUD.html#a14263b5fca304352a07d8afeadc0e21c',1,'UMainHUD']]],
   ['heal',['HEAL',['../structSkillItem.html#a2174202fd143385920a81ba50114e3e8acc07096931347995c85f8d7b875abe24',1,'SkillItem::HEAL()'],['../classPacketID.html#aaac69b977036b9b9d40419b939c1570aaf06d4180632f93414398c648de411e2f',1,'PacketID::Heal()'],['../classACharacterBase.html#ab27cac6304412e470bb2f031f1194b85',1,'ACharacterBase::Heal()']]],
   ['healed',['Healed',['../classUPlayerHPGauge.html#ad3fda5f300cc67e8fbea44949cc94beb',1,'UPlayerHPGauge']]],

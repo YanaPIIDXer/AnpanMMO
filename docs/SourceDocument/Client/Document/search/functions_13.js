@@ -13,6 +13,8 @@ var searchData=
   ['uitemmenu',['UItemMenu',['../classUItemMenu.html#a26620e6d7605a43955cd07ace683a50e',1,'UItemMenu']]],
   ['ulayeredmenuwidgetbase',['ULayeredMenuWidgetBase',['../classULayeredMenuWidgetBase.html#ad3489f84bc81c769f5fbee69915033fb',1,'ULayeredMenuWidgetBase']]],
   ['ulevelmanager',['ULevelManager',['../classULevelManager.html#adc7d24951040b62df73aaa3480836ad9',1,'ULevelManager']]],
+  ['umaildetail',['UMailDetail',['../classUMailDetail.html#a1767b5c8f7726b55faabe0d8dc878cfc',1,'UMailDetail']]],
+  ['umailmenu',['UMailMenu',['../classUMailMenu.html#ada295e635a829e20d43ea11c79cbdcc1',1,'UMailMenu']]],
   ['umainhud',['UMainHUD',['../classUMainHUD.html#ab9685e55d0b01aa694f8ecec2afbcd58',1,'UMainHUD']]],
   ['ummogameinstance',['UMMOGameInstance',['../classUMMOGameInstance.html#af3e0e2d0b3d771177ec0a7d678135e30',1,'UMMOGameInstance']]],
   ['unoticebase',['UNoticeBase',['../classUNoticeBase.html#a65410366d783963410da00b6e5baeb05',1,'UNoticeBase']]],

@@ -1,8 +1,12 @@
 var searchData=
 [
   ['maildata_2eh',['MailData.h',['../MailData_8h.html',1,'']]],
+  ['maildetail_2ecpp',['MailDetail.cpp',['../MailDetail_8cpp.html',1,'']]],
+  ['maildetail_2eh',['MailDetail.h',['../MailDetail_8h.html',1,'']]],
   ['mailmanager_2ecpp',['MailManager.cpp',['../MailManager_8cpp.html',1,'']]],
   ['mailmanager_2eh',['MailManager.h',['../MailManager_8h.html',1,'']]],
+  ['mailmenu_2ecpp',['MailMenu.cpp',['../MailMenu_8cpp.html',1,'']]],
+  ['mailmenu_2eh',['MailMenu.h',['../MailMenu_8h.html',1,'']]],
   ['mainhud_2ecpp',['MainHUD.cpp',['../MainHUD_8cpp.html',1,'']]],
   ['mainhud_2eh',['MainHUD.h',['../MainHUD_8h.html',1,'']]],
   ['masterdata_2ecpp',['MasterData.cpp',['../MasterData_8cpp.html',1,'']]],

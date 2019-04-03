@@ -1,0 +1,11 @@
+<map id="UMailDetail::Open" name="UMailDetail::Open">
+<area shape="rect" id="node2" href="$classUMMOGameInstance.html#a3fde3ed660855f5fc1f63eeba2a04479" title="UMMOGameInstance::Change\lMailFlag" alt="" coords="194,27,393,69"/>
+<area shape="rect" id="node4" href="$classUMMOGameInstance.html#a742ddc60c20a96634bed311deda3e902" title="UMMOGameInstance::SendPacket" alt="" coords="180,93,407,120"/>
+<area shape="rect" id="node10" href="$classUMailDetail.html#ad4c0861ffad9d036a8d4755f50ebd777" title="UMailDetail::OnOpen" alt="" coords="221,144,365,171"/>
+<area shape="rect" id="node3" href="$classMailManager.html#a89a2a01f38bfaac1033064e789532a6c" title="MailManager::ChangeFlag" alt="" coords="455,35,628,61"/>
+<area shape="rect" id="node5" href="$classGameServerConnection.html#ac751385003e92982476bef66acfb4519" title="GameServerConnection\l::SendPacket" alt="" coords="462,86,621,127"/>
+<area shape="rect" id="node6" href="$classPacketBase.html#ab4e30d95c9ddc4ccb36376fc93d1398d" title="PacketBase::Serialize" alt="" coords="698,5,849,32"/>
+<area shape="rect" id="node7" href="$classMemorySizeCaliculateStream.html#a72c4a78e20afe4329e1f42b03949a9dd" title="MemorySizeCaliculateStream\l::GetSize" alt="" coords="676,57,871,98"/>
+<area shape="rect" id="node8" href="$classPacketBase.html#a25571c44a21c4e9e15df719b2073ba62" title="PacketBase::GetPacketID" alt="" coords="686,123,861,149"/>
+<area shape="rect" id="node9" href="$classBuffer.html#ae4ffa3ab2c0fd7745d7498b34f8cda4c" title="Buffer::Push" alt="" coords="727,173,820,200"/>
+</map>

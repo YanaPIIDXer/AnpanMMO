@@ -24,5 +24,5 @@ var searchData=
   ['startstageid',['StartStageId',['../structQuestItem.html#a64979ce58fc2a116c69217549dc810e4',1,'QuestItem']]],
   ['state',['State',['../classQuestData.html#ae9a8ce8a0d15ed3e9c5260ce26419b3c',1,'QuestData::State()'],['../classSkillTreeNode.html#a7a1a7eee0c6c45ed7121d7e170bbf94e',1,'SkillTreeNode::State()']]],
   ['str',['Str',['../structFEquipData.html#a8b31ddee90125e832fefb97fb47dd41e',1,'FEquipData::Str()'],['../structAnpanItem.html#a74247df1af127824e803799d63d2039b',1,'AnpanItem::Str()'],['../structEquipItem.html#a7292b4d132f4f650cf7c171ad496676c',1,'EquipItem::Str()'],['../classPacketCharacterStatus.html#a57179c09184740babd3c17eeb14c1571',1,'PacketCharacterStatus::Str()'],['../classPacketLevelUp.html#ad7be1418c5faf6b013fd1919cd839937',1,'PacketLevelUp::Str()']]],
-  ['subject',['Subject',['../classMailData.html#a8805800791b29c216f807ce33c861de7',1,'MailData']]]
+  ['subject',['Subject',['../structFMailData.html#a4fd2bbe8425210e19818c7af1170c470',1,'FMailData::Subject()'],['../classMailData.html#a8805800791b29c216f807ce33c861de7',1,'MailData::Subject()']]]
 ];

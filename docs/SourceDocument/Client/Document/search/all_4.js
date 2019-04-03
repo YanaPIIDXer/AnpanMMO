@@ -5,6 +5,8 @@ var searchData=
   ['echattype',['EChatType',['../ChatWindowWidget_8h.html#a3e92ec978e6b1ef6fc762f5bfd1a8a9d',1,'ChatWindowWidget.h']]],
   ['efademode',['EFadeMode',['../FadeScreen_8h.html#a189894e4d6863b5b9e4ad4882cabd3a8',1,'FadeScreen.h']]],
   ['eid',['EID',['../classPacketID.html#aaac69b977036b9b9d40419b939c1570a',1,'PacketID']]],
+  ['emailattachmenttype',['EMailAttachmentType',['../MailMenu_8h.html#a44aa1a838f432d814216026020a4bd34',1,'MailMenu.h']]],
+  ['emailflag',['EMailFlag',['../MailMenu_8h.html#aa4a3ff2973d05d8ee53e23e4c704eaea',1,'MailMenu.h']]],
   ['emptyname',['EmptyName',['../classPacketCreateCharacterResult.html#a76ac4cb65949221d75a6891d1adef276a9380a700f1921c03a49e122654264441',1,'PacketCreateCharacterResult']]],
   ['endianconverter',['EndianConverter',['../classEndianConverter.html',1,'']]],
   ['endianconverter_2eh',['EndianConverter.h',['../EndianConverter_8h.html',1,'']]],
