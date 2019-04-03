@@ -70,7 +70,7 @@ void UItemMenu::Init()
 }
 
 // パケットを受信した。
-void UItemMenu::OnRecvPacket(uint8 ID)
+void UItemMenu::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
 	switch (ID)
 	{

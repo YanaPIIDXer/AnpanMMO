@@ -67,7 +67,7 @@ public:
 	void SendMailListRequest();
 
 	// パケットを受信した。
-	virtual void OnRecvPacket(uint8 ID) override;
+	virtual void OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream) override;
 
 protected:
 

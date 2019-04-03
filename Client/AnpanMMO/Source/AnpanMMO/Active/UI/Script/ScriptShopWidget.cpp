@@ -31,7 +31,7 @@ UScriptShopWidget::UScriptShopWidget(const FObjectInitializer &ObjectInitializer
 }
 
 // パケットを受信した。
-void UScriptShopWidget::OnRecvPacket(uint8 ID)
+void UScriptShopWidget::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
 	switch (ID)
 	{

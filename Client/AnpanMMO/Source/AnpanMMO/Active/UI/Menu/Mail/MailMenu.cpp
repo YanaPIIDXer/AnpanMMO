@@ -24,7 +24,7 @@ void UMailMenu::SendMailListRequest()
 }
 
 // パケットを受信した。
-void UMailMenu::OnRecvPacket(uint8 ID)
+void UMailMenu::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 {
 	switch (ID)
 	{

@@ -47,6 +47,7 @@ void AMMOGameModeBase::OnRecvPacket(uint8 ID, MemoryStreamInterface *pStream)
 
 	if (pCurrentMenu != nullptr)
 	{
-		pCurrentMenu->OnRecvPacket(ID);
+		pStream->Reset();
+		pCurrentMenu->OnRecvPacket(ID, pStream);
 	}
 }
