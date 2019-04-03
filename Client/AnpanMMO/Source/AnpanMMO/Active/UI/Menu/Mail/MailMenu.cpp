@@ -36,6 +36,13 @@ void UMailMenu::OnRecvPacket(uint8 ID)
 }
 
 
+// qWidget‚©‚ç–ß‚Á‚Ä‚«‚½‚Ìˆ—.
+void UMailMenu::OnBackFromChild_Implementation()
+{
+	Init();
+}
+
+
 // ‰Šú‰».
 void UMailMenu::Init()
 {

@@ -71,13 +71,17 @@ public:
 
 protected:
 
-	// 初期化.
-	UFUNCTION(BlueprintCallable, Category = "Mail")
-	void Init();
+	// 子Widgetから戻ってきた時の処理.
+	virtual void OnBackFromChild_Implementation() override;
 
 	// 初期化イベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Mail")
 	void OnInit(const TArray<FMailData> &MailList);
 	void OnInit_Implementation(const TArray<FMailData> &MailList) {}
+
+private:
+
+	// 初期化.
+	void Init();
 
 };

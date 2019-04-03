@@ -52,7 +52,7 @@ protected:
 	// 戻ってきた時のイベント
 	UFUNCTION(BlueprintNativeEvent, Category = "Menu")
 	void OnBackFromChild();
-	void OnBackFromChild_Implementation() {}
+	virtual void OnBackFromChild_Implementation() {}
 
 	// 子を表示.
 	UFUNCTION(BlueprintCallable, Category = "Menu")
