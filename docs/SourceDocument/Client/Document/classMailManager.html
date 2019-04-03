@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AnpanMMO: MailManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AnpanMMO
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classMailManager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">MailManager クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="MailManager_8h_source.html">MailManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3dedcda970ae699c8d5086d0184093b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailManager.html#a3dedcda970ae699c8d5086d0184093b0">MailManager</a> ()</td></tr>
+<tr class="separator:a3dedcda970ae699c8d5086d0184093b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f772cfb6b7fce1b428879f0efea299"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailManager.html#a80f772cfb6b7fce1b428879f0efea299">~MailManager</a> ()</td></tr>
+<tr class="separator:a80f772cfb6b7fce1b428879f0efea299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a448a0add80726cfec8829907a7815451"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailManager.html#a448a0add80726cfec8829907a7815451">Get</a> (uint32 Id, <a class="el" href="classMailData.html">MailData</a> &amp;OutData) const</td></tr>
+<tr class="separator:a448a0add80726cfec8829907a7815451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda26c57532f4e3d55c2c4bd8829fbad"><td class="memItemLeft" align="right" valign="top">const TArray&lt; <a class="el" href="classMailData.html">MailData</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailManager.html#acda26c57532f4e3d55c2c4bd8829fbad">GetAllMail</a> () const</td></tr>
+<tr class="separator:acda26c57532f4e3d55c2c4bd8829fbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ec1f33d02af1219d636d945c68ad72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailManager.html#a18ec1f33d02af1219d636d945c68ad72">OnRecvMailList</a> (const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="classMailData.html">MailData</a> &gt; &amp;List)</td></tr>
+<tr class="separator:a18ec1f33d02af1219d636d945c68ad72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a2a01f38bfaac1033064e789532a6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMailManager.html#a89a2a01f38bfaac1033064e789532a6c">ChangeFlag</a> (uint32 Id, uint8 Flag)</td></tr>
+<tr class="separator:a89a2a01f38bfaac1033064e789532a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>メール管理. </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a3dedcda970ae699c8d5086d0184093b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dedcda970ae699c8d5086d0184093b0">&#9670;&nbsp;</a></span>MailManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MailManager::MailManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80f772cfb6b7fce1b428879f0efea299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80f772cfb6b7fce1b428879f0efea299">&#9670;&nbsp;</a></span>~MailManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MailManager::~MailManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a89a2a01f38bfaac1033064e789532a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a2a01f38bfaac1033064e789532a6c">&#9670;&nbsp;</a></span>ChangeFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MailManager::ChangeFlag </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>Id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8&#160;</td>
+          <td class="paramname"><em>Flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMailManager_a89a2a01f38bfaac1033064e789532a6c_icgraph.png" border="0" usemap="#classMailManager_a89a2a01f38bfaac1033064e789532a6c_icgraph" alt=""/></div>
+<map name="classMailManager_a89a2a01f38bfaac1033064e789532a6c_icgraph" id="classMailManager_a89a2a01f38bfaac1033064e789532a6c_icgraph">
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#a3fde3ed660855f5fc1f63eeba2a04479" title="UMMOGameInstance::Change\lMailFlag" alt="" coords="227,5,425,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a448a0add80726cfec8829907a7815451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a448a0add80726cfec8829907a7815451">&#9670;&nbsp;</a></span>Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MailManager::Get </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>Id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMailData.html">MailData</a> &amp;&#160;</td>
+          <td class="paramname"><em>OutData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acda26c57532f4e3d55c2c4bd8829fbad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acda26c57532f4e3d55c2c4bd8829fbad">&#9670;&nbsp;</a></span>GetAllMail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const TArray&lt;<a class="el" href="classMailData.html">MailData</a>&gt;&amp; MailManager::GetAllMail </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18ec1f33d02af1219d636d945c68ad72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ec1f33d02af1219d636d945c68ad72">&#9670;&nbsp;</a></span>OnRecvMailList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MailManager::OnRecvMailList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="classMailData.html">MailData</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>List</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMailManager_a18ec1f33d02af1219d636d945c68ad72_cgraph.png" border="0" usemap="#classMailManager_a18ec1f33d02af1219d636d945c68ad72_cgraph" alt=""/></div>
+<map name="classMailManager_a18ec1f33d02af1219d636d945c68ad72_cgraph" id="classMailManager_a18ec1f33d02af1219d636d945c68ad72_cgraph">
+<area shape="rect" id="node2" href="classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7" title="FlexArray::GetCurrentSize" alt="" coords="248,5,423,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMailManager_a18ec1f33d02af1219d636d945c68ad72_icgraph.png" border="0" usemap="#classMailManager_a18ec1f33d02af1219d636d945c68ad72_icgraph" alt=""/></div>
+<map name="classMailManager_a18ec1f33d02af1219d636d945c68ad72_icgraph" id="classMailManager_a18ec1f33d02af1219d636d945c68ad72_icgraph">
+<area shape="rect" id="node2" href="classUMMOGameInstance.html#ae4676b5f599c747bb613081324d40b46" title="UMMOGameInstance::OnRecv\lMailList" alt="" coords="248,5,448,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="MailManager_8h_source.html">MailManager.h</a></li>
+<li><a class="el" href="MailManager_8cpp.html">MailManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

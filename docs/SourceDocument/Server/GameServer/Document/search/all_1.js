@@ -111,7 +111,7 @@ var searchData=
   ['asyncrecv',['AsyncRecv',['../classTCPConnection.html#afdc370c27676080e6a90743b4a6ea3e2',1,'TCPConnection']]],
   ['asyncsend',['AsyncSend',['../classTCPConnection.html#a2add2f8d17c25e01d3fa21d98491f9fd',1,'TCPConnection']]],
   ['attachmentcount',['AttachmentCount',['../classMailData.html#a08ec639905e710fbadd0475371c101aa',1,'MailData']]],
-  ['attachmentid',['AttachmentId',['../classMailData.html#a112eabd19acf8dbf8626c56fb36b7f5d',1,'MailData']]],
+  ['attachmentid',['AttachmentId',['../classCachePacketMailAttachmentRecvResult.html#afb48e7679c7904c230021f933c058a8c',1,'CachePacketMailAttachmentRecvResult::AttachmentId()'],['../classMailData.html#a112eabd19acf8dbf8626c56fb36b7f5d',1,'MailData::AttachmentId()']]],
   ['attachmentkind',['AttachmentKind',['../classMailData.html#abdbb9e869b9906e43f3ed10c6d4e3a78',1,'MailData']]],
   ['attachmenttype',['AttachmentType',['../classMailData.html#a402d6cec17bd0f7bbd03469c9749879a',1,'MailData']]],
   ['attack',['ATTACK',['../structSkillItem.html#af16a4269928b1fc7cff4e5479eef6cd1a63452507f8c07b55c794840596f413b6',1,'SkillItem']]],

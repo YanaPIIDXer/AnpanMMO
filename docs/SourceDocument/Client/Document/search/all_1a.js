@@ -29,6 +29,7 @@ var searchData=
   ['_7ehttpconnection',['~HttpConnection',['../classHttpConnection.html#acb8dccc6bb58adf22089deec89a5da6e',1,'HttpConnection']]],
   ['_7eidmanager',['~IdManager',['../classIdManager.html#a5bcf6f8c81ae16380c620515bdce333e',1,'IdManager']]],
   ['_7eitemlist',['~ItemList',['../classItemList.html#aae9c754f5b26f5ccaa828468cf31a25c',1,'ItemList']]],
+  ['_7emailmanager',['~MailManager',['../classMailManager.html#a80f772cfb6b7fce1b428879f0efea299',1,'MailManager']]],
   ['_7emasterdata',['~MasterData',['../classMasterData.html#af31a789929b4e3c7e58d22278489ba09',1,'MasterData']]],
   ['_7ememorysizecaliculatestream',['~MemorySizeCaliculateStream',['../classMemorySizeCaliculateStream.html#a93d19e7d4178e7a6e9baaa3775fec6b1',1,'MemorySizeCaliculateStream']]],
   ['_7ememorystreaminterface',['~MemoryStreamInterface',['../classMemoryStreamInterface.html#a41daf667398222a6cd406a9ce0073da8',1,'MemoryStreamInterface']]],

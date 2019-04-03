@@ -138,6 +138,12 @@ UMMOGameInstance 連携図</div>
 <tr class="separator:af26d480a22ec679fe7a22c306bc68c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a194e4f45d812c899d211e39fc2bd71"><td class="memItemLeft" align="right" valign="top">FOnActiveQuestUpdated &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a6a194e4f45d812c899d211e39fc2bd71">OnActiveQuestUpdated</a> ()</td></tr>
 <tr class="separator:a6a194e4f45d812c899d211e39fc2bd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17cf9782825e05d03b311f20bd2f975c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMailManager.html">MailManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a17cf9782825e05d03b311f20bd2f975c">GetMailManager</a> () const</td></tr>
+<tr class="separator:a17cf9782825e05d03b311f20bd2f975c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4676b5f599c747bb613081324d40b46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#ae4676b5f599c747bb613081324d40b46">OnRecvMailList</a> (const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="classMailData.html">MailData</a> &gt; &amp;List)</td></tr>
+<tr class="separator:ae4676b5f599c747bb613081324d40b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fde3ed660855f5fc1f63eeba2a04479"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUMMOGameInstance.html#a3fde3ed660855f5fc1f63eeba2a04479">ChangeMailFlag</a> (uint32 Id, uint8 Flag)</td></tr>
+<tr class="separator:a3fde3ed660855f5fc1f63eeba2a04479"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 公開変数類</h2></td></tr>
@@ -216,6 +222,42 @@ UMMOGameInstance 連携図</div>
 <area shape="rect" id="node4" href="classMasterData.html#ad5d842c20bc0240b7977c0d352768889" title="MasterData::GetQuestMaster" alt="" coords="486,56,679,83"/>
 <area shape="rect" id="node5" href="classQuestMaster.html#a1fe8ccbcb98de486f735d0dbfe66cee2" title="QuestMaster::Get" alt="" coords="519,107,646,133"/>
 <area shape="rect" id="node6" href="classQuestManager.html#ab76a9f8f1a15a636ba7fa73d30dcf4f4" title="QuestManager::SetActiveQuest" alt="" coords="480,157,685,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3fde3ed660855f5fc1f63eeba2a04479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fde3ed660855f5fc1f63eeba2a04479">&#9670;&nbsp;</a></span>ChangeMailFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMMOGameInstance::ChangeMailFlag </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>Id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8&#160;</td>
+          <td class="paramname"><em>Flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_cgraph.png" border="0" usemap="#classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_cgraph" alt=""/></div>
+<map name="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_cgraph" id="classUMMOGameInstance_a3fde3ed660855f5fc1f63eeba2a04479_cgraph">
+<area shape="rect" id="node2" href="classMailManager.html#a89a2a01f38bfaac1033064e789532a6c" title="MailManager::ChangeFlag" alt="" coords="252,13,425,39"/>
 </map>
 </div>
 
@@ -386,6 +428,31 @@ UMMOGameInstance 連携図</div>
 <area shape="rect" id="node2" href="classUMainHUD.html#a1e8a3ed8c060154e615aac2c53dc1b73" title="UMainHUD::StartLevelLoad" alt="" coords="256,13,435,39"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a17cf9782825e05d03b311f20bd2f975c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17cf9782825e05d03b311f20bd2f975c">&#9670;&nbsp;</a></span>GetMailManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classMailManager.html">MailManager</a>&amp; UMMOGameInstance::GetMailManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -655,6 +722,33 @@ UMMOGameInstance 連携図</div>
 <div class="center"><img src="classUMMOGameInstance_aeaf7e2c3b545df42fc55e7de6dde4f53_cgraph.png" border="0" usemap="#classUMMOGameInstance_aeaf7e2c3b545df42fc55e7de6dde4f53_cgraph" alt=""/></div>
 <map name="classUMMOGameInstance_aeaf7e2c3b545df42fc55e7de6dde4f53_cgraph" id="classUMMOGameInstance_aeaf7e2c3b545df42fc55e7de6dde4f53_cgraph">
 <area shape="rect" id="node2" href="classPlayerStatus.html#a7dde5f9d0eb1c361a004748d267c675e" title="PlayerStatus::UpdateItem\lShortcut" alt="" coords="253,5,424,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae4676b5f599c747bb613081324d40b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4676b5f599c747bb613081324d40b46">&#9670;&nbsp;</a></span>OnRecvMailList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMMOGameInstance::OnRecvMailList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classFlexArray.html">FlexArray</a>&lt; <a class="el" href="classMailData.html">MailData</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>List</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="classUMMOGameInstance_ae4676b5f599c747bb613081324d40b46_cgraph.png" border="0" usemap="#classUMMOGameInstance_ae4676b5f599c747bb613081324d40b46_cgraph" alt=""/></div>
+<map name="classUMMOGameInstance_ae4676b5f599c747bb613081324d40b46_cgraph" id="classUMMOGameInstance_ae4676b5f599c747bb613081324d40b46_cgraph">
+<area shape="rect" id="node2" href="classMailManager.html#a18ec1f33d02af1219d636d945c68ad72" title="MailManager::OnRecvMailList" alt="" coords="253,13,448,39"/>
+<area shape="rect" id="node3" href="classFlexArray.html#a3eaa1561f40060a31f1966974a65f1f7" title="FlexArray::GetCurrentSize" alt="" coords="496,13,671,39"/>
 </map>
 </div>
 
