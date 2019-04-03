@@ -26,7 +26,7 @@ public:
 
 	// メールを開く
 	UFUNCTION(BlueprintCallable, Category = "Mail")
-	void Open(const FMailData &Data);
+	void Open(const FMailData &InData);
 
 protected:
 
@@ -35,20 +35,13 @@ protected:
 	void OnOpen();
 	void OnOpen_Implementation() {}
 
-	// 件名を取得.
+	// データを取得.
 	UFUNCTION(BlueprintPure, Category = "Mail")
-	const FString &GetSubject() const { return Subject; }
-
-	// 本文を取得.
-	UFUNCTION(BlueprintPure, Category = "Mail")
-	const FString &GetBody() const { return Body; }
+	const FMailData &GetData() const { return Data; }
 
 private:
 	
-	// 件名.
-	FString Subject;
-
-	// 本文.
-	FString Body;
+	// データ
+	FMailData Data;
 
 };

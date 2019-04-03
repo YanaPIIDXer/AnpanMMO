@@ -4,6 +4,7 @@
 #include "MailMenu.h"
 #include "MMOGameInstance.h"
 #include "Kismet/GameplayStatics.h"
+#include "Master/MasterData.h"
 #include "Packet/PacketMailListRequest.h"
 
 // コンストラクタ
@@ -86,4 +87,36 @@ FMailData::FMailData(const MailData &Source)
 			Flag = EMailFlag::RecvAttachment;
 			break;
 	}
+
+	AttachmentItemName = "";
+	switch (Source.AttachmentType)
+	{
+		case MailData::None:
+
+			AttachmentType = EMailAttachmentType::None;
+			break;
+
+		case MailData::Item:
+
+			AttachmentType = EMailAttachmentType::Item;
+			if (Source.AttachmentId < 10000)
+			{
+				const ItemItem *pItem = MasterData::GetInstance().GetItemMaster().Get(Source.AttachmentId);
+				check(pItem != nullptr);
+				AttachmentItemName = pItem->Name;
+			}
+			else
+			{
+				const EquipItem *pItem = MasterData::GetInstance().GetEquipMaster().Get(Source.AttachmentId);
+				check(pItem != nullptr);
+				AttachmentItemName = pItem->Name;
+			}
+			break;
+
+		case MailData::Gold:
+
+			AttachmentType = EMailAttachmentType::Gold;
+			break;
+	}
+	AttachmentCount = Source.AttachmentCount;
 }

@@ -9,16 +9,13 @@
 // コンストラクタ
 UMailDetail::UMailDetail(const FObjectInitializer &ObjectInitializer)
 	: Super(ObjectInitializer)
-	, Subject("")
-	, Body("")
 {
 }
 
 // メールを開く
-void UMailDetail::Open(const FMailData &Data)
+void UMailDetail::Open(const FMailData &InData)
 {
-	Subject = Data.Subject;
-	Body = Data.Body;
+	Data = InData;
 
 	UMMOGameInstance *pInst = Cast<UMMOGameInstance>(UGameplayStatics::GetGameInstance(this));
 	check(pInst != nullptr);

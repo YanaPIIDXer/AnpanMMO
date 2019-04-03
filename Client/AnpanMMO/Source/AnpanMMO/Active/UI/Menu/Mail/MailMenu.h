@@ -20,6 +20,20 @@ enum class EMailFlag : uint8
 	RecvAttachment,
 };
 
+// メール添付物の種類.
+UENUM(BlueprintType)
+enum class EMailAttachmentType : uint8
+{
+	// 無し
+	None,
+
+	// アイテム
+	Item,
+
+	// ゴールド
+	Gold,
+};
+
 class MailData;
 
 // メールデータ
@@ -45,6 +59,18 @@ public:
 	// フラグ
 	UPROPERTY(BlueprintReadOnly)
 	EMailFlag Flag;
+
+	// 添付物タイプ
+	UPROPERTY(BlueprintReadOnly)
+	EMailAttachmentType AttachmentType;
+
+	// 添付物アイテム名.
+	UPROPERTY(BlueprintReadOnly)
+	FString AttachmentItemName;
+
+	// 添付物数.
+	UPROPERTY(BlueprintReadOnly)
+	int32 AttachmentCount;
 
 
 	// コンストラクタ
