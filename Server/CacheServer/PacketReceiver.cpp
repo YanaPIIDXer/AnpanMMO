@@ -480,6 +480,16 @@ bool PacketReceiver::OnRecvMailRead(MemoryStreamInterface *pStream)
 	CachePacketMailRead Packet;
 	if (!Packet.Serialize(pStream)) { return false; }
 
+	MailData Data;
+	if (!DBConnection::GetInstance().LoadMailData(Packet.Id, Data))
+	{
+		std::cout << "Mail Not Found... Id:" << Packet.Id << std::endl;
+		return true;
+	}
+
+	// ƒtƒ‰ƒO‚ª–¢“Ç‚É‚È‚Á‚Ä‚¢‚È‚¢ê‡‚Í‰½‚à‚µ‚È‚¢B
+	if (Data.Flag != MailData::NotRead) { return true; }
+
 	if (!DBConnection::GetInstance().ChangeMailFlag(Packet.Id, MailData::Read))
 	{
 		std::cout << "Mail Read Failed... Mail ID:" << Packet.Id << std::endl;
